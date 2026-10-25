@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Go tests, evidence and terminal smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: yankeetrader
+    steps:
+      - name: Check out Yankee Trader
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: yankeetrader
+          persist-credentials: false
+      - name: Check out minimum supported GoDoors
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: robbiew/godoors
+          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          path: godoors
+          persist-credentials: false
+      - name: Set up minimum supported Go version
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.23.x'
+          cache-dependency-path: yankeetrader/go.sum
+      - name: Check formatting
+        run: test -z "$(gofmt -l cmd internal)"
+      - name: Run race-enabled tests and vet
+        run: |
+          go test -race -count=1 ./...
+          go vet ./...
+      - name: Verify preserved research evidence
+        run: |
+          python3 scripts/verify_navigation_evidence.py
+          python3 scripts/verify_avoid_evidence.py
+          python3 scripts/verify_planet_evidence.py
+          python3 scripts/verify_archive.py
+      - name: Build and exercise real terminal sessions
+        run: |
+          go build -o bin/yt ./cmd/yt
+          python3 scripts/smoke_navigation.py
+          python3 scripts/smoke.py
+      - name: Cross-build Linux and Windows
+        run: |
+          mkdir -p ../artifacts
+          GOOS=linux GOARCH=amd64 go build -o ../artifacts/yt-linux ./cmd/yt
+          GOOS=windows GOARCH=amd64 go build -o ../artifacts/yt-windows.exe ./cmd/yt
