@@ -78,6 +78,12 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 Sensors show actual public sector/ship data. Mines, deployed sector defenses, cloak detection, danger scanners and emergency warps remain outside this slice. The current Go world has no combat hazards.
 
+Port colors, commodity columns, dotted labels, Earth menu spacing, and purchase prompts are checked against 35 original DOS screen captures from ten isolated sessions. The comparisons cover the port body through the current prompt, including Earth redraws, purchases, sales, ownership, full holds, and declined trades. Live timestamps and unsupported-item affordability remain dynamic; startup history, caller/status details, timing, and invalid-input behavior are outside this visual comparison. See [port screen evidence](research/yt-port-screens/RECOVERY.md).
+
+In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `2` holds, `3` fighters, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Other historical equipment options retain their original labels and prices, with `N/A` affordability; selecting one reports that it is unavailable. An empty equipment quantity cancels that purchase. The shop refreshes your credits after each saved purchase.
+
+Ordinary ports offer commodities in ore/organics/equipment order. Enter a quantity (`0` skips), then agree with `Y` or Enter; `N` declines. Enter at the quantity prompt selects the displayed maximum, limited by current stock/demand, cargo space, cargo aboard, and credits. Invalid quantities skip that commodity without a transaction. Docking costs one turn, including a visit with no purchases. A replaced or expired docking session cannot complete an old prompt. `-compact` keeps the explicit `BUY`, `SELL`, and `EQUIP` workflow.
+
 Other cargo names are `organics` and `equipment`. Earth sells `holds` (500 credits), `fighters` (100), `shields` (50), and `forces` (750). Quantities must be whole, positive numbers. Cargo capacity is shared across all three cargo types. Earth equipment costs remain an economic sink.
 
 ## Run as a BBS door
@@ -150,6 +156,8 @@ go test -race ./...
 go vet ./...
 python3 scripts/smoke.py
 python3 scripts/smoke_startup.py
+python3 scripts/verify_port_screens.py
+python3 scripts/smoke_port_parity.py
 python3 scripts/verify_startup_evidence.py
 python3 scripts/smoke_navigation.py
 python3 scripts/verify_navigation_evidence.py

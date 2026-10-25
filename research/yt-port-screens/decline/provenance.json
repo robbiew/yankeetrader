@@ -1,0 +1,13 @@
+{
+  "actor": "TESTER",
+  "fixture": "fixture-trade-high",
+  "keys": "\r~~~~~\r~P\r~~@10\r~~@N\r~~@Q;Y\r~\r~\r",
+  "before_sha256": "75b6cd8a0d6acab0ca0c82f524ca06974b290e691a36aeadc982092f828882ef",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "248c3afeda29b9edd34ce09ce31c98631f8e70383ac18fda1be77e66664179dc",
+  "game_log_sha256": "a95693f6e177ecd63aae0d4419bf0cf8c151cedaeda65fb98c4d9b2919a43e1f",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "patches": [],
+  "input_sha256": "75b6cd8a0d6acab0ca0c82f524ca06974b290e691a36aeadc982092f828882ef"
+}

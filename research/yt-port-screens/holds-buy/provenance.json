@@ -1,0 +1,19 @@
+{
+  "actor": "TESTER",
+  "fixture": "fixture-trade-earth",
+  "patches": [
+    {
+      "record": 2,
+      "offset": 65,
+      "value": 10
+    }
+  ],
+  "input_sha256": "1a3f33c741665a52eec6a67fcfd3674a36ec03e7dc15fe7de950b620c938e88f",
+  "keys": "\r~~~~~\r~P\r~~@2\r~~@1\r~~@0\r~~@Q;Y\r~\r~\r",
+  "before_sha256": "faf2c99341bcaceaa37770831d1548e5ebb066642ed146c2c665d679e27d65ca",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "40d9be22e9e8fdd24611616f17bd780bf5436f083447643df75f6ce9de461d48",
+  "game_log_sha256": "aa25db7a5b0f0bdaa6d71970ee823b9a3a64b242d60816a5bca408e264e21700",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114"
+}
