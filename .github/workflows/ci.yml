@@ -52,6 +52,8 @@ jobs:
         run: |
           go build -o bin/yt ./cmd/yt
           python3 scripts/smoke_startup.py
+          python3 scripts/smoke_ports.py
+          python3 scripts/smoke_ports.py --ascii
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke.py
       - name: Cross-build Linux and Windows

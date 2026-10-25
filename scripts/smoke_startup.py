@@ -79,7 +79,7 @@ class Screen:
     def snapshot(self):return json.loads(json.dumps(self.cells))
 
 
-def capture(data,alias,new=False,ascii=False,abort=False):
+def capture(data,alias,new=False,ascii=False,abort=False,after_info=None):
     master,slave=pty.openpty();fcntl.ioctl(slave,termios.TIOCSWINSZ,struct.pack('HHHH',25,80,0,0))
     command=[str(ROOT/'bin/yt'),'-data',str(data),'-local',alias]
     if ascii:command.append('-ascii')
@@ -90,7 +90,8 @@ def capture(data,alias,new=False,ascii=False,abort=False):
         phases += [('alias','-+> ',b'\x1b' if abort else b'Pilot\r')]
         if not abort:phases += [('confirm','Is this OK (Y/[N])? ',b'Y\r'),('instructions','Do you want instructions (Y/N) [N]? ',b'N\r')]
     if not abort:
-        phases += [('info','[ Press any Key ]' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',b' '),('sector','Main Command (?=Help)? ',b'?\r'),
+        phases += [('info','[ Press any Key ]' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',b' ')]
+        phases += after_info if after_info is not None else [('sector','Main Command (?=Help)? ',b'?\r'),
                    ('help','Main Command (?=Help)? ',b'C\r'),('computer','Computer command (?=help)? ',b'?\r'),
                    ('computer-help','Computer command (?=help)? ',b'1;Q;Y\r')]
     try:

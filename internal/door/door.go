@@ -621,7 +621,10 @@ func (s Session) Run() (runErr error) {
 			})
 			if e == nil {
 				planetToken = ""
-				if port.ID == 1 {
+				if s.Classic {
+					e = s.classicPort(id, token, &pending)
+					token = ""
+				} else if port.ID == 1 {
 					e = s.Terminal.Printf("Earth: holds 500, fighters 100, shields 50, forces 750 credits each.\r\n")
 				} else {
 					for i, name := range game.Goods {
