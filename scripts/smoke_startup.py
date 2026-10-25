@@ -60,7 +60,7 @@ class Screen:
                         if v==0:self.fg,self.bg=7,0
                         elif v==1:self.fg|=8
                         elif v==22:self.fg&=7
-                        elif 30<=v<=37:self.fg=mapping[v-30]
+                        elif 30<=v<=37:self.fg=(self.fg&8)|mapping[v-30]
                         elif 90<=v<=97:self.fg=mapping[v-90]+8
                         elif 40<=v<=47:self.bg=mapping[v-40]
                 elif op=='r':
