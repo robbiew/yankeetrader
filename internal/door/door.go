@@ -310,7 +310,7 @@ func (s Session) Run() (runErr error) {
 				}
 			}
 		}
-		if s.Classic && cmd == "a" && p.PlanetToken == "" {
+		if s.Classic && cmd == "a" && planetToken == "" {
 			cmd = "attack"
 		}
 		if s.Classic && cmd == "l" {
@@ -515,6 +515,14 @@ func (s Session) Run() (runErr error) {
 				}
 			}
 		case "land":
+			if s.Classic {
+				e = s.classicLand(id, &pending)
+				if errors.Is(e, io.EOF) {
+					return nil
+				}
+				token, planetToken = "", ""
+				break
+			}
 			var status game.Planet
 			e = s.Store.Update(func(w *game.World) error {
 				if e := w.Land(id, s.Now()); e != nil {

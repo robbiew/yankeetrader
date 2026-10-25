@@ -1,0 +1,12 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-bank-deposit",
+  "input_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+  "keys": "\r~~~~~\r~L;B\r~~@15000\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "bb69a24f29c878978b2901224b95a3f02c5e9973ac9c944464f0dbd146c0a517",
+  "game_log_sha256": "72d92f6dd1bfd6539bc0b54a9295a08333e3e9515f4a076834742ff57027bf9e",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114"
+}

@@ -1,0 +1,12 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-foreign",
+  "input_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+  "keys": "\r~~~~~\r~L\r~~@N\r~~@Q;Y\r~\r~\r",
+  "before_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "a3d0c7e6ed444d988bb4381c07f04efada9b5071d4d7284ff9273e79a498f8cc",
+  "game_log_sha256": "e990aa77946e22ba85e4ad6331b6d30ea08b9ea89a998dad431b8e9e28b02288",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114"
+}

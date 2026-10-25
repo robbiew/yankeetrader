@@ -392,7 +392,13 @@ func (s Session) classicSector(w *game.World, id int) error {
 		}
 	}
 	if planet := w.Planets[sector.Planet]; planet != nil {
+		if err := s.planetColor(14); err != nil {
+			return err
+		}
 		if err := s.Terminal.Printf("Planet: %s * Forces: %d\r\n", planet.Name, planet.Ground); err != nil {
+			return err
+		}
+		if err := s.planetColor(4); err != nil {
 			return err
 		}
 	}
