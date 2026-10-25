@@ -20,7 +20,11 @@ def main():
     parser.add_argument("--archive", type=Path, default=Path(__file__).resolve().parents[1] / "archive")
     parser.add_argument("--source", type=Path, help="Use a completed disposable session as the fixture source")
     parser.add_argument("--only", nargs="*", help="Run only named probes")
+    parser.add_argument("--dosbox", default="dosbox-staging", help="DOSBox Staging command or executable path")
     args = parser.parse_args()
+    dosbox = shutil.which(args.dosbox)
+    if dosbox is None:
+        parser.error("DOSBox Staging not found; install dosbox-staging on PATH or pass --dosbox /path/to/executable")
     archive = args.archive.resolve()
     args.destination.mkdir(parents=True, exist_ok=False)
     spec = importlib.util.spec_from_file_location("mbf", archive / "analysis/yt-maint/experiments.py")
@@ -94,7 +98,7 @@ def main():
         keys = ("\r~~~~~\r~" + command + "\r~~~~" + "\r" * 8 + "Q;Y\r").encode()
         (dest / "KEYS.TXT").write_bytes(keys)
         with (dest / "dosbox.log").open("w") as log:
-            subprocess.run(["/opt/homebrew/bin/dosbox-staging", "--noprimaryconf", "--nolocalconf",
+            subprocess.run([dosbox, "--noprimaryconf", "--nolocalconf",
                             "--set", "cpu_cycles=200000", "--set", "nosound=true",
                             "-c", f"mount c {dest.resolve()}", "-c", "c:",
                             "-c", "date 10/24/2026", "-c", "time 00:00:00",

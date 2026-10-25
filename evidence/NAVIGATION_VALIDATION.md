@@ -1,9 +1,11 @@
 # Navigation/scanning validation — 2026-10-25
 
-Implemented on local branch `codex/navigation-scanning`, based on `fe1c02e`.
-The original checkout's uncommitted work was left untouched.
+Validation host: macOS arm64, Go 1.27.3. The declared minimum Go version is
+1.23; these results do not establish execution on that minimum toolchain.
+Use GoDoors commit `9364a49ddd7c396ccbfcdd3c240c104ea9178551` or a descendant
+at `../godoors`, or point the module replacement at that checkout.
 
-Passed on macOS arm64 with Go 1.27.3 and the existing local GoDoors checkout:
+From the repository root, the following checks passed:
 
 - `go test -race ./...`: game, store, door and CLI packages.
 - `go vet ./...`.
@@ -35,10 +37,17 @@ was exported and the analysis session closed. Original executable identity and
 all DOS runtime outcomes are linked in the
 [recovery report](../research/yt-navigation/RECOVERY.md).
 
-The worktree has an ignored local `go.work` pointing to
-`/Users/robbie/GitHub/godoors`; the committed `go.mod` is unchanged. Its native
-`bin/yt` is built for local play. Use a new data directory for this checkout;
-the existing player's world was not migrated or modified.
+Build the native executable with `go build -o bin/yt ./cmd/yt` before running
+the PTY scripts. They create disposable worlds. The DOS recovery runner locates
+`dosbox-staging` on `PATH`; `--dosbox` selects another executable path.
+The archived `local-smoke.txt` transcript is retained unchanged because its
+elapsed-time production values vary on each run.
 
 No live BBS acceptance, complete DOS navigation parity, combat-hazard support,
 or native Windows durability claim is made by this milestone.
+
+Review follow-up: the door tests also pass against the exact minimum GoDoors
+revision `9364a49ddd7c396ccbfcdd3c240c104ea9178551`. The portable DOS launcher
+was checked with a missing executable (clear diagnostic, no destination created)
+and by rerunning the `avoid-slot30` probe through PATH discovery; the recorded
+alternate route and unchanged turn balance were reproduced.

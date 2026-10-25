@@ -58,8 +58,8 @@ Planet transfer saved.
 Available goods loaded; equipment gets cargo priority.
 Planet New Eden | governor 1 | garrison 1 | bank 15000 credits
 Production: ore 2.004, organics 4, equipment 5 per day
-Warehouses: ore 1.01029e-06, organics 1.08726e-06, equipment 1.15934e-06
-Fighters 1.05187e-05 | missiles 3.99809e-08 | mines 1.59924e-08 | plasma 1.59924e-10
+Warehouses: ore 1.10601e-06, organics 1.1799e-06, equipment 1.25463e-06
+Fighters 1.17124e-05 | missiles 4.49913e-08 | mines 1.79965e-08 | plasma 1.79965e-10
 Saved. Safe travels, Tester.
 
 YANKEE TRADER - Go reconstruction
@@ -68,7 +68,7 @@ Welcome, Tester. Actions save automatically. Type ? for help.
 Sector 1 | 59749 credits | 495 turns > land;bank 0;q
 Planet New Eden | governor 1 | garrison 1 | bank 15000 credits
 Production: ore 2.004, organics 4, equipment 5 per day
-Warehouses: ore 1.96131e-06, organics 2.37646e-06, equipment 2.6521e-06
-Fighters 2.16466e-05 | missiles 8.06927e-08 | mines 3.22771e-08 | plasma 3.22771e-10
+Warehouses: ore 2.12091e-06, organics 2.55569e-06, equipment 2.84766e-06
+Fighters 2.35877e-05 | missiles 8.84375e-08 | mines 3.5375e-08 | plasma 3.5375e-10
 Planet account/production/garrison saved.
 Saved. Safe travels, Tester.

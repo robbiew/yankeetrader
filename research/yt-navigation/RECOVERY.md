@@ -131,6 +131,11 @@ rejected. Each autopilot hop revalidates the entire remaining route against live
 preferences, position, links and turn budget. A newly avoided future sector stops
 the course immediately, preserving previously committed hops.
 
+Save compatibility is forward-only after a successful avoid edit: `AvoidSectors`
+is written even when all 30 slots are subsequently cleared, and the version
+stays at 2. Older strict decoders reject this field. Preserve a pre-edit backup
+before returning to an older binary; restoring it loses subsequent progress.
+
 Session tests cover changed preferences during confirmation and after a committed
 hop. The real PTY smoke covers rerouting, reconnect persistence, clearing, Ctrl-X
 and preservation of the queued quit key. Hazard and emergency-warp behavior is
@@ -161,7 +166,7 @@ go build -o bin/yt ./cmd/yt
 python3 scripts/smoke_navigation.py
 ```
 
-The DOS runner requires DOSBox Staging at `/opt/homebrew/bin/dosbox-staging`;
+The DOS runner requires DOSBox Staging on `PATH` (or an explicit `--dosbox` path);
 the destination must not exist. It mounts disposable fixtures, never the archive.
 Each case fixes DOS date/time to 2026-10-24 00:00:00 to match the source login
 fixture; actual simulated seconds advance while the key feeder runs. The

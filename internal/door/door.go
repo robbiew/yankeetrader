@@ -52,7 +52,7 @@ func (g *GoDoors) Interrupted() (bool, error) {
 	return false, nil
 }
 
-func (GoDoors) Printf(f string, args ...any) error {
+func (*GoDoors) Printf(f string, args ...any) error {
 	_, e := fmt.Fprintf(gd.Output(), f, args...)
 	return e
 }

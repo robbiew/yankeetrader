@@ -98,6 +98,8 @@ Team management, port acquisition/treasury collection, combat, NPCs, full univer
 
 ## Storage and recovery
 
+**Save rollback compatibility:** Existing version-2 saves load in this build. After the first successful `AVOID` edit, saving adds `AvoidSectors` while the world version remains 2. Previous binaries reject that unknown field and cannot load the updated save. Clearing all avoid slots still retains the field. Back up the data directory before using the new commands; restoring that backup is the supported way to return to a previous binary, and discards later progress.
+
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
 Updates serialize through the lock, validate the complete world, write and sync a temporary file, then replace the save atomically on macOS/Linux. The containing directory is also synced there. Windows uses its file lock and replacement APIs but has not received native crash/durability acceptance. Orphan `.world-*` files are never treated as committed saves. Existing/corrupt saves are never silently reinitialized. Back up the data directory while the door is stopped, or take a filesystem snapshot.
@@ -106,7 +108,7 @@ If a save error occurs, stop and inspect the filesystem before retrying a purcha
 
 ## Build and validate
 
-Requires Go 1.23+ and the existing local GoDoors checkout. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
+Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
 
 ```sh
 go build -o bin/yt ./cmd/yt
