@@ -1,0 +1,25 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-takeall",
+  "patches": [
+    {
+      "record": 4053,
+      "offset": 73,
+      "value": 0
+    },
+    {
+      "record": 4053,
+      "offset": 77,
+      "value": 0
+    }
+  ],
+  "input_sha256": "213843dab0558ae70ef347e19c2a1d6095c7ce82d6a721a551917e504e85f264",
+  "keys": "\r~~~~~\r~L;N\r~~@New Eden\r~~@Y\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "5a5ce8aeab08f0dc0944aef35ab6759f5342e054ef0dcf17a41fbe080504db4e",
+  "game_log_sha256": "bc8f0b8f86b9fabb8583c7d7247178ab012b60e278a05c41fd76538f93bb8ba0",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "after_sha256": "7f4aef8de067f141abd6bf61978ad3ba484e0b91de0506967532794abd3f5756"
+}

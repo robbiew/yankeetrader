@@ -1,0 +1,14 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-unguarded-bank",
+  "patches": [],
+  "input_sha256": "790cec2c9b94b14fd631dedb26875830c9ebf175fdecd144f36c68c70894dc76",
+  "keys": "\r~~~~~\r~L;N\r~~@New Eden\r~~@Y\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "790cec2c9b94b14fd631dedb26875830c9ebf175fdecd144f36c68c70894dc76",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "f98bc86164bba74d40fc596a0ee4878f7a37ab59932a92ea0df1af2f597b9ade",
+  "game_log_sha256": "f9dc255daa109f002a88ffc358f2d5ab73e40284fb99bb6f8ee1ad1514557c35",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "after_sha256": "1c9f7ef92a74a5df75039610c92af6920c19e861e3d93751002913e4ad53fbdb"
+}

@@ -1,0 +1,14 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-takeall",
+  "patches": [],
+  "input_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "keys": "\r~~~~~\r~L;N\r~~@Xannoron\r~~@N;Mercenary Base\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "41754c311ef244bd09cb0c2b8c7436057f3186f1b173abd866c3b4d9b81ce7ac",
+  "game_log_sha256": "c41b9ee68d7d8d9b0aab9e9c9942a020119d8f91d229286dea3d6077737ec3a9",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "after_sha256": "aaf4f1ab894ed5fc9f3aedb2cd5f6a5de8ea71a89e4e63ff63e7c89ae1a36b82"
+}

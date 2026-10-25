@@ -257,6 +257,8 @@ func (s Session) classicPlanet(id int, token string, pending *[]string) error {
 			err = s.planetDisplay(p, planet)
 		case "a", "":
 			err = s.planetTakeAll(id, token)
+		case "n":
+			err = s.planetRename(id, token, pending)
 		case "t":
 			err = s.planetTransfer(id, token, pending)
 		case "b", "f", "$":
@@ -471,4 +473,58 @@ func (s Session) planetAccount(id int, token, choice string, pending *[]string) 
 		}
 		return nil
 	}
+}
+
+func (s Session) planetRename(id int, token string, pending *[]string) error {
+	for {
+		w, _, _, err := s.planetView(id, token)
+		if err != nil {
+			return err
+		}
+		if err = w.CanRenamePlanet(id, token, s.Now()); err != nil {
+			if errors.Is(err, game.ErrProtectedPlanetRename) {
+				return s.planetRenameWarning(err)
+			}
+			return err
+		}
+		name, err := s.planetAnswer("\r\nWhat do you want to name this planet? -=>", pending, 3)
+		if err != nil {
+			return err
+		}
+		if name == "" {
+			return nil
+		}
+		inputName := name
+		name, err = game.PlanetRenameName(name)
+		if errors.Is(err, game.ErrReservedPlanetName) {
+			return s.planetRenameWarning(err)
+		}
+		if err != nil {
+			return err
+		}
+		answer, err := s.planetAnswer(fmt.Sprintf("\r\n\"%s\" Is this OK? (Y/n) [Y] ?", name), pending, 3)
+		if err != nil {
+			return err
+		}
+		if strings.EqualFold(answer, "n") {
+			continue
+		}
+		return s.Store.Update(func(w *game.World) error { return w.RenamePlanet(id, token, inputName, s.Now()) })
+	}
+}
+
+func (s Session) planetRenameWarning(err error) error {
+	if outErr := s.Terminal.Printf("\r\n"); outErr != nil {
+		return outErr
+	}
+	if outErr := s.planetColor(0x8b); outErr != nil {
+		return outErr
+	}
+	if outErr := s.Terminal.Printf("%s", err); outErr != nil {
+		return outErr
+	}
+	if outErr := s.planetColor(3); outErr != nil {
+		return outErr
+	}
+	return s.Terminal.Printf("\r\n")
 }

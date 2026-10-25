@@ -31,9 +31,9 @@ def compare(actual,expected,first,last=24):
             assert a[2]==e[2] and (a[0]==' ' or a[1]==e[1]),('color',y+1,x+1,a,e)
 
 
-def seed(data,name):
+def seed(data,name,research='yt-planet-screens'):
     path=data/'world.json';w=json.loads(path.read_text());p=w['Players']['1']
-    prov=json.loads((ROOT/'research/yt-planet-screens'/name/'provenance.json').read_text())
+    prov=json.loads((ROOT/'research'/research/name/'provenance.json').read_text())
     source=(ROOT/'archive/analysis/yt-combat/experiments'/prov['fixture']/'before.dat').read_bytes()
     for field,offset in [('Credits',81),('Turns',49),('Holds',65),('Fighters',61),('Shields',53),('Ground',121),('Missiles',97),('Mines',129),('Plasma',113)]:p[field]=int(get(source,2,offset))
     p.update(Sector=2,Cargo=[int(get(source,2,o)) for o in [69,73,77]])

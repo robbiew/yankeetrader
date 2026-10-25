@@ -1,0 +1,14 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-takeall",
+  "patches": [],
+  "input_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "keys": "\r~~~~~\r~L;N;the wanderer\r~~@Y\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "d057a60d9c192517d35a326d217a65073781881474eb445e256affd0a4c5bb9d",
+  "game_log_sha256": "3105312f8b899693505a945e13a0be273662a9d7c8b82571b0f38924ef9ae243",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "after_sha256": "675df395c49556547a8787406bbd696bb13e6c8f6af1027995d0453a018214d9"
+}

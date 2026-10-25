@@ -78,7 +78,9 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 Sensors show actual public sector/ship data. Mines, deployed sector defenses, cloak detection, danger scanners and emergency warps remain outside this slice. The current Go world has no combat hazards.
 
-The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Rename, thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
+The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
+
+Planet renaming uses the original name/confirmation prompts and colors. Blank names cancel; `N` at confirmation retries; Enter accepts. Names receive DOS word casing/space cleanup and are clipped to 41 characters. Renaming costs no credits or turns and uses the current landing permission, including shared/unguarded access. Reserved names and the final special planet slot remain protected. See [rename rules, 45 DOS captures and comparison boundaries](research/yt-planet-rename/RECOVERY.md).
 
 Port colors, commodity columns, dotted labels, Earth menu spacing, and purchase prompts are checked against 35 original DOS screen captures from ten isolated sessions. The comparisons cover the port body through the current prompt, including Earth redraws, purchases, sales, ownership, full holds, and declined trades. Live timestamps and unsupported-item affordability remain dynamic; startup history, caller/status details, timing, and invalid-input behavior are outside this visual comparison. See [port screen evidence](research/yt-port-screens/RECOVERY.md).
 
@@ -163,6 +165,9 @@ python3 scripts/smoke_port_parity.py
 python3 scripts/verify_planet_screens.py
 python3 scripts/smoke_planet_parity.py
 python3 scripts/smoke_planet_parity.py --ascii
+python3 scripts/verify_planet_rename.py
+python3 scripts/smoke_planet_rename.py
+python3 scripts/smoke_planet_rename.py --ascii
 python3 scripts/verify_startup_evidence.py
 python3 scripts/smoke_navigation.py
 python3 scripts/verify_navigation_evidence.py

@@ -46,6 +46,7 @@ jobs:
           python3 scripts/verify_startup_evidence.py
           python3 scripts/verify_port_screens.py
           python3 scripts/verify_planet_screens.py
+          python3 scripts/verify_planet_rename.py
           python3 scripts/verify_navigation_evidence.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py
@@ -59,6 +60,8 @@ jobs:
           python3 scripts/smoke_port_parity.py
           python3 scripts/smoke_planet_parity.py
           python3 scripts/smoke_planet_parity.py --ascii
+          python3 scripts/smoke_planet_rename.py
+          python3 scripts/smoke_planet_rename.py --ascii
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke.py
       - name: Cross-build Linux and Windows
