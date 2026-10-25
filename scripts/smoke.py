@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[1]
 binary=str(root/'bin/yt')
 def play(args,commands):
  master,slave=pty.openpty()
- proc=subprocess.Popen([binary,*args],stdin=slave,stdout=slave,stderr=slave,close_fds=True)
+ proc=subprocess.Popen([binary,'-compact',*args],stdin=slave,stdout=slave,stderr=slave,close_fds=True)
  os.close(slave);chunks=[];sent=False;end=time.monotonic()+20
  try:
   while time.monotonic()<end:

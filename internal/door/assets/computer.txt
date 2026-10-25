@@ -1,0 +1,12 @@
+ Computer commands:
+
+ 1) Exit Computer                        2) Port Report
+ 3) Autopilot                            4) Rank Teams & Players
+ 5) Send Radio Message                   6) Radio Message Log
+ 7) Set autopilot Sectors to Avoid       8) Galactic Newspaper
+ 9) Planet Report                       10) Path Finder
+11) Fighter Finder (Yours)              12) Port(s) Treasury Report
+13) Planet Finder (Yours)               14) Find Nearest Ports
+15) Show Active Spies                   16) Find Port Pairs
+17) Check Profits of Adjacent Ports
+

@@ -1,0 +1,30 @@
+{
+  "computer.txt": {
+    "sha256": "b04382dd8bb5ca67dacfc5ce399b430d623fdc6a27eb89f35e89f77acb3b48dd",
+    "bytes": 563
+  },
+  "info.bin": {
+    "sha256": "0ac7baf13846b7dced788cdc50b4fa6af3cd57ee8f32da3759f5a8e5391c7a8c",
+    "bytes": 4000
+  },
+  "main-help.bin": {
+    "sha256": "d6d318795f7c44a5fbe7f2609ab180fc34a96dba3da3efd7a350584511d569da",
+    "bytes": 4000
+  },
+  "title.bin": {
+    "sha256": "2fca9f2816ef9f6750e30b743c0832f1b34f12017e586670e82e477bfc7808b0",
+    "bytes": 4000
+  },
+  "ytinstr.doc": {
+    "sha256": "918f9d746c14cda8025397f47e8616263187f9f810d10b2dae21b190759dae5f",
+    "bytes": 24736
+  },
+  "ytopen.ans": {
+    "sha256": "ba52bc4165d018458c19ace7d7f49f598437bb338d539cd763dd189837997903",
+    "bytes": 2629
+  },
+  "ytopen.asc": {
+    "sha256": "f9a18322a45ad4c79876b83c0d5a9800cdfc09b716a938a4e4b0fe472413031a",
+    "bytes": 502
+  }
+}

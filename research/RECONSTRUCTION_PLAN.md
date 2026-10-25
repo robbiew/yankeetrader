@@ -66,3 +66,11 @@ to both `PATH` and `AUTO`, and revalidates the remaining course between hops.
 Ten more DOS sessions establish editor/routing rules and show DOS resetting the
 list on reconnect. Go deliberately persists it. Total navigation evidence is now
 23 DOS sessions and 46 compressed save snapshots.
+
+## DOS startup presentation — 2026-10-25
+
+The default frontend now follows the original title/opening, alias registration,
+instructions choice, ship-information key pause, sector display and first menus.
+Original captures supply cells/colors; dynamic fields use current game data.
+`-compact` retains the previous interface. See [startup recovery](yt-startup/RECOVERY.md)
+for exact comparisons, unsupported-system boundaries and save compatibility.

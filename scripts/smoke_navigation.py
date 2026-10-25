@@ -15,7 +15,7 @@ binary = str(root / "bin/yt")
 
 def play(data, commands, confirmation=None):
     master,slave = pty.openpty()
-    proc = subprocess.Popen([binary,"-data",str(data),"-local","Navigator"],stdin=slave,stdout=slave,stderr=slave)
+    proc = subprocess.Popen([binary,'-compact',"-data",str(data),"-local","Navigator"],stdin=slave,stdout=slave,stderr=slave)
     os.close(slave)
     chunks = []
     sent = confirmed = False

@@ -2,6 +2,40 @@
 
 A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
 
+## DOS-style startup
+
+The default interface reproduces the preserved DOS title, opening art, new-player
+alias confirmation, instructions choice, ship-information pause, sector display
+and first command menus. Use an 80×25 ANSI terminal for the recovered colors and
+layout. Local terminals receive UTF-8 box characters; ANSI BBS callers receive
+raw CP437. Door32's emulation field selects the remote display; `-ascii` forces
+plain text. No terminal-size probes are required.
+
+Press a key at the title. New players enter an in-game alias (Enter uses the
+Door32 real name, or the local name), confirm with `Y`, and choose whether to read
+the original instructions. Press a key after ship information. At the main
+prompt, Enter redisplays the sector, `?` shows the original two-column help,
+`C` enters the ship's computer, and `Q` asks for confirmation. Commands finish
+with Enter and can be stacked with semicolons. A trailing `/` saves a command
+line for Ctrl-R replay; `/R2` through `/R20` repeat a command.
+
+In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
+sector. The compact interface keeps its existing `L` look binding. Use
+`-compact` to skip the startup screens and retain the prior command workflow.
+The computer currently connects options 3 (autopilot), 7 (avoid slots), and 10
+(path finder) to the implemented game rules.
+
+The original menus and manual include features still under reconstruction.
+Selecting an unavailable action says so; radio, scanner and cloak values are
+not fabricated. Ship balances and inventory come from the current Go world,
+including its existing deliberate differences from DOS starting equipment.
+The title's original version, compilation date and evaluation notice are
+preserved historical artwork, not metadata about the Go executable.
+
+See [startup evidence and limits](research/yt-startup/RECOVERY.md) and the
+[title](evidence/startup/title.png), [ship information](evidence/startup/info.png),
+and [main menu](evidence/startup/help.png) captures.
+
 ## Play now on this Mac
 
 The native executable and existing local world are preserved. Play:
@@ -25,7 +59,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 |---|---|
 | `?` | Help |
 | `I` | Ship information |
-| `L` | Current sector, warps, and port |
+| `LOOK` | Current sector, warps, and port (`L` in compact mode) |
 | `M <sector>` | Move through a listed adjacent warp; one turn |
 | `S` / `SCAN` | Scan adjacent sectors: ports, planets, ships and outgoing warps; free |
 | `PATH <from> <to>` | Display a shortest directed warp route and turn cost; free |
@@ -59,7 +93,7 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 
 `-system` is a stable namespace for the BBS. Identity uses this value plus the positive user-record number on Door32 line five; alias is display information. Changing an alias does not create a fresh ship. Keep the system value stable. Local identities are separate from Door32 identities.
 
-GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. The door honors the drop file's remaining session time (1–1,440 minutes). The first interface uses printable ASCII and does not require terminal probing or ANSI support.
+GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
 Native macOS PTY and Door32 **local transport** were exercised. Linux/Windows builds compile, but this is not evidence of live acceptance under either BBS transport. Test an inherited Windows socket on the target BBS before deployment.
 
@@ -98,7 +132,7 @@ Team management, port acquisition/treasury collection, combat, NPCs, full univer
 
 ## Storage and recovery
 
-**Save rollback compatibility:** Existing version-2 saves load in this build. After the first successful `AVOID` edit, saving adds `AvoidSectors` while the world version remains 2. Previous binaries reject that unknown field and cannot load the updated save. Clearing all avoid slots still retains the field. Back up the data directory before using the new commands; restoring that backup is the supported way to return to a previous binary, and discards later progress.
+**Save rollback compatibility:** Existing version-2 saves load in this build. A DOS-style login saves a `LastLogin` date to distinguish repeat visits, and preserves the selected in-game alias independently of the BBS handle. Older binaries that do not know this field cannot load that updated save. Back up the world before using DOS-style startup. After the first successful `AVOID` edit, saving adds `AvoidSectors` while the world version remains 2. Previous binaries reject that unknown field and cannot load the updated save. Clearing all avoid slots still retains the field. Back up the data directory before using the new commands; restoring that backup is the supported way to return to a previous binary, and discards later progress.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -115,6 +149,8 @@ go build -o bin/yt ./cmd/yt
 go test -race ./...
 go vet ./...
 python3 scripts/smoke.py
+python3 scripts/smoke_startup.py
+python3 scripts/verify_startup_evidence.py
 python3 scripts/smoke_navigation.py
 python3 scripts/verify_navigation_evidence.py
 python3 scripts/verify_avoid_evidence.py

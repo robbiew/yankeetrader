@@ -12,7 +12,10 @@ func TestDoor32StableRecord(t *testing.T) {
 	if e := os.WriteFile(p, []byte("0\n0\n38400\nTest BBS\n42\nReal Name\nAlias\n10\n60\n0\n1\n"), 0600); e != nil {
 		t.Fatal(e)
 	}
-	n, e := recordNumber(d)
+	n, realName, e := door32Identity(d)
+	if realName != "Real Name" {
+		t.Fatal("missing real-name default", realName)
+	}
 	if e != nil || n != 42 {
 		t.Fatalf("record=%d error=%v", n, e)
 	}

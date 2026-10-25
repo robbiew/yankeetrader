@@ -43,6 +43,7 @@ jobs:
           go vet ./...
       - name: Verify preserved research evidence
         run: |
+          python3 scripts/verify_startup_evidence.py
           python3 scripts/verify_navigation_evidence.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py
@@ -50,6 +51,7 @@ jobs:
       - name: Build and exercise real terminal sessions
         run: |
           go build -o bin/yt ./cmd/yt
+          python3 scripts/smoke_startup.py
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke.py
       - name: Cross-build Linux and Windows
