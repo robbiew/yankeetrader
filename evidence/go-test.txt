@@ -1,0 +1,4 @@
+ok  	github.com/robbiew/yankeetrader/cmd/yt	1.296s
+ok  	github.com/robbiew/yankeetrader/internal/door	2.306s
+ok  	github.com/robbiew/yankeetrader/internal/game	1.534s
+ok  	github.com/robbiew/yankeetrader/internal/store	3.650s

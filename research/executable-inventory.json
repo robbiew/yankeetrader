@@ -1,0 +1,57 @@
+[
+  {
+    "file": "YT.EXE",
+    "sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "size": 174321,
+    "mz_declared_size": 174321,
+    "header_bytes": 3584,
+    "relocations": 870,
+    "entry_cs_ip": "0000:0030",
+    "entry_file_offset": 3632,
+    "trailing_bytes": 0
+  },
+  {
+    "file": "YTMAINT.EXE",
+    "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "size": 43185,
+    "mz_declared_size": 43185,
+    "header_bytes": 512,
+    "relocations": 108,
+    "entry_cs_ip": "0000:0030",
+    "entry_file_offset": 560,
+    "trailing_bytes": 0
+  },
+  {
+    "file": "YT-INIT.EXE",
+    "sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "size": 20385,
+    "mz_declared_size": 20385,
+    "header_bytes": 512,
+    "relocations": 28,
+    "entry_cs_ip": "0000:0030",
+    "entry_file_offset": 560,
+    "trailing_bytes": 0
+  },
+  {
+    "file": "YTCONFIG.EXE",
+    "sha256": "120da32994a9ae3b8b9276aeabe076a5d1e2aab86c011cf175db7573e59faa03",
+    "size": 15153,
+    "mz_declared_size": 15153,
+    "header_bytes": 512,
+    "relocations": 36,
+    "entry_cs_ip": "0000:0030",
+    "entry_file_offset": 560,
+    "trailing_bytes": 0
+  },
+  {
+    "file": "BRUN30.EXE",
+    "sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "size": 70680,
+    "mz_declared_size": 70680,
+    "header_bytes": 512,
+    "relocations": 71,
+    "entry_cs_ip": "0000:0000",
+    "entry_file_offset": 512,
+    "trailing_bytes": 0
+  }
+]

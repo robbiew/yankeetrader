@@ -1,0 +1,62 @@
+[
+  {
+    "name": "high",
+    "source": "analysis/yt-combat/experiments/trade-high",
+    "credits_before": 1000000,
+    "cargo_before": 0,
+    "supply": 1000.0,
+    "coefficient": 50.0,
+    "owner": "none",
+    "credits_after": 999900,
+    "cargo_after": 10,
+    "treasury_after": 0
+  },
+  {
+    "name": "low",
+    "source": "analysis/yt-combat/experiments/trade-low",
+    "credits_before": 1000000,
+    "cargo_before": 0,
+    "supply": 100.0,
+    "coefficient": 50.0,
+    "owner": "none",
+    "credits_after": 999810,
+    "cargo_after": 10,
+    "treasury_after": 0
+  },
+  {
+    "name": "sell",
+    "source": "analysis/yt-combat/experiments/trade-sell",
+    "credits_before": 1000000,
+    "cargo_before": 100,
+    "supply": 1000.0,
+    "coefficient": -50.0,
+    "owner": "none",
+    "credits_after": 1000300,
+    "cargo_after": 90,
+    "treasury_after": 0
+  },
+  {
+    "name": "self",
+    "source": "analysis/yt-combat/experiments/trade-self",
+    "credits_before": 1000000,
+    "cargo_before": 0,
+    "supply": 1000.0,
+    "coefficient": 50.0,
+    "owner": "self",
+    "credits_after": 999900,
+    "cargo_after": 10,
+    "treasury_after": 1
+  },
+  {
+    "name": "other",
+    "source": "analysis/yt-combat/experiments/trade-other",
+    "credits_before": 1000000,
+    "cargo_before": 0,
+    "supply": 1000.0,
+    "coefficient": 50.0,
+    "owner": "other",
+    "credits_after": 999900,
+    "cargo_after": 10,
+    "treasury_after": 100
+  }
+]

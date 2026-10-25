@@ -1,0 +1,74 @@
+
+YANKEE TRADER - Go reconstruction
+Welcome, Tester. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > p;equip fighters 1;m 2;p;buy ore 5;m 3;p;sell ore 5;q
+Earth: holds 500, fighters 100, shields 50, forces 750 credits each.
+Equipment purchased and saved.
+Moved to sector 2.
+Port sells ore at 10 credits; available 1000.
+Port buys organics at 45 credits; available 1000.
+Port buys equipment at 60 credits; available 1000.
+Trade saved.
+Moved to sector 3.
+Port buys ore at 30 credits; available 1000.
+Port sells organics at 15 credits; available 1000.
+Port buys equipment at 60 credits; available 1000.
+Trade saved.
+Saved. Safe travels, Tester.
+
+YANKEE TRADER - Go reconstruction
+Welcome, Tester. Actions save automatically. Type ? for help.
+
+Sector 3 | 1005 credits | 495 turns > i;q
+Tester: holds 10; ore 0; organics 0; equipment 0
+Fighters 26; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Saved. Safe travels, Tester.
+
+YANKEE TRADER - Go reconstruction
+Welcome, RemoteTrader. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > p;equip fighters 1;q
+Earth: holds 500, fighters 100, shields 50, forces 750 credits each.
+Equipment purchased and saved.
+Saved. Safe travels, RemoteTrader.
+
+YANKEE TRADER - Go reconstruction
+Welcome, RemoteRenamed. Actions save automatically. Type ? for help.
+
+Sector 1 | 905 credits | 499 turns > i;q
+RemoteRenamed: holds 10; ore 0; organics 0; equipment 0
+Fighters 26; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Saved. Safe travels, RemoteRenamed.
+
+YANKEE TRADER - Go reconstruction
+Welcome, Tester. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 495 turns > create New Eden;land;bank 15000;invest 251;transfer cargo;a;planet;leave;q
+Planet created for 25000 credits. Use LAND to visit.
+Planet New Eden | governor 1 | garrison 1 | bank 0 credits
+Production: ore 1, organics 1, equipment 1 per day
+Warehouses: ore 10, organics 10, equipment 10
+Fighters 30 | missiles 0 | mines 0 | plasma 0
+Planet account/production/garrison saved.
+Planet account/production/garrison saved.
+Planet transfer saved.
+Available goods loaded; equipment gets cargo priority.
+Planet New Eden | governor 1 | garrison 1 | bank 15000 credits
+Production: ore 2.004, organics 4, equipment 5 per day
+Warehouses: ore 1.10601e-06, organics 1.1799e-06, equipment 1.25463e-06
+Fighters 1.17124e-05 | missiles 4.49913e-08 | mines 1.79965e-08 | plasma 1.79965e-10
+Saved. Safe travels, Tester.
+
+YANKEE TRADER - Go reconstruction
+Welcome, Tester. Actions save automatically. Type ? for help.
+
+Sector 1 | 59749 credits | 495 turns > land;bank 0;q
+Planet New Eden | governor 1 | garrison 1 | bank 15000 credits
+Production: ore 2.004, organics 4, equipment 5 per day
+Warehouses: ore 2.12091e-06, organics 2.55569e-06, equipment 2.84766e-06
+Fighters 2.35877e-05 | missiles 8.84375e-08 | mines 3.5375e-08 | plasma 3.5375e-10
+Planet account/production/garrison saved.
+Saved. Safe travels, Tester.

@@ -1,0 +1,23 @@
+{
+  "validated_date": "2026-10-25",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "godoors_revision": "170c451faafedda81df7118012db9df129e16a7b",
+  "godoors_dirty": true,
+  "sha256": {
+    "bin/yt": "90f3f547a4bc6b24817ae3042cf51a5d694c15b0d5f1e0c75e7bf6af471906e4",
+    "cmd/yt/main.go": "7db31d97a62dfc52823d49ddacee893c60809dc7d5deb2bcdb338ee46439dde1",
+    "cmd/yt/main_test.go": "c64e126ad44c61c23e93474523882c04452347d2fcba91b8c687a273bbc82c65",
+    "go.mod": "642412f15bec4c13e8c16525f16c54607012bdc8233a6678f494160afb1164a4",
+    "go.sum": "aaace3578ebf15a632a9139f0fb09fe6102c477b92255c3d01c88d10a7eeec43",
+    "internal/door/door.go": "288952c2b4eac5cec38040ae5c5c242420ae07133bb0d389262bc04f94f5e70c",
+    "internal/door/door_test.go": "a151d92db71da14ad80aacc989ace028a592f48fe9719f1649d81697c40ebad6",
+    "internal/game/game.go": "709e2bfd370bf980b5d6de6b85e7c50bdee78fa9fe1a6bc16f4bc4f121b361b9",
+    "internal/game/game_test.go": "7d67f02f753a2b256156f55255aa4abf2d0eaa7d81f44205c873be346fe2dd71",
+    "internal/game/planet.go": "713ae882e95b38a603b6677f2ca1e10e7602956c93c081986902d80e66f13d82",
+    "internal/game/planet_test.go": "5b9f2812bc3277dd4122021ca626425e3872eea0b17268d3acec01753417c857",
+    "internal/store/lock_unix.go": "8c57397abb05c91cc34b9fdeb084c931b1082accb09281592233fa4fc2228ffd",
+    "internal/store/lock_windows.go": "8bfe83ce0f4f944c355373cf61c5ac8e6934ac2569ae7e4163e4ccb90a3d8d48",
+    "internal/store/store.go": "479c9ac64d7a2a199e18e1443f3ae01dadbe44f8025139ea557190a3b94fddbc",
+    "internal/store/store_test.go": "9f6d1a3cd39fa6b327bc67aa58f1548c63af032e4db9caea58d8d711cf1cff34"
+  }
+}

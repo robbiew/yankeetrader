@@ -1,0 +1,219 @@
+{
+  "date": "10/24/2026",
+  "validated": {
+    "team-create-confirm": {
+      "source": "fixture-team-create",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;2|~~~~Orion|~~~~ABCD|~~~~1;Q;Y|",
+      "deadline_seconds": 65,
+      "before_sha256": "71681ff6384d50112ab613391147db0a2367e48f73d6bda38324443898a37c7c",
+      "after_sha256": "58c8f628c1b6884d4d27b3e84768c70a8d3d834180597163c38a3fba8b93e7e7",
+      "normal_local_return": false
+    },
+    "team-join": {
+      "source": "fixture-team-join",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;3;1;ABCD;1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "50008b983f1a8a70e5f7c0b88f09cdbfe107ebe483ba290afc374d3b4adb2b28",
+      "after_sha256": "3ebfa41b57af648b18ff899629e778f56f595e7f57afa7a4375a28737d2c2143",
+      "normal_local_return": false
+    },
+    "team-wrong": {
+      "source": "fixture-team-wrong",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;3;1;WXYZ|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "50008b983f1a8a70e5f7c0b88f09cdbfe107ebe483ba290afc374d3b4adb2b28",
+      "after_sha256": "86d50011299c0d940341d9f52e15756d2b58b61f37695a5959abb79be54bc5db",
+      "normal_local_return": false
+    },
+    "team-full": {
+      "source": "fixture-team-full",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;3;1;ABCD|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "307af32c26e075d46027e5b7c92f5adfff43cd6386e5630e5b13a7700170b36a",
+      "after_sha256": "abec743775c24d19730cdd70eb8ec11ebce9bc39da2dd81dd98674f8583adae6",
+      "normal_local_return": false
+    },
+    "team-quit": {
+      "source": "fixture-team-quit",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;4|~~Y|~~~~1;L|~~N|~~~~Q;Y|",
+      "deadline_seconds": 50,
+      "before_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "after_sha256": "e862789bd7ac526da219e6ced7c0b5be5f3c501dec042696e0c0352c397522f9",
+      "normal_local_return": false
+    },
+    "team-banish": {
+      "source": "fixture-team-captain",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;7|~~Y|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "after_sha256": "706918e72e179acca8b2cdd35a403d9e512f632628f3f4212117e1de9e3a23fa",
+      "normal_local_return": false
+    },
+    "team-member-privilege": {
+      "source": "fixture-team-member",
+      "player": "Enemy",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;8;WXYZ|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "after_sha256": "c08bd9a87f49d720a20cda5e381d9d1d66b335ecc5d1ad4813069e746ec56d01",
+      "normal_local_return": false
+    },
+    "team-password": {
+      "source": "fixture-team-captain",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;8;WXYZ;1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "after_sha256": "4d3d1ae42b24e5643bb021fcc9a15273133f2c99bcb6021cd6edab0f41c8e6c0",
+      "normal_local_return": false
+    },
+    "team-last": {
+      "source": "fixture-team-last",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;4|~~Y|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "bfcad729bde275c3b63f84c34b13da79c273d15fb297b91f213d21c9c9b3ace0",
+      "after_sha256": "7d7bee524014fd414c9cd178f3f48ce36690d1a68ca061a95cbe441f3427f532",
+      "normal_local_return": false
+    },
+    "team-defense": {
+      "source": "fixture-team-defense",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~M;101|~~~~Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "cba93d2095b0893695a9bf3ab9974a411d8067bfe0686b6b4f41f4dddc261ec3",
+      "after_sha256": "7bb81f4ab90664964a10a139c8945349544a96ab75b5827e87a27e37daf3cd7b",
+      "normal_local_return": false
+    },
+    "team-transfer-current": {
+      "source": "fixture-team-transfer-current",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;6;123|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "1334ffb1197952e55ac3f0431077073b743ee3c5b00ff45b97e250b9895a6d93",
+      "after_sha256": "1b476c4f6a917c7d9fa1fee45837413497c6ccea2db1ef2d2faf6b20ac509543",
+      "normal_local_return": false
+    },
+    "team-transfer-foreign": {
+      "source": "fixture-team-transfer-foreign",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;6;123|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "4fbd962c74966731db7b590a2e08d8d90b76d1d5734bd3de8c927bb9d25345c1",
+      "after_sha256": "902289c1329249f12bc0bf6d77298856c73b1ae2fa11f6fbce40ef5b6376fab4",
+      "normal_local_return": false
+    },
+    "team-promote": {
+      "source": "fixture-team-captain-gone",
+      "player": "Enemy",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "4dc94a81b8ed081da5d5eae4dc2e3475002658f577aa0a27de03269d4aea3c40",
+      "after_sha256": "5d8492ea49e158a96c6d84e321b9e7f24cdbf3c1cdf7e834923932538cbf9462",
+      "normal_local_return": true
+    },
+    "team-port-account": {
+      "source": "fixture-team-port-account",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~$|~~~~Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "ab0d6a05c9d71ad046c1783353ffc3becbc4fc8f873e584c83221eb62e867995",
+      "after_sha256": "4c8f47b21f46b36541ab59614fe39182645ace1101a183d5f2cbd35eb47b4e89",
+      "normal_local_return": true
+    },
+    "team-withdraw-defense": {
+      "source": "fixture-team-transfer-current",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~F;0|~~~~Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "1334ffb1197952e55ac3f0431077073b743ee3c5b00ff45b97e250b9895a6d93",
+      "after_sha256": "9525ff8ce6efbac7352562931a9de561e0feba9f733c250db9c7f9678db6dbb7",
+      "normal_local_return": true
+    },
+    "team-rejoin": {
+      "source": "fixture-team-after-banish",
+      "player": "Enemy",
+      "time": "00:01:00",
+      "keys": "|~~~~~|~T;3;1;ABCD|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "706918e72e179acca8b2cdd35a403d9e512f632628f3f4212117e1de9e3a23fa",
+      "after_sha256": "681fb3b421670debfc457a374f10fdb3dc86e95b69475f727404a73c1e1ed629",
+      "normal_local_return": true
+    },
+    "team-successor": {
+      "source": "fixture-team-after-quit",
+      "player": "Enemy",
+      "time": "00:01:00",
+      "keys": "|~~~~~|~T;1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "e862789bd7ac526da219e6ced7c0b5be5f3c501dec042696e0c0352c397522f9",
+      "after_sha256": "e46da407eb48fcd46f0eb27771f4d252d7ea6b415e849af40ab6bcf0e844a609",
+      "normal_local_return": true
+    },
+    "team-short-name": {
+      "source": "fixture-team-create",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;2|~~~~AB|~~~~1;Q;Y|",
+      "deadline_seconds": 55,
+      "before_sha256": "71681ff6384d50112ab613391147db0a2367e48f73d6bda38324443898a37c7c",
+      "after_sha256": "a2bfd17ebc7d17c8c42b0325c7bf300bb55024c64cc6b5780533dbd247569e60",
+      "normal_local_return": true
+    },
+    "team-lowercase": {
+      "source": "fixture-team-join",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;3;1;abcd|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "50008b983f1a8a70e5f7c0b88f09cdbfe107ebe483ba290afc374d3b4adb2b28",
+      "after_sha256": "83c507c208b3478ca389b168ccb4f780b6aadfa59023759ededb0db5046a9388",
+      "normal_local_return": true
+    },
+    "team-quit-assets": {
+      "source": "fixture-team-owned-assets",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;4|~~Y|~~~~1;$;L|~~N|~~~~Q;Y|",
+      "deadline_seconds": 55,
+      "before_sha256": "130f067e45a47f807c569f7ce287637ca050d6a971ec7479477317817a5d2eb4",
+      "after_sha256": "355329fb4106bede4007afc25c929bafd631350eeef749f1d3adfbfb046a9d66",
+      "normal_local_return": true
+    },
+    "team-search": {
+      "source": "fixture-team-owned-assets",
+      "player": "TESTER",
+      "time": "00:00:00",
+      "keys": "|~~~~~|~T;5|~~~~1;Q;Y|",
+      "deadline_seconds": 45,
+      "before_sha256": "130f067e45a47f807c569f7ce287637ca050d6a971ec7479477317817a5d2eb4",
+      "after_sha256": "10d184186f4bde81b999102d515eec08f1cff03e27d83763c4c2dcd0130ca7c3",
+      "normal_local_return": true
+    }
+  },
+  "excluded": {
+    "team-create": "Exploratory input/empty-defense probe; not counted as successful creation/reinforcement.",
+    "team-transfer": "Exploratory input/empty-defense probe; not counted as successful creation/reinforcement."
+  }
+}

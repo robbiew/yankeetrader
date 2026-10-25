@@ -1,0 +1,2206 @@
+[
+  {
+    "name": "takeall",
+    "source": "analysis/yt-combat/experiments/planet-takeall",
+    "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "after_sha256": "030ccbe66c48aa1046742356784d34d9648a275aeffe81711872f4bf3166cfcd",
+    "now": "2026-10-24T00:00:14.220000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.220000Z",
+      "Production": [
+        10.000164985656738,
+        20.000329971313477,
+        30.00049591064453
+      ],
+      "Cargo": [
+        100.00164794921875,
+        200.0032958984375,
+        260.00494384765625
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 0.0098876953125,
+      "Missiles": 0.0,
+      "Mines": 0.0,
+      "Plasma": 0.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10600,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        70
+      ],
+      "Missiles": 77,
+      "Mines": 88,
+      "Plasma": 99,
+      "Team": 0
+    }
+  },
+  {
+    "name": "transfer-cargo",
+    "source": "analysis/yt-combat/experiments/planet-transfer-cargo",
+    "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "after_sha256": "0c85b7d3f7f8ab70d9702aa79cd52d35d616fe0321be8c6b34ff88b33a6775cf",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        12.0,
+        23.0,
+        34.0
+      ],
+      "Cargo": [
+        110.00166320800781,
+        220.00332641601562,
+        330.0050048828125
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.010009765625,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "transfer-weapons",
+    "source": "analysis/yt-combat/experiments/planet-transfer-weapons",
+    "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "after_sha256": "c4bcbd1b8b38443e9baeb9c1ef5e626d038502a25a6b71ed9a7e60a891c794ed",
+    "now": "2026-10-24T00:00:15.210001Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:15.210001Z",
+      "Production": [
+        10.000176429748535,
+        20.00035285949707,
+        30.000530242919922
+      ],
+      "Cargo": [
+        100.00176239013672,
+        200.00352478027344,
+        300.00531005859375
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 723.0106201171875,
+      "Missiles": 77.0,
+      "Mines": 88.0,
+      "Plasma": 99.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 9877,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 0,
+      "Mines": 0,
+      "Plasma": 0,
+      "Team": 0
+    }
+  },
+  {
+    "name": "create",
+    "source": "analysis/yt-combat/experiments/planet-create",
+    "before_sha256": "a7b3941522608094210d43b5ec8c142d769d735c5c9ab87062c854ec4e324b21",
+    "after_sha256": "f1ad9104a9b887a38f3e3045ef41ca0093aa062511b715dc6d905e5a03bf35ee",
+    "now": "2026-10-24T00:00:26.579999Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 3,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "New Eden",
+      "Updated": "2026-10-24T00:00:26.579999Z",
+      "Production": [
+        1.000030755996704,
+        1.000030755996704,
+        1.000030755996704
+      ],
+      "Cargo": [
+        10.0003080368042,
+        10.0003080368042,
+        10.0003080368042
+      ],
+      "Bank": 0,
+      "Ground": 1,
+      "Fighters": 30.00092315673828,
+      "Missiles": 0.0,
+      "Mines": 0.0,
+      "Plasma": 0.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 75000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "poor",
+    "source": "analysis/yt-combat/experiments/planet-poor",
+    "before_sha256": "a16b695f9b7a3b717a127f0de97912f2d9e0cb984df7eb8932d91077f883cc73",
+    "after_sha256": "015b94b9d4450bb39100ea1ef63340ea73cc81ebe0cae39c3ec4c454a7be9f2e",
+    "now": "2026-10-24T00:00:00Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 24999,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 24999,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "full",
+    "source": "analysis/yt-combat/experiments/planet-full",
+    "before_sha256": "5924c2788fe7a005a986f60df37e7f0626fe60f34e3208484d11f0a6f37f770a",
+    "after_sha256": "dd731d6f51e638518cf6bab95faee2007fe2db30b4009763f316b4a332ceb7f3",
+    "now": "2026-10-24T00:00:00Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-deposit",
+    "source": "analysis/yt-combat/experiments/planet-bank-deposit",
+    "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "after_sha256": "0c74d7f0166ffe2be4f9850fccdc9319432f33e2b3ecc02fce193156a133ff5e",
+    "now": "2026-10-24T00:00:14.550000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.550000Z",
+      "Production": [
+        10.000016212463379,
+        20.000032424926758,
+        30.000051498413086
+      ],
+      "Cargo": [
+        100.0018539428711,
+        200.00344848632812,
+        300.0050964355469
+      ],
+      "Bank": 15000,
+      "Ground": 100,
+      "Fighters": 600.0134887695312,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 95000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-withdraw",
+    "source": "analysis/yt-combat/experiments/planet-bank-withdraw",
+    "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "after_sha256": "c1c9ca2ca30fe9632308e178a13e7a0dda694cf3d255d0df412edc788715f928",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.000182151794434,
+        20.00033950805664,
+        30.000503540039062
+      ],
+      "Cargo": [
+        100.00182342529297,
+        200.00340270996094,
+        300.0050354003906
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0133056640625,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 110000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-negative",
+    "source": "analysis/yt-combat/experiments/planet-bank-negative",
+    "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "after_sha256": "7dfdf32793fab0a84050ae1684879f3cb8efaeac66178934bb93aeb653ce1ac4",
+    "now": "2026-10-24T00:00:14.390000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.390000Z",
+      "Production": [
+        10.000016212463379,
+        20.000032424926758,
+        30.000051498413086
+      ],
+      "Cargo": [
+        100.0018310546875,
+        200.00341796875,
+        300.00506591796875
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0133666992188,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-over",
+    "source": "analysis/yt-combat/experiments/planet-bank-over",
+    "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "after_sha256": "47beb42e0fca98646976d425fee81217b69da074fcfdd4c919cf98a0b24c3922",
+    "now": "2026-10-24T00:00:14.610000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.610000Z",
+      "Production": [
+        10.000016212463379,
+        20.000032424926758,
+        30.000051498413086
+      ],
+      "Cargo": [
+        100.00186157226562,
+        200.0034637451172,
+        300.005126953125
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0135498046875,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-halfday",
+    "source": "analysis/yt-combat/experiments/planet-bank-halfday",
+    "before_sha256": "49753f33b8eb24e2ee74d9056dc27efbaa098214ccfd72a664a15b28d41fbd65",
+    "after_sha256": "1906759d231598ebea240547d843bdbd5fbbd57c7027acc5c9dccca0fb247978",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-23T12:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 1000000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        15.504327774047852,
+        23.50616455078125,
+        33.17522048950195
+      ],
+      "Cargo": [
+        155.04327392578125,
+        235.0616455078125,
+        331.752197265625
+      ],
+      "Bank": 0,
+      "Ground": 150,
+      "Fighters": 1630.3419189453125,
+      "Missiles": 75.00166320800781,
+      "Mines": 82.00066375732422,
+      "Plasma": 90.02000427246094
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 1105001,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "invest1",
+    "source": "analysis/yt-combat/experiments/planet-invest1",
+    "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "after_sha256": "abca7df1fac57f714ff4461248fe6b027ab37ebdd0e04e5d78933eae67b14327",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.004165649414062,
+        20.004331588745117,
+        30.004499435424805
+      ],
+      "Cargo": [
+        100.00166320800781,
+        200.00332641601562,
+        300.0050048828125
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.010009765625,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 99999,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "invest251",
+    "source": "analysis/yt-combat/experiments/planet-invest251",
+    "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "after_sha256": "a494a3e00ea072a7a84ccdd2ba556968318c07aea3ce765ba462f93df6dd5931",
+    "now": "2026-10-24T00:00:14.439999Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.439999Z",
+      "Production": [
+        11.004167556762695,
+        21.004335403442383,
+        31.00450325012207
+      ],
+      "Cargo": [
+        100.00167083740234,
+        200.0033416748047,
+        300.0050354003906
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0100708007812,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 99749,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "foreign",
+    "source": "analysis/yt-combat/experiments/planet-foreign",
+    "before_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+    "after_sha256": "30f484ce1b8d0152f65c8c18959d1af808cd7f6aa3827f283ea8079bdb4c4187",
+    "now": "2026-10-24T00:00:18.069999Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:18.069999Z",
+      "Production": [
+        10.00020980834961,
+        20.00041961669922,
+        30.000629425048828
+      ],
+      "Cargo": [
+        100.0020980834961,
+        200.0041961669922,
+        300.00628662109375
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0125732421875,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "team-bank",
+    "source": "analysis/yt-combat/experiments/planet-team-bank",
+    "before_sha256": "005e7dfad3ab8433dfe5b6eaaa9a4de299edf743c1e0c1de8086df5622692876",
+    "after_sha256": "022f861efd716536c7b3d3ae04ae7ae33e1f8651b31061004fe10e9e94a2d98f",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 1
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 1
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.000182151794434,
+        20.00033950805664,
+        30.000503540039062
+      ],
+      "Cargo": [
+        100.00182342529297,
+        200.00340270996094,
+        300.0050354003906
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0133056640625,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 110000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 1
+    }
+  },
+  {
+    "name": "unguarded-bank",
+    "source": "analysis/yt-combat/experiments/planet-unguarded-bank",
+    "before_sha256": "790cec2c9b94b14fd631dedb26875830c9ebf175fdecd144f36c68c70894dc76",
+    "after_sha256": "5221fe5f538f48efa5d2208acb266a119b2b07f592736a83c198bf7c8c09cab1",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 10000,
+      "Ground": 0,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 3,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.000182151794434,
+        20.00033950805664,
+        30.000503540039062
+      ],
+      "Cargo": [
+        100.00182342529297,
+        200.00340270996094,
+        300.0050354003906
+      ],
+      "Bank": 0,
+      "Ground": 0,
+      "Fighters": 600.0133056640625,
+      "Missiles": 70.00001525878906,
+      "Mines": 80.00000762939453,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 110000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "lazy-production",
+    "source": "analysis/yt-combat/experiments/planet-lazy-production",
+    "before_sha256": "d18546fef166f8e87b4b93051728c567e65a6f50142f1588778329b78de98683",
+    "after_sha256": "770045494b871298d71c9c53a7723201ea1a7926b03630be5d07f6a0fe1b44fb",
+    "now": "2026-10-24T00:00:14.109999Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-23T12:00:00Z",
+      "Production": [
+        1000.0,
+        2000.0,
+        3000.0
+      ],
+      "Cargo": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 0.0,
+      "Missiles": 0.0,
+      "Mines": 0.0,
+      "Plasma": 0.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.109999Z",
+      "Production": [
+        1005.0016479492188,
+        2010.0032958984375,
+        3015.0048828125
+      ],
+      "Cargo": [
+        502.664794921875,
+        1005.32958984375,
+        1507.994384765625
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 3000.98046875,
+      "Missiles": 1.0003265142440796,
+      "Mines": 0.0,
+      "Plasma": 0.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-large",
+    "source": "analysis/yt-combat/experiments/planet-bank-large",
+    "before_sha256": "9d708d60ef2f0dbba6c21fe7d252a684d2e5fca6fb82c4b9ad3fbe24a6c98f2e",
+    "after_sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+    "now": "2026-10-24T00:00:14.330000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:00Z",
+      "Production": [
+        10.0,
+        20.0,
+        30.0
+      ],
+      "Cargo": [
+        100.0,
+        200.0,
+        300.0
+      ],
+      "Bank": 0,
+      "Ground": 100,
+      "Fighters": 600.0,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.000165939331055,
+        20.00033187866211,
+        30.000499725341797
+      ],
+      "Cargo": [
+        100.00166320800781,
+        200.00332641601562,
+        300.0050048828125
+      ],
+      "Bank": 1,
+      "Ground": 100,
+      "Fighters": 600.010009765625,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  },
+  {
+    "name": "bank-large-relogin",
+    "source": "analysis/yt-combat/experiments/planet-bank-large-relogin",
+    "before_sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+    "after_sha256": "d3b02c334f01ca36f13513ba91fa5fd7a326fce0f83d47f3f8b610f45fa40eae",
+    "now": "2026-10-24T00:01:14.310000Z",
+    "player": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    },
+    "other": {
+      "ID": 3,
+      "Identity": "dos:3",
+      "Alias": "Enemy",
+      "Sector": 100,
+      "Credits": 12345,
+      "Turns": 500,
+      "Holds": 10,
+      "Fighters": 10,
+      "Ground": 0,
+      "Shields": 10,
+      "Cargo": [
+        0,
+        0,
+        0
+      ],
+      "Missiles": 0,
+      "Mines": 5,
+      "Plasma": 0,
+      "Team": 0
+    },
+    "before": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:00:14.330000Z",
+      "Production": [
+        10.000165939331055,
+        20.00033187866211,
+        30.000499725341797
+      ],
+      "Cargo": [
+        100.00166320800781,
+        200.00332641601562,
+        300.0050048828125
+      ],
+      "Bank": 1,
+      "Ground": 100,
+      "Fighters": 600.010009765625,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "after": {
+      "ID": 2,
+      "Sector": 100,
+      "Owner": 2,
+      "Name": "Test Planet",
+      "Updated": "2026-10-24T00:01:14.310000Z",
+      "Production": [
+        10.000835418701172,
+        20.001670837402344,
+        30.00258445739746
+      ],
+      "Cargo": [
+        100.00860595703125,
+        200.0172119140625,
+        300.0258483886719
+      ],
+      "Bank": 2,
+      "Ground": 100,
+      "Fighters": 600.0516967773438,
+      "Missiles": 70.0,
+      "Mines": 80.0,
+      "Plasma": 90.0
+    },
+    "player_after": {
+      "ID": 2,
+      "Identity": "dos:2",
+      "Alias": "Q",
+      "Sector": 100,
+      "Credits": 100000000,
+      "Turns": 500,
+      "Holds": 100,
+      "Fighters": 10000,
+      "Ground": 15,
+      "Shields": 10000,
+      "Cargo": [
+        10,
+        20,
+        30
+      ],
+      "Missiles": 7,
+      "Mines": 8,
+      "Plasma": 9,
+      "Team": 0
+    }
+  }
+]

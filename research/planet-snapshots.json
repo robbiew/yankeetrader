@@ -1,0 +1,386 @@
+{
+  "yt-combat/experiments/planet-takeall/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-takeall/YTDATA.DAT.gz": {
+    "sha256": "030ccbe66c48aa1046742356784d34d9648a275aeffe81711872f4bf3166cfcd",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-takeall/GAME.LOG.gz": {
+    "sha256": "3d1748ab8f4ae90b3bcd899b7c5260b3707bc77a8c9a5a88f8e136d271337fd7",
+    "uncompressed_bytes": 4892
+  },
+  "yt-combat/experiments/planet-takeall/KEYS.TXT.gz": {
+    "sha256": "6ebcffe7e66a4498970ab6e639ea6c624a0c51cb6ba8804602dd9f1798925f67",
+    "uncompressed_bytes": 22
+  },
+  "yt-combat/experiments/planet-transfer-cargo/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-transfer-cargo/YTDATA.DAT.gz": {
+    "sha256": "0c85b7d3f7f8ab70d9702aa79cd52d35d616fe0321be8c6b34ff88b33a6775cf",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-transfer-cargo/GAME.LOG.gz": {
+    "sha256": "eeb1119046cd0e473a78b82c77406c54713cec766608ae196a83a454ecfe7356",
+    "uncompressed_bytes": 4899
+  },
+  "yt-combat/experiments/planet-transfer-cargo/KEYS.TXT.gz": {
+    "sha256": "9d6eee6185954b14de1290fc720e874c2aed57d61428e75d14a5dacaffcbda76",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-transfer-weapons/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-transfer-weapons/YTDATA.DAT.gz": {
+    "sha256": "c4bcbd1b8b38443e9baeb9c1ef5e626d038502a25a6b71ed9a7e60a891c794ed",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-transfer-weapons/GAME.LOG.gz": {
+    "sha256": "682f05938ae30abcdd33c0e0e888c67723466333e50cb1613db64c760d4f696a",
+    "uncompressed_bytes": 5684
+  },
+  "yt-combat/experiments/planet-transfer-weapons/KEYS.TXT.gz": {
+    "sha256": "aead9b611e3f39363484170e14367ae4b4900940e777ccf48a3ffb26cfdd4feb",
+    "uncompressed_bytes": 40
+  },
+  "yt-combat/experiments/planet-create/before.dat.gz": {
+    "sha256": "a7b3941522608094210d43b5ec8c142d769d735c5c9ab87062c854ec4e324b21",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-create/YTDATA.DAT.gz": {
+    "sha256": "f1ad9104a9b887a38f3e3045ef41ca0093aa062511b715dc6d905e5a03bf35ee",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-create/GAME.LOG.gz": {
+    "sha256": "3d4b70ac27608a399b3f2b5137061f40ecf05bd8f9ac1375805f8ddf3edd006c",
+    "uncompressed_bytes": 2882
+  },
+  "yt-combat/experiments/planet-create/KEYS.TXT.gz": {
+    "sha256": "f9eb3530e546ac86a75f9c1da8cf02e7eecd60daab9e64163cfd0d16211f6cda",
+    "uncompressed_bytes": 37
+  },
+  "yt-combat/experiments/planet-poor/before.dat.gz": {
+    "sha256": "a16b695f9b7a3b717a127f0de97912f2d9e0cb984df7eb8932d91077f883cc73",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-poor/YTDATA.DAT.gz": {
+    "sha256": "015b94b9d4450bb39100ea1ef63340ea73cc81ebe0cae39c3ec4c454a7be9f2e",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-poor/GAME.LOG.gz": {
+    "sha256": "42f71939222354b31119839a22c56fc39a6a3cf955d510c66347584380219de5",
+    "uncompressed_bytes": 4018
+  },
+  "yt-combat/experiments/planet-poor/KEYS.TXT.gz": {
+    "sha256": "c7f2776c7fe3d09de321de31a1968679337f841b93934e91bc7b7c85c5e57678",
+    "uncompressed_bytes": 18
+  },
+  "yt-combat/experiments/planet-full/before.dat.gz": {
+    "sha256": "5924c2788fe7a005a986f60df37e7f0626fe60f34e3208484d11f0a6f37f770a",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-full/YTDATA.DAT.gz": {
+    "sha256": "dd731d6f51e638518cf6bab95faee2007fe2db30b4009763f316b4a332ceb7f3",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-full/GAME.LOG.gz": {
+    "sha256": "7a61724997b703e35984b5983a7a700f37818fa06adfd528844bf763f72f3836",
+    "uncompressed_bytes": 4213
+  },
+  "yt-combat/experiments/planet-full/KEYS.TXT.gz": {
+    "sha256": "6919bbc61d527553e03f36044c99484171e5eeacf20811af7e94a80d1c0c5e45",
+    "uncompressed_bytes": 22
+  },
+  "yt-combat/experiments/planet-bank-deposit/before.dat.gz": {
+    "sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-deposit/YTDATA.DAT.gz": {
+    "sha256": "0c74d7f0166ffe2be4f9850fccdc9319432f33e2b3ecc02fce193156a133ff5e",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-deposit/GAME.LOG.gz": {
+    "sha256": "3d8fd0f8e6328701351fdcb99cde8a7048868f277fc502ea545791e4f0d55bea",
+    "uncompressed_bytes": 4943
+  },
+  "yt-combat/experiments/planet-bank-deposit/KEYS.TXT.gz": {
+    "sha256": "7c16ec0a3e9a9dc1dcb833967a8a425130eca4796eb3b602a31677f0f84d84a3",
+    "uncompressed_bytes": 28
+  },
+  "yt-combat/experiments/planet-bank-withdraw/before.dat.gz": {
+    "sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-withdraw/YTDATA.DAT.gz": {
+    "sha256": "c1c9ca2ca30fe9632308e178a13e7a0dda694cf3d255d0df412edc788715f928",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-withdraw/GAME.LOG.gz": {
+    "sha256": "9c2da4046880c0df66e86f01e7521bb0afcbac1b78df8c163842844ac64e69db",
+    "uncompressed_bytes": 4885
+  },
+  "yt-combat/experiments/planet-bank-withdraw/KEYS.TXT.gz": {
+    "sha256": "c9c6f04258199d2d1459c082bb2aca8c50f59d88efab72a007d94784295b2c10",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-bank-negative/before.dat.gz": {
+    "sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-negative/YTDATA.DAT.gz": {
+    "sha256": "7dfdf32793fab0a84050ae1684879f3cb8efaeac66178934bb93aeb653ce1ac4",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-negative/GAME.LOG.gz": {
+    "sha256": "09a226465b9b6d7d039fb5c8cd93ff71e17d3c2251e5bed229c8deaec6891c9a",
+    "uncompressed_bytes": 4764
+  },
+  "yt-combat/experiments/planet-bank-negative/KEYS.TXT.gz": {
+    "sha256": "bd26f152a2db367cc7f7862c47e83b2595e87143c79b30258f0feecdc1cc624e",
+    "uncompressed_bytes": 25
+  },
+  "yt-combat/experiments/planet-bank-over/before.dat.gz": {
+    "sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-over/YTDATA.DAT.gz": {
+    "sha256": "47beb42e0fca98646976d425fee81217b69da074fcfdd4c919cf98a0b24c3922",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-over/GAME.LOG.gz": {
+    "sha256": "165ccd58c6f6e1dcb4c4f34083ab49ff00cfc2001148d0fecb6e5715e77e4bdd",
+    "uncompressed_bytes": 4765
+  },
+  "yt-combat/experiments/planet-bank-over/KEYS.TXT.gz": {
+    "sha256": "7cb291422f377cc9502430a831c8b020db6c987511d48bea845d3325d3dba222",
+    "uncompressed_bytes": 29
+  },
+  "yt-combat/experiments/planet-bank-halfday/before.dat.gz": {
+    "sha256": "49753f33b8eb24e2ee74d9056dc27efbaa098214ccfd72a664a15b28d41fbd65",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-halfday/YTDATA.DAT.gz": {
+    "sha256": "1906759d231598ebea240547d843bdbd5fbbd57c7027acc5c9dccca0fb247978",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-halfday/GAME.LOG.gz": {
+    "sha256": "c3d852af1711767c79fc1dc7bacfbbef366c00c70628bddf0d14c1e5e8ed6a84",
+    "uncompressed_bytes": 4886
+  },
+  "yt-combat/experiments/planet-bank-halfday/KEYS.TXT.gz": {
+    "sha256": "c9c6f04258199d2d1459c082bb2aca8c50f59d88efab72a007d94784295b2c10",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-invest1/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-invest1/YTDATA.DAT.gz": {
+    "sha256": "abca7df1fac57f714ff4461248fe6b027ab37ebdd0e04e5d78933eae67b14327",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-invest1/GAME.LOG.gz": {
+    "sha256": "62ad046f392c9c6c829c1642396a6e0904ce7e8e1f22e1c22422b9a9f5127aca",
+    "uncompressed_bytes": 4957
+  },
+  "yt-combat/experiments/planet-invest1/KEYS.TXT.gz": {
+    "sha256": "950cbfee78e6c40acae5b420f88316553b00b452e9d4d6b076bf67526347401c",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-invest251/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-invest251/YTDATA.DAT.gz": {
+    "sha256": "a494a3e00ea072a7a84ccdd2ba556968318c07aea3ce765ba462f93df6dd5931",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-invest251/GAME.LOG.gz": {
+    "sha256": "a261860b9b0fdc605265c747698e98ab393d7df36bfda29148b2c48497e0196a",
+    "uncompressed_bytes": 4991
+  },
+  "yt-combat/experiments/planet-invest251/KEYS.TXT.gz": {
+    "sha256": "ab6b23f05da92833a2c01d6a024ad036f3bf688410123047dd75a386747a007e",
+    "uncompressed_bytes": 26
+  },
+  "yt-combat/experiments/planet-foreign/before.dat.gz": {
+    "sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-foreign/YTDATA.DAT.gz": {
+    "sha256": "30f484ce1b8d0152f65c8c18959d1af808cd7f6aa3827f283ea8079bdb4c4187",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-foreign/GAME.LOG.gz": {
+    "sha256": "b1a5713964525b21eff24272d09a8fb3352c7b2038b46a9bf3041d3a591f8624",
+    "uncompressed_bytes": 2717
+  },
+  "yt-combat/experiments/planet-foreign/KEYS.TXT.gz": {
+    "sha256": "e6fd83a9a9a7aeb2b40686a4040e7b42985b7378f15895c1d9640d58a42b2807",
+    "uncompressed_bytes": 22
+  },
+  "yt-combat/experiments/planet-team-bank/before.dat.gz": {
+    "sha256": "005e7dfad3ab8433dfe5b6eaaa9a4de299edf743c1e0c1de8086df5622692876",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-team-bank/YTDATA.DAT.gz": {
+    "sha256": "022f861efd716536c7b3d3ae04ae7ae33e1f8651b31061004fe10e9e94a2d98f",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-team-bank/GAME.LOG.gz": {
+    "sha256": "d997f2c388473f9a2a4fe52d8f44d1bd26daaac86c05971a7cb1615046bad0ca",
+    "uncompressed_bytes": 5166
+  },
+  "yt-combat/experiments/planet-team-bank/KEYS.TXT.gz": {
+    "sha256": "c9c6f04258199d2d1459c082bb2aca8c50f59d88efab72a007d94784295b2c10",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-unguarded-bank/before.dat.gz": {
+    "sha256": "790cec2c9b94b14fd631dedb26875830c9ebf175fdecd144f36c68c70894dc76",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-unguarded-bank/YTDATA.DAT.gz": {
+    "sha256": "5221fe5f538f48efa5d2208acb266a119b2b07f592736a83c198bf7c8c09cab1",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-unguarded-bank/GAME.LOG.gz": {
+    "sha256": "9196b23351cc0d5443f8127e8643a6cf67e82f5b7e000277d703ec36b612f216",
+    "uncompressed_bytes": 4881
+  },
+  "yt-combat/experiments/planet-unguarded-bank/KEYS.TXT.gz": {
+    "sha256": "c9c6f04258199d2d1459c082bb2aca8c50f59d88efab72a007d94784295b2c10",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-ground/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground/YTDATA.DAT.gz": {
+    "sha256": "d21abdeb7e7ca42c427321daece8c3167a473df44df1dda98880eac10ace5782",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground/GAME.LOG.gz": {
+    "sha256": "062e46437d20a9abbf6126a84047b01163639183449a9fa0fa3c34bb1c388a48",
+    "uncompressed_bytes": 4692
+  },
+  "yt-combat/experiments/planet-ground/KEYS.TXT.gz": {
+    "sha256": "c6111a4a1687ffd12ab136f139a811a9cd09596e529672bf28c2ea1c160665cf",
+    "uncompressed_bytes": 26
+  },
+  "yt-combat/experiments/planet-ground90/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground90/YTDATA.DAT.gz": {
+    "sha256": "14e047b7459ec1411dca79920c1d1e43ac6ae4ecfdb4c4fa4d15d9804cf83e17",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground90/GAME.LOG.gz": {
+    "sha256": "090663d085eadb68067801cce1f83c19e28f8675c10b5a73c98dccdc1b3f2420",
+    "uncompressed_bytes": 4908
+  },
+  "yt-combat/experiments/planet-ground90/KEYS.TXT.gz": {
+    "sha256": "5ee45bd97f640d4a098c7014788464933c55d8cfa887ab732f1e447d0dc32a5e",
+    "uncompressed_bytes": 25
+  },
+  "yt-combat/experiments/planet-ground0/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground0/YTDATA.DAT.gz": {
+    "sha256": "a50570a602e57f2b2efe1911d34fb0bafa795d9b7e1105ba5c91370f0bd9523d",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-ground0/GAME.LOG.gz": {
+    "sha256": "cee6cf85efd290a46ec704fb96d5882ef7ee3d678222d8394317c7fcbab2c537",
+    "uncompressed_bytes": 4863
+  },
+  "yt-combat/experiments/planet-ground0/KEYS.TXT.gz": {
+    "sha256": "e2332be118f659886b1af4c4d13016605d58ea64d945f59068ec7c133a98e499",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-move-yes/before.dat.gz": {
+    "sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-move-yes/YTDATA.DAT.gz": {
+    "sha256": "7bb08db079e94a07babf4347d250bdd3121e9cc274c1e488bd11a341d7e2eac8",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-move-yes/GAME.LOG.gz": {
+    "sha256": "c972f3e7c96d19dba933daef156e56312c9af7f7eedcabca07ecf3c8f5730e5b",
+    "uncompressed_bytes": 5169
+  },
+  "yt-combat/experiments/planet-move-yes/KEYS.TXT.gz": {
+    "sha256": "416bdff2f82c5b747035f1b8059a547b13b81c24c36fb5d2d98041dae8813483",
+    "uncompressed_bytes": 30
+  },
+  "yt-combat/experiments/planet-move-collision/before.dat.gz": {
+    "sha256": "731b6e703ec24ede646e64b8b2a46489bbde1af3b40ea22db4ce7c022a46b0e8",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-move-collision/YTDATA.DAT.gz": {
+    "sha256": "ed5674c5d5c0449695d15aac05dd1e7fd08b4f7ac4bea4cba9026f5b75b06b07",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-move-collision/GAME.LOG.gz": {
+    "sha256": "75f0798c9fbedd76ff740c7efce9ad2027166bc1012d9ecb572cb327b2a2d849",
+    "uncompressed_bytes": 5238
+  },
+  "yt-combat/experiments/planet-move-collision/KEYS.TXT.gz": {
+    "sha256": "416bdff2f82c5b747035f1b8059a547b13b81c24c36fb5d2d98041dae8813483",
+    "uncompressed_bytes": 30
+  },
+  "yt-combat/experiments/planet-lazy-production/before.dat.gz": {
+    "sha256": "d18546fef166f8e87b4b93051728c567e65a6f50142f1588778329b78de98683",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-lazy-production/YTDATA.DAT.gz": {
+    "sha256": "770045494b871298d71c9c53a7723201ea1a7926b03630be5d07f6a0fe1b44fb",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-lazy-production/GAME.LOG.gz": {
+    "sha256": "4be147fa66535d8562bca67bf71e6036ab37f215393012b04c848c7d35e441c2",
+    "uncompressed_bytes": 4702
+  },
+  "yt-combat/experiments/planet-lazy-production/KEYS.TXT.gz": {
+    "sha256": "533170f9299cb11302e0fa3a1085265d8227c43c2a0df20e4b4b868d20c8137f",
+    "uncompressed_bytes": 20
+  },
+  "yt-combat/experiments/planet-bank-large/before.dat.gz": {
+    "sha256": "9d708d60ef2f0dbba6c21fe7d252a684d2e5fca6fb82c4b9ad3fbe24a6c98f2e",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-large/YTDATA.DAT.gz": {
+    "sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-large/GAME.LOG.gz": {
+    "sha256": "9480af957833c0f3089f08c23b087e5d78ec044aab651cd34a05d2da49557737",
+    "uncompressed_bytes": 4987
+  },
+  "yt-combat/experiments/planet-bank-large/KEYS.TXT.gz": {
+    "sha256": "325befdad905c2b7c1585f112ef3d77759eb425ca1972f7427e192a691ad6850",
+    "uncompressed_bytes": 24
+  },
+  "yt-combat/experiments/planet-bank-large-relogin/before.dat.gz": {
+    "sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-large-relogin/YTDATA.DAT.gz": {
+    "sha256": "d3b02c334f01ca36f13513ba91fa5fd7a326fce0f83d47f3f8b610f45fa40eae",
+    "uncompressed_bytes": 568687
+  },
+  "yt-combat/experiments/planet-bank-large-relogin/GAME.LOG.gz": {
+    "sha256": "2b978f8547e62d35e2326154625f718939b3e8703353b9ac735ad321aa0579f7",
+    "uncompressed_bytes": 4987
+  },
+  "yt-combat/experiments/planet-bank-large-relogin/KEYS.TXT.gz": {
+    "sha256": "9ca8d27ffb6567a59f0862422ae872017fd8149691adfdb1685977979b808f62",
+    "uncompressed_bytes": 24
+  }
+}

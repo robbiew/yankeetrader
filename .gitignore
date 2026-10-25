@@ -1,0 +1,12 @@
+/bin/
+/data/
+*.test
+.DS_Store
+world.json
+world.lock
+.world-*
+go.work
+go.work.sum
+*.exe
+*.EXE
+*.COM
