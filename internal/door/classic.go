@@ -92,6 +92,13 @@ func (s Session) timeLeft() string {
 	return fmt.Sprintf("%d:%02d", seconds/60, seconds%60)
 }
 
+// VT100 DECSC/DECRC also work in terminals that ignore CSI s/u. Preserve
+// the input cursor and attributes while updating both clock fields together.
+func (s Session) refreshClassicClock(width int) error {
+	left := s.timeLeft()
+	return s.Terminal.Printf("\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%-*s\x1b8", left, width, left)
+}
+
 func template(name string) []byte {
 	data, err := classicAssets.ReadFile("assets/" + name + ".bin")
 	if err != nil {

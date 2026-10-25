@@ -208,6 +208,7 @@ func (s Session) Run() (runErr error) {
 			return errors.New("player no longer exists")
 		}
 		if len(pending) == 0 {
+			clockWidth := 0
 			if s.Classic {
 				label := "Main Command (?=Help)?"
 				if computer {
@@ -218,7 +219,9 @@ func (s Session) Run() (runErr error) {
 						return e
 					}
 				}
-				e = s.Terminal.Printf("\r\nTime: %s  %s ", s.timeLeft(), label)
+				left := s.timeLeft()
+				clockWidth = len(left)
+				e = s.Terminal.Printf("\r\nTime: %s  %s ", left, label)
 			} else {
 				e = s.Terminal.Printf("\r\nSector %d | %d credits | %d turns > ", p.Sector, p.Credits, p.Turns)
 			}
@@ -227,7 +230,7 @@ func (s Session) Run() (runErr error) {
 			}
 			if terminal, ok := s.Terminal.(*GoDoors); ok && s.Classic && s.ANSI {
 				terminal.onIdle = func() error {
-					return s.Terminal.Printf("\x1b[s\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%s\x1b[u", s.timeLeft(), s.timeLeft())
+					return s.refreshClassicClock(clockWidth)
 				}
 			}
 			line, e := s.Terminal.ReadLine(s.Deadline)

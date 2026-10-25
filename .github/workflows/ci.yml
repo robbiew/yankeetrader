@@ -55,6 +55,7 @@ jobs:
         run: |
           go build -o bin/yt ./cmd/yt
           python3 scripts/smoke_startup.py
+          python3 scripts/smoke_prompt_clock.py
           python3 scripts/smoke_ports.py
           python3 scripts/smoke_ports.py --ascii
           python3 scripts/smoke_port_parity.py

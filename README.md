@@ -160,6 +160,7 @@ go test -race ./...
 go vet ./...
 python3 scripts/smoke.py
 python3 scripts/smoke_startup.py
+python3 scripts/smoke_prompt_clock.py
 python3 scripts/verify_port_screens.py
 python3 scripts/smoke_port_parity.py
 python3 scripts/verify_planet_screens.py

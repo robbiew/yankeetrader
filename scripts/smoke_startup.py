@@ -21,7 +21,8 @@ OUT=ROOT/'evidence/startup'
 
 
 class Screen:
-    def __init__(self):
+    def __init__(self,csi_save_restore=True):
+        self.csi_save_restore=csi_save_restore;self.dec_saved=(0,0,7,0)
         self.cells=[[[' ',7,0] for _ in range(80)] for _ in range(25)]
         self.x=self.y=0;self.fg=7;self.bg=0;self.top=0;self.bottom=24
         self.saved=(0,0);self.wrap=True;self.deferred=False;self.pending=''
@@ -35,6 +36,11 @@ class Screen:
         while self.pending:
             c=self.pending[0]
             if c=='\x1b':
+                if len(self.pending)==1:break
+                if self.pending.startswith('\x1b7'):
+                    self.dec_saved=(self.x,self.y,self.fg,self.bg);self.pending=self.pending[2:];continue
+                if self.pending.startswith('\x1b8'):
+                    self.x,self.y,self.fg,self.bg=self.dec_saved;self.deferred=False;self.pending=self.pending[2:];continue
                 match=re.match(r'\x1b\[([0-9;?]*)([@-~])',self.pending)
                 if not match:
                     if len(self.pending)==1 or (self.pending.startswith('\x1b[') and not re.search(r'[@-~]',self.pending[2:])):break
@@ -46,8 +52,8 @@ class Screen:
                 elif op=='B':self.y=min(self.bottom,self.y+n);self.deferred=False
                 elif op=='C':self.x=min(79,self.x+n);self.deferred=False
                 elif op=='D':self.x=max(0,self.x-n);self.deferred=False
-                elif op=='s':self.saved=(self.x,self.y)
-                elif op=='u':self.x,self.y=self.saved;self.deferred=False
+                elif op=='s' and self.csi_save_restore:self.saved=(self.x,self.y)
+                elif op=='u' and self.csi_save_restore:self.x,self.y=self.saved;self.deferred=False
                 elif op=='J':
                     if values[0]==2:self.cells=[[[' ',self.fg,self.bg] for _ in range(80)] for _ in range(25)]
                 elif op=='K':
