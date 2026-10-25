@@ -21,8 +21,12 @@ type inputKey struct {
 	k gd.Key
 }
 type GoDoors struct {
-	pending []inputKey
-	readKey func(time.Duration) (rune, gd.Key, error)
+	escaped     bool
+	commandMode bool
+	savedLine   string
+	onIdle      func() error
+	pending     []inputKey
+	readKey     func(time.Duration) (rune, gd.Key, error)
 }
 
 func (g *GoDoors) read(timeout time.Duration) (rune, gd.Key, error) {
@@ -57,6 +61,7 @@ func (*GoDoors) Printf(f string, args ...any) error {
 	return e
 }
 func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
+	g.escaped = false
 	var b []rune
 	for {
 		left := time.Until(deadline)
@@ -70,15 +75,34 @@ func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
 			r, k = g.pending[0].r, g.pending[0].k
 			g.pending = g.pending[1:]
 		} else {
-			r, k, e = g.read(left)
+			timeout := left
+			if g.onIdle != nil && timeout > time.Second {
+				timeout = time.Second
+			}
+			r, k, e = g.read(timeout)
+		}
+		if errors.Is(e, gd.ErrInputTimeout) && g.onIdle != nil {
+			if err := g.onIdle(); err != nil {
+				return "", err
+			}
+			continue
 		}
 		if e != nil {
 			return "", e
 		}
 		if k == gd.KeyEnter {
-			return string(b), g.Printf("\r\n")
+			line := string(b)
+			if g.commandMode && strings.HasSuffix(line, "/") {
+				line = strings.TrimSuffix(line, "/")
+				g.savedLine = line
+			}
+			return line, g.Printf("\r\n")
+		}
+		if g.commandMode && r == 18 && g.savedLine != "" {
+			return g.savedLine, g.Printf("%s\r\n", g.savedLine)
 		}
 		if k == gd.KeyEsc {
+			g.escaped = true
 			return "quit", nil
 		}
 		if r == 8 || r == 127 {
@@ -100,37 +124,77 @@ func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
 }
 
 type Session struct {
-	Store           store.Store
-	Terminal        Terminal
-	Identity, Alias string
-	Deadline        time.Time
-	Now             func() time.Time
+	RealName             string
+	Store                store.Store
+	Terminal             Terminal
+	Identity, Alias      string
+	Deadline             time.Time
+	Now                  func() time.Time
+	Classic, ANSI, Local bool
 }
 
-func (s Session) Run() error {
+func (s Session) Run() (runErr error) {
+	defer func() {
+		if errors.Is(runErr, io.EOF) {
+			runErr = nil
+		}
+	}()
+
+	if s.Classic && s.ANSI {
+		defer s.Terminal.Printf("\x1b[r\x1b[25;1H\x1b[0m\r\n")
+	}
+	if s.Classic {
+		s.Alias = terminalLabel(s.Alias)
+		s.RealName = terminalLabel(s.RealName)
+		if strings.TrimSpace(s.Alias) == "" {
+			return errors.New("caller name is missing")
+		}
+	}
 	if s.Now == nil {
 		s.Now = time.Now
 	}
 	var id int
-	if e := s.Store.Update(func(w *game.World) error {
-		w.Maintain(s.Now())
-		p, e := w.Join(s.Identity, s.Alias)
-		if e == nil {
-			id = p.ID
-			p.DockToken = ""
-			p.PlanetToken = ""
-			p.LandedPlanet = 0
+	if s.Classic {
+		var err error
+		id, err = s.classicStartup()
+		if errors.Is(err, io.EOF) {
+			return nil
 		}
-		return e
-	}); e != nil {
-		return e
+		if err != nil {
+			return err
+		}
+	} else {
+		if e := s.Store.Update(func(w *game.World) error {
+			w.Maintain(s.Now())
+			alias := s.Alias
+			for _, existing := range w.Players {
+				if existing.Identity == s.Identity && existing.LastLogin != "" {
+					alias = existing.Alias
+					break
+				}
+			}
+			p, e := w.Join(s.Identity, alias)
+			if e == nil {
+				id = p.ID
+				p.DockToken = ""
+				p.PlanetToken = ""
+				p.LandedPlanet = 0
+			}
+			return e
+		}); e != nil {
+			return e
+		}
+		if e := s.Terminal.Printf("\r\nYANKEE TRADER - Go reconstruction\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", s.Alias); e != nil {
+			return e
+		}
 	}
-	if e := s.Terminal.Printf("\r\nYANKEE TRADER - Go reconstruction\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", s.Alias); e != nil {
-		return e
+	if terminal, ok := s.Terminal.(*GoDoors); ok {
+		terminal.commandMode = true
 	}
 	pending := []string{}
 	token := ""
 	planetToken := ""
+	computer := false
 	for {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
@@ -144,33 +208,177 @@ func (s Session) Run() error {
 			return errors.New("player no longer exists")
 		}
 		if len(pending) == 0 {
-			if e = s.Terminal.Printf("\r\nSector %d | %d credits | %d turns > ", p.Sector, p.Credits, p.Turns); e != nil {
+			if s.Classic {
+				label := "Main Command (?=Help)?"
+				if computer {
+					label = "Computer command (?=help)?"
+				}
+				if s.ANSI {
+					if e = s.Terminal.Printf("\x1b[0;32m"); e != nil {
+						return e
+					}
+				}
+				e = s.Terminal.Printf("\r\nTime: %s  %s ", s.timeLeft(), label)
+			} else {
+				e = s.Terminal.Printf("\r\nSector %d | %d credits | %d turns > ", p.Sector, p.Credits, p.Turns)
+			}
+			if e != nil {
 				return e
 			}
+			if terminal, ok := s.Terminal.(*GoDoors); ok && s.Classic && s.ANSI {
+				terminal.onIdle = func() error {
+					return s.Terminal.Printf("\x1b[s\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%s\x1b[u", s.timeLeft(), s.timeLeft())
+				}
+			}
 			line, e := s.Terminal.ReadLine(s.Deadline)
+			if terminal, ok := s.Terminal.(*GoDoors); ok {
+				terminal.onIdle = nil
+			}
 			if errors.Is(e, io.EOF) {
 				return nil
 			}
 			if e != nil {
 				return e
 			}
-			pending = strings.Split(line, ";")
+			pending = splitCommands(line)
 		}
 		command := strings.Fields(pending[0])
 		pending = pending[1:]
 		if len(command) == 0 {
+			if s.Classic {
+				if computer {
+					menu, _ := classicAssets.ReadFile("assets/computer.txt")
+					e = s.classicText(string(menu))
+				} else {
+					e = s.classicSector(w, id)
+				}
+				if e != nil {
+					return e
+				}
+			}
 			continue
 		}
 		cmd := strings.ToLower(command[0])
 		args := command[1:]
+		if s.Classic && computer {
+			switch cmd {
+			case "1":
+				computer = false
+				if e = s.classicText("\r\n<Computer deactivated>\r\n"); e != nil {
+					return e
+				}
+				if e = s.classicSector(w, id); e != nil {
+					return e
+				}
+				continue
+			case "3":
+				value, err := s.classicArgument("What sector do you want to go to? ", &pending)
+				if err != nil {
+					return err
+				}
+				cmd, args = "auto", []string{value}
+			case "10":
+				from, err := s.classicArgument("Enter start for path search? ", &pending)
+				if err != nil {
+					return err
+				}
+				to, err := s.classicArgument("What sector do you want to go to? ", &pending)
+				if err != nil {
+					return err
+				}
+				cmd, args = "path", []string{from, to}
+			case "7":
+				slot, err := s.classicArgument("Enter the number of the slot to change [1 - 30]: ", &pending)
+				if err != nil {
+					return err
+				}
+				n, err := strconv.Atoi(slot)
+				if err != nil || n < 1 || n > 30 {
+					continue
+				}
+				sector, err := s.classicArgument("Enter the sector you wish to avoid (0 to clear): ", &pending)
+				if err != nil {
+					return err
+				}
+				cmd, args = "avoid", []string{slot, sector}
+			default:
+				if cmd != "?" && cmd != "help" {
+					if err := s.Terminal.Printf("That computer function is not available yet.\r\n"); err != nil {
+						return err
+					}
+					continue
+				}
+			}
+		}
+		if s.Classic && cmd == "a" && p.PlanetToken == "" {
+			cmd = "attack"
+		}
+		if s.Classic && cmd == "l" {
+			cmd = "land"
+		}
+		if s.Classic && (cmd == "m" || cmd == "move") && len(args) == 0 {
+			value, err := s.classicArgument("Move to which sector? ", &pending)
+			if err != nil {
+				return err
+			}
+			args = []string{value}
+		}
 		switch cmd {
 		case "q", "quit":
+			if s.Classic {
+				answer, err := s.classicArgument("\r\n<Quit>\r\nAre you sure (Y/N)? ", &pending)
+				if errors.Is(err, io.EOF) {
+					return nil
+				}
+				if err != nil {
+					return err
+				}
+				if !strings.EqualFold(answer, "y") {
+					continue
+				}
+			}
 			return s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias)
 		case "?", "help":
+			if s.Classic {
+				if computer {
+					menu, _ := classicAssets.ReadFile("assets/computer.txt")
+					e = s.classicText(string(menu))
+				} else {
+					e = s.classicHelp(p.Alias)
+				}
+				break
+			}
 			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+		case "c":
+			if s.Classic {
+				computer = true
+				e = s.classicText("\r\n<Computer activated>\r\n")
+			} else {
+				e = errors.New("use PATH, AUTO or AVOID")
+			}
+		case "v":
+			if s.Classic {
+				e = s.drawClassic(template("title"))
+			} else {
+				e = errors.New("unknown command; type ? for help")
+			}
+		case "z":
+			if s.Classic {
+				e = s.classicInstructions()
+			} else {
+				e = errors.New("unknown command; type ? for help")
+			}
 		case "i", "info":
+			if s.Classic {
+				e = s.classicInfo(w, id, false)
+				break
+			}
 			e = s.Terminal.Printf("%s: holds %d; ore %d; organics %d; equipment %d\r\nFighters %d; shields %d; ground forces %d\r\nMissiles %d; mines %d; plasma %d\r\n", p.Alias, p.Holds, p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma)
 		case "l", "look":
+			if s.Classic {
+				e = s.classicSector(w, id)
+				break
+			}
 			sector := w.Sectors[p.Sector]
 			e = s.Terminal.Printf("Warps: %v\r\n", sector.Warps)
 			if e == nil && sector.Port != 0 {
@@ -264,6 +472,9 @@ func (s Session) Run() error {
 					if !strings.EqualFold(answer, "y") {
 						e = s.Terminal.Printf("Autopilot cancelled.\r\n")
 					} else {
+						if s.Classic {
+							computer = false
+						}
 						for hop := 1; hop < len(path); hop++ {
 							if terminal, ok := s.Terminal.(interface{ Interrupted() (bool, error) }); ok {
 								stopped, err := terminal.Interrupted()
@@ -475,7 +686,11 @@ func (s Session) Run() error {
 			token = ""
 			planetToken = ""
 		default:
-			e = errors.New("unknown command; type ? for help")
+			if s.Classic {
+				e = errors.New("That command is not available in this edition yet.")
+			} else {
+				e = errors.New("unknown command; type ? for help")
+			}
 		}
 		if e != nil {
 			if outErr := s.Terminal.Printf("%s\r\n", e); outErr != nil {
@@ -529,4 +744,23 @@ func allClear(sectors []int) bool {
 		}
 	}
 	return true
+}
+
+func splitCommands(line string) []string {
+	var commands []string
+	for _, command := range strings.Split(line, ";") {
+		upper := strings.ToUpper(command)
+		at := strings.LastIndex(upper, "/R")
+		if at >= 0 {
+			n, err := strconv.Atoi(strings.TrimSpace(command[at+2:]))
+			if err == nil && n >= 2 && n <= 20 {
+				for i := 0; i < n; i++ {
+					commands = append(commands, strings.TrimSpace(command[:at]))
+				}
+				continue
+			}
+		}
+		commands = append(commands, command)
+	}
+	return commands
 }

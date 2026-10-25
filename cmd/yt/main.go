@@ -29,6 +29,8 @@ func run() error {
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
 	local := flag.String("local", "", "local player name")
+	compact := flag.Bool("compact", false, "skip DOS startup and use the compact command interface")
+	ascii := flag.Bool("ascii", false, "disable ANSI color and cursor control")
 	drop := flag.String("drop", "", "Door32 drop-file directory")
 	system := flag.String("system", "bbs", "stable BBS identity namespace")
 	flag.Parse()
@@ -66,6 +68,8 @@ func run() error {
 	if (*local == "") == (*drop == "") {
 		return errors.New("choose -local <name> or -drop <directory>")
 	}
+	realName := *local
+	ansi := !*ascii
 	alias, identity, minutes := *local, "local:"+strings.ToLower(strings.TrimSpace(*local)), 180
 	if *drop != "" {
 		info, e := gd.OpenSession(*drop)
@@ -73,12 +77,14 @@ func run() error {
 			return e
 		}
 		defer gd.CloseSession()
+		ansi = info.Emulation == 1 && !*ascii
 		alias = info.Alias
 		minutes = info.TimeLeft
-		uid, e := recordNumber(*drop)
+		uid, name, e := door32Identity(*drop)
 		if e != nil {
 			return e
 		}
+		realName = name
 		identity = "door32:" + *system + ":" + strconv.Itoa(uid)
 	}
 	if minutes < 1 || minutes > 1440 {
@@ -88,14 +94,19 @@ func run() error {
 		return e
 	}
 	defer gd.CloseSession()
-	return (door.Session{Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
+	return (door.Session{RealName: realName, Classic: !*compact, ANSI: ansi, Local: *drop == "", Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
 }
 
 // Door32 line five is the stable BBS user record number; alias is display only.
 func recordNumber(dir string) (int, error) {
+	n, _, err := door32Identity(dir)
+	return n, err
+}
+
+func door32Identity(dir string) (int, string, error) {
 	entries, e := os.ReadDir(dir)
 	if e != nil {
-		return 0, e
+		return 0, "", e
 	}
 	var path string
 	for _, v := range entries {
@@ -106,18 +117,22 @@ func recordNumber(dir string) (int, error) {
 	}
 	f, e := os.Open(path)
 	if e != nil {
-		return 0, e
+		return 0, "", e
 	}
 	defer f.Close()
 	scan := bufio.NewScanner(f)
 	for i := 0; i < 5; i++ {
 		if !scan.Scan() {
-			return 0, errors.New("Door32 user record number is missing")
+			return 0, "", errors.New("Door32 user record number is missing")
 		}
 	}
 	n, e := strconv.Atoi(strings.TrimSpace(scan.Text()))
 	if e != nil || n < 1 {
-		return 0, errors.New("Door32 user record number must be positive")
+		return 0, "", errors.New("Door32 user record number must be positive")
 	}
-	return n, nil
+	name := ""
+	if scan.Scan() {
+		name = strings.TrimSpace(scan.Text())
+	}
+	return n, name, nil
 }

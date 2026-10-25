@@ -1,0 +1,115 @@
+[0m[2J[H[?25l[?7l[1;1H[0;37;40mLocal Console Mode                                                              [2;1H                                                                                [3;1H                                                                                [4;1H                                                                                [5;1H                                                                                [6;1H[0;36;40m                                 Yankee Trader[0;37;40m                                  [7;1H[0;36;40m                               By Alan Davenport[0;37;40m                                [8;1H[0;36;40m          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport[0;37;40m            [9;1H                                                                                [10;1H[0;36;40m                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75[0;37;40m                  [11;1H                                                                                [12;1H[0;36;40m                     Version 3.6 * YT * Compiled 03/16/94[0;37;40m                       [13;1H                                                                                [14;1H[0;36;40m                         UNREGISTERED EVALUATION COPY![0;37;40m                          [15;1H                                                                                [16;1H[0;36;40m              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.[0;37;40m                [17;1H                                                                                [18;1H                                                                                [19;1H                                                                                [20;1H                                                                                [21;1H                                                                                [22;1H                                                                                [23;1H                                                                                [24;1H                                                                                [25;1H                                                                                [0m[?7h[?25h[1;24r[24;1H
+Cntl-X to Stop
+[40m[2J[2;8H[0;1;33;40m╔[3C╗[C[s
+[u[35m╔══╗[C[31m╦[2C╦[C[36m╦[s
+[u[C╦[C[32m╦══╗[C[34m╦══╗[4C[s
+[u[33m╔═╦═╗[C[35m╦══╗[C[31m╔══╗[s
+[u[C[36m╦══╗[C[32m╦══╗[C[34m╦═[s
+[u═╗[2C[37m▄[3;8H[33m║[3C║[C[s
+[u[35m║[2C║[C[31m╠╗[C║[C[36m║[s
+[u╔╝[C[32m║[4C[34m║[9C[33m║[s
+[u[3C[35m║[2C║[C[31m║[2C║[C[s
+[u[36m║[2C║[C[32m║[4C[34m║[2C[s
+[u║[2C[37m█[4;8H[33m╚═╦═╝[C[s
+[u[35m╠══╣[C[31m║╚╗║[C[36m╠╣[s
+[u[2C[32m╠═╣[2C[34m╠═╣[7C[33m║[s
+[u[3C[35m╠═╦╝[C[31m╠══╣[C[36m║[s
+[u[2C║[C[32m╠═╣[2C[34m╠═╦╝[2C[s
+[u[37m█[5;10H[33m║[3C[35m║[2C║[s
+[u[C[31m║[C╚╣[C[36m║╚╗[C[32m║[s
+[u[4C[34m║[9C[33m║[3C[35m║[C╚[s
+[u╗[C[31m║[2C║[C[36m║[2C║[C[s
+[u[32m║[4C[34m║[C╚╗[2C[37m▀
+[6;10H[33m╩[3C[35m╩[2C╩[C[31m╩[s
+[u[2C╩[C[36m╩[C╩[C[32m╩══╝[C[s
+[u[34m╩══╝[6C[33m╩[3C[35m╩[2C╩[s
+[u[C[31m╩[2C╩[C[36m╩══╝[C[32m[s
+[u╩══╝[C[34m╩[2C╩[2C[37m▀
+[9;25H[32mWhere[Conly[Cthe[C[s
+[u[5;33mTOUGH[C[0;1;32mSurvive!
+[13;53H[31m [D[14;53H[36m [D
+[15;50H[32mMine[13;20H[31m [D
+[14;20H[36m [D[15;20H[32m(Dumbu[s
+[us Playerus)[13;20H  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D[1D [3C [D[1D [s
+[u [D [2D [D[1D  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D [2D  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D[1D  [D[1D [s
+[u [D[1D  [D[1D [33m [D
+[14;53H [D[1A [D[12;52H [D
+[14;52H [D[C [D[12;54H [D[s
+[u[2D [D[13;52H [D[35m [D[s
+[u[B [D[12;54H [D[14;52H [D
+[12;52H [D[13;54H [D[14;53H[s
+[u [D[13;52H [D[1A [D[31m[s
+[u [D[13;52H [D[B [D[1A[s
+[u [D[12;52H [D [D[2B [D[s
+[u[3D [D[1A[36m [D[1A [D[s
+[u[3D [D[2B [D[1A [D[2D[s
+[u [D[2D [D[14;52H [D[C[s
+[u [D[12;53H [D[13;53H 
+[14;53H [2A [3D [13;54H [14;52H [s
+[u[2A [13;52H [14;54H [15;50H   [s
+[u [14;20H [15;20H                [s
+[u  [12;37H[32m [D[2C [D[1D [s
+[u [D[13;39H [D[14;37H└───┘
+[12;31H   [13;33H   [14;33H   
+[16;30H[31mBy Alan Davenport[46D 
+[17;28HBBS # [36m([32m717[36m)-[s
+[u[35m686[36m-[33m3037[13H[37m [s
+[u                                  [s
+[u     [12;37H [3C [14;37H     
+[12;20H"Whee fyte to the DEETH Hoo-m[s
+[uan Slyme!"[18;34H9600 [33mH[35m[s
+[uS[31mT[11D [0m
+
+Initializing...
+
+Welcome Caller!
+Searching my records for your name.
+
+You have been on today.
+[0m[2J[H[?25l[?7l[1;1H[0;35;40m                                                                                [2;1H                                                                                [3;1H[0;32;40m                                                                                [4;1H                                                                                [5;1H                    [ Info ]                                                    [6;1H                                                                                [7;1HName  : Pilot                                                                   [8;1HTime  : 179:59                                                                  [9;1HTeam  : None                                                                    [10;1H                                                                                [11;1H                                                                                [12;1H                                                                                [13;1H╔═════════════════════════╦══════════════════════╗                              [14;1H║ Credits.. : 1005        ║ Sector....... : 1    ║                              [15;1H║ Turns.... : 500         ║ Holds........ : 10   ║                              [16;1H║ Fighters. : 25          ║ Ore.......... :[0;97;44m 0    [0;32;40m║                              [17;1H║ Mines.... : 0           ║ Organics..... :[0;97;44m 0    [0;32;40m║                              [18;1H║ Missiles. : 0           ║ Equipment.... :[0;97;44m 0    [0;32;40m║                              [19;1H║ Scanner.. : N/A         ║ Ports Owned.. : 0    ║                              [20;1H║ Shields.. : 0           ║ Cloak Energy. : N/A  ║                              [21;1H║ Forces... : 0           ║ Plasma Bolts. : 0    ║                              [22;1H╚═════════════════════════╩══════════════════════╝                              [23;1H                                                                                [24;1H[ Press any Key ]                                                               [25;1H[0;93;46m Yankee Trader [0;96;44m  | Caller | Pilot                                    179:59    [0;37;40m [0m[?7h[?25h[1;24r[24;1H
+Checking for Radio Messages.
+Radio messages are not available in this edition yet.
+[0;31m
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+[0;32m
+Time: 179:59  Main Command (?=Help)? ?
+[0m[2J[H[?25l[?7l[1;1H[0;32;40m                                                                                [2;1H[0;36;40m<Help>                                                                          [3;1H                                                                                [4;1H[ENTER] - Re-display sector             $ - Take Credits from your ports        [5;1H! - Launch a Cruise Missile             A - <A>ttack a player's ship            [6;1HB - <B>uy a Port                        C - Ship's <C>omputer                   [7;1HD - <D>rop a Sector mine                F - Take or leave <F>ighters            [8;1HG - Initiate <G>enesis                  I - <I>nfo on your ship                 [9;1HL - <L>and on or create a planet        M - <M>ove to another sector            [10;1HN - Re<N>ame Port                       P - Dock at a <P>ort (and trade)        [11;1HQ - <Q>uit game                         S - <S>ensors                           [12;1HT - <T>eam menu                         V - <V>ersion Info                      [13;1HW - Emergency <W>arp                    X - Sound Effects On/Off                [14;1HZ - Instructions                        + - Fire Plasma Bolt                    [15;1H                                                                                [16;1HString commands by seperating them with a semicolons (;).                       [17;1HTo place an EXTRA 'hit enter' in a string, use an extra ';'.                    [18;1HSave a command string by placing a '/' at the end.                              [19;1HThen hit Control-R to [R]eplay the saved command.                               [20;1HYou may repeat any command up to 20 times by putting                            [21;1Ha /R# at the end of your command. Replace the '#' with                          [22;1Hany number between 2 and 20. Example: your command/R20                          [23;1H                                                                                [24;1H[0;32;40m                                                                                [25;1H[0;93;46m Yankee Trader [0;96;44m  | Caller | Pilot                                    179:59    [0;37;40m [0m[?7h[?25h[1;24r[24;1H[23;1H[0;32m
+Time: 179:59  Main Command (?=Help)? C
+
+<Computer activated>
+[0;32m
+Time: 179:59  Computer command (?=help)? ?
+ Computer commands:
+
+ 1) Exit Computer                        2) Port Report
+ 3) Autopilot                            4) Rank Teams & Players
+ 5) Send Radio Message                   6) Radio Message Log
+ 7) Set autopilot Sectors to Avoid       8) Galactic Newspaper
+ 9) Planet Report                       10) Path Finder
+11) Fighter Finder (Yours)              12) Port(s) Treasury Report
+13) Planet Finder (Yours)               14) Find Nearest Ports
+15) Show Active Spies                   16) Find Port Pairs
+17) Check Profits of Adjacent Ports
+
+[0;32m
+Time: 179:59  Computer command (?=help)? 1;Q;Y
+
+<Computer deactivated>
+[0;31m
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Pilot.
+[r[25;1H[0m

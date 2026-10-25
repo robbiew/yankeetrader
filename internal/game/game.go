@@ -28,7 +28,8 @@ type Player struct {
 	Missiles, Mines, Plasma                          int64
 	DockUntil                                        time.Time
 	DockPrices                                       [3]int64
-	AvoidSectors                                     []int `json:",omitempty"`
+	LastLogin                                        string `json:",omitempty"`
+	AvoidSectors                                     []int  `json:",omitempty"`
 }
 type Sector struct {
 	ID     int
@@ -115,6 +116,12 @@ func (w *World) Validate() error {
 			return errors.New("invalid player identity or position")
 		}
 		ids[p.Identity] = true
+		if p.LastLogin != "" {
+			if _, err := time.Parse("2006-01-02", p.LastLogin); err != nil {
+				return errors.New("invalid last login date")
+			}
+		}
+
 		if len(p.AvoidSectors) > 30 {
 			return errors.New("too many sectors to avoid")
 		}
@@ -406,4 +413,22 @@ func (w *World) Maintain(now time.Time) bool {
 	}
 	w.LastMaintenance = today
 	return true
+}
+
+// ClassicAlias validates a new DOS-style in-game alias without creating a player.
+func ClassicAlias(w *World, alias string) error {
+	if !clean(alias) {
+		return errors.New("use a printable alias of 1 to 41 characters")
+	}
+	for _, reserved := range []string{"Sysop", "Xannor", "Mercenaries"} {
+		if strings.EqualFold(alias, reserved) {
+			return errors.New("That ALIAS is NOT allowed. Please choose another.")
+		}
+	}
+	for _, p := range w.Players {
+		if strings.EqualFold(strings.TrimSpace(p.Alias), alias) {
+			return errors.New("I'm sorry, but that Alias is already in use.")
+		}
+	}
+	return nil
 }
