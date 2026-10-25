@@ -1,0 +1,12 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-takeall",
+  "input_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "keys": "\r~~~~~\r~L;A\r~~@D\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "65cfb23668c1b5d05407396d244f29047a14eb24d45c7e2713a9a4ddaeb1e9f3",
+  "game_log_sha256": "0df42bf20da1d3f1141bb0422024bea68059bf2ba7046e2d42d9220acc27e72c",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114"
+}

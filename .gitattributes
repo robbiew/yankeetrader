@@ -1,2 +1,3 @@
 # These are exact DOS key streams; CR bytes are Enter keypresses, not line endings.
 /research/yt-port-screens/**/KEYS.TXT -text -diff
+/research/yt-planet-screens/**/KEYS.TXT -text -diff

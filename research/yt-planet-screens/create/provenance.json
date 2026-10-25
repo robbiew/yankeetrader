@@ -1,0 +1,12 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-create",
+  "input_sha256": "a7b3941522608094210d43b5ec8c142d769d735c5c9ab87062c854ec4e324b21",
+  "keys": "\r~~~~~\r~L\r~~@Y\r~~@New Eden\r~~@Y\r~~@Q;Y\r~\r~\r",
+  "before_sha256": "a7b3941522608094210d43b5ec8c142d769d735c5c9ab87062c854ec4e324b21",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "dc619dd4b6c01272209790fc7d1c08cfbd645efa7515d65140775e6b1c3b1409",
+  "game_log_sha256": "2191c6996ad0182ce67a498c55e8ade4aa414dfe640e5a8f6e6ff8c2c71a6785",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114"
+}
