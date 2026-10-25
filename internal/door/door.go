@@ -16,20 +16,62 @@ type Terminal interface {
 	ReadLine(time.Time) (string, error)
 	Printf(string, ...any) error
 }
-type GoDoors struct{}
+type inputKey struct {
+	r rune
+	k gd.Key
+}
+type GoDoors struct {
+	pending []inputKey
+	readKey func(time.Duration) (rune, gd.Key, error)
+}
+
+func (g *GoDoors) read(timeout time.Duration) (rune, gd.Key, error) {
+	if g.readKey != nil {
+		return g.readKey(timeout)
+	}
+	return gd.ReadKeyTimeout(timeout)
+}
+
+// Interrupted consumes Ctrl-X while retaining other keys for the next prompt.
+func (g *GoDoors) Interrupted() (bool, error) {
+	for i := 0; i < 160; i++ {
+		r, k, err := g.read(time.Millisecond)
+		if errors.Is(err, gd.ErrInputTimeout) {
+			return false, nil
+		}
+		if err != nil {
+			return false, err
+		}
+		if r == 24 {
+			return true, nil
+		}
+		if len(g.pending) < 4096 {
+			g.pending = append(g.pending, inputKey{r, k})
+		}
+	}
+	return false, nil
+}
 
 func (GoDoors) Printf(f string, args ...any) error {
 	_, e := fmt.Fprintf(gd.Output(), f, args...)
 	return e
 }
-func (g GoDoors) ReadLine(deadline time.Time) (string, error) {
+func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
 	var b []rune
 	for {
 		left := time.Until(deadline)
 		if left <= 0 {
 			return "", errors.New("session time expired")
 		}
-		r, k, e := gd.ReadKeyTimeout(left)
+		var r rune
+		var k gd.Key
+		var e error
+		if len(g.pending) > 0 {
+			r, k = g.pending[0].r, g.pending[0].k
+			g.pending = g.pending[1:]
+		} else {
+			r, k, e = g.read(left)
+		}
 		if e != nil {
 			return "", e
 		}
@@ -125,7 +167,7 @@ func (s Session) Run() error {
 		case "q", "quit":
 			return s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias)
 		case "?", "help":
-			e = s.Terminal.Printf("I info | L look | M <sector> move | P dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "i", "info":
 			e = s.Terminal.Printf("%s: holds %d; ore %d; organics %d; equipment %d\r\nFighters %d; shields %d; ground forces %d\r\nMissiles %d; mines %d; plasma %d\r\n", p.Alias, p.Holds, p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma)
 		case "l", "look":
@@ -136,6 +178,90 @@ func (s Session) Run() error {
 			}
 			if e == nil && sector.Planet != 0 {
 				e = s.Terminal.Printf("Planet: %s\r\n", w.Planets[sector.Planet].Name)
+			}
+		case "s", "scan", "sensors":
+			if len(args) != 0 {
+				e = errors.New("use S to scan adjacent sectors")
+			} else {
+				var reports []game.SensorReport
+				reports, e = w.Scan(id)
+				if e == nil {
+					e = showSensors(s.Terminal, reports)
+				}
+			}
+		case "path":
+			if len(args) != 2 {
+				e = errors.New("use PATH <start sector> <destination sector>")
+			} else {
+				var from, to int
+				from, e = strconv.Atoi(args[0])
+				if e == nil {
+					to, e = strconv.Atoi(args[1])
+				}
+				if e == nil {
+					var path []int
+					path, e = w.Path(from, to)
+					if e == nil {
+						e = s.Terminal.Printf("Shortest path: %v | %d turns.\r\n", path, len(path)-1)
+					}
+				}
+			}
+		case "auto", "autopilot":
+			if len(args) != 1 {
+				e = errors.New("use AUTO <destination sector>")
+			} else {
+				var to int
+				var path []int
+				to, e = strconv.Atoi(args[0])
+				if e == nil {
+					path, e = w.Course(id, to)
+				}
+				if e == nil {
+					if e = s.Terminal.Printf("Course: %v | %d turns (Ctrl-X stops between hops). Engage autopilot? [y/N] ", path, len(path)-1); e != nil {
+						return e
+					}
+					var answer string
+					if len(pending) == 0 {
+						answer, e = s.Terminal.ReadLine(s.Deadline)
+						if errors.Is(e, io.EOF) {
+							return nil
+						}
+						if e != nil {
+							return e
+						}
+						pending = strings.Split(answer, ";")
+					}
+					answer, pending = strings.TrimSpace(pending[0]), pending[1:]
+					if !strings.EqualFold(answer, "y") {
+						e = s.Terminal.Printf("Autopilot cancelled.\r\n")
+					} else {
+						for hop := 1; hop < len(path); hop++ {
+							if terminal, ok := s.Terminal.(interface{ Interrupted() (bool, error) }); ok {
+								stopped, err := terminal.Interrupted()
+								if err != nil {
+									return err
+								}
+								if stopped {
+									if err := s.Terminal.Printf("Autopilot stopped. Completed moves remain saved.\r\n"); err != nil {
+										return err
+									}
+									break
+								}
+							}
+							if !time.Now().Before(s.Deadline) {
+								return errors.New("session time expired")
+							}
+							e = s.Store.Update(func(w *game.World) error { return w.FollowCourse(id, path[hop-1], path[hop], len(path)-hop) })
+							if e != nil {
+								break
+							}
+							token, planetToken = "", ""
+							if e = s.Terminal.Printf("Moved to sector %d.\r\n", path[hop]); e != nil {
+								return e
+							}
+						}
+					}
+				}
 			}
 		case "create":
 			if len(args) == 0 {
@@ -332,4 +458,37 @@ func (s Session) Run() error {
 
 func showPlanet(t Terminal, p game.Planet) error {
 	return t.Printf("Planet %s | governor %d | garrison %d | bank %d credits\r\nProduction: ore %.6g, organics %.6g, equipment %.6g per day\r\nWarehouses: ore %.6g, organics %.6g, equipment %.6g\r\nFighters %.6g | missiles %.6g | mines %.6g | plasma %.6g\r\n", p.Name, p.Owner, p.Ground, p.Bank, p.Production[0], p.Production[1], p.Production[2], p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Missiles, p.Mines, p.Plasma)
+}
+
+func showSensors(t Terminal, reports []game.SensorReport) error {
+	if err := t.Printf("[ Sensors Activated ]\r\n"); err != nil {
+		return err
+	}
+	for _, r := range reports {
+		if err := t.Printf("Sector: %d | Warps: %v\r\n", r.Sector, r.Warps); err != nil {
+			return err
+		}
+		if r.PortName != "" {
+			selling := strings.Join(r.Selling, ", ")
+			if r.PortID == 1 {
+				selling = "ship equipment"
+			} else if selling == "" {
+				selling = "no cargo"
+			}
+			if err := t.Printf("Port: %s | Selling: %s\r\n", r.PortName, selling); err != nil {
+				return err
+			}
+		}
+		if r.PlanetName != "" {
+			if err := t.Printf("Planet: %s | Forces: %d\r\n", r.PlanetName, r.Ground); err != nil {
+				return err
+			}
+		}
+		for _, ship := range r.Ships {
+			if err := t.Printf("Ship: %s | Team: %d | Fighters: %d | Shields: %d\r\n", ship.Alias, ship.Team, ship.Fighters, ship.Shields); err != nil {
+				return err
+			}
+		}
+	}
+	return t.Printf("[ End Sensor Scan ]\r\n")
 }

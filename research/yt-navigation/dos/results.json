@@ -1,0 +1,240 @@
+{
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "sensors",
+      "command": "S",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "8be0741e262f24925f3bef81735521d896f76949cbf05c35b37a31d81525622a",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/sensors/transcript.txt"
+    },
+    {
+      "name": "sensors-zero",
+      "command": "S",
+      "before_sha256": "d7cdc6332a29be53171e13b1c9759c777fb6faa685293840819290ef44e9fdee",
+      "after_sha256": "9930cc50d7b9b25fd345679ff5c53f486af4e1d478eab6a2104c727ddda876be",
+      "turns_before": 0,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/sensors-zero/transcript.txt"
+    },
+    {
+      "name": "move",
+      "command": "M;101",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "c08051ccbdd526ca5fab23f9b4e48ec4ab67f251ea22ab4dce99c89777fe8bb1",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/move/transcript.txt"
+    },
+    {
+      "name": "move-invalid",
+      "command": "M;110",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/move-invalid/transcript.txt"
+    },
+    {
+      "name": "move-last",
+      "command": "M;101",
+      "before_sha256": "e91f57a6e4535a49cba9d7d87bd0a01b14955dbdabd2d1cd106339929a9c15ce",
+      "after_sha256": "d59e9fee5b858da3a8f62d3c72fab2d44e595147e27b7ea232259bd883f1e1a5",
+      "turns_before": 1,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/move-last/transcript.txt"
+    },
+    {
+      "name": "path",
+      "command": "C;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/path/transcript.txt",
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ],
+      "course_turns": 4
+    },
+    {
+      "name": "path-reverse",
+      "command": "C;10;101;100;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/path-reverse/transcript.txt",
+      "route": [
+        101,
+        107,
+        109,
+        110,
+        100
+      ],
+      "course_turns": 4
+    },
+    {
+      "name": "autopilot",
+      "command": "C;3;110;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "f2f70426de579791379c9ea0d9873f54b4165b80fb188f8df08798e128377d8b",
+      "turns_before": 500,
+      "turns_after": 496,
+      "sector_before": 100,
+      "sector_after": 110,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/autopilot/transcript.txt",
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ],
+      "course_turns": 4
+    },
+    {
+      "name": "autopilot-cancel",
+      "command": "C;3;110;N;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/autopilot-cancel/transcript.txt",
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ],
+      "course_turns": 4
+    },
+    {
+      "name": "autopilot-short",
+      "command": "C;3;110\r~~\r~1",
+      "before_sha256": "2c44a8338dacf95b54093e0afe02c0e66f094aa42564c958247d7870ae1c9876",
+      "after_sha256": "51b306a0c2a1fb0200f4813190dc93753299d90e6544c7fe6a2689557e8611dd",
+      "turns_before": 3,
+      "turns_after": 3,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/autopilot-short/transcript.txt",
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ],
+      "course_turns": 4
+    },
+    {
+      "name": "move-zero",
+      "command": "M;101",
+      "before_sha256": "d7cdc6332a29be53171e13b1c9759c777fb6faa685293840819290ef44e9fdee",
+      "after_sha256": "6c484e0b90f5674e5bd11176b20e3256c98596145454faba0f615d1420edd827",
+      "turns_before": 0,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/move-zero/transcript.txt"
+    },
+    {
+      "name": "path-same",
+      "command": "C;10;100;100\r~~\r~1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/path-same/transcript.txt"
+    },
+    {
+      "name": "path-unreachable",
+      "command": "C;10;100;111\r~~\r~1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "transcript": "research/yt-navigation/dos/path-unreachable/transcript.txt"
+    }
+  ]
+}

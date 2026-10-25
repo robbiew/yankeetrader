@@ -1,0 +1,11 @@
+{
+  "name": "move-last",
+  "command": "M;101",
+  "before_sha256": "e91f57a6e4535a49cba9d7d87bd0a01b14955dbdabd2d1cd106339929a9c15ce",
+  "after_sha256": "d59e9fee5b858da3a8f62d3c72fab2d44e595147e27b7ea232259bd883f1e1a5",
+  "turns_before": 1.0,
+  "turns_after": 0.0,
+  "sector_before": 100.0,
+  "sector_after": 101.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

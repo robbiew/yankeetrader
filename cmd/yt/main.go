@@ -88,7 +88,7 @@ func run() error {
 		return e
 	}
 	defer gd.CloseSession()
-	return (door.Session{Store: st, Terminal: door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
+	return (door.Session{Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
 }
 
 // Door32 line five is the stable BBS user record number; alias is display only.

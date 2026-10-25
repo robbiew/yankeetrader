@@ -1,0 +1,11 @@
+{
+  "name": "move-zero",
+  "command": "M;101",
+  "before_sha256": "d7cdc6332a29be53171e13b1c9759c777fb6faa685293840819290ef44e9fdee",
+  "after_sha256": "6c484e0b90f5674e5bd11176b20e3256c98596145454faba0f615d1420edd827",
+  "turns_before": 0.0,
+  "turns_after": 0.0,
+  "sector_before": 100.0,
+  "sector_after": 100.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

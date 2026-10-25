@@ -1,0 +1,11 @@
+{
+  "name": "autopilot-short",
+  "command": "C;3;110\r~~\r~1",
+  "before_sha256": "2c44a8338dacf95b54093e0afe02c0e66f094aa42564c958247d7870ae1c9876",
+  "after_sha256": "51b306a0c2a1fb0200f4813190dc93753299d90e6544c7fe6a2689557e8611dd",
+  "turns_before": 3.0,
+  "turns_after": 3.0,
+  "sector_before": 100.0,
+  "sector_after": 100.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

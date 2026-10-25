@@ -1,6 +1,6 @@
 # Yankee Trader — Go door
 
-A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
 
 ## Play now on this Mac
 
@@ -27,11 +27,18 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `I` | Ship information |
 | `L` | Current sector, warps, and port |
 | `M <sector>` | Move through a listed adjacent warp; one turn |
+| `S` / `SCAN` | Scan adjacent sectors: ports, planets, ships and outgoing warps; free |
+| `PATH <from> <to>` | Display a shortest directed warp route and turn cost; free |
+| `AUTO <sector>` | Plot from your current sector, confirm with Y/N, then move one turn per hop |
 | `P` | Dock and display current prices; one turn |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
 | `LEAVE` | Leave port |
 | `Q` or Escape | Exit |
+
+Sensors work even when no turns remain. `AUTO` asks before moving; an empty answer cancels. You can stack the response, for example `PATH 1 3; AUTO 3; Y; I`. Ctrl-X stops autopilot between hops. Every completed hop saves immediately and remains spent after interruption or disconnect. Courses stop if another session changes your position or leaves too few turns. See [navigation recovery and DOS comparisons](research/yt-navigation/RECOVERY.md).
+
+Sensors show actual public sector/ship data. Mines, deployed sector defenses, cloak detection, danger scanners, emergency warps and autopilot avoid lists remain outside this slice. The current Go world has no combat hazards.
 
 Other cargo names are `organics` and `equipment`. Earth sells `holds` (500 credits), `fighters` (100), `shields` (50), and `forces` (750). Quantities must be whole, positive numbers. Cargo capacity is shared across all three cargo types. Earth equipment costs remain an economic sink.
 
@@ -102,6 +109,8 @@ go build -o bin/yt ./cmd/yt
 go test -race ./...
 go vet ./...
 python3 scripts/smoke.py
+python3 scripts/smoke_navigation.py
+python3 scripts/verify_navigation_evidence.py
 ```
 
 The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt).

@@ -1,0 +1,11 @@
+{
+  "name": "sensors",
+  "command": "S",
+  "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+  "after_sha256": "8be0741e262f24925f3bef81735521d896f76949cbf05c35b37a31d81525622a",
+  "turns_before": 500.0,
+  "turns_after": 500.0,
+  "sector_before": 100.0,
+  "sector_after": 100.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sensors-zero",
+  "command": "S",
+  "before_sha256": "d7cdc6332a29be53171e13b1c9759c777fb6faa685293840819290ef44e9fdee",
+  "after_sha256": "9930cc50d7b9b25fd345679ff5c53f486af4e1d478eab6a2104c727ddda876be",
+  "turns_before": 0.0,
+  "turns_after": 0.0,
+  "sector_before": 100.0,
+  "sector_after": 100.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

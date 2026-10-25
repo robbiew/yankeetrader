@@ -1,0 +1,11 @@
+{
+  "name": "autopilot",
+  "command": "C;3;110;Y",
+  "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+  "after_sha256": "f2f70426de579791379c9ea0d9873f54b4165b80fb188f8df08798e128377d8b",
+  "turns_before": 500.0,
+  "turns_after": 496.0,
+  "sector_before": 100.0,
+  "sector_after": 110.0,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}
