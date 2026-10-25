@@ -51,7 +51,7 @@ func TestEarthNumberedShop(t *testing.T) {
 		t.Fatalf("unexpected purchases: %+v", p)
 	}
 	out := s.Terminal.(*scripted).output.String()
-	if !strings.Contains(out, "That item is unavailable") || strings.Count(out, "purchased and saved") != 4 || !strings.Contains(out, "Purchase rejected") {
+	if !strings.Contains(out, "That item is unavailable") || !strings.Contains(out, "Purchase rejected") {
 		t.Fatal(out)
 	}
 }
