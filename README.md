@@ -1,6 +1,6 @@
 # Yankee Trader — Go door
 
-A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
 
 ## Play now on this Mac
 
@@ -27,11 +27,22 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `I` | Ship information |
 | `L` | Current sector, warps, and port |
 | `M <sector>` | Move through a listed adjacent warp; one turn |
+| `S` / `SCAN` | Scan adjacent sectors: ports, planets, ships and outgoing warps; free |
+| `PATH <from> <to>` | Display a shortest directed warp route and turn cost; free |
+| `AUTO <sector>` | Plot from your current sector, confirm with Y/N, then move one turn per hop |
+| `AVOID` | Show your saved routing preferences; free |
+| `AVOID <slot> <sector>` | Set slot 1–30; sector 0 clears that slot; free |
 | `P` | Dock and display current prices; one turn |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
 | `LEAVE` | Leave port |
 | `Q` or Escape | Exit |
+
+Sensors work even when no turns remain. `AUTO` asks before moving; an empty answer cancels. You can stack the response, for example `PATH 1 3; AUTO 3; Y; I`. Ctrl-X stops autopilot between hops. Every completed hop saves immediately and remains spent after interruption or disconnect. Courses stop if another session changes your position or leaves too few turns. See [navigation recovery and DOS comparisons](research/yt-navigation/RECOVERY.md).
+
+`PATH` and `AUTO` honor your 30 private avoid slots, including the start and destination. For example, `AVOID 1 2` routes around sector 2; `AVOID 1 0` clears that preference. Manual `M` movement and sensors still work normally. Avoid edits cost no turns and persist across logins—an intentional improvement over the DOS session-only list. If a list edit makes a plotted course unsafe, autopilot stops before the next hop and keeps completed moves saved. Existing saves begin with an empty list.
+
+Sensors show actual public sector/ship data. Mines, deployed sector defenses, cloak detection, danger scanners and emergency warps remain outside this slice. The current Go world has no combat hazards.
 
 Other cargo names are `organics` and `equipment`. Earth sells `holds` (500 credits), `fighters` (100), `shields` (50), and `forces` (750). Quantities must be whole, positive numbers. Cargo capacity is shared across all three cargo types. Earth equipment costs remain an economic sink.
 
@@ -87,6 +98,8 @@ Team management, port acquisition/treasury collection, combat, NPCs, full univer
 
 ## Storage and recovery
 
+**Save rollback compatibility:** Existing version-2 saves load in this build. After the first successful `AVOID` edit, saving adds `AvoidSectors` while the world version remains 2. Previous binaries reject that unknown field and cannot load the updated save. Clearing all avoid slots still retains the field. Back up the data directory before using the new commands; restoring that backup is the supported way to return to a previous binary, and discards later progress.
+
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
 Updates serialize through the lock, validate the complete world, write and sync a temporary file, then replace the save atomically on macOS/Linux. The containing directory is also synced there. Windows uses its file lock and replacement APIs but has not received native crash/durability acceptance. Orphan `.world-*` files are never treated as committed saves. Existing/corrupt saves are never silently reinitialized. Back up the data directory while the door is stopped, or take a filesystem snapshot.
@@ -95,13 +108,16 @@ If a save error occurs, stop and inspect the filesystem before retrying a purcha
 
 ## Build and validate
 
-Requires Go 1.23+ and the existing local GoDoors checkout. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
+Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
 
 ```sh
 go build -o bin/yt ./cmd/yt
 go test -race ./...
 go vet ./...
 python3 scripts/smoke.py
+python3 scripts/smoke_navigation.py
+python3 scripts/verify_navigation_evidence.py
+python3 scripts/verify_avoid_evidence.py
 ```
 
 The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt).

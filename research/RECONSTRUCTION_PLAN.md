@@ -23,12 +23,17 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 
 ## Next implementation stages
 
-1. Recover remaining navigation/scanning, NPC encounters, and utility commands, with exploit reproduction included. Planet management, trading, major combat modes, maintenance, and Genesis now have evidence-backed first-pass specifications.
-2. Build the independent rules engine, transactional storage, godoors session interface, and sysop tools.
-3. Deliver a playable join/move/scan/trade/equipment/save loop, followed by ports, planets, and coordinated maintenance.
-4. Add combat, death/respawn, teams, computer functions, communications, and NPC behavior.
-5. Compare intended mechanics against DOS fixtures and test deliberate exploit fixes, concurrency, interrupted maintenance, disconnects, and restoration.
-6. Playtest balance changes and document all intentional departures from original 3.6 behavior before release.
+1. Complete the remaining navigation/encounter research: danger scanners, cloak visibility, emergency warps and NPC/utility commands. The first sensor/path/autopilot slice is now implemented; see [navigation recovery](yt-navigation/RECOVERY.md).
+2. Add port acquisition, buyouts and treasury collection with targeted DOS validation of the untested buyout branch.
+3. Add teams and shared assets, preserving transactional role/membership checks.
+4. Add combat and death/respawn with active-session invalidation before enabling dangerous sectors, then NPC behavior, computer functions, communications and Genesis.
+5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
+6. Playtest balance and document intentional departures before release.
+
+The independent rules engine, transactional storage, GoDoors session interface,
+join/move/trade/equipment/save loop, planets and coordinated daily economic
+maintenance are implemented. Full maintenance, combat and release acceptance
+remain separate work.
 
 ## Playable Go milestone — 2026-10-24
 
@@ -37,3 +42,27 @@ The standalone [modern Go door](../README.md) now implements persistent join/rec
 Money is integer-based; Earth equipment cannot recycle owner revenue; maintenance is idempotent and rollback does not grant production; every mutation reloads state under an OS process lock and docking tokens invalidate stale quotes. Five recorded DOS ore-trading examples are executable Go fixtures. This first universe generator and fixed reference prices are provisional; planets, teams, combat, NPCs, acquisition, Genesis and complete maintenance parity are not yet ported.
 
 Validation covers race-enabled unit/session/storage tests, concurrent processes, killed lock-holder recovery, real PTY/GoDoors operation, Door32 local transport, reconnect and stable identity across alias changes. Windows/Linux cross-builds are distinct from native BBS/socket acceptance. See [validation evidence](../evidence/VALIDATION.md).
+
+## Navigation/scanning milestone — 2026-10-25
+
+`S`, free directed `PATH`, and confirmed per-hop `AUTO` are implemented. Thirteen
+original DOS sessions establish sensor contents, zero-turn scanning, directed
+shortest paths/tie order, cancellation, insufficient turns and per-hop costs.
+Compressed saves and transcripts have a provenance verifier and Go fixtures.
+REA's first integrated investigation verified YT.EXE's loaded image and checked
+sensor dispatch bytes against the runtime-aware listings.
+
+Autopilot saves each hop, stops on Ctrl-X/disconnect/time expiration, and
+revalidates authoritative position/turns between hops. The terminal commands keep
+the existing `L` look binding. See [the bounded recovery report](yt-navigation/RECOVERY.md)
+for evidence and unimplemented hazard/avoid-list boundaries.
+
+The older playable-milestone section above is a historical snapshot: planet
+management has since shipped, and the working game now lives at the repository
+root, not under `modern/`.
+
+The navigation follow-up adds the 30-slot `AVOID` editor, applies player preferences
+to both `PATH` and `AUTO`, and revalidates the remaining course between hops.
+Ten more DOS sessions establish editor/routing rules and show DOS resetting the
+list on reconnect. Go deliberately persists it. Total navigation evidence is now
+23 DOS sessions and 46 compressed save snapshots.

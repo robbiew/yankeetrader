@@ -1,0 +1,44 @@
+
+YANKEE TRADER - Go reconstruction
+Welcome, Navigator. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > s;avoid 1 2;avoid;path 1 4;auto 4;n;auto 4;y;i;q
+[ Sensors Activated ]
+Sector: 2 | Warps: [3]
+Port: Port 2 | Selling: ore
+Sector: 5 | Warps: [6]
+Port: Port 5 | Selling: ore
+[ End Sensor Scan ]
+Avoid slot 1 saved: 2. Routing preferences persist across logins.
+Sectors to avoid (30 slots; 0 clears a slot):
+Slot 1: sector 2
+Shortest path: [1 5 6 4] | 3 turns.
+Course: [1 5 6 4] | 3 turns (Ctrl-X stops between hops). Engage autopilot? [y/N] Autopilot cancelled.
+Course: [1 5 6 4] | 3 turns (Ctrl-X stops between hops). Engage autopilot? [y/N] Moved to sector 5.
+Moved to sector 6.
+Moved to sector 4.
+Navigator: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Saved. Safe travels, Navigator.
+
+YANKEE TRADER - Go reconstruction
+Welcome, Navigator. Actions save automatically. Type ? for help.
+
+Sector 4 | 1005 credits | 497 turns > avoid;avoid 1 0;avoid;q
+Sectors to avoid (30 slots; 0 clears a slot):
+Slot 1: sector 2
+Avoid slot 1 saved: 0. Routing preferences persist across logins.
+Sectors to avoid (30 slots; 0 clears a slot):
+None. Use AVOID <slot> <sector>, or AVOID <slot> 0 to clear.
+Saved. Safe travels, Navigator.
+
+YANKEE TRADER - Go reconstruction
+Welcome, Navigator. Actions save automatically. Type ? for help.
+
+Sector 4 | 1005 credits | 497 turns > auto 3
+Course: [4 1 2 3] | 3 turns (Ctrl-X stops between hops). Engage autopilot? [y/N] y
+Autopilot stopped. Completed moves remain saved.
+
+Sector 4 | 1005 credits | 497 turns > q
+Saved. Safe travels, Navigator.

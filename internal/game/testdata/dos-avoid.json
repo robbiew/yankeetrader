@@ -1,0 +1,256 @@
+{
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "avoid-reroute",
+      "command": "C;7;1;101;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          101
+        ]
+      ],
+      "route": [
+        100,
+        102,
+        108,
+        109,
+        110
+      ]
+    },
+    {
+      "name": "avoid-block",
+      "command": "C;7;1;101;7;2;102;10;100;110\r~~\r~1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          101
+        ],
+        [
+          2,
+          102
+        ]
+      ]
+    },
+    {
+      "name": "avoid-destination",
+      "command": "C;7;1;110;10;100;110\r~~\r~1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          110
+        ]
+      ]
+    },
+    {
+      "name": "avoid-start",
+      "command": "C;7;1;100;10;100;110\r~~\r~1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          100
+        ]
+      ]
+    },
+    {
+      "name": "avoid-manual",
+      "command": "C;7;1;101;1;M;101",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "c08051ccbdd526ca5fab23f9b4e48ec4ab67f251ea22ab4dce99c89777fe8bb1",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          101
+        ]
+      ]
+    },
+    {
+      "name": "avoid-clear",
+      "command": "C;7;1;101;7;1;0;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          101
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ]
+    },
+    {
+      "name": "avoid-slot30",
+      "command": "C;7;30;101;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          30,
+          101
+        ]
+      ],
+      "route": [
+        100,
+        102,
+        108,
+        109,
+        110
+      ]
+    },
+    {
+      "name": "avoid-slot31",
+      "command": "C;7;31;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [],
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ],
+      "attempted_slot": 31
+    },
+    {
+      "name": "avoid-invalid-sector",
+      "command": "C;7;1;3001;10;100;110;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [
+        [
+          1,
+          3001
+        ]
+      ],
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ]
+    },
+    {
+      "name": "avoid-reconnect",
+      "command": "C;7;0;10;100;110;1",
+      "before_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "edits": [],
+      "source_session": "avoid-reroute",
+      "route": [
+        100,
+        101,
+        107,
+        109,
+        110
+      ]
+    }
+  ]
+}
