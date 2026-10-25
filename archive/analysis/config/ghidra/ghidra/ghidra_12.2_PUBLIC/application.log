@@ -1,0 +1,45 @@
+2026-10-24 15:54:56 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-24 15:54:56 INFO  (LoggingInitialization) Using log file: /Users/robbie/Downloads/YT36/analysis/config/ghidra/ghidra/ghidra_12.2_PUBLIC/application.log  
+2026-10-24 15:54:56 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-24 15:54:56 INFO  (Preferences) Loading user preferences: /Users/robbie/Downloads/YT36/analysis/config/ghidra/ghidra/ghidra_12.2_PUBLIC/preferences  
+2026-10-24 15:54:56 INFO  (ClassSearcher) Searching for classes...  
+2026-10-24 15:54:56 INFO  (ClassSearcher) Class search complete (391 ms)  
+2026-10-24 15:54:56 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-24 15:54:56 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-24 15:54:56 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-24 15:54:56 WARN  (DefaultTrustManagerFactory) OS Truststore load failed: X509 trusted CA certificates not found  
+2026-10-24 15:54:56 INFO  (DefaultTrustManagerFactory) Loaded 110 trusted CA certificates from the Java default trust store.  
+2026-10-24 15:54:56 INFO  (AnalyzeHeadless) Headless startup complete (1040 ms)  
+2026-10-24 15:54:56 INFO  (ClassSearcher) Class searcher loaded 60 extension points (19 false positives)  
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /Users/robbie/Downloads/YT36/analysis/ghidra-scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Swift/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts  
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) Opening existing project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader  
+2026-10-24 15:54:57 INFO  (HeadlessProject) Opening project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader  
+2026-10-24 15:54:57 DEBUG (SleighLanguage) Took 126ms (0ms inside lock) to initialize language /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.slaspec -> /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.sla  
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) REPORT: Processing project file: /RMT-INIT.EXE  
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) REPORT: Execute script: DecodeQBBinary.java '/Users/robbie/Downloads/YT36/analysis/yt-genesis' '0x32f0'   
+2026-10-24 15:54:57 INFO  (HeadlessAnalyzer) SCRIPT: /Users/robbie/Downloads/YT36/analysis/ghidra-scripts/DecodeQBBinary.java  
+2026-10-24 15:54:58 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for processed file: /RMT-INIT.EXE  

@@ -1,0 +1,10 @@
+<Transfer items to planet>
+Transfer which item?
+[B] Plasma Bolts
+[C] Cargo
+[F] Fighters
+[S] Missiles
+[M] Mines
+-=>
+CSFMB
+C

@@ -1,0 +1,180 @@
+{
+  "source": "YTCONFIG.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 10010,
+      "text_offset": 10014,
+      "length": 35,
+      "text": "Yankee Trader Configuration Program",
+      "hex": "59616e6b65652054726164657220436f6e66696775726174696f6e2050726f6772616d"
+    },
+    {
+      "descriptor_offset": 10050,
+      "text_offset": 10054,
+      "length": 17,
+      "text": "By Alan Davenport",
+      "hex": "427920416c616e20446176656e706f7274"
+    },
+    {
+      "descriptor_offset": 10072,
+      "text_offset": 10076,
+      "length": 28,
+      "text": "<A> Maximum Number of Holds:",
+      "hex": "3c413e204d6178696d756d204e756d626572206f6620486f6c64733a"
+    },
+    {
+      "descriptor_offset": 10104,
+      "text_offset": 10108,
+      "length": 18,
+      "text": "<B> Turns per day:",
+      "hex": "3c423e205475726e7320706572206461793a"
+    },
+    {
+      "descriptor_offset": 10126,
+      "text_offset": 10130,
+      "length": 21,
+      "text": "<C> Initial fighters:",
+      "hex": "3c433e20496e697469616c2066696768746572733a"
+    },
+    {
+      "descriptor_offset": 10152,
+      "text_offset": 10156,
+      "length": 20,
+      "text": "<D> Initial credits:",
+      "hex": "3c443e20496e697469616c20637265646974733a"
+    },
+    {
+      "descriptor_offset": 10176,
+      "text_offset": 10180,
+      "length": 24,
+      "text": "<E> Initial cargo holds:",
+      "hex": "3c453e20496e697469616c20636172676f20686f6c64733a"
+    },
+    {
+      "descriptor_offset": 10204,
+      "text_offset": 10208,
+      "length": 40,
+      "text": "<F> Days until a dead player is deleted:",
+      "hex": "3c463e204461797320756e74696c2061206465616420706c617965722069732064656c657465643a"
+    },
+    {
+      "descriptor_offset": 10248,
+      "text_offset": 10252,
+      "length": 27,
+      "text": "<G> OK to run Maintenance?:",
+      "hex": "3c473e204f4b20746f2072756e204d61696e74656e616e63653f3a"
+    },
+    {
+      "descriptor_offset": 10280,
+      "text_offset": 10284,
+      "length": 22,
+      "text": " No, Ran Today Already",
+      "hex": "204e6f2c2052616e20546f64617920416c7265616479"
+    },
+    {
+      "descriptor_offset": 10306,
+      "text_offset": 10310,
+      "length": 4,
+      "text": " Yes",
+      "hex": "20596573"
+    },
+    {
+      "descriptor_offset": 10314,
+      "text_offset": 10318,
+      "length": 30,
+      "text": "<H> Xannor Headquarters is in:",
+      "hex": "3c483e2058616e6e6f722048656164717561727465727320697320696e3a"
+    },
+    {
+      "descriptor_offset": 10348,
+      "text_offset": 10352,
+      "length": 31,
+      "text": "<I> Scoreboard File Path\\Name: ",
+      "hex": "3c493e2053636f7265626f6172642046696c6520506174685c4e616d653a20"
+    },
+    {
+      "descriptor_offset": 10384,
+      "text_offset": 10388,
+      "length": 38,
+      "text": "<J> Local Screen With Remote Callers: ",
+      "hex": "3c4a3e204c6f63616c2053637265656e20576974682052656d6f74652043616c6c6572733a20"
+    },
+    {
+      "descriptor_offset": 10426,
+      "text_offset": 10430,
+      "length": 3,
+      "text": "Off",
+      "hex": "4f6666"
+    },
+    {
+      "descriptor_offset": 10434,
+      "text_offset": 10438,
+      "length": 2,
+      "text": "On",
+      "hex": "4f6e"
+    },
+    {
+      "descriptor_offset": 10440,
+      "text_offset": 10444,
+      "length": 35,
+      "text": "<K> Maximum Lottery Plays Per Day :",
+      "hex": "3c4b3e204d6178696d756d204c6f747465727920506c6179732050657220446179203a"
+    },
+    {
+      "descriptor_offset": 10488,
+      "text_offset": 10492,
+      "length": 9,
+      "text": " DISABLED",
+      "hex": "2044495341424c4544"
+    },
+    {
+      "descriptor_offset": 10502,
+      "text_offset": 10506,
+      "length": 37,
+      "text": "<L> Ports needed to initiate Genesis:",
+      "hex": "3c4c3e20506f727473206e656564656420746f20696e6974696174652047656e657369733a"
+    },
+    {
+      "descriptor_offset": 10544,
+      "text_offset": 10548,
+      "length": 29,
+      "text": "<N> Player NAME/ALIAS editor.",
+      "hex": "3c4e3e20506c61796572204e414d452f414c49415320656469746f722e"
+    },
+    {
+      "descriptor_offset": 10578,
+      "text_offset": 10582,
+      "length": 21,
+      "text": "<O> pOrt name editor.",
+      "hex": "3c4f3e20704f7274206e616d6520656469746f722e"
+    },
+    {
+      "descriptor_offset": 10604,
+      "text_offset": 10608,
+      "length": 23,
+      "text": "<P> Planet name editor.",
+      "hex": "3c503e20506c616e6574206e616d6520656469746f722e"
+    },
+    {
+      "descriptor_offset": 10632,
+      "text_offset": 10636,
+      "length": 16,
+      "text": "<X> Exit Program",
+      "hex": "3c583e20457869742050726f6772616d"
+    },
+    {
+      "descriptor_offset": 10652,
+      "text_offset": 10656,
+      "length": 9,
+      "text": "Command: ",
+      "hex": "436f6d6d616e643a20"
+    },
+    {
+      "descriptor_offset": 10666,
+      "text_offset": 10670,
+      "length": 1,
+      "text": "P",
+      "hex": "50"
+    }
+  ]
+}

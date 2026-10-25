@@ -1,0 +1,188 @@
+{
+  "emulator": "DOSBox Staging 0.83.0",
+  "initialization_completed": true,
+  "initial_maintenance_completed": true,
+  "original_distribution_unchanged": true,
+  "data_file_bytes": 568687,
+  "record_bytes": 137,
+  "record_count": 4151,
+  "data_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "genesis": {
+    "initializer_prints": 450,
+    "configuration_displays": 300,
+    "stored_value": 300,
+    "file_offset": 105,
+    "bytes_hex": "00001689",
+    "gameplay_reset_trigger_tested": false
+  },
+  "verified_config_values_by_offset": {
+    "49": 500,
+    "53": 51,
+    "57": 3051,
+    "61": 4051,
+    "65": 25,
+    "69": 1005,
+    "73": 10,
+    "77": 14,
+    "85": -1,
+    "93": 4151,
+    "101": 5,
+    "105": 300,
+    "121": 1000,
+    "125": 6324
+  },
+  "config_record": {
+    "number": 1,
+    "text": "YTSCORE.ASC",
+    "fields": [
+      11.0,
+      26.0,
+      500.0,
+      51.0,
+      3051.0,
+      4051.0,
+      25.0,
+      1005.0,
+      10.0,
+      14.0,
+      297.0,
+      -1.0,
+      0.0,
+      4151.0,
+      0.0,
+      5.0,
+      300.0,
+      0.0,
+      0.0,
+      1114.0,
+      1000.0,
+      6324.0,
+      0.0
+    ],
+    "tail_hex": "00000000"
+  },
+  "all_sector_warp_slots_valid": true,
+  "sectors_reachable_from_earth": 3000,
+  "nonempty_port_names": 1000,
+  "record_tails": {
+    "00000000": 4151
+  },
+  "samples": {
+    "earth_sector": {
+      "number": 52,
+      "text": "",
+      "fields": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1114.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tail_hex": "00000000"
+    },
+    "earth_port": {
+      "number": 3052,
+      "text": "Earth",
+      "fields": [
+        3.0,
+        297.0,
+        258960.0,
+        139960.0,
+        145460.0,
+        25896.0,
+        13996.0,
+        14546.0,
+        64.0,
+        -44.0,
+        -22.0,
+        5.0,
+        0.0,
+        1.0,
+        0.0,
+        819.7725219726562,
+        0.0,
+        0.0,
+        0.0,
+        1114.0,
+        1000.0,
+        6324.0,
+        0.0
+      ],
+      "tail_hex": "00000000"
+    },
+    "xannor_hq_sector": {
+      "number": 1165,
+      "text": "",
+      "fields": [
+        1104.0,
+        1118.0,
+        0.0,
+        1109.0,
+        1119.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3418.0,
+        -1.0,
+        0.0,
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tail_hex": "00000000"
+    }
+  },
+  "generated_files": {
+    "YTDATA.DAT": {
+      "bytes": 568687,
+      "sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59"
+    },
+    "YTNAME.DAT": {
+      "bytes": 26,
+      "sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+    },
+    "YTNEWS.DAT": {
+      "bytes": 434,
+      "sha256": "e3f2e7e4a47f220a2efbe1c5634f2116913efd4b18e17d9e4c8ae7a10750f70a"
+    },
+    "YTYNEWS.DAT": {
+      "bytes": 309,
+      "sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+    },
+    "YTRMSG.DAT": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "YTSCORE.ASC": {
+      "bytes": 603,
+      "sha256": "d3ae7e2a0b75a143bc2a3e1da97f532eaa13546b8a76fc31bd812b570e21b09e"
+    }
+  }
+}

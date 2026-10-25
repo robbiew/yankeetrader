@@ -1,0 +1,16 @@
+1 - Take Ore
+2 - Take Organics
+3 - Take Equipment
+4 - Take Fighters
+5 - Take Missiles
+6 - Take Mines
+9 - Take Plasma Bolts
+A - Take <A>ll (Default)
+B - Planet's <B>ank
+D - <D>isplay Planet
+F - Take/Leave Ground <F>orces
+L - <L>eave Planet
+N - Re-<N>ame Planet
+T - <T>ransfer Cargo to Planet
+! - Use Planet Thrusters
+$ - Raise Productivity

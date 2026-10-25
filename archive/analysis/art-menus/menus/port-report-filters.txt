@@ -1,0 +1,3 @@
+Show buying/selling [1] Equ, [2] Org, [3] Ore,
+[Y] Your Ports, [T] Team's Ports, [E] Enemy Ports
+[U] Un-owned Ports OR [A] All Ports ? -=> [A] 

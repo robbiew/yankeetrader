@@ -1,0 +1,10 @@
+There is a Yankee Trader Echo. Any fidonet sysop may link directly to me for
+the echo if they wish. The only requirements are that they poll at LEAST once
+per week to pick up their mail and that they take steps to prevent problem
+users from ruining the echo. Access to the echo is for BOTH sysops and their
+users that have echomail privileges. The echo tag for the Yankee Trader echo
+is "YTRADER". If you wish to link in, send a netmail message requesting a link
+to "Alan Davenport" at Fidonet address 1:13/75. Any systems getting the echo
+from me MUST have a session password. When requesting a link to the echo,
+please pick a session password and tell me what you wish it to be when you
+request a link.

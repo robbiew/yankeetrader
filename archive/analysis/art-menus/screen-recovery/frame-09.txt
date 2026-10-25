@@ -1,0 +1,25 @@
+Port: Test Port, Selling: Org
+Planet: Test Planet * Forces: 100
+Fighters in sector: 100 (Belong to Enemy  Team [1] [Orion])
+Warps lead to: 101, 99
+
+Time: 179:52  Main Command (?=Help)? C
+
+<Computer activated>
+
+Time: 179:42  Computer command (?=help)? ?
+
+ Computer commands:
+
+ 1) Exit Computer                        2) Port Report
+ 3) Autopilot                            4) Rank Teams & Players
+ 5) Send Radio Message                   6) Radio Message Log
+ 7) Set autopilot Sectors to Avoid       8) Galactic Newspaper
+ 9) Planet Report                       10) Path Finder
+11) Fighter Finder (Yours)              12) Port(s) Treasury Report
+13) Planet Finder (Yours)               14) Find Nearest Ports
+15) Show Active Spies                   16) Find Port Pairs
+17) Check Profits of Adjacent Ports
+
+Time: 179:41  Computer command (?=help)?
+ Yankee Trader   | Tester | Q                                          179:37

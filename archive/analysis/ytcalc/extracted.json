@@ -1,0 +1,418 @@
+{
+  "source": "/Users/robbie/Downloads/ytcalc.xls",
+  "sha256": "f548b8f47268d9ad9276b58849bf81240fc75bbd89ca414d0d822195a16dae7c",
+  "sheets": [
+    {
+      "name": "Data",
+      "rows": 44,
+      "columns": 13,
+      "cells": [
+        {
+          "cell": "B2",
+          "value": "Money Needed to Increase Productivity to 1 Plasma Bolt/Day"
+        },
+        {
+          "cell": "B3",
+          "value": "Fighters produced per day:*"
+        },
+        {
+          "cell": "E3",
+          "value": 27910.0
+        },
+        {
+          "cell": "G3",
+          "value": "Credits Needed:"
+        },
+        {
+          "cell": "I3",
+          "value": 6007500.0,
+          "formula": "CEILING((100000.0-E3)*250.0/3.0,250.0)"
+        },
+        {
+          "cell": "B4",
+          "value": "* calculation valid only with no credits stored on the planet, range must be between 0-99999"
+        },
+        {
+          "cell": "E6",
+          "value": "Bolts / Missiles"
+        },
+        {
+          "cell": "F6",
+          "value": "Fighters.min"
+        },
+        {
+          "cell": "G6",
+          "value": "Fighters.max"
+        },
+        {
+          "cell": "H6",
+          "value": "Shields"
+        },
+        {
+          "cell": "I6",
+          "value": "Mines"
+        },
+        {
+          "cell": "J6",
+          "value": "Gforces"
+        },
+        {
+          "cell": "K6",
+          "value": "Prod.min"
+        },
+        {
+          "cell": "L6",
+          "value": "Prod.max"
+        },
+        {
+          "cell": "B7",
+          "value": "Plasma Bolt Damage:"
+        },
+        {
+          "cell": "E7",
+          "value": 2.0
+        },
+        {
+          "cell": "F7",
+          "value": 200000.0,
+          "formula": "$E$7^2.0*50000.0"
+        },
+        {
+          "cell": "H7",
+          "value": 100000.0,
+          "formula": "$E$7^2.0*25000.0"
+        },
+        {
+          "cell": "I7",
+          "value": 1000.0,
+          "formula": "$E$7^2.0*250.0"
+        },
+        {
+          "cell": "J7",
+          "value": 4000.0,
+          "formula": "$E$7^2.0*1000.0"
+        },
+        {
+          "cell": "K7",
+          "value": 4000.0,
+          "formula": "$E$7^2.0*1000.0"
+        },
+        {
+          "cell": "L7",
+          "value": 12000.0,
+          "formula": "$E$7^2.0*3000.0"
+        },
+        {
+          "cell": "B8",
+          "value": "Plasma Bolts Needed:"
+        },
+        {
+          "cell": "E8",
+          "value": 30.0,
+          "formula": "IF(ISBLANK(L8),ROUNDUP(SQRT(F8/50000.0)+SQRT(H8/25000.0)+SQRT(I8/300.0)+SQRT(J8/1000.0),0.0),IF(ISBLANK(J8),ROUNDUP(SQRT(F8/50000.0)+SQRT(H8/25000.0)+SQRT(I8/250.0)+SQRT(L8/3000.0),0.0),ROUNDUP(SQRT(F8/50000.0)+SQRT(H8/25000.0)+SQRT(I8/300.0)+MIN(SQRT(J8/1000.0),SQRT(L8/3000.0)),0.0)))"
+        },
+        {
+          "cell": "F8",
+          "value": 42401296.0
+        },
+        {
+          "cell": "B9",
+          "value": "Missile Damage:"
+        },
+        {
+          "cell": "E9",
+          "value": 1634.0
+        },
+        {
+          "cell": "F9",
+          "value": 4003300.0,
+          "formula": "$E$9*2450.0"
+        },
+        {
+          "cell": "G9",
+          "value": 4166700.0,
+          "formula": "$E$9*2550.0"
+        },
+        {
+          "cell": "H9",
+          "value": 1879100.0,
+          "formula": "$E$9*1150.0"
+        },
+        {
+          "cell": "I9",
+          "value": 1634.0,
+          "formula": "$E$9"
+        },
+        {
+          "cell": "J9",
+          "value": 20425.0,
+          "formula": "$E$9*12.5"
+        },
+        {
+          "cell": "K9",
+          "value": 1634000.0,
+          "formula": "$E$9*1000.0"
+        },
+        {
+          "cell": "L9",
+          "value": 4902000.0,
+          "formula": "$E$9*3000.0"
+        },
+        {
+          "cell": "B10",
+          "value": "Missiles Needed:"
+        },
+        {
+          "cell": "E10",
+          "value": 26159.0,
+          "formula": "ROUNDUP(F10/2450.0+F11/2550.0+H10/1150.0+I10+J10/12.5+L10/3000.0,0.0)"
+        },
+        {
+          "cell": "J10",
+          "value": 326976.0
+        },
+        {
+          "cell": "E12",
+          "value": "Xannor Score"
+        },
+        {
+          "cell": "F12",
+          "value": "Ground Forces"
+        },
+        {
+          "cell": "I12",
+          "value": "Fighters"
+        },
+        {
+          "cell": "J12",
+          "value": "Credits needed"
+        },
+        {
+          "cell": "B13",
+          "value": "Xannor Max Planet Attack"
+        },
+        {
+          "cell": "E13",
+          "value": 3000000000.0
+        },
+        {
+          "cell": "F13",
+          "value": 60000.0,
+          "formula": "ROUNDUP(E13/50000.0,0.0)"
+        },
+        {
+          "cell": "H13",
+          "value": "Mercenary Bribe:"
+        },
+        {
+          "cell": "J13",
+          "value": 0.0,
+          "formula": "ROUNDUP(I13*2.5,0.0)"
+        },
+        {
+          "cell": "E15",
+          "value": "Attacking Ftrs"
+        },
+        {
+          "cell": "F15",
+          "value": "Defending Ftrs"
+        },
+        {
+          "cell": "G15",
+          "value": "Ratio Att/Def"
+        },
+        {
+          "cell": "H15",
+          "value": "Surrendering"
+        },
+        {
+          "cell": "I15",
+          "value": "Not Surrendering"
+        },
+        {
+          "cell": "B16",
+          "value": "Number of Fighters"
+        },
+        {
+          "cell": "E16",
+          "value": 656000.0
+        },
+        {
+          "cell": "F16",
+          "value": 500000.0
+        },
+        {
+          "cell": "G16",
+          "value": 1.312,
+          "formula": "E16/F16"
+        },
+        {
+          "cell": "H16",
+          "value": 84040.0,
+          "formula": "IF(G16<1.0,0.0,IF(G16>10.0,F16,F16*(0.05+0.09*G16)))"
+        },
+        {
+          "cell": "I16",
+          "value": 415960.0,
+          "formula": "F16-H16"
+        },
+        {
+          "cell": "K17",
+          "value": "Planet credit storage estimation calculator"
+        },
+        {
+          "cell": "E18",
+          "value": "Item"
+        },
+        {
+          "cell": "F18",
+          "value": "Production"
+        },
+        {
+          "cell": "G18",
+          "value": "Amount"
+        },
+        {
+          "cell": "J18",
+          "value": "Credits/min"
+        },
+        {
+          "cell": "K18",
+          "value": "Gforces"
+        },
+        {
+          "cell": "L18",
+          "value": "GF/day"
+        },
+        {
+          "cell": "M18",
+          "value": "Mil Credits"
+        },
+        {
+          "cell": "E19",
+          "value": "Ore"
+        },
+        {
+          "cell": "F19",
+          "value": 33334.0,
+          "formula": "1.0+G19/10.0+$G$25/10000.0+$G$29/250.0"
+        },
+        {
+          "cell": "I19",
+          "value": "GF/sec"
+        },
+        {
+          "cell": "J19",
+          "value": 10.0
+        },
+        {
+          "cell": "K19",
+          "value": 55000.0
+        },
+        {
+          "cell": "L19",
+          "value": 13850.0,
+          "formula": "ROUNDUP(J19*60.0*60.0*24.0/60.0,0.0)-K19/100.0"
+        },
+        {
+          "cell": "M19",
+          "value": 138.5,
+          "formula": "L19/100.0"
+        },
+        {
+          "cell": "E20",
+          "value": "Organics"
+        },
+        {
+          "cell": "F20",
+          "value": 33334.0,
+          "formula": "1.0+G20/10.0+$G$25/10000.0/2.0+$G$29/250.0"
+        },
+        {
+          "cell": "E21",
+          "value": "Equipment"
+        },
+        {
+          "cell": "F21",
+          "value": 33334.0,
+          "formula": "1.0+G21/10.0+$G$25/10000.0/3.0+$G$29/250.0"
+        },
+        {
+          "cell": "E22",
+          "value": "Fighters"
+        },
+        {
+          "cell": "F22",
+          "value": 100002.0,
+          "formula": "3.0+G25/500.0+(G19+G20+G21)/10.0+G29/250.0*3.0"
+        },
+        {
+          "cell": "E23",
+          "value": "Missiles"
+        },
+        {
+          "cell": "F23",
+          "value": 39.0,
+          "formula": "G25/25000.0/4.0+ROUNDDOWN((G19+G20+G21)/25000.0+G29/250.0*3.0/2500.0,0.0)"
+        },
+        {
+          "cell": "E24",
+          "value": "Mines"
+        },
+        {
+          "cell": "F24",
+          "value": 3.0,
+          "formula": "G25/250000.0+ROUNDDOWN((G19+G20+G21)/250000.0+G29/250.0*3.0/25000.0,0.0)"
+        },
+        {
+          "cell": "E25",
+          "value": " Credits"
+        },
+        {
+          "cell": "F25",
+          "value": 0.0,
+          "formula": "G25/100.0"
+        },
+        {
+          "cell": "E26",
+          "value": "Forces"
+        },
+        {
+          "cell": "F26",
+          "value": 0.0,
+          "formula": "G25/10000.0+ROUNDDOWN((G26-1.0)/100.0,0.0)"
+        },
+        {
+          "cell": "E27",
+          "value": "Plasma Bolts"
+        },
+        {
+          "cell": "F27",
+          "value": 0.0,
+          "formula": "ROUNDDOWN(G25/25000000.0,0.0)+ROUNDDOWN((G19+G20+G21)/1000000.0+G29/25000000.0*3.0,0.0)"
+        },
+        {
+          "cell": "D29",
+          "value": "Spent ($) Credits: **"
+        },
+        {
+          "cell": "G29",
+          "value": 8333250.0
+        },
+        {
+          "cell": "D30",
+          "value": "** Spent credits must be spent AFTER transfering cargo or effects are not cumulative"
+        },
+        {
+          "cell": "E32",
+          "value": "Total Credits Used on Planet:"
+        },
+        {
+          "cell": "G32",
+          "value": 8333250.0,
+          "formula": "G25+G29"
+        }
+      ]
+    }
+  ]
+}

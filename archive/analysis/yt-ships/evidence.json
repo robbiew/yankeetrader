@@ -1,0 +1,160 @@
+{
+  "checks": 141,
+  "standalone_sessions": 17,
+  "paired_scenarios": 2,
+  "total_dos_processes": 21,
+  "model_checks": 6,
+  "results": [
+    {
+      "scenario": "ship-kill",
+      "normal_return": true,
+      "log_sha256": "1c6c2969691b282276bf3c73415ca63b7f338a6f946aab0c4ecf8c543760391a",
+      "before_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "after_sha256": "1afce99e114b69b3e07a3ae208772cba7d788b0765f2940d39e0e906c19bbc0c",
+      "shield_stage_survivors": 987,
+      "target_shields": 0,
+      "attacker_fighter_losses": 4,
+      "defender_fighter_losses": 10
+    },
+    {
+      "scenario": "ship-hidden",
+      "normal_return": true,
+      "log_sha256": "94398e800d687092e02ca5e45a2f37cc5d044b57eec2abf45f906f8121f7c7c3",
+      "before_sha256": "ca622bda81c5678706938f1593c2834f6941000c28d7e28c546153e3b95f03f3",
+      "after_sha256": "fd2c3b5fca138efdbe0b29c53bb5a489eb063371ad03f636a15d12454a30d69b"
+    },
+    {
+      "scenario": "ship-team",
+      "normal_return": true,
+      "log_sha256": "750da8ffaca6a523b4d0bbbd625b48ead0f800064865b0a4c99d304f60ce5fb7",
+      "before_sha256": "a1b0444892dd42a723c68b7258c8f14a8858a5bf8f9ae3e4c8f38e73f52118f8",
+      "after_sha256": "d5273cf5037c4fd1e85d578a2c255e1929f22c341cb81d8a9b63dc737734296e"
+    },
+    {
+      "scenario": "ship-fight",
+      "normal_return": true,
+      "log_sha256": "ca3ea33c050c3e14e61ae9876a9a66918796adce9a87ae97efbf56cd26b93772",
+      "before_sha256": "30e8de3fcfd1d5e53d0523f6eeb5113ac8f656540fb1a0eb16f6eaf7258bdbeb",
+      "after_sha256": "8cabf2cb7cce05837f0f97eff3a2e872791727489470748f6b2efa6ea84c6018",
+      "shield_stage_survivors": 0,
+      "target_shields": 9550,
+      "attacker_fighter_losses": 451,
+      "defender_fighter_losses": 1000
+    },
+    {
+      "scenario": "ship-retaliation",
+      "normal_return": true,
+      "log_sha256": "68a3e6c7615cc02cafe4b6e227abefe298cd419ef2a2424a4050afe92a2ce08c",
+      "before_sha256": "2d6d95e7e8d6611f1ad1c38b6e9ee11144176115d2d3b729b9bd060536af0302",
+      "after_sha256": "e22ef135ebf7bac51532b4aa5d2b29d40f338c2b42fbbf1f78dd1c4ee7266a99",
+      "attacker_fighter_losses": 10,
+      "defender_fighter_losses": 21
+    },
+    {
+      "scenario": "ship-earthdeath",
+      "normal_return": true,
+      "log_sha256": "e6f6d4f419f1f983f4769fea87a9ad3c2160a293e8e22c7c058bce5231b20425",
+      "before_sha256": "f87e59b7f13509913c39ccb4f58769893fedf76201013d2ff27347050f4d3f3d",
+      "after_sha256": "0030b7fd70bda7e38d3b660dba16f12de3a3c58a3ceb92d24f8df2afb23c9e2c"
+    },
+    {
+      "scenario": "ship-counterdeath-adj",
+      "normal_return": true,
+      "log_sha256": "9d08f966be5e3c0d2cd39a7a6734cbc3c8f31d5d64df3d9aefa26f0af0105c88",
+      "before_sha256": "c93602147bcdadd57b6d9d6d2deaa7c7d25ba0cfb5aec0aa6e0a06673475a4e3",
+      "after_sha256": "713b4d66ea3ecf25390bfb61cc0482254bcda583298b2d7c12c0382376b9cc40",
+      "retaliation_missiles": 731
+    },
+    {
+      "scenario": "ship-counter-six-adj",
+      "normal_return": true,
+      "log_sha256": "6c8eec451a1e66e3b7eabea5631977f3940b1b5171064167be184cfc3ffc8a39",
+      "before_sha256": "dc5a91b4d151eac590b34621e497af185e432b2ae8b208c9016d1bb5e21574eb",
+      "after_sha256": "2f092ac5b276e8fd472492addce089b83eefd64b27f5eeca6180085925a5b581",
+      "retaliation_missiles": 6
+    },
+    {
+      "scenario": "ship-cloakdecay",
+      "normal_return": true,
+      "log_sha256": "36d04a820c2dce5df07b92cdafb28ff28d71cf9873e1bea6b501c68acc9f717e",
+      "before_sha256": "66e443fd8e0ba9369ddaaa2c8028f327084ee2c6092862ca627a83f9e1db06d4",
+      "after_sha256": "bfa732aeec0f9b42476c3ef6f0f9f06c70c108798e191a9eebe3416739985f5d"
+    },
+    {
+      "scenario": "ship-relogin-same",
+      "normal_return": true,
+      "log_sha256": "528a182cb7f10b86c4b3acdf6a25bb5ce7c758cf767b4838aa164ecdd96bd080",
+      "before_sha256": "1afce99e114b69b3e07a3ae208772cba7d788b0765f2940d39e0e906c19bbc0c",
+      "after_sha256": "85986035cb6ea8ee110ec45bb4278929e87224eec87bbfdb6a92ed165c64e5d1"
+    },
+    {
+      "scenario": "ship-relogin-next",
+      "normal_return": true,
+      "log_sha256": "a8201a950753f899122d6e9ba07ea133e7c6809f0b810a6dadee7133ed2d2290",
+      "before_sha256": "1afce99e114b69b3e07a3ae208772cba7d788b0765f2940d39e0e906c19bbc0c",
+      "after_sha256": "e4c2a28936f8ce3f5c4bbed5f497c9aa5d94b7e842148bbf747b3405148bc630"
+    },
+    {
+      "scenario": "ship-self-same",
+      "normal_return": false,
+      "log_sha256": "10578870daa9cb84e3d79f801bc03acd7955ebe9b15cc3fa7b16afcda8655f81",
+      "before_sha256": "841114175df025a9127f7c0c13f6feb303916a943c7f870e94cb68e0652fa706",
+      "after_sha256": "841114175df025a9127f7c0c13f6feb303916a943c7f870e94cb68e0652fa706"
+    },
+    {
+      "scenario": "ship-self-next",
+      "normal_return": true,
+      "log_sha256": "84299bb6443b17f0e98dfddd3442682f793c36612ec0a16e9b7ff5f187f774ff",
+      "before_sha256": "841114175df025a9127f7c0c13f6feb303916a943c7f870e94cb68e0652fa706",
+      "after_sha256": "e4c2a28936f8ce3f5c4bbed5f497c9aa5d94b7e842148bbf747b3405148bc630"
+    },
+    {
+      "scenario": "ship-refresh-turns",
+      "normal_return": true,
+      "log_sha256": "528a182cb7f10b86c4b3acdf6a25bb5ce7c758cf767b4838aa164ecdd96bd080",
+      "before_sha256": "ff9565e473ad5271732a5a5bb9e4284e181e47ce63fea81dbb88fa0620e91405",
+      "after_sha256": "85986035cb6ea8ee110ec45bb4278929e87224eec87bbfdb6a92ed165c64e5d1"
+    },
+    {
+      "scenario": "ship-earth-respawn",
+      "normal_return": false,
+      "log_sha256": "d0f06768be7fefc2208206d75b8c8cc99236a317b3d28e9960dc0a9158a95dfc",
+      "before_sha256": "0030b7fd70bda7e38d3b660dba16f12de3a3c58a3ceb92d24f8df2afb23c9e2c",
+      "after_sha256": "10a1862306abb7b2e626b9b5c863f8459b22f879f7d8b281ea0d7791806ad8b5"
+    },
+    {
+      "scenario": "ship-anticloak",
+      "normal_return": true,
+      "log_sha256": "9ccc18f833b1cf36316f317b9be534e0ba9f93254c80ff8ec5e4e033dde2456e",
+      "before_sha256": "02fce11fee15a45acd2b55bd0ce304d54775f025c8657175a9b3ae6489eec5fd",
+      "after_sha256": "bb8acf5d7d9366c238d7bf5c877aa8034082f8058c7aeef3c98ed78ac1424598"
+    },
+    {
+      "scenario": "ship-counter-relogin",
+      "normal_return": false,
+      "log_sha256": "95584d222fe131412c05dac623f5db246e01e4595bd5bdf127868249e818a19d",
+      "before_sha256": "713b4d66ea3ecf25390bfb61cc0482254bcda583298b2d7c12c0382376b9cc40",
+      "after_sha256": "713b4d66ea3ecf25390bfb61cc0482254bcda583298b2d7c12c0382376b9cc40"
+    },
+    {
+      "scenario": "ship-online",
+      "processes": 2,
+      "attacker_log_sha256": "e59ee8766d1def01dddf70c9a156e4c8c6a86501621be40ff8defcf6b4c9789f",
+      "victim_log_sha256": "36d07c90b01bce69355baee174ae8950198d7942b066af07d3a7ae9e68a37d74",
+      "after_sha256": "9f129baa9338c086a655272b099fe7083164dd02e61a69bd14ede2c814d9bc4f"
+    },
+    {
+      "scenario": "ship-stale-position",
+      "processes": 2,
+      "attacker_log_sha256": "54cac8975ad79128696239ea78ab5f8cc07385fc6c17646be2c6e9797e5558c1",
+      "victim_log_sha256": "9cc6275e10bc6330a5009ed4c34ca97447bd73880ba0cc4b6d4c434dfd09483f",
+      "after_sha256": "157053ca4a1d846dadbdd000156af0104389759e5325efbb2c13b63502191060"
+    }
+  ],
+  "limits": [
+    "No bit-exact original RNG capture or MBF arithmetic.",
+    "Concurrent findings reproduced in two DOSBox processes sharing one isolated directory.",
+    "Replacement ship Earth-mine probe stopped at a command prompt after forced emergency escape.",
+    "Same-sector missile self-destruct probes are excluded from retaliation conclusions."
+  ]
+}

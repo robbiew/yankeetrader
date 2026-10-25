@@ -1,0 +1,126 @@
+00002684  Version 1.8 -=- 03/13/94
+000026a0  R
+000026a6  YTDATA.DAT
+000026b4  MAIN DATA FILE NOT FOUND. PLEASE RUN YT-INIT FIRST!
+000026ec  ytdata.dat
+00002706  NUL
+0000271e  Yankee Trader Configuration Program
+00002746  By Alan Davenport
+0000275c  <A> Maximum Number of Holds:
+0000277c  <B> Turns per day:
+00002792  <C> Initial fighters:
+000027ac  <D> Initial credits:
+000027c4  <E> Initial cargo holds:
+000027e0  <F> Days until a dead player is deleted:
+0000280c  <G> OK to run Maintenance?:
+0000282c   No, Ran Today Already
+00002846   Yes
+0000284e  <H> Xannor Headquarters is in:
+00002870  <I> Scoreboard File Path\Name: 
+00002894  <J> Local Screen With Remote Callers: 
+000028be  Off
+000028c6  On
+000028cc  <K> Maximum Lottery Plays Per Day :
+000028fc   DISABLED
+0000290a  <L> Ports needed to initiate Genesis:
+00002934  <N> Player NAME/ALIAS editor.
+00002956  <O> pOrt name editor.
+00002970  <P> Planet name editor.
+0000298c  <X> Exit Program
+000029a0  Command: 
+000029ae  P
+000029b8  Loading planet names...
+000029d8  There are
+000029e6   planets in your game.
+00002a00  YOUR GAME HAS NO PLANETS!
+00002a1e  Press enter to quit. Please Select:
+00002a46  [L] List planets
+00002a5a  [C] Choose a planet to edit
+00002a7a  -+> 
+00002a82  C
+00002a88  L
+00002a8e    #   Name
+00002a9c  =
+00002aa6   
+00002aac  : 
+00002ab2  [ Pause ]
+00002ac0  Edit which planet number
+00002adc  INVALID PLANET NUMBER!!
+00002af8  The planets 
+00002b08  The Wanderer
+00002b18   and 
+00002b22  Xannoron
+00002b2e   cannot be re-named!
+00002b46  Editing: 
+00002b54  Press enter to quit.
+00002b6c  Please enter new name. -=> 
+00002b8c  Change name to 
+00002ba0  ? [Y/N] -=> 
+00002bb0  Y
+00002bb6  N
+00002bbc  Canceled!
+00002bca  New name saved! Press any key.
+00002bec  O
+00002bf6  Enter port name to change (Search String) -+> 
+00002c2c  Change 
+00002c38   [Y/N]? 
+00002c44  Not Found
+00002c52  -= End of List =-
+00002c68  Press Enter
+00002c78  Please enter a new name for this port.
+00002ca2  -=> 
+00002caa   Is this OK? [Y/N]? 
+00002cc2  CANCELED!
+00002cd0  Name change successful!!!
+00002cee  Loading names...
+00002d02  ytname.dat
+00002d10   players in your game.
+00002d2a  YOUR GAME HAS NO PLAYERS!
+00002d48  [L] List players/alias's
+00002d64  [C] Choose player to edit
+00002d82    #   Real Name
+00002d96  Alias
+00002da0  Edit which player number
+00002dbc  INVALID PLAYER NUMBER!!
+00002dd8   a.k.a. 
+00002de4  Please enter new Alias. -=> 
+00002e04  ,
+00002e0a  Change player Alias to 
+00002e2a  New alias saved! Press any key.
+00002e4e  There are 1000 ports in the game, enter a number
+00002e82  greater than 1000 to TURN OFF the Genesis Function.
+00002eba  How many ports will a player need to initiate Genesis? [50 - 1000] 
+00002f06  H
+00002f0c  The Xannor Headquarters is currently in sector:
+00002f40  Location? [ 8 to 
+00002f56  ] -=> 
+00002f64  Invalid Range!
+00002f76  That sector is already occupied!
+00002f9e  I
+00002fa4  Enter new scoreboard and path or hit ENTER for 'YTSCORE.ASC'.
+00002fe6  Too long! 41 chars max!!
+00003002  YTSCORE.ASC
+00003012  J
+00003018  K
+0000301e  How many times per day may a user play the lottery? (0 - 9) -=> 
+00003066  Range is 1 to 10!
+0000307c  A
+00003082  What is the Maximum amount of Cargo Holds allowed? (5 - 1000) -=> 
+000030c8  X
+000030ce  -=* End of Run *=-
+000030e4  B
+000030ea  Turns allowed per day? (100 - 1000) 
+00003116   Invalid Range!
+0000312a  Starting Number of Fighters? (1 to 10,000) -=> 
+00003162  D
+00003168  Starting credits? (25 to 10,000) -=> 
+00003196  E
+0000319c  Starting Amount of Holds? (1 to 
+000031c0  ) -=> 
+000031ca  F
+000031d0  Days until deleted? 
+000031e8  G
+000031ee  OK to Run Maintenence [Y/N] -=> 
+00003262    
+0000328c  a
+00003292  z

@@ -1,0 +1,75 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 152976,
+      "text_offset": 152980,
+      "length": 17,
+      "text": "1) Exit Team menu",
+      "hex": "31292045786974205465616d206d656e75"
+    },
+    {
+      "descriptor_offset": 152998,
+      "text_offset": 153002,
+      "length": 16,
+      "text": "2) Create a Team",
+      "hex": "3229204372656174652061205465616d"
+    },
+    {
+      "descriptor_offset": 153018,
+      "text_offset": 153022,
+      "length": 14,
+      "text": "3) Join a Team",
+      "hex": "3329204a6f696e2061205465616d"
+    },
+    {
+      "descriptor_offset": 153036,
+      "text_offset": 153040,
+      "length": 14,
+      "text": "4) Quit a Team",
+      "hex": "342920517569742061205465616d"
+    },
+    {
+      "descriptor_offset": 153054,
+      "text_offset": 153058,
+      "length": 38,
+      "text": "5) Search for Team Members & Resources",
+      "hex": "35292053656172636820666f72205465616d204d656d626572732026205265736f7572636573"
+    },
+    {
+      "descriptor_offset": 153096,
+      "text_offset": 153100,
+      "length": 37,
+      "text": "6) Transfer Fighters to Defense Force",
+      "hex": "3629205472616e7366657220466967687465727320746f20446566656e736520466f726365"
+    },
+    {
+      "descriptor_offset": 153138,
+      "text_offset": 153142,
+      "length": 23,
+      "text": "7) Banish a Team Member",
+      "hex": "37292042616e6973682061205465616d204d656d626572"
+    },
+    {
+      "descriptor_offset": 153166,
+      "text_offset": 153170,
+      "length": 23,
+      "text": "8) Change Team Password",
+      "hex": "3829204368616e6765205465616d2050617373776f7264"
+    },
+    {
+      "descriptor_offset": 153194,
+      "text_offset": 153198,
+      "length": 19,
+      "text": "9) Change Team Name",
+      "hex": "3929204368616e6765205465616d204e616d65"
+    },
+    {
+      "descriptor_offset": 153218,
+      "text_offset": 153222,
+      "length": 14,
+      "text": "Team Command? ",
+      "hex": "5465616d20436f6d6d616e643f20"
+    }
+  ]
+}

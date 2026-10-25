@@ -1,0 +1,165 @@
+[
+  {
+    "frame": "frame-01",
+    "title": "Startup",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 0,
+    "cursor_row": 17,
+    "attributes": [
+      3,
+      7
+    ],
+    "sha256": "a830b2472089c8940d18f68141437fbfa8e28b2daae03805ea062db4373b72ba"
+  },
+  {
+    "frame": "frame-02",
+    "title": "Ship information",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 17,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      5,
+      7,
+      27,
+      31,
+      62
+    ],
+    "sha256": "72855f12daa291b45d969269a879741d85a4c8e5788ee015df23045866d1fdb2"
+  },
+  {
+    "frame": "frame-03",
+    "title": "Sector display",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 37,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      4,
+      7,
+      12,
+      14,
+      27,
+      31,
+      62
+    ],
+    "sha256": "550623e84b4e93c48ddf4bc22952843547cb0469a5fa75fbbfd1a8088de22560"
+  },
+  {
+    "frame": "frame-04",
+    "title": "Main command help",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 37,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      3,
+      7,
+      27,
+      62
+    ],
+    "sha256": "f37693a11279bbc8791cee43146c67605fe721270bf05885a5568ad0f71ed62e"
+  },
+  {
+    "frame": "frame-05",
+    "title": "Computer prompt",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 41,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      3,
+      4,
+      7,
+      27,
+      62
+    ],
+    "sha256": "99a187f158eaa56ecb81ded50a55a372337c9a8ae22595dab602c727f1b1b34c"
+  },
+  {
+    "frame": "frame-06",
+    "title": "Team menu",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 28,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      3,
+      4,
+      7,
+      12,
+      14,
+      27,
+      62
+    ],
+    "sha256": "7846cdaabdd6045a0513c5f29257b68913bd6001c7991b3947785f14e4677578"
+  },
+  {
+    "frame": "frame-07",
+    "title": "Planet display",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 43,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      3,
+      4,
+      7,
+      27,
+      62
+    ],
+    "sha256": "21d2d411d9d9a08cd6b7b22acd6e4f4d67909cb9734dd0d762d67c101fdc27a0"
+  },
+  {
+    "frame": "frame-08",
+    "title": "Planet help",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 43,
+    "cursor_row": 23,
+    "attributes": [
+      3,
+      7,
+      27,
+      62
+    ],
+    "sha256": "5ded04a730a43cbe442d70b72d0d43d13942120fa3e4a42bfb24b72b915fdd9e"
+  },
+  {
+    "frame": "frame-09",
+    "title": "Computer help",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 41,
+    "cursor_row": 23,
+    "attributes": [
+      2,
+      4,
+      7,
+      12,
+      14,
+      27,
+      62
+    ],
+    "sha256": "6f279dd59db03e688802b8b798c786a1cc5f9b0b126fb5d1f787bfb7243a9c73"
+  },
+  {
+    "frame": "frame-10",
+    "title": "Sysop configuration",
+    "mode": 3,
+    "columns": 80,
+    "cursor_column": 9,
+    "cursor_row": 23,
+    "attributes": [
+      14
+    ],
+    "sha256": "3caa71e942ff583b1ecc5d59504f1c136baeba292d0e724c45ac7c5ba5c62c14"
+  }
+]

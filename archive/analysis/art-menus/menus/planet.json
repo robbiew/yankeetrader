@@ -1,0 +1,117 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 151264,
+      "text_offset": 151268,
+      "length": 12,
+      "text": "1 - Take Ore",
+      "hex": "31202d2054616b65204f7265"
+    },
+    {
+      "descriptor_offset": 151280,
+      "text_offset": 151284,
+      "length": 17,
+      "text": "2 - Take Organics",
+      "hex": "32202d2054616b65204f7267616e696373"
+    },
+    {
+      "descriptor_offset": 151302,
+      "text_offset": 151306,
+      "length": 18,
+      "text": "3 - Take Equipment",
+      "hex": "33202d2054616b652045717569706d656e74"
+    },
+    {
+      "descriptor_offset": 151324,
+      "text_offset": 151328,
+      "length": 17,
+      "text": "4 - Take Fighters",
+      "hex": "34202d2054616b65204669676874657273"
+    },
+    {
+      "descriptor_offset": 151346,
+      "text_offset": 151350,
+      "length": 17,
+      "text": "5 - Take Missiles",
+      "hex": "35202d2054616b65204d697373696c6573"
+    },
+    {
+      "descriptor_offset": 151368,
+      "text_offset": 151372,
+      "length": 14,
+      "text": "6 - Take Mines",
+      "hex": "36202d2054616b65204d696e6573"
+    },
+    {
+      "descriptor_offset": 151386,
+      "text_offset": 151390,
+      "length": 21,
+      "text": "9 - Take Plasma Bolts",
+      "hex": "39202d2054616b6520506c61736d6120426f6c7473"
+    },
+    {
+      "descriptor_offset": 151412,
+      "text_offset": 151416,
+      "length": 24,
+      "text": "A - Take <A>ll (Default)",
+      "hex": "41202d2054616b65203c413e6c6c202844656661756c7429"
+    },
+    {
+      "descriptor_offset": 151440,
+      "text_offset": 151444,
+      "length": 19,
+      "text": "B - Planet's <B>ank",
+      "hex": "42202d20506c616e65742773203c423e616e6b"
+    },
+    {
+      "descriptor_offset": 151464,
+      "text_offset": 151468,
+      "length": 20,
+      "text": "D - <D>isplay Planet",
+      "hex": "44202d203c443e6973706c617920506c616e6574"
+    },
+    {
+      "descriptor_offset": 151488,
+      "text_offset": 151492,
+      "length": 30,
+      "text": "F - Take/Leave Ground <F>orces",
+      "hex": "46202d2054616b652f4c656176652047726f756e64203c463e6f72636573"
+    },
+    {
+      "descriptor_offset": 151522,
+      "text_offset": 151526,
+      "length": 18,
+      "text": "L - <L>eave Planet",
+      "hex": "4c202d203c4c3e6561766520506c616e6574"
+    },
+    {
+      "descriptor_offset": 151544,
+      "text_offset": 151548,
+      "length": 20,
+      "text": "N - Re-<N>ame Planet",
+      "hex": "4e202d2052652d3c4e3e616d6520506c616e6574"
+    },
+    {
+      "descriptor_offset": 151568,
+      "text_offset": 151572,
+      "length": 30,
+      "text": "T - <T>ransfer Cargo to Planet",
+      "hex": "54202d203c543e72616e7366657220436172676f20746f20506c616e6574"
+    },
+    {
+      "descriptor_offset": 151602,
+      "text_offset": 151606,
+      "length": 24,
+      "text": "! - Use Planet Thrusters",
+      "hex": "21202d2055736520506c616e657420546872757374657273"
+    },
+    {
+      "descriptor_offset": 151630,
+      "text_offset": 151634,
+      "length": 22,
+      "text": "$ - Raise Productivity",
+      "hex": "24202d2052616973652050726f647563746976697479"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+000004c8  C-C3CF
+0000083a  Program too large
+0000098b  POY[Z[
+000009ab  cOY[Z[
+00000cd8  String Space Corrupt
+00000cf3   during G.C.
+00000d6a  module 
+00000d86   at address 
+00000dff  No Line Number in 
+00000ec5  PSQRVW
+00000f8d  _^ZY[X
+00000fdf  < tP<=tL
+000014a0  xKu7VW3
+00001973  h?Y[[Z
+00001987  ?Y[[ZX
+0000199a  WDY[[ZX
+00001b1d  Microsoft BASIC Compiler Runtime
+00001b3f  Version 5.60 
+00001b4e  (C) Copyright Microsoft Corp. 1982 - 1987           
+00001c3f  *Break*
+00001e58  Hit any key to return to system
+00001f64  =bz^Xt
+000020d9  =bz^Xt
+00002173  UVWPQRS
+0000217e  [ZYX_^]
+0000228b  JKt-Ct Ct
+00002541  $0<0uO
+000027ea  PSQRVW
+00002857  _^ZY[X
+00002c61  89:;<=>?
+00002d18  _^]t_UVW
+00003496  *Break*
+0000376b  Syntax error
+00003779  RETURN without GOSUB
+0000378f  Out of data
+0000379c  Illegal function call
+000037b3  Overflow
+000037bd  Out of memory
+000037cc  Subscript out of range
+000037e4  Redimensioned array
+000037f9  Division by zero
+0000380b  Type mismatch
+0000381a  Out of string space
+0000382f  String formula too complex
+0000384b  RESUME without error
+00003861  Device timeout
+00003871  Device fault
+0000387f  Out of paper
+0000388c  'CASE ELSE expected
+000038a0  2FIELD overflow
+000038b0  3Internal error
+000038c0  4Bad file number
+000038d1  5File not found
+000038e1  6Bad file mode
+000038f0  7File already open
+00003903  9Device I/O error
+00003915  :File already exists
+0000392a  =Disk full
+00003935  >Input past end
+00003945  ?Bad record number
+00003958  @Bad file name
+00003967  CToo many files
+00003977  DDevice unavailable
+0000398b  ECommunication buffer overflow
+000039aa  FPermission denied
+000039bd  GDisk not ready
+000039cd  HDisk media error
+000039df  IAdvanced feature error
+000039f7  JRename across disks
+00003a0c  KPath/file access error
+00003a24  LPath not found
+00003a35  Unprintable error
+00003ccf  [<[<[<x
+00003cd9  9<N<N<[<[<[<
+00003ce9  N<N<N<S
+0000421e  SPQRVW
+00004265  _^ZYX[
+000049a7  <%t,<#t(<!t$<Dt
+00005f9d  %kr"< t
+0000621e  a.a<aga%a
+000063af  PSQRVW
+000063c7  _^ZY[X
+0000650b  ZY[X^_
+000067a8  WVRQSP
+00006a19  1h<hAhGhbhghmhuh{h
+00006db5  glnlul
+000070de  nToToSoUoUoUoUoUo2
+00007922  [^_ZYX
+000079c7  t`WRwI
+000080c2  VEt%MR
+000083b3  Microsoft QuickBASIC Compiler
+000083d2  Version 3.00
+00008b1a  PSQRVP
+00008c88  X^ZY[X
+00008da0  _^][YFF
+00009042  \0\0f0p0p0p0p0z0
+000095cb  !5PQVW
+00009900  <#t@<&t
+00009914  <.tE<_t
+00009e66  mPQRVW
+0000a0d7  j_ZY^X
+0000a329  PQRVWQS
+0000a3d4  hPSQRW
+0000b3f5  PQRVWU
+0000b404  ]_^ZYX
+0000c262  S[^ZYX
+0000c3ba  </t,<-t(
+0000c7af  ?Redo from start
+0000c7ed  Overflow
+0000ca96  _ZY[Ct
+0000cc94  :?KZYX
+0000ce08  \)*\*:\)u"
+0000ceaf  D*CZY[X
+0000d16b  u:SQR3
+0000d5a1  Bytes free
+0000d641  ^YSRV3
+0000d66b  ]XZRPU
+0000ebac  Xt;PSQR3
+0000ed43  u<UWPQRV
+0000ed79  [^ZYX_]
+0000ee35  ^ZYX_]
+0000f2f5  <=tD<+t
+0000ff7b  Program too big for memory.
+000100fc             
+0001010c             
+0001011d  COMSPEC=\COMMAND.COM
+0001018d  command
+00010238  Random Number Seed (-32768 to 32767)$
+000102bb    ((PP((P
+0001034a          ;<=>?@ABCDHKMPR:EF8
+00010543      !!!"""####$$$%%%&&&&'''((())))***+++,,,,---...////0001112222333444555566677788
+000105a3  ~P$L~y
+000109cc        <DIR> LPT1LPT2LPT3LPT4

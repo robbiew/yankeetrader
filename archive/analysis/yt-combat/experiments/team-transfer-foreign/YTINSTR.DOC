@@ -1,0 +1,542 @@
+
+
+
+
+
+                  Y     Y AAAAA   N    N K  K EEEEE EEEEE
+                   Y   Y  A   A   NN   N K K  E     E
+                    Y Y   AAAAA   N N  N KK   EEE   EEE
+                     Y    A   A   N  N N KK   E     E
+                     Y    A   A   N   NN K K  E     E
+                     Y    A   A   N    N K  K EEEEE EEEEE
+
+                    TTTTTTT RRRR AAAAA DDDD  EEEEE RRRR !!
+                       T    R  R A   A D   D E     R  R !!
+                       T    RRRR AAAAA D   D EEE   RRRR !!
+                       T    RR   A   A D   D E     RR   !!
+                       T    R R  A   A D   D E     R R
+                       T    R  R A   A DDDD  EEEEE R  R !!
+
+
+                              by Alan Davenport
+
+
+
+
+        It is a period of great instability. Mankind has broken the time and
+distance barrier to the stars with inexpensive warp driven space ships. Anyone
+with enough credits can buy a ship and head out into the void. Chaos rules.
+The central Earth government found that it is impossible to maintain law and
+order throughout the vastness of space and on the countless outposts that have
+appeared almost overnight. The only law is of survival. The only hope for
+survival is in strength. The only way to strength is through ruthless trading
+of basic goods. It seems that all ports always have too much or too little of
+one thing or another. You've purchased your ship, barely able to afford the
+minimum of holds, defensive fighters, some shield energy, and a few days
+cloaking charge. An ant to be squashed by the more powerful trader barons.
+However, you are smart. You are confident that you can hide out long enough to
+equip your ship with more powerful arms and holds and that you will one day be
+a trader baron to be feared!
+
+
+        As you sit down on the bridge of your new ship, you admire its compact
+and efficient design. Since you spent your every last credit on this beauty,
+and on equipping her, you live on the bridge. Your first move is to power up
+the ship's computer and start browsing its operations manual....
+
+
+M - Move
+
+        Each location in the galaxy is called a sector. Each sector can have
+from 1 to 6 flux paths called "warps" which appear on the sector display.
+Warps lead to other sectors, usually close by, but occasionally reach long
+distances. To move, select a sector NUMBER to move to and enter the number
+after pressing "M".
+
+
+S - Sensors
+
+        Just moving around blindly will get you killed real fast. It's best to
+use your sensors. They will show you what is in the adjacent sectors. Whether
+they have a port, a planet, are mined, has other players or have a defense
+force in them.
+
+
+P - Port
+
+        To earn credits, you must transport goods from port to port. Some
+ports sell raw materials (Ore), Some sell food (Organics) and others sell end
+products (Equipment). It is more than just buying from one port and selling
+that product to another. Some ports are rather inflexible in their prices.
+Other port's prices vary greatly. All vary to some extent with supply and
+demand. You must use common sense in trading. If you suck a port dry (buy all
+there is to sell) or saturate a port (sell them so much that they don't want
+any more) you are going to be getting prices a lot less than if you spread
+your trading out.
+
+
+B - Buy a Port
+
+        You can purchase the deed to any port except Earth. Ports are rather
+expensive but once you own one, the money it makes becomes yours less 10%
+taxes taken out by the Government PER DAY for defenses. The port will remain
+in your name until your death or someone "buys you out". It is best to buy
+ports on well traveled routes or nearby the home system (Earth) since they are
+more heavily traded. 1% of the credits you spend at your OWN ports is returned
+to you in taxes.
+
+
+$ - Take Credits from your Ports
+
+        Use this command to electronically transfer the credits earned by your
+ports to your ship.
+
+
+A - Attack Another Player
+
+        It's a rough universe. You may be harassed, attacked, or even KILLED
+by other players. You may attack other ships in self defense or maybe you got
+up on the wrong side of your cabin today and just feel mean. You attack with
+your "defensive" fighters. You may pick how many you wish to attack with and
+that group will fight until they kill off the attacked ship or are themselves
+killed completely off.
+
+        If you manage to kill off the ship you are attacking, you will be able
+to recover whatever portion of the ship that wasn't destroyed and that you
+have room to carry.
+
+        While moving around you may run into defensive forces. These forces
+will try to prevent you from entering their sector (unless they were dropped
+by a team member.) If you run into one, you may either try to fight them off
+or run away using emergency warp. If you attack, your force will either fight
+until it is killed off or wins the battle. If you attack with a large enough
+force, the defending fighters may decide that it is futile to resist and will
+offer to surrender. If you accept their surrender, they join YOUR forces. If
+however you reject their surrender, they will fight to the death (for what
+other choice have they?)
+
+        Being cloaked improves your chances in battle.
+
+        Your ship is equipped with a cloaking device. This device will make
+your ship invisible to other ships and improve your chances in battle. It is
+NOT foolproof however but being cloaked greatly protects you from most
+hazards. Unfortunately, the cloaking device requires a great deal of energy.
+This energy is not in the same form as produced by your ships engines and is
+quite expensive. It may only be bought at EARTH (Sector 1 port). Cloaking
+energy cannot be stored for any length of time. Once you buy cloaking energy,
+you immediately become cloaked and your cloaking device will continue to
+function until it exhausts all the available cloaking energy.
+
+        Having a lot of shield energy will help you survive attacks.
+
+        Your ship is equiped with shields. These shields will protect your
+ship when it is attacked by either other ships or missiles and if you hit
+sector mines. Shield power may be purchased at Earth.
+
+
+I - Info on Your Ship
+
+        This command tells you the current status of your mother ship. It will
+tell you much good information that you require to survive and is available at
+most menus, even if it is not displayed.
+
+
+D - Drop a Sector Mine
+
+        Sector mines are produced by the larger planets. They may be dropped
+off in a sector and will seek out and explode on ANYONE who enters the sector
+after it is armed, (including YOU!) doing great damage. They are dangerous but
+are useful for laying traps for your enemies.
+
+
+Q - Quit Back to the BBS.
+
+        You should be able to figure this one out.
+
+
+Z - Instructions
+
+        You should be able to figure this one out too!
+
+
+T - Team Menu
+
+        There is safety in numbers. You may team up with up to 3 others. The
+resources of Team Members are shared. Defense forces will allow passage of
+other team members. Planets with ground defenses will allow team members to
+land, etc. Items appearing on the team menu will vary. Only what is actually
+available for use will show up. When you create a NEW team, you will become
+the Team Captain. The team captain has extra functions and can banish team
+members, change the team password, etc. (You pick the team password when you
+create a new team. Other players will use this password to join your team.)
+You will remain the team captain until you die or quit the team. If this
+happens, the next team member who logs onto the game will be promoted to
+captain.
+
+
+F - Drop Defensive Fighters in a Sector
+
+        If you wish to keep others out of a sector you may leave a portion of
+your ships defensive fighters there. They will try to prevent anyone who is
+not a team member from entering the sector. If someone runs into them who is
+not a team member, they will either have to use emergency warp or try to fight
+their way into the sector. If they choose to fight they will use their
+fighters against your defensive fighters.
+
+        If they attack with overwhelming odds your defense force may decide it
+is hopeless and surrender! Don't leave too small defense forces unless you
+like wasting fighters.
+
+
+L - Land on or Create a Planet
+
+        Something that you might want to drop fighters to defend is a Planet.
+Planets are much more efficient at producing items than ports. Any excess
+goods produced by planets are stored in warehouses and you can take this
+excess for FREE. Planets produce Ore, Organics, Equipment, Fighters, Mines
+Missiles nad Plasma Bolts. They also have a bank where you can deposit excess
+credits at 1% interest per day compounded by the minute!
+
+        If you try to [L]and in a sector where there is no planet, the planet
+builders "Genesis, Incorporated" will ask you if you wish them to build you a
+planet here. When you buy a planet, it will have a defense level of 1 and will
+produce 1 unit of each item per day (Except mines,missiles anb plasma bolts.)
+Not very impressive. HOWEVER you can quickly build up a planet by spending
+money to increase productivity.
+
+        Productivity is increased by one unit of ore, org, and equ. for each
+250 credtis you spend. You can also increase a planet's productivity by
+transferring cargo to it until there is a 10 times surplus of the basic three
+items. If there is 10 times the daily production of ore, organincs or
+equipment in storage in the warehouses, production for that item will slowly
+increase. The bigger the planet, the faster the increase. Planets will also
+increase production by 1% a day no matter what.
+
+        Production of fighters is the total of the daily production of ore,
+organics, and equipment. Missile production per day is total production of
+ore, organics and equipment / 2500. Mine production per day is total
+production of ore, orgranincs and equipment / 25000. Plasma bolt production is
+total production / 100,000. There is no upper limit on how big a planet can
+grow however over populated planets stand the chance of being hit by a plague.
+
+        Obviously, you don't want just anyone in the universe to come along be
+able to plunder your planets! Especially when they reach a decent level of
+productivity. To defend your planets you can either drop defensive fighters in
+the same sector and/or build up ground defenses. Ground defenses will keep
+anyone who is not on your team from landing on your planets. Ground defenses
+are quite expensive but anyone attacking them will spend much more on their
+attack then you had to spend to build the defenses! Any ground forces on a
+planet grow at a rate of 1% per day.
+
+        When you land at a planet, you will have the option of taking [1]Ore,
+[2]Organics, [3]Equipment, [4]Fighters, [5]Missiles, [6]Mines, [9]Plasma Bolts
+or [A]ll (Take as much as you can carry taking the most valuable items first.)
+You may also [T]ransfer any ore, organics, equipment you are carrying to the
+planet. You may also transfer excessive mines, missiles, plasma bolts and
+fighters to the planet. This is a good way to share resources with team
+members.
+
+        Every Planet has a bank. You may deposit credits there which will earn
+interest at the rate of 1% daily. At the bank, you specify how much you want
+in the account. ANYONE who is allowed to land at the planet can withdraw the
+credits. This is a good way for team members to share resources. Depositing
+credits on an undefended planet is foolish.
+
+        If too many people know where your planet is, you may hire Xannoron
+Movers to move your planet to a new location. This takes a good deal of time
+(10 turns per sector) but is a fairly safe procedure. There IS a very small
+chance of the planet blowing up due to excessive stress, but that is "Bad
+Business" and Xannoron Movers is usually quite careful. Moving two planets
+into one another can have disastrous results.
+
+
++ - Launch a Plasma Bolt
+
+        Plasma bolts are expensive but catastrophically destructive devices
+that your larger planets will produce for you. You cannot buy them at Earth.
+Plasma bolts will hit (and potentially destroy) ANYTHING that is in their
+path! They have many uses. When you launch one, you will be asked which sector
+you wish to send it to. Plasma bolts are extremely dangerous and can do great
+damage to an enemy if fired with care. Plasma bolts have limited range and
+weaken with distance.
+
+
+! - Launch a Cruise Missile
+
+        Missiles are destructive weapons that your larger planets will produce
+for you. You cannot buy them at Earth. Missiles will attack (and potentially
+destroy) ANYTHING that does not belong to you or your team members. They have
+many uses. When you launch one, you will be asked which sector you wish to
+send it to. Missiles are single-minded and will attack the FIRST thing they
+find that is on their "hit-list". Be careful you don't hit the wrong target!
+Missiles have no range limitation and do not weaken with distance.
+
+
+C - The Ship's Computer
+
+        The computer is the single most useful item on board your ship. It has
+many useful functions that can be selected by number. Each one is described
+below:
+
+        1 - Exit Computer Control
+
+                Easy, no description needed.
+
+        2 - Port Report
+
+                This will allow you to see the prices and amount of products
+                of any port in a sector that is not defended by an enemy. You
+                enter the sector the port is in and the computer gives you the
+                data.
+
+        3 - Autopilot
+
+                This is the single most useful computer function. You enter
+                the sector you wish to go to and the computer will program the
+                navigation computer with the path data and you will be
+                transported there (one sector at a time) automatically.
+
+        4 - Rank Players
+
+                This function will generate a scoreboard showing the relative
+                power of each player, team, and alien forces in the game.
+
+        5 - Sub-Space Radio
+
+                The computer controlled radio will allow you to send messages
+                to an individual player, your entire team, or ALL players.
+                Using the radio, you can send a short message to anyone.
+
+        6 - Review Radio Messages
+
+                Radio messages are stored for a short time in your computer's
+                memory. You may use this function to reread incoming messages,
+                unexpired broadcast messages to all, or unread messages that
+                you have transmitted to others.
+
+        7 - Set Sectors to Avoid using the Autopilot
+
+                There are times that you will wish to AVOID passing through
+                dangerous sectors. The trouble with this is that the shortest
+                path found using the autopilot may pass THROUGH one of these
+                sectors!  Using this computer option,  you can command the
+                computer to NOT choose paths through certain sectors. Up to
+                thirty sectors may be eliminated.
+
+        8 - Display Galactic Newspaper
+
+                Almost everything that happens in the galaxy is recorded in
+                the electronic newspaper. The list of what is displayed is
+                rather extensive. A serious trader ALWAYS reads the newspaper
+                on a daily basis for important information.
+
+        9 - Planet Report
+
+                Similar to the function #2 port report, this will display the
+                information or the status of any undefended planet.
+ 
+       10 - Path Finder
+    
+                This will allow you to check the path between any two sectors.
+                It is useful for finding safe paths around dangerous areas.
+
+       11 - Display Defense Forces
+
+                This function will display all of your defense forces, their
+                locations and strengths.
+
+       12 - Check Port Profits
+ 
+                This function will display all of your ports that have earned
+                credits from trading. The totals of barren ports, ports with
+                credits, and total credits earned are displayed.
+
+       13 - Find Your Planets
+
+                This function will list the sector numbers of each planet that
+                you have placed ground forces on.
+ 
+       14 - Find Nearest Ports
+
+                This function is extremely useful when trading. It will save
+                you endless wandering looking for a port to trade your goods
+                at. It shows ports nearest your sector first then increasing
+                in distance until you cancel the function.
+
+       15 - Show Active Spies
+
+                This function will show where any spies you have hired are.
+
+       16 - Find Port Pairs
+
+                This function will show where there are ports in adjacent
+                sectors and what the pairs of ports are selling. It also shows
+                which port pairs are the most profitable. This is very useful
+                for finding good places to trade.
+
+       17 - Check Profits of Trading at Ports in Adjacent Sectors
+
+                This function will tell you how much profit there will be if
+                you do a two-way trade with the port(s) in the sector(s) that
+                is/are adjacent to the one you are in.
+
+
+G - Initiate Genesis
+
+        It has been written that one day, a Trader Baron will arise who will
+eliminate all of the evil in the universe. Only one true of heart and of great
+power may do this. Are you the one to fulfill the prophesy?
+
+
+W - Emergency Warps
+
+        If you run into a fighter force too strong for you, or are trapped in
+a sector and wish to escape, you may raise your engine power to emergency warp
+levels. This uses a great deal of turns and you risk engine overload. If your
+engines overload, you will lose all turns for that day. Emergency Warps are
+for just that, EMERGENCIES! You should only use it in the greatest of need!
+
+
+N - Rename Port
+
+        You can rename ports using this command. You must be the owner of the
+port.
+
+
+X - Sound Effects On/Off
+
+        You can use this command to turn on and off the ANSI sound effects.
+
+
+                  *** Miscellaneous Other Information ***
+
+The Xannor
+
+        Man has encountered one, and only ONE other intelligent race in the
+galaxy; The Xannor. Unfortunately, they are completely aggressive and
+(apparently) impossible to eradicate. They wander around and attack anything
+and anyone they can find. They drop mines all over the place, sit in sectors
+and refuse to leave, and fire missiles seemingly at random. In short, they are
+arrogant little ------'s! The only good Xannor is a dead Xannor and the
+government will grant you 1 turn for every 250 Xannor killed. The Government
+will also greatly reward you if you can find their home system and destroy the
+defense forces there. It is rumored that the Xannor home planet is quite a
+prize for the brave and more powerful players to plunder!
+
+
+The Mercenaries
+
+        The government daily collects 10% (!!) taxes from port profits and
+uses this money to hire mercenaries. These mercenaries will fight any Xannor
+they find but also may plunder any planets they find, or join up with defense
+forces of other traders! They are an unpredictable and dangerous but it is
+rumored that they may be bribed to join up with traders. They will join up
+cheaply with you (for life with a powerful trader baron is better than working
+for the government!) but care must be exercised to not insult them or they
+will attack you to the death! If you pay them enough, they will join up with
+you and will remain loyal forever more. Nothing is certain however and care
+should be exercised with them. If you are (heaven forbid!) killed, your old
+defense forces will become mercenaries.
+
+
+Danger Scanner
+
+        The universe is dangerous! While moving, you can run into sector
+mines, black holes or defensive fighters that you will have to fight or use
+your emergency warp to escape from! Your could move cautiously (scanning
+before each move) OR purchase a Danger Scanner at Earth. A danger scanner
+interfaces with your onboard computer and will automatically scan the sector
+you are about to move into for dangerous situations. If danger is detected,
+the scanner will shut down your warp drives before you enter the sector and
+your computer will then ask you if you wish to enter the sector anyhow. A
+danger scanner is a MUST for moving about the universe. Buy one as soon as you
+can afford one. It can save your LIFE! Be warned however, danger scanners are
+fragile. They may be destroyed if your ship takes damage!
+
+
+Spies
+
+        You may hires SPIES at Earth for a price. Spies ask a hefty price for
+searching. They will radio you back when they find anything of interest.
+
+
+Entering Commands
+
+
+        As a beginner, you will likely enter commands one at a time at the
+various prompts however if you continue to do so you will never be more than a
+mediocre player. The key to winning is to gain as much power as fast as
+possible. The key to speed is stacking commands. Commands can be stacked
+separated by semicolons. You may stack as many commands as you wish (within
+reason). An example of how to land at a planet, take all, and leave is below:
+
+L;A;L
+
+        Command strings will cancel if something unusual happens. (i.e. you
+run into a defense force, etc.) You can also cancel execution of a command
+string yourself by hitting CONTROL-X.
+
+Some times you will want to constantly reuse a command string. You can save a
+command for reuse by placing a slash ( / ) at the end of the command string.
+The example for land-all-leave above would then look like this;
+
+L;A;L/
+
+To REPLAY the commands, hit CONTROL-R. Any command recorded is remembered
+until you log out of the game. Any new command recorded erases the previous
+entry.
+
+
+Repeating commands
+
+        You also may repeat a command up to 30 times while only entering it
+ONCE. To do this you enter your command string as usual, but put a "/R#" at
+the end of it where "#" is a number from 2 to 30. Say you were trading between
+two ports in sectors 555 and 666. A command string to do this would look like
+this:
+
+M;555;P;1000;Y;1000;Y;M;666;P;1000;Y;1000;Y
+
+        You COULD put a slash on the end and then hit control-R to replay the
+command but if you want to do a lot of trading, even this can get tedious. A
+better way would be to use the repeat function. Let's say that you wanted to
+trade between the two ports 30 times. To do this you would put "/R30" at the
+end of the command. In this case, the command would look like this:
+
+M;555;P;1000;Y;1000;Y;M;666;P;1000;Y;1000;Y/R30
+                                           ^^^^
+                                           See?
+
+        That would trade between the two ports 30 times. Now let's say you
+want to trade 30 MORE times. In this case, you can just hit control-R to
+replay the above command 30 MORE times!
+
+        If you want to CANCEL the command before it finishes, you can hit
+control-X. This will work for ANY command not just for repeat commands. This
+can be useful if you realize you made a mistake and want to abort! (-:
+
+
+Global Commands
+
+        Many commands of the most commonly used commands in the game are
+global. That is, they are available at almost every menu prompt even if they
+are NOT displayed. The global commands are [I] - Info, [P] - Port, [L] - Land,
+[C] - Computer, and [M] - Move. There are a few others but those five are
+available almost everywhere.
+
+
+The Final Word
+
+        That's it for the instructions. There are lots of not-so-obvious
+features and functions that you will discover as you become more and more
+proficient at the game. Don't be afraid to experiment. A lot of things that
+seem random really aren't and can be used to your playing advantage as you
+learn all the tricks. Remember, others will be learning too and the key to
+winning is by being the most resourceful player!
+
+Alan Davenport
+29 January, 1992
+BBS # 1-717-686-3037
+9600 HST
+Fidonet 1:13/75
+Door Distribution System Headquarters

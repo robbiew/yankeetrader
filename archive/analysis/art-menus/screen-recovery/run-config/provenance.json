@@ -1,0 +1,10 @@
+{
+  "fixture": "analysis/yt-combat/experiments/team-transfer-current",
+  "initial_data_sha256": "1334ffb1197952e55ac3f0431077073b743ee3c5b00ff45b97e250b9895a6d93",
+  "game_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keys": "~~@X\r",
+  "frame_size": 4016,
+  "format": "16-byte BIOS metadata followed by 2000 character/attribute pairs from active B800 text page",
+  "executed_binary": "YTCONFIG.EXE",
+  "executed_binary_sha256": "120da32994a9ae3b8b9276aeabe076a5d1e2aab86c011cf175db7573e59faa03"
+}

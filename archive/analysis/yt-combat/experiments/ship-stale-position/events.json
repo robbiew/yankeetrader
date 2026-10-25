@@ -1,0 +1,42 @@
+[
+  {
+    "seconds_after_attacker_start": 0.0,
+    "death_sector_fighters_shields_credits": [
+      0.0,
+      100.0,
+      10.0,
+      10.0,
+      12345.0
+    ]
+  },
+  {
+    "seconds_after_attacker_start": 19.2,
+    "death_sector_fighters_shields_credits": [
+      0.0,
+      101.0,
+      10.0,
+      10.0,
+      12345.0
+    ]
+  },
+  {
+    "seconds_after_attacker_start": 30.8,
+    "death_sector_fighters_shields_credits": [
+      0.0,
+      101.0,
+      0.0,
+      0.0,
+      12345.0
+    ]
+  },
+  {
+    "seconds_after_attacker_start": 31.1,
+    "death_sector_fighters_shields_credits": [
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      12345.0
+    ]
+  }
+]

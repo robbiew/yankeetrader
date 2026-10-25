@@ -10,3 +10,10 @@ go.work.sum
 *.exe
 *.EXE
 *.COM
+
+# Preserved DOS distribution and experiment executables are research inputs.
+!/archive/**/*.exe
+!/archive/**/*.EXE
+!/archive/**/*.COM
+__pycache__/
+*.pyc

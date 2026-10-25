@@ -1,0 +1,114 @@
+{
+  "checks": 80,
+  "dos_sessions": [
+    {
+      "case": "missile-fighters",
+      "log_sha256": "a330a640d136cc1a9acd0a4f2cddc94a27314b6d9f096f781f0c535b0b777d04",
+      "before_sha256": "6aa2b7cde5d61af0d410f4c50e7cc24725442defcdada352c1e26fce3dc9d8fe",
+      "after_sha256": "e3479b2857281c902cfa218214e4d30cce71ca6c2914d2f0aedff87aeb3ce72c",
+      "hits": 39262,
+      "sheet_range": [
+        49000,
+        51000
+      ]
+    },
+    {
+      "case": "missile-mines",
+      "log_sha256": "9b136f937e9625b21640cc87fc9c645fc702877b9fdf2871a89b7b6d592672d4",
+      "before_sha256": "753044d38ccccd1d2e02ea7e25c94eb77ee9f0c05ec01eb488dca703c8336fa4",
+      "after_sha256": "31d7034720569860f61fed078cacce9aea14978835dea8c5c83db51b0673d100",
+      "hits": 20,
+      "sheet": 20
+    },
+    {
+      "case": "missile-shields",
+      "log_sha256": "86e80a5dbad0602161b86dcd7dfbe87645cfd92fee5666465b87ae9d4ee97176",
+      "before_sha256": "b0e6192794777de7e22926d90e56eacc3c2d0ac232b1f55980924a8a7de744f8",
+      "after_sha256": "e9164d7427ba7850fadf8a3e03391d6ed5c853904dfd87cc801f55a03af85735",
+      "shield_damage": 0
+    },
+    {
+      "case": "missile-planet",
+      "log_sha256": "3dfd1dd6c0e972ae59f51eb2971400add76dab7f0e8e154d6c72f585e64852da",
+      "before_sha256": "088de355685556b87bba069fa03a50d0235aee7d364c479ed899a177e2d8f412",
+      "after_sha256": "4bedc0d9ce9ef49066d094574cd01394ebbaa87baf83fefdf5d04b7dc21d758e",
+      "initial_ground": 5000,
+      "final_ground": 4781,
+      "sheet_loss": 250
+    },
+    {
+      "case": "missile-production",
+      "log_sha256": "88427c33c654f49351369f89271014fcbfa83883c169077e241c09145dbbf018",
+      "before_sha256": "b2db4356c1b1547ff5db21026fe5b1945bc4acf8c4521ebd2371ebf3f177691c",
+      "after_sha256": "91a245f44a73f4c3f104b9c9bb93bd79fdc86b20a3130ee84044b1198d588f6e",
+      "production_damage": 59613.78,
+      "sheet_range": [
+        20000,
+        60000
+      ]
+    },
+    {
+      "case": "missile-uncloaked",
+      "log_sha256": "4d85f70d2c8ca92eca6462b67028dbd995caf9b27c490f5c79f65e2deed7bd01",
+      "before_sha256": "b1e54c407ee75c9aaf3b47ac9f16ba95608e223c9a9b1442010726392dc4a2cb",
+      "after_sha256": "28690f2baa256b6b8942efb724c6c2d5e6d394b8dacf500c5e1ce02f328aefc0",
+      "shield_damage": 9211,
+      "fighter_damage": 0,
+      "sheet_shields": 23000,
+      "sheet_fighters": [
+        49000,
+        51000
+      ]
+    },
+    {
+      "case": "missile-shipfighters",
+      "log_sha256": "8fec23c64d5824624a2a23b10a75b5d133e11a1de91c5f5c5303226ef85cfe53",
+      "before_sha256": "8069881fbbd073ac42a7d1b1525c08d123192982317db4b39e31a3258fcb0c99",
+      "after_sha256": "fd33ab6d6044668f3e8504196abff253e609c17b264946729064732b39a3e8fc",
+      "shield_damage": 228,
+      "fighter_damage": 35579,
+      "sheet_shields": 23000,
+      "sheet_fighters": [
+        49000,
+        51000
+      ]
+    },
+    {
+      "case": "missile-ground-fixed",
+      "log_sha256": "738fc3454f0af68dc73a080c8867c6870edd075ce6216a31243fd124de651b6b",
+      "before_sha256": "088de355685556b87bba069fa03a50d0235aee7d364c479ed899a177e2d8f412",
+      "after_sha256": "a9e638fe084955474176b19b5f91be13fee41dee7f48576a8c8edd6de898e85f",
+      "initial_ground": 5000,
+      "final_ground": 4766,
+      "sheet_loss": 250
+    },
+    {
+      "case": "assault-win",
+      "log_sha256": "5dc2f2aeb6979af78386f18b36c5488eb696c3f8d7f0de056c17faa03cbb0a1f",
+      "before_sha256": "7bdb2d7a69977f26c58adbe2d7f64d93d1301e2f399d7d79ee9f97ee5138c7be",
+      "after_sha256": "b999faa453a1e71ad95a8745ed23f8a2ad42ebf2776f812cf0807d0d545e6732",
+      "committed": 1000,
+      "initial_defenders": 10,
+      "surviving_attackers": 973,
+      "surviving_defenders": 0,
+      "garrison": 973.0
+    },
+    {
+      "case": "assault-loss",
+      "log_sha256": "325d350f4d683cb9f4a954b20c39798d4736257eb30d1272df20aae185ae9d21",
+      "before_sha256": "695f1194776bc92d7e73e6b3c7aa50c8150e4e5b9721c345855c9a746e0f080e",
+      "after_sha256": "a0afef1b1e71b615e65ed10cb21a5f590cd1421e16374809f865b51a4afbf5f0",
+      "committed": 100,
+      "initial_defenders": 100610,
+      "surviving_attackers": 0,
+      "surviving_defenders": 100610,
+      "garrison": 100610.0
+    }
+  ],
+  "model_checks": 4,
+  "limitations": [
+    "No original RNG capture or bit-exact MBF emulation.",
+    "Planet lazy updates precede combat; fixed-clock ground case isolates elapsed growth to seconds.",
+    "No spreadsheet formula models planetary assault."
+  ]
+}

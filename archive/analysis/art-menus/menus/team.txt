@@ -1,0 +1,10 @@
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Transfer Fighters to Defense Force
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? 

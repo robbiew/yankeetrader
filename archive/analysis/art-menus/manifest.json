@@ -1,0 +1,696 @@
+{
+  "sources": [
+    {
+      "source": "YTOPEN.ANS",
+      "sha256": "ba52bc4165d018458c19ace7d7f49f598437bb338d539cd763dd189837997903",
+      "bytes": 2629
+    },
+    {
+      "source": "YTOPEN.ASC",
+      "sha256": "944771174b660037d04bbca2a4186996fbae1e2e14a6baf1fbdd99e07c3b52c2",
+      "bytes": 505
+    },
+    {
+      "source": "YTINSTR.DOC",
+      "sha256": "918f9d746c14cda8025397f47e8616263187f9f810d10b2dae21b190759dae5f",
+      "bytes": 24736
+    },
+    {
+      "source": "YT.EXE",
+      "sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "literal_count": 1107
+    },
+    {
+      "source": "YTCONFIG.EXE",
+      "sha256": "120da32994a9ae3b8b9276aeabe076a5d1e2aab86c011cf175db7573e59faa03",
+      "literal_count": 126
+    },
+    {
+      "source": "YT-INIT.EXE",
+      "sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+      "literal_count": 78
+    },
+    {
+      "source": "YTMAINT.EXE",
+      "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "literal_count": 141
+    },
+    {
+      "source": "RMT-INIT.EXE",
+      "sha256": "05f639fe5249ac6ae8e28d8656f4c5e668e40ff08bf66524b109ad31a2217dac",
+      "literal_count": 86
+    }
+  ],
+  "dos_captures": [
+    {
+      "source": "analysis/yt-combat/experiments/assault-loss/GAME.LOG",
+      "reference": "dos-captures/assault-loss.txt",
+      "sha256": "325d350f4d683cb9f4a954b20c39798d4736257eb30d1272df20aae185ae9d21"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/assault-win/GAME.LOG",
+      "reference": "dos-captures/assault-win.txt",
+      "sha256": "5dc2f2aeb6979af78386f18b36c5488eb696c3f8d7f0de056c17faa03cbb0a1f"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-planet-bank-large-relogin/GAME.LOG",
+      "reference": "dos-captures/fixture-planet-bank-large-relogin.txt",
+      "sha256": "9480af957833c0f3089f08c23b087e5d78ec044aab651cd34a05d2da49557737"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-planet-bank-large-repeat/GAME.LOG",
+      "reference": "dos-captures/fixture-planet-bank-large-repeat.txt",
+      "sha256": "9480af957833c0f3089f08c23b087e5d78ec044aab651cd34a05d2da49557737"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-planet-bank-large2/GAME.LOG",
+      "reference": "dos-captures/fixture-planet-bank-large2.txt",
+      "sha256": "9480af957833c0f3089f08c23b087e5d78ec044aab651cd34a05d2da49557737"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-ship-counter-dead/GAME.LOG",
+      "reference": "dos-captures/fixture-ship-counter-dead.txt",
+      "sha256": "9d08f966be5e3c0d2cd39a7a6734cbc3c8f31d5d64df3d9aefa26f0af0105c88"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-ship-dead/GAME.LOG",
+      "reference": "dos-captures/fixture-ship-dead.txt",
+      "sha256": "1c6c2969691b282276bf3c73415ca63b7f338a6f946aab0c4ecf8c543760391a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-ship-earth-mines/GAME.LOG",
+      "reference": "dos-captures/fixture-ship-earth-mines.txt",
+      "sha256": "e6f6d4f419f1f983f4769fea87a9ad3c2160a293e8e22c7c058bce5231b20425"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-ship-lowturn-dead/GAME.LOG",
+      "reference": "dos-captures/fixture-ship-lowturn-dead.txt",
+      "sha256": "1c6c2969691b282276bf3c73415ca63b7f338a6f946aab0c4ecf8c543760391a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-ship-selfdead/GAME.LOG",
+      "reference": "dos-captures/fixture-ship-selfdead.txt",
+      "sha256": "1c6c2969691b282276bf3c73415ca63b7f338a6f946aab0c4ecf8c543760391a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-team-after-banish/GAME.LOG",
+      "reference": "dos-captures/fixture-team-after-banish.txt",
+      "sha256": "89e1a42ef3b5392c8e9da496d4106a9ffe7e02f0eb6c9477f0dd571da33deafb"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/fixture-team-after-quit/GAME.LOG",
+      "reference": "dos-captures/fixture-team-after-quit.txt",
+      "sha256": "1df2d39bcc697b8cced0175511382230565ecf8a1abb8755f890f07688615e20"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-20/GAME.LOG",
+      "reference": "dos-captures/gen-20.txt",
+      "sha256": "711168569fdc6592de7e4880d3649e4b587d215cb4869457efc3e8eabb705b72"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-299/GAME.LOG",
+      "reference": "dos-captures/gen-299.txt",
+      "sha256": "548271b06656b1cedd0d9aed602949b9a35f9447316092dc5406522c8d4a8337"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-300/GAME.LOG",
+      "reference": "dos-captures/gen-300.txt",
+      "sha256": "5676ebb3661af730304be4a13d79488aacad0d517ffafdcaa3c3b73174de84b8"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-cancel/GAME.LOG",
+      "reference": "dos-captures/gen-cancel.txt",
+      "sha256": "f51518c7d00d3ab4b4b75190f23d0530991e749b30267b87e631e00a7dd890fd"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-counter/GAME.LOG",
+      "reference": "dos-captures/gen-counter.txt",
+      "sha256": "5676ebb3661af730304be4a13d79488aacad0d517ffafdcaa3c3b73174de84b8"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-custom/GAME.LOG",
+      "reference": "dos-captures/gen-custom.txt",
+      "sha256": "8224b836b7aee58bacf0d68815e6ec7c238872944aab3174147b03473067bd32"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-custom200/GAME.LOG",
+      "reference": "dos-captures/gen-custom200.txt",
+      "sha256": "1ff4976aafb23c43879174dd03e3f7b4b12fddc9004f9e9c4ac30e8a4fadbc44"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-disabled/GAME.LOG",
+      "reference": "dos-captures/gen-disabled.txt",
+      "sha256": "e41cc3fc87bd69c5f259335b9ad6086454e0c631824b02a9a3f643d463897630"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/gen-postmaint/GAME.LOG",
+      "reference": "dos-captures/gen-postmaint.txt",
+      "sha256": "5676ebb3661af730304be4a13d79488aacad0d517ffafdcaa3c3b73174de84b8"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/login-existing/GAME.LOG",
+      "reference": "dos-captures/login-existing.txt",
+      "sha256": "6401db72ef9f2d5b3b907a647d2321f5aec9934307eb56b967bd18083fb21454"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/login-keyfeed/GAME.LOG",
+      "reference": "dos-captures/login-keyfeed.txt",
+      "sha256": "58854d3ef366c24dbdbaab7beb694f58fc7fed337916a924d3dd0d746342798b"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/login-probe/GAME.LOG",
+      "reference": "dos-captures/login-probe.txt",
+      "sha256": "b8c26f28bec4f563a2e3d3f2db66fd10bca44e0e3c587a1683c71f0570cfcc9f"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/login-probe2/GAME.LOG",
+      "reference": "dos-captures/login-probe2.txt",
+      "sha256": "35165dbcba8f3bba14489a54153f97dd2c113e0ad914be9430588d1d51d47a32"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-fighters/GAME.LOG",
+      "reference": "dos-captures/missile-fighters.txt",
+      "sha256": "a330a640d136cc1a9acd0a4f2cddc94a27314b6d9f096f781f0c535b0b777d04"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-ground-fixed/GAME.LOG",
+      "reference": "dos-captures/missile-ground-fixed.txt",
+      "sha256": "738fc3454f0af68dc73a080c8867c6870edd075ce6216a31243fd124de651b6b"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-mines/GAME.LOG",
+      "reference": "dos-captures/missile-mines.txt",
+      "sha256": "9b136f937e9625b21640cc87fc9c645fc702877b9fdf2871a89b7b6d592672d4"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-planet/GAME.LOG",
+      "reference": "dos-captures/missile-planet.txt",
+      "sha256": "3dfd1dd6c0e972ae59f51eb2971400add76dab7f0e8e154d6c72f585e64852da"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-production/GAME.LOG",
+      "reference": "dos-captures/missile-production.txt",
+      "sha256": "88427c33c654f49351369f89271014fcbfa83883c169077e241c09145dbbf018"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-shields/GAME.LOG",
+      "reference": "dos-captures/missile-shields.txt",
+      "sha256": "86e80a5dbad0602161b86dcd7dfbe87645cfd92fee5666465b87ae9d4ee97176"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-shipfighters/GAME.LOG",
+      "reference": "dos-captures/missile-shipfighters.txt",
+      "sha256": "8fec23c64d5824624a2a23b10a75b5d133e11a1de91c5f5c5303226ef85cfe53"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/missile-uncloaked/GAME.LOG",
+      "reference": "dos-captures/missile-uncloaked.txt",
+      "sha256": "4d85f70d2c8ca92eca6462b67028dbd995caf9b27c490f5c79f65e2deed7bd01"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-deposit/GAME.LOG",
+      "reference": "dos-captures/planet-bank-deposit.txt",
+      "sha256": "3d8fd0f8e6328701351fdcb99cde8a7048868f277fc502ea545791e4f0d55bea"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-halfday/GAME.LOG",
+      "reference": "dos-captures/planet-bank-halfday.txt",
+      "sha256": "c3d852af1711767c79fc1dc7bacfbbef366c00c70628bddf0d14c1e5e8ed6a84"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-large/GAME.LOG",
+      "reference": "dos-captures/planet-bank-large.txt",
+      "sha256": "9480af957833c0f3089f08c23b087e5d78ec044aab651cd34a05d2da49557737"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-large-relogin/GAME.LOG",
+      "reference": "dos-captures/planet-bank-large-relogin.txt",
+      "sha256": "2b978f8547e62d35e2326154625f718939b3e8703353b9ac735ad321aa0579f7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-large-repeat/GAME.LOG",
+      "reference": "dos-captures/planet-bank-large-repeat.txt",
+      "sha256": "7cf094146b3003e5c9258c03afd0f993b7b3c46a01ae523558a03916441daf24"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-large2/GAME.LOG",
+      "reference": "dos-captures/planet-bank-large2.txt",
+      "sha256": "dc1f35e44b319f69bb00260ae2226ec96edde61c2858c78b7f917199413d05ad"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-negative/GAME.LOG",
+      "reference": "dos-captures/planet-bank-negative.txt",
+      "sha256": "09a226465b9b6d7d039fb5c8cd93ff71e17d3c2251e5bed229c8deaec6891c9a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-over/GAME.LOG",
+      "reference": "dos-captures/planet-bank-over.txt",
+      "sha256": "165ccd58c6f6e1dcb4c4f34083ab49ff00cfc2001148d0fecb6e5715e77e4bdd"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-bank-withdraw/GAME.LOG",
+      "reference": "dos-captures/planet-bank-withdraw.txt",
+      "sha256": "9c2da4046880c0df66e86f01e7521bb0afcbac1b78df8c163842844ac64e69db"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-create/GAME.LOG",
+      "reference": "dos-captures/planet-create.txt",
+      "sha256": "3d4b70ac27608a399b3f2b5137061f40ecf05bd8f9ac1375805f8ddf3edd006c"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-foreign/GAME.LOG",
+      "reference": "dos-captures/planet-foreign.txt",
+      "sha256": "b1a5713964525b21eff24272d09a8fb3352c7b2038b46a9bf3041d3a591f8624"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-full/GAME.LOG",
+      "reference": "dos-captures/planet-full.txt",
+      "sha256": "7a61724997b703e35984b5983a7a700f37818fa06adfd528844bf763f72f3836"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-ground/GAME.LOG",
+      "reference": "dos-captures/planet-ground.txt",
+      "sha256": "062e46437d20a9abbf6126a84047b01163639183449a9fa0fa3c34bb1c388a48"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-ground0/GAME.LOG",
+      "reference": "dos-captures/planet-ground0.txt",
+      "sha256": "cee6cf85efd290a46ec704fb96d5882ef7ee3d678222d8394317c7fcbab2c537"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-ground90/GAME.LOG",
+      "reference": "dos-captures/planet-ground90.txt",
+      "sha256": "090663d085eadb68067801cce1f83c19e28f8675c10b5a73c98dccdc1b3f2420"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-invest1/GAME.LOG",
+      "reference": "dos-captures/planet-invest1.txt",
+      "sha256": "62ad046f392c9c6c829c1642396a6e0904ce7e8e1f22e1c22422b9a9f5127aca"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-invest251/GAME.LOG",
+      "reference": "dos-captures/planet-invest251.txt",
+      "sha256": "a261860b9b0fdc605265c747698e98ab393d7df36bfda29148b2c48497e0196a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-lazy-production/GAME.LOG",
+      "reference": "dos-captures/planet-lazy-production.txt",
+      "sha256": "4be147fa66535d8562bca67bf71e6036ab37f215393012b04c848c7d35e441c2"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-move/GAME.LOG",
+      "reference": "dos-captures/planet-move.txt",
+      "sha256": "9046f56166faea17b5faa4eec28111884bbb3f8b246252d455bfe569e23e06c1"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-move-collision/GAME.LOG",
+      "reference": "dos-captures/planet-move-collision.txt",
+      "sha256": "75f0798c9fbedd76ff740c7efce9ad2027166bc1012d9ecb572cb327b2a2d849"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-move-yes/GAME.LOG",
+      "reference": "dos-captures/planet-move-yes.txt",
+      "sha256": "c972f3e7c96d19dba933daef156e56312c9af7f7eedcabca07ecf3c8f5730e5b"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-poor/GAME.LOG",
+      "reference": "dos-captures/planet-poor.txt",
+      "sha256": "42f71939222354b31119839a22c56fc39a6a3cf955d510c66347584380219de5"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-takeall/GAME.LOG",
+      "reference": "dos-captures/planet-takeall.txt",
+      "sha256": "3d1748ab8f4ae90b3bcd899b7c5260b3707bc77a8c9a5a88f8e136d271337fd7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-team/GAME.LOG",
+      "reference": "dos-captures/planet-team.txt",
+      "sha256": "92ff31fe976793c079697b1f15093379c0f50957ab5a13d15b2e3cd737c52361"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-team-bank/GAME.LOG",
+      "reference": "dos-captures/planet-team-bank.txt",
+      "sha256": "d997f2c388473f9a2a4fe52d8f44d1bd26daaac86c05971a7cb1615046bad0ca"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-transfer/GAME.LOG",
+      "reference": "dos-captures/planet-transfer.txt",
+      "sha256": "5db672f6c080a65871fe4687c0443f460b4acbe2eda38d8f34b5f6104a1d8cb6"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-transfer-cargo/GAME.LOG",
+      "reference": "dos-captures/planet-transfer-cargo.txt",
+      "sha256": "eeb1119046cd0e473a78b82c77406c54713cec766608ae196a83a454ecfe7356"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-transfer-weapons/GAME.LOG",
+      "reference": "dos-captures/planet-transfer-weapons.txt",
+      "sha256": "682f05938ae30abcdd33c0e0e888c67723466333e50cb1613db64c760d4f696a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-unguarded/GAME.LOG",
+      "reference": "dos-captures/planet-unguarded.txt",
+      "sha256": "c2b935e27d878f15a38cf32d0dce9c6051a7ffc385cde1693423b0806766dbf7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/planet-unguarded-bank/GAME.LOG",
+      "reference": "dos-captures/planet-unguarded-bank.txt",
+      "sha256": "9196b23351cc0d5443f8127e8643a6cf67e82f5b7e000277d703ec36b612f216"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-distance/GAME.LOG",
+      "reference": "dos-captures/plasma-distance.txt",
+      "sha256": "32e7f00ebcc0662178cd6fe5284eed4a6ea006b41239c30f28a35d35f8bf8b77"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-fast/GAME.LOG",
+      "reference": "dos-captures/plasma-fast.txt",
+      "sha256": "62fe5f07a667ce2b6083fc8f25377a8d52a59eb78657bcb8c9710b1598513205"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-mines/GAME.LOG",
+      "reference": "dos-captures/plasma-mines.txt",
+      "sha256": "df8235b708bd1f0115226ed971ac7caad5a132373af5bcfe0bed874d4fbcc8a2"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-one/GAME.LOG",
+      "reference": "dos-captures/plasma-one.txt",
+      "sha256": "c6d5416e7f746eabd15024998ea625e60023eadbff273bc58f0f75b6f5d68073"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-planet/GAME.LOG",
+      "reference": "dos-captures/plasma-planet.txt",
+      "sha256": "b070739443c4c4808ad5e2f7b3b99cc7f80e884c4888e4c368ea156eedf349bf"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-planet-future/GAME.LOG",
+      "reference": "dos-captures/plasma-planet-future.txt",
+      "sha256": "67d51802d7c068388526e2a18ef9b098302c22b78fe3908e6338c1f457c3a0b7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-shields/GAME.LOG",
+      "reference": "dos-captures/plasma-shields.txt",
+      "sha256": "304e2436eb3a2f6c9e32460f88eb09b54c453fb2f1797ada9ece0e4acfcf3398"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/plasma-two/GAME.LOG",
+      "reference": "dos-captures/plasma-two.txt",
+      "sha256": "1cd0fba34235a823d1b4d513cec541dbbea10f51956f0cbf45de98435f549c9c"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-anticloak/GAME.LOG",
+      "reference": "dos-captures/ship-anticloak.txt",
+      "sha256": "9ccc18f833b1cf36316f317b9be534e0ba9f93254c80ff8ec5e4e033dde2456e"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-cloakdecay/GAME.LOG",
+      "reference": "dos-captures/ship-cloakdecay.txt",
+      "sha256": "36d04a820c2dce5df07b92cdafb28ff28d71cf9873e1bea6b501c68acc9f717e"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-counter-relogin/GAME.LOG",
+      "reference": "dos-captures/ship-counter-relogin.txt",
+      "sha256": "95584d222fe131412c05dac623f5db246e01e4595bd5bdf127868249e818a19d"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-counter-six/GAME.LOG",
+      "reference": "dos-captures/ship-counter-six.txt",
+      "sha256": "a32bd810cc562b4b537384d3eb950f3b7f85605eaaac45f22466e6b7a96d2874"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-counter-six-adj/GAME.LOG",
+      "reference": "dos-captures/ship-counter-six-adj.txt",
+      "sha256": "6c8eec451a1e66e3b7eabea5631977f3940b1b5171064167be184cfc3ffc8a39"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-counterdeath/GAME.LOG",
+      "reference": "dos-captures/ship-counterdeath.txt",
+      "sha256": "18fa6484141c11284c81478829fff80d1d6ad82eb0dbd8d166f90b61ff843387"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-counterdeath-adj/GAME.LOG",
+      "reference": "dos-captures/ship-counterdeath-adj.txt",
+      "sha256": "9d08f966be5e3c0d2cd39a7a6734cbc3c8f31d5d64df3d9aefa26f0af0105c88"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-earth-respawn/GAME.LOG",
+      "reference": "dos-captures/ship-earth-respawn.txt",
+      "sha256": "d0f06768be7fefc2208206d75b8c8cc99236a317b3d28e9960dc0a9158a95dfc"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-earthdeath/GAME.LOG",
+      "reference": "dos-captures/ship-earthdeath.txt",
+      "sha256": "e6f6d4f419f1f983f4769fea87a9ad3c2160a293e8e22c7c058bce5231b20425"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-fight/GAME.LOG",
+      "reference": "dos-captures/ship-fight.txt",
+      "sha256": "ca3ea33c050c3e14e61ae9876a9a66918796adce9a87ae97efbf56cd26b93772"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-hidden/GAME.LOG",
+      "reference": "dos-captures/ship-hidden.txt",
+      "sha256": "94398e800d687092e02ca5e45a2f37cc5d044b57eec2abf45f906f8121f7c7c3"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-kill/GAME.LOG",
+      "reference": "dos-captures/ship-kill.txt",
+      "sha256": "1c6c2969691b282276bf3c73415ca63b7f338a6f946aab0c4ecf8c543760391a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-refresh-turns/GAME.LOG",
+      "reference": "dos-captures/ship-refresh-turns.txt",
+      "sha256": "528a182cb7f10b86c4b3acdf6a25bb5ce7c758cf767b4838aa164ecdd96bd080"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-relogin-next/GAME.LOG",
+      "reference": "dos-captures/ship-relogin-next.txt",
+      "sha256": "a8201a950753f899122d6e9ba07ea133e7c6809f0b810a6dadee7133ed2d2290"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-relogin-same/GAME.LOG",
+      "reference": "dos-captures/ship-relogin-same.txt",
+      "sha256": "528a182cb7f10b86c4b3acdf6a25bb5ce7c758cf767b4838aa164ecdd96bd080"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-retaliation/GAME.LOG",
+      "reference": "dos-captures/ship-retaliation.txt",
+      "sha256": "68a3e6c7615cc02cafe4b6e227abefe298cd419ef2a2424a4050afe92a2ce08c"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-self-next/GAME.LOG",
+      "reference": "dos-captures/ship-self-next.txt",
+      "sha256": "84299bb6443b17f0e98dfddd3442682f793c36612ec0a16e9b7ff5f187f774ff"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-self-same/GAME.LOG",
+      "reference": "dos-captures/ship-self-same.txt",
+      "sha256": "10578870daa9cb84e3d79f801bc03acd7955ebe9b15cc3fa7b16afcda8655f81"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/ship-team/GAME.LOG",
+      "reference": "dos-captures/ship-team.txt",
+      "sha256": "750da8ffaca6a523b4d0bbbd625b48ead0f800064865b0a4c99d304f60ce5fb7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-confirm/GAME.LOG",
+      "reference": "dos-captures/surrender-confirm.txt",
+      "sha256": "cfffef1fadfff3d5cca0b46c23ef20bbfe154bb40ffbf74d2d03a44ac66b3d99"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-fast/GAME.LOG",
+      "reference": "dos-captures/surrender-fast.txt",
+      "sha256": "06f76213b41cf9fed40d7c090ea0dfd4710ca59ea3c87489481c74f723efa2a0"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-first/GAME.LOG",
+      "reference": "dos-captures/surrender-first.txt",
+      "sha256": "a3acfaec4ad2f6d8dc0cd38629c9830b3b14cf8e039c9c015d6dfbd1a58494b7"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-immediate/GAME.LOG",
+      "reference": "dos-captures/surrender-immediate.txt",
+      "sha256": "8d582d3f3469095b740c57d4c257c5df7939263e04ade5ffaad5a24621d9fca1"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-ten/GAME.LOG",
+      "reference": "dos-captures/surrender-ten.txt",
+      "sha256": "b7038b53212d6e224b540d1a97261cc0db750f9124defbc750761f733ae8ad5e"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/surrender-xannor/GAME.LOG",
+      "reference": "dos-captures/surrender-xannor.txt",
+      "sha256": "e62b20c4c56407f95e5a92940afeaeecf1a6e4bbfe77ee478efe82aa831069ad"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-banish/GAME.LOG",
+      "reference": "dos-captures/team-banish.txt",
+      "sha256": "89e1a42ef3b5392c8e9da496d4106a9ffe7e02f0eb6c9477f0dd571da33deafb"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-create/GAME.LOG",
+      "reference": "dos-captures/team-create.txt",
+      "sha256": "8621a95c25b7bd8ddf5609503cf0f9c0d20146d8004c15590264e5a1d71acba3"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-create-confirm/GAME.LOG",
+      "reference": "dos-captures/team-create-confirm.txt",
+      "sha256": "3aeb696ef0ae12b396a1ef72ff055847e652e5a53aa8b7b4069c17ba30b4b646"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-defense/GAME.LOG",
+      "reference": "dos-captures/team-defense.txt",
+      "sha256": "22f6b2ebeeed6b4055318ead9699a6c74546943c3755694a4c9623716199fd6f"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-full/GAME.LOG",
+      "reference": "dos-captures/team-full.txt",
+      "sha256": "2baf3413ca7808b609f9f5ad6de10a7231db0e39585c5ab767d68908ab986c27"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-join/GAME.LOG",
+      "reference": "dos-captures/team-join.txt",
+      "sha256": "5d4ecf974d0b22d6e62f287287a4f3385beaf7f09e02fa512ad0bc5bda83d4da"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-last/GAME.LOG",
+      "reference": "dos-captures/team-last.txt",
+      "sha256": "65b613a08010547343622172321310a4a0b7f510686c13f10526c00bed71fe73"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-lowercase/GAME.LOG",
+      "reference": "dos-captures/team-lowercase.txt",
+      "sha256": "7e77ce3a9e103706f6609bb29b76c511d87613136a4ec914a49c33dc5eba8d95"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-member-privilege/GAME.LOG",
+      "reference": "dos-captures/team-member-privilege.txt",
+      "sha256": "bf1fd2db42bd6a839b4b690b2fb1ef9fe00e7408c85b5482faf7140e04e842ea"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-password/GAME.LOG",
+      "reference": "dos-captures/team-password.txt",
+      "sha256": "a84179684651691da798f85502e273aef27b0bbaccbf6013d2ec234e41c0fb56"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-port-account/GAME.LOG",
+      "reference": "dos-captures/team-port-account.txt",
+      "sha256": "7750a1eb23e7c82556756220789fd0c26577533f5b7682d62daed948d4d97065"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-promote/GAME.LOG",
+      "reference": "dos-captures/team-promote.txt",
+      "sha256": "7a50cd0512c5a8d3af30311a251c202d4777b0207b2579cde3dc34bfc8d4dd40"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-quit/GAME.LOG",
+      "reference": "dos-captures/team-quit.txt",
+      "sha256": "1df2d39bcc697b8cced0175511382230565ecf8a1abb8755f890f07688615e20"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-quit-assets/GAME.LOG",
+      "reference": "dos-captures/team-quit-assets.txt",
+      "sha256": "fea467303f7a418cc2399d0d12631d7a10bca7d74cdbbd61136462f43ff2c217"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-rejoin/GAME.LOG",
+      "reference": "dos-captures/team-rejoin.txt",
+      "sha256": "b56c3f5b05630c97798fb78b963f93795038c88a06ae383a6a1b19200f00872c"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-search/GAME.LOG",
+      "reference": "dos-captures/team-search.txt",
+      "sha256": "afc1ee961710ccacf6868af968344a1296bf74be0fbc1e9eb556bd7fcce6e78b"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-short-name/GAME.LOG",
+      "reference": "dos-captures/team-short-name.txt",
+      "sha256": "f99a429ac19cb9b91d892a4b961e8390bcf70fd1239d67c072052bb55077afdb"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-successor/GAME.LOG",
+      "reference": "dos-captures/team-successor.txt",
+      "sha256": "94c8a2724a115fb9a3204fa28e33374c159a3202ddb54f55fcd1f100bd2ec9db"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-transfer/GAME.LOG",
+      "reference": "dos-captures/team-transfer.txt",
+      "sha256": "b6ce2c7cef30f4a2c5f29786a7d34baae003fdf34057d058025c569d1595f090"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-transfer-current/GAME.LOG",
+      "reference": "dos-captures/team-transfer-current.txt",
+      "sha256": "9340c22ec53ac1c4b3ba42d150522b4633f7cd63b6418e189fe8d63ed7bb3df0"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-transfer-foreign/GAME.LOG",
+      "reference": "dos-captures/team-transfer-foreign.txt",
+      "sha256": "0cda5c398f1173aa37f286e1732a474584b998b58a42259ee45cb7e17c522706"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-withdraw-defense/GAME.LOG",
+      "reference": "dos-captures/team-withdraw-defense.txt",
+      "sha256": "8fb6fb96e95dcd3f54c07cf135c929d074af9ae98aea8552f8d45836a7d3c2e4"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/team-wrong/GAME.LOG",
+      "reference": "dos-captures/team-wrong.txt",
+      "sha256": "249dd8d7af053321c2ae7791e23ea37b6067ea7257deba93bbce26896f1d490d"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-earth-buy/GAME.LOG",
+      "reference": "dos-captures/trade-earth-buy.txt",
+      "sha256": "7d9684208a92f9f1e3ff28f9c4ac49f45314016c1d98d9adf2ac08655a961016"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-earth-gear/GAME.LOG",
+      "reference": "dos-captures/trade-earth-gear.txt",
+      "sha256": "e8ac851f42076381375b0bde23044ca27f3023c1f31e590ae8a604bc6572d8a3"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-earth-gear2/GAME.LOG",
+      "reference": "dos-captures/trade-earth-gear2.txt",
+      "sha256": "fabec202e0abaf0aa88d1b54f1869e4a0f73d4ce98888c20fd6d52ab96819eb0"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-earth-withdraw/GAME.LOG",
+      "reference": "dos-captures/trade-earth-withdraw.txt",
+      "sha256": "2e4cd4b01a457a711af77f59c5c255ccbd38b16ebb5eee09014bde43dfa5e56b"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-earth-withdraw2/GAME.LOG",
+      "reference": "dos-captures/trade-earth-withdraw2.txt",
+      "sha256": "8f2a2b39f4c89ba94011ef16c03fe86f4aa96d4490c679b3499510c8a10a5541"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-high/GAME.LOG",
+      "reference": "dos-captures/trade-high.txt",
+      "sha256": "0c382f34ce29a619375a5271bfe15c67f911479c131273c332a88c9f0826fc20"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-low/GAME.LOG",
+      "reference": "dos-captures/trade-low.txt",
+      "sha256": "aa13a1c142dc91fe73af16411f71c177e9a1da8b7c3d0513934a4b232a671e47"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-other/GAME.LOG",
+      "reference": "dos-captures/trade-other.txt",
+      "sha256": "2cbc4e33cf9b865db64bda171c72d7e3e30251204388d073ae723201f4bf3d05"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-port-buy/GAME.LOG",
+      "reference": "dos-captures/trade-port-buy.txt",
+      "sha256": "26943b855560f4020fae3c2e565b6c2bd63f1fad2db3134eb0f1cfd480a60fec"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-self/GAME.LOG",
+      "reference": "dos-captures/trade-self.txt",
+      "sha256": "39c836f80eb131e0ddc084d764aadb8e1e7fa43e1ddfff0669155bdfece44b5a"
+    },
+    {
+      "source": "analysis/yt-combat/experiments/trade-sell/GAME.LOG",
+      "reference": "dos-captures/trade-sell.txt",
+      "sha256": "087f38e01ef7f338bf67ffa75d6bd44fbcb290bec0e9fc86ec2cdcef6600684b"
+    }
+  ]
+}

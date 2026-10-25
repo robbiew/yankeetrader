@@ -1,0 +1,652 @@
+Version 1.0. first public release on 2/18/90.
+
+*** To keep things brief, the descriptions of changes from version 1.1 to 2.F
+have been deleted. This CHANGES.TXT file was getting too large!
+
+*** Version 3.0 of Yankee Trader has the following changes/fixes...
+
+Added AUTO BAUD RATE DETECT! Now there is no longer ANY need to run special
+baud rate conversion program. Yankee Trader now AUTOMATICALLY detects the baud
+rate in use on either COM port! My thanks go to Raymond Clements for sending
+me information on how to do this!
+
+Fixed a cheat where players were storing all their credits won from the
+lottery on planets then committing suicide and logging in with a new ship to
+play the lottery over and over and acquiring large amounts of credits. Now if
+a player kills themself, they wont be allowed to play until tomorrow.
+
+Greatly reduced black hole loss-of-turns damage.
+
+Fixed a bug where autopilot would hang if the sector the person was starting
+from was set in sector excludes.
+
+The thing I added to MAINT to reduce plague reports (in version 2.E) seemed to
+make matters WORSE! So I changed maint to only report on the number of ports
+that contracted the plague instead of a report for EACH individual port.
+
+Fixed a bug where the first port a person tried to buy per game session was
+for sale for FREE!
+
+Changed to local logon program for a maximum play time of 180 minutes per
+session from 45 minutes.
+
+Added an option on "Scoreboard" of the computer to view the OLD scoreboard
+rather than updating the scoreboard then viewing it. Players will be able to
+use this option to see how much their score has improved (hopefully! ;-) by
+viewing the old scoreboard before viewing the updated one. For this to work
+properly, it is IMPORTANT that you do not move the scoreboard from the
+directory defined in YTCONFIG. This shoudnt be a problem for you since you can
+use YTCONFIG to place the scoreboard any place you wish.
+
+Cut in half the frequency that Xannor launch missiles.
+
+Added the ability to transfer Missies, Mines & Fighters to planets.
+
+REMOVED the option to transfer fighters to another team member from the team
+menu. (Since this can be done by leaving them on planets now.)
+
+ADDED to the team function "Find Team Members and Defense Forces" a search for
+team PLANETS as well.
+
+ADDED pauses to sensor displays so they dont scoll off the screen.
+
+Updated YTMAINT.EXE so that it updates planet production each run. This helps
+seldomly visited planets grow properly instead of stagnating.
+
+Updated YTMAINT so that the Xannor planet has full production upon regen.
+
+ADDED sales for Shields and Ground Forces.
+
+UPPED bonus for sucessfully invading Xannor HQ from 250,000 credits to
+1,000,000 credits.
+
+FIXED a bug where the display of credits earned on Earth (for the owner) was
+always showing as "0" credits.
+
+ADDED Ground Force Production to planets. Ground forces now grow 1% per day.
+
+SHORTENED the delays in the lottery routine.
+
+*** FINALLY *** FINALLY *** FINALLY *** Found out where all the unexplained
+ERROR 64 reports have been coming from! A PCBoard Sysop (Alan Brenner) pointed
+me to the info I needed. It seems a door conversion utility commonly used by
+PCBoard sysops to run DORINFO type doors was writing a non-standard DORINFO
+with the bits and parity information transposed! I re-wrote the DORINFO parser
+for Yankee Trader so that it will handle DORINFOs with the parity and bits
+info in ANY order.
+
+*** Version 3.1 of Yankee Trader has the following changes/fixes...
+
+Non-standard DORINFOs will be the death of me yet. I thought I had everything
+fixed in 3.0 but I found and fixed 2 more ways that an error 64 can occur.
+Wildcat 3.0 sysops will benefit from this newest fix. Again, a non-standard
+DORINFO was being written by yet another door conversion utility. My thanks go
+to Paul Naley for providing me with the information needed to correct this
+problem.
+
+Changed the pause routine so it eats keystrokes rather than putting them in
+the input buffer. This will prevent keys presses to "un-pause" the screen from
+giving players grief.
+
+Fixed YTMAINT so it will only run once per day. (I had left the test parameter
+in from the last release! Sorry.)
+
+Added EMERGENCY WARPS. A player may now invoke emergeny warp if they run into
+a fighter force too strong for them or are trapped in a sector. Running into a
+black hole now automatically invokes emergency warp. Using emergency warp uses
+a lot of turns and there is a risk of engine overload and the subsequent loss
+of all turns for that day.
+
+Added a new sound effect used for Emergency Warps.
+
+Changed Sector Avoids to hold a maximum of 30 values. This is up from a
+maximum of 9 before.
+
+Changed "Find Nearest Ports" to show what the port is buying and selling and
+at what cost.
+
+REMOVED "Complete Port Report". It was redundant  since "Find Nearest Port"
+now performs this function.
+
+Sector Avoids moved from computer option 15 to option 7 filling in the gap
+left by the removal of Complete Port Report.
+
+Reduced the chances of hitting a black hole.
+
+Added "Continuous (Non-Stop) read to "Find Nearest Ports".
+
+Found and fixed a couple places where text was outputted to the screen even if
+SNOOP was off.
+
+Fixed a problem that was preventing the RMT-INIT.EXE program from running.
+
+*** Version 3.2 of Yankee Trader has the following fixes/changes...
+
+ADDED the ability of the sysop to CHANGE user ALIAS's. This function has been
+added to the YTCONFIG.EXE program.
+
+CHANGED YTMaint. Before mercs were generated in groups of 2,500. This was OK
+except for when huge amounts of taxes were collected. There stood a chance of
+lockup during maint because there were not enough empty sectors to hold all
+the merc groups! I changed it so that the mercs are spread out among 10 equal
+sized groups.
+
+FIXED a bug where Earth was not being properly displayed when a player tried
+to buy it.
+
+CHANGED YTMAINT Xannor Revenge function so that the Xannor spend 50 times more
+time hunting for targets in the universe if they are in "Revnege Mode".
+
+Changed most cases of numbers appearing in scientific notation to "normal"
+numbers. (I tried to get them all but won't say that I HAVE! :-)
+
+ADDED a new feature! Command repeats. No no NO! This is not the old control-R
+feature! Now your players can repeat any command up to 30 times but placing a
+"/R#" (where "#" is a number from 2 to 30) at the end of their command! An
+example of moving between two ports and trading 30 times would be:
+
+"M;555;P;1000;Y;1000;Y;M;666;P;1000;Y;1000;Y/R30"
+                                            ^^^^
+                                            See?
+
+Updated instruction file for command repeats. (YTINSTR.DOC)
+
+Added a PLANET NAME EDITOR to the configuration program "YTCONFIG".
+
+ADDED a registration key scheme. This will allow registered sysops to show
+that they registered the game. (This was added at the request of many sysops
+who wanted to be able to show that they registered.) Yankee Trader is still
+completely free of crippling in the unregistered version. The only difference
+between the registered and unregistered versions is that the unregistered
+version will show "UNREGISTERED EVALUATION COPY!" while the registered version
+will show the name of the sysop who registered YT and the name of the BBS that
+YT is registered to. See YTSYSOP.DOC for more information on the key file
+scheme.
+
+If you previously registered YT and you call my BBS and ask for a registration
+code I will give it to you in a private message for free otherwise PREVIOUSLY
+REGISTERED SYSOPS CAN GET A REGISTRATION CODE IF YOU MAIL ME A SELF ADDRESSED
+STAMPED ENVELOPE. BE SURE TO TELL ME THE NAME OF YOUR BBS AND THE NAME THAT
+YOU ARE REGISTERED UNDER!!! I will verify that you are previously registered
+in my records. The price for first-time registrations remains $20.00.
+
+FIXED a bug in YTMAINT where the Xannor were not killing players with 0
+shields and 0 fighters.
+
+The XANNOR are now MUCH BETTER at hunting for targets. (Evil Grin!)
+
+FIXED bugs in YTMAINT and YT where the programs would go into an infinate loop
+when fighter groups of numbers in scientific notation would attack other
+groups in scientific notation. Due to rounding errors going from scientific
+notation to single precision numbers, BOTH fighter groups would NEVER reach
+zero left and the programs would loop forever trying to determine a winner to
+the battle. )-; I never expected battles on this scale! It's fixed now! (-;
+
+Changed YT so that a player gets credited with defeating Xannor HQ whether
+they do it with missiles or by going to the sector and attacking the fighters.
+Before they only got credit if they attacked the fighters and got NO credit if
+they attacked with missiles.
+
+FIXED a bug where sectors were not being properly displayed after an emergency
+warp escape from sector mines.
+
+CHANGED the sector mines routine so that it executes MUCH more rapidly. Now if
+there are large amounts of mines in a sector they go off in groups instead of
+ONE AT A TIME like they did before! Before when the mines went off one at a
+time it would take forever to finish if a strong player hit a large amount of
+mines!
+
+FIXED a problem where incorrect text was displayed if a player tried to sell
+more than a port wanted or buy more then they had.
+
+ENHANCED Planet Thrusters (Move a Planet) routine so that now it behaves like
+the computer autopilot. A player only has to enter a destination sector.
+Before, they had to get an autopilot report for the path they wanted to take,
+then move the planet there MANUALLY one sector at a time! (Ugh)
+
+Added checking so that a player cant hit control-R too many times and exceed
+maximum string length.
+
+LIMITED the amount of turns awadred for killing Xannor to the maximum turns
+per day as defined by you in YTCONFIG. This will prevent the really powerful
+players from acquiring ridiculous amounts of turns.
+
+Changed the game so the Xannor's Missiles are no longer effected by a player's
+sector excludes.
+
+Made the Xannor 2.5 times stronger against ground forces. Before, it would
+have taken 2.5 MILLION xannor to get through 1000 ground forces, now it will
+only take 1 million Xannor. They were too weak before.
+
+Added PORT UPDATES to maintenance. This will allow seldon visited ports to
+grow and will help prevent ports from being sucked dry too often from being
+too small.
+
+ADDED a display of ground force productivity to the planet display.
+
+The Xannor now shoot back with more missiles when fired upon.
+
+The amount of fighters killed by missiles was unrealistic. Fighters lost to
+missiles has been reduced.
+
+The amount of damage done to shields by missiles was unrealistic. Shields lost
+to missiles have been increased.
+
+FIXED a bug I found in the two init programs. They were not always finding ALL
+the isolated sectors during warp verification.
+
+CHANGED YT-INIT.EXE (Initialization program) so that it automatically runs
+game maintenance upon completion.
+
+Sensor robots now report planet's ground force level. Before, they only
+reported a planet's name.
+
+FIXED a bug in YTMAINT where not all dead players were being removed from
+teams when killed by the Xannor.
+
+COMPLETELY rewrote the Cloaking routine. Now cloaking is expressed as a
+percentage of maximum possible cloaking. Someone at 100% cloak is now
+completely undetectable unless a player buys an anti-cloak. Someone at 90%
+cloak will be detectable 1 in 10. Someone at 10% cloak will be detectable 9 in
+10! etc. Cloaking slowly decreases as a player plays and will be reduced 5%
+per day by maintenance. All I can say about this rewrite is 'WHEW, what a
+chore!' but I believe that it is much more realistic than the old method.
+
+CHANGED Anti-Cloaking so the purchaser of the anti-cloak gets uncloaked too!
+
+FIXED the routine where Xannor shoot back when fired upon so that they ONLY
+hit the person who fired on them rather than whoever was in the same sector as
+the person who attacked the Xannor! Weak players were using this loophole to
+kill much stronger ones by getting the Xannor to kill them off! (They would
+fire ONE missile at the Xannor and the Xannor would fire 1 to 100 BACK hitting
+the wrong target in many cases!)
+
+Changed YTMAINT so that port and planet plagues do not kick in until ports and
+planets are much bigger. Especially with ports, plagues were coming too often!
+
+ADDED FILE LOCKING. Yankee Trader will now exit gracefully if more than one
+person tries to play it at the same time on different nodes. SHARE MUST NOW BE
+LOADED IN ORDER TO RUN YANKEE TRADER!
+
+Changed YT-INIT & RMT-INIT so that the minimum production of an item at a port
+is 1000. Before it was -1- which was a bit too small!
+
+Fixed YT missile routine so that if the ground forces on a planet are reduced
+to 0 by a missile the planet becomes "un-owned".
+
+*** Version 3.3 of Yankee Trader has the following changes/fixes...
+
+Fixed the team function "Banish a Team Member". Only the Team Captain should
+have been able to use it but ANYONE on the team could use it!
+
+Fixed the display of Cloak Energy Percentage in the "Info" display so it shows
+whole numbers only.
+
+You can no longer buy mines and missiles at Earth. Now you must get them from
+planets. Since planets produce them so well and so cheaply, noone was really
+buying them any more anyhow. This will also raise the importance of owning
+good planets.
+
+There was an "urban legend" floating around YT players that having money in a
+planet's bank increased productivity on that planet. This was completely
+false. HOWEVER I thought, "Hey, that's not a bad idea!" so I made it so with
+this new version! (-:
+
+Fixed a bug in move-planet where the routine was not exiting when a planet
+blew up when being moved! This often caused multiple explosions!
+
+Fixed info display of shields. This was still showing up in scientific
+notation.
+
+Added a much improved message line editor to computer radio option.
+
+Doubled the size of RS232 input buffer. This should help prevent lockups when
+players use special terminal programs and dump their command buffer into the
+door.
+
+Added a MOTHER SHIP for the Mercenaries. You may buy PLASMA BOLTS from the
+mother ship for 5,000,000 credits each. Plasma bolts are VERY powerful weapons
+which you fire like missiles. Unlike missiles however, plasma bolts do not
+have the benefit of computer control and will hit ANYTHING in their path..
+including the person who fired them if they fire at their own sector! They are
+like firing a bullet. They go until they run out of energy or hit something.
+(Cloaked or not!) Missiles, with their benefit of computer control, are smart
+enough not to hit friendly targets. The benefit of plasma bolts is that they
+can do great damage to an enemy if fired with care.
+
+Added a new sound effect for Plasma Bolts.
+
+The player instructions file has been updated to reflect the change in status
+of sector mines and missiles and to add plasma bolts. Make sure you copy the
+new YTINSTR.DOC into your game directory if you are upgrading from a previous
+version.
+
+Improved the player [ Info ] display.
+
+Added COLOR to the newspaper display from the computer.
+
+Planets now lose ground forces if they contract the plague.
+
+Sensors now show black holes in adjacent sectors.
+
+Fixed a problem on Earth when buying cloak energy after buying an anti-cloak.
+The game thought you had no cloak energy and would allow you to buy more even
+though you had cloak energy already. (It was just temporarily disabled.) The
+INFO display will now display you cloak as "FAIL" if you have activated an
+anti-cloak. Before it showed 0%.
+
+The Xannor are now 33% better at finding cloaked targets.
+
+Yankee Trader NOW WORKS ON COM3 AND COM4! Yes, I finally obtained the info I
+needed to add COM3 and COM4 support to YT! My thanks go to Brad Garner of
+Arlington, Texas for providing me the information I needed!
+
+Added some code to try to prevent error 14 (Out of String Space) crashes when
+a player hits control-r too many times in a row to replay saved commands.
+
+Turned the cursor on on the local console.
+
+Yankee Trader now works on ANY baud rate between 75 and 115200 baud! This
+should make you sysops with the newer, lightning fast modems happy! (-: (And
+now the old 75 baudders can use it again... hehe!)
+
+Players now only get 1 turn for every 1000 Xannor killed. Before it was one
+turn per every 250 killed.
+
+*** Version 3.4 of Yankee Trader has the following fixes/changes...
+
+A planet now has the chance of having a civil war if it has too many ground
+forces. (Over 1 Million.)
+
+Fixed display telling users that the game is active on another node and
+telling the sysop that share must be loaded.
+
+Earth can no longer be owned. Ownership of Earth gave too much power to a
+player or a team which made them almost invincible. This had the effect of
+discouraging other players.
+
+Raised the base cost of holds to 2500 from 500 credits. They were too cheap
+before.
+
+Changed the "Salvage" routine to award a portion of mines, plasma bolts and
+ground forces also. Before only holds, cash, missiles and robots were awarded.
+Also changed the game so that "Salvage" runs whether a player kills another
+using fighters, missiles OR plasma bolts. Before only attacks using fighters
+triggered the salvage routine.
+
+Raised the cost of planets from 25,000 to 250,000 credits. They were too cheap
+before.
+
+Chnged Salvage to report to the newspaper what a player gets for killing
+another.
+
+FIXED a bug where players were not being awarded the ports of those they
+killed! Also changed the routine so it writes to he newspaper how many ports
+that are awarded to the victor.
+
+FIXED a bug where a player was not effected by a black hole if they started
+playing in a sector containing one.
+
+ADDED plasma bolt production to planets. 1 PB is produced per day for every
+250,000 total production of ore, org & equ and 1 per day for every 10 million
+credits in the bank.
+
+REMOVED the mercenary mother ship. It was not needed any more since plasma
+bolts are now produced by planets. Another reason for removal is because the
+mother ship took a lot of program space for a limited feature.
+
+ADDED hi-lighting to "Info" display for cargo in holds.
+
+ADDED Port cost display to "Find Nearest Port". This will allow easier
+searching for ports to buy. The display also shows whether or not a port is
+owned and who owns it if it is owned.
+
+FIXED Anti-Cloak routine so it doesnt show dead players as being uncloaked!
+
+DECREASED missile and mine production on planets.
+
+FIXED and CHANGED ground forces production on planets. Due to a misplaced
+bracket ground forces were growing MUCH too quickly! Also even after fixing
+the formula it was still too generous. The formula should have increased
+ground forces 1% per day PLUS 1% for every million in the planet's bank. The
+NEW formula is 1% growth per day PLUS 1 unit of growth for every 10,000
+credits in the bank. This produces a much more reasonable rate of growth! If
+you have a game running where the ground forces have gotten out of hand you
+may wish to re-init the game to return the game balance to normal.
+(Alternately you can just wait for the "Civil Wars" to knock them down!)
+
+DECREASED the amount of fighters each plasma bolt destroys. Before ONE would
+destroy 1 - 2 MILLION fighters which was OK when plasma bolts were hard to
+come by but made defense fighters worthless once I added plasma bolt
+production to planets! Now one bolt destroys an average of 10,000 fighters.
+
+FIXED a minor bug in YTCONFIG.
+
+Added to YTMAINT a feature that causes ports to switch to selling whatever
+they have the most of. This is a little more realistic than it was before and
+should make trading more interesting as the ports change around!
+
+Changed the formula for Xannor vs. planet ground forces. Now it takes an
+average of 500 Xannor to remove 1 ground force unit from a planet.
+
+ENHANCED "Find Nearest Ports" some more to allow players to show ALL ports,
+their ports, their team member's ports, enemy ports, un-owned ports or ports
+buying OR selling any particular cargo type. (You'll like this one!)
+
+ADDED a feature to the team function. Whenever someone joins, quits or ENTERS
+AN INVALID PASSWORD for your team a message is now sent to all team members!
+Now your players will know if someone tries to hack their team password!
+
+Greatly reduced plasma bolt damage for all items. The damage done was too
+great considering that the bolts are now a lot easier to come by.
+
+Re-did planets to update ANY time that they are encountered or displayed.
+Before they were not always up to date on their productivity causing them to
+display incorrectly (too low of production and items) or making them too easy
+to destroy beause they were not as strong as they should have been.
+
+FIXED a bug in the plasma bolt routine. They were not always killing other
+player's ships when they should have been.
+
+CHANGED the interest in planet banks from 5% to 1% per day.
+
+CHANGED port ownership so that you get 1% of what YOU spend at your own ports
+as well as ALL of what others spend. Before you got NOTHING when YOU traded at
+your own ports. This makes port ownership more valuable.
+
+*** Version 3.5 of Yankee Trader has the following fixes/changes...
+
+Mutter mumble mutter mumble. The day AFTER I released YT3.4 my players
+discover a BUG. Doggone it. Well, 3.5 fixes that bug!
+
+*** Version 3.6 of Yankee Trader has the following changes/fixes...
+
+FIXED how ground forces were working on Planet Xannoron. The game was assuming
+that the planet was owned by a dead player instead of the Xannor!
+
+FIXED the display of credit production (interest) in the planet display. It
+was till showing the old 5% value instead of the new 1% interest value.
+
+CHANGED Repeat command function to be a maximum of 20 times from 30. This is
+because it was still occasionally possible to crash the game due to an "out
+of string space" condition while using the repeat command "X" times function.
+
+DECREASED plasma bolt production modifier so that each 25 million in the bank
+to raises PB prod 1 unit per day. Before PB prod was raised 1 unit per every
+10 million in the bank.
+
+Fixed a bug where players could display planets that were not their own or
+team members if the just dropped defense fighters in the sector!
+
+REMOVED sensor robots. (WHAT!?!??) Relax, I've added a new type of scanner
+called a "Danger Scanner". A danger scanner will automatically stop a player's
+ship before it enters a sector where there is a dangerous situation. Danger
+scanners are fairly expensive (250,000 c.) and also can be destroyed if a
+player's ship takes damage. The reason for removing sensor robots is because
+they made it TOO EASY to search the universe. Removing them from the game
+should make the game more challenging and the danger scanner will offset the
+loss of the robots for safely moving about.
+
+REVISED the instructions for the Danger Scanner. Make sure you copy the new
+instructions into your game directory!
+
+Added a new SOUND EFFECT for the Danger Scanner.
+
+Changed the lottery routine so it will no longer accept LETTERS instead of
+numbers. Also changed it to hilight the numbers that match.
+
+ADDED "spies". Spies search the universe at random and report any non-friendly
+forces or planets that they find. Spies can be hired at Earth for 333,000
+credits each.
+
+Added a new sound effect for spies.
+
+Added the ability for players to change the name of ports they purchase. In
+case someone enters something rude, I've also added a function to YTCONFIG.EXE
+to change port names.
+
+Fixed computer option 11. It was not stopping if a player selected "E" to end
+the display.
+
+Changed turns awarded for killing Xannor to be the max turns allowed per day.
+This way a player can never have more then the maximum turns allowed. Also
+changed it so that one turn is awarded per every 200 Xannor killed, it was 1
+per 1000 before.
+
+Reduced the base cost of cargo holds to 500 credits and the cost of planets to
+25,000 credits. I originally raised them because it was too easy for a killed
+player to get back into the game. I overlooked that cheap planets and holds
+made it FUN and less discouraging for players who were just killed or were
+just starting out.
+
+Changed YTMAINT. Small groups of fighters (less than 100 or so) stand a chance
+of defecting and joining the mercenaries. This is to prevent players from
+dropping a fighter in each sector and clogging up the game!
+
+Changed the "low turns warning" to start flashing at 50 turns instead of 40 as
+it was before.
+
+Added an option to planets to increase their productivity by spending credits.
+(ONE unit each of ore, organics and equipment for each 250 credits spent.)
+
+Added a function at the "Main Command" prompt where players can rename their
+ports. This is useful if a player decides to change the name later or if they
+inherit ports from others. (Kill them in battle.)
+
+REMOVED the requirement that share must be loaded. SHARE has caused grief for
+a fair number of sysops. If you are runing multi-node and you have problems
+because share is no longer used by YT please let me know. If you run multi-
+node and your problems are SOLVED by my removing the requirement of having
+share loaded, please let me know too!
+
+CHANGED plasma bolt damage to 25,000 shields, 250 mines 50,000 fighters for
+each one launched.
+
+CHANGED to lottery displays to be a little more interesting.
+
+Tripled fighter production on planets. Fighter prod. was avg. of all daily
+prod. of ore, org., and equ. Now it is the equal to the TOTAL of all three.
+
+Added NEW computer option 16, "Find Port Pairs". This function will show pairs
+of ports and what each pair is selling. This function also shows the profit
+that will result in a two-way trade at the pair of ports. This will be very
+useful for trading!
+
+REALLOWED the purchase of "Earth".
+
+Changed planet production of plasma bolts to 1 bolt per day for every 100,000
+total production from 1 for every 250,000 production.
+
+Made a change to try to prevent crashes to to excessive string length. You can
+no longer do a control-R to replay a command string while a command string is
+already executing. Sometimes before pressing control-R several times in
+succession would crash the door and return the user to the BBS.
+
+RENAMED THE "YTMESG.DAT" FILE (NEWSPAPER FILE) TO "YTNEWS.DAT". IF YOU ARE
+UPGRADING TO THIS VERSION, YOU WILL HAVE TO RENAME THIS FILE (AT THE DOS
+PROMPT IN YOUR YT DIRECTORY, TYPE "RENAME YTMESG.DAT YTNEWS.DAT" (NO QUOTES).
+IF YOU ARE DISPLAYING THE NEWS AS A BULLETIN ON YOUR BBS, DON'T FORGET TO
+UPDATE THE MENU SELECTION OR BATCH FILE THAT DISPLAYS/COPIES THE NEWSPAPER.
+EVERY NIGHT WHEN THE MAINENENCE RUNS, IT WILL RENAME "YTNEWS.DAT" TO
+"YTYNEWS.DAT" (YESTERDAY'S NEWS.) IF YOU ARE DISPLAYING THE NEWS ON YOUR BBS,
+YOU MAY WANT TO ADD AN ENTRY TO DISPLAY YESTERDAY'S NEWS.
+
+REDUCED the score for each missile and each mine a player has. Before the
+score was 100,000 for each missile and 35,000 for each mine. This was
+unrealistically high. I changed the scoring to 1,000 for each missile and
+2,500 for each mine. Also, shields were being scored incorrectly. They should
+have been 50 points per unit. They were 200 points per unit.
+
+FIXED a bug that must have existed for a very long time. If a player entered
+too long a name there was a chance the game would enter them as a new player
+each time they entered the game!
+
+Reduced the cost of ports by a factor of 10. In a long running game, the price
+was going way up as ports grew. Players were not buying ports because they
+cost too much!
+
+Doggone it! I was still getting out of string space errors so I stopped
+reading sector data into memory for the autopilot and changed it to run from
+disk. This slows autopilot down quite a bit but should end for good the
+crashes due to memory shortages!
+
+Cleaned up the path display when using autopilot.
+
+I saved so much variable memory by running the autopilot from disk instead of
+from memory that I was finally able to do something I wanted to do for some
+time; I've increased the amount of sectors in the game to 3,000 from 1,000!!!
+
+IF YOU WANT TO RUN A 3,000 SECTOR GAME YOU WILL HAVE TO RE-INITIALIZE YOUR
+GAME! DO -NOT- USE "RMT-INIT.EXE" TO DO THE REINITIALIZATION ELSE YOU WILL END
+UP WITH A 1,000 SECTOR GAME AGAIN! ("RMT-INIT.EXE" TAKES THE CURRENT DEFAULTS
+AND REUSES THEM.) YOU MUST START CLEAN AND RUN "YT-INIT.EXE" IF YOU WANT TO
+RUN A 3,000 SECTOR GAME. ALSO, IF YOU DO -+NOT+- WANT TO RESTART YOUR GAME YOU
+DO NOT HAVE TO! IN KEEPING WITH MY USUAL PRACTICE, I DO NOT FORCE YOU TO
+RESTART YOUR GAME TO UPGRADE. "YT.EXE" WILL RUN WITH THE OLD, 1,000 SECTOR
+DATA FILE JUST FINE.
+
+Some other changes that go along with the sector expansion are:
+
+1) Increased the maximum amount of planets to 100 from 75.
+2) Increased the amount of ports in the game to 1000 from 300.
+
+One strange (very!) result of the sector expansion is strange port names. I
+was NOT about to try to come up with another 700 names for the ports so I
+wrote this silly little routine to make random names from random syllables.
+Some of the names it comes up with are REALLY off-the-wall... oh well, it
+ought to be good for a laugh anyway! (-: WARNING: Since the names are
+generated at random, it may come up with something "rude" from time to time.
+If that is the case, you can use the port rename function of "YTCONFIG.EXE" to
+rename that port.
+
+Changed YT-INIT.EXE and RMT-INIT.EXE to produce BIGGER ports. (Larger initial
+production.)
+
+Added computer option 17: "Check Profits of a Two-way Trade to Port in
+Adjacent sectors". Sounds worse than it is! (-: If there is a port in your
+sector and port(s) you can trade with in the ADJACENT sector(s) this option
+will show you how much profit there will be if you do a two-way trade between
+the two ports.
+
+Changed computer;14 display to show port names if the port is un-owned.
+
+Made a program called "PORTNAME.EXE" that will apply new, random names to all
+ports. (I wrote this to generate new random names for my game in progress. The
+first generation of the random port name generator produced rather lame names!
+I wanted to redo the names of my current game using the new random name
+generator routine without doing a complete reinitialization.)
+
+Changed planet growth. They now increase production of ore, organincs and
+equipment by 1% per day over any other increases.
+
+Changed YT-INIT. I changed the default "Times Allowed to Play Lottery Per Day"
+to 5 from 3.
+
+Changed the game to show the TIME a player logs in instead of the date.
+
+Added a MERCENARY HOME PLANET to the game. This is a heavily defended planet
+that will be well worth the attempt for players to take! (-: This planet is
+created by maintenence if it is missing.
+
+Added a report to the newspaper when someone attacks a planet with ground
+forces.

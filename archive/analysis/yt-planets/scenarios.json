@@ -1,0 +1,230 @@
+{
+  "dos_date": "10/24/2026",
+  "binary_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "validated": {
+    "planet-takeall": {
+      "source": "fixture-planet-takeall",
+      "keys": "|~~~~~|~L;A;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "030ccbe66c48aa1046742356784d34d9648a275aeffe81711872f4bf3166cfcd",
+      "normal_local_return": false
+    },
+    "planet-transfer-cargo": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;T;C;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "0c85b7d3f7f8ab70d9702aa79cd52d35d616fe0321be8c6b34ff88b33a6775cf",
+      "normal_local_return": false
+    },
+    "planet-transfer-weapons": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;T;B;T;S;T;M;T;F;123;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "c4bcbd1b8b38443e9baeb9c1ef5e626d038502a25a6b71ed9a7e60a891c794ed",
+      "normal_local_return": false
+    },
+    "planet-create": {
+      "source": "fixture-planet-create",
+      "keys": "|~~~~~|~L|~~Y|~~New Eden|~~Y|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 50,
+      "before_sha256": "a7b3941522608094210d43b5ec8c142d769d735c5c9ab87062c854ec4e324b21",
+      "after_sha256": "f1ad9104a9b887a38f3e3045ef41ca0093aa062511b715dc6d905e5a03bf35ee",
+      "normal_local_return": false
+    },
+    "planet-poor": {
+      "source": "fixture-planet-poor",
+      "keys": "|~~~~~|~L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "a16b695f9b7a3b717a127f0de97912f2d9e0cb984df7eb8932d91077f883cc73",
+      "after_sha256": "015b94b9d4450bb39100ea1ef63340ea73cc81ebe0cae39c3ec4c454a7be9f2e",
+      "normal_local_return": false
+    },
+    "planet-full": {
+      "source": "fixture-planet-full",
+      "keys": "|~~~~~|~L|~~Y|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "5924c2788fe7a005a986f60df37e7f0626fe60f34e3208484d11f0a6f37f770a",
+      "after_sha256": "dd731d6f51e638518cf6bab95faee2007fe2db30b4009763f316b4a332ceb7f3",
+      "normal_local_return": true
+    },
+    "planet-bank-deposit": {
+      "source": "fixture-planet-bank-deposit",
+      "keys": "|~~~~~|~L;B;15000;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+      "after_sha256": "0c74d7f0166ffe2be4f9850fccdc9319432f33e2b3ecc02fce193156a133ff5e",
+      "normal_local_return": false
+    },
+    "planet-bank-withdraw": {
+      "source": "fixture-planet-bank-withdraw",
+      "keys": "|~~~~~|~L;B;0;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+      "after_sha256": "c1c9ca2ca30fe9632308e178a13e7a0dda694cf3d255d0df412edc788715f928",
+      "normal_local_return": false
+    },
+    "planet-bank-negative": {
+      "source": "fixture-planet-bank-negative",
+      "keys": "|~~~~~|~L;B;-1;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+      "after_sha256": "7dfdf32793fab0a84050ae1684879f3cb8efaeac66178934bb93aeb653ce1ac4",
+      "normal_local_return": false
+    },
+    "planet-bank-over": {
+      "source": "fixture-planet-bank-over",
+      "keys": "|~~~~~|~L;B;110001;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "fba37d61e3262ab38a191c493c9d5eb9176a4d2ef87dcfb40ed0969f3f8acda4",
+      "after_sha256": "47beb42e0fca98646976d425fee81217b69da074fcfdd4c919cf98a0b24c3922",
+      "normal_local_return": false
+    },
+    "planet-bank-halfday": {
+      "source": "fixture-planet-bank-halfday",
+      "keys": "|~~~~~|~L;B;0;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "49753f33b8eb24e2ee74d9056dc27efbaa098214ccfd72a664a15b28d41fbd65",
+      "after_sha256": "1906759d231598ebea240547d843bdbd5fbbd57c7027acc5c9dccca0fb247978",
+      "normal_local_return": false
+    },
+    "planet-invest1": {
+      "source": "fixture-planet-invest1",
+      "keys": "|~~~~~|~L;$;1;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "abca7df1fac57f714ff4461248fe6b027ab37ebdd0e04e5d78933eae67b14327",
+      "normal_local_return": false
+    },
+    "planet-invest251": {
+      "source": "fixture-planet-invest251",
+      "keys": "|~~~~~|~L;$;251;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "a494a3e00ea072a7a84ccdd2ba556968318c07aea3ce765ba462f93df6dd5931",
+      "normal_local_return": false
+    },
+    "planet-foreign": {
+      "source": "fixture-planet-foreign",
+      "keys": "|~~~~~|~L|~~N|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "after_sha256": "30f484ce1b8d0152f65c8c18959d1af808cd7f6aa3827f283ea8079bdb4c4187",
+      "normal_local_return": false
+    },
+    "planet-team-bank": {
+      "source": "fixture-planet-team-bank",
+      "keys": "|~~~~~|~L;B;0;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "005e7dfad3ab8433dfe5b6eaaa9a4de299edf743c1e0c1de8086df5622692876",
+      "after_sha256": "022f861efd716536c7b3d3ae04ae7ae33e1f8651b31061004fe10e9e94a2d98f",
+      "normal_local_return": true
+    },
+    "planet-unguarded-bank": {
+      "source": "fixture-planet-unguarded-bank",
+      "keys": "|~~~~~|~L;B;0;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "790cec2c9b94b14fd631dedb26875830c9ebf175fdecd144f36c68c70894dc76",
+      "after_sha256": "5221fe5f538f48efa5d2208acb266a119b2b07f592736a83c198bf7c8c09cab1",
+      "normal_local_return": false
+    },
+    "planet-ground": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;F;-10;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "d21abdeb7e7ca42c427321daece8c3167a473df44df1dda98880eac10ace5782",
+      "normal_local_return": false
+    },
+    "planet-ground90": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;F;90;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "14e047b7459ec1411dca79920c1d1e43ac6ae4ecfdb4c4fa4d15d9804cf83e17",
+      "normal_local_return": true
+    },
+    "planet-ground0": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;F;0;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "a50570a602e57f2b2efe1911d34fb0bafa795d9b7e1105ba5c91370f0bd9523d",
+      "normal_local_return": true
+    },
+    "planet-move-yes": {
+      "source": "fixture-planet-transfer",
+      "keys": "|~~~~~|~L;!;101|~~~~Y|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 50,
+      "before_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+      "after_sha256": "7bb08db079e94a07babf4347d250bdd3121e9cc274c1e488bd11a341d7e2eac8",
+      "normal_local_return": false
+    },
+    "planet-move-collision": {
+      "source": "fixture-planet-move-collision",
+      "keys": "|~~~~~|~L;!;101|~~~~Y|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 50,
+      "before_sha256": "731b6e703ec24ede646e64b8b2a46489bbde1af3b40ea22db4ce7c022a46b0e8",
+      "after_sha256": "ed5674c5d5c0449695d15aac05dd1e7fd08b4f7ac4bea4cba9026f5b75b06b07",
+      "normal_local_return": false
+    },
+    "planet-lazy-production": {
+      "source": "fixture-planet-lazy-production",
+      "keys": "|~~~~~|~L;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "d18546fef166f8e87b4b93051728c567e65a6f50142f1588778329b78de98683",
+      "after_sha256": "770045494b871298d71c9c53a7723201ea1a7926b03630be5d07f6a0fe1b44fb",
+      "normal_local_return": true
+    },
+    "planet-bank-large": {
+      "source": "fixture-planet-bank-large",
+      "keys": "|~~~~~|~L;B;1;L|~~~~Q;Y|",
+      "dos_time": "00:00:00",
+      "deadline_seconds": 45,
+      "before_sha256": "9d708d60ef2f0dbba6c21fe7d252a684d2e5fca6fb82c4b9ad3fbe24a6c98f2e",
+      "after_sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+      "normal_local_return": true
+    },
+    "planet-bank-large-relogin": {
+      "source": "fixture-planet-bank-large-relogin",
+      "keys": "|~~~~~|~L;B;2;L|~~~~Q;Y|",
+      "dos_time": "00:01:00",
+      "deadline_seconds": 45,
+      "before_sha256": "ca8bc30cfc94d04c392c663493217cafd83b555269f36d90c7a483b58ef8871b",
+      "after_sha256": "d3b02c334f01ca36f13513ba91fa5fd7a326fce0f83d47f3f8b610f45fa40eae",
+      "normal_local_return": true
+    }
+  },
+  "excluded": {
+    "planet-bank-large-repeat": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted.",
+    "planet-bank-large2": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted.",
+    "planet-move": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted.",
+    "planet-team": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted.",
+    "planet-transfer": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted.",
+    "planet-unguarded": "Exploratory menu/access/confirmation probe or superseded clock-control experiment; not counted."
+  }
+}

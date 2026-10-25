@@ -1,0 +1,183 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Enemy | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Enemy!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Enemy | Enemy  179:52  
+                    [ Info ]
+
+Name  : Enemy 
+Time  : 179:52  
+Team  : None
+
+ษอออออออออออออออออออออออออหออออออออออออออออออออออป
+บ Credits.. : 900000      บ Sector....... : 1    บ
+บ Turns.... : 499         บ Holds........ : 0    บ
+บ Fighters. : 1025        บ Ore.......... : 0    บ
+บ Mines.... : 5           บ Organics..... : 0    บ
+บ Missiles. : 0           บ Equipment.... : 0    บ
+บ Scanner.. : Installed   บ Ports Owned.. : 0    บ
+บ Shields.. : 10          บ Cloak Energy. : 100% บ
+บ Forces... : 0           บ Plasma Bolts. : 0    บ
+ศอออออออออออออออออออออออออสออออออออออออออออออออออผ
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 1
+Port: Earth, Selling: Ore
+Warps lead to: 1, 2, 3, 4, 5, 6
+
+Time: 179:52  Main Command (?=Help)?  179:45   179:44  P; 179:42  3;1000
+<Port>
+
+Docking, One Turn Deducted, 498 left.
+
+Commerce report for Earth: 10-24-2026 00:00:14
+
+This port is owned by: Q 
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 900
+[2] Cargo Holds       * 500    * 1800
+[3] Fighters          * 100    * 9000
+[4] Play Lottery      * 5      * 180000
+[5] Danger Scanner    * 250000 * 3
+[6] Anti-Cloak Device * 500000 * 1
+[7] Ground Forces     * 750    * 1200
+[8] Shield Power      * 50     * 18000
+[9] Hire Spies (Each) * 333000 * 2
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 900000 -=*=- Buy Which Item? -=>3
+
+Buy how many fighters? [0]? 1000
+
+Commerce report for Earth: 10-24-2026 00:00:14
+
+This port is owned by: Q 
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 800
+[2] Cargo Holds       * 500    * 1600
+[3] Fighters          * 100    * 8000
+[4] Play Lottery      * 5      * 160000
+[5] Danger Scanner    * 250000 * 3
+[6] Anti-Cloak Device * 500000 * 1
+[7] Ground Forces     * 750    * 1066
+[8] Shield Power      * 50     * 16000
+[9] Hire Spies (Each) * 333000 * 2
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 800000 -=*=- Buy Which Item? -=> 179:41   179:40   179:39   179:38   179:37   179:36   179:35  0 179:34  
+
+Sector: 1
+Port: Earth, Selling: Ore
+Warps lead to: 1, 2, 3, 4, 5, 6
+
+Time: 179:34  Main Command (?=Help)?  179:33   179:32   179:31  Q; 179:30  Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Enemy 
+Time  : 179:30  
+Team  : None
+
+ษอออออออออออออออออออออออออหออออออออออออออออออออออป
+บ Credits.. : 800000      บ Sector....... : 1    บ
+บ Turns.... : 498         บ Holds........ : 0    บ
+บ Fighters. : 2025        บ Ore.......... : 0    บ
+บ Mines.... : 5           บ Organics..... : 0    บ
+บ Missiles. : 0           บ Equipment.... : 0    บ
+บ Scanner.. : Installed   บ Ports Owned.. : 0    บ
+บ Shields.. : 10          บ Cloak Energy. : 100% บ
+บ Forces... : 0           บ Plasma Bolts. : 0    บ
+ศอออออออออออออออออออออออออสออออออออออออออออออออออผ
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:00:27
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%        4,152,500   None      1    Q                             
+  2   30.48%        1,265,500   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000    24.08%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...

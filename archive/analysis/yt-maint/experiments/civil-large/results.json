@@ -1,0 +1,59 @@
+{
+  "before": {
+    "text": "civil-large",
+    "fields": {
+      "41": 297.0,
+      "45": 1000.0,
+      "49": 1000.0,
+      "53": 1000.0,
+      "57": 0.0,
+      "61": 0.0,
+      "65": 0.0,
+      "69": 0.0,
+      "73": 0.0,
+      "77": 100000000.0,
+      "81": 0.0,
+      "85": 11.0,
+      "89": 0.0,
+      "93": 0.0,
+      "97": 0.0,
+      "101": 0.0,
+      "105": 0.0,
+      "109": 0.0,
+      "113": 0.0,
+      "117": 0.0,
+      "121": 0.0,
+      "125": 0.0,
+      "129": 0.0
+    }
+  },
+  "after": {
+    "text": "civil-large",
+    "fields": {
+      "41": 298.0,
+      "45": 28.602672576904297,
+      "49": 848.8421020507812,
+      "53": 706.6730346679688,
+      "57": 286.0267333984375,
+      "61": 1000.0006103515625,
+      "65": 1000.0006103515625,
+      "69": 1.0000005960464478,
+      "73": 0.0,
+      "77": 27471880.0,
+      "81": 0.0,
+      "85": 11.0,
+      "89": 0.0008333333535119891,
+      "93": 0.0,
+      "97": 0.0,
+      "101": 0.0,
+      "105": 0.0,
+      "109": 0.0,
+      "113": 0.0,
+      "117": 0.0,
+      "121": 0.0,
+      "125": 0.0,
+      "129": 3000.001708984375
+    }
+  },
+  "events": "Running planet maintenance...\r\n\r\n  -  CIVIL WAR has struck planet civil-large as a result of overcrowding!\r\n  -  Productivity reduced from 3030 units to 1584.118 units!\r\n  -  Ground forces reduced from 1.01E+08 to 2.747188E+07 units!\r\n\r\n  -  A PLAGUE has struck planet Xannoron as a result of overcrowding!\r\n  -  Productivity reduced from 301293.8 units to 209673.1 units!\r\n  -  Ground forces reduced from 214 to 153 units!\r\n\r\n"
+}

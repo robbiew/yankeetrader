@@ -1,0 +1,149 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Tester | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Tester!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Tester | Q  179:51  
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:51  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 1005        ║ Sector....... : 100  ║
+║ Turns.... : 500         ║ Holds........ : 10   ║
+║ Fighters. : 2000000     ║ Ore.......... : 0    ║
+║ Mines.... : 0           ║ Organics..... : 0    ║
+║ Missiles. : 100         ║ Equipment.... : 0    ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 2000000     ║ Cloak Energy. : 100% ║
+║ Forces... : 0           ║ Plasma Bolts. : 10   ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 100
+Warps lead to: 101, 99
+
+Time: 179:51  Main Command (?=Help)?  179:44   179:43  ! 179:42  ;101;20
+
+You have 100. Send your cruise missile to what sector? [ 1 to 3000 ] ?101
+Send how many? [0] ?20
+
+One Turn Deducted, 499 left.
+
+Loading course into misile targeting computer.
+*** Tracking Report ***
+The missiles attacked Enemy  in 101 reducing
+shields to 999772 units and destroying 35579 fighters!
+
+Enemy  shot back with 1 missiles at you!
+
+Loading course into misile targeting computer.
+*** Tracking Report ***
+The missiles attacked Q  in 100 reducing
+shields to 2000000 units and destroying 169 fighters!
+
+Sector: 100
+Warps lead to: 101, 99
+
+Time: 179:42  Main Command (?=Help)?  179:37   179:36   179:35   179:34   179:33   179:32   179:31  Q;Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:31  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 1005        ║ Sector....... : 100  ║
+║ Turns.... : 499         ║ Holds........ : 10   ║
+║ Fighters. : 1999831     ║ Ore.......... : 0    ║
+║ Mines.... : 0           ║ Organics..... : 0    ║
+║ Missiles. : 80          ║ Equipment.... : 0    ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 2000000     ║ Cloak Energy. : 100% ║
+║ Forces... : 0           ║ Plasma Bolts. : 10   ║
+╚═════════════════════════╩══════════════════════╝
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 14:41:06
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%      310,089,088   None      0    Q                             
+  2   47.22%      146,430,688   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000     0.32%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...

@@ -1,0 +1,68 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 144978,
+      "text_offset": 144982,
+      "length": 6,
+      "text": "<Help>",
+      "hex": "3c48656c703e"
+    },
+    {
+      "descriptor_offset": 144988,
+      "text_offset": 144992,
+      "length": 12,
+      "text": "A - <A>ttack",
+      "hex": "41202d203c413e747461636b"
+    },
+    {
+      "descriptor_offset": 145004,
+      "text_offset": 145008,
+      "length": 20,
+      "text": "B - <B>ribe Fighters",
+      "hex": "42202d203c423e72696265204669676874657273"
+    },
+    {
+      "descriptor_offset": 145028,
+      "text_offset": 145032,
+      "length": 17,
+      "text": "D - <D>rop a Mine",
+      "hex": "44202d203c443e726f702061204d696e65"
+    },
+    {
+      "descriptor_offset": 145050,
+      "text_offset": 145054,
+      "length": 33,
+      "text": "I - <I>nformation about your ship",
+      "hex": "49202d203c493e6e666f726d6174696f6e2061626f757420796f75722073686970"
+    },
+    {
+      "descriptor_offset": 145088,
+      "text_offset": 145092,
+      "length": 19,
+      "text": "Q - <Q>uit the game",
+      "hex": "51202d203c513e756974207468652067616d65"
+    },
+    {
+      "descriptor_offset": 145112,
+      "text_offset": 145116,
+      "length": 20,
+      "text": "S - Display <S>ector",
+      "hex": "53202d20446973706c6179203c533e6563746f72"
+    },
+    {
+      "descriptor_offset": 145136,
+      "text_offset": 145140,
+      "length": 15,
+      "text": "T - <T>eam Menu",
+      "hex": "54202d203c543e65616d204d656e75"
+    },
+    {
+      "descriptor_offset": 145156,
+      "text_offset": 145160,
+      "length": 20,
+      "text": "W - Emergency <W>arp",
+      "hex": "57202d20456d657267656e6379203c573e617270"
+    }
+  ]
+}

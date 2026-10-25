@@ -1,0 +1,26 @@
+Yankee Trader Configuration Program
+By Alan Davenport
+
+Version 1.8 -=- 03/13/94
+
+<A> Maximum Number of Holds: 1000
+<B> Turns per day: 500 
+<C> Initial fighters: 25 
+<D> Initial credits: 1005 
+<E> Initial cargo holds: 10 
+<F> Days until a dead player is deleted: 14 
+<G> OK to run Maintenance?: No, Ran Today Already
+<H> Xannor Headquarters is in: 1114 
+<I> Scoreboard File Path\Name: YTSCORE.ASC
+<J> Local Screen With Remote Callers: On
+<K> Maximum Lottery Plays Per Day : 5 
+<L> Ports needed to initiate Genesis: 300
+<N> Player NAME/ALIAS editor.
+<O> pOrt name editor.
+<P> Planet name editor.
+
+<X> Exit Program
+
+Command: X
+
+-=* End of Run *=-

@@ -1,0 +1,50 @@
+[
+  {
+    "port": 1,
+    "before": 1005,
+    "after": 1005.0,
+    "repeat": 1005.0
+  },
+  {
+    "port": 2,
+    "before": 0,
+    "after": 0.0,
+    "repeat": 0.0
+  },
+  {
+    "port": 3,
+    "before": 9,
+    "after": 9.0,
+    "repeat": 9.0
+  },
+  {
+    "port": 4,
+    "before": 10,
+    "after": 9.0,
+    "repeat": 9.0
+  },
+  {
+    "port": 5,
+    "before": 19,
+    "after": 18.0,
+    "repeat": 17.0
+  },
+  {
+    "port": 6,
+    "before": 101,
+    "after": 91.0,
+    "repeat": 82.0
+  },
+  {
+    "port": 7,
+    "before": 1005,
+    "after": 905.0,
+    "repeat": 815.0
+  },
+  {
+    "port": 8,
+    "before": 1000000,
+    "after": 900000.0,
+    "repeat": 810000.0
+  }
+]

@@ -1,0 +1,957 @@
+00000e00  bmYT      
+00002519  Y x *)A#C
+00004c88  XIQESO
+0000d018  'Da('val(
+0000d328  !"`U!"`Z!"`_!"`p!"`
+0000d364  !"`=""`F""`K""`N""`N""`S""`X""`c""`x""`
+0000d3b0  #"`##"`.#"`>#"`B#
+0000d510  'Da%'Da)'va.'va7'va<'vaE'vaJ'vaO'vaf'vak'vay'va
+0000d580  (va$(va)(va/(va@(vaO(vaR(vaX(vaX(va[(vad(vai(val(vam(
+0000d800  0Hq(0Hq10Hq60Hq
+0000d810  =h~90Hq90Hqg0Hq
+0000d84c  0Hq"1Hq'1Hq,1Hq81HqA1HqJ1HqO1
+0000d8c2  u_2 ui2 un2 u
+0000d900  3&u+3&u03&u>3&uG3&ub3&uk3&ux3&u{3&u~3&u
+0000db60  :;~%:;~*:;~3:;~8:;~B:;~^:;~
+0000db88  ;;~);;~8;;~o;;~
+0000dba8  <;~L<;~t<;~y<;~
+0000dbcc  =h~#=h~R=h~W=h~\=h~e=h~n=h~
+0000dc20  >h~2>h~5>h~5>h~C>h~H>h~K>h~Y>h~^>h~a>h~
+0000dcac  ?h~(?h~-?h~6?h~;?h~D?h~I?h~R?h~W?h~`?h~e?h~n?h~s?h~|?h~
+00010220  bmYT-SUB  Z
+0001f590  bmYT-SUB2 
+0001f59f  ^jaD"')
+0001f5b4  0"0"0"
+0002310f  @PVSRW
+0002325b  aVersion 3.6 * YT * Compiled 03/16/94
+00023289  aOre..........
+0002329b  aOrganics.....
+000232ad  aEquipment....
+000232bf  bFighters.....M
+000232d0  "bMissiles.....
+000232e2  4bMines........
+000232f4  FbCredits......
+00023306  XbForces.......
+00023318  jbPlasma bolts.
+0002332a  |bYT.REG
+00023341  bGenerating ScoreBoard
+0002335b  bPLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+00023389  bReturning to \
+000233b5  cYTOPEN.Asc
+000233c7  cInitializing...
+000233da  ,cWelcome 
+000233ec  >cSearching my records for your name.
+00023414  fcEntering a new player...3
+00023431  cI'm sorry but the game is full. Try again tomorrow.
+00023471  c: New player not allowed - game full.
+0002349b  cNotice: If your ship is dead and you have not played for7
+000234d6  (ddays, it will be deleted to make room for someone else.
+00023512  dd-=*=- 
+0002351c  nd New Player Entered -=*=-
+0002353b  dYour ship has been destroyed!
+00023561  d[ Press any Key ]
+00023583  dA *-BLACK HOLE-* grabs you!
+000235a3  dYou have to defeat the fighters before you can enter this sector.
+000235e8  :eFighters:
+000235fc  NeOption? (A,B,D,I,Q,S,T,W,?=Help):? 
+00023637  eAQBDWT
+00023641  eInvalid command.
+00023655  e<Help>
+0002365f  eA - <A>ttack
+0002366f  eB - <B>ribe Fighters
+00023687  eD - <D>rop a Mine
+0002369d  eI - <I>nformation about your ship
+000236c3  fQ - <Q>uit the game
+000236da  ,fS - Display <S>ector
+000236f2  DfT - <T>eam Menu
+00023706  XfW - Emergency <W>arp
+0002371e  pf<Attack>
+00023733  fYou don't have any fighters!
+00023753  fAttack with how many fighters? 
+00023777  fYou only have
+000237a1  fRADIO MESSAGE COMING IN!
+000237c1  gThis is the captain of the fighter group in sector
+000237f6  HgWE WISH TO SURRENDER!!!
+00023812  dgWill you accept our surrender? [Y]/N -=>
+00023843  gWhee fyte to the deeth hoo-man slyme!
+00023871  gWe'll DIE before joining with a slyme like you 
+000238ab  g We join your forces!
+000238c5  h fighters in sector
+000238dc  .h surrendered to 
+000238f0  Bh fighters surrendered!fff
+0002390e  `h You lost
+0002391c  nh fighter(s)
+0002392c  ~h You destroyed
+0002393f  h enemy fighters.)
+00023953  hFighters gone! Enemy attacking your ship!
+00023981  h destroyed
+0002398f  h fighters belonging to 
+000239b3  i turns bonus for destroying
+000239d2  $i Xannor!!
+000239e0  2iCollect
+000239ec  >i collected
+00023a02  TiYou defeated all the fighters and have
+00023a2c  ~i left.
+00023a37  i<Quit>
+00023a41  iAre you sure (Y/N)? 
+00023a59  iWe don't accept no Bribes 
+00023a7b  iScram 
+00023a85  i, This planet is OURS!
+00023aa7  iWe just want your miserable life 
+00023acd  jWe MAY join up if you pay us enough 
+00023af4  FjYou have$
+00023b00  Rj credits. How much do you offer? -+>
+00023b28  zjYou insult us 
+00023b3b  j! Prepare to DIE!
+00023b51  jGood Deal! We join up with you!
+00023b75  jThis is a desperate move! Your engines will be drained and will take time
+00023bc3  kto recharge! You also risk a melt down! Are you sure you wish to do this?
+00023c10  bk[y/N] -=> 
+00023c1e  pkTime:
+00023c28  zkMain Command (?=Help)? 
+00023c4b  k<Display>
+00023c59  kW!+ABCFLMPQTD$GN
+00023c79  k<Instructions>
+00023c8b  k[ENTER] - Re-display sector
+00023cab  k$ - Take Credits from your ports
+00023cce   l! - Launch a Cruise Missile
+00023cee  @lA - <A>ttack a player's ship
+00023d0e  `lB - <B>uy a Port
+00023d22  tlC - Ship's <C>omputer
+00023d3d  lD - <D>rop a Sector mine
+00023d59  lF - Take or leave <F>ighters
+00023d79  lG - Initiate <G>enesis
+00023d93  lI - <I>nfo on your ship
+00023daf  mL - <L>and on or create a planet
+00023dd2  $mM - <M>ove to another sector
+00023df2  DmN - Re<N>ame Port
+00023e08  ZmP - Dock at a <P>ort (and trade)
+00023e2c  ~mQ - <Q>uit game
+00023e41  mS - <S>ensors
+00023e53  mT - <T>eam menu
+00023e67  mV - <V>ersion Info
+00023e7d  mX - Sound Effects On/Off
+00023e99  mZ - Instructions
+00023ead  m+ - Fire Plasma Bolt9
+00023ec5  nString commands by seperating them with a semicolons (;).
+00023f02  TnTo place an EXTRA 'hit enter' in a string, use an extra ';'.2
+00023f43  nSave a command string by placing a '/' at the end.1
+00023f79  nThen hit Control-R to [R]eplay the saved command.
+00023faf  oYou may repeat any command up to 20 times by putting6
+00023fe6  8oa /R# at the end of your command. Replace the '#' with6
+00024020  roany number between 2 and 20. Example: your command/R20
+0002405b  oWarps lead to
+00024073  oMove to which sector? 
+00024093  oThat was quick! Felt like we didn't even move!
+000240c5  pYou can't get there from here.
+000240e6  8pMove into sector
+000240fa  Lp? [y/N] 
+00024106  Xp<Drop/Take Fighters>
+00024122  tpYou can't leave fighters in the Union (sectors 1-7)
+0002415b  pThere are already fighters in this sector!
+00024189  p fighters available."
+000241a1  pDefend this sector with how many? 
+000241c7  qYou don't have that many!
+000241e4  6qDone.  You have2
+000241f8  Jq fighters left.
+0002420c  ^qYou don't HAVE any!
+00024224  vqThe Union doesnt like the home 7 sectors mined!
+00024259  q mines. Drop how many? [0] -=>
+0002427b  qSector
+00024285  q is now mined!
+00024297  q cruise missile 
+000242ab  q plasma bolt 
+000242bd  rYou dont have any!
+000242d2  $r. Send your
+000242e2  4rto what sector? [ 1 to
+000242fc  Nr ] ?
+00024304  VrInvalid Sector number!
+0002431e  prSend how many? [0] ?
+00024337  rYou dont have that many!
+00024357  rNo port here!
+00024371  rEarth
+0002437b  rYou already OWN this port 
+00024399  rThis port is for sale for
+000243b7  s credits. You have
+000243cd  s credits.
+000243da  ,sCome back when you can afford it!
+00024400  RsYou may buy it from 
+00024418  js if you wish.
+0002442a  |sDo you wish to buy it? [y/N]
+0002444b  sSold!
+00024455  sCredits transferred to f
+00024471  s's account!
+00024481  s bought your port 
+000244a7  s credits
+000244b3  tCongratulations .
+000244c7  t! When others trade at your port their CREDITS9
+000244f8  Jtwill go into the port treasury for you to take out later!
+00024537  tWhat a shame.. it's a nice port!<
+0002455b  tIt has been written that one day a Trader Baron will rise up8
+0002459b  tand wipe the universe clean of the evil that infests it.
+000245d6  (uAre you that Trader 
+000245ee  @u [y/N]
+000245fc  Nu*FUNCTION DISABLED*
+0002461a  luYou are not up to the challenge. You must own]
+0002464d  u ports before you are powerful#
+0002466f  uenough to initiate Genesis. You are
+00024697  u short of fulfilling the prophesy.F
+000246bd  v...and so it was written, that one day a trader baron would emerge who8
+00024706  Xvwould wipe away the all of the evil in the universe.....
+00024743  vRMTINIT.TMP
+00024753  vRmt-init.exe@
+00024763  vAlas, today is not the day that the prophesy will be fullfilled.
+000247a7  vThis isn't your port!
+000247c1  wCan't rename Earth!
+000247d8  *wYou don't have any fighters.
+000247f8  JwNOT attacking team member 
+00024816  hwAttack 
+00024822  tw (Y/N)[Y]? 
+00024833  wThere are no other ships in this sector.
+0002485f  wThere's no one here!
+00024877  w. Use how many fighters? [0] 
+00024899  wYou lost
+000248a5  w fighter(s),
+000248b5  x remain.
+000248c1  xYou destroyedf
+000248d2  $x enemy fighters,(
+000248e6  8xFighters eliminated! Attacking the ship!
+00024912  dx  -  |!
+0002491c  nx had sector mines! They EXPLODED!
+00024943  xDo you want instructions (Y/N) [N]? 
+0002496b  xytinstr.doc
+0002497b  xMoving planets costs 10 turns per sector.
+000249ad  xMove planet to what sector? 
+000249cd  yHey, look out the window dummy!
+000249f0  ByValid sector numbers are from 1 to
+00024a16  hyWorking. 
+00024a24  vyThe shortest path from sector
+00024a47  y to sector
+00024a5d  yDistance is
+00024a6d  y and will take
+00024a7f  y turns.
+00024a8b  yNot enough turns left to move the planet that far!
+00024ac1  z turns left.
+00024ad0  "zMove the planet? (Y/[N])
+00024aec  >zPlanet thrusters engaged.
+00024b0a  \zMoving to sector:
+00024b20  rzDrop how many ground force units on the planet?
+00024b55  z Available ->
+00024b67  zInsuficient forces!
+00024b7f  zGround force strength now at
+00024b9f  z units!
+00024bab  z<Land/Create planet>
+00024bc3  {Landing...
+00024bd0  "{Sensors report ground forces of
+00024bf4  F{ units. You have
+00024c0e  `{Do you wish to try to force a landing? [y/N] 
+00024c41  {Use how many ground forces? You have
+00024c69  {. [0] "
+00024c73  {There is no planet in this sector.
+00024c9d  {Planets cost 25000 credits.
+00024cbd  |You're too poor to buy one.
+00024cdc  .|Do you wish to buy a planet(Y/N) [N]? %
+00024d06  X|I'm sorry, but all planets are taken.
+00024d31  |One has to be destroyed before you can buy a planet.
+00024d71  | made a planet: 
+00024d85  |Planet 
+00024d91  | created with Genesis Device!
+00024db3  }To increase productivity on your new planet, spend credits [$] on it.
+00024dfc  N}Planet: 1
+00024e08  Z} Item           Production     Amount    In Holds
+00024e3f  }=============  ============   ========  ==========
+00024e89  } free cargo holds.
+00024e9f  }Planet command (?=help) [A]? 
+00024ecd  ~F!MPC1234569LTAB$
+00024ee2  4~1 - Take Ore
+00024ef2  D~2 - Take Organics
+00024f08  Z~3 - Take Equipment
+00024f1e  p~4 - Take Fighters
+00024f35  ~5 - Take Missiles
+00024f4b  ~6 - Take Mines
+00024f5d  ~9 - Take Plasma Bolts
+00024f77  ~A - Take <A>ll (Default)
+00024f93  ~B - Planet's <B>ank
+00024fab  ~D - <D>isplay Planet
+00024fc4  F - Take/Leave Ground <F>orces
+00024fe6  L - <L>eave Planet
+00024ffc  N - Re-<N>ame Planet
+00025014  T - <T>ransfer Cargo to Planet
+00025036  ! - Use Planet Thrusters
+00025052  $ - Raise Productivity
+0002506c  <Take 
+0002507e  Organics)
+0002508c  Equipment)
+0002509a  Fighters)
+000250a8  Missiles)
+000250b6  Mines)
+000250c0  Plasma Bolts>
+000250d2  How much [
+000250e8  They don't have that many.
+00025106  You can't take that much!
+00025128  <Take all>
+00025136  Taking:
+00025146  <Transfer items to planet>
+00025164  Transfer which item?
+0002517c  [B] Plasma Bolts
+00025190  [C] Cargo
+0002519e  [F] Fighters
+000251ae  [S] Missiles
+000251be  [M] Mines
+000251e4  You don't have any cargo!
+00025202  Cargo transferred!!
+00025220  Plasma Bolts Transferred!
+0002523e  Missiles Transferred!
+0002525e   fighters. Transfer how many -=>
+00025282  Fighters Transferred!
+0002529c  Mines Transferred!%
+000252b2  Welcome to the intergalactic bank of 
+000252dc  How many credits do you want in the account?(
+0002530c  We are a SAVINGS not a LOAN institution!!
+00025338  You don't have that many Credits!
+0002535e   credits on deposit at 1% interest. 
+00025386  Have a nice day!L
+0002539a  Productivity is increased by 1 Unit of EQU, ORG  & ORE for each 250 credits.
+000253ea   Credits.
+000253f8  Spend how much to raise productivity? -+>  
+00025426  You dont have that many credits!
+00025452  Productivity increased byD
+00025470   units of ORE, ORG & EQU!
+0002548e  Also increased: Fighters:
+000254b0  , Missiles:
+000254c0  , Mines:
+000254d0  , Plasma Bolts:
+000254e4  You can't re-name this planet!)
+00025506  What do you want to name this planet? -=>
+00025534  The Wanderer
+00025544  Xannoron
+00025550  Mercenary Base
+00025562  I Don't think so!
+00025578   Is this OK? (Y/n) [Y] ?
+00025594  1) Exit Team menu
+000255aa  2) Create a Team
+000255be  3) Join a Team
+000255d0  4) Quit a Team&
+000255e2  5) Search for Team Members & Resources%
+0002560c  6) Transfer Fighters to Defense Force
+00025636  7) Banish a Team Member
+00025652  8) Change Team Password
+0002566e  9) Change Team Name
+00025686  Team Command? 
+00025698  Invalid Choice!
+000256b8  Entering a New Team...
+000256d6   Created Team
+000256f2  Team number [<
+0002570c  ] CREATED!
+00025726  Which team do you wish to join (0=quit)? 
+00025754  That team is dead!
+0002576a  The Team you picked is full!!
+0002578c  Team #
+0002579c  Please enter Password to Join Team? 
+000257c8  Invalid Password entered!
+000257e6   Joined Team,
+000257f6  Your Team info has been recorded!  Have fun!
+0002582c  Are you sure you wish to quit your team? [N] 
+0002585e  You have been removed from Team play
+0002588c  Locating Team Members, Planets & Defenses./
+000258ba  Name                                     Sector
+000258ee  ====================                     ======
+00025922  Defending;
+00025930  Planets;
+0002593c  None Found
+00025950  There IS no defense force here!
+00025974   fighters.
+00025982  There are
+00025990   fighters here.
+000259a4  How many fighters do you wish to transfer? 
+000259d4  Fighters transferred!
+000259f4  Banish 
+00025a00   (Y/[N])? 
+00025a0e  End of List
+00025a1e  Done. Now change your Team Password!
+00025a52  other 
+00025a5c  Transfer to 
+00025a74  team mates in this sector!+
+00025a92  Pick a name for your Team (41 chars. max)? 
+00025ac2  Team names MUST more than 2 letters!2
+00025aea  Please Pick a Password for your Team. (4 Chars.) :
+00025b20  Password MUST be 4 characters!4
+00025b42  REMEMBER YOUR TEAM PASSWORD SO OTHERS CAN JOIN! -+> 
+00025b7a  <Port>
+00025b84  Docking, 
+00025b9a  We don't want your goods and you can't buy ours 
+00025bce   credits and
+00025bde   empty cargo holds.
+00025c0e  Commerce report for 5
+00025c26   Items         Status      # units    in holds   Cost
+00025c60  =======       =========   =========   ========   ====
+00025c9a    Buying 
+00025ca8    Selling
+00025cbe  Commerce report for Earth: 
+00025cfa  ----------------------*--------*------------+
+00025d2a           ITEM         *  COST  * CAN AFFORD
+00025d5a  [1] Cloak Energy
+00025d78  [2] Cargo Holds
+00025d8c  [3] Fighters
+00025d9c  [4] Play Lottery
+00025dc0  [5] Danger Scanner
+00025dd6  [6] Anti-Cloak Device
+00025df0  [7] Ground Forces
+00025e06  [8] Shield Power
+00025e1a  [9] Hire Spies (Each)
+00025e34  [I] Ship Info -=*=- [0] Leave Port
+00025e5a  Credits:
+00025e66   -=*=- Buy Which Item? -=>
+00025e8c  INAVLID CHOICE!
+00025ea0  You dont need any holds.
+00025ebc  You need
+00025ec8   holds.
+00025ed4  Buy how many holds? [0]? 
+00025ef2  You don't need that many!
+00025f10  Buy how many fighters? [0]? 
+00025f34  You can't afford a lottery ticket!
+00025f5e  Welcome to the Intergalactic Pick-6 Lottery!3
+00025f8e  Enter a 6 digit number for the lottery computer -+>
+00025fc6  Cloak energy is down by0
+00025fe8  Buy how many points of Cloak Energy? (0 -Y
+0002601e  You can't have over 100% cloak!
+00026042  You already HAVE a Danger Scanner!#
+00026068  You cannot afford a Danger Scanner!
+00026090  Danger Scanner installed in your ship!>
+000260ba  Anti-Cloaking Device works for this logon only. Buy one? [y/N]
+000260fc  Hit [Enter]
+0002610c  Buy how many ground force units? [0]?  
+00026136  Buy how much shield power? [0]? 
+0002615a   spies active already.
+0002617e  Hire how many>
+00026190   spies? [0]? 
+000261a2  Max spies allowed is 3!
+000261be  Start spy #
+000261ce   in what sector?
+000261e6  You do not have enough credits!
+0002621e  We are 
+0002622a  ing up to
+00026238  .  You have
+00026248   in your holds.
+0002625c  How many holds of 
+0002627a  Organics
+00026286  Equipment
+00026294   do you want to 
+000262ae  don't have
+000262bc  don't need
+000262d2   that much!
+000262e2  You don't have enough cargo holds.
+00026308  can't afford
+00026320  We're not selling that many.
+00026340  We don't want that many.
+0002635c  You don't have that much!
+0002637a  Agreed,
+00026386   units.
+00026392  We'll sell them for
+000263aa  We'll buy them for
+000263c0  Do you agree? [Y/n] 
+000263d8  Never mind!
+000263e8  We'll take them!
+000263fc  It's Yours!
+0002640c  <Computer activated>
+00026428   Computer commands:
+00026440   1) Exit Computer
+00026456   2) Port Report
+0002646a   3) Autopilot
+0002647c   4) Rank Teams & Players
+00026498   5) Send Radio Message
+000264b2   6) Radio Message Log
+000264cc   7) Set autopilot Sectors to Avoid
+000264f2   8) Galactic Newspaper
+0002650c   9) Planet Report
+00026522  10) Path Finder
+00026536  11) Fighter Finder (Yours)
+00026554  12) Port(s) Treasury Report
+00026574  13) Planet Finder (Yours)
+00026592  14) Find Nearest Ports
+000265ac  15) Show Active Spies
+000265c6  16) Find Port Pairs
+000265de  17) Check Profits of Adjacent Ports
+00026606  Computer command (?=help)? 
+00026660  Show buying/selling [1] Equ, [2] Org, [3] Ore,1
+00026692  [Y] Your Ports, [T] Team's Ports, [E] Enemy Ports
+000266c8  [U] Un-owned Ports OR [A] All Ports ? -=> [A] 
+000266fa  123ATYEU
+00026706  You dont belong to a team!
+00026724  You dont own any!
+0002673a  Find ports [B] Buying or [S] Selling 
+0002676e  You may set the autopilot to avoid up to 30 sectors
+000267a6  Current sectors to avoid are:
+000267c8   ]  -=> 
+000267e0  Enter the number of the slot to change [1 - 30]: 
+00026816  Enter the sector you wish to avoid [1 -
+00026842  ] (0 to clear): 
+00026856   now locked out.
+0002686a   now available.
+0002687e  +!LMP?123459
+00026894  Do you want to read [T]oday's or [Y]esterday's news? [T/Y] -=> 
+000268d8  ytnews.dat
+000268e6  YTYNEWS.DAT
+000268f6  Don't BREAK the 'ON' button!
+00026916  Does not compute#
+0002692a  Enter sector number port is in -=> 
+00026952  Invalid sector number! Range is 1 -
+0002697a  No information available.
+0002699c  Enter start for path search? 
+000269be  What sector do you want to go to? 
+000269e8  Course will take
+00026a00  Not enough turns left to autopilot this course!
+00026a34  Enter course into autopilot? (Y/[N])
+00026a5c  Autopilot Engaged.
+00026a72  Ctrl-X to StopE
+00026a84  Enter 'O' to see OLD scoreboard or press [ENTER] for UPDATED one. -=>
+00026ad4  P l a y e r  R a n k i n g s
+00026af4  Warming up sub-space radio.
+00026b14  Send a message to who? (search string) or 'ALL' or 'TEAM'? 
+00026b5c  You Don't belong to a team!
+00026b84  This will be a broadcast message to ALL players
+00026bb8  Tuning in to 
+00026bca  's frequency.
+00026bdc     Due to the distances involved, messages are limited to 20 lines.
+00026c24  Message full!
+00026c44  [L] List [S] Send [A] Abort [C] Continue [E] Edit -=> 
+00026c8a  Are you sure? [y/N]
+00026ca2    -  Message from: 
+00026cba  Transmission successful!
+00026cd6  Edit Which line? (1 -
+00026cf0  ) -=> 
+00026cfa  INVALID LINE NUMBER!
+00026d1a   reads:
+00026d26  Replace what section? -=> 
+00026d44   NOT FOUND in line
+00026d5a  Replace it with what? -=> 
+00026d78   now reads:
+00026d88  Is this OK? [Y/N]? -=> 
+00026da4  Change Saved!
+00026db6  CANCELED!
+00026dc4   [Y]? 
+00026dce  Not found.%
+00026ddc  What sector number is the planet in? 
+00026e06   -*- Ground Forces:
+00026e1e  Searching;
+00026e2c   Sector
+00026e38  Amount
+00026e42  --------*--------
+00026e58   NONE found!
+00026e68  <Computer deactivated>
+00026e82  You do not have any spies!
+00026ea0  Spy #)
+00026eaa   will hunt in sector
+00026ec2  Cntl-X to Stop
+00026ef4  *** GAME FILE [
+00026f08  ] NOT FOUND! ***
+00026f28  Cloak at
+00026f3a   WARNING! CLOAK EXPIRED!
+00026f5a  One Turn Deducted,
+00026f78  Sorry but you have no turns left.
+00026f9e  This port is owned by: 
+00026fba  YOU, Credits:
+00026fcc  This port is called: 
+00026fe6  Press [ENTER] to keep same name."
+0002700a  Please enter a NAME for your port.
+00027038   Is this OK? [y/N]
+00027056  USER FELL ASLEEP!
+0002706c  TIME LIMIT EXCEEDED!
+0002708a  Command Saved -+- Ctrl-R to Re-use -+- Ctrl-X to cancel.
+000270d2  Command Repeated1
+000270e6   times -+- Ctrl-R to Re-use -+- Ctrl-X to cancel.
+00027124  [ENTER] for more, [E] to end, or [NS] for Non-stop 
+00027162  YT DEBUG Error Trap Entry ERL= 
+00027186    ERR= 
+00027196  YTMerg2 1.15 Untrapped Error ERL=
+000271c6   Date >
+000271d2  ERRORS.DOR
+000271e0   - Hit ESC to exit chat mode
+00027208  !  This is 
+0002721c  SNOOP ON
+00027228  You are a new player.
+00027242  Enter the FULL alias you wish to use in the game.
+00027278  Press [ENTER] to use your real name.
+000272b2  Xannor
+000272bc  Mercenaries
+000272cc  That ALIAS is NOT allowed. Please choose another.
+00027302  I'm sorry #
+00027310  , but that Alias is already in use.
+00027338   a.k.a. 
+00027344  Is this OK (Y/[N])? '
+0002735c  Your Alias has been recorded. Have fun!
+000273b4  Scanning Starmap Database...6
+000273d4  Owned ports show the name of the owner preceeded by a 
+00027452  Distance:
+00027460   Ore @
+0002746a   Org @
+00027474   Equ @
+00027492        
+000274a4  Sector:
+000274b0  ** Earth **
+000274ce  More? [Y]es [N]o [+] Continuous [Y] 
+00027508  T255L63o4be
+00027518  MBO4L32P32CP64CP64CP64L16EP64L32CP64L12E
+00027544  MBO1L64P32CEDFEGFAGBAO5BAGFEDC0
+00027566  MBO2L2P32CL3CL8CP32L3CP6E-L8DL3DL8CL3CO1L8BO2L1C
+0002759a  MBT128O5L48P64CP64C
+000275b2  MBO1L64P8CdGCdGCdGCDGCGD3
+000275ce  MBO2T200L64FBEAP8FBEAP8FBEAP4FBEAP8FBEAP8FBEAP4T128
+00027606  MBO6L64T128GADO3BAGFEDCO2BAGFEDCO1BAGFEDCP16&
+00027636  MBO4T128L64CGCGCGP16CGCGCGP16CGCGCGP16
+00027664  MBT64L64O3CEFADFGL16BK
+00027684  *** You can't get there without going someplace you dont want to!
+000276ca  Yankee Trader
+000276dc  By Alan Davenport
+000276f2  Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport-
+00027730  BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+00027762  You have been on today.
+0002777e  -=*=- 
+00027788   Logged on -=*=-
+0002779c  You have been killed by 
+000277b8  The Xannor!
+000277cc  mercenaries!
+000277e0  a deleted player.
+000277f6  You managed to kill yourself on your last time on.+
+0002782c  You will be allowed to play again tomorrow!
+0002785c   destroyed your ship!
+000278a2  ytnews.DAT'
+000278b0  (**CARRIER DROPPED**) Returning to bbs!
+000278e2   Yankee Trader 
+0002791a  ytRMSG.DAT1
+00027928  SysOp, how many minutes till user is forced off [
+000279a0  YTOPEN.ANS
+000279be   destroyed
+000279cc   of your fighters!
+000279f6  Log of messages sent/recieved.
+00027a18  Checking for Radio Messages.
+00027a38  Message to: 
+00027a50   * From: 
+00027a5e  The Xannor
+00027a6c  The Mercenaries
+00027a80  [Pause]
+00027a98  None Found.
+00027aa8  The titles to
+00027aba   ports of 
+00027ac8  's are now yours!
+00027ade    -  1
+00027ae8   was killed!
+00027af8   killed 
+00027b04    -  Took~
+00027b12   ports from 2
+00027b22  You destroyed the ship and salvaged the following:
+00027b58   *** 9
+00027b62   salvaged the following from F
+00027b84  's ship:
+00027b90    -  Credits:
+00027ba2    -  Cruise Missiles:
+00027bbc    -  Plasma Bolts:
+00027bd2    -  Ground Forces:
+00027bea    -  Sector Mines:
+00027c08   empty holds
+00027c18   holds of ore
+00027c2a   holds of organics
+00027c40   holds of equipment
+00027c58    -  NOTHING!
+00027c6a  Your ship has been built.
+00027cc4  yttemp/
+00027cce  Y a n k e e   T r a d e r   S c o r e b o a r d
+00027d02  Last updated at: 
+00027d18  Rank  Rank%        Score        Team   Ports   Player
+00027d52  ==== ======= ================= ====== ======= ================================
+00027dac  ###  ###.##%  ###,###,###,###   \    \ ####    &
+00027de8  T e a m   R a n k i n g s
+00027e06  Rank  Rank%        Score        Team   Team NameN
+00027e3a  ==== ======= ================= ====== ========================================(
+00027e8c  ###  ###.##%  ###,###,###,###   ###    &#
+00027eb8  N o n  -  H u m a n   P l a y e r s
+00027ee0      The Xannor       Rank%     The Mercenaries   Rank%7
+00027f1a  ================== =========  ================= =======
+00027f56    ###,###,###,###  ####.##%    ###,###,###,###  ###.##%
+00027f92  ytNAME.DAT
+00027fce  YT-SUB DEBUG Error Trap Entry ERL= 
+00028004   *** Not Enough System Memory for Autopilot Function! ***
+00028046  Error opening ytDATA.DAT
+00028066  Please Create YTOPEN.ANS for ANSI graphics users!
+000280a0  Error with Player Rankings filespec
+000280cc  Error with DORINFO file!
+000280e8  DORINFO not found!
+000280fe  Error opening the COM Port!
+00028122  Error with YTNAME.DAT file!
+00028142  Untrapped YT-SUB Error> 
+0002815e   Line> 
+0002816a  Please record error and circumstances. Also, if the error
+000281a8  is Severe, Please inform Alan Davenport!q=J
+000281f2  Fighters=
+0002820a  Shields
+00028222  Ground Forces
+00028234  Special clearance sale! The Trader's Guild is selling 
+00028276  % off!
+00028284  Sorry, The supreme ruler has banned all gambling!
+000282ba  You may play
+000282ca   times daily.
+000282dc  You will be allowed to play again tomorrow.
+0002830c  You've played
+0002831e   times already.
+00028332  That's not 6 digits!
+0002834a  Please enter NUMBERS only!&
+00028368  The Galactic Lottery Computer picked: 
+0002839e  Sorry, you didn't win this time.
+000283c2  You matched
+000283d2   digits and won
+000283e6   credits!
+000283fc   credits in the lottery!
+00028418  Command line missing! Aborting!
+0002843c  BBS usage: YT.EXE C:\BBS\DORINFO1.DEF
+0002849c  ,E,7,1
+000284a6  ,N,7,1
+000284b6  ,O,7,1
+000284c0  ,N,8,1
+000284d4  ,CS65535,DS,CD
+000284fa  Opening COM port
+0002851c  Local Console Mode
+00028536  [ Sensors Activated ]
+00028550  ** Space-time disruption detected! **
+0002857a  ** WARNING! SECTOR HAS
+00028594   MINES! **
+000285ba  Port: 
+000285c4  , Selling: 
+000285d4  Planet: 
+000285e8  Forces:
+000285f4  You detect the shimmering of a cloaking device!
+00028628  Other Ships: 
+00028642   - Team:
+0002864e   - Fighters:
+0002865e   - Shields:
+0002866e  Fighters in sector:
+00028686   (Belong to 
+0002869c  Mercenaries
+000286b4   Team [#
+000286cc  Warps lead to:
+000286e2  [ Pause ]
+000286f4  [ End Sensor Scan ]
+0002870c  ** Sector is Mined!! **
+00028728   hit sector mines in sector
+00028752  There areM
+00028760   mines here!
+00028770   EXPLODE!
+00028782  Shields disintegrated!
+0002879c  Shields down toI
+000287b0   units!
+000287c0  Danger scanner destroyed!
+000287ea   fighters!
+000287f8  % cloak!
+00028804   Missiles!
+00028816   mines!
+00028822   holds of ore!
+00028834   holds of organics!
+0002884c   holds of equipment!
+00028864   empty holds!
+00028876  Shields reduced to.
+0002888c  Loading course into misile targeting computer.
+000288be  *** Tracking Report ***
+000288da  Missles self destructed!
+000288fa  The missiles are deflected by a black hole in sector-
+00028932  The Union Police have destroyed the Missiles!
+00028974   defended by 
+00028990   fighters.
+000289a2  The Missiles destroyed
+000289bc  's Missiles destroyed
+000289d6   fighters in sector
+000289f2  The missiles hit
+00028a06   SECTOR MINES in sector
+00028a22  's Missiles hit sector mines in sector
+00028a52  The missileF
+00028a78   missiles attacked 
+00028a98   reducing
+00028ab4  shields to
+00028ac2   units and destroying
+00028adc   was destroyed!
+00028af0  *** WARNING, /
+00028b02   had sector mines!
+00028b18  NOT attacking friendly planet 
+00028b3a   Missiles attacked planet 
+00028b58   in sector
+00028b6a  Ground forces reduced to
+00028b8a  Productivity reduced by
+00028ba6   units to
+00028bb4  The planet was destroyed!!
+00028bd2  *** End of Report ***
+00028bec  No way! We don't want no trouble from no Xannor .
+00028c20  (Xannoron Movers, We're MOVEers not FIGHTers.))
+00028c52  There is already a planet in that sector!
+00028c84  The stress was too much! PLANET 
+00028ca8   EXPLODED!
+00028cb6   *** Planet 
+00028cc6   EXPLODED while being moved by }
+00028cfc   fighters in the explosion!
+00028d24  The Wanderer vanishes from your sensors!6
+00028d50   moved! (Xannoron Movers, we move anyTHING, anyWHERE!)
+00028d92  Team  : None
+00028da2  Team  :
+00028db4  You are the Captain of team
+00028dd4  Your team has no captain! You've been promoted to Captain!<
+00028e12  Congratulations Captain! See Team Menu for your new options!
+00028e52  Your Team Captain is: 
+00028e6c  Time Left:
+00028e7a  You don't OWN any ports!!!"
+00028e98  Sending out armored cargo ships to$
+00028ebe  Checking galactic bank statement for
+00028ee6   ports with credits...
+00028f04   Credits:
+00028f12   Total:
+00028f1e  Total ports...:
+00028f32  With credits..:
+00028f46  Barren ports..:
+00028f5a  Total credits.:
+00028f6e  You collected a total of
+00028f8a   credits.
+00028f98  You have
+00028fa4   credits in your port accounts.
+00028fc8  This planet has no governor! Hail to the new planetary governor!!
+0002900e  Due to the unrest caused by the lack of planetary govornment, "
+00029050  ground forces have been reduced to
+00029080  This is space traffic control at planet 
+000290ac  Permission to land is 
+000290c6  DENIED!
+000290dc   attacked planet 
+000290f2   ground forces!
+00029106  Forces engaging!
+0002911a  Your forces remaining  :
+00029136  Ground forces remaining:
+00029152  Planetary defenses destroyed!
+00029174  You've captured the planet!
+00029194   captured planet 
+000291aa  Attack Failed! Ground Forces remaining:
+000291d6  Anti-Cloaking device activated!
+000291fa  Waves of electromagnetic disruption flood the galaxy...
+00029236   is uncloaked!!
+00029248  Too bad noone was cloaked anyhow!
+0002926e  ...the effect fades.
+00029286  Sound 
+0002929e  Scanning...
+000292ae   Sector:
+000292ba  None found!
+000292d2  The Xannor have launched
+000292ee   missiles at sector
+00029306  lockout.dat
+00029316  Lockout.dat
+00029326  YOUR ACCESS TO THIS GAME HAS BEEN REVOKED!
+00029354  Please contact your sysop 
+00029372  Fighters remaining:
+0002938a  Shields reduced to:
+000293aa   shot back with
+000293be   missiles at 
+000293d8   * EMERGENCY WARP ENGAGED! * 
+000293fa  You enter a wormhole as your engines build up to emergency power!
+00029440       * Engine Temperature *
+00029460  [ Normal ][ Danger ][ Overheat ]
+0002949c  MELT DOWN!
+000294aa  Your engines are disabled!(
+000294c8  It will take a solar day to repair them.
+000294f4  You are stranded in sectorC
+00029512  You sigh in relief as you look at your scanner and find yourself in
+0002955a  sector
+00029564  . However, it takes youu 
+00029580   turns to recharge your engines!
+000295b4   * INVALID REGISTRATION KEY! *
+000295d6  Registered to 
+000295e8  Registered by 0
+000295fa  ONLY REGISTERED SYSOPS CAN RUN BETA TEST COPIES!
+0002962e  UNREGISTERED EVALUATION COPY!
+00029650  PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+0002968e  XannorHQ.TXT
+0002969e  [PAUSE]
+000296aa  Collect 1,000,000 credits bonus!
+000296ce  Congratulations go to 
+000296e8   who defeated the Xannor HQ!!!
+0002970e  The Mercenary
+0002972c  Loading course into targeting computer.
+00029758  Plasma bolts targeted... firing-
+0002977c   megawatts!
+0002978c  Firing
+00029796  * Tracking Report *
+000297ae  Bolt entering sector
+000297c6   Megawatts remaining.
+000297e0  The plasma bolt is deflected by a black hole in sector
+0002981a   to sector
+0002983c  The plasma bolts destroyed
+00029862  's plasma bolts destroyed
+00029880  's Plasma Bolts hit sector mines in sectorjl
+000298b6   plasma bolts destroyed
+000298d2   mines in sector
+000298f2   plasma bolts hit 
+00029908  YOU were destroyed!
+00029920   plasma bolts hit planet 
+00029946  Ground forces reduced by
+00029962  Plasma bolts dissipated.
+0002997e  ytdata.dat
+00029994  ytscore.asc
+000299d4  Profits of a two way trade to ports in adjacent sectors.
+00029a14  NO trading port in your sector!
+00029a4c  Equ -> 
+00029a5c  Org -> 
+00029a68  Ore -> 
+00029aae  Profit of
+00029ac4  No ports you can trade with in adjacent sectors!
+00029b54  [ Info ]
+00029b60  Name  : 
+00029b6c  Time  :
+00029b78   Credits.. :
+00029b8c   Sector....... :
+00029ba4   Turns.... :
+00029bb4   Holds........ :
+00029bc8   Fighters. :
+00029bd8   Ore.......... :
+00029bf0   Mines.... :
+00029c00   Organics..... :
+00029c14   Missiles. :
+00029c24   Equipment.... :
+00029c42   Installed
+00029c50   Scanner.. :
+00029c60   Ports Owned.. :
+00029c74   Shields.. :
+00029c98   Cloak Energy. :
+00029cac   Forces... :
+00029cbc   Plasma Bolts. :
+00029cda   QUIT your team on 
+00029d00   joined your team on 
+00029d1a   entered invalid password for your team: 
+00029d50  ** Space-time disruption! **
+00029d76   SECTOR MINES! **
+00029d94   Fighters Belonging to 
+00029db4  The Xannor
+00029dc2  Mercenaries
+00029dd2   * Team [t
+00029dec  *** WARP DRIVE DEACTIVATED ***
+00029e12  *** WARNING! ***4
+00029e26   Danger Scanner has detected the following in sector
+00029e62  ** Space-time disruption detected! **
+00029e8c  ** WARNING! SECTOR HAS
+00029ea6   MINES! **
+00029eb4  Planet: 
+00029ec8  Forces:
+00029ed4  The spy detected the shimmering of a cloaking device!
+00029f0e  Other Ships: 
+00029f28   - Team:
+00029f34   - Fighters:
+00029f44   - Shields:
+00029f54  Fighters in sector:
+00029f6c   (Belong to 
+00029f82   Team [
+00029f98  *** RADIO MESSAGE FROM SPY 
+00029fb8  ! The following was found in sector
+00029fe6  *[ Press any Key ]*
+0002a01a  More? [Y/n] 
+0002a02a   *-[ End of List ]-*
+0002a529  <:tv<\tr
+0002a685  Cannot find $  Enter new path: $
+0002a754  Must run under DOS 2.00 or later
+0002a779  Program too large
+0002a78f  Must link with BRUN30.LIB
+0002a7ad  Wrong version of runtime module
+0002a7d1  Error in EXE file
+0002a7e7  Cannot find BRUN30.EXE
+0002a7ff  User Library is incompatible with QuickBASIC
+0002a830  User Library is incompatible with User Program
+0002a863  Enter new path specification: $BRUN30.EXE

@@ -1,0 +1,48 @@
+Semantic reconstruction; not the original source. Record offsets in RECOVERY.md.
+
+CreatePlanet:
+  require no planet linked from this sector
+  require credits >= 25000; require affirmative confirmation
+  find first inactive planet slot starting at slot 2; fail without charge if full
+  obtain and confirm nonempty name
+  rates = [1,1,1]; stocks = [10,10,10]
+  fighters=30; ground=1; governor=current_player
+  bank=missiles=mines=plasma=0
+  set timestamps; link sector; subtract 25000 credits
+
+SetPlanetBank(target):
+  target=floor(parse_number(input)); reject negative or target>ship.cash+bank
+  ship.cash = ship.cash+bank-target
+  bank=target
+  DOS persists both as MBF singles; Go must avoid independent rounding.
+
+Invest(credits):
+  expenditure=floor(credits); require 1<=expenditure<=ship.cash
+  for each cargo type: rate += expenditure/250
+  ship.cash -= expenditure
+
+SetGarrison(target):
+  target=floor(target); require 0<=target<=planet.ground+ship.ground
+  ship.ground = planet.ground+ship.ground-target
+  planet.ground=target
+  governor=current_player if target>=1 else 0
+
+TransferCargo:
+  update planet to now
+  for each cargo type:
+    combined=warehouse+ship.cargo
+    if combined>10*rate: rate=floor(combined)/10+1
+    warehouse=combined; ship.cargo=0
+
+TakeAll:
+  collect whole fighters, missiles, mines, plasma independently of holds
+  fill free holds with equipment, organics, ore in that order
+
+MovePlanet:
+  find shortest route; require turns>=10*hops; confirm
+  for each step:
+    forbid moving Xannor's special planet
+    occupied target forces destruction of moving planet
+    otherwise RND>0.995 enters stress destruction branch
+    successful step moves planet link and ship and spends 10 turns
+  collision/explosion fighter-loss randomness requires additional recovery

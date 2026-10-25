@@ -1,0 +1,159 @@
+completed
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Tester | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Tester!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Tester | Q  179:52  
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:52  
+Team  : None
+
+������������������������������������������������ͻ
+� Credits.. : 1000000     � Sector....... : 100  �
+� Turns.... : 500         � Holds........ : 1000 �
+� Fighters. : 10000       � Ore.......... : 0    �
+� Mines.... : 0           � Organics..... : 0    �
+� Missiles. : 0           � Equipment.... : 0    �
+� Scanner.. : NONE        � Ports Owned.. : 0    �
+� Shields.. : 10000       � Cloak Energy. : 100% �
+� Forces... : 0           � Plasma Bolts. : 0    �
+������������������������������������������������ͼ
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 100
+Port: Test Port, Selling: Org
+Warps lead to: 101, 99
+
+Time: 179:52  Main Command (?=Help)?  179:45   179:44  P 179:42  ;10
+<Port>
+
+Docking, One Turn Deducted, 499 left.
+
+Commerce report for Test Port: 10-24-2026 00:00:14
+
+ Items         Status      # units    in holds   Cost
+=======       =========   =========   ========   ====
+Ore..........  Selling        1000          0     10
+Organics.....  Buying         1000          0     44
+Equipment....  Buying         1000          0     62
+
+You have 1000000 credits and 1000 empty cargo holds.
+
+We are selling up to 1000.  You have 0 in your holds.
+How many holds of Ore do you want to buy [ 1000 ]? 10
+Agreed, 10 units.
+
+We'll sell them for 100 credits.
+Do you agree? [Y/n]  179:41   179:40   179:39  Y 179:38  
+It's Yours!
+
+You have 999900 credits and 990 empty cargo holds.
+
+Sector: 100
+Port: Test Port, Selling: Org
+Warps lead to: 101, 99
+
+Time: 179:38  Main Command (?=Help)?  179:37   179:36   179:35   179:34   179:33   179:32   179:31  Q;Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:31  
+Team  : None
+
+������������������������������������������������ͻ
+� Credits.. : 999900      � Sector....... : 100  �
+� Turns.... : 499         � Holds........ : 1000 �
+� Fighters. : 10000       � Ore.......... : 10   �
+� Mines.... : 0           � Organics..... : 0    �
+� Missiles. : 0           � Equipment.... : 0    �
+� Scanner.. : NONE        � Ports Owned.. : 0    �
+� Shields.. : 10000       � Cloak Energy. : 100% �
+� Forces... : 0           � Plasma Bolts. : 0    �
+������������������������������������������������ͼ
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:00:26
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%        5,000,100   None      0    Q                             
+  2    5.53%          276,345   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000    20.00%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...
+

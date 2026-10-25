@@ -1,0 +1,76 @@
+2026-10-24 13:35:02 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-24 13:35:02 INFO  (LoggingInitialization) Using log file: /Users/robbie/Downloads/YT36/analysis/yt-init/analysis.log  
+2026-10-24 13:35:02 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-24 13:35:02 INFO  (Preferences) Loading user preferences: /Users/robbie/Downloads/YT36/analysis/config/ghidra/ghidra_12.2_PUBLIC/preferences  
+2026-10-24 13:35:02 INFO  (ClassSearcher) Searching for classes...  
+2026-10-24 13:35:03 INFO  (ClassSearcher) Class search complete (618 ms)  
+2026-10-24 13:35:03 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-24 13:35:03 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-24 13:35:03 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-24 13:35:03 WARN  (DefaultTrustManagerFactory) OS Truststore load failed: X509 trusted CA certificates not found  
+2026-10-24 13:35:03 INFO  (DefaultTrustManagerFactory) Loaded 110 trusted CA certificates from the Java default trust store.  
+2026-10-24 13:35:03 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /Users/robbie/Downloads/YT36/analysis/cache/ghidra/fscache2  
+2026-10-24 13:35:03 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-10-24 13:35:03 INFO  (AnalyzeHeadless) Headless startup complete (1155 ms)  
+2026-10-24 13:35:03 INFO  (ClassSearcher) Class searcher loaded 60 extension points (19 false positives)  
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Swift/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /Users/robbie/Downloads/YT36/analysis/ghidra-scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts  
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer) Creating project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader  
+2026-10-24 13:35:03 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-24 13:35:03 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-24 13:35:03 INFO  (DefaultProject) Creating project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader  
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer)      project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader  
+2026-10-24 13:35:03 INFO  (HeadlessAnalyzer) IMPORTING: file:///Users/robbie/Downloads/YT36/YT-INIT.EXE  
+2026-10-24 13:35:04 DEBUG (SleighLanguage) Took 104ms (0ms inside lock) to initialize language /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.slaspec -> /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.sla  
+2026-10-24 13:35:04 INFO  (ProgramLoader) Using Loader: Old-style DOS Executable (MZ)  
+2026-10-24 13:35:04 INFO  (ProgramLoader) Using Language/Compiler: x86:LE:16:Real Mode:default  
+2026-10-24 13:35:04 INFO  (ProgramLoader) Using Library Search Path: [., /System/Library/dyld/dyld_shared_cache_arm64e, /System/Library/dyld/dyld_shared_cache_x86_64, /System/Library/dyld/dyld_shared_cache_x86_64h, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64h, /Users/robbie/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java]  
+2026-10-24 13:35:04 INFO  (ProgramLoader) Additional info:
+Loading file:///Users/robbie/Downloads/YT36/YT-INIT.EXE?MD5=026043659a1d78b88b671074755512cc...
+No file data available for defined segment at: 2119:0000
+------------------------------------------------
+
+  
+2026-10-24 13:35:04 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-10-24 13:35:04 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///Users/robbie/Downloads/YT36/YT-INIT.EXE  
+2026-10-24 13:35:04 DEBUG (FidAnalyzer) No FID Libraries apply for language x86:LE:16:Real Mode  
+2026-10-24 13:35:04 INFO  (PackedDatabaseCache) Packed database cache: /Users/robbie/Downloads/YT36/analysis/cache/ghidra/packed-db-cache  
+2026-10-24 13:35:04 DEBUG (PackedDatabaseCache) Caching packed database: /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/data/typeinfo/generic/generic_clib.gdt  
+2026-10-24 13:35:04 DEBUG (PackedDatabase) Unpacking database /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/data/typeinfo/generic/generic_clib.gdt -> /Users/robbie/Downloads/YT36/analysis/cache/ghidra/packed-db-cache/pdb5BAB1F23/db.1.gbf  
+2026-10-24 13:35:04 DEBUG (PackedDatabaseCache) Cache update completed: /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/data/typeinfo/generic/generic_clib.gdt  
+2026-10-24 13:35:05 DEBUG (SleighLanguage) Took 74ms (0ms inside lock) to initialize language /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.slaspec -> /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/x86/data/languages/x86.sla  
+2026-10-24 13:35:05 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib  
+2026-10-24 13:35:05 INFO  (FormatStringAnalyzer) No functions detected that make variadic function calls with format strings containing format specifiers  
+2026-10-24 13:35:05 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///Users/robbie/Downloads/YT36/YT-INIT.EXE  
+2026-10-24 13:35:05 INFO  (HeadlessAnalyzer) REPORT: Execute script: ExportYT.java '/Users/robbie/Downloads/YT36/analysis/yt-init'   
+2026-10-24 13:35:06 INFO  (HeadlessAnalyzer) SCRIPT: /Users/robbie/Downloads/YT36/analysis/ghidra-scripts/ExportYT.java  
+2026-10-24 13:35:06 WARN  (DecompileCallback) Decompiling 1000:00b5, pcode error at 1000:0126: Unable to resolve constructor at 1000:0126  
+2026-10-24 13:35:07 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///Users/robbie/Downloads/YT36/YT-INIT.EXE  
+2026-10-24 13:35:07 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///Users/robbie/Downloads/YT36/YT-INIT.EXE  
+2026-10-24 13:35:07 INFO  (LocalFileSystem) /YT-INIT.EXE: file created (robbie)  
+2026-10-24 13:35:07 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /YT-INIT.EXE (YankeeTrader:/YT-INIT.EXE)  
+2026-10-24 13:35:07 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

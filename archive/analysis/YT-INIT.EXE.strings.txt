@@ -1,0 +1,147 @@
+00000200  bmYT-INIT 
+0000285f  @PVSRW
+00002998  YTDATA.DAT
+00002a2c              Yankee Trader Initialization Program&
+00002a60                       By Alan DavenportH
+00002a8a  This program will initialize Yankee Trader. You must run this program atC
+00002ad6  least once when you start up the game. If this program is run on ansK
+00002b1e  existing game, the old game will be wiped out and be replaced by a new one.
+00002b6e  Continue (Y/N)? 
+00002b8e  Creating main data file: YTDATA.DAT;
+00002bbc  ytdata.dat
+00002bce  Starting year:
+00002be0  Starting player info:
+00002bfe    # of fighters at start:
+00002c20    # of credits at start:
+00002c3c    # of cargo holds at start:
+00002c60    # of days inactivity until an dead player is deleted:
+00002c9c    Last day maintenance run: Yesterday7
+00002cca    # of turns per day:
+00002ce4    # of times per day a user may play the lottery:
+00002d1e    Xannor Headquarters placed in sector:='
+00002d4a    Ports needed to initiate Genesis: 450
+00002d7a    Maximum Cargo holds set to:
+00002d9c    Local screen on with remote callers: On
+00002dca  If at any time you wish to change these settings, run YTCONFIG.
+00002e0e  Please input filename for the Scoreboard Bulletin.@
+00002e44  Include FULL PATH and NAME of file! ([ENTER] for YTSCORE.ASC) : 
+00002e90  YTSCORE.ASC
+00002ea4  Generating Player Records for
+00002ec6  Players.
+00002ed6  Initializing sectors...
+00002ef2  Generating Randomized Universe... Please be patient...
+00002f2c  Wormholes (Long Warps)..
+00002f5a  Verifying warps.. linking isolated sectors.
+00002f8a  Verifying warp to sector#
+00002fa6   ** Warp verification complete!! **
+00002fce   ** Building shortcuts back to sector 1
+00002ffe  *** Error - No Path to sector
+00003026  Sector
+00003030  has been linked to sector
+0000304e  Random sector data generated and verified. Writing...
+00003088  Initializing ports...
+000030a2     They started producing 10 days ago...
+000030ce  Port #
+000030d8  Prod Ore
+000030e4  Prod Org
+000030f0  Prod Equ
+000030fc  Port Name
+0000311c  Initializing planets...
+00003138     Maximum number of planets:
+0000315a  Initializing the Xannor...
+0000317c  Setting up newspaper file.
+0000319a  ytnews.dat
+000031ae   **********************
+000031ca   **                  **
+000031e6   ** Game Initialized **
+00003202  Initializing the alias file (Matches real name to alias.)
+00003240  YTNAME.DAT
+0000324e  Dummy]
+0000325e  Clearing YTRMSG.DAT  (Radio message file)s
+0000328c  YTrmsg.dat%
+0000329a  Initialization completed sucessfully!
+000032c4  <YT-INIT Normal Termination>;
+000032e4  Be SURE to run YTMAINT.EXE at LEAST ONCE per day EVERY DAY!
+00003324  Run YTCONFIG and change the default OPTIONS if you wish!
+00003360  Running initial maintenance...
+00003382  L64cgaL1p1p1p1
+00003394  ytmaint.exe
+000033b1  & ing,bat,ton,son,tha,cut,ed,stro,a,e,i,o,u,y,ook,eek,unt,or,ar,er,ma,ba
+000033fb  & ra,oi,wer,war,cut,rut,mud,cad,cud,cod,er,wo,ang,ong,thro,thru,thra,ou
+00003444  & ca,ba,ra,ta,org,orp,ick,ock,ack,dow,dog,ann,al,ind,moo,boo,zoo,too,who
+0000348e  & town,ville,burg,uck,aan,ton,tan,tor,og,den,dan,don,in,on,an,ly,jo,do,flat
+000034db  & ban,ash,ent,bol,ish,bom,tion,ound,ace,ode,bra,ive,rid,upt,ant,ted,flam
+00003525  & dul,ism,ture,ock,uzzy,asm,liv,gog,sau,au,ness,oot,scro,the,erm,ium,tri
+0000356f  & out,oint,nom,mer,erk,our,fem,ale,dis,dix,cem,cha,zy,vis,oast,oad,pred,pes
+000035bc  & non,met,tin,hop,gy,gam,xan,ex,croo,clea,bro,crim,nud,mas,hy,her,him,ex
+00003606  & won,for,maar,tun,nut,mad,dam,god,rod,wag,hut,mat,sum,mus,tor,rot,bug,dell
+00003653  & bag,fag,gag,rag,sum,rat,tar,umb,mix,max,der,red,mur,rum,hot,cut,ute,man
+0000369e  & bot,star,port,net,pla,ship,ore,equ,org,oat,ote,oll,all,ill,ear,bro,rom
+000036e8  & bre,bri,xig,sox,six,sex,sax,sux,pi,qui,quo,qua,que,pop,bop,flo,fla,fle
+00003732  & ele,tron,ic,mon,tor,spea,ker,raid,ship,box,ette,lan,der,cal,car,pet,org
+0000377d  & flop,flap,flip,ink,wow,mis,sile,plas,ma,bolt,gun,bang,shield,cloak,anti
+000037c8  & glen,ade,fern,wood,tree,pond,lake,river,sky,red,blue,white,green,pink,bi
+00003814  & orange,yellow,slow,fast,half,big,small,tiny,purple,main,sub,trac,mini
+0000385d  & wiz,ard,demon,rock,metal,hull,full,stic,stat,ic,fere,inter,space,dock
+000038a6  & ice,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,new
+000038f0  & thirteen,teen,boat,end,good,cove,hole,reef,bad,light,dark,little,old
+00003938  & mono,stereo,quad,triple,single,worm,snake,le,sion,ion,cannon,if,she,he
+00003982  & double,reactor,turbo,lift,proton,torpedo,warp,drive,hope,fear,happy,cat
+000039cd  & unit,computer,central,serial,parallel,door,hatch,shoot,fire,pan,tube
+00003a15  & display,key,board,mouse,trak,ball,trade,sell,buy,lost,last,word,work,up
+00003a60  & down,out,throu,under,over,left,right,dead,live,forsaken,place,lonely,yes
+00003aac  & silver,gold,credit,rich,poor,king,prince,princess,darth,vader,walker
+00003af4  & toad,frog,turtle,lion,moose,breath,body,soul,cry,love,smile,klick,black
+00003b3e   & suck,sock,sick,sack,coal,nuclear,oil,water,oxygen,less,void,empty,vacume
+00003b8a  !& moon,asteroid,planet,ring,nova,super,event,horizon,broken,fix,repair,no
+00003bd5  "& dino,saur,rex,park,jeep,truck,robot,droid,castle,wolf,lamb,chop,burger
+00003c1f  #& roll,bun,pickle,radiation,danger,safe,bar,drink,farm,factory,food,eat
+00003c68  $& kill,kiss,kick,push,pull,button,lever,awful,wonderful,many,few,men,women
+00003cb4  %& boy,girl,kid,son,wife,daughter,husband,tire,rim,cap,hub,trunk,hood,wind
+00003cff  && rain,snow,thunder,twist,earth,volcano,ocean,sea,world,marine,lick,bite
+00003d49  '& ping,pong,joy,stick,crew,worth,thing,life,death,shot,run,away,sleep,wake
+00003d95  (& shore,leave,land,piss,beer,wine,whiskey,card,house,pool,table,pin,screw
+00003de0  )& pay,mega,kilo,micro,brain,giga,tetra,radio,beam,tune,antenna,dish,luck
+00003e2a  *& alien,xannor,merc,sale,price,quarter,maxi,top,bottom,center,fail,try,smell
+00003e78  +& virus,trojan,horse,modem,game,room,boss,captain,mutiny,officer,science
+00003ec2  ,& vid,mine,boom,able,great,blood,nose,eyes,hand,foot,feet,mouth,teeth,bone
+00003f0e  -& cave,elec,finger,open,close,stuck,hate,sink,pipe,drain,watt,circuit,queen
+00003f5b  .& chip,wire,power,torus,rotate,binary,crap,puke,spit,look,that,this,short
+00003fa6  /& cheap,free,bird,chicken,ranch,clear,wave,ride,bow,stern,aft,fore,more
+00003fef  0& data,bit,byte,disk,mother,father,brother,sister,wall,floor,window,shut
+00004039  1& gram,ounce,pound,ton,mile,inch,yard,meter,centi,milli,fusion,fission,sniff
+00004087  2& ugly,pretty,nice,rotten,muddy,sandy,flower,pot,thorn,leaf,sexy,talk,trans
+000040d4  3& nude,naked,lick,strip,strap,bare,bear,deer,dear,holo,deck,bridge,butt,hip
+00004121  4& plant,sword,knife,armor,murder,rape,pilliage,burn,rob,give,take,show,extra
+0000416f  5& buck,proof,shake,fries,illegal,widow,maker,ass,quick,sand,some,laser,freak
+000041bd  6& tooth,nail,hook,crook,pirate,hyper,grass,sun,fish,breed,dick,slit,bush
+00004207  7& greed,insect,beast,cook,arm,leg,knee,elbow,ceti,alpha,beta,omega,burbon
+00004252  8& vodka,scotch,corn,wheat,grain,alcohol,drunk,stoned,joint,bong,smoke,year
+0000429e  9& day,week,time,century,millenium,hour,minute,second,first,third,engine
+000042e7  :& impulse,thrust,money,platinum,iron,lead,titanium,uranium,steel,plastic
+00004331  ;& glass,meteor,comet,card,dice,poker,gamble,slot,machine,cool,cold,hot
+00004379  <& warm,frozen,liquid,gas,matter,crimsom,blush,scarlet,dwarf,monster,burning
+000043c6  =& giant,puppy,puss,kitten,dragon,lizard,snag,snatch,grab,grub,fly,crash
+0000440f  >& disease,plague,revolt,civil,rest,fuel,energy,motor,servo,control,panel
+00004459  ?& fever,neutron,electron,storm,acid,base,melt,freeze,thaw,glad,wreck,apple
+000044a5  @& birth,death,kong,blank,draw,burp,fart,belch,itch,scratch,jump,hop,wiggle
+000044f1  A& angry,lash,large,huge,egg,couch,potatoe,boron,misty,stupid,smart,genious
+0000453d  B& baron,lord,mess,baggage,plane,air,hammer,wrench,dream,saw,drill,dill,pad
+00004589  C& shirt,shoes,pants,dress,blouse,hat,panties,shorts,sad,jock,rub,code
+000045d0  D& cube,square,pyramid,rectangle,circle,cover,bull,cow,udder,whip,chain
+00004618  E& kinky,pie,cake,aqua,island,doctor,nurse,ruin,heal,heel,toe,slave,destiny
+00004664  F& breast,limb,equal,penny,share,shore,sure,tour,stare,fare,ware,hair,skin
+000046af  G& monkey,gorilla,camel,kangeroo,alligator,crocodile,tear,swamp,mire,bog
+000046f8  H& tractor,lightning
+0000470d  I& "***"
+00004bd9  <:tv<\tr
+00004d35  Cannot find $  Enter new path: $
+00004e04  Must run under DOS 2.00 or later
+00004e29  Program too large
+00004e3f  Must link with BRUN30.LIB
+00004e5d  Wrong version of runtime module
+00004e81  Error in EXE file
+00004e97  Cannot find BRUN30.EXE
+00004eaf  User Library is incompatible with QuickBASIC
+00004ee0  User Library is incompatible with User Program
+00004f13  Enter new path specification: $BRUN30.EXE

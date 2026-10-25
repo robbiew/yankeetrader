@@ -1,0 +1,29 @@
+<Instructions>
+[ENTER] - Re-display sector
+$ - Take Credits from your ports
+! - Launch a Cruise Missile
+A - <A>ttack a player's ship
+B - <B>uy a Port
+C - Ship's <C>omputer
+D - <D>rop a Sector mine
+F - Take or leave <F>ighters
+G - Initiate <G>enesis
+I - <I>nfo on your ship
+L - <L>and on or create a planet
+M - <M>ove to another sector
+N - Re<N>ame Port
+P - Dock at a <P>ort (and trade)
+Q - <Q>uit game
+S - <S>ensors
+T - <T>eam menu
+V - <V>ersion Info
+X - Sound Effects On/Off
+Z - Instructions
++ - Fire Plasma Bolt
+String commands by seperating them with a semicolons (;).
+To place an EXTRA 'hit enter' in a string, use an extra ';'.
+Save a command string by placing a '/' at the end.
+Then hit Control-R to [R]eplay the saved command.
+You may repeat any command up to 20 times by putting
+a /R# at the end of your command. Replace the '#' with
+any number between 2 and 20. Example: your command/R20

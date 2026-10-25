@@ -1,0 +1,208 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 146550,
+      "text_offset": 146554,
+      "length": 14,
+      "text": "<Instructions>",
+      "hex": "3c496e737472756374696f6e733e"
+    },
+    {
+      "descriptor_offset": 146568,
+      "text_offset": 146572,
+      "length": 27,
+      "text": "[ENTER] - Re-display sector",
+      "hex": "5b454e5445525d202d2052652d646973706c617920736563746f72"
+    },
+    {
+      "descriptor_offset": 146600,
+      "text_offset": 146604,
+      "length": 32,
+      "text": "$ - Take Credits from your ports",
+      "hex": "24202d2054616b6520437265646974732066726f6d20796f757220706f727473"
+    },
+    {
+      "descriptor_offset": 146636,
+      "text_offset": 146640,
+      "length": 27,
+      "text": "! - Launch a Cruise Missile",
+      "hex": "21202d204c61756e6368206120437275697365204d697373696c65"
+    },
+    {
+      "descriptor_offset": 146668,
+      "text_offset": 146672,
+      "length": 28,
+      "text": "A - <A>ttack a player's ship",
+      "hex": "41202d203c413e747461636b206120706c6179657227732073686970"
+    },
+    {
+      "descriptor_offset": 146700,
+      "text_offset": 146704,
+      "length": 16,
+      "text": "B - <B>uy a Port",
+      "hex": "42202d203c423e7579206120506f7274"
+    },
+    {
+      "descriptor_offset": 146720,
+      "text_offset": 146724,
+      "length": 21,
+      "text": "C - Ship's <C>omputer",
+      "hex": "43202d20536869702773203c433e6f6d7075746572"
+    },
+    {
+      "descriptor_offset": 146746,
+      "text_offset": 146750,
+      "length": 24,
+      "text": "D - <D>rop a Sector mine",
+      "hex": "44202d203c443e726f70206120536563746f72206d696e65"
+    },
+    {
+      "descriptor_offset": 146774,
+      "text_offset": 146778,
+      "length": 28,
+      "text": "F - Take or leave <F>ighters",
+      "hex": "46202d2054616b65206f72206c65617665203c463e69676874657273"
+    },
+    {
+      "descriptor_offset": 146806,
+      "text_offset": 146810,
+      "length": 22,
+      "text": "G - Initiate <G>enesis",
+      "hex": "47202d20496e697469617465203c473e656e65736973"
+    },
+    {
+      "descriptor_offset": 146832,
+      "text_offset": 146836,
+      "length": 23,
+      "text": "I - <I>nfo on your ship",
+      "hex": "49202d203c493e6e666f206f6e20796f75722073686970"
+    },
+    {
+      "descriptor_offset": 146860,
+      "text_offset": 146864,
+      "length": 32,
+      "text": "L - <L>and on or create a planet",
+      "hex": "4c202d203c4c3e616e64206f6e206f7220637265617465206120706c616e6574"
+    },
+    {
+      "descriptor_offset": 146896,
+      "text_offset": 146900,
+      "length": 28,
+      "text": "M - <M>ove to another sector",
+      "hex": "4d202d203c4d3e6f766520746f20616e6f7468657220736563746f72"
+    },
+    {
+      "descriptor_offset": 146928,
+      "text_offset": 146932,
+      "length": 17,
+      "text": "N - Re<N>ame Port",
+      "hex": "4e202d2052653c4e3e616d6520506f7274"
+    },
+    {
+      "descriptor_offset": 146950,
+      "text_offset": 146954,
+      "length": 32,
+      "text": "P - Dock at a <P>ort (and trade)",
+      "hex": "50202d20446f636b2061742061203c503e6f72742028616e6420747261646529"
+    },
+    {
+      "descriptor_offset": 146986,
+      "text_offset": 146990,
+      "length": 15,
+      "text": "Q - <Q>uit game",
+      "hex": "51202d203c513e7569742067616d65"
+    },
+    {
+      "descriptor_offset": 147006,
+      "text_offset": 147010,
+      "length": 13,
+      "text": "S - <S>ensors",
+      "hex": "53202d203c533e656e736f7273"
+    },
+    {
+      "descriptor_offset": 147024,
+      "text_offset": 147028,
+      "length": 15,
+      "text": "T - <T>eam menu",
+      "hex": "54202d203c543e65616d206d656e75"
+    },
+    {
+      "descriptor_offset": 147044,
+      "text_offset": 147048,
+      "length": 18,
+      "text": "V - <V>ersion Info",
+      "hex": "56202d203c563e657273696f6e20496e666f"
+    },
+    {
+      "descriptor_offset": 147066,
+      "text_offset": 147070,
+      "length": 24,
+      "text": "X - Sound Effects On/Off",
+      "hex": "58202d20536f756e642045666665637473204f6e2f4f6666"
+    },
+    {
+      "descriptor_offset": 147094,
+      "text_offset": 147098,
+      "length": 16,
+      "text": "Z - Instructions",
+      "hex": "5a202d20496e737472756374696f6e73"
+    },
+    {
+      "descriptor_offset": 147114,
+      "text_offset": 147118,
+      "length": 20,
+      "text": "+ - Fire Plasma Bolt",
+      "hex": "2b202d204669726520506c61736d6120426f6c74"
+    },
+    {
+      "descriptor_offset": 147138,
+      "text_offset": 147142,
+      "length": 57,
+      "text": "String commands by seperating them with a semicolons (;).",
+      "hex": "537472696e6720636f6d6d616e64732062792073657065726174696e67207468656d207769746820612073656d69636f6c6f6e7320283b292e"
+    },
+    {
+      "descriptor_offset": 147200,
+      "text_offset": 147204,
+      "length": 60,
+      "text": "To place an EXTRA 'hit enter' in a string, use an extra ';'.",
+      "hex": "546f20706c61636520616e204558545241202768697420656e7465722720696e206120737472696e672c2075736520616e20657874726120273b272e"
+    },
+    {
+      "descriptor_offset": 147264,
+      "text_offset": 147268,
+      "length": 50,
+      "text": "Save a command string by placing a '/' at the end.",
+      "hex": "53617665206120636f6d6d616e6420737472696e6720627920706c6163696e67206120272f272061742074686520656e642e"
+    },
+    {
+      "descriptor_offset": 147318,
+      "text_offset": 147322,
+      "length": 49,
+      "text": "Then hit Control-R to [R]eplay the saved command.",
+      "hex": "5468656e2068697420436f6e74726f6c2d5220746f205b525d65706c61792074686520736176656420636f6d6d616e642e"
+    },
+    {
+      "descriptor_offset": 147372,
+      "text_offset": 147376,
+      "length": 52,
+      "text": "You may repeat any command up to 20 times by putting",
+      "hex": "596f75206d61792072657065617420616e7920636f6d6d616e6420757020746f2032302074696d65732062792070757474696e67"
+    },
+    {
+      "descriptor_offset": 147428,
+      "text_offset": 147432,
+      "length": 54,
+      "text": "a /R# at the end of your command. Replace the '#' with",
+      "hex": "61202f52232061742074686520656e64206f6620796f757220636f6d6d616e642e205265706c61636520746865202723272077697468"
+    },
+    {
+      "descriptor_offset": 147486,
+      "text_offset": 147490,
+      "length": 54,
+      "text": "any number between 2 and 20. Example: your command/R20",
+      "hex": "616e79206e756d626572206265747765656e203220616e642032302e204578616d706c653a20796f757220636f6d6d616e642f523230"
+    }
+  ]
+}

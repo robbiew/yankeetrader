@@ -1,0 +1,66 @@
+{
+  "gen-299": {
+    "fixture": "fixture-gen-299",
+    "keys": "|~~~~~|~G|~~Y|~~~~Q;Y|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "9535ef03468ab896833b206b31b378bce2da63442574a764b3831c795c65a23e",
+    "after_sha256": "b5cfa012caa17d7859657bf785a325aa956961ac5bccaa5690cfded4224ba995"
+  },
+  "gen-300": {
+    "fixture": "fixture-gen-300",
+    "keys": "|~~~~~|~G|~~Y|~~~~~~~~~~~~~~~~|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "be34a2ce15b5c9cbd44fd6228c52660a76e852cab371bd877816429bab8924b2",
+    "after_sha256": "b47c73f3798f48640ddc1eabbd085631b1cdd28a2f37c503ef16c1e257643f07"
+  },
+  "gen-cancel": {
+    "fixture": "fixture-gen-cancel",
+    "keys": "|~~~~~|~G|~~N|~~~~Q;Y|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "be34a2ce15b5c9cbd44fd6228c52660a76e852cab371bd877816429bab8924b2",
+    "after_sha256": "5d669085bbf6544981ee36c4c670bb8cae76dc5ea1c402fd87320ce607cf49ef"
+  },
+  "gen-disabled": {
+    "fixture": "fixture-gen-disabled",
+    "keys": "|~~~~~|~G|~~Y|~~~~Q;Y|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "c1af16d67bfea5f60324dea43eac1ef3f44aa2b7040c18b6a9c846e130747fb4",
+    "after_sha256": "0447cd89d5b325e4b002ff6163ac5b426099493666f851f2196b9a25369f8d66"
+  },
+  "gen-counter": {
+    "fixture": "fixture-gen-counter",
+    "keys": "|~~~~~|~G|~~Y|~~~~~~~~~~~~~~~~|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "ecd191a5cc2af7a7e2f6b36be7c5da8e1ac26e888d0fc3f1c4e9d956ec8aff81",
+    "after_sha256": "b47c73f3798f48640ddc1eabbd085631b1cdd28a2f37c503ef16c1e257643f07"
+  },
+  "gen-custom": {
+    "fixture": "fixture-gen-custom",
+    "keys": "|~~~~~|~G|~~Y|~~~~~~~~~~~~~~~~|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "a55d950ecca4e933fef87937a9ee7c0631e0936e5dad01f14ec6909cbebc71a7",
+    "after_sha256": "aaa5e7219b14884bd3645e67c83ca482aea2077daf2015c874c747d2eeb496e0"
+  },
+  "gen-custom200": {
+    "fixture": "fixture-gen-custom200",
+    "keys": "|~~~~~|~G|~~Y|~~~~~~~~~~~~~~~~|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "f2a39da0e93ac975181e663c8aad7262f0710dd865d5ce4bab8444fa3298fbe8",
+    "after_sha256": "6e5c2d19a74ca6811cc4a73a073ebc85bb52fd535bba19e7d6c8f753d53c85f3"
+  },
+  "gen-20": {
+    "fixture": "fixture-gen-20",
+    "keys": "|~~~~~|~G|~~Y|~~~~~~~~~~~~~~~~|",
+    "dos_date": "10/24/2026",
+    "dos_time": "00:00:00",
+    "before_sha256": "3da9154326e4c3d6e1ac4b8dd8a0232bb116bad6da1a8a9ee633722d41e36578",
+    "after_sha256": "657a46eb1ff274af6dfadab422f1614978b144b8a4d1b856b0bf76243b3ef8bc"
+  }
+}

@@ -1,0 +1,141 @@
+00008e38  Daily Maintenance Completed OK
+00008e5a  ytDATA.DAT
+00008e6c  NUL
+00008e84  Maintenance not needed!
+00008ea0  (Revision 03/14/94)
+00008eb8  Yankee Trader Maintenance program
+00008ede          by Alan Davenport
+00008efc         
+00008f08  This should be run once per day.
+00008f34   
+00008f3a  : Maintenance Program Ran 
+00008f58  Loading players, deleting inactive players and subtracting cloak charge.
+00008fb0   *** Cloaking Device Energy Expired for 
+00008fdc  !
+00008fe6  Your cloaking energy ran out at 
+0000900a   on 
+00009012   *** 
+0000901c   deleted from game
+00009032  Running port maintenance...
+00009072   ***
+0000907a   ports contracted the plague and lost productivity! ***
+000090b6  Running planet maintenance...
+0000910c  A PLAGUE
+00009118  CIVIL WAR
+00009126    -  
+00009130   has struck planet 
+00009148   as a result of overcrowding!
+0000916a    -  Productivity reduced from
+0000918c   units to
+0000919a   units!
+000091a6    -  Ground forces reduced from
+000091ca   to
+000091d2    - 
+000091da   credits were spent putting down the insurrection!
+00009210  Moving The Wanderer (Planet #1)
+00009234    -  The Wanderer is missing or has been destroyed!
+0000926c  The Wanderer
+0000928c    -  The Wanderer regenerated with P.H.O.E.N.I.X. device!
+000092ca  Wanderer has successfully warped!
+000092f0  Checking for Planet Xannor, create it if missing.
+00009326    -  The Xannor have made a Planet!
+0000934e  Xannoron
+00009366  The Xannor home base now has a planet!
+00009394  Processing the Xannor.....
+000093b2  Locating Top Player... (For Groups 16 - 20 to Pick on!)
+000093ee    -  Xannor report:
+00009412  Group 20 will hunt for 
+0000945a  Calculated Dynamic Xannor Regeneration is
+00009488   fighters.
+0000949a  The Mercenaries
+000094ae   *** The Xannor are attempting to reclaim their base from 
+000094f8   *** Successful!
+0000950c   *** Failed!
+0000951c   *** The Xannor have MOVED their Headquarters! ***
+00009556   *** Xannor REVENGE! ***
+00009576  The Xannor are on the prowl...
+000095a0    -  Group:
+000095b0    
+000095b6  Size:
+000095c0  *** Error - Sector path not found - from sector
+000095f4   to sector 
+00009604    -  The goverment has collected
+00009628   credits tax from the ports.
+00009648  Mercenary Maintenance...
+00009664    -  Mercenary Report:
+0000967e  Checking for Mercenary Planet.. Rebuild if missing
+000096b4    -  The Mercenaries have built a home base using a captured Genesis Device!
+00009704  Mercenary Base
+00009726    -  The government has hired
+00009748   mercenaries to help Fight the Xannor!
+00009772   fighters in sector
+0000978a   belonging to 
+0000979c   joined the mercs!
+000097b6  Mercenaries moving from sector
+000097d8   mercenaries hit sector mines in sector
+00009804   *** The mercenariers were killed!
+0000982a   *** Lost a total of
+00009842   fighters!
+00009850   Mercenaries captured planet 
+00009872   Mercenaries taking
+0000988a   fighters from planet 
+000098a4  The Xannor
+000098b6   Mercenaries attacking
+000098d0   fighters beloning to 
+000098f6  Won!
+000098fe  Lost!
+00009908   *** The Mercenaries 
+00009922   Mercenaries joined 
+0000993a  's Defense force in Sector
+00009958   of our boys joined your defense force in Sector
+0000998c  Running Super Planet Lottery
+000099ac  's Planet
+000099c2   won a PLANET in the SUPER LOTTERY!!!!!
+000099ee  You won a PLANET in the SUPER-LOTTERY! Look in sector
+00009a28  No one won a planet today.
+00009a46  ytnews.DAT
+00009a64  Ha! We kilt
+00009a74   of yoor fyterz hoo-man slyme!
+00009a9e  Peh! Whee maik yoor wheak sheeldz
+00009ac4   unitz!
+00009ad0  : lost
+00009ada  , dstrd
+00009ae6   (Xannor Lost) - Shields:
+00009b04   (Player Killed)
+00009b18  HA! We kilt yoo yoo hoo-man slyme bull!
+00009b44   Xannor attacked the planet 
+00009b70   *** Planet 
+00009b80   *** Xannor fighters
+00009b98   destroyed!
+00009ba8  Compressing Message Base's
+00009bc6  temp
+00009bd6  ytrmsg.dat
+00009be4  Temp
+00009bec  ytnews.dat
+00009bfa  ytynews.dat
+00009c12  ytname.dat
+00009c20  tempwork
+00009c2c  ,
+00009c32  ytRMSG.DAT
+00009c40   Xannor hit sector mines in sector
+00009c66   *** The Xannor were killed!
+00009c86  Mercenaries
+00009c96   (
+00009c9c  Plyr ftrs dstrd)
+00009cb0  Xannor ftrs dstrd)
+00009d06  Generating Updated Scoreboard...
+00009d4e  yttemp
+00009d58  Y a n k e e   T r a d e r   S c o r e b o a r d
+00009d8c  Last updated at: 
+00009da2  Rank  Rank%        Score        Team   Ports   Player
+00009ddc  ==== ======= ================= ====== ======= ================================
+00009e2e  None
+00009e36  ###  ###.##%  ###,###,###,###   \    \ ####    &
+00009e72  T e a m   R a n k i n g s
+00009e90  Rank  Rank%        Score        Team   Team Name
+00009ec4  ==== ======= ================= ====== ========================================
+00009f16  ###  ###.##%  ###,###,###,###   ###    &
+00009f42  N o n  -  H u m a n   P l a y e r s
+00009f6a      The Xannor       Rank%     The Mercenaries   Rank%
+00009fa4  ================== =========  ================= =======
+00009fe0    ###,###,###,###  ####.##%    ###,###,###,###  ###.##%

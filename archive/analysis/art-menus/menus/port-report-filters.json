@@ -1,0 +1,26 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 157276,
+      "text_offset": 157280,
+      "length": 46,
+      "text": "Show buying/selling [1] Equ, [2] Org, [3] Ore,",
+      "hex": "53686f7720627579696e672f73656c6c696e67205b315d204571752c205b325d204f72672c205b335d204f72652c"
+    },
+    {
+      "descriptor_offset": 157326,
+      "text_offset": 157330,
+      "length": 49,
+      "text": "[Y] Your Ports, [T] Team's Ports, [E] Enemy Ports",
+      "hex": "5b595d20596f757220506f7274732c205b545d205465616d277320506f7274732c205b455d20456e656d7920506f727473"
+    },
+    {
+      "descriptor_offset": 157380,
+      "text_offset": 157384,
+      "length": 46,
+      "text": "[U] Un-owned Ports OR [A] All Ports ? -=> [A] ",
+      "hex": "5b555d20556e2d6f776e656420506f727473204f52205b415d20416c6c20506f727473203f202d3d3e205b415d20"
+    }
+  ]
+}

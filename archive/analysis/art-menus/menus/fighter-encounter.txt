@@ -1,0 +1,9 @@
+<Help>
+A - <A>ttack
+B - <B>ribe Fighters
+D - <D>rop a Mine
+I - <I>nformation about your ship
+Q - <Q>uit the game
+S - Display <S>ector
+T - <T>eam Menu
+W - Emergency <W>arp

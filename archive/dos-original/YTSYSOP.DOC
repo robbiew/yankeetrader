@@ -1,0 +1,446 @@
+
+
+
+
+
+                  Y     Y AAAAA   N    N K  K EEEEE EEEEE
+                   Y   Y  A   A   NN   N K K  E     E
+                    Y Y   AAAAA   N N  N KK   EEE   EEE
+                     Y    A   A   N  N N KK   E     E
+                     Y    A   A   N   NN K K  E     E
+                     Y    A   A   N    N K  K EEEEE EEEEE
+
+                    TTTTTTT RRRR AAAAA DDDD  EEEEE RRRR !!
+                       T    R  R A   A D   D E     R  R !!
+                       T    RRRR AAAAA D   D EEE   RRRR !!
+                       T    RR   A   A D   D E     RR   !!
+                       T    R R  A   A D   D E     R R
+                       T    R  R A   A DDDD  EEEEE R  R !!
+
+
+                              by Alan Davenport
+
+
+
+
+        "It is a period of great instability. Mankind has broken the time and
+distance barrier to the stars with inexpensive warp driven space ships. Anyone
+with enough credits can buy a ship and head out into the void. Chaos rules.
+The central Earth government found that it is impossible to maintain law and
+order throughout the vastness of space and on the countless outposts that have
+appeared almost overnight. The only law is of survival. The only hope for
+survival is in strength. The only way to strength is through ruthless trading
+of basic goods. It seems that all ports always have too much or too little of
+one thing or another. You've purchased your ship, barely able to afford the
+minimum of holds, defensive fighters and a few days cloaking charge. An ant to
+be squashed by the more powerful trader barons. However, you are smart. You
+are confident that you can hide out long enough to equip your ship with more
+powerful arms and holds and that you will one day be a trader baron to be
+feared!"
+
+
+        Yankee Trader is the result of thousands of hours of work. The total
+source code is well over 15 THOUSAND lines. While being developed, it was
+completely rewritten from top to bottom many times over. Afterward, many
+months of fine tuning, to achieve a decent game balance, followed.
+
+
+        Yankee Trader is a space trading/war game. There are several different
+door games of this genre. The original idea for such a game was called "Trade
+Wars (c)" which was first published by Hewlett Packard in "The People's Book
+of Computer Games 1 and 2" and was first converted to a BBS door by Chris
+Sherrick. The door game became very popular and many different versions still
+exist today. Several other space trading/war games have appeared in recent
+years also.
+
+
+        Yankee Trader takes the idea of a space trading/war game to new
+heights. There are many new ideas and enhancements to the old theme. The idea
+of a space trading/war game still remains, the result however is something
+entirely different, YANKEE TRADER!
+
+
+        This door is the result of my love for programming. I have fixed every
+bug that I have found and I believe that it is reasonably clean however it is
+NOT a commercial product but the result of programming for a hobby. As such
+there is NO GUARANTEE OF ANY KIND EXPRESSED OR IMPLIED. IN NO CASE SHALL I BE
+HELD RESPONSIBLE FOR ANY DAMAGES OR LOSSES RESULTING FROM YOU RUNNING THIS
+SOFTWARE, EVEN IF I HAVE BEEN INFORMED OF POSSIBLE OR REAL PROBLEMS. BY
+RUNNING THIS SOFTWARE YOU HAVE AGREED TO TAKE RESPONSIBILITY FOR ANY PROBLEMS
+THAT MAY RESULT. IF YOU DO NOT AGREE TO THIS, DO NOT RUN ANY OF THE PROGRAMS
+IN THIS PACKAGE. NOT EVEN ONCE!
+
+
+General information :-
+
+This door uses the Microsoft QuickBasic 3.0 run time module BRUN30.EXE. The
+reason for using the run time module instead of making stand alone programs is
+to keep the distribution package a reasonable size.. otherwise it would be
+almost 600K! This copy of the run time module has been patched so that it does
+NOT cause the modem to hang up on the caller when they exit the door and it
+ALSO has been patched so that it will EXIT if ever the message "Fatal Error,
+Hit any key to return to the system" appears providing you with an extra level
+of protection against hanging your system in the event of a severe error/bug!
+
+        BRUN30 doesn't HAVE to be in the directory with the game files, just
+as long as it is in your system PATH someplace. Since this copy has the extra
+patches applied to it and if you have other doors that use BRUN30, you may
+want to put it in your path (Utilities directory?) and delete all other copies
+of BRUN30 you may have. This will save you some disk space and also give you
+extra protection while running other BRUN30 dependent doors. However if you do
+not use BRUN30 any other place, you should place it in your YT directory. This
+will make the game load marginally faster since your system doesn't have to
+search the entire path to find BRUN30.
+
+
+Getting set up :-
+
+        Starting with the basics, decide which drive you wish to run the door
+on and make a directory to hold all the files. Move ALL of the files in this
+package into that directory. You are now ready to run the initialization
+program.
+
+
+Initializing the game :-
+
+        Before you can run the game, you must run the initialization program
+"YT-INIT.EXE". This program will set up ALL the data files needed to run the
+game. You can also run YT-INIT any time you wish to restart an old game. The
+game is open ended and you will never HAVE to run YT-INIT but sometimes, when
+a game starts to get old, you may wish to restart everyone over fresh.
+
+        There is one piece of information you will need to give to the
+initialization program. That is the full path and NAME of the scoreboard
+bulletin. This is a straight ASCII text file that you can display from your
+BBS. The maximum length of your scoreboard path/name description is 41
+characters. An example of an entry for a scoreboard file is;
+
+C:\BBS\TXTFILES\YTSCORE.ASC
+
+        You may change the scoreboard description any time you wish by using
+the game's configuration program. (If you get an error when the game tries to
+generate the scoreboard you messed up the path/name somehow!)
+
+        Once you are done running YT-INIT, you should bring up the game's
+configuration program by typing "YTCONFIG.EXE". The default settings provided
+by the initialization program will provide a decent game however, once you
+become more familiar with the game, you may wish to change some of them
+around.
+
+
+The "RMT-INIT.EXE" Program :-
+
+        This program is used by YT.EXE itself to run the user "Initiate
+Genesis" function. When called by the game it will run with no intervention.
+It takes your old, previously defined defaults and re-initializes the game.
+You will find this program useful to re-start the game yourself. When run from
+the DOS prompt, it will ask you if you REALLY want to re-start the game using
+your old defaults. RMT-INIT.EXE will NOT do an initial initialization. To use
+this program, you must have initialized the game using YT-INIT.EXE previously.
+
+
+The "PORTNAME.EXE" Program :-
+
+        This program will generate new, random names for all your ports in an
+existing game.
+
+
+Running Maintenance :-
+
+        The first thing you should do after RMT-INIT completes successfully is
+type YTMAINT and press enter in the game's directory. THIS IS IMPORTANT TO
+INITIALIZE SOME OF THE AUTOMATIC FUNCTIONS! (YT-INIT automatically runs
+YTMAINT.) You should add an entry in your system maintenance batch file to run
+YTMAINT.EXE EVERY day ONCE per DAY. YTMAINT is in integral part of Yankee
+Trader and if you do NOT run it on daily basis you will SEVERELY inhibit the
+game! (Perhaps RUIN the game is a better description!) An example of the batch
+file entries needed to be added to your SYSMAINT.BAT file are below;
+
+c:
+cd \bbs\doors\yt
+ytmaint.exe
+cd \bbs
+
+
+Running Yankee Trader from a BBS :-
+
+        Yankee Trader uses the file created by QuickBBS, Remote Access and
+other BBS programs use to pass information to the door programs from the BBS
+called DORINFO1.DEF. To run YT, you must pass the path and NAME of the
+DORINFO1.DEF file to YT on the command line. There are converters to make
+DORINFO1.DEF for just about all other BBS programs out there.
+
+        To run Yankee Trader from your BBS, you must tell it where to find
+DORINFOx.DEF from your BBS. (Replace the "x" in the example with the BBS node
+number if running multi-node.) If your BBS software does NOT produce a file
+called DORINFOx.DEF when it shells to a door, you will need to use a convert
+program to create one for you. There are many different ones to do the job for
+you. Consult a guru familiar with running doors with your BBS software. A
+sample batch file to run Yankee Trader is listed below:
+
+CD \YT
+YT C:\BBS\DORINFO1.DEF
+CD \BBS
+
+        Yes, that's ALL there is to it! Just change to the door's directory
+and pass it the FULL PATH to and NAME of the DORINFOx.DEF file.
+
+        Running Yankee Trader on a BBS with a high speed modem with the baud
+rate locked requires NO additional baud rate conversion programs OR command
+line options since the correct baud rate is AUTOMATICALLY detected! Yankee
+Trader supports COM1 through COM4 and baud rates from 75 to 115,200 baud. COM3
+and COM4 MUST NOT be on non-standard interrupts. (My thanks go to Raymond
+Clements for information on how to do auto-detect the baud rate and to Brad
+Garner for info on how to access COM3 and COM4.)
+
+
+Playing YT withOUT a BBS! :-
+
+        I have included a program that you can use to log onto the game
+WITHOUT having a BBS! The program is called "LOCAL.EXE" and all you have to do
+to run it is to type "LOCAL" in your YT directory.
+
+        "LOCAL" reads the user names from the Yankee Trader data files. You
+will be able to pick your name from a menu, rather than typing it in. You also
+may start "LOCAL" by typing "LOCAL #" where "#" is the number of user on the
+"LOCAL" menu or by typing "LOCAL [user name]. This will go right into YT
+without you having to wait for the menu to display.
+
+
+Running YT from your BBS :-
+
+        Yankee Trader, even using the run time module, takes a lot of memory.
+At LEAST 300K for the 1.0 version. Later versions probably will take even
+MORE. For this reason you should NOT use a type 7 (Shell to program) exit from
+QuickBBS or Remote Access unless you use the "Memoryswap" option. What you
+MUST do if you do not use "Memoryswap" is a type 15 (Exit with errorlevel)
+exit. An example of a batch file to run YT from a QuickBBS type 15 exit is
+included with this package and is shown below;
+
+Echo off
+:RESTART
+c:
+cd \quickbbs
+quickbbs -e1
+
+:afterbbs
+
+if errorlevel 50 goto YT
+if errorlevel 1 goto RESTART
+
+Rem Allow exiting of batch file.
+goto endit
+
+:RELOGIN
+c:
+cd \quickbbs
+quickbbs -r -e1
+goto afterbbs
+
+:YT
+Rem Yankee Trader Batch File
+c:
+cd \quickbbs\doors\yt
+yt.exe c:\quickbbs\dorinfo1.def
+goto relogin
+
+:Endit
+Echo QuickBBS is now down.
+
+
+        Using that batch file, you would set a type 15 exit on your YT menu
+using your QuickBBS menu editing program for the menu entry to load YT and
+place a "50" to exit with errorlevel 50 in the "Other Data" field.
+
+
+Dealing with problem players, "LOCKOUT.DAT" :-
+
+You may lock anyone out of the game by placing their name in a file called
+"LOCKOUT.DAT". This file can be edited with any text editor. To use it, place
+the players REAL name as it appears on your BBS in "LOCKOUT.DAT" and they will
+be denied access to the game until you remove their name from "LOCKOUT.DAT".
+
+Dealing with an unacceptable alias :-
+
+Since your users can choose virtually any alias they wish in Yankee Trader,
+there is always the danger an immature individual will pick one that is
+unacceptable to you. You may change the alias of any user using the program
+called YTCONFIG.EXE. YTCONFIG is mainly for setting up default values in the
+game, however I added a function that will allow you to change player names
+due to popular request.
+
+There are also functions to change unacceptable PLANET names and PORT names.
+
+Function Keys in YT :-
+
+There are 5 function keys active on Yankee Trader. They are;
+
+F4  - Toggles Local (Console) sounds on and off. Default is OFF when a remote
+      caller is online and ON when you are playing in the local mode. The
+      users can control their own remote sounds and they are totally
+      independent of the local sounds.
+  
+F5  - End now! This is the "nuke" key. Hitting F5 will close all files and
+      the communication port, and exit immediately.
+ 
+F8  - Adjust users time in the door. You will be prompted for how much time to
+      give the player. (Either more or less time.) Enter the time in minutes.
+      0 minutes will log them off. (F5 is quicker.)
+
+F9  - Toggle local screen ON/OFF for remote callers. Has no effect when logged
+      on locally.
+ 
+F10 - Chat with online user. This will allow you to type in real time with a
+      user logged into the game. The user's time does not decrease in chat.
+      Hit [ESCAPE] to terminate chat with the user.
+
+
+Problems? :-
+
+That's basically it on setup. Some common problems you might run into are:
+
+Problem: "When someone uses the autopilot, the game crashes".
+Answer : Not enough memory. The door needs at least 300K to run.
+
+Problem: "The door runs for a while then locks up tight."
+Answer : There is enough memory to let the game start, but not enough to hold
+         all the variables once the game has run for a while. Give it MORE
+         ROOM to run in! (See the documentation for your BBS software on how
+         to free up more memory while running doors.)
+
+Problem: "The door hangs up the phone on my users when they try to exit back
+         to my BBS."
+Answer : You are NOT using the specially patched version of BRUN30.EXE
+         provided! (OR you have another version someplace in your system path
+         someplace that is being found BEFORE the patched version.)
+
+Problem: "The game crashes when generating the scoreboard."
+Answer : You have the path/name set up to and invalid path/name. Use YTCONFIG
+         and fix the path/name.
+
+Problem: "The door reports 'Command line missing. Aborting!'"
+Answer : You MUST pass on the command line the path/name of/to DORINFO1.DEF.
+         See the example.
+
+Problem: "The door will not start and reports a problem accessing DORINFO1.DEF"
+Answer : You may have passed an invalid path to DORINFO1.DEF OR you just
+         passed the PATH. You must pass both the path AND the name. (See the
+         example.)
+
+Problem: "The Door reports "ERROR 64" when a remote caller tries to play."
+Answer : If you are running Desqview, you have to define the COM port in the
+         DV window that YT is running in else it thinks there is NO com port
+         available. (See DV-NOTES.TXT.)
+
+Problem: "The Door says 'Opening COM port 3 (or 4) at xxxx baud' then locks
+         up."
+Answer : You have your COM port 3 or 4 on a non-standard interrupt. You must
+         make sure that COM 3 uses interrupt 4 and/or COM 4 uses interrupt 3.
+         If you can't do this I'm sorry but you will not be able to run Yankee
+         Trader. I have not been able to find information on how to reassign
+         COM port interrupts in QuickBasic. (IF anyone KNOWS how to do this
+         and can give me the info I'll give them a FREE REGISTRATION!)
+
+Problem: "The game locks up on me randomly."
+Answer : This can be many things. Honestly, if the above suggestions do not
+         solve any problems you are having, I haven't a clue! (Doggone it!) It
+         could be darn near anything. I had one sysop tell me that when he
+         changed how EMM386 was configured, his lockups went away! Check your
+         setup for TSR's (etc.) which may be causing conflicts with the game.
+
+There may be other problems for SOME people. I can honestly say that the game
+will not work for everyone. (Non-standard interrupts, etc.) If you havent seen
+a solution listed above, you've likely come accross something I do not know
+how to fix. I've tried to make the game as universal as possible but it is
+impossible to test/fix for all possible hardware/software combinations. Sorry.
+
+
+Notes on lockups when running from a BBS using the MEMORYSWAP option. :
+
+Due to problems inherent with QuickBasic, you MAY experience machine lockups
+if you use the memory swap option of Remote Access BBS or others. This is due
+to memory being fragmented. I cannot do a thing about it unfortunately since
+it is inherent to QuickBasic HOWEVER there is a way to prevent lockups from
+happening. There are utilities that allow removal of TSRs. They are oldies but
+still are quite useful. It will allow you to put a bookmark in memory and then
+erase memory (remove) TSRs later. This utility also nicely corrects the memory
+fragmentation problem of QB doors. I've included MARK.COM and RELEASE.COM with
+this package. MARK places a bookmark in memory, RELEASE will free up memory
+from the last bookmark. To use it, you would add the following lines to your
+YT.BAT file. The utilities are in UPPER CASE in the example below;
+
+cd \bbs\doors\yt
+MARK
+yt \bbs\dorinfo1.def
+RELEASE
+cd \bbs
+
+This should solve any lockup problems caused by memory fragmentation you may
+experience. NOTE: This is not needed if you run RA/QBBS and use type 15 exits.
+
+Suggestions and Reporting Bugs :-
+
+        This is the most sticky thing about writing doors. Why? I find that
+90% of all bugs reported are NOT really bugs and that when 90% of real bugs
+are reported I am not given enough information to track down and SOLVE the
+problem! This is extremely irritating and frustrating to me and makes me want
+to hang it all up and forget about it all!
+
+        If a you do not like the way a routine works that is NOT a bug and
+rather than reporting it as one it is much less irritating if you make a
+SUGGESTION for a change and/or and improvement. Before making a suggestion
+think to yourself 'Is it practical?' I receive "suggestions" all the time
+(usually by non-programmers) that, if implemented, would totally change the
+game or would take so much to implement that it would take a lifetime to add!
+(I do this in my spare time as a hobby!) A LOT of thought has gone into the
+game and establishing a reasonable game balance. Think about your suggestion.
+Will it enhance the game or will it just mess up the game balance? I DO listen
+to suggestions when they are well though out and when they are accompanied by
+an explanation of just WHY the person thinks that it would enhance the game.
+
+        When reporting real bugs (crashes, non-functioning or malfunctioning
+routines) please, before reporting it to me, gather as much information as
+possible. Write down the EXACT circumstances that cause the bug to appear. If
+I cannot reproduce the problem, I cannot fix it! Nothing is more frustrating
+to me, as a programmer, to know that there is a problem however am unable to
+do anything about it since it was reported with too little information to
+track it down!! Please be explicit and detailed when reporting any problems
+you may encounter otherwise you are wasting your time and irritating the
+person who spent so much time to bring YT to you. Thank you!
+
+
+Registration of Yankee Trader :-
+
+        Please see "REGISTER.DOC" for a registration form for registering
+Yankee Trader. Registration is $20.00 U.S. When I recieve your registration
+form, you will be netmailed (if you are in the Fidonet Nodelist) or you will
+be mailed a letter with your registration code. To register Yankee Trader, use
+your favorite text editor to create a file called "YT.REG" containing THREE
+lines. Your BBS's name, your name, and your registration code number to
+activate your registration. You should type your name and BBS name EXACTLY as
+it appears in the letter. Make a mistake and the key will not work.  Place
+this file in your Yankee Trader directory. An example of a key file is below:
+
+John Doe's BBS
+John Doe
+1934829892
+
+That is what you would type into "YT.REG" if you run "John Doe's BBS" and are
+"John Doe" and your registration code is "1934829892". Make sure that there is
+NO BLANK LINE at the top of the key file when you type it in!
+ 
+
+Getting New Versions :-
+
+        You can always download the latest version of Yankee Trader from my
+BBS. OR you may file request it from 1:13/75 any time but Zone 1 Mail Hour. My
+BBS phone number is 1-717-686-3037 16800 HST / 14400 v.32b/v.42b.
+
+
+A Final Word :-
+
+        I wish to thank everyone who has helped test the early, buggy beta
+test versions of Yankee Trader. I was going to try to list you all but I am
+afraid that I would miss someone and insult them by leaving their name out. So
+I'll just say this; "Thank you one and all. Your help was appreciated more
+than you can ever know!"

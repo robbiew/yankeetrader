@@ -1,0 +1,25 @@
+Searching my records for your name.
+
+You have been on today.
+
+                    [ Info ]
+
+Name  : Q
+Time  : 179:49
+Team  : 1, Orion
+
+You are the Captain of team 1!
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 100000      ║ Sector....... : 100  ║
+║ Turns.... : 500         ║ Holds........ : 100  ║
+║ Fighters. : 1000        ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 10000       ║ Cloak Energy. : 100% ║
+║ Forces... : 15          ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+ Yankee Trader   | Tester | Q                                          179:49

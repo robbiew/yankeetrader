@@ -132,3 +132,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
 Version-1 worlds upgrade to version 2 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full research archive remain at `/Users/robbie/Downloads/YT36`; the portable supporting reports and compressed DOS snapshots are included under `research`.
+
+## Complete recovery archive
+
+The [complete archive](archive/README.md) includes the original DOS distribution, full experiments, Ghidra projects, player spreadsheet and [art/menu gallery](archive/analysis/art-menus/index.html). Run `python3 scripts/verify_archive.py` to verify all imported checksums. The Downloads backup remains intact; this repository is the working home for future recovery.

@@ -1,0 +1,119 @@
+{
+  "checks": 91,
+  "yt_exe_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_cases": [
+    {
+      "case": "plasma-one",
+      "game_finished": true,
+      "log_sha256": "c6d5416e7f746eabd15024998ea625e60023eadbff273bc58f0f75b6f5d68073",
+      "data_sha256": "40f32f389d8129fa890ad6f4d90ba148d28a08f5b0dd466d57a150fb988c9ad1",
+      "actual": 54736,
+      "spreadsheet": 50000
+    },
+    {
+      "case": "plasma-fast",
+      "game_finished": true,
+      "log_sha256": "62fe5f07a667ce2b6083fc8f25377a8d52a59eb78657bcb8c9710b1598513205",
+      "data_sha256": "aa04f0537feabf3453c26443e9e2c27ca94b88ebaa1dc445dabc8d95e6cb99a1",
+      "actual": 54197,
+      "spreadsheet": 50000
+    },
+    {
+      "case": "plasma-two",
+      "game_finished": true,
+      "log_sha256": "1cd0fba34235a823d1b4d513cec541dbbea10f51956f0cbf45de98435f549c9c",
+      "data_sha256": "7b87b1888934708da62852f7dd2312fb9ed0a28ea24dfc2d0dc32400e7475dc9",
+      "actual": 201159,
+      "spreadsheet": 200000
+    },
+    {
+      "case": "plasma-mines",
+      "game_finished": true,
+      "log_sha256": "df8235b708bd1f0115226ed971ac7caad5a132373af5bcfe0bed874d4fbcc8a2",
+      "data_sha256": "c0c3e63f9686d285391957b0d60a0623e1e8f9bdb038bdfa4d9423f3927cf3e6",
+      "actual": 351,
+      "spreadsheet": 250
+    },
+    {
+      "case": "plasma-shields",
+      "game_finished": true,
+      "log_sha256": "304e2436eb3a2f6c9e32460f88eb09b54c453fb2f1797ada9ece0e4acfcf3398",
+      "data_sha256": "10503e3f68f9a959a69929f9c9aca74e1805b7f16e2286efcf039b76903a2d1c",
+      "actual": 25832,
+      "spreadsheet": 25000
+    },
+    {
+      "case": "plasma-distance",
+      "game_finished": true,
+      "log_sha256": "32e7f00ebcc0662178cd6fe5284eed4a6ea006b41239c30f28a35d35f8bf8b77",
+      "data_sha256": "cf2d30c1f94141afd23cc39ed06cc2e48439400eae091549141ffd890f9f408e",
+      "actual": 50033,
+      "spreadsheet": 50000
+    },
+    {
+      "case": "plasma-planet",
+      "game_finished": true,
+      "log_sha256": "b070739443c4c4808ad5e2f7b3b99cc7f80e884c4888e4c368ea156eedf349bf",
+      "data_sha256": "0b3582bb9b4a413c3a67efae4a80239f3da19d984c72ec7910f2a2c8e97e27a9",
+      "ground_damage": 1074,
+      "spreadsheet_ground": 1000,
+      "production_damage": 3221.522,
+      "spreadsheet_production": [
+        1000,
+        3000
+      ]
+    },
+    {
+      "case": "surrender-first",
+      "game_finished": false,
+      "log_sha256": "a3acfaec4ad2f6d8dc0cd38629c9830b3b14cf8e039c9c015d6dfbd1a58494b7",
+      "data_sha256": "524bee00e3f0d21defc1526967e2ea38a2e1d7e9ccfe50b77b1d0566aa16e94c",
+      "lost": 176233,
+      "killed": 452758,
+      "joined": 47242,
+      "spreadsheet_joined": 84040
+    },
+    {
+      "case": "surrender-confirm",
+      "game_finished": true,
+      "log_sha256": "cfffef1fadfff3d5cca0b46c23ef20bbfe154bb40ffbf74d2d03a44ac66b3d99",
+      "data_sha256": "fd2ade61442d51399911d0ab45fbd989604ca274d96a21bddfc830be92cd8d85",
+      "lost": 312738,
+      "killed": 467007,
+      "joined": 32993,
+      "spreadsheet_joined": 84040
+    },
+    {
+      "case": "surrender-immediate",
+      "game_finished": true,
+      "log_sha256": "8d582d3f3469095b740c57d4c257c5df7939263e04ade5ffaad5a24621d9fca1",
+      "data_sha256": "9c671e1b4dc6fbf417726fc95021e67bd5e8df31698df46703a23d941f269951",
+      "lost": 0,
+      "killed": 0,
+      "joined": 1000
+    },
+    {
+      "case": "surrender-ten",
+      "game_finished": true,
+      "log_sha256": "b7038b53212d6e224b540d1a97261cc0db750f9124defbc750761f733ae8ad5e",
+      "data_sha256": "d92262f730ab205a1af7859e4e2906be411f7b1c3bb0be974d9b2ff88f7e4b41",
+      "lost": 150,
+      "killed": 50,
+      "joined": 950
+    },
+    {
+      "case": "surrender-xannor",
+      "game_finished": true,
+      "log_sha256": "e62b20c4c56407f95e5a92940afeaeecf1a6e4bbfe77ee478efe82aa831069ad",
+      "data_sha256": "f8514ab1b069260ad3d1d7f0d26b7f6f40536206e34a87314fc1285778ab1731",
+      "lost": 504,
+      "killed": 1000,
+      "joined": 0
+    }
+  ],
+  "limitations": [
+    "RNG sequence not captured; model checks do not establish bit-exact MBF/RNG reproduction.",
+    "Early exploratory probes and incomplete logins are excluded.",
+    "Planet load applies lazy updates before impact; use reported impact damage, not raw before/after difference."
+  ]
+}

@@ -1,0 +1,25 @@
+Yankee Trader Configuration Program
+By Alan Davenport
+<A> Maximum Number of Holds:
+<B> Turns per day:
+<C> Initial fighters:
+<D> Initial credits:
+<E> Initial cargo holds:
+<F> Days until a dead player is deleted:
+<G> OK to run Maintenance?:
+ No, Ran Today Already
+ Yes
+<H> Xannor Headquarters is in:
+<I> Scoreboard File Path\Name: 
+<J> Local Screen With Remote Callers: 
+Off
+On
+<K> Maximum Lottery Plays Per Day :
+ DISABLED
+<L> Ports needed to initiate Genesis:
+<N> Player NAME/ALIAS editor.
+<O> pOrt name editor.
+<P> Planet name editor.
+<X> Exit Program
+Command: 
+P

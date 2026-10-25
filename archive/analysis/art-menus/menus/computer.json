@@ -1,0 +1,201 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 156708,
+      "text_offset": 156712,
+      "length": 19,
+      "text": " Computer commands:",
+      "hex": "20436f6d707574657220636f6d6d616e64733a"
+    },
+    {
+      "descriptor_offset": 156732,
+      "text_offset": 156736,
+      "length": 17,
+      "text": " 1) Exit Computer",
+      "hex": "203129204578697420436f6d7075746572"
+    },
+    {
+      "descriptor_offset": 156754,
+      "text_offset": 156758,
+      "length": 15,
+      "text": " 2) Port Report",
+      "hex": "20322920506f7274205265706f7274"
+    },
+    {
+      "descriptor_offset": 156774,
+      "text_offset": 156778,
+      "length": 13,
+      "text": " 3) Autopilot",
+      "hex": "203329204175746f70696c6f74"
+    },
+    {
+      "descriptor_offset": 156792,
+      "text_offset": 156796,
+      "length": 24,
+      "text": " 4) Rank Teams & Players",
+      "hex": "2034292052616e6b205465616d73202620506c6179657273"
+    },
+    {
+      "descriptor_offset": 156820,
+      "text_offset": 156824,
+      "length": 22,
+      "text": " 5) Send Radio Message",
+      "hex": "2035292053656e6420526164696f204d657373616765"
+    },
+    {
+      "descriptor_offset": 156846,
+      "text_offset": 156850,
+      "length": 21,
+      "text": " 6) Radio Message Log",
+      "hex": "20362920526164696f204d657373616765204c6f67"
+    },
+    {
+      "descriptor_offset": 156872,
+      "text_offset": 156876,
+      "length": 34,
+      "text": " 7) Set autopilot Sectors to Avoid",
+      "hex": "20372920536574206175746f70696c6f7420536563746f727320746f2041766f6964"
+    },
+    {
+      "descriptor_offset": 156910,
+      "text_offset": 156914,
+      "length": 22,
+      "text": " 8) Galactic Newspaper",
+      "hex": "2038292047616c6163746963204e6577737061706572"
+    },
+    {
+      "descriptor_offset": 156936,
+      "text_offset": 156940,
+      "length": 17,
+      "text": " 9) Planet Report",
+      "hex": "20392920506c616e6574205265706f7274"
+    },
+    {
+      "descriptor_offset": 156958,
+      "text_offset": 156962,
+      "length": 15,
+      "text": "10) Path Finder",
+      "hex": "31302920506174682046696e646572"
+    },
+    {
+      "descriptor_offset": 156978,
+      "text_offset": 156982,
+      "length": 26,
+      "text": "11) Fighter Finder (Yours)",
+      "hex": "31312920466967687465722046696e6465722028596f75727329"
+    },
+    {
+      "descriptor_offset": 157008,
+      "text_offset": 157012,
+      "length": 27,
+      "text": "12) Port(s) Treasury Report",
+      "hex": "31322920506f7274287329205472656173757279205265706f7274"
+    },
+    {
+      "descriptor_offset": 157040,
+      "text_offset": 157044,
+      "length": 25,
+      "text": "13) Planet Finder (Yours)",
+      "hex": "31332920506c616e65742046696e6465722028596f75727329"
+    },
+    {
+      "descriptor_offset": 157070,
+      "text_offset": 157074,
+      "length": 22,
+      "text": "14) Find Nearest Ports",
+      "hex": "3134292046696e64204e65617265737420506f727473"
+    },
+    {
+      "descriptor_offset": 157096,
+      "text_offset": 157100,
+      "length": 21,
+      "text": "15) Show Active Spies",
+      "hex": "3135292053686f7720416374697665205370696573"
+    },
+    {
+      "descriptor_offset": 157122,
+      "text_offset": 157126,
+      "length": 19,
+      "text": "16) Find Port Pairs",
+      "hex": "3136292046696e6420506f7274205061697273"
+    },
+    {
+      "descriptor_offset": 157146,
+      "text_offset": 157150,
+      "length": 35,
+      "text": "17) Check Profits of Adjacent Ports",
+      "hex": "31372920436865636b2050726f66697473206f662041646a6163656e7420506f727473"
+    },
+    {
+      "descriptor_offset": 157186,
+      "text_offset": 157190,
+      "length": 27,
+      "text": "Computer command (?=help)? ",
+      "hex": "436f6d707574657220636f6d6d616e6420283f3d68656c70293f20"
+    },
+    {
+      "descriptor_offset": 157218,
+      "text_offset": 157222,
+      "length": 2,
+      "text": "17",
+      "hex": "3137"
+    },
+    {
+      "descriptor_offset": 157224,
+      "text_offset": 157228,
+      "length": 1,
+      "text": "$",
+      "hex": "24"
+    },
+    {
+      "descriptor_offset": 157230,
+      "text_offset": 157234,
+      "length": 2,
+      "text": "10",
+      "hex": "3130"
+    },
+    {
+      "descriptor_offset": 157236,
+      "text_offset": 157240,
+      "length": 2,
+      "text": "11",
+      "hex": "3131"
+    },
+    {
+      "descriptor_offset": 157242,
+      "text_offset": 157246,
+      "length": 2,
+      "text": "12",
+      "hex": "3132"
+    },
+    {
+      "descriptor_offset": 157252,
+      "text_offset": 157256,
+      "length": 2,
+      "text": "13",
+      "hex": "3133"
+    },
+    {
+      "descriptor_offset": 157258,
+      "text_offset": 157262,
+      "length": 2,
+      "text": "15",
+      "hex": "3135"
+    },
+    {
+      "descriptor_offset": 157264,
+      "text_offset": 157268,
+      "length": 2,
+      "text": "16",
+      "hex": "3136"
+    },
+    {
+      "descriptor_offset": 157270,
+      "text_offset": 157274,
+      "length": 2,
+      "text": "14",
+      "hex": "3134"
+    }
+  ]
+}

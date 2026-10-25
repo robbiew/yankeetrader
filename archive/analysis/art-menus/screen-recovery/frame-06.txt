@@ -1,0 +1,25 @@
+<Computer deactivated>
+
+Sector: 100
+Port: Test Port, Selling: Org
+Planet: Test Planet * Forces: 100
+Fighters in sector: 100 (Belong to Enemy  Team [1] [Orion])
+Warps lead to: 101, 99
+
+Time: 179:31  Main Command (?=Help)? T
+
+Team  : 1, Orion
+
+You are the Captain of team 1!
+
+
+1) Exit Team menu
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Transfer Fighters to Defense Force
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+
+Time: 179:29  Team Command?
+ Yankee Trader   | Tester | Q                                          179:25

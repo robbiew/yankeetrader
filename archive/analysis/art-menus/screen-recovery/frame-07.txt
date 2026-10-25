@@ -1,0 +1,25 @@
+
+Time: 179:25  Main Command (?=Help)? L
+
+<Land/Create planet>
+
+Landing...
+
+Planet: Test Planet
+
+ Item           Production     Amount    In Holds
+=============  ============   ========  ==========
+Ore..........           11        100          10
+Organics.....           20        200          20
+Equipment....           30        300          30
+Fighters.....           80        600        1000
+Missiles.....            0         70           7
+Mines........            0         80           8
+Credits......           99      10000      100000
+Forces.......            1        100          15
+Plasma bolts.            0         90           9
+
+You have 40 free cargo holds.
+
+Time: 179:23  Planet command (?=help) [A]?
+ Yankee Trader   | Tester | Q                                          179:18

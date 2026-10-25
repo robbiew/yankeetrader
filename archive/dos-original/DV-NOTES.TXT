@@ -1,0 +1,6 @@
+        Folks have been having troubles running YT under Desqview. This
+happens when they do not define the COM port in the window that is running YT.
+The solution is to define the port (COM1 2 3 or 4) in the DV window. This will
+solve the problem and YT will run just fine. QuickBasic correctly detects that
+there is no COM port defined and will terminate with an ERROR 64 rather than
+grabbing the port regardless of the DV configuration.

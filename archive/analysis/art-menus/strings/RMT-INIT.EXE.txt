@@ -1,0 +1,86 @@
+00003634  rmtinit.tmp
+0000364c  Running stand alone... re-initializing using old sysop defined defaults.
+00003698  Do you wish to re-init Y.T. using your old default values?
+000036d6  y
+000036dc  Y
+000036e2  The Sysop
+000036f4  :
+000036fe  COM2
+0000370a  COM1
+00003746  7
+0000374c  ,E,7,1
+00003756  N
+0000375c  ,N,7,1
+00003766  O
+0000376c  ,O,7,1
+00003776  ,N,8,1
+00003780  :1200
+0000378a  ,CS65535,DS,CD
+000037a0  Opening COM port
+000037b4  at
+000037ba  baud
+000037c2  Local Console Mode
+000037dc   
+000037e2  ytNAME.DAT
+000037f0            Yankee Trader Remote Initialization Program v2.2
+0000382e                           By Alan Davenport
+0000385c  Re-creating main data file: YTDATA.DAT
+00003886  ytdata.dat
+00003898  Starting player info:
+000038b2    # of fighters at start:
+000038d0    # of credits at start:
+000038ec    # of cargo holds at start:
+0000390c    # of days inactivity until an dead player is deleted:
+00003948    Last day maintenance run: Yesterday
+00003972    # of turns per day:
+0000398c    # of times per day a user may play the lottery:
+000039c6    Xannor Headquarters placed in sector:
+000039f2    Ports needed to initiate Genesis:
+00003a1a    Maximum Cargo holds set to:
+00003a3c    Scoreboard bulletin name and path is: 
+00003a68  Generating Player Records for
+00003a8a   Players.
+00003a98  Initializing sectors...
+00003ab4  Generating Randomized Universe... Please be patient...
+00003af2  Wormholes (Long Warps)..
+00003b1e   -
+00003b24  Verifying warps.. linking isolated sectors.
+00003b54   ** Warp verification complete!! **
+00003b7c   ** Building shortcuts back to sector 1
+00003bac  Random sector data generated and verified. Writing...
+00003be6  .
+00003bec  Initializing ports... (Be patient)
+00003c12     They started producing 10 days ago...
+00003c4a  Earth
+00003c5c  Initializing planets...
+00003c78     Maximum number of planets:
+00003c9a  Initializing the Xannor...
+00003cbc  Setting up newspaper file.
+00003cda  YTNEWS.dat
+00003ce8  ** The Prophesy has been fulfilled by 
+00003d12  !! **
+00003d1c   **********************
+00003d38   **                  **
+00003d54   ** Game Initialized **
+00003d70  Setting up yesterday's newspaper file.
+00003d9a  ytynews.dat
+00003daa  NO YESTERDAY'S NEWS TO READ!
+00003dca  Initializing the alias file (Matches real name to alias.)
+00003e08  YTNAME.DAT
+00003e16  Dummy,Dummy,Dummy,Dummy
+00003e32  Clearing YTRMSG.DAT  (Radio message file)
+00003e60  YTrmsg.dat
+00003e6e  ytRMSG.DAT
+00003e94  Initialization completed sucessfully!
+00003ebe  Congratulations 
+00003ed2  ! You have fulfilled the prophesy!!
+00003efa  Returning you to the BBS...
+00003f5e  ERROR! OLD DATA FILES NOT FOUND!!!!!!!!!!!!!!!!!!!!!!!!
+00003f9a  YTDATA.DAT
+00003fb8  NUL
+00003fc0    
+00003fea  *** Error - No Path to sector
+0000400c  !!
+00004012  Sector
+0000401c   has been linked to sector
+0000403a  ***

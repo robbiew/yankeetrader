@@ -1,0 +1,78 @@
+00002998  YTDATA.DAT
+00002a1a  R
+00002a20  NUL
+00002a2c              Yankee Trader Initialization Program
+00002a60                       By Alan Davenport
+00002a8a  This program will initialize Yankee Trader. You must run this program at
+00002ad6  least once when you start up the game. If this program is run on an
+00002b1e  existing game, the old game will be wiped out and be replaced by a new one.
+00002b6e  Continue (Y/N)? 
+00002b82  Y
+00002b88  y
+00002b8e  Creating main data file: YTDATA.DAT
+00002bb6  O
+00002bbc  ytdata.dat
+00002bce  Starting year:
+00002be0  Starting player info:
+00002bfe    # of fighters at start:
+00002c20    # of credits at start:
+00002c3c    # of cargo holds at start:
+00002c60    # of days inactivity until an dead player is deleted:
+00002c9c    Last day maintenance run: Yesterday
+00002cca    # of turns per day:
+00002ce4    # of times per day a user may play the lottery:
+00002d1e    Xannor Headquarters placed in sector:
+00002d4a    Ports needed to initiate Genesis: 450
+00002d7a    Maximum Cargo holds set to:
+00002d9c    Local screen on with remote callers: On
+00002dca  If at any time you wish to change these settings, run YTCONFIG.
+00002e0e  Please input filename for the Scoreboard Bulletin.
+00002e44  Include FULL PATH and NAME of file! ([ENTER] for YTSCORE.ASC) : 
+00002e88  -=> 
+00002e90  YTSCORE.ASC
+00002ea4  Generating Player Records for
+00002ec6  Players.
+00002ed6  Initializing sectors...
+00002ef2  Generating Randomized Universe... Please be patient...
+00002f2c  Wormholes (Long Warps)..
+00002f54  -
+00002f5a  Verifying warps.. linking isolated sectors.
+00002f8a  Verifying warp to sector
+00002fa6   ** Warp verification complete!! **
+00002fce   ** Building shortcuts back to sector 1
+00002ffe  *** Error - No Path to sector
+00003020  !!
+00003026  Sector
+00003030  has been linked to sector
+0000304e  Random sector data generated and verified. Writing...
+00003088  Initializing ports...
+000030a2     They started producing 10 days ago...
+000030ce  Port #
+000030d8  Prod Ore
+000030e4  Prod Org
+000030f0  Prod Equ
+000030fc  Port Name
+0000310e  Earth
+0000311c  Initializing planets...
+00003138     Maximum number of planets:
+0000315a  Initializing the Xannor...
+0000317c  Setting up newspaper file.
+0000319a  ytnews.dat
+000031a8   
+000031ae   **********************
+000031ca   **                  **
+000031e6   ** Game Initialized **
+00003202  Initializing the alias file (Matches real name to alias.)
+00003240  YTNAME.DAT
+0000324e  Dummy
+00003258  ,
+0000325e  Clearing YTRMSG.DAT  (Radio message file)
+0000328c  YTrmsg.dat
+0000329a  Initialization completed sucessfully!
+000032c4  <YT-INIT Normal Termination>
+000032e4  Be SURE to run YTMAINT.EXE at LEAST ONCE per day EVERY DAY!
+00003324  Run YTCONFIG and change the default OPTIONS if you wish!
+00003360  Running initial maintenance...
+00003382  L64cgaL1p1p1p1
+00003394  ytmaint.exe
+000033a4  ***

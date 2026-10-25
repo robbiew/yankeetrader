@@ -1,0 +1,59 @@
+{
+  "before": {
+    "text": "civil-rich",
+    "fields": {
+      "41": 297.0,
+      "45": 1000.0,
+      "49": 1000.0,
+      "53": 1000.0,
+      "57": 0.0,
+      "61": 0.0,
+      "65": 0.0,
+      "69": 0.0,
+      "73": 0.0,
+      "77": 100000000.0,
+      "81": 0.0,
+      "85": 10.0,
+      "89": 0.0,
+      "93": 0.0,
+      "97": 0.0,
+      "101": 0.0,
+      "105": 0.0,
+      "109": 0.0,
+      "113": 0.0,
+      "117": 1000000000.0,
+      "121": 0.0,
+      "125": 0.0,
+      "129": 0.0
+    }
+  },
+  "after": {
+    "text": "civil-rich",
+    "fields": {
+      "41": 298.0,
+      "45": 288.8871765136719,
+      "49": 4329.09716796875,
+      "53": 2426.245361328125,
+      "57": 2888.871826171875,
+      "61": 43290.97265625,
+      "65": 24262.453125,
+      "69": 10001.005859375,
+      "73": 0.0,
+      "77": 27499072.0,
+      "81": 0.0,
+      "85": 10.0,
+      "89": 0.0008333333535119891,
+      "93": 0.0,
+      "97": 0.0,
+      "101": 0.0,
+      "105": 0.0,
+      "109": 0.0,
+      "113": 40.000022888183594,
+      "117": 230773760.0,
+      "121": 0.0,
+      "125": 4000.00244140625,
+      "129": 2003001.25
+    }
+  },
+  "events": "Running planet maintenance...\r\n\r\n  -  CIVIL WAR has struck planet civil-rich as a result of overcrowding!\r\n  -  Productivity reduced from 18819.68 units to 7044.23 units!\r\n  -  Ground forces reduced from 1.011E+08 to 2.749907E+07 units!\r\n  -  779226240 credits were spent putting down the insurrection!\r\n\r\n  -  A PLAGUE has struck planet Xannoron as a result of overcrowding!\r\n  -  Productivity reduced from 301293.8 units to 209673.1 units!\r\n  -  Ground forces reduced from 214 to 153 units!\r\n  -  779226240 credits were spent putting down the insurrection!\r\n\r\n"
+}

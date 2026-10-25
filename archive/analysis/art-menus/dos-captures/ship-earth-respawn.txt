@@ -1,0 +1,121 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Enemy | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Enemy!
+Searching my records for your name.
+
+You have been on today.
+
+Q  destroyed your ship!
+
+Your ship has been built.
+                                                                                Yankee Trader   | Enemy | Enemy  179:47  
+                    [ Info ]
+
+Name  : Enemy 
+Time  : 179:47  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 1005        ║ Sector....... : 1    ║
+║ Turns.... : 500         ║ Holds........ : 10   ║
+║ Fighters. : 25          ║ Ore.......... : 0    ║
+║ Mines.... : 0           ║ Organics..... : 0    ║
+║ Missiles. : 1           ║ Equipment.... : 0    ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 100         ║ Cloak Energy. : 100% ║
+║ Forces... : 0           ║ Plasma Bolts. : 0    ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Message to: Enemy  * From: The Mercenaries
+Q  destroyed 0 of your fighters!                                          
+
+Sector: 1
+** WARNING! SECTOR HAS 60 MINES! **
+Port: Earth, Selling: Ore
+Warps lead to: 1, 2, 3, 4, 5, 6
+
+** Sector is Mined!! **
+There are 60 mines here! 6 EXPLODE!
+Shields disintegrated!
+There are 54 mines here! 5 EXPLODE!
+Lost 25 fighters!
+Lost 53% cloak!
+Lost 1 Missiles!
+Lost 3 empty holds!
+
+ * EMERGENCY WARP ENGAGED! * 
+
+You enter a wormhole as your engines build up to emergency power!
+
+     * Engine Temperature *
+[ Normal ][ Danger ][ Overheat ]
+================================
+[**********************
+
+You sigh in relief as you look at your scanner and find yourself in
+sector 44. However, it takes you 91 turns to recharge your engines!
+
+Sector: 44
+Warps lead to: 37, 38, 36, 47
+
+Time: 179:47  Main Command (?=Help)?  179:35  ;Y
+
+<Display>
+
+Sector: 44
+Warps lead to: 37, 38, 36, 47
+
+Time: 179:35  Main Command (?=Help)? Y
+
+Invalid command.
+
+Time: 179:35  Main Command (?=Help)?  179:33   179:32   179:31   179:30   179:29   179:28   179:27   179:26   179:25   179:24   179:23   179:22   179:21   179:20   179:19   179:18   179:17   179:16   179:15   179:14   179:13   179:12   179:11   179:09   179:08   179:07   179:06   179:05   179:04   179:03   179:02   179:01   179:00   178:59   178:58  

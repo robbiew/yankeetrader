@@ -1,0 +1,75 @@
+{
+  "source": "YT.EXE",
+  "strings": [
+    {
+      "descriptor_offset": 151874,
+      "text_offset": 151878,
+      "length": 26,
+      "text": "<Transfer items to planet>",
+      "hex": "3c5472616e73666572206974656d7320746f20706c616e65743e"
+    },
+    {
+      "descriptor_offset": 151904,
+      "text_offset": 151908,
+      "length": 20,
+      "text": "Transfer which item?",
+      "hex": "5472616e73666572207768696368206974656d3f"
+    },
+    {
+      "descriptor_offset": 151928,
+      "text_offset": 151932,
+      "length": 16,
+      "text": "[B] Plasma Bolts",
+      "hex": "5b425d20506c61736d6120426f6c7473"
+    },
+    {
+      "descriptor_offset": 151948,
+      "text_offset": 151952,
+      "length": 9,
+      "text": "[C] Cargo",
+      "hex": "5b435d20436172676f"
+    },
+    {
+      "descriptor_offset": 151962,
+      "text_offset": 151966,
+      "length": 12,
+      "text": "[F] Fighters",
+      "hex": "5b465d204669676874657273"
+    },
+    {
+      "descriptor_offset": 151978,
+      "text_offset": 151982,
+      "length": 12,
+      "text": "[S] Missiles",
+      "hex": "5b535d204d697373696c6573"
+    },
+    {
+      "descriptor_offset": 151994,
+      "text_offset": 151998,
+      "length": 9,
+      "text": "[M] Mines",
+      "hex": "5b4d5d204d696e6573"
+    },
+    {
+      "descriptor_offset": 152008,
+      "text_offset": 152012,
+      "length": 3,
+      "text": "-=>",
+      "hex": "2d3d3e"
+    },
+    {
+      "descriptor_offset": 152016,
+      "text_offset": 152020,
+      "length": 5,
+      "text": "CSFMB",
+      "hex": "4353464d42"
+    },
+    {
+      "descriptor_offset": 152026,
+      "text_offset": 152030,
+      "length": 1,
+      "text": "C",
+      "hex": "43"
+    }
+  ]
+}

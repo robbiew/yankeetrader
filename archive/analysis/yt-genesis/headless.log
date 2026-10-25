@@ -1,0 +1,75 @@
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/Users/robbie/Downloads/YT36/analysis/config -Dapplication.settingsdir=/Users/robbie/Downloads/YT36/analysis/config/ghidra -Djava.io.tmpdir=/Users/robbie/Downloads/YT36/analysis/cache
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/Users/robbie/Downloads/YT36/analysis/config -Dapplication.settingsdir=/Users/robbie/Downloads/YT36/analysis/config/ghidra -Djava.io.tmpdir=/Users/robbie/Downloads/YT36/analysis/cache
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/Users/robbie/Downloads/YT36/analysis/config -Dapplication.settingsdir=/Users/robbie/Downloads/YT36/analysis/config/ghidra -Djava.io.tmpdir=/Users/robbie/Downloads/YT36/analysis/cache
+Picked up JAVA_TOOL_OPTIONS: -Duser.home=/Users/robbie/Downloads/YT36/analysis/config -Dapplication.settingsdir=/Users/robbie/Downloads/YT36/analysis/config/ghidra -Djava.io.tmpdir=/Users/robbie/Downloads/YT36/analysis/cache
+openjdk version "25.0.5.0.2" 2026-10-22
+OpenJDK Runtime Environment Homebrew (build 25.0.5.0.2)
+OpenJDK 64-Bit Server VM Homebrew (build 25.0.5.0.2, mixed mode)
+INFO  Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: analysis/yt-genesis/analysis.log (LoggingInitialization)  
+INFO  Loading user preferences: /Users/robbie/Downloads/YT36/analysis/config/ghidra/ghidra/ghidra_12.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (630 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+WARN  OS Truststore load failed: X509 trusted CA certificates not found (DefaultTrustManagerFactory)  
+INFO  Loaded 110 trusted CA certificates from the Java default trust store. (DefaultTrustManagerFactory)  
+INFO  Starting cache cleanup: /Users/robbie/Downloads/YT36/analysis/cache/robbie-ghidra/fscache2 (FileCacheMaintenanceDaemon)  
+INFO  Finished cache cleanup, estimated storage used: 0 (FileCacheMaintenanceDaemon)  
+INFO  Headless startup complete (1417 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (19 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /Users/robbie/Downloads/YT36/analysis/ghidra-scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Swift/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.2/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader (HeadlessAnalyzer)  
+INFO  Opening project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader (HeadlessProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /Users/robbie/Downloads/YT36/analysis/ghidra-projects/YankeeTrader (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE (HeadlessAnalyzer)  
+INFO  Using Loader: Old-style DOS Executable (MZ) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:16:Real Mode:default (ProgramLoader)  
+INFO  Using Library Search Path: [., /System/Library/dyld/dyld_shared_cache_arm64e, /System/Library/dyld/dyld_shared_cache_x86_64, /System/Library/dyld/dyld_shared_cache_x86_64h, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64h, /Users/robbie/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java] (ProgramLoader)  
+INFO  Additional info:
+Loading file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE?MD5=abb00f0a4694084cff0748b67b81d0ad...
+No file data available for defined segment at: 1932:0000
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE (HeadlessAnalyzer)  
+INFO  Packed database cache: /Users/robbie/Downloads/YT36/analysis/cache/robbie-ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
+INFO  No functions detected that make variadic function calls with format strings containing format specifiers (FormatStringAnalyzer)  
+INFO  REPORT: Analysis succeeded for file: file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExportYT.java '/Users/robbie/Downloads/YT36/analysis/yt-genesis'  (HeadlessAnalyzer)  
+INFO  SCRIPT: /Users/robbie/Downloads/YT36/analysis/ghidra-scripts/ExportYT.java (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DecodeQBBinary.java '/Users/robbie/Downloads/YT36/analysis/yt-genesis' '0x2000'  (HeadlessAnalyzer)  
+INFO  SCRIPT: /Users/robbie/Downloads/YT36/analysis/ghidra-scripts/DecodeQBBinary.java (HeadlessAnalyzer)  
+INFO  ANALYZING changes made by post scripts: file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///Users/robbie/Downloads/YT36/RMT-INIT.EXE (HeadlessAnalyzer)  
+INFO  /RMT-INIT.EXE: file created (robbie) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /RMT-INIT.EXE (YankeeTrader:/RMT-INIT.EXE) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

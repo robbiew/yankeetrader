@@ -1,0 +1,28 @@
+
+SHEET Data 44x13
+B2='Money Needed to Increase Productivity to 1 Plasma Bolt/Day'
+B3='Fighters produced per day:*' | E3=27910.0 | G3='Credits Needed:' | I3=6007500.0
+B4='* calculation valid only with no credits stored on the planet, range must be between 0-99999'
+E6='Bolts / Missiles' | F6='Fighters.min' | G6='Fighters.max' | H6='Shields' | I6='Mines' | J6='Gforces' | K6='Prod.min' | L6='Prod.max'
+B7='Plasma Bolt Damage:' | E7=2.0 | F7=200000.0 | H7=100000.0 | I7=1000.0 | J7=4000.0 | K7=4000.0 | L7=12000.0
+B8='Plasma Bolts Needed:' | E8=30.0 | F8=42401296.0
+B9='Missile Damage:' | E9=1634.0 | F9=4003300.0 | G9=4166700.0 | H9=1879100.0 | I9=1634.0 | J9=20425.0 | K9=1634000.0 | L9=4902000.0
+B10='Missiles Needed:' | E10=26159.0 | J10=326976.0
+E12='Xannor Score' | F12='Ground Forces' | I12='Fighters' | J12='Credits needed'
+B13='Xannor Max Planet Attack' | E13=3000000000.0 | F13=60000.0 | H13='Mercenary Bribe:' | J13=0.0
+E15='Attacking Ftrs' | F15='Defending Ftrs' | G15='Ratio Att/Def' | H15='Surrendering' | I15='Not Surrendering'
+B16='Number of Fighters' | E16=656000.0 | F16=500000.0 | G16=1.312 | H16=84040.0 | I16=415960.0
+K17='Planet credit storage estimation calculator'
+E18='Item' | F18='Production' | G18='Amount' | J18='Credits/min' | K18='Gforces' | L18='GF/day' | M18='Mil Credits'
+E19='Ore' | F19=33334.0 | I19='GF/sec' | J19=10.0 | K19=55000.0 | L19=13850.0 | M19=138.5
+E20='Organics' | F20=33334.0
+E21='Equipment' | F21=33334.0
+E22='Fighters' | F22=100002.0
+E23='Missiles' | F23=39.0
+E24='Mines' | F24=3.0
+E25=' Credits' | F25=0.0
+E26='Forces' | F26=0.0
+E27='Plasma Bolts' | F27=0.0
+D29='Spent ($) Credits: **' | G29=8333250.0
+D30='** Spent credits must be spent AFTER transfering cargo or effects are not cumulative'
+E32='Total Credits Used on Planet:' | G32=8333250.0
