@@ -276,10 +276,10 @@ Only the selected economic and Xannor rules above have been validated in detail.
 - `experiments/*/BEFORE.DAT`, `YTDATA.DAT`, `MAINT.LOG`, `results.json`: per-scenario evidence. DOS truncates the date/time log names to `MAINTDAT.LOG` and `MAINTTIM.LOG`.
 - `validation-results.json`: all checks and qualifications.
 
-Safe evidence revalidation:
+Safe evidence revalidation (first prepare the disposable workspace described in [the recovery README](../README.md)):
 
 ```
-python3 /Users/robbie/Downloads/YT36/analysis/yt-maint/validate_recovery.py
+python3 /tmp/yankeetrader-recovery/analysis/yt-maint/validate_recovery.py
 ```
 
 Scenario creation intentionally refuses existing directory names, preserving the collected evidence. Use a fresh name when rerunning an experiment.

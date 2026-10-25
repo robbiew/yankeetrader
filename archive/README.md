@@ -1,6 +1,6 @@
 # Complete recovery archive
 
-This directory consolidates the recovery workspace as of 2026-10-25. Original files are copied byte-for-byte; the Downloads source remains intact. This private repository is the working home for future recovery.
+This directory consolidates the recovery workspace as of 2026-10-25. Original files are copied byte-for-byte; the original Downloads folder is no longer required. This private repository is the working home for future recovery.
 
 - `dos-original/`: original DOS distribution, executables, documentation and artwork. Original author notices are retained; inclusion here does not grant redistribution rights or apply a new license to the original game.
 - `analysis/`: complete experiment fixtures and outputs, disassembly, recovery notes, Ghidra projects/scripts, and saved tool preferences. Existing internal relative paths are preserved.
@@ -11,3 +11,15 @@ This directory consolidates the recovery workspace as of 2026-10-25. Original fi
 Generated caches, compiled Python files, transient locks and machine runtime settings are excluded. Experimental DOS saves are reproducibility fixtures; the live Go save remains ignored under `data/`.
 
 `research/` at the repository root remains the compact curated evidence package used by the Go tests. Its selected reports/snapshots overlap this complete raw archive intentionally; keep the original fixtures immutable. Historical scripts and reports can contain absolute Downloads paths: inspect their input/output configuration before rerunning them, and direct new work into disposable directories. Do not run DOS executables on a host directly; use an isolated emulator copy.
+
+## Running historical tools
+
+From the repository root, run:
+
+```sh
+python3 scripts/prepare_recovery_workspace.py /tmp/yankeetrader-recovery
+python3 /tmp/yankeetrader-recovery/analysis/dos-validation/validate_data.py
+python3 /tmp/yankeetrader-recovery/analysis/yt-maint/validate_recovery.py
+```
+
+The preparation script copies `analysis/` and the contents of `dos-original/` into a new destination, restoring the layout expected by the historical tools. Run relative-path experiment commands from that destination. The player workbook is copied there as `ytcalc.xls`; the old workbook extractor has a hard-coded source path that must be adjusted in the disposable copy before use. Existing destinations and destinations inside the preserved archive are refused. Archived source files, manifests, logs and provenance retain their original contents and paths.

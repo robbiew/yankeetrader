@@ -18,4 +18,4 @@ for name in json.loads((a/'analysis/yt-planets/scenarios.json').read_text())['va
  for filename in ['before.dat','YTDATA.DAT','GAME.LOG','KEYS.TXT']:
   data=(src/filename).read_bytes();compressed=dest/(filename+'.gz');compressed.write_bytes(gzip.compress(data,mtime=0));manifest[str(compressed.relative_to(out))]={'sha256':hashlib.sha256(data).hexdigest(),'uncompressed_bytes':len(data)}
 (out/'planet-snapshots.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print(f'Packaged {len(manifest)} compressed evidence files; archival executables remain in Downloads.')
+print(f'Packaged {len(manifest)} compressed evidence files; archival executables remain in archive/dos-original.')
