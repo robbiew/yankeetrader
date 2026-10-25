@@ -64,12 +64,14 @@ Unused record fields can contain reused buffer contents: for example, an unused 
 
 ## Reproduction
 
-DOSBox was run with dummy video/audio drivers, without loading or creating a primary configuration, with CPU cycles set to 20,000 and sound disabled. The mounted path was `/Users/robbie/Downloads/YT36/analysis/dos-validation/run`.
+Prepare the disposable workspace as described in [the recovery README](../README.md) before running these commands. Paths below refer to that workspace.
+
+DOSBox was run with dummy video/audio drivers, without loading or creating a primary configuration, with CPU cycles set to 20,000 and sound disabled. The recorded run mounted `/Users/robbie/Downloads/YT36/analysis/dos-validation/run`; the commands below use the equivalent path in the new disposable workspace.
 
 DOS commands for the initializer:
 
 ```
-mount c /Users/robbie/Downloads/YT36/analysis/dos-validation/run
+mount c /tmp/yankeetrader-recovery/analysis/dos-validation/run
 c:
 yt-init < answers.txt > init.log
 exit
@@ -80,5 +82,5 @@ exit
 To rerun the validation without changing the preserved universe:
 
 ```
-python3 /Users/robbie/Downloads/YT36/analysis/dos-validation/validate_data.py
+python3 /tmp/yankeetrader-recovery/analysis/dos-validation/validate_data.py
 ```

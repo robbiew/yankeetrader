@@ -11,6 +11,8 @@ Included here:
 
 Run `python3 scripts/verify_planet_evidence.py` from the repository root to check the packaged snapshots and golden provenance. Go tests run without Python or the original DOS distribution.
 
-The complete DOS distribution, workbook, Ghidra project, original validators and other raw experiments remain preserved at `/Users/robbie/Downloads/YT36`. Historical reports may refer to those larger, unbundled experiments or original uncompressed filenames. The original EXE hashes are in `executable-inventory.json`; this repository contains no DOS EXEs, runtime binaries or generated Go executables in tracked source.
+The complete DOS distribution, workbook, Ghidra project, original validators and raw experiments are preserved in [`../archive/`](../archive/README.md). Original EXE hashes are in `executable-inventory.json`. Historical reports and logs retain their original source locations as provenance.
 
-To regenerate the compact planet fixtures from that full archive, run `python3 scripts/export_planet_evidence.py /Users/robbie/Downloads/YT36`. To refresh this research bundle, use `scripts/package_research.py` with the same archive path. The exporter retains the DOS money-rounding results as evidence; Go tests explicitly expect corrected, conserved balances instead.
+From the repository root, regenerate the compact planet fixtures with `python3 scripts/export_planet_evidence.py archive`. Refresh this research bundle with `python3 scripts/package_research.py archive`. The exporter retains the DOS money-rounding results as evidence; Go tests explicitly expect corrected, conserved balances instead.
+
+Older experiment scripts expect DOS files beside `analysis/` and write results into that tree. Prepare a disposable workspace with `python3 scripts/prepare_recovery_workspace.py /tmp/yankeetrader-recovery`, then run them there. The destination must not already exist. See the archive README for details.
