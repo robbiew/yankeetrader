@@ -167,7 +167,7 @@ func (s Session) Run() error {
 		case "q", "quit":
 			return s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias)
 		case "?", "help":
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "i", "info":
 			e = s.Terminal.Printf("%s: holds %d; ore %d; organics %d; equipment %d\r\nFighters %d; shields %d; ground forces %d\r\nMissiles %d; mines %d; plasma %d\r\n", p.Alias, p.Holds, p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma)
 		case "l", "look":
@@ -189,6 +189,35 @@ func (s Session) Run() error {
 					e = showSensors(s.Terminal, reports)
 				}
 			}
+		case "avoid":
+			if len(args) == 0 {
+				e = s.Terminal.Printf("Sectors to avoid (30 slots; 0 clears a slot):\r\n")
+				for slot, sector := range p.AvoidSectors {
+					if e != nil {
+						break
+					}
+					if sector != 0 {
+						e = s.Terminal.Printf("Slot %d: sector %d\r\n", slot+1, sector)
+					}
+				}
+				if e == nil && allClear(p.AvoidSectors) {
+					e = s.Terminal.Printf("None. Use AVOID <slot> <sector>, or AVOID <slot> 0 to clear.\r\n")
+				}
+			} else if len(args) != 2 {
+				e = errors.New("use AVOID [<slot 1-30> <sector, or 0 to clear>]")
+			} else {
+				var slot, sector int
+				slot, e = strconv.Atoi(args[0])
+				if e == nil {
+					sector, e = strconv.Atoi(args[1])
+				}
+				if e == nil {
+					e = s.Store.Update(func(w *game.World) error { return w.SetAvoid(id, slot, sector) })
+				}
+				if e == nil {
+					e = s.Terminal.Printf("Avoid slot %d saved: %d. Routing preferences persist across logins.\r\n", slot, sector)
+				}
+			}
 		case "path":
 			if len(args) != 2 {
 				e = errors.New("use PATH <start sector> <destination sector>")
@@ -200,7 +229,7 @@ func (s Session) Run() error {
 				}
 				if e == nil {
 					var path []int
-					path, e = w.Path(from, to)
+					path, e = w.PlayerPath(id, from, to)
 					if e == nil {
 						e = s.Terminal.Printf("Shortest path: %v | %d turns.\r\n", path, len(path)-1)
 					}
@@ -251,7 +280,7 @@ func (s Session) Run() error {
 							if !time.Now().Before(s.Deadline) {
 								return errors.New("session time expired")
 							}
-							e = s.Store.Update(func(w *game.World) error { return w.FollowCourse(id, path[hop-1], path[hop], len(path)-hop) })
+							e = s.Store.Update(func(w *game.World) error { return w.FollowCourse(id, path[hop-1:]) })
 							if e != nil {
 								break
 							}
@@ -491,4 +520,13 @@ func showSensors(t Terminal, reports []game.SensorReport) error {
 		}
 	}
 	return t.Printf("[ End Sensor Scan ]\r\n")
+}
+
+func allClear(sectors []int) bool {
+	for _, sector := range sectors {
+		if sector != 0 {
+			return false
+		}
+	}
+	return true
 }

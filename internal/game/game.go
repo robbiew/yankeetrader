@@ -28,6 +28,7 @@ type Player struct {
 	Missiles, Mines, Plasma                          int64
 	DockUntil                                        time.Time
 	DockPrices                                       [3]int64
+	AvoidSectors                                     []int `json:",omitempty"`
 }
 type Sector struct {
 	ID     int
@@ -114,6 +115,15 @@ func (w *World) Validate() error {
 			return errors.New("invalid player identity or position")
 		}
 		ids[p.Identity] = true
+		if len(p.AvoidSectors) > 30 {
+			return errors.New("too many sectors to avoid")
+		}
+		for _, sector := range p.AvoidSectors {
+			if sector != 0 && w.Sectors[sector] == nil {
+				return errors.New("invalid sector to avoid")
+			}
+		}
+
 		if p.Credits < 0 || p.Credits > MaxMoney || p.Turns < 0 || p.Turns > 500 || p.Holds < 10 || p.Holds > 1000 || p.Fighters < 0 || p.Fighters > MaxQuantity || p.Shields < 0 || p.Shields > MaxQuantity || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid player assets")
 		}

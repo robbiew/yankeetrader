@@ -76,7 +76,7 @@ func (t *courseTerminal) Interrupted() (bool, error) {
 }
 
 func TestAutopilotStopsOnDisconnectInterruptAndConcurrentMovement(t *testing.T) {
-	for _, mode := range []string{"disconnect", "interrupt", "concurrent-move", "turns-spent"} {
+	for _, mode := range []string{"disconnect", "interrupt", "concurrent-move", "turns-spent", "avoid-suffix"} {
 		t.Run(mode, func(t *testing.T) {
 			term := &courseTerminal{scripted: &scripted{lines: []string{"auto 4;y;q"}}}
 			s, st := navigationSession(t, term)
@@ -90,6 +90,8 @@ func TestAutopilotStopsOnDisconnectInterruptAndConcurrentMovement(t *testing.T) 
 					return st.Update(func(w *game.World) error {
 						if mode == "concurrent-move" {
 							w.Players[1].Sector = 8
+						} else if mode == "avoid-suffix" {
+							return w.SetAvoid(1, 1, 4)
 						} else {
 							w.Players[1].Turns = 0
 						}
@@ -181,5 +183,56 @@ func TestSensorEarthSellsEquipment(t *testing.T) {
 	}
 	if !strings.Contains(term.output.String(), "Earth | Selling: ship equipment") {
 		t.Fatal(term.output.String())
+	}
+}
+
+func TestAvoidCommandsPersistAcrossReconnect(t *testing.T) {
+	term := &scripted{lines: []string{"avoid 1 2;avoid;path 1 4;auto 4;n;q"}}
+	s, st := navigationSession(t, term)
+	if err := st.Update(func(w *game.World) error {
+		w.Sectors[1].Warps = []int{2, 5}
+		w.Sectors[5].Warps = []int{6}
+		w.Sectors[6].Warps = []int{4}
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if err := s.Run(); err != nil {
+		t.Fatal(err)
+	}
+	for _, text := range []string{"Slot 1: sector 2", "Shortest path: [1 5 6 4]", "Autopilot cancelled"} {
+		if !strings.Contains(term.output.String(), text) {
+			t.Fatal("missing output", text, term.output.String())
+		}
+	}
+	w, _ := st.View()
+	if w.Players[1].Turns != 500 || w.Players[1].AvoidSectors[0] != 2 {
+		t.Fatal("avoid not saved or edit charged turns")
+	}
+	term = &scripted{lines: []string{"avoid;auto 4;y;avoid 1 0;avoid;q"}}
+	s.Terminal = term
+	if err := s.Run(); err != nil {
+		t.Fatal(err)
+	}
+	w, _ = st.View()
+	p := w.Players[1]
+	if p.Sector != 4 || p.Turns != 497 || p.AvoidSectors[0] != 0 || len(w.Players) != 1 {
+		t.Fatalf("avoid reconnect state: %+v", p)
+	}
+	if !strings.Contains(term.output.String(), "Slot 1: sector 2") || !strings.Contains(term.output.String(), "None.") {
+		t.Fatal("list/clear not shown")
+	}
+}
+
+func TestAvoidChangedDuringAutopilotConfirmation(t *testing.T) {
+	term := &confirmationTerminal{scripted: &scripted{lines: []string{"auto 4", "y", "q"}}}
+	s, st := navigationSession(t, term)
+	term.beforeConfirm = func() error { return st.Update(func(w *game.World) error { return w.SetAvoid(1, 1, 4) }) }
+	if err := s.Run(); err != nil {
+		t.Fatal(err)
+	}
+	w, _ := st.View()
+	if w.Players[1].Sector != 1 || w.Players[1].Turns != 500 || !strings.Contains(term.output.String(), "avoid list") {
+		t.Fatal("stale confirmed course accepted", term.output.String())
 	}
 }

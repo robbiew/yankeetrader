@@ -23,7 +23,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 
 ## Next implementation stages
 
-1. Complete the remaining navigation/encounter research: danger scanners, cloak visibility, emergency warps, avoid lists and NPC/utility commands. The first sensor/path/autopilot slice is now implemented; see [navigation recovery](yt-navigation/RECOVERY.md).
+1. Complete the remaining navigation/encounter research: danger scanners, cloak visibility, emergency warps and NPC/utility commands. The first sensor/path/autopilot slice is now implemented; see [navigation recovery](yt-navigation/RECOVERY.md).
 2. Add port acquisition, buyouts and treasury collection with targeted DOS validation of the untested buyout branch.
 3. Add teams and shared assets, preserving transactional role/membership checks.
 4. Add combat and death/respawn with active-session invalidation before enabling dangerous sectors, then NPC behavior, computer functions, communications and Genesis.
@@ -60,3 +60,9 @@ for evidence and unimplemented hazard/avoid-list boundaries.
 The older playable-milestone section above is a historical snapshot: planet
 management has since shipped, and the working game now lives at the repository
 root, not under `modern/`.
+
+The navigation follow-up adds the 30-slot `AVOID` editor, applies player preferences
+to both `PATH` and `AUTO`, and revalidates the remaining course between hops.
+Ten more DOS sessions establish editor/routing rules and show DOS resetting the
+list on reconnect. Go deliberately persists it. Total navigation evidence is now
+23 DOS sessions and 46 compressed save snapshots.

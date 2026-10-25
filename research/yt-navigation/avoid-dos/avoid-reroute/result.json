@@ -1,0 +1,11 @@
+{
+  "name": "avoid-reroute",
+  "command": "C;7;1;101;10;100;110;1",
+  "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+  "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+  "turns_before": 500,
+  "turns_after": 500,
+  "sector_before": 100,
+  "sector_after": 100,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+}

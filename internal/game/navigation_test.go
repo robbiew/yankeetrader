@@ -97,7 +97,7 @@ func TestNavigationDOSRoutesAndTurnAccounting(t *testing.T) {
 	}
 	p.DockToken, p.PlanetToken, p.LandedPlanet = "old-dock", "old-planet", 2
 	for hop := 1; hop < len(path); hop++ {
-		if err := w.FollowCourse(p.ID, path[hop-1], path[hop], len(path)-hop); err != nil {
+		if err := w.FollowCourse(p.ID, path[hop-1:]); err != nil {
 			t.Fatal(err)
 		}
 	}
@@ -125,11 +125,11 @@ func TestAutopilotRejectsInsufficientTurnsAndStaleCourse(t *testing.T) {
 		t.Fatal(err)
 	}
 	p.Sector = 102
-	if err := w.FollowCourse(p.ID, 100, 101, 4); err == nil {
+	if err := w.FollowCourse(p.ID, []int{100, 101, 107, 109, 110}); err == nil {
 		t.Fatal("stale course accepted")
 	}
 	p.Sector = 100
-	if err := w.FollowCourse(p.ID, 100, 110, 4); err == nil {
+	if err := w.FollowCourse(p.ID, []int{100, 110}); err == nil {
 		t.Fatal("nonadjacent hop accepted")
 	}
 	if p.Sector != 100 || p.Turns != 4 {
@@ -191,7 +191,7 @@ func TestDOSNavigationGolden(t *testing.T) {
 				path, err = w.Course(p.ID, 110)
 				if err == nil {
 					for i := 1; i < len(path); i++ {
-						if err = w.FollowCourse(p.ID, path[i-1], path[i], len(path)-i); err != nil {
+						if err = w.FollowCourse(p.ID, path[i-1:]); err != nil {
 							break
 						}
 					}

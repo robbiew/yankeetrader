@@ -86,11 +86,61 @@ flow, complete function discovery, or runtime behavior.
   rejected hops, confirmation, interruption, disconnect, and competing state
   changes. The PTY smoke script exercises real GoDoors I/O and persistence.
 
+## Avoid-list follow-up — 2026-10-25
+
+Ten additional original DOS sessions establish the 30-slot editor and its
+routing effects. See [the manifest](avoid-dos/results.json), compressed saves,
+keystrokes and transcripts. `scripts/verify_avoid_evidence.py` verifies 20 more
+save snapshots plus matching Go fixture provenance. Combined with the first
+slice, the evidence covers **23 completed DOS sessions and 46 save snapshots**.
+
+- `avoid-reroute`: slot 1 blocks 101; the route switches to
+  `100 -> 102 -> 108 -> 109 -> 110` without spending turns.
+- `avoid-block`: blocking both 101 and 102 prevents any route to 110.
+- `avoid-start` / `avoid-destination`: an avoided endpoint rejects the path.
+- `avoid-clear`: setting slot 1 back to zero restores the original route.
+- `avoid-slot30`: the last of the 30 slots is effective.
+- `avoid-slot31` / `avoid-invalid-sector`: invalid slot/sector input does not
+  alter the route or spend turns.
+- `avoid-manual`: ordinary movement into avoided sector 101 still succeeds,
+  costing exactly one turn.
+- `avoid-reconnect`: reopens the completed `avoid-reroute` world's saved output;
+  all 30 slots are zero and the original route returns. The before snapshot
+  exactly matches that source session's after snapshot. The DOS list is
+  session-only in this tested login path.
+
+REA's [avoid-editor byte evidence](rea/avoid-evidence.json),
+`ev_63f4fe624f599b24fa55b2b1307bb65c01d522d9e910a8bba44e4f4ef7417243`,
+reads 44 bytes at linear `0x18b89`. This matches the annotated menu code's slot
+lookup and assignment into the 30-entry array at logical DS `18b8`.
+Main `1000:8959..8c4b` contains the editor, slot/sector bounds and zero-to-clear
+operation; sub `1f42:107f..1100` applies the avoid entries before traversal and
+handles avoided endpoints. These static leads were checked against the sessions
+above, rather than treated as proof on their own.
+
+Go now exposes `AVOID` and `AVOID <slot 1-30> <sector>` (zero clears a slot).
+Edits are validated and saved under the world lock with no turn charge. The list
+is private to each player and controls both `PATH` and `AUTO`; manual movement
+and scanning ignore it. Numbered slots permit repeated sector entries.
+
+**Deliberate departure:** Go persists the list across reconnects. DOS resets it
+in the tested path. This avoids silently dropping a player's routing preferences
+when a connection ends. Existing version-2 saves with no `AvoidSectors` field
+load with an empty list; invalid sectors or more than 30 stored entries are
+rejected. Each autopilot hop revalidates the entire remaining route against live
+preferences, position, links and turn budget. A newly avoided future sector stops
+the course immediately, preserving previously committed hops.
+
+Session tests cover changed preferences during confirmation and after a committed
+hop. The real PTY smoke covers rerouting, reconnect persistence, clearing, Ctrl-X
+and preservation of the queued quit key. Hazard and emergency-warp behavior is
+still not implemented.
+
 ## Remaining boundaries
 
 This is not complete navigation or scanning parity. Sector mines/fighter forces,
 cloaked-ship detection and danger-scanner failure probabilities, emergency warps,
-autopilot avoid-list editing/persistence, NPC encounters and utility/computer
+NPC encounters and utility/computer
 reports remain separate work. Current Go sectors have no hazards or cloak
 state; scans report the real fields that exist instead of inventing hazard
 readings. Landing remains governed by the existing planet permissions.
@@ -104,6 +154,7 @@ death/session invariants before enabling combat hazards in Go.
 ```sh
 python3 scripts/recover_navigation.py /tmp/yt-navigation-new
 python3 scripts/verify_navigation_evidence.py
+python3 scripts/verify_avoid_evidence.py
 go test -race ./...
 go vet ./...
 go build -o bin/yt ./cmd/yt
@@ -115,3 +166,13 @@ the destination must not exist. It mounts disposable fixtures, never the archive
 Each case fixes DOS date/time to 2026-10-24 00:00:00 to match the source login
 fixture; actual simulated seconds advance while the key feeder runs. The
 packaged evidence can be checked without DOSBox or running any DOS executable.
+
+To reproduce the avoid-list suite in separate disposable directories:
+
+```sh
+python3 scripts/recover_navigation.py /tmp/yt-avoid-new --only \
+  avoid-reroute avoid-block avoid-destination avoid-start avoid-manual \
+  avoid-clear avoid-slot30 avoid-slot31 avoid-invalid-sector
+python3 scripts/recover_navigation.py /tmp/yt-avoid-login \
+  --source /tmp/yt-avoid-new/avoid-reroute --only avoid-reconnect
+```

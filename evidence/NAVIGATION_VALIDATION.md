@@ -10,9 +10,12 @@ Passed on macOS arm64 with Go 1.27.3 and the existing local GoDoors checkout:
 - `python3 scripts/verify_navigation_evidence.py`: 13 original DOS sessions,
   26 full save snapshots, sensor transcripts, directed paths and Go fixture
   provenance.
+- `python3 scripts/verify_avoid_evidence.py`: 10 additional DOS sessions and
+  20 save snapshots covering avoid slots, route effects and DOS reconnect reset.
 - `python3 scripts/verify_archive.py`: all 4,682 archived files verified.
 - `python3 scripts/smoke_navigation.py`: real PTY/GoDoors sensors, path display,
-  cancelled and accepted autopilot, persisted destination/turn cost.
+  cancelled and accepted autopilot, persisted destination/turn cost, avoid-list
+  reconnect/clear, Ctrl-X and queued-key preservation.
   [Transcript](navigation-smoke.txt).
 - `python3 scripts/smoke.py`: existing trading/equipment, planet, reconnect,
   repeat-maintenance and Door32 local-transport regression scenarios.
@@ -22,7 +25,8 @@ Passed on macOS arm64 with Go 1.27.3 and the existing local GoDoors checkout:
 
 Unit/session tests additionally cover stopping on Ctrl-X, preserving other typed
 keys during polling, confirmation disconnects, output failure after one committed
-hop, stale position, and turns spent by a competing session. Completed moves
+hop, stale position, turns spent by a competing session, and avoid-list changes
+while confirmation is open or between committed hops. Completed moves
 remain saved; rejected moves/courses do not consume turns.
 
 REA 6.8.0/Ghidra 12.1.4 verified the original YT.EXE loaded image and provided

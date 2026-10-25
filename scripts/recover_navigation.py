@@ -18,6 +18,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("destination", type=Path)
     parser.add_argument("--archive", type=Path, default=Path(__file__).resolve().parents[1] / "archive")
+    parser.add_argument("--source", type=Path, help="Use a completed disposable session as the fixture source")
     parser.add_argument("--only", nargs="*", help="Run only named probes")
     args = parser.parse_args()
     archive = args.archive.resolve()
@@ -25,7 +26,7 @@ def main():
     spec = importlib.util.spec_from_file_location("mbf", archive / "analysis/yt-maint/experiments.py")
     mbf = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mbf)
-    source = archive / "analysis/yt-combat/experiments/fixture-team-captain"
+    source = args.source or archive / "analysis/yt-combat/experiments/fixture-team-captain"
     graph = {100: [101, 102, 103, 104, 105, 106], 101: [107], 102: [108],
              103: [100], 104: [100], 105: [100], 106: [100], 107: [109],
              108: [109], 109: [110], 110: [100]}
@@ -43,7 +44,20 @@ def main():
         ("move-zero", 0, "M;101", {}),
         ("path-same", 500, "C;10;100;100\r~~\r~1", {}),
         ("path-unreachable", 500, "C;10;100;111\r~~\r~1", {}),
+        ("avoid-reroute", 500, "C;7;1;101;10;100;110;1", {}),
+        ("avoid-block", 500, "C;7;1;101;7;2;102;10;100;110\r~~\r~1", {}),
+        ("avoid-destination", 500, "C;7;1;110;10;100;110\r~~\r~1", {}),
+        ("avoid-start", 500, "C;7;1;100;10;100;110\r~~\r~1", {}),
+        ("avoid-manual", 500, "C;7;1;101;1;M;101", {}),
+        ("avoid-clear", 500, "C;7;1;101;7;1;0;10;100;110;1", {}),
+        ("avoid-slot30", 500, "C;7;30;101;10;100;110;1", {}),
+        ("avoid-slot31", 500, "C;7;31;10;100;110;1", {}),
+        ("avoid-invalid-sector", 500, "C;7;1;3001;10;100;110;1", {}),
+        ("avoid-reconnect", 500, "C;7;0;10;100;110;1", {}),
+
     ]
+    if not args.only:
+        scenarios = [s for s in scenarios if not s[0].startswith("avoid-")]
     if args.only:
         scenarios = [s for s in scenarios if s[0] in args.only]
         if len(scenarios) != len(set(args.only)):
