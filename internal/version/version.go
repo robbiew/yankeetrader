@@ -2,7 +2,7 @@
 package version
 
 const (
-	Name            = "Yankee Trader: The Resurrection"
+	Name            = "Yankee Trader: Resurrection"
 	OriginalCreator = "Alan Davenport"
 	OriginalVersion = "3.6"
 	Repository      = "https://github.com/robbiew/yankeetrader"
