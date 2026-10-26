@@ -51,6 +51,8 @@ as decompiler-proven gameplay rules.
    rejected. A player is created only after confirmation, with alias uniqueness
    rechecked inside the store transaction.
 4. New players choose whether to page through the preserved original manual.
+   The viewer accepts Enter for another page, E to leave, and NS for non-stop
+   output (Ctrl-X stops non-stop output).
 5. Ship information is rendered from current player, port-ownership and world
    state using the recovered table skin. Press any key to continue.
 6. Sector/port/planet/warp display, then the timed main command prompt.
@@ -58,7 +60,12 @@ as decompiler-proven gameplay rules.
    original computer menu. Options 3, 7 and 10 connect to autopilot, avoid edits
    and path finding. `M;sector` and quit confirmation consume stacked input.
 
-ANSI output reserves the bottom status row while the upper 24 rows scroll.
+ANSI output reserves the bottom row while the upper 24 rows scroll. The status
+bar and its clock are rendered only in local console mode; remote callers see
+the prompt clock, without the local caller/alias bar. The original bar routine
+(`research/yt-combat/sub/qb-annotated.txt`, 1f42:1e1a–1eba) positions row 25
+and prints through console routines. The B800 captures used for the templates
+were local-console captures, not evidence of remote ANSI output.
 While waiting for a main/computer command, the remaining session time refreshes
 without discarding typed input. Local ANSI output maps CP437 to UTF-8; remote
 ANSI output keeps the original bytes. Plain text emits neither ANSI controls nor

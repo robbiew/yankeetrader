@@ -97,7 +97,10 @@ func (s Session) timeLeft() string {
 // the input cursor and attributes while updating both clock fields together.
 func (s Session) refreshClassicClock(width int) error {
 	left := s.timeLeft()
-	return s.Terminal.Printf("\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%-*s\x1b8", left, width, left)
+	if s.Local {
+		return s.Terminal.Printf("\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%-*s\x1b8", left, width, left)
+	}
+	return s.Terminal.Printf("\x1b7\x1b[24;7H\x1b[0;32m%-*s\x1b8", width, left)
 }
 
 func template(name string) []byte {
@@ -141,7 +144,11 @@ func (s Session) drawClassic(cells []byte) error {
 		b.WriteString("\x1b[0m\x1b[2J\x1b[H\x1b[?25l\x1b[?7l")
 		previous := -1
 		colors := []int{30, 34, 32, 36, 31, 35, 33, 37}
-		for y := 0; y < 25; y++ {
+		rows := 24
+		if s.Local {
+			rows = 25
+		}
+		for y := 0; y < rows; y++ {
 			fmt.Fprintf(&b, "\x1b[%d;1H", y+1)
 			for x := 0; x < 80; x++ {
 				i := (y*80 + x) * 2
@@ -367,16 +374,47 @@ func (s Session) classicInstructions() error {
 			break
 		}
 	}
+	nonstop := false
 	for i, line := range lines {
+		if !time.Now().Before(s.Deadline) {
+			return errors.New("session time expired")
+		}
+		if nonstop {
+			if terminal, ok := s.Terminal.(interface{ Interrupted() (bool, error) }); ok {
+				stop, err := terminal.Interrupted()
+				if err != nil {
+					return err
+				}
+				if stop {
+					return nil
+				}
+			}
+		}
 		if err := s.classicText(line + "\r\n"); err != nil {
 			return err
 		}
-		if (i+1)%22 == 0 {
-			if err := s.classicText("[ Press any Key ]\r\n"); err != nil {
-				return err
-			}
-			if err := s.waitClassicKey(); err != nil {
-				return err
+		if !nonstop && (i+1)%22 == 0 && i+1 < len(lines) {
+			for {
+				if err := s.classicText("[ENTER] for more, [E] to end, or [NS] for Non-stop "); err != nil {
+					return err
+				}
+				answer, err := s.readClassicLine()
+				if err != nil {
+					return err
+				}
+				switch strings.ToUpper(strings.TrimSpace(answer)) {
+				case "E":
+					return nil
+				case "NS":
+					nonstop = true
+					if err := s.classicText("Ctrl-X to Stop\r\n"); err != nil {
+						return err
+					}
+				case "":
+				default:
+					continue
+				}
+				break
 			}
 		}
 	}
@@ -516,4 +554,15 @@ func terminalLabel(value string) string {
 		}
 	}
 	return strings.TrimSpace(b.String())
+}
+
+// Original DOS tune from YT.EXE, file offset 0x275ce. Use the portable
+// CTerm introducer rather than the legacy CSI M form (delete-line on VT100).
+const exitTune = "MBO2T200L64FBEAP8FBEAP8FBEAP4FBEAP8FBEAP8FBEAP4T128"
+
+func (s Session) exitMusic() error {
+	if !s.ANSI || !s.Music {
+		return nil
+	}
+	return s.Terminal.Printf("%s", gd.MusicSequence(exitTune))
 }
