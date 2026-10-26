@@ -10,7 +10,7 @@ import (
 )
 
 func TestClassicNewPlayerAndReturningAlias(t *testing.T) {
-	term := &scripted{lines: []string{"", "Pilot", "y", "n", "", "?;c;?;1;q;y"}}
+	term := &scripted{lines: []string{"", "", "Pilot", "y", "n", "", "?;c;?;1;q;y"}}
 	s, st := navigationSession(t, term)
 	s.Classic = true
 	if err := s.Run(); err != nil {
@@ -36,7 +36,7 @@ func TestClassicNewPlayerAndReturningAlias(t *testing.T) {
 	if p.Alias != "Pilot" || p.Credits != 1005 || p.Turns != 500 || p.LastLogin == "" {
 		t.Fatalf("onboarding state: %+v", p)
 	}
-	term = &scripted{lines: []string{"", "", "q;y"}}
+	term = &scripted{lines: []string{"", "", "", "q;y"}}
 	s.Terminal = term
 	s.Alias = "Changed BBS handle"
 	if err = s.Run(); err != nil {
@@ -49,7 +49,7 @@ func TestClassicNewPlayerAndReturningAlias(t *testing.T) {
 }
 
 func TestClassicDefaultsReservedAliasesAndCancellation(t *testing.T) {
-	term := &scripted{lines: []string{"", "Sysop", "Xannor", "Mercenaries", "Rejected", "n", "", "y", "n", "", "q;y"}}
+	term := &scripted{lines: []string{"", "", "Sysop", "Xannor", "Mercenaries", "Rejected", "n", "", "y", "n", "", "q;y"}}
 	s, st := navigationSession(t, term)
 	s.Classic = true
 	s.RealName = "Real Trader"
@@ -63,7 +63,7 @@ func TestClassicDefaultsReservedAliasesAndCancellation(t *testing.T) {
 	if strings.Count(term.output.String(), "That ALIAS is NOT allowed") != 3 {
 		t.Fatal("reserved aliases accepted")
 	}
-	for _, lines := range [][]string{{}, {""}, {"", "Proposed"}, {"", "Proposed", "n"}} {
+	for _, lines := range [][]string{{}, {""}, {"", ""}, {"", "", "Proposed"}, {"", "", "Proposed", "n"}} {
 		term := &scripted{lines: lines}
 		s, st := navigationSession(t, term)
 		s.Classic = true
@@ -78,7 +78,7 @@ func TestClassicDefaultsReservedAliasesAndCancellation(t *testing.T) {
 }
 
 func TestClassicAliasCollisionDoesNotCreateAnotherPlayer(t *testing.T) {
-	term := &scripted{lines: []string{"", "Pilot", "Other", "y", "n", "", "q;y"}}
+	term := &scripted{lines: []string{"", "", "Pilot", "Other", "y", "n", "", "q;y"}}
 	s, st := navigationSession(t, term)
 	s.Classic = true
 	if err := st.Update(func(w *game.World) error { _, err := w.Join("existing", "Pilot"); return err }); err != nil {
@@ -129,7 +129,7 @@ func TestClassicEncodingAndOriginalTitleCells(t *testing.T) {
 }
 
 func TestClassicExpiredLoginAndDateValidation(t *testing.T) {
-	term := &courseTerminal{scripted: &scripted{lines: []string{"", "Pilot", "y", "n", ""}}}
+	term := &courseTerminal{scripted: &scripted{lines: []string{"", "", "Pilot", "y", "n", ""}}}
 	s, st := navigationSession(t, term)
 	s.Classic = true
 	s.Deadline = time.Now().Add(-time.Second)
@@ -161,7 +161,7 @@ func TestDOSCommandRepeat(t *testing.T) {
 }
 
 func TestCompactReconnectPreservesChosenClassicAlias(t *testing.T) {
-	term := &scripted{lines: []string{"", "Pilot", "y", "n", "", "q;y"}}
+	term := &scripted{lines: []string{"", "", "Pilot", "y", "n", "", "q;y"}}
 	s, st := navigationSession(t, term)
 	s.Classic = true
 	if err := s.Run(); err != nil {

@@ -42,6 +42,7 @@ you can just hit enter. (Or use an extra ";".)
 SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
 RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
 
+[ Press any Key ]
 Initializing...
 
 Welcome Caller!

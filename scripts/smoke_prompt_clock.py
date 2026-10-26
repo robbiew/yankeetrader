@@ -51,7 +51,8 @@ def main():
             assert inline==status,('clock fields disagree',inline,status)
         try:
             ready='\x1b[?25h\x1b[1;24r\x1b[24;1H'
-            wait_marker(ready,0);start=len(text);send(b'\r');wait_marker(ready,start)
+            wait_marker(ready,0);start=len(text);send(b'\r');wait_marker('[ Press any Key ]',start)
+            start=len(text);send(b' ');wait_marker(ready,start)
             start=len(text);send(b' ');wait_marker('Main Command (?=Help)? ',start)
             tick();check('Main Command (?=Help)?')
             start=len(text);send(b'LO');wait_marker('LO',start);tick();check('Main Command (?=Help)?','LO')

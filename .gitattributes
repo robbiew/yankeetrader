@@ -2,3 +2,7 @@
 /research/yt-port-screens/**/KEYS.TXT -text -diff
 /research/yt-planet-screens/**/KEYS.TXT -text -diff
 /research/yt-planet-rename/**/KEYS.TXT -text -diff
+
+# ANSI recordings contain significant control sequences and trailing spaces.
+/evidence/startup/transcript.txt -text -diff
+/evidence/startup/returning.txt -text -diff

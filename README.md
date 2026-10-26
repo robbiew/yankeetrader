@@ -11,7 +11,8 @@ layout. Local terminals receive UTF-8 box characters; ANSI BBS callers receive
 raw CP437. Door32's emulation field selects the remote display; `-ascii` forces
 plain text. No terminal-size probes are required.
 
-Press a key at the title. New players enter an in-game alias (Enter uses the
+Press a key at the title, then a separate key after the opening artwork. Each
+page stays visible until its own keypress. New players enter an in-game alias (Enter uses the
 Door32 real name, or the local name), confirm with `Y`, and choose whether to read
 the original instructions. Press a key after ship information. At the main
 prompt, Enter redisplays the sector, `?` shows the original two-column help,

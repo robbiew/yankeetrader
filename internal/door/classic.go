@@ -195,7 +195,22 @@ func (s Session) classicStartup() (int, error) {
 		asset = "assets/ytopen.ans"
 	}
 	opening, _ := classicAssets.ReadFile(asset)
-	if err := s.classicText("\r\nCntl-X to Stop\r\n" + string(opening) + "\r\nInitializing...\r\n\r\nWelcome " + s.Alias + "!\r\nSearching my records for your name.\r\n"); err != nil {
+	art := string(opening)
+	if s.ANSI {
+		// Preserve the asset while using the same portable save/restore as
+		// the clock; some terminals ignore the original CSI s/u sequences.
+		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
+	}
+	if err := s.classicText("\r\nCntl-X to Stop\r\n" + art); err != nil {
+		return 0, err
+	}
+	if err := s.Terminal.Printf("\r\n[ Press any Key ]"); err != nil {
+		return 0, err
+	}
+	if err := s.waitClassicKey(); err != nil {
+		return 0, err
+	}
+	if err := s.classicText("\r\nInitializing...\r\n\r\nWelcome " + s.Alias + "!\r\nSearching my records for your name.\r\n"); err != nil {
 		return 0, err
 	}
 	w, err := s.Store.View()

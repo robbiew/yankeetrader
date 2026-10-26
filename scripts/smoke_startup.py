@@ -85,13 +85,13 @@ class Screen:
     def snapshot(self):return json.loads(json.dumps(self.cells))
 
 
-def capture(data,alias,new=False,ascii=False,abort=False,after_info=None):
+def capture(data,alias,new=False,ascii=False,abort=False,after_info=None,check_pauses=False,title_key=b'\r'):
     master,slave=pty.openpty();fcntl.ioctl(slave,termios.TIOCSWINSZ,struct.pack('HHHH',25,80,0,0))
     command=[str(ROOT/'bin/yt'),'-data',str(data),'-local',alias]
     if ascii:command.append('-ascii')
     proc=subprocess.Popen(command,stdin=slave,stdout=slave,stderr=slave);os.close(slave)
     screen=Screen();decoder=codecs.getincrementaldecoder('utf-8')();text='';frames={};step=0;phase_start=0;end=time.monotonic()+25
-    phases=[('title','REGISTER THIS GAME.' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',b'\r')]
+    phases=[('title','REGISTER THIS GAME.' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',title_key),('opening','[ Press any Key ]',b' ')]
     if new:
         phases += [('alias','-+> ',b'\x1b' if abort else b'Pilot\r')]
         if not abort:phases += [('confirm','Is this OK (Y/[N])? ',b'Y\r'),('instructions','Do you want instructions (Y/N) [N]? ',b'N\r')]
@@ -100,8 +100,13 @@ def capture(data,alias,new=False,ascii=False,abort=False,after_info=None):
         phases += after_info if after_info is not None else [('sector','Main Command (?=Help)? ',b'?\r'),
                    ('help','Main Command (?=Help)? ',b'C\r'),('computer','Computer command (?=help)? ',b'?\r'),
                    ('computer-help','Computer command (?=help)? ',b'1;Q;Y\r')]
+    waiting=None
     try:
         while time.monotonic()<end:
+            if waiting is not None and time.monotonic()>=waiting[2]:
+                name,keys,_=waiting
+                assert screen.snapshot()==frames[name],('startup page replaced without another key',name)
+                os.write(master,keys);step+=1;phase_start=len(text);waiting=None
             if select.select([master],[],[],.1)[0]:
                 try:raw=os.read(master,65536)
                 except OSError as e:
@@ -109,10 +114,17 @@ def capture(data,alias,new=False,ascii=False,abort=False,after_info=None):
                     raise
                 if not raw:break
                 chunk=decoder.decode(raw);text+=chunk;screen.feed(chunk)
-                if step<len(phases):
+                if waiting is None and step<len(phases):
                     name,marker,keys=phases[step]
                     if marker in text[phase_start:]:
-                        frames[name]=screen.snapshot();os.write(master,keys);step+=1;phase_start=len(text)
+                        frames[name]=screen.snapshot()
+                        if check_pauses and name in ('opening','info'):
+                            if name=='opening':
+                                visible='\n'.join(''.join(c[0] for c in row) for row in frames[name])
+                                assert '[ Info ]' not in visible and 'Initializing...' not in visible, 'opening already replaced before its keypress'
+                            waiting=(name,keys,time.monotonic()+.3)
+                        else:
+                            os.write(master,keys);step+=1;phase_start=len(text)
             if proc.poll() is not None:break
         proc.wait(timeout=2)
     finally:
@@ -143,7 +155,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='yt-startup-smoke-') as temp:
         data=Path(temp)/'world'
         subprocess.run([str(ROOT/'bin/yt'),'-data',str(data),'-init','-sectors','8'],capture_output=True,check=True)
-        text,frames=capture(data,'Caller',new=True)
+        text,frames=capture(data,'Caller',new=True,check_pauses=True)
         world=json.loads((data/'world.json').read_text());p=world['Players']['1']
         assert (p['Alias'],p['Credits'],p['Turns'])==('Pilot',1005,500),p
         raw=(ROOT/'archive/analysis/art-menus/screen-recovery/run-main/SCREENS.BIN').read_bytes()[16:4016]
@@ -163,9 +175,9 @@ def main():
         assert info[13][26]=='║' and info[13][49]=='║',info[13]
         before=(data/'world.json').read_bytes();cancelled,_=capture(data,'Aborted',new=True,abort=True)
         assert (data/'world.json').read_bytes()==before,'cancelled alias created/changed player'
-        returning,return_frames=capture(data,'Caller')
+        returning,return_frames=capture(data,'Caller',check_pauses=True,title_key=b'\r\n')
         assert 'You are a new player.' not in returning and 'You have been on today.' in returning
-        plain,_=capture(data,'Caller',ascii=True)
+        plain,_=capture(data,'Caller',ascii=True,check_pauses=True)
         assert '\x1b' not in plain and all(ord(c)<128 for c in plain),'plain mode emitted ANSI/CP437'
         assert len(json.loads((data/'world.json').read_text())['Players'])==1
         (OUT/'transcript.txt').write_text(text.replace('\r',''))
@@ -173,7 +185,7 @@ def main():
         (OUT/'ascii.txt').write_text(plain.replace('\r',''))
         (OUT/'cells.json').write_text(json.dumps(frames,ensure_ascii=False))
         if args.render:render(frames)
-        print('Startup PTY passed: original title and 23 menu rows/attributes, alias registration, real stats, key pause, main/computer menus, reconnect, Escape rollback and ASCII fallback.')
+        print('Startup PTY passed: original title and 23 menu rows/attributes, separate stable opening/info pauses (including CRLF), alias registration, real stats, key pause, main/computer menus, reconnect, Escape rollback and ASCII fallback.')
 
 
 if __name__=='__main__':main()
