@@ -1,6 +1,6 @@
 # Yankee Trader: The Resurrection
 
-Version **0.1.0**, based on original YT Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+Version **0.1.0**, based on original YT Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original version and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
 ## A little history
 

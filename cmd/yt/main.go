@@ -9,6 +9,7 @@ import (
 	"github.com/robbiew/yankeetrader/internal/door"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"github.com/robbiew/yankeetrader/internal/store"
+	"github.com/robbiew/yankeetrader/internal/version"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -24,6 +25,7 @@ func main() {
 }
 func run() error {
 	data := flag.String("data", "data", "world directory")
+	showVersion := flag.Bool("version", false, "print application name and version")
 	initWorld := flag.Bool("init", false, "create a new world; never overwrites")
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
@@ -34,6 +36,10 @@ func run() error {
 	drop := flag.String("drop", "", "Door32 drop-file directory")
 	system := flag.String("system", "bbs", "stable BBS identity namespace")
 	flag.Parse()
+	if *showVersion {
+		fmt.Printf("%s (based on original YT Version %s)\n%s\n", version.String(), version.OriginalVersion, version.Repository)
+		return nil
+	}
 	if flag.NArg() != 0 {
 		return errors.New("unexpected arguments; use -help")
 	}

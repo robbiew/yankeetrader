@@ -2,6 +2,7 @@ package door
 
 import (
 	gd "github.com/robbiew/godoors"
+	"github.com/robbiew/yankeetrader/internal/version"
 	"regexp"
 	"strings"
 	"testing"
@@ -57,7 +58,7 @@ func TestResurrectionTitle(t *testing.T) {
 			t.Fatal(err)
 		}
 		text := regexp.MustCompile(`\x1b\[[0-9;?]*[@-~]`).ReplaceAllString(term.output.String(), "")
-		for _, want := range []string{projectName, "Version " + projectVersion, projectURL, "Based on original YT Version 3.6", "By Alan Davenport", "[ Press any Key ]"} {
+		for _, want := range []string{version.Name, "Version " + version.Version, version.Repository, "Based on original YT Version " + version.OriginalVersion, "By Alan Davenport", "[ Press any Key ]"} {
 			if !strings.Contains(text, want) {
 				t.Fatalf("missing %q", want)
 			}
