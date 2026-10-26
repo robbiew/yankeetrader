@@ -20,7 +20,7 @@ func TestClassicNewPlayerAndReturningAlias(t *testing.T) {
 	}
 	text := term.output.String()
 	cursor := 0
-	for _, part := range []string{"Yankee Trader", "By Alan Davenport", "Initializing...", "You are a new player.", "Enter the FULL alias", "Is this OK (Y/[N])?", "Your Alias has been recorded.", "Your ship has been built.", "Do you want instructions", "[ Info ]", "[ Press any Key ]", "Sector: 1", "Main Command (?=Help)?", "<Help>", "<Computer activated>", "Computer commands:", "<Computer deactivated>"} {
+	for _, part := range []string{"Yankee Trader", version.OriginalCredit, version.BasedOn, "Initializing...", "You are a new player.", "Enter the FULL alias", "Is this OK (Y/[N])?", "Your Alias has been recorded.", "Your ship has been built.", "Do you want instructions", "[ Info ]", "[ Press any Key ]", "Sector: 1", "Main Command (?=Help)?", "<Help>", "<Computer activated>", "Computer commands:", "<Computer deactivated>"} {
 		at := strings.Index(text[cursor:], part)
 		if at < 0 {
 			t.Fatalf("missing or out-of-order %q in %s", part, text)
@@ -58,12 +58,12 @@ func TestResurrectionTitle(t *testing.T) {
 			t.Fatal(err)
 		}
 		text := regexp.MustCompile(`\x1b\[[0-9;?]*[@-~]`).ReplaceAllString(term.output.String(), "")
-		for _, want := range []string{version.Name, "Version " + version.Version, version.Repository, "Based on original YT Version " + version.OriginalVersion, "By Alan Davenport", "[ Press any Key ]"} {
+		for _, want := range []string{version.Name, version.OriginalCredit, "Version " + version.Version, version.Repository, version.BasedOn, "[ Press any Key ]"} {
 			if !strings.Contains(text, want) {
 				t.Fatalf("missing %q", want)
 			}
 		}
-		for _, obsolete := range []string{"UNREGISTERED", "REGISTER THIS GAME", "Fidonet", "1-717", "Compiled"} {
+		for _, obsolete := range []string{"UNREGISTERED", "REGISTER THIS GAME", "Fidonet", "1-717", "Compiled", "By Alan Davenport", "original YT Version"} {
 			if strings.Contains(text, obsolete) {
 				t.Fatalf("obsolete splash text %q", obsolete)
 			}

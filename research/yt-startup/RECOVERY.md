@@ -66,11 +66,11 @@ CP437 box bytes. The embedded title, info skin and main-help templates are copie
 from the original 4,000-byte character/attribute pages. Opening art/manual bytes
 are copied through the DOS Ctrl-Z EOF marker; `assets.json` records hashes.
 
-The live title overlays the project name, version 0.1.0, original YT Version 3.6
-credit and GitHub link on the preserved template. Original author/copyright
-credits remain; the old compilation date, registration notices and contact
-details are replaced. The opening page also replaces its old BBS contact
-lines. Embedded source assets and archived captures remain unchanged.
+The live title, opening page and optional manual pages say “Original game by
+Alan Davenport” and “Based on Yankee Trader Version 3.6.” The title and opening
+also show project version 0.1.0 and the GitHub link. Old compilation date,
+registration notices and BBS contact details are replaced. Embedded source
+assets and archived captures remain unchanged.
 
 ## State and compatibility
 

@@ -160,13 +160,14 @@ def main():
         world=json.loads((data/'world.json').read_text());p=world['Players']['1']
         assert (p['Alias'],p['Credits'],p['Turns'])==('Pilot',1005,500),p
         raw=bytearray((ROOT/'archive/analysis/art-menus/screen-recovery/run-main/SCREENS.BIN').read_bytes()[16:4016])
-        branding={6:'Yankee Trader: The Resurrection',10:'https://github.com/robbiew/yankeetrader',12:'Version 0.1.0',14:'Based on original YT Version 3.6',16:'[ Press any Key ]'}
+        branding={6:'Yankee Trader: The Resurrection',7:'Original game by Alan Davenport',10:'https://github.com/robbiew/yankeetrader',12:'Version 0.1.0',14:'Based on Yankee Trader Version 3.6',16:'[ Press any Key ]'}
         for row,label in branding.items():
             line=label.center(80)
             attr=raw[((row-1)*80+39)*2+1]
             for x,ch in enumerate(line):raw[((row-1)*80+x)*2:((row-1)*80+x)*2+2]=bytes([ord(ch),attr])
         opening='\n'.join(''.join(c[0] for c in row) for row in frames['opening'])
         assert 'The Resurrection - 0.1.0' in opening and 'https://github.com/robbiew/yankeetrader' in opening,opening
+        assert 'Original game by Alan Davenport' in opening and 'Based on Yankee Trader Version 3.6' in opening,opening
         assert '717' not in opening and '9600 HST' not in opening,opening
         for y,row in enumerate(frames['title']):
             for x,cell in enumerate(row):

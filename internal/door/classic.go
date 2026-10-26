@@ -184,9 +184,10 @@ func resurrectionTitle() []byte {
 	cells := template("title")
 	for row, text := range map[int]string{
 		6:  version.Name,
+		7:  version.OriginalCredit,
 		10: version.Repository,
 		12: "Version " + version.Version,
-		14: "Based on original YT Version " + version.OriginalVersion,
+		14: version.BasedOn,
 		16: "[ Press any Key ]",
 	} {
 		attr := cells[((row-1)*80+39)*2+1]
@@ -222,10 +223,13 @@ func (s Session) classicStartup() (int, error) {
 		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
 		// Brand the live page without changing the preserved DOS source art.
 		art += "\x1b[7;1H\x1b[2K\x1b[0;96m                         The Resurrection - " + version.Version +
+			"\x1b[15;1H\x1b[2K\x1b[0;37m" + strings.Repeat(" ", (80-len(version.BasedOn))/2) + version.BasedOn +
+			"\x1b[16;1H\x1b[2K\x1b[0;31m" + strings.Repeat(" ", (80-len(version.OriginalCredit))/2) + version.OriginalCredit +
 			"\x1b[17;1H\x1b[2K\x1b[0;37m                     " + version.Repository +
 			"\x1b[18;1H\x1b[2K\x1b[19;1H"
 	} else {
 		art = strings.Replace(art, "Y A N K E E   T R A D E R ! ! !", version.Name+"\r\nVersion "+version.Version+"\r\n"+version.Repository, 1)
+		art = strings.Replace(art, "By Alan Davenport", version.OriginalCredit+"\r\n"+version.BasedOn, 1)
 	}
 	if err := s.classicText("\r\nCntl-X to Stop\r\n" + art); err != nil {
 		return 0, err
@@ -356,7 +360,8 @@ func (s Session) classicStartup() (int, error) {
 
 func (s Session) classicInstructions() error {
 	raw, _ := classicAssets.ReadFile("assets/ytinstr.doc")
-	lines := strings.Split(strings.ReplaceAll(string(raw), "\r\n", "\n"), "\n")
+	manual := strings.Replace(string(raw), "\r\nby "+version.OriginalCreator+"\r\n", "\r\n"+version.OriginalCredit+"\r\n"+version.BasedOn+"\r\n", 1)
+	lines := strings.Split(strings.ReplaceAll(manual, "\r\n", "\n"), "\n")
 	for i, line := range lines {
 		if err := s.classicText(line + "\r\n"); err != nil {
 			return err
