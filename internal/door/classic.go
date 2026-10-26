@@ -360,8 +360,13 @@ func (s Session) classicStartup() (int, error) {
 
 func (s Session) classicInstructions() error {
 	raw, _ := classicAssets.ReadFile("assets/ytinstr.doc")
-	manual := strings.Replace(string(raw), "\r\nby "+version.OriginalCreator+"\r\n", "\r\n"+version.OriginalCredit+"\r\n"+version.BasedOn+"\r\n", 1)
-	lines := strings.Split(strings.ReplaceAll(manual, "\r\n", "\n"), "\n")
+	lines := strings.Split(strings.ReplaceAll(string(raw), "\r\n", "\n"), "\n")
+	for i, line := range lines {
+		if strings.EqualFold(strings.TrimSpace(line), "by "+version.OriginalCreator) {
+			lines = append(lines[:i], append([]string{version.OriginalCredit, version.BasedOn}, lines[i+1:]...)...)
+			break
+		}
+	}
 	for i, line := range lines {
 		if err := s.classicText(line + "\r\n"); err != nil {
 			return err
