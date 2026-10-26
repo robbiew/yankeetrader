@@ -125,7 +125,8 @@ def capture(data,alias,new=False,ascii=False,abort=False,after_info=None,check_p
                             waiting=(name,keys,time.monotonic()+.3)
                         else:
                             os.write(master,keys);step+=1;phase_start=len(text)
-            if proc.poll() is not None:break
+            # A child may exit while its final writes are still queued on the
+            # PTY. Keep reading until EOF/EIO instead of stopping at poll().
         proc.wait(timeout=2)
     finally:
         if proc.poll() is None:proc.kill();proc.wait()
