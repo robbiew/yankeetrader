@@ -212,7 +212,7 @@ func TestPlanetCancelZeroAndDefaultQuantities(t *testing.T) {
 		{"cancel cargo", []string{"1", "0", "l"}, 100000, 10000, 10, 15},
 		{"remove garrison", []string{"f", "0", "l"}, 100000, 10000, 10, 115},
 		{"one credit", []string{"$", "1", "l"}, 99999, 10000, 10, 15},
-		{"unavailable", []string{"n", "!", "l"}, 100000, 10000, 10, 15},
+		{"unavailable", []string{"!", "l"}, 100000, 10000, 10, 15},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			s, id := planetSession(t)

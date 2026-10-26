@@ -92,6 +92,13 @@ func (s Session) timeLeft() string {
 	return fmt.Sprintf("%d:%02d", seconds/60, seconds%60)
 }
 
+// VT100 DECSC/DECRC also work in terminals that ignore CSI s/u. Preserve
+// the input cursor and attributes while updating both clock fields together.
+func (s Session) refreshClassicClock(width int) error {
+	left := s.timeLeft()
+	return s.Terminal.Printf("\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%-*s\x1b8", left, width, left)
+}
+
 func template(name string) []byte {
 	data, err := classicAssets.ReadFile("assets/" + name + ".bin")
 	if err != nil {
@@ -188,7 +195,22 @@ func (s Session) classicStartup() (int, error) {
 		asset = "assets/ytopen.ans"
 	}
 	opening, _ := classicAssets.ReadFile(asset)
-	if err := s.classicText("\r\nCntl-X to Stop\r\n" + string(opening) + "\r\nInitializing...\r\n\r\nWelcome " + s.Alias + "!\r\nSearching my records for your name.\r\n"); err != nil {
+	art := string(opening)
+	if s.ANSI {
+		// Preserve the asset while using the same portable save/restore as
+		// the clock; some terminals ignore the original CSI s/u sequences.
+		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
+	}
+	if err := s.classicText("\r\nCntl-X to Stop\r\n" + art); err != nil {
+		return 0, err
+	}
+	if err := s.Terminal.Printf("\r\n[ Press any Key ]"); err != nil {
+		return 0, err
+	}
+	if err := s.waitClassicKey(); err != nil {
+		return 0, err
+	}
+	if err := s.classicText("\r\nInitializing...\r\n\r\nWelcome " + s.Alias + "!\r\nSearching my records for your name.\r\n"); err != nil {
 		return 0, err
 	}
 	w, err := s.Store.View()

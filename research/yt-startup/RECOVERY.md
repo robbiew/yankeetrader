@@ -43,8 +43,8 @@ as decompiler-proven gameplay rules.
 ## Implemented sequence
 
 1. Original title at the captured positions/colors; press any key.
-2. Original YTOPEN ANSI art or ASCII welcome, followed by Initializing and
-   caller lookup.
+2. Original YTOPEN ANSI art or ASCII welcome, with its own key pause before
+   Initializing and caller lookup.
 3. For new players, enter and confirm an in-game alias. Enter selects the real
    name from Door32, or the local caller name. Reserved/duplicate aliases are
    rejected. A player is created only after confirmation, with alias uniqueness
@@ -97,7 +97,11 @@ loses subsequent progress. Alias input remains bounded to the existing printable
   retain their current Go workflows; this milestone does not recreate every DOS
   submenu. Classic `L` lands;
   `LOOK` preserves access to sector display, and compact `L` is unchanged.
-- The opening file is emitted promptly; DOS's evaluation delay, sound effects
+- The opening file is emitted promptly and paused explicitly so fast terminals
+  can read it before the ship-information screen clears it. This readability
+  pause does not assert original DOS timing. Runtime output translates the
+  asset's CSI save/restore controls to VT100 equivalents; embedded source bytes
+  remain unchanged. DOS's evaluation delay, sound effects
   and transfer-speed pacing are not emulated. The separate LOCAL.EXE launcher
   banner is not reproduced as if it were part of the Go game.
 - The terminal remains byte/ASCII-oriented for typed names/commands. The default
@@ -110,7 +114,9 @@ loses subsequent progress. Alias input remains bounded to the existing printable
 transcript/keystroke provenance and embedded asset identity. The real PTY smoke
 compares all 2,000 title cells/attributes and the first 23 main-help rows against
 DOS, while checking live stats, alias persistence, key pauses, computer menu,
-Escape cancellation and ASCII fallback.
+Escape cancellation and ASCII fallback. It holds both opening and info screens
+without sending a key and checks their cells stay unchanged; new, returning,
+ASCII and CRLF-title-input paths are covered.
 
 ```sh
 python3 scripts/recover_startup.py /tmp/yt-startup-new
@@ -128,7 +134,7 @@ disposable directory and preserves original files. Startup smoke uses only
 stdlib Python and disposable Go worlds. Optional `--render` adds PNGs with
 Pillow and the macOS Menlo font; CI verifies cells without those dependencies.
 
-Rendered PTY captures: [title](../../evidence/startup/title.png),
+Rendered PTY captures: [opening artwork](../../evidence/startup/opening.png), [title](../../evidence/startup/title.png),
 [ship information](../../evidence/startup/info.png),
 [main help](../../evidence/startup/help.png), and
 [computer menu](../../evidence/startup/computer-help.png).

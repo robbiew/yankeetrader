@@ -1,0 +1,14 @@
+{
+  "actor": "TESTER",
+  "fixture": "planet-team-bank",
+  "patches": [],
+  "input_sha256": "005e7dfad3ab8433dfe5b6eaaa9a4de299edf743c1e0c1de8086df5622692876",
+  "keys": "\r~~~~~\r~L;N\r~~@New Eden\r~~@Y\r~~@L;Q;Y\r~\r~\r",
+  "before_sha256": "005e7dfad3ab8433dfe5b6eaaa9a4de299edf743c1e0c1de8086df5622692876",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "screens_sha256": "0e2f8db7a1d8d93596c03069e1aaaa8533d0df1148deea7c88d7ff4092ab1d3a",
+  "game_log_sha256": "bb5c6f6a6bb46d7ca6c8ec77ab85695d50e7727054429eca3d4ed08f44e6d8c8",
+  "capture_sha256": "a92d3655bc2e6b26670e20a87a9fde9417be50c4a964a0ec9c1d7063acbb6f6b",
+  "dump_sha256": "05bdfdcff846fb5415618a14afa6586fa1fff46552cf952e4242c79a7dc01114",
+  "after_sha256": "45b50ae2aa43cebb8f4869c45256f2863485abf58c0e942d192df65e3efbff0a"
+}
