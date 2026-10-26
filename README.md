@@ -1,6 +1,19 @@
 # Yankee Trader — Go door
 
-A local Go/godoors reconstruction of Yankee Trader 3.6. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+A Go/GoDoors reconstruction of Yankee Trader 3.6 for local play and BBS doors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+
+## A little history
+
+Yankee Trader is Alan Davenport's text-based BBS space strategy game, combining
+exploration, trading and warfare. Its roots are in the Trade Wars 2 code base:
+following Chris Sherrick's first Trade Wars in 1984, Davenport released Trade
+Wars 1000 in 1987. The game took the Yankee Trader name in 1989, and its final
+DOS release, version 3.6, arrived in 1994.
+
+[Zharous's Yankee Trader strategy guide](https://yt.starflt.com/22-2/) records
+that history and reports that Davenport's original QuickBASIC source was lost.
+This project reconstructs the game in Go using the preserved DOS distribution
+and captured behavior as references.
 
 ## DOS-style startup
 
@@ -37,16 +50,22 @@ See [startup evidence and limits](research/yt-startup/RECOVERY.md) and the
 [title](evidence/startup/title.png), [ship information](evidence/startup/info.png),
 and [main menu](evidence/startup/help.png) captures.
 
-## Play now on this Mac
+## Play locally
 
-The native executable and existing local world are preserved. Play:
+From the repository directory, build the game, create a world, and start a local
+session (see [Build and validate](#build-and-validate) for prerequisites):
 
 ```sh
-cd /Users/robbie/GitHub/yankeetrader
-./bin/yt -data data -local Robbie
+go build -o bin/yt ./cmd/yt
+./bin/yt -data data -init
+./bin/yt -data data -local Player
 ```
 
-For a separate new world, run `./bin/yt -data another-world -init`. Initialization refuses to overwrite an existing world. `-local` is for trusted local play; do not give remote callers control over that flag or the data directory. The data files live in `data`, separately from the DOS game. Every successful action saves before its result is displayed. Quitting or disconnecting never restores spent resources or turns.
+On Windows, build with `-o bin/yt.exe` and use `.\bin\yt.exe` in place of
+`./bin/yt`. Replace `Player` with your local player name. For later sessions,
+run only the local-play command with the same name and data directory.
+
+For a separate new world, run `./bin/yt -data another-world -init`. Initialization refuses to overwrite an existing world; skip that step if you already have one. `-local` is for trusted local play; do not give remote callers control over that flag or the data directory. The data files live in `data`, separately from the DOS game. Every successful action saves before its result is displayed. Quitting or disconnecting never restores spent resources or turns.
 
 Try this route to buy a fighter, buy five ore at sector 2, and sell it at sector 3:
 
@@ -96,10 +115,10 @@ Other cargo names are `organics` and `equipment`. Earth sells `holds` (500 credi
 Use the directory containing that node's Door32 drop file and the same absolute data directory on every node:
 
 ```sh
-/Users/robbie/GitHub/yankeetrader/bin/yt \
-  -data /Users/robbie/GitHub/yankeetrader/data \
+/path/to/yankeetrader/bin/yt \
+  -data /path/to/yankeetrader/data \
   -drop /path/to/node1 \
-  -system vision3
+  -system mybbs
 ```
 
 `-system` is a stable namespace for the BBS. Identity uses this value plus the positive user-record number on Door32 line five; alias is display information. Changing an alias does not create a fresh ship. Keep the system value stable. Local identities are separate from Door32 identities.
