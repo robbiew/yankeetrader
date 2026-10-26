@@ -11,6 +11,7 @@ import (
 
 	gd "github.com/robbiew/godoors"
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/version"
 )
 
 // Captured DOS character/attribute templates and original opening/manual files.
@@ -179,8 +180,27 @@ func (s Session) drawClassic(cells []byte) error {
 	return s.classicText(b.String())
 }
 
-func (s Session) classicStartup() (int, error) {
+func resurrectionTitle() []byte {
 	cells := template("title")
+	for row, text := range map[int]string{
+		6:  version.Name,
+		10: version.Repository,
+		12: "Version " + version.Version,
+		14: "Based on original YT Version " + version.OriginalVersion,
+		16: "[ Press any Key ]",
+	} {
+		attr := cells[((row-1)*80+39)*2+1]
+		cellText(cells, row, 1, 80, "")
+		for x := 0; x < 80; x++ {
+			cells[((row-1)*80+x)*2+1] = attr
+		}
+		cellText(cells, row, (80-len(text))/2+1, len(text), text)
+	}
+	return cells
+}
+
+func (s Session) classicStartup() (int, error) {
+	cells := resurrectionTitle()
 	if !s.Local {
 		cellText(cells, 1, 1, 80, "")
 	}
@@ -200,6 +220,12 @@ func (s Session) classicStartup() (int, error) {
 		// Preserve the asset while using the same portable save/restore as
 		// the clock; some terminals ignore the original CSI s/u sequences.
 		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
+		// Brand the live page without changing the preserved DOS source art.
+		art += "\x1b[7;1H\x1b[2K\x1b[0;96m                         The Resurrection - " + version.Version +
+			"\x1b[17;1H\x1b[2K\x1b[0;37m                     " + version.Repository +
+			"\x1b[18;1H\x1b[2K\x1b[19;1H"
+	} else {
+		art = strings.Replace(art, "Y A N K E E   T R A D E R ! ! !", version.Name+"\r\nVersion "+version.Version+"\r\n"+version.Repository, 1)
 	}
 	if err := s.classicText("\r\nCntl-X to Stop\r\n" + art); err != nil {
 		return 0, err

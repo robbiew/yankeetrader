@@ -6,6 +6,7 @@ import (
 	gd "github.com/robbiew/godoors"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"github.com/robbiew/yankeetrader/internal/store"
+	"github.com/robbiew/yankeetrader/internal/version"
 	"io"
 	"strconv"
 	"strings"
@@ -184,7 +185,7 @@ func (s Session) Run() (runErr error) {
 		}); e != nil {
 			return e
 		}
-		if e := s.Terminal.Printf("\r\nYANKEE TRADER - Go reconstruction\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", s.Alias); e != nil {
+		if e := s.Terminal.Printf("\r\n%s\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", version.String(), s.Alias); e != nil {
 			return e
 		}
 	}

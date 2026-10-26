@@ -31,7 +31,7 @@ func (p *startupPauseTerminal) ReadKey(time.Time) (rune, gd.Key, error) {
 			p.t.Fatal("opening page was replaced before receiving its own keypress")
 		}
 	case 3:
-		if !strings.Contains(text, "[ Info ]") || strings.Count(text, "[ Press any Key ]") != 2 {
+		if !strings.Contains(text, "[ Info ]") || strings.Count(text, "[ Press any Key ]") != 3 {
 			p.t.Fatal("ship info lacks its separate key pause")
 		}
 	default:

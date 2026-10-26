@@ -3,17 +3,17 @@ Local Console Mode
 
 
 
-                                 Yankee Trader
+                        Yankee Trader: The Resurrection
                                By Alan Davenport
           Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
 
-                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+                    https://github.com/robbiew/yankeetrader
 
-                     Version 3.6 * YT * Compiled 03/16/94
+                                 Version 0.1.0
 
-                         UNREGISTERED EVALUATION COPY!
+                        Based on original YT Version 3.6
 
-              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+                               [ Press any Key ]
 
 
 
@@ -27,7 +27,9 @@ Cntl-X to Stop
 
 Welcome to .....
 
-Y A N K E E   T R A D E R ! ! !
+Yankee Trader: The Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
 
 Coming to you compliments of your Sysop!
 
