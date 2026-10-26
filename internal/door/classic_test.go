@@ -240,3 +240,95 @@ func TestClassicPromptClockTimeoutPreservesInput(t *testing.T) {
 		t.Fatal("clock refresh lost input", line, ticks, err)
 	}
 }
+
+func TestInstructionPagingControls(t *testing.T) {
+	const prompt = "[ENTER] for more, [E] to end, or [NS] for Non-stop "
+	for _, tc := range []struct {
+		name     string
+		input    []string
+		prompts  int
+		complete bool
+	}{
+		{"end", []string{"e"}, 1, false},
+		{"next then end", []string{"", "E"}, 2, false},
+		{"nonstop", []string{"ns"}, 1, true},
+		{"invalid then nonstop", []string{"bad", "NS"}, 2, true},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			term := &scripted{lines: tc.input}
+			s := Session{Terminal: term, Deadline: time.Now().Add(time.Minute)}
+			if err := s.classicInstructions(); err != nil {
+				t.Fatal(err)
+			}
+			text := term.output.String()
+			if strings.Count(text, prompt) != tc.prompts {
+				t.Fatalf("wrong prompt count: %d", strings.Count(text, prompt))
+			}
+			if strings.Contains(text, "That's it for the instructions.") != tc.complete {
+				t.Fatal("wrong manual completion state")
+			}
+			if len(term.lines) != 0 {
+				t.Fatal("did not consume navigation input")
+			}
+		})
+	}
+}
+
+func TestStatusBarIsLocalOnly(t *testing.T) {
+	for _, local := range []bool{false, true} {
+		term := &scripted{}
+		s := Session{Terminal: term, ANSI: true, Local: local, Alias: "BBS Caller", Deadline: time.Now().Add(time.Minute)}
+		cells := template("info")
+		s.status(cells, "Pilot")
+		if err := s.drawClassic(cells); err != nil {
+			t.Fatal(err)
+		}
+		text := term.output.String()
+		if strings.Contains(text, "\x1b[25;1H") != local || strings.Contains(text, "BBS Caller") != local {
+			t.Fatalf("local=%v: unexpected status visibility", local)
+		}
+	}
+}
+
+type instructionInterruptTerminal struct {
+	scripted
+	checks int
+}
+
+func (t *instructionInterruptTerminal) Interrupted() (bool, error) {
+	t.checks++
+	return true, nil
+}
+
+func TestInstructionNonstopCanBeInterrupted(t *testing.T) {
+	term := &instructionInterruptTerminal{scripted: scripted{lines: []string{"NS"}}}
+	s := Session{Terminal: term, Deadline: time.Now().Add(time.Minute)}
+	if err := s.classicInstructions(); err != nil {
+		t.Fatal(err)
+	}
+	if term.checks != 1 || !strings.Contains(term.output.String(), "Ctrl-X to Stop") || strings.Contains(term.output.String(), "That's it for the instructions.") {
+		t.Fatal("nonstop did not stop at interruption")
+	}
+}
+
+func TestExitMusicRequiresDetectedSupport(t *testing.T) {
+	for _, tc := range []struct{ ansi, music bool }{{true, true}, {true, false}, {false, true}, {false, false}} {
+		term := &scripted{lines: []string{"q"}}
+		s, _ := navigationSession(t, term)
+		s.ANSI, s.Music = tc.ansi, tc.music
+		if err := s.Run(); err != nil {
+			t.Fatal(err)
+		}
+		text := term.output.String()
+		if !strings.Contains(text, "Safe travels") {
+			t.Fatal("missing goodbye")
+		}
+		if tc.ansi && tc.music {
+			if !strings.HasSuffix(text, gd.MusicSequence(exitTune)) {
+				t.Fatalf("missing safe music sequence: %q", text)
+			}
+		} else if strings.Contains(text, "FBEAP") || strings.Contains(text, "\x0e") {
+			t.Fatalf("music leaked to unsupported terminal: %q", text)
+		}
+	}
+}

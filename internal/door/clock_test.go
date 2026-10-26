@@ -9,7 +9,7 @@ import (
 
 func TestClockRefreshRestoresCursorAndPadsShrinkingTime(t *testing.T) {
 	term := &scripted{}
-	s := Session{Terminal: term, Deadline: time.Now().Add(100 * time.Second)}
+	s := Session{Terminal: term, Local: true, Deadline: time.Now().Add(100 * time.Second)}
 	if err := s.refreshClassicClock(6); err != nil {
 		t.Fatal(err)
 	}
@@ -20,5 +20,17 @@ func TestClockRefreshRestoresCursorAndPadsShrinkingTime(t *testing.T) {
 	}
 	if strings.TrimSpace(fields[1]) != strings.TrimSpace(fields[2]) || !strings.HasSuffix(fields[2], "  ") {
 		t.Fatalf("clock fields disagree or retain old digits: %q", fields)
+	}
+}
+
+func TestRemoteClockDoesNotWriteLocalStatusRow(t *testing.T) {
+	term := &scripted{}
+	s := Session{Terminal: term, Deadline: time.Now().Add(time.Minute)}
+	if err := s.refreshClassicClock(6); err != nil {
+		t.Fatal(err)
+	}
+	text := term.output.String()
+	if strings.Contains(text, "[25;") || !strings.Contains(text, "[24;7H") || !strings.HasPrefix(text, "\x1b7") || !strings.HasSuffix(text, "\x1b8") {
+		t.Fatalf("unexpected remote clock update: %q", text)
 	}
 }

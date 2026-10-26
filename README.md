@@ -233,3 +233,9 @@ Version-1 worlds upgrade to version 2 in memory and are saved atomically on the 
 ## Complete recovery archive
 
 The [complete archive](archive/README.md) includes the original DOS distribution, full experiments, Ghidra projects, player spreadsheet and [art/menu gallery](archive/analysis/art-menus/index.html). Run `python3 scripts/verify_archive.py` to verify all imported checksums. This repository is the working home for future recovery; the old Downloads folder is no longer required.
+
+On exit, the original DOS tune plays only when GoDoors positively identifies
+SyncTERM or another CTerm-compatible terminal using its device-attributes query.
+Unknown terminals and `-ascii` sessions receive no music bytes. Music uses the
+CTerm `CSI |` introducer and SO/SI terminators, avoiding the legacy `CSI M`
+sequence that ordinary ANSI terminals interpret as delete-line.

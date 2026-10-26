@@ -100,7 +100,8 @@ func run() error {
 		return e
 	}
 	defer gd.CloseSession()
-	return (door.Session{RealName: realName, Classic: !*compact, ANSI: ansi, Local: *drop == "", Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
+	music := ansi && gd.IsCTerm()
+	return (door.Session{Music: music, RealName: realName, Classic: !*compact, ANSI: ansi, Local: *drop == "", Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
 }
 
 // Door32 line five is the stable BBS user record number; alias is display only.

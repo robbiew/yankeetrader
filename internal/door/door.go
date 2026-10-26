@@ -132,6 +132,7 @@ type Session struct {
 	Deadline             time.Time
 	Now                  func() time.Time
 	Classic, ANSI, Local bool
+	Music                bool // positively identified CTerm-compatible terminal
 }
 
 func (s Session) Run() (runErr error) {
@@ -341,7 +342,10 @@ func (s Session) Run() (runErr error) {
 					continue
 				}
 			}
-			return s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias)
+			if err := s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias); err != nil {
+				return err
+			}
+			return s.exitMusic()
 		case "?", "help":
 			if s.Classic {
 				if computer {
