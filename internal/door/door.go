@@ -184,7 +184,7 @@ func (s Session) Run() (runErr error) {
 		}); e != nil {
 			return e
 		}
-		if e := s.Terminal.Printf("\r\nYANKEE TRADER - Go reconstruction\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", s.Alias); e != nil {
+		if e := s.Terminal.Printf("\r\n%s - Version %s\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", projectName, projectVersion, s.Alias); e != nil {
 			return e
 		}
 	}

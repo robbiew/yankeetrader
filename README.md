@@ -1,6 +1,6 @@
-# Yankee Trader — Go door
+# Yankee Trader: The Resurrection
 
-A Go/GoDoors reconstruction of Yankee Trader 3.6 for local play and BBS doors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
+Version **0.1.0**, based on original YT Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched.
 
 ## A little history
 
@@ -17,7 +17,8 @@ and captured behavior as references.
 
 ## DOS-style startup
 
-The default interface reproduces the preserved DOS title, opening art, new-player
+The default interface adapts the preserved DOS title and opening art with
+Resurrection branding, and reproduces the new-player
 alias confirmation, instructions choice, ship-information pause, sector display
 and first command menus. Use an 80×25 ANSI terminal for the recovered colors and
 layout. Local terminals receive UTF-8 box characters; ANSI BBS callers receive
@@ -43,8 +44,10 @@ The original menus and manual include features still under reconstruction.
 Selecting an unavailable action says so; radio, scanner and cloak values are
 not fabricated. Ship balances and inventory come from the current Go world,
 including its existing deliberate differences from DOS starting equipment.
-The title's original version, compilation date and evaluation notice are
-preserved historical artwork, not metadata about the Go executable.
+The splash identifies this project as Yankee Trader: The Resurrection 0.1.0,
+credits the original YT Version 3.6 and Alan Davenport, and links to the
+[GitHub repository](https://github.com/robbiew/yankeetrader). No registration
+code is required. Original DOS artwork remains preserved in the archive.
 
 See [startup evidence and limits](research/yt-startup/RECOVERY.md) and the
 [title](evidence/startup/title.png), [ship information](evidence/startup/info.png),

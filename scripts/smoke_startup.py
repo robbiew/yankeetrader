@@ -91,7 +91,7 @@ def capture(data,alias,new=False,ascii=False,abort=False,after_info=None,check_p
     if ascii:command.append('-ascii')
     proc=subprocess.Popen(command,stdin=slave,stdout=slave,stderr=slave);os.close(slave)
     screen=Screen();decoder=codecs.getincrementaldecoder('utf-8')();text='';frames={};step=0;phase_start=0;end=time.monotonic()+25
-    phases=[('title','REGISTER THIS GAME.' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',title_key),('opening','[ Press any Key ]',b' ')]
+    phases=[('title','[ Press any Key ]' if ascii else '\x1b[?25h\x1b[1;24r\x1b[24;1H',title_key),('opening','[ Press any Key ]',b' ')]
     if new:
         phases += [('alias','-+> ',b'\x1b' if abort else b'Pilot\r')]
         if not abort:phases += [('confirm','Is this OK (Y/[N])? ',b'Y\r'),('instructions','Do you want instructions (Y/N) [N]? ',b'N\r')]
@@ -159,7 +159,15 @@ def main():
         text,frames=capture(data,'Caller',new=True,check_pauses=True)
         world=json.loads((data/'world.json').read_text());p=world['Players']['1']
         assert (p['Alias'],p['Credits'],p['Turns'])==('Pilot',1005,500),p
-        raw=(ROOT/'archive/analysis/art-menus/screen-recovery/run-main/SCREENS.BIN').read_bytes()[16:4016]
+        raw=bytearray((ROOT/'archive/analysis/art-menus/screen-recovery/run-main/SCREENS.BIN').read_bytes()[16:4016])
+        branding={6:'Yankee Trader: The Resurrection',10:'https://github.com/robbiew/yankeetrader',12:'Version 0.1.0',14:'Based on original YT Version 3.6',16:'[ Press any Key ]'}
+        for row,label in branding.items():
+            line=label.center(80)
+            attr=raw[((row-1)*80+39)*2+1]
+            for x,ch in enumerate(line):raw[((row-1)*80+x)*2:((row-1)*80+x)*2+2]=bytes([ord(ch),attr])
+        opening='\n'.join(''.join(c[0] for c in row) for row in frames['opening'])
+        assert 'The Resurrection - 0.1.0' in opening and 'https://github.com/robbiew/yankeetrader' in opening,opening
+        assert '717' not in opening and '9600 HST' not in opening,opening
         for y,row in enumerate(frames['title']):
             for x,cell in enumerate(row):
                 ch,attr=raw[(y*80+x)*2:(y*80+x)*2+2];expected=[bytes([ch]).decode('cp437') if ch>=32 else ' ',attr&15,(attr>>4)&7]
@@ -186,7 +194,7 @@ def main():
         (OUT/'ascii.txt').write_text(plain.replace('\r',''))
         (OUT/'cells.json').write_text(json.dumps(frames,ensure_ascii=False))
         if args.render:render(frames)
-        print('Startup PTY passed: original title and 23 menu rows/attributes, separate stable opening/info pauses (including CRLF), alias registration, real stats, key pause, main/computer menus, reconnect, Escape rollback and ASCII fallback.')
+        print('Startup PTY passed: branded title and 23 original menu rows/attributes, separate stable opening/info pauses (including CRLF), alias registration, real stats, key pause, main/computer menus, reconnect, Escape rollback and ASCII fallback.')
 
 
 if __name__=='__main__':main()

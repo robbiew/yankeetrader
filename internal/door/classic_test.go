@@ -2,6 +2,7 @@ package door
 
 import (
 	gd "github.com/robbiew/godoors"
+	"regexp"
 	"strings"
 	"testing"
 	"time"
@@ -45,6 +46,27 @@ func TestClassicNewPlayerAndReturningAlias(t *testing.T) {
 	w, _ = st.View()
 	if len(w.Players) != 1 || w.Players[1].Alias != "Pilot" || strings.Contains(term.output.String(), "You are a new player") || !strings.Contains(term.output.String(), "You have been on today.") {
 		t.Fatal("returning login lost alias or repeated registration")
+	}
+}
+
+func TestResurrectionTitle(t *testing.T) {
+	for _, tc := range []struct{ ansi, local bool }{{false, true}, {true, true}, {true, false}} {
+		term := &scripted{}
+		s := Session{Terminal: term, ANSI: tc.ansi, Local: tc.local}
+		if err := s.drawClassic(resurrectionTitle()); err != nil {
+			t.Fatal(err)
+		}
+		text := regexp.MustCompile(`\x1b\[[0-9;?]*[@-~]`).ReplaceAllString(term.output.String(), "")
+		for _, want := range []string{projectName, "Version " + projectVersion, projectURL, "Based on original YT Version 3.6", "By Alan Davenport", "[ Press any Key ]"} {
+			if !strings.Contains(text, want) {
+				t.Fatalf("missing %q", want)
+			}
+		}
+		for _, obsolete := range []string{"UNREGISTERED", "REGISTER THIS GAME", "Fidonet", "1-717", "Compiled"} {
+			if strings.Contains(text, obsolete) {
+				t.Fatalf("obsolete splash text %q", obsolete)
+			}
+		}
 	}
 }
 

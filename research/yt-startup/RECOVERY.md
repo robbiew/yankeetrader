@@ -42,8 +42,9 @@ as decompiler-proven gameplay rules.
 
 ## Implemented sequence
 
-1. Original title at the captured positions/colors; press any key.
-2. Original YTOPEN ANSI art or ASCII welcome, with its own key pause before
+1. Resurrection title adapted from the original positions/colors; press any key.
+2. YTOPEN ANSI art or ASCII welcome with Resurrection branding and a repository
+   link replacing old contact details, with its own key pause before
    Initializing and caller lookup.
 3. For new players, enter and confirm an in-game alias. Enter selects the real
    name from Door32, or the local caller name. Reserved/duplicate aliases are
@@ -65,9 +66,11 @@ CP437 box bytes. The embedded title, info skin and main-help templates are copie
 from the original 4,000-byte character/attribute pages. Opening art/manual bytes
 are copied through the DOS Ctrl-Z EOF marker; `assets.json` records hashes.
 
-The title intentionally preserves original copyright, version/date and
-unregistered-copy wording as historical artwork. It does not imply the Go
-executable was compiled in 1994 or requires DOS registration.
+The live title overlays the project name, version 0.1.0, original YT Version 3.6
+credit and GitHub link on the preserved template. Original author/copyright
+credits remain; the old compilation date, registration notices and contact
+details are replaced. The opening page also replaces its old BBS contact
+lines. Embedded source assets and archived captures remain unchanged.
 
 ## State and compatibility
 
@@ -112,8 +115,8 @@ loses subsequent progress. Alias input remains bounded to the existing printable
 
 `python3 scripts/verify_startup_evidence.py` verifies 11 original frames,
 transcript/keystroke provenance and embedded asset identity. The real PTY smoke
-compares all 2,000 title cells/attributes and the first 23 main-help rows against
-DOS, while checking live stats, alias persistence, key pauses, computer menu,
+compares all 2,000 title cells/attributes against the DOS template plus explicit
+branding overlays, and the first 23 main-help rows against DOS, while checking live stats, alias persistence, key pauses, computer menu,
 Escape cancellation and ASCII fallback. It holds both opening and info screens
 without sending a key and checks their cells stay unchanged; new, returning,
 ASCII and CRLF-title-input paths are covered.
