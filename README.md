@@ -1,6 +1,6 @@
-# Yankee Trader: The Resurrection
+# Yankee Trader: Resurrection
 
-Version **0.1.0**, based on original YT Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original version and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
+Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
 ## A little history
 
@@ -44,8 +44,9 @@ The original menus and manual include features still under reconstruction.
 Selecting an unavailable action says so; radio, scanner and cloak values are
 not fabricated. Ship balances and inventory come from the current Go world,
 including its existing deliberate differences from DOS starting equipment.
-The splash identifies this project as Yankee Trader: The Resurrection 0.1.0,
-credits the original YT Version 3.6 and Alan Davenport, and links to the
+The startup screens identify this project as Yankee Trader: Resurrection
+0.1.0, say “Original game by Alan Davenport” and “Based on Yankee Trader
+Version 3.6,” and link to the
 [GitHub repository](https://github.com/robbiew/yankeetrader). No registration
 code is required. Original DOS artwork remains preserved in the archive.
 

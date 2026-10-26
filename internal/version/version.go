@@ -2,9 +2,12 @@
 package version
 
 const (
-	Name            = "Yankee Trader: The Resurrection"
+	Name            = "Yankee Trader: Resurrection"
+	OriginalCreator = "Alan Davenport"
 	OriginalVersion = "3.6"
 	Repository      = "https://github.com/robbiew/yankeetrader"
+	OriginalCredit  = "Original game by " + OriginalCreator
+	BasedOn         = "Based on Yankee Trader Version " + OriginalVersion
 )
 
 // Version is the current project's semantic version. Release builds may

@@ -37,7 +37,7 @@ func run() error {
 	system := flag.String("system", "bbs", "stable BBS identity namespace")
 	flag.Parse()
 	if *showVersion {
-		fmt.Printf("%s (based on original YT Version %s)\n%s\n", version.String(), version.OriginalVersion, version.Repository)
+		fmt.Printf("%s\n%s\n%s\n%s\n", version.String(), version.OriginalCredit, version.BasedOn, version.Repository)
 		return nil
 	}
 	if flag.NArg() != 0 {
