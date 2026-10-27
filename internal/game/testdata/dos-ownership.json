@@ -1,0 +1,101 @@
+[
+  {
+    "Name": "ownership-buyout",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 3,
+    "BuyerAfter": 99969,
+    "SellerAfter": 2808,
+    "TreasuryAfter": 0,
+    "OwnerAfter": 2
+  },
+  {
+    "Name": "ownership-cancel",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 3,
+    "BuyerAfter": 100000,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 777,
+    "OwnerAfter": 3
+  },
+  {
+    "Name": "ownership-default",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 3,
+    "BuyerAfter": 100000,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 777,
+    "OwnerAfter": 3
+  },
+  {
+    "Name": "ownership-poor",
+    "BuyerBefore": 30,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 3,
+    "BuyerAfter": 30,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 777,
+    "OwnerAfter": 3
+  },
+  {
+    "Name": "ownership-unowned",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 0,
+    "OwnerBefore": 0,
+    "BuyerAfter": 99969,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 0,
+    "OwnerAfter": 2
+  },
+  {
+    "Name": "ownership-self",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 2,
+    "BuyerAfter": 100000,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 777,
+    "OwnerAfter": 2
+  },
+  {
+    "Name": "ownership-collect",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 2,
+    "BuyerAfter": 100777,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 0,
+    "OwnerAfter": 2
+  },
+  {
+    "Name": "ownership-report",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 2,
+    "BuyerAfter": 100000,
+    "SellerAfter": 2000,
+    "TreasuryAfter": 777,
+    "OwnerAfter": 2
+  },
+  {
+    "Name": "ownership-buy-collect",
+    "BuyerBefore": 100000,
+    "SellerBefore": 2000,
+    "TreasuryBefore": 777,
+    "OwnerBefore": 3,
+    "BuyerAfter": 99969,
+    "SellerAfter": 2808,
+    "TreasuryAfter": 0,
+    "OwnerAfter": 2
+  }
+]

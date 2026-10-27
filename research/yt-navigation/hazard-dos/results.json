@@ -1,0 +1,3708 @@
+{
+  "scenarios": [
+    {
+      "name": "hazard-bare-clock-01",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "39f7686e1150ec70a2f6dfabf8b5ed9a9add99b30e9009ecf48f70f0788f680a",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "01:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "85aff78ae25949835f2d6d6d9f4f69399c4490239de0317465033497995f25cc",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "cb9ccc19e23307664ca7b29752c12b7a6bee30433b485786582f407b83873231"
+    },
+    {
+      "name": "hazard-bare-clock-02",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "be356e8e7cbb75aaba9e8ec9cfbab9ae3f3e7e0841c75ffc9c785dd9c049b6df",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "02:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f71dfee2305dac89afa307bb2695ccce1d3321c44886e419285d85d26379fbb2",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "fc955508691e4aa6a3606c1392c4f65ee47e02471059d8e61817e4ae38cf9e8b"
+    },
+    {
+      "name": "hazard-bare-clock-03",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "0c347097d93ed5e6703bfdba8e1731135291662a236beb64ea884b18860528a9",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "03:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f8b198946984b63cb74468e4c5e18ee9bdb7cdbb94b8df98e047918d10953435",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "2eb5b334889d9e5f340c498255c42a925904697aa37c22b1f71937a9c78f2ea0"
+    },
+    {
+      "name": "hazard-bare-clock-04",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "63794e1bc056315b7f4221c838b76074e6e70e1975c864d64a14c976e1df7255",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "04:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "a10f7b4a7d697fa9564de244cb54115b25dd9c5ea986a9f3001cd235c20ffc15",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "80627185f3a02e78e56bba2f82fd332629f901ada1ac229e8564da61b022fe9a"
+    },
+    {
+      "name": "hazard-bare-clock-05",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "2f6a19fa129e9203a5424ceca18601f3a85ac1c6b7b709e021e9a5afbc04fd01",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "05:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f96bd83aa5fa1b239f7068b347476c696131db968bc41cd42dc3fa88bdfeaaae",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "ba48fdb03a48656fafbaf26b55d9c0657b33a15f35171aa26f6ac898e7634c72"
+    },
+    {
+      "name": "hazard-bare-clock-06",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "150036bc719ddeb2b21a14c900104167380ce9f4c5e566b391aacb69f2dec14b",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "06:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "eee6375591d3c11c4e42c2eb486cb1c85d50c0bfe2b0766fa9ab33cc96280b42",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "772ac0875436acc863fb3d10da3354bf6600a634be93d4a6c31324b94032e7f3"
+    },
+    {
+      "name": "hazard-bare-clock-07",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "63db265026b98f477d46b6281f70a80df55f5a67d0f5c7d12827563c65d8ac25",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "07:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "6745edfec2a30106d3ed082ec4d83c9b9131902979ad30cb53df8e3b0ea8d87f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "6dcd398b732c58518fbb8a676a4a6ad465cfb3ae295b16024efafdc9d77ee150"
+    },
+    {
+      "name": "hazard-bare-clock-08",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "cc4bd8a63ea3af7fea24bec82252a98f5b54dae894ae56bde2cc5db479b9459f",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "08:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f692e12132c46d755a8e9d1b46e0e063a2bb3b2754ac94dfa7b6a59a00d1642b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "fb93fdba59d2c1993bb1754b6283ecd1dd39c35b2c88ad68900d1456df30839c"
+    },
+    {
+      "name": "hazard-bare-clock-09",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "435f0892265aaeb259f953dfcbe32af2ff9f60e6e77e9eda57cf5c29bdf950bd",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "09:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "287a6ff2ce744e9813463c49f8325da3a0e6f1e803062e7d7d203a310105836c",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "7af59fc5ab767e4219a7113fac6a05612cdd78d7be2691496284297e19e4fb01"
+    },
+    {
+      "name": "hazard-bare-clock-10",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "2cff9d1b05b86aec60a8cff404e98b28757fdfb929637243433b5bb0adb95141",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "10:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "e93cda655a5b2ca7710b53eafeaa85cf3bcb6a0494a90039d3941cda867616b4",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "346b17d5c240a9356ab264b4f8b3e0bca922043077e254ddd84f83094f9e8d59"
+    },
+    {
+      "name": "hazard-bare-clock-11",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "19e4efcfa6cbd4c3cd248c80d7a750c1bb59737d00e2b82309be339bbb9ae424",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "11:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "d93964ca8372d05fa5fcc576c3654c3254fe4a386b74048fcc61bf1f1395cb1f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "e6932d66946b357639edde7a857437a0d167f715a9d0e5be2158067a8074c375"
+    },
+    {
+      "name": "hazard-bare-clock-12",
+      "command": "M;101\r~~Y",
+      "before_sha256": "aa15652517192dafd7252a0d345c5d1254a2465cc61cfda2431b849555153d88",
+      "after_sha256": "3a164cab99128d812db90ca2316f5f344a8adde2098b75a071d9ff31bc628bc2",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "12:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "7c6a42b88a7124272dba338fed08789a1cf186740ce0bbbfa3d5dfa8b749d49e",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "0e370a45668e11319d0622c0d367097f2a5eafd650d0a98e94ec8e5feb3c8125"
+    },
+    {
+      "name": "hazard-disrupt-bare",
+      "command": "M;2",
+      "before_sha256": "7c793498c234a5b2d67f266acb4bf3586628b92804f024ab3e43e4a511bd6b8b",
+      "after_sha256": "2090cf3cfc00c4893a176ca6044a676086a60ee4447e001f2c19ff4275b8c508",
+      "turns_before": 500,
+      "turns_after": 262,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      },
+      "patches": [
+        {
+          "record": 1,
+          "offset": 57,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 61,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 93,
+          "value": 53
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 93,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "b11707ca6ca3bce49d34e758ecf0a8ab2bec9845e54b1f9361b3282a85bbb7be",
+      "transcript_sha256": "7d338c9e88b1765ffff15207caa599a9caab304e7eee706af8b02abadce14715",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "bac3b6a0d491b360b61a98d948b78b7b39b46c430f6fc6cb13e62e2c7a6c5cbb"
+    },
+    {
+      "name": "hazard-disrupt-no",
+      "command": "M;2\r~~N",
+      "before_sha256": "3e7e958904f764fe4eec9cafc3219a6a60a2db229829f80257396aa495152818",
+      "after_sha256": "7164ab698d593a5aa2c460da1511401694194712a524b894034944d7a6768527",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      },
+      "patches": [
+        {
+          "record": 1,
+          "offset": 57,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 61,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 93,
+          "value": 53
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 93,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "f4c2a80ad53f57ebbdbe95996bbffe5d476231c72995d9e6f2ab3dacf8909f2e",
+      "transcript_sha256": "faf58df00921e732e940bec44358b1e442c475a00e496cf3abe97866a3cdfc67",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "dc0c7ad9871a82f9652e171b7fbff62fbb6a81fd07c80586a18ade4f60229009"
+    },
+    {
+      "name": "hazard-disrupt-scan",
+      "command": "S",
+      "before_sha256": "3e7e958904f764fe4eec9cafc3219a6a60a2db229829f80257396aa495152818",
+      "after_sha256": "7164ab698d593a5aa2c460da1511401694194712a524b894034944d7a6768527",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      },
+      "patches": [
+        {
+          "record": 1,
+          "offset": 57,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 61,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 93,
+          "value": 53
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 93,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "f4f4ca3a2bbb1b26f563893976c8969294bd21881228e6a7a0677dd027d37c14",
+      "transcript_sha256": "d0e4ffd7e59897df452fe983dbe4efb35e2e33589070441e8de38275fecd0fa0",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "9d07f8c5d5f5ba7796dfb84b6b9e758f7c4493cf9ab649d85d27c216c3fae68b"
+    },
+    {
+      "name": "hazard-disrupt-yes",
+      "command": "M;2\r~~Y",
+      "before_sha256": "3e7e958904f764fe4eec9cafc3219a6a60a2db229829f80257396aa495152818",
+      "after_sha256": "1a1784bfaff6dca7416fac1ce4ffd674c100a1fa58a6d62b0bf84b5561422b69",
+      "turns_before": 500,
+      "turns_after": 262,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      },
+      "patches": [
+        {
+          "record": 1,
+          "offset": 57,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 61,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 93,
+          "value": 53
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 93,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "a1f93501915b3b814ad65bab1a0dc56ae89901661a40b657ace43efd630985f6",
+      "transcript_sha256": "ff67d1ec6f056c14925ee564788c56f08a8029736cfecf0ae31e9ec9801508ee",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "a9d40ae4654879855f995d6b0243ac1e3dbad33b24af0eeb44686aeaae979dd7"
+    },
+    {
+      "name": "hazard-shield-clock-01",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "463f460e3e9e7b753580b236804c3dfff2e3333e0f076aad5e7dd774df5127d7",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "01:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "c1bf8a697ca7e67e2924826cf8df158d0eed7d3bba885874a317d277ff35dea8",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "671358c6dfdb7262cdf7a717a529e355c4cad059e0b5aee22ef15922e34db374"
+    },
+    {
+      "name": "hazard-shield-clock-02",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "d0261859ac1e2334f644dc28c12a63b506f2c04773b51e5cf6c93cb7d1fe1486",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "02:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "41bf5e218ee47e51f69b4b3c1c9ce85d518f73f04b93ea8ebb9dec06529c4461",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "1e4e2887caa2be92c3aa8548f23c996f7fdc57621274b51eac1cf102bb2dc5be"
+    },
+    {
+      "name": "hazard-shield-clock-03",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "3fd507d0a408b972c3ab30a0363a9b85de5a9a25ce3beeaa5ff502c7543d778d",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "03:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "21c185d16a80d651fddfd291d7eb1e202ce0ddbc98016fcb5c2d257c4e7e7ce5",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "dddff70e0f9fd4f595ed3381c38a1bed0e0b261276d3bd11fb24ae7ac43ee978"
+    },
+    {
+      "name": "hazard-shield-clock-04",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "b0addb213e5f44794fb8f114735e95db846dfba489bda3677f07f7ef7b52d0bf",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "04:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "a72c6cb496ba34fec5a3c77c8431fd3bdf6f798d52562c3e090fd86d130da8b2",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "a106a9137656951f068704b0a8b9c0febb69fb19179dfb3e64b9870ab851fdcd"
+    },
+    {
+      "name": "hazard-shield-clock-05",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "e39542aed27e4baf7fd610b5bb28d32b3b2d2ab84e8b3a6a2563c8bb5a75344a",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "05:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "1407a7855913b1c40c216066f8db8780ec2f6ccfdeb989bd0482b58566d40ea5",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "157c629a324ec1ab5df1f9ace1a3256a14dc49438bcefacc18fb22f38ce431db"
+    },
+    {
+      "name": "hazard-shield-clock-06",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "1d014ca34027e3cc52a654d09a4f74da9759149de9bea21bb56fead7f1b6a0c8",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "06:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "1af8531fd5e382f0422d5857ed69572724c7011b3845fd18a9f71037d376098e",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "3b2e9a59ef8210a553d5645f42528b5ad9cda6264763772e658128035cbc5f81"
+    },
+    {
+      "name": "hazard-shield-clock-07",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "9bd2df4e06f41e33b013e921b5b9874b35a0925fae91ab4d7fc16f0b702ee2f9",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "07:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "3be5e91ab14095f99f5667bd6b669398d4d8b9345c164befc7fbb53cf7703371",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "730a768f4269d04bbaad7bdcca2f46e3ce97d3b80d3e16a4c5234cb9841d2531"
+    },
+    {
+      "name": "hazard-shield-clock-08",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "6eb2d60d516858259c4a4572956cebad9e9cbe7b64052213f570027d6ecddd5e",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "08:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "97fec4686445a3b15f51acd96aa910dbdf75e9182c22051fff3b89840749f21d",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "a6da751dc57e94e77a078086eede6d72b27a4c6f7b71fbfa20ce9a9e4d98b8cb"
+    },
+    {
+      "name": "hazard-shield-clock-09",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "0908f16ebd4d2d12b17712768b425790cb4c48573582fa22412298590c73ed5b",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "09:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "ce7dadc452a1a3808c24fb8c2240346e99bed252ff67a087746472832e30df99",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "30384afe8c06404074506d78402e618a918773a2c4f98dc1f844c41694687504"
+    },
+    {
+      "name": "hazard-shield-clock-10",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "fb749810cc950d8161cd2a4a4dfcfe4185b10bbbdc8b6fc11375874960b00499",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "10:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "ca539bb855a5ae3e55d69f63554fd726cbc6ca0a8ea50bdafe5b3bc2803d652a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "4e368e5697e05d2f8725b263011c1608e2e7ab0e4288d95364d37cdee2aab289"
+    },
+    {
+      "name": "hazard-shield-clock-11",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "1f41ae3b6c120620f7112a48a7c1202c428f78ffe3c405424be88b49b576ec3f",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "11:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "562a6d2bb9354ad233b50497b90dc8929c83e2197a863b11b2fe89eec7775179",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "29ffdfd6474604e929b92380cd2d92a22ac608113bad97132bce3e4567a14ad7"
+    },
+    {
+      "name": "hazard-shield-clock-12",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "ad173e1158d60c549e51efeeadc08a4630890958be968cd8574fd647bf972f0b",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "12:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f9097884734637be68d37b2b726d848169c09ef6fbd6e6b3c442a883c4750330",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "786b9c57bbc4da4f1957e43263b5d90ae7944e203029d5b8d5f3ebf0a50a5d7a"
+    },
+    {
+      "name": "hazard-burst-clock-01",
+      "command": "M;101\r~~Y",
+      "before_sha256": "c80395412f537e996df6215eabb59fb13ba01d291839f8cc0f0ef8b527faa2c8",
+      "after_sha256": "ad105139c834f2c40862c89bc77a68038d7938baf34240306cd7b720adaeae49",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "01:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1000000
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 20
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "2d02f6b52a3de3b230f197c9fa8f4dabe43c3e6f12fd813c490b6a8f47de3e10",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "cde498e7cc972daa869b59d26581d3ca755c1acc2a403c4a8b5f6d1cf475e2a9"
+    },
+    {
+      "name": "hazard-burst-clock-02",
+      "command": "M;101\r~~Y",
+      "before_sha256": "c80395412f537e996df6215eabb59fb13ba01d291839f8cc0f0ef8b527faa2c8",
+      "after_sha256": "f98bd2da5b169a8a1868f578a82557eba9d77a6965c64a23fda946c43253f417",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "02:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1000000
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 20
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "b8d2ed0fc0beee8006533f8e75cf8e1561ec840dcd1490321cfb4002107551c9",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "adb54e0026a12c99e957868fbf9cc745d7904a6da515b40a0fd92bf07bd664ec"
+    },
+    {
+      "name": "hazard-burst-clock-03",
+      "command": "M;101\r~~Y",
+      "before_sha256": "c80395412f537e996df6215eabb59fb13ba01d291839f8cc0f0ef8b527faa2c8",
+      "after_sha256": "8067ef5cca1a118c40854890f75af8a859d3eb44d19a0e31a739715edc01d8de",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "03:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1000000
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 20
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "a1452c50b7620d6f0ec0a16aa1c48e15ca51ed0deb5f4ef324a9590ceabc08b4",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "be47719ddc3babeb88ee8d88749b7bfb7732636763da302c6b9ea42dec8b74a7"
+    },
+    {
+      "name": "hazard-burst-clock-04",
+      "command": "M;101\r~~Y",
+      "before_sha256": "c80395412f537e996df6215eabb59fb13ba01d291839f8cc0f0ef8b527faa2c8",
+      "after_sha256": "c1b0982b37684086d6bc2cbe79be3339df828351eace28ab8f9b0d7a8a25ebd6",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "04:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1000000
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 20
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "c72f000a562920087e3ff32c76374359eebf223d0f775be1a545a3896a4583c2",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "ea7735162256813bd8f33751c767aaac28e4e72b0ceb7c57a3dc5e49952e3775"
+    },
+    {
+      "name": "hazard-small-clock-01",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "292503f175c4afad834539383d1a1c4f2bd47edac790519fd1e4f38501b8f541",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "01:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "dc91f2cf6415e40db29f4ff0bed94562454d3208f28031a6953c785ecb316c26",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "ddd313bf52aff2c2f9fb3f820109bf21138756da68127473a6ce3012e8a7b569"
+    },
+    {
+      "name": "hazard-small-clock-02",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "3aa5de1c6563d89f75df0e1d7297f88db9d78cbdd450cd52dd032d8886155d98",
+      "turns_before": 500,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 2434,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "02:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f7356fcc6e662a339ef0447ebe241d65621550aacc9a36f439bfcef7088041a7",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "bb3626295f4b9c5c3f79e67ad7be64229e1f9f7d119b52f169f4ddf21500d0d9"
+    },
+    {
+      "name": "hazard-small-clock-03",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "ef1e099502042ac3c44c8fe7902ebfbaee4b2bd146c951758e244df7c0d764f1",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "03:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "f8fbe828bca967bdcdd0268bb5f90ef5726d275cf30c0ac1ae9c3e0615255a33",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "9702fd18da136004768fc1d6612979f6b82b4e78f489073f97d49725f81b507d"
+    },
+    {
+      "name": "hazard-small-clock-04",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "cd39c81ee0154841770f23dd07410fea17ecead81308e46361ced28771b0d108",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "04:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "3aeb83a2846a759ef0eaf083193527a8021bd93c0c7ce7afec4fc9ad2867579a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "85c8d6bf65c3ae267405ca373e332ea52dfb22397a8f5c49f212044711987ec1"
+    },
+    {
+      "name": "hazard-small-clock-05",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "6112a2c964f7fdf47c6c029bca55303b6951aad3e43db2c4b799852bdeeefdcb",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "05:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "27877e448b65b1949f5726036f93f85e3f682c7e6326a18ca6d07c4c6726715e",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "b60c21bec345057cfb993eda1ba0c49566290e479a9af9082e8ccb6cf62d5b02"
+    },
+    {
+      "name": "hazard-small-clock-06",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "016849a38d0387a9f1a5705b353908fdf96c95fdd607c5422b30b235b9c52854",
+      "turns_before": 500,
+      "turns_after": 455,
+      "sector_before": 100,
+      "sector_after": 1333,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "06:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "9cfd59b77a71f3cda4c359713c27d87c749016c0d1a7078e3bc2147a9c517380",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "6beb2211aac3e8e28eafda2337ae0020fbe8f9445366a831f7bad627a2718e22"
+    },
+    {
+      "name": "hazard-small-clock-07",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "5d9dea685f47bf7ee7d9f9918a50d0f53cd8b3dc41c448be54e6780fb4e8f141",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "07:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "098a54347e14fc76197e3adc93c60d1317e7fd0cac21bb60792f2970977544fb",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "b831ea5031a901a3b8622c85dd061ac4d3eacdb7a743d6e9e2116dca1ed8b9a6"
+    },
+    {
+      "name": "hazard-small-clock-08",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "eb910eed1f2014483d0143309cd92c69040ba98edf8c6699156ec5e89f725dc4",
+      "turns_before": 500,
+      "turns_after": 398,
+      "sector_before": 100,
+      "sector_after": 1480,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "08:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "bd3f9b375249f960699726d705abc26a85352349f52d302cbb837f23e16f4af8",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "4141e2be3b1d7d1ee4668e68da98340a669d80c78026fe05d8ebd808487bf2bf"
+    },
+    {
+      "name": "hazard-small-clock-09",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "292503f175c4afad834539383d1a1c4f2bd47edac790519fd1e4f38501b8f541",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "09:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "8aed7f821535f4ba319c3260b04588c49d9883c9ee62f1e5d8b320449fee3c67",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "54d3097df46fefa69f15829c1550aae02bc3e08657c36e3de9f8ed272cd2645c"
+    },
+    {
+      "name": "hazard-small-clock-10",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "67ead91a67eed5614a2f893abe93c143679a20e751c64aa2a8f058dff3d6d485",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "10:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "9d6a2d4054d17126fa3fb780a2cb0bb93a78519d6dc6d4170e9ea467680e1828",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "2575e1225bdb9354154a1a7e3fdc142076ee65184433c9118b14a4c9ac0a8787"
+    },
+    {
+      "name": "hazard-small-clock-11",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "3433494bce62475722b40b269ea05f3ffa334420056eb72ed6ad788159d4b229",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "11:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "21ede55dbda5b6b0775bf4f4566ad3ff8d5feb63315df66ea562509c60fb8df7",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "cf6715ae64e3d104664016cf6aa43911bbab598fbaa44a4b7562a86f4e92d637"
+    },
+    {
+      "name": "hazard-small-clock-12",
+      "command": "M;101\r~~Y",
+      "before_sha256": "e1493d936d6130b3926c78ce4d1b92e46d9ac5b8da621cda14c25d59c504ac4a",
+      "after_sha256": "ed4ca71ca1241097e619fac0e00bdcd7e5118be4dd26c574ca8c6975e7279840",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "12:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 9
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "84d3e5d6d9a2a72fa978babc3ec4e464e0fbcb0ec10f1eeba3d138b045952255",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "a16f1c5b4142983e2b46658a83c7b5139ab09bf89e3ace1b095375c24b7d8c1b"
+    },
+    {
+      "name": "hazard-ten-holds",
+      "command": "M;101\r~~Y",
+      "before_sha256": "8cd0953f263c15ad23fd99e93dcc3c075a937d862a00c5babf9bdd8697c4b9f4",
+      "after_sha256": "bb7abc843aa3e337294ce1999a82522df4cd4bec8c7bdc07bb18c9d5f02d7b40",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "73693167d37f082f28deee0fb51e008427a2181cd77d3eb4f7fdd2f99941ac5e",
+      "transcript_sha256": "b21c54b8b5b86ffe4a44346778a2e8b43991345f1623e777e55586cfc13822ff",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "d705ca5d58c25bb4a16e003e69e5f33ee332127b23685c62b0886f95f5722c24"
+    },
+    {
+      "name": "hazard-disrupt-last",
+      "command": "M;2\r~~Y",
+      "before_sha256": "bdd23f8e071f2f88a8333a5e4f4351748f5fb6b8f77d837f1149da7d7a3a8253",
+      "after_sha256": "a2244a201ab5fc85b02ca99b7d47b36833ea3839907a1d5f41e5106f6228a243",
+      "turns_before": 1,
+      "turns_after": 0,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      },
+      "patches": [
+        {
+          "record": 1,
+          "offset": 57,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 61,
+          "value": 53
+        },
+        {
+          "record": 1,
+          "offset": 93,
+          "value": 53
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 65,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 93,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "a1f93501915b3b814ad65bab1a0dc56ae89901661a40b657ace43efd630985f6",
+      "transcript_sha256": "482f1b346b10749f4833d74f1f3f54d99ee1eeae41fa1b9f788aaa973d647c84",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "0b7e9b2a622e70439eb0d9a3bd12858bf8587260c8d6fbc998c3fc2a61494d81"
+    }
+  ]
+}

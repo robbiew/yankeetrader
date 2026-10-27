@@ -91,6 +91,9 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `AVOID` | Show your saved routing preferences; free |
 | `AVOID <slot> <sector>` | Set slot 1–30; sector 0 clears that slot; free |
 | `P` | Dock and display current prices; one turn |
+| `B` / `ACQUIRE` | Buy the current port after explicit `Y` confirmation |
+| `TREASURY` / computer `C`, `12` | Report personally owned port balances |
+| `$` / `COLLECT` | Collect all personal port balances from any sector |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
 | `LEAVE` | Leave port |
@@ -137,6 +140,8 @@ Native macOS PTY and Door32 **local transport** were exercised. Linux/Windows bu
 ./bin/yt -data data -maint
 ```
 
+Port purchases cost `floor(sum of production / 10) + 1` credits and no turns. Buying an owned port pays its former owner the price plus its treasury, then clears that account. Earth cannot be bought. Confirmation defaults to cancellation and expires after five minutes; changed ownership, location, price or funds rejects the sale. Ownership changes invalidate docking agreements in the sector. Treasury collection is free, remote and personal; insufficient credit capacity rejects the entire collection. See [ownership evidence and deliberate fixes](research/yt-trade/OWNERSHIP.md).
+
 Maintenance runs automatically at login as well. Days use **UTC**. On a new date it updates port supply, taxes ordinary port treasuries by `floor(treasury/10)`, restores players to 500 turns, and invalidates outstanding docking sessions. Repeating the command on the same day, or moving the clock backward, does not repeat daily phases. A missed interval gets at most ten days of port production; missing days do not accumulate extra player turns. Taxes run once when advancing the maintenance marker, not once for every missed day.
 
 Planet maintenance also produces stocks and weapons, grows rates and ground defenses, and pays bank interest. NPC actions, cloak decay, deletion, lottery, combat and other daily phases remain deferred.
@@ -162,7 +167,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 players, 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Team management, port acquisition/treasury collection, combat, NPCs, full universe generation parity, DOS save import/export, Genesis, and richer terminal menus remain future milestones. Their recovered rules are in `research`.
+Team management, combat, NPCs, full universe generation parity, DOS save import/export, Genesis, and richer terminal menus remain future milestones. Their recovered rules are in `research`.
 
 ## Storage and recovery
 

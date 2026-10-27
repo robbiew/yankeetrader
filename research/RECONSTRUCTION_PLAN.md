@@ -23,8 +23,8 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 
 ## Next implementation stages
 
-1. Complete the remaining navigation/encounter research: danger scanners, cloak visibility, emergency warps and NPC/utility commands. The first sensor/path/autopilot slice is now implemented; see [navigation recovery](yt-navigation/RECOVERY.md).
-2. Add port acquisition, buyouts and treasury collection with targeted DOS validation of the untested buyout branch.
+1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
+2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Add teams and shared assets, preserving transactional role/membership checks.
 4. Add combat and death/respawn with active-session invalidation before enabling dangerous sectors, then NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
@@ -69,8 +69,21 @@ list on reconnect. Go deliberately persists it. Total navigation evidence is now
 
 ## DOS startup presentation — 2026-10-25
 
+Live BBS follow-up, 2026-10-26: the user confirms that the Go door loads on the
+live BBS. This establishes successful loading; gameplay, disconnect, transport
+and durability acceptance remain separate checks.
+
 The default frontend now follows the original title/opening, alias registration,
 instructions choice, ship-information key pause, sector display and first menus.
 Original captures supply cells/colors; dynamic fields use current game data.
 `-compact` retains the previous interface. See [startup recovery](yt-startup/RECOVERY.md)
 for exact comparisons, unsupported-system boundaries and save compatibility.
+
+## Port ownership milestone — 2026-10-26
+
+`B`/`ACQUIRE`, computer `12`/`TREASURY`, and `$`/`COLLECT` now operate on
+persistent personal port ownership. DOS buyouts pay the old owner the purchase
+price plus the old treasury. Earth protection, exact money, confirmation
+revalidation and atomic capacity checks deliberately prevent ownership/money
+exploits. [Recovery and validation](yt-trade/OWNERSHIP.md). Next: teams and shared
+assets, with authoritative membership and role checks.

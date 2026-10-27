@@ -1,0 +1,964 @@
+{
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "danger-team",
+      "command": "M;101",
+      "before_sha256": "67789a4c133e061c955facb92b50861abad4021de58d5b53d8f52326e501b709",
+      "after_sha256": "a7bcb0b2ff67c2ee4a6e91d28bf941b91cc98d36a5423eb64df9cec4c1f4f87e",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 77,
+          "value": 2
+        },
+        {
+          "record": 52,
+          "offset": 109,
+          "value": 2
+        },
+        {
+          "record": 52,
+          "offset": 117,
+          "value": 3
+        },
+        {
+          "record": 152,
+          "offset": 81,
+          "value": 100
+        },
+        {
+          "record": 152,
+          "offset": 85,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fcb9e3d6609f3276046db25de2a37f71d75cec82c309a84114f80fb6075725e8",
+      "transcript_sha256": "3b9605c23b18fce74494dc83136980a934f48506fef295ee1ae7085a5ad84606",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "d84c321b54a7644275784795ea48fa22c74abb86f9d3042da92c530c1fec8ebd"
+    },
+    {
+      "name": "danger-other-team",
+      "command": "M;101\r~~N",
+      "before_sha256": "7c6069aa1b576304789c536375d6aa2fe3de5d898c851ea6ab0e0d72f3667f6d",
+      "after_sha256": "113d6a59f04adad300cd9d18ea128b5a7c147a4d12b9c553fe3e03e1d4761297",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 2
+        },
+        {
+          "record": 52,
+          "offset": 77,
+          "value": 2
+        },
+        {
+          "record": 52,
+          "offset": 109,
+          "value": 2
+        },
+        {
+          "record": 52,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 53,
+          "offset": 77,
+          "value": 3
+        },
+        {
+          "record": 53,
+          "offset": 109,
+          "value": 3
+        },
+        {
+          "record": 152,
+          "offset": 81,
+          "value": 100
+        },
+        {
+          "record": 152,
+          "offset": 85,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "c68cf65cf51908d4081ba57a7223a7f59e840fbb880bad20485879977248860a",
+      "transcript_sha256": "877a80f8ba735db3e6d4492a14e819d46a7b315733d213ba8341f49ef8886338",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "db2de8e9f0ba37ac5577eb47bd4e71654717f222e6225101ace7c77af3e209d8"
+    },
+    {
+      "name": "cloak-none",
+      "command": "S",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "8be0741e262f24925f3bef81735521d896f76949cbf05c35b37a31d81525622a",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fe6de27216a7fa9b6250d24ec8ed5d7cbdc505c7305bbfa4b005b51e4b959897",
+      "transcript_sha256": "7bac4815987b508332252c5e34c0a3a0d34a3cf137c95d7f16fd7d3c234d37cd",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "202f45774a57171a2184561988386fa656b69fbe0c873123d08f893ed4a6d724"
+    },
+    {
+      "name": "cloak-full",
+      "command": "S",
+      "before_sha256": "a33e472a71ce10ca339148b7b684ffae13a6729c507a4ae71da08ccb14abc230",
+      "after_sha256": "546f6ec6f46f2c0f17463f311047763be3e17041dfbc60057b865474baaa372c",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fe6de27216a7fa9b6250d24ec8ed5d7cbdc505c7305bbfa4b005b51e4b959897",
+      "transcript_sha256": "fa4beef6bd2fa1e9a31e404419155c550b6a6f2f33f0539cffa4796d6870260d",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "294f151f9a52494dfddfc7ea8ef6d94e0566028248d044dc573035e9bb759d41"
+    },
+    {
+      "name": "cloak-weak",
+      "command": "S;S",
+      "before_sha256": "4696def3e9b8c375ade55e9a1a4978561c2f3b00dde8f8e462d420456053ca7e",
+      "after_sha256": "de4c515a2e09cae21ae70ea0085a0fc7da3317b0c78c984f21e61a29b0b2947a",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 1e-06
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "27f86d91aaea6b97165befbe27f02faeeda00fb82bf12203e79d206b89d9ae85",
+      "transcript_sha256": "a1d4f3cd93fe557a9350a481156ddb00f3d35f3779b53d6eac0496eee396cbfc",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "512c77f6e9b99210c3cf53d85b0da0f77d7136b29847d6166a8cc60bd1547218"
+    },
+    {
+      "name": "cloak-half",
+      "command": "S;S;S",
+      "before_sha256": "9f27e0f41a0ed0cfe933f9429f8ab54ee837eecfe832d3994aca1f8c0ce7bd5b",
+      "after_sha256": "bf147e6827371ab0637f4e10efd3b953a0d93004645df9c20ebefdc42f9f02ef",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 0.5
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "50e5cba90b29600002480b1fae6182b70b0d8d23a428633c50a079bdec8feb17",
+      "transcript_sha256": "e80f92f1c07836750692e6ed6c86c2e2cbf0f4ba1ffdc713d1994c70dc90bd61",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "1143d3023663602c74267e70b15656eed77374f9e95824680b3b35cb75a503a5"
+    },
+    {
+      "name": "warp-scan-01",
+      "command": "S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "bca5ea3f62ee4c3dff436868b0ad3292b8f8496f62c03000ec31b95f5e1b1a3c",
+      "turns_before": 500,
+      "turns_after": 465,
+      "sector_before": 100,
+      "sector_after": 2441,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "49d28ba1bbfbf277b6dea30742a4f4692481e59ebea6ed4aec9b921449f8c7cd",
+      "transcript_sha256": "799cf0b83d7f6a4741d1d22001e28f902fbc2d29fdba3be42a49fd3fc3731e5a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "3dc441a214d09b209c6d02581353745d724925defa39f4a5b0a553c92517d664"
+    },
+    {
+      "name": "warp-scan-02",
+      "command": "S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "bcbf6dc3283889ed9d5eaf42b8bf01cb481da8972eb0d02ee3c8ba699532773f",
+      "turns_before": 500,
+      "turns_after": 494,
+      "sector_before": 100,
+      "sector_after": 320,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "64d7afddb812634d18fe0a21e82634d7a3f64d78dfeaebd9b4ff3ff8269213db",
+      "transcript_sha256": "5d8cd5925a9ff49cc416e2fed7b652c3c22444d2882e18dec695b13643b96e1c",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "cb30464edbf6b1a09c74a71f4277d751921bcd3febf3ce1295f9de996ba1c812"
+    },
+    {
+      "name": "warp-scan-03",
+      "command": "S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "d12820309422cfab8a04dda015aa125a35d10e27fae75b701ed42393e787d2c5",
+      "turns_before": 500,
+      "turns_after": 457,
+      "sector_before": 100,
+      "sector_after": 2023,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "01e1fd816e213775994206fc34019058deab478411d71f62202d2da39c852b27",
+      "transcript_sha256": "ceed7e02621c984d48dcdd1f60658afdf7b5f3a8022ff6cfbff5a9658d8f2eff",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "ef6cc6c1c99b959f7fc07d23310c77a721209814060acec5d6d3f6f7cc359cf0"
+    },
+    {
+      "name": "warp-scan-04",
+      "command": "S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "174b0d76dd0da026d0584d0eb6475b17f5e6e3ca89c95b645ebb6378ac9b1f5f",
+      "turns_before": 500,
+      "turns_after": 438,
+      "sector_before": 100,
+      "sector_after": 1256,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "1f87b6fd558220fcb46138b51137c59e398ce6d6237edb9e69035a61b4fd1cb4",
+      "transcript_sha256": "b724cd5446ac1a9d6416c03bcfca267e9c369811ae4edbfdf3b58c551de44cfa",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "6f3e5bfe519329a732584a4e26cb7df9538e72785ba30844b68e315c3ccfd9b8"
+    },
+    {
+      "name": "warp-scan-05",
+      "command": "S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "9106a4d2be792107e5740c984c3595f2e474f49047b53adddaa0aa42224e02de",
+      "turns_before": 500,
+      "turns_after": 396,
+      "sector_before": 100,
+      "sector_after": 2402,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "97b9dde9d97f007f9397ce0d8a00568c4bfddb695d1331220bc85f3560176c94",
+      "transcript_sha256": "c42952be374606a9027d548e2e9f30ae20cacebbd0a951e5eccd9b402a7be320",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "d10e6ff93514cf89f35c5f42b8f93e52228c3ffe24ed483e3189cbae5a25add0"
+    },
+    {
+      "name": "warp-scan-06",
+      "command": "S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "35dfe3382a9296aa50f585c70728e0a0f259e67d29eaca762a14cdffdf2b6eb3",
+      "turns_before": 500,
+      "turns_after": 390,
+      "sector_before": 100,
+      "sector_after": 1106,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "9686fcc78452bb7daffb0ab5f8c2548e6f8819084b6c9362d1c834532413c243",
+      "transcript_sha256": "07f9ac326361ed4fe7c6c83be617accfadf92d1d3a7e05bd73e36e98756cf47b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "6d8c5ebae039561bb8af1223f5aea5184093ec520b4437415b159ab95064513d"
+    },
+    {
+      "name": "warp-scan-07",
+      "command": "S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "daf25fad000cda6faa4f5d5b4ff057ddfd13f7bdc0f4f54c44402f30ed4849f6",
+      "turns_before": 500,
+      "turns_after": 490,
+      "sector_before": 100,
+      "sector_after": 2026,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "c3ba8cb2bffb2364aa83464a3e2e1b5ad624863e77d04b1c14ec0557237022ec",
+      "transcript_sha256": "1bd2ed119edd729177dd603715bbdc01f164947dc7de17495fc4e166d2914156",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "e4f0401caa9f995301da89e813042b1468f41a1b32fc1c56c2aadef0c8f0a54a"
+    },
+    {
+      "name": "warp-scan-08",
+      "command": "S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "9ad92e97a13c9ad0b450e37233c98cab58c7c9f70de8f86f78bde63d88cfa8e6",
+      "turns_before": 500,
+      "turns_after": 456,
+      "sector_before": 100,
+      "sector_after": 858,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "b3d4223e9df734c69a75ef399972a775f3341aa63a5a5225c12f03386c1ac9b3",
+      "transcript_sha256": "fc588621e2ca06a2b138b044829ecd1f58fd753801df0dcdf1580d90f4dc22a9",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "0dd658e0e49b1429c910e6d086839c66e6ee0359f2dda99996daac05dde06fc0"
+    },
+    {
+      "name": "warp-scan-09",
+      "command": "S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "7ec6c5d34e113b9be04c9296a6115e8a18903f88b4db42437856e7781e8681e4",
+      "turns_before": 500,
+      "turns_after": 403,
+      "sector_before": 100,
+      "sector_after": 2446,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "a6633e4c8e299ef14929d4baa18ff4a0f670ed21ed3b9544c22098f8f2a502d1",
+      "transcript_sha256": "9c6763fcf1e9823780463312f9749785f5efea4a7b6fb6e2b48fa907a2de569b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "340f1366799c0dab0b946eba4b99a4e1a376b7c7f8470f9e3f8c0232f7325534"
+    },
+    {
+      "name": "warp-scan-10",
+      "command": "S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "ed390340cee2ff66bef20b21cd134423183e2e910ee5294210ddec7753363dd5",
+      "turns_before": 500,
+      "turns_after": 419,
+      "sector_before": 100,
+      "sector_after": 1699,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fdf476c0f685f5ab03940cdaedb6cbbd7953841da4e3c2cc4931c5f02941edd9",
+      "transcript_sha256": "410dee2ec95d2502e31cefb7ced5ca0b9e576ab8e6fdf36632f76e5fabc36b73",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "a96edb19ea94016d51a91efbddef00dda9c2672b4c8a9c9777f9b1287dff50b8"
+    },
+    {
+      "name": "warp-scan-11",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "39f65d547002c5e30f67e619eb8a8e21be1b690140c71f3117d68a32cf1a91fd",
+      "turns_before": 500,
+      "turns_after": 435,
+      "sector_before": 100,
+      "sector_after": 2212,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "3f384e8d2add2b74b1da03ca9f781d00423b1d02414c21a34326a9a628278ae2",
+      "transcript_sha256": "cd03f5dc4f594cf5a1906c91b31546ec856161753be8580f29efbc7bbfa473ae",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "bddc6bb78fb2d9746fde72b908bfae7f87bb8fb2d6676a23f8e0a9362e6826b4"
+    },
+    {
+      "name": "warp-scan-12",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "ef53e070fd5cd14ffae6e4a888b3eec68ca964f0138c4ffdb70963ca363bea8a",
+      "turns_before": 500,
+      "turns_after": 438,
+      "sector_before": 100,
+      "sector_after": 2171,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "1008b59a89837714d90e87b259aaa35114c3faeb106f781e4affc0a8d48ae7ac",
+      "transcript_sha256": "5e5ce93a55c247a36a3ae538e4ca70b22994eed961394834d8582078cdd59955",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "e7d4c8401bf9479849b6f9c9986d97b9bb67356664447713d7c84706da25e8ea"
+    },
+    {
+      "name": "warp-scan-13",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "f785c36b9c9284da3a91ea94b41effb56afe5fa70e212488db12343d76024c9e",
+      "turns_before": 500,
+      "turns_after": 405,
+      "sector_before": 100,
+      "sector_after": 2158,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "b45544ef7604c7efe65871f4b306065c5c87685247dbeef182f197e1ee201f0b",
+      "transcript_sha256": "4e2c4ae37a25c3bbf4b55720c1b3b0af33d14c910c58e6a21846c82fdd2d266f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "cdbfab8d4478135f4905cbf3311862bc817296c6727ec39891b8d4d2a64fc4f8"
+    },
+    {
+      "name": "warp-scan-14",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "e33be6a729ea59c2c2a3237cc8082e26422483c857b841115f292abbb8630445",
+      "turns_before": 500,
+      "turns_after": 417,
+      "sector_before": 100,
+      "sector_after": 2158,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "e2e653b4efa51c81af42cc69278868c3e52a04490085dd03df46332b61d9b60f",
+      "transcript_sha256": "66876f51f0e8e738ba2ea96f56403c0da3754111a0737550181a12fd42fadc3b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "17d8bb85cd44764c45d8c299cf4b1c2fd9fbbafad1cebc12df3c0d3d3ac76f86"
+    },
+    {
+      "name": "warp-scan-15",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "b829cea860b01e2d087026b6cc3b9b0fce63691bf3d69d4c48f0bde1dfe26bff",
+      "turns_before": 500,
+      "turns_after": 459,
+      "sector_before": 100,
+      "sector_after": 2212,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "312c760d7d3c5437ef7b8996c479291ac308d05a4496b77fae226cd618aa59f7",
+      "transcript_sha256": "0e56d4f1dd447ea306d682dd95ea71803f033f07daa24da931251254eee2e2b2",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "9f79509c1b8e2007dc01b176b2a80f6d2bc283ca5dde64f5d23a5172d1f598e6"
+    },
+    {
+      "name": "warp-scan-16",
+      "command": "S;S;S;S;S;S;S;S;S;S;S;S;S;S;S;S;W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "1d3c845729ee3a4a81b46f3c9b02958564ebfd0f4417bf2aa231c155c83053d7",
+      "turns_before": 500,
+      "turns_after": 429,
+      "sector_before": 100,
+      "sector_after": 2527,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "44f59cdf92a957f6bf55ff45ddc5579303e3b5eba6e185b935f7573194167157",
+      "transcript_sha256": "4d38d2c00ae0a87a455ed4d6e8be2b1848aacd90730bb171406380579bbc7456",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dos_time": "00:00:00",
+      "dosbox_log_sha256": "fd0d41cbfa5e469947acda664d16a8f55f5f24db6a5074db86a4c8145197f69a"
+    },
+    {
+      "name": "warp-clock-01",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "9cce084803e32b522f78f74edf8818df42afca07f3c02fc5ea48728d28610977",
+      "turns_before": 500,
+      "turns_after": 429,
+      "sector_before": 100,
+      "sector_after": 1522,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "01:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "9e41507626c871009ec7c09472506a47fc318e6c4b92b624c883ffc7458c1b1a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "4246263060c37a2ceff461e28a6d12c787c9b9bee5d49b6208a678db57f33455"
+    },
+    {
+      "name": "warp-clock-02",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "1d7bcf3e2523261e9295b77354189de94c7c8e5d9b409a98c4d0f2936b915001",
+      "turns_before": 500,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 219,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "02:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "7ef3a339465bf1f0a6903da30ea0d57ed390dd667be393e35c1c01e920542deb",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "5c3575109850fbf9ddba9df43eeeea56d2826209538663c37dca52f2c896c93d"
+    },
+    {
+      "name": "warp-clock-03",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "38a69ca45912d0dba3fb2747d73ef3ae0182ad9f5f696fd97ebc4e62df492c35",
+      "turns_before": 500,
+      "turns_after": 450,
+      "sector_before": 100,
+      "sector_after": 1920,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "03:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "4d59ab20832b509259bd34f60fd0e35854bdbf33b0e24fb18c1d03779487cfaf",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "36fb07f4578acd24e79cc7eb072ae7e40760e4c04246bf097e6b8cde7249ef0e"
+    },
+    {
+      "name": "warp-clock-04",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "e6f5998760f953e90eafa8b91a83ad469e89a5823eba62f2f502ddbb32f9cb17",
+      "turns_before": 500,
+      "turns_after": 394,
+      "sector_before": 100,
+      "sector_after": 1420,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "04:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "af09e187804921821edd0288ed41f0d5052969e07190a5e825241aaaaf412e53",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "3e38e2dd0bf77c1fbed45043a117e96d0f90130bc8f5c32980ba877ec67228d9"
+    },
+    {
+      "name": "warp-clock-05",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "e2bd36623fbcbf9739abf8b02d84c0a804d41d6116aefd81a2aaf44267df8e77",
+      "turns_before": 500,
+      "turns_after": 437,
+      "sector_before": 100,
+      "sector_after": 967,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "05:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "a0bc8dc90ec8083f59d2821d79a0d2882885cd54cd15932a6ed41a24b910cc9c",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "cc1f1b2fb1f6cc814b4e90eb491e8cecc434109206ff00e9b64cb0194447c8b7"
+    },
+    {
+      "name": "warp-clock-06",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "5ee2a62b2dabf763e8897f26ec804f09424cc3bec1d13ddd9ab94fbe7815f0f1",
+      "turns_before": 500,
+      "turns_after": 463,
+      "sector_before": 100,
+      "sector_after": 757,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "06:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "6b8966605848e277a20f3d72c6da09bee3e4f4335923d9f01185c7fd2dae402f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "ee99448d9d9fed385775e2adfc20cd148c7633f3faea5abdbf61d6efc7a4ac41"
+    },
+    {
+      "name": "warp-clock-07",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "60ce2a3dd0bb5f4c1af3a73d97175df59ea4c2c0234dd7b3d8967bb9ae5db875",
+      "turns_before": 500,
+      "turns_after": 420,
+      "sector_before": 100,
+      "sector_after": 2611,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "07:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "51ffe457ddbdad5725c8236e46f03d2c0b76620794cd2872a157c3228e3366bd",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "b3f9afdad4c5ea196818686ae7dfa615fc40696e6d6faaa6a54c9ab44db32883"
+    },
+    {
+      "name": "warp-clock-08",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "d7b6b953da4869fd9473a54ccf5beb6fa1100a4b7410213ce3107c2afbd8e311",
+      "turns_before": 500,
+      "turns_after": 444,
+      "sector_before": 100,
+      "sector_after": 1657,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "08:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "054e9a9bce059da376b7924a7a20c6b4e72824328575b52d3220585bee2ddf6c",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "22ecfb165b18f77a0ed23bed4febee47eb92376fb7c63fe0d5bc6c3b70042afa"
+    },
+    {
+      "name": "warp-clock-09",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "8b62657e27f77a2f4032ded758a9a358e6d39ea4a9e8249fb09dc5cfecffbd74",
+      "turns_before": 500,
+      "turns_after": 391,
+      "sector_before": 100,
+      "sector_after": 2205,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "09:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "aba60090bd7e4176b561d43431aa75559a69abfefcac59ea9f2dc50700c39e4b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "c5955daa984aec26ab86472b4cf1604fc766b39c9d7389805491fe419c5add53"
+    },
+    {
+      "name": "warp-clock-10",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "82378a13f355c9f2e71e9810d614f6c76031ce8ccc93604519da3ad276cc5e3c",
+      "turns_before": 500,
+      "turns_after": 401,
+      "sector_before": 100,
+      "sector_after": 2733,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "10:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "93fc2aba346cc7e77a5dd65055f257355230e7cadec29f84bd82ae2803b4b108",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "578646352cfe39f20f7c8cf7262c1b2baa69f386eea837d77250fe71f67d1bfd"
+    },
+    {
+      "name": "warp-clock-11",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "01652b861cd911480fd6fd6e061145a7e3ea3b07663f701ccba0bca9a708f3ac",
+      "turns_before": 500,
+      "turns_after": 466,
+      "sector_before": 100,
+      "sector_after": 1631,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "11:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "c2558530a8d818c2b3474517f7b4e4d1c8a593526460ebccfeff7c436827b645",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "bbfac1286913ff7388d63ef9f2ef8b9413130467f5b0dfd74773438ed79914f5"
+    },
+    {
+      "name": "warp-clock-12",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "255e02749ffc7243582dafec5599c19ded6593869d1e123b673a9d6193dc42a2",
+      "turns_before": 500,
+      "turns_after": 437,
+      "sector_before": 100,
+      "sector_after": 2438,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "12:00:00",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "245cac030829891bb54a8e3dcc205a0c160842546910aa3e5a702f79423c808a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "be83844c56f8363b981cc87fec0fd54565b1308bd580179e16c187613e9aa4ae"
+    },
+    {
+      "name": "warp-look-00",
+      "command": "W;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "08f11600486df38be3e45531a2fd36534863179c0ece7f4661beb04e37070c9d",
+      "turns_before": 500,
+      "turns_after": 410,
+      "sector_before": 100,
+      "sector_after": 252,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+      "transcript_sha256": "5458343b48febfba2b6c5b4cf65ee27849f23aab577201bc544903a06824b6a0",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "db0cb6116c4bc6c8b07bf6a7368dc6de14e22c645f1f59efafaef707a57fc4fe"
+    },
+    {
+      "name": "warp-look-01",
+      "command": "\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "d6d20be64451c31b60f0cae2d1df078e5e3274ffdb9496a8e9c425f96b39b9fe",
+      "turns_before": 500,
+      "turns_after": 453,
+      "sector_before": 100,
+      "sector_after": 2023,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "3817d9051300ff8ca84d2cae257f0ae62f217077d401ad28c3256c6d1f899733",
+      "transcript_sha256": "6261081f39919deee77a291feb4356880f5e26029ec7624f2e9197ebbe70a302",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "6d811d4c96a368e285a2681f08c0ecc09bc7072bf99f2647eede434632302e6a"
+    },
+    {
+      "name": "warp-look-02",
+      "command": "\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "f928979beaa59ee7962a8b5bca26d5337440ca191cee985fd57c6d70653d0814",
+      "turns_before": 500,
+      "turns_after": 439,
+      "sector_before": 100,
+      "sector_after": 1780,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "398144ada6c6ead7dbcd7494b66b618203ab8173c3b1d3d19445fa85321f4b49",
+      "transcript_sha256": "c0c4d4f1ecd796fb70a2e280453fcb20dce7eb2d00fb64151e54a97d217838df",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "7c28a6bd82388bf044fe0ab67af9d897747ee3b4924bc22d457487cda13c60c9"
+    },
+    {
+      "name": "warp-look-04",
+      "command": "\r\r\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "d10f67b5a18e2996ab126d3ee0917f381c05d92fdc2e7fa0e4f1d08a41611250",
+      "turns_before": 500,
+      "turns_after": 469,
+      "sector_before": 100,
+      "sector_after": 2441,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "eaa889a42cafad3e28d788f91850dc7f05c69dc6ca74f3b688637878dde6ef02",
+      "transcript_sha256": "3f735871cc6ab655f0cebc31e845d01857ea33a08188d5af8b1a27cf6674c302",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "b2d4ffc34484f70b856ee6af272fb1a4ed4229d49f08ee58d4903c6dd98ef42c"
+    },
+    {
+      "name": "warp-look-08",
+      "command": "\r\r\r\r\r\r\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "a5e3250adb4e6aad4f795494d6781927a9312712b22bfb59cd9536e1b800721b",
+      "turns_before": 500,
+      "turns_after": 444,
+      "sector_before": 100,
+      "sector_after": 1963,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "a85f325c92806079d7ffe93ea0f973faeef3d35668ff9f92f1a9b5bb08c73ae8",
+      "transcript_sha256": "a85da4cbc2e5815b59ac93c0dc1c497831446280c987ef3190a66399c3a2b141",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "160d5c75137e5b61b1fcae4521efa18aadbc2f40f538c0da23ff044ae2724fba"
+    },
+    {
+      "name": "warp-look-16",
+      "command": "\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "206fb59dfd947c7f31fe1064a63c9aa38f9c6dcb911187f0183abd0f27a232ac",
+      "turns_before": 500,
+      "turns_after": 463,
+      "sector_before": 100,
+      "sector_after": 2924,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fb18c9aaaa5efcceeb0c80480525f907fd064dbb09cb3dc6dcfbb32282c66b10",
+      "transcript_sha256": "55316a5e80f2d912b893feeda21ff8948202c2d2727215289080b4e584259f87",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "661a0cfe6b7942db61c24cdd577604af8ed18355ecf761bb2aa48d5eedb73a18"
+    },
+    {
+      "name": "warp-look-24",
+      "command": "\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "dbb3c2166ea827b3d2e02f34e4c48040ff2d43b637983ea0f998cb84a0db6dd9",
+      "turns_before": 500,
+      "turns_after": 491,
+      "sector_before": 100,
+      "sector_after": 2924,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "23f832b2a16caec12dc6559dddb683bbb02efeb3e4c1c8777be3b16b9e8ec39f",
+      "transcript_sha256": "8b929270e3980706367da2e0083418cbe951d2d8514f7c0f45b0164f1953254b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "c0a1a3128df7a2cfd7287ef8959006855c0cd9dd9301027f1f54d636abf41d1e"
+    },
+    {
+      "name": "warp-look-32",
+      "command": "\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rW;Y",
+      "before_sha256": "9e1dcf99179080b4f27c846f34108e7f11f33b4a3f6d2b086cb60fa68dc74085",
+      "after_sha256": "5e84d6f57a5d32369a0023a1aeebcbb47468ce6f24df2cfffcd8a1b39a3f3427",
+      "turns_before": 500,
+      "turns_after": 484,
+      "sector_before": 100,
+      "sector_after": 1061,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 100
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "6285386e2095affceccc635b1541ced9d119d7e32afab62ae06159010db44261",
+      "transcript_sha256": "360ad7bd711a4fe21069fe34c4895dd08ee9eeee7a6e788e928bfc0edb618fff",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "6d59e2b835947c8e4d40fccac3734a207ac86b4d70892dd2619556680dcfc7d4"
+    }
+  ]
+}
