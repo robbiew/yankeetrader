@@ -64,7 +64,7 @@ func (w *World) validateTeams() error {
 		if len(members) < 1 || len(members) > 4 {
 			return errors.New("invalid team capacity")
 		}
-		if team.Captain != 0 && (w.Players[team.Captain] == nil || w.Players[team.Captain].Team != id) {
+		if team.Captain != 0 && (w.Players[team.Captain] == nil || w.Players[team.Captain].Team != id || w.Players[team.Captain].Death != nil) {
 			return errors.New("captain is not a member")
 		}
 		cost, err := bcrypt.Cost([]byte(team.PasswordHash))

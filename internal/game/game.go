@@ -17,6 +17,8 @@ const MaxQuantity int64 = 1_000_000_000
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
+	ShipGeneration                                   uint64 `json:",omitempty"`
+	Death                                            *Death `json:",omitempty"`
 	ID                                               int
 	Identity, Alias                                  string
 	Sector                                           int
@@ -62,7 +64,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 3, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: 4, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -105,15 +107,18 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 3 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 4 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
 		return errors.New("invalid maintenance date")
 	}
+	if err := w.validateLifecycle(); err != nil {
+		return err
+	}
 	ids := map[string]bool{}
 	for id, p := range w.Players {
-		if p == nil || p.ID != id || id < 1 || id >= w.NextPlayer || !clean(p.Alias) || p.Identity == "" || len(p.Identity) > 256 || ids[p.Identity] || w.Sectors[p.Sector] == nil {
+		if p == nil || p.ID != id || id < 1 || id >= w.NextPlayer || !clean(p.Alias) || p.Identity == "" || len(p.Identity) > 256 || ids[p.Identity] || (p.Death == nil && w.Sectors[p.Sector] == nil) {
 			return errors.New("invalid player identity or position")
 		}
 		ids[p.Identity] = true
@@ -218,6 +223,9 @@ func (w *World) player(id int) (*Player, error) {
 	p := w.Players[id]
 	if p == nil {
 		return nil, errors.New("player no longer exists")
+	}
+	if p.Death != nil {
+		return nil, ErrShipDestroyed
 	}
 	return p, nil
 }

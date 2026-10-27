@@ -27,7 +27,9 @@ personal; membership does not grant another member's treasury.
 
 ## Saved worlds
 
-The world format is version 3. Version-1 and version-2 worlds upgrade in memory
+The team milestone introduced world version 3; the subsequent [ship lifecycle
+build](../yt-ships/LIFECYCLE.md) uses version 4. In the team milestone, version-1
+and version-2 worlds upgrade in memory
 with an empty team table and persist on the next successful update. Player IDs,
 identity, assets, balances, dates and avoidance preferences are preserved.
 Read-only loading does not rewrite files. Experimental legacy saves with nonzero

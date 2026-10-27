@@ -40,6 +40,14 @@ func (w *World) Upgrade() error {
 		w.Teams = map[int]*Team{}
 		w.Version = 3
 	}
+	if w.Version == 3 {
+		for _, p := range w.Players {
+			if p != nil && (p.ShipGeneration != 0 || p.Death != nil) {
+				return errors.New("version-three world unexpectedly contains ship lifecycle state")
+			}
+		}
+		w.Version = 4
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {

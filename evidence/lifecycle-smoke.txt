@@ -1,0 +1,31 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 37 turns > m 2;acquire;y;q
+your ship was destroyed; reconnect for a replacement
+[cYour replacement ship has been built. Remaining turns: 37.
+
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 37 turns > i;q
+Victim: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 100; ground forces 0
+Missiles 1; mines 0; plasma 0
+Saved. Safe travels, Victim.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 37 turns > m 2;acquire;y;q
+this ship session is no longer current; reconnect
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 37 turns > i;q
+Victim: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 100; ground forces 0
+Missiles 1; mines 0; plasma 0
+Saved. Safe travels, Victim.

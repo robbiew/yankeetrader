@@ -26,7 +26,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
-4. Add combat and death/respawn with active-session invalidation before enabling dangerous sectors, then NPC behavior, computer functions, communications and Genesis.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. Next implement combat damage/retaliation, one-time loot and ownership settlement, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -97,3 +97,13 @@ Fourteen selected archived DOS scenarios provide membership fixtures. The save
 format advances to version 3 with explicit upgrade and rollback documentation.
 Sector fighter defenses, reinforcement and captain death remain in the combat
 stage. [Implementation and validation](yt-teams/IMPLEMENTATION.md).
+
+## Ship lifecycle foundation — 2026-10-26
+
+Saved generations now bind all live session reads/mutations, including pending
+prompts. Atomic death/replacement, authoritative target checks and explicit
+attribution prevent old sessions acting on a replacement. Same-day replacement
+preserves remaining turns; self-death keeps a next-UTC-day cooldown. Version-4
+worlds upgrade from earlier supported formats. Separate-process tests and actual
+PTY/GoDoors sessions verify the boundary. [Scope and deliberate policies](yt-ships/LIFECYCLE.md).
+Attacks, loot and combat ownership transfers remain disabled/unimplemented.

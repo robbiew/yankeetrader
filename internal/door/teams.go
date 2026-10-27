@@ -86,6 +86,10 @@ func (s Session) teamMenu(id int, pending *[]string) error {
 		if err != nil {
 			return err
 		}
+		w, err = s.Store.View()
+		if err != nil {
+			return err
+		}
 		if choice == "1" || strings.EqualFold(choice, "exit") {
 			return nil
 		}

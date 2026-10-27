@@ -172,7 +172,7 @@ Sector defenses and reinforcement, combat, NPCs, full universe generation parity
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 3 for teams. Existing version-1/version-2 saves with no team memberships upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 3. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 4 for ship lifecycle safeguards. Existing version-1/version-2 saves with no team memberships and normal version-3 team saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 4. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -234,7 +234,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 and version-2 worlds upgrade to version 3 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1, version-2 and version-3 worlds upgrade to version 4 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -253,3 +253,7 @@ Press `T` (or `TEAM`) for the team menu. Create a team with a name of 3–41 pri
 Members can view the roster and teammate planet locations, share defended teammate planets, and confirm departure. Only the current captain can rename the team, change its invitation or remove another member. Removal permits rejoining until the password changes. If the captain leaves, the next member to visit the menu or log in succeeds them. Empty teams disappear.
 
 Leaving or removal immediately revokes shared landing sessions that no longer have access. Planets and ports retain their individual owners; port treasuries remain personal. Sector defenses and reinforcement are pending. See [team implementation and evidence](research/yt-teams/IMPLEMENTATION.md).
+
+## Combat preparation
+
+Combat and hazards remain disabled. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md).

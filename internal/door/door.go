@@ -162,6 +162,8 @@ func (s Session) Run() (runErr error) {
 		s.Now = time.Now
 	}
 	var id int
+	var generation uint64
+	replaced := false
 	if s.Classic {
 		var err error
 		id, err = s.classicStartup()
@@ -184,6 +186,11 @@ func (s Session) Run() (runErr error) {
 			p, e := w.Join(s.Identity, alias)
 			if e == nil {
 				id = p.ID
+				replaced = p.Death != nil
+				if e = w.LoginShip(id, s.Now()); e != nil {
+					return e
+				}
+				generation = p.ShipGeneration
 				p.DockToken = ""
 				p.PlanetToken = ""
 				p.LandedPlanet = 0
@@ -191,6 +198,12 @@ func (s Session) Run() (runErr error) {
 			return e
 		}); e != nil {
 			return e
+		}
+		s.Store = s.Store.ForShip(id, generation)
+		if replaced {
+			if err := s.replacementNotice(id); err != nil {
+				return err
+			}
 		}
 		if e := s.Terminal.Printf("\r\n%s\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", version.String(), s.Alias); e != nil {
 			return e
@@ -262,6 +275,14 @@ func (s Session) Run() (runErr error) {
 			}
 			pending = splitCommands(line)
 		}
+		// Input may have waited while another process destroyed/replaced the
+		// ship. Refresh before even a read-only dispatch; mutations recheck
+		// again under the transaction lock.
+		w, e = s.Store.View()
+		if e != nil {
+			return e
+		}
+		p = w.Players[id]
 		command := strings.Fields(pending[0])
 		pending = pending[1:]
 		if len(command) == 0 {

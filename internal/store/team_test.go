@@ -106,7 +106,7 @@ func TestTeamSaveUpgradeAndMalformedLegacyMembership(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 3 || current.Teams == nil || current.Players[1].Credits != 75000 || current.Ports[2].Owner != 1 || current.Ports[2].Treasury != 777 || current.Planets[2].Owner != 1 || len(current.Players[1].AvoidSectors) != 2 {
+	if err != nil || current.Version != 4 || current.Teams == nil || current.Players[1].Credits != 75000 || current.Ports[2].Owner != 1 || current.Ports[2].Treasury != 777 || current.Planets[2].Owner != 1 || len(current.Players[1].AvoidSectors) != 2 {
 		t.Fatal("v2 upgrade failed", current, err)
 	}
 	disk, _ := os.ReadFile(s.Dir + "/world.json")
@@ -117,7 +117,7 @@ func TestTeamSaveUpgradeAndMalformedLegacyMembership(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err = s.View()
-	if err != nil || current.Version != 3 || current.Teams[1].Captain != 1 {
+	if err != nil || current.Version != 4 || current.Teams[1].Captain != 1 {
 		t.Fatal("upgraded team not saved", err)
 	}
 	// Experimental, manually assigned legacy IDs cannot grant invented membership.
