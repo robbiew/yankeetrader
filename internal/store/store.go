@@ -10,7 +10,27 @@ import (
 	"path/filepath"
 )
 
-type Store struct{ Dir string }
+type Store struct {
+	Dir  string
+	ship *shipSession
+}
+type shipSession struct {
+	id         int
+	generation uint64
+}
+
+// ForShip binds only this copy of the store to a login's ship generation.
+// Administrative maintenance and fresh login use the unbound store.
+func (s Store) ForShip(id int, generation uint64) Store {
+	s.ship = &shipSession{id, generation}
+	return s
+}
+func (s Store) checkShip(w *game.World) error {
+	if s.ship != nil {
+		return w.CheckShip(s.ship.id, s.ship.generation)
+	}
+	return nil
+}
 
 func (s Store) locked(fn func() error) error {
 	if err := os.MkdirAll(s.Dir, 0700); err != nil {
@@ -98,6 +118,9 @@ func (s Store) Update(fn func(*game.World) error) error {
 		if e != nil {
 			return e
 		}
+		if e = s.checkShip(w); e != nil {
+			return e
+		}
 		if e = fn(w); e != nil {
 			return e
 		}
@@ -107,5 +130,11 @@ func (s Store) Update(fn func(*game.World) error) error {
 func (s Store) View() (*game.World, error) {
 	var w *game.World
 	err := s.locked(func() error { var e error; w, e = s.load(); return e })
+	if err == nil {
+		err = s.checkShip(w)
+	}
+	if err != nil {
+		return nil, err
+	}
 	return w, err
 }

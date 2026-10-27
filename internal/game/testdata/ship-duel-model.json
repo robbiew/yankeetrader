@@ -1,0 +1,185 @@
+[
+  {
+    "Name": "fighter-win",
+    "Committed": 10,
+    "Defenders": 10,
+    "Shields": 0,
+    "Cloak": 1,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Survivors": 10,
+      "DefenderFighters": 0,
+      "DefenderShields": 0,
+      "AttackerLosses": 0,
+      "DefenderLosses": 10,
+      "Rounds": 10,
+      "Destroyed": true
+    }
+  },
+  {
+    "Name": "fighter-loss",
+    "Committed": 10,
+    "Defenders": 10,
+    "Shields": 0,
+    "Cloak": 0,
+    "Draws": [
+      0.1
+    ],
+    "Expected": {
+      "Survivors": 0,
+      "DefenderFighters": 10,
+      "DefenderShields": 0,
+      "AttackerLosses": 10,
+      "DefenderLosses": 0,
+      "Rounds": 10,
+      "Destroyed": false
+    }
+  },
+  {
+    "Name": "shield-large",
+    "Committed": 200,
+    "Defenders": 0,
+    "Shields": 200,
+    "Cloak": 0,
+    "Draws": [
+      0.1
+    ],
+    "Expected": {
+      "Survivors": 200,
+      "DefenderFighters": 0,
+      "DefenderShields": 0,
+      "AttackerLosses": 0,
+      "DefenderLosses": 0,
+      "Rounds": 101,
+      "Destroyed": true
+    }
+  },
+  {
+    "Name": "shield-small-loss",
+    "Committed": 100,
+    "Defenders": 0,
+    "Shields": 10,
+    "Cloak": 0,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Survivors": 0,
+      "DefenderFighters": 0,
+      "DefenderShields": 10,
+      "AttackerLosses": 100,
+      "DefenderLosses": 0,
+      "Rounds": 100,
+      "Destroyed": false
+    }
+  },
+  {
+    "Name": "shield-100-boundary",
+    "Committed": 101,
+    "Defenders": 0,
+    "Shields": 101,
+    "Cloak": 0,
+    "Draws": [
+      0.1,
+      0.9
+    ],
+    "Expected": {
+      "Survivors": 100,
+      "DefenderFighters": 0,
+      "DefenderShields": 0,
+      "AttackerLosses": 1,
+      "DefenderLosses": 0,
+      "Rounds": 3,
+      "Destroyed": true
+    }
+  },
+  {
+    "Name": "cloak-advantage",
+    "Committed": 5,
+    "Defenders": 5,
+    "Shields": 5,
+    "Cloak": 1,
+    "Draws": [
+      0.4,
+      0.1,
+      0.6,
+      0.8
+    ],
+    "Expected": {
+      "Survivors": 0,
+      "DefenderFighters": 0,
+      "DefenderShields": 3,
+      "AttackerLosses": 5,
+      "DefenderLosses": 5,
+      "Rounds": 12,
+      "Destroyed": false
+    }
+  },
+  {
+    "Name": "fighter-batch-boundary",
+    "Committed": 41,
+    "Defenders": 40,
+    "Shields": 0,
+    "Cloak": 0,
+    "Draws": [
+      0.45,
+      0.44,
+      0.9
+    ],
+    "Expected": {
+      "Survivors": 22,
+      "DefenderFighters": 0,
+      "DefenderShields": 0,
+      "AttackerLosses": 19,
+      "DefenderLosses": 40,
+      "Rounds": 58,
+      "Destroyed": true
+    }
+  },
+  {
+    "Name": "mixed",
+    "Committed": 1000,
+    "Defenders": 1000,
+    "Shields": 10000,
+    "Cloak": 0,
+    "Draws": [
+      0.2,
+      0.8,
+      0.7,
+      0.49,
+      0.45,
+      0.9,
+      0.5
+    ],
+    "Expected": {
+      "Survivors": 0,
+      "DefenderFighters": 0,
+      "DefenderShields": 9393,
+      "AttackerLosses": 1000,
+      "DefenderLosses": 1000,
+      "Rounds": 156,
+      "Destroyed": false
+    }
+  },
+  {
+    "Name": "no-defenses",
+    "Committed": 7,
+    "Defenders": 0,
+    "Shields": 0,
+    "Cloak": 0,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Survivors": 7,
+      "DefenderFighters": 0,
+      "DefenderShields": 0,
+      "AttackerLosses": 0,
+      "DefenderLosses": 0,
+      "Rounds": 0,
+      "Destroyed": true
+    }
+  }
+]

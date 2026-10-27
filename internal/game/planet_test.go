@@ -37,6 +37,12 @@ func fixturePlanet(t *testing.T, c planetCase) *World {
 	}
 	w.Players = map[int]*Player{2: &c.Player, 3: &c.Other}
 	w.NextPlayer = 4
+	for _, player := range w.Players {
+		if player.Team != 0 {
+			hash, _ := hashTeamPassword("ABCD")
+			w.Teams[player.Team] = &Team{ID: player.Team, Name: "Team", Captain: player.ID, PasswordHash: hash}
+		}
+	}
 	p := c.Before
 	if c.Name == "create" || c.Name == "poor" || c.Name == "full" {
 		p.Sector = 101
@@ -209,6 +215,8 @@ func TestPlanetAccessTokensAndConservation(t *testing.T) {
 		t.Fatal("stale access after ownership change")
 	}
 	p.Team = 1
+	hash, _ := hashTeamPassword("ABCD")
+	w.Teams[1] = &Team{ID: 1, Name: "Team", Captain: p.ID, PasswordHash: hash}
 	other.Team = 1
 	if e := w.Bank(p.ID, token, 0, clock); e != nil {
 		t.Fatal(e)

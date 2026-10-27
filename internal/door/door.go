@@ -61,7 +61,9 @@ func (*GoDoors) Printf(f string, args ...any) error {
 	_, e := fmt.Fprintf(gd.Output(), f, args...)
 	return e
 }
-func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
+func (g *GoDoors) ReadLine(deadline time.Time) (string, error)   { return g.readLine(deadline, false) }
+func (g *GoDoors) ReadSecret(deadline time.Time) (string, error) { return g.readLine(deadline, true) }
+func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 	g.escaped = false
 	var b []rune
 	for {
@@ -93,13 +95,13 @@ func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
 		}
 		if k == gd.KeyEnter {
 			line := string(b)
-			if g.commandMode && strings.HasSuffix(line, "/") {
+			if !secret && g.commandMode && strings.HasSuffix(line, "/") {
 				line = strings.TrimSuffix(line, "/")
 				g.savedLine = line
 			}
 			return line, g.Printf("\r\n")
 		}
-		if g.commandMode && r == 18 && g.savedLine != "" {
+		if !secret && g.commandMode && r == 18 && g.savedLine != "" {
 			return g.savedLine, g.Printf("%s\r\n", g.savedLine)
 		}
 		if k == gd.KeyEsc {
@@ -117,7 +119,11 @@ func (g *GoDoors) ReadLine(deadline time.Time) (string, error) {
 		}
 		if k == gd.KeyNone && r >= 32 && r <= 126 && len(b) < 160 {
 			b = append(b, r)
-			if e = g.Printf("%c", r); e != nil {
+			echo := r
+			if secret {
+				echo = '*'
+			}
+			if e = g.Printf("%c", echo); e != nil {
 				return "", e
 			}
 		}
@@ -156,6 +162,8 @@ func (s Session) Run() (runErr error) {
 		s.Now = time.Now
 	}
 	var id int
+	var generation uint64
+	replaced := false
 	if s.Classic {
 		var err error
 		id, err = s.classicStartup()
@@ -178,6 +186,11 @@ func (s Session) Run() (runErr error) {
 			p, e := w.Join(s.Identity, alias)
 			if e == nil {
 				id = p.ID
+				replaced = p.Death != nil
+				if e = w.LoginShip(id, s.Now()); e != nil {
+					return e
+				}
+				generation = p.ShipGeneration
 				p.DockToken = ""
 				p.PlanetToken = ""
 				p.LandedPlanet = 0
@@ -185,6 +198,12 @@ func (s Session) Run() (runErr error) {
 			return e
 		}); e != nil {
 			return e
+		}
+		s.Store = s.Store.ForShip(id, generation)
+		if replaced {
+			if err := s.replacementNotice(id); err != nil {
+				return err
+			}
 		}
 		if e := s.Terminal.Printf("\r\n%s\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", version.String(), s.Alias); e != nil {
 			return e
@@ -196,6 +215,15 @@ func (s Session) Run() (runErr error) {
 	pending := []string{}
 	token := ""
 	planetToken := ""
+	if err := s.Store.Update(func(w *game.World) error {
+		if w.Players[id].Team != 0 {
+			_, err := w.VisitTeam(id)
+			return err
+		}
+		return nil
+	}); err != nil {
+		return err
+	}
 	computer := false
 	for {
 		if !time.Now().Before(s.Deadline) {
@@ -247,6 +275,14 @@ func (s Session) Run() (runErr error) {
 			}
 			pending = splitCommands(line)
 		}
+		// Input may have waited while another process destroyed/replaced the
+		// ship. Refresh before even a read-only dispatch; mutations recheck
+		// again under the transaction lock.
+		w, e = s.Store.View()
+		if e != nil {
+			return e
+		}
+		p = w.Players[id]
 		command := strings.Fields(pending[0])
 		pending = pending[1:]
 		if len(command) == 0 {
@@ -360,7 +396,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -658,6 +694,12 @@ func (s Session) Run() (runErr error) {
 						}
 					}
 				}
+			}
+		case "t", "team":
+			if len(args) != 0 {
+				e = errors.New("use TEAM, then enter choices at the prompts")
+			} else {
+				e = s.teamMenu(id, &pending)
 			}
 		case "b", "buyport", "acquire":
 			if len(args) != 0 {

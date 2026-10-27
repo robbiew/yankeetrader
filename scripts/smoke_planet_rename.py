@@ -75,6 +75,12 @@ def main():
             path=data/'world.json';w=json.loads(path.read_text());p=w['Players']['1']
             source=(ROOT/'archive/analysis/yt-combat/experiments'/json.loads((ROOT/'research/yt-planet-rename'/name/'provenance.json').read_text())['fixture']/'before.dat').read_bytes()
             p['Team']=int(get(source,2,89));w['Players']['2']['Team']=int(get(source,3,89))
+            # Controlled fixture membership now has authoritative team metadata.
+            # Fixed bcrypt hash for the test invitation ABCD; no production secret.
+            for member in w['Players'].values():
+                if member['Team']:
+                    team_id=member['Team']
+                    w['Teams'][str(team_id)]=dict(ID=team_id,Name='Orion',Captain=member['ID'],PasswordHash='$2a$10$dOMD28ZwcLnJIvanvLnwfOkm0aXgBheUp29wuNWKFG/.IWHhfkZcS')
             if name=='unowned':w['Planets']['2'].update(Owner=0,Ground=0)
             planet_id='2'
             if name=='last-slot':

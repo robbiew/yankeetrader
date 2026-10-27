@@ -207,7 +207,7 @@ func resurrectionTitle() []byte {
 	return cells
 }
 
-func (s Session) classicStartup() (int, error) {
+func (s *Session) classicStartup() (int, error) {
 	cells := resurrectionTitle()
 	if !s.Local {
 		cellText(cells, 1, 1, 80, "")
@@ -300,6 +300,8 @@ func (s Session) classicStartup() (int, error) {
 		}
 	}
 	previousDay := ""
+	var generation uint64
+	replaced := false
 	err = s.Store.Update(func(live *game.World) error {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
@@ -323,12 +325,23 @@ func (s Session) classicStartup() (int, error) {
 			id = p.ID
 		}
 		p := live.Players[id]
+		replaced = p.Death != nil
+		if err := live.LoginShip(id, s.Now()); err != nil {
+			return err
+		}
+		generation = p.ShipGeneration
 		p.LastLogin = s.Now().UTC().Format("2006-01-02")
 		p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0
 		return nil
 	})
 	if err != nil {
 		return 0, err
+	}
+	s.Store = s.Store.ForShip(id, generation)
+	if replaced {
+		if err := s.replacementNotice(id); err != nil {
+			return 0, err
+		}
 	}
 	if isNew {
 		if err = s.classicText("\r\nYour Alias has been recorded. Have fun!\r\n\r\nEntering a new player...\r\n\r\nYour ship has been built.\r\nDo you want instructions (Y/N) [N]? "); err != nil {

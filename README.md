@@ -1,6 +1,6 @@
 # Yankee Trader: Resurrection
 
-Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
+Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
 ## A little history
 
@@ -91,6 +91,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `AVOID` | Show your saved routing preferences; free |
 | `AVOID <slot> <sector>` | Set slot 1–30; sector 0 clears that slot; free |
 | `P` | Dock and display current prices; one turn |
+| `T` / `TEAM` | Team menu: create/join, roster/resources, leave and captain controls |
 | `B` / `ACQUIRE` | Buy the current port after explicit `Y` confirmation |
 | `TREASURY` / computer `C`, `12` | Report personally owned port balances |
 | `$` / `COLLECT` | Collect all personal port balances from any sector |
@@ -167,11 +168,11 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 players, 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Team management, combat, NPCs, full universe generation parity, DOS save import/export, Genesis, and richer terminal menus remain future milestones. Their recovered rules are in `research`.
+Sector defenses and reinforcement, combat, NPCs, full universe generation parity, DOS save import/export, Genesis, and richer terminal menus remain future milestones. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
-**Save rollback compatibility:** Existing version-2 saves load in this build. A DOS-style login saves a `LastLogin` date to distinguish repeat visits, and preserves the selected in-game alias independently of the BBS handle. Older binaries that do not know this field cannot load that updated save. Back up the world before using DOS-style startup. After the first successful `AVOID` edit, saving adds `AvoidSectors` while the world version remains 2. Previous binaries reject that unknown field and cannot load the updated save. Clearing all avoid slots still retains the field. Back up the data directory before using the new commands; restoring that backup is the supported way to return to a previous binary, and discards later progress.
+**Save rollback compatibility:** This build uses world version 4 for ship lifecycle safeguards. Existing version-1/version-2 saves with no team memberships and normal version-3 team saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 4. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -233,7 +234,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 worlds upgrade to version 2 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1, version-2 and version-3 worlds upgrade to version 4 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -244,3 +245,15 @@ SyncTERM or another CTerm-compatible terminal using its device-attributes query.
 Unknown terminals and `-ascii` sessions receive no music bytes. Music uses the
 CTerm `CSI |` introducer and SO/SI terminators, avoiding the legacy `CSI M`
 sequence that ordinary ANSI terminals interpret as delete-line.
+
+## Teams
+
+Press `T` (or `TEAM`) for the team menu. Create a team with a name of 3–41 printable characters and a four-character invitation password, or select a listed team to join. Passwords are case-insensitive, entered separately at a masked prompt, and stored as bcrypt hashes. Do not stack passwords with commands. Teams hold up to four members; joining and team management spend no credits or turns.
+
+Members can view the roster and teammate planet locations, share defended teammate planets, and confirm departure. Only the current captain can rename the team, change its invitation or remove another member. Removal permits rejoining until the password changes. If the captain leaves, the next member to visit the menu or log in succeeds them. Empty teams disappear.
+
+Leaving or removal immediately revokes shared landing sessions that no longer have access. Planets and ports retain their individual owners; port treasuries remain personal. Sector defenses and reinforcement are pending. See [team implementation and evidence](research/yt-teams/IMPLEMENTATION.md).
+
+## Combat preparation
+
+Combat and hazards remain disabled. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations and a one-time precomputed credit-salvage transfer are also implemented; full loot formulas and attack commands remain pending. [Duel and settlement scope](research/yt-ships/DUELS.md).

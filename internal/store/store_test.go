@@ -181,7 +181,7 @@ func TestVersionOneUpgradePreservesExistingPlayers(t *testing.T) {
 	if e != nil {
 		t.Fatal(e)
 	}
-	if w.Version != 2 || w.Planets == nil || w.Players[1].Credits != 1005 || w.Players[1].Identity != "local:q" {
+	if w.Version != 4 || w.Planets == nil || w.Players[1].Credits != 1005 || w.Players[1].Identity != "local:q" {
 		t.Fatal("migration changed existing player")
 	}
 	if e = s.Update(func(w *game.World) error { return nil }); e != nil {
@@ -190,7 +190,7 @@ func TestVersionOneUpgradePreservesExistingPlayers(t *testing.T) {
 	b, _ = os.ReadFile(s.Dir + "/world.json")
 	var saved game.World
 	_ = json.Unmarshal(b, &saved)
-	if saved.Version != 2 || saved.Planets == nil {
+	if saved.Version != 4 || saved.Planets == nil {
 		t.Fatal("migration not persisted")
 	}
 }

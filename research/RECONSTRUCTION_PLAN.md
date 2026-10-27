@@ -25,8 +25,8 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
-3. Add teams and shared assets, preserving transactional role/membership checks.
-4. Add combat and death/respawn with active-session invalidation before enabling dangerous sectors, then NPC behavior, computer functions, communications and Genesis.
+3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. Next validate full loot distributions and implement target visibility, combat/retaliation and complete ownership settlement, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -85,5 +85,34 @@ for exact comparisons, unsupported-system boundaries and save compatibility.
 persistent personal port ownership. DOS buyouts pay the old owner the purchase
 price plus the old treasury. Earth protection, exact money, confirmation
 revalidation and atomic capacity checks deliberately prevent ownership/money
-exploits. [Recovery and validation](yt-trade/OWNERSHIP.md). Next: teams and shared
-assets, with authoritative membership and role checks.
+exploits. [Recovery and validation](yt-trade/OWNERSHIP.md). Next: team membership and shared
+assets (implemented in the following milestone).
+
+## Teams and shared planets milestone — 2026-10-26
+
+`T`/`TEAM` supports creation, joining, personal rosters, captain controls,
+resource locations, departure/removal and visiting-member succession. Shared
+planet access is revoked against current membership on every transaction.
+Fourteen selected archived DOS scenarios provide membership fixtures. The save
+format advances to version 3 with explicit upgrade and rollback documentation.
+Sector fighter defenses, reinforcement and captain death remain in the combat
+stage. [Implementation and validation](yt-teams/IMPLEMENTATION.md).
+
+## Ship lifecycle foundation — 2026-10-26
+
+Saved generations now bind all live session reads/mutations, including pending
+prompts. Atomic death/replacement, authoritative target checks and explicit
+attribution prevent old sessions acting on a replacement. Same-day replacement
+preserves remaining turns; self-death keeps a next-UTC-day cooldown. Version-4
+worlds upgrade from earlier supported formats. Separate-process tests and actual
+PTY/GoDoors sessions verify the boundary. [Scope and deliberate policies](yt-ships/LIFECYCLE.md).
+Attacks, loot and combat ownership transfers remain disabled/unimplemented.
+
+## Ship-duel calculations and credit transfer — 2026-10-26
+
+The internal fighter/shield calculation now matches nine injected-RNG cases from
+the archived recovered model. A defeated ship's precomputed credit salvage is
+consumed and transferred with death in one transaction, rejecting duplicate,
+stale and overflowing claims. Later settlement failure rolls back all damage,
+death and rewards. Full loot/estate formulas remain pending; attacks are still
+disabled. [Scope, evidence and remaining work](yt-ships/DUELS.md).

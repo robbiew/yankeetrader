@@ -47,6 +47,8 @@ func TestRenameUsesLandingPermissionAndOnlyChangesName(t *testing.T) {
 			case "team":
 				planet.Owner = other.ID
 				p.Team = 1
+				hash, _ := hashTeamPassword("ABCD")
+				w.Teams[1] = &Team{ID: 1, Name: "Team", Captain: p.ID, PasswordHash: hash}
 				other.Team = 1
 			case "unguarded":
 				planet.Owner = other.ID
