@@ -1,0 +1,3200 @@
+{
+  "scenarios": [
+    {
+      "name": "loot-credit-0",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "b61317d7ad7d1e58fee835f2f4d7af63412bf07ea8066807372ad91e081b087c",
+      "after_sha256": "e216627d9281411bde7b4c21a72bb97ed5997374f0978eb2756bc101a82c102a",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "a4fc2684fca3e3fb42b06ec52c664bd7dd4fe2a5f75d175758653be59ff0db44",
+      "dosbox_log_sha256": "6c32e2884e46459d1798f1b7a6add88003511b4a1d641d0322dd2289600857fb",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 0
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-1",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "358e2219d1177e97d9b99895b4c8649541e6d9a81f9890bfd905ca649ff58fb5",
+      "after_sha256": "476ed403fad7fca9a6dfb600cfcb23851b8d8a16395803ac1b115fc1251006bc",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "a4fc2684fca3e3fb42b06ec52c664bd7dd4fe2a5f75d175758653be59ff0db44",
+      "dosbox_log_sha256": "1b000fc8e4fc2547ab384f0935842aff9e9e7c0f9b142d32c8da48420272cf30",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 1
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-2",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "332b8aea0535c4fa23251ffb2261766fb1ea574eacddd9742ac3d1e96a572b57",
+      "after_sha256": "637921c742c9fe8ba1fe1993cd0e939b1744794bfe26703a32a05491bddca7ec",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "d058e082286a95c78fde409737262da6ba1d3c2bd78a6f8ef9b9bba169c32f63",
+      "dosbox_log_sha256": "181bcd53b9ffdced32d9492b19099d5baf5a0cda5e9d15af71ac97e36b401cc0",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-3",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "42fdf5896198593023ca8ef82961e21c2099667ce3689e352df355ee24c50f47",
+      "after_sha256": "ed3ad4eaf77f567c076c5ca6fba335a66192eba568789ee3ebfdb6d1567fc288",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "86bfd2db70bb374ba0a8ec3318800ae6138b248120842b9f8aba7ca71af56ac1",
+      "dosbox_log_sha256": "0b5c85b0fd1434004faa7c40882cb92c60c1b89253b5bdcd8e63a11f7d6c68dd",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 3
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-10",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "31fb57fc427c5b8f31be89fa4dab20dde95db88c084accd21b50b4a3727cd93a",
+      "after_sha256": "a7761596fc317e990b427a981281b9e08ab7e8a865a4cb716ad55452caa70665",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "e1cb97b43ea7c545c95ec882487fc83ba50c455c73e118d5a63b6c4025166b84",
+      "dosbox_log_sha256": "8c67b7ff10138d08e504dd3dceadb4365f1254aa3b084f56d138068f6d99a0d3",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 10
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-100",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "0ab5a4bb1916b1db324a6efda30bad7218f2a5ff57cc5fecf276a6bf494daf87",
+      "after_sha256": "a35864242721178fe1eba3681275e4df608b37de75a8c7ab5c35dca1c4dd248b",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "b42b55398f210a0a1ada740c1ded760ecf6cbc68ae8ede99dfecb9692bbaf5ea",
+      "dosbox_log_sha256": "790ea6605fb7196d7289ae37404146b739f9c2c2bf796d6a32083c14af0d551a",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-10000",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "after_sha256": "0834160eb76f9f6099c2d6358114da304b9f879c555bef1eb85fc153e998b65c",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "139af89ff60bf56f6ad599eeedddb4fb95260732143ba749f5bf53f23cbe76db",
+      "dosbox_log_sha256": "a2abe435c5a83a408ad06afabfeaf9a4f9b2f798ad0bce0b053aec05bb036125",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 10000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-items",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "df5f6ed0fc735b0893607e9ef495f3c9aa87bc737b0f10824bdd37c423cee364",
+      "after_sha256": "92f20783c0e04ffa68b2bcbef1e0bb7fe9f290a66e5cbd63e20b5ce16eee9370",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "ebd5219335a943248d94eb7ad5d5072762de3160516de6fe172f346a38f9ecb3",
+      "dosbox_log_sha256": "add8bb8afb4ba608555ce82425e44a910a87db36eb2f76da93b423fbb09b2308",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-holds-empty",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "3fa3cd414c9bcf5ac0df354ee92b499636f8c6e2d72f559f15149be8229d003e",
+      "after_sha256": "79a79cb0327a175143ac9e2a7cb925cdf51af99cbbbc09e8b83b5403fc9f3f25",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "de6fae895b8d00c1cfdd4e897456889554c53daca27bb3bac5ac7869bd9a2e4d",
+      "dosbox_log_sha256": "3f76d1c52033f94c26ce48f8b3e506b4273117f9270c037985b195ad5b09cd8f",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-holds-full",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "0a3186582449b68c1a22bbac33935dd08e8815b481f942b634bfde6c0d9ad461",
+      "after_sha256": "48a6db4c8b8b5b94356812ad99d834b71fed210a051d0c4c9b825224e2656f4e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "715ea10ad6119de19cc9e5d5909184085c613ffcceb26f069548f1eb148c0354",
+      "dosbox_log_sha256": "27969ceca3e3bdda0df98bcdbbad47b0cd40d7f4fe374250375e315e5f55cfba",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-estate",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "abfc15707ed8a7f5621e489f65798d155a41b19bb4d797a4ab4093366eebce39",
+      "after_sha256": "3e33d3c8e6e820a9406eb54865b85066399151b5b8b22ce62a87942fc96a5785",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "0daea28f5ade462ee2c0282cd692aeb3174f58a8a8518a210626d80d7583c0ac",
+      "dosbox_log_sha256": "6d7a5a22ed5a5039a33af4492bf013b1320922e09565aa2f0a5c96167e0da539",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-estate-stale-count",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "e0877589a476f98c7e628f00d7818659c3a6d7bafa303f5e7243df8e0418782f",
+      "after_sha256": "41535df1b02e69dcbfbf86160c750bd0af3e220f80d949fcd39bc6bacef1b5c0",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "4f5a17cc68ec4e29036675a455d6e7d13149ba252f8eea90428be0bf33ba03a6",
+      "dosbox_log_sha256": "56759d9a58fc7eafced34d80295585db4494675aef8e96f75d5cd86838d543a6",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-team-captain",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "328aa9ce2260461145c135bc5aacccfcb3ee12b7fb1e38f81fc7d21ed25eee9d",
+      "after_sha256": "081acc7d11c8f178467500ec7c009b6548083611e4ea47e0638d36d04938b5e0",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "f24d9420bb78b4bdd7b73d9f097d463c028d749565f86568e236c780d897ce89",
+      "dosbox_log_sha256": "2f88aff42aa83ef43975a24493e69aaca8ddfd77560fc35248e27f0f67377d1e",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 4,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 73,
+          "value": 5
+        },
+        {
+          "record": 52,
+          "offset": 77,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 109,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 117,
+          "value": 4
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-team-last",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "44685b952bfd777bc039fd1c5c0de93f89994fb8b95b275b0c189e308af65cd5",
+      "after_sha256": "58477fed30536b4493397d5b74766bcbe5b76de482f4bac1fbdc3fc774063868",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "7eefda19a708fd7bafc02aaff581d90e2c8465c499182fcdfb554e29d4fc1826",
+      "dosbox_log_sha256": "36c6adeef42df4b79ca114d20c0a68c693c5d1aa6c37ce39a7e52ec058030b98",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 4,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 52,
+          "offset": 73,
+          "value": 5
+        },
+        {
+          "record": 52,
+          "offset": 77,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 109,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-clock-01",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "df5f6ed0fc735b0893607e9ef495f3c9aa87bc737b0f10824bdd37c423cee364",
+      "after_sha256": "92ff0bbad6617be856c7be5f0e66036899b3cd426a4d60e3092102b310337e72",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "712c9c123da8ed1fc0b84826c121370a2773d8e507ca7d020846cfda1e5dd5b6",
+      "dosbox_log_sha256": "7bfb15586a7d040dc192bb9a0768b0d58f39354dd0bddbec14a30009eca69e95",
+      "dos_date": "10/24/2026",
+      "dos_time": "01:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-clock-02",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "df5f6ed0fc735b0893607e9ef495f3c9aa87bc737b0f10824bdd37c423cee364",
+      "after_sha256": "ab8b2eda45cb7b1466fb5af881dc1956722b73d7ea2b7a2c9208b7caa80e336e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "9c2a7bd5239acf6e4b5e5a9d060f72c4557320ae2896a8d594c5b5ce9ed37c49",
+      "dosbox_log_sha256": "f70945ec8743dd34db6c9ea294d53631785656f74df56ea646df5179c90d6f3c",
+      "dos_date": "10/24/2026",
+      "dos_time": "02:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-clock-03",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "df5f6ed0fc735b0893607e9ef495f3c9aa87bc737b0f10824bdd37c423cee364",
+      "after_sha256": "d56170d70d3eeb3d5eb811b36b980fdce3899db1ad7c1d560fd43ae8cc4e04d2",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "a2734cdd5aabd934f35248afd066263a3020056fc4d944255b29278bb1fbfab9",
+      "dosbox_log_sha256": "8df2fdb69b6837c1240aafd49932f06f9d07f2d7fcb0e326d5defc384755d5fe",
+      "dos_date": "10/24/2026",
+      "dos_time": "03:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-clock-04",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "df5f6ed0fc735b0893607e9ef495f3c9aa87bc737b0f10824bdd37c423cee364",
+      "after_sha256": "e2a66c8a74dd70a3094e951d12f7fd22b60c1c2cce7c4fdad72c571ac0c16ef2",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "f2525fe6f26f36ca052e16143cca0c1a5795b47a30ffa32001d676549d818ae4",
+      "dosbox_log_sha256": "375f1681f95b43675464d0a8e645fa92207ce85500446cf4f6ad467cb759f563",
+      "dos_date": "10/24/2026",
+      "dos_time": "04:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-weapons-100",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "12cd905dcdca7ab217adc9464a90c561d3a7721dc954e7e05779aa68784189a8",
+      "after_sha256": "5da26343e8f92e1d48ad55bae5fb2490f9750def7929dc5aa7b000030427dbf0",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "d8885ce893ee52f72360ecb5d07d08a1d92ccb9f62a9a1f8387306fb984a491e",
+      "dosbox_log_sha256": "daa238b10d6cfd6c781f28e91c963f179c9fac8cdd953452bbcc737390c0c1ad",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-cargo-ore",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "c5d893c305f0adbaa296b6a22cc912dc493be440d07e107052b728857a541200",
+      "after_sha256": "1b6efaeebde7774232f5e01899e134b03f15b518fbcd70bd9f4769478b679b2c",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "18ad5af40472ee7e02a051b29ebd0ef97bb6c171a5ec6e267676bb59595517dc",
+      "dosbox_log_sha256": "8a708ab39de536088d94e84474acda6951207c7dba7b69d01a9dcbda5f905f58",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-cargo-org",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "7c345b09818167ea3ce73dc39f34b910b86aa199c03bb7d3951916dfa7757603",
+      "after_sha256": "649a577e4145e7ce990235faee2e572a377121f3ed2dadcd60d96877fb0ef596",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "4706cef472ad403fb7899ea9c4bed22609fe245f6fad679b882b06498908882f",
+      "dosbox_log_sha256": "50900d96b56a5181931cbf8bb67ef4b16969b87a1b39e6965b58f402876b22e9",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-cargo-equip",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "488123d2968f5f73efe77bcc94b96294f3b2cd3ee06c8e4cde756710e6ce38c2",
+      "after_sha256": "16156f12c601555a665ac82accc5ee9107ff3d9dd8d4126e1224ee47bca15f04",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "32c4dd18834f25aaba48c4d8bfd19d2ace51a9e3acdfb3adf7fe3efcaa2dc33d",
+      "dosbox_log_sha256": "7b9875e720b13f32e0fb3241ea2a9e1caa75bedef60c5820cd7866f404f92755",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-cargo-empty",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "c418aaca2e0d0dce7ce2e97d52bf23b46c43c79d5421693d51c935d03a43f8dd",
+      "after_sha256": "cd4b19bc816eb28276d4dfa4d1b81b0ce774af089f6be57956979851fbb1fb97",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "2f296b699a5ffd8091de206265f9f2c0c9b4b3ab6b9a99a701720ba7b5370e31",
+      "dosbox_log_sha256": "b4e6040f1950061523f7c5ba3160154513b8f2a2a09d4897baa97f042f1f42ba",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 3,
+          "offset": 65,
+          "value": 100
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-holds-990",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "5969e420f022e587369ced9b453b410625506db5f5527654a7a13434c335d124",
+      "after_sha256": "d321dc511ea0261a12dec3b27c0dffd4b0d0c4d76a528f58632363ad4d0a3fd6",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "7e4632dae790b15ffe4317ae8b6126a1adbcf759e35972492f9fbd3925c0f1aa",
+      "dosbox_log_sha256": "0f8f6a555d5e45d110f4a53a083138e8e5e1247c8a91ec33167193ec966cb827",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 990
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-holds-999",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "3a0489716df1285ae36cfebef4e429d715c6c529a3ba409151f9f7ca7c569672",
+      "after_sha256": "4bf0127208bcb56c19ea3a6a470bc5a902b6a288ed27c7e6ac25e0cb2c55ef9f",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "cc1cb65399c4e787729b0e7a24522c979cfc8c7e132d4e38ddab87495a79e311",
+      "dosbox_log_sha256": "c165eeea7163c77da7071329b00dd5e52da2c75e9df58d0d39d9eff7222ef1e2",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 999
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 11
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 23
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 37
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 41
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 43
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 47
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 5
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-credit-large",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "59cbaf055906914a90b9413832382d462b2a36062c9d5e2adfe77a679d1290a0",
+      "after_sha256": "c16d33741fe4cdac70bd65239614323ebd57312457efe23c8c3ffa6e17774d21",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "9982245ff17070ae96e2879e86d9081dafae22c61d8f82706ac96f5e3432e564",
+      "dosbox_log_sha256": "bc8f3ea148a099debe07cfb24a1b35b67eaa49ea5cefe9cbf71889c2d615cfcd",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000000
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 100000000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-own-prior-port",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "e8b88ffd30cdc06017f80d89d069d76b8ab57c7e9f937efd6f1d6320ac54f673",
+      "after_sha256": "c063c41417a110788383140f5113429ed765c4878f0da3f4bdde11f6e370bf8e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "967fcd00312e89913aff4e2553d2dc26c5aed7dc913418c5430f0261975d8bd0",
+      "dosbox_log_sha256": "15ce6e945646c9682116ec9ecffbdad92b5b069df0e016c898de942a51b31159",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-estate-collect",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "abfc15707ed8a7f5621e489f65798d155a41b19bb4d797a4ab4093366eebce39",
+      "after_sha256": "bed7d028273af6ff067bce49be99e16a15125490f1ce40ab15ea98bbdd137de8",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "b93d8d28cdbe7306caee434856b47fa7ae931c4f635fabd862006ae35f262e92",
+      "transcript_sha256": "8065384f187e942d48615c338ea718e41de92fe8748d5a4a83d4c9c66d2a1021",
+      "dosbox_log_sha256": "1792789bc98cb1527864a962808ff81e7e26804262963cd9b8ac4feaeac5c958",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-self-estate",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "4d51d40b22a1cb9759cff09a98bb58fc0e9fd80b83fe04b8326d64e4f4894c03",
+      "after_sha256": "5f4db639b8546132a1523e70c651971e5cf7ddb70be9ff074e16a8c8a5412c1f",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "4d28e25782b961ee0ef2aee572cfcb3c368de70f3f04a93c7161a1bdbb223865",
+      "transcript_sha256": "b052e27e8272819696e450b16d1d5e6ee57ef70f605f2747fd6894adbdbef3d6",
+      "dosbox_log_sha256": "922a7ba3c45a713a71a6213dcec74b3a789bc8c9a5db2b73781fe94504f021de",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 200
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-self-stale-count",
+      "complete": true,
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "d2644f2d09d4571dd40be1be632ec4ce5fc55c7c4b7006ce6a8182e2bb794535",
+      "after_sha256": "de9d98b713a58968255f82d1ce3603450a8f233a8cddb963f59b20591b73a2c5",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "4d28e25782b961ee0ef2aee572cfcb3c368de70f3f04a93c7161a1bdbb223865",
+      "transcript_sha256": "8f4eb4fe4688a6c9094b6c152595e2aefc4b43ea374078d8cd74788d41e180e1",
+      "dosbox_log_sha256": "4ced654a2488e3104b468d8705565ed9ccd86ce1bbd1e015805d093d26c811a8",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 200
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ],
+      "planet_template_sha256": null
+    },
+    {
+      "name": "loot-live-estate",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "d5c05cd249b47e877de96d2a35ab062620f0d2a9a9b027a2767403ae428a1a35",
+      "after_sha256": "20fff33d35f3206e02f22593ac33e7269901bc008645b86f43c4dbd1effbaacd",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "0daea28f5ade462ee2c0282cd692aeb3174f58a8a8518a210626d80d7583c0ac",
+      "dosbox_log_sha256": "2a42621bb83fe74ad2da59c70d7fc80e7d977989b14eaf5fe351f08206a9b590",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-stale-count",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "fdc0d595b1c276a66ea4500173227708cae58cda8101fbb6e47cf9a1baba5c7c",
+      "after_sha256": "fcf8a9a7d72b29ee3b910da81582bcaab0a2ab44354c0f937fa0b4b8ea54d5d5",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "4f5a17cc68ec4e29036675a455d6e7d13149ba252f8eea90428be0bf33ba03a6",
+      "dosbox_log_sha256": "474432c11b7310ea77df1320821608689340e6d33cea980f750c13c159cea134",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-team-captain",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "d91635d77ff76c530a115bf6758f56c548551b04d39b366f13e886221889e99b",
+      "after_sha256": "53c48cc2951ae5dde4715401c84038a560ca7a3e3b31841e907da2ddd308b89e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "7046fe0cb5f2102913af81813c4ee02e49e9655e298f5f0d19f61ed2fd40a7ec",
+      "transcript_sha256": "f24d9420bb78b4bdd7b73d9f097d463c028d749565f86568e236c780d897ce89",
+      "dosbox_log_sha256": "5dc8e74bb596e7ef54bd0d064d3a0dc8e1bacf258b951aba13b17744ecfce5e1",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 4,
+          "offset": 89,
+          "value": 1
+        },
+        {
+          "record": 52,
+          "offset": 73,
+          "value": 5
+        },
+        {
+          "record": 52,
+          "offset": 77,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 109,
+          "value": 3
+        },
+        {
+          "record": 52,
+          "offset": 117,
+          "value": 4
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 3
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 3
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-self-estate",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "f51bb05df9c0786c1d6b14cc2f183b944191125b7410008fe3849fae4cee2817",
+      "after_sha256": "d5487acebf75a7d9ad033d711f8e1708a9af7938b37520f98b6fce59957035b3",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "4d28e25782b961ee0ef2aee572cfcb3c368de70f3f04a93c7161a1bdbb223865",
+      "transcript_sha256": "b052e27e8272819696e450b16d1d5e6ee57ef70f605f2747fd6894adbdbef3d6",
+      "dosbox_log_sha256": "e1417819e7c1f7049a9c1381230123d7ae4b53abe4fae7178c8edc0c9e451d89",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 200
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-mine-death",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "37142e0b39a8ac36b60d524ed771d23db4497d896b02119d9050423da02bdbeb",
+      "after_sha256": "2ee32a4e37edc162003ff1ef76f1501f05cf1c9bf93d2c5d8fca7d8f9e106e77",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "f0b2489778cebc57407aaeb00cf997ad173a68a06e47afe1afadd87ab46627bf",
+      "transcript_sha256": "e9cbf477651d7a07dc5aa1b5e328b1c6d448fceb212a8d59e7bfa465390fa60e",
+      "dosbox_log_sha256": "b4e50683d37b2f4236718e60063490688ac397b17dc57195e502163fcde23fea",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 200
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 151,
+          "offset": 129,
+          "value": 100
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-mine-fatal",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "9d052d7f4c70d7bf9e1df0b1aa4ee3a2445485d7be2c628efda19b9d07b4b1d1",
+      "after_sha256": "b0b9ff75347e5068b6ef62e48a2a991f61a421d57b861cf9a81cd7d73e168ecc",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "f0b2489778cebc57407aaeb00cf997ad173a68a06e47afe1afadd87ab46627bf",
+      "transcript_sha256": "2aa05409a77b554bdadbc96acde5cc830dc63c6f9139a72f60b671d73f3e3759",
+      "dosbox_log_sha256": "be2016b8e4f7bf6d72ccb6a8e2c4626f556a5b9fd4b64eadf736495edfdedaae",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 200
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 151,
+          "offset": 129,
+          "value": 10000
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "name": "loot-live-chain-death",
+      "complete": true,
+      "planet_template_sha256": "9f92640037fb67a1a71762020e0cee92462714440ba154503c1dd0096da5adb9",
+      "source_sha256": "85ec6b4931822e46134f4d95301ba533e364972e5415de6db8e876c988b002c9",
+      "baseline_sha256": "52c0933ca27dcd9e6078365d41391ddb899d2b296be4f2ea5f3843a2535fc2b4",
+      "before_sha256": "11b9301ab39b15714a41b2581b830c343eea6a4c4683bcf70a7c37e7d550894a",
+      "after_sha256": "28d136dbb28e10a8854a1ac0bebdfd2940c505786d9fe3faf4c8d3f3bc52ee53",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "keys_sha256": "c12876478ac84786e93a273949ce3a849518a4e25ec2f6b9ea1f1376e3e4b2dd",
+      "transcript_sha256": "74b77db20d8d136edeb4f3377618d17d5593352b6fcc74b4e99bfc547bcecdf0",
+      "dosbox_log_sha256": "acd6506c745d74fd47950feb820174ff683ad854b825e64ba6a01b34d7c6917b",
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 41,
+          "value": 297.0
+        },
+        {
+          "record": 2,
+          "offset": 45,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 49,
+          "value": 500.0
+        },
+        {
+          "record": 2,
+          "offset": 53,
+          "value": 1.0
+        },
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1.0
+        },
+        {
+          "record": 2,
+          "offset": 61,
+          "value": 200.0
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10.0
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 1005.0
+        },
+        {
+          "record": 2,
+          "offset": 85,
+          "value": 2.0
+        },
+        {
+          "record": 2,
+          "offset": 89,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 93,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 97,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 101,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 105,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 109,
+          "value": -1.0
+        },
+        {
+          "record": 2,
+          "offset": 113,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 2
+        },
+        {
+          "record": 2,
+          "offset": 121,
+          "value": 0.0
+        },
+        {
+          "record": 2,
+          "offset": 125,
+          "value": 1.0
+        },
+        {
+          "record": 2,
+          "offset": 129,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 41,
+          "value": 297.0
+        },
+        {
+          "record": 3,
+          "offset": 45,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 49,
+          "value": 500.0
+        },
+        {
+          "record": 3,
+          "offset": 53,
+          "value": 1.0
+        },
+        {
+          "record": 3,
+          "offset": 57,
+          "value": 1.0
+        },
+        {
+          "record": 3,
+          "offset": 61,
+          "value": 1.0
+        },
+        {
+          "record": 3,
+          "offset": 65,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 69,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 73,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 77,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 12345.0
+        },
+        {
+          "record": 3,
+          "offset": 85,
+          "value": 6.0
+        },
+        {
+          "record": 3,
+          "offset": 89,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 93,
+          "value": 7.0
+        },
+        {
+          "record": 3,
+          "offset": 97,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 101,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 105,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 109,
+          "value": -1.0
+        },
+        {
+          "record": 3,
+          "offset": 113,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 121,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 125,
+          "value": 0.0
+        },
+        {
+          "record": 3,
+          "offset": 129,
+          "value": 100.0
+        },
+        {
+          "record": 161,
+          "offset": 81,
+          "value": 123
+        },
+        {
+          "record": 161,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 161,
+          "offset": 93,
+          "value": 2
+        },
+        {
+          "record": 162,
+          "offset": 81,
+          "value": 234
+        },
+        {
+          "record": 162,
+          "offset": 85,
+          "value": 4
+        },
+        {
+          "record": 162,
+          "offset": 93,
+          "value": 3
+        },
+        {
+          "record": 163,
+          "offset": 81,
+          "value": 345
+        },
+        {
+          "record": 163,
+          "offset": 85,
+          "value": 2
+        },
+        {
+          "record": 163,
+          "offset": 93,
+          "value": 4
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 333
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 2
+        },
+        {
+          "record": 3055,
+          "offset": 89,
+          "value": 555
+        },
+        {
+          "record": 3055,
+          "offset": 97,
+          "value": 4
+        },
+        {
+          "record": 4053,
+          "offset": 73,
+          "value": 2
+        },
+        {
+          "record": 4053,
+          "offset": 77,
+          "value": 100
+        },
+        {
+          "record": 4053,
+          "offset": 117,
+          "value": 1000
+        },
+        {
+          "record": 4054,
+          "offset": 73,
+          "value": 3
+        },
+        {
+          "record": 4054,
+          "offset": 117,
+          "value": 2000
+        },
+        {
+          "record": 4055,
+          "offset": 73,
+          "value": 4
+        },
+        {
+          "record": 4055,
+          "offset": 117,
+          "value": 3000
+        }
+      ]
+    }
+  ]
+}

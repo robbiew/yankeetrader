@@ -65,3 +65,15 @@ transfers, then implement target visibility/confirmation, weapon eligibility,
 production randomness, retaliation and protected-spawn hazard drops before
 exposing attacks. Native-BBS combat and the full salvage/respawn exploit chain
 remain unverified. Existing research archives are unchanged.
+
+### Subsequent research
+
+The [loot/estate follow-up](LOOT.md) now supplies 37 controlled DOS sessions for
+the distributions and ownership effects listed above. These recovered rules are
+not yet wired into the internal Go helpers or player commands.
+
+### Subsequent implementation — 2026-10-27
+
+[Atomic loot/estate settlement](SETTLEMENT.md) now supersedes the temporary
+retained-port/team policy and the pending sampler described in this milestone.
+It uses world version 5. Player attacks and minefield aftermath remain disabled.

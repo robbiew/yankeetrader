@@ -65,7 +65,7 @@ func TestShipDuelRejectsInvalidRNGAndBounds(t *testing.T) {
 	}
 }
 
-func TestCreditSalvageConsumesOnceWithoutRetitlingAssets(t *testing.T) {
+func TestCreditSalvageConsumesOnceAndTransfersEstate(t *testing.T) {
 	w, victim, killer := ownedPortWorld(t)
 	victim.Fighters, victim.Shields = 0, 0
 	killer.Sector = victim.Sector
@@ -76,7 +76,7 @@ func TestCreditSalvageConsumesOnceWithoutRetitlingAssets(t *testing.T) {
 	if err := w.SettleCreditSalvage(ctx, 6689, clock); err != nil {
 		t.Fatal(err)
 	}
-	if victim.Credits != 5656 || killer.Credits != 7694 || victim.Credits+killer.Credits != before || victim.Death == nil || w.Ports[2].Owner != victim.ID || w.Ports[2].Treasury != 777 {
+	if victim.Credits != 5656 || killer.Credits != 7694 || victim.Credits+killer.Credits != before || victim.Death == nil || w.Ports[2].Owner != killer.ID || w.Ports[2].Treasury != 777 {
 		t.Fatal("salvage duplicated or retitled assets", victim, killer)
 	}
 	if w.SettleCreditSalvage(ctx, 6689, clock) == nil {

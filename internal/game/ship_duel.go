@@ -75,7 +75,8 @@ func ResolveShipDuel(committed, defenders, shields int64, attackerCloak float64,
 // SettleCreditSalvage atomically attributes death and transfers a precomputed
 // credit salvage amount, consuming it from the victim's frozen inventory. It is
 // an internal building block, not a loot formula or a player-facing attack.
-// Call inside the same store Update as final damage and all future estate work.
+// Estate cleanup is shared with RecordDeath. Prefer SettleShipSalvage for the
+// recovered full inventory sampler; use this helper only for explicit amounts.
 func (w *World) SettleCreditSalvage(context DeathContext, credits int64, now time.Time) error {
 	if context.Cause != "combat" && context.Cause != "retaliation" {
 		return errors.New("credit salvage requires an enemy combat death")

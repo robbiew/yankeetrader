@@ -1,0 +1,28 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 10000 credits | 37 turns > m 2;q
+your ship was destroyed; reconnect for a replacement
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Killer. Actions save automatically. Type ? for help.
+
+Sector 1 | 6005 credits | 500 turns > treasury;collect;i;q
+Port treasury report (1 personally owned):
+Sector 2: Port 2 - 777 credits
+Collected 777 credits from your port treasuries.
+Killer: holds 60; ore 0; organics 9; equipment 37
+Fighters 25; shields 0; ground forces 50
+Missiles 50; mines 50; plasma 50
+Saved. Safe travels, Killer.
+[cYour replacement ship has been built. Remaining turns: 37.
+
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 37 turns > i;q
+Victim: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 100; ground forces 0
+Missiles 1; mines 0; plasma 0
+Saved. Safe travels, Victim.

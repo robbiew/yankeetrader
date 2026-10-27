@@ -806,6 +806,11 @@ func showSensors(t Terminal, reports []game.SensorReport) error {
 				return err
 			}
 		}
+		if r.DefenseFighters > 0 {
+			if err := t.Printf("Sector fighters: %d | Owner: %s\r\n", r.DefenseFighters, r.DefenseOwner); err != nil {
+				return err
+			}
+		}
 		if r.PlanetName != "" {
 			if err := t.Printf("Planet: %s | Forces: %d\r\n", r.PlanetName, r.Ground); err != nil {
 				return err

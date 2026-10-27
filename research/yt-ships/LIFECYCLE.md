@@ -75,3 +75,9 @@ acceptance. Implement fighter/shield rounds, retaliation weapons, cloak, turn
 charges, one-time loot settlement, combat asset transfers/death cleanup,
 protected-Earth drop invariants, sector defenses and hazard ordering next.
 No claim is made about native BBS combat acceptance or exact DOS RNG/MBF parity.
+
+### Subsequent implementation — 2026-10-27
+
+[Atomic loot/estate settlement](SETTLEMENT.md) now supersedes the temporary
+retained-port/team policy and the pending sampler described in this milestone.
+It uses world version 5. Player attacks and minefield aftermath remain disabled.

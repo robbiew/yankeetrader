@@ -161,3 +161,11 @@ This is a replacement-ship test, not a first-ever-account registration test. It 
 - `recovered_rules.py`: readable fighter/shield duels, cloak tick and counter-volley arithmetic with injected RNG. It is not the modern rules engine and does not emulate every MBF rounding operation.
 
 The Earth replacement probe was stopped at a subsequent command prompt after the emergency escape. Other completion states are recorded in evidence.json. No modern Go implementation, exploit fix, remote publication, or archival binary patch was made in this research pass. Balance policy for same-day PvP replacement and global anti-cloak needs explicit design and playtesting; neither should be silently confused with the confirmed concurrency/lifecycle defects.
+
+## Loot/estate follow-up — 2026-10-27
+
+A separate [37-session recovery](LOOT.md) now establishes the salvage sampling
+shape, new-hold/cargo behavior, ordinary-port capture and treasury handling,
+active planet retention, Mercenary defense conversion, team removal and a chained
+self-attributed death's port cleanup. This extends the first-pass scope above;
+exact RNG/MBF equivalence and complete combat integration remain unverified.

@@ -74,12 +74,12 @@ func TestDeathAttributionAndReplacementBudget(t *testing.T) {
 			if p.Death != nil || p.Sector != 1 || p.ShipGeneration != 2 || p.Credits != 1005 || p.Holds != 10 || p.Fighters != 25 || p.Shields != 100 || p.Missiles != 1 || p.Mines != 0 || p.Plasma != 0 || p.Ground != 0 || p.Cargo != [3]int64{} || p.Turns != wantTurns {
 				t.Fatal("incorrect replacement", p)
 			}
-			treasury := int64(777)
-			if cause == "self" {
-				treasury = 700
-			} // ordinary daily tax, unrelated to replacement
-			if w.Ports[2].Owner != p.ID || w.Ports[2].Treasury != treasury || p.Team != 1 {
-				t.Fatal("replacement retitled account assets")
+			owner, treasury := killer.ID, int64(777)
+			if cause == "self" || cause == "hazard" {
+				owner, treasury = 0, 0
+			}
+			if w.Ports[2].Owner != owner || w.Ports[2].Treasury != treasury || p.Team != 0 {
+				t.Fatal("replacement restored disposed estate or membership")
 			}
 			if w.CheckShip(p.ID, 0) == nil || w.CheckShip(p.ID, 1) == nil {
 				t.Fatal("old generation accepted after replacement")
