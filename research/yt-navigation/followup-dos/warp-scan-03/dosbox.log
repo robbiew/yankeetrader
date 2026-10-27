@@ -1,0 +1,81 @@
+date       time         | 
+2026-10-26 08:38:10.372 | arguments: /opt/homebrew/bin/dosbox-staging --noprimaryconf --nolocalconf --set cpu_cycles=200000 --set nosound=true -c mount\ c\ /private/tmp/yt-warp-complete-20261026/warp-scan-03 -c c: -c date\ 10/24/2026 -c time\ 00:00:00 -c keyfeed -c local\ TESTER\ >\ game.log -c exit
+2026-10-26 08:38:10.373 | Current dir: /Users/robbie/GitHub/yankeetrader
+2026-10-26 08:38:10.373 | stderr verbosity: 0
+2026-10-26 08:38:10.373 | -----------------------------------
+2026-10-26 08:38:10.373 | dosbox-staging version 0.83.0 ()
+2026-10-26 08:38:10.373 | ---
+2026-10-26 08:38:10.373 | Loguru version 2.1.0 initialised
+2026-10-26 08:38:10.373 | CONFIG: Can't create config directory '/Users/robbie/Library/Preferences/DOSBox'
+2026-10-26 08:38:10.379 | LOCALE: Using internal English language messages (detected from 'en-US; GUI: en-US')
+2026-10-26 08:38:10.379 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/plugins'
+2026-10-26 08:38:10.380 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/shaders'
+2026-10-26 08:38:10.380 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/soundfonts'
+2026-10-26 08:38:10.380 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/mt32-roms'
+2026-10-26 08:38:10.380 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/soundcanvas-roms'
+2026-10-26 08:38:10.380 | CONFIG: Can't create directory '/Users/robbie/Library/Preferences/DOSBox/webserver'
+2026-10-26 08:38:10.380 | SDL: Version 2.32.74 initialised
+2026-10-26 08:38:10.380 | SDL: dummy video initialised
+2026-10-26 08:38:10.490 | VIDEO: Using the DOS video modes' refresh rate
+2026-10-26 08:38:10.490 | DOS: Setting hard disk disk speed to maximum
+2026-10-26 08:38:10.491 | DOS: Setting floppy disk speed to maximum
+2026-10-26 08:38:10.494 | MEMORY: Using 4096 DOS memory pages (16 MB) at address: 0xce4c00000
+2026-10-26 08:38:10.494 | CPU: Setting fixed 200000 cycles. Try setting 'core = dynamic' for increased performance if you need more than 20000 cycles.
+2026-10-26 08:38:10.494 | FPU: Using reduced-precision floating-point emulation
+2026-10-26 08:38:10.494 | VIDEO: Initialised S3 Trio64 VESA 2.0 compatible with 4 MB of FP DRAM supporting 89 modes
+2026-10-26 08:38:10.496 | VOODOO: Initialized with 4 MB of RAM, 12 threads, and bilinear filtering
+2026-10-26 08:38:10.496 | CAPTURE: Image capturer started
+2026-10-26 08:38:10.496 | MIXER: Sound output disabled ('nosound' mode)
+2026-10-26 08:38:10.496 | MIXER: Reverb disabled
+2026-10-26 08:38:10.496 | MIXER: Master compressor enabled
+2026-10-26 08:38:10.496 | MPU-401: Running in intelligent mode on ports 330h and 331h
+2026-10-26 08:38:10.507 | MIDI:COREMIDI: No client created
+2026-10-26 08:38:10.508 | MIDI: Error opening MIDI device 'port'; using 'none' (disabling MIDI output)
+2026-10-26 08:38:10.508 | OPL: Operating at 49716 Hz and downsampling to the output rate
+2026-10-26 08:38:10.508 | OPL: Noise gate enabled
+2026-10-26 08:38:10.508 | OPL: Running OPL3 on ports 220h and 388h
+2026-10-26 08:38:10.508 | OPL: Sound Blaster 16 OPL output filter enabled
+2026-10-26 08:38:10.508 | DMA: Initialised primary controller
+2026-10-26 08:38:10.508 | DMA: Initialised secondary controller
+2026-10-26 08:38:10.508 | SB: Operating at 22050 Hz and upsampling to the output rate
+2026-10-26 08:38:10.508 | SB16: Modern DAC output filter enabled
+2026-10-26 08:38:10.508 | SB16: Setting 'BLASTER' environment variable to 'A220 I7 D1 H5 T6'
+2026-10-26 08:38:10.508 | SB16: Running on port 220h, IRQ 7, DMA 1, and high DMA 5
+2026-10-26 08:38:10.509 | PCSPEAKER: Operating at 32000 Hz and upsampling to the output rate
+2026-10-26 08:38:10.509 | PCSPEAKER: Initialised impulse model
+2026-10-26 08:38:10.509 | PCSPEAKER: High-pass filter enabled (18 dB/oct at 120 Hz)
+2026-10-26 08:38:10.509 | PCSPEAKER: Low-pass filter enabled (18 dB/oct at 4300 Hz)
+2026-10-26 08:38:10.510 | SHELL: Unable to update history file: '/Users/robbie/Library/Preferences/DOSBox/shell_history.txt'
+2026-10-26 08:38:10.520 | LOCALE: Country detected from 'en-US'
+2026-10-26 08:38:10.520 | LOCALE: Loading native locale for country 1 - 'United States'
+2026-10-26 08:38:10.520 | LOCALE: Using numeric/time/date format detected from host OS
+2026-10-26 08:38:10.520 | LOCALE: Keyboard layout and code page detected from '0 (U.S.)'
+2026-10-26 08:38:10.521 | LOCALE: Loaded keyboard layout 'us' - 'US (standard, QWERTY/national)'
+2026-10-26 08:38:10.521 | CONFIG: Loaded auto-mounted drive config file '/opt/homebrew/Cellar/dosbox-staging/0.83.0/share/dosbox-staging/drives/y.conf'
+2026-10-26 08:38:10.521 | DISPLAY: Using 758x569 window size in windowed mode on display-0
+2026-10-26 08:38:10.521 | OPENGL: Error creating window: OpenGL support is either not configured in SDL or not available in current SDL video driver (dummy) or platform
+2026-10-26 08:38:10.521 | OPENGL: Error initialising OpenGL renderer, falling back to SDL renderer
+2026-10-26 08:38:10.529 | SDL: Using 'software' SDL render driver
+2026-10-26 08:38:10.529 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-26 08:38:10.529 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-26 08:38:10.530 | MOUSE: Will be captured after the first left or right button click
+2026-10-26 08:38:10.530 | MOUSE: Middle button will capture/release the mouse (clicks not sent to the game/program)
+2026-10-26 08:38:10.530 | RENDER: Deinterlacing disabled
+2026-10-26 08:38:10.530 | RENDER: Dedithering disabled
+2026-10-26 08:38:10.540 | MAPPER: No joysticks found
+2026-10-26 08:38:10.540 | MAPPER: Loaded default key bindings
+2026-10-26 08:38:10.541 | SHELL: Unable to update history file: '/Users/robbie/Library/Preferences/DOSBox/shell_history.txt'
+2026-10-26 08:38:10.542 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-26 08:38:10.542 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-26 08:38:10.542 | DISPLAY: VGA 720x400 16-colour text mode 03h at 70.087 Hz, scaled to 758x569 pixels with 1:1.35 (20:27) pixel aspect ratio
+2026-10-26 08:38:10.542 | DISPLAY: Presenting at DOS rate without vsync
+2026-10-26 08:38:10.542 | MOUSE (DOS): Built-in driver is simulating a 2 buttons model
+2026-10-26 08:38:48.808 | SHELL: Unable to update history file: '/Users/robbie/Library/Preferences/DOSBox/shell_history.txt'
+2026-10-26 08:38:48.809 | PCSPEAKER: Shutting down impulse model
+2026-10-26 08:38:48.809 | OPL: Shutting down OPL3
+2026-10-26 08:38:48.809 | SB16: Shutting down
+2026-10-26 08:38:48.809 | MPU-401: Shutting down
+2026-10-26 08:38:48.823 | CAPTURE: Image capturer shutting down
+2026-10-26 08:38:48.823 | DMA: Shutting down primary controller
+2026-10-26 08:38:48.824 | DMA: Shutting down secondary controller
+2026-10-26 08:38:48.824 | atexit

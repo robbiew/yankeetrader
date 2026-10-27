@@ -1,0 +1,1025 @@
+{
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "ownership-buyout",
+      "command": "B\r~~Y",
+      "before_sha256": "b47af8d9052cace3c4b30e92191bd3915c43bcecd81e229d32002ca11d8389aa",
+      "after_sha256": "083eaaa0d39aac887014a0761a0bfb1b66ea379cee3b1cd05245119cd8996673",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "6e4cc9a5a8dc02b70b198fa2a1a4a58c0c8e8cdcd6de36e7d243af4f34e6a43d",
+      "transcript_sha256": "5a7c0254c274f7d4c49f2ab587ec73568d5c55224050e893a10b9b1b78058726",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "361284c7b87686104a1f228707f5f0a346e0dd552af839c0e91ee7a94b9b43b9"
+    },
+    {
+      "name": "ownership-cancel",
+      "command": "B\r~~N",
+      "before_sha256": "b47af8d9052cace3c4b30e92191bd3915c43bcecd81e229d32002ca11d8389aa",
+      "after_sha256": "5495edba4f3ee06be94c8cea48363cc9c0d9a2b208848552212c1f263d8cd94d",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "f6ab951d6d86ff591307e4f4f819f5504bd35294027552d1cb22b7f89ddd5082",
+      "transcript_sha256": "22d31def2499bc64dd8511e84ef2c8bf7eae63652e3df9818486c1a61371207a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "f0beee4b8b587a837a1100f1ee0d40dc99a4fff4c3991dc225c9460ec528ba60"
+    },
+    {
+      "name": "ownership-default",
+      "command": "B\r~~",
+      "before_sha256": "b47af8d9052cace3c4b30e92191bd3915c43bcecd81e229d32002ca11d8389aa",
+      "after_sha256": "5495edba4f3ee06be94c8cea48363cc9c0d9a2b208848552212c1f263d8cd94d",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "e7b1b329d086d552377dd736d80ca5932a451a01151a0f8adcb6a343dbf9cf5d",
+      "transcript_sha256": "da4784b2164cd6fb1489318aa9b3d8806ae1bf706182bf1ea3af6174d90d2241",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "747f3fd0863a1ebd61613c7f30f03c23a551764e7a10bd719756a8d7de3f57c0"
+    },
+    {
+      "name": "ownership-poor",
+      "command": "B",
+      "before_sha256": "cfcba9c8f29ad06b9f56f0ec2a40f929435bab35ede16f7f8f4d95663c938849",
+      "after_sha256": "dc2003db1d3465fff771b3fee6ac215de5dedc32255d84b554065906ea29ae9f",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 30
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "733e2649c4c63d56ee67c2dae4aecab51aaf01e71c208cc59cb8c5b959cc8b04",
+      "transcript_sha256": "b133982add4b15f7ef49178a7dce34bd7dfc7771f3891ac06178ecfbda6e1b50",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "00b25fb97057b60316b827b40c32dbd8e95df84bc6abfe4a4600f7c64610daab"
+    },
+    {
+      "name": "ownership-unowned",
+      "command": "B\r~~Y",
+      "before_sha256": "0a8378b30df75196a18857c6e34c8b0df0e583459d56f45e99e908abf3385572",
+      "after_sha256": "37684c7b7a562e45d897413fa93870d68d72920e6db9829a9fbbba608161d0ac",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "6e4cc9a5a8dc02b70b198fa2a1a4a58c0c8e8cdcd6de36e7d243af4f34e6a43d",
+      "transcript_sha256": "3bbcfe9af15cc3ec2dea8b97c1ff96ad20643559fc9ca75145a1cea0ca194c62",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "73e6a19058ee43465eb85571bc1b2d7f8cdc0fdfa2f9b84160ac362dcbf4f9ae"
+    },
+    {
+      "name": "ownership-self",
+      "command": "B",
+      "before_sha256": "701d9b731da6d77a8b19ea3f5ca68eaecdb9293e8d2644f975b9571e96ad995b",
+      "after_sha256": "60c3ff7ffacd1d6d92b1c972c61f23f3ea887a4726d95d5967b59a4a651e65c4",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "733e2649c4c63d56ee67c2dae4aecab51aaf01e71c208cc59cb8c5b959cc8b04",
+      "transcript_sha256": "1a8f2e878c6dbf009f58e6790e693b69a9a338b9d4dfa0ac449fd099a69effd8",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "305c0d21118de165d5e2d93bfa3b21383fad5fd572dd69212f1099dd1ae4b000"
+    },
+    {
+      "name": "ownership-collect",
+      "command": "$",
+      "before_sha256": "ef41e2b87158735f7a36615b742e0af496427b4b6346dcd175bb5c2a2c30171f",
+      "after_sha256": "f584d34e82ed803fd1fb3f0f5377d84d002ae47705057a95765a6c20d5760b9d",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 100
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "6b8fe54c7afae2be6e34b7cda5fe6ca8e425e056b1ccf1c43a8a782f1350e635",
+      "transcript_sha256": "2f6d5eee1dd651949e8e4ddb0f4e73de4fb44dd260c0fa92e881acbb4a801269",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "13b95bfea71ca41088b36b4e728a070a605f3a6829037c03ee7d2f396435e547"
+    },
+    {
+      "name": "ownership-report",
+      "command": "C;12;1",
+      "before_sha256": "ef41e2b87158735f7a36615b742e0af496427b4b6346dcd175bb5c2a2c30171f",
+      "after_sha256": "620a5facaca1991d9349eaf304cb921ceababa2eb08b004441a060b98c437724",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 100
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 2
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "009473a4d3715cc84425c6ca32428144b9919807850cc85b111e47db45501336",
+      "transcript_sha256": "fd25097a60d98fef58d78a4fd7964fc6d470d3e0c4a9dc57c6df994d8bb7a706",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "b2a53eb602ce2b748333809d1150f72b41ddfcfe7db0506d2c78682428e64c10"
+    },
+    {
+      "name": "ownership-buy-collect",
+      "command": "B\r~~Y\r~~$",
+      "before_sha256": "b47af8d9052cace3c4b30e92191bd3915c43bcecd81e229d32002ca11d8389aa",
+      "after_sha256": "083eaaa0d39aac887014a0761a0bfb1b66ea379cee3b1cd05245119cd8996673",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 100000
+        },
+        {
+          "record": 2,
+          "offset": 117,
+          "value": 0
+        },
+        {
+          "record": 3,
+          "offset": 81,
+          "value": 2000
+        },
+        {
+          "record": 3,
+          "offset": 117,
+          "value": 1
+        },
+        {
+          "record": 3053,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3053,
+          "offset": 89,
+          "value": 777
+        },
+        {
+          "record": 3053,
+          "offset": 97,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "758c3456df5c10c7112d6d69fa5e3cd6fdd11a50454aed0ce5fd2f11e4e6122c",
+      "transcript_sha256": "e1a0a21fd1a2b044697425d5068fcced1aac94c4051f3d8292f0f1c29c4fd189",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "dosbox_log_sha256": "de1901ce1dd573493b07596cb408f5b367977c0853b8c3bc6603c8e67d1336c1"
+    }
+  ]
+}

@@ -1,0 +1,2181 @@
+{
+  "scenarios": [
+    {
+      "name": "commerce-nearest-all",
+      "command": "C;14;A;1",
+      "before_sha256": "ad7ae37c4bd64ea1b36686960c8753915c96967a931297fe21367d05f56338fc",
+      "after_sha256": "9a1acc9f69afce733c5648a16966c6f885b31e8d1d5275099db991b2df6bd1b1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "46ad8e3256a1c308207a55d08ede2f2b26f702dd0cebaa27f41f072335a4cf74",
+      "transcript_sha256": "aa3668ed710b45d5d52999d4b62b1b59b9c945a76aeacf5f3f6379f7f3ddc8fa",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "4c5a7815e370ef049b3169bb9a0620aaa86bdcc01ceb13c19069757342513567"
+    },
+    {
+      "name": "commerce-nearest-ore",
+      "command": "C;14;3;S;1",
+      "before_sha256": "ad7ae37c4bd64ea1b36686960c8753915c96967a931297fe21367d05f56338fc",
+      "after_sha256": "9a1acc9f69afce733c5648a16966c6f885b31e8d1d5275099db991b2df6bd1b1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "3b187b43d85c58c760d39eae504dfbb556d5ccef0b9937e012cb89dbd5576789",
+      "transcript_sha256": "82a797b8f4f39445cbfc6f1135f6cf18180c5a16a47c50108015b0235099b2dc",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "ec754e9fc378535f4823d09f03133b12ca98dfd3c3bfdb79288c51e8967be85d"
+    },
+    {
+      "name": "commerce-nearest-team",
+      "command": "C;14;T;1",
+      "before_sha256": "ad7ae37c4bd64ea1b36686960c8753915c96967a931297fe21367d05f56338fc",
+      "after_sha256": "9a1acc9f69afce733c5648a16966c6f885b31e8d1d5275099db991b2df6bd1b1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "eced75e80c33296f33ffc215d1d698ca2b928b8b4f45243fc87f2b2e1d8d8583",
+      "transcript_sha256": "a58705e46fbb1243893b5537b3b6ad365c546738069f81429f61a1083625c0f5",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "829ee9c403df97deae40985e73c8c9424ab8d76a0175ac849446536303b0f170"
+    },
+    {
+      "name": "commerce-pairs-oneway",
+      "command": "C;16;1",
+      "before_sha256": "ad7ae37c4bd64ea1b36686960c8753915c96967a931297fe21367d05f56338fc",
+      "after_sha256": "9a1acc9f69afce733c5648a16966c6f885b31e8d1d5275099db991b2df6bd1b1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "5c29c70463b705486004f1bfc2e724513dc242cbf6e538d75fee3be6eb727b7b",
+      "transcript_sha256": "0eaa2a679b4e024feea7fc270f69a97c3b1b051550cf6b9a38e06f87bf5bd0da",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "eeb286a19f0109bff60b0a40c172138f518257f3a14bacb627f2f6e3dda6ce95"
+    },
+    {
+      "name": "commerce-pairs-twoway",
+      "command": "C;16;1",
+      "before_sha256": "a17f257929cf3bd4903a56adb4287f5b64346e43817cdeccbdf885bcd113da0f",
+      "after_sha256": "999e9bd3630a780e347220ffeb1c57531a2d49bd7977e3425927e0f183cff9b7",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 45,
+          "value": 101
+        },
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "5c29c70463b705486004f1bfc2e724513dc242cbf6e538d75fee3be6eb727b7b",
+      "transcript_sha256": "0eaa2a679b4e024feea7fc270f69a97c3b1b051550cf6b9a38e06f87bf5bd0da",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "d2ceee77c3ec5047b338442d4baf4593b35bd33e7baf04065456a1ca7cc0d972"
+    },
+    {
+      "name": "commerce-profit-empty",
+      "command": "C;17;1",
+      "before_sha256": "ad7ae37c4bd64ea1b36686960c8753915c96967a931297fe21367d05f56338fc",
+      "after_sha256": "9a1acc9f69afce733c5648a16966c6f885b31e8d1d5275099db991b2df6bd1b1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "e96d1ba1dccc116a44492467662ffc49f535fc1a85ad42a3a7b13088a98fa413",
+      "transcript_sha256": "e01cd74f0ad0547af80f9ed7eaab98511e585f43ca1c468e5a0655b04815ef8b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "9e62496c8cfd082547ef2e8c0313b9896a299e8f4582fc9e390e5b4cae5211cf"
+    },
+    {
+      "name": "commerce-profit-ports",
+      "command": "C;17;1",
+      "before_sha256": "82b1d9601bcffcb2a08d04ae40d9ac845dc3bed16975d4fa584132660dc63e78",
+      "after_sha256": "401723c798f58a98ed3634848c2ab0e1b3cd8b8abcca69afcbe102eb2726335a",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 158,
+          "offset": 45,
+          "value": 101
+        },
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "e96d1ba1dccc116a44492467662ffc49f535fc1a85ad42a3a7b13088a98fa413",
+      "transcript_sha256": "15c88df9f19d87499d6312d781c13ed40e2dd3c87aa0d880ca6caae159e0dbc1",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "65fbad0eae2828da3e656d3e454b5f905343bc7101f17605f60bac00bef857d1"
+    },
+    {
+      "name": "intel-hire-one",
+      "command": "P;9;1;101\r~~~~\r~~0;C;15;1",
+      "before_sha256": "39b98f0f32d40ce03b08c0f80ec665177ca527b29f0123de3f911bf2080e36db",
+      "after_sha256": "037560c8582d593603d9c7a824687b4de560b1e5ee48d9cbd1a3959cf4047af5",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 2000000
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "0919b1f0fc07ef475e217392a7654c9234b36c474dd690cf2a353e30ca9a89b5",
+      "transcript_sha256": "175ab3c01c9011b53e06d9f18a9bce27074292c708ba741f98ce46d97882f5d8",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "53a50556c3287219571ad8b0d104aea0661b8a769d5dc6562afbf1994ff72908"
+    },
+    {
+      "name": "intel-hire-three",
+      "command": "P;9;3;101;102;103\r~~~~\r~~0;C;15;1",
+      "before_sha256": "39b98f0f32d40ce03b08c0f80ec665177ca527b29f0123de3f911bf2080e36db",
+      "after_sha256": "21af521955ab9064cc0e21403a53375de05eb3e78779786aed4df84fa399e5ff",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 2000000
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "231f1048ff0376f0965eb14416cc275c4fcefa14dae54828ab2c1eb567d951c1",
+      "transcript_sha256": "a9f500e9c55f2c0f4c565496a62e9c1c9382df515d855702f3f57e2e0ad718b9",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "61b0058a806d668a393e728e9bb04d11ef9f5d55430a65712821ec27d31621e9"
+    },
+    {
+      "name": "radio-abort",
+      "command": "C;5;Enemy;Y\r~~YT ABORT PROBE\r\r~~A;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "293790d3a5783fa3ede3b9c083d052f98b7af0b96e10d63d432d61b5f6e12c0f",
+      "transcript_sha256": "2b947ac4016b6fc60fe367a54fa59fa8e2f247fb22fe936c62d1bce5acbf1114",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "b9f6fa1ffcc9a55d86f94f7fccc25615d091d11adb81241ce11f5153cd88601c"
+    },
+    {
+      "name": "radio-log-empty",
+      "command": "C;6;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "34bd2aa449c5cfdc32e2fded0113bb3c6d8504ff6e22f5b361ed5857cb41b9c4",
+      "transcript_sha256": "281d0cdde5c87d5a7b0e17a7fb04781e10a22e53bd009b70359aa3bc31669c5a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "b16a300cbdd565a1e23b204d9706f823d5342c1b97d0a6b52df483ad54c76070"
+    },
+    {
+      "name": "radio-send",
+      "command": "C;5;Enemy;Y\r~~YT RADIO PROBE\r\r~~S\r~~~~6;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "0edf41fac4aa8e1a9386d27a7cfc7343d03f774ccfc39822c07da8f418e3b661",
+      "transcript_sha256": "bc1c6cd0aff6ac909ccc4771b818622a5a654ed0cd7653e785cddea78263854a",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "d9e637555ad54ef1f78d35d5ecf6f44cdda3203ec4b3a86197c816a8e25e0c0d"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "actor": "TESTER",
+      "player_record": 2,
+      "dosbox_log_sha256": "41a044f743139bc437778a273f66380d6de1c092c423c8ccb28d050d8d5fad2c"
+    },
+    {
+      "name": "intel-limit-four",
+      "command": "P;9;4\r~~0;0;C;15;1",
+      "before_sha256": "39b98f0f32d40ce03b08c0f80ec665177ca527b29f0123de3f911bf2080e36db",
+      "after_sha256": "2281c323c50ff8da373fc2152b7eb29634d83dc97a06f7dbd307a5574192e139",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 1
+        },
+        {
+          "record": 2,
+          "offset": 81,
+          "value": 2000000
+        },
+        {
+          "record": 52,
+          "offset": 65,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "8eb935b9b7bcc375c1e18557899a8427d03eae1da346ccec86da2c75bccd9852",
+      "transcript_sha256": "ed3229768ad5b5bb29e582546b1fdf43e53ae1172b0463a29fbbdae615b45076",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "TESTER",
+      "player_record": 2,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "bd8a1142fb352b23884dbf9f693a539b844d4cb98dec2cad5e1b3b19452babe7"
+    },
+    {
+      "name": "radio-team-denied",
+      "command": "C;5;TEAM;1",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "2ff1a99f6d9b2b9c334326d987cdad39fab877e2e5e5f59a34b852b78bc567a7",
+      "transcript_sha256": "bd81d2945bb5871c134576938795e511ce6f0914cc9eb6f1ba92c1b61744e0d0",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "TESTER",
+      "player_record": 2,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "267267be4ffd1c3f649b445cfed61e0efc6cf9f94bf8ede3fa3a900757049230"
+    },
+    {
+      "name": "commerce-profit-small",
+      "command": "C;17;1",
+      "before_sha256": "9ca5b760dba94b3828763afb2d740d2a979bcf94bb81bd4919309114bba9d2d2",
+      "after_sha256": "cc0c7a414e93297b33e5b942685892cbff6ab8e3b48db23a8bbcddab7422ad36",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 101,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [
+        {
+          "record": 2,
+          "offset": 57,
+          "value": 101
+        },
+        {
+          "record": 2,
+          "offset": 65,
+          "value": 10
+        },
+        {
+          "record": 2,
+          "offset": 69,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 73,
+          "value": 0
+        },
+        {
+          "record": 2,
+          "offset": 77,
+          "value": 0
+        },
+        {
+          "record": 158,
+          "offset": 45,
+          "value": 101
+        },
+        {
+          "record": 158,
+          "offset": 65,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 41,
+          "value": 3
+        },
+        {
+          "record": 3054,
+          "offset": 45,
+          "value": 297
+        },
+        {
+          "record": 3054,
+          "offset": 49,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 53,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 57,
+          "value": 1000
+        },
+        {
+          "record": 3054,
+          "offset": 61,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 65,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 69,
+          "value": 100
+        },
+        {
+          "record": 3054,
+          "offset": 73,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 77,
+          "value": 50
+        },
+        {
+          "record": 3054,
+          "offset": 81,
+          "value": -50
+        },
+        {
+          "record": 3054,
+          "offset": 89,
+          "value": 0
+        },
+        {
+          "record": 3054,
+          "offset": 93,
+          "value": 107
+        },
+        {
+          "record": 3054,
+          "offset": 97,
+          "value": 0
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "e96d1ba1dccc116a44492467662ffc49f535fc1a85ad42a3a7b13088a98fa413",
+      "transcript_sha256": "e6b8cedaca52540ba39c584bd15beed982e4db6d5bde6f4d7f8a3543e2355210",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "TESTER",
+      "player_record": 2,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "836dd30caa58d9da6149d287321c87c76f4ad043bfb65df63ee51fba4cad8c8c",
+          "after_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "2d893cca781f078f17ca9c1c3846608df6dc7dfd00edb79ca104b11168701181"
+    },
+    {
+      "name": "intel-reconnect",
+      "command": "C;15;1",
+      "before_sha256": "037560c8582d593603d9c7a824687b4de560b1e5ee48d9cbd1a3959cf4047af5",
+      "after_sha256": "037560c8582d593603d9c7a824687b4de560b1e5ee48d9cbd1a3959cf4047af5",
+      "turns_before": 499,
+      "turns_after": 499,
+      "sector_before": 1,
+      "sector_after": 1,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "037560c8582d593603d9c7a824687b4de560b1e5ee48d9cbd1a3959cf4047af5",
+      "keys_sha256": "cef85a6f125d760eff32a8a33340f3c6dd99bc3d64b067a9fb38897157ad97a9",
+      "transcript_sha256": "d1f6a5d2dfe5b4f664552a69ec962519161a7b779782528ffa184d26e8fb8db2",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "TESTER",
+      "player_record": 2,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a",
+          "after_sha256": "6bc1c55f3d248571c4ba302f00697c607e4656285d7dff50bb99e0d9793ba5e9"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "eac6804012ad23d5dc57bc063ed5c440ff9862befd33bde6bb9afedb07a8c926"
+    },
+    {
+      "name": "radio-read",
+      "command": "\r~~~~C;6;1",
+      "before_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 103,
+      "sector_after": 103,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "keys_sha256": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+      "transcript_sha256": "54cb3702ac349eb362d9bbebcaade7244088deb8cd3715a5a32303009c1f868f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "ENEMY",
+      "player_record": 3,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "9589640662ee19b6e59fa53569ce0238597fd7e9de0e95375be9e8dc8290ab3a",
+          "after_sha256": "12ebf950a8d1dc637db4da16dbda057848c249bf258472e0a21708373f19aa97"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "d9e637555ad54ef1f78d35d5ecf6f44cdda3203ec4b3a86197c816a8e25e0c0d",
+          "after_sha256": "f772885ad1c2e90cb21a4100ac4bd3036c24f18a71808819416e968a8bb1d62d"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "d3d78d1a6dfd6048656e53943481722b89476156b65e88cc0127df2fe124ef20"
+    },
+    {
+      "name": "radio-read-again",
+      "command": "\r~~~~C;6;1",
+      "before_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 103,
+      "sector_after": 103,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "dos_time": "00:00:00",
+      "graph": {
+        "100": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106
+        ],
+        "101": [
+          107
+        ],
+        "102": [
+          108
+        ],
+        "103": [
+          100
+        ],
+        "104": [
+          100
+        ],
+        "105": [
+          100
+        ],
+        "106": [
+          100
+        ],
+        "107": [
+          109
+        ],
+        "108": [
+          109
+        ],
+        "109": [
+          110
+        ],
+        "110": [
+          100
+        ]
+      },
+      "patches": [],
+      "source_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "keys_sha256": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+      "transcript_sha256": "a122977475342f966779ffa01b08d13a3da38610cd96d956d6c4a71b27bbe8a8",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "actor": "ENEMY",
+      "player_record": 3,
+      "auxiliary": {
+        "YTNEWS.DAT": {
+          "before_sha256": "12ebf950a8d1dc637db4da16dbda057848c249bf258472e0a21708373f19aa97",
+          "after_sha256": "936d0aae87f01c031865029daa625abc6221efc095a71c3a1ff2253fdad58d7f"
+        },
+        "YTRMSG.DAT": {
+          "before_sha256": "f772885ad1c2e90cb21a4100ac4bd3036c24f18a71808819416e968a8bb1d62d",
+          "after_sha256": "f772885ad1c2e90cb21a4100ac4bd3036c24f18a71808819416e968a8bb1d62d"
+        },
+        "YTYNEWS.DAT": {
+          "before_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d",
+          "after_sha256": "36b5ca0b267b52a97e26c8d4d8bacfa0cbf94ae514ac299b59d583aba6d38d0d"
+        },
+        "YTNAME.DAT": {
+          "before_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1",
+          "after_sha256": "3348283c67c4bcb4871b786405800cc0ae52894db8084da38df2ba8ab107fbc1"
+        },
+        "LOCKOUT.DAT": {
+          "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "dosbox_log_sha256": "d522915ba25036aaff406c450a6f6b270c6a1a64a268905deb1e2f47933f45cb"
+    }
+  ]
+}

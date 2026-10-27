@@ -1,0 +1,345 @@
+{
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "danger-clear",
+      "command": "M;101",
+      "before_sha256": "e125453e6e39c23b7225aecb8c79b5b46513693a01c19ef0f2f519dcb7327747",
+      "after_sha256": "9a323c38890f1e1743c3810a62178e2ecba87bd301c3f7290cd14c2c6f24f703",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fcb9e3d6609f3276046db25de2a37f71d75cec82c309a84114f80fb6075725e8",
+      "transcript_sha256": "6d140e90db941d706c1a1dbf074a4d40f6a2eee3a840ca8b9b8c2ae8fabfb5ba",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-mines-no",
+      "command": "M;101\r~~N",
+      "before_sha256": "c3c1f139b013dd8796aaeb3c9e0f90a3184aa91286d7c0846c414e73a9b5c5f1",
+      "after_sha256": "389c1bc70d4254281e25d775b94b78bd6b098f6bf95080fb8af5d63ee8ce6fad",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 10
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "c68cf65cf51908d4081ba57a7223a7f59e840fbb880bad20485879977248860a",
+      "transcript_sha256": "ff36abc434f4634db23fc54a688f92b81485c697563ba29ed4d582105124de7f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-mines-yes",
+      "command": "M;101\r~~Y",
+      "before_sha256": "841001b72b57de1edbbdc0fe9e82f7b31a348f5b51343de13e93e934ae6e8096",
+      "after_sha256": "34e48c144b02c09e80b80dcbfcc0cc271184424cf6058fb5626f5bdb49a40fc3",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "56d84399a01249531a0f6a95d8f9e0b7c76d2840844f1c88e11103305aaf6a3f",
+      "transcript_sha256": "1de351c0c8f7a1e1e6c9732c904a2a8bb20d2dc9f07508e297fc42780d23c274",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-stacked-yes",
+      "command": "M;101;Y",
+      "before_sha256": "c3c1f139b013dd8796aaeb3c9e0f90a3184aa91286d7c0846c414e73a9b5c5f1",
+      "after_sha256": "389c1bc70d4254281e25d775b94b78bd6b098f6bf95080fb8af5d63ee8ce6fad",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 10
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "2bcc9d915b0a37277a5a6555ffbe75cad7e8cba9492da7a82e55205d047bcd8d",
+      "transcript_sha256": "06fe6df4ec408ebf7c6b62b673cc0c2f4e362d91dd9f166961b72d99099f85cf",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-fighters-no",
+      "command": "M;101\r~~N",
+      "before_sha256": "6e7a97cf6f4c7c8f5e453e56de13edf564e8239f860ed966ae5721eba717b987",
+      "after_sha256": "0c8d0f88130c48f1212337c29c51250086c444c5abe29784ba1b7300f6348503",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 81,
+          "value": 100
+        },
+        {
+          "record": 152,
+          "offset": 85,
+          "value": 3
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "c68cf65cf51908d4081ba57a7223a7f59e840fbb880bad20485879977248860a",
+      "transcript_sha256": "779f82b502515e88007d899a7091ac9abf3a1ab32e3d98fc35f7c07fe90b383b",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-own-fighters",
+      "command": "M;101",
+      "before_sha256": "fb90f3923db6a56f3857f2e69363a764dfde72f675f494531d55b24c30a9c446",
+      "after_sha256": "c9a5b0a9538c78c28aa14901abb57d397405a648a1e479a11cbd1ff71b2b8733",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 81,
+          "value": 100
+        },
+        {
+          "record": 152,
+          "offset": 85,
+          "value": 2
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fcb9e3d6609f3276046db25de2a37f71d75cec82c309a84114f80fb6075725e8",
+      "transcript_sha256": "692d01ea166ade2d1bad1f454aa30c19d06b50a3cc8862fd92c48f8e5436e2a3",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-no-scanner",
+      "command": "M;101",
+      "before_sha256": "14cd0d779a349d6021e5b10894a980a05669a334db47e818bd9a7f14eff4c363",
+      "after_sha256": "497217d5e8b0392f1d6a38c2e7e878ae41ec4377313b73558b1c280a365ff8a1",
+      "turns_before": 500,
+      "turns_after": 499,
+      "sector_before": 100,
+      "sector_after": 101,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": 0
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 1
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fcb9e3d6609f3276046db25de2a37f71d75cec82c309a84114f80fb6075725e8",
+      "transcript_sha256": "cafa0e50dd926bd510e24d634b56adab7e560c676dfe0282fefe41f7e94dda88",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "danger-autopilot-no",
+      "command": "C;3;110;Y\r~~N",
+      "before_sha256": "c3c1f139b013dd8796aaeb3c9e0f90a3184aa91286d7c0846c414e73a9b5c5f1",
+      "after_sha256": "389c1bc70d4254281e25d775b94b78bd6b098f6bf95080fb8af5d63ee8ce6fad",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [
+        {
+          "record": 2,
+          "offset": 93,
+          "value": -1
+        },
+        {
+          "record": 152,
+          "offset": 129,
+          "value": 10
+        }
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "fe8bfa15bd4c89adcf6bc2d5e69f5bd755a0a25c0cb487cdf1819fef94ff9a65",
+      "transcript_sha256": "d866efec09606f4e6689d2d9e104d6df5a0780f85cab1f24f1c50f22b915595d",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "warp-cancel",
+      "command": "W;N",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "f7bfb1825aa52fd7e8dcb4736a47caccbc1a974d63c4fda0c73514f28d0718d8",
+      "transcript_sha256": "5a48e09625bd3aac88baf4b0aae1859d0d5e028381155d41cf79cf7148c7954d",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "warp-default",
+      "command": "W;",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "123c91b8dc89683db8f765c92d447f17e321ec431aedd6df7a922ec1727959e1",
+      "turns_before": 500,
+      "turns_after": 500,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "0d36c18cd47c144d2d07e19510614e44daaa6e59f85d47ab594faa2f34e0efd7",
+      "transcript_sha256": "1cc157b87f1f50a61fea36240c83d615f06d76b0993a2b71a9fdeea03a37362f",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "warp-yes",
+      "command": "W;Y",
+      "before_sha256": "7cc4ce681ef69dd42675cf1dd764313ff76f2147fcca6fbff99c778874addbba",
+      "after_sha256": "127b35ab268caa06abb7a206e5057b6b33863e96235248b57d9a80d38d900275",
+      "turns_before": 500,
+      "turns_after": 445,
+      "sector_before": 100,
+      "sector_after": 60,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "ce85b3cfa3fb12bec9f5ae29e26c4f56a943975b673bdcd4aacd26d14779a161",
+      "transcript_sha256": "5547ee79189d9f01d4aef9fd1ecf057a9e3a04b72df5e22f1df1949bdcdf7ad3",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "warp-one",
+      "command": "W;Y",
+      "before_sha256": "e91f57a6e4535a49cba9d7d87bd0a01b14955dbdabd2d1cd106339929a9c15ce",
+      "after_sha256": "51855727bd0d0f8ea87cb11ed3b219144d5b07215cdb90c82c4aa0c4d5b168b1",
+      "turns_before": 1,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 60,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "ce85b3cfa3fb12bec9f5ae29e26c4f56a943975b673bdcd4aacd26d14779a161",
+      "transcript_sha256": "9da41a463f636d39c3b5b572c8d60ff98a9af3d055c61929d099f644cfcb55d0",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    },
+    {
+      "name": "warp-zero",
+      "command": "W;Y",
+      "before_sha256": "d7cdc6332a29be53171e13b1c9759c777fb6faa685293840819290ef44e9fdee",
+      "after_sha256": "6c484e0b90f5674e5bd11176b20e3256c98596145454faba0f615d1420edd827",
+      "turns_before": 0,
+      "turns_after": 0,
+      "sector_before": 100,
+      "sector_after": 100,
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "keys_sha256": "ce85b3cfa3fb12bec9f5ae29e26c4f56a943975b673bdcd4aacd26d14779a161",
+      "transcript_sha256": "cf0979a8aa4b6684e3a7675eb6ed750730033d6154b01f4507a6c3cf2579f0f5",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+    }
+  ]
+}

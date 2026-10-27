@@ -143,6 +143,28 @@ still not implemented.
 
 ## Remaining boundaries
 
+Follow-up: [scanner and emergency-warp research](ENCOUNTERS.md) adds 13 completed
+DOS sessions and 26 snapshots covering warnings, confirmation, queued-command
+clearing, autopilot cancellation and manual warp turn boundaries. These rules
+are not yet implemented in Go; exact random behavior remains open.
+
+A second follow-up adds 42 completed DOS sessions and 84 snapshots for cached
+sensor-cloak reveals, team scanner passage, varied warp destinations/recharge,
+and a natural meltdown consuming all remaining turns. The readable research
+model and evidence verifier remain separate from Go gameplay implementation.
+
+[Hazard research](HAZARDS.md) adds 46 completed sessions and 92 snapshots for
+disruption warnings, mine-related scanner loss, post-damage low-hold automatic
+escape, and forced warp after the movement turn budget reaches zero.
+
+[Computer/faction research](UTILITIES.md) adds 23 completed sessions and 46
+snapshots for report ownership/access and turn costs, Mercenary recruitment,
+faction surrender refusal, forced combat and restricted fighter-menu warp escape.
+
+[Route-commerce/spies/radio research](COMMERCE_RADIO.md) adds 18 completed sessions,
+36 world snapshots and auxiliary file snapshots, including exact reconnect chains
+for session-only spies and unread-versus-history radio behavior.
+
 This is not complete navigation or scanning parity. Sector mines/fighter forces,
 cloaked-ship detection and danger-scanner failure probabilities, emergency warps,
 NPC encounters and utility/computer
