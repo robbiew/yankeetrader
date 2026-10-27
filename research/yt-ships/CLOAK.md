@@ -1,5 +1,7 @@
 # Persisted cloak and session visibility — 2026-10-27
 
+Follow-up: [player-facing fighter attacks](PLAYER_ATTACKS.md) now use these visibility APIs; pending-command statements below describe the original cloak milestone.
+
 ## Recovered rules and implementation
 
 [Ship recovery](RECOVERY.md#cloaking-and-anti-cloak) establishes new/replacement

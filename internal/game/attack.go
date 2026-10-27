@@ -7,8 +7,7 @@ import (
 )
 
 // AttackIntent binds confirmation to both ship incarnations and the encounter.
-// This is an internal foundation. A frontend must establish cloak visibility
-// before offering an intent; no public attack command uses this API yet.
+// Frontends must use visible candidates and recheck this intent on commit.
 type AttackIntent struct {
 	Attacker, Target, Sector             int
 	AttackerGeneration, TargetGeneration uint64
@@ -55,6 +54,9 @@ func (w *World) PrepareAttack(attacker, target int, fighters int64) (AttackInten
 	if err != nil {
 		return AttackIntent{}, err
 	}
+	if err := checkAttackAftermath(d); err != nil {
+		return AttackIntent{}, err
+	}
 	if fighters < 1 || fighters > a.Fighters {
 		return AttackIntent{}, errors.New("choose available fighters to commit")
 	}
@@ -87,6 +89,9 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	if d.Cloak > 0 && (visibility == nil || !visibility.sees(d)) {
 		return ShipDuelResult{}, errors.New("target ship is cloaked")
 	}
+	if err := checkAttackAftermath(d); err != nil {
+		return ShipDuelResult{}, err
+	}
 	if now.IsZero() || now.Before(w.Created) {
 		return ShipDuelResult{}, errors.New("invalid attack time")
 	}
@@ -100,10 +105,25 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	a.Fighters -= result.AttackerLosses
 	d.Fighters, d.Shields = result.DefenderFighters, result.DefenderShields
 	if result.Destroyed {
-		_, err = w.SettleShipSalvage(DeathContext{Victim: d.ID, Generation: d.ShipGeneration, Sector: d.Sector, Killer: a.ID, Cause: "combat"}, rng, now)
+		result.Salvage, err = w.SettleShipSalvage(DeathContext{Victim: d.ID, Generation: d.ShipGeneration, Sector: d.Sector, Killer: a.ID, Cause: "combat"}, rng, now)
 		if err != nil {
 			return ShipDuelResult{}, err
 		}
+		// Salvage consumes awarded mines first. Earth safely destroys the
+		// remainder; no duplicate stock can become a protected-spawn hazard.
+		if intent.Sector == 1 {
+			result.DisarmedMines = d.Mines
+			d.Mines = 0
+		}
 	}
 	return result, nil
+}
+
+// Minefield storage, explosions and chained deaths are not exposed yet.
+// Withhold unsupported encounters rather than silently omitting their aftermath.
+func checkAttackAftermath(target *Player) error {
+	if target.Sector != 1 && target.Mines > 0 {
+		return errors.New("mine-bearing targets outside Earth require minefield combat, which is not available yet")
+	}
+	return nil
 }
