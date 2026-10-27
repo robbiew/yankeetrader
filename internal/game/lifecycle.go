@@ -80,7 +80,7 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 }
 
 // RecordDeath applies generation invalidation and estate/access cleanup together.
-// Compose it with damage/awards inside one store Update. No attack command is enabled.
+// Compose it with damage/awards inside one store Update, as CommitVisibleAttack does.
 func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 	p, err := w.deathTarget(context, now)
 	if err != nil {

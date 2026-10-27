@@ -91,7 +91,7 @@ func SampleSalvage(victim Player, winnerHolds int64, rng func() float64) (Salvag
 
 // SettleShipSalvage commits loot, death, team revocation and estate changes
 // together. Call from the same store Update as final damage; return any error
-// from the callback so damage also rolls back. No attack command exposes it yet.
+// from the callback so damage also rolls back. CommitVisibleAttack uses this path.
 func (w *World) SettleShipSalvage(context DeathContext, rng func() float64, now time.Time) (Salvage, error) {
 	if context.Cause != "combat" && context.Cause != "retaliation" {
 		return Salvage{}, errors.New("salvage requires an enemy combat death")

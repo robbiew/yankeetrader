@@ -104,7 +104,7 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 `PATH` and `AUTO` honor your 30 private avoid slots, including the start and destination. For example, `AVOID 1 2` routes around sector 2; `AVOID 1 0` clears that preference. Manual `M` movement and sensors still work normally. Avoid edits cost no turns and persist across logins—an intentional improvement over the DOS session-only list. If a list edit makes a plotted course unsafe, autopilot stops before the next hop and keeps completed moves saved. Existing saves begin with an empty list.
 
-Sensors show actual public sector/ship data. Mines, deployed sector defenses, cloak detection, danger scanners and emergency warps remain outside this slice. The current Go world has no combat hazards.
+Sensors show actual public sector/ship data. Minefield combat, defense deployment, danger scanners and emergency warps remain outside this slice. Cloak detection and direct fighter attacks are implemented in the later milestones below. The current Go world has no combat hazards.
 
 The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
 
@@ -145,7 +145,7 @@ Port purchases cost `floor(sum of production / 10) + 1` credits and no turns. Bu
 
 Maintenance runs automatically at login as well. Days use **UTC**. On a new date it updates port supply, taxes ordinary port treasuries by `floor(treasury/10)`, restores players to 500 turns, and invalidates outstanding docking sessions. Repeating the command on the same day, or moving the clock backward, does not repeat daily phases. A missed interval gets at most ten days of port production; missing days do not accumulate extra player turns. Taxes run once when advancing the maintenance marker, not once for every missed day.
 
-Planet maintenance also produces stocks and weapons, grows rates and ground defenses, and pays bank interest. NPC actions, cloak decay, deletion, lottery, combat and other daily phases remain deferred.
+Planet maintenance also produces stocks and weapons, grows rates and ground defenses, and pays bank interest. NPC actions, deletion, lottery and other daily phases remain deferred. Cloak decay follows turn spending, rather than daily maintenance.
 
 ## Fidelity and deliberate changes
 
@@ -256,7 +256,7 @@ Leaving or removal immediately revokes shared landing sessions that no longer ha
 
 ## Combat preparation
 
-Combat and hazards remain disabled. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; attack commands and hazard aftermath remain pending. [Duel and settlement scope](research/yt-ships/DUELS.md).
+Confirmed direct fighter attacks are now available; minefield and sector-defense combat remain gated as described below. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; player-facing fighter attacks connect these operations, while minefield aftermath outside Earth remains pending. [Duel and settlement scope](research/yt-ships/DUELS.md).
 
 ## Loot and death-related ownership
 
@@ -264,9 +264,24 @@ Internal settlement samples holds, money and weapons separately, then chooses ca
 
 A new enemy death transfers ordinary ports with their treasuries intact. Self/environmental death releases those ports and clears their treasuries. Planets remain owned by the victim. Death removes team membership and revokes shared guarded-planet access; owned sector fighters become Mercenaries. Captured/released ports invalidate old docking agreements. Replacement preserves remaining turns and retained planets.
 
-Sector-defense state is available internally, with real sensor reports and hostile-warp blocking; no deployment/combat command is enabled. Default worlds have no deployed defenses. Attacks and minefield drops remain disabled. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
+Sector-defense state is available internally, with real sensor reports and hostile-warp blocking; no deployment/combat command is enabled. Default worlds have no deployed defenses. Direct fighter attacks are enabled for supported encounters. Minefield drops remain disabled; mine-bearing targets outside Earth are rejected until that aftermath is implemented. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
 
 Cloak energy persists per ship, decays by one percentage point when a spent turn
 leaves a multiple of 25 turns, and starts full on new/replacement ships. Legacy
 saves retain zero cloak. Sensor detection is private to each session and never
 drains the observed ship. See [cloak scope and validation](research/yt-ships/CLOAK.md).
+
+### Confirmed fighter attacks
+
+Use `ATTACK` to list visible local enemies and choose a ship number and committed
+fighters, or `ATTACK <ship number> <fighters>`. Classic main-menu `A` enters this
+dialog; the planet-menu `A` take-all binding is retained. A separate exact `Y`
+confirms one attack. Blank, N, Escape or disconnect cancels; stacked answers,
+queued keys and command-repeat syntax cannot supply approval. Fighters, defenses,
+loot and ownership save together, and direct fighter attacks spend no turns.
+
+Earth safely disposes of unsalvaged victim mines after loot is consumed once.
+Mine-bearing targets outside Earth are blocked at preparation and commit until
+minefield explosions/chained deaths are implemented. Other supported direct duels
+are available; missile attacks, counterfire and sector-defense combat remain
+separate. See [scope and validation](research/yt-ships/PLAYER_ATTACKS.md).

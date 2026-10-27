@@ -8,9 +8,11 @@ import (
 
 const maxDuelRounds = 1_000_000
 
-// ShipDuelResult describes only committed fighters and the defending ship.
-// Uncommitted fighters, turns, inventories and rewards are not mutated here.
+// ShipDuelResult describes committed fighters and the defending ship. Pure
+// calculations leave Salvage/DisarmedMines zero; attack settlement fills them.
 type ShipDuelResult struct {
+	Salvage                                      Salvage
+	DisarmedMines                                int64
 	Survivors, DefenderFighters, DefenderShields int64
 	AttackerLosses, DefenderLosses               int64
 	Rounds                                       int
