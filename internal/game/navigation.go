@@ -20,13 +20,14 @@ type SensorReport struct {
 }
 
 type SensorShip struct {
+	Revealed          bool
 	ID, Team          int
 	Alias             string
 	Fighters, Shields int64
 }
 
 // Scan observes outgoing adjacent sectors in warp order without spending a turn.
-func (w *World) Scan(id int) ([]SensorReport, error) {
+func (w *World) scanRaw(id int) ([]SensorReport, error) {
 	p, err := w.player(id)
 	if err != nil {
 		return nil, err

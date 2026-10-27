@@ -468,7 +468,7 @@ func (s Session) classicInfo(w *game.World, id int, pause bool) error {
 		cellText(cells, row, 45, 5, numberCell(right[row-14], 5))
 	}
 	cellText(cells, 19, 15, 12, "N/A")
-	cellText(cells, 20, 45, 5, "N/A")
+	cellText(cells, 20, 45, 5, fmt.Sprintf("%.0f%%", p.Cloak*100))
 	if !pause {
 		cellText(cells, 24, 1, 80, "")
 	}

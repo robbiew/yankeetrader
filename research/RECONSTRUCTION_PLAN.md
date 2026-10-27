@@ -26,7 +26,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
-4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Next implement target visibility and combat/retaliation, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Cloak persistence/session visibility and internal attack confirmation are implemented below. Next integrate frontend combat/retaliation, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -146,5 +146,17 @@ team and available force are rechecked before randomness; late settlement failur
 rolls back the entire attack under the store lock. Tests cover surviving duels,
 full kills, stale/replayed kills and concurrent confirmations. Player attacks
 remain disabled. [Scope and validation](yt-ships/ATTACKS.md).
-Next: cloak persistence and session visibility, followed by frontend confirmation
+Cloak persistence and session visibility are implemented below. Next: frontend confirmation
 and protected-spawn aftermath before enabling combat.
+
+## Cloak persistence and session visibility — 2026-10-27
+
+Version 6 stores finite cloak energy in [0,1]. New/replacement ships start full;
+legacy ships preserve their formerly uncloaked behavior. Movement and docking
+apply the recovered one-percent decay at remaining-turn multiples of 25. Sensors
+use strict RND > cloak detection and generation-bound session reveals without
+changing saved target energy. Classic and compact information screens show real
+cloak energy. Internal attack confirmation/commit filter current visibility and
+use the attacker's saved cloak advantage. [Scope and validation](yt-ships/CLOAK.md).
+Next: frontend attack confirmation and protected-spawn aftermath; anti-cloak
+purchases, recharge and full combat acceptance remain separate.

@@ -8,6 +8,7 @@ import (
 	"github.com/robbiew/yankeetrader/internal/store"
 	"github.com/robbiew/yankeetrader/internal/version"
 	"io"
+	prng "math/rand"
 	"strconv"
 	"strings"
 	"time"
@@ -142,6 +143,7 @@ type Session struct {
 }
 
 func (s Session) Run() (runErr error) {
+	var visibility *game.Visibility
 	defer func() {
 		if errors.Is(runErr, io.EOF) {
 			runErr = nil
@@ -422,6 +424,9 @@ func (s Session) Run() (runErr error) {
 				break
 			}
 			e = s.Terminal.Printf("%s: holds %d; ore %d; organics %d; equipment %d\r\nFighters %d; shields %d; ground forces %d\r\nMissiles %d; mines %d; plasma %d\r\n", p.Alias, p.Holds, p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma)
+			if e == nil {
+				e = s.Terminal.Printf("Cloak energy: %.0f%%\r\n", p.Cloak*100)
+			}
 		case "l", "look":
 			if s.Classic {
 				e = s.classicSector(w, id)
@@ -440,7 +445,12 @@ func (s Session) Run() (runErr error) {
 				e = errors.New("use S to scan adjacent sectors")
 			} else {
 				var reports []game.SensorReport
-				reports, e = w.Scan(id)
+				if visibility == nil {
+					visibility, e = w.NewVisibility(id)
+				}
+				if e == nil {
+					reports, e = w.ScanVisible(id, visibility, prng.Float64)
+				}
 				if e == nil {
 					e = showSensors(s.Terminal, reports)
 				}
@@ -817,6 +827,11 @@ func showSensors(t Terminal, reports []game.SensorReport) error {
 			}
 		}
 		for _, ship := range r.Ships {
+			if ship.Revealed {
+				if err := t.Printf("A cloaking field shimmers and fades.\r\n"); err != nil {
+					return err
+				}
+			}
 			if err := t.Printf("Ship: %s | Team: %d | Fighters: %d | Shields: %d\r\n", ship.Alias, ship.Team, ship.Fighters, ship.Shields); err != nil {
 				return err
 			}

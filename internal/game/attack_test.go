@@ -11,6 +11,7 @@ func TestAttackConfirmationRevalidatesBeforeRandomness(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			w, d, a := ownedPortWorld(t)
 			a.Sector = d.Sector
+			a.Cloak, d.Cloak = 0, 0
 			a.Fighters = 100
 			intent, err := w.PrepareAttack(a.ID, d.ID, 50)
 			if err != nil {
@@ -46,6 +47,7 @@ func TestAttackConfirmationRevalidatesBeforeRandomness(t *testing.T) {
 func TestAttackSelectionAndSurvivingDuel(t *testing.T) {
 	w, d, a := ownedPortWorld(t)
 	a.Sector = d.Sector
+	a.Cloak, d.Cloak = 0, 0
 	a.Fighters = 100
 	d.Fighters = 1000
 	d.Shields = 50

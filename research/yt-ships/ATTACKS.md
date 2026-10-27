@@ -1,7 +1,7 @@
 # Attack confirmation and transaction foundation — 2026-10-27
 
 `AttackCandidates`, `PrepareAttack` and `CommitAttack` connect the existing duel
-and settlement engines internally. There is still no player-facing attack command.
+and settlement engines internally. There is still no player-facing attack command. The subsequent [cloak milestone](CLOAK.md) adds persisted energy, visibility-aware APIs and commit-time target filtering; the zero-cloak-only limits below describe this original foundation.
 
 Candidates are live, different, local ships outside the attacker's positive team,
 sorted by player ID. They are **not** visibility-filtered targets: cloak energy

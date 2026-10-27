@@ -56,6 +56,14 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 5
 	}
+	if w.Version == 5 {
+		for _, p := range w.Players {
+			if p != nil && p.Cloak != 0 {
+				return errors.New("version-five world unexpectedly contains cloak energy")
+			}
+		}
+		w.Version = 6
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
