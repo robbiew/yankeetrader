@@ -34,6 +34,7 @@ func TestSensorsLocalPublicAndFree(t *testing.T) {
 	p.Turns = 0
 	other, _ := w.Join("secret-identity", "Visitor")
 	other.Sector, other.Fighters, other.Shields = 103, 42, 7
+	other.Cloak = 0
 	w.Sectors[100].Warps = []int{103, 101, 102}
 	w.Ports[101].Name = "Test Port"
 	w.Ports[101].Coefficient = [3]float64{-50, 50, -50}

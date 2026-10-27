@@ -74,6 +74,7 @@ jobs:
           python3 scripts/smoke_teams.py
           python3 scripts/smoke_lifecycle.py
           python3 scripts/smoke_salvage.py
+          python3 scripts/smoke_cloak.py
       - name: Cross-build Linux and Windows
         run: |
           mkdir -p ../artifacts

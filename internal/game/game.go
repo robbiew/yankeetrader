@@ -17,8 +17,9 @@ const MaxQuantity int64 = 1_000_000_000
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
-	ShipGeneration                                   uint64 `json:",omitempty"`
-	Death                                            *Death `json:",omitempty"`
+	Cloak                                            float64 `json:",omitempty"`
+	ShipGeneration                                   uint64  `json:",omitempty"`
+	Death                                            *Death  `json:",omitempty"`
 	ID                                               int
 	Identity, Alias                                  string
 	Sector                                           int
@@ -65,7 +66,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 5, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: 6, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -108,7 +109,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 5 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 6 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -138,6 +139,9 @@ func (w *World) Validate() error {
 			}
 		}
 
+		if math.IsNaN(p.Cloak) || math.IsInf(p.Cloak, 0) || p.Cloak < 0 || p.Cloak > 1 {
+			return errors.New("invalid cloak energy")
+		}
 		if p.Credits < 0 || p.Credits > MaxMoney || p.Turns < 0 || p.Turns > 500 || (p.Holds < 10 && p.Death == nil) || p.Holds < 0 || p.Holds > 1000 || p.Fighters < 0 || p.Fighters > MaxQuantity || p.Shields < 0 || p.Shields > MaxQuantity || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid player assets")
 		}
@@ -218,7 +222,7 @@ func (w *World) Join(identity, alias string) (*Player, error) {
 	if len(w.Players) >= 50 {
 		return nil, errors.New("all player slots are occupied")
 	}
-	p := &Player{ID: w.NextPlayer, Identity: identity, Alias: alias, Sector: 1, Credits: 1005, Turns: 500, Holds: 10, Fighters: 25}
+	p := &Player{Cloak: 1, ID: w.NextPlayer, Identity: identity, Alias: alias, Sector: 1, Credits: 1005, Turns: 500, Holds: 10, Fighters: 25}
 	w.NextPlayer++
 	w.Players[p.ID] = p
 	return p, nil
@@ -251,7 +255,7 @@ func (w *World) Move(id, to int) error {
 		return errors.New("no turns left today")
 	}
 	p.Sector = to
-	p.Turns--
+	p.spendTurn()
 	p.DockToken = ""
 	p.PlanetToken = ""
 	p.LandedPlanet = 0
@@ -289,7 +293,7 @@ func (w *World) Dock(id int, now time.Time) error {
 		return e
 	}
 	update(port, now)
-	p.Turns--
+	p.spendTurn()
 	p.PlanetToken = ""
 	p.LandedPlanet = 0
 	p.DockToken = hex.EncodeToString(token)

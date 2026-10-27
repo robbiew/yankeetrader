@@ -63,9 +63,15 @@ func (w *World) PrepareAttack(attacker, target int, fighters int64) (AttackInten
 
 // CommitAttack must run inside a store Update whose caller returns every error.
 // Final damage and salvage share that transaction, including failures during loot.
-// Cloak is not yet persisted; only the recovered zero-cloak duel is integrated.
+// The attacker's current persisted cloak supplies the recovered duel advantage.
 // Direct fighter duels do not trigger missile retaliation or consume turns.
 func (w *World) CommitAttack(intent AttackIntent, rng func() float64, now time.Time) (ShipDuelResult, error) {
+	return w.CommitVisibleAttack(intent, nil, rng, now)
+}
+
+// CommitVisibleAttack rechecks visibility inside the same transaction as damage.
+// Nil visibility only permits an uncloaked target; reveals never survive replacement.
+func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility, rng func() float64, now time.Time) (ShipDuelResult, error) {
 	a, d, err := w.attackPair(intent.Attacker, intent.Target)
 	if err != nil {
 		return ShipDuelResult{}, err
@@ -73,13 +79,21 @@ func (w *World) CommitAttack(intent AttackIntent, rng func() float64, now time.T
 	if a.Sector != intent.Sector || a.ShipGeneration != intent.AttackerGeneration || d.ShipGeneration != intent.TargetGeneration {
 		return ShipDuelResult{}, errors.New("attack confirmation is stale")
 	}
+	if visibility != nil {
+		if err := w.checkVisibility(intent.Attacker, visibility); err != nil {
+			return ShipDuelResult{}, err
+		}
+	}
+	if d.Cloak > 0 && (visibility == nil || !visibility.sees(d)) {
+		return ShipDuelResult{}, errors.New("target ship is cloaked")
+	}
 	if now.IsZero() || now.Before(w.Created) {
 		return ShipDuelResult{}, errors.New("invalid attack time")
 	}
 	if intent.Fighters < 1 || intent.Fighters > a.Fighters {
 		return ShipDuelResult{}, errors.New("committed fighters are no longer available")
 	}
-	result, err := ResolveShipDuel(intent.Fighters, d.Fighters, d.Shields, 0, rng)
+	result, err := ResolveShipDuel(intent.Fighters, d.Fighters, d.Shields, a.Cloak, rng)
 	if err != nil {
 		return ShipDuelResult{}, err
 	}

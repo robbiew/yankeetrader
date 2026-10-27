@@ -114,6 +114,7 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 	}
 	p.ShipGeneration++
 	p.Death = nil
+	p.Cloak = 1
 	p.Sector = 1
 	p.Credits, p.Holds, p.Fighters, p.Shields = 1005, 10, 25, 100
 	p.Ground = 0

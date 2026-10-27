@@ -19,6 +19,8 @@ func TestConfirmedAttackSettlesOnceAndRollsBackLootFailure(t *testing.T) {
 					return err
 				}
 				a.Fighters = 100
+				a.Cloak = 0
+				w.Players[1].Cloak = 0
 				d := w.Players[1]
 				d.Fighters = 1
 				d.Shields = 1
@@ -86,6 +88,8 @@ func TestConcurrentConfirmedKillsHaveOneWinner(t *testing.T) {
 			return err
 		}
 		a.Fighters = 100
+		a.Cloak = 0
+		w.Players[1].Cloak = 0
 		w.Players[1].Fighters = 1
 		w.Players[1].Shields = 1
 		intent, err = w.PrepareAttack(a.ID, 1, 10)
