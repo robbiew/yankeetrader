@@ -137,3 +137,14 @@ world version 5; supported older saves upgrade without replaying past deaths.
 Model/conservation/concurrency/rollback tests and separate-process PTY validation
 cover this backend milestone. [Scope and deliberate limits](yt-ships/SETTLEMENT.md).
 Next: attack eligibility/confirmation and aftermath integration before enabling combat.
+
+## Attack confirmation and transaction foundation — 2026-10-27
+
+Internal attack candidates, generation-bound preparation and commit now connect
+zero-cloak duels with full inventory/estate settlement. Current location, life,
+team and available force are rechecked before randomness; late settlement failure
+rolls back the entire attack under the store lock. Tests cover surviving duels,
+full kills, stale/replayed kills and concurrent confirmations. Player attacks
+remain disabled. [Scope and validation](yt-ships/ATTACKS.md).
+Next: cloak persistence and session visibility, followed by frontend confirmation
+and protected-spawn aftermath before enabling combat.
