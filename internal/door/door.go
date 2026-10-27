@@ -306,6 +306,10 @@ func (s Session) Run() (runErr error) {
 					return err
 				}
 				cmd, args = "avoid", []string{slot, sector}
+			case "12", "treasury":
+				cmd = "treasury"
+			case "$", "collect":
+				cmd = "collect"
 			default:
 				if cmd != "?" && cmd != "help" {
 					if err := s.Terminal.Printf("That computer function is not available yet.\r\n"); err != nil {
@@ -356,7 +360,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -654,6 +658,24 @@ func (s Session) Run() (runErr error) {
 						}
 					}
 				}
+			}
+		case "b", "buyport", "acquire":
+			if len(args) != 0 {
+				e = errors.New("use ACQUIRE at the port you want to buy")
+			} else {
+				e = s.buyPort(id, &pending)
+			}
+		case "treasury":
+			if len(args) != 0 {
+				e = errors.New("use TREASURY")
+			} else {
+				e = s.portTreasuryReport(id)
+			}
+		case "$", "collect":
+			if len(args) != 0 {
+				e = errors.New("use COLLECT")
+			} else {
+				e = s.collectPortTreasury(id)
 			}
 		case "buy", "sell":
 			var q int64
