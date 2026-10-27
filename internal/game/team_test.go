@@ -311,6 +311,9 @@ func TestCaptainCanRemoveDestroyedMemberAndReuseRosterSlot(t *testing.T) {
 	if err = w.RecordDeath(DeathContext{Victim: victim.ID, Generation: victim.ShipGeneration, Sector: victim.Sector, Killer: enemy.ID, Cause: "combat"}, clock); err != nil {
 		t.Fatal(err)
 	}
+	// Legacy version-4 dead accounts could retain membership. Keep that
+	// compatibility regression even though new deaths remove it immediately.
+	victim.Team = 1
 	if err = w.JoinTeam(applicant.ID, 1, "ABCD"); err == nil {
 		t.Fatal("full team accepted another member")
 	}
@@ -333,8 +336,8 @@ func TestCaptainCanRemoveDestroyedMemberAndReuseRosterSlot(t *testing.T) {
 	if !reflect.DeepEqual(*victim, frozen) {
 		t.Fatal("removal changed frozen ship or death attribution")
 	}
-	if w.Ports[2].Owner != victim.ID || w.Ports[2].Treasury != 777 {
-		t.Fatal("removal confiscated personal assets")
+	if w.Ports[2].Owner != enemy.ID || w.Ports[2].Treasury != 777 {
+		t.Fatal("membership removal changed the already settled estate")
 	}
 	if err = w.JoinTeam(applicant.ID, 1, "ABCD"); err != nil {
 		t.Fatal("removed member still occupied roster slot", err)

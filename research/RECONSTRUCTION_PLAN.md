@@ -26,7 +26,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
-4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. Next implement the recovered loot/estate rules alongside target visibility and combat/retaliation, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Next implement target visibility and combat/retaliation, protected-spawn drop rules and sector defenses before enabling attacks or dangerous sectors; then NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -125,4 +125,15 @@ planet retention, Mercenary defense conversion and team removal. A chained
 attacker death confirms the self-attributed port-release branch. Cached-count,
 MBF, hazard and unsuccessful-probe boundaries are explicit. Eight REA observations
 are checked against independently relocated original bytes. [Findings and replay](yt-ships/LOOT.md).
-Next implement complete atomic inventory/estate settlement; gameplay remains disabled.
+Complete atomic inventory/estate settlement is implemented in the following milestone; player attacks remain disabled.
+
+## Atomic loot and estate settlement — 2026-10-27
+
+The recovered sampler now awards and consumes holds, cash, weapons and cargo in
+one death transaction. Ordinary-port titles/treasuries, team/access revocation,
+planet retention and Mercenary defense conversion share that transaction. Exact
+integer sampling avoids MBF balance rounding. New optional defense state uses
+world version 5; supported older saves upgrade without replaying past deaths.
+Model/conservation/concurrency/rollback tests and separate-process PTY validation
+cover this backend milestone. [Scope and deliberate limits](yt-ships/SETTLEMENT.md).
+Next: attack eligibility/confirmation and aftermath integration before enabling combat.

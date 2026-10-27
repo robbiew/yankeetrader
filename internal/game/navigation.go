@@ -7,14 +7,16 @@ import (
 
 // SensorReport contains only public, local observations, never account or session data.
 type SensorReport struct {
-	Sector     int
-	Warps      []int
-	PortID     int
-	PortName   string
-	Selling    []string
-	PlanetName string
-	Ground     int64
-	Ships      []SensorShip
+	Sector          int
+	Warps           []int
+	PortID          int
+	PortName        string
+	Selling         []string
+	PlanetName      string
+	Ground          int64
+	DefenseFighters int64
+	DefenseOwner    string
+	Ships           []SensorShip
 }
 
 type SensorShip struct {
@@ -43,6 +45,19 @@ func (w *World) Scan(id int) ([]SensorReport, error) {
 		}
 		if planet := w.Planets[s.Planet]; planet != nil {
 			r.PlanetName, r.Ground = planet.Name, planet.Ground
+		}
+		if d := s.Defense; d != nil {
+			r.DefenseFighters = d.Fighters
+			switch d.Owner {
+			case MercenaryOwner:
+				r.DefenseOwner = "Mercenaries"
+			case XannorOwner:
+				r.DefenseOwner = "Xannor"
+			default:
+				if owner := w.Players[d.Owner]; owner != nil {
+					r.DefenseOwner = owner.Alias
+				}
+			}
 		}
 		for _, other := range w.Players {
 			if other.ID != id && other.Sector == target {

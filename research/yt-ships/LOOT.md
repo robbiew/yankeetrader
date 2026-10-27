@@ -194,3 +194,9 @@ limits, fractional or corrupt inventory, equipment-limit overflow, exact RNG/MBF
 replay, statistical distributions, explicit suicide, enemy retaliation combined
 with estate cleanup, live-BBS acceptance and the complete cooperative farming
 chain. No production attack or hazard command is enabled by this research.
+
+### Subsequent implementation — 2026-10-27
+
+[Atomic loot/estate settlement](SETTLEMENT.md) now supersedes the temporary
+retained-port/team policy and the pending sampler described in this milestone.
+It uses world version 5. Player attacks and minefield aftermath remain disabled.

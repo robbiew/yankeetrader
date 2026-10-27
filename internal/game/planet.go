@@ -48,6 +48,14 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 4
 	}
+	if w.Version == 4 {
+		for _, s := range w.Sectors {
+			if s != nil && s.Defense != nil {
+				return errors.New("version-four world unexpectedly contains sector defenses")
+			}
+		}
+		w.Version = 5
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
