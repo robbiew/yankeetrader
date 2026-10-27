@@ -28,6 +28,18 @@ func (w *World) Upgrade() error {
 		w.Planets = map[int]*Planet{}
 		w.Version = 2
 	}
+	if w.Version == 2 {
+		if len(w.Teams) != 0 {
+			return errors.New("version-two world unexpectedly contains teams")
+		}
+		for _, p := range w.Players {
+			if p != nil && p.Team != 0 {
+				return errors.New("legacy team membership has no team metadata; refusing to invent invitations or captains")
+			}
+		}
+		w.Teams = map[int]*Team{}
+		w.Version = 3
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
@@ -109,7 +121,7 @@ func (w *World) allowed(p *Player, planet *Planet) bool {
 		return true
 	}
 	owner := w.Players[planet.Owner]
-	return owner != nil && p.Team != 0 && p.Team == owner.Team
+	return owner != nil && p.Team != 0 && w.Teams[p.Team] != nil && p.Team == owner.Team
 }
 func (w *World) Land(id int, now time.Time) error {
 	p, e := w.player(id)

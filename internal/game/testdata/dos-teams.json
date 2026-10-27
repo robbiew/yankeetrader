@@ -1,0 +1,590 @@
+[
+  {
+    "Name": "team-create-confirm",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 0,
+      "Roster": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-join",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-wrong",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-full",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-quit",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-banish",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-member-privilege",
+    "Actor": 3,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-password",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-last",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 0,
+      "Roster": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-promote",
+    "Actor": 3,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-rejoin",
+    "Actor": 3,
+    "Before": {
+      "Members": {
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-successor",
+    "Actor": 3,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 2,
+      "Roster": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-short-name",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 0,
+      "Roster": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 0,
+      "Roster": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  },
+  {
+    "Name": "team-lowercase",
+    "Actor": 2,
+    "Before": {
+      "Members": {
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    },
+    "After": {
+      "Members": {
+        "2": 1,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "Captain": 3,
+      "Roster": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "Name": "Orion",
+      "Credits": 100000,
+      "Turns": 500
+    }
+  }
+]

@@ -1,0 +1,159 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > create Home;land;bank 1000;leave;team;2;Orion
+Planet created for 25000 credits. Use LAND to visit.
+Planet Home | governor 1 | garrison 1 | bank 0 credits
+Production: ore 1, organics 1, equipment 1 per day
+Warehouses: ore 10, organics 10, equipment 10
+Fighters 30 | missiles 0 | mines 0 | plasma 0
+Planet account/production/garrison saved.
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team Command? Team name? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+4) Quit a Team
+5) Search for Team Members & Resources
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? 1;q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Member. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > team;3;1
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team 1: Orion (1/4 members)
+Team Command? Team number? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+2: Member (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+Team Command? 1;land;bank 0;leave;treasury;q
+Planet Home | governor 1 | garrison 1 | bank 1000 credits
+Production: ore 1, organics 1, equipment 1 per day
+Warehouses: ore 10, organics 10, equipment 10
+Fighters 30.0001 | missiles 1.95937e-07 | mines 7.83749e-08 | plasma 7.83749e-10
+Planet account/production/garrison saved.
+You don't OWN any ports!!!
+Saved. Safe travels, Member.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 74000 credits | 500 turns > team;7;2;y;1;q
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+2: Member (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? Member number to remove? Remove this member (Y/[N])? Done. Now change your Team Password! Removal does not prevent rejoining.
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+4) Quit a Team
+5) Search for Team Members & Resources
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Member. Actions save automatically. Type ? for help.
+
+Sector 1 | 2005 credits | 500 turns > land;q
+permission to land is denied by ground defenses
+Saved. Safe travels, Member.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Member. Actions save automatically. Type ? for help.
+
+Sector 1 | 2005 credits | 500 turns > team;3;1
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team 1: Orion (1/4 members)
+Team Command? Team number? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+2: Member (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+Team Command? 1;q
+Saved. Safe travels, Member.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 74000 credits | 500 turns > team;4;y;1;collect;q
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+2: Member (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? Quit your team (Y/[N])? Team change saved.
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team 1: Orion (1/4 members)
+Team Command? Collected 777 credits from your port treasuries.
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Member. Actions save automatically. Type ? for help.
+
+Sector 1 | 2005 credits | 500 turns > team;1;q
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+2: Member (captain)
+4) Quit a Team
+5) Search for Team Members & Resources
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? Saved. Safe travels, Member.

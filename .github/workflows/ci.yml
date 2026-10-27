@@ -50,6 +50,8 @@ jobs:
           python3 scripts/verify_navigation_evidence.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py
+          python3 scripts/verify_team_evidence.py
+          python3 scripts/verify_ownership_evidence.py
           python3 scripts/verify_archive.py
       - name: Build and exercise real terminal sessions
         run: |
@@ -65,6 +67,8 @@ jobs:
           python3 scripts/smoke_planet_rename.py --ascii
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke.py
+          python3 scripts/smoke_ownership.py
+          python3 scripts/smoke_teams.py
       - name: Cross-build Linux and Windows
         run: |
           mkdir -p ../artifacts

@@ -166,6 +166,8 @@ func TestPortPurchasePreviewReplayAndDockInvalidation(t *testing.T) {
 func TestPersonalPortCollectionConservationAndOverflow(t *testing.T) {
 	w, buyer, seller := ownedPortWorld(t)
 	buyer.Team, seller.Team = 7, 7
+	hash, _ := hashTeamPassword("ABCD")
+	w.Teams[7] = &Team{ID: 7, Name: "Team", Captain: buyer.ID, PasswordHash: hash}
 	w.Ports[2].Owner = buyer.ID
 	w.Ports[3].Owner, w.Ports[3].Treasury = buyer.ID, 333
 	w.Ports[4].Owner, w.Ports[4].Treasury = seller.ID, 999
