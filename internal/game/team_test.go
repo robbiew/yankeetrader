@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"reflect"
 	"strings"
 	"testing"
 )
@@ -278,5 +279,76 @@ func TestTeamValidationAndPasswordFailures(t *testing.T) {
 				t.Fatal("invalid team state accepted")
 			}
 		})
+	}
+}
+
+func TestCaptainCanRemoveDestroyedMemberAndReuseRosterSlot(t *testing.T) {
+	w, captain := setup(t)
+	if err := w.CreateTeam(captain.ID, "Orion", "ABCD"); err != nil {
+		t.Fatal(err)
+	}
+	var members []*Player
+	for i := 0; i < 3; i++ {
+		member, err := w.Join(fmt.Sprintf("member:%d", i), fmt.Sprintf("Member%d", i))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err = w.JoinTeam(member.ID, 1, "ABCD"); err != nil {
+			t.Fatal(err)
+		}
+		members = append(members, member)
+	}
+	victim := members[0]
+	w.Ports[2].Owner, w.Ports[2].Treasury = victim.ID, 777
+	enemy, err := w.Join("enemy", "Enemy")
+	if err != nil {
+		t.Fatal(err)
+	}
+	applicant, err := w.Join("applicant", "Applicant")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err = w.RecordDeath(DeathContext{Victim: victim.ID, Generation: victim.ShipGeneration, Sector: victim.Sector, Killer: enemy.ID, Cause: "combat"}, clock); err != nil {
+		t.Fatal(err)
+	}
+	if err = w.JoinTeam(applicant.ID, 1, "ABCD"); err == nil {
+		t.Fatal("full team accepted another member")
+	}
+	frozen := *victim
+	frozenDeath := *victim.Death
+	frozen.Death = &frozenDeath
+	if err = w.BanishTeamMember(members[1].ID, 1, victim.ID); err == nil {
+		t.Fatal("ordinary member removed destroyed teammate")
+	}
+	if err = w.BanishTeamMember(captain.ID, 1, 99); err == nil {
+		t.Fatal("missing target accepted")
+	}
+	if err = w.BanishTeamMember(captain.ID, 1, enemy.ID); err == nil {
+		t.Fatal("nonmember target accepted")
+	}
+	if err = w.BanishTeamMember(captain.ID, 1, victim.ID); err != nil {
+		t.Fatal("captain could not remove destroyed member", err)
+	}
+	frozen.Team = 0
+	if !reflect.DeepEqual(*victim, frozen) {
+		t.Fatal("removal changed frozen ship or death attribution")
+	}
+	if w.Ports[2].Owner != victim.ID || w.Ports[2].Treasury != 777 {
+		t.Fatal("removal confiscated personal assets")
+	}
+	if err = w.JoinTeam(applicant.ID, 1, "ABCD"); err != nil {
+		t.Fatal("removed member still occupied roster slot", err)
+	}
+	if len(w.ListTeams()[0].Members) != 4 {
+		t.Fatal("incorrect roster capacity")
+	}
+	if err = w.ReplaceShip(victim.ID, clock); err != nil {
+		t.Fatal(err)
+	}
+	if victim.Team != 0 {
+		t.Fatal("replacement restored removed membership")
+	}
+	if err = w.Validate(); err != nil {
+		t.Fatal(err)
 	}
 }

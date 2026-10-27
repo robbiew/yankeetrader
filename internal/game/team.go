@@ -197,9 +197,10 @@ func (w *World) BanishTeamMember(id, teamID, target int) error {
 	if _, err := w.teamCaptain(id, teamID); err != nil {
 		return err
 	}
-	p, err := w.player(target)
-	if err != nil {
-		return err
+	// Removal concerns account membership; the target need not have a live ship.
+	p := w.Players[target]
+	if p == nil {
+		return errors.New("player no longer exists")
 	}
 	if target == id || p.Team != teamID {
 		return errors.New("select another current team member")
