@@ -333,3 +333,24 @@ func TestRetaliationUsesOriginalAttackersStoredScore(t *testing.T) {
 		t.Fatal("return fire changed observation cache")
 	}
 }
+
+func TestMissileReturnPathUnsupportedDefensesRejectedBeforeSpending(t *testing.T) {
+	for _, mode := range []string{"planet", "fighters"} {
+		t.Run(mode, func(t *testing.T) {
+			w, a, _, v := missileWorld(t)
+			if mode == "planet" {
+				w.Sectors[a.Sector].Planet = 2
+			} else {
+				w.Sectors[a.Sector].Defense = &SectorDefense{Owner: a.ID, Fighters: 100}
+			}
+			before, _ := json.Marshal(w)
+			if _, err := w.PrepareMissile(a.ID, 2, 1, v); err == nil {
+				t.Fatal("unsupported return path")
+			}
+			after, _ := json.Marshal(w)
+			if string(before) != string(after) {
+				t.Fatal("return-path rejection spent resources")
+			}
+		})
+	}
+}
