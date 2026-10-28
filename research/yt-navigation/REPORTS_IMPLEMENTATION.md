@@ -30,13 +30,16 @@ Reports preserve position, ship assets, docking/landing state and stored
 economic state, except the documented blocked-query turn charge. Port and full
 planet growth is projected on value copies using existing economic rules.
 Projected prices are information; docking still supplies the binding quote.
-Private reports do not calculate or return hidden inventory/bank fields.
+Private reports do not return hidden inventory/bank fields.
 
 ## Explicit policies and boundaries
 
 Current team access reuses the modern planet landing policy, including immediate
 revocation when membership changes. The DOS utility suite did not establish team
 report behavior. Personal finders remain personal regardless of team membership.
+Ground-force growth is projected before checking access, so regenerated foreign
+defenses protect inventory and bank details even when the stored ground count is
+zero. The projected public ground count is shown without changing stored assets.
 Each input prompt is followed by a fresh authoritative read/update, so ownership,
 sector defenses and ship generation are rechecked before disclosure or charging.
 
@@ -51,7 +54,9 @@ from the local terminal evidence.
 `internal/game/reports_test.go` covers accessible/private/missing/blocked reports,
 team policy, price and growth projections, no live-state aliases, invalid input,
 zero-turn rejection, and personal finder filtering. Store tests cover competing
-last-turn queries and transaction rollback. Door tests exercise classic numeric
+last-turn queries and transaction rollback. A regenerated-ground regression
+checks private, personal, team and unowned reports without saved-state changes.
+Door tests exercise classic numeric
 and compact dispatch, cancellation, private output and an ownership change while
 the sector prompt waits.
 

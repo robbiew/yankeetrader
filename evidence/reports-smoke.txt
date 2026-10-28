@@ -85,7 +85,7 @@ Time: 179:59  Main Command (?=Help)? c;2;2;9;3;13;1;q;y
 
 <Computer activated>
 Enter sector number port is in -=> 
-Commerce report for Trading Post: 10-28-2026 10:41:15
+Commerce report for Trading Post: 10-28-2026 12:16:09
 
  Items         Status      # units    in holds   Cost
 =======       =========   =========   ========   ====
@@ -137,15 +137,23 @@ Planet: Private World
 
  Item           Production     Amount    In Holds
 =============  ============   ========  ==========
-Ore..........          988          4           0
-Organics.....          495          5           0
-Equipment....          332          6           0
-Fighters.....        19759          1          25
-Missiles.....           98          0           0
-Mines........           39          0           0
-Credits......        98765    9876548        1005
-Forces.......          987          0           0
+Ore..........            1          4           0
+Organics.....            2          5           0
+Equipment....            3          6           0
+Fighters.....            6          0          25
+Missiles.....            0          0           0
+Mines........            0          0           0
+Credits......            0          0        1005
+Forces.......            0          0           0
 Plasma bolts.            0          0           0
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > planetreport 3;q
+
+Planet: Private World -*- Ground Forces: 987
 Saved. Safe travels, Caller.
 [c
 Yankee Trader: Resurrection 0.1.0

@@ -73,12 +73,11 @@ func (w *World) RemotePlanetReport(id, sector int, now time.Time) (PlanetReport,
 	if planet == nil {
 		return PlanetReport{}, nil
 	}
-	report := PlanetReport{Available: true, Name: planet.Name, Ground: planet.Ground}
-	if planet.Owner == 0 || w.allowed(p, planet) {
-		projected := *planet
-		projected.update(now, true)
+	projected := *planet
+	projected.update(now, true)
+	report := PlanetReport{Available: true, Name: projected.Name, Ground: projected.Ground}
+	if projected.Owner == 0 || w.allowed(p, &projected) {
 		report.Details = &projected
-		report.Ground = projected.Ground
 	}
 	return report, nil
 }

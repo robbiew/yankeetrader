@@ -172,6 +172,40 @@ func TestRemotePlanetReportTeamAccessRevokedImmediately(t *testing.T) {
 	}
 }
 
+func TestRemotePlanetReportChecksRegeneratedGroundBeforeDisclosure(t *testing.T) {
+	for _, access := range []string{"foreign", "owner", "team", "unowned"} {
+		t.Run(access, func(t *testing.T) {
+			w, p, owner := reportWorld(t)
+			w.Planets[2].Ground = 0
+			switch access {
+			case "owner":
+				w.Planets[2].Owner = p.ID
+			case "team":
+				p.Team, owner.Team = 1, 1
+				w.Teams[1] = &Team{ID: 1}
+			case "unowned":
+				w.Planets[2].Owner = 0
+			}
+			before, _ := json.Marshal(w)
+			r, err := w.RemotePlanetReport(p.ID, 102, w.Created.Add(24*time.Hour))
+			if err != nil || !r.Available || r.Ground != 1 {
+				t.Fatalf("regenerated public ground: %+v, %v", r, err)
+			}
+			if access == "foreign" {
+				if r.Details != nil {
+					t.Fatal("regenerated foreign defenses did not protect bank/inventory")
+				}
+			} else if r.Details == nil || r.Details.Ground != 1 {
+				t.Fatal("accessible report lost projected details")
+			}
+			after, _ := json.Marshal(w)
+			if string(before) != string(after) {
+				t.Fatal("permission projection changed the stored world")
+			}
+		})
+	}
+}
+
 func TestOwnPlanetFinderDoesNotIncludeTeamOrForeignPlanets(t *testing.T) {
 	w, p, enemy := reportWorld(t)
 	w.Planets[2].Owner = p.ID
