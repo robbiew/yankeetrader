@@ -326,3 +326,15 @@ spreads rather than ship earnings. Four-entry pages refresh after input.
 No save-format change is needed. Rankings, communications, spies, newspaper,
 NPC behavior and Genesis remain separate milestones.
 [Recovered evidence, policies and validation](yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
+
+
+## Direct radio and message history — implementation
+
+Computer `5` sends one confirmed direct radio line; computer `6` displays the
+caller's sent and received history. Compact commands are `RADIO`, `MESSAGES`,
+and `INBOX`. Save version 11 retains account-level messages and per-recipient
+unread state. Delivery acknowledges only successful output; retrying one draft
+cannot duplicate it. This implements the recovered one-line send/abort and
+retained-history slice. Broadcast/team routing and the DOS multiline editor
+remain unimplemented, alongside rankings, spies, newspaper, NPCs and Genesis.
+[Evidence boundaries, storage policies and validation](yt-navigation/RADIO_IMPLEMENTATION.md).

@@ -37,14 +37,13 @@ line for Ctrl-R replay; `/R2` through `/R20` repeat a command.
 In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
 sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
-The computer connects options 2 (port report), 3 (autopilot), 7 (avoid slots),
+The computer connects options 2 (port report), 3 (autopilot), 5 (send radio), 6 (message history), 7 (avoid slots),
 9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
 12 (port treasuries), 13 (your planets), 14 (nearest ports), 16 (port pairs),
 and 17 (adjacent-port trade forecasts) to the implemented game rules.
 
 The original menus and manual include features still under reconstruction.
-Selecting an unavailable action says so; radio, scanner and cloak values are
-not fabricated. Ship balances and inventory come from the current Go world,
+Selecting an unavailable action says so; unavailable scanner values are not fabricated. Ship balances and inventory come from the current Go world,
 including its existing deliberate differences from DOS starting equipment.
 The startup screens identify this project as Yankee Trader: Resurrection
 0.1.0, say “Original game by Alan Davenport” and “Based on Yankee Trader
@@ -99,6 +98,9 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `TREASURY` / computer `C`, `12` | Report personally owned port balances |
 | `PORTREPORT [sector]` / computer `C`, `2` | Remote ordinary-port commerce report; free |
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
+| `RADIO [alias or player number]` / computer `C`, `5` | Compose a direct message, confirm recipient, then Send or Abort; free |
+| `MESSAGES` / computer `C`, `6` | Your sent and received message history; free |
+| `INBOX` | Unread received messages; free |
 | `MYPLANETS` / computer `C`, `13` | List personally owned planets and sectors; free |
 | `NEAREST [all\|own\|team\|enemy\|unowned]` / computer `C`, `14` | Nearest accessible ordinary ports, with directed warp distances; free |
 | `NEAREST <ore\|organics\|equipment> <buy\|sell>` | Filter nearest ports by **your** trade action |
@@ -109,6 +111,22 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
 | `LEAVE` | Leave port |
 | `Q` or Escape | Exit |
+
+Direct radio accepts one printable ASCII line of up to 74 characters. Confirm a
+recipient alias or player number, enter the body, then choose `S` to send or `A`
+to abort. Message text and Send/Abort are separate inputs: semicolons and a
+trailing slash in the body stay literal. Sender and recipient can read saved
+history in five-message pages; other players cannot. Aliases are saved with the
+message, and account history survives ship replacement. Sending costs no turns
+or assets and works for offline recipients.
+
+Unread messages appear at login and between commands, up to five per check;
+`INBOX` reads the rest. A message becomes read only after successful terminal
+output. A disconnect or simultaneous sessions can cause a repeated notification;
+read messages remain in history, and senders receive no read receipts. The world
+retains at most 4,096 messages and refuses new sends at capacity without deleting
+history. Broadcast/team delivery and the DOS multiline editor remain open.
+See [radio scope and validation](research/yt-navigation/RADIO_IMPLEMENTATION.md).
 
 Sensors work even when no turns remain. `AUTO` asks before moving; an empty answer cancels. You can stack the response, for example `PATH 1 3; AUTO 3; Y; I`. Ctrl-X stops autopilot between hops. Every completed hop saves immediately and remains spent after interruption or disconnect. Courses stop if another session changes your position or leaves too few turns. See [navigation recovery and DOS comparisons](research/yt-navigation/RECOVERY.md).
 
@@ -207,7 +225,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 10 for persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 10. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 11 for saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 11. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -269,7 +287,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-9 worlds upgrade to version 10 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-10 worlds upgrade to version 11 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -331,7 +349,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 10; follow the stopped-world
+Earth remains free of mines. This build now uses save version 11; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the

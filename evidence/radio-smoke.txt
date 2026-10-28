@@ -1,0 +1,172 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio Enemy;y;ignored;s
+Send to Enemy (#2)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): YT RADIO PROBE; literal/
+To: Enemy (#2)
+YT RADIO PROBE; literal/
+[S] Send [A] Abort -=> s
+Transmission successful! Message #1 saved.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #1 | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+YT RADIO PROBE; literal/
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Visitor. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+No matching radio messages.
+Saved. Safe travels, Visitor.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Enemy. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #1 [NEW] | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+YT RADIO PROBE; literal/
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #1 | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+YT RADIO PROBE; literal/
+Saved. Safe travels, Enemy.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Enemy. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Enemy.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio Enemy;y
+Send to Enemy (#2)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): ABORTED PROBE
+To: Enemy (#2)
+ABORTED PROBE
+[S] Send [A] Abort -=> a
+Radio cancelled.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #1 | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+YT RADIO PROBE; literal/
+Saved. Safe travels, Sender.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Sender!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Sender
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+Time: 179:59  Main Command (?=Help)? c;5;Enemy;y
+
+<Computer activated>
+Send a message to who? (alias search or player number) Send to Enemy (#2)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): CLASSIC RADIO PROBE
+To: Enemy (#2)
+CLASSIC RADIO PROBE
+[S] Send [A] Abort -=> s
+Transmission successful! Message #2 saved.
+
+Time: 179:59  Computer command (?=help)? 6;1;q;y
+
+Radio #1 | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+YT RADIO PROBE; literal/
+
+Radio #2 | 2026-10-28 20:07 UTC
+Message to: Enemy * From: Sender
+CLASSIC RADIO PROBE
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Sender.

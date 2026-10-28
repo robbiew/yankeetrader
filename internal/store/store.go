@@ -147,7 +147,16 @@ func (s Store) View() (*game.World, error) {
 	return w, err
 }
 
-// ResolveMines is the only bound-session update allowed to start in a minefield.
+// AcknowledgeRadio only changes this bound recipient's read flag. This metadata
+// update remains available during an encounter without opening a mutation bypass.
+func (s Store) AcknowledgeRadio(messageID uint64) error {
+	if s.ship == nil {
+		return errors.New("radio acknowledgement requires a bound ship session")
+	}
+	return s.update(func(w *game.World) error { return w.AcknowledgeRadio(s.ship.id, messageID) }, true, true)
+}
+
+// ResolveMines is the bound-session entry point for resolving a minefield.
 // Death is saved successfully before the caller observes its invalid generation.
 func (s Store) ResolveMines(now time.Time, rng func() float64) (game.MineOutcome, error) {
 	if s.ship == nil {

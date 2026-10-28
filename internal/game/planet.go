@@ -96,6 +96,13 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 10
 	}
+	if w.Version == 10 {
+		if len(w.Radio) != 0 || w.NextRadio != 0 {
+			return errors.New("version-ten world unexpectedly contains radio state")
+		}
+		w.NextRadio = 1
+		w.Version = 11
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
