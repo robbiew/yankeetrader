@@ -339,3 +339,30 @@ cannot duplicate it. This implements the recovered one-line send/abort and
 retained-history slice. Broadcast/team routing and the DOS multiline editor
 remain unimplemented, alongside rankings, spies, newspaper, NPCs and Genesis.
 [Evidence boundaries, storage policies and validation](yt-navigation/RADIO_IMPLEMENTATION.md).
+
+## Player/team rankings and score generation — research
+
+27 controlled DOS sessions establish scoreboard entry/OLD/updated behavior,
+asset weights, persisted score updates, deployed fighter attribution, summed
+team scores, zero/dead-player rows and stable player ties. The port-count pair
+confirms that DOS trusts a stale cached count instead of current titles; the
+Go implementation should recount authoritative ownership. Existing missile
+retaliation consumes the stored score, so cache-publication timing must be
+specified before wiring rankings. Go gameplay remains unchanged in this slice.
+Next: implement supported player/team rankings and coherent score-cache updates,
+with checked arithmetic, explicit zero-score rules and current ownership/team
+membership. Multiteam percentage semantics and nonzero NPC rankings remain
+unverified. [Findings, evidence and reproduction](yt-rankings/RECOVERY.md).
+
+
+## Player/team rankings — implementation
+
+Computer `4`, `RANK`, and `RANK OLD` now expose real supported asset totals,
+current team sums, authoritative port ownership and personal sector defenses.
+An explicit update publishes all score caches atomically; OLD uses stored
+scores with current public labels and counts. Zero/dead rows, stable ties,
+exact bounded percentages and score saturation are defined. Missile retaliation
+uses the published cache; automatic quit/daily cache refresh, historical
+scoreboard files, scanners and NPC rankings remain separate work. No save
+version change is needed beyond the radio prerequisite's version 11.
+[Rules and validation](yt-rankings/IMPLEMENTATION.md).

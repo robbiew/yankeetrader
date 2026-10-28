@@ -1,0 +1,1099 @@
+{
+  "evidence_id": "ev_03514cdc41e9c75482e17cee3453202b476020e2c67335ece260857148a762e9",
+  "subject": {
+    "name": "YT.EXE",
+    "digest": {
+      "sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+    },
+    "local_path": "/Users/robbie/GitHub/yankeetrader/archive/dos-original/YT.EXE",
+    "format": "dos-mz",
+    "architecture": "x86"
+  },
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "analysis_profile": {
+    "provider": {
+      "id": "ghidra",
+      "name": "Ghidra",
+      "version": "12.1.4"
+    },
+    "parameters": {
+      "target_kind": "executable",
+      "target_format": "dos-mz",
+      "architecture": "x86",
+      "available_architectures": [
+        "x86"
+      ],
+      "import_mode": "ephemeral-source-immutable",
+      "annotation_policy": "atomic-function-entry-metadata-v1",
+      "load_image_observations": "source-mappings-entry-context-v2",
+      "function_body_evidence": "complete-inclusive-ranges-v1",
+      "function_references": "complete-body-and-entry-reference-manager-v2",
+      "call_relationship_coverage": "function-body-call-coverage-v5",
+      "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+      "string_inventory_evidence": "defined-data-coverage-v1",
+      "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+      "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+      "instruction_flow_evidence": "decoded-return-pcode-v1",
+      "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+      "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+      "no_return_repair": "returning-imports-decoded-return-v2",
+      "process_launch": "inspected-jvm-launch-support-v1",
+      "load_image_evidence": "independent-mz-mapping-relocations-v2",
+      "jump_table_evidence": "typed-case-default-blocks-v1",
+      "decompiler_jump_loads": true,
+      "loader": "MzLoader",
+      "language_id": "x86:LE:16:Real Mode",
+      "compiler_spec_id": "default",
+      "load_segment": "0x1000",
+      "address_coordinates": "linear-byte-offset",
+      "analyzer_preset": "ghidra-default",
+      "function_coordinate_context": {
+        "kind": "native-function-coordinate-context-v1",
+        "selected_image": null,
+        "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+      }
+    },
+    "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+  },
+  "status": "verified",
+  "limitations": [
+    "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+    "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+    "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+    "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+    "Independent verification covers admitted DOS MZ, explicitly selected COM with measured entry context, and caller-supplied raw-binary imports. Measured source mappings use inclusive end addresses and complete region digests; no target execution or project mutation occurs.",
+    "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+    "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+    "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+  ],
+  "mappings": [
+    {
+      "block": "CODE_0",
+      "start": "0x10000",
+      "end": "0x1f41f",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 62496,
+      "source_file_index": 0,
+      "file_offset": 3584,
+      "sha256": "31dad91cf408d93d45ef7d29533ad3f3a6a0b9858dbb256f47ebe55c2447bc34"
+    },
+    {
+      "block": "CODE_1",
+      "start": "0x1f420",
+      "end": "0x2e78f",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 62320,
+      "source_file_index": 0,
+      "file_offset": 66080,
+      "sha256": "72b28830d010e03a94019a2c610ca59135df1a94e99906e20a5a9ebdcd1aca01"
+    },
+    {
+      "block": "CODE_2",
+      "start": "0x2e790",
+      "end": "0x322ff",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 15216,
+      "source_file_index": 0,
+      "file_offset": 128400,
+      "sha256": "9f24c7968260afe66f8192c4b783870ee865c3ef94e43f8a82337b540c565b09"
+    },
+    {
+      "block": "CODE_3",
+      "start": "0x32300",
+      "end": "0x3243f",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 320,
+      "source_file_index": 0,
+      "file_offset": 143616,
+      "sha256": "979266b28f13e63ed96a514b5b435545955b46fbd31767c845a4ce769dbbb95a"
+    },
+    {
+      "block": "CODE_4",
+      "start": "0x32440",
+      "end": "0x3926f",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 28208,
+      "source_file_index": 0,
+      "file_offset": 143936,
+      "sha256": "e3d47ec3fd0ffff2b029a2ba8d9db98c869c64e39052311a6089614399d882a2"
+    },
+    {
+      "block": "CODE_5",
+      "start": "0x39270",
+      "end": "0x39af0",
+      "address_space": "ram",
+      "initialized": true,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": true,
+      "length": 2177,
+      "source_file_index": 0,
+      "file_offset": 172144,
+      "sha256": "75e38d87454c4eb7da581497cc77ff8db4ab712922cffa5f6ad107533feeab4f"
+    },
+    {
+      "block": "CODE_5u",
+      "start": "0x39af1",
+      "end": "0x39aff",
+      "address_space": "ram",
+      "initialized": false,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": false,
+      "length": 15,
+      "source_file_index": null,
+      "file_offset": null,
+      "sha256": null
+    },
+    {
+      "block": "CODE_6u",
+      "start": "0x39b00",
+      "end": "0x3fc8f",
+      "address_space": "ram",
+      "initialized": false,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": false,
+      "length": 24976,
+      "source_file_index": null,
+      "file_offset": null,
+      "sha256": null
+    },
+    {
+      "block": "CODE_7u",
+      "start": "0x3fc90",
+      "end": "0x46abf",
+      "address_space": "ram",
+      "initialized": false,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": false,
+      "length": 28208,
+      "source_file_index": null,
+      "file_offset": null,
+      "sha256": null
+    },
+    {
+      "block": "DATA",
+      "start": "0x46ac0",
+      "end": "0x53c8f",
+      "address_space": "ram",
+      "initialized": false,
+      "loaded": true,
+      "overlay": false,
+      "readable": true,
+      "writable": true,
+      "executable": false,
+      "length": 53712,
+      "source_file_index": null,
+      "file_offset": null,
+      "sha256": null
+    },
+    {
+      "block": "HEADER",
+      "start": "HEADER:0x0",
+      "end": "HEADER:0xdff",
+      "address_space": "HEADER",
+      "initialized": true,
+      "loaded": false,
+      "overlay": true,
+      "readable": false,
+      "writable": false,
+      "executable": false,
+      "length": 3584,
+      "source_file_index": 0,
+      "file_offset": 0,
+      "sha256": "4a657a5e72b88c245f84e34e72903a64a3ddb76b79284c7791249449bd0f7da1"
+    }
+  ],
+  "checks": [
+    {
+      "name": "executable_format",
+      "matched": true,
+      "expected": "Old-style DOS Executable (MZ)",
+      "observed": "Old-style DOS Executable (MZ)",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "language_id",
+      "matched": true,
+      "expected": "x86:LE:16:Real Mode",
+      "observed": "x86:LE:16:Real Mode",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "compiler_spec_id",
+      "matched": true,
+      "expected": "default",
+      "observed": "default",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "image_base",
+      "matched": true,
+      "expected": "0x0",
+      "observed": "0x0",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "default_address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "source_file_count",
+      "matched": true,
+      "expected": 1,
+      "observed": 1,
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "source_file_size",
+      "matched": true,
+      "expected": 174321,
+      "observed": 174321,
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "original_file_sha256",
+      "matched": true,
+      "expected": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "observed": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "modified_file_sha256",
+      "matched": true,
+      "expected": "caf2a0e3833f9c4fc7051045b08338a46326ea38fdad4c43af723e63d0b71e16",
+      "observed": "caf2a0e3833f9c4fc7051045b08338a46326ea38fdad4c43af723e63d0b71e16",
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "entry_points",
+      "matched": true,
+      "expected": [
+        "0x10030"
+      ],
+      "observed": [
+        "0x10030"
+      ],
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "mapping[0].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].file_coverage_start",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].loaded",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].overlay",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].address_space",
+      "matched": true,
+      "expected": "HEADER",
+      "observed": "HEADER",
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].start",
+      "matched": true,
+      "expected": "HEADER:0x0",
+      "observed": "HEADER:0x0",
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[0].end",
+      "matched": true,
+      "expected": "HEADER:0xdff",
+      "observed": "HEADER:0xdff",
+      "file_offset": 0,
+      "address": "HEADER:0xdff"
+    },
+    {
+      "name": "mapping[0].memory_sha256",
+      "matched": true,
+      "expected": "4a657a5e72b88c245f84e34e72903a64a3ddb76b79284c7791249449bd0f7da1",
+      "observed": "4a657a5e72b88c245f84e34e72903a64a3ddb76b79284c7791249449bd0f7da1",
+      "file_offset": 0,
+      "address": "HEADER:0x0"
+    },
+    {
+      "name": "mapping[1].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].file_coverage_start",
+      "matched": true,
+      "expected": 3584,
+      "observed": 3584,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].start",
+      "matched": true,
+      "expected": "0x10000",
+      "observed": "0x10000",
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[1].end",
+      "matched": true,
+      "expected": "0x1f41f",
+      "observed": "0x1f41f",
+      "file_offset": 3584,
+      "address": "0x1f41f"
+    },
+    {
+      "name": "mapping[1].memory_sha256",
+      "matched": true,
+      "expected": "31dad91cf408d93d45ef7d29533ad3f3a6a0b9858dbb256f47ebe55c2447bc34",
+      "observed": "31dad91cf408d93d45ef7d29533ad3f3a6a0b9858dbb256f47ebe55c2447bc34",
+      "file_offset": 3584,
+      "address": "0x10000"
+    },
+    {
+      "name": "mapping[2].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].file_coverage_start",
+      "matched": true,
+      "expected": 66080,
+      "observed": 66080,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].start",
+      "matched": true,
+      "expected": "0x1f420",
+      "observed": "0x1f420",
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[2].end",
+      "matched": true,
+      "expected": "0x2e78f",
+      "observed": "0x2e78f",
+      "file_offset": 66080,
+      "address": "0x2e78f"
+    },
+    {
+      "name": "mapping[2].memory_sha256",
+      "matched": true,
+      "expected": "72b28830d010e03a94019a2c610ca59135df1a94e99906e20a5a9ebdcd1aca01",
+      "observed": "72b28830d010e03a94019a2c610ca59135df1a94e99906e20a5a9ebdcd1aca01",
+      "file_offset": 66080,
+      "address": "0x1f420"
+    },
+    {
+      "name": "mapping[3].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].file_coverage_start",
+      "matched": true,
+      "expected": 128400,
+      "observed": 128400,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].start",
+      "matched": true,
+      "expected": "0x2e790",
+      "observed": "0x2e790",
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[3].end",
+      "matched": true,
+      "expected": "0x322ff",
+      "observed": "0x322ff",
+      "file_offset": 128400,
+      "address": "0x322ff"
+    },
+    {
+      "name": "mapping[3].memory_sha256",
+      "matched": true,
+      "expected": "9f24c7968260afe66f8192c4b783870ee865c3ef94e43f8a82337b540c565b09",
+      "observed": "9f24c7968260afe66f8192c4b783870ee865c3ef94e43f8a82337b540c565b09",
+      "file_offset": 128400,
+      "address": "0x2e790"
+    },
+    {
+      "name": "mapping[4].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].file_coverage_start",
+      "matched": true,
+      "expected": 143616,
+      "observed": 143616,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].start",
+      "matched": true,
+      "expected": "0x32300",
+      "observed": "0x32300",
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[4].end",
+      "matched": true,
+      "expected": "0x3243f",
+      "observed": "0x3243f",
+      "file_offset": 143616,
+      "address": "0x3243f"
+    },
+    {
+      "name": "mapping[4].memory_sha256",
+      "matched": true,
+      "expected": "979266b28f13e63ed96a514b5b435545955b46fbd31767c845a4ce769dbbb95a",
+      "observed": "979266b28f13e63ed96a514b5b435545955b46fbd31767c845a4ce769dbbb95a",
+      "file_offset": 143616,
+      "address": "0x32300"
+    },
+    {
+      "name": "mapping[5].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].file_coverage_start",
+      "matched": true,
+      "expected": 143936,
+      "observed": 143936,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].start",
+      "matched": true,
+      "expected": "0x32440",
+      "observed": "0x32440",
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[5].end",
+      "matched": true,
+      "expected": "0x3926f",
+      "observed": "0x3926f",
+      "file_offset": 143936,
+      "address": "0x3926f"
+    },
+    {
+      "name": "mapping[5].memory_sha256",
+      "matched": true,
+      "expected": "e3d47ec3fd0ffff2b029a2ba8d9db98c869c64e39052311a6089614399d882a2",
+      "observed": "e3d47ec3fd0ffff2b029a2ba8d9db98c869c64e39052311a6089614399d882a2",
+      "file_offset": 143936,
+      "address": "0x32440"
+    },
+    {
+      "name": "mapping[6].source_file_index",
+      "matched": true,
+      "expected": 0,
+      "observed": 0,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].file_coverage_start",
+      "matched": true,
+      "expected": 172144,
+      "observed": 172144,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].partition",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].initialized",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].loaded",
+      "matched": true,
+      "expected": true,
+      "observed": true,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].overlay",
+      "matched": true,
+      "expected": false,
+      "observed": false,
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].address_space",
+      "matched": true,
+      "expected": "ram",
+      "observed": "ram",
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].start",
+      "matched": true,
+      "expected": "0x39270",
+      "observed": "0x39270",
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "mapping[6].end",
+      "matched": true,
+      "expected": "0x39af0",
+      "observed": "0x39af0",
+      "file_offset": 172144,
+      "address": "0x39af0"
+    },
+    {
+      "name": "mapping[6].memory_sha256",
+      "matched": true,
+      "expected": "75e38d87454c4eb7da581497cc77ff8db4ab712922cffa5f6ad107533feeab4f",
+      "observed": "75e38d87454c4eb7da581497cc77ff8db4ab712922cffa5f6ad107533feeab4f",
+      "file_offset": 172144,
+      "address": "0x39270"
+    },
+    {
+      "name": "initialized_file_coverage_end",
+      "matched": true,
+      "expected": 174321,
+      "observed": 174321,
+      "file_offset": null,
+      "address": null
+    },
+    {
+      "name": "initialized_unbacked_mappings",
+      "matched": true,
+      "expected": [],
+      "observed": [],
+      "file_offset": null,
+      "address": null
+    }
+  ],
+  "byte_evidence": [
+    {
+      "evidence_id": "ev_67f1e644e00a9a9ea1c374125df789397cfd759642a21e625bf1b4f4c5e14f5d",
+      "subject": {
+        "name": "YT.EXE",
+        "digest": {
+          "sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+        },
+        "local_path": "/Users/robbie/GitHub/yankeetrader/archive/dos-original/YT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x19330",
+        "length": 111
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x19330",
+        "requested_bytes": 111,
+        "returned_bytes": 111,
+        "bytes_hex": "bbf062ba3251cd3f61cd3f58bf02bbd099ba9a4ccd3f61cd3f581f03cd3f585703bf7e4dbe3099cd3f7bcd3f58bf02bb1a9ab89a4ccd3f627503e92200bb209aba9a4ccd3f61cd3f581f03b8381950cd3e839aea36421f1e07fccd3f58bf02bb3819baa24ccd3f61cd3f587ca5e999",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_a8a6764ebd283974b1cf32cc129a5abd6f8d9c67e5b9c21846d618d73b5f522e",
+      "subject": {
+        "name": "YT.EXE",
+        "digest": {
+          "sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037"
+        },
+        "local_path": "/Users/robbie/GitHub/yankeetrader/archive/dos-original/YT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x22c73",
+        "length": 327
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x22c73",
+        "requested_bytes": 327,
+        "returned_bytes": 327,
+        "bytes_hex": "bef654cd3f75d1e3d1e3d1e38bd3bb5419cd3d19bfd8abcd3f91bb5c19cd3f7180cd3d19bfe4a8cd3f91cd3f8580bb6019cd3f7181cd3d19bfecabcd3f918bdfcd3f85818bcbbb6419cd3f7182cd3d19bfe4a2cd3f91cd3f8582bb6819cd3f7183cd3d19bfeca2cd3f91cd3f8583bb6c19cd3f7184cd3d19bff4a2cd3f91cd3f8584bb9819cd3f7185cd3d19bff0abcd3f91cd3f8585bb8019cd3f7186cd3d19bf96a3cd3f91cd3f8586bb9c19cd3f7187cd3d19bff4abcd3f91cd3f8587bba419cd3f7188cd3d198bf9cd3f91cd3f8588bb7019cd3f7189cd3d19cd3f8589cd3f74bbc854cd3fc5bef654cd3f75d1e3d1e3d1e38bd3bbc854cd3fc48bcbbb9019cd3f7280cd3d19bff8abcd3f91cd3f74cd3f86808bd9cd3fc5bb7c19cd3d19cd3f1f23db7503e91d00bef654cd3f75d1e3d1e3d1e38bd3bbc854cd3fc4bffcabcd3f82cd3fc5",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  ]
+}

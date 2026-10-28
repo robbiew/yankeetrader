@@ -1,0 +1,27 @@
+{
+  "name": "cached-ports",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      3,
+      117,
+      1
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "bb2e75dc8ff611a9d2848d1eb1e90b25a9259badb670600788818a1bddf05947",
+  "after_sha256": "1f1d9edc38a69cb14c06e86b612c5956a8dd9d07c9e2cc39f15fa28296871c62",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "4990738218db1512d1588d011efc7c7e998427b788dd5235e4f05d54d582818e",
+    "transcript.txt": "69d8660ed3b3c2e05f89582222528e201c899d4cd7ef775c252d93ceedfc6405",
+    "scoreboard.txt": "b6f9f978bd2ecbffeba6de64e1d4056785e2bd1b638d3cba60aa8430671b7bb7"
+  },
+  "target_score": 76000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "holds-eleven",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      3,
+      65,
+      11
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "80eef51f472af7b9c9f3c11712d1bb0edf629f7f88a15dc497b73e1390fa0047",
+  "after_sha256": "8889c579728eb7fa905220a5ef54bdd7a7bb0fe7090224c5a150aa9a9f5a6b34",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "86a20fc6262e6123fe6fc2697f651d9e1006d78b204c80bdb65c5454a0cf4ded",
+    "transcript.txt": "2f36486d4fcdda0c1ad1ae870e2a41a8ea6e44173b69b0792b23c7166b41f24d",
+    "scoreboard.txt": "3082365e533d1058958b78be9c81581c10e68e1b9aaf6d610a6febd3c4e72e52"
+  },
+  "target_score": 28500.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

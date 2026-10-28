@@ -1,0 +1,32 @@
+{
+  "name": "planet-bank",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      4053,
+      73,
+      3
+    ],
+    [
+      4053,
+      117,
+      1000000
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "62e9a362b97e1856077422dea7c0492ed3e70c9d6433f2e91d2c6012d3e9d617",
+  "after_sha256": "f2383abb81e1e4917fd10d9f983e7460854b0d5c34298c7de0f4f5e230c0876e",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "458d20c3965a3152dfd8aff5e7fa31253437dc0c40a87056c901aed253d37349",
+    "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+    "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+  },
+  "target_score": 26000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

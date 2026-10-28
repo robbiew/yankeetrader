@@ -1,0 +1,27 @@
+{
+  "name": "plasma",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      3,
+      113,
+      10
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "036a78eab9e6bdc69406dde4959faef90455859416e535ae0c696ccd921f1a36",
+  "after_sha256": "33e8e6bed26261ee1e71b1b69a0e7a9e9cae74a11b3cee98e7f66d12a551c3eb",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "facc7f9ae0163f5b953d20d4485fbee73d5972975055085fb3dd249a03c6803f",
+    "transcript.txt": "e71db9381e49a9eedf861b044d4d537828ff34c6f58f62642ccdfe41d7221666",
+    "scoreboard.txt": "6c947944b75f6d2c6e1c738bf8b926c23a39ecb73f885a465f9dc0cefa5ea059"
+  },
+  "target_score": 10026000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

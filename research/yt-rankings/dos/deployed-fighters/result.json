@@ -1,0 +1,32 @@
+{
+  "name": "deployed-fighters",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      152,
+      81,
+      100
+    ],
+    [
+      152,
+      85,
+      3
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "215a0091821c7cae4d13e6a4b2128fe3b613cf4ecd67791826b6c37478ccf9e5",
+  "after_sha256": "be7260c37eb7dd0251938b880f0da5199ae4396ca0c7749bae3a40663b3980e4",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "dosbox.log": "a3a850d4f7311854ffdb2c7d03241d227715e9ed8e7f34eaa3bfead4e3c2e07f",
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "transcript.txt": "fb53da88815b572a3442fde74c170aa8b81eb8221d8402a538ebd1acf232afa0",
+    "scoreboard.txt": "86fce4cbfede38e3f9138e45e8f5946ac1d62f60e504c95761f9dfe3052b9f09"
+  },
+  "target_score": 36000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

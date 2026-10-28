@@ -1,0 +1,27 @@
+{
+  "name": "missiles",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      3,
+      97,
+      10
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "4dbf5017a7b650de35873d78c290132536535657fb9c0dc52951de620759aea9",
+  "after_sha256": "7e81842dda10cca2cdb8142a444d377f114b992fc330b8f0f451f48ca615c507",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "5aaef94c6a74016d2fc1cc63ea5c765c8bf18dd1c187cca4e890977d458c14cf",
+    "transcript.txt": "fb53da88815b572a3442fde74c170aa8b81eb8221d8402a538ebd1acf232afa0",
+    "scoreboard.txt": "86fce4cbfede38e3f9138e45e8f5946ac1d62f60e504c95761f9dfe3052b9f09"
+  },
+  "target_score": 36000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

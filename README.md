@@ -37,7 +37,7 @@ line for Ctrl-R replay; `/R2` through `/R20` repeat a command.
 In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
 sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
-The computer connects options 2 (port report), 3 (autopilot), 5 (send radio), 6 (message history), 7 (avoid slots),
+The computer connects options 2 (port report), 3 (autopilot), 4 (player/team rankings), 5 (send radio), 6 (message history), 7 (avoid slots),
 9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
 12 (port treasuries), 13 (your planets), 14 (nearest ports), 16 (port pairs),
 and 17 (adjacent-port trade forecasts) to the implemented game rules.
@@ -98,6 +98,8 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `TREASURY` / computer `C`, `12` | Report personally owned port balances |
 | `PORTREPORT [sector]` / computer `C`, `2` | Remote ordinary-port commerce report; free |
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
+| `RANK` / computer `C`, `4` | Rank players and teams from current assets and save all player scores; free |
+| `RANK OLD` / computer `C`, `4`, `O` | Stored scores with current aliases, teams and port counts; free |
 | `RADIO [alias or player number]` / computer `C`, `5` | Compose a direct message, confirm recipient, then Send or Abort; free |
 | `MESSAGES` / computer `C`, `6` | Your sent and received message history; free |
 | `INBOX` | Unread received messages; free |
@@ -111,6 +113,20 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
 | `LEAVE` | Leave port |
 | `Q` or Escape | Exit |
+
+`RANK` publishes current player scores together, using supported ship assets,
+actual ordinary-port ownership and personally deployed sector fighters. Team
+rankings sum current members. `RANK OLD` reads the last published score values;
+new accounts can show zero until an update. Dead accounts show zero, ties use
+account/team order, and percentages use each list's leader. Rankings work with
+zero turns and cost no assets. Reports show public totals, without private
+account or planetary-bank fields.
+
+Missile retaliation uses these published scores. Scores refresh on an explicit
+updated ranking request; normal quit and daily maintenance do not refresh them.
+Individual scores cap at 9,000,000,000,000,000 points. Scanners, NPC rankings and
+historical scoreboard files remain outside this slice. See [scoring rules,
+cache timing and validation](research/yt-rankings/IMPLEMENTATION.md).
 
 Direct radio accepts one printable ASCII line of up to 74 characters. Confirm a
 recipient alias or player number, enter the body, then choose `S` to send or `A`
@@ -382,9 +398,10 @@ destroyed even if escorts remain, as in the recovered missile path. Prototype
 new ships still start with zero shields: purchase shields at Earth before combat.
 
 Return-volley sizing uses the saved `StoredScore` cache. New/migrated accounts
-start at zero and use the recovered random 1..stock fallback; score calculation
-and scoreboard maintenance are not implemented yet. No wealth-derived score is
-invented. Positive cached scores use the recovered score formula. See
+start at zero and use the recovered random 1..stock fallback until an updated
+ranking publishes real supported asset scores. Automatic quit/daily cache
+refresh remains separate work. Positive cached scores use the recovered
+retaliation formula. See
 [missile scope, rules and validation](research/yt-missiles/IMPLEMENTATION.md).
 
 ### Sector fighters

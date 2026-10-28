@@ -1,0 +1,295 @@
+{
+  "baseline": {
+    "patches": [],
+    "score": 26000
+  },
+  "shields": {
+    "patches": [
+      [
+        3,
+        53,
+        100
+      ]
+    ],
+    "score": 31000
+  },
+  "fighters": {
+    "patches": [
+      [
+        3,
+        61,
+        100
+      ]
+    ],
+    "score": 36000
+  },
+  "holds-eleven": {
+    "patches": [
+      [
+        3,
+        65,
+        11
+      ]
+    ],
+    "score": 28500
+  },
+  "holds-twenty": {
+    "patches": [
+      [
+        3,
+        65,
+        20
+      ]
+    ],
+    "score": 51000
+  },
+  "ore": {
+    "patches": [
+      [
+        3,
+        69,
+        10
+      ]
+    ],
+    "score": 26200
+  },
+  "organics": {
+    "patches": [
+      [
+        3,
+        73,
+        10
+      ]
+    ],
+    "score": 26300
+  },
+  "equipment": {
+    "patches": [
+      [
+        3,
+        77,
+        10
+      ]
+    ],
+    "score": 26400
+  },
+  "credits": {
+    "patches": [
+      [
+        3,
+        81,
+        1100
+      ]
+    ],
+    "score": 26100
+  },
+  "scanner": {
+    "patches": [
+      [
+        3,
+        93,
+        -1
+      ]
+    ],
+    "score": 276000
+  },
+  "missiles": {
+    "patches": [
+      [
+        3,
+        97,
+        10
+      ]
+    ],
+    "score": 36000
+  },
+  "field101": {
+    "patches": [
+      [
+        3,
+        101,
+        10
+      ]
+    ],
+    "score": 26000
+  },
+  "field105": {
+    "patches": [
+      [
+        3,
+        105,
+        10
+      ]
+    ],
+    "score": 26000
+  },
+  "stored-score": {
+    "patches": [
+      [
+        3,
+        109,
+        12345
+      ]
+    ],
+    "score": 26000
+  },
+  "plasma": {
+    "patches": [
+      [
+        3,
+        113,
+        10
+      ]
+    ],
+    "score": 10026000
+  },
+  "cached-ports": {
+    "patches": [
+      [
+        3,
+        117,
+        1
+      ]
+    ],
+    "score": 76000
+  },
+  "ground": {
+    "patches": [
+      [
+        3,
+        121,
+        10
+      ]
+    ],
+    "score": 33500
+  },
+  "cloak": {
+    "patches": [
+      [
+        3,
+        125,
+        1
+      ]
+    ],
+    "score": 26000
+  },
+  "mines": {
+    "patches": [
+      [
+        3,
+        129,
+        10
+      ]
+    ],
+    "score": 51000
+  },
+  "dead-target": {
+    "patches": [
+      [
+        3,
+        45,
+        2
+      ]
+    ],
+    "score": 0
+  },
+  "deployed-fighters": {
+    "patches": [
+      [
+        152,
+        81,
+        100
+      ],
+      [
+        152,
+        85,
+        3
+      ]
+    ],
+    "score": 36000
+  },
+  "port-title": {
+    "patches": [
+      [
+        3152,
+        89,
+        3
+      ]
+    ],
+    "score": 26000
+  },
+  "planet-bank": {
+    "patches": [
+      [
+        4053,
+        73,
+        3
+      ],
+      [
+        4053,
+        117,
+        1000000
+      ]
+    ],
+    "score": 26000
+  },
+  "team-members": {
+    "patches": [
+      [
+        2,
+        89,
+        1
+      ],
+      [
+        3,
+        89,
+        1
+      ],
+      [
+        52,
+        77,
+        2
+      ],
+      [
+        52,
+        109,
+        2
+      ],
+      [
+        52,
+        117,
+        3
+      ]
+    ],
+    "score": 26000
+  },
+  "old-board": {
+    "patches": [],
+    "score": 26000
+  },
+  "zero-score": {
+    "patches": [
+      [
+        3,
+        65,
+        0
+      ],
+      [
+        3,
+        81,
+        0
+      ]
+    ],
+    "score": 0
+  },
+  "tie-score": {
+    "patches": [
+      [
+        3,
+        81,
+        9965250
+      ]
+    ],
+    "score": 9990250
+  }
+}
