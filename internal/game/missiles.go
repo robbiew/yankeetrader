@@ -118,6 +118,12 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if len(w.Sectors[a.Sector].Minefield) > 0 {
 		return MissileIntent{}, ErrMineEncounter
 	}
+	// Return fire reaches this sector too. Until its interception rules are
+	// supported, refuse the whole exchange before charging ammo or turns.
+	origin := w.Sectors[a.Sector]
+	if origin.Planet != 0 {
+		return MissileIntent{}, errors.New("missile return path through planets is not available yet")
+	}
 	target := w.Sectors[to]
 	if target == nil || to == a.Sector || !contains(w.Sectors[a.Sector].Warps, to) || !contains(target.Warps, a.Sector) {
 		return MissileIntent{}, errors.New("choose a different sector linked in both directions by one warp")
