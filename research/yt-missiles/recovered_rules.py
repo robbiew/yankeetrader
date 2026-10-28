@@ -11,7 +11,7 @@ def sector_fighters(missiles, defenders, rng):
 def ship(missiles,fighters,shields,rng):
     killed=damage=0
     for spent in range(1,missiles+1):
-        # Mine-dropping check also consumes RNG in the real game.
+        # Scanner-disabling check also consumes RNG in the real game.
         rng()
         killed=floor(killed+rng()*4001)
         if rng()*fighters<killed:damage+=floor(rng()*1001)

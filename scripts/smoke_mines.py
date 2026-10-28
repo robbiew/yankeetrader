@@ -103,6 +103,6 @@ with tempfile.TemporaryDirectory(prefix='yt-mines-smoke-') as temp:
         assert code==0 and f'Remaining turns: {turns}' in text,text
         transcript+=text
     world=json.loads(path.read_text())
-    assert world['Version']==7 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
+    assert world['Version']==8 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
     (ROOT/'evidence/mines-smoke.txt').write_text(transcript)
     print('PTY mines passed: fresh entry/cancellation, autopilot stop, 20-mine depletion and persisted damage, mine-attributed chained death, no false suicide cooldown, preserved turns and protected Earth.')

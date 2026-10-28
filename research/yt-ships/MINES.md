@@ -1,5 +1,7 @@
 # Non-Earth minefields, aftermath and chained attribution — 2026-10-27
 
+Follow-up: [one-hop missile attacks and retaliation](../yt-missiles/IMPLEMENTATION.md) add world version 8 and use these mine layers for interception and wreck drops. The version-7 statements below describe the minefield milestone.
+
 ## Research basis and boundaries
 
 This implements existing [46-session hazard evidence](../yt-navigation/HAZARDS.md),

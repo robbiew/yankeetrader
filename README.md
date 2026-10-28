@@ -172,7 +172,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 7 for attributed minefields and mine-death lifecycle, alongside persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 7. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 8 for missile deaths and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 8. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -234,7 +234,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-6 worlds upgrade to version 7 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-7 worlds upgrade to version 8 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -282,7 +282,7 @@ loot and ownership save together, and direct fighter attacks spend no turns.
 
 Earth safely disposes of unsalvaged victim mines after loot is consumed once.
 Mine-bearing targets outside Earth are enabled, with wreck drops and chained
-deaths resolved atomically. Other supported direct duels are available; missile attacks, counterfire and sector-defense combat remain
+deaths resolved atomically. Other supported direct duels are available; one-hop missile attacks and counterfire are implemented below; sector-defense combat remains
 separate. See [scope and validation](research/yt-ships/PLAYER_ATTACKS.md).
 
 ### Minefields and chained deaths
@@ -297,6 +297,30 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This uses save version 7; follow the stopped-world
+Earth remains free of mines. This build now uses save version 8; follow the stopped-world
 backup and all-node upgrade guidance. Mine placement/withdrawal commands and
-missile/sector-fighter combat remain separate. See [rules and validation](research/yt-ships/MINES.md).
+sector-fighter combat and wider missile encounters remain separate. See [rules and validation](research/yt-ships/MINES.md).
+
+### Missile attacks and retaliation
+
+Use `MISSILE <adjacent sector> <quantity>` or classic `!`; omitted arguments are
+prompted. Launches need a fresh separate Y and cost one turn plus all selected
+missiles. This stage supports a one-hop corridor linked in both directions, with
+one visible enemy ship or a minefield. Hidden ships and teammates are skipped.
+Sectors with planets/deployed fighters, longer routes and multiple visible enemies
+remain blocked until their interception/bombardment rules are implemented.
+
+Missiles clear one mine each before reaching the ship. A surviving enemy with
+missiles returns one volley against the original attacker, including through
+its cloak; return fire does not consume that defender's daily turns or recurse.
+Both volleys, loot, deaths, port transfers and mine drops save together.
+Remaining outgoing missiles clear wreck mines before dissipating. Earth disposal
+still applies. A ship whose shields reach zero is destroyed even if escorts
+remain, as in the recovered missile path. Prototype new ships still start with
+zero shields: purchase shields at Earth before combat.
+
+Return-volley sizing uses the saved `StoredScore` cache. New/migrated accounts
+start at zero and use the recovered random 1..stock fallback; score calculation
+and scoreboard maintenance are not implemented yet. No wealth-derived score is
+invented. Positive cached scores use the recovered score formula. See
+[missile scope, rules and validation](research/yt-missiles/IMPLEMENTATION.md).

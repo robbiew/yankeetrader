@@ -50,7 +50,7 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 		return nil, errors.New("invalid death time or exhausted ship generation")
 	}
 	switch context.Cause {
-	case "combat", "retaliation":
+	case "combat", "retaliation", "missile":
 		if context.Killer == p.ID || w.Players[context.Killer] == nil {
 			return nil, errors.New("enemy death requires a different existing killer")
 		}
@@ -65,6 +65,9 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 			return nil, errors.New("attacker ship or location changed")
 		}
 
+		if context.Cause == "missile" && (!contains(w.Sectors[killer.Sector].Warps, p.Sector) || !contains(w.Sectors[p.Sector].Warps, killer.Sector)) {
+			return nil, errors.New("missile launch corridor changed")
+		}
 	case "mines":
 		if context.Killer < 0 || (context.Killer > 0 && w.Players[context.Killer] == nil) {
 			return nil, errors.New("invalid mine source")
@@ -155,7 +158,7 @@ func (w *World) validateLifecycle() error {
 			return errors.New("invalid destroyed ship")
 		}
 		switch death.Cause {
-		case "combat", "retaliation":
+		case "combat", "retaliation", "missile":
 			if death.Killer == p.ID || w.Players[death.Killer] == nil {
 				return errors.New("invalid enemy killer")
 			}
