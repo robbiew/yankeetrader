@@ -1,0 +1,179 @@
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Caller!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Caller
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+Radio messages are not available in this edition yet.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+Time: 179:59  Main Command (?=Help)? c;2;2;9;3;13;1;q;y
+
+<Computer activated>
+Enter sector number port is in -=> 
+Commerce report for Trading Post: 10-28-2026 12:16:09
+
+ Items         Status      # units    in holds   Cost
+=======       =========   =========   ========   ====
+Ore..........  Selling        1000          0     10
+Organics.....  Buying         1000          0     45
+Equipment....  Buying         1000          0     60
+What sector number is the planet in? 
+Planet: Private World -*- Ground Forces: 12
+
+Scanning...
+
+Planet: Home                                      Sector: 4
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > planetreport 4;q
+[0;36;40m
+Planet: Home
+
+ Item           Production     Amount    In Holds
+=============  ============   ========  ==========
+Ore..........            4          4           0
+Organics.....            3          5           0
+Equipment....            4          6           0
+Fighters.....           75          0          25
+Missiles.....            0          0           0
+Mines........            0          0           0
+Credits......          345      34567        1005
+Forces.......            3         12           0
+Plasma bolts.            0          0           0
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > planetreport 3;q
+[0;36;40m
+Planet: Private World
+
+ Item           Production     Amount    In Holds
+=============  ============   ========  ==========
+Ore..........            1          4           0
+Organics.....            2          5           0
+Equipment....            3          6           0
+Fighters.....            6          0          25
+Missiles.....            0          0           0
+Mines........            0          0           0
+Credits......            0          0        1005
+Forces.......            0          0           0
+Plasma bolts.            0          0           0
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > planetreport 3;q
+
+Planet: Private World -*- Ground Forces: 987
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > portreport 2;planetreport 3;q
+No information available.
+No information available. One turn spent: sector fighters blocked the report.
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 499 turns > myplanets;i;q
+
+Scanning...
+
+Planet: Home                                      Sector: 4
+Caller: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Cloak energy: 100%
+Saved. Safe travels, Caller.

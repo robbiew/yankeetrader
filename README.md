@@ -37,8 +37,9 @@ line for Ctrl-R replay; `/R2` through `/R20` repeat a command.
 In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
 sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
-The computer currently connects options 3 (autopilot), 7 (avoid slots), 10
-(path finder), and 11 (your deployed sector fighters) to the implemented game rules.
+The computer connects options 2 (port report), 3 (autopilot), 7 (avoid slots),
+9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
+12 (port treasuries), and 13 (your planets) to the implemented game rules.
 
 The original menus and manual include features still under reconstruction.
 Selecting an unavailable action says so; radio, scanner and cloak values are
@@ -95,6 +96,9 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `T` / `TEAM` | Team menu: create/join, roster/resources, leave and captain controls |
 | `B` / `ACQUIRE` | Buy the current port after explicit `Y` confirmation |
 | `TREASURY` / computer `C`, `12` | Report personally owned port balances |
+| `PORTREPORT [sector]` / computer `C`, `2` | Remote ordinary-port commerce report; free |
+| `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
+| `MYPLANETS` / computer `C`, `13` | List personally owned planets and sectors; free |
 | `$` / `COLLECT` | Collect all personal port balances from any sector |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
@@ -112,6 +116,15 @@ The default planet interface now follows the original DOS landing/report, help a
 Planet renaming uses the original name/confirmation prompts and colors. Blank names cancel; `N` at confirmation retries; Enter accepts. Names receive DOS word casing/space cleanup and are clipped to 41 characters. Renaming costs no credits or turns and uses the current landing permission, including shared/unguarded access. Reserved names and the final special planet slot remain protected. See [rename rules, 45 DOS captures and comparison boundaries](research/yt-planet-rename/RECOVERY.md).
 
 Port colors, commodity columns, dotted labels, Earth menu spacing, and purchase prompts are checked against 35 original DOS screen captures from ten isolated sessions. The comparisons cover the port body through the current prompt, including Earth redraws, purchases, sales, ownership, full holds, and declined trades. Live timestamps and unsupported-item affordability remain dynamic; startup history, caller/status details, timing, and invalid-input behavior are outside this visual comparison. See [port screen evidence](research/yt-port-screens/RECOVERY.md).
+
+Remote computer reports do not move, dock, land, or bind a trading price. Hostile
+sector fighters hide both port and planet reports; only the blocked planet query
+spends a turn, and it is refused when no turns remain. A defended foreign planet
+shows just its name and ground forces. Unowned, unguarded, personally owned, and
+currently shared team planets expose full reports. Full reports project current
+production and interest without changing stored stock or money. The personal
+planet finder excludes teammates' assets. Remote Earth equipment reports remain
+unavailable; dock at Earth for its shop. See [report rules and validation](research/yt-navigation/REPORTS_IMPLEMENTATION.md).
 
 In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `2` holds, `3` fighters, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Other historical equipment options retain their original labels and prices, with `N/A` affordability; selecting one reports that it is unavailable. An empty equipment quantity cancels that purchase. The shop refreshes your credits after each saved purchase.
 
