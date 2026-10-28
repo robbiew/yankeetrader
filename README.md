@@ -172,7 +172,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 8 for missile deaths and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 8. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 9 for zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 9. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -234,7 +234,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-7 worlds upgrade to version 8 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-8 worlds upgrade to version 9 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -296,7 +296,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 8; follow the stopped-world
+Earth remains free of mines. This build now uses save version 9; follow the stopped-world
 backup and all-node upgrade guidance. Mine placement/withdrawal commands and wider missile encounters remain separate;
 sector-fighter combat is available below. See [rules and validation](research/yt-ships/MINES.md).
 
@@ -306,7 +306,7 @@ Use `MISSILE <adjacent sector> <quantity>` or classic `!`; omitted arguments are
 prompted. Launches need a fresh separate Y and cost one turn plus all selected
 missiles. This stage supports a one-hop corridor linked in both directions, with
 one visible enemy ship, a minefield or a hostile fighter group. Hidden ships and teammates are skipped.
-Hostile planets support ground-only bombardment as described below. Longer routes,
+Hostile planets support ground and production bombardment as described below. Longer routes,
 multiple visible enemies and mixed visible ship/planet encounters remain blocked.
 
 Hostile sector fighters intercept missiles first (up to 4,999 fighters per missile); friendly groups are bypassed. Remaining missiles clear one mine each before reaching the ship. A surviving enemy with
@@ -342,14 +342,16 @@ all remaining turns. Adjacent entry spends one movement turn. Victory resolves
 any destination mines in the same saved transaction. Defeating a group does not
 kill its owner or capture a port. [Rules, policies and validation](research/yt-combat/SECTOR_FIGHTERS.md).
 
-### Planetary ground bombardment
+### Planetary ground and production bombardment
 
 `MISSILE <adjacent sector> <quantity>` can strike a hostile planet after sector
-fighters and mines intercept the volley. A fresh warning names the planet and
-its garrison. Own/team planets and mixed visible ship/planet encounters are blocked.
-The selected quantity must be at most the planet's saved ground forces divided
-by 25 (rounded down), ensuring every missile stays in the recovered ground phase.
-Ground below 25 and volleys that could reach production remain unsupported.
-Planet growth runs before impact; the remaining fractional ground balance is
-rounded down once at the end. The launch, interception, growth and ground damage save together. Planet
-ownership stays unchanged. [Rules, evidence and remaining work](research/yt-missiles/GROUND_BOMBARDMENT.md).
+fighters and mines intercept the volley. A fresh warning names the planet,
+garrison and production rates. Own/team planets and mixed visible ship/planet
+encounters are blocked. Missiles first reduce
+ground forces by a random fraction of 25 each; after ground reaches zero, each
+remaining missile independently damages all three production rates. Rates clamp
+at zero and matching warehouses cap at ten times their resulting rate. Recovered
+cached-ore round eligibility is preserved. If all rates reach zero, the planet
+is removed from its sector and every landing token for it is revoked. The launch,
+interception, growth, damage and deletion save atomically. Planet bank, ownership,
+attacker cash and ships are not transferred by destruction. [Rules, evidence and remaining work](research/yt-missiles/PRODUCTION_DESTRUCTION.md).
