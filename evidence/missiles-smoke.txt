@@ -1,0 +1,61 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 3;y
+Launch 3 missiles into sector 2 (Victim; 0 mines)? Your shields: 0. A surviving enemy may retaliate. [y/N] 
+Missile launch cancelled.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 3
+Launch 3 missiles into sector 2 (Victim; 0 mines)? Your shields: 0. A surviving enemy may retaliate. [y/N] y
+Missile launch saved: 3 missiles fired, 2 mines destroyed; Victim lost 0 fighters and 0 shields.
+Victim destroyed. You recovered 1123 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces, 42 mines; cargo 0/0/0.
+Wreck dropped 58 unsalvaged mines.
+
+Sector 1 | 2128 credits | 499 turns > q
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Victim. Actions save automatically. Type ? for help.
+
+Sector 2 | 10000 credits | 37 turns > m 3;q
+your ship was destroyed; reconnect for a replacement
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 10000 credits | 37 turns > missile 2 1
+Launch 1 missiles into sector 2 (Enemy; 0 mines)? Your shields: 0. A surviving enemy may retaliate. [y/N] y
+Missile launch saved: 1 missiles fired, 0 mines destroyed; Enemy lost 3550 fighters and 0 shields.
+Enemy retaliation saved: 6 missiles fired, 0 mines destroyed; your ship lost 0 fighters and 0 shields.
+your ship destroyed. Enemy recovered 649 credits, 0 holds, 7 missiles, 0 plasma, 0 ground forces, 62 mines; cargo 0/0/0.
+Earth protection safely disposed of 38 unsalvaged mines.
+your ship was destroyed; reconnect for a replacement
+q
+[cYour replacement ship has been built. Remaining turns: 36.
+
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 36 turns > i;q
+Launcher: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 100; ground forces 0
+Missiles 1; mines 0; plasma 0
+Cloak energy: 100%
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 3
+Launch 3 missiles into sector 2 (minefield only; 5 mines)? Your shields: 0. A surviving enemy may retaliate. [y/N] y
+Missile launch saved: 3 missiles fired, 3 mines destroyed. No ship struck.
+
+Sector 1 | 1005 credits | 499 turns > q
+Saved. Safe travels, Launcher.

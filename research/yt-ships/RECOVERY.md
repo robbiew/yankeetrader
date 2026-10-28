@@ -61,6 +61,8 @@ This confirms the remote-reveal component of BAL-001. It does not reproduce the 
 
 ## Missile retaliation
 
+Modern follow-up: [implemented one-hop missile and return-fire scope](../yt-missiles/IMPLEMENTATION.md).
+
 Retaliation routine: `1f42:9d3d..9fbe`. It excludes invalid/self targets, dead retaliators, and retaliators without missiles. It temporarily switches actor identity and overrides target concealment, then invokes the normal missile routine.
 
 Let S be the original attacker's **stored score loaded for the session**, and M the retaliator's available missiles:

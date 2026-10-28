@@ -1,0 +1,123 @@
+[
+  {
+    "Name": "zero-defense",
+    "Missiles": 1,
+    "Fighters": 0,
+    "Shields": 0,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Spent": 1,
+      "Fighters": 0,
+      "Shields": 0
+    }
+  },
+  {
+    "Name": "shield-only",
+    "Missiles": 20,
+    "Fighters": 0,
+    "Shields": 1000000,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Spent": 20,
+      "Fighters": 0,
+      "Shields": 10000
+    }
+  },
+  {
+    "Name": "fighters-shields",
+    "Missiles": 20,
+    "Fighters": 1000000,
+    "Shields": 1000000,
+    "Draws": [
+      0.5
+    ],
+    "Expected": {
+      "Spent": 20,
+      "Fighters": 40000,
+      "Shields": 0
+    }
+  },
+  {
+    "Name": "kill",
+    "Missiles": 20,
+    "Fighters": 1,
+    "Shields": 1,
+    "Draws": [
+      0.9
+    ],
+    "Expected": {
+      "Spent": 1,
+      "Fighters": 1,
+      "Shields": 1
+    }
+  },
+  {
+    "Name": "zero-roll",
+    "Missiles": 5,
+    "Fighters": 100,
+    "Shields": 100,
+    "Draws": [
+      0.0
+    ],
+    "Expected": {
+      "Spent": 5,
+      "Fighters": 0,
+      "Shields": 0
+    }
+  },
+  {
+    "Name": "strict-shield-gate",
+    "Missiles": 1,
+    "Fighters": 4000,
+    "Shields": 100,
+    "Draws": [
+      0.0,
+      0.5,
+      0.5
+    ],
+    "Expected": {
+      "Spent": 1,
+      "Fighters": 2000,
+      "Shields": 0
+    }
+  },
+  {
+    "Name": "max-quantity",
+    "Missiles": 20,
+    "Fighters": 1000000000,
+    "Shields": 1000000000,
+    "Draws": [
+      0.9999999999999999
+    ],
+    "Expected": {
+      "Spent": 20,
+      "Fighters": 80000,
+      "Shields": 0
+    }
+  },
+  {
+    "Name": "mixed",
+    "Missiles": 100,
+    "Fighters": 20000,
+    "Shields": 20000,
+    "Draws": [
+      0.1,
+      0.9,
+      0.2,
+      0.8,
+      0.3,
+      0.7,
+      0.4,
+      0.6
+    ],
+    "Expected": {
+      "Spent": 27,
+      "Fighters": 20000,
+      "Shields": 20000
+    }
+  }
+]

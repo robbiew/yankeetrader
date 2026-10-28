@@ -152,7 +152,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 7 {
+	if err != nil || current.Version != 8 {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)

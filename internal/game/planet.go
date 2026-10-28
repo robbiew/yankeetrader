@@ -77,6 +77,14 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 7
 	}
+	if w.Version == 7 {
+		for _, p := range w.Players {
+			if p != nil && (p.StoredScore != 0 || (p.Death != nil && p.Death.Cause == "missile")) {
+				return errors.New("version-seven world unexpectedly contains missile state")
+			}
+		}
+		w.Version = 8
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {

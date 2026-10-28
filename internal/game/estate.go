@@ -16,7 +16,7 @@ type SectorDefense struct {
 
 func (w *World) applyDeathEstate(victim *Player, context DeathContext) {
 	recipient := 0
-	if context.Cause == "combat" || context.Cause == "retaliation" {
+	if context.Cause == "combat" || context.Cause == "retaliation" || context.Cause == "missile" {
 		recipient = context.Killer
 	}
 	affected := map[int]bool{}

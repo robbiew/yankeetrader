@@ -66,7 +66,7 @@ Within an eligible ship encounter, maintain cumulative fighter kills K and shiel
 
 ```
 consume one missile
-perform the ship mine-dropping check
+perform the ship scanner-disabling check
 K = floor(K + RND * 4001)
 if RND * original_ship_fighters < K:
     S += floor(RND * 1001)
@@ -75,7 +75,7 @@ stop if both defenses have been exhausted
 
 Then cap K at the original fighters and S at the original shields and save the remaining defenses. Note that the comparison uses the original fighter count and cumulative kills; it is not an unconditional fixed shield strike. With no fighters, essentially every positive fighter roll allows a shield hit, averaging about 500 shields per missile. With many fighters, shields are hit much less often initially. There is no 1,150 shield constant in this loop.
 
-Ship fighters average about 2,000 per missile before caps, unlike sector fighters. The spreadsheet's common fighter coefficient omits that distinction. The mine-dropping side effect and retaliation were identified but their full decision rules, protected-sector behavior, and exploit chain remain separate work.
+Ship fighters average about 2,000 per missile before caps, unlike sector fighters. The spreadsheet's common fighter coefficient omits that distinction. Follow-up static correction: the per-missile check changes the saved scanner flag (`197c`), not mine stock. Wreck mine drops occur in the death branch. See [missile integration](IMPLEMENTATION.md) for the verified byte ranges, implemented scope and explicit modern policies.
 
 ### Planet ground defenses and production
 
