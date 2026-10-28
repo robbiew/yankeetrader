@@ -300,3 +300,14 @@ ordered by sector, or reports that none were found. It is a read-only query and
 does not expose other players' groups. This follows the DOS fixture showing two
 owned groups while omitting a nearby enemy group; broader report functions
 remain separate work.
+
+## Remote computer reports — implementation
+
+Computer `2`, `9`, and `13` now provide ordinary-port commerce reports, remote
+planet reports, and a personal planet finder. Target-sector defenses block
+disclosure; the blocked planet query atomically spends one turn. Private
+defended planets expose only name/ground forces. Current personal/team access
+controls full planet detail. Reports project growth on detached values and do
+not change stored assets or issue docking/landing tokens. Remote Earth service
+reports, commerce-route forecasts, rankings and the other computer functions
+remain open. [Scope, recovered rules and validation](yt-navigation/REPORTS_IMPLEMENTATION.md).
