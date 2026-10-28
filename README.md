@@ -173,7 +173,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 9 for zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 9. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 10 for persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 10. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -235,7 +235,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-8 worlds upgrade to version 9 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-9 worlds upgrade to version 10 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -297,10 +297,13 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 9; follow the stopped-world
+Earth remains free of mines. This build now uses save version 10; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
-and no turn cost. Sector-field recovery is not implemented; the DOS manual has no
+and no turn cost. Ships already safely present can depart without triggering the
+new field, even after reconnect; departure clears that grace and reentry triggers
+the mines. New wreck mines remain immediate hazards. Sector-field recovery is not
+implemented; the DOS manual has no
 recovered pickup command. See [mine placement research](research/yt-ships/MINE_PLACEMENT.md)
 and [minefield rules and validation](research/yt-ships/MINES.md). Routed missile
 encounters and sector-fighter combat are available below.

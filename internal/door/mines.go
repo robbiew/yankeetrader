@@ -37,7 +37,7 @@ func (s Session) resolveCurrentMines(id int) error {
 	if err != nil {
 		return err
 	}
-	if len(w.Sectors[w.Players[id].Sector].Minefield) == 0 {
+	if !w.HasMineEncounter(id) {
 		return nil
 	}
 	out, err := s.Store.ResolveMines(s.Now(), rand.Float64)

@@ -47,6 +47,22 @@ attributed layer, spends no turn, protects sectors 1–7, and requires a fresh
 confirmation after pending input is discarded. The committed research precedes
 this gameplay change in the local branch history.
 
+Version 10 adds persistent departure grace for living occupants who had no
+unresolved mine encounter before a voluntary drop. This is an explicit modern
+entry/aftermath policy: deploying does not immediately detonate the new field
+against ships already there, including after reconnect. Movement, emergency
+escape and death clear the grace. New wreck mines revoke it and retain their
+existing immediate aftermath behavior; reentry, including by the original owner,
+triggers normal mine resolution. Version-nine saves upgrade with no grace, so
+pre-existing pending encounters are not waived. The isolated placement probes
+above do not establish all multi-occupant/aftermath boundaries in DOS.
+
+Game, store and door regressions cover preserved fields, other entrants, owner
+reentry, wreck hazards, rollback, concurrent placement, legacy upgrade and death.
+The real terminal `smoke_mines.py` includes deployment, reconnect, departure and
+reentry. The original embedded DOS manual remains byte-for-byte preserved;
+current Go rules are documented in the README and this report.
+
 ## Evidence
 
 - Standard probes: [`mine-placement-dos/results.json`](mine-placement-dos/results.json)

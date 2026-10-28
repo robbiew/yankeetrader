@@ -17,6 +17,7 @@ const MaxQuantity int64 = 1_000_000_000
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
+	MineGraceSector                                  int     `json:",omitempty"`
 	StoredScore                                      int64   `json:",omitempty"`
 	Cloak                                            float64 `json:",omitempty"`
 	ShipGeneration                                   uint64  `json:",omitempty"`
@@ -68,7 +69,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 9, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: 10, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -111,7 +112,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 9 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 10 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -263,7 +264,7 @@ func (w *World) canMove(p *Player, to int) error {
 	if w.HostileDefense(p.ID, p.Sector) {
 		return ErrDefenseEncounter
 	}
-	if len(w.Sectors[p.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(p.ID) {
 		return ErrMineEncounter
 	}
 	if !contains(w.Sectors[p.Sector].Warps, to) {
@@ -281,6 +282,7 @@ func (w *World) canMove(p *Player, to int) error {
 	return nil
 }
 func (w *World) move(p *Player, to int) {
+	p.MineGraceSector = 0
 	p.Sector = to
 	p.spendTurn()
 	p.DockToken = ""

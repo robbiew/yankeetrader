@@ -290,7 +290,10 @@ world snapshots the player's generation, mine stock and current field before
 confirmation, then revalidates and saves the stock transfer with the attributed
 mine layer in one update. Same-owner drops add to that source's existing layer,
 following this world's attributed-layer model rather than DOS's aggregate
-overwrite behavior. No save-version change was needed. Field recovery remains
+overwrite behavior. Save version 10 persists departure grace for ships already
+present when mines are deployed, preventing an immediate self-detonation after
+placement or reconnect. Leaving, dying, or receiving new wreck mines clears that
+grace; subsequent entry triggers the field normally. Field recovery remains
 unimplemented because no original DOS pickup behavior has been established.
 
 ## Own sector fighter finder — implementation

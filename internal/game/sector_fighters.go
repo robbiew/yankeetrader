@@ -155,7 +155,7 @@ func (w *World) PrepareDefenseFight(id, to int, count int64, accept bool) (Defen
 	if err != nil {
 		return DefenseIntent{}, err
 	}
-	if len(w.Sectors[p.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
 	if to != p.Sector {
@@ -185,7 +185,7 @@ func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	if !w.HostileDefense(id, p.Sector) {
 		return DefenseIntent{}, errors.New("no hostile defense requires escape here")
 	}
-	if len(w.Sectors[p.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
 	return DefenseIntent{Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
