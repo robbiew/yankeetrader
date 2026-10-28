@@ -35,11 +35,12 @@ type Player struct {
 	AvoidSectors                                     []int  `json:",omitempty"`
 }
 type Sector struct {
-	Defense *SectorDefense `json:",omitempty"`
-	ID      int
-	Warps   []int
-	Port    int
-	Planet  int
+	Minefield []MineLayer    `json:",omitempty"`
+	Defense   *SectorDefense `json:",omitempty"`
+	ID        int
+	Warps     []int
+	Port      int
+	Planet    int
 }
 type Port struct {
 	ID, Sector         int
@@ -66,7 +67,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 6, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: 7, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -109,7 +110,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 6 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 7 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -142,7 +143,7 @@ func (w *World) Validate() error {
 		if math.IsNaN(p.Cloak) || math.IsInf(p.Cloak, 0) || p.Cloak < 0 || p.Cloak > 1 {
 			return errors.New("invalid cloak energy")
 		}
-		if p.Credits < 0 || p.Credits > MaxMoney || p.Turns < 0 || p.Turns > 500 || (p.Holds < 10 && p.Death == nil) || p.Holds < 0 || p.Holds > 1000 || p.Fighters < 0 || p.Fighters > MaxQuantity || p.Shields < 0 || p.Shields > MaxQuantity || p.Ground < 0 || p.Ground > MaxQuantity {
+		if p.Credits < 0 || p.Credits > MaxMoney || p.Turns < 0 || p.Turns > 500 || (p.Holds < 1 && p.Death == nil) || p.Holds < 0 || p.Holds > 1000 || p.Fighters < 0 || p.Fighters > MaxQuantity || p.Shields < 0 || p.Shields > MaxQuantity || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid player assets")
 		}
 		if p.DockToken != "" {
@@ -200,6 +201,9 @@ func (w *World) Validate() error {
 			}
 		}
 	}
+	if err := w.validateMines(); err != nil {
+		return err
+	}
 	if err := w.validateDefenses(); err != nil {
 		return err
 	}
@@ -238,14 +242,27 @@ func (w *World) player(id int) (*Player, error) {
 	return p, nil
 }
 func (w *World) Move(id, to int) error {
-	p, e := w.player(id)
-	if e != nil {
-		return e
+	p, err := w.player(id)
+	if err != nil {
+		return err
+	}
+	if err = w.canMove(p, to); err != nil {
+		return err
+	}
+	if len(w.Sectors[to].Minefield) > 0 {
+		return errors.New("minefield ahead; confirm entry manually")
+	}
+	w.move(p, to)
+	return nil
+}
+func (w *World) canMove(p *Player, to int) error {
+	if len(w.Sectors[p.Sector].Minefield) > 0 {
+		return ErrMineEncounter
 	}
 	if !contains(w.Sectors[p.Sector].Warps, to) {
 		return errors.New("that sector is not an adjacent warp")
 	}
-	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != id {
+	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]
 		if owner == nil || p.Team == 0 || owner.Team != p.Team {
 			return errors.New("hostile sector fighters block this warp")
@@ -254,13 +271,16 @@ func (w *World) Move(id, to int) error {
 	if p.Turns < 1 {
 		return errors.New("no turns left today")
 	}
+	return nil
+}
+func (w *World) move(p *Player, to int) {
 	p.Sector = to
 	p.spendTurn()
 	p.DockToken = ""
 	p.PlanetToken = ""
 	p.LandedPlanet = 0
-	return nil
 }
+
 func update(p *Port, now time.Time) {
 	if !now.After(p.Updated) {
 		return

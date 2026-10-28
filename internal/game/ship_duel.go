@@ -11,6 +11,8 @@ const maxDuelRounds = 1_000_000
 // ShipDuelResult describes committed fighters and the defending ship. Pure
 // calculations leave Salvage/DisarmedMines zero; attack settlement fills them.
 type ShipDuelResult struct {
+	MineAftermath                                MineOutcome
+	DroppedMines                                 int64
 	Salvage                                      Salvage
 	DisarmedMines                                int64
 	Survivors, DefenderFighters, DefenderShields int64

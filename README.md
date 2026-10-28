@@ -104,7 +104,7 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 `PATH` and `AUTO` honor your 30 private avoid slots, including the start and destination. For example, `AVOID 1 2` routes around sector 2; `AVOID 1 0` clears that preference. Manual `M` movement and sensors still work normally. Avoid edits cost no turns and persist across logins—an intentional improvement over the DOS session-only list. If a list edit makes a plotted course unsafe, autopilot stops before the next hop and keeps completed moves saved. Existing saves begin with an empty list.
 
-Sensors show actual public sector/ship data. Minefield combat, defense deployment, danger scanners and emergency warps remain outside this slice. Cloak detection and direct fighter attacks are implemented in the later milestones below. The current Go world has no combat hazards.
+Sensors show actual public sector/ship data. Defense deployment, danger scanners and manual emergency warps remain outside this slice. Minefields and safe automatic escape are implemented in the later milestones below. Cloak detection and direct fighter attacks are implemented in the later milestones below. Default worlds start without minefields; non-Earth combat wrecks can create them.
 
 The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
 
@@ -172,7 +172,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 6 for persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 6. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 7 for attributed minefields and mine-death lifecycle, alongside persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 7. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -234,7 +234,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-5 worlds upgrade to version 6 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-6 worlds upgrade to version 7 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -256,7 +256,7 @@ Leaving or removal immediately revokes shared landing sessions that no longer ha
 
 ## Combat preparation
 
-Confirmed direct fighter attacks are now available; minefield and sector-defense combat remain gated as described below. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; player-facing fighter attacks connect these operations, while minefield aftermath outside Earth remains pending. [Duel and settlement scope](research/yt-ships/DUELS.md).
+Confirmed direct fighter attacks are now available; minefield aftermath is implemented, while sector-defense combat remains gated as described below. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; player-facing fighter attacks connect these operations, including attributed minefield aftermath outside Earth. [Duel and settlement scope](research/yt-ships/DUELS.md).
 
 ## Loot and death-related ownership
 
@@ -264,7 +264,7 @@ Internal settlement samples holds, money and weapons separately, then chooses ca
 
 A new enemy death transfers ordinary ports with their treasuries intact. Self/environmental death releases those ports and clears their treasuries. Planets remain owned by the victim. Death removes team membership and revokes shared guarded-planet access; owned sector fighters become Mercenaries. Captured/released ports invalidate old docking agreements. Replacement preserves remaining turns and retained planets.
 
-Sector-defense state is available internally, with real sensor reports and hostile-warp blocking; no deployment/combat command is enabled. Default worlds have no deployed defenses. Direct fighter attacks are enabled for supported encounters. Minefield drops remain disabled; mine-bearing targets outside Earth are rejected until that aftermath is implemented. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
+Sector-defense state is available internally, with real sensor reports and hostile-warp blocking; no deployment/combat command is enabled. Default worlds have no deployed defenses. Direct fighter attacks are enabled for supported encounters. Non-Earth wreck mines now form attributed minefields and resolve against the attacker. Earth safely disposes of its unsalvaged mines. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
 
 Cloak energy persists per ship, decays by one percentage point when a spent turn
 leaves a multiple of 25 turns, and starts full on new/replacement ships. Legacy
@@ -281,7 +281,22 @@ queued keys and command-repeat syntax cannot supply approval. Fighters, defenses
 loot and ownership save together, and direct fighter attacks spend no turns.
 
 Earth safely disposes of unsalvaged victim mines after loot is consumed once.
-Mine-bearing targets outside Earth are blocked at preparation and commit until
-minefield explosions/chained deaths are implemented. Other supported direct duels
-are available; missile attacks, counterfire and sector-defense combat remain
+Mine-bearing targets outside Earth are enabled, with wreck drops and chained
+deaths resolved atomically. Other supported direct duels are available; missile attacks, counterfire and sector-defense combat remain
 separate. See [scope and validation](research/yt-ships/PLAYER_ATTACKS.md).
+
+### Minefields and chained deaths
+
+Non-Earth wrecks drop only unsalvaged carried mines, once, with their source
+account retained. Mines threaten all occupants, including their source and team.
+Manual entry requires a fresh warning confirmation; autopilot stops before a
+mined hop. Sensors report the actual stock. Current-sector hazards resolve before
+commands or on reconnect, and save-lock guards prevent spending or moving away
+through a newly arrived field. Small surviving ships may emergency-warp to a
+safe destination even with no remaining turns.
+
+Mine deaths retain their actual source even if that source already died. They
+release ports rather than award remote loot, and do not become voluntary suicides.
+Earth remains free of mines. This uses save version 7; follow the stopped-world
+backup and all-node upgrade guidance. Mine placement/withdrawal commands and
+missile/sector-fighter combat remain separate. See [rules and validation](research/yt-ships/MINES.md).

@@ -1,0 +1,313 @@
+[
+  {
+    "Name": "shield-single",
+    "Player": {
+      "Holds": 10,
+      "Shields": 10000,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 1,
+    "Draws": [
+      0.73
+    ],
+    "Expected": {
+      "Holds": 10,
+      "Shields": 9270,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "shield-collapse",
+    "Player": {
+      "Holds": 10,
+      "Shields": 100,
+      "Fighters": 100,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 2,
+    "Draws": [
+      0.99
+    ],
+    "Expected": {
+      "Holds": 10,
+      "Shields": 0,
+      "Fighters": 100,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "unshielded-mixed",
+    "Player": {
+      "Holds": 10,
+      "Shields": 0,
+      "Fighters": 100000,
+      "Cloak": 1.0,
+      "Missiles": 10,
+      "Mines": 10,
+      "Cargo": [
+        4,
+        3,
+        2
+      ]
+    },
+    "Burst": 2,
+    "Draws": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "Expected": {
+      "Holds": 6,
+      "Shields": 0,
+      "Fighters": 89999,
+      "Cloak": 0,
+      "Missiles": 6,
+      "Mines": 6,
+      "Cargo": [
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "empty-lethal",
+    "Player": {
+      "Holds": 1,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 1,
+    "Draws": [
+      0.9,
+      0.9,
+      0.9
+    ],
+    "Expected": {
+      "Holds": 0,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "cargo-first",
+    "Player": {
+      "Holds": 10,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        10,
+        0,
+        0
+      ]
+    },
+    "Burst": 1,
+    "Draws": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Expected": {
+      "Holds": 9,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        9,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "cloak-fraction",
+    "Player": {
+      "Holds": 100,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.075,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 1,
+    "Draws": [
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ],
+    "Expected": {
+      "Holds": 99,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.024999999999999994,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "large-stocks",
+    "Player": {
+      "Holds": 1000,
+      "Shields": 0,
+      "Fighters": 1000000000,
+      "Cloak": 0.0,
+      "Missiles": 1000000000,
+      "Mines": 1000000000,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 100000000,
+    "Draws": [
+      0.1,
+      0.9,
+      0.5,
+      0.1,
+      0.9,
+      0.5,
+      0.1,
+      0.9,
+      0.5,
+      0.1,
+      0.9,
+      0.5
+    ],
+    "Expected": {
+      "Holds": 0,
+      "Shields": 0,
+      "Fighters": 0,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "Name": "three-nested",
+    "Player": {
+      "Holds": 1000,
+      "Shields": 0,
+      "Fighters": 100000,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Burst": 1,
+    "Draws": [
+      0.25,
+      0.5,
+      0.75,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "Expected": {
+      "Holds": 905,
+      "Shields": 0,
+      "Fighters": 96249,
+      "Cloak": 0.0,
+      "Missiles": 0,
+      "Mines": 0,
+      "Cargo": [
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

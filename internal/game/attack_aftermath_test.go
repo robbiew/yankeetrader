@@ -1,7 +1,6 @@
 package game
 
 import (
-	"encoding/json"
 	"testing"
 	"time"
 )
@@ -56,22 +55,22 @@ func TestEarthAttackConservesAndDisarmsVictimMines(t *testing.T) {
 	}
 }
 
-func TestUnsupportedMineAftermathRejectedAtPreparationAndCommit(t *testing.T) {
+func TestMineBearingTargetCanBeAttackedOutsideEarth(t *testing.T) {
 	w, d, a := ownedPortWorld(t)
 	a.Sector = d.Sector
 	a.Cloak, d.Cloak = 0, 0
+	d.Mines = 1
+	d.Fighters, d.Shields = 0, 0
+	a.Shields = 10000
 	intent, err := w.PrepareAttack(a.ID, d.ID, 1)
 	if err != nil {
 		t.Fatal(err)
 	}
-	d.Mines = 100
-	if _, err = w.PrepareAttack(a.ID, d.ID, 1); err == nil {
-		t.Fatal("unsupported preparation")
+	result, err := w.CommitAttack(intent, func() float64 { return .5 }, time.Now())
+	if err != nil {
+		t.Fatal(err)
 	}
-	before, _ := json.Marshal(w)
-	_, err = w.CommitAttack(intent, func() float64 { t.Fatal("unsupported attack consumed RNG"); return 0 }, time.Now())
-	after, _ := json.Marshal(w)
-	if err == nil || string(before) != string(after) {
-		t.Fatal("unsupported aftermath accepted or mutated", err)
+	if result.DroppedMines != 1 || result.MineAftermath.Spent != 1 || d.Mines != 0 || len(w.Sectors[2].Minefield) != 0 {
+		t.Fatal(result)
 	}
 }

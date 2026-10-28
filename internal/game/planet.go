@@ -64,6 +64,19 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 6
 	}
+	if w.Version == 6 {
+		for _, p := range w.Players {
+			if p != nil && ((p.Death != nil && p.Death.Cause == "mines") || (p.Death == nil && p.Holds < 10)) {
+				return errors.New("version-six world unexpectedly contains mine lifecycle state")
+			}
+		}
+		for _, s := range w.Sectors {
+			if s != nil && len(s.Minefield) > 0 {
+				return errors.New("version-six world unexpectedly contains minefields")
+			}
+		}
+		w.Version = 7
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
