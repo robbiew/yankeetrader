@@ -37,8 +37,8 @@ line for Ctrl-R replay; `/R2` through `/R20` repeat a command.
 In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
 sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
-The computer currently connects options 3 (autopilot), 7 (avoid slots), and 10
-(path finder) to the implemented game rules.
+The computer currently connects options 3 (autopilot), 7 (avoid slots), 10
+(path finder), and 11 (your deployed sector fighters) to the implemented game rules.
 
 The original menus and manual include features still under reconstruction.
 Selecting an unavailable action says so; radio, scanner and cloak values are

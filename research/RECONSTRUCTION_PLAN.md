@@ -292,3 +292,11 @@ mine layer in one update. Same-owner drops add to that source's existing layer,
 following this world's attributed-layer model rather than DOS's aggregate
 overwrite behavior. No save-version change was needed. Field recovery remains
 unimplemented because no original DOS pickup behavior has been established.
+
+## Own sector fighter finder — implementation
+
+Computer option `11` lists only the caller's deployed sector fighter groups,
+ordered by sector, or reports that none were found. It is a read-only query and
+does not expose other players' groups. This follows the DOS fixture showing two
+owned groups while omitting a nearby enemy group; broader report functions
+remain separate work.

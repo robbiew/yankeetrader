@@ -358,6 +358,27 @@ func (s Session) Run() (runErr error) {
 					return err
 				}
 				cmd, args = "path", []string{from, to}
+			case "11":
+				groups, err := w.OwnSectorFighters(id)
+				if err != nil {
+					return err
+				}
+				if e = s.Terminal.Printf("\r\nSearching;\r\n\r\n Sector   Amount\r\n--------*--------\r\n"); e != nil {
+					return e
+				}
+				if len(groups) == 0 {
+					e = s.Terminal.Printf("No sector fighters found.\r\n")
+				} else {
+					for _, group := range groups {
+						if e = s.Terminal.Printf(" %-8d %d\r\n", group.Sector, group.Fighters); e != nil {
+							return e
+						}
+					}
+				}
+				if e != nil {
+					return e
+				}
+				continue
 			case "7":
 				slot, err := s.classicArgument("Enter the number of the slot to change [1 - 30]: ", &pending)
 				if err != nil {

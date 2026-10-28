@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math"
 	"slices"
+	"sort"
 	"time"
 )
 
@@ -27,6 +28,26 @@ type DefenseOutcome struct {
 	Sector  int
 	Escaped bool
 	Mines   MineOutcome
+}
+
+type SectorFighterGroup struct {
+	Sector   int
+	Fighters int64
+}
+
+// OwnSectorFighters lists only the caller's deployed fighter groups.
+func (w *World) OwnSectorFighters(id int) ([]SectorFighterGroup, error) {
+	if _, err := w.player(id); err != nil {
+		return nil, err
+	}
+	groups := make([]SectorFighterGroup, 0)
+	for sectorID, sector := range w.Sectors {
+		if sector.Defense != nil && sector.Defense.Owner == id {
+			groups = append(groups, SectorFighterGroup{Sector: sectorID, Fighters: sector.Defense.Fighters})
+		}
+	}
+	sort.Slice(groups, func(i, j int) bool { return groups[i].Sector < groups[j].Sector })
+	return groups, nil
 }
 
 func (w *World) friendlyDefense(id int, d *SectorDefense) bool {
