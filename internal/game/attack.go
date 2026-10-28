@@ -23,6 +23,9 @@ func (w *World) attackPair(attacker, target int) (*Player, *Player, error) {
 	if err != nil {
 		return nil, nil, err
 	}
+	if w.HostileDefense(a.ID, a.Sector) {
+		return nil, nil, ErrDefenseEncounter
+	}
 	if len(w.Sectors[a.Sector].Minefield) > 0 {
 		return nil, nil, ErrMineEncounter
 	}

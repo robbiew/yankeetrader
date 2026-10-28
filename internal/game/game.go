@@ -260,6 +260,9 @@ func (w *World) Move(id, to int) error {
 	return nil
 }
 func (w *World) canMove(p *Player, to int) error {
+	if w.HostileDefense(p.ID, p.Sector) {
+		return ErrDefenseEncounter
+	}
 	if len(w.Sectors[p.Sector].Minefield) > 0 {
 		return ErrMineEncounter
 	}
@@ -269,7 +272,7 @@ func (w *World) canMove(p *Player, to int) error {
 	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]
 		if owner == nil || p.Team == 0 || owner.Team != p.Team {
-			return errors.New("hostile sector fighters block this warp")
+			return errors.New("hostile sector fighters block this warp; use BREACH")
 		}
 	}
 	if p.Turns < 1 {

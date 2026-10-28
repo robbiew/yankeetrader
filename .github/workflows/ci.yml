@@ -57,6 +57,7 @@ jobs:
           python3 scripts/verify_hazard_evidence.py
           python3 scripts/verify_loot_evidence.py
           python3 scripts/verify_ship_duel_model.py
+          python3 scripts/verify_sector_model.py
           python3 scripts/verify_team_evidence.py
           python3 scripts/verify_ownership_evidence.py
           python3 scripts/verify_archive.py
@@ -82,6 +83,7 @@ jobs:
           python3 scripts/smoke_attacks.py
           python3 scripts/smoke_mines.py
           python3 scripts/smoke_missiles.py
+          python3 scripts/smoke_sector_fighters.py
       - name: Cross-build Linux and Windows
         run: |
           mkdir -p ../artifacts

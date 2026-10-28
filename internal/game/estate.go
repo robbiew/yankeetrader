@@ -7,8 +7,8 @@ var errInvalidDefense = errors.New("invalid sector defense or protected Earth de
 const MercenaryOwner = -2
 const XannorOwner = -1
 
-// SectorDefense is stored independently of ships. Placement and fighting remain
-// unavailable; movement refuses hostile defenses rather than bypassing them.
+// SectorDefense persists independently of ships. Personal/team passage is free;
+// hostile entry requires confirmed combat.
 type SectorDefense struct {
 	Owner    int
 	Fighters int64

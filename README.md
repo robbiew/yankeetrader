@@ -252,11 +252,11 @@ Press `T` (or `TEAM`) for the team menu. Create a team with a name of 3–41 pri
 
 Members can view the roster and teammate planet locations, share defended teammate planets, and confirm departure. New deaths also remove membership. Only the current captain can rename the team, change its invitation or remove another member. Removal permits rejoining until the password changes. If the captain leaves, the next member to visit the menu or log in succeeds them. Empty teams disappear.
 
-Leaving or removal immediately revokes shared landing sessions that no longer have access. Planets and ports retain their individual owners; port treasuries remain personal. Sector defenses and reinforcement are pending. See [team implementation and evidence](research/yt-teams/IMPLEMENTATION.md).
+Leaving or removal immediately revokes shared landing sessions that no longer have access. Planets and ports retain their individual owners; port treasuries remain personal. Sector defenses can be deployed/recovered with `F`/`DEFEND`, and teammates may reinforce them with `REINFORCE` or team option 6. See [team implementation and evidence](research/yt-teams/IMPLEMENTATION.md).
 
 ## Combat preparation
 
-Confirmed direct fighter attacks are now available; minefield aftermath is implemented, while sector-defense combat remains gated as described below. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; player-facing fighter attacks connect these operations, including attributed minefield aftermath outside Earth. [Duel and settlement scope](research/yt-ships/DUELS.md).
+Confirmed direct fighter attacks are now available; minefield aftermath is implemented, with sector-defense combat available as described below. The engine now records death and replacement atomically and binds each logged-in session to its ship generation. Old commands and pending prompts cannot act after death or use a replacement ship. Fresh-login replacement preserves remaining turns, while ordinary daily maintenance remains the only turn refill. Self-death has a next-UTC-day cooldown; enemy retaliation keeps its actual killer attribution. These internal transitions have no production kill/debug command. See [lifecycle scope, policies and validation](research/yt-ships/LIFECYCLE.md). Internal fighter/shield calculations, sampled inventory salvage and complete modeled estate transfers are implemented; player-facing fighter attacks connect these operations, including attributed minefield aftermath outside Earth. [Duel and settlement scope](research/yt-ships/DUELS.md).
 
 ## Loot and death-related ownership
 
@@ -264,7 +264,7 @@ Internal settlement samples holds, money and weapons separately, then chooses ca
 
 A new enemy death transfers ordinary ports with their treasuries intact. Self/environmental death releases those ports and clears their treasuries. Planets remain owned by the victim. Death removes team membership and revokes shared guarded-planet access; owned sector fighters become Mercenaries. Captured/released ports invalidate old docking agreements. Replacement preserves remaining turns and retained planets.
 
-Sector-defense state is available internally, with real sensor reports and hostile-warp blocking; no deployment/combat command is enabled. Default worlds have no deployed defenses. Direct fighter attacks are enabled for supported encounters. Non-Earth wreck mines now form attributed minefields and resolve against the attacker. Earth safely disposes of its unsalvaged mines. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
+Sector defenses have deployment/recovery, reinforcement, confirmed combat and missile interception, with real sensor reports and hostile-warp blocking. Default worlds have no deployed defenses. Direct fighter attacks are enabled for supported encounters. Non-Earth wreck mines now form attributed minefields and resolve against the attacker. Earth safely disposes of its unsalvaged mines. [Settlement rules, upgrades and validation](research/yt-ships/SETTLEMENT.md).
 
 Cloak energy persists per ship, decays by one percentage point when a spent turn
 leaves a multiple of 25 turns, and starts full on new/replacement ships. Legacy
@@ -282,8 +282,7 @@ loot and ownership save together, and direct fighter attacks spend no turns.
 
 Earth safely disposes of unsalvaged victim mines after loot is consumed once.
 Mine-bearing targets outside Earth are enabled, with wreck drops and chained
-deaths resolved atomically. Other supported direct duels are available; one-hop missile attacks and counterfire are implemented below; sector-defense combat remains
-separate. See [scope and validation](research/yt-ships/PLAYER_ATTACKS.md).
+deaths resolved atomically. Other supported direct duels are available; one-hop missile attacks and counterfire are implemented below; sector-defense combat is available below. See [scope and validation](research/yt-ships/PLAYER_ATTACKS.md).
 
 ### Minefields and chained deaths
 
@@ -298,19 +297,19 @@ safe destination even with no remaining turns.
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
 Earth remains free of mines. This build now uses save version 8; follow the stopped-world
-backup and all-node upgrade guidance. Mine placement/withdrawal commands and
-sector-fighter combat and wider missile encounters remain separate. See [rules and validation](research/yt-ships/MINES.md).
+backup and all-node upgrade guidance. Mine placement/withdrawal commands and wider missile encounters remain separate;
+sector-fighter combat is available below. See [rules and validation](research/yt-ships/MINES.md).
 
 ### Missile attacks and retaliation
 
 Use `MISSILE <adjacent sector> <quantity>` or classic `!`; omitted arguments are
 prompted. Launches need a fresh separate Y and cost one turn plus all selected
 missiles. This stage supports a one-hop corridor linked in both directions, with
-one visible enemy ship or a minefield. Hidden ships and teammates are skipped.
-Sectors with planets/deployed fighters, longer routes and multiple visible enemies
+one visible enemy ship, a minefield or a hostile fighter group. Hidden ships and teammates are skipped.
+Sectors with planets, longer routes and multiple visible enemies
 remain blocked until their interception/bombardment rules are implemented.
 
-Missiles clear one mine each before reaching the ship. A surviving enemy with
+Hostile sector fighters intercept missiles first (up to 4,999 fighters per missile); friendly groups are bypassed. Remaining missiles clear one mine each before reaching the ship. A surviving enemy with
 missiles returns one volley against the original attacker, including through
 its cloak; return fire does not consume that defender's daily turns or recurse.
 Both volleys, loot, deaths, port transfers and mine drops save together.
@@ -324,3 +323,21 @@ start at zero and use the recovered random 1..stock fallback; score calculation
 and scoreboard maintenance are not implemented yet. No wealth-derived score is
 invented. Positive cached scores use the recovered score formula. See
 [missile scope, rules and validation](research/yt-missiles/IMPLEMENTATION.md).
+
+### Sector fighters
+
+`F <total>` / `DEFEND <total>` sets the final size of your current-sector defense;
+`F 0` recovers it. Deployment is prohibited in Union sectors 1–7. Existing legacy
+groups there may be reduced or recovered. `REINFORCE <quantity>` and team option 6
+add fighters to an existing personal or teammate group without changing ownership.
+Only its owner may recover a group; all transfers enforce ship and defense capacity.
+
+Hostile defenses stop ordinary movement. Use `BREACH <current-or-adjacent sector>
+<fighters>` to commit a force. Choose whether to accept human surrender, then give
+a fresh separate Y to fight. Surviving defenders may surrender when outnumbered
+strictly more than ten to one; NPCs and Mercenaries refuse. Uncommitted fighters
+stay aboard. Exhausting the committed force forces emergency escape; `FLEE` also
+escapes a current hostile group, with a fresh confirmation and possible loss of
+all remaining turns. Adjacent entry spends one movement turn. Victory resolves
+any destination mines in the same saved transaction. Defeating a group does not
+kill its owner or capture a port. [Rules, policies and validation](research/yt-combat/SECTOR_FIGHTERS.md).

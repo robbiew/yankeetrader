@@ -14,10 +14,13 @@ type MissileIntent struct {
 	Generation, TargetGeneration uint64
 	Count                        int64
 	Mines                        []MineLayer
+	Defense                      SectorDefense
 }
 type MissileImpact struct {
+	SectorMissiles                              int64
 	Target                                      int
 	Launched, MinesDestroyed, Dropped, Disarmed int64
+	SectorFightersDestroyed                     int64
 	LostEscorts                                 int64
 	Damage                                      MissileDamage
 	Destroyed                                   bool
@@ -105,21 +108,24 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if err != nil {
 		return MissileIntent{}, err
 	}
+	if w.HostileDefense(id, a.Sector) {
+		return MissileIntent{}, ErrDefenseEncounter
+	}
 	if len(w.Sectors[a.Sector].Minefield) > 0 {
 		return MissileIntent{}, ErrMineEncounter
 	}
 	// Return fire reaches this sector too. Until its interception rules are
 	// supported, refuse the whole exchange before charging ammo or turns.
 	origin := w.Sectors[a.Sector]
-	if origin.Planet != 0 || origin.Defense != nil {
-		return MissileIntent{}, errors.New("missile return path through planets or sector fighters is not available yet")
+	if origin.Planet != 0 {
+		return MissileIntent{}, errors.New("missile return path through planets is not available yet")
 	}
 	target := w.Sectors[to]
 	if target == nil || to == a.Sector || !contains(w.Sectors[a.Sector].Warps, to) || !contains(target.Warps, a.Sector) {
 		return MissileIntent{}, errors.New("choose a different sector linked in both directions by one warp")
 	}
-	if target.Defense != nil || target.Planet != 0 {
-		return MissileIntent{}, errors.New("sector fighter interception and planet bombardment are not available yet")
+	if target.Planet != 0 {
+		return MissileIntent{}, errors.New("planet bombardment is not available yet")
 	}
 	if a.Turns < 1 {
 		return MissileIntent{}, errors.New("no turns left today")
@@ -128,6 +134,9 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 		return MissileIntent{}, errors.New("choose available missiles to launch")
 	}
 	intent := MissileIntent{Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Mines: append([]MineLayer(nil), target.Minefield...)}
+	if target.Defense != nil {
+		intent.Defense = *target.Defense
+	}
 	for _, p := range w.Players {
 		if p.ID == id || p.Death != nil || p.Sector != to || (a.Team != 0 && a.Team == p.Team) || !v.sees(p) {
 			continue
@@ -138,7 +147,7 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 		intent.Target = p.ID
 		intent.TargetGeneration = p.ShipGeneration
 	}
-	if intent.Target == 0 && len(intent.Mines) == 0 {
+	if intent.Target == 0 && len(intent.Mines) == 0 && !w.HostileDefense(id, to) {
 		return MissileIntent{}, errors.New("no visible enemy ship or minefield in that sector")
 	}
 	return intent, nil
@@ -154,7 +163,7 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	if err != nil {
 		return MissileResult{}, err
 	}
-	if fresh.From != intent.From || fresh.Target != intent.Target || fresh.TargetGeneration != intent.TargetGeneration || !slices.Equal(fresh.Mines, intent.Mines) {
+	if fresh.Defense != intent.Defense || fresh.From != intent.From || fresh.Target != intent.Target || fresh.TargetGeneration != intent.TargetGeneration || !slices.Equal(fresh.Mines, intent.Mines) {
 		return MissileResult{}, errors.New("missile target or mine warning changed; confirm again")
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
@@ -206,8 +215,32 @@ func (w *World) interceptMines(sector int, missiles int64) int64 {
 }
 func (w *World) missileImpact(shooter, target, sector int, count int64, cause string, rng func() float64, now time.Time, budget *int) (MissileImpact, error) {
 	out := MissileImpact{Target: target, Launched: count}
-	out.MinesDestroyed = w.interceptMines(sector, count)
-	remaining := count - out.MinesDestroyed
+	remaining := count
+	if s := w.Sectors[sector]; s.Defense != nil && !w.friendlyDefense(shooter, s.Defense) {
+		spent := int64(0)
+		killed := int64(0)
+		for spent < remaining && killed < s.Defense.Fighters {
+			if *budget <= 0 {
+				return MissileImpact{}, errors.New("missile calculation limit reached")
+			}
+			*budget -= 1
+			hit, err := scaledSalvageDraw(5000, rng)
+			if err != nil {
+				return MissileImpact{}, err
+			}
+			killed += hit
+			spent++
+		}
+		out.SectorMissiles = spent
+		out.SectorFightersDestroyed = min(killed, s.Defense.Fighters)
+		s.Defense.Fighters -= out.SectorFightersDestroyed
+		if s.Defense.Fighters == 0 {
+			s.Defense = nil
+		}
+		remaining -= spent
+	}
+	out.MinesDestroyed = w.interceptMines(sector, remaining)
+	remaining -= out.MinesDestroyed
 	if remaining == 0 || target == 0 {
 		return out, nil
 	}

@@ -211,7 +211,7 @@ func TestMissileDamageModel(t *testing.T) {
 }
 
 func TestUnsupportedMissileEncountersAreRejectedWithoutSpending(t *testing.T) {
-	for _, mode := range []string{"same sector", "longer route", "one way", "defenses", "planet", "multiple enemies", "no turns", "no stock"} {
+	for _, mode := range []string{"same sector", "longer route", "one way", "planet", "multiple enemies", "no turns", "no stock"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, _, v := missileWorld(t)
 			to := 2
@@ -222,8 +222,6 @@ func TestUnsupportedMissileEncountersAreRejectedWithoutSpending(t *testing.T) {
 				to = 3
 			case "one way":
 				w.Sectors[2].Warps = []int{3}
-			case "defenses":
-				w.Sectors[2].Defense = &SectorDefense{Owner: 0, Fighters: 1}
 			case "planet":
 				w.Sectors[2].Planet = 2
 			case "multiple enemies":
@@ -335,7 +333,7 @@ func TestRetaliationUsesOriginalAttackersStoredScore(t *testing.T) {
 }
 
 func TestMissileReturnPathUnsupportedDefensesRejectedBeforeSpending(t *testing.T) {
-	for _, mode := range []string{"planet", "fighters"} {
+	for _, mode := range []string{"planet"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, _, v := missileWorld(t)
 			if mode == "planet" {

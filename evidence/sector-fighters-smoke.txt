@@ -1,0 +1,62 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Owner. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Owner.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 8 | 1005 credits | 500 turns > f 100;i;f 0;i;q
+Sector fighter transfer saved.
+Caller: holds 10; ore 0; organics 0; equipment 0
+Fighters 900; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Cloak energy: 100%
+Sector fighter transfer saved.
+Caller: holds 10; ore 0; organics 0; equipment 0
+Fighters 1000; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Cloak energy: 100%
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 7 | 1005 credits | 500 turns > breach 8 10001;y
+Accept human surrender if offered during this battle? [Y/n] y
+Fight 1000 sector fighters with 10001 fighters in sector 8 (0 mines)? Lost forces stay lost; defeat forces emergency escape. [y/N] 
+Defense encounter cancelled.
+
+Sector 7 | 1005 credits | 500 turns > q
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 7 | 1005 credits | 500 turns > breach 8 10001
+Accept human surrender if offered during this battle? [Y/n] y
+Fight 1000 sector fighters with 10001 fighters in sector 8 (0 mines)? Lost forces stay lost; defeat forces emergency escape. [y/N] y
+Defense encounter saved: 0 attackers lost, 0 defenders destroyed, 1000 surrendered.
+Hostile defense cleared in sector 8.
+
+Sector 8 | 1005 credits | 499 turns > q
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 7 | 1005 credits | 499 turns > missile 8 1
+Launch 1 missiles into sector 8 (sector defenses; 0 mines)? Your shields: 0. A surviving enemy may retaliate. [y/N] y
+Missile launch saved: 1 missiles fired, 0 mines destroyed. No ship struck.
+Sector interception: 1 missiles, 2398 fighters destroyed.
+
+Sector 7 | 1005 credits | 498 turns > q
+Saved. Safe travels, Caller.
