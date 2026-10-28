@@ -12,10 +12,10 @@ import (
 
 func (s Session) launchMissiles(id int, args []string, pending *[]string, v *game.Visibility) error {
 	if len(args) != 0 && len(args) != 2 {
-		return errors.New("use MISSILE [<adjacent sector> <quantity>]")
+		return errors.New("use MISSILE [<sector> <quantity>]")
 	}
 	if len(args) == 0 {
-		sector, err := s.classicArgument("Fire missiles into which adjacent sector (blank cancels)? ", pending)
+		sector, err := s.classicArgument("Fire missiles into which sector (blank cancels)? ", pending)
 		if err != nil {
 			return err
 		}
@@ -44,16 +44,19 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	if err != nil {
 		return err
 	}
-	name := "sector defenses"
-	if intent.Planet != nil {
-		name = fmt.Sprintf("planet %s; %d ground forces; production %g/%g/%g", intent.Planet.Name, intent.Planet.Ground, intent.Planet.Production[0], intent.Planet.Production[1], intent.Planet.Production[2])
+	name := missileTargetSummary(w, id, intent)
+	route := make([]string, len(intent.Route))
+	for i, sector := range intent.Route {
+		route[i] = strconv.Itoa(sector)
 	}
-	if intent.Target != 0 {
-		name = w.Players[intent.Target].Alias
+	if err = s.Terminal.Printf("Missile course (%d warps): %s\r\n", len(intent.Route)-1, strings.Join(route, " -> ")); err != nil {
+		return err
 	}
 	mines := int64(0)
-	for _, layer := range intent.Mines {
-		mines += layer.Count
+	for _, sector := range intent.Sectors {
+		for _, layer := range sector.Mines {
+			mines += layer.Count
+		}
 	}
 	*pending = nil
 	if terminal, ok := s.Terminal.(interface{ DiscardTypeahead() error }); ok {
@@ -61,11 +64,18 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 			return err
 		}
 	}
-	consequence := "A surviving enemy may retaliate."
-	if intent.Planet != nil {
-		consequence = "This damages ground forces and production; the planet may be destroyed."
+	consequence := "A surviving ship with a route back may retaliate."
+	for _, sector := range intent.Sectors {
+		if planet := sector.Planet; planet != nil {
+			actor, owner := w.Players[id], w.Players[planet.Owner]
+			friendly := planet.Owner == id || actor.Team != 0 && owner != nil && owner.Team == actor.Team
+			if !friendly {
+				consequence += " Hostile planets along the course may be damaged or destroyed."
+				break
+			}
+		}
 	}
-	if err = s.Terminal.Printf("Launch %d missiles into sector %d (%s; %d mines)? Your shields: %d. %s [y/N] ", count, to, name, mines, w.Players[id].Shields, consequence); err != nil {
+	if err = s.Terminal.Printf("Launch %d missiles into sector %d (%s; %d route mines)? Your shields: %d. %s [y/N] ", count, to, name, mines, w.Players[id].Shields, consequence); err != nil {
 		return err
 	}
 	answer, err := s.readAttackConfirmation()
@@ -105,46 +115,51 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	return nil
 }
 func (s Session) showMissileImpact(label, name, recipient string, out game.MissileImpact) error {
-	if out.Target == 0 {
+	if len(out.ShipImpacts) == 0 {
 		if err := s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed. No ship struck.\r\n", label, out.Launched, out.MinesDestroyed); err != nil {
 			return err
 		}
-		if out.SectorMissiles > 0 {
-			if err := s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed); err != nil {
-				return err
-			}
-		}
-		if out.PlanetMissiles > 0 {
-			if err := s.Terminal.Printf("Planet bombardment saved: %d missiles reached planet %d; ground forces %d -> %d; production %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f; warehouses %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f.\r\n", out.PlanetMissiles, out.PlanetID, out.GroundBefore, out.GroundAfter, out.ProductionBefore[0], out.ProductionBefore[1], out.ProductionBefore[2], out.ProductionAfter[0], out.ProductionAfter[1], out.ProductionAfter[2], out.CargoBefore[0], out.CargoBefore[1], out.CargoBefore[2], out.CargoAfter[0], out.CargoAfter[1], out.CargoAfter[2]); err != nil {
-				return err
-			}
-			if out.PlanetDestroyed {
-				return s.Terminal.Printf("Planet %d destroyed; surviving ships and the sector remain. No planetary bank or inventory was salvaged.\r\n", out.PlanetID)
-			}
-			return nil
-		}
-		return nil
-	}
-	if err := s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed; %s lost %d fighters and %d shields.\r\n", label, out.Launched, out.MinesDestroyed, name, out.Damage.Fighters, out.Damage.Shields); err != nil {
+	} else if err := s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed; %d ships struck.\r\n", label, out.Launched, out.MinesDestroyed, len(out.ShipImpacts)); err != nil {
 		return err
 	}
-	if out.SectorMissiles > 0 {
-		if err := s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed); err != nil {
-			return err
-		}
-	}
-	if out.Destroyed {
-		if out.LostEscorts > 0 {
-			if err := s.Terminal.Printf("%d remaining fighters were lost with the ship.\r\n", out.LostEscorts); err != nil {
+	for _, impact := range out.Interceptions {
+		if impact.Missiles > 0 {
+			if err := s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed in sector %d.\r\n", impact.Missiles, impact.FightersDestroyed, impact.Sector); err != nil {
 				return err
 			}
 		}
-		if err := s.Terminal.Printf("%s destroyed. %s recovered %d credits, %d holds, %d missiles, %d plasma, %d ground forces, %d mines; cargo %d/%d/%d.\r\n", name, recipient, out.Salvage.Credits, out.Salvage.Holds, out.Salvage.Missiles, out.Salvage.Plasma, out.Salvage.Ground, out.Salvage.Mines, out.Salvage.Cargo[0], out.Salvage.Cargo[1], out.Salvage.Cargo[2]); err != nil {
+		if impact.MinesDestroyed > 0 {
+			if err := s.Terminal.Printf("Mines in sector %d destroyed: %d.\r\n", impact.Sector, impact.MinesDestroyed); err != nil {
+				return err
+			}
+		}
+	}
+	for _, impact := range out.ShipImpacts {
+		if impact.Destroyed {
+			if impact.LostEscorts > 0 {
+				if err := s.Terminal.Printf("%d remaining fighters were lost with the ship.\r\n", impact.LostEscorts); err != nil {
+					return err
+				}
+			}
+			if err := s.Terminal.Printf("%s destroyed. %s recovered %d credits, %d holds, %d missiles, %d plasma, %d ground forces, %d mines; cargo %d/%d/%d (sector %d).\r\n", impact.Alias, recipient, impact.Salvage.Credits, impact.Salvage.Holds, impact.Salvage.Missiles, impact.Salvage.Plasma, impact.Salvage.Ground, impact.Salvage.Mines, impact.Salvage.Cargo[0], impact.Salvage.Cargo[1], impact.Salvage.Cargo[2], impact.Sector); err != nil {
+				return err
+			}
+		} else if err := s.Terminal.Printf("%s in sector %d lost %d fighters and %d shields.\r\n", impact.Alias, impact.Sector, impact.Damage.Fighters, impact.Damage.Shields); err != nil {
 			return err
+		}
+	}
+	for _, impact := range out.PlanetImpacts {
+		if err := s.Terminal.Printf("Planet bombardment saved: %d missiles reached planet %d in sector %d; ground forces %d -> %d; production %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f; warehouses %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f.\r\n", impact.Missiles, impact.PlanetID, impact.Sector, impact.GroundBefore, impact.GroundAfter, impact.ProductionBefore[0], impact.ProductionBefore[1], impact.ProductionBefore[2], impact.ProductionAfter[0], impact.ProductionAfter[1], impact.ProductionAfter[2], impact.CargoBefore[0], impact.CargoBefore[1], impact.CargoBefore[2], impact.CargoAfter[0], impact.CargoAfter[1], impact.CargoAfter[2]); err != nil {
+			return err
+		}
+		if impact.Destroyed {
+			if err := s.Terminal.Printf("Planet %d destroyed; surviving ships and the sector remain. No planetary bank or inventory was salvaged.\r\n", impact.PlanetID); err != nil {
+				return err
+			}
 		}
 	}
 	if out.Dropped > 0 {
-		if err := s.Terminal.Printf("Wreck dropped %d unsalvaged mines.\r\n", out.Dropped); err != nil {
+		if err := s.Terminal.Printf("Wrecks dropped %d unsalvaged mines.\r\n", out.Dropped); err != nil {
 			return err
 		}
 	}
@@ -152,4 +167,28 @@ func (s Session) showMissileImpact(label, name, recipient string, out game.Missi
 		return s.Terminal.Printf("Earth protection safely disposed of %d unsalvaged mines.\r\n", out.Disarmed)
 	}
 	return nil
+}
+
+func missileTargetSummary(w *game.World, shooter int, intent game.MissileIntent) string {
+	var names []string
+	for _, sector := range intent.Sectors {
+		for _, ship := range sector.Ships {
+			names = append(names, ship.Alias)
+		}
+		if planet := sector.Planet; planet != nil {
+			actor, owner := w.Players[shooter], w.Players[planet.Owner]
+			friendly := planet.Owner == shooter || actor != nil && actor.Team != 0 && owner != nil && owner.Team == actor.Team
+			if friendly {
+				continue
+			}
+			if len(intent.Sectors) == 1 && len(sector.Ships) == 0 {
+				return fmt.Sprintf("planet %s; %d ground forces; production %g/%g/%g", planet.Name, planet.Ground, planet.Production[0], planet.Production[1], planet.Production[2])
+			}
+			names = append(names, "planet "+planet.Name)
+		}
+	}
+	if len(names) == 0 {
+		return "sector defenses or mines"
+	}
+	return strings.Join(names, ", ")
 }

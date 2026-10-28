@@ -3,6 +3,8 @@
 This report records the earlier ground-only implementation boundary. Ground
 bombardment now continues into production damage and logical destruction as
 documented in [the production/destruction report](PRODUCTION_DESTRUCTION.md).
+Routed and mixed ship/planet encounters are documented in
+[the wider-routes report](WIDER_ROUTES.md).
 
 # Planetary ground bombardment
 

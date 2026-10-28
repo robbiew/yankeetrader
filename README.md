@@ -297,26 +297,30 @@ safe destination even with no remaining turns.
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
 Earth remains free of mines. This build now uses save version 9; follow the stopped-world
-backup and all-node upgrade guidance. Mine placement/withdrawal commands and wider missile encounters remain separate;
-sector-fighter combat is available below. See [rules and validation](research/yt-ships/MINES.md).
+backup and all-node upgrade guidance. Mine placement/withdrawal commands remain
+separate; routed missile encounters and sector-fighter combat are available below.
+See [rules and validation](research/yt-ships/MINES.md).
 
 ### Missile attacks and retaliation
 
-Use `MISSILE <adjacent sector> <quantity>` or classic `!`; omitted arguments are
-prompted. Launches need a fresh separate Y and cost one turn plus all selected
-missiles. This stage supports a one-hop corridor linked in both directions, with
-one visible enemy ship, a minefield or a hostile fighter group. Hidden ships and teammates are skipped.
-Hostile planets support ground and production bombardment as described below. Longer routes,
-multiple visible enemies and mixed visible ship/planet encounters remain blocked.
+Use `MISSILE <sector> <quantity>` or classic `!`; omitted arguments are prompted.
+The confirmation displays the selected shortest route (ties use stored warp
+order) and visible targets along it. Launches need a fresh separate Y and cost
+one turn plus all selected missiles. Hostile sector fighters intercept first,
+then mines, visible enemy ships in player-ID order, and hostile planets in each
+sector. Destroyed ships and planets let remaining missiles continue down the
+route. Hidden ships and teammates are skipped; friendly defenses are bypassed,
+and friendly planets are passed over. The shortest-path and tie-break behavior
+are modern policies; the DOS tie rule is unknown.
 
-Hostile sector fighters intercept missiles first (up to 4,999 fighters per missile); friendly groups are bypassed. Remaining missiles clear one mine each before reaching the ship. A surviving enemy with
-missiles returns one volley against the original attacker, including through
-its cloak; return fire does not consume that defender's daily turns or recurse.
-Both volleys, loot, deaths, port transfers and mine drops save together.
-Remaining outgoing missiles clear wreck mines before dissipating. Earth disposal
-still applies. A ship whose shields reach zero is destroyed even if escorts
-remain, as in the recovered missile path. Prototype new ships still start with
-zero shields: purchase shields at Earth before combat.
+A surviving ship actually hit may return one volley if a directed route leads
+back to the launcher. The response uses its own preflighted route and resolves
+intermediate defenses, mines and hostile planets; it can target the original
+attacker through cloak. Return fire does not consume the defender's daily turns
+or recurse. Both volleys, interceptions, ship and planet damage, loot, deaths,
+port transfers and mine drops save together. A ship whose shields reach zero is
+destroyed even if escorts remain, as in the recovered missile path. Prototype
+new ships still start with zero shields: purchase shields at Earth before combat.
 
 Return-volley sizing uses the saved `StoredScore` cache. New/migrated accounts
 start at zero and use the recovered random 1..stock fallback; score calculation
@@ -344,10 +348,11 @@ kill its owner or capture a port. [Rules, policies and validation](research/yt-c
 
 ### Planetary ground and production bombardment
 
-`MISSILE <adjacent sector> <quantity>` can strike a hostile planet after sector
-fighters and mines intercept the volley. A fresh warning names the planet,
-garrison and production rates. Own/team planets and mixed visible ship/planet
-encounters are blocked. Missiles first reduce
+`MISSILE <sector> <quantity>` can strike hostile planets along a routed course
+after sector fighters and mines intercept the volley. A fresh warning names the
+route and visible ships/planets. Own/team planets are passed over, while a
+personal or teammate planet cannot be selected as the destination. Mixed visible
+ship/planet encounters are supported in sector order. Missiles first reduce
 ground forces by a random fraction of 25 each; after ground reaches zero, each
 remaining missile independently damages all three production rates. Rates clamp
 at zero and matching warehouses cap at ten times their resulting rate. Recovered

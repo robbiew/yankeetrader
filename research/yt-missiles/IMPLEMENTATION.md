@@ -1,5 +1,8 @@
 # One-hop missile attacks and retaliation — 2026-10-27
 
+This document preserves the initial one-hop integration scope. The current
+routed and mixed-encounter behavior is in [WIDER_ROUTES.md](WIDER_ROUTES.md).
+
 ## Playable scope
 
 `MISSILE <sector> <quantity>` and classic `!` offer a fresh, separately entered Y

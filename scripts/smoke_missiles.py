@@ -102,7 +102,7 @@ with tempfile.TemporaryDirectory(prefix='yt-missile-smoke-') as temp:
     world['Ports']['2'].update(Owner=1,Treasury=777)
     path.write_text(json.dumps(world))
     code,text=play(data,'Launcher','missile 2 1',answer='y')
-    assert code==1 and 'Enemy retaliation saved: 6 missiles fired' in text and 'your ship destroyed. Enemy recovered' in text,text
+    assert code==1 and 'Enemy retaliation saved: 6 missiles fired' in text and 'Launcher destroyed. Enemy recovered' in text,text
     assert 'Earth protection safely disposed' in text,text
     transcript+=text
     world=json.loads(path.read_text());launcher,enemy=world['Players']['1'],world['Players']['2']

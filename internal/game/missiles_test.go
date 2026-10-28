@@ -211,23 +211,21 @@ func TestMissileDamageModel(t *testing.T) {
 }
 
 func TestUnsupportedMissileEncountersAreRejectedWithoutSpending(t *testing.T) {
-	for _, mode := range []string{"same sector", "longer route", "one way", "planet", "multiple enemies", "no turns", "no stock"} {
+	for _, mode := range []string{"same sector", "unreachable route", "no target", "own planet", "no turns", "no stock"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, _, v := missileWorld(t)
 			to := 2
 			switch mode {
 			case "same sector":
 				to = 1
-			case "longer route":
+			case "unreachable route":
 				to = 3
-			case "one way":
-				w.Sectors[2].Warps = []int{3}
-			case "planet":
+				w.Sectors[2].Warps = []int{1}
+			case "no target":
+				w.Players[2].Sector = 3
+			case "own planet":
 				w.Sectors[2].Planet = 2
-			case "multiple enemies":
-				third, _ := w.Join("third", "Third")
-				third.Sector = 2
-				third.Cloak = 0
+				w.Planets[2] = &Planet{ID: 2, Sector: 2, Owner: a.ID, Updated: clock, Name: "Home", Ground: 100}
 			case "no turns":
 				a.Turns = 0
 			case "no stock":
@@ -242,6 +240,175 @@ func TestUnsupportedMissileEncountersAreRejectedWithoutSpending(t *testing.T) {
 				t.Fatal("preparation mutated state")
 			}
 		})
+	}
+}
+
+func routeTwoHop(w *World, target *Player, returnVia int) {
+	w.Sectors[1].Warps = []int{2}
+	w.Sectors[2].Warps = []int{3}
+	w.Sectors[3].Warps = nil
+	if returnVia != 0 {
+		w.Sectors[3].Warps = []int{returnVia}
+		w.Sectors[returnVia].Warps = []int{1}
+	}
+	target.Sector = 3
+}
+
+func TestMissileFollowsLongerDirectedRouteAndIntermediateMines(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	routeTwoHop(w, d, 0)
+	d.Fighters, d.Shields, d.Missiles = MaxQuantity, MaxQuantity, 10
+	w.Sectors[2].Minefield = []MineLayer{{Owner: d.ID, Count: 1}}
+	intent, err := w.PrepareMissile(a.ID, 3, 2, v)
+	if err != nil || !reflect.DeepEqual(intent.Route, []int{1, 2, 3}) {
+		t.Fatal(intent.Route, err)
+	}
+	out, err := w.CommitMissile(intent, v, func() float64 { return .5 }, clock)
+	if err != nil || out.Primary.MinesDestroyed != 1 || out.Primary.Damage.Spent != 1 || out.Counter.Launched != 0 {
+		t.Fatal(out, err)
+	}
+	if d.Fighters == MaxQuantity || a.Missiles != 8 || a.Turns != 499 {
+		t.Fatal("routed attack did not apply atomically", a, d)
+	}
+}
+
+func TestRoutedMissileCanDestroyTargetWithoutReturnRoute(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	routeTwoHop(w, d, 0)
+	d.Sector = 3
+	d.Fighters, d.Shields, d.Missiles = 1, 1, 10
+	intent, err := w.PrepareMissile(a.ID, 3, 1, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	out, err := w.CommitMissile(intent, v, func() float64 { return .99 }, clock)
+	if err != nil || !out.Primary.Destroyed || d.Death == nil || d.Death.Cause != "missile" || out.Counter.Launched != 0 {
+		t.Fatal(out, d, err)
+	}
+}
+
+func TestRoutedMissileConfirmationRechecksIntermediateHazards(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	routeTwoHop(w, d, 0)
+	intent, err := w.PrepareMissile(a.ID, 3, 1, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	w.Sectors[2].Minefield = []MineLayer{{Owner: d.ID, Count: 4}}
+	before, _ := json.Marshal(w)
+	if _, err = w.CommitMissile(intent, v, func() float64 { t.Fatal("stale route sampled RNG"); return 0 }, clock); err == nil {
+		t.Fatal("changed intermediate hazard accepted")
+	}
+	after, _ := json.Marshal(w)
+	if string(before) != string(after) {
+		t.Fatal("stale route changed world")
+	}
+}
+
+func TestMissileRouteInterceptsIntermediateFighters(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	routeTwoHop(w, d, 0)
+	d.Fighters, d.Shields = MaxQuantity, MaxQuantity
+	w.Sectors[2].Defense = &SectorDefense{Owner: d.ID, Fighters: 5_000}
+	intent, err := w.PrepareMissile(a.ID, 3, 3, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	out, err := w.CommitMissile(intent, v, func() float64 { return .5 }, clock)
+	if err != nil || out.Primary.SectorMissiles != 2 || out.Primary.SectorFightersDestroyed != 5_000 || out.Primary.Damage.Spent != 1 {
+		t.Fatal(out, err)
+	}
+}
+
+func TestMissileCourseUsesShortestRouteAndStoredWarpOrderForTies(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	d.Sector = 4
+	w.Sectors[1].Warps = []int{2, 3}
+	w.Sectors[2].Warps = []int{4}
+	w.Sectors[3].Warps = []int{4}
+	w.Sectors[4].Warps = []int{2, 3}
+	w.Sectors[2].Minefield = []MineLayer{{Owner: d.ID, Count: 1}}
+	intent, err := w.PrepareMissile(a.ID, 4, 2, v)
+	if err != nil || !reflect.DeepEqual(intent.Route, []int{1, 2, 4}) {
+		t.Fatal(intent.Route, err)
+	}
+}
+
+func TestMissileIntermediatePlanetPrecedesFartherShip(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	routeTwoHop(w, d, 0)
+	d.Fighters, d.Shields = MaxQuantity, MaxQuantity
+	planet := &Planet{ID: 2, Sector: 2, Owner: d.ID, Name: "Waystation", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
+	w.Planets[planet.ID] = planet
+	w.Sectors[2].Planet = planet.ID
+	intent, err := w.PrepareMissile(a.ID, 3, 2, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	out, err := w.CommitMissile(intent, v, func() float64 { return .99 }, clock)
+	if err != nil || len(out.Primary.PlanetImpacts) != 1 || out.Primary.PlanetImpacts[0].Sector != 2 || out.Primary.Damage.Spent != 0 {
+		t.Fatal(out, err)
+	}
+	if d.Fighters != MaxQuantity || d.Shields != MaxQuantity || out.Primary.PlanetMissiles != 2 {
+		t.Fatal("farther ship was reached through an intact planet", out, d)
+	}
+}
+
+func TestMissileContinuesFromDestroyedShipToSecondShipAndPlanet(t *testing.T) {
+	t.Run("second ship", func(t *testing.T) {
+		w, a, first, v := missileWorld(t)
+		first.Fighters, first.Shields = 1, 1
+		second, _ := w.Join("second", "Second")
+		second.Sector, second.Cloak = 2, 0
+		second.Fighters, second.Shields = MaxQuantity, MaxQuantity
+		intent, err := w.PrepareMissile(a.ID, 2, 2, v)
+		if err != nil {
+			t.Fatal(err)
+		}
+		out, err := w.CommitMissile(intent, v, func() float64 { return .999 }, clock)
+		if err != nil || len(out.Primary.ShipImpacts) != 2 || !out.Primary.ShipImpacts[0].Destroyed || out.Primary.ShipImpacts[1].Player != second.ID || out.Primary.ShipImpacts[1].Damage.Spent != 1 {
+			t.Fatal(out, err)
+		}
+		if second.Fighters == MaxQuantity || out.Primary.Target != second.ID {
+			t.Fatal("remaining missile did not continue to the next ship", second, out.Primary)
+		}
+	})
+	t.Run("planet", func(t *testing.T) {
+		w, a, first, v := missileWorld(t)
+		first.Fighters, first.Shields = 1, 1
+		planet := &Planet{ID: 2, Sector: 2, Owner: first.ID, Name: "Target", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
+		w.Planets[planet.ID] = planet
+		w.Sectors[2].Planet = planet.ID
+		intent, err := w.PrepareMissile(a.ID, 2, 2, v)
+		if err != nil {
+			t.Fatal(err)
+		}
+		out, err := w.CommitMissile(intent, v, func() float64 { return .999 }, clock)
+		if err != nil || len(out.Primary.ShipImpacts) != 1 || !out.Primary.ShipImpacts[0].Destroyed || len(out.Primary.PlanetImpacts) != 1 || out.Primary.PlanetImpacts[0].Missiles != 1 {
+			t.Fatal(out, err)
+		}
+	})
+}
+
+func TestMissileUsesPreflightedReturnRouteInterception(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	w.Sectors[1].Warps = []int{2}
+	w.Sectors[2].Warps = []int{3}
+	w.Sectors[3].Warps = []int{4}
+	w.Sectors[4].Warps = []int{1}
+	d.Sector, d.Fighters, d.Shields, d.Missiles = 3, MaxQuantity, MaxQuantity, 1
+	a.Fighters, a.Shields = MaxQuantity, MaxQuantity
+	w.Sectors[4].Minefield = []MineLayer{{Owner: d.ID, Count: 1}}
+	intent, err := w.PrepareMissile(a.ID, 3, 1, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(intent.Route, []int{1, 2, 3}) || !reflect.DeepEqual(intent.Sectors[1].Ships[0].ReturnRoute, []int{3, 4, 1}) {
+		t.Fatal("unexpected preflighted routes", intent)
+	}
+	out, err := w.CommitMissile(intent, v, func() float64 { return .99 }, clock)
+	if err != nil || out.Counter.Launched != 1 || out.Counter.MinesDestroyed != 1 || out.Counter.Damage.Spent != 0 || a.Fighters != MaxQuantity {
+		t.Fatal(out, err)
 	}
 }
 
@@ -332,23 +499,21 @@ func TestRetaliationUsesOriginalAttackersStoredScore(t *testing.T) {
 	}
 }
 
-func TestMissileReturnPathUnsupportedDefensesRejectedBeforeSpending(t *testing.T) {
-	for _, mode := range []string{"planet"} {
-		t.Run(mode, func(t *testing.T) {
-			w, a, _, v := missileWorld(t)
-			if mode == "planet" {
-				w.Sectors[a.Sector].Planet = 2
-			} else {
-				w.Sectors[a.Sector].Defense = &SectorDefense{Owner: a.ID, Fighters: 100}
-			}
-			before, _ := json.Marshal(w)
-			if _, err := w.PrepareMissile(a.ID, 2, 1, v); err == nil {
-				t.Fatal("unsupported return path")
-			}
-			after, _ := json.Marshal(w)
-			if string(before) != string(after) {
-				t.Fatal("return-path rejection spent resources")
-			}
-		})
+func TestMissilePreflightSnapshotsPlanetOnReturnPath(t *testing.T) {
+	w, a, d, v := missileWorld(t)
+	a.StoredScore = 1
+	d.Missiles = 1
+	w.Sectors[a.Sector].Planet = 2
+	w.Planets[2] = &Planet{ID: 2, Sector: a.Sector, Owner: a.ID, Name: "Home", Updated: clock, Ground: 100}
+
+	intent, err := w.PrepareMissile(a.ID, d.Sector, 1, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(intent.Sectors) != 1 || len(intent.Sectors[0].Ships) != 1 || len(intent.Sectors[0].Ships[0].ReturnSectors) != 1 {
+		t.Fatal("return route and its sectors were not captured", intent)
+	}
+	if got := intent.Sectors[0].Ships[0].ReturnSectors[0].Planet; got == nil || got.ID != 2 {
+		t.Fatal("return-path planet snapshot missing", intent.Sectors[0].Ships[0].ReturnSectors)
 	}
 }

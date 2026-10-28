@@ -3,7 +3,8 @@ package game
 import (
 	"errors"
 	"math"
-	"slices"
+	"reflect"
+	"sort"
 	"time"
 )
 
@@ -11,12 +12,27 @@ const maxMissileRounds = 1_000_000
 
 type MissileDamage struct{ Spent, Fighters, Shields int64 }
 type MissileIntent struct {
-	Player, From, To, Target     int
-	Generation, TargetGeneration uint64
-	Count                        int64
-	Mines                        []MineLayer
-	Defense                      SectorDefense
-	Planet                       *Planet
+	Player, From, To int
+	Generation       uint64
+	Count            int64
+	Route            []int
+	Sectors          []MissileRouteSector
+}
+type MissileRouteSector struct {
+	Sector  int
+	Mines   []MineLayer
+	Defense *SectorDefense
+	Ships   []MissileShipTarget
+	Planet  *Planet
+}
+type MissileShipTarget struct {
+	Player, Team      int
+	Generation        uint64
+	Alias             string
+	Fighters, Shields int64
+	Cloak             float64
+	ReturnRoute       []int
+	ReturnSectors     []MissileRouteSector
 }
 type MissileImpact struct {
 	SectorMissiles                              int64
@@ -27,12 +43,36 @@ type MissileImpact struct {
 	CargoBefore, CargoAfter                     [3]float64
 	PlanetDestroyed                             bool
 	Target                                      int
+	Retaliator                                  int
 	Launched, MinesDestroyed, Dropped, Disarmed int64
 	SectorFightersDestroyed                     int64
 	LostEscorts                                 int64
 	Damage                                      MissileDamage
 	Destroyed                                   bool
 	Salvage                                     Salvage
+	Interceptions                               []MissileInterception
+	ShipImpacts                                 []MissileShipImpact
+	PlanetImpacts                               []MissilePlanetImpact
+}
+type MissileInterception struct {
+	Sector                                      int
+	Missiles, FightersDestroyed, MinesDestroyed int64
+}
+type MissileShipImpact struct {
+	Sector, Player int
+	Alias          string
+	Damage         MissileDamage
+	Destroyed      bool
+	LostEscorts    int64
+	Salvage        Salvage
+}
+type MissilePlanetImpact struct {
+	Sector, PlanetID                    int
+	GroundBefore, GroundAfter, Missiles int64
+	GroundMissiles, ProductionMissiles  int64
+	ProductionBefore, ProductionAfter   [3]float64
+	CargoBefore, CargoAfter             [3]float64
+	Destroyed                           bool
 }
 type MissileResult struct{ Primary, Counter MissileImpact }
 
@@ -122,15 +162,8 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if len(w.Sectors[a.Sector].Minefield) > 0 {
 		return MissileIntent{}, ErrMineEncounter
 	}
-	// Return fire reaches this sector too. Until its interception rules are
-	// supported, refuse the whole exchange before charging ammo or turns.
-	origin := w.Sectors[a.Sector]
-	if origin.Planet != 0 {
-		return MissileIntent{}, errors.New("missile return path through planets is not available yet")
-	}
-	target := w.Sectors[to]
-	if target == nil || to == a.Sector || !contains(w.Sectors[a.Sector].Warps, to) || !contains(target.Warps, a.Sector) {
-		return MissileIntent{}, errors.New("choose a different sector linked in both directions by one warp")
+	if w.Sectors[to] == nil || to == a.Sector {
+		return MissileIntent{}, errors.New("choose a different existing sector")
 	}
 	if a.Turns < 1 {
 		return MissileIntent{}, errors.New("no turns left today")
@@ -138,39 +171,85 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if count < 1 || count > a.Missiles {
 		return MissileIntent{}, errors.New("choose available missiles to launch")
 	}
-	intent := MissileIntent{Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Mines: append([]MineLayer(nil), target.Minefield...)}
-	if target.Defense != nil {
-		intent.Defense = *target.Defense
+	route, err := w.path(a.Sector, to, nil)
+	if err != nil {
+		return MissileIntent{}, errors.New("no warp route reaches that missile target")
 	}
-	for _, p := range w.Players {
-		if p.ID == id || p.Death != nil || p.Sector != to || (a.Team != 0 && a.Team == p.Team) || !v.sees(p) {
-			continue
-		}
-		if intent.Target != 0 {
-			return MissileIntent{}, errors.New("multiple visible enemies require sector-wide missile combat, which is not available yet")
-		}
-		intent.Target = p.ID
-		intent.TargetGeneration = p.ShipGeneration
+	intent := MissileIntent{Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Route: route}
+	intent.Sectors, err = w.snapshotMissileRoute(id, route, v, true)
+	if err != nil {
+		return MissileIntent{}, err
 	}
-	if target.Planet != 0 {
-		planet := w.Planets[target.Planet]
-		if planet == nil {
-			return MissileIntent{}, errors.New("planet record is missing")
+	eligible := false
+	for _, sector := range intent.Sectors {
+		eligible = eligible || len(sector.Mines) > 0 || sector.Defense != nil && !w.friendlyDefense(id, sector.Defense) || len(sector.Ships) > 0 || sector.Planet != nil && !w.friendlyPlanet(id, sector.Planet)
+		if sector.Sector == to && sector.Planet != nil && w.friendlyPlanet(id, sector.Planet) {
+			return MissileIntent{}, errors.New("cannot target a personal or teammate planet")
 		}
-		if intent.Target != 0 {
-			return MissileIntent{}, errors.New("mixed ship/planet missile encounters are not available yet")
-		}
-		owner := w.Players[planet.Owner]
-		if planet.Owner == id || (a.Team != 0 && owner != nil && owner.Team == a.Team) {
-			return MissileIntent{}, errors.New("cannot bombard a personal or teammate planet")
-		}
-		snapshot := *planet
-		intent.Planet = &snapshot
 	}
-	if intent.Planet == nil && intent.Target == 0 && len(intent.Mines) == 0 && !w.HostileDefense(id, to) {
-		return MissileIntent{}, errors.New("no eligible ship, hostile fighter group, minefield or supported planet in that sector")
+	if !eligible {
+		return MissileIntent{}, errors.New("no eligible ship, hostile fighter group, minefield or hostile planet lies along that route")
 	}
 	return intent, nil
+}
+
+func (w *World) friendlyPlanet(shooter int, planet *Planet) bool {
+	if planet == nil {
+		return false
+	}
+	a := w.Players[shooter]
+	owner := w.Players[planet.Owner]
+	return planet.Owner == shooter || a != nil && a.Team != 0 && owner != nil && owner.Team == a.Team
+}
+
+func (w *World) snapshotMissileRoute(shooter int, route []int, visibility *Visibility, includeShips bool) ([]MissileRouteSector, error) {
+	if len(route) < 2 {
+		return nil, errors.New("missile course has no destination")
+	}
+	out := make([]MissileRouteSector, 0, len(route)-1)
+	for _, sectorID := range route[1:] {
+		sector := w.Sectors[sectorID]
+		if sector == nil {
+			return nil, errors.New("missile course changed; confirm again")
+		}
+		snapshot := MissileRouteSector{Sector: sectorID, Mines: append([]MineLayer(nil), sector.Minefield...)}
+		if sector.Defense != nil {
+			defense := *sector.Defense
+			snapshot.Defense = &defense
+		}
+		if sector.Planet != 0 {
+			planet := w.Planets[sector.Planet]
+			if planet == nil {
+				return nil, errors.New("planet record is missing")
+			}
+			copy := *planet
+			snapshot.Planet = &copy
+		}
+		if includeShips {
+			ids := make([]int, 0, len(w.Players))
+			for playerID := range w.Players {
+				ids = append(ids, playerID)
+			}
+			sort.Ints(ids)
+			for _, playerID := range ids {
+				p, actor := w.Players[playerID], w.Players[shooter]
+				if p.ID == shooter || p.Death != nil || p.Sector != sectorID || actor.Team != 0 && actor.Team == p.Team || !visibility.sees(p) {
+					continue
+				}
+				target := MissileShipTarget{Player: p.ID, Team: p.Team, Generation: p.ShipGeneration, Alias: p.Alias, Fighters: p.Fighters, Shields: p.Shields, Cloak: p.Cloak}
+				if back, err := w.path(sectorID, route[0], nil); err == nil {
+					target.ReturnRoute = back
+					target.ReturnSectors, err = w.snapshotMissileRoute(p.ID, back, nil, false)
+					if err != nil {
+						return nil, err
+					}
+				}
+				snapshot.Ships = append(snapshot.Ships, target)
+			}
+		}
+		out = append(out, snapshot)
+	}
+	return out, nil
 }
 
 // CommitMissile saves both volleys and every consequence in the caller's single
@@ -183,7 +262,7 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	if err != nil {
 		return MissileResult{}, err
 	}
-	if !sameMissilePlanet(fresh.Planet, intent.Planet) || fresh.Defense != intent.Defense || fresh.From != intent.From || fresh.Target != intent.Target || fresh.TargetGeneration != intent.TargetGeneration || !slices.Equal(fresh.Mines, intent.Mines) {
+	if !reflect.DeepEqual(fresh, intent) {
 		return MissileResult{}, errors.New("missile target or mine warning changed; confirm again")
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
@@ -193,13 +272,28 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	a.Missiles -= intent.Count
 	a.spendTurn()
 	budget := maxMissileRounds
-	primary, err := w.missileImpact(a.ID, intent.Target, intent.To, intent.Count, "missile", rng, now, &budget)
+	primary, err := w.missileImpact(a.ID, intent.Route, intent.Sectors, 0, intent.Count, "missile", rng, now, &budget)
 	if err != nil {
 		return MissileResult{}, err
 	}
 	result := MissileResult{Primary: primary}
-	d := w.Players[intent.Target]
-	if primary.Damage.Spent == 0 || primary.Destroyed || d == nil || d.Death != nil || d.Missiles == 0 {
+	if primary.Retaliator == 0 {
+		return result, nil
+	}
+	d := w.Players[primary.Retaliator]
+	if d == nil || d.Death != nil || d.Missiles == 0 {
+		return result, nil
+	}
+	var target *MissileShipTarget
+	for si := range intent.Sectors {
+		for ti := range intent.Sectors[si].Ships {
+			if intent.Sectors[si].Ships[ti].Player == d.ID {
+				target = &intent.Sectors[si].Ships[ti]
+				break
+			}
+		}
+	}
+	if target == nil || len(target.ReturnRoute) < 2 {
 		return result, nil
 	}
 	// The same locked encounter supplies the explicit original attacker target,
@@ -209,7 +303,7 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 		return MissileResult{}, err
 	}
 	d.Missiles -= n
-	result.Counter, err = w.missileImpact(d.ID, a.ID, intent.From, n, "retaliation", rng, now, &budget)
+	result.Counter, err = w.missileImpact(d.ID, target.ReturnRoute, target.ReturnSectors, a.ID, n, "retaliation", rng, now, &budget)
 	if err != nil {
 		return MissileResult{}, err
 	}
@@ -233,127 +327,201 @@ func (w *World) interceptMines(sector int, missiles int64) int64 {
 	}
 	return spent
 }
-func (w *World) missileImpact(shooter, target, sector int, count int64, cause string, rng func() float64, now time.Time, budget *int) (MissileImpact, error) {
-	out := MissileImpact{Target: target, Launched: count}
+func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRouteSector, explicitTarget int, count int64, cause string, rng func() float64, now time.Time, budget *int) (MissileImpact, error) {
+	out := MissileImpact{Launched: count}
 	remaining := count
-	if s := w.Sectors[sector]; s.Defense != nil && !w.friendlyDefense(shooter, s.Defense) {
-		spent := int64(0)
-		killed := int64(0)
-		for spent < remaining && killed < s.Defense.Fighters {
-			if *budget <= 0 {
-				return MissileImpact{}, errors.New("missile calculation limit reached")
+	for i, snap := range routeSectors {
+		sectorID := snap.Sector
+		sector := w.Sectors[sectorID]
+		if sector == nil || i+1 >= len(route) || route[i+1] != sectorID {
+			return MissileImpact{}, errors.New("missile course changed")
+		}
+		var intercepted MissileInterception
+		intercepted.Sector = sectorID
+		if sector.Defense != nil && !w.friendlyDefense(shooter, sector.Defense) {
+			spent, killed := int64(0), int64(0)
+			for spent < remaining && killed < sector.Defense.Fighters {
+				if *budget <= 0 {
+					return MissileImpact{}, errors.New("missile calculation limit reached")
+				}
+				(*budget)--
+				hit, err := scaledSalvageDraw(5000, rng)
+				if err != nil {
+					return MissileImpact{}, err
+				}
+				killed += hit
+				spent++
 			}
-			*budget -= 1
-			hit, err := scaledSalvageDraw(5000, rng)
-			if err != nil {
-				return MissileImpact{}, err
+			intercepted.Missiles = spent
+			intercepted.FightersDestroyed = min(killed, sector.Defense.Fighters)
+			out.SectorMissiles += spent
+			out.SectorFightersDestroyed += intercepted.FightersDestroyed
+			sector.Defense.Fighters -= intercepted.FightersDestroyed
+			if sector.Defense.Fighters == 0 {
+				sector.Defense = nil
 			}
-			killed += hit
-			spent++
+			remaining -= spent
 		}
-		out.SectorMissiles = spent
-		out.SectorFightersDestroyed = min(killed, s.Defense.Fighters)
-		s.Defense.Fighters -= out.SectorFightersDestroyed
-		if s.Defense.Fighters == 0 {
-			s.Defense = nil
-		}
-		remaining -= spent
-	}
-	out.MinesDestroyed = w.interceptMines(sector, remaining)
-	remaining -= out.MinesDestroyed
-	if remaining > 0 && target == 0 && w.Sectors[sector].Planet != 0 {
-		reachedPlanet := remaining
-		planet := w.Planets[w.Sectors[sector].Planet]
-		if now.Before(planet.Updated) {
-			return MissileImpact{}, errors.New("planet update is ahead of launch time")
-		}
-		planet.update(now, true)
-		out.PlanetID = planet.ID
-		out.GroundBefore = planet.Ground
-		out.ProductionBefore = planet.Production
-		out.CargoBefore = planet.Cargo
-		left := remaining
-		groundAfter := planet.Ground
-		var err error
-		if left > 0 {
-			left, groundAfter, err = resolveMissileGroundPhase(left, float64(planet.Ground), rng, budget)
-			if err != nil {
-				return MissileImpact{}, err
-			}
-		}
-		out.GroundMissiles = remaining - left
-		remaining = left
-		planet.Ground = groundAfter
-		out.GroundAfter = groundAfter
-		used, rates, cargo, destroyed := int64(0), planet.Production, planet.Cargo, false
 		if remaining > 0 {
-			used, rates, cargo, destroyed, err = resolveMissileProduction(remaining, rates, cargo, rng, budget)
+			intercepted.MinesDestroyed = w.interceptMines(sectorID, remaining)
+			out.MinesDestroyed += intercepted.MinesDestroyed
+			remaining -= intercepted.MinesDestroyed
+		}
+		if intercepted.Missiles > 0 || intercepted.MinesDestroyed > 0 {
+			out.Interceptions = append(out.Interceptions, intercepted)
+		}
+		if remaining == 0 {
+			break
+		}
+
+		var targets []int
+		if explicitTarget != 0 {
+			if i == len(routeSectors)-1 {
+				targets = []int{explicitTarget}
+			}
+		} else {
+			for _, target := range snap.Ships {
+				targets = append(targets, target.Player)
+			}
+		}
+		for _, targetID := range targets {
+			if remaining == 0 {
+				break
+			}
+			d := w.Players[targetID]
+			actor := w.Players[shooter]
+			if d == nil || d.Death != nil || d.Sector != sectorID || d.ID == shooter || actor.Team != 0 && actor.Team == d.Team {
+				continue
+			}
+			damage, err := resolveMissileShip(remaining, d.Fighters, d.Shields, rng, budget)
 			if err != nil {
 				return MissileImpact{}, err
 			}
-		}
-		out.ProductionMissiles = used
-		remaining -= used
-		planet.Production, planet.Cargo = rates, cargo
-		out.ProductionAfter, out.CargoAfter = rates, cargo
-		out.PlanetDestroyed = destroyed
-		if destroyed {
-			delete(w.Planets, planet.ID)
-			w.Sectors[sector].Planet = 0
-			for _, player := range w.Players {
-				if player.LandedPlanet == planet.ID {
-					player.PlanetToken = ""
-					player.LandedPlanet = 0
+			remaining -= damage.Spent
+			out.Target = d.ID
+			out.Damage.Spent += damage.Spent
+			out.Damage.Fighters += damage.Fighters
+			out.Damage.Shields += damage.Shields
+			d.Fighters -= damage.Fighters
+			d.Shields -= damage.Shields
+			shipImpact := MissileShipImpact{Sector: sectorID, Player: d.ID, Alias: d.Alias, Damage: damage}
+			if d.Shields != 0 {
+				if cause == "missile" {
+					out.Retaliator = d.ID
+				}
+				out.ShipImpacts = append(out.ShipImpacts, shipImpact)
+				continue
+			}
+			shipImpact.Destroyed = true
+			out.Destroyed = true
+			shipImpact.LostEscorts = d.Fighters
+			out.LostEscorts += d.Fighters
+			d.Fighters = 0 // The ship and surviving escorts are lost when shields are exhausted.
+			var deathRoute []int
+			if cause == "missile" {
+				deathRoute = append([]int(nil), route[:i+2]...)
+			}
+			shipImpact.Salvage, err = w.SettleShipSalvage(DeathContext{Victim: d.ID, Generation: d.ShipGeneration, Sector: sectorID, Killer: shooter, Cause: cause, MissileRoute: deathRoute}, rng, now)
+			if err != nil {
+				return MissileImpact{}, err
+			}
+			addSalvage(&out.Salvage, shipImpact.Salvage)
+			if sectorID == 1 {
+				out.Disarmed += d.Mines
+				d.Mines = 0
+			} else {
+				out.Dropped += d.Mines
+				if err = w.dropMines(sectorID, d.ID, d.Mines); err != nil {
+					return MissileImpact{}, err
+				}
+				d.Mines = 0
+				if remaining > 0 {
+					destroyedMines := w.interceptMines(sectorID, remaining)
+					out.MinesDestroyed += destroyedMines
+					remaining -= destroyedMines
+					if destroyedMines > 0 {
+						out.Interceptions = append(out.Interceptions, MissileInterception{Sector: sectorID, MinesDestroyed: destroyedMines})
+					}
 				}
 			}
+			out.ShipImpacts = append(out.ShipImpacts, shipImpact)
 		}
-		out.PlanetMissiles = reachedPlanet
+		if remaining == 0 {
+			break
+		}
+
+		if sector.Planet != 0 {
+			planet := w.Planets[sector.Planet]
+			if planet == nil {
+				return MissileImpact{}, errors.New("planet record is missing")
+			}
+			if w.friendlyPlanet(shooter, planet) {
+				continue
+			}
+			planetImpact := MissilePlanetImpact{Sector: sectorID, PlanetID: planet.ID, Missiles: remaining}
+			if now.Before(planet.Updated) {
+				return MissileImpact{}, errors.New("planet update is ahead of launch time")
+			}
+			planet.update(now, true)
+			planetImpact.GroundBefore = planet.Ground
+			planetImpact.ProductionBefore = planet.Production
+			planetImpact.CargoBefore = planet.Cargo
+			left, groundAfter, err := resolveMissileGroundPhase(remaining, float64(planet.Ground), rng, budget)
+			if err != nil {
+				return MissileImpact{}, err
+			}
+			planetImpact.GroundMissiles = remaining - left
+			planet.Ground = groundAfter
+			planetImpact.GroundAfter = groundAfter
+			used, rates, cargo, destroyed := int64(0), planet.Production, planet.Cargo, false
+			if left > 0 {
+				used, rates, cargo, destroyed, err = resolveMissileProduction(left, rates, cargo, rng, budget)
+				if err != nil {
+					return MissileImpact{}, err
+				}
+			}
+			planetImpact.ProductionMissiles = used
+			planetImpact.ProductionAfter, planetImpact.CargoAfter = rates, cargo
+			planetImpact.Destroyed = destroyed
+			planet.Production, planet.Cargo = rates, cargo
+			remaining = left - used
+			out.PlanetID = planet.ID
+			out.GroundBefore, out.GroundAfter = planetImpact.GroundBefore, planetImpact.GroundAfter
+			out.PlanetMissiles += planetImpact.Missiles
+			out.GroundMissiles += planetImpact.GroundMissiles
+			out.ProductionMissiles += planetImpact.ProductionMissiles
+			out.ProductionBefore, out.ProductionAfter = planetImpact.ProductionBefore, planetImpact.ProductionAfter
+			out.CargoBefore, out.CargoAfter = planetImpact.CargoBefore, planetImpact.CargoAfter
+			out.PlanetDestroyed = out.PlanetDestroyed || planetImpact.Destroyed
+			if destroyed {
+				delete(w.Planets, planet.ID)
+				sector.Planet = 0
+				for _, player := range w.Players {
+					if player.LandedPlanet == planet.ID {
+						player.PlanetToken = ""
+						player.LandedPlanet = 0
+					}
+				}
+			}
+			out.PlanetImpacts = append(out.PlanetImpacts, planetImpact)
+		}
+		if remaining == 0 {
+			break
+		}
 	}
-	if remaining == 0 || target == 0 {
-		return out, nil
-	}
-	d, err := w.player(target)
-	if err != nil {
-		return MissileImpact{}, err
-	}
-	if d.Sector != sector {
-		return MissileImpact{}, errors.New("missile target moved")
-	}
-	out.Damage, err = resolveMissileShip(remaining, d.Fighters, d.Shields, rng, budget)
-	if err != nil {
-		return MissileImpact{}, err
-	}
-	d.Fighters -= out.Damage.Fighters
-	d.Shields -= out.Damage.Shields
-	if d.Shields != 0 {
-		return out, nil
-	}
-	out.Destroyed = true
-	out.LostEscorts = d.Fighters
-	d.Fighters = 0 // The ship and surviving escorts are lost when shields are exhausted.
-	out.Salvage, err = w.SettleShipSalvage(DeathContext{Victim: d.ID, Generation: d.ShipGeneration, Sector: sector, Killer: shooter, Cause: cause}, rng, now)
-	if err != nil {
-		return MissileImpact{}, err
-	}
-	if sector == 1 {
-		out.Disarmed = d.Mines
-		d.Mines = 0
-		return out, nil
-	}
-	out.Dropped = d.Mines
-	if err = w.dropMines(sector, d.ID, d.Mines); err != nil {
-		return MissileImpact{}, err
-	}
-	d.Mines = 0
-	out.MinesDestroyed += w.interceptMines(sector, remaining-out.Damage.Spent)
 	return out, nil
 }
 
-func sameMissilePlanet(a, b *Planet) bool {
-	if a == nil || b == nil {
-		return a == nil && b == nil
+func addSalvage(total *Salvage, add Salvage) {
+	total.Holds += add.Holds
+	total.Credits += add.Credits
+	total.Missiles += add.Missiles
+	total.Plasma += add.Plasma
+	total.Ground += add.Ground
+	total.Mines += add.Mines
+	for i := range total.Cargo {
+		total.Cargo[i] += add.Cargo[i]
 	}
-	return *a == *b
 }
 
 // ResolveMissileGround is the bounded ground-only calculation retained for

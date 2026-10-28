@@ -19,11 +19,12 @@ type Death struct {
 }
 
 type DeathContext struct {
-	Victim     int
-	Generation uint64
-	Sector     int
-	Killer     int
-	Cause      string
+	Victim       int
+	Generation   uint64
+	Sector       int
+	Killer       int
+	Cause        string
+	MissileRoute []int
 }
 
 func (w *World) CheckShip(id int, generation uint64) error {
@@ -65,8 +66,22 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 			return nil, errors.New("attacker ship or location changed")
 		}
 
-		if context.Cause == "missile" && (!contains(w.Sectors[killer.Sector].Warps, p.Sector) || !contains(w.Sectors[p.Sector].Warps, killer.Sector)) {
-			return nil, errors.New("missile launch corridor changed")
+		if context.Cause == "missile" {
+			if len(context.MissileRoute) == 0 {
+				if !contains(w.Sectors[killer.Sector].Warps, p.Sector) || !contains(w.Sectors[p.Sector].Warps, killer.Sector) {
+					return nil, errors.New("missile launch corridor changed")
+				}
+			} else {
+				route := context.MissileRoute
+				if len(route) < 2 || route[0] != killer.Sector || route[len(route)-1] != p.Sector {
+					return nil, errors.New("missile launch route changed")
+				}
+				for i := 1; i < len(route); i++ {
+					if w.Sectors[route[i-1]] == nil || w.Sectors[route[i]] == nil || !contains(w.Sectors[route[i-1]].Warps, route[i]) {
+						return nil, errors.New("missile launch route changed")
+					}
+				}
+			}
 		}
 	case "mines":
 		if context.Killer < 0 || (context.Killer > 0 && w.Players[context.Killer] == nil) {

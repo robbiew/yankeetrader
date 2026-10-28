@@ -1,0 +1,290 @@
+[
+  {
+    "case": "route-2",
+    "setup": "two hops; ship at 102",
+    "observation": "launch reached ship; ship retaliated at sector 100",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "2f0a1212b17ce34b30088b9f6b2a03315a8c69bb31c1c422188f8553adfe3ca6",
+        "bytes": 4371
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "95432cdf8e20f5ce147c570f8748061ce3ce9b24c759810ddd1e405c305cb9de",
+        "bytes": 82852
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "76d6948ec28be3c37a9abede16bad71d60cd5c56dcec30d036ec0390ab269d1b",
+        "bytes": 82824
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "4c5cb45751d3ced2eaf3ab3f5468d0524aaf53460fe1d28afd2346250b0ece16",
+        "bytes": 6021
+      }
+    ]
+  },
+  {
+    "case": "route-3",
+    "setup": "three hops; ship at 103",
+    "observation": "launch reached ship; ship retaliated at sector 100",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "8b2f059faf324930af1d4d8040898977b1c3a047967c7857180168bc0da3c6f1",
+        "bytes": 4371
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "6787be98c26a0fc6bd27b78ddbfd344361e1039f609bf251091725f25ff50b59",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "a8f5f5fccf49e61dc8e1fc3f3a2e954014137e8c31d3f3fc107f094f8ec836a8",
+        "bytes": 82855
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "22331c4cfb75c105da5f80bc57ad5d0b9638a5b5c6afe356ae3dc9173068e568",
+        "bytes": 82826
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "f8f804a257c1f11f2500bfc2cde38f0cf813048562961ce99c7b1102002da378",
+        "bytes": 6021
+      }
+    ]
+  },
+  {
+    "case": "route-2-mines",
+    "setup": "one mine in intermediate sector 101",
+    "observation": "one mine intercepted and consumed one missile; surviving volley hit ship at 102",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "2e47664b516b3d8e3b74830d4decb097718c096d70efeb555f034017a162f8a0",
+        "bytes": 4451
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "b1f5291ec467e063dceadff623c8a77fab63712006a26b6cc73120c03bed0b74",
+        "bytes": 82848
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "8eea1cb52897697d465b28426f6ceb41959dc8c4e0936f45ed405f64eca39486",
+        "bytes": 82830
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "5a91bad8934ac14334b4d7d5f0951665783519d974877495af38f3a266d0b3f2",
+        "bytes": 6027
+      }
+    ]
+  },
+  {
+    "case": "route-2-fighters",
+    "setup": "5,000 hostile fighters in intermediate sector 101",
+    "observation": "fighters intercepted missiles before ship; surviving volley hit ship at 102",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "5cab7a3fbdbcbd73a67261b6f9f4912b4196ebff6788fe979e8e5372fc697c03",
+        "bytes": 4467
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "0da685735ca98f073fd3c4c0aa969999872cc341e46ce8ad0a76fcc39638cafa",
+        "bytes": 82858
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "f1d91c6eca9c7f797e8951fda6c140e770949093a978a4d05c121a7daeac9f13",
+        "bytes": 82834
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "f0e0adbeccf3c69d3eda3e097b4e581b0ae26a385900ac996f17930949837b9b",
+        "bytes": 6030
+      }
+    ]
+  },
+  {
+    "case": "route-2-multiple-ships",
+    "setup": "two enemy ships at sector 102; first survives",
+    "observation": "first ship consumed volley; second untouched",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "306aac0d2e556f3be91902873e956e30baedb9ed7470018ddd4077b3b27f18ee",
+        "bytes": 4451
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "ddceece3523a9efabbd4585f9afbe3749ac536504a1489a8d2dec1e9d17ffa2f",
+        "bytes": 82875
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "4c4aa8125acedd26331594bb2e7986142df5fb13d52c5ba276aa649207030c83",
+        "bytes": 82837
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "5515b5c1308f938865c4ce57b5239d955efc850cafed1f8b982a5cb274ee6b0a",
+        "bytes": 6036
+      }
+    ]
+  },
+  {
+    "case": "route-2-multiple-with-kill",
+    "setup": "two enemy ships at sector 102; first has low defenses",
+    "observation": "first ship destroyed; remaining missiles continued to second ship",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "334f259df26d8a0cd9b1ffaecfb4cdd0cc0e2184e2b1828190fbe5e2753a0784",
+        "bytes": 4395
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "18ebd2c57de498180221dabfa48943941cae118d37cbd1772637b7e9bb9f4851",
+        "bytes": 82875
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "b47f8122ca38e5dec360576b45bfbf24f4d22b3acb356a3bb40561be3030d3a5",
+        "bytes": 82843
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "3261f09e9d745f7bdb70c5893bcc77fa1f126d6639991aa38960b3db5e50e921",
+        "bytes": 6040
+      }
+    ]
+  },
+  {
+    "case": "route-2-ship-planet",
+    "setup": "enemy ship and hostile planet in sector 102",
+    "observation": "after ship destruction remaining missiles hit planet and destroyed it",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "ac1919a22968da1c974cf6c195bb987cd86b1da30e30d08001c4646e001fa696",
+        "bytes": 4346
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "40d449b130bcc23a64c6e34e19236015e8c06c4702189e4bf956ede24618a119",
+        "bytes": 82856
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "eb2c66165f291d02ec79d256208f624fc26cd82825a31012aac6fee9e4bfd735",
+        "bytes": 82811
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "ee3d63a37edf204f798f36390caea8ab0cd649a6d8dc99e135d86cdef2b285d3",
+        "bytes": 6033
+      }
+    ]
+  },
+  {
+    "case": "route-2-intermediate-planet",
+    "setup": "hostile planet at sector 101; ship at 102",
+    "observation": "intermediate planet received attack; farther ship was not attacked",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "ab7750da54b0e097ad5b1ec65ce5b73e479e952f1348764d35c011f7e738fd6f",
+        "bytes": 4199
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "5639206442b952717594e2ff190de57ffc5c75549f9cccc0670c86894112fe25",
+        "bytes": 82878
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "d1002a03d3c04a660ea94239878a448a4830a89f118f90af7c070cf116f8a40b",
+        "bytes": 82810
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "d330fdd53e297f0390564f0fce526e774ff0218854a0d954cd89576ee7785c0c",
+        "bytes": 6041
+      }
+    ]
+  },
+  {
+    "case": "route-2-oneway",
+    "setup": "remove reverse warp from sector 102 to 101",
+    "observation": "outbound attack reached ship at 102; no return fire observed",
+    "evidence": [
+      {
+        "file": "GAME.LOG",
+        "sha256": "691250a30966712ea7e20e1a0ac50df6409d901f2a5815e4703ded3e99f0cc31",
+        "bytes": 4214
+      },
+      {
+        "file": "KEYS.TXT",
+        "sha256": "80b0ee0690f05e15883d091b56a4172d8eb282a82b36175ede272aa426dc627b",
+        "bytes": 33
+      },
+      {
+        "file": "after.dat.gz",
+        "sha256": "27767e487c06061737aed88068979a99d30a874b2af60502f8503d3309d8a9b3",
+        "bytes": 82850
+      },
+      {
+        "file": "before.dat.gz",
+        "sha256": "7e9028d1b5e6b26b8aa9efd44ff728e974c327a4b1b8098c45a2ee44137d1147",
+        "bytes": 82852
+      },
+      {
+        "file": "dosbox.log",
+        "sha256": "0addae225d06f5be14de1e15b5d9fbbb47990d85a79c2da1f53dd490333bce64",
+        "bytes": 6052
+      }
+    ]
+  }
+]
