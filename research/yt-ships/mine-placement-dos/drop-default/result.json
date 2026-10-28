@@ -1,0 +1,19 @@
+{
+  "name": "drop-default",
+  "complete": true,
+  "source_sha256": "6898a8f2d9990e12b41d5dc18cceb61c3668e739efb9f69c23a1de329a76c0ef",
+  "baseline_sha256": "92c1ca91a1019b7378ddf79e6ddcce6031a49778e31671f115d635261bb9b03c",
+  "before_sha256": "92c1ca91a1019b7378ddf79e6ddcce6031a49778e31671f115d635261bb9b03c",
+  "after_sha256": "b1a5515ec41cfbcfef9ab6ce322e93b1317f2822041499406f01350609f9618b",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "keys_sha256": "448f4b8ede783c07287cd9d86bc526058480bca8fc76d630d72f53711eef1f40",
+  "transcript_sha256": "5fe642c3c9dfafd1445341867a065354f29c23df0bd910e35bf86162fafec7ed",
+  "dosbox_log_sha256": "75457b43199f7b8929abde84005f85d219873a603d8781d0d390922ecd95547b",
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00",
+  "sector": 100,
+  "starting_stock": 10,
+  "existing_field": 0,
+  "command": "D;\r"
+}

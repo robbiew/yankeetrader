@@ -7,9 +7,11 @@ Included here:
 - Recovery reports for initialization, maintenance, planets, teams, trading, combat and Genesis, plus the spreadsheet assessment.
 - Runtime-aware annotated YT.EXE listings used to recover planet routines.
 - Compressed before/after saves, logs and keystrokes for all 24 counted DOS planet experiments. `planet-snapshots.json` contains hashes of their **uncompressed** bytes. No executable is embedded in these snapshots.
+- Original-DOS sector mine-placement transcripts, inputs, emulator logs and compressed before/after saves, with an independent verifier for stock, field and turn deltas.
 - Compact Go golden fixtures in `../internal/game/testdata`, with original snapshot hashes. Nineteen planet scenarios are relevant to this implementation; relocation and ground-force assault cases remain archived for future work.
 
 Run `python3 scripts/verify_planet_evidence.py` from the repository root to check the packaged snapshots and golden provenance. Go tests run without Python or the original DOS distribution.
+Run `python3 scripts/verify_mine_placement.py` to validate the mine-placement sessions and expected outcomes.
 
 The complete DOS distribution, workbook, Ghidra project, original validators and raw experiments are preserved in [`../archive/`](../archive/README.md). Original EXE hashes are in `executable-inventory.json`. Historical reports and logs retain their original source locations as provenance.
 

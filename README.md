@@ -297,9 +297,12 @@ safe destination even with no remaining turns.
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
 Earth remains free of mines. This build now uses save version 9; follow the stopped-world
-backup and all-node upgrade guidance. Mine placement/withdrawal commands remain
-separate; routed missile encounters and sector-fighter combat are available below.
-See [rules and validation](research/yt-ships/MINES.md).
+backup and all-node upgrade guidance. Voluntary mine placement and recovery
+commands remain unimplemented; controlled original-DOS placement results and
+the absence of a recovered field-withdrawal action are documented in
+[mine placement research](research/yt-ships/MINE_PLACEMENT.md). Routed missile
+encounters and sector-fighter combat are available below. See
+[minefield rules and validation](research/yt-ships/MINES.md).
 
 ### Missile attacks and retaliation
 
