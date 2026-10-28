@@ -27,6 +27,12 @@ type MineEntry struct {
 	Generation       uint64
 	Layers           []MineLayer
 }
+type MinePlacement struct {
+	Player, Sector int
+	Generation     uint64
+	Stock, Count   int64
+	Layers         []MineLayer
+}
 
 func (w *World) validateMines() error {
 	for _, s := range w.Sectors {
@@ -72,6 +78,49 @@ func (w *World) dropMines(sector, owner int, count int64) error {
 	}
 	s.Minefield = append(s.Minefield, MineLayer{Owner: owner, Count: count})
 	return nil
+}
+
+func (w *World) PrepareMinePlacement(id int, count int64) (MinePlacement, error) {
+	p, err := w.player(id)
+	if err != nil {
+		return MinePlacement{}, err
+	}
+	if p.Sector <= 7 {
+		return MinePlacement{}, errors.New("the home seven sectors are protected from mine placement")
+	}
+	if count < 1 || count > p.Mines || count > MaxQuantity {
+		return MinePlacement{}, errors.New("choose a positive mine quantity no greater than your stock")
+	}
+	s := w.Sectors[p.Sector]
+	if s == nil {
+		return MinePlacement{}, errors.New("current sector does not exist")
+	}
+	return MinePlacement{Player: id, Sector: p.Sector, Generation: p.ShipGeneration,
+		Stock: p.Mines, Count: count, Layers: append([]MineLayer(nil), s.Minefield...)}, nil
+}
+
+func (w *World) CommitMinePlacement(placement MinePlacement) (int64, error) {
+	p, err := w.player(placement.Player)
+	if err != nil {
+		return 0, err
+	}
+	s := w.Sectors[placement.Sector]
+	if s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
+		p.Mines != placement.Stock || !slices.Equal(placement.Layers, s.Minefield) {
+		return 0, errors.New("mine placement warning or ship changed; confirm again")
+	}
+	if placement.Sector <= 7 || placement.Count < 1 || placement.Count > p.Mines || placement.Count > MaxQuantity {
+		return 0, errors.New("mine placement is no longer valid")
+	}
+	if err = w.dropMines(placement.Sector, p.ID, placement.Count); err != nil {
+		return 0, err
+	}
+	p.Mines -= placement.Count
+	var total int64
+	for _, layer := range s.Minefield {
+		total += layer.Count
+	}
+	return total, nil
 }
 
 // nestedMineDraw is the recovered helper's three successively smaller integer

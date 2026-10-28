@@ -86,6 +86,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `LOOK` | Current sector, warps, and port (`L` in compact mode) |
 | `M <sector>` | Move through a listed adjacent warp; one turn |
 | `S` / `SCAN` | Scan adjacent sectors: ports, planets, ships and outgoing warps; free |
+| `D` / `DROP [quantity]` | Place carried mines in the current sector outside sectors 1–7; fresh Y confirmation; no turn cost |
 | `PATH <from> <to>` | Display a shortest directed warp route and turn cost; free |
 | `AUTO <sector>` | Plot from your current sector, confirm with Y/N, then move one turn per hop |
 | `AVOID` | Show your saved routing preferences; free |
@@ -297,12 +298,12 @@ safe destination even with no remaining turns.
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
 Earth remains free of mines. This build now uses save version 9; follow the stopped-world
-backup and all-node upgrade guidance. Voluntary mine placement and recovery
-commands remain unimplemented; controlled original-DOS placement results and
-the absence of a recovered field-withdrawal action are documented in
-[mine placement research](research/yt-ships/MINE_PLACEMENT.md). Routed missile
-encounters and sector-fighter combat are available below. See
-[minefield rules and validation](research/yt-ships/MINES.md).
+backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
+in the current sector outside the protected home seven, with a fresh confirmation
+and no turn cost. Sector-field recovery is not implemented; the DOS manual has no
+recovered pickup command. See [mine placement research](research/yt-ships/MINE_PLACEMENT.md)
+and [minefield rules and validation](research/yt-ships/MINES.md). Routed missile
+encounters and sector-fighter combat are available below.
 
 ### Missile attacks and retaliation
 

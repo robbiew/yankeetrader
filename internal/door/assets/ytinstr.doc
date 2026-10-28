@@ -141,12 +141,14 @@ tell you much good information that you require to survive and is available at
 most menus, even if it is not displayed.
 
 
-D - Drop a Sector Mine
+D - Drop Sector Mines
 
-        Sector mines are produced by the larger planets. They may be dropped
-off in a sector and will seek out and explode on ANYONE who enters the sector
-after it is armed, (including YOU!) doing great damage. They are dangerous but
-are useful for laying traps for your enemies.
+        Drop part of your carried mine stock in your current sector. You must
+leave the home seven sectors clear. The door asks for a fresh confirmation;
+canceling does not spend mines or a turn. Sector mines seek out and explode on
+ANYONE who enters the sector after they are armed, (including YOU!).
+Mine placement has no turn cost. Mines can be recovered from planets, but this
+game does not provide a command for picking them up from a sector.
 
 
 Q - Quit Back to the BBS.

@@ -35,13 +35,17 @@ mines from a planet is separately documented under planetary transfers.
 The modern world represents mine sources and preserves source attribution,
 whereas DOS stores one aggregate count. Its additive same-owner mine-layer
 representation therefore deliberately differs from DOS's overwrite result for
-`D` on an already mined sector. Keep that policy explicit and covered by tests.
-The recovered home-sector protection should include every source of field
-creation, including voluntary placement, wrecks and combat aftermath. Placement
-also needs fresh confirmation, unchanged-state revalidation and atomic stock
-transfer. Sector-field withdrawal remains a separate design question because
-the DOS recovery path is not established; do not present a new recovery command
-as recovered behavior.
+`D` on an already mined sector. The placement command requires fresh
+confirmation, unchanged-state revalidation and atomic stock transfer. Sectors
+1–7 are protected for voluntary placement; other mine sources retain their
+existing behavior until separately researched. Sector-field withdrawal remains
+a separate design question because the DOS recovery path is not established; do
+not present a new recovery command as recovered behavior.
+
+`D`/`DROP [quantity]` is implemented. It merges a new amount into the caller's
+attributed layer, spends no turn, protects sectors 1–7, and requires a fresh
+confirmation after pending input is discarded. The committed research precedes
+this gameplay change in the local branch history.
 
 ## Evidence
 
