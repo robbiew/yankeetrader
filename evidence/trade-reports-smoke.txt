@@ -1,0 +1,224 @@
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Caller!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Caller
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 7    |
+| Turns.... : 0           | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+Radio messages are not available in this edition yet.
+
+Sector: 7
+Warps lead to: 2
+
+Time: 179:59  Main Command (?=Help)? c;14;A;14;3;S;16;17;1;q;y
+
+<Computer activated>
+Show buying/selling [1] Equ, [2] Org, [3] Ore,
+[Y] Your Ports, [T] Team's Ports, [E] Enemy Ports
+[U] Un-owned Ports OR [A] All Ports ? -=> [A] 
+B/S is your buy/sell action. Prices and stock/demand are forecasts.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 7 (free):
+Distance: 1 | Sector: 2 | First Market
+B ore @ 10  S organics @ 44  S equipment @ 62
+Stock/demand ore/org/equ: 1000/1000/1000
+Owner: Unowned
+Distance: 2 | Sector: 3 | Second Market
+S ore @ 30  B organics @ 15  S equipment @ 62
+Stock/demand ore/org/equ: 1000/1000/1000
+Owner: Unowned
+End of report.
+Show buying/selling [1] Equ, [2] Org, [3] Ore,
+[Y] Your Ports, [T] Team's Ports, [E] Enemy Ports
+[U] Un-owned Ports OR [A] All Ports ? -=> [A] Your action: [B] Buy or [S] Sell? 
+B/S is your buy/sell action. Prices and stock/demand are forecasts.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 7 (free):
+Distance: 2 | Sector: 3 | Second Market
+S ore @ 30  B organics @ 15  S equipment @ 62
+Stock/demand ore/org/equ: 1000/1000/1000
+Owner: Unowned
+End of report.
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 7 (free):
+2 -> 3 | Approach: 1 warps | Out: 1 | Return: 4
+Buy ore @ 10 in 2; sell @ 30 in 3
+Return: buy organics @ 15 in 3; sell @ 44 in 2
+Spread: 49 credits/unit of each | Stock/demand: 1000/1000
+End of report.
+no accessible cargo trading port in your sector
+
+<Computer deactivated>
+
+Sector: 7
+Warps lead to: 2
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 2 | 1005 credits | 0 turns > pairs;profits;nearest team;q
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 2 (free):
+2 -> 3 | Approach: 0 warps | Out: 1 | Return: 4
+Buy ore @ 10 in 2; sell @ 30 in 3
+Return: buy organics @ 15 in 3; sell @ 44 in 2
+Spread: 49 credits/unit of each | Stock/demand: 1000/1000
+End of report.
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 2 (free):
+2 -> 3 | Approach: 0 warps | Out: 1 | Return: 4
+Buy ore @ 10 in 2; sell @ 30 in 3
+Return: buy organics @ 15 in 3; sell @ 44 in 2
+Spread: 49 credits/unit of each | Stock/demand: 1000/1000
+End of report.
+you don't belong to a team
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 2 | 1005 credits | 0 turns > profits;q
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 2 (free):
+2 -> 3 | Approach: 0 warps | Out: 1 | Return: 1
+Buy ore @ 10 in 2; sell @ 30 in 3
+Return: buy organics @ 15 in 3; sell @ 44 in 2
+Spread: 49 credits/unit of each | Stock/demand: 1000/1000
+End of report.
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 2 | 1005 credits | 0 turns > profits;nearest;q
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+No matching accessible ports or trade routes found.
+
+B/S is your buy/sell action. Prices and stock/demand are forecasts.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+
+Report from sector 2 (free):
+Distance: 0 | Sector: 2 | First Market
+B ore @ 10  S organics @ 44  S equipment @ 62
+Stock/demand ore/org/equ: 1000/1000/1000
+Owner: Unowned
+Distance: 1 | Sector: 3 | Second Market
+S ore @ 30  B organics @ 15  S equipment @ 62
+Stock/demand ore/org/equ: 1000/1000/1000
+Owner: Unowned
+End of report.
+Saved. Safe travels, Caller.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 2 | 1005 credits | 0 turns > nearest ore sell;pairs;profits;q
+
+B/S is your buy/sell action. Prices and stock/demand are forecasts.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+No matching accessible ports or trade routes found.
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+No matching accessible ports or trade routes found.
+
+Price spreads are per unit of each commodity, not ship earnings.
+Cash, holds, docking turns and later price/stock changes are excluded.
+Routes honor AVOID; mines/defenses can still interrupt travel.
+No matching accessible ports or trade routes found.
+Saved. Safe travels, Caller.
