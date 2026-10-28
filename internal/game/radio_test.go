@@ -186,3 +186,28 @@ func TestRadioArchiveValidation(t *testing.T) {
 		})
 	}
 }
+
+func TestRadioDuplicateExactAliasesRequirePlayerNumber(t *testing.T) {
+	w, sender, recipient, _ := radioWorld(t)
+	_, err := w.Join("duplicate-alias-account", "enemy")
+	if err != nil {
+		t.Fatal(err)
+	}
+	_, err = w.Join("substring-account", "Enemy Two")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for i := 0; i < 30; i++ {
+		if address, err := w.FindRadioRecipient(sender.ID, "Enemy"); err == nil {
+			t.Fatal("ambiguous exact alias selected an account", address)
+		}
+	}
+	address, err := w.FindRadioRecipient(sender.ID, "2")
+	if err != nil || address.ID != recipient.ID {
+		t.Fatal("numeric disambiguation failed", address, err)
+	}
+	address, err = w.FindRadioRecipient(sender.ID, "Enemy Two")
+	if err != nil || address.Alias != "Enemy Two" {
+		t.Fatal("unique exact match lost", address, err)
+	}
+}
