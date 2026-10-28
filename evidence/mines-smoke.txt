@@ -40,9 +40,9 @@ Visible enemy ships:
 1: Victim | Fighters 0 | Shields 0
 Attack Victim with 1 fighters? Damage and losses save immediately. [y/N] y
 Attack saved. Lost 0 fighters; target has 0 fighters and 0 shields.
-Victim destroyed. Salvaged 4572 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces, 91 mines; cargo 0 ore / 0 organics / 0 equipment.
-Wreck dropped 9 unsalvaged mines.
-Mine encounter saved: 1 mines exploded in 1 bursts.
+Victim destroyed. Salvaged 7501 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces, 4 mines; cargo 0 ore / 0 organics / 0 equipment.
+Wreck dropped 96 unsalvaged mines.
+Mine encounter saved: 9 mines exploded in 1 bursts.
 Your ship was destroyed by mines from player 1. Reconnect for a replacement.
 your ship was destroyed; reconnect for a replacement
 q
@@ -68,3 +68,41 @@ Fighters 25; shields 100; ground forces 0
 Missiles 1; mines 0; plasma 0
 Cloak energy: 100%
 Saved. Safe travels, Killer.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Deployer. Actions save automatically. Type ? for help.
+
+Sector 8 | 1005 credits | 500 turns > d 5
+Place 5 mines in sector 8 (currently 0)? Ships entering can be damaged. [y/N] y
+Dropped 5 mines in sector 8; the sector now contains 5 mines. No turn was spent.
+
+Sector 8 | 1005 credits | 500 turns > q
+Saved. Safe travels, Deployer.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Deployer. Actions save automatically. Type ? for help.
+
+Sector 8 | 1005 credits | 500 turns > i;q
+Deployer: holds 10; ore 0; organics 0; equipment 0
+Fighters 25; shields 1000000; ground forces 0
+Missiles 0; mines 5; plasma 0
+Cloak energy: 100%
+Saved. Safe travels, Deployer.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Deployer. Actions save automatically. Type ? for help.
+
+Sector 8 | 1005 credits | 500 turns > m 7;q
+Moved to sector 7.
+Saved. Safe travels, Deployer.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Deployer. Actions save automatically. Type ? for help.
+
+Sector 7 | 1005 credits | 499 turns > m 8
+Sector 8 contains 5 mines. Enter this dangerous sector? [y/N] y
+Moved into sector 8.
+Mine encounter saved: 5 mines exploded in 5 bursts.
+
+Sector 8 | 1005 credits | 498 turns > q
+Saved. Safe travels, Deployer.

@@ -88,6 +88,14 @@ func (w *World) Upgrade() error {
 	if w.Version == 8 {
 		w.Version = 9
 	}
+	if w.Version == 9 {
+		for _, p := range w.Players {
+			if p != nil && p.MineGraceSector != 0 {
+				return errors.New("version-nine world unexpectedly contains mine departure grace")
+			}
+		}
+		w.Version = 10
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {

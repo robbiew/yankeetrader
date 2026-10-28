@@ -38,7 +38,7 @@ def play(data, alias, commands, action=None, answer=None):
                         action()
                     os.write(master, commands.encode()+b'\r')
                     sent = True
-                if answer is not None and not confirmed and (b'Damage and losses save immediately. [y/N] ' in output or b'Enter this dangerous sector? [y/N] ' in output):
+                if answer is not None and not confirmed and any(marker in output for marker in (b'Damage and losses save immediately. [y/N] ', b'Enter this dangerous sector? [y/N] ', b'Ships entering can be damaged. [y/N] ')):
                     os.write(master, answer.encode()+b'\r')
                     # Q must arrive after confirmation; it cannot authorize the attack.
                     time.sleep(.05)
@@ -103,6 +103,28 @@ with tempfile.TemporaryDirectory(prefix='yt-mines-smoke-') as temp:
         assert code==0 and f'Remaining turns: {turns}' in text,text
         transcript+=text
     world=json.loads(path.read_text())
-    assert world['Version']==9 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
+    assert world['Version']==10 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
+
+    data=temp/'deploy'
+    subprocess.run([BINARY,'-data',str(data),'-init','-sectors','8'],check=True,capture_output=True)
+    code,_=play(data,'Deployer','q');assert code==0
+    path=data/'world.json';world=json.loads(path.read_text())
+    world['Players']['1'].update(Sector=8,Mines=10,Shields=1000000)
+    world['Sectors']['8']['Warps']=[7];world['Sectors']['7']['Warps']=[8]
+    path.write_text(json.dumps(world))
+    code,text=play(data,'Deployer','d 5',answer='y');transcript+=text
+    assert code==0 and 'Dropped 5 mines' in text and 'Mine encounter saved' not in text,text
+    world=json.loads(path.read_text());p=world['Players']['1']
+    assert p['Mines']==5 and p['Shields']==1000000 and p['MineGraceSector']==8 and p['Turns']==500
+    assert world['Sectors']['8']['Minefield'][0]['Count']==5
+    code,text=play(data,'Deployer','i;q');transcript+=text
+    assert code==0 and 'Mine encounter saved' not in text,text
+    code,text=play(data,'Deployer','m 7;q');transcript+=text
+    assert code==0 and 'Moved to sector 7.' in text,text
+    world=json.loads(path.read_text());assert not world['Players']['1'].get('MineGraceSector')
+    assert world['Sectors']['8']['Minefield'][0]['Count']==5
+    code,text=play(data,'Deployer','m 8',answer='y');transcript+=text
+    assert code==0 and 'Mine encounter saved: 5 mines exploded' in text,text
+    world=json.loads(path.read_text());assert world['Players']['1']['Turns']==498 and not world['Sectors']['8'].get('Minefield')
     (ROOT/'evidence/mines-smoke.txt').write_text(transcript)
-    print('PTY mines passed: fresh entry/cancellation, autopilot stop, 20-mine depletion and persisted damage, mine-attributed chained death, no false suicide cooldown, preserved turns and protected Earth.')
+    print('PTY mines passed: fresh entry/cancellation, autopilot stop, persisted damage, chained death attribution, protected Earth, deployment grace across reconnect, departure and hazardous reentry.')

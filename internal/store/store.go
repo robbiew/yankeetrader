@@ -123,7 +123,7 @@ func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool)
 		if e = s.checkShip(w); e != nil {
 			return e
 		}
-		if s.ship != nil && !allowMines && len(w.Sectors[w.Players[s.ship.id].Sector].Minefield) > 0 {
+		if s.ship != nil && !allowMines && w.HasMineEncounter(s.ship.id) {
 			return game.ErrMineEncounter
 		}
 		if s.ship != nil && !allowDefense && w.HostileDefense(s.ship.id, w.Players[s.ship.id].Sector) {
