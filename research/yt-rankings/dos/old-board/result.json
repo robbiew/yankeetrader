@@ -1,0 +1,21 @@
+{
+  "name": "old-board",
+  "complete": true,
+  "command": "C;4;O;1",
+  "patches": [],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "after_sha256": "13e7480c85b6834c2857d1cd552f4e72e85e993a09423feb477a77b4f5825fe7",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "2f9792b0bd1bcd5debe51c3ea28bada467042377a18b9a819f9a87de0c99fd44",
+    "dosbox.log": "3817e14c78870cb6f58b2f897464f164dd5d631c2ccc455692eba5c1f693a54b",
+    "transcript.txt": "ef9f066266e72b711044dc8173ea28fbad26b489a06d5cb73a1bb1fe98e48513",
+    "scoreboard.txt": "66ad2a61bca379eec39d3cb283ad6e543e5d5df39a062278fc713fd845c23c38"
+  },
+  "target_score": 26000.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

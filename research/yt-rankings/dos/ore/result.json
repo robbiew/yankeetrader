@@ -1,0 +1,27 @@
+{
+  "name": "ore",
+  "complete": true,
+  "command": "C;4;\r~~1",
+  "patches": [
+    [
+      3,
+      69,
+      10
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+  "before_sha256": "ba7bc726a64549207c4ab193b5b249b6746e6a9b03276f8c7c766271860056e3",
+  "after_sha256": "047f2b97b0624dd411e9184fe822922354184ea21a87f74526d2ffc1841393c6",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+    "dosbox.log": "216943f613dc5b18172dda8e24e7cc8f019342297f7e360d608aa4135f401c23",
+    "transcript.txt": "c609bd0ef6d4f78df4c6bd8ac6227550fc0009cec1dd99b99579c5053a1bcac2",
+    "scoreboard.txt": "fd6117d3fc3e5afefd9f59fe1f6819964ddbd4ad4b6554a1026ab2b8895070bb"
+  },
+  "target_score": 26200.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

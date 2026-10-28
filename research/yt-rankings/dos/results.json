@@ -1,0 +1,756 @@
+{
+  "scenarios": [
+    {
+      "name": "baseline",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "after_sha256": "87a8f3268c20e85d9c45c43d54671e41f80fd2a89168f90cd8f1abdb156f0355",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "3c3ac33ceff51c244ce214952510040d7a494aad0d56a0e3bd9f7f42cff18a1d",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "shields",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          53,
+          100
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "7639338555f67e4e2f8659eb85f70587a1f0e113c137caea4110539228369f3f",
+      "after_sha256": "f4f3f73730c335dd9752e4e098c1cc534716c4b0837b0218a3469bcad9a3e319",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "a95b928b8901dd3495b5feffd5dc97aa1ce3ce5f8b2d5190b5b54b3620284fa2",
+        "transcript.txt": "707c72f37eb9ac59316ae537bf99dc733ce428b86a1ef9420578e03be5d7fab6",
+        "scoreboard.txt": "69a69c23ac878e08e477c8100be4e10c565a7c702bb6aae86b2f8dc9073d106e"
+      },
+      "target_score": 31000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "fighters",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          61,
+          100
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "b327fd313d4fd3f1b3a3fd4d21a078d19cee432d3cc9d294f01ed517d556adb2",
+      "after_sha256": "c4be51da6d61d04b356fe05028cbf57bcf4f55bdb78f7d9afdb00c8a01cbd727",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "e3a7dcf4038f52df39270e69da14ce7fac2d4ee716e50ba0c0a5a1ce2a4f2bcf",
+        "transcript.txt": "fb53da88815b572a3442fde74c170aa8b81eb8221d8402a538ebd1acf232afa0",
+        "scoreboard.txt": "86fce4cbfede38e3f9138e45e8f5946ac1d62f60e504c95761f9dfe3052b9f09"
+      },
+      "target_score": 36000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "holds-eleven",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          65,
+          11
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "80eef51f472af7b9c9f3c11712d1bb0edf629f7f88a15dc497b73e1390fa0047",
+      "after_sha256": "8889c579728eb7fa905220a5ef54bdd7a7bb0fe7090224c5a150aa9a9f5a6b34",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "86a20fc6262e6123fe6fc2697f651d9e1006d78b204c80bdb65c5454a0cf4ded",
+        "transcript.txt": "2f36486d4fcdda0c1ad1ae870e2a41a8ea6e44173b69b0792b23c7166b41f24d",
+        "scoreboard.txt": "3082365e533d1058958b78be9c81581c10e68e1b9aaf6d610a6febd3c4e72e52"
+      },
+      "target_score": 28500.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "holds-twenty",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          65,
+          20
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "0b86bb26789529ec85e3126bbd989096e3657784d756a0c0b857224ccb5bb58e",
+      "after_sha256": "5b70a3604290f4dabb935d399c76275c18bc6dbc738f95a6db3de2c7ccb41e7c",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "eae45659289c06872456798cf5dd9c566fceb1ba6ca7ec4645e3a9ef9623d8ce",
+        "transcript.txt": "58fd9ec047e18d7e8acc9d280eee297b0063b70d412b65ba7bd915263a392ee6",
+        "scoreboard.txt": "9fb0fbdf56b2ced97d4961aa100bfef3cd621a51877228a1f0c5802dd9419004"
+      },
+      "target_score": 51000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "ore",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          69,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "ba7bc726a64549207c4ab193b5b249b6746e6a9b03276f8c7c766271860056e3",
+      "after_sha256": "047f2b97b0624dd411e9184fe822922354184ea21a87f74526d2ffc1841393c6",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "216943f613dc5b18172dda8e24e7cc8f019342297f7e360d608aa4135f401c23",
+        "transcript.txt": "c609bd0ef6d4f78df4c6bd8ac6227550fc0009cec1dd99b99579c5053a1bcac2",
+        "scoreboard.txt": "fd6117d3fc3e5afefd9f59fe1f6819964ddbd4ad4b6554a1026ab2b8895070bb"
+      },
+      "target_score": 26200.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "organics",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          73,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "0a43378abaddbf9641e53e7b28d78a2ff40e77d23a63bed880d7d9a8f2c666dc",
+      "after_sha256": "994cf5bdeda9eb599c94fc6bb13df9c287d88a02b4ec9b30eef58b579cdc99c1",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "d16fd5c5d45b51bc135bab76e66fc379c865a7cbc3809aa09114570592866353",
+        "transcript.txt": "1b388aded386484f0c69982c1013d2ce0637bcf2d74165acae7aaff62a781744",
+        "scoreboard.txt": "0c9017b6ba018047c09bd134280a973d61d3aa1c12d482b2f082ea53d164301e"
+      },
+      "target_score": 26300.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "equipment",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          77,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "9b8306b1a05740fd5f89537aa888b0f3c2b1ea07181bb40fa4977dda08a1cb07",
+      "after_sha256": "c0317a9a62a57bcfde09f81c4185a4b6958334f0a59b8557422b6d267537eb81",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "d4b984089ac6f59a1f80dd2ccd012b7e584f727abc5aaff05a12757f99de3b73",
+        "transcript.txt": "320273007e789683297e380f8b15b8abbacdf502460d5ab83c105b7d176e569a",
+        "scoreboard.txt": "5135135000917185ef35c47a837016134085bcecde9a0ab8e1770e86388084fe"
+      },
+      "target_score": 26400.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "credits",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          81,
+          1100
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "3305e2b403694a30c934bf4db7c699eb517585ea0eeb4484c2504c88eaa7f95e",
+      "after_sha256": "a84000a6bd0296fe340ecdd5fbba056271ffd61b4fc446220c44b30c5b24b8d1",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "6058435599d90d0c529e57917d415883400bc2dae5c6ac309adbf2598d1fa841",
+        "transcript.txt": "e984dd3f98f910b5c2e54aa76c17b18ed13db4c3d8faad01e0de562fc70e5d12",
+        "scoreboard.txt": "530016497aa30a541fee9126ed238aaaa09785195abb0c61ac312ab43df2e781"
+      },
+      "target_score": 26100.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "scanner",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          93,
+          -1
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "f0de4abdad29e35f3b52a9035c5dfc88147f0d4f951e3010914825e38dfa6f8e",
+      "after_sha256": "aec6ff9c8a506ba02e00682bb4e1ab762426e0259d4793ac1ae64c1507531c85",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "2cd3796b42e41fc1a86cda0b9f5632d4017cf11920b90c9c270506eb1d35dd5e",
+        "transcript.txt": "adf9d1c1f930a474eae71fddad67108df4cbb9ce0fb703e3d69872f7db0791ee",
+        "scoreboard.txt": "4348336aa5db3edc109f0fa88258a3b0213ce285b4e57538eac354b3ffe2f447"
+      },
+      "target_score": 276000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "missiles",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          97,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "4dbf5017a7b650de35873d78c290132536535657fb9c0dc52951de620759aea9",
+      "after_sha256": "7e81842dda10cca2cdb8142a444d377f114b992fc330b8f0f451f48ca615c507",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "5aaef94c6a74016d2fc1cc63ea5c765c8bf18dd1c187cca4e890977d458c14cf",
+        "transcript.txt": "fb53da88815b572a3442fde74c170aa8b81eb8221d8402a538ebd1acf232afa0",
+        "scoreboard.txt": "86fce4cbfede38e3f9138e45e8f5946ac1d62f60e504c95761f9dfe3052b9f09"
+      },
+      "target_score": 36000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "field101",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          101,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "eda9f2d80845d960828c1f80b20eb1e60e88e2aa58e63ce4d457c20c065c0715",
+      "after_sha256": "9c1e4ab1515099ce7e685468a67f83798c134e4ff3ad4b155ef9201e9a921283",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "664009926fbaf5352606575c0197895cc511c69f57dda0902e648604b48b46e3",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "field105",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          105,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "864305c83e63cac7478c380e0321ac6179d8fd2377498b9fad1488f3ff8b3818",
+      "after_sha256": "ab4a6316b78b15d5f32c96faab6ddf6144f4b3bb1af91db4082d236e6e8ea889",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "0613a95a90e85c99f2c853eda0fca6d25f293fe455db134d3024f759239b6842",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "stored-score",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          109,
+          12345
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "1298c406e0ba0e9b9d7e8ee690321161089bd5ff4ece06130d53b7103acb60f3",
+      "after_sha256": "87a8f3268c20e85d9c45c43d54671e41f80fd2a89168f90cd8f1abdb156f0355",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "cb8734920d76300e95704f0c2e6058fd73e5e120c7111e5f5ce34f3b7a10fe2d",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "plasma",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          113,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "036a78eab9e6bdc69406dde4959faef90455859416e535ae0c696ccd921f1a36",
+      "after_sha256": "33e8e6bed26261ee1e71b1b69a0e7a9e9cae74a11b3cee98e7f66d12a551c3eb",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "facc7f9ae0163f5b953d20d4485fbee73d5972975055085fb3dd249a03c6803f",
+        "transcript.txt": "e71db9381e49a9eedf861b044d4d537828ff34c6f58f62642ccdfe41d7221666",
+        "scoreboard.txt": "6c947944b75f6d2c6e1c738bf8b926c23a39ecb73f885a465f9dc0cefa5ea059"
+      },
+      "target_score": 10026000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "cached-ports",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          117,
+          1
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "bb2e75dc8ff611a9d2848d1eb1e90b25a9259badb670600788818a1bddf05947",
+      "after_sha256": "1f1d9edc38a69cb14c06e86b612c5956a8dd9d07c9e2cc39f15fa28296871c62",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "4990738218db1512d1588d011efc7c7e998427b788dd5235e4f05d54d582818e",
+        "transcript.txt": "69d8660ed3b3c2e05f89582222528e201c899d4cd7ef775c252d93ceedfc6405",
+        "scoreboard.txt": "b6f9f978bd2ecbffeba6de64e1d4056785e2bd1b638d3cba60aa8430671b7bb7"
+      },
+      "target_score": 76000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "ground",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          121,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "ddd92dad5f1b2c151ea8ed7da97ea10c0805953984c234c2b098dd080644e7d1",
+      "after_sha256": "cdf97c28e54394b9b71662bece91f97088cf591750cea61d8c168fbaaf6177bd",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "5b6a4b03b552bbaf86aae41abfe998762d872e45283a0321eb5696c8f09bc2e0",
+        "transcript.txt": "45e7890e7036f3dfd7b3654edc36060b0bca487b8578fe206a69e05036d51e1f",
+        "scoreboard.txt": "20c73c336bfe10a40d033a24b647fb8ee1506e323b98f28aa1a14d5c9c1b964a"
+      },
+      "target_score": 33500.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "cloak",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          125,
+          1
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "24f6562488a286953411d53fc473de0c6b62e70d41a8aaa21ed4014de67facbc",
+      "after_sha256": "a58f83dadd062a625b00de89e15c6178b3c4f5566975c83c7e4f23c46edf4895",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "448001e57824d11bbe315c981f3bd43f2d62e47c1311df850d359d4ce08f014c",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "mines",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          129,
+          10
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "ac89d13e3fd075b1dde6bd688ca6076c553bcd73a850fb9a747a1b61e93b8952",
+      "after_sha256": "0a1a1f537dc4384dc495b6efa3d2fa2dadf083a6f26cd2867e80b093901e9384",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "7e19978e92d3ee550ed93f5726fbe7a72875b9f50848b90aa2743ab9476bccce",
+        "transcript.txt": "58fd9ec047e18d7e8acc9d280eee297b0063b70d412b65ba7bd915263a392ee6",
+        "scoreboard.txt": "9fb0fbdf56b2ced97d4961aa100bfef3cd621a51877228a1f0c5802dd9419004"
+      },
+      "target_score": 51000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "dead-target",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          45,
+          2
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "fb69bd9dea706a97aaf257485a6b7df40328595519c831651f4ee7586260b4d1",
+      "after_sha256": "8bfdc0ecb793f714ce8ac91e75a1e760d5237371da955795ea7655dd0c49af19",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "f677002386db3ba2f91e7d00aab10c8b6e424e12fdbe21e27bf54a134a04f648",
+        "transcript.txt": "7782069097d4eb6917e5053ac67cc3e36abd24f6f00fd59c9bba119df2623d41",
+        "scoreboard.txt": "891915cc8120e9f9cb8d20bf7d5c8c20539dbe310363acbe3d5e01b0927a961a"
+      },
+      "target_score": 0.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "deployed-fighters",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          3
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "215a0091821c7cae4d13e6a4b2128fe3b613cf4ecd67791826b6c37478ccf9e5",
+      "after_sha256": "be7260c37eb7dd0251938b880f0da5199ae4396ca0c7749bae3a40663b3980e4",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "dosbox.log": "a3a850d4f7311854ffdb2c7d03241d227715e9ed8e7f34eaa3bfead4e3c2e07f",
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "transcript.txt": "fb53da88815b572a3442fde74c170aa8b81eb8221d8402a538ebd1acf232afa0",
+        "scoreboard.txt": "86fce4cbfede38e3f9138e45e8f5946ac1d62f60e504c95761f9dfe3052b9f09"
+      },
+      "target_score": 36000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "port-title",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3152,
+          89,
+          3
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "bd13ab3d50f116b85218f26340aa519ddb6122a37175560b046498d68c85b0a3",
+      "after_sha256": "0996d10f03e499e45cdd02de6f2e468135d93d18230c05827af313c3fdd44a77",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "57b25155de333236d62e7cc3081522978d89cb2c0332d8b477121e1a36a6a2dd",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "planet-bank",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          117,
+          1000000
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "62e9a362b97e1856077422dea7c0492ed3e70c9d6433f2e91d2c6012d3e9d617",
+      "after_sha256": "f2383abb81e1e4917fd10d9f983e7460854b0d5c34298c7de0f4f5e230c0876e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "458d20c3965a3152dfd8aff5e7fa31253437dc0c40a87056c901aed253d37349",
+        "transcript.txt": "8406cf7b18d53c7c1eb2ecf2fa84b19e48427d2a62c316216b852068e9b7e894",
+        "scoreboard.txt": "60d1ec9f345d7924429992b302bc673abe2ea56540297442057c3f835e796244"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "team-members",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ],
+        [
+          52,
+          77,
+          2
+        ],
+        [
+          52,
+          109,
+          2
+        ],
+        [
+          52,
+          117,
+          3
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "c10f85847abe1eaa569cc1ae041faa51f913ec353f41cb5b54d001956f02ff80",
+      "after_sha256": "3bf65dd52b9e7341a87d28a85f6415774313957935f876f296c26076a5b4fe7c",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "dosbox.log": "3d1ba795942a874a90ec4267dd67ad2a1f4e4968f425f55b5a03997b24cf7b9c",
+        "transcript.txt": "bfa53c68b73d9ac084288c791ad921eba56d28f27c936550315a3d9ccf8f5bf0",
+        "scoreboard.txt": "3002b21ef6d3acfdeaf60eb52330e9f1850d199f59b6c5ffd424e46bdbf53e11"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "old-board",
+      "complete": true,
+      "command": "C;4;O;1",
+      "patches": [],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "after_sha256": "13e7480c85b6834c2857d1cd552f4e72e85e993a09423feb477a77b4f5825fe7",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "KEYS.TXT": "2f9792b0bd1bcd5debe51c3ea28bada467042377a18b9a819f9a87de0c99fd44",
+        "dosbox.log": "3817e14c78870cb6f58b2f897464f164dd5d631c2ccc455692eba5c1f693a54b",
+        "transcript.txt": "ef9f066266e72b711044dc8173ea28fbad26b489a06d5cb73a1bb1fe98e48513",
+        "scoreboard.txt": "66ad2a61bca379eec39d3cb283ad6e543e5d5df39a062278fc713fd845c23c38"
+      },
+      "target_score": 26000.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "zero-score",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          65,
+          0
+        ],
+        [
+          3,
+          81,
+          0
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "4e02c81f30dd34bc7d190074a7476d182ef1003440d80351e04963ed4b784277",
+      "after_sha256": "ce5d8927d812e085bfe03c56c65c1d33c18586cebda8ddd9e60b1d0f9c0cb667",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "dosbox.log": "9d858cf065dc761b37a821fa215986fdb08acb6bff8a530d01ec344224178b3b",
+        "scoreboard.txt": "891915cc8120e9f9cb8d20bf7d5c8c20539dbe310363acbe3d5e01b0927a961a",
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "transcript.txt": "7782069097d4eb6917e5053ac67cc3e36abd24f6f00fd59c9bba119df2623d41"
+      },
+      "target_score": 0.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    },
+    {
+      "name": "tie-score",
+      "complete": true,
+      "command": "C;4;\r~~1",
+      "patches": [
+        [
+          3,
+          81,
+          9965250
+        ]
+      ],
+      "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "baseline_sha256": "b90c370a075d5e9c0ec0a30aa1cd4d110b8f58c635d06f2f75025682a5426a70",
+      "before_sha256": "e98c0d2790167a0c534627b3356c7b09f87f74034ba8b794d0093c2053a56047",
+      "after_sha256": "f3937016cb4d4634f287e77d378baefdf314250f71a12b45dae20cb8d0a3fcda",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+      "files": {
+        "dosbox.log": "567c52dce95b2c1d126a3389065aca4439bfd818edb04ae8bd4fbe46462b875d",
+        "scoreboard.txt": "0e2b52d26e194a34a380c7185e70ba3fff560c140aae3895645f653fbc93a884",
+        "KEYS.TXT": "c8639c47958f028f81c7c5420572cc686d0efbc5feba58040969633b416cb48c",
+        "transcript.txt": "3a93c6be388446127be74f561583c346bce1f81604b988c68d4888a485193167"
+      },
+      "target_score": 9990250.0,
+      "dos_date": "10/24/2026",
+      "dos_time": "00:00:00"
+    }
+  ]
+}

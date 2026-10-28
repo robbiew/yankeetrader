@@ -6,3 +6,9 @@
 # ANSI recordings contain significant control sequences and trailing spaces.
 /evidence/startup/transcript.txt -text -diff
 /evidence/startup/returning.txt -text -diff
+
+# Ranking captures preserve exact DOS Enter keys, CRLF, log headers and table padding.
+/research/yt-rankings/dos/**/KEYS.TXT -text -diff
+/research/yt-rankings/dos/**/scoreboard.txt -text whitespace=-blank-at-eol
+/research/yt-rankings/dos/**/transcript.txt -text whitespace=-blank-at-eol
+/research/yt-rankings/dos/**/dosbox.log -text whitespace=-blank-at-eol
