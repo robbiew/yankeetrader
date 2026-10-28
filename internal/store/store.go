@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"sync"
 	"time"
 )
 
@@ -16,14 +17,16 @@ type Store struct {
 	ship *shipSession
 }
 type shipSession struct {
+	spyMu      sync.Mutex
 	id         int
 	generation uint64
+	spies      *game.SpyNetwork
 }
 
 // ForShip binds only this copy of the store to a login's ship generation.
 // Administrative maintenance and fresh login use the unbound store.
 func (s Store) ForShip(id int, generation uint64) Store {
-	s.ship = &shipSession{id, generation}
+	s.ship = &shipSession{id: id, generation: generation, spies: game.NewSpyNetwork(id, generation)}
 	return s
 }
 func (s Store) checkShip(w *game.World) error {
@@ -115,6 +118,13 @@ func (s Store) Create(w *game.World) error {
 }
 func (s Store) Update(fn func(*game.World) error) error { return s.update(fn, false, false) }
 func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool) error {
+	return s.updateState(fn, allowMines, allowDefense, nil)
+}
+func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense bool, spyFn func(*game.World, *game.SpyNetwork) error) error {
+	if spyFn != nil && s.ship != nil {
+		s.ship.spyMu.Lock()
+		defer s.ship.spyMu.Unlock()
+	}
 	return s.locked(func() error {
 		w, e := s.load()
 		if e != nil {
@@ -132,7 +142,23 @@ func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool)
 		if e = fn(w); e != nil {
 			return e
 		}
-		return s.save(w)
+		var staged *game.SpyNetwork
+		if spyFn != nil {
+			if s.ship == nil {
+				return errors.New("spies require a bound ship session")
+			}
+			staged = s.ship.spies.Clone()
+			if e = spyFn(w, staged); e != nil {
+				return e
+			}
+		}
+		if e = s.save(w); e != nil {
+			return e
+		}
+		if staged != nil {
+			*s.ship.spies = *staged
+		}
+		return nil
 	})
 }
 func (s Store) View() (*game.World, error) {

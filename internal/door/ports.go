@@ -3,6 +3,7 @@ package door
 import (
 	"errors"
 	"fmt"
+	"io"
 	"strconv"
 	"strings"
 
@@ -87,7 +88,7 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 		costs := []int64{1000, 500, 100, 5, 250000, 500000, 750, 50, 333000}
 		for i, label := range labels {
 			afford := "N/A"
-			if i == 1 || i == 2 || i == 6 || i == 7 {
+			if i == 1 || i == 2 || i == 6 || i == 7 || i == 8 {
 				afford = strconv.FormatInt(p.Credits/costs[i], 10)
 			}
 			if err = s.Terminal.Printf("%-22s* %-7d* %s\r\n", label, costs[i], afford); err != nil {
@@ -107,6 +108,17 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 		if strings.EqualFold(choice, "i") {
 			if err = s.classicInfo(w, id, true); err != nil {
 				return err
+			}
+			continue
+		}
+		if choice == "9" {
+			if err = s.hireSpies(token, nil, pending); err != nil {
+				if errors.Is(err, io.EOF) {
+					return err
+				}
+				if err = s.Terminal.Printf("Purchase rejected: %s\r\n", err); err != nil {
+					return err
+				}
 			}
 			continue
 		}

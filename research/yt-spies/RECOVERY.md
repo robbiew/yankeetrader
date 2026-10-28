@@ -1,5 +1,8 @@
 # Spies and intelligence reports — research
 
+Follow-up: [the implementation](IMPLEMENTATION.md) now connects the confirmed
+hiring, movement and mine/planet/defender findings to gameplay.
+
 This slice studies the original DOS 3.6 executable. It does not implement Go
 spy gameplay. README updates were verified in every merged PR #22–28; those
 feature descriptions remain implementation claims, distinct from this research.

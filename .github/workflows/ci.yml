@@ -84,6 +84,7 @@ jobs:
           python3 scripts/smoke_automatic_scores.py
           python3 scripts/smoke_rankings.py
           python3 scripts/smoke_radio.py
+          python3 scripts/smoke_spies.py
           python3 scripts/smoke_reports.py
           python3 scripts/smoke_trade_reports.py
           python3 scripts/smoke.py

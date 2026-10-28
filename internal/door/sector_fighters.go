@@ -31,12 +31,12 @@ func (s Session) setSectorFighters(id int, args []string, pending *[]string, rei
 	if err != nil {
 		return errors.New("choose a whole fighter quantity")
 	}
-	err = s.Store.Update(func(w *game.World) error {
+	err = s.Store.UpdateWithSpies(func(w *game.World) error {
 		if reinforce {
 			return w.ReinforceSector(id, count)
 		}
 		return w.SetSectorFighters(id, count)
-	})
+	}, s.Now(), s.Deadline)
 	if err != nil {
 		return err
 	}
