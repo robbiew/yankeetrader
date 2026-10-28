@@ -85,6 +85,9 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 8
 	}
+	if w.Version == 8 {
+		w.Version = 9
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
@@ -120,11 +123,6 @@ func (w *World) validatePlanets() error {
 		for _, x := range append(append([]float64{}, p.Production[:]...), append(p.Cargo[:], p.Fighters, p.Missiles, p.Mines, p.Plasma)...) {
 			if math.IsNaN(x) || math.IsInf(x, 0) || x < 0 || x > float64(MaxQuantity) {
 				return errors.New("invalid planet production or inventory")
-			}
-		}
-		for _, x := range p.Production {
-			if x < 1 {
-				return errors.New("planet production must be at least one")
 			}
 		}
 	}
@@ -240,7 +238,7 @@ func (p *Planet) update(now time.Time, lazy bool) {
 		} else {
 			base = math.Max(base, p.Cargo[i]/10) * (1 + .01*d)
 		}
-		p.Production[i] = math.Max(1, limited(base))
+		p.Production[i] = limited(base)
 	}
 	p.Fighters = limited(p.Fighters + (math.Floor(total)+float64(bank)/500)*d)
 	p.Missiles = limited(p.Missiles + (math.Floor(total/2500)+float64(bank)/100000)*d)

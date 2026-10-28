@@ -57,15 +57,11 @@ func TestPlanetMissileLazyGrowthAndNoUnusedProductionShots(t *testing.T) {
 	}
 }
 func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
-	for _, mode := range []string{"overrun", "zero ground", "own", "team", "mixed", "changed ground", "changed bank", "changed owner", "changed production", "removed"} {
+	for _, mode := range []string{"own", "team", "mixed", "changed ground", "changed bank", "changed owner", "changed production", "removed"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, p, v := planetMissileWorld(t)
 			count := int64(1)
 			switch mode {
-			case "overrun":
-				p.Ground = 24
-			case "zero ground":
-				p.Ground = 0
 			case "own":
 				p.Owner = a.ID
 			case "team":
@@ -76,7 +72,7 @@ func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
 			}
 			before, _ := json.Marshal(w)
 			intent, err := w.PrepareMissile(a.ID, 2, count, v)
-			if mode == "overrun" || mode == "zero ground" || mode == "own" || mode == "team" || mode == "mixed" {
+			if mode == "own" || mode == "team" || mode == "mixed" {
 				if err == nil {
 					t.Fatal("unsupported bombardment")
 				}
@@ -112,6 +108,84 @@ func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
 				t.Fatal("stale launch mutation")
 			}
 		})
+	}
+}
+
+func TestPlanetMissileProductionDamageAndDestruction(t *testing.T) {
+	t.Run("partial clamps and caps each warehouse", func(t *testing.T) {
+		w, a, p, v := planetMissileWorld(t)
+		p.Ground = 25
+		p.Production = [3]float64{1, 10000, 1}
+		p.Cargo = [3]float64{10, 100000, 10}
+		p.Bank = 0
+		intent, err := w.PrepareMissile(a.ID, 2, 10, v)
+		if err != nil {
+			t.Fatal(err)
+		}
+		draws := 0
+		out, err := w.CommitMissile(intent, v, func() float64 { draws++; return .5 }, clock)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if out.Primary.GroundMissiles != 2 || out.Primary.ProductionMissiles != 8 || out.Primary.PlanetMissiles != 10 || draws != 26 {
+			t.Fatal(out.Primary, "draws", draws)
+		}
+		if p.Production != [3]float64{0, 2000, 0} || p.Cargo != [3]float64{0, 20000, 0} || out.Primary.PlanetDestroyed {
+			t.Fatal("unexpected production or warehouse result", p, out.Primary)
+		}
+		if err := w.Validate(); err != nil {
+			t.Fatal(err)
+		}
+	})
+	t.Run("destruction atomically revokes all landing sessions", func(t *testing.T) {
+		w, a, p, v := planetMissileWorld(t)
+		p.Ground = 25
+		p.Production = [3]float64{1, 1, 1}
+		ownerCredits := w.Players[p.Owner].Credits
+		attackerCredits := a.Credits
+		landed, err := w.Join("landed", "Landed")
+		if err != nil {
+			t.Fatal(err)
+		}
+		landed.Sector, landed.LandedPlanet, landed.PlanetToken = 2, 2, "0123456789abcdef0123456789abcdef"
+		intent, err := w.PrepareMissile(a.ID, 2, 10, v)
+		if err != nil {
+			t.Fatal(err)
+		}
+		out, err := w.CommitMissile(intent, v, func() float64 { return .5 }, clock)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !out.Primary.PlanetDestroyed || w.Planets[2] != nil || w.Sectors[2].Planet != 0 || landed.PlanetToken != "" || landed.LandedPlanet != 0 {
+			t.Fatal(out.Primary, w.Sectors[2], landed)
+		}
+		if landed.Sector != 2 || landed.Death != nil || a.Death != nil || w.Players[p.Owner].Death != nil || a.Credits != attackerCredits || w.Players[p.Owner].Credits != ownerCredits {
+			t.Fatal("planet destruction affected a ship, owner or account", landed, a, w.Players[p.Owner])
+		}
+		if err := w.Validate(); err != nil {
+			t.Fatal(err)
+		}
+	})
+}
+
+func TestProductionBombardmentPreservesCachedOreEligibility(t *testing.T) {
+	production := [3]float64{100, 1, 1}
+	budget := maxMissileRounds
+	used, rates, _, destroyed, err := resolveMissileProduction(3, production, [3]float64{}, func() float64 { return .99 }, &budget)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if used != 3 || rates != [3]float64{} || !destroyed {
+		t.Fatal("positive entry ore must keep the production loop eligible", used, rates, destroyed)
+	}
+	production = [3]float64{0, 1, 1}
+	budget = maxMissileRounds
+	used, rates, _, destroyed, err = resolveMissileProduction(3, production, [3]float64{}, func() float64 { return .99 }, &budget)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if used != 1 || rates != [3]float64{} || !destroyed {
+		t.Fatal("zero entry ore should stop when both live secondary rates exhaust", used, rates, destroyed)
 	}
 }
 func TestGroundMissileBoundsFractionalRoundingAndRNG(t *testing.T) {

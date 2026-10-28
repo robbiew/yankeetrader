@@ -1,7 +1,9 @@
 # Planetary production damage and destruction research
 
-This is research only. The playable Go door still restricts planetary missiles
-to the ground phase. No production-damage or destruction command is enabled here.
+This research now guides the playable Go implementation. One-hop missile attacks
+apply production damage after ground forces reach zero and logically destroy a
+planet when all three rates reach zero. This file remains the evidence and
+compatibility record.
 
 ## Results
 
@@ -101,21 +103,23 @@ preserved runtime-aware listing at `2e79:0e3e..0e7a`. Byte reads are evidence of
 shipped instructions, not a decompilation of the QuickBASIC runtime or an emulator
 trace of every operation.
 
-## Implications for a later implementation
+## Implementation decisions
 
-- Current Go validation requires every production rate to be at least one.
-  Supporting this behavior requires an explicit invariant/save-compatibility
-  decision for zero-rate categories; forcing them back to one would lose parity.
+- World version 9 permits individual zero-rate categories. Version-8 worlds
+  upgrade in memory without rewriting read-only loads; the next successful write
+  persists version 9. Lazy and daily updates preserve zero rather than forcing a
+  minimum rate of one.
 - Apply lazy growth before impact, consume missiles across phases only once,
   accumulate random losses before final clamping, and cap each cargo type using
   its own resulting rate. Preserve one shared calculation budget.
-- Destruction must atomically unlink/remove the planet and revoke every active
-  landing session referencing it. The logical deletion observed in DOS does not
-  justify exposing residual inactive inventory or awarding it to the attacker.
-  Token cleanup and storage atomicity are proposed modern safety policies, not
-  established multi-node DOS behavior.
-- Decide explicitly whether to preserve the cached-ore round-count asymmetry.
-  A symmetric live-rate termination rule would be a modern policy change.
+- Destruction atomically removes the planet record, clears its sector link and
+  revokes every landing session referencing it. Modern deletion discards the
+  inactive residual inventory rather than retaining an inaccessible record.
+  It does not transfer bank, inventory or credits, and does not kill the owner.
+- The recovered cached-ore round-count asymmetry is preserved. A symmetric
+  live-rate termination rule would be a modern policy change.
+- Missiles left after the production loop ends dissipate; they create no extra
+  effects or refund. Route continuation after destruction remains a later scope.
 - Do not infer ship damage, estate transfer, faction behavior, return fire,
   allied-planet targeting or route continuation from these isolated planets.
   Wider/mixed encounters remain a separate research and implementation milestone.
@@ -136,5 +140,6 @@ For fresh experiments, first prepare a new disposable directory using
 `research/yt-missiles/production/run_cases.py <new-recovery-directory>`.
 The runner uses the existing local DOSBox/KEYFEED tools, creates new fixture/result
 directories and refuses existing ones. Never run it against the immutable archive.
-Original RNG capture, bit-exact MBF32 rounding, concurrent landed sessions,
-large/fractional numeric boundaries and routing after destruction remain open.
+Original RNG capture, bit-exact MBF32 rounding, larger/fractional numeric
+boundaries and routing after destruction remain open. Native BBS acceptance is
+also still distinct from the local PTY smoke and race-tested transaction.

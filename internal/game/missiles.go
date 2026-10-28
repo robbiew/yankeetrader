@@ -22,6 +22,10 @@ type MissileImpact struct {
 	SectorMissiles                              int64
 	PlanetID                                    int
 	GroundBefore, GroundAfter, PlanetMissiles   int64
+	GroundMissiles, ProductionMissiles          int64
+	ProductionBefore, ProductionAfter           [3]float64
+	CargoBefore, CargoAfter                     [3]float64
+	PlanetDestroyed                             bool
 	Target                                      int
 	Launched, MinesDestroyed, Dropped, Disarmed int64
 	SectorFightersDestroyed                     int64
@@ -160,12 +164,6 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 		if planet.Owner == id || (a.Team != 0 && owner != nil && owner.Team == a.Team) {
 			return MissileIntent{}, errors.New("cannot bombard a personal or teammate planet")
 		}
-		// Conservatively bound the entire volley before interception. Every
-		// draw is below 25, so no missile can reach the unrecovered production
-		// phase. Integer ground conversion occurs only after the whole volley.
-		if planet.Ground < 1 || count > planet.Ground/25 {
-			return MissileIntent{}, errors.New("choose at most ground forces / 25 missiles; production bombardment is not available yet")
-		}
 		snapshot := *planet
 		intent.Planet = &snapshot
 	}
@@ -264,6 +262,7 @@ func (w *World) missileImpact(shooter, target, sector int, count int64, cause st
 	out.MinesDestroyed = w.interceptMines(sector, remaining)
 	remaining -= out.MinesDestroyed
 	if remaining > 0 && target == 0 && w.Sectors[sector].Planet != 0 {
+		reachedPlanet := remaining
 		planet := w.Planets[w.Sectors[sector].Planet]
 		if now.Before(planet.Updated) {
 			return MissileImpact{}, errors.New("planet update is ahead of launch time")
@@ -271,13 +270,41 @@ func (w *World) missileImpact(shooter, target, sector int, count int64, cause st
 		planet.update(now, true)
 		out.PlanetID = planet.ID
 		out.GroundBefore = planet.Ground
+		out.ProductionBefore = planet.Production
+		out.CargoBefore = planet.Cargo
+		left := remaining
+		groundAfter := planet.Ground
 		var err error
-		out.GroundAfter, err = resolveMissileGround(remaining, planet.Ground, rng, budget)
+		if left > 0 {
+			left, groundAfter, err = resolveMissileGroundPhase(left, float64(planet.Ground), rng, budget)
+			if err != nil {
+				return MissileImpact{}, err
+			}
+		}
+		out.GroundMissiles = remaining - left
+		remaining = left
+		planet.Ground = groundAfter
+		out.GroundAfter = groundAfter
+		used, rates, cargo, destroyed, err := resolveMissileProduction(remaining, planet.Production, planet.Cargo, rng, budget)
 		if err != nil {
 			return MissileImpact{}, err
 		}
-		planet.Ground = out.GroundAfter
-		out.PlanetMissiles = remaining
+		out.ProductionMissiles = used
+		remaining -= used
+		planet.Production, planet.Cargo = rates, cargo
+		out.ProductionAfter, out.CargoAfter = rates, cargo
+		out.PlanetDestroyed = destroyed
+		if destroyed {
+			delete(w.Planets, planet.ID)
+			w.Sectors[sector].Planet = 0
+			for _, player := range w.Players {
+				if player.LandedPlanet == planet.ID {
+					player.PlanetToken = ""
+					player.LandedPlanet = 0
+				}
+			}
+		}
+		out.PlanetMissiles = reachedPlanet
 	}
 	if remaining == 0 || target == 0 {
 		return out, nil
@@ -326,9 +353,9 @@ func sameMissilePlanet(a, b *Planet) bool {
 	return *a == *b
 }
 
-// ResolveMissileGround preserves fractional losses until the final integer
-// conversion. This supported phase consumes every missile and cannot reach
-// production; callers must reject volleys above ground/25 before spending.
+// ResolveMissileGround is the bounded ground-only calculation retained for
+// fixtures and callers that explicitly need that isolated phase. Full attacks
+// use resolveMissileGroundPhase and continue into production.
 func ResolveMissileGround(missiles, ground int64, rng func() float64) (int64, error) {
 	budget := maxMissileRounds
 	return resolveMissileGround(missiles, ground, rng, &budget)
@@ -350,4 +377,55 @@ func resolveMissileGround(missiles, ground int64, rng func() float64, budget *in
 		remaining -= r * 25
 	}
 	return int64(math.Floor(remaining)), nil
+}
+
+func resolveMissileGroundPhase(missiles int64, ground float64, rng func() float64, budget *int) (int64, int64, error) {
+	if missiles < 1 || missiles > MaxQuantity || ground < 0 || ground > float64(MaxQuantity) || math.IsNaN(ground) || rng == nil {
+		return 0, 0, errors.New("invalid ground bombardment inputs")
+	}
+	used := int64(0)
+	for used < missiles && ground > 0 {
+		if *budget <= 0 {
+			return 0, 0, errors.New("missile calculation limit reached")
+		}
+		(*budget)--
+		r := rng()
+		if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
+			return 0, 0, errors.New("combat RNG must return [0,1)")
+		}
+		ground -= r * 25
+		used++
+	}
+	return missiles - used, int64(math.Max(0, math.Floor(ground))), nil
+}
+
+// resolveMissileProduction follows the recovered YT 3.6 loop: the cached ore
+// rate at entry controls loop eligibility while all three live rates take
+// independent damage draws. A single round consumes one missile and budget.
+func resolveMissileProduction(missiles int64, production, cargo [3]float64, rng func() float64, budget *int) (int64, [3]float64, [3]float64, bool, error) {
+	if missiles < 0 || rng == nil {
+		return 0, production, cargo, false, errors.New("invalid production bombardment inputs")
+	}
+	cachedOre := production[0]
+	used := int64(0)
+	for used < missiles && (cachedOre > 0 || production[1] > 0 || production[2] > 0) {
+		if *budget <= 0 {
+			return 0, production, cargo, false, errors.New("missile calculation limit reached")
+		}
+		(*budget)--
+		for i := range production {
+			r := rng()
+			if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
+				return 0, production, cargo, false, errors.New("combat RNG must return [0,1)")
+			}
+			production[i] -= r * 2000
+		}
+		used++
+	}
+	for i := range production {
+		production[i] = limited(production[i])
+		cargo[i] = math.Min(cargo[i], 10*production[i])
+	}
+	destroyed := production == [3]float64{}
+	return used, production, cargo, destroyed, nil
 }

@@ -127,7 +127,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	path := s.Dir + "/world.json"
 	os.WriteFile(path, data, 0600)
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 8 || upgraded.Players[1].StoredScore != 0 {
+	if err != nil || upgraded.Version != 9 || upgraded.Players[1].StoredScore != 0 {
 		t.Fatal(upgraded, err)
 	}
 	actual, _ := os.ReadFile(path)
@@ -143,6 +143,41 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	os.WriteFile(path, data, 0600)
 	if _, err = s.View(); err == nil {
 		t.Fatal("malformed legacy score accepted")
+	}
+}
+
+func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
+	s := create(t)
+	w, err := s.View()
+	if err != nil {
+		t.Fatal(err)
+	}
+	w.Version = 8
+	w.Players[1].Credits = 100000
+	if err = w.CreatePlanet(1, "Zero", time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	w.Planets[2].Production = [3]float64{0, 20, 0}
+	w.Planets[2].Cargo = [3]float64{0, 200, 0}
+	data, _ := json.Marshal(w)
+	path := s.Dir + "/world.json"
+	if err = os.WriteFile(path, data, 0600); err != nil {
+		t.Fatal(err)
+	}
+	upgraded, err := s.View()
+	if err != nil || upgraded.Version != 9 || upgraded.Planets[2].Production != [3]float64{0, 20, 0} {
+		t.Fatal(upgraded, err)
+	}
+	disk, _ := os.ReadFile(path)
+	if string(disk) != string(data) {
+		t.Fatal("read-only upgrade rewrote save")
+	}
+	if err = s.Update(func(*game.World) error { return nil }); err != nil {
+		t.Fatal(err)
+	}
+	upgraded, err = s.View()
+	if err != nil || upgraded.Version != 9 || upgraded.Planets[2].Production[0] != 0 {
+		t.Fatal(upgraded, err)
 	}
 }
 
@@ -177,8 +212,13 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	now := time.Now().UTC()
 	if err := s.Update(func(w *game.World) error {
 		w.Players[2].Sector = 3
-		w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: now.Add(-time.Hour), Ground: 5000, Production: [3]float64{100, 200, 300}, Bank: 10000}
+		w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: now.Add(-time.Hour), Ground: 25, Production: [3]float64{1, 1, 1}, Bank: 0}
 		w.Sectors[2].Planet = 2
+		landed, err := w.Join("landed", "Landed")
+		if err != nil {
+			return err
+		}
+		landed.Sector, landed.LandedPlanet, landed.PlanetToken = 2, 2, "0123456789abcdef0123456789abcdef"
 		w.Sectors[2].Defense = &game.SectorDefense{Owner: 2, Fighters: 1}
 		w.Sectors[2].Minefield = []game.MineLayer{{Owner: 2, Count: 1}}
 		return nil
@@ -186,7 +226,7 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 		t.Fatal(err)
 	}
 	before, _ := s.View()
-	intent, err := before.PrepareMissile(1, 2, 4, v)
+	intent, err := before.PrepareMissile(1, 2, 6, v)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -212,13 +252,28 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	}
 	err = s.ForShip(1, 0).Update(func(w *game.World) error {
 		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, now)
+		if err != nil {
+			return err
+		}
+		return errors.New("late abort after planetary destruction")
+	})
+	if err == nil {
+		t.Fatal("late-aborted destruction was saved")
+	}
+	after, _ = s.View()
+	actual, _ = json.Marshal(after)
+	if string(saved) != string(actual) {
+		t.Fatal("late abort persisted planet destruction")
+	}
+	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, now)
 		return err
 	})
 	if err != nil {
 		t.Fatal(err)
 	}
 	after, _ = s.View()
-	if after.Players[1].Missiles != 6 || after.Players[1].Turns != 36 || after.Sectors[2].Defense != nil || len(after.Sectors[2].Minefield) != 0 || after.Planets[2].Ground >= 5000 {
-		t.Fatal("launch consequences missing", after.Planets[2])
+	if after.Players[1].Missiles != 4 || after.Players[1].Turns != 36 || after.Sectors[2].Defense != nil || len(after.Sectors[2].Minefield) != 0 || after.Planets[2] != nil || after.Sectors[2].Planet != 0 || after.Players[3].PlanetToken != "" || after.Players[3].LandedPlanet != 0 {
+		t.Fatal("launch consequences missing", after.Planets[2], after.Players[3])
 	}
 }

@@ -218,16 +218,16 @@ Next: wider/multiple-ship missile routes and planetary bombardment, followed by
 mine placement/recovery. NPC behavior, communications, computer functions, Genesis,
 score generation/complete maintenance and native BBS combat acceptance remain open.
 
-## Planetary ground bombardment
+## Planetary ground and production bombardment
 
-Confirmed one-hop `MISSILE` launches now reach hostile planetary ground forces
-after sector fighters/mines. Own/team planets are protected. The full planet
-record is bound to confirmation, and lazy growth plus damage save atomically.
-Volleys are limited to `quantity <= saved ground / 25` so no round reaches the
-still-unimplemented production phase; mixed visible ship/planet targets remain
-blocked. [Scope, arithmetic and evidence](yt-missiles/GROUND_BOMBARDMENT.md).
-Next research: production clamping/destruction and the ore-only entry condition,
-then wider/multiple-ship missile routes. Mine placement/recovery and native BBS
+Confirmed one-hop `MISSILE` launches now reach hostile planetary ground and
+production after sector fighters/mines. Own/team planets are protected. The full
+planet record is bound to confirmation, and lazy growth, damage, warehouse caps
+and deletion save atomically. All-zero production removes the sector link and
+revokes every landing token for the planet; ownership, bank and ships are not
+salvaged. Mixed visible ship/planet targets remain blocked. Recovered cached-ore
+eligibility is preserved. [Scope and arithmetic](yt-missiles/PRODUCTION_DESTRUCTION.md).
+Next: wider/multiple-ship missile routes. Mine placement/recovery and native BBS
 combat acceptance remain open alongside the later systems listed above.
 
 ## Production damage and destruction research
@@ -237,6 +237,7 @@ at ten times resulting rates, and logical planet deletion when all rates reach
 zero. The ore-only omission hypothesis is disproved: the shared value is cached
 ore production. Static recovery identifies a remaining cached/live-rate loop
 asymmetry. [Evidence, model and implementation decisions](yt-missiles/PRODUCTION_DESTRUCTION.md).
-No production bombardment is exposed in Go yet. Next implement these phases with
-zero-rate validation, atomic removal and landing-session invalidation, explicitly
-choosing the cached-ore compatibility policy; then research wider/mixed routes.
+Implemented in the planetary ground and production bombardment milestone, using
+world version 9 to admit zero production categories and bind destruction plus
+landing-token revocation to the launch transaction. Cached-ore asymmetry is
+preserved for compatibility; wider/mixed routes remain a separate milestone.

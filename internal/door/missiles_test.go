@@ -138,7 +138,7 @@ func TestPlanetBombardmentWarningCancellationAndReceipt(t *testing.T) {
 				t.Fatal(err)
 			}
 			w, _ := st.View()
-			if !strings.Contains(term.output.String(), "Target; 5000 ground forces; ground-only bombardment") {
+			if !strings.Contains(term.output.String(), "Target; 5000 ground forces; production 1/1/1") {
 				t.Fatal(term.output.String())
 			}
 			if answer == "n" {

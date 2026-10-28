@@ -46,7 +46,7 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	}
 	name := "sector defenses"
 	if intent.Planet != nil {
-		name = fmt.Sprintf("planet %s; %d ground forces; ground-only bombardment", intent.Planet.Name, intent.Planet.Ground)
+		name = fmt.Sprintf("planet %s; %d ground forces; production %g/%g/%g", intent.Planet.Name, intent.Planet.Ground, intent.Planet.Production[0], intent.Planet.Production[1], intent.Planet.Production[2])
 	}
 	if intent.Target != 0 {
 		name = w.Players[intent.Target].Alias
@@ -63,7 +63,7 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	}
 	consequence := "A surviving enemy may retaliate."
 	if intent.Planet != nil {
-		consequence = "This reduces ground forces without capturing the planet."
+		consequence = "This damages ground forces and production; the planet may be destroyed."
 	}
 	if err = s.Terminal.Printf("Launch %d missiles into sector %d (%s; %d mines)? Your shields: %d. %s [y/N] ", count, to, name, mines, w.Players[id].Shields, consequence); err != nil {
 		return err
@@ -115,7 +115,13 @@ func (s Session) showMissileImpact(label, name, recipient string, out game.Missi
 			}
 		}
 		if out.PlanetMissiles > 0 {
-			return s.Terminal.Printf("Planet bombardment saved: %d missiles reached planet %d; ground forces %d -> %d.\r\n", out.PlanetMissiles, out.PlanetID, out.GroundBefore, out.GroundAfter)
+			if err := s.Terminal.Printf("Planet bombardment saved: %d missiles reached planet %d; ground forces %d -> %d; production %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f; warehouses %.2f/%.2f/%.2f -> %.2f/%.2f/%.2f.\r\n", out.PlanetMissiles, out.PlanetID, out.GroundBefore, out.GroundAfter, out.ProductionBefore[0], out.ProductionBefore[1], out.ProductionBefore[2], out.ProductionAfter[0], out.ProductionAfter[1], out.ProductionAfter[2], out.CargoBefore[0], out.CargoBefore[1], out.CargoBefore[2], out.CargoAfter[0], out.CargoAfter[1], out.CargoAfter[2]); err != nil {
+				return err
+			}
+			if out.PlanetDestroyed {
+				return s.Terminal.Printf("Planet %d destroyed; surviving ships and the sector remain. No planetary bank or inventory was salvaged.\r\n", out.PlanetID)
+			}
+			return nil
 		}
 		return nil
 	}
