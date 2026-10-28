@@ -27,7 +27,7 @@ def play(data,alias,command,answer=None):
                 output+=chunk
                 if not sent and b'> ' in output:
                     os.write(master,command.encode()+b'\r');sent=True
-                if answer is not None and not confirmed and b'the planet may be destroyed. [y/N] ' in output:
+                if answer is not None and not confirmed and b'Hostile planets along the course may be damaged or destroyed. [y/N] ' in output:
                     os.write(master,answer.encode()+b'\r');confirmed=True
                     time.sleep(.05)
                     if proc.poll() is None:os.write(master,b'q\r')
