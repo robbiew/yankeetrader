@@ -229,3 +229,14 @@ blocked. [Scope, arithmetic and evidence](yt-missiles/GROUND_BOMBARDMENT.md).
 Next research: production clamping/destruction and the ore-only entry condition,
 then wider/multiple-ship missile routes. Mine placement/recovery and native BBS
 combat acceptance remain open alongside the later systems listed above.
+
+## Production damage and destruction research
+
+Controlled DOS cases confirm zero-clamping of production categories, cargo caps
+at ten times resulting rates, and logical planet deletion when all rates reach
+zero. The ore-only omission hypothesis is disproved: the shared value is cached
+ore production. Static recovery identifies a remaining cached/live-rate loop
+asymmetry. [Evidence, model and implementation decisions](yt-missiles/PRODUCTION_DESTRUCTION.md).
+No production bombardment is exposed in Go yet. Next implement these phases with
+zero-rate validation, atomic removal and landing-session invalidation, explicitly
+choosing the cached-ore compatibility policy; then research wider/mixed routes.

@@ -150,6 +150,6 @@ Sector offset 81 holds fighters, 85 their owner, 93 a planet reference, and **12
 
 ## Remaining work and intentional fixes
 
-Missiles and planetary ground assaults are now covered in [the next recovery report](../yt-missiles/RECOVERY.md). Remaining work includes direct ship combat, overflow/negative inputs, exact MBF conversions, original RNG and seeding, and multiplayer/death timing. The planet loop appears to test ground forces, organics production, and equipment production while omitting ore-only production from its entry condition; this is a **static lead requiring a DOS reproduction**, not yet a confirmed exploit.
+Missiles and planetary ground assaults are now covered in [the next recovery report](../yt-missiles/RECOVERY.md). Remaining work includes direct ship combat, overflow/negative inputs, exact MBF conversions, original RNG and seeding, and multiplayer/death timing. Follow-up [production/destruction research](../yt-missiles/PRODUCTION_DESTRUCTION.md) disproves the proposed ore-only omission: the tested shared value is cached ore production, and isolated ore-only planets take damage.
 
 Keep the original stochastic rules as documented research. For the modern game, fix validated defects and exploits deliberately; retain an injected RNG and transaction boundaries so combat can be tested without depending on wall-clock timing.

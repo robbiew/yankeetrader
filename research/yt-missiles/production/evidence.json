@@ -1,0 +1,616 @@
+{
+  "dos_normal_sessions": 10,
+  "cases": [
+    {
+      "case": "partial-cap",
+      "before_sha256": "29ec16a74cbf23b5755cdbffbbaa4f5e24bb36799d81b0436345873a28fce31c",
+      "after_sha256": "ce06868455785d9cdb3170dc2480b082d228c767c272d5b0fdc37747246a9114",
+      "log_sha256": "35f4c6c4fbb8beeab6cf4c944770eb71c464a7fd55b8443a46ec9c3278748051",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          100000.0,
+          100000.0,
+          100000.0
+        ],
+        "stocks": [
+          1000000.0,
+          1000000.0,
+          1000000.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          74732.796875,
+          82999.25,
+          81298.9765625
+        ],
+        "stocks": [
+          747328.0,
+          829992.5,
+          812989.75
+        ],
+        "weapons": [
+          111.01998901367188,
+          222.00050354003906,
+          333.0019836425781,
+          493.96527099609375
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "partial-clamp",
+      "before_sha256": "946e7169933cc4e1ee5c2ae6ee931499822fd8fd6ebd105bbb55b8cf8e9896c6",
+      "after_sha256": "0f9f6fa063b7d70503b49234f42f1afb68323014c2288e9302b3b773a03e67cb",
+      "log_sha256": "73b0c19985b78a3a8cf410eba79a102cd3bb88874c37ecc752a24eef38ebdca1",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          1.0,
+          100000.0,
+          1.0
+        ],
+        "stocks": [
+          10.0,
+          1000000.0,
+          10.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          82999.25,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          829992.5,
+          0.0
+        ],
+        "weapons": [
+          111.00666046142578,
+          222.0001678466797,
+          333.00067138671875,
+          460.6554260253906
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "destroy",
+      "before_sha256": "ab06cde3fa18ae31045c305ad35a75bf0102524c83d9d0f49f01389902ccda7e",
+      "after_sha256": "6657f4cf2f227fe362e87eb1ac8dd0389b03b9b4c1238e78e1adf9706829ef4c",
+      "log_sha256": "0683fd1d6efa709eb256cf6b8da198e752e522e58231b17e9c373f7b5058f2f2",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stocks": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.00048828125
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 0.0,
+        "bank": 0.0,
+        "sector_planet": 0.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "ore-only",
+      "before_sha256": "c08a665eede7338a184a6e07edcf3496abfaa91296eaba79125283b50a8177cf",
+      "after_sha256": "6fb7c1aedfaa3aed38c45c7325cd1d21b90c42c646046f955d49d3d90959c3d7",
+      "log_sha256": "3098e335924979e0f6636ebf271cd4840d96c04aa036f2ab3435cba91d2054fd",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          100000.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          74731.296875,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          16.655120849609375,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.00666046142578,
+          222.0001678466797,
+          333.00067138671875,
+          460.65509033203125
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "organics-only",
+      "before_sha256": "58c71e10cebeabf38c1fd9dbf5980969ce34cc111010195fb265312682ced1ec",
+      "after_sha256": "b15024d4b34ebf7ce111d5c45108df440e4a1200fcae4680e66e6047bca72297",
+      "log_sha256": "933f8aa1ef7f629d45800316d005c15f519b8beca7dda4aac6563124859e8f90",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          0.0,
+          100000.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          82997.75,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          16.655120849609375,
+          0.0
+        ],
+        "weapons": [
+          111.00666046142578,
+          222.0001678466797,
+          333.00067138671875,
+          460.65509033203125
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "equipment-only",
+      "before_sha256": "09bb8e8e559e32c4afee44f821b1fb5be41a11920689ab0aba1344e05f715d9b",
+      "after_sha256": "b432561206ddf60e69496701d431b5a01c59614e5c95be67a9bded937ef60919",
+      "log_sha256": "1324650bcfc0a38baccf998e7cc3b3d32073a00b16383fa7618284aa2b0bc762",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          0.0,
+          0.0,
+          100000.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          0.0,
+          81297.4765625
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          16.655120849609375
+        ],
+        "weapons": [
+          111.00666046142578,
+          222.0001678466797,
+          333.00067138671875,
+          460.65509033203125
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "zero-production",
+      "before_sha256": "457d55fd783f36cb10062930409cfef0fb3893d55f7586cb013994de7f70f6b9",
+      "after_sha256": "231f67247dd180af9e89341424845bc0f47172c99ee0059770ae914e4f3d6e69",
+      "log_sha256": "4fee7649e814b0f333c007372fb5e7fc4ee0f6615cf367c1392f7c509b5f5c9d",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 0.0,
+        "bank": 0.0,
+        "sector_planet": 0.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "ore-stock-derived",
+      "before_sha256": "b329a9947f68db889e0368f9e9f93610311930ad26cb8ce661ae4e465c5cc97e",
+      "after_sha256": "f611cabe500f6b7e2924aa759cf5d4bd3bcf10af995dcddfe306e404a50258b7",
+      "log_sha256": "dc88e4c43a40e7d78ede4177e6b03e0dcb66e36862875809f18868f271e8b530",
+      "keys_sha256": "e745bce5fa5a56719beded8e95943085e32e725121d5c80de214b394935b901e",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          1000000.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          74731.1328125,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          747311.3125,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "ore-trigger",
+      "before_sha256": "f69f6383019b86105281c1ffe107b313bbf1ce92fa51745a5f1d1d43e018a845",
+      "after_sha256": "1c6bacac3cfa2c4efa40b176ab37040273fe98fdbdd2239cc5e637fc6cb13b59",
+      "log_sha256": "59128f3b9e1b6a40cbae20b02ad95e4d90b98d3c684ba8bc23617ba959f091e9",
+      "keys_sha256": "887d599dcab08fed5acf63b165f3023c5c3031af890fe2052aba57791b250a68",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          100000.0,
+          1.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          74731.296875,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          16.655120849609375,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.00666046142578,
+          222.0001678466797,
+          333.00067138671875,
+          460.6552734375
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 0.0,
+        "sector_planet": 1.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    },
+    {
+      "case": "destroy-bank",
+      "before_sha256": "c24749daf14e6323e747a6ce9d8094771628380d578b079273bca5c5b3ac8beb",
+      "after_sha256": "dae55ad2e8bd5bedabdcbc0b6ccbb0a098c9b971a62b972f276e2402a2d38fac",
+      "log_sha256": "2a4a119910f1523554783e03a926e09a113dcc6f983b1db9ac3924111e6bff28",
+      "keys_sha256": "887d599dcab08fed5acf63b165f3023c5c3031af890fe2052aba57791b250a68",
+      "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+      "before": {
+        "production": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stocks": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "weapons": [
+          111.0,
+          222.0,
+          333.0,
+          444.0
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 7.0,
+        "bank": 12345.0,
+        "sector_planet": 1.0,
+        "ammo": 100.0,
+        "turns": 500.0,
+        "credits": 1005.0
+      },
+      "after": {
+        "production": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "weapons": [
+          111.0000228881836,
+          222.0,
+          333.0,
+          444.0046081542969
+        ],
+        "owner": 3.0,
+        "ground": 0.0,
+        "active": 0.0,
+        "bank": 12345.0,
+        "sector_planet": 0.0,
+        "ammo": 80.0,
+        "turns": 499.0,
+        "credits": 1005.0
+      }
+    }
+  ],
+  "limitations": [
+    "Original RNG sequence and MBF32 intermediate arithmetic are not replayed.",
+    "Fixed DOS date/time still allows seconds of natural lazy growth.",
+    "Initial ore-trigger attempt timed out at the final scoreboard; its completed retry is included, and the initial attempt is excluded from the ten normal sessions."
+  ],
+  "dos_process_attempts": 11,
+  "excluded_attempt": {
+    "case": "excluded-ore-trigger-timeout",
+    "log_sha256": "69a6f45fe98a02286629a39174dc5852df2ca18053a19714c2b295abedd6bf8f",
+    "reason": "timeout after saved combat and scoreboard; no normal local-logon return marker"
+  }
+}

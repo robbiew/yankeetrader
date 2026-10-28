@@ -92,7 +92,7 @@ This supports J9's **12.5 average** before final integer conversion and caps. It
 
 Only missiles left after ground defense proceed to production. Per remaining missile, each of the three production categories loses an independent `RND * 2000`. Average loss is about 1,000 per positive category, up to about 3,000 total average with all three categories still positive. Individual random outcomes are wider than the sheet's nominal 1,000–3,000 range. Production is clamped, stocks are constrained, and destruction handling follows. A 20-missile volley used entirely on ground forces does not simultaneously cause the sheet's production estimate.
 
-As with plasma, the production loop's entry condition appears to omit ore-only production when organics, equipment, and the referenced ground-production variable are zero. That unusual case remains a static lead requiring its own DOS reproduction.
+Follow-up production research corrects the earlier apparent ore-only omission: the referenced `1a48` value is cached ore production. Controlled ore-only and stock-derived-ore DOS cases both take damage. Negative rates clamp to zero, cargo is capped at ten times the resulting rate, and all-zero production logically deletes the planet. See [production and destruction evidence](PRODUCTION_DESTRUCTION.md) for the cache asymmetry and captured cases.
 
 ## Planetary assault
 
