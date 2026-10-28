@@ -240,4 +240,14 @@ asymmetry. [Evidence, model and implementation decisions](yt-missiles/PRODUCTION
 Implemented in the planetary ground and production bombardment milestone, using
 world version 9 to admit zero production categories and bind destruction plus
 landing-token revocation to the launch transaction. Cached-ore asymmetry is
-preserved for compatibility; wider/mixed routes remain a separate milestone.
+preserved for compatibility.
+
+## Wider missile routes and mixed encounters — research
+
+Controlled DOS runs confirmed two- and three-hop attacks, directional outbound
+routing, return fire, intermediate fighter/mine interception, intermediate
+planet targeting, and sequential ship/planet targets at a shared destination.
+See [route evidence and implementation guidance](yt-missiles/WIDER_ROUTES.md).
+Next implementation milestone: integrate routed missile encounters with
+intermediate interception and sequential targets. Disconnected routes, tie
+selection, black-hole behavior, and native BBS acceptance remain open.
