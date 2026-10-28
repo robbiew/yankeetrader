@@ -285,9 +285,12 @@ func (w *World) missileImpact(shooter, target, sector int, count int64, cause st
 		remaining = left
 		planet.Ground = groundAfter
 		out.GroundAfter = groundAfter
-		used, rates, cargo, destroyed, err := resolveMissileProduction(remaining, planet.Production, planet.Cargo, rng, budget)
-		if err != nil {
-			return MissileImpact{}, err
+		used, rates, cargo, destroyed := int64(0), planet.Production, planet.Cargo, false
+		if remaining > 0 {
+			used, rates, cargo, destroyed, err = resolveMissileProduction(remaining, rates, cargo, rng, budget)
+			if err != nil {
+				return MissileImpact{}, err
+			}
 		}
 		out.ProductionMissiles = used
 		remaining -= used

@@ -112,6 +112,28 @@ func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
 }
 
 func TestPlanetMissileProductionDamageAndDestruction(t *testing.T) {
+	t.Run("ground absorbs volley without capping bank-supported warehouse", func(t *testing.T) {
+		w, a, p, v := planetMissileWorld(t)
+		p.Ground = 25
+		p.Production = [3]float64{1, 0, 0}
+		p.Cargo = [3]float64{100, 0, 0}
+		p.Bank = 1_000_000
+		intent, err := w.PrepareMissile(a.ID, 2, 1, v)
+		if err != nil {
+			t.Fatal(err)
+		}
+		draws := 0
+		out, err := w.CommitMissile(intent, v, func() float64 { draws++; return .999 }, clock)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if draws != 1 || out.Primary.GroundMissiles != 1 || out.Primary.ProductionMissiles != 0 || out.Primary.PlanetDestroyed {
+			t.Fatal("missile should be fully absorbed by ground", out.Primary, "draws", draws)
+		}
+		if p.Production != [3]float64{1, 0, 0} || p.Cargo != [3]float64{100, 0, 0} || out.Primary.ProductionAfter != p.Production || out.Primary.CargoAfter != p.Cargo {
+			t.Fatal("ground-only impact changed production or warehouse", p, out.Primary)
+		}
+	})
 	t.Run("partial clamps and caps each warehouse", func(t *testing.T) {
 		w, a, p, v := planetMissileWorld(t)
 		p.Ground = 25
