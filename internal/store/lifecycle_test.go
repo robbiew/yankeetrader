@@ -99,6 +99,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 	}
 	w, _ := s.View()
 	hash := w.Teams[1].PasswordHash
+	w.NextRadio = 0
 	w.Version = 3
 	for _, p := range w.Players {
 		p.Cloak = 0
@@ -115,7 +116,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 	p := upgraded.Players[1]
-	if upgraded.Version != 10 || p.ShipGeneration != 0 || p.Death != nil || p.Team != 1 || upgraded.Teams[1].PasswordHash != hash || upgraded.Teams[1].Captain != 1 || upgraded.Planets[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || len(p.AvoidSectors) != 2 || p.Credits != 75000 {
+	if upgraded.Version != 11 || p.ShipGeneration != 0 || p.Death != nil || p.Team != 1 || upgraded.Teams[1].PasswordHash != hash || upgraded.Teams[1].Captain != 1 || upgraded.Planets[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || len(p.AvoidSectors) != 2 || p.Credits != 75000 {
 		t.Fatal("v3 data changed during upgrade")
 	}
 	disk, _ := os.ReadFile(s.Dir + "/world.json")
@@ -126,7 +127,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 10 {
+	if err != nil || current.Version != 11 {
 		t.Fatal("upgrade not persisted", err)
 	}
 }

@@ -107,6 +107,7 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
+	w.NextRadio = 0
 	w.Version = 4
 	for _, p := range w.Players {
 		p.Cloak = 0
@@ -125,7 +126,7 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if upgraded.Version != 10 || upgraded.Players[1].Death == nil || upgraded.Players[1].ShipGeneration != 1 || upgraded.Ports[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || upgraded.Players[2].Credits != 1005 {
+	if upgraded.Version != 11 || upgraded.Players[1].Death == nil || upgraded.Players[1].ShipGeneration != 1 || upgraded.Ports[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || upgraded.Players[2].Credits != 1005 {
 		t.Fatal("upgrade replayed an old death")
 	}
 	disk, _ := os.ReadFile(s.Dir + "/world.json")

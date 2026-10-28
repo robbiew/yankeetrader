@@ -62,6 +62,7 @@ func TestMinePlacementGraceAtomicPersistence(t *testing.T) {
 func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 	s := create(t)
 	w, _ := s.View()
+	w.NextRadio = 0
 	w.Version = 9
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
@@ -69,7 +70,7 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 10 || upgraded.Players[1].MineGraceSector != 0 {
+	if err != nil || upgraded.Version != 11 || upgraded.Players[1].MineGraceSector != 0 {
 		t.Fatal("version-nine upgrade failed", err)
 	}
 	unchanged, _ := os.ReadFile(path)

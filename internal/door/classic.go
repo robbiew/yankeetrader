@@ -371,8 +371,10 @@ func (s *Session) classicStartup() (int, error) {
 	if err = s.waitClassicKey(); err != nil {
 		return 0, err
 	}
-	// Communications are not implemented: do not invent an empty inbox.
-	if err = s.classicText("\r\nChecking for Radio Messages.\r\nRadio messages are not available in this edition yet.\r\n"); err != nil {
+	if err = s.classicText("\r\nChecking for Radio Messages.\r\n"); err != nil {
+		return 0, err
+	}
+	if err = s.deliverRadio(id); err != nil {
 		return 0, err
 	}
 	return id, s.classicSector(w, id)

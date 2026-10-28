@@ -145,6 +145,7 @@ func TestChainedMineDeathAtomicReplayAndReplacement(t *testing.T) {
 func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	s := create(t)
 	w, _ := s.View()
+	w.NextRadio = 0
 	w.Version = 6
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
@@ -152,7 +153,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 10 {
+	if err != nil || current.Version != 11 {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -162,6 +163,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	if err = s.Update(func(w *game.World) error { return nil }); err != nil {
 		t.Fatal(err)
 	}
+	w.NextRadio = 0
 	w.Version = 6
 	w.Sectors[2].Minefield = []game.MineLayer{{Owner: 0, Count: 1}}
 	data, _ = json.Marshal(w)

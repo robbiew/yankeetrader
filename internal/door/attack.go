@@ -25,7 +25,7 @@ func (g *GoDoors) DiscardTypeahead() error {
 			return err
 		}
 	}
-	return errors.New("too much queued input; attack cancelled")
+	return errors.New("too much queued input; confirmation cancelled")
 }
 
 func (s Session) attackShip(id int, args []string, pending *[]string, visibility *game.Visibility) error {
@@ -145,6 +145,10 @@ func (s Session) attackShip(id int, args []string, pending *[]string, visibility
 
 // Command-repeat syntax must not transform a confirmation into a saved Y.
 func (s Session) readAttackConfirmation() (string, error) {
+	return s.readLiteralLine()
+}
+
+func (s Session) readLiteralLine() (string, error) {
 	if g, ok := s.Terminal.(*GoDoors); ok {
 		mode := g.commandMode
 		g.commandMode = false
