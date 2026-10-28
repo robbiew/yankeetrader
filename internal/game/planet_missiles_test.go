@@ -57,7 +57,7 @@ func TestPlanetMissileLazyGrowthAndNoUnusedProductionShots(t *testing.T) {
 	}
 }
 func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
-	for _, mode := range []string{"own", "team", "mixed", "changed ground", "changed bank", "changed owner", "changed production", "removed"} {
+	for _, mode := range []string{"own", "team", "changed ground", "changed bank", "changed owner", "changed production", "removed"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, p, v := planetMissileWorld(t)
 			count := int64(1)
@@ -67,12 +67,10 @@ func TestPlanetMissilePreflightAndStaleSnapshots(t *testing.T) {
 			case "team":
 				a.Team = 1
 				w.Players[p.Owner].Team = 1
-			case "mixed":
-				w.Players[p.Owner].Sector = 2
 			}
 			before, _ := json.Marshal(w)
 			intent, err := w.PrepareMissile(a.ID, 2, count, v)
-			if mode == "own" || mode == "team" || mode == "mixed" {
+			if mode == "own" || mode == "team" {
 				if err == nil {
 					t.Fatal("unsupported bombardment")
 				}

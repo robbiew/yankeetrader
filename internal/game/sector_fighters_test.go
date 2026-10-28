@@ -233,7 +233,7 @@ func TestFriendlyDefenseBypassAndDefenseOnlyTarget(t *testing.T) {
 	d.Sector = 3
 	w.Sectors[2].Defense.Owner = d.ID
 	intent, err = w.PrepareMissile(a.ID, 2, 1, v)
-	if err != nil || intent.Target != 0 {
+	if err != nil || len(intent.Sectors[0].Ships) != 0 {
 		t.Fatal(intent, err)
 	}
 	out, err = w.CommitMissile(intent, v, func() float64 { return .5 }, clock)

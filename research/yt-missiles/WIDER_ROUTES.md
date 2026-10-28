@@ -31,6 +31,31 @@ The preserved DOS transcripts, key feeds, emulator logs, compressed before/after
 
 ## Implementation guidance
 
-Represent a launch as traversal over connected sectors, not direct target lookup. Resolve each traversed sector's defenses and eligible targets in DOS order while decrementing one shared missile budget. Stop when the budget is exhausted or a target's handling consumes the volley. Keep outbound route discovery distinct from retaliation route discovery. Preserve the exact selected target and route context across asynchronous confirmation so a later state reload cannot redirect an attack.
+## Go implementation
 
-Do not assume a fixed maximum hop count, shortest-path tie behavior, behavior for disconnected targets, black-hole redirection, or target ordering among multiple planets: these boundaries were not tested here. Native BBS acceptance is also separate from these DOS reference runs.
+The current Go door routes over directed warps using a shortest path. Equal-length
+routes use the stored warp order as a deterministic modern policy; the DOS
+tie-break rule is unknown. The command displays its chosen course before asking
+for a separate confirmation. A disconnected destination is rejected before
+charging stock or a turn.
+
+Each routed sector resolves hostile fighters, then mines, visible hostile ships
+in player-ID order, then a hostile planet. Teammates and cloaked ships are
+skipped, friendly sector defenses are bypassed, and friendly planets are passed
+over. A destroyed ship or planet permits the shared remaining volley to
+continue. Ship/planet combinations and multiple visible ships are therefore
+supported in the routed encounter. The player-ID ordering and treatment of
+friendly transit planets are explicit modern policies; the historical evidence
+does not settle every ordering edge case.
+
+For each visible target, preparation captures a directed route back to the
+launcher when one exists. A surviving ship may fire one response volley along
+that course; an outbound one-way route without a return path does not retaliate.
+Return-path sectors resolve defenses, mines, hostile planets, and the explicit
+original attacker target. They do not reveal or hit unrelated hidden ships.
+Both routes and their encounter snapshots are rebound at commit, before the
+missile stock or turn is spent. No save-format change was required.
+
+The Go implementation does not claim recovered behavior for equal-path ties,
+black-hole redirection, or every target ordering edge case. Native BBS
+acceptance remains separate from the captured DOS reference runs.

@@ -26,7 +26,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
-4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Cloak persistence/session visibility and internal attack confirmation are implemented below. Confirmed fighter attacks and protected-Earth mine disposal are implemented below. Non-Earth minefields, automatic escape and chained attribution are implemented below. One-hop missile attacks/retaliation are implemented below. Sector fighter deployment/combat/interception is implemented below. Next integrate wider missile encounters; then NPC behavior, computer functions, communications and Genesis.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Cloak persistence/session visibility and internal attack confirmation are implemented below. Confirmed fighter attacks and protected-Earth mine disposal are implemented below. Non-Earth minefields, automatic escape and chained attribution are implemented below. One-hop missile attacks/retaliation and sector fighter deployment/combat/interception are implemented below. Routed missile encounters are implemented below; next milestones include mine placement/recovery, NPC behavior, computer functions, communications and Genesis.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -172,7 +172,7 @@ replacement/newcomer services and exits. Mine-bearing targets outside Earth are
 rejected before randomness until minefield combat is ready; other supported
 direct fighter encounters are enabled. Schema remains version 6.
 [Scope, tests and real terminal evidence](yt-ships/PLAYER_ATTACKS.md).
-Non-Earth minefields/aftermath and chained-death attribution are implemented below. Missile attacks/retaliation are implemented below. Sector-defense combat is implemented below. Next: wider missile encounters. Native BBS combat acceptance remains open.
+Non-Earth minefields/aftermath and chained-death attribution are implemented below. Missile attacks/retaliation, sector-defense combat and routed missile encounters are implemented below. Mine placement/recovery and native BBS combat acceptance remain open.
 
 ## Non-Earth minefields, aftermath and chained deaths — 2026-10-27
 
@@ -220,15 +220,17 @@ score generation/complete maintenance and native BBS combat acceptance remain op
 
 ## Planetary ground and production bombardment
 
-Confirmed one-hop `MISSILE` launches now reach hostile planetary ground and
-production after sector fighters/mines. Own/team planets are protected. The full
+`MISSILE` launches now reach hostile planetary ground and production after
+sector fighters/mines on routed courses. Own/team planets are skipped in transit
+and protected as selected targets. The full
 planet record is bound to confirmation, and lazy growth, damage, warehouse caps
 and deletion save atomically. All-zero production removes the sector link and
 revokes every landing token for the planet; ownership, bank and ships are not
-salvaged. Mixed visible ship/planet targets remain blocked. Recovered cached-ore
-eligibility is preserved. [Scope and arithmetic](yt-missiles/PRODUCTION_DESTRUCTION.md).
-Next: wider/multiple-ship missile routes. Mine placement/recovery and native BBS
-combat acceptance remain open alongside the later systems listed above.
+salvaged. Mixed visible ship/planet targets are supported in routed encounter
+order. Recovered cached-ore eligibility is preserved.
+[Scope and arithmetic](yt-missiles/PRODUCTION_DESTRUCTION.md). Mine
+placement/recovery and native BBS combat acceptance remain open alongside the
+later systems listed above.
 
 ## Production damage and destruction research
 
@@ -248,6 +250,22 @@ Controlled DOS runs confirmed two- and three-hop attacks, directional outbound
 routing, return fire, intermediate fighter/mine interception, intermediate
 planet targeting, and sequential ship/planet targets at a shared destination.
 See [route evidence and implementation guidance](yt-missiles/WIDER_ROUTES.md).
-Next implementation milestone: integrate routed missile encounters with
-intermediate interception and sequential targets. Disconnected routes, tie
-selection, black-hole behavior, and native BBS acceptance remain open.
+Disconnected-route rejection and shortest-route selection are implemented as
+modern policies. The original game's tie behavior and black-hole handling remain
+unverified, as does native BBS acceptance.
+
+## Wider missile routes and mixed encounters — implementation
+
+Missile launches follow a shortest directed warp route. Stored warp order
+breaks equal-length ties as a modern policy; the confirmation displays the
+selected course. Each sector resolves hostile fighters, mines, visible enemy
+ships in player-ID order, then hostile planets. A destroyed ship or planet lets
+the shared remaining volley continue. Cloaked ships and teammates remain
+excluded; friendly defenses and planets are passed over. Return fire uses a
+preflighted route back to the original attacker and resolves route hazards and
+hostile planets. A one-way outgoing route without a return path does not
+retaliate. Preparation snapshots both routes and encounters, and commit
+revalidates them before spending missiles or a turn. No save-version change was
+needed. [Rules, DOS evidence, and implementation policy](yt-missiles/WIDER_ROUTES.md).
+Native BBS acceptance, DOS tie behavior, black-hole redirection and the later
+NPC/computer/communications/Genesis systems remain open.
