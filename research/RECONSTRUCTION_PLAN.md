@@ -26,7 +26,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
 3. Implemented: [team membership/captain controls and shared planets](yt-teams/IMPLEMENTATION.md), with four-member capacity, visiting-member succession, hashed invitations and authoritative access revocation. Sector defenses/reinforcement and complete resource listings remain part of the combat stage.
-4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Cloak persistence/session visibility and internal attack confirmation are implemented below. Confirmed fighter attacks and protected-Earth mine disposal are implemented below. Non-Earth minefields, automatic escape and chained attribution are implemented below. One-hop missile attacks/retaliation and sector fighter deployment/combat/interception are implemented below. Routed missile encounters are implemented below; next milestones include mine placement/recovery, NPC behavior, computer functions, communications and Genesis.
+4. [Death/replacement and session-generation safeguards](yt-ships/LIFECYCLE.md) are implemented as an internal foundation. [Fighter/shield calculations and one-time credit transfer](yt-ships/DUELS.md) are also implemented internally. [Salvage and estate research](yt-ships/LOOT.md) now has 37 controlled DOS sessions. [Inventory/estate settlement](yt-ships/SETTLEMENT.md) is implemented. Cloak persistence/session visibility and internal attack confirmation are implemented below. Confirmed fighter attacks and protected-Earth mine disposal are implemented below. Non-Earth minefields, automatic escape and chained attribution are implemented below. One-hop missile attacks/retaliation and sector fighter deployment/combat/interception are implemented below. Routed missile encounters are implemented below. [Mine placement research](yt-ships/MINE_PLACEMENT.md) is complete; voluntary placement is implemented below, while field recovery remains an unverified and unimplemented extension. NPC behavior, computer functions, communications and Genesis remain open.
 5. Continue DOS fixture comparisons, exploit-fix tests, concurrency/disconnect recovery and native target-BBS acceptance.
 6. Playtest balance and document intentional departures before release.
 
@@ -172,7 +172,7 @@ replacement/newcomer services and exits. Mine-bearing targets outside Earth are
 rejected before randomness until minefield combat is ready; other supported
 direct fighter encounters are enabled. Schema remains version 6.
 [Scope, tests and real terminal evidence](yt-ships/PLAYER_ATTACKS.md).
-Non-Earth minefields/aftermath and chained-death attribution are implemented below. Missile attacks/retaliation, sector-defense combat and routed missile encounters are implemented below. Mine placement/recovery and native BBS combat acceptance remain open.
+Non-Earth minefields/aftermath and chained-death attribution are implemented below. Missile attacks/retaliation, sector-defense combat and routed missile encounters are implemented below. Voluntary mine placement/recovery and native BBS combat acceptance remain open.
 
 ## Non-Earth minefields, aftermath and chained deaths — 2026-10-27
 
@@ -269,3 +269,38 @@ revalidates them before spending missiles or a turn. No save-version change was
 needed. [Rules, DOS evidence, and implementation policy](yt-missiles/WIDER_ROUTES.md).
 Native BBS acceptance, DOS tie behavior, black-hole redirection and the later
 NPC/computer/communications/Genesis systems remain open.
+
+## Voluntary mine placement — research
+
+Eight controlled DOS sessions and four additional home-sector boundary sessions
+exercise the `D` placement command with saved before/after data. DOS requires
+carried stock, defaults the amount to zero, spends no turn, refuses amounts
+outside available stock, and refuses deployment in sectors 1–7. Sector 8 is the first tested
+allowed location. The existing-field probe detonates all initial mines before
+the drop, so addition versus replacement of a still-nonempty field remains
+unverified. The manual documents dropping mines but no field pickup or
+withdrawal action; such a recovery feature is not established as original DOS
+behavior. [Rules, probes, snapshots and validation](yt-ships/MINE_PLACEMENT.md).
+
+## Voluntary mine placement — implementation
+
+`D`/`DROP [quantity]` places carried mines in the caller's current sector.
+Sectors 1–7 are protected, placement is free in turns, and a fresh exact `Y`
+is required after the command queue and terminal typeahead are discarded. The
+world snapshots the player's generation, mine stock and current field before
+confirmation, then revalidates and saves the stock transfer with the attributed
+mine layer in one update. Same-owner drops add to that source's existing layer,
+as an explicit modern policy; DOS behavior for placement onto a still-nonempty
+field remains unverified. Save version 10 persists departure grace for ships already
+present when mines are deployed, preventing an immediate self-detonation after
+placement or reconnect. Leaving, dying, or receiving new wreck mines clears that
+grace; subsequent entry triggers the field normally. Field recovery remains
+unimplemented because no original DOS pickup behavior has been established.
+
+## Own sector fighter finder — implementation
+
+Computer option `11` lists only the caller's deployed sector fighter groups,
+ordered by sector, or reports that none were found. It is a read-only query and
+does not expose other players' groups. This follows the DOS fixture showing two
+owned groups while omitting a nearby enemy group; broader report functions
+remain separate work.

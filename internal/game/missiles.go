@@ -159,7 +159,7 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if w.HostileDefense(id, a.Sector) {
 		return MissileIntent{}, ErrDefenseEncounter
 	}
-	if len(w.Sectors[a.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(a.ID) {
 		return MissileIntent{}, ErrMineEncounter
 	}
 	if w.Sectors[to] == nil || to == a.Sector {

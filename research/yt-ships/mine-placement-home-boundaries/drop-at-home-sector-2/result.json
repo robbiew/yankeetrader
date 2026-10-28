@@ -1,0 +1,19 @@
+{
+  "name": "drop-at-home-sector-2",
+  "complete": true,
+  "source_sha256": "6898a8f2d9990e12b41d5dc18cceb61c3668e739efb9f69c23a1de329a76c0ef",
+  "baseline_sha256": "92c1ca91a1019b7378ddf79e6ddcce6031a49778e31671f115d635261bb9b03c",
+  "before_sha256": "36016b47be3fa84b6bd285b5245f35e2a092523c6650043ad599f60b2e67afec",
+  "after_sha256": "5eada618995c111d92b2e53772b6474983c53326357b402f0d17d34dc96a0031",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "keys_sha256": "9a6b357f49e1536ecb517591179a5682c2bd6f9c03819a4a756f2356c176d9e8",
+  "transcript_sha256": "fb6a5dc60ce9d12150880854d688e06a8515c731e3cef07e32c5f8efb0d41e25",
+  "dosbox_log_sha256": "aace43d1c7ccb7f337a5fcc2345bd97e03fa8262951553ac7c724bac6fc68c0a",
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00",
+  "sector": 2,
+  "starting_stock": 10,
+  "existing_field": 0,
+  "command": "D;5"
+}

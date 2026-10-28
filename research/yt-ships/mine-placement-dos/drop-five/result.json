@@ -1,0 +1,19 @@
+{
+  "name": "drop-five",
+  "complete": true,
+  "source_sha256": "6898a8f2d9990e12b41d5dc18cceb61c3668e739efb9f69c23a1de329a76c0ef",
+  "baseline_sha256": "92c1ca91a1019b7378ddf79e6ddcce6031a49778e31671f115d635261bb9b03c",
+  "before_sha256": "92c1ca91a1019b7378ddf79e6ddcce6031a49778e31671f115d635261bb9b03c",
+  "after_sha256": "a7cc3feb7ad8ad5884a7649e8bc976bb75213ccc8b2dd2aff9d7ca5d665f5732",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "keys_sha256": "9a6b357f49e1536ecb517591179a5682c2bd6f9c03819a4a756f2356c176d9e8",
+  "transcript_sha256": "4932e0b81ffb6aa550cdc5578e5cb32b3f9d8f0dcd588bef3fed2d9c0ef193d2",
+  "dosbox_log_sha256": "7284e7f55cb80e2612aaccf22b009d928bd526950b6e7ab52fc49a40971ea7b3",
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00",
+  "sector": 100,
+  "starting_stock": 10,
+  "existing_field": 0,
+  "command": "D;5"
+}

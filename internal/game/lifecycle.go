@@ -111,6 +111,7 @@ func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 	p.Death = &Death{At: now.UTC(), Cause: context.Cause, Killer: context.Killer, Sector: p.Sector}
 	p.ShipGeneration++
 	p.Sector = 0
+	p.MineGraceSector = 0
 	p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0
 	p.DockUntil = time.Time{}
 	p.DockPrices = [3]int64{}
@@ -138,6 +139,7 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 	p.Death = nil
 	p.Cloak = 1
 	p.Sector = 1
+	p.MineGraceSector = 0
 	p.Credits, p.Holds, p.Fighters, p.Shields = 1005, 10, 25, 100
 	p.Ground = 0
 	p.Cargo = [3]int64{}

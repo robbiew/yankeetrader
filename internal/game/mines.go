@@ -27,8 +27,30 @@ type MineEntry struct {
 	Generation       uint64
 	Layers           []MineLayer
 }
+type MinePlacement struct {
+	Player, Sector int
+	Generation     uint64
+	Stock, Count   int64
+	Layers         []MineLayer
+}
+
+// HasMineEncounter distinguishes entry/wreck hazards from a voluntary field
+// deployed around a ship that has not left its current sector yet.
+func (w *World) HasMineEncounter(id int) bool {
+	p := w.Players[id]
+	if p == nil || p.Death != nil {
+		return false
+	}
+	s := w.Sectors[p.Sector]
+	return s != nil && len(s.Minefield) > 0 && p.MineGraceSector != p.Sector
+}
 
 func (w *World) validateMines() error {
+	for _, p := range w.Players {
+		if p.MineGraceSector != 0 && (p.Death != nil || p.MineGraceSector <= 7 || p.MineGraceSector != p.Sector) {
+			return errors.New("invalid mine departure grace")
+		}
+	}
 	for _, s := range w.Sectors {
 		total := int64(0)
 		owners := map[int]bool{}
@@ -64,6 +86,13 @@ func (w *World) dropMines(sector, owner int, count int64) error {
 	if count < 0 || total > MaxQuantity {
 		return errors.New("minefield capacity exceeded")
 	}
+	// Wreck mines retain their immediate aftermath behavior, even in a field
+	// where voluntary deployment previously granted departure grace.
+	for _, p := range w.Players {
+		if p.MineGraceSector == sector {
+			p.MineGraceSector = 0
+		}
+	}
 	for i := range s.Minefield {
 		if s.Minefield[i].Owner == owner {
 			s.Minefield[i].Count += count
@@ -72,6 +101,64 @@ func (w *World) dropMines(sector, owner int, count int64) error {
 	}
 	s.Minefield = append(s.Minefield, MineLayer{Owner: owner, Count: count})
 	return nil
+}
+
+func (w *World) PrepareMinePlacement(id int, count int64) (MinePlacement, error) {
+	p, err := w.player(id)
+	if err != nil {
+		return MinePlacement{}, err
+	}
+	if w.HasMineEncounter(id) {
+		return MinePlacement{}, ErrMineEncounter
+	}
+	if p.Sector <= 7 {
+		return MinePlacement{}, errors.New("the home seven sectors are protected from mine placement")
+	}
+	if count < 1 || count > p.Mines || count > MaxQuantity {
+		return MinePlacement{}, errors.New("choose a positive mine quantity no greater than your stock")
+	}
+	s := w.Sectors[p.Sector]
+	if s == nil {
+		return MinePlacement{}, errors.New("current sector does not exist")
+	}
+	return MinePlacement{Player: id, Sector: p.Sector, Generation: p.ShipGeneration,
+		Stock: p.Mines, Count: count, Layers: append([]MineLayer(nil), s.Minefield...)}, nil
+}
+
+func (w *World) CommitMinePlacement(placement MinePlacement) (int64, error) {
+	p, err := w.player(placement.Player)
+	if err != nil {
+		return 0, err
+	}
+	s := w.Sectors[placement.Sector]
+	if s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
+		p.Mines != placement.Stock || !slices.Equal(placement.Layers, s.Minefield) {
+		return 0, errors.New("mine placement warning or ship changed; confirm again")
+	}
+	if placement.Sector <= 7 || placement.Count < 1 || placement.Count > p.Mines || placement.Count > MaxQuantity {
+		return 0, errors.New("mine placement is no longer valid")
+	}
+	if w.HasMineEncounter(p.ID) {
+		return 0, ErrMineEncounter
+	}
+	var occupants []*Player
+	for _, occupant := range w.Players {
+		if occupant.Death == nil && occupant.Sector == p.Sector && !w.HasMineEncounter(occupant.ID) {
+			occupants = append(occupants, occupant)
+		}
+	}
+	if err = w.dropMines(placement.Sector, p.ID, placement.Count); err != nil {
+		return 0, err
+	}
+	for _, occupant := range occupants {
+		occupant.MineGraceSector = placement.Sector
+	}
+	p.Mines -= placement.Count
+	var total int64
+	for _, layer := range s.Minefield {
+		total += layer.Count
+	}
+	return total, nil
 }
 
 // nestedMineDraw is the recovered helper's three successively smaller integer
@@ -140,7 +227,7 @@ func (w *World) ResolveMinefield(id int, rng func() float64, now time.Time) (Min
 	}
 	out := MineOutcome{Sector: p.Sector}
 	s := w.Sectors[p.Sector]
-	if len(s.Minefield) == 0 {
+	if !w.HasMineEncounter(id) {
 		return out, nil
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
@@ -266,6 +353,7 @@ func (w *World) escapeMines(p *Player, rng func() float64) error {
 	for i := int64(0); i < cost; i++ {
 		p.spendTurn()
 	}
+	p.MineGraceSector = 0
 	p.Sector = destination
 	p.DockToken = ""
 	p.PlanetToken = ""

@@ -358,6 +358,27 @@ func (s Session) Run() (runErr error) {
 					return err
 				}
 				cmd, args = "path", []string{from, to}
+			case "11":
+				groups, err := w.OwnSectorFighters(id)
+				if err != nil {
+					return err
+				}
+				if e = s.Terminal.Printf("\r\nSearching;\r\n\r\n Sector   Amount\r\n--------*--------\r\n"); e != nil {
+					return e
+				}
+				if len(groups) == 0 {
+					e = s.Terminal.Printf("No sector fighters found.\r\n")
+				} else {
+					for _, group := range groups {
+						if e = s.Terminal.Printf(" %-8d %d\r\n", group.Sector, group.Fighters); e != nil {
+							return e
+						}
+					}
+				}
+				if e != nil {
+					return e
+				}
+				continue
 			case "7":
 				slot, err := s.classicArgument("Enter the number of the slot to change [1 - 30]: ", &pending)
 				if err != nil {
@@ -426,7 +447,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -477,6 +498,11 @@ func (s Session) Run() (runErr error) {
 				if errors.Is(e, io.EOF) {
 					return nil
 				}
+			}
+		case "d", "drop", "lay":
+			e = s.placeMines(id, args, &pending)
+			if errors.Is(e, io.EOF) {
+				return nil
 			}
 		case "f", "defend":
 			e = s.setSectorFighters(id, args, &pending, false)

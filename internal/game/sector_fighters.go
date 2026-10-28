@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math"
 	"slices"
+	"sort"
 	"time"
 )
 
@@ -27,6 +28,26 @@ type DefenseOutcome struct {
 	Sector  int
 	Escaped bool
 	Mines   MineOutcome
+}
+
+type SectorFighterGroup struct {
+	Sector   int
+	Fighters int64
+}
+
+// OwnSectorFighters lists only the caller's deployed fighter groups.
+func (w *World) OwnSectorFighters(id int) ([]SectorFighterGroup, error) {
+	if _, err := w.player(id); err != nil {
+		return nil, err
+	}
+	groups := make([]SectorFighterGroup, 0)
+	for sectorID, sector := range w.Sectors {
+		if sector.Defense != nil && sector.Defense.Owner == id {
+			groups = append(groups, SectorFighterGroup{Sector: sectorID, Fighters: sector.Defense.Fighters})
+		}
+	}
+	sort.Slice(groups, func(i, j int) bool { return groups[i].Sector < groups[j].Sector })
+	return groups, nil
 }
 
 func (w *World) friendlyDefense(id int, d *SectorDefense) bool {
@@ -134,7 +155,7 @@ func (w *World) PrepareDefenseFight(id, to int, count int64, accept bool) (Defen
 	if err != nil {
 		return DefenseIntent{}, err
 	}
-	if len(w.Sectors[p.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
 	if to != p.Sector {
@@ -164,7 +185,7 @@ func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	if !w.HostileDefense(id, p.Sector) {
 		return DefenseIntent{}, errors.New("no hostile defense requires escape here")
 	}
-	if len(w.Sectors[p.Sector].Minefield) > 0 {
+	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
 	return DefenseIntent{Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
