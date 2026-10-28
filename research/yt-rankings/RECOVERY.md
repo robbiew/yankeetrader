@@ -1,8 +1,8 @@
 # Player/team rankings and score generation
 
 Recovered 2026-10-28 from original Yankee Trader 3.6 in isolated DOSBox Staging
-copies. This is a research milestone; the Go ranking command and score-cache
-updates are not implemented by this branch.
+copies. This records the research milestone; the subsequent Go ranking command and
+score-cache updates are documented separately in [implementation policies](IMPLEMENTATION.md).
 
 ## Scope and evidence
 

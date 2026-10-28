@@ -352,3 +352,16 @@ Next: implement supported player/team rankings and coherent score-cache updates,
 with checked arithmetic, explicit zero-score rules and current ownership/team
 membership. Multiteam percentage semantics and nonzero NPC rankings remain
 unverified. [Findings, evidence and reproduction](yt-rankings/RECOVERY.md).
+
+
+## Player/team rankings — implementation
+
+Computer `4`, `RANK`, and `RANK OLD` now expose real supported asset totals,
+current team sums, authoritative port ownership and personal sector defenses.
+An explicit update publishes all score caches atomically; OLD uses stored
+scores with current public labels and counts. Zero/dead rows, stable ties,
+exact bounded percentages and score saturation are defined. Missile retaliation
+uses the published cache; automatic quit/daily cache refresh, historical
+scoreboard files, scanners and NPC rankings remain separate work. No save
+version change is needed beyond the radio prerequisite's version 11.
+[Rules and validation](yt-rankings/IMPLEMENTATION.md).

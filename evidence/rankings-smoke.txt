@@ -1,0 +1,297 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > team;2;Orion
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team Command? Team name? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Reinforce Current Sector Defense
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? 1;q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Member. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > team;3;1
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team 1: Orion (1/4 members)
+Team Command? Team number? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Captain (captain)
+2: Member (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Reinforce Current Sector Defense
+Team Command? 1;q
+Saved. Safe travels, Member.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+You have been on today.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : 1
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 0           | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 1    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+Time: 179:59  Main Command (?=Help)? c;4;o;1;q;y
+
+<Computer activated>
+Enter 'O' for stored scores or [ENTER] for UPDATED rankings:
+Yankee Trader Scoreboard - Stored scores; current aliases, teams and port counts
+Player Rankings
+Rank  Rank%              Score  Team  Ports  Player
+   1 100.00%                999  None      0  Third
+   2  88.88%                888     1      0  Member
+   3  77.77%                777     1      1  Captain
+Team Rankings
+Rank  Rank%              Score  Team  Team Name
+   1 100.00%               1665     1  Orion
+End of rankings.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+You have been on today.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : 1
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 0           | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 1    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+Time: 179:59  Main Command (?=Help)? c;4;;1;q;y
+
+<Computer activated>
+Enter 'O' for stored scores or [ENTER] for UPDATED rankings:
+Yankee Trader Scoreboard - Updated scores saved
+Player Rankings
+Rank  Rank%              Score  Team  Ports  Player
+   1 100.00%              78505     1      1  Captain
+   2  49.04%              38505     1      0  Member
+   3  36.30%              28505  None      0  Third
+Team Rankings
+Rank  Rank%              Score  Team  Team Name
+   1 100.00%             117010     1  Orion
+End of rankings.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 0 turns > rank old;q
+
+Yankee Trader Scoreboard - Stored scores; current aliases, teams and port counts
+Player Rankings
+Rank  Rank%              Score  Team  Ports  Player
+   1 100.00%              78505     1      1  Captain
+   2  49.04%              38505     1      0  Member
+   3  36.30%              28505  None      0  Third
+Team Rankings
+Rank  Rank%              Score  Team  Team Name
+   1 100.00%             117010     1  Orion
+End of rankings.
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 0 turns > rank;q
+
+Yankee Trader Scoreboard - Updated scores saved
+Player Rankings
+Rank  Rank%              Score  Team  Ports  Player
+   1 100.00%              88505     1      1  Member
+   2  32.20%              28505     1      0  Captain
+   3  32.20%              28505  None      0  Third
+Team Rankings
+Rank  Rank%              Score  Team  Team Name
+   1 100.00%             117010     1  Orion
+End of rankings.
+Saved. Safe travels, Captain.
