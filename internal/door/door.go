@@ -454,6 +454,9 @@ func (s Session) Run() (runErr error) {
 					continue
 				}
 			}
+			if err := s.Store.RefreshScoresOnLogout(s.Deadline); err != nil {
+				return err
+			}
 			if err := s.Terminal.Printf("Saved. Safe travels, %s.\r\n", p.Alias); err != nil {
 				return err
 			}

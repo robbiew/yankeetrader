@@ -366,3 +366,17 @@ uses the published cache; automatic quit/daily cache refresh, historical
 scoreboard files, scanners and NPC rankings remain separate work. No save
 version change is needed beyond the radio prerequisite's version 11.
 [Rules and validation](yt-rankings/IMPLEMENTATION.md).
+
+
+## Automatic score publication — implementation
+
+Successful daily maintenance and clean logout now publish all account score
+caches atomically using the same supported scoring rules as RANK. Maintenance
+works without a living caller and retains its once-per-UTC-day/rollback guard.
+Logout checks the bound generation and deadline inside the lock, can only
+change score metadata during encounters, and reports success after the save.
+Declined confirmation, disconnect and stale/expired sessions do not publish
+logout scores. Score publication consumes no ship resources and does not resolve
+hazards. No new save fields or version change are needed. Historical scoreboard
+files, unsupported scanner/NPC scores and full NPC maintenance remain separate.
+[Timing, safeguards and validation](yt-rankings/IMPLEMENTATION.md).

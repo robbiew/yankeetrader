@@ -87,9 +87,9 @@ its cloak. No global reveal, cached cloak clearing or other hidden-ship hit is
 created. Explicit role IDs replace the original temporary actor-identity switching
 that produced false suicide attribution in the captured DOS counterdeath case.
 
-`Player.StoredScore` is a validated signed integer cache. Score calculation and explicit cache publication are now implemented through
-`RANK`/computer option 4; see [scoreboard policies](../yt-rankings/IMPLEMENTATION.md).
-Automatic quit/daily scoreboard refresh remains unimplemented. New/migrated accounts default to
+`Player.StoredScore` is a validated signed integer cache. Score calculation and cache publication are implemented through
+`RANK`/computer option 4, clean logout and successful daily maintenance; see
+[scoreboard policies](../yt-rankings/IMPLEMENTATION.md). New/migrated accounts default to
 zero and therefore use the recovered random-stock fallback unless a validated
 cache is populated. No synthetic wealth score, placeholder positive score or
 new point reward is invented. The cache persists across ordinary saves and

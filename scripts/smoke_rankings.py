@@ -77,11 +77,15 @@ with tempfile.TemporaryDirectory(prefix="yt-rankings-smoke-") as temp:
     play(data, "Captain", "q")
     play(data, "Captain", "q;y", classic=True)
     before = json.loads(path.read_text())
+    for n,player in before["Players"].items():player["StoredScore"] = 666 + 111 * int(n)
+    path.write_text(json.dumps(before))
     text = play(data, "Captain", "c;4;o;1;q;y", classic=True)
     transcript += text
     assert "Stored scores;" in text and "777" in text and "Orion" in text, text
     actual = json.loads(path.read_text())["Players"]
-    assert actual == before["Players"], {n:{k:(before["Players"][n].get(k),v) for k,v in p.items() if before["Players"][n].get(k)!=v} for n,p in actual.items()}
+    # OLD displays stored values; clean logout now publishes fresh scores.
+    for n,p in actual.items():
+        assert {k:v for k,v in p.items() if k != "StoredScore"} == {k:v for k,v in before["Players"][n].items() if k != "StoredScore"}
 
     def score(world, player):
         ports = sum(p["ID"] != 1 and p["Owner"] == player["ID"] for p in world["Ports"].values())
@@ -93,6 +97,7 @@ with tempfile.TemporaryDirectory(prefix="yt-rankings-smoke-") as temp:
                 + 750*player["Ground"] + 2500*player["Mines"])
 
     expected = {n: score(before, p) for n,p in before["Players"].items()}
+    assert all(actual[n]["StoredScore"] == value for n,value in expected.items())
     text = play(data, "Captain", "c;4;;1;q;y", classic=True)
     transcript += text
     assert "Updated scores saved" in text and "Player Rankings" in text and "Team Rankings" in text, text

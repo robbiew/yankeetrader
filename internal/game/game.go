@@ -471,6 +471,7 @@ func (w *World) Maintain(now time.Time) bool {
 		p.PlanetToken = ""
 		p.LandedPlanet = 0
 	}
+	w.publishRankings(w.rankingSnapshot(false))
 	w.LastMaintenance = today
 	return true
 }
