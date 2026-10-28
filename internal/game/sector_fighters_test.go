@@ -241,3 +241,36 @@ func TestFriendlyDefenseBypassAndDefenseOnlyTarget(t *testing.T) {
 		t.Fatal(out, err)
 	}
 }
+
+func TestOwnSectorFightersFiltersOrdersAndHandlesEmpty(t *testing.T) {
+	w, p := setup(t)
+	ally, _ := w.Join("finder-ally", "Teammate")
+	enemy, _ := w.Join("finder-enemy", "Enemy")
+	empty, _ := w.Join("finder-empty", "No Groups")
+	p.Team, ally.Team = 1, 1
+	w.Sectors[7].Defense = &SectorDefense{Owner: p.ID, Fighters: 789}
+	w.Sectors[3].Defense = &SectorDefense{Owner: p.ID, Fighters: 123}
+	w.Sectors[2].Defense = &SectorDefense{Owner: ally.ID, Fighters: 234}
+	w.Sectors[4].Defense = &SectorDefense{Owner: enemy.ID, Fighters: 456}
+	// NPC ownership is unsupported for deployment, but must never match a
+	// personal query if such a source is present in an internal fixture.
+	w.Sectors[5].Defense = &SectorDefense{Owner: -1, Fighters: 999}
+	before, _ := json.Marshal(w)
+	for i := 0; i < 20; i++ {
+		groups, err := w.OwnSectorFighters(p.ID)
+		if err != nil || len(groups) != 2 || groups[0] != (SectorFighterGroup{Sector: 3, Fighters: 123}) || groups[1] != (SectorFighterGroup{Sector: 7, Fighters: 789}) {
+			t.Fatal("wrong personal groups/order", groups, err)
+		}
+	}
+	groups, err := w.OwnSectorFighters(empty.ID)
+	if err != nil || len(groups) != 0 {
+		t.Fatal("empty finder", groups, err)
+	}
+	if _, err := w.OwnSectorFighters(999); err == nil {
+		t.Fatal("missing caller accepted")
+	}
+	after, _ := json.Marshal(w)
+	if string(before) != string(after) {
+		t.Fatal("finder mutated world")
+	}
+}
