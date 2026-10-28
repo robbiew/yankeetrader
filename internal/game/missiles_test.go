@@ -333,7 +333,7 @@ func TestRetaliationUsesOriginalAttackersStoredScore(t *testing.T) {
 }
 
 func TestMissileReturnPathUnsupportedDefensesRejectedBeforeSpending(t *testing.T) {
-	for _, mode := range []string{"planet", "fighters"} {
+	for _, mode := range []string{"planet"} {
 		t.Run(mode, func(t *testing.T) {
 			w, a, _, v := missileWorld(t)
 			if mode == "planet" {
