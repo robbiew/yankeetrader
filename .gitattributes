@@ -12,3 +12,8 @@
 /research/yt-rankings/dos/**/scoreboard.txt -text whitespace=-blank-at-eol
 /research/yt-rankings/dos/**/transcript.txt -text whitespace=-blank-at-eol
 /research/yt-rankings/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-spies/dos/**/KEYS.TXT -text -diff
+/research/yt-spies/dos/**/transcript.txt -text whitespace=-blank-at-eol
+/research/yt-spies/dos/**/scoreboard.txt -text whitespace=-blank-at-eol
+/research/yt-spies/dos/**/dosbox.log -text whitespace=-blank-at-eol

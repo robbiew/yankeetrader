@@ -437,3 +437,5 @@ cached-ore round eligibility is preserved. If all rates reach zero, the planet
 is removed from its sector and every landing token for it is revoked. The launch,
 interception, growth, damage and deletion save atomically. Planet bank, ownership,
 attacker cash and ships are not transferred by destruction. [Rules, evidence and remaining work](research/yt-missiles/PRODUCTION_DESTRUCTION.md).
+
+Spy gameplay remains outstanding. [Spies and intelligence research](research/yt-spies/RECOVERY.md) records original hiring, search, movement and report evidence; it does not enable spies in the Go game.

@@ -1,0 +1,150 @@
+{
+  "list-only": {
+    "patches": [],
+    "locations": [
+      101,
+      101,
+      101
+    ],
+    "reports": 0,
+    "turns": 499,
+    "contains": []
+  },
+  "status": {
+    "patches": [],
+    "locations": [
+      101,
+      101,
+      101
+    ],
+    "reports": 0,
+    "turns": 499,
+    "contains": [
+      "[ Sensors Activated ]"
+    ]
+  },
+  "move": {
+    "patches": [],
+    "locations": [
+      101,
+      102,
+      101
+    ],
+    "reports": 0,
+    "turns": 497,
+    "contains": [
+      "Move to which sector? 100",
+      "Move to which sector? 1"
+    ]
+  },
+  "populated": {
+    "patches": [
+      [
+        152,
+        129,
+        7
+      ],
+      [
+        152,
+        93,
+        2
+      ],
+      [
+        4053,
+        73,
+        3
+      ],
+      [
+        4053,
+        77,
+        12
+      ],
+      [
+        3,
+        57,
+        101
+      ]
+    ],
+    "locations": [
+      101,
+      102,
+      101
+    ],
+    "reports": 1,
+    "turns": 497,
+    "contains": [
+      "** WARNING! SECTOR HAS 7 MINES! **",
+      "Planet: Test Planet * Forces: 12"
+    ]
+  },
+  "defenders": {
+    "patches": [
+      [
+        152,
+        81,
+        42
+      ],
+      [
+        152,
+        85,
+        3
+      ]
+    ],
+    "locations": [
+      101,
+      102,
+      101
+    ],
+    "reports": 1,
+    "turns": 497,
+    "contains": [
+      "Fighters in sector: 42 (Belong to Enemy  Team [1] [Orion])"
+    ]
+  },
+  "same-sector": {
+    "patches": [
+      [
+        152,
+        41,
+        101
+      ],
+      [
+        152,
+        129,
+        7
+      ]
+    ],
+    "locations": [
+      101,
+      101,
+      101
+    ],
+    "reports": 1,
+    "turns": 497,
+    "contains": [
+      "** WARNING! SECTOR HAS 7 MINES! **"
+    ]
+  },
+  "cloak": {
+    "patches": [
+      [
+        3,
+        57,
+        101
+      ],
+      [
+        3,
+        125,
+        1
+      ]
+    ],
+    "locations": [
+      101,
+      102,
+      101
+    ],
+    "reports": 0,
+    "turns": 497,
+    "contains": []
+  }
+}
