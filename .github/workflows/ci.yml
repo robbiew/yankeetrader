@@ -49,6 +49,7 @@ jobs:
           python3 scripts/verify_planet_rename.py
           python3 scripts/verify_navigation_evidence.py
           python3 scripts/verify_utility_evidence.py
+          python3 scripts/verify_commerce_evidence.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py
           python3 scripts/verify_salvage_model.py
@@ -79,6 +80,7 @@ jobs:
           python3 scripts/smoke_planet_rename.py --ascii
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke_reports.py
+          python3 scripts/smoke_trade_reports.py
           python3 scripts/smoke.py
           python3 scripts/smoke_ownership.py
           python3 scripts/smoke_teams.py

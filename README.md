@@ -39,7 +39,8 @@ sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
 The computer connects options 2 (port report), 3 (autopilot), 7 (avoid slots),
 9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
-12 (port treasuries), and 13 (your planets) to the implemented game rules.
+12 (port treasuries), 13 (your planets), 14 (nearest ports), 16 (port pairs),
+and 17 (adjacent-port trade forecasts) to the implemented game rules.
 
 The original menus and manual include features still under reconstruction.
 Selecting an unavailable action says so; radio, scanner and cloak values are
@@ -99,6 +100,10 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `PORTREPORT [sector]` / computer `C`, `2` | Remote ordinary-port commerce report; free |
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
 | `MYPLANETS` / computer `C`, `13` | List personally owned planets and sectors; free |
+| `NEAREST [all\|own\|team\|enemy\|unowned]` / computer `C`, `14` | Nearest accessible ordinary ports, with directed warp distances; free |
+| `NEAREST <ore\|organics\|equipment> <buy\|sell>` | Filter nearest ports by **your** trade action |
+| `PAIRS` / computer `C`, `16` | Reachable adjacent-port pairs with complementary goods and a directed route back; free |
+| `PROFITS` / computer `C`, `17` | Trade forecasts for your current port's outgoing adjacent ports; free |
 | `$` / `COLLECT` | Collect all personal port balances from any sector |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
 | `EQUIP fighters 1` | Buy equipment while docked at Earth |
@@ -125,6 +130,22 @@ currently shared team planets expose full reports. Full reports project current
 production and interest without changing stored stock or money. The personal
 planet finder excludes teammates' assets. Remote Earth equipment reports remain
 unavailable; dock at Earth for its shop. See [report rules and validation](research/yt-navigation/REPORTS_IMPLEMENTATION.md).
+
+Nearest-port and trade-route reports honor your avoid list and port-report
+access. `B`/`S` in nearest results means **you buy/sell**. Team filters include
+your own ports and current teammates' ports; enemy filters exclude both and
+unowned ports. Results include projected quotes and whole-unit stock/demand.
+Earth's equipment service is excluded. Reports also work with no turns left.
+
+`PAIRS` and `PROFITS` show one positive commodity combination per port pair,
+including approach, outward and return warp counts. A return route can require
+several warps; a pair with no route back is omitted. The spread is the sum of
+the two per-unit price differences, independent of cargo holds. It does not
+promise ship earnings or account for cash, docking turns, or later changes in
+prices and stock. Mines and defenses can still interrupt travel. Long reports
+page four entries at a time; Enter shows more and Q stops. Each page refreshes
+current access and prices, so changing state can change the remaining results.
+See [trade-report scope and validation](research/yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
 
 In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `2` holds, `3` fighters, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Other historical equipment options retain their original labels and prices, with `N/A` affordability; selecting one reports that it is unavailable. An empty equipment quantity cancels that purchase. The shop refreshes your credits after each saved purchase.
 

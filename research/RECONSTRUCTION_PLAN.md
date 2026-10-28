@@ -314,3 +314,15 @@ controls full planet detail. Reports project growth on detached values and do
 not change stored assets or issue docking/landing tokens. Remote Earth service
 reports, commerce-route forecasts, rankings and the other computer functions
 remain open. [Scope, recovered rules and validation](yt-navigation/REPORTS_IMPLEMENTATION.md).
+
+## Nearest-port and trade-route reports — implementation
+
+Computer `14`, `16`, and `17` now provide filtered nearest ordinary ports,
+reachable adjacent-port pairs, and current-port adjacent trade forecasts.
+Compact commands are `NEAREST`, `PAIRS`, and `PROFITS`. Directed warp counts
+include the actual return path, and all routes honor the caller's avoid list.
+Reports use current Go prices and report access; forecasts are per-unit price
+spreads rather than ship earnings. Four-entry pages refresh after input.
+No save-format change is needed. Rankings, communications, spies, newspaper,
+NPC behavior and Genesis remain separate milestones.
+[Recovered evidence, policies and validation](yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
