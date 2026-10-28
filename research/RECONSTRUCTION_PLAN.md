@@ -275,9 +275,10 @@ NPC/computer/communications/Genesis systems remain open.
 Eight controlled DOS sessions and four additional home-sector boundary sessions
 exercise the `D` placement command with saved before/after data. DOS requires
 carried stock, defaults the amount to zero, spends no turn, refuses amounts
-outside available stock, replaces rather than adds to a preexisting aggregate
-field, and refuses deployment in sectors 1–7. Sector 8 is the first tested
-allowed location. The manual documents dropping mines but no field pickup or
+outside available stock, and refuses deployment in sectors 1–7. Sector 8 is the first tested
+allowed location. The existing-field probe detonates all initial mines before
+the drop, so addition versus replacement of a still-nonempty field remains
+unverified. The manual documents dropping mines but no field pickup or
 withdrawal action; such a recovery feature is not established as original DOS
 behavior. [Rules, probes, snapshots and validation](yt-ships/MINE_PLACEMENT.md).
 
@@ -289,8 +290,8 @@ is required after the command queue and terminal typeahead are discarded. The
 world snapshots the player's generation, mine stock and current field before
 confirmation, then revalidates and saves the stock transfer with the attributed
 mine layer in one update. Same-owner drops add to that source's existing layer,
-following this world's attributed-layer model rather than DOS's aggregate
-overwrite behavior. Save version 10 persists departure grace for ships already
+as an explicit modern policy; DOS behavior for placement onto a still-nonempty
+field remains unverified. Save version 10 persists departure grace for ships already
 present when mines are deployed, preventing an immediate self-detonation after
 placement or reconnect. Leaving, dying, or receiving new wreck mines clears that
 grace; subsequent entry triggers the field normally. Field recovery remains

@@ -37,6 +37,12 @@ def check_set(path, expected):
         assert mbf.get(after_bytes, record, 129) == field, (name, "sector field")
         assert mbf.get(after_bytes, 2, 49) == turns, (name, "daily turns")
         assert marker in transcript, (name, "transcript marker", marker)
+        if name == "drop-onto-existing":
+            # The initial field is consumed before the drop. This probe cannot
+            # establish addition versus replacement of a still-nonempty field.
+            cursor = 0
+            for line in ("There are 3 mines here! 1 EXPLODE!", "There are 2 mines here! 1 EXPLODE!", "There are 1 mines here! 1 EXPLODE!", "You have 10 mines. Drop how many?", "Sector 100 is now mined!"):
+                cursor = transcript.index(line, cursor) + len(line)
     print(f"verified {len(scenarios)} DOS scenarios in {path.relative_to(ROOT)}")
 
 
