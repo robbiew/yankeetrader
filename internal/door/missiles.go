@@ -43,7 +43,7 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	if err != nil {
 		return err
 	}
-	name := "minefield only"
+	name := "sector defenses"
 	if intent.Target != 0 {
 		name = w.Players[intent.Target].Alias
 	}
@@ -98,10 +98,21 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 }
 func (s Session) showMissileImpact(label, name, recipient string, out game.MissileImpact) error {
 	if out.Target == 0 {
-		return s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed. No ship struck.\r\n", label, out.Launched, out.MinesDestroyed)
+		if err := s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed. No ship struck.\r\n", label, out.Launched, out.MinesDestroyed); err != nil {
+			return err
+		}
+		if out.SectorMissiles > 0 {
+			return s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed)
+		}
+		return nil
 	}
 	if err := s.Terminal.Printf("%s: %d missiles fired, %d mines destroyed; %s lost %d fighters and %d shields.\r\n", label, out.Launched, out.MinesDestroyed, name, out.Damage.Fighters, out.Damage.Shields); err != nil {
 		return err
+	}
+	if out.SectorMissiles > 0 {
+		if err := s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed); err != nil {
+			return err
+		}
 	}
 	if out.Destroyed {
 		if out.LostEscorts > 0 {

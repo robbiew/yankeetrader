@@ -73,7 +73,7 @@ func (s Session) teamMenu(id int, pending *[]string) error {
 					return err
 				}
 			}
-			if err = s.Terminal.Printf("4) Quit a Team\r\n5) Search for Team Members & Resources\r\n"); err != nil {
+			if err = s.Terminal.Printf("4) Quit a Team\r\n5) Search for Team Members & Resources\r\n6) Reinforce Current Sector Defense\r\n"); err != nil {
 				return err
 			}
 			if team.Captain == id {
@@ -156,6 +156,12 @@ func (s Session) teamMenu(id int, pending *[]string) error {
 					}
 				}
 			}
+		case "6":
+			if w.Players[id].Team == 0 {
+				err = errors.New("join a team first")
+				break
+			}
+			err = s.setSectorFighters(id, nil, pending, true)
 		case "7":
 			if team.Captain != id {
 				err = errors.New("only the current team captain may do that")

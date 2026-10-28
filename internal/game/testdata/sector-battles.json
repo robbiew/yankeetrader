@@ -1,0 +1,122 @@
+[
+  {
+    "Name": "immediate",
+    "Attackers": 10001,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.5,
+    "OriginalOwner": 3,
+    "Accept": true,
+    "Expected": {
+      "lost": 0,
+      "killed": 0,
+      "joined": 1000,
+      "offered": true
+    }
+  },
+  {
+    "Name": "strict-boundary",
+    "Attackers": 10000,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.5,
+    "OriginalOwner": 3,
+    "Accept": true,
+    "Expected": {
+      "lost": 0,
+      "killed": 50,
+      "joined": 950,
+      "offered": true
+    }
+  },
+  {
+    "Name": "decline",
+    "Attackers": 10001,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.5,
+    "OriginalOwner": 3,
+    "Accept": false,
+    "Expected": {
+      "lost": 0,
+      "killed": 1000,
+      "joined": 0,
+      "offered": true
+    }
+  },
+  {
+    "Name": "mercenary",
+    "Attackers": 10001,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.5,
+    "OriginalOwner": -2,
+    "Accept": true,
+    "Expected": {
+      "lost": 0,
+      "killed": 1000,
+      "joined": 0,
+      "offered": true
+    }
+  },
+  {
+    "Name": "xannor",
+    "Attackers": 10001,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.5,
+    "OriginalOwner": -1,
+    "Accept": true,
+    "Expected": {
+      "lost": 0,
+      "killed": 1000,
+      "joined": 0,
+      "offered": true
+    }
+  },
+  {
+    "Name": "loss",
+    "Attackers": 100,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.1,
+    "OriginalOwner": 3,
+    "Accept": true,
+    "Expected": {
+      "lost": 100,
+      "killed": 0,
+      "joined": 0,
+      "offered": false
+    }
+  },
+  {
+    "Name": "cloak-win",
+    "Attackers": 100,
+    "Defenders": 1000,
+    "Cloak": 1,
+    "Draw": 0.4,
+    "OriginalOwner": 3,
+    "Accept": true,
+    "Expected": {
+      "lost": 0,
+      "killed": 991,
+      "joined": 9,
+      "offered": true
+    }
+  },
+  {
+    "Name": "cloak-loss",
+    "Attackers": 100,
+    "Defenders": 1000,
+    "Cloak": 0,
+    "Draw": 0.4,
+    "OriginalOwner": 3,
+    "Accept": true,
+    "Expected": {
+      "lost": 100,
+      "killed": 0,
+      "joined": 0,
+      "offered": false
+    }
+  }
+]

@@ -113,8 +113,8 @@ func (s Store) Create(w *game.World) error {
 		return s.save(w)
 	})
 }
-func (s Store) Update(fn func(*game.World) error) error { return s.update(fn, false) }
-func (s Store) update(fn func(*game.World) error, allowMines bool) error {
+func (s Store) Update(fn func(*game.World) error) error { return s.update(fn, false, false) }
+func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool) error {
 	return s.locked(func() error {
 		w, e := s.load()
 		if e != nil {
@@ -125,6 +125,9 @@ func (s Store) update(fn func(*game.World) error, allowMines bool) error {
 		}
 		if s.ship != nil && !allowMines && len(w.Sectors[w.Players[s.ship.id].Sector].Minefield) > 0 {
 			return game.ErrMineEncounter
+		}
+		if s.ship != nil && !allowDefense && w.HostileDefense(s.ship.id, w.Players[s.ship.id].Sector) {
+			return game.ErrDefenseEncounter
 		}
 		if e = fn(w); e != nil {
 			return e
@@ -155,6 +158,27 @@ func (s Store) ResolveMines(now time.Time, rng func() float64) (game.MineOutcome
 		var err error
 		result, err = w.ResolveMinefield(s.ship.id, rng, now)
 		return err
-	}, true)
+	}, true, true)
 	return result, err
+}
+
+// DefenseEncounter is the bound entry point permitted to fight or flee a current
+// hostile group. Ordinary account mutations remain blocked there.
+func (s Store) DefenseEncounter(entry game.DefenseIntent, rng func() float64, now, deadline time.Time) (game.DefenseOutcome, error) {
+	if s.ship == nil || entry.Player != s.ship.id {
+		return game.DefenseOutcome{}, errors.New("defense encounter requires the bound player")
+	}
+	var out game.DefenseOutcome
+	err := s.update(func(w *game.World) error {
+		if !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		var err error
+		out, err = w.CommitDefense(entry, rng, now)
+		if err == nil && !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		return err
+	}, false, true)
+	return out, err
 }

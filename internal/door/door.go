@@ -226,7 +226,7 @@ func (s Session) Run() (runErr error) {
 			return err
 		}
 		return nil
-	}); err != nil {
+	}); err != nil && !errors.Is(err, game.ErrDefenseEncounter) {
 		return err
 	}
 	computer := false
@@ -252,6 +252,11 @@ func (s Session) Run() (runErr error) {
 		}
 		if p == nil {
 			return errors.New("player no longer exists")
+		}
+		if len(pending) == 0 && w.HostileDefense(id, p.Sector) {
+			if e = s.Terminal.Printf("Hostile sector fighters block normal actions. Use BREACH %d <fighters> or FLEE.\r\n", p.Sector); e != nil {
+				return e
+			}
 		}
 		if len(pending) == 0 {
 			clockWidth := 0
@@ -421,7 +426,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<adjacent sector> <quantity>] (fresh Y/N; may trigger retaliation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<adjacent sector> <quantity>] (fresh Y/N; may trigger retaliation)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -472,6 +477,15 @@ func (s Session) Run() (runErr error) {
 				if errors.Is(e, io.EOF) {
 					return nil
 				}
+			}
+		case "f", "defend":
+			e = s.setSectorFighters(id, args, &pending, false)
+		case "reinforce":
+			e = s.setSectorFighters(id, args, &pending, true)
+		case "breach", "flee":
+			e = s.defenseEncounter(id, args, &pending, cmd == "flee")
+			if errors.Is(e, io.EOF) {
+				return nil
 			}
 		case "attack":
 			if visibility == nil {
