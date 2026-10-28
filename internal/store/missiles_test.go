@@ -171,3 +171,54 @@ func TestMissileSalvageCapacityFailureRestoresLaunchAndVictim(t *testing.T) {
 		t.Fatal("capacity failure partly saved launch")
 	}
 }
+
+func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T) {
+	s, _, v := missileStore(t)
+	now := time.Now().UTC()
+	if err := s.Update(func(w *game.World) error {
+		w.Players[2].Sector = 3
+		w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: now.Add(-time.Hour), Ground: 5000, Production: [3]float64{100, 200, 300}, Bank: 10000}
+		w.Sectors[2].Planet = 2
+		w.Sectors[2].Defense = &game.SectorDefense{Owner: 2, Fighters: 1}
+		w.Sectors[2].Minefield = []game.MineLayer{{Owner: 2, Count: 1}}
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	before, _ := s.View()
+	intent, err := before.PrepareMissile(1, 2, 4, v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	saved, _ := json.Marshal(before)
+	draws := 0
+	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+		_, err := w.CommitMissile(intent, v, func() float64 {
+			draws++
+			if draws > 2 {
+				return math.NaN()
+			}
+			return .5
+		}, now)
+		return err
+	})
+	if err == nil || draws != 3 {
+		t.Fatal(err, draws)
+	}
+	after, _ := s.View()
+	actual, _ := json.Marshal(after)
+	if string(saved) != string(actual) {
+		t.Fatal("partial planetary launch saved")
+	}
+	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, now)
+		return err
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	after, _ = s.View()
+	if after.Players[1].Missiles != 6 || after.Players[1].Turns != 36 || after.Sectors[2].Defense != nil || len(after.Sectors[2].Minefield) != 0 || after.Planets[2].Ground >= 5000 {
+		t.Fatal("launch consequences missing", after.Planets[2])
+	}
+}

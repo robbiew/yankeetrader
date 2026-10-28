@@ -306,8 +306,8 @@ Use `MISSILE <adjacent sector> <quantity>` or classic `!`; omitted arguments are
 prompted. Launches need a fresh separate Y and cost one turn plus all selected
 missiles. This stage supports a one-hop corridor linked in both directions, with
 one visible enemy ship, a minefield or a hostile fighter group. Hidden ships and teammates are skipped.
-Sectors with planets, longer routes and multiple visible enemies
-remain blocked until their interception/bombardment rules are implemented.
+Hostile planets support ground-only bombardment as described below. Longer routes,
+multiple visible enemies and mixed visible ship/planet encounters remain blocked.
 
 Hostile sector fighters intercept missiles first (up to 4,999 fighters per missile); friendly groups are bypassed. Remaining missiles clear one mine each before reaching the ship. A surviving enemy with
 missiles returns one volley against the original attacker, including through
@@ -341,3 +341,15 @@ escapes a current hostile group, with a fresh confirmation and possible loss of
 all remaining turns. Adjacent entry spends one movement turn. Victory resolves
 any destination mines in the same saved transaction. Defeating a group does not
 kill its owner or capture a port. [Rules, policies and validation](research/yt-combat/SECTOR_FIGHTERS.md).
+
+### Planetary ground bombardment
+
+`MISSILE <adjacent sector> <quantity>` can strike a hostile planet after sector
+fighters and mines intercept the volley. A fresh warning names the planet and
+its garrison. Own/team planets and mixed visible ship/planet encounters are blocked.
+The selected quantity must be at most the planet's saved ground forces divided
+by 25 (rounded down), ensuring every missile stays in the recovered ground phase.
+Ground below 25 and volleys that could reach production remain unsupported.
+Planet growth runs before impact; the remaining fractional ground balance is
+rounded down once at the end. The launch, interception, growth and ground damage save together. Planet
+ownership stays unchanged. [Rules, evidence and remaining work](research/yt-missiles/GROUND_BOMBARDMENT.md).

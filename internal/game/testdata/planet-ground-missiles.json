@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "fixed",
+    "Missiles": 20,
+    "Ground": 5000,
+    "Draw": 0.5,
+    "Remaining": 4750
+  },
+  {
+    "Name": "fractional",
+    "Missiles": 2,
+    "Ground": 50,
+    "Draw": 0.01,
+    "Remaining": 49
+  },
+  {
+    "Name": "last-ground",
+    "Missiles": 1,
+    "Ground": 25,
+    "Draw": 0.999,
+    "Remaining": 0
+  },
+  {
+    "Name": "zero-draw",
+    "Missiles": 20,
+    "Ground": 500,
+    "Draw": 0,
+    "Remaining": 500
+  },
+  {
+    "Name": "near-one",
+    "Missiles": 20,
+    "Ground": 500,
+    "Draw": 0.999,
+    "Remaining": 0
+  },
+  {
+    "Name": "large",
+    "Missiles": 100,
+    "Ground": 1000000000,
+    "Draw": 0.123,
+    "Remaining": 999999692
+  }
+]

@@ -2,6 +2,7 @@ package door
 
 import (
 	"errors"
+	"fmt"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"math/rand"
 	"strconv"
@@ -44,6 +45,9 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 		return err
 	}
 	name := "sector defenses"
+	if intent.Planet != nil {
+		name = fmt.Sprintf("planet %s; %d ground forces; ground-only bombardment", intent.Planet.Name, intent.Planet.Ground)
+	}
 	if intent.Target != 0 {
 		name = w.Players[intent.Target].Alias
 	}
@@ -57,7 +61,11 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 			return err
 		}
 	}
-	if err = s.Terminal.Printf("Launch %d missiles into sector %d (%s; %d mines)? Your shields: %d. A surviving enemy may retaliate. [y/N] ", count, to, name, mines, w.Players[id].Shields); err != nil {
+	consequence := "A surviving enemy may retaliate."
+	if intent.Planet != nil {
+		consequence = "This reduces ground forces without capturing the planet."
+	}
+	if err = s.Terminal.Printf("Launch %d missiles into sector %d (%s; %d mines)? Your shields: %d. %s [y/N] ", count, to, name, mines, w.Players[id].Shields, consequence); err != nil {
 		return err
 	}
 	answer, err := s.readAttackConfirmation()
@@ -102,7 +110,12 @@ func (s Session) showMissileImpact(label, name, recipient string, out game.Missi
 			return err
 		}
 		if out.SectorMissiles > 0 {
-			return s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed)
+			if err := s.Terminal.Printf("Sector interception: %d missiles, %d fighters destroyed.\r\n", out.SectorMissiles, out.SectorFightersDestroyed); err != nil {
+				return err
+			}
+		}
+		if out.PlanetMissiles > 0 {
+			return s.Terminal.Printf("Planet bombardment saved: %d missiles reached planet %d; ground forces %d -> %d.\r\n", out.PlanetMissiles, out.PlanetID, out.GroundBefore, out.GroundAfter)
 		}
 		return nil
 	}

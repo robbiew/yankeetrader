@@ -2,6 +2,7 @@ package game
 
 import (
 	"errors"
+	"math"
 	"slices"
 	"time"
 )
@@ -15,9 +16,12 @@ type MissileIntent struct {
 	Count                        int64
 	Mines                        []MineLayer
 	Defense                      SectorDefense
+	Planet                       *Planet
 }
 type MissileImpact struct {
 	SectorMissiles                              int64
+	PlanetID                                    int
+	GroundBefore, GroundAfter, PlanetMissiles   int64
 	Target                                      int
 	Launched, MinesDestroyed, Dropped, Disarmed int64
 	SectorFightersDestroyed                     int64
@@ -118,9 +122,6 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if target == nil || to == a.Sector || !contains(w.Sectors[a.Sector].Warps, to) || !contains(target.Warps, a.Sector) {
 		return MissileIntent{}, errors.New("choose a different sector linked in both directions by one warp")
 	}
-	if target.Planet != 0 {
-		return MissileIntent{}, errors.New("planet bombardment is not available yet")
-	}
 	if a.Turns < 1 {
 		return MissileIntent{}, errors.New("no turns left today")
 	}
@@ -141,8 +142,29 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 		intent.Target = p.ID
 		intent.TargetGeneration = p.ShipGeneration
 	}
-	if intent.Target == 0 && len(intent.Mines) == 0 && !w.HostileDefense(id, to) {
-		return MissileIntent{}, errors.New("no visible enemy ship or minefield in that sector")
+	if target.Planet != 0 {
+		planet := w.Planets[target.Planet]
+		if planet == nil {
+			return MissileIntent{}, errors.New("planet record is missing")
+		}
+		if intent.Target != 0 {
+			return MissileIntent{}, errors.New("mixed ship/planet missile encounters are not available yet")
+		}
+		owner := w.Players[planet.Owner]
+		if planet.Owner == id || (a.Team != 0 && owner != nil && owner.Team == a.Team) {
+			return MissileIntent{}, errors.New("cannot bombard a personal or teammate planet")
+		}
+		// Conservatively bound the entire volley before interception. Every
+		// draw is below 25, so no missile can reach the unrecovered production
+		// phase. Integer ground conversion occurs only after the whole volley.
+		if planet.Ground < 1 || count > planet.Ground/25 {
+			return MissileIntent{}, errors.New("choose at most ground forces / 25 missiles; production bombardment is not available yet")
+		}
+		snapshot := *planet
+		intent.Planet = &snapshot
+	}
+	if intent.Planet == nil && intent.Target == 0 && len(intent.Mines) == 0 && !w.HostileDefense(id, to) {
+		return MissileIntent{}, errors.New("no eligible ship, hostile fighter group, minefield or supported planet in that sector")
 	}
 	return intent, nil
 }
@@ -157,7 +179,7 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	if err != nil {
 		return MissileResult{}, err
 	}
-	if fresh.Defense != intent.Defense || fresh.From != intent.From || fresh.Target != intent.Target || fresh.TargetGeneration != intent.TargetGeneration || !slices.Equal(fresh.Mines, intent.Mines) {
+	if !sameMissilePlanet(fresh.Planet, intent.Planet) || fresh.Defense != intent.Defense || fresh.From != intent.From || fresh.Target != intent.Target || fresh.TargetGeneration != intent.TargetGeneration || !slices.Equal(fresh.Mines, intent.Mines) {
 		return MissileResult{}, errors.New("missile target or mine warning changed; confirm again")
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
@@ -235,6 +257,22 @@ func (w *World) missileImpact(shooter, target, sector int, count int64, cause st
 	}
 	out.MinesDestroyed = w.interceptMines(sector, remaining)
 	remaining -= out.MinesDestroyed
+	if remaining > 0 && target == 0 && w.Sectors[sector].Planet != 0 {
+		planet := w.Planets[w.Sectors[sector].Planet]
+		if now.Before(planet.Updated) {
+			return MissileImpact{}, errors.New("planet update is ahead of launch time")
+		}
+		planet.update(now, true)
+		out.PlanetID = planet.ID
+		out.GroundBefore = planet.Ground
+		var err error
+		out.GroundAfter, err = resolveMissileGround(remaining, planet.Ground, rng, budget)
+		if err != nil {
+			return MissileImpact{}, err
+		}
+		planet.Ground = out.GroundAfter
+		out.PlanetMissiles = remaining
+	}
 	if remaining == 0 || target == 0 {
 		return out, nil
 	}
@@ -273,4 +311,37 @@ func (w *World) missileImpact(shooter, target, sector int, count int64, cause st
 	d.Mines = 0
 	out.MinesDestroyed += w.interceptMines(sector, remaining-out.Damage.Spent)
 	return out, nil
+}
+
+func sameMissilePlanet(a, b *Planet) bool {
+	if a == nil || b == nil {
+		return a == nil && b == nil
+	}
+	return *a == *b
+}
+
+// ResolveMissileGround preserves fractional losses until the final integer
+// conversion. This supported phase consumes every missile and cannot reach
+// production; callers must reject volleys above ground/25 before spending.
+func ResolveMissileGround(missiles, ground int64, rng func() float64) (int64, error) {
+	budget := maxMissileRounds
+	return resolveMissileGround(missiles, ground, rng, &budget)
+}
+func resolveMissileGround(missiles, ground int64, rng func() float64, budget *int) (int64, error) {
+	if missiles < 1 || ground < 1 || ground > MaxQuantity || missiles > ground/25 || rng == nil {
+		return 0, errors.New("unsupported ground bombardment inputs")
+	}
+	remaining := float64(ground)
+	for i := int64(0); i < missiles; i++ {
+		if *budget <= 0 {
+			return 0, errors.New("missile calculation limit reached")
+		}
+		*budget -= 1
+		r := rng()
+		if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
+			return 0, errors.New("combat RNG must return [0,1)")
+		}
+		remaining -= r * 25
+	}
+	return int64(math.Floor(remaining)), nil
 }

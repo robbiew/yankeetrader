@@ -120,3 +120,34 @@ func TestExpiredMissileConfirmationDoesNotSpendAmmunition(t *testing.T) {
 		t.Fatal("expired confirmation spent stock")
 	}
 }
+
+func TestPlanetBombardmentWarningCancellationAndReceipt(t *testing.T) {
+	for _, answer := range []string{"n", "y"} {
+		t.Run(answer, func(t *testing.T) {
+			term := &scripted{lines: []string{"missile 2 2;y", answer, "q"}}
+			s, st := missileSession(t, term)
+			if err := st.Update(func(w *game.World) error {
+				w.Players[2].Sector = 3
+				w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: s.Now(), Ground: 5000, Production: [3]float64{1, 1, 1}}
+				w.Sectors[2].Planet = 2
+				return nil
+			}); err != nil {
+				t.Fatal(err)
+			}
+			if err := s.Run(); err != nil {
+				t.Fatal(err)
+			}
+			w, _ := st.View()
+			if !strings.Contains(term.output.String(), "Target; 5000 ground forces; ground-only bombardment") {
+				t.Fatal(term.output.String())
+			}
+			if answer == "n" {
+				if w.Planets[2].Ground != 5000 || w.Players[1].Missiles != 10 || w.Players[1].Turns != 500 {
+					t.Fatal("declined bombardment saved")
+				}
+			} else if w.Players[1].Missiles != 8 || w.Players[1].Turns != 499 || !strings.Contains(term.output.String(), "Planet bombardment saved: 2 missiles reached planet 2") {
+				t.Fatal(term.output.String())
+			}
+		})
+	}
+}

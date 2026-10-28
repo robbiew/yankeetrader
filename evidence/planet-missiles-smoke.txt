@@ -1,0 +1,40 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Owner. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Owner.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 201;q
+choose at most ground forces / 25 missiles; production bombardment is not available yet
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 4;y
+Launch 4 missiles into sector 2 (planet Target; 5000 ground forces; ground-only bombardment; 0 mines)? Your shields: 0. This reduces ground forces without capturing the planet. [y/N] 
+Missile launch cancelled.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Launcher.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Launcher. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > missile 2 4
+Launch 4 missiles into sector 2 (planet Target; 5000 ground forces; ground-only bombardment; 0 mines)? Your shields: 0. This reduces ground forces without capturing the planet. [y/N] y
+Missile launch saved: 4 missiles fired, 0 mines destroyed. No ship struck.
+Planet bombardment saved: 4 missiles reached planet 2; ground forces 5000 -> 4961.
+
+Sector 1 | 1005 credits | 499 turns > q
+Saved. Safe travels, Launcher.

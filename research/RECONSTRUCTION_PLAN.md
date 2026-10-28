@@ -217,3 +217,15 @@ including return fire. Existing version-8 defense records are reused.
 Next: wider/multiple-ship missile routes and planetary bombardment, followed by
 mine placement/recovery. NPC behavior, communications, computer functions, Genesis,
 score generation/complete maintenance and native BBS combat acceptance remain open.
+
+## Planetary ground bombardment
+
+Confirmed one-hop `MISSILE` launches now reach hostile planetary ground forces
+after sector fighters/mines. Own/team planets are protected. The full planet
+record is bound to confirmation, and lazy growth plus damage save atomically.
+Volleys are limited to `quantity <= saved ground / 25` so no round reaches the
+still-unimplemented production phase; mixed visible ship/planet targets remain
+blocked. [Scope, arithmetic and evidence](yt-missiles/GROUND_BOMBARDMENT.md).
+Next research: production clamping/destruction and the ore-only entry condition,
+then wider/multiple-ship missile routes. Mine placement/recovery and native BBS
+combat acceptance remain open alongside the later systems listed above.
