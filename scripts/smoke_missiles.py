@@ -111,10 +111,13 @@ with tempfile.TemporaryDirectory(prefix='yt-missile-smoke-') as temp:
     assert launcher['Missiles']+enemy['Missiles']==9 # initial 16 minus primary 1 and return 6
     assert launcher['Mines']==0 and not world['Sectors']['1'].get('Minefield')
     assert world['Ports']['2']['Owner']==2 and world['Ports']['2']['Treasury']==777
-    code,text=play(data,'Launcher','i;q')
+    def replacement_cache():
+        # Login preserves the previous cache until a refresh boundary.
+        assert json.loads(path.read_text())['Players']['1']['StoredScore']==500000
+    code,text=play(data,'Launcher','i;q',action=replacement_cache)
     assert code==0 and 'Remaining turns: 36' in text,text
     transcript+=text
-    world=json.loads(path.read_text());assert world['Players']['1']['StoredScore']==500000
+    world=json.loads(path.read_text());assert world['Players']['1']['StoredScore']==34505 # clean logout scores the replacement
 
     data,path,world=setup('clear',('Launcher',))
     world['Players']['1'].update(Missiles=3)

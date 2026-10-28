@@ -1,0 +1,112 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > q
+Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+You have been on today.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 1    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8, 2, 5, 3, 4, 6
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Daily economy maintenance completed.
+Maintenance already current; no daily phases repeated.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > rank old;q
+
+Yankee Trader Scoreboard - Stored scores; current aliases, teams and port counts
+Player Rankings
+Rank  Rank%              Score  Team  Ports  Player
+   1 100.00%             177500  None      1  Captain
+   2  18.87%              33505  None      0  Enemy
+Team Rankings
+Rank  Rank%              Score  Team  Team Name
+No teams found.
+End of rankings.
+Saved. Safe travels, Captain.

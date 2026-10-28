@@ -46,17 +46,16 @@ func TestRankingsCommandsPublishAndReadStoredScores(t *testing.T) {
 			if !strings.Contains(term.output.String(), "Player Rankings") || !strings.Contains(term.output.String(), "Team Rankings") {
 				t.Fatal(term.output.String())
 			}
-			if old {
-				if w.Players[1].StoredScore != 777 || !strings.Contains(term.output.String(), "Stored scores;") {
-					t.Fatal("old command changed cache")
-				}
-			} else {
-				for _, row := range expected.Players {
-					if w.Players[row.ID].StoredScore != row.Score {
-						t.Fatal("refresh was not saved")
-					}
+			if old && (!strings.Contains(term.output.String(), "Stored scores;") || !strings.Contains(term.output.String(), "777")) {
+				t.Fatal("old view did not use stored score")
+			}
+			// Both updated and OLD sessions publish current scores on clean quit.
+			for _, row := range expected.Players {
+				if w.Players[row.ID].StoredScore != row.Score {
+					t.Fatal("logout refresh was not saved")
 				}
 			}
+
 			if w.Players[1].Turns != 500 || w.Players[1].Credits != 1005 {
 				t.Fatal("rankings spent resources")
 			}

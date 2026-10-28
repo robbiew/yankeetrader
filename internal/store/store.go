@@ -156,6 +156,26 @@ func (s Store) AcknowledgeRadio(messageID uint64) error {
 	return s.update(func(w *game.World) error { return w.AcknowledgeRadio(s.ship.id, messageID) }, true, true)
 }
 
+// RefreshScoresOnLogout publishes only score metadata from the current world.
+// It cannot mutate encounter resources, and always checks the bound generation.
+func (s Store) RefreshScoresOnLogout(deadline time.Time) error {
+	if s.ship == nil {
+		return errors.New("score publication requires a bound ship session")
+	}
+	return s.update(func(w *game.World) error {
+		if !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		if _, err := w.RefreshRankings(s.ship.id); err != nil {
+			return err
+		}
+		if !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		return nil
+	}, true, true)
+}
+
 // ResolveMines is the bound-session entry point for resolving a minefield.
 // Death is saved successfully before the caller observes its invalid generation.
 func (s Store) ResolveMines(now time.Time, rng func() float64) (game.MineOutcome, error) {

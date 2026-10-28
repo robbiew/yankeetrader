@@ -123,7 +123,9 @@ zero turns and cost no assets. Reports show public totals, without private
 account or planetary-bank fields.
 
 Missile retaliation uses these published scores. Scores refresh on an explicit
-updated ranking request; normal quit and daily maintenance do not refresh them.
+updated ranking request, clean logout, and successful once-per-UTC-day
+maintenance. An abrupt disconnect, declined logout or expired/stale session
+does not trigger logout publication.
 Individual scores cap at 9,000,000,000,000,000 points. Scanners, NPC rankings and
 historical scoreboard files remain outside this slice. See [scoring rules,
 cache timing and validation](research/yt-rankings/IMPLEMENTATION.md).
@@ -398,9 +400,8 @@ destroyed even if escorts remain, as in the recovered missile path. Prototype
 new ships still start with zero shields: purchase shields at Earth before combat.
 
 Return-volley sizing uses the saved `StoredScore` cache. New/migrated accounts
-start at zero and use the recovered random 1..stock fallback until an updated
-ranking publishes real supported asset scores. Automatic quit/daily cache
-refresh remains separate work. Positive cached scores use the recovered
+start at zero and use the recovered random 1..stock fallback until a ranking update, clean logout or new daily maintenance publishes real
+supported asset scores. Positive cached scores use the recovered
 retaliation formula. See
 [missile scope, rules and validation](research/yt-missiles/IMPLEMENTATION.md).
 

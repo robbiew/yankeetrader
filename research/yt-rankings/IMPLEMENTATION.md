@@ -30,18 +30,32 @@ Percentage multiplication uses arbitrary-precision integers, avoiding overflow.
 
 ## Cache timing and transactional behavior
 
-Only an explicit UPDATED/`RANK` request publishes new scores. One Store.Update
-rechecks the bound live session and computes all players from the same locked
-world, then saves every score together. Failures roll back the whole update.
-The report and missile retaliation therefore use coherent published values.
-Unlike DOS, normal quit and daily maintenance do not yet refresh this cache.
-This policy keeps display work from introducing hidden changes at disconnect.
-Retaliation continues to use the last published score until another update.
+An explicit UPDATED/`RANK` request, clean logout and successful daily maintenance
+publish new scores. Each computes all accounts from one authoritative world and
+saves their caches together. Daily maintenance publishes after its economic and
+turn phases, including worlds with no living caller. Its UTC-date guard prevents
+same-day or backward-clock attempts repeating those phases or refreshing scores.
+
+A confirmed classic quit, compact `Q` or normal Escape exit publishes scores
+before reporting a successful save. The bound session and real deadline are
+checked inside the store lock. The narrow logout operation can change only score
+metadata, even during unresolved encounters; it cannot clear hazards, move ships
+or open general resource mutations. Interrupted input, declined confirmation,
+disconnect, expired time and destroyed/replaced sessions do not publish a logout
+snapshot. Failure rolls back the entire cache update. If output fails after a
+successful save, the committed cache remains saved.
+
+Missile retaliation consumes the most recently published score. Other economic
+and combat actions do not continuously rescore the world; the cache can remain
+stale between these explicit boundaries. Replacement alone preserves the cached
+value until the next boundary. These timings are modern transactional policies,
+grounded in DOS's observed quit-time generation and maintenance scoreboard phase;
+full DOS abnormal-exit timing and maintenance parity remain unverified.
 
 OLD means stored score values with **current** aliases, membership and port
 counts, not a retained historical scoreboard file. No last-update time is shown
 because none is stored. Newly created/migrated accounts can legitimately show
-zero until rankings are updated. Dead rows show zero regardless of old caches.
+zero until a publication boundary. Dead rows show zero regardless of old caches.
 No additional save fields or version change are needed; the radio prerequisite
 already uses version 11 and the stored score field existed earlier.
 
@@ -53,7 +67,8 @@ leave a successfully saved score update committed; a retry recomputes from
 current state. Only public scoreboard fields are projected: no identities,
 passwords, planet banks, trade tokens or individual asset breakdowns are sent.
 Ordinary encounter mutation guards still apply to UPDATED requests; OLD remains
-a bound read. No general-purpose encounter bypass is added.
+a bound read. Logout publication has a separate narrow metadata path; no general-purpose
+encounter bypass is added.
 
 ## Validation
 
@@ -73,3 +88,15 @@ scoreboard-file, maintenance or NPC parity.
 
 The full race-enabled Go suite, vet, focused ranking regressions, ranking PTY
 smoke, preserved 27-session DOS verifier and diff/format checks passed locally.
+
+The follow-up automatic refresh tests cover empty/all-dead worlds, maintenance
+replay and rollback, concurrent publication, both encounter guards, expired and
+stale sessions, declined/disconnected logout, output failure and cached reconnect.
+`scripts/smoke_automatic_scores.py` drives real compact/classic quits and the
+operator `-maint` command, including same-day replay; its transcript is
+`evidence/automatic-scores-smoke.txt`.
+
+Automatic-refresh validation passed the full race-enabled suite, vet, the
+automatic-score PTY/maintenance CLI smoke, rankings smoke, missile/replacement,
+planet-missile and sector-fighter terminal smoke, preserved ranking evidence,
+and formatting/diff checks. Live-BBS acceptance remains unverified.

@@ -80,6 +80,7 @@ jobs:
           python3 scripts/smoke_planet_rename.py
           python3 scripts/smoke_planet_rename.py --ascii
           python3 scripts/smoke_navigation.py
+          python3 scripts/smoke_automatic_scores.py
           python3 scripts/smoke_rankings.py
           python3 scripts/smoke_radio.py
           python3 scripts/smoke_reports.py

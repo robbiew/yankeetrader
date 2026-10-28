@@ -50,6 +50,11 @@ func (w *World) PlayerRankings(id int, stored bool) (Rankings, error) {
 	if _, err := w.player(id); err != nil {
 		return Rankings{}, err
 	}
+	return w.rankingSnapshot(stored), nil
+}
+
+// rankingSnapshot also serves maintenance, which may run without any live caller.
+func (w *World) rankingSnapshot(stored bool) Rankings {
 	ports := map[int]int{}
 	defenses := map[int]int64{}
 	for _, port := range w.Ports {
@@ -118,7 +123,13 @@ func (w *World) PlayerRankings(id int, stored bool) (Rankings, error) {
 		report.Teams[i].Rank = i + 1
 		report.Teams[i].Percent = rankPercent(report.Teams[i].Score, leader)
 	}
-	return report, nil
+	return report
+}
+
+func (w *World) publishRankings(report Rankings) {
+	for _, row := range report.Players {
+		w.Players[row.ID].StoredScore = row.Score
+	}
 }
 
 // RefreshRankings publishes every account score from the same world snapshot.
@@ -128,8 +139,6 @@ func (w *World) RefreshRankings(id int) (Rankings, error) {
 	if err != nil {
 		return Rankings{}, err
 	}
-	for _, row := range report.Players {
-		w.Players[row.ID].StoredScore = row.Score
-	}
+	w.publishRankings(report)
 	return report, nil
 }
