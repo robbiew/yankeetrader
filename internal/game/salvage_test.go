@@ -268,8 +268,10 @@ func TestSalvagedHoldsCanLeaveSmallFrozenInventory(t *testing.T) {
 	}
 	victim.Death = nil
 	victim.Sector = 1
+	victim.Holds = 0
+	victim.Cargo = [3]int64{}
 	if w.Validate() == nil {
-		t.Fatal("live ship with fewer than ten holds accepted")
+		t.Fatal("live ship with zero holds accepted")
 	}
 }
 

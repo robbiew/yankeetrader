@@ -135,7 +135,12 @@ func (s Session) attackShip(id int, args []string, pending *[]string, visibility
 	if result.DisarmedMines > 0 {
 		return s.Terminal.Printf("Earth protection safely disposed of %d unsalvaged mines.\r\n", result.DisarmedMines)
 	}
-	return nil
+	if result.DroppedMines > 0 {
+		if err = s.Terminal.Printf("Wreck dropped %d unsalvaged mines.\r\n", result.DroppedMines); err != nil {
+			return err
+		}
+	}
+	return s.showMineOutcome(result.MineAftermath)
 }
 
 // Command-repeat syntax must not transform a confirmation into a saved Y.

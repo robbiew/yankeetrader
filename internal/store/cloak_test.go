@@ -24,7 +24,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 6 || current.Players[1].Cloak != 0 {
+	if err != nil || current.Version != 7 || current.Players[1].Cloak != 0 {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -37,7 +37,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 	saved, _ := os.ReadFile(path)
 	var header struct{ Version int }
 	json.Unmarshal(saved, &header)
-	if header.Version != 6 {
+	if header.Version != 7 {
 		t.Fatal("migration not saved")
 	}
 	w.Version = 5

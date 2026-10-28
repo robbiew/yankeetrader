@@ -1,5 +1,7 @@
 # Confirmed player fighter attacks and protected Earth — 2026-10-27
 
+Follow-up: [non-Earth minefields and chained attribution](MINES.md) now remove the temporary encounter gate described in this milestone snapshot.
+
 ## Supported encounters and user flow
 
 `ATTACK` lists current visible local enemy ships by number, alias, fighters and

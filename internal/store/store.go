@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"time"
 )
 
 type Store struct {
@@ -112,7 +113,8 @@ func (s Store) Create(w *game.World) error {
 		return s.save(w)
 	})
 }
-func (s Store) Update(fn func(*game.World) error) error {
+func (s Store) Update(fn func(*game.World) error) error { return s.update(fn, false) }
+func (s Store) update(fn func(*game.World) error, allowMines bool) error {
 	return s.locked(func() error {
 		w, e := s.load()
 		if e != nil {
@@ -120,6 +122,9 @@ func (s Store) Update(fn func(*game.World) error) error {
 		}
 		if e = s.checkShip(w); e != nil {
 			return e
+		}
+		if s.ship != nil && !allowMines && len(w.Sectors[w.Players[s.ship.id].Sector].Minefield) > 0 {
+			return game.ErrMineEncounter
 		}
 		if e = fn(w); e != nil {
 			return e
@@ -137,4 +142,19 @@ func (s Store) View() (*game.World, error) {
 		return nil, err
 	}
 	return w, err
+}
+
+// ResolveMines is the only bound-session update allowed to start in a minefield.
+// Death is saved successfully before the caller observes its invalid generation.
+func (s Store) ResolveMines(now time.Time, rng func() float64) (game.MineOutcome, error) {
+	if s.ship == nil {
+		return game.MineOutcome{}, errors.New("mine resolution requires a bound ship session")
+	}
+	var result game.MineOutcome
+	err := s.update(func(w *game.World) error {
+		var err error
+		result, err = w.ResolveMinefield(s.ship.id, rng, now)
+		return err
+	}, true)
+	return result, err
 }

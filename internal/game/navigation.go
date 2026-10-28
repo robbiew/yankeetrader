@@ -7,6 +7,7 @@ import (
 
 // SensorReport contains only public, local observations, never account or session data.
 type SensorReport struct {
+	Mines           int64
 	Sector          int
 	Warps           []int
 	PortID          int
@@ -36,6 +37,9 @@ func (w *World) scanRaw(id int) ([]SensorReport, error) {
 	for _, target := range w.Sectors[p.Sector].Warps {
 		s := w.Sectors[target]
 		r := SensorReport{Sector: target, Warps: append([]int(nil), s.Warps...)}
+		for _, layer := range s.Minefield {
+			r.Mines += layer.Count
+		}
 		if port := w.Ports[s.Port]; port != nil {
 			r.PortID, r.PortName = port.ID, port.Name
 			for i, coefficient := range port.Coefficient {

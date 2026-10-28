@@ -217,6 +217,9 @@ func (s Session) Run() (runErr error) {
 	pending := []string{}
 	token := ""
 	planetToken := ""
+	if err := s.resolveCurrentMines(id); err != nil {
+		return err
+	}
 	if err := s.Store.Update(func(w *game.World) error {
 		if w.Players[id].Team != 0 {
 			_, err := w.VisitTeam(id)
@@ -231,11 +234,22 @@ func (s Session) Run() (runErr error) {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
 		}
+		if err := s.resolveCurrentMines(id); err != nil {
+			return err
+		}
 		w, e := s.Store.View()
 		if e != nil {
 			return e
 		}
 		p := w.Players[id]
+		if p != nil {
+			if p.DockToken != token {
+				token = ""
+			}
+			if p.PlanetToken != planetToken {
+				planetToken = ""
+			}
+		}
 		if p == nil {
 			return errors.New("player no longer exists")
 		}
@@ -280,11 +294,20 @@ func (s Session) Run() (runErr error) {
 		// Input may have waited while another process destroyed/replaced the
 		// ship. Refresh before even a read-only dispatch; mutations recheck
 		// again under the transaction lock.
+		if err := s.resolveCurrentMines(id); err != nil {
+			return err
+		}
 		w, e = s.Store.View()
 		if e != nil {
 			return e
 		}
 		p = w.Players[id]
+		if p.DockToken != token {
+			token = ""
+		}
+		if p.PlanetToken != planetToken {
+			planetToken = ""
+		}
 		command := strings.Fields(pending[0])
 		pending = pending[1:]
 		if len(command) == 0 {
@@ -674,12 +697,15 @@ func (s Session) Run() (runErr error) {
 			} else {
 				to, e = strconv.Atoi(args[0])
 				if e == nil {
-					e = s.Store.Update(func(w *game.World) error { return w.Move(id, to) })
+					e = s.moveShip(id, to, &pending)
+					if errors.Is(e, io.EOF) {
+						return nil
+					}
 				}
 				if e == nil {
 					token = ""
 					planetToken = ""
-					e = s.Terminal.Printf("Moved to sector %d.\r\n", to)
+
 				}
 			}
 		case "p", "dock":
@@ -795,6 +821,9 @@ func (s Session) Run() (runErr error) {
 				e = errors.New("unknown command; type ? for help")
 			}
 		}
+		if errors.Is(e, game.ErrShipDestroyed) || errors.Is(e, game.ErrShipChanged) {
+			return e
+		}
 		if e != nil {
 			if outErr := s.Terminal.Printf("%s\r\n", e); outErr != nil {
 				return outErr
@@ -823,6 +852,11 @@ func showSensors(t Terminal, reports []game.SensorReport) error {
 				selling = "no cargo"
 			}
 			if err := t.Printf("Port: %s | Selling: %s\r\n", r.PortName, selling); err != nil {
+				return err
+			}
+		}
+		if r.Mines > 0 {
+			if err := t.Printf("Sector mines: %d\r\n", r.Mines); err != nil {
 				return err
 			}
 		}

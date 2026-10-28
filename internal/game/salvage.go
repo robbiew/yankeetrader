@@ -41,7 +41,7 @@ func scaledSalvageDraw(quantity int64, rng func() float64) (int64, error) {
 // ordering and cargo sampling without replacement; original MBF rounding and
 // seeded RNG equivalence are intentionally not reproduced.
 func SampleSalvage(victim Player, winnerHolds int64, rng func() float64) (Salvage, error) {
-	if rng == nil || victim.Holds < 0 || victim.Holds > 1000 || winnerHolds < 10 || winnerHolds > 1000 || victim.Credits < 0 || victim.Credits > MaxMoney {
+	if rng == nil || victim.Holds < 0 || victim.Holds > 1000 || winnerHolds < 1 || winnerHolds > 1000 || victim.Credits < 0 || victim.Credits > MaxMoney {
 		return Salvage{}, errors.New("invalid salvage inputs")
 	}
 	for _, q := range []int64{victim.Missiles, victim.Plasma, victim.Ground, victim.Mines} {

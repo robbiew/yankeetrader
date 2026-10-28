@@ -23,6 +23,9 @@ func (w *World) attackPair(attacker, target int) (*Player, *Player, error) {
 	if err != nil {
 		return nil, nil, err
 	}
+	if len(w.Sectors[a.Sector].Minefield) > 0 {
+		return nil, nil, ErrMineEncounter
+	}
 	if a.ID == d.ID || a.Sector != d.Sector {
 		return nil, nil, errors.New("choose another ship in your current sector")
 	}
@@ -54,9 +57,7 @@ func (w *World) PrepareAttack(attacker, target int, fighters int64) (AttackInten
 	if err != nil {
 		return AttackIntent{}, err
 	}
-	if err := checkAttackAftermath(d); err != nil {
-		return AttackIntent{}, err
-	}
+
 	if fighters < 1 || fighters > a.Fighters {
 		return AttackIntent{}, errors.New("choose available fighters to commit")
 	}
@@ -89,9 +90,7 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	if d.Cloak > 0 && (visibility == nil || !visibility.sees(d)) {
 		return ShipDuelResult{}, errors.New("target ship is cloaked")
 	}
-	if err := checkAttackAftermath(d); err != nil {
-		return ShipDuelResult{}, err
-	}
+
 	if now.IsZero() || now.Before(w.Created) {
 		return ShipDuelResult{}, errors.New("invalid attack time")
 	}
@@ -114,16 +113,17 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 		if intent.Sector == 1 {
 			result.DisarmedMines = d.Mines
 			d.Mines = 0
+		} else {
+			result.DroppedMines = d.Mines
+			if err = w.dropMines(intent.Sector, d.ID, d.Mines); err != nil {
+				return ShipDuelResult{}, err
+			}
+			d.Mines = 0
+			result.MineAftermath, err = w.ResolveMinefield(a.ID, rng, now)
+			if err != nil {
+				return ShipDuelResult{}, err
+			}
 		}
 	}
 	return result, nil
-}
-
-// Minefield storage, explosions and chained deaths are not exposed yet.
-// Withhold unsupported encounters rather than silently omitting their aftermath.
-func checkAttackAftermath(target *Player) error {
-	if target.Sector != 1 && target.Mines > 0 {
-		return errors.New("mine-bearing targets outside Earth require minefield combat, which is not available yet")
-	}
-	return nil
 }

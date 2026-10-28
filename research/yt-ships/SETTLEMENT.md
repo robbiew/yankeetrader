@@ -1,5 +1,7 @@
 # Modern loot and estate settlement — 2026-10-27
 
+Follow-up: [minefields and chained deaths](MINES.md) add world version 7 and valid damaged live ships with 1–9 holds. The version-5 and minimum-hold statements below describe this original milestone.
+
 Implements the [37-session DOS recovery](LOOT.md) as internal engine operations.
 Attacks, defense placement and minefield combat remain unavailable to players.
 The current frontend can observe resulting inventories/ownership and collect

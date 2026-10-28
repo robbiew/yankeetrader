@@ -65,6 +65,10 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 			return nil, errors.New("attacker ship or location changed")
 		}
 
+	case "mines":
+		if context.Killer < 0 || (context.Killer > 0 && w.Players[context.Killer] == nil) {
+			return nil, errors.New("invalid mine source")
+		}
 	case "self":
 		if context.Killer != p.ID {
 			return nil, errors.New("self death requires the ship's own player")
@@ -154,6 +158,10 @@ func (w *World) validateLifecycle() error {
 		case "combat", "retaliation":
 			if death.Killer == p.ID || w.Players[death.Killer] == nil {
 				return errors.New("invalid enemy killer")
+			}
+		case "mines":
+			if death.Killer < 0 || (death.Killer > 0 && w.Players[death.Killer] == nil) {
+				return errors.New("invalid mine source")
 			}
 		case "self":
 			if death.Killer != p.ID {
