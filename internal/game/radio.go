@@ -94,14 +94,20 @@ func (w *World) FindRadioRecipient(id int, query string) (RadioAddress, error) {
 	if query == "" {
 		return RadioAddress{}, errors.New("choose a recipient alias or player number")
 	}
-	var matches []RadioAddress
+	var matches, exact []RadioAddress
 	for _, target := range w.Players {
 		if strings.EqualFold(query, target.Alias) {
-			return RadioAddress{ID: target.ID, Alias: target.Alias}, nil
+			exact = append(exact, RadioAddress{ID: target.ID, Alias: target.Alias})
 		}
 		if strings.Contains(strings.ToLower(target.Alias), strings.ToLower(query)) {
 			matches = append(matches, RadioAddress{ID: target.ID, Alias: target.Alias})
 		}
+	}
+	if len(exact) > 1 {
+		return RadioAddress{}, errors.New("more than one player has that exact alias; enter a player number")
+	}
+	if len(exact) > 0 {
+		matches = exact
 	}
 	if len(matches) != 1 {
 		return RadioAddress{}, errors.New("recipient search needs one match; enter an exact alias or player number")

@@ -17,13 +17,15 @@ committed snapshots and transcripts.
 | Blank amount or `D;0` | Default is zero; no stock or sector change. |
 | `D;11` with 10 carried mines | No drop; stock and sector remain unchanged. |
 | `D;-1` | No drop; stock and sector remain unchanged. |
-| `D;5` with 3 existing sector mines | Player stock 10 → 5; sector stock 3 → 5. DOS replaces the aggregate field count with the entered amount; it does not add the amount. |
+| `D;5` with 3 existing sector mines | All three initial mines explode before `D;5`. Player stock then changes 10 → 5 and the empty sector gains five mines. This does not distinguish addition from replacement of a still-nonempty field. |
 | `D;5` with no carried mines | Reports “You don't HAVE any!”; state remains unchanged. |
 | `D;5` from sectors 1, 2, or 7 | Refused with “The Union doesnt like the home 7 sectors mined!”; stock, field and turns remain unchanged. |
 | `D;5` from sector 8 | Accepted; stock 10 → 5, sector stock 0 → 5, turns remain 500. |
 
 These runs establish the command's stock validation, zero default, lack of turn
-cost, overwrite behavior for an existing field, and the home-sector boundary.
+cost and the home-sector boundary. Placement onto a still-nonempty field is
+unverified: the existing-field probe exhausts its starting field before the
+drop prompt.
 They do not establish every invalid numeric input or every account/planet
 combination. `D` is the only sector-field operation named in the recovered
 instruction manual. It describes dropping mines but no field pickup/withdrawal;
@@ -34,8 +36,9 @@ mines from a planet is separately documented under planetary transfers.
 
 The modern world represents mine sources and preserves source attribution,
 whereas DOS stores one aggregate count. Its additive same-owner mine-layer
-representation therefore deliberately differs from DOS's overwrite result for
-`D` on an already mined sector. The placement command requires fresh
+representation is an explicit modern policy. DOS placement onto a still-nonempty
+field has not been established by these probes; no additive/replacement
+divergence is claimed. The placement command requires fresh
 confirmation, unchanged-state revalidation and atomic stock transfer. Sectors
 1–7 are protected for voluntary placement; other mine sources retain their
 existing behavior until separately researched. Sector-field withdrawal remains

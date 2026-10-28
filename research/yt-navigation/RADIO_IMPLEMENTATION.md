@@ -14,7 +14,8 @@ concurrent delivery behavior have not been established by these fixtures.
 
 Computer 5 / `RADIO [alias or player number]` accepts one printable ASCII line
 of 1–74 characters. Exact aliases win over substring matches; ambiguous searches
-must be narrowed. Recipient confirmation precedes literal text entry. Queued
+must be narrowed. If multiple accounts have the same exact alias, use the
+player number; map iteration never selects an arbitrary recipient. Recipient confirmation precedes literal text entry. Queued
 commands/typeahead are discarded before composition and before Send/Abort;
 only a separate exact `S` sends. Semicolons and trailing slashes remain text.
 Blank text or any other final response cancels without saving. Self-mail and
