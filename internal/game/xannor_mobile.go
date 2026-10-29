@@ -181,13 +181,6 @@ func (w *World) joinXannor(sector int, force int64, acted map[*SectorDefense]boo
 	return force - take
 }
 
-func (w *World) xannorUnsupported(sector int) bool {
-	if p := w.Planets[w.Sectors[sector].Planet]; p != nil && p.Owner != XannorOwner {
-		return true
-	}
-	return false
-}
-
 func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDefense]bool, preferred *int, now time.Time, rng func() float64) {
 	origin, current := path[0], path[0]
 	force := group.Fighters
@@ -204,7 +197,7 @@ func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDe
 	}
 	work := xannorWorkLimit
 	for hop, next := range path[1:] {
-		if next <= 7 || work == 0 || w.xannorUnsupported(next) {
+		if next <= 7 || work == 0 {
 			hold()
 			return
 		}
@@ -260,8 +253,14 @@ func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDe
 				return
 			}
 		}
-		// Foreign planets still hold before any encounter mutation. Ship battles
-		// follow mines/sector fighters; friendly planetary stocks are untouched.
+		// Planetary assaults precede ship detection, sharing the route budget.
+		if !w.xannorPlanet(next, &force, &work, preferred, now, rng) {
+			hold()
+			return
+		}
+		if force == 0 {
+			return
+		}
 		if !w.xannorShips(next, &force, &work, preferred, now, rng) {
 			hold()
 			return

@@ -614,3 +614,25 @@ eligibility for production/destruction, atomic title/resource updates, private
 owner reports and landing-token invalidation. Keep Union protection and captured
 home ownership explicit; remaining revenge/cloak searching and native acceptance
 are separate. [Evidence, limits and implementation contract](yt-xannor-planets/RECOVERY.md).
+
+
+## Bounded Xannor planetary assaults — implemented
+
+Mobile routes now resolve ground and production battles after mines/sector
+defenses and before ships, sharing the existing finite work budget. Surviving
+attackers are required for production damage/capping/destruction, protecting
+legitimate zero-rate planets after ground victory. The corrected large-batch
+policy requires 450 attackers and a rate above 500. Current ownership, captured
+homes and protected Union sectors remain explicit.
+
+Zero ground neutralizes titles; destruction atomically removes the object/link
+and every landing grant, without loot or collateral ship death. Original owners
+receive private snapshots in BATTLES; whitelisted public news contains only planet
+name/outcome. Save version 16 preserves version-15 ship history and rejects
+future fields in legacy-labelled saves. Game/store/interface tests and real PTYs
+cover bounded work, conservation, ownership, privacy, stale confirmations, slot
+reuse, rollback, concurrency, replay, reload and committed durability failure.
+[Implementation and validation](yt-xannor-planets/IMPLEMENTATION.md).
+
+Next: remaining Xannor revenge/cloak candidate-search research. Exact RNG/MBF
+parity and live BBS/native Windows acceptance remain separate.

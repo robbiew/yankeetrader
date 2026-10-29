@@ -15,6 +15,26 @@ func (s Session) displayBattle(r game.BattleReport) error {
 	if !time.Now().Before(s.Deadline) {
 		return errors.New("session time expired")
 	}
+	if r.Planet != nil {
+		p := r.Planet
+		outcome := "Planet survived."
+		if p.Neutralized {
+			outcome = "Planet neutralized."
+		}
+		if r.Destroyed {
+			outcome = "Planet destroyed."
+		}
+		if p.Interrupted {
+			outcome += " Assault work limit reached."
+		}
+		if err := s.Terminal.Printf("\r\nPrivate Xannor planetary report #%d | %s | Sector %d\r\n%s: Xannor lost %d fighters; ground %d -> %d.\r\nProduction %.3f/%.3f/%.3f -> %.3f/%.3f/%.3f\r\nCargo %.3f/%.3f/%.3f -> %.3f/%.3f/%.3f\r\n%s\r\n", r.ID, r.At.Format("2006-01-02 15:04 UTC"), r.Sector, p.Name, r.XannorLost, p.GroundBefore, p.GroundAfter, p.ProductionBefore[0], p.ProductionBefore[1], p.ProductionBefore[2], p.ProductionAfter[0], p.ProductionAfter[1], p.ProductionAfter[2], p.CargoBefore[0], p.CargoBefore[1], p.CargoBefore[2], p.CargoAfter[0], p.CargoAfter[1], p.CargoAfter[2], outcome); err != nil {
+			return err
+		}
+		if r.Unread {
+			return s.Store.AcknowledgeBattleReport(r.ID)
+		}
+		return nil
+	}
 	outcome := "Your ship survived."
 	if r.Destroyed {
 		outcome = "Your ship was destroyed by the Xannor."

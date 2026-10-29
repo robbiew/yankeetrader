@@ -13,6 +13,7 @@ const MaxBattleReports = 32
 // BattleReport is a recipient-only snapshot, retained across ship replacement.
 // Public news uses a separate whitelist and never copies these casualty counts.
 type BattleReport struct {
+	Planet                                *PlanetBattleReport `json:",omitempty"`
 	ID                                    uint64
 	At                                    time.Time
 	Sector                                int
@@ -36,6 +37,9 @@ func (w *World) validateBattleReports() error {
 			if r.ID <= last || r.ID >= w.NextBattleReport || seen[r.ID] || r.At.IsZero() || offset != 0 || r.At.Before(w.Created) || r.At.Before(at) || r.Sector <= 7 || w.Sectors[r.Sector] == nil || r.XannorLost < 0 || r.XannorLost > MaxQuantity || r.FightersLost < 0 || r.FightersLost > MaxQuantity || r.ShieldsLost < 0 || r.ShieldsLost > MaxQuantity {
 				return errors.New("invalid private battle report")
 			}
+			if err := validatePlanetBattle(r); err != nil {
+				return err
+			}
 			seen[r.ID] = true
 			last, at = r.ID, r.At
 		}
@@ -51,6 +55,10 @@ func (w *World) BattleHistory(id int, unreadOnly bool) ([]BattleReport, error) {
 	reports := []BattleReport{}
 	for _, r := range p.BattleReports {
 		if !unreadOnly || r.Unread {
+			if r.Planet != nil {
+				snapshot := *r.Planet
+				r.Planet = &snapshot
+			}
 			reports = append(reports, r)
 		}
 	}

@@ -4,8 +4,8 @@ This slice preserves **71 completed original-DOS maintenance runs**, 142 world
 snapshots, paired economic-phase controls, an exact next-day world chain and
 **20 complete REA byte observations** from YTMAINT and BRUN30. It establishes
 planetary eligibility, ground/production battle rules, warehouse capping,
-neutralization, logical deletion and route ordering. This is research only: Go
-mobile groups still hold before foreign planets, and save version remains 15.
+neutralization, logical deletion and route ordering. This research introduced no Go changes. The subsequent
+[bounded implementation](IMPLEMENTATION.md) now enables assaults in save version 16.
 
 The original executable SHA-256 is
 `8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6`;
@@ -240,7 +240,7 @@ only after the planetary action, with finite work, replay/rollback and concurren
 login/landing coverage. Apply captured-home policy explicitly rather than copying
 DOS's earlier forced-retitling side effects.
 
-Planetary assault/destruction implementation is the next milestone; remaining
+The [bounded implementation](IMPLEMENTATION.md) now fulfills this contract; remaining
 revenge/cloak candidate searches, exact RNG/MBF parity and native/live BBS
 acceptance stay separate.
 

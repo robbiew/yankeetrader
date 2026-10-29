@@ -16,7 +16,7 @@ def exercise(guard):
         guard.run(play,seed,'Captain','q');guard.run(play,seed,'Visitor','q')
         original=json.loads((seed/'world.json').read_text())
         stamp=(guard.clock()+datetime.timedelta(days=2)).isoformat()
-        for mode in ('death','survivor','planet-hold','defense-stop'):
+        for mode in ('death','survivor','planet-ground','defense-stop'):
             data=root/mode;data.mkdir();path=data/'world.json';world=copy.deepcopy(original)
             world['LastMaintenance']=(guard.day-datetime.timedelta(days=1)).isoformat()
             p=world['Players']['1'];p.update(Sector=10,Cloak=0,Fighters=10000 if mode=='survivor' else 0,Shields=10000 if mode=='survivor' else 0,StoredScore=4000,Mines=5,Credits=12345)
@@ -29,20 +29,21 @@ def exercise(guard):
             for slot,sector,owner,faction,name in [(99,11,-2,'mercenaries','Mercenary Base'),(100,8,-1,'xannor','Xannoron')]:
                 world['Planets'][str(slot)]=dict(ID=slot,Sector=sector,Owner=owner,FactionHome=faction,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=100,Bank=1)
                 world['Sectors'][str(sector)]['Planet']=slot
-            if mode=='planet-hold':
-                world['Planets']['2']=dict(ID=2,Sector=10,Owner=0,Name='Neutral probe',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=0,Bank=1234)
+            if mode=='planet-ground':
+                world['Planets']['2']=dict(ID=2,Sector=10,Owner=0,Name='Neutral probe',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1000000000,Bank=1234)
                 world['Sectors']['10']['Planet']=2
                 world['Sectors']['10']['Minefield']=[dict(Owner=1,Count=3)]
             if mode=='defense-stop':world['Sectors']['10']['Defense']=dict(Owner=2,Fighters=1000000)
             path.write_text(json.dumps(world))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());p=saved['Players']['1']
-            assert saved['Version']==15 and saved['Xannor']==dict(HQ=8,Reserve=0)
-            if mode in ('planet-hold','defense-stop'):
+            assert saved['Version']==16 and saved['Xannor']==dict(HQ=8,Reserve=0)
+            if mode in ('planet-ground','defense-stop'):
                 assert not p.get('Death') and not p.get('BattleReports'),p
-                if mode=='planet-hold':
-                    assert saved['Sectors']['9']['Defense']==dict(Owner=-1,Fighters=100)
-                    assert saved['Sectors']['10']['Minefield']==[dict(Owner=1,Count=3)]
+                if mode=='planet-ground':
+                    assert not saved['Sectors']['9'].get('Defense')
+                    assert sum(x['Count'] for x in saved['Sectors']['10'].get('Minefield',[]))<3
+                    assert saved['Planets']['2']['Ground']>=1000000000-100
                 continue
             reports=p['BattleReports'];assert len(reports)==1 and reports[0]['Unread']
             report=reports[0];assert report['Sector']==10 and saved['NextBattleReport']==2
@@ -76,4 +77,4 @@ def exercise(guard):
 
 if __name__=='__main__':
     run_on_stable_date(exercise)
-    print('Xannor ship PTY passed: atomic death/replacement, casualty reports, no wreck mines, replay, visitor privacy, compact/classic history and retained foreign-planet holds.')
+    print('Xannor ship PTY passed: atomic death/replacement, casualty reports, no wreck mines, replay, visitor privacy, compact/classic history and planetary ground defenses before ship detection.')

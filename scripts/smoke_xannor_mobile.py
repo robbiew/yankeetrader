@@ -41,23 +41,21 @@ def exercise(guard):
             if mode == 'planet':
                 world['Sectors']['10']['Defense'] = dict(Owner=1, Fighters=100)
             if mode == 'planet':
-                world['Planets']['2'] = dict(ID=2, Sector=10, Owner=0, Name='Neutral probe', Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.5, Missiles=0, Mines=0, Plasma=0, Ground=0, Bank=1234)
+                world['Planets']['2'] = dict(ID=2, Sector=10, Owner=0, Name='Neutral probe', Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.5, Missiles=0, Mines=0, Plasma=0, Ground=1000000000, Bank=1234)
                 world['Sectors']['10']['Planet'] = 2
             path.write_text(json.dumps(world))
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
-            assert saved['Version'] == 15 and saved['Xannor'] == dict(HQ=8, Reserve=0)
+            assert saved['Version'] == 16 and saved['Xannor'] == dict(HQ=8, Reserve=0)
             assert saved['Planets']['100']['Fighters'] == 37.5
             assert saved['Players']['1']['Fighters'] == world['Players']['1']['Fighters'] and not saved['Players']['1'].get('Death')
             if mode == 'planet':
-                assert saved['Sectors']['9']['Defense'] == dict(Owner=-1, Fighters=100)
+                assert not saved['Sectors']['9'].get('Defense')
                 assert saved['Sectors']['8']['Defense'] == dict(Owner=-1, Fighters=1)
-                assert saved['Sectors']['10']['Minefield'] == [dict(Owner=1, Count=3)]
-                assert saved['Sectors']['10']['Defense'] == dict(Owner=1, Fighters=100)
-                if mode == 'planet':
-                    actual, expected = saved['Planets']['2'].copy(), world['Planets']['2'].copy()
-                    assert datetime.datetime.fromisoformat(actual.pop('Updated')) == datetime.datetime.fromisoformat(expected.pop('Updated'))
-                    assert actual == expected, (actual, expected)
+                assert sum(x['Count'] for x in saved['Sectors']['10'].get('Minefield', [])) < 3
+                assert saved['Planets']['2']['Ground'] >= 1000000000 - 100
+                assert saved['Planets']['2']['Bank'] == 1234
+                assert saved['Planets']['2']['Fighters'] == 37.5
             else:
                 assert not saved['Sectors']['9'].get('Defense')
                 final = saved['Sectors']['8']['Defense']
@@ -80,4 +78,4 @@ def exercise(guard):
 
 if __name__ == '__main__':
     run_on_stable_date(exercise)
-    print('Xannor mobile PTY passed: saved return routes, uniform mine accounting, retained friendly stocks, foreign-planet holds, daily replay and compact/classic reconnect encounters.')
+    print('Xannor mobile PTY passed: saved return routes, uniform mine accounting, retained friendly stocks, mines before planetary ground defenses, daily replay and compact/classic reconnect encounters.')

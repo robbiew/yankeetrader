@@ -155,6 +155,7 @@ until transactional NPC combat is implemented.
 
 
 The follow-on [ship battle implementation](../yt-xannor-ships/IMPLEMENTATION.md)
-now supersedes this milestone's live-ship holds. Foreign-planet holds remain.
-Ship detection/rounds consume the existing route work budget; current saves use
-version 15 for private reports and NPC death attribution.
+now supersedes this milestone's live-ship holds. The subsequent
+[planetary implementation](../yt-xannor-planets/IMPLEMENTATION.md) also supersedes
+foreign-planet holds. All encounter stages share the existing route work budget;
+current saves use version 16 for ship/planet reports and atomic aftermath.
