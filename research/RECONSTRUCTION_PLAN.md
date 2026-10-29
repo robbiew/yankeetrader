@@ -466,10 +466,10 @@ elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
 recruitment or full-force defense combat. Login-local hostility, one-use quote
 tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
-NPC spawning/daily behavior and full NPC ship combat remain separate milestones.
+Daily hiring is implemented below; NPC route actions and full NPC ship combat remain separate milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
-## Mercenary daily maintenance — research complete, implementation pending
+## Mercenary daily maintenance — research complete, hiring implemented
 
 Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
 budget carry, group placement and human-defense desertion. Forty-one completed
@@ -478,8 +478,14 @@ combat, planetary fighter pickup without title/ground transfer, and reserved-bas
 restoration. Static byte checks protect the distinct NPC battle threshold and
 nested mine rolls. [Evidence and boundaries](yt-mercenary-maintenance/RECOVERY.md).
 
-Next implement finite tax-funded hiring in the existing daily transaction with
-explicit unplaced-budget policy. Then integrate stable phase participants and
-valid route actions. Do not reproduce the DOS capacity hang, failed-path
+Daily maintenance now hires from summed per-port integer taxes with the recovered
+rounding rules and finite distinct placement. Protected Union sectors and existing
+defenses are excluded. Missing space and the modern force limit discard unused
+funding without carry/refund. Tax debits, hires and date persist atomically, once
+per UTC day; version 12 remains current. Game/store regressions and a real
+maintenance/reconnect smoke cover saturation, replay and persistence.
+[Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
+
+Next integrate stable phase participants and valid route actions. Do not reproduce the DOS capacity hang, failed-path
 teleportation or repeated activation. Exact RNG/MBF parity and additional faction
 lifecycle combinations remain research boundaries; live BBS acceptance is separate.

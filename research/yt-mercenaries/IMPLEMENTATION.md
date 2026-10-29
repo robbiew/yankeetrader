@@ -61,8 +61,10 @@ An unresolved group continues blocking ordinary actions, including after a
 noncombat refusal. Successful output is not required to preserve a committed
 world change, and a durability warning must not trigger automatic replay.
 
-No save-format change is needed: version 12 remains current. NPC movement,
-tax-funded hiring, spawning and full NPC ship/planet combat remain separate.
+No save-format change is needed: version 12 remains current.
+[Daily hiring](../yt-mercenary-maintenance/IMPLEMENTATION.md) is now implemented
+separately. NPC movement, base restoration and full NPC ship/planet combat remain
+separate.
 Existing estate conversion already supplies Mercenary groups in ordinary worlds.
 
 ## Validation

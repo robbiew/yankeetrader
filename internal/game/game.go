@@ -465,12 +465,16 @@ func (w *World) Maintain(now time.Time) bool {
 	for _, planet := range w.Planets {
 		planet.update(now, false)
 	}
+	var taxes int64
 	for _, p := range w.Ports {
 		update(p, now)
 		if p.ID != 1 {
-			p.Treasury -= p.Treasury / 10
+			tax := p.Treasury / 10
+			p.Treasury -= tax
+			taxes += tax
 		}
 	}
+	w.hireMercenaries(taxes)
 	for _, p := range w.Players {
 		p.Turns = 500
 		p.DockToken = ""

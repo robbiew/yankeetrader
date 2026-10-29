@@ -5,7 +5,9 @@ and [player-facing bribery](../yt-mercenaries/IMPLEMENTATION.md). It preserves
 **41 completed original-DOS maintenance runs and 82 before/after snapshots**, plus
 **one separate eight-second hiring-capacity timeout with two snapshots**. Eleven
 Ghidra/REA byte observations cross-check the relevant code. This slice changes
-research, verifiers and documentation; Go gameplay and its save format are unchanged.
+research, verifiers and documentation. The subsequent
+[hiring implementation](IMPLEMENTATION.md) enables a bounded subset; the
+original-DOS evidence below remains unchanged.
 
 Target: original `YTMAINT.EXE`, SHA-256
 `8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6`.
@@ -269,8 +271,8 @@ child worlds and no-route outcomes are rejected by semantic negative controls.
 Validation passed: the new verifier, both existing bribery/hostility verifiers,
 the utility evidence verifier, all 4,682 archive hashes, Python syntax checks and
 `git diff --check`. All four rehashed semantic negative controls were rejected.
-CI is configured to revalidate artifacts without DOSBox or REA; it has not run
-on this unpublished branch. No new Go gameplay is enabled.
+CI is configured to revalidate artifacts without DOSBox or REA. The research
+commit itself enables no gameplay; subsequent hiring is documented separately.
 
 ## Implementation boundary and recommended next slice
 
@@ -281,10 +283,11 @@ acceptance remain bounded work. The timeout does not prove elapsed-time behavior
 on every host; its unbounded placement loop and absence of eligible slots explain
 this specific stalled run.
 
-Next implement **tax-funded hiring with finite placement**, within the existing
+The subsequent [implementation](IMPLEMENTATION.md) adds **tax-funded hiring with
+finite placement**, within the existing
 once-per-UTC-day locked transaction. Preserve integer accounting and define
 unplaced-budget handling explicitly. Do not introduce arbitrary NPC owners or
-world fields without validation/migration coverage. Then integrate route actions
+world fields without validation/migration coverage. Remaining work: integrate route actions
 using stable phase participants, valid paths, conserved merges, current ownership
 and existing attributed mine/death machinery. Snapshotting eliminates repeated
 activation; path failure must not relocate a force. Planet-fighter pickup must
