@@ -545,3 +545,13 @@ renaming or capture: human-owned and neutralized bases retain their titles and
 resources, without automatic retitling, replenishment or duplicate creation.
 A destroyed base can rebuild on a later daily run.
 [Base policies, migration and validation](research/yt-mercenary-maintenance/BASE.md).
+
+### Xannor lifecycle research
+
+[Xannor HQ and Xannoron lifecycle evidence](research/yt-xannor-lifecycle/RECOVERY.md)
+now covers 38 completed DOS runs, three bounded relocation stalls and exact
+next-day world chains. It establishes recreation, reserve/title changes,
+regeneration, reclaim and relocation rules, and documents a stale-result defect
+that creates phantom fighters. This is research only; Xannor home/HQ gameplay is
+still outstanding. The next slice is explicit Xannor-home identity and finite
+restoration with captured ownership preserved.

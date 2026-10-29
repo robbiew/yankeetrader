@@ -1,0 +1,36 @@
+{
+  "name": "reclaim-no-score",
+  "human": true,
+  "patches": [
+    [
+      1165,
+      81,
+      100
+    ],
+    [
+      1165,
+      85,
+      2
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "ad806ad0f32b9f120d5fbaa19887445c58dd7d9b2eade101e512354270c889e3",
+  "after_sha256": "0061cdec989d3a1b464a684489e6fb1c0a9a08baafe7a1dd58e8d1f14023d45d",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "c6fcd82379f95d49c5bf15299365a651abbf7d317af9b65fcf55039081bd4b74",
+    "transcript.txt": "22bca8de938017e65f48ceaf0c610d2794b452b9b525346bacd1da99387c7554",
+    "before.dat.gz": "ab3f16b56b6b39074d8677bf895efd6c73f94a5fe0e31a80972f5ee7903e63e8",
+    "after.dat.gz": "037aa918359fea10fd5b8e870d384881736ca2c71d06b8134a6d391c4771ff8b"
+  }
+}

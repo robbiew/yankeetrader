@@ -99,5 +99,6 @@ worktree builds use a temporary module-file override to the existing GoDoors
 checkout, leaving committed module files unchanged. CI on this unpublished
 branch and live BBS acceptance remain unverified.
 
-Remaining work: further Xannor/faction-home lifecycle combinations, full NPC ship
-combat and bit-exact QuickBASIC RNG/MBF parity.
+[Xannor lifecycle research](../yt-xannor-lifecycle/RECOVERY.md) now establishes the
+bounded home/HQ rules. Their implementation, further faction-home combinations,
+full NPC ship combat and bit-exact QuickBASIC RNG/MBF parity remain separate.

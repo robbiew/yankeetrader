@@ -52,6 +52,7 @@ jobs:
           python3 scripts/verify_bribes.py
           python3 scripts/verify_bribe_hostility.py
           python3 scripts/verify_mercenary_maintenance.py
+          python3 scripts/verify_xannor_lifecycle.py
           python3 scripts/verify_rankings.py
           python3 scripts/verify_spies.py
           python3 scripts/verify_newspaper.py

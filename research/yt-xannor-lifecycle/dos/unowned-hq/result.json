@@ -1,0 +1,30 @@
+{
+  "name": "unowned-hq",
+  "patches": [
+    [
+      1165,
+      85,
+      0
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "cbead130f9e462e7c4e6d15b9ba0e3c68ef97364330028fc5c63a90eb8ae0140",
+  "after_sha256": "70ab55599c8715efeae2aec49aa8ebb6930cd7b15ede1fef8dadf5c2442f562b",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "973c231728f46ba70f0ac41ed8434a61bf248eddecde190090b8504cee0bf0ff",
+    "transcript.txt": "c109aceb06eb959ba393dfa599d5b65d915796a8c814e6dae771f2d815c93972",
+    "before.dat.gz": "bdb7885d253484c5e6e3bfe9d1d2ea749169f5d901ff5e89b07a56c560ea729c",
+    "after.dat.gz": "851a715322efec6a60cdebf9d383c5502eef90510ce2dbe1576136dbaa5d2304"
+  }
+}

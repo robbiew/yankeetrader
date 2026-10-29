@@ -1,0 +1,75 @@
+{
+  "name": "recreated-stock-reset-inactive",
+  "patches": [
+    [
+      1165,
+      93,
+      0
+    ],
+    [
+      4151,
+      85,
+      0
+    ],
+    [
+      4151,
+      117,
+      0
+    ],
+    [
+      4151,
+      57,
+      11
+    ],
+    [
+      4151,
+      61,
+      13
+    ],
+    [
+      4151,
+      65,
+      17
+    ],
+    [
+      4151,
+      69,
+      7
+    ],
+    [
+      4151,
+      129,
+      37
+    ],
+    [
+      4151,
+      125,
+      3
+    ],
+    [
+      4151,
+      113,
+      5
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "17e24ffb430ac57a631c0736e193b7456bc48bc3adeb000778e0e817f44bde0a",
+  "after_sha256": "e13fdea97f52acaa9d2c9bdfd095497e0f8ccee3eaccbb2affe3cb290d848f2b",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "241edb6d53b8d2982cef2bd9521c0b67c5922c4ede8a249e2bd51b83e7aaaf02",
+    "transcript.txt": "0708739254d8172297ca48be3b2d3c74383baf69c4fb37b9eac7d9503caf240e",
+    "before.dat.gz": "c61193bbaef53c242257aa33e7aa6ebe5e88deb4752d4194f264b627b227fe18",
+    "after.dat.gz": "d28eed61fd692169340dc156d99d3971afccbf148f277f47e02b3e83696637ed"
+  }
+}

@@ -509,3 +509,18 @@ inferring home identity or creating assets during read-only loading.
 [Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
 parity and additional faction lifecycle combinations remain research boundaries;
 live BBS acceptance is separate.
+
+## Xannor HQ and Xannoron lifecycle — research
+
+Thirty-eight completed original-DOS runs, three bounded relocation stalls, two
+exact next-day world chains and eleven new REA byte observations establish
+recreation predicates, retained/reset stocks, ground/bank restoration, forced
+retitling, group normalization/regeneration, reclaim thresholds and relocation
+rules. Candidate controls distinguish one/two foreign fighters and expose an
+unbounded search. A zero-HQ control ties phantom strength to a stale RNG helper
+result. [Evidence, boundaries and proposed implementation](yt-xannor-lifecycle/RECOVERY.md).
+
+Next implement explicit Xannor-home identity and bounded restoration with
+conservative captured ownership and schema validation/migration. HQ/group state,
+finite reclaim/relocation, full NPC ship combat and exact RNG parity remain
+separate implementation slices. No Xannor Go gameplay is enabled by this research.

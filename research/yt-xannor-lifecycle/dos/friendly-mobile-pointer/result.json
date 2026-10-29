@@ -1,0 +1,40 @@
+{
+  "name": "friendly-mobile-pointer",
+  "patches": [
+    [
+      53,
+      105,
+      100
+    ],
+    [
+      151,
+      81,
+      999
+    ],
+    [
+      151,
+      85,
+      -1
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "24893e36fabb1e2a9799607cd593368c1c315adb8637f20b4430e9dca3137b55",
+  "after_sha256": "f42cff4f5bf134b1cefedd9f67258c1ad45b14083fb4c0cf37a51108a416bf0b",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "295d4fbb817e0ba671267a062afee721553797f9339ff40145cc2e2e86390379",
+    "transcript.txt": "15756f67a605c4fcf63047e89678b0b7243ad92cb58225ad04adbaa2ed5fa677",
+    "before.dat.gz": "6c2225a78f2a2869ad95758f757f73ae3a40009041dcd55c469dfa03345be46f",
+    "after.dat.gz": "daba7f24ab87f536656e44bfea7e6a9119399c8c1f1ec3d491c2dc442302337f"
+  }
+}

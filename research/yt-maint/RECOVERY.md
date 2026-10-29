@@ -192,7 +192,7 @@ A modern version needs an explicit decision about reproducing or fixing this beh
 
 There are 20 group slots: one headquarters group and 19 mobile groups. Sector records 1..20 use offset 105 as group-location pointers. The maintenance phase caches, merges/clears duplicate or invalid group entries, operates on the groups, and writes the updated state back.
 
-The strongest active player's **stored score at the start of maintenance** controls regeneration. The fixtures deliberately supplied this field; the scoreboard later recalculates scores and is not the value used for this test.
+The greatest **stored score among named player records after earlier cleanup** controls regeneration. The local selection loop does not directly test a death marker; see the [focused lifecycle boundaries](../yt-xannor-lifecycle/RECOVERY.md). The fixtures deliberately supplied this field; the scoreboard later recalculates scores and is not the value used for this test.
 
 Let `T` be that top stored score and `X` the cached aggregate group strength:
 
@@ -235,16 +235,16 @@ Static evidence: 2AC4–2F3F (HQ handling), 2FAB–30EA (revenge pointer), 311E�
 
 Clearing both the HQ sector's planet reference and the old planet's active-name field caused the original program to report that the Xannor had made a planet and to recreate Xannoron.
 
-Observed initial values for the rebuilt planet:
+Observed final values for the rebuilt planet after the complete maintenance run:
 
 - Name `Xannoron`, name length 8, owner -1.
 - Daily ore, organics, equipment production **100,000 each**.
 - Zero cargo stocks, missiles, mines, and fighters in the measured recreated record.
 - Randomized ground forces and bank balance: 175 ground forces and 3,980,002.5 credits in this run.
 
-The static creation code indicates ground forces from `floor(RND * 250)` and bank balance from `RND * 10,000,000 + 100,000`, with BASIC rounding/conversion. The observed sample fits those ranges; their full distributions have not been measured.
+The static creation code begins ground forces with `floor(RND * 250)` and bank balance with `RND * 10,000,000 + 100,000`, with BASIC rounding/conversion. The subsequent existing-home block adds another `floor(RND * 25)` to ground. The [focused lifecycle recovery](../yt-xannor-lifecycle/RECOVERY.md) also shows fighters/plasma can survive recreation while mines/cargo/missiles reset; the zero-stock sample above is not a universal reset rule. Full distributions have not been measured.
 
-A first missing-planet probe only cleared its name length while leaving the sector reference alive; it did not recreate the planet and is excluded as an invalid deletion fixture. The corrected experiment is `missing-xannoron-v2`.
+A first missing-planet probe only cleared name length while leaving the sector reference alive, so it is not evidence of failure to recreate a deleted planet. The corrected old experiment is `missing-xannoron-v2`; later isolated controls establish that clearing the HQ reference alone is sufficient. The name-only case is retained as a deliberate negative control in the [lifecycle research](../yt-xannor-lifecycle/RECOVERY.md).
 
 Evidence: 20AD–2331, especially 21AB–228C.
 

@@ -33,3 +33,7 @@
 /research/yt-mercenary-maintenance/dos/**/DOS*.LOG -text -diff
 /research/yt-mercenary-maintenance/dos/**/transcript.txt -text whitespace=-blank-at-eol
 /research/yt-mercenary-maintenance/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-xannor-lifecycle/dos/**/DOS*.LOG -text -diff
+/research/yt-xannor-lifecycle/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-xannor-lifecycle/dos/**/dosbox.log -text whitespace=-blank-at-eol

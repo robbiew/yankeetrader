@@ -1,0 +1,1566 @@
+{
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "scenarios": [
+    {
+      "name": "hq-held",
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "after_sha256": "5f531c8c7289718c780f54a31bb8aaa54d5d09e113463754b7009dada8fe768b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "1dc8ed3e1c25b88d5e899062698343117c1fc9afcc6865159aa775806cecd46c",
+        "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+        "before.dat.gz": "d43f71c61209810c099127bfae45e33cc63a29f68ff0c579ed1cbf2789926a7d",
+        "after.dat.gz": "4e52a0aced7057c96cb3acf078166bdb6d2af606c4c005e6575aa08dfe758973"
+      }
+    },
+    {
+      "name": "missing-reference",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "490099d0cb244ea5b88deb95463c2201897fe7ace31974d59a950e041c8f9faf",
+      "after_sha256": "a27c769fb02d16871e6946152644a75f474c4abe73951c6e611d09defc1dcc0a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "1e8688a472d2e70d1ded3ec37950b5329617c4767de2d4d0054a4176c7c29bb1",
+        "transcript.txt": "e9e172e7f06b2a63eed27be303aaf104599929a7fc6f41d53cb78bbc099e85cb",
+        "before.dat.gz": "d34ab1fd6b5291851eec47eadd3d2626e6cd2b8d1b2c2ebb34c754bce8945298",
+        "after.dat.gz": "f6d54b533f202a355d979c38584a9c1cb4a71cdb9ac7f32e49db1a835c5decd8"
+      }
+    },
+    {
+      "name": "inactive-record",
+      "patches": [
+        [
+          4151,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "981650bab727545772a2fc16d14dbd1ca4e3a9f612988406376f71382622d555",
+      "after_sha256": "33c9b6a71a3f08a82fb083a9062d7f2889b46bb5d9207ea8fecd2a8d26d49163",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "e586e572d4ccc1af1a3016578bbf7c338e49fddbf9587e586abc421331530e05",
+        "transcript.txt": "0cd705da2212172fdb17f741347ad1662fe07ecf3084f01ca5cd11b8494696f5",
+        "before.dat.gz": "bd002ee82d3afdae6a1f541e13b01e9328082070f8f62d3d4f114ced24da9476",
+        "after.dat.gz": "9b2507608b59f38087cb97b2fce4e881f505b0a9849383ba732705218f8541f8"
+      }
+    },
+    {
+      "name": "missing-both",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "5e47535fa46e8abb875a6e2ee3cfebb1cb28f16760b61bcfd93bc9ef68db94c3",
+      "after_sha256": "f264853542032727ab2fff8a779154308b4757725c643fb5f70030b17cf3ed44",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "6deb3c25ec2d4b77edff149d42e17285f64e8c6aebdd6c3dc2b62d41e984ece5",
+        "transcript.txt": "0708739254d8172297ca48be3b2d3c74383baf69c4fb37b9eac7d9503caf240e",
+        "before.dat.gz": "f03b3fd43e98a09607479b49840b6997a6e2cbd5dcdab23c98674f2d24abe4e2",
+        "after.dat.gz": "614b46ee5877489ff872d605bcd44fd48d5f2ac98d6bfb9b94abe5f2daf0d2eb"
+      }
+    },
+    {
+      "name": "captured-planet",
+      "human": true,
+      "patches": [
+        [
+          4151,
+          73,
+          2
+        ],
+        [
+          4151,
+          77,
+          500000
+        ],
+        [
+          4151,
+          117,
+          1234
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "eefae8d6529c09ca22a6c62ed3e12cff9ce70cdb16104cb6181d80cdf86625af",
+      "after_sha256": "880ea5a578b049f7c08519cb579e93e7fc5a0c25775c681309fcc4dd64bdd434",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "63b576baadccd082eafdc338991d344ecdf4b736d0d82e144b7c34ac3488e938",
+        "transcript.txt": "3480a338a4449afc634437c109211cf0d9bc93aeae94c5cef025e11a4ac195c1",
+        "before.dat.gz": "a991a62ce77bc9f797101ba40e27ac3b397b06f32f4a269ebb36f69c6e2e78df",
+        "after.dat.gz": "06604179e1c3deca43d5abcd03deaa3bcdd387a90529f64bad247a7ee79f9cfa"
+      }
+    },
+    {
+      "name": "zero-reserves",
+      "patches": [
+        [
+          4151,
+          77,
+          0
+        ],
+        [
+          4151,
+          117,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "b21c4262396ba3ce0a986644abcd47eb534d66e24f146ac591d19d1f0a2c5d60",
+      "after_sha256": "4d676ce853988451862dfd9f256d6b59eeb0c0a038ed7c0aecf9f449f634672b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "d409402f6915b7a6ffbc97658c44dbfd55584769c6dbdcc3e7d71c55a557c04c",
+        "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+        "before.dat.gz": "8f45e1a5fd12970fc7886a42142cde9f18cafea099a8731850a2d76a3ac59da5",
+        "after.dat.gz": "390a33a678820a97c888c7bdf0f79deb6fa57b146983ea63584dcef7699c7d63"
+      }
+    },
+    {
+      "name": "zero-hq",
+      "patches": [
+        [
+          1165,
+          81,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "6d0db7bb34f0f6620a179ff76917999aad84dfb9705282b26a8a48f818ca9397",
+      "after_sha256": "7a673b658df277ffd8f5622350d5e4495aa2a3311cece71df132029e87af8bfc",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "f80d63d05471413a9d80d14c22239a3e6c4d4ba5584a47ab676cc84a88c86cae",
+        "transcript.txt": "c109aceb06eb959ba393dfa599d5b65d915796a8c814e6dae771f2d815c93972",
+        "before.dat.gz": "4980efb3f82be0070ed19fbc54bf515ea18012fb7f5cedeec9988c2103ecd0a3",
+        "after.dat.gz": "3e1bfab5d035ec6d4c7eec2293ec727eb93ff9c146c824e24d704e4cd1fe4394"
+      }
+    },
+    {
+      "name": "unowned-hq",
+      "patches": [
+        [
+          1165,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "cbead130f9e462e7c4e6d15b9ba0e3c68ef97364330028fc5c63a90eb8ae0140",
+      "after_sha256": "70ab55599c8715efeae2aec49aa8ebb6930cd7b15ede1fef8dadf5c2442f562b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "973c231728f46ba70f0ac41ed8434a61bf248eddecde190090b8504cee0bf0ff",
+        "transcript.txt": "c109aceb06eb959ba393dfa599d5b65d915796a8c814e6dae771f2d815c93972",
+        "before.dat.gz": "bdb7885d253484c5e6e3bfe9d1d2ea749169f5d901ff5e89b07a56c560ea729c",
+        "after.dat.gz": "851a715322efec6a60cdebf9d383c5502eef90510ce2dbe1576136dbaa5d2304"
+      }
+    },
+    {
+      "name": "duplicate-pointer",
+      "patches": [
+        [
+          53,
+          105,
+          1114
+        ],
+        [
+          54,
+          105,
+          1114
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "378bf9f321e3f75e1df243dc3ac645042d8100393bf040dbfbfb9a85a0602ad6",
+      "after_sha256": "5f531c8c7289718c780f54a31bb8aaa54d5d09e113463754b7009dada8fe768b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "8dc527a05bf4711b50e8a30cbcc00b5bc396008feb49a9075b6a1ba8cfc9bd2a",
+        "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+        "before.dat.gz": "9b65bf9045fdf9830b0b7a66cf4014360d34f588fa66bb9b00f0fac1a70c57ff",
+        "after.dat.gz": "4e52a0aced7057c96cb3acf078166bdb6d2af606c4c005e6575aa08dfe758973"
+      }
+    },
+    {
+      "name": "empty-hq-pointer",
+      "patches": [
+        [
+          52,
+          105,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "008c5e17c9f8ee85b7e7036dba903e15a128d0e941710daff91af9abc4d89075",
+      "after_sha256": "e97d6e8ea2b996f94345675403fd84472f1c08833608dc2023080df833cda741",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "63cbe317d134c1b470dde344b1639fc90ea7098189005da26b9d79097b34e649",
+        "transcript.txt": "ea7f540a1c9a51e360ac80323b16a96cebad7019e2ea16b08cf39cd82cf64a76",
+        "before.dat.gz": "c783487806c22a450eafb2b87675d6b4f4e99de665971fab8aaa255066857943",
+        "after.dat.gz": "6fac062e566b1aacd0911e855ff71e1ac76913876238d68e95be593fc54a819b"
+      }
+    },
+    {
+      "name": "split-hq-pointers",
+      "patches": [
+        [
+          52,
+          105,
+          1200
+        ],
+        [
+          1251,
+          81,
+          5000
+        ],
+        [
+          1251,
+          85,
+          -1
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "b88e3a8336f18fb831f556a4cba7b72e2908c87de79872015abdb0905aa8eca1",
+      "after_sha256": "358dd81fae5de253b7490ae1c61aeb02d2cf42e82c0961b5148ef7401a986948",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "213d568a07c9de404fd166a0c4ad8f6ca09233f383fa1980c643e98fc3afce93",
+        "transcript.txt": "9669249ba8738d8801ad5907f6b3855caea9d58e4f1115ab7650d2e202c2d6e4",
+        "before.dat.gz": "911e287046679c4eaf1705df00473b4499798fe78a88156d97397155a63d0502",
+        "after.dat.gz": "18d4813ac49a077aa6fe646cd1fd437a92ce55f39b25be6d0a28c6d61c3ebbb7"
+      }
+    },
+    {
+      "name": "foreign-mobile-pointer",
+      "human": true,
+      "patches": [
+        [
+          53,
+          105,
+          100
+        ],
+        [
+          151,
+          81,
+          999
+        ],
+        [
+          151,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "d0e9fff23924d0550788588ff6c5549b497f59e6e582fd44ec992bbd024aa162",
+      "after_sha256": "5cdc338075b909d80c27cfa818d6403467606b92a154e7d5581855d5ddeea287",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "3c50970198f8c44e41995e8b529f7eebcd08aada134ef99f5647899e483d2f00",
+        "transcript.txt": "94f6a8e8a9526a72001a823fa6971ab9d7a7bd9bc71ed02afac69c683ecaa89a",
+        "before.dat.gz": "7762a70ed15c95c8825102110829e0e7848a45e6b567a5b129ec67fb5da9ec94",
+        "after.dat.gz": "b42f157559927dab15e37a7c975eb4e904a95c3ab1ea41f54c16d290ff12a65c"
+      }
+    },
+    {
+      "name": "friendly-mobile-pointer",
+      "patches": [
+        [
+          53,
+          105,
+          100
+        ],
+        [
+          151,
+          81,
+          999
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "24893e36fabb1e2a9799607cd593368c1c315adb8637f20b4430e9dca3137b55",
+      "after_sha256": "f42cff4f5bf134b1cefedd9f67258c1ad45b14083fb4c0cf37a51108a416bf0b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "295d4fbb817e0ba671267a062afee721553797f9339ff40145cc2e2e86390379",
+        "transcript.txt": "15756f67a605c4fcf63047e89678b0b7243ad92cb58225ad04adbaa2ed5fa677",
+        "before.dat.gz": "6c2225a78f2a2869ad95758f757f73ae3a40009041dcd55c469dfa03345be46f",
+        "after.dat.gz": "daba7f24ab87f536656e44bfea7e6a9119399c8c1f1ec3d491c2dc442302337f"
+      }
+    },
+    {
+      "name": "regen-100000",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          100000
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "85d4092192b2ea9d7d298775e37ce20a6a9fb21899081f4fdc29afc35c15d7fc",
+      "after_sha256": "f9038119bce7d07a14810ea40f46ae4479fa58bac7a6bf1a4e6dcae71b445206",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "810dcaa86aa4a9337d252ed79886ce120d8bf4943c7dcab661800e3ffd9b728e",
+        "transcript.txt": "d352ec45b6a8629c9f73c77ff7c55fcc8fa5946cc9f55ee0907cf42eea8ae8dc",
+        "before.dat.gz": "f82f16b4305ef1f42adaa277e5da4a5dccb25b23037ba35659be05f1e5c5d4d5",
+        "after.dat.gz": "51edbc86afdd306ad3b87fa058870101a804ab211cc45ab42a9a4dad5ceed496"
+      }
+    },
+    {
+      "name": "regen-999999",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          999999
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "625da9a3d13890f6f3d7bec4bbf6b74b2eaa953fb7335dc34488a2ff94052fe3",
+      "after_sha256": "f9038119bce7d07a14810ea40f46ae4479fa58bac7a6bf1a4e6dcae71b445206",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "76aa5ec507cb7e6a42175adb362e0509db45aa98dd30bbebfdf6cf343bee9c3a",
+        "transcript.txt": "d352ec45b6a8629c9f73c77ff7c55fcc8fa5946cc9f55ee0907cf42eea8ae8dc",
+        "before.dat.gz": "5b0185f2023bf8381656a39a72d3654922a51ed1631a0415e531a4119cdfa33c",
+        "after.dat.gz": "51edbc86afdd306ad3b87fa058870101a804ab211cc45ab42a9a4dad5ceed496"
+      }
+    },
+    {
+      "name": "regen-1000000",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          1000000
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "4a58695648063d7d047da9a0624c4a58e496efc0a33ed22508acad9a47b2d531",
+      "after_sha256": "3420ed801fbb3444ac83d6e7901ba35fc658e5a877fd6f41bcfdf63c571be26a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "b407e38d883d15e851f473723768a7a7db7e3607e409114fabb6e3936037375d",
+        "transcript.txt": "ced1a7211bafa8b5baa51edbe3242b30236b31b1aa4981b5bb726a132f1ce061",
+        "before.dat.gz": "0e467e756e0ea5be9fd21ef6f08e88f40c388f8882f201590e35054039f55bcc",
+        "after.dat.gz": "98ac7ce1248e72116d3106173e67a09c78167e2d313c83caec18630c3abb212b"
+      }
+    },
+    {
+      "name": "regen-1000500",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          1000500
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "a307612aaa38fc7f7eda97ee97f2563da7b5bf18c0808ca4c843f53cc84321d2",
+      "after_sha256": "dea2f48755f6188b781d680b476683d1a23825443e1167a2ace36db783aaa192",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "d3c49fa19257e3e4aa847ec192b1a547dedad31407fc0872f98d94426852a1cd",
+        "transcript.txt": "3a15e0325a9421272600499abe7fc930e0b4a0e8040caad5b8d15c3c577c066f",
+        "before.dat.gz": "f16fc33bab3c403192c694c0f1562ef937ee37e96cbaa43b2a561e4ba44964f4",
+        "after.dat.gz": "f9477baeb1244ece8a1f61261efaa66af93443167cb7b6716990f8069b87e49d"
+      }
+    },
+    {
+      "name": "regen-10000000",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "832a99f663af265c0ca252573a00165751e3679b94f529cc646e5e6ec202588d",
+      "after_sha256": "50b45dcb2ff68a0156136c8a87e4a3e2b351be871f6ec312981a5c4f4d537185",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "249777304ea1e533b1bb2ac94b1a4d0790606face57e2324bda1458aec154e07",
+        "transcript.txt": "ba75905927535d965b2d2500a53d83183e63650b02a74682dcd636d5f89aae5e",
+        "before.dat.gz": "21235315f45f1d00cc45c3c47f34d7c0a13ec193ad6aeb6faf5b4b27c52c6f43",
+        "after.dat.gz": "20a89ffe197547ff93d13d37ff07e88899afe59fa8e5160a95414130f0b4fb1f"
+      }
+    },
+    {
+      "name": "reclaim-owner--2",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ],
+        [
+          1165,
+          81,
+          100
+        ],
+        [
+          1165,
+          85,
+          -2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "8f88683d8a75a825a5c235f5d9c07d7e7e79e725c1f8696cd4697b6dcfbc453d",
+      "after_sha256": "42feff2ef08564bfebc0c801a9b546d1d59b9c49a35223f9efa7fdc77706f8fb",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "ce630b28848d86e41e9e831290ed193222013d687ba1ed7a6c3407ebd84c62a0",
+        "transcript.txt": "eb51a2601b407b4c7fc91373fa8fe4a3a7f63e724f2183d745e43d14debfc92a",
+        "before.dat.gz": "01501a0597340bddbfe1ef8632c5c5d6516e321600f59c78aa9948ea10de04e7",
+        "after.dat.gz": "683403ef9fc5d5354cc1ee07e6eb8d92113663a10a0a1f926da4c896e48db13c"
+      }
+    },
+    {
+      "name": "reclaim-owner-0",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ],
+        [
+          1165,
+          81,
+          100
+        ],
+        [
+          1165,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "e98543ec6ff1358b98ceac171c579c8a6d16f29e8de4faff9055da0511b3e84f",
+      "after_sha256": "8f362da5f57928e4647bb005ffc368180411eaa8e246c8fdd27a41438f32e6df",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "28c0ed4b44e18a3d162522641eff7f2921c0e4ecdbc81b96b02d92673f637af7",
+        "transcript.txt": "c678ac2dc3838b2bca9780d352883113acf1ded5890b37b126a68b37d452465f",
+        "before.dat.gz": "c55fcdae476ed049a62e3788bcf534636f94ff2fa3b8ebdd8a95610cb6f3f60e",
+        "after.dat.gz": "90bebe096b690cba9e6e547688fe685bd7aa5d1c88c2a044a07c35f98f839088"
+      }
+    },
+    {
+      "name": "reclaim-owner-1",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ],
+        [
+          1165,
+          81,
+          100
+        ],
+        [
+          1165,
+          85,
+          1
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "1f77078f66f5749e1016235c9f616c2b7dfd5e90241384437c9b457132d84027",
+      "after_sha256": "dddc2fa3a305c8592d6975b751154aa96ab8551b19e74b3511dee808ac9e3c43",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "e47eee5ebaed28d8cb97b277f4ac03a511624ad5b9826b818da6b7558f0f5819",
+        "transcript.txt": "c678ac2dc3838b2bca9780d352883113acf1ded5890b37b126a68b37d452465f",
+        "before.dat.gz": "fe32a91caaa5370252a5e5c407385e94ec12e8e4f1afdb9a0953c169a1ad7f7f",
+        "after.dat.gz": "8a5a6802ec4bc7833cff52f85fcd9bdb712a506956ee2e5313af9fb427e17fa8"
+      }
+    },
+    {
+      "name": "reclaim-owner-2",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ],
+        [
+          1165,
+          81,
+          100
+        ],
+        [
+          1165,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "415f692d36d9ff31926363d9f380f158177fec64282a2c010daf92011d22df4e",
+      "after_sha256": "42feff2ef08564bfebc0c801a9b546d1d59b9c49a35223f9efa7fdc77706f8fb",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "c891254fab4453c2fea91e33d524bc9e527538e2d12d5bbba069ea27f4160af1",
+        "transcript.txt": "cef8ee09efee5c286382788e5e095306654446436d54fcfa5cf2bc363c5a9a6e",
+        "before.dat.gz": "17bc9c82a2529588c1e314078fed4d876294885651d95ee4d3fd9f13ab169f38",
+        "after.dat.gz": "683403ef9fc5d5354cc1ee07e6eb8d92113663a10a0a1f926da4c896e48db13c"
+      }
+    },
+    {
+      "name": "reclaim-overwhelming",
+      "human": true,
+      "patches": [
+        [
+          2,
+          109,
+          10000000
+        ],
+        [
+          1165,
+          81,
+          10000000
+        ],
+        [
+          1165,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "687ba549e38194eb149c38e2768791fb801a40ca09f888292619225229b42600",
+      "after_sha256": "4ff406b9f4351060535d957be4e5c9debd4b338e30bc0b33ca289fe6891988bc",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "277c715143104f841e5ec1685d625d64f4c9773efc7c4d4c11429f4f36b75c7e",
+        "transcript.txt": "e37097a8b8cefb6cb986511ac51fb513f44f7e0f4ac20aa7b3a2466ee4b58742",
+        "before.dat.gz": "30468d4219a6d2ebef2bfafdee55e2028979c8117f380b37c1d9654b3ed35151",
+        "after.dat.gz": "445d0212e1ae00a8d3991a844aed8b0bffcc4d2ba9f53cce1a6a58322881997b"
+      }
+    },
+    {
+      "name": "reclaim-no-score",
+      "human": true,
+      "patches": [
+        [
+          1165,
+          81,
+          100
+        ],
+        [
+          1165,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "ad806ad0f32b9f120d5fbaa19887445c58dd7d9b2eade101e512354270c889e3",
+      "after_sha256": "0061cdec989d3a1b464a684489e6fb1c0a9a08baafe7a1dd58e8d1f14023d45d",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "c6fcd82379f95d49c5bf15299365a651abbf7d317af9b65fcf55039081bd4b74",
+        "transcript.txt": "22bca8de938017e65f48ceaf0c610d2794b452b9b525346bacd1da99387c7554",
+        "before.dat.gz": "ab3f16b56b6b39074d8677bf895efd6c73f94a5fe0e31a80972f5ee7903e63e8",
+        "after.dat.gz": "037aa918359fea10fd5b8e870d384881736ca2c71d06b8134a6d391c4771ff8b"
+      }
+    },
+    {
+      "name": "missing-both-time-04",
+      "time": "04:00:00",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "5e47535fa46e8abb875a6e2ee3cfebb1cb28f16760b61bcfd93bc9ef68db94c3",
+      "after_sha256": "f747d6aef0690e68bb35e0f2a7455389fd028a5b2a6ac6a0461feb511b65c66f",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "21b6dc44174f046507a148c3e155c62484470f61e22b092643c45251570b8c95",
+        "dosbox.log": "b105f9992fa645d9c9d27e92f800893110d0ccb71cf7b974e29a51423de420d8",
+        "transcript.txt": "31c4932caf13bfed28b9123c4e2def43f8f5abc2489d10da855236d677a9c638",
+        "before.dat.gz": "f03b3fd43e98a09607479b49840b6997a6e2cbd5dcdab23c98674f2d24abe4e2",
+        "after.dat.gz": "27350971ae36ce5c6bf8802fdb32d2d92ea10994a4b68f55a1783b27a1f0e01f"
+      }
+    },
+    {
+      "name": "missing-both-time-08",
+      "time": "08:00:00",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "5e47535fa46e8abb875a6e2ee3cfebb1cb28f16760b61bcfd93bc9ef68db94c3",
+      "after_sha256": "46a623f4831fad65396902517c83d5666869270ace6d5087efd2a3ba1daa9cba",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "ebd4ddfbd20135351ae6ff996ec06422292065cfda7d01dafb1a9b33a5cb4880",
+        "dosbox.log": "059843871042965ecae026e9402fb9751fa42fa39ccaf93b9af1fc4fa591608a",
+        "transcript.txt": "16c4f071f9c5e2a81c200bdab8b15f768992a8ae88160906f637716ed4c25fbd",
+        "before.dat.gz": "f03b3fd43e98a09607479b49840b6997a6e2cbd5dcdab23c98674f2d24abe4e2",
+        "after.dat.gz": "402946d9f9c522bf561a4a5e910a38966e8239d7d043c685e6336984ed4109c0"
+      }
+    },
+    {
+      "name": "wrong-home-reference",
+      "patches": [
+        [
+          1165,
+          93,
+          2
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "876f30a0516eccbc15e6cbfa274d829481fba784a781e1ace8517f33170a1f20",
+      "after_sha256": "ed45f4b2e00427ead9dc195df2f5ab06c55244fdfb404f319caa373a0d898350",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "d6a882716a444ba23361551387cb9f905034a300979fe583488879c67a440c79",
+        "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+        "before.dat.gz": "1efee1cc506f98b6d593be09bb4e78a345a0b996860cf51d1e9304adbb639f8a",
+        "after.dat.gz": "bf55989dddc1320cf44dd9cfbecbef7b1f53e69f493291d8a24ade53cebd0605"
+      }
+    },
+    {
+      "name": "recreated-retained-stocks",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          117,
+          0
+        ],
+        [
+          4151,
+          129,
+          37
+        ],
+        [
+          4151,
+          125,
+          3
+        ],
+        [
+          4151,
+          113,
+          5
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "2b289a2e79d9c43f4d19727a985ca52548964b40989759e2a6f49b696957809a",
+      "after_sha256": "25839b091929e7421a31c7d271032eb3f5a257162041e4c8d485b953cd1c50e8",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "e0f0a793563f9e9e59e87909f1ea86fba2a464715e201998bf001ff2c9067dce",
+        "transcript.txt": "e9e172e7f06b2a63eed27be303aaf104599929a7fc6f41d53cb78bbc099e85cb",
+        "before.dat.gz": "22fcdc47960b6675b612357103ccdd9096580c48eab2110fad7744a59a7507b3",
+        "after.dat.gz": "0ae2760711dbf075ed76fd1d401397f05f2938648fafb9535b7d4f89d9cb98db"
+      }
+    },
+    {
+      "name": "recreated-stock-reset",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          117,
+          0
+        ],
+        [
+          4151,
+          57,
+          11
+        ],
+        [
+          4151,
+          61,
+          13
+        ],
+        [
+          4151,
+          65,
+          17
+        ],
+        [
+          4151,
+          69,
+          7
+        ],
+        [
+          4151,
+          129,
+          37
+        ],
+        [
+          4151,
+          125,
+          3
+        ],
+        [
+          4151,
+          113,
+          5
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "6b3845aca017ea8c824273e1dcf8da95cb09fc0577b90def81cbd8236c57e625",
+      "after_sha256": "25839b091929e7421a31c7d271032eb3f5a257162041e4c8d485b953cd1c50e8",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "382fbc2898b333314d08bd957b547ef734d2095c1d9b7a660ebb6443e33fba5a",
+        "transcript.txt": "e9e172e7f06b2a63eed27be303aaf104599929a7fc6f41d53cb78bbc099e85cb",
+        "before.dat.gz": "c6b44b913a9002c6fc46ab25fe456823df7bc5ccb3ade19acab83775ae31bb7c",
+        "after.dat.gz": "0ae2760711dbf075ed76fd1d401397f05f2938648fafb9535b7d4f89d9cb98db"
+      }
+    },
+    {
+      "name": "recreated-stock-reset-inactive",
+      "patches": [
+        [
+          1165,
+          93,
+          0
+        ],
+        [
+          4151,
+          85,
+          0
+        ],
+        [
+          4151,
+          117,
+          0
+        ],
+        [
+          4151,
+          57,
+          11
+        ],
+        [
+          4151,
+          61,
+          13
+        ],
+        [
+          4151,
+          65,
+          17
+        ],
+        [
+          4151,
+          69,
+          7
+        ],
+        [
+          4151,
+          129,
+          37
+        ],
+        [
+          4151,
+          125,
+          3
+        ],
+        [
+          4151,
+          113,
+          5
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "17e24ffb430ac57a631c0736e193b7456bc48bc3adeb000778e0e817f44bde0a",
+      "after_sha256": "e13fdea97f52acaa9d2c9bdfd095497e0f8ccee3eaccbb2affe3cb290d848f2b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "241edb6d53b8d2982cef2bd9521c0b67c5922c4ede8a249e2bd51b83e7aaaf02",
+        "transcript.txt": "0708739254d8172297ca48be3b2d3c74383baf69c4fb37b9eac7d9503caf240e",
+        "before.dat.gz": "c61193bbaef53c242257aa33e7aa6ebe5e88deb4752d4194f264b627b227fe18",
+        "after.dat.gz": "d28eed61fd692169340dc156d99d3971afccbf148f277f47e02b3e83696637ed"
+      }
+    },
+    {
+      "name": "positive-home-reserves",
+      "patches": [
+        [
+          4151,
+          77,
+          100
+        ],
+        [
+          4151,
+          117,
+          1234
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "28fedeab7c5063456e429a9be7b384177dfe09e4270306a5651fdb1d09282126",
+      "after_sha256": "f324b8b798fae1f0e80ce0d8c805789e5d2295eb06f16effee61879cb3f505fa",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "120d70630891c3e851fbb9f3de2a6677215d284b5203d5f5ec4db1ca866afad8",
+        "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+        "before.dat.gz": "b428ac96ac2dc1f9da6bc5fc932b4302e5397d6ee6c51175164a2d9b03940d90",
+        "after.dat.gz": "8c6aaa5e894404531488580f4c976f0ed026d7b330589ecdbe807da00a2c2653"
+      }
+    },
+    {
+      "name": "candidate-empty",
+      "small": true,
+      "human": false,
+      "patches": [
+        [
+          72,
+          81,
+          0
+        ],
+        [
+          72,
+          85,
+          0
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "9f71763693a610191f03b10767d5ea8242ca28b0e085a2779a25b8a9bc007f19",
+      "after_sha256": "daf01c089fdc53afd642b12d14fb5a3f680c670eb100a0cbb0de8ad8bf5045ba",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "8e66ed3324af18cf6662e87989b56cc511ca94f25c58f8bc7ef98a3834173e63",
+        "transcript.txt": "3af2b858628ad5277c37393ecd3f76951e610ff5ceb1d4ece81c712cb23fe9b3",
+        "before.dat.gz": "fdc789584e8201ca12999eb530e17ee0673c3efdabed97dd1903fd24e77ef5f3",
+        "after.dat.gz": "9eb7a24e101a6ef2b57789e560d8b1eb9f52faf01fce49732a4c076543164e18"
+      }
+    },
+    {
+      "name": "candidate-human-one",
+      "small": true,
+      "human": true,
+      "patches": [
+        [
+          72,
+          81,
+          1
+        ],
+        [
+          72,
+          85,
+          2
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "6d5a50288c8fcccab6ba497fdbeb2c85bccb3caaa427327eceedb6a24e07e2aa",
+      "after_sha256": "761a8aa242c2a9c264a82dd7e21e11143123ac1197fb1e3e42f81aca329160ba",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "c45d30f19e6cb81095d1a62c72e73c14f5b2efdd979151fa698d38f30f4a41e5",
+        "transcript.txt": "5e431933bfc58d94d857f302ccd9ad255f4b61251acbee9ebbfbca1887152450",
+        "before.dat.gz": "cd924443a8770ea5603e864b7daa6c21c34692403dda28109c54cda045907e91",
+        "after.dat.gz": "868a314607ac77ce561168c5a0662f2b3553dd1beebaded5fa3a17c6053d6fbc"
+      }
+    },
+    {
+      "name": "candidate-human-two",
+      "small": true,
+      "human": true,
+      "patches": [
+        [
+          72,
+          81,
+          2
+        ],
+        [
+          72,
+          85,
+          2
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "expect_timeout": true,
+      "timeout": 8,
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "f8fca1c9d1013f40ba686ecec310b951fda841d02f7c241384818ee3ae82e76e",
+      "after_sha256": "0da671535e02a4e9827b87f4114c9138c1a2c5258b666ed6fd7dd0d8a85caf6c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": true,
+      "timeout_seconds": 8,
+      "complete": false,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "3181b6f6d8555213b3a3633401fe25175a54319abcdf95a90125e8ece678ff91",
+        "transcript.txt": "8d810ba102754293a86bfbb82171d236ba5d1939fbf851bd7eb67d4cb976667b",
+        "before.dat.gz": "cf02f6cf1fe02c48293a9d4552e7a36bc40c00504428ba8ec3c2df6b91749aab",
+        "after.dat.gz": "cb969a70999b3286077b9c833509dacb368943ab723dc08cee7dda5a26d5c707"
+      }
+    },
+    {
+      "name": "candidate-merc-one",
+      "small": true,
+      "human": false,
+      "patches": [
+        [
+          72,
+          81,
+          1
+        ],
+        [
+          72,
+          85,
+          -2
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "448a664ea562f1b447bd3c4af8174a72b771f33fe558fbf6f363363f99e9f4a3",
+      "after_sha256": "27f37b314914a6c2dd9da7e0ed8a7ae5493dc8e67405d2b24c2bc509e8dc77c5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "689c940e12165e92ac20c1ff841417386335651ec25ffc952c021c9f84645b7f",
+        "transcript.txt": "a7e52743b9afd30a9baaf6d4ddd0cd5a046f09a005a3951d0c5157683382a952",
+        "before.dat.gz": "d7e3c4b1043cf15f20b8fc1ee7fbb9b754b37569b4d59e282a376584444c99cb",
+        "after.dat.gz": "ed0f89f4c1d1894bc1975dfaa2fd6d3fe36e1e2f87aa4f2050a50456ed2f3534"
+      }
+    },
+    {
+      "name": "candidate-merc-two",
+      "small": true,
+      "human": false,
+      "patches": [
+        [
+          72,
+          81,
+          2
+        ],
+        [
+          72,
+          85,
+          -2
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "expect_timeout": true,
+      "timeout": 8,
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "4cc09c5742203da4b96f1f26d095653ca4db71ce70f03fb94b45e04ded9ac6ff",
+      "after_sha256": "a54b49f8a9c5f8a6339fce6a5a1616f21cce0f4da14970a0bb2240b9626416dd",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": true,
+      "timeout_seconds": 8,
+      "complete": false,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "fbe887f8d15789e95d3747eba80cd425c4f34a7a4d4d3b4b3b4b3ea00c249436",
+        "transcript.txt": "8d810ba102754293a86bfbb82171d236ba5d1939fbf851bd7eb67d4cb976667b",
+        "before.dat.gz": "22a897533c5168d5d9708242b141eabb156a4ce7f64818b11285f64849d65708",
+        "after.dat.gz": "302c24b922f9be477ecf6f517949d2150f545c7b44c4960a4fe3cebe72bd3797"
+      }
+    },
+    {
+      "name": "candidate-xannor-two",
+      "small": true,
+      "human": false,
+      "patches": [
+        [
+          72,
+          81,
+          2
+        ],
+        [
+          72,
+          85,
+          -1
+        ],
+        [
+          72,
+          93,
+          0
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "b8cdc10c0108a5a378f5f237b273e1a1b79e7904ee32871cccca83a07d2cfa36",
+      "after_sha256": "e2cb535979c2a1626166154d81db273e99e6f6df4b42629a10cc925bcc1e0471",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "4d275f1ff10f245932329d2f106d5f77887d64b20a42770ec673a542b10bb46c",
+        "transcript.txt": "935805fd534681267e8bac83ca267170dd66146233b2b806cf1486702cac57df",
+        "before.dat.gz": "c10ec21fa7d5fbe4ce8e59efbc71ba31b235a60643fbfa1e490b2aec7aebe398",
+        "after.dat.gz": "b75f5cf44e80d96c17d7d6fd5fb46ee83fb9b451851da76a22486eef1d19c445"
+      }
+    },
+    {
+      "name": "candidate-planet-blocked",
+      "small": true,
+      "human": false,
+      "patches": [
+        [
+          72,
+          81,
+          0
+        ],
+        [
+          72,
+          85,
+          0
+        ],
+        [
+          72,
+          93,
+          14
+        ]
+      ],
+      "expect_timeout": true,
+      "timeout": 8,
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "after_sha256": "3c6c96393022c3dcb2fdeef283611343e82d263c7ca29c44505b660fcfcc264e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": true,
+      "timeout_seconds": 8,
+      "complete": false,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "a9c28d84d29499687dc80607bcff06219271bd17ff7c98918269fd4d27835f89",
+        "transcript.txt": "2f9abcf254de78e5143caeeee939718f023d75a7fac84bb5c3d7e26b66b00f25",
+        "before.dat.gz": "a656d7c7d75d6c34b8d04651366dc5e5b8dd266e081374d36f23149ba1e665bd",
+        "after.dat.gz": "5a9e1139617b5d4e5fcc2fd0860e1a8351a2ad93dd2aad842d4fb3c087cdb920"
+      }
+    },
+    {
+      "name": "candidate-zero-hq-positive-score",
+      "small": true,
+      "human": true,
+      "patches": [
+        [
+          72,
+          81,
+          0
+        ],
+        [
+          72,
+          85,
+          0
+        ],
+        [
+          72,
+          93,
+          0
+        ],
+        [
+          2,
+          109,
+          1000000
+        ]
+      ],
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+      "before_sha256": "a58a1e11166e7d1af9608963c2f21fd27d50ced1f718e8466174029e15b680d8",
+      "after_sha256": "d1946391661a0a586fa01c4a383e3eda50959a328136429e41535d499b9db66c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "6a20b38cd65a6cc573f20f62b77f6ae30e3fc61a70dd0c0c5c551572fa035a8c",
+        "transcript.txt": "e289e42790c3d69b1b7c33a55fcef81b636e8d58305d1cbd30d79c2303f0056d",
+        "before.dat.gz": "e97abb43b58fa67c1e59cb0d36956b057fca982c9eecfd70abb68f476932370c",
+        "after.dat.gz": "1b574e417146cb9eaab083c08855bd8864b015c265a3a238b1b1614bf6130c58"
+      }
+    },
+    {
+      "name": "zero-hq-next-day",
+      "parent": "zero-hq",
+      "date": "10/26/2026",
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "7a673b658df277ffd8f5622350d5e4495aa2a3311cece71df132029e87af8bfc",
+      "after_sha256": "e8dd8bef2d67ef96c9f99a3639810a5b72bd9d9b4c6ebc29291dbb3f78c1bca4",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "314febd1ff4ab1faf591d24e5f437942f5976b8f64537e3b1627e1a6c492047e",
+        "transcript.txt": "ac990b12df4877c53decce5be8a67bc9b3d233e901e178744dd544edf9670d93",
+        "before.dat.gz": "3e1bfab5d035ec6d4c7eec2293ec727eb93ff9c146c824e24d704e4cd1fe4394",
+        "after.dat.gz": "5aadf09e283c78a30c2d5b910f965a57f7c767a59490c8ea19f5d537e23df163"
+      }
+    },
+    {
+      "name": "missing-both-next-day",
+      "parent": "missing-both",
+      "date": "10/26/2026",
+      "recipe": "xannor-lifecycle-isolation-v1",
+      "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+      "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+      "before_sha256": "f264853542032727ab2fff8a779154308b4757725c643fb5f70030b17cf3ed44",
+      "after_sha256": "9a4002b0eb5d0db0d2effe5138e505237f9105f60d69bc5e8ecc99f40017f0a9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "dosbox.log": "1a204c49fa13b7601262871f5fcf31a001928815bccb41e11243c5e540418ce1",
+        "transcript.txt": "41f73902f54c5848d9110590e8bdcf58a76eebb13f58e6f6832962c846f3ec1b",
+        "before.dat.gz": "614b46ee5877489ff872d605bcd44fd48d5f2ac98d6bfb9b94abe5f2daf0d2eb",
+        "after.dat.gz": "151ef75f556b755a108d9d2065f59bbc9618029cbb8d688e959c76357d4284f7"
+      }
+    }
+  ]
+}
