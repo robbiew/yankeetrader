@@ -2,6 +2,26 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+## Screenshots
+
+Captured from the current Go game in an 80×25 local ANSI terminal session.
+Click any screenshot to view it at full size.
+
+<table>
+  <tr>
+    <td align="center"><a href="evidence/startup/title.png"><img src="evidence/startup/title.png" alt="Yankee Trader: Resurrection title screen" width="400"></a><br>Title screen</td>
+    <td align="center"><a href="evidence/startup/opening.png"><img src="evidence/startup/opening.png" alt="Opening ANSI artwork" width="400"></a><br>Opening artwork</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="evidence/startup/sector.png"><img src="evidence/startup/sector.png" alt="Sector view and main command prompt" width="400"></a><br>Sector view</td>
+    <td align="center"><a href="evidence/startup/info.png"><img src="evidence/startup/info.png" alt="Ship information and player statistics" width="400"></a><br>Ship information</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="evidence/startup/help.png"><img src="evidence/startup/help.png" alt="Main command menu" width="400"></a><br>Command menu</td>
+    <td align="center"><a href="evidence/startup/computer-help.png"><img src="evidence/startup/computer-help.png" alt="Ship computer menu" width="400"></a><br>Ship computer</td>
+  </tr>
+</table>
+
 ## A little history
 
 Yankee Trader is Alan Davenport's text-based BBS space strategy game, combining

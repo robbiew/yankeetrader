@@ -3,15 +3,15 @@ Local Console Mode
 
 
 
-                        Yankee Trader: The Resurrection
-                               By Alan Davenport
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
           Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
 
                     https://github.com/robbiew/yankeetrader
 
                                  Version 0.1.0
 
-                        Based on original YT Version 3.6
+                       Based on Yankee Trader Version 3.6
 
                                [ Press any Key ]
 
@@ -27,7 +27,7 @@ Cntl-X to Stop
 
 Welcome to .....
 
-Yankee Trader: The Resurrection
+Yankee Trader: Resurrection
 Version 0.1.0
 https://github.com/robbiew/yankeetrader
 
@@ -70,14 +70,13 @@ Team  : None
 | Mines.... : 0           | Organics..... : 0    |
 | Missiles. : 0           | Equipment.... : 0    |
 | Scanner.. : N/A         | Ports Owned.. : 0    |
-| Shields.. : 0           | Cloak Energy. : N/A  |
+| Shields.. : 0           | Cloak Energy. : 100% |
 | Forces... : 0           | Plasma Bolts. : 0    |
 +-------------------------+----------------------+
 
 [ Press any Key ]
 
 Checking for Radio Messages.
-Radio messages are not available in this edition yet.
 
 Sector: 1
 Port: Earth, Selling: Ship equipment
