@@ -56,7 +56,7 @@ func (s Session) moveShip(id, to int, pending *[]string) error {
 		return err
 	}
 	if len(entry.Layers) == 0 {
-		if err = s.Store.Update(func(w *game.World) error { return w.Move(id, to) }); err != nil {
+		if err = s.Store.UpdateWithSpies(func(w *game.World) error { return w.Move(id, to) }, s.Now(), s.Deadline); err != nil {
 			return err
 		}
 		return s.Terminal.Printf("Moved to sector %d.\r\n", to)
@@ -82,7 +82,7 @@ func (s Session) moveShip(id, to int, pending *[]string) error {
 		return s.Terminal.Printf("Minefield entry cancelled.\r\n")
 	}
 	var out game.MineOutcome
-	err = s.Store.Update(func(w *game.World) error {
+	err = s.Store.UpdateWithSpies(func(w *game.World) error {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
 		}
@@ -92,7 +92,7 @@ func (s Session) moveShip(id, to int, pending *[]string) error {
 			return errors.New("session time expired")
 		}
 		return err
-	})
+	}, s.Now(), s.Deadline)
 	if err != nil {
 		return err
 	}

@@ -39,7 +39,7 @@ sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
 The computer connects options 2 (port report), 3 (autopilot), 4 (player/team rankings), 5 (send radio), 6 (message history), 7 (avoid slots),
 9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
-12 (port treasuries), 13 (your planets), 14 (nearest ports), 16 (port pairs),
+12 (port treasuries), 13 (your planets), 14 (nearest ports), 15 (active spies), 16 (port pairs),
 and 17 (adjacent-port trade forecasts) to the implemented game rules.
 
 The original menus and manual include features still under reconstruction.
@@ -100,6 +100,9 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
 | `RANK` / computer `C`, `4` | Rank players and teams from current assets and save all player scores; free |
 | `RANK OLD` / computer `C`, `4`, `O` | Stored scores with current aliases, teams and port counts; free |
+| `HIRE <sector> [sector ...]` / Earth option `9` | Hire up to three spies per login, 333,000 credits each; choose every starting sector |
+| `SPIES` / computer `C`, `15` | List this login's current spy hunt locations; free |
+| `INTEL` | Read this login's last 30 intelligence reports in five-report pages; free |
 | `RADIO [alias or player number]` / computer `C`, `5` | Compose a direct message, confirm recipient, then Send or Abort; free |
 | `MESSAGES` / computer `C`, `6` | Your sent and received message history; free |
 | `INBOX` | Unread received messages; free |
@@ -437,3 +440,18 @@ cached-ore round eligibility is preserved. If all rates reach zero, the planet
 is removed from its sector and every landing token for it is revoked. The launch,
 interception, growth, damage and deletion save atomically. Planet bank, ownership,
 attacker cash and ships are not transferred by destruction. [Rules, evidence and remaining work](research/yt-missiles/PRODUCTION_DESTRUCTION.md).
+
+Spies are available at Earth for 333,000 credits each, up to three per login.
+Choose their starting sectors through Earth option 9 or compact `HIRE` while
+docked. Computer option 15 / `SPIES` lists their locations. Successful movement
+(including autopilot hops), docking and sector-fighter transfers search each
+spy's current sector, then move it along a random outgoing warp. Reports cover
+mines, planet names/ground forces and other owners' sector defenses. Repeated
+findings in the last reported sector are suppressed; zero-warp sectors safely
+hold position. Spy work has no extra turn charge beyond the triggering action.
+
+Reports appear between commands; `INTEL` retains the last 30 for this login.
+Spies and intelligence history end on disconnect or logout; hires are not
+refunded. Direct radio history remains persistent and separate. Ship/cloak and
+disruption intelligence still need runtime evidence and are unavailable.
+[Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).

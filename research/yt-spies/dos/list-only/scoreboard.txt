@@ -1,0 +1,26 @@
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:00:35
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%       11,557,250   None      0    Q                             
+  2   86.44%        9,990,250   None      0    Third                         
+  3   86.44%        9,990,250   None      0    Fourth                        
+  4   86.44%        9,990,250   None      0    Fifth                         
+  5    4.01%          463,000     1       0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+  1  100.00%          463,000     1    Orion                               
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000     8.65%                  0    0.00%
+
+

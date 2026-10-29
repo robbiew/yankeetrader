@@ -8,22 +8,37 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"sync"
 	"time"
 )
+
+// DurabilityError means world.json was replaced successfully, but synchronizing
+// its directory failed. The visible update is committed; callers must not treat
+// this error as a rollback or automatically repeat a resource-spending action.
+type DurabilityError struct{ Err error }
+
+func (e *DurabilityError) Error() string {
+	return fmt.Sprintf("Update committed, but storage durability could not be confirmed: %v", e.Err)
+}
+func (e *DurabilityError) Unwrap() error { return e.Err }
 
 type Store struct {
 	Dir  string
 	ship *shipSession
+	// syncDirectory permits deterministic durability-failure tests; nil uses the OS.
+	syncDirectory func(string) error
 }
 type shipSession struct {
+	spyMu      sync.Mutex
 	id         int
 	generation uint64
+	spies      *game.SpyNetwork
 }
 
 // ForShip binds only this copy of the store to a login's ship generation.
 // Administrative maintenance and fresh login use the unbound store.
 func (s Store) ForShip(id int, generation uint64) Store {
-	s.ship = &shipSession{id, generation}
+	s.ship = &shipSession{id: id, generation: generation, spies: game.NewSpyNetwork(id, generation)}
 	return s
 }
 func (s Store) checkShip(w *game.World) error {
@@ -99,7 +114,14 @@ func (s Store) save(w *game.World) error {
 	if e = os.Rename(name, filepath.Join(s.Dir, "world.json")); e != nil {
 		return e
 	}
-	return syncDir(s.Dir)
+	syncDirectory := s.syncDirectory
+	if syncDirectory == nil {
+		syncDirectory = syncDir
+	}
+	if e = syncDirectory(s.Dir); e != nil {
+		return &DurabilityError{Err: e}
+	}
+	return nil
 }
 func (s Store) Create(w *game.World) error {
 	return s.locked(func() error {
@@ -115,6 +137,13 @@ func (s Store) Create(w *game.World) error {
 }
 func (s Store) Update(fn func(*game.World) error) error { return s.update(fn, false, false) }
 func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool) error {
+	return s.updateState(fn, allowMines, allowDefense, nil)
+}
+func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense bool, spyFn func(*game.World, *game.SpyNetwork) error) error {
+	if spyFn != nil && s.ship != nil {
+		s.ship.spyMu.Lock()
+		defer s.ship.spyMu.Unlock()
+	}
 	return s.locked(func() error {
 		w, e := s.load()
 		if e != nil {
@@ -132,7 +161,25 @@ func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool)
 		if e = fn(w); e != nil {
 			return e
 		}
-		return s.save(w)
+		var staged *game.SpyNetwork
+		if spyFn != nil {
+			if s.ship == nil {
+				return errors.New("spies require a bound ship session")
+			}
+			staged = s.ship.spies.Clone()
+			if e = spyFn(w, staged); e != nil {
+				return e
+			}
+		}
+		e = s.save(w)
+		var durability *DurabilityError
+		if e != nil && !errors.As(e, &durability) {
+			return e
+		}
+		if staged != nil {
+			*s.ship.spies = *staged
+		}
+		return e
 	})
 }
 func (s Store) View() (*game.World, error) {

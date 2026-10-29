@@ -124,3 +124,5 @@ Validation on 2026-10-26 passed the commerce, utility, hazard, encounter,
 follow-up, navigation and avoid-list verifiers, all 4,682 archive checksums and
 `git diff --check`. Negative controls changed a profit forecast and restored an
 unread delivery marker, recomputed their hashes, and were still rejected.
+
+Follow-up: [spies and intelligence search research](../yt-spies/RECOVERY.md) extends the original hire/reconnect slice with controlled movement, mine/planet/defender reports and repeat-suppression evidence. Ship/cloak runtime eligibility remains unconfirmed.

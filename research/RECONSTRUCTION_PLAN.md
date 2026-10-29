@@ -380,3 +380,27 @@ logout scores. Score publication consumes no ship resources and does not resolve
 hazards. No new save fields or version change are needed. Historical scoreboard
 files, unsupported scanner/NPC scores and full NPC maintenance remain separate.
 [Timing, safeguards and validation](yt-rankings/IMPLEMENTATION.md).
+
+
+## Spies and intelligence reports — research
+
+Original DOS hiring/reconnect evidence is extended with focused static search,
+report and movement recovery and controlled two-sector runtime probes. No Go
+gameplay or save format changes are included. Next: implement session-bound
+hiring, active-spy display and supported intelligence reporting, with explicit
+delivery, privacy and zero-warp policies. RNG parity and broader spy/NPC
+interactions remain bounded research. [Evidence and reproduction](yt-spies/RECOVERY.md).
+
+
+## Spies and intelligence reports — implementation
+
+Earth option 9 and compact HIRE now atomically purchase up to three spies for
+333,000 credits apiece. Computer 15 / SPIES displays current hunt locations.
+Successful moves/autopilot hops, docking and fighter transfers search and move
+spies, emitting the runtime-confirmed mine, planet-ground and defender findings.
+INTEL holds 30 session-only reports, with output acknowledgement and paging.
+Reconnect starts without spies or intelligence history, matching the DOS slice;
+the purchase remains spent. Empty-warp sectors safely hold position. World
+version 11 is unchanged. Ship/cloak and disruption reports, exact RNG parity,
+and other DOS trigger branches remain outstanding.
+[Scope, adaptations and validation](yt-spies/IMPLEMENTATION.md).
