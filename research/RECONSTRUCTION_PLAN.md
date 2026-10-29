@@ -467,11 +467,11 @@ recruitment or full-force defense combat. Login-local hostility, one-use quote
 tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
 Daily hiring, NPC route actions and human-defense desertion are implemented
-below. Faction-base restoration and full NPC ship combat remain separate
-milestones.
+below. Mercenary-base restoration is implemented below; full NPC ship combat remains
+a separate milestone.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
-## Mercenary daily maintenance — hiring, routes and desertion implemented
+## Mercenary daily maintenance — hiring, routes, desertion and base restoration
 
 Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
 budget carry, group placement and human-defense desertion. Forty-one completed
@@ -484,7 +484,8 @@ Daily maintenance now hires from summed per-port integer taxes with the recovere
 rounding rules and finite distinct placement. Protected Union sectors and existing
 defenses are excluded. Missing space and the modern force limit discard unused
 funding without carry/refund. Tax debits, hires and date persist atomically, once
-per UTC day; version 12 remains current. Game/store regressions and a real
+per UTC day; these phases introduced no schema changes. Base restoration now
+uses version 13. Game/store regressions and a real
 maintenance/reconnect smoke cover saturation, replay and persistence.
 [Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
 
@@ -498,8 +499,13 @@ failed-path teleportation or repeated activation is reproduced. Human-defense
 desertion now runs first, converting only eligible human-owned groups outside
 the protected Union when RND*100 strictly exceeds their force. Converted groups
 join the stable route snapshot that day; publication reflects current ownership.
-[Desertion validation](yt-mercenary-maintenance/DESERTION.md). Reserved-base
-restoration with explicit ownership policy is the next daily-faction slice.
+[Desertion validation](yt-mercenary-maintenance/DESERTION.md). Mercenary-base
+restoration now uses explicit identity, validated references and
+finite free-slot/sector selection. Captured or neutralized titles are preserved;
+only empty reserves on Mercenary-owned homes replenish. Missing homes rebuild
+without commandeering legacy slot/name matches. Version-12 saves upgrade without
+inferring home identity or creating assets during read-only loading.
+[Base lifecycle and migration](yt-mercenary-maintenance/BASE.md).
 [Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
 parity and additional faction lifecycle combinations remain research boundaries;
 live BBS acceptance is separate.

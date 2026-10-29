@@ -129,7 +129,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	path := s.Dir + "/world.json"
 	os.WriteFile(path, data, 0600)
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 12 || upgraded.Players[1].StoredScore != 0 {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.Players[1].StoredScore != 0 {
 		t.Fatal(upgraded, err)
 	}
 	actual, _ := os.ReadFile(path)
@@ -171,7 +171,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 12 || upgraded.Planets[2].Production != [3]float64{0, 20, 0} {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.Planets[2].Production != [3]float64{0, 20, 0} {
 		t.Fatal(upgraded, err)
 	}
 	disk, _ := os.ReadFile(path)
@@ -182,7 +182,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err = s.View()
-	if err != nil || upgraded.Version != 12 || upgraded.Planets[2].Production[0] != 0 {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.Planets[2].Production[0] != 0 {
 		t.Fatal(upgraded, err)
 	}
 }

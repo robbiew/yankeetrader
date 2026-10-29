@@ -22,7 +22,7 @@ func TestNewspaperVersionElevenMigrationDoesNotBackfill(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 12 || current.NextNews != 1 || len(current.News) != 0 || current.Players[1].LastLogin != "2026-10-24" {
+	if err != nil || current.Version != game.WorldVersion || current.NextNews != 1 || len(current.News) != 0 || current.Players[1].LastLogin != "2026-10-24" {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -33,7 +33,7 @@ func TestNewspaperVersionElevenMigrationDoesNotBackfill(t *testing.T) {
 		t.Fatal(err)
 	}
 	saved, err := s.View()
-	if err != nil || saved.Version != 12 || saved.NextNews != 1 || len(saved.News) != 0 {
+	if err != nil || saved.Version != game.WorldVersion || saved.NextNews != 1 || len(saved.News) != 0 {
 		t.Fatal(saved, err)
 	}
 	w.NextNews = 7

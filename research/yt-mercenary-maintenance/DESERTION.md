@@ -42,7 +42,8 @@ The existing UTC maintenance marker and locked transaction cover desertion,
 routes, hiring, score publication and the day together. Same-day replay and clock
 rollback do not consume randomness or reroll a retained group. Abort or failed
 validation leaves the published save unchanged. The phase needs no new fields;
-save version 12 and its migration behavior are unchanged.
+desertion itself introduced no migration. Current version 13 adds
+[Mercenary-base identity and restoration](BASE.md).
 
 Deterministic game tests cover both player IDs 1 and 2, one/50/99-fighter strict
 ties and just-above thresholds, 100/1,000/maximum-size immunity, protected and NPC
@@ -88,5 +89,6 @@ existing GoDoors replacement to /Users/robbie/GitHub/godoors. Committed module
 files are unchanged. CI on this unpublished branch and live BBS acceptance are
 not yet verified.
 
-Next implement reserved Mercenary-base restoration with an explicit ownership
-policy. Full NPC ship combat and bit-exact DOS RNG/MBF parity remain separate.
+[Mercenary-base restoration](BASE.md) is now implemented with an explicit
+ownership policy. Full NPC ship combat and bit-exact DOS RNG/MBF parity remain
+separate.

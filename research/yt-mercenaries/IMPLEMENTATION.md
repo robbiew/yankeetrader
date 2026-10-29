@@ -61,12 +61,13 @@ An unresolved group continues blocking ordinary actions, including after a
 noncombat refusal. Successful output is not required to preserve a committed
 world change, and a durability warning must not trigger automatic replay.
 
-No save-format change is needed: version 12 remains current.
+Bribery itself introduced no save-format change. Current version 13 adds
+[Mercenary-base identity and restoration](../yt-mercenary-maintenance/BASE.md).
 [Daily hiring](../yt-mercenary-maintenance/IMPLEMENTATION.md) and
 [NPC route actions](../yt-mercenary-maintenance/ROUTES.md) are implemented
 separately. [Human-defense desertion](../yt-mercenary-maintenance/DESERTION.md)
-now converts eligible deployed groups before those route actions. Base
-restoration and full NPC ship combat remain outstanding; route pickup already
+now converts eligible deployed groups before those route actions. Mercenary-base restoration is now implemented; full NPC ship combat
+remains outstanding; route pickup already
 takes planetary fighters without transferring title or ground forces.
 Existing estate conversion already supplies Mercenary groups in ordinary worlds.
 
