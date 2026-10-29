@@ -123,6 +123,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 0
 	data, _ := json.Marshal(w)
@@ -141,6 +142,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 1
 	data, _ = json.Marshal(w)
@@ -158,6 +160,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 8
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].Credits = 100000
 	if err = w.CreatePlanet(1, "Zero", time.Now()); err != nil {

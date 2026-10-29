@@ -18,6 +18,7 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 		t.Fatal(err)
 	}
 	w.Version = 12
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.Planets[99] = &game.Planet{ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: w.Created, Ground: 123, Bank: 1234}
 	w.Sectors[8].Planet = 99
 	old, _ := json.Marshal(w)
@@ -31,6 +32,7 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 	}
 	expected := *w
 	expected.Version = game.WorldVersion
+	expected.NextBattleReport = 1
 	want, _ := json.Marshal(expected)
 	got, _ := json.Marshal(current)
 	if string(want) != string(got) || len(current.News) != 1 || current.NextNews != 2 {
@@ -50,6 +52,7 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 	}
 	for _, version := range []int{11, 12} {
 		w.Version = version
+		w.NextBattleReport = 0 // This fixture represents a pre-report save.
 		w.Planets[99].FactionHome = game.MercenaryHome
 		bad, _ := json.Marshal(w)
 		if err := os.WriteFile(path, bad, 0600); err != nil {

@@ -146,3 +146,15 @@ smokes, Mercenary hiring/routes/desertion/base and sector-fighter/planet-missile
 terminal smokes; mobile/lifecycle/Mercenary DOS verifiers and nine semantic
 negative controls; all 4,682 archive hashes; Linux/Windows cross-builds; Python
 syntax, changed documentation links and diff checks.
+
+
+The subsequent [ship-combat research](../yt-xannor-ships/RECOVERY.md) now recovers
+the ordinary ship-battle and maintenance aftermath rules in 42 DOS controls. It
+does not enable Go ship attacks; the safe holds described above remain active
+until transactional NPC combat is implemented.
+
+
+The follow-on [ship battle implementation](../yt-xannor-ships/IMPLEMENTATION.md)
+now supersedes this milestone's live-ship holds. Foreign-planet holds remain.
+Ship detection/rounds consume the existing route work budget; current saves use
+version 15 for private reports and NPC death attribution.

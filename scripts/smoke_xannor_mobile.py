@@ -17,13 +17,13 @@ def exercise(guard):
         guard.run(play, seed, 'Captain', 'q')
         original = json.loads((seed / 'world.json').read_text())
         stamp = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=2)).isoformat().replace('+00:00', 'Z')
-        for mode in ('return', 'mines', 'ship', 'planet'):
+        for mode in ('return', 'mines', 'planet'):
             data = root / mode
             data.mkdir()
             path = data / 'world.json'
             world = copy.deepcopy(original)
             world['LastMaintenance'] = (guard.day - datetime.timedelta(days=1)).isoformat()
-            world['Players']['1'].update(Sector=10 if mode == 'ship' else 1, StoredScore=4000, Cloak=1 if mode == 'ship' else 0)
+            world['Players']['1'].update(Sector=1, StoredScore=4000, Cloak=0)
             world['Xannor'] = dict(HQ=8, Reserve=0)
             for sector in range(8, 13):
                 world['Sectors'][str(sector)]['Warps'] = []
@@ -38,7 +38,7 @@ def exercise(guard):
                 world['Sectors'][str(sector)]['Planet'] = slot
             if mode != 'return':
                 world['Sectors']['10']['Minefield'] = [dict(Owner=1, Count=3)]
-            if mode in ('ship', 'planet'):
+            if mode == 'planet':
                 world['Sectors']['10']['Defense'] = dict(Owner=1, Fighters=100)
             if mode == 'planet':
                 world['Planets']['2'] = dict(ID=2, Sector=10, Owner=0, Name='Neutral probe', Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.5, Missiles=0, Mines=0, Plasma=0, Ground=0, Bank=1234)
@@ -46,10 +46,10 @@ def exercise(guard):
             path.write_text(json.dumps(world))
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
-            assert saved['Version'] == 14 and saved['Xannor'] == dict(HQ=8, Reserve=0)
+            assert saved['Version'] == 15 and saved['Xannor'] == dict(HQ=8, Reserve=0)
             assert saved['Planets']['100']['Fighters'] == 37.5
             assert saved['Players']['1']['Fighters'] == world['Players']['1']['Fighters'] and not saved['Players']['1'].get('Death')
-            if mode in ('ship', 'planet'):
+            if mode == 'planet':
                 assert saved['Sectors']['9']['Defense'] == dict(Owner=-1, Fighters=100)
                 assert saved['Sectors']['8']['Defense'] == dict(Owner=-1, Fighters=1)
                 assert saved['Sectors']['10']['Minefield'] == [dict(Owner=1, Count=3)]
@@ -80,4 +80,4 @@ def exercise(guard):
 
 if __name__ == '__main__':
     run_on_stable_date(exercise)
-    print('Xannor mobile PTY passed: saved return routes, uniform mine accounting, retained friendly stocks, ship/planet holds, daily replay and compact/classic reconnect encounters.')
+    print('Xannor mobile PTY passed: saved return routes, uniform mine accounting, retained friendly stocks, foreign-planet holds, daily replay and compact/classic reconnect encounters.')

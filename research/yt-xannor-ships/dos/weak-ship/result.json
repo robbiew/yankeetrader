@@ -1,0 +1,40 @@
+{
+  "name": "weak-ship",
+  "patches": [
+    [
+      2,
+      61,
+      1
+    ],
+    [
+      2,
+      53,
+      1
+    ],
+    [
+      151,
+      81,
+      100
+    ]
+  ],
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "2a3b3db9d2933501289871d4abf49e003105b40f388cfad4c5d139cdec3bd447",
+  "after_sha256": "489089894d2f3d1dab320e39c319cd9ff8b761ce1d3a48d71cb892fdcbc2f4d5",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "5f5a4c7b22e8ebd28999d0b6cad551b1e23a0143c0b3178d3ccbad3ef8da91e8",
+    "before.dat.gz": "aa40eaf17dbc3db22cd44b1b8c345694aaea464cb329fce80c897c4f3f765fa1",
+    "dosbox.log": "753e9d74c0d16302affc69a443766279d3938c61a2727d7431cf282912ff25b5",
+    "sidefiles.json": "d0032c45042ee112b64e2fc1b496129036f04b16ddd0e8299898ef3362b9af86",
+    "transcript.txt": "cea30f4eaec96ec153eff517c5899000811e2e620e8ae44462f958d7172f2e46"
+  }
+}

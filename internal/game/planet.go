@@ -22,6 +22,22 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 15 {
+		if w.NextBattleReport != 0 {
+			return errors.New("legacy world unexpectedly contains battle report state")
+		}
+		for _, p := range w.Players {
+			if p != nil && (len(p.BattleReports) != 0 || p.Death != nil && p.Death.Cause == "xannor") {
+				return errors.New("legacy world unexpectedly contains Xannor battle state")
+			}
+		}
+		for _, e := range w.News {
+			if e.Kind == NewsXannorDeath {
+				return errors.New("legacy world unexpectedly contains Xannor battle news")
+			}
+		}
+	}
+
 	if w.Version < 14 {
 		if w.Xannor != nil {
 			return errors.New("legacy world unexpectedly contains Xannor HQ state")
@@ -133,6 +149,10 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 13 {
 		w.Version = 14
+	}
+	if w.Version == 14 {
+		w.NextBattleReport = 1
+		w.Version = 15
 	}
 	return nil
 }

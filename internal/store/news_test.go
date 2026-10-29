@@ -15,6 +15,7 @@ func TestNewspaperVersionElevenMigrationDoesNotBackfill(t *testing.T) {
 	w, _ := s.View()
 	w.Players[1].LastLogin = "2026-10-24"
 	w.Version = 11
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	old, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"

@@ -1,0 +1,30 @@
+{
+  "name": "dead-3",
+  "patches": [
+    [
+      2,
+      45,
+      3
+    ]
+  ],
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "de9d96c834c4d36c5900b800602ac3cf794d29294b0c6ca240c87e4a0d61509d",
+  "after_sha256": "f7361d7d99dda6c6f6f0673a938b0be1a65e45ddd8a4fbbac53c2d90998ed765",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "22d90e9b198955bc1e9705a34459f6ff55120d27b66f3325f64111f09473882c",
+    "before.dat.gz": "b58efeb947d465bedf5f9f94c1741eadb8ac566363208b76f5cf35e4b2daea03",
+    "dosbox.log": "ec13a57adf720d31b60685fde0d0a78be2d52ddcdcad2060e372acdd295435a2",
+    "sidefiles.json": "ae38d19a619f47cc6b14c04cda1309f76a1058b4b0d8526a6f5036be4554cf2e",
+    "transcript.txt": "eed55a1bc84309810df1f4f7b4aad89df741705b521b4d10f8569f22e355395d"
+  }
+}

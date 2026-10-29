@@ -13,6 +13,7 @@ type NewsKind string
 
 const (
 	NewsLogin       NewsKind = "login"
+	NewsXannorDeath NewsKind = "xannor-death"
 	NewsTeamCreated NewsKind = "team-created"
 )
 
@@ -52,7 +53,7 @@ func (w *World) validateNews() error {
 			return errors.New("invalid newspaper event")
 		}
 		switch e.Kind {
-		case NewsLogin:
+		case NewsLogin, NewsXannorDeath:
 			if e.Team != 0 || e.TeamName != "" {
 				return errors.New("login newspaper event contains team details")
 			}

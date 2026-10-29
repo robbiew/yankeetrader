@@ -1,0 +1,30 @@
+{
+  "name": "cloak-one-08",
+  "patches": [
+    [
+      2,
+      125,
+      1
+    ]
+  ],
+  "time": "08:00:00",
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+  "after_sha256": "20b1bd0397cf7228740e029d2f8e12bd2012ea7248e325bdf6f83aa1179f6008",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "ebd4ddfbd20135351ae6ff996ec06422292065cfda7d01dafb1a9b33a5cb4880",
+    "after.dat.gz": "ff4830d561ddbb0e9c2fdc33876ff2a104ef85e3a16d7a0a7fb515dea46b2009",
+    "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+    "dosbox.log": "ecd8c8fec7b1fbdb65e30b71d831fbaceefbc0d8ac148cf66454a45ffdbaafe4",
+    "sidefiles.json": "55e08a39de93b0b946b1668faec27281c4f4dc803f5a7401d31d5a96057488ab",
+    "transcript.txt": "2df7ac084bc1e6d7c526cd38e0cbe9e95f71bf135fd44346d51808d6d8d61f62"
+  }
+}

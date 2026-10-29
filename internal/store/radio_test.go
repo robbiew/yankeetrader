@@ -110,6 +110,7 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 	s := create(t)
 	w, _ := s.View()
 	w.Version, w.NextRadio = 10, 0
+	w.NextBattleReport = 0
 	w.NextNews = 0
 	w.Players[1].Sector, w.Players[1].MineGraceSector = 8, 8
 	data, _ := json.Marshal(w)

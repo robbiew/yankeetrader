@@ -1,12 +1,15 @@
 package game
 
-import "sort"
+import (
+	"sort"
+	"time"
+)
 
 const xannorMobileGroups = 19
 
 // Mobile identities are a daily snapshot of authoritative sector defenses.
 // No persisted pointer cache can duplicate force or survive a group's capture.
-func (w *World) xannorActions(rng func() float64) {
+func (w *World) xannorActions(now time.Time, rng func() float64) {
 	if w.Xannor == nil {
 		return
 	}
@@ -84,7 +87,7 @@ func (w *World) xannorActions(rng func() float64) {
 			}
 			continue
 		}
-		w.walkXannor(group, path, acted, &preferred, rng)
+		w.walkXannor(group, path, acted, &preferred, now, rng)
 	}
 }
 
@@ -182,15 +185,10 @@ func (w *World) xannorUnsupported(sector int) bool {
 	if p := w.Planets[w.Sectors[sector].Planet]; p != nil && p.Owner != XannorOwner {
 		return true
 	}
-	for _, p := range w.Players {
-		if p.Death == nil && p.Sector == sector {
-			return true
-		}
-	}
 	return false
 }
 
-func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDefense]bool, preferred *int, rng func() float64) {
+func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDefense]bool, preferred *int, now time.Time, rng func() float64) {
 	origin, current := path[0], path[0]
 	force := group.Fighters
 	if w.Sectors[origin].Defense == group {
@@ -262,13 +260,20 @@ func (w *World) walkXannor(group *SectorDefense, path []int, acted map[*SectorDe
 				return
 			}
 		}
+		// Foreign planets still hold before any encounter mutation. Ship battles
+		// follow mines/sector fighters; friendly planetary stocks are untouched.
+		if !w.xannorShips(next, &force, &work, preferred, now, rng) {
+			hold()
+			return
+		}
+		if force == 0 {
+			return
+		}
 		if w.xannorCapacity(next) < force {
 			force = w.joinXannor(next, force, acted)
 			hold()
 			return
 		}
-		// Friendly planetary stocks are never picked up. Foreign planets and live
-		// ships were preflighted above, before any unsupported encounter mutation.
 		current = next
 	}
 	hold()

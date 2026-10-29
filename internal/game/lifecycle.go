@@ -91,6 +91,10 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 		if context.Killer != p.ID {
 			return nil, errors.New("self death requires the ship's own player")
 		}
+	case "xannor":
+		if context.Killer != XannorOwner || context.Sector <= 7 {
+			return nil, errors.New("invalid Xannor death source or protected sector")
+		}
 	case "hazard":
 		if context.Killer != 0 {
 			return nil, errors.New("environmental death has no player killer")
@@ -108,6 +112,12 @@ func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 	if err != nil {
 		return err
 	}
+	w.recordDeath(p, context, now)
+	return nil
+}
+
+// recordDeath is infallible after deathTarget validates the locked live ship.
+func (w *World) recordDeath(p *Player, context DeathContext, now time.Time) {
 	p.Death = &Death{At: now.UTC(), Cause: context.Cause, Killer: context.Killer, Sector: p.Sector}
 	p.ShipGeneration++
 	p.Sector = 0
@@ -116,7 +126,11 @@ func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 	p.DockUntil = time.Time{}
 	p.DockPrices = [3]int64{}
 	w.applyDeathEstate(p, context)
-	return nil
+	if context.Cause == "xannor" {
+		p.Credits, p.Holds, p.Fighters, p.Shields, p.Ground = 0, 0, 0, 0, 0
+		p.Cargo = [3]int64{}
+		p.Missiles, p.Mines, p.Plasma = 0, 0, 0
+	}
 }
 
 // ReplaceShip is a login-only transition. It preserves the account's remaining
@@ -186,6 +200,10 @@ func (w *World) validateLifecycle() error {
 		case "self":
 			if death.Killer != p.ID {
 				return errors.New("invalid self killer")
+			}
+		case "xannor":
+			if death.Killer != XannorOwner || death.Sector <= 7 || p.Fighters != 0 || p.Shields != 0 {
+				return errors.New("invalid Xannor death")
 			}
 		case "hazard":
 			if death.Killer != 0 {

@@ -1,0 +1,1603 @@
+{
+  "recipe": "xannor-ship-isolation-v1",
+  "scenarios": [
+    {
+      "name": "strong-ship",
+      "patches": [],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "after_sha256": "c02625780dfb9cb64f57b37c0fcc236640dd59e4e3b683176328f6e63f7f2b29",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "0596e34602b50da233d7a0731926563b80d71552ebc84abb13e47d7d0d4fb1bd",
+        "before.dat.gz": "5baf4f916a192266611758d02992d1dc09e811739f997aa4fcef75d6fdbac074",
+        "dosbox.log": "2b4646fffe280382bffc2e6cbb00f31a6479f0811ef8ba5cef10ab6ad7530816",
+        "sidefiles.json": "72f050d9fc9dddaa534748b506d3a58d4d2c694e3aaab3eb8e86ad582642f493",
+        "transcript.txt": "644a02bd7bc9b163ba45c5b153c343fd075ce1595896fafc7f8f3bcb876d945c"
+      }
+    },
+    {
+      "name": "no-ship",
+      "patches": [
+        [
+          2,
+          57,
+          7
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "e2c9d915af497c932af6bcae17333be7b839aa2d1902678d2442a5402e18f7b8",
+      "after_sha256": "2c92b54aa2fa4ac47b7fe73be9acda6eb2a38b76c9590112fa45dee60d48c3f1",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "02b143dc9af52c3640d15e3f4a5b77e8c478def735b1a67c812406091057ba5c",
+        "before.dat.gz": "e060ecc7fb6ba61811db28c074df102d92090757c7fef71365b55b73ab039d9c",
+        "dosbox.log": "39604c25956286c71d6af7033f1033cb15e72d16202301d2a7a3a0f11d6b1c4b",
+        "sidefiles.json": "18204e3534ddae64a9d313bcd34104104bd5e55c3542a98ec6247ed949afe666",
+        "transcript.txt": "90cea1e9c6b29976d1a6b63f638f100a47825d7b011069d4e2e4685ce2d01b10"
+      }
+    },
+    {
+      "name": "origin-ship",
+      "patches": [
+        [
+          2,
+          57,
+          100
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "4ff97fe874b83d94736ee2cc2363fcd83f396bdd08df43aa4bb45ebeab20b6cb",
+      "after_sha256": "b576dd79c46873e3be8e4ff331214bdf98c008f0661047f5d463e38b192edd49",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "44f29b81ed8b95dd4ff2bdc1ebd0b7d0de33a40e057a6a5d1eab60dbcd4d7282",
+        "before.dat.gz": "4a95d800a710645fdca9de719d2ccb4f9e47c0e5a5887b80ddcc1f0b6321fcd4",
+        "dosbox.log": "6e0578b6d1a19f11da2230894535480c78b2505037f2e55f43a6b22c90c21348",
+        "sidefiles.json": "18204e3534ddae64a9d313bcd34104104bd5e55c3542a98ec6247ed949afe666",
+        "transcript.txt": "90cea1e9c6b29976d1a6b63f638f100a47825d7b011069d4e2e4685ce2d01b10"
+      }
+    },
+    {
+      "name": "hq-ship",
+      "patches": [
+        [
+          2,
+          57,
+          1114
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "660ab6543f4f7dc86649fca3e073c8eed61b67df434fb3f5d0eea4655dc2aaca",
+      "after_sha256": "f28c6655449a344821b391e393b458badf97c31c9c21930756e7d352dfcea420",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "0a06514485128e51971953bf1207ad8b14317cac7c3c1e26ccf8057bedd62b34",
+        "before.dat.gz": "458e9f4761e1585d5ff71866d911dab32981dd237056056ce6959b9c006112e0",
+        "dosbox.log": "e454eb6462afe98b006dda52ea5d6674790c16aa48e81eb715218f9cd1e4bde2",
+        "sidefiles.json": "4870950408a8629f431a432305cca1c3885f958634a61754f30b5e271fbf4b94",
+        "transcript.txt": "7abd8260e8f684a87d298df69392f51d7da7d613e912dc0f5d46e6ccc15fb766"
+      }
+    },
+    {
+      "name": "fighters-only",
+      "patches": [
+        [
+          2,
+          61,
+          1000
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          100
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "9ba34280f47a8f16730b1f5a9bd100b8989a64ee8aceae36ed06cfd53b8a2b8a",
+      "after_sha256": "7cca4d078e3750dd95447382b9158770baf43ac973e8f559ec61724e564afc59",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "6bfe3b848ed6c9248637c33083b37da219f3fd9e6ae6735b6ab459358c7a97ab",
+        "before.dat.gz": "59791a2c1ceed32093de3ef5b646831eed39d9612c1ca017404cba47322672ad",
+        "dosbox.log": "06f7655a99b0587e6aa78c32bf09a4c13fab29cb9f1d051f2eb75af4cc711301",
+        "sidefiles.json": "b5f62df19df0d7cf5ff92be93d215c0f90237a44d7257005667cdcc0beebfccd",
+        "transcript.txt": "76bf37b5836ab502ab9776d162509145406ba4e7a5a56e1473103c24c9d1a82d"
+      }
+    },
+    {
+      "name": "shields-only",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          151,
+          81,
+          100
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "7396fa274fb7f01ee9baf106dcf7336f5f15f06a7e021bdecdc561006e51e90b",
+      "after_sha256": "bb5ea2fc7dbcfac66328ce461118108ef9f5d33921241cf780f1236cb653544c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "c8e0456f7da9a9b8adfe5d9a4e5b1b03a4e1d21a4ba1d896214dedb7fbf9a5b0",
+        "before.dat.gz": "452d427ed713416153071094bfbaf979565792feb9dde7f3e0bd60b94783e0a3",
+        "dosbox.log": "0233ca2fa19bb7486f0998a72f569e64a9da4516017955dca72e9c61d6a86a80",
+        "sidefiles.json": "628184165568d8e552422b6b52b2fea3d049aaf479394f5b2d220b691841c5f2",
+        "transcript.txt": "867ac52c000be1c9adba133d9e9c0e57ce89a6c796e126b250a984c68704d0e2"
+      }
+    },
+    {
+      "name": "unarmed",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          100
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "6adf6558d8b5d7e56847815dd61a820af6f2abb14e57308ec07c29b2af5c80ab",
+      "after_sha256": "d3205199c0962b6431df85fd7ddf598b3b22e0e3a7242986cc85cf359a893bce",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "eb74c26dbb2bd8a0a27b78c4cefcec9dd2efb73111c34944dd226e1ce8ce736c",
+        "before.dat.gz": "4992eb1dc4a932af997d27b4cbf95e34583122f4ecdd9f937402ee9c6bb6ecf1",
+        "dosbox.log": "e92987cfe3e6109a63618694c7891c25e201d2b8364c66934b20068e3954bd09",
+        "sidefiles.json": "371800c627a55addd6d2d3543149ad632bbd4c40d351045320f68f505a6463d8",
+        "transcript.txt": "290538c6defe73bf7b5f84c3bb1f467edd243a3faa962bffe68d2b5e625c24d5"
+      }
+    },
+    {
+      "name": "weak-ship",
+      "patches": [
+        [
+          2,
+          61,
+          1
+        ],
+        [
+          2,
+          53,
+          1
+        ],
+        [
+          151,
+          81,
+          100
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "2a3b3db9d2933501289871d4abf49e003105b40f388cfad4c5d139cdec3bd447",
+      "after_sha256": "489089894d2f3d1dab320e39c319cd9ff8b761ce1d3a48d71cb892fdcbc2f4d5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5f5a4c7b22e8ebd28999d0b6cad551b1e23a0143c0b3178d3ccbad3ef8da91e8",
+        "before.dat.gz": "aa40eaf17dbc3db22cd44b1b8c345694aaea464cb329fce80c897c4f3f765fa1",
+        "dosbox.log": "753e9d74c0d16302affc69a443766279d3938c61a2727d7431cf282912ff25b5",
+        "sidefiles.json": "d0032c45042ee112b64e2fc1b496129036f04b16ddd0e8299898ef3362b9af86",
+        "transcript.txt": "cea30f4eaec96ec153eff517c5899000811e2e620e8ae44462f958d7172f2e46"
+      }
+    },
+    {
+      "name": "fighters-499",
+      "patches": [
+        [
+          2,
+          61,
+          499
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          500
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "327c44a858a74b5d558d3e0ebaa293e1402ededd7ccb3bbbf775e63662d97a7c",
+      "after_sha256": "bab53d1342bf7828e9bf462f2161361ff189419212f639670708c2532cc0b67e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "937a657ed1b6e5ffa23a03e2c2fbe37eb84ba2ec2adf893fcfd70d4609f89f42",
+        "before.dat.gz": "95ea0a0e611e8e2b41288b6249b4cebeb84106bb52294b1a0b6c7ab0479dd684",
+        "dosbox.log": "e4b6337affdd5cc5c78b281948363f9ce225551af23f4bf573767b7cb9db14fc",
+        "sidefiles.json": "edd8686dbf9d1118108dcf6bace643dabeb353070680cde3b8c2acfed6578eea",
+        "transcript.txt": "3e086524f3b4005bbe36765177cc8a6a0fac0b008c68ec41d7208461f5d3b4a7"
+      }
+    },
+    {
+      "name": "fighters-500",
+      "patches": [
+        [
+          2,
+          61,
+          500
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          500
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "3e63bdd0ed34dff85d0762c6426c898fe13d2514cdab0ace64a495694d40091f",
+      "after_sha256": "a72758739996a3748c6d0a31ef7f628147b2d92b790d932b07cc7a5386b546cf",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "95185c6e40219ef2424a91e0f8b24b94e6475b2477910ed648fdb4f6a781aa4e",
+        "before.dat.gz": "49ce0aa876381f9130dfea37730f2352e6f6f08fe19f831c02d023b6cf39f2f7",
+        "dosbox.log": "db023c5c67388c2ba3fc220ad066424b41a9e79aa46340ca1e1be665bb8daabc",
+        "sidefiles.json": "22f9aff5ba3086cc3733295a50c8c070f1541f82b6e550c329fd162518caa229",
+        "transcript.txt": "b7c589d64fd88eb8bf6706b260222b50137bdb565b58736d46f5b684e8fd8e49"
+      }
+    },
+    {
+      "name": "fighters-5000",
+      "patches": [
+        [
+          2,
+          61,
+          5000
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          5000
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "e7ea5aed976ee53d1c81e9da989ca5b8cdf74ea399c65d6b41d811acd545e664",
+      "after_sha256": "227210491eaf1b8912b315c5b982769b61e9603297c2ef6b308e82ef3cebf942",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ee6382cbe8baf3b0b2eba2594cc004d9955d3193de4001e12222e453193edfdf",
+        "before.dat.gz": "25e7cba1bff0661ae93d95a8adc12ee64bde7338f6556affe1054daf10de5f92",
+        "dosbox.log": "df834ea6829ba3c18f251024fbd31b3ed5dcf885e86640737cc88abda252c47c",
+        "sidefiles.json": "b0d5b3ec774b9e8f3f0cedb042c98f030649e7819cd209cfdf7a5311aea6344d",
+        "transcript.txt": "93d959ceed4ada2a2095e140e3fb41d822bbd9852a487be855c806abe4d60528"
+      }
+    },
+    {
+      "name": "fighters-5001",
+      "patches": [
+        [
+          2,
+          61,
+          5001
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          151,
+          81,
+          5001
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "21986c11f2f51a8c7a8a418ce8b439d37c8a20f456aa991371fac074c46ca99a",
+      "after_sha256": "3fcf475094461e82b830889b578801f4ece473299dce405ff6bde282969f9c3a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "bc8199e69c3601dd004194d3b3abd3130bf022fff9995d6e112546468545af8b",
+        "before.dat.gz": "785ad84d7b5d7df9e7101f0d8c00aae452f293bd4848103b4a44f533112cb88a",
+        "dosbox.log": "c3ff5ea9328ceccd8532dc0a588d40d5247588d9a19427a908f6e5e170cc9256",
+        "sidefiles.json": "cfdec883ed9716ce9dbe50fe982b94da2c7ea0c6bd9220bbc1408184eccbfda7",
+        "transcript.txt": "f95e2bf93d6d420976ca697eecffade47e8b91b5854a989ca37a753b6949f1b1"
+      }
+    },
+    {
+      "name": "shields-499",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          499
+        ],
+        [
+          151,
+          81,
+          500
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "01b320fff973f22124eb42e22d73f8f07e09a8305d26a4f617aa1d4b0a8f2272",
+      "after_sha256": "a7cb554fefa99bedf3c6252d3635981ddeaa13f3dc22f595da902efe5cb982a5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "47bfaedd77b5578b5d4f52ef2da3befbb2faf0d19c31384e79729a1b96c8fecf",
+        "before.dat.gz": "3f55e14ea13682d06d7754f3b8680bdfa7cc401aae11248580ce2a86f77bdf1d",
+        "dosbox.log": "9851d409b1977759eb4d58efa4c508b11f8d8813d53b5fff9edf64b0608ba442",
+        "sidefiles.json": "0c80175c8a3ad33f86dea1129004f11d53f138d1bb1ce1f27f8cf52a4d669d17",
+        "transcript.txt": "075356d1485853b18299237f6154a85e52164bd8ca8ee07a4ae8671475d2c3e3"
+      }
+    },
+    {
+      "name": "shields-500",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          500
+        ],
+        [
+          151,
+          81,
+          500
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "38b70f115a3ad05ab02f2125ab57c7a28f4a0be4e434878a8ed639c874ce63ca",
+      "after_sha256": "567faf19cb05797e7e0f79451c7bfc931a8e2c893596ea2a69a194ef4bc80529",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "e433d33738545547800d3e7bbef81441baf8de15f72ce510e882f153e9a9a975",
+        "before.dat.gz": "4e779201b97269f1dddb1e44d49691cf888a534cf45d5bad8f5e42b3452edc60",
+        "dosbox.log": "281e84a057b8d8124de32667cfe300d35afa1b854ef92e01216e9fdfdfab8902",
+        "sidefiles.json": "adad3a92f2ba663359fbca064e903346cd986fe939da7de39e436b2b1281be27",
+        "transcript.txt": "4c79f258893954ba796045b68e5d3072a64d3e5e6472a4e4f30a1b76a770d772"
+      }
+    },
+    {
+      "name": "shields-5000",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          5000
+        ],
+        [
+          151,
+          81,
+          5000
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "9885fd539607e9a9e0580a01669c86b80d8acf413c892aa0a27faa66a03e5b0b",
+      "after_sha256": "c8736f9c20034cd3387b4420e3676df9cf9a1c72785e927b1353ad4adc981332",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "b3aa887e93cef5a04a73396fb0eec12b41f4c1ca2ff5a85785db7229b66074de",
+        "before.dat.gz": "8c4b1e1f61d0a906de1b10b9400b85a78827815f43f464bd192527fe449f0c16",
+        "dosbox.log": "1a2edb7dc0cfd14cb26f48c40f01c4133daf4e743088dbbeb3a7a3185b52d946",
+        "sidefiles.json": "6bf8c1cd68b43227b64a6c62fc1e8c319d9573933923d37757c6b7079a09cc08",
+        "transcript.txt": "b698c6d9fc27b48983a4209902a6a77f9dc0776ab87a7793bcad3c25ce8dd267"
+      }
+    },
+    {
+      "name": "shields-5001",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          5001
+        ],
+        [
+          151,
+          81,
+          5001
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "0825048104c12c3af33b2edde04e1f80506d7302c635a0622ba395d394d72a57",
+      "after_sha256": "e6393f12077934a7d382e8729145496f2973ea88320a5367391c70cc0221c4cd",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "875bc4b162ab7b37914ab65bceb6db9a1baa279954762359aff0a09b72a82dca",
+        "before.dat.gz": "492da49c8812d5e76917cb546e441e0a29e6a38b76c8b317a4024e2af2b8c39a",
+        "dosbox.log": "f77c4cae0d824bdcf1a25a0ef76223557cde1f7433f5ab081b255c9dba993102",
+        "sidefiles.json": "8bfb5116a0eee27d407231a4f9807c240588459e0f718f28fb3599c35489647b",
+        "transcript.txt": "5730330e9afda996f67eef9458622aa95fbd86a876e01111464c7902a1279a3f"
+      }
+    },
+    {
+      "name": "staged-5000",
+      "patches": [
+        [
+          2,
+          61,
+          5000
+        ],
+        [
+          2,
+          53,
+          5000
+        ],
+        [
+          151,
+          81,
+          10000
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "a506abbdeb9eb49698d949d8f40242c96f15725e6064762389370c0f95cfd40d",
+      "after_sha256": "68cf6c2e485a387dfcb669cde7d8fe388ddf5d61da40e364bd5da52c9d52bab2",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "260d2ecd79ce9779eea7b1bbf15f1137cbacdb6f2d3b43c7baf72a99c4308a41",
+        "before.dat.gz": "13f94af26722324b02717b93eda6d59478fd022abd2450ffefd8b4d3b9255cf9",
+        "dosbox.log": "9e86e11cae41a88afb31ba46b7a7d6ddb2e58e2467c04bf5b1bc93eb5a71dc27",
+        "sidefiles.json": "24ce160cf2f0e6a5449f4574555875659d0cc7f889fe02571ab42b46e47380c3",
+        "transcript.txt": "824ba9dcac0d3548a238f68c5a2297fbde1d89c9d8f57f04e8e47f4e8a093452"
+      }
+    },
+    {
+      "name": "cloak-one-00",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "00:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "96199d9e1a0aaf484c9bbb460a75c1132307d51b5d0dbff7c95935c8a6c11e78",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "205cc4b554a6047cffeb7c15bb8cbd3acc9982646b47719a0144b829bc52dd70",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "90b4ef66f6676ece99fa256153585da5428371673ec58725a8b35b2e71bd5cf7",
+        "sidefiles.json": "18204e3534ddae64a9d313bcd34104104bd5e55c3542a98ec6247ed949afe666",
+        "transcript.txt": "90cea1e9c6b29976d1a6b63f638f100a47825d7b011069d4e2e4685ce2d01b10"
+      }
+    },
+    {
+      "name": "cloak-one-04",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "04:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "213053946367605ffcb3d8a8f7a522976e98ea7d365498dfe2176321cc4272f7",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "21b6dc44174f046507a148c3e155c62484470f61e22b092643c45251570b8c95",
+        "after.dat.gz": "9d50b0c56df09ce61ce11b1311122af5d64b4ab45ca03e1ab8ccd00d47df3e3e",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "b3e127e6787c4772a190bea2cde9d680a8096b1f9c6b6c2e2f489d54e6213f00",
+        "sidefiles.json": "1b0c776251a50690ec7eed89834512f96614e2a25caf56ada9ea0938743e0552",
+        "transcript.txt": "1f43d85543235c7ce5cb9faa5611f56b16215b8e3c21b3a8fef5377d1b049611"
+      }
+    },
+    {
+      "name": "cloak-one-08",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "08:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "20b1bd0397cf7228740e029d2f8e12bd2012ea7248e325bdf6f83aa1179f6008",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "ebd4ddfbd20135351ae6ff996ec06422292065cfda7d01dafb1a9b33a5cb4880",
+        "after.dat.gz": "ff4830d561ddbb0e9c2fdc33876ff2a104ef85e3a16d7a0a7fb515dea46b2009",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "ecd8c8fec7b1fbdb65e30b71d831fbaceefbc0d8ac148cf66454a45ffdbaafe4",
+        "sidefiles.json": "55e08a39de93b0b946b1668faec27281c4f4dc803f5a7401d31d5a96057488ab",
+        "transcript.txt": "2df7ac084bc1e6d7c526cd38e0cbe9e95f71bf135fd44346d51808d6d8d61f62"
+      }
+    },
+    {
+      "name": "cloak-one-12",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "12:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "2717b8396cee67dd40e6e9945a93d2b863a571d4d856b83bb1dd7ffdd876d9f1",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "2ff210792f88e484af91b2ead495f870abb227b053cdc038045a05f9de7ea6d9",
+        "after.dat.gz": "8b308a2c9a7ee3266241036d320aadabac7cf55f5ac01d497a354923bedeffbb",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "7030f6c2acc24c6d02b6bcbbd655cf6966346f6efd024d3484faf3d148c08b12",
+        "sidefiles.json": "073c85271a2f85c18ec4d1dae8f7218131c56f0397ddfd79da016a12127df53c",
+        "transcript.txt": "74d170a3be45e2b34b529acdc6e0f3cedf63d0602fb66af2d7b250929742653e"
+      }
+    },
+    {
+      "name": "cloak-one-16",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "16:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "14b51c6f40d78ef31abe125cd4a0adb061b802eba13a015aa0e6fbb8a4d2ff77",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "26d26360981f9faccf94d29fef474536216dd9a212767c5cc6cdb76c93d073ed",
+        "after.dat.gz": "3d7f4d3abdee233f0bd1a1c2e44aa3f1b95e78625e5d1661db59c04185122a18",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "61187c6d121af103cd1ee055fca4fce531112f4693b708efa7aaea016a023351",
+        "sidefiles.json": "1dd5e1e904c22df36f11e36e79f43d90ad3a72ccb75b29ec8b25d401c8cdc38b",
+        "transcript.txt": "cf440b716d8b1c7582148f2329b5f73691add3516a48e5dab7d38f946aeaa609"
+      }
+    },
+    {
+      "name": "cloak-one-20",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "20:00:00",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b67cc0258a5cc480214aead6504558e3cc7c7f777e6c2b23cb6e9518a69125b2",
+      "after_sha256": "b7e0c4ba04c534219d89ac359d2ea058e174c76cdeaa1ef0df81eeea1f192be2",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "f1cea85e27101db8ee5b046c4d62294e1b832e79965c14a0a49ac727899527d7",
+        "after.dat.gz": "6d832c60b39070c1b3d6e48868f8d92920044ce95ace9717ff7bcb8e4d0ff377",
+        "before.dat.gz": "1705a12eff093415e5b3bac0a6971d15be97ea9e524f44621876614def547381",
+        "dosbox.log": "7ccbf48f585a40215919a045a2011e7df4480144be6606471c3137d8f01d1da1",
+        "sidefiles.json": "33041de46662af239b0e2b6b94be33d849bb98283e3e0c75698ef1f69b0e9f64",
+        "transcript.txt": "42e6447671b726e8473afd5fd5d2c71f578590e5838f8f89dfad29926ee42df1"
+      }
+    },
+    {
+      "name": "cloak-diagnostic-hidden",
+      "patches": [
+        [
+          2,
+          125,
+          10
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "460c58021353b1df683fbcd1d8c594c7275dfb66a3af00f2a215e968d7b6224b",
+      "after_sha256": "aa1d72695556275dfd3456d0459f89633adddacdee20ceeb970817f5ff52c952",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8249f432e001bac1c025cd4f5c3083ff19ae7ef41538ff8cdee640f395eda31d",
+        "before.dat.gz": "8aab53b7192d9a215f913b2cd29368e133aee04e5b6f8d462e0259acdab97acc",
+        "dosbox.log": "e7cdc61813b8d8822c9a85636e16247a69962caf8f138e085bf2bb312da8ca4c",
+        "sidefiles.json": "18204e3534ddae64a9d313bcd34104104bd5e55c3542a98ec6247ed949afe666",
+        "transcript.txt": "90cea1e9c6b29976d1a6b63f638f100a47825d7b011069d4e2e4685ce2d01b10"
+      }
+    },
+    {
+      "name": "cloak-0.33",
+      "patches": [
+        [
+          2,
+          125,
+          0.33
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "f573166d1fb9d81150ed0bd7c3662ac29b81b9b87bbab3e533b087e12acba8b2",
+      "after_sha256": "c5fd4f881a03ba557ac3eaab50dd64d25d9038caa6ad013095cd006a72429564",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ccf32fdf53b32719bd37b5ae47bfe606a6bdacc20cbbf697573230da06c90d0f",
+        "before.dat.gz": "d2d759f5638079ee7df8ccd949b41d67753569ab37eb1d4506e525849a634b48",
+        "dosbox.log": "c73b20aba44ec82675fcae188b70eaaf6ecb679b95b90fdebe9e32ae6b3b5196",
+        "sidefiles.json": "72f050d9fc9dddaa534748b506d3a58d4d2c694e3aaab3eb8e86ad582642f493",
+        "transcript.txt": "644a02bd7bc9b163ba45c5b153c343fd075ce1595896fafc7f8f3bcb876d945c"
+      }
+    },
+    {
+      "name": "cloak-0.66",
+      "patches": [
+        [
+          2,
+          125,
+          0.66
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "6fb40f43844fea803cddd9dbf48a13a877f255bc08ecc2372240b4f880d3abb3",
+      "after_sha256": "702668bae1c18ada3c516037db203e97a74e35f915ab87df9112c0697b81fbb9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "888ca913a8d643f48be2786a4275984a42b81c8e9ce7bf0201468f285eec263a",
+        "before.dat.gz": "75629b89c097b649a858df0afaa5f2856658570aa868f34628fda753e78efd9d",
+        "dosbox.log": "86f326ea5a60d60b37b4fd266c788c735d3dde4921b81b90ea6c819d9b3d6917",
+        "sidefiles.json": "72f050d9fc9dddaa534748b506d3a58d4d2c694e3aaab3eb8e86ad582642f493",
+        "transcript.txt": "644a02bd7bc9b163ba45c5b153c343fd075ce1595896fafc7f8f3bcb876d945c"
+      }
+    },
+    {
+      "name": "no-missiles",
+      "patches": [
+        [
+          2,
+          97,
+          0
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "72603767480b63883154725b3577bd943ddf237f820d2595da008b8ab9316fdd",
+      "after_sha256": "94306bcf40e908437c2afeaf5f02f1a3411a5a1806721dda908c121ab11d148d",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "428cbaa78038ccc16a1bc7112d504fbbb71b1b93cf9e33e23953f5a36d1f9d57",
+        "before.dat.gz": "4c2d8f013ab8266f216390b994e0737f84b136fad0b790c5bd32f416bbf5010a",
+        "dosbox.log": "0a42f12424adf2c428e976ce0c06a2e39b3479224911216be51c696ae4344701",
+        "sidefiles.json": "c5fea70cc03db4de40cba0f4b7867c4a37807954aef70e9e69f8513d182b5f8b",
+        "transcript.txt": "52fbae30c9642e455ce043ad782dd62cde415ce5b173770f3502c827495ed29f"
+      }
+    },
+    {
+      "name": "many-missiles",
+      "patches": [
+        [
+          2,
+          97,
+          100000
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "bc5ce001c8d9ec10b5e581f1f7461aaa0a7d2a843eda3f72006e82d3037662f5",
+      "after_sha256": "40dbffe6b4aefb0c9d443197ec16a13621284c79026e14fe35bba680c9ee5f74",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f889a0347f73426fb7127dd832677e2d68afc3d13bdc32f804d3b1e3e1cf0229",
+        "before.dat.gz": "d58fee5a61b90d5d5f5cea4aab150050beb21564971ea2dd188f9fdf58f0c2f7",
+        "dosbox.log": "abae65b1575e7143d4c142eb3f940e51b818aeecd8e24c63316fd8cc48482b9d",
+        "sidefiles.json": "1eb288e403dcc5f4968dc32197e0e939f5f9a5423c9313407dfc029872f7fcb5",
+        "transcript.txt": "b4784f28c141f4e89b277ff901371601e6b653c0655e319a340c7dd1e2a86df1"
+      }
+    },
+    {
+      "name": "dead-2",
+      "patches": [
+        [
+          2,
+          45,
+          2
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "67d5a034eedce11c40b66532d756213845be2cf1713a89fd4837a36304978785",
+      "after_sha256": "13e624a15e05a3dfca81a35c978dd08238a1bdaead21dcc655efd84f3b1b8cdc",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ac31b1707e30b4848923622560055200c5a70ac7f9205f227a7ca35d2084e005",
+        "before.dat.gz": "ee6473228a3cb5d7768acb5b852984a75956b59eb6f1b19023691dad311eaa08",
+        "dosbox.log": "d92b471a81236f2df4067dc4cc2bf8f8191c8d261d05acc1442dae78d871bed0",
+        "sidefiles.json": "ae38d19a619f47cc6b14c04cda1309f76a1058b4b0d8526a6f5036be4554cf2e",
+        "transcript.txt": "eed55a1bc84309810df1f4f7b4aad89df741705b521b4d10f8569f22e355395d"
+      }
+    },
+    {
+      "name": "dead-3",
+      "patches": [
+        [
+          2,
+          45,
+          3
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "de9d96c834c4d36c5900b800602ac3cf794d29294b0c6ca240c87e4a0d61509d",
+      "after_sha256": "f7361d7d99dda6c6f6f0673a938b0be1a65e45ddd8a4fbbac53c2d90998ed765",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "22d90e9b198955bc1e9705a34459f6ff55120d27b66f3325f64111f09473882c",
+        "before.dat.gz": "b58efeb947d465bedf5f9f94c1741eadb8ac566363208b76f5cf35e4b2daea03",
+        "dosbox.log": "ec13a57adf720d31b60685fde0d0a78be2d52ddcdcad2060e372acdd295435a2",
+        "sidefiles.json": "ae38d19a619f47cc6b14c04cda1309f76a1058b4b0d8526a6f5036be4554cf2e",
+        "transcript.txt": "eed55a1bc84309810df1f4f7b4aad89df741705b521b4d10f8569f22e355395d"
+      }
+    },
+    {
+      "name": "dead--1",
+      "patches": [
+        [
+          2,
+          45,
+          -1
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "fa76e4c2bcf5cfbb330c7cf89a87b76abacd8faf7743f26891b71121fdcd8ee3",
+      "after_sha256": "a67cf1f2f7f420c66dff8c571d4e8f021a08c11a44e9c7dedf685981b8a32569",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "1090565db46be1709171753a0404ebb1f1580b03548a9e70e23c0b1ae6c1dfee",
+        "before.dat.gz": "c61d9a29f1a7a52f44e373a2d1c43d54e16ef8aac6a903eae6ab638a89916869",
+        "dosbox.log": "14bb60d30d29d6502cee013205dc00f19f628e2ae967d5eb9d717fec4e64b2a4",
+        "sidefiles.json": "e31934625b833658acde4b84cee85af134cab018d3915775b4996e9b4347a72f",
+        "transcript.txt": "eed55a1bc84309810df1f4f7b4aad89df741705b521b4d10f8569f22e355395d"
+      }
+    },
+    {
+      "name": "mines-before-ship",
+      "patches": [
+        [
+          152,
+          129,
+          1
+        ],
+        [
+          151,
+          81,
+          10000
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "234bdc61d0b0d81dc793d2947479aebd03d2bf42d28e2cd92b78e0a5e2b54c23",
+      "after_sha256": "320a81a0ddf131f3e72d5b5636b1ad445a67c19b378af5bb4b8ffc17e7906323",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "fee1b8829bd56238055d85f19eff0159092f6c2334766dd101fa1a8ab2396180",
+        "before.dat.gz": "9fa4863f1a60c47a49a18c10f4e3e3d786b73fbb03d51e6cbea1103a97b5f0ec",
+        "dosbox.log": "8f8644a562abb1c6d746c8e258c1673bedace81070e2d1afb746a18bc3434581",
+        "sidefiles.json": "c90e79cb29140c52a0689d7900935ee1c0168b9fe4f8c6d3b8e9dd035799a569",
+        "transcript.txt": "22b1737eae95043694bf730d66e1cfa48ac61e8d6d81ea78a773f24d6ad3d1f5"
+      }
+    },
+    {
+      "name": "defense-before-ship",
+      "patches": [
+        [
+          152,
+          81,
+          100000
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "625efec58227e7788c1da4a5bb59fd748a701bf1425a80bfe4d321e6f24a268b",
+      "after_sha256": "2554457424732feef6d84722ccabe0ff8a4cb702e2899b9295bb09bed0e98914",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "cd89d34933a0f35c16870a72c8329d30fcf5c441ef02c49e529042f19e4683d8",
+        "before.dat.gz": "dbc56ab4c7ed10df6d25c6dbe7ab2a6e69f6dd1515ab6caf5f32caf5216b27e7",
+        "dosbox.log": "65458b1158724a36deeab9a293f0ef7fda64496a90086779da0c3de2c03160b4",
+        "sidefiles.json": "bda1400770c88da08de6392b83c6f76653964110d23ee482786413ab2550e8cb",
+        "transcript.txt": "3e6211f30ba9fc921533f5c4c58f50b7f9280dbe0d3f48b1c115884161cef4ae"
+      }
+    },
+    {
+      "name": "mines-after-win",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          153,
+          129,
+          1
+        ],
+        [
+          152,
+          41,
+          102
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "cc9cef7ff67fabf587e9252c9af6dd292ba11e7e961a75aa5ece4f1fc529d8ec",
+      "after_sha256": "b4b6e9da2c830e83c91186b8d35de13e0aa21ef3ce022f9b85dec1a713adba94",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "99b6aa3acc588236e409e0328d00430f2c8af3dba60cdb0ecabb9db9fef408ad",
+        "before.dat.gz": "621b88d40582cca4835c1748c158a514bce3da4a56ea1f5ee13643e224b28ddc",
+        "dosbox.log": "6ee638fee4f22d31841550f8c934e6ac361be567d8b27ba758dbfa497f7edc37",
+        "sidefiles.json": "d234250215ca53e4ccc507d4adb0b8e552f9927547a2677e1d2d882c84e48083",
+        "transcript.txt": "8b4750a32052eb2d58a0b83cd5a15b4691bdbb463020be83d2f7487b254cf710"
+      }
+    },
+    {
+      "name": "mines-after-loss",
+      "patches": [
+        [
+          153,
+          129,
+          1
+        ],
+        [
+          152,
+          41,
+          102
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "b66c9b5c4f07b6e5b42b28977ff69f61876238560d623be508e1f02d4009e3be",
+      "after_sha256": "ed7667aa0793be2ec3f682f080ab7eff836e03fd8f3deb663e4b4c3276780ba5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f68e9b64c5710cfb1dce4e2209673eff6440eec65cb8176db96ae1134d9a13f7",
+        "before.dat.gz": "fda00abeda3e217f4afe21f04dc29737bd7cc3b273217980a321cd209e23a0a9",
+        "dosbox.log": "ae3b190544cabb21a9afd8856ac741cbc6e8612097ade14f837f4f23e506e4ff",
+        "sidefiles.json": "72f050d9fc9dddaa534748b506d3a58d4d2c694e3aaab3eb8e86ad582642f493",
+        "transcript.txt": "644a02bd7bc9b163ba45c5b153c343fd075ce1595896fafc7f8f3bcb876d945c"
+      }
+    },
+    {
+      "name": "two-ships",
+      "patches": [],
+      "second": true,
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "cda350a4d6c3043a9757dc69ea1b5f91ba7f90db96221a2c52c580eb6c12691d",
+      "after_sha256": "b824d6fc895b7b89e0d62c4b3cc6b83fa37bd645a790b543ddea22423f454c38",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "15e24c41dde5c58fa3afaf18dfb671cbf736976df834b74d06969e929a7d62c6",
+        "before.dat.gz": "701a03b7feba0eaaaf96d762d678badb743390801b96dcd7cdc71ee301c14357",
+        "dosbox.log": "8ca056b3599d6b2c7c3f46fd3d3c4cc01ad983bc5ef33815ae50b58c09284d99",
+        "sidefiles.json": "b99bedb12ccd2b3cdf176f3fb1f60c86f44187d0cfdae6b94df3274a04e954f7",
+        "transcript.txt": "d422fb8bf8e528d9c9465234f8f317b2045fc1d5be56c9d33ab079ea87cfad3c"
+      }
+    },
+    {
+      "name": "two-ships-first-dead",
+      "patches": [
+        [
+          2,
+          45,
+          3
+        ]
+      ],
+      "second": true,
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "87712f910be21090caaa94f50eac1fb5c0e13b58106b258c87ada2fc620a6a16",
+      "after_sha256": "aaf05d5456d6aff1b46643de487dc8fa6751377c68b14be8feaef78aa2b57294",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "b8b895388e63aa0c200a9888a4e60acf8c69b8b3b1b0b4fd3006afd17beecc56",
+        "before.dat.gz": "86dd2ecb727c93f51696594b1106722d6648b5744d558410f33a6d42454474e2",
+        "dosbox.log": "63ad37dfc0057daed12d8754e45298bd1a0aec4e6793905e70b9dd9be29f8de3",
+        "sidefiles.json": "c648b3baa4055f50a0059de09547971dfa287b1c87ca6f0c1b028e310f4518a6",
+        "transcript.txt": "6fff4dc85c743d7a9fbbd1fa06c82d66f4dbfffd80d329b9c67b3943973f8e45"
+      }
+    },
+    {
+      "name": "two-ships-first-unarmed",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ]
+      ],
+      "second": true,
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "e2d37304b96994ca18962d4069c2c5b284b319894a70e955601010721bf27d80",
+      "after_sha256": "93fd6bb9de890d76e8d0c8156131bc50a12aa2bdf974adb93b4a89d8b5487ef1",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5a46d0d8ab649b5d7ff1ac77915abe487c33bda886e1d5b68a2a90c864309734",
+        "before.dat.gz": "5ec9fb9a87acc52ca017a9fdbcde1310ae3b9e3fde088f9758b9025d2ca4504e",
+        "dosbox.log": "8623349ddc1a199ce3bcfcf38117018517fd14974f16ef9f7c8c70b7e912a5ab",
+        "sidefiles.json": "47f45c4789b4248352fdf9c71c1a70db055a8cdfc1bbc02f022fd0ed3c9cb17d",
+        "transcript.txt": "72411e384bd8e0adcf98a37c5abded4f6ac42e7cbfaffd6ff78a09fd9102f7dd"
+      }
+    },
+    {
+      "name": "kill-assets",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          3052,
+          97,
+          2
+        ],
+        [
+          3052,
+          89,
+          777
+        ],
+        [
+          3052,
+          101,
+          3
+        ],
+        [
+          2,
+          117,
+          1
+        ],
+        [
+          351,
+          81,
+          37
+        ],
+        [
+          351,
+          85,
+          2
+        ],
+        [
+          351,
+          41,
+          301
+        ],
+        [
+          351,
+          45,
+          0
+        ],
+        [
+          351,
+          49,
+          0
+        ],
+        [
+          351,
+          53,
+          0
+        ],
+        [
+          351,
+          57,
+          0
+        ],
+        [
+          351,
+          61,
+          0
+        ],
+        [
+          352,
+          41,
+          300
+        ],
+        [
+          352,
+          45,
+          0
+        ],
+        [
+          352,
+          49,
+          0
+        ],
+        [
+          352,
+          53,
+          0
+        ],
+        [
+          352,
+          57,
+          0
+        ],
+        [
+          352,
+          61,
+          0
+        ],
+        [
+          4053,
+          73,
+          2
+        ]
+      ],
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "d41563313607474181eba8597fd0514f5508ecd5341450492ba8e8b8c6b05ea7",
+      "after_sha256": "96fbec88cca3105548ecfcaaf3e8b6aba14f03187db81ec64477a046eb3bd569",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "09eb2d9ffaa39eaf433819007bdef78194341642ae03a13ab5f12abce330f04c",
+        "before.dat.gz": "6cb26cecdfd4e69018583db02b431ad2fc2970c53a6699ef9958063530cd962a",
+        "dosbox.log": "a6d04fb06710afd63f94d39e3a1d04ebc24f16b04b06c35b9e45c87516f93fcc",
+        "sidefiles.json": "f04cdeee778d4aaa3932a9d1b514812083fa7eda662af1adba8568cec8d66d64",
+        "transcript.txt": "8fec2aa1f071776849d61043ec00f397c368f7a395c0b264398e79544d96d002"
+      }
+    },
+    {
+      "name": "kill-team-captain",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ],
+        [
+          3,
+          57,
+          7
+        ],
+        [
+          52,
+          73,
+          5
+        ],
+        [
+          52,
+          77,
+          2
+        ],
+        [
+          52,
+          109,
+          2
+        ],
+        [
+          52,
+          117,
+          3
+        ],
+        [
+          52,
+          121,
+          0
+        ],
+        [
+          52,
+          125,
+          0
+        ]
+      ],
+      "second": true,
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "ec00f49b436939bf7be10ccfb05fde822faf140f28e7930eb653ea9fcb4aaeb9",
+      "after_sha256": "807e8adb5e25234b8bf25e1a81573d53b5d7e9a6c5289a447e16c86728bd2ece",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "36a48ee138dad5f9aa862b2ddfcc686eda5b32ff2c01592736a0cf2087abece1",
+        "before.dat.gz": "dcb03245f39324e3bf56ba129271ac4eb87529c9e4acd4bd94b2a55695bedef0",
+        "dosbox.log": "19bb7167e017d8814bb7604863866dfc94c094d4a9eeb9efe11c779c40ec74ec",
+        "sidefiles.json": "09102306f0292e824c110110ee2abfa05b3348237cd78a0d8f575466620f2883",
+        "transcript.txt": "841d1ef639572a4d7719e38b5d8b01d38bc763092cb8fcfbcd4dd5d32854a972"
+      }
+    },
+    {
+      "name": "two-unarmed",
+      "patches": [
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          3,
+          61,
+          0
+        ],
+        [
+          3,
+          53,
+          0
+        ]
+      ],
+      "second": true,
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "ce213777be51c6ccdc87241b3ad19e4552a6e85dec129e458e90cf683f60b38f",
+      "after_sha256": "068932a9fe1ab79f5fdd9245e6acaaba757ab73c780d1c2d49e39049fbcb8dbf",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "585c85961d40fff8f1bf08918f6eaef0452960054f426be589d034a539980241",
+        "before.dat.gz": "c4fe5b05890da47db0992fdb66c3929d70694e14ea63315863dfc3e8fb7316b4",
+        "dosbox.log": "e9069ee4b0ea5f48f05524c7b0e187b19484f3a6b919d9209065b51f43b3d627",
+        "sidefiles.json": "cd1a7d915d2b56dd7c64a8f4cfdae23e880cb553ee59adb9e64672e064bb984b",
+        "transcript.txt": "e30a4b7809a993936932700b5d828f22e3478792ffcab75090196fbf21c1c4ee"
+      }
+    },
+    {
+      "name": "strong-next-day",
+      "patches": [],
+      "parent": "strong-ship",
+      "date": "10/26/2026",
+      "recipe": "xannor-ship-isolation-v1",
+      "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+      "before_sha256": "c02625780dfb9cb64f57b37c0fcc236640dd59e4e3b683176328f6e63f7f2b29",
+      "after_sha256": "06ccadf4487883e2ee0a9edc64aff9a280f324a68643269d5ba0a351fe3c49b9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "0ecd46e98d788d5a5d69aff84a164979689f46ce94edd433a6daa1ece6425ed0",
+        "before.dat.gz": "0596e34602b50da233d7a0731926563b80d71552ebc84abb13e47d7d0d4fb1bd",
+        "dosbox.log": "3afdf4a3132672b56e5096a8a59a9a7dc87d5a87483581811a2c86e5c5906fe2",
+        "sidefiles.json": "f9c10476b0fe6744935e35e06f8ca812d8f00165e8a0b570129327f879e3723e",
+        "transcript.txt": "31cb96599095ff252c2dccf5cffe319629d650a7502aa4fcb0140c2b0ebadddf"
+      }
+    }
+  ]
+}

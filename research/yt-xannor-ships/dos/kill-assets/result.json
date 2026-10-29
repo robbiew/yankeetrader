@@ -1,0 +1,130 @@
+{
+  "name": "kill-assets",
+  "patches": [
+    [
+      2,
+      61,
+      0
+    ],
+    [
+      2,
+      53,
+      0
+    ],
+    [
+      3052,
+      97,
+      2
+    ],
+    [
+      3052,
+      89,
+      777
+    ],
+    [
+      3052,
+      101,
+      3
+    ],
+    [
+      2,
+      117,
+      1
+    ],
+    [
+      351,
+      81,
+      37
+    ],
+    [
+      351,
+      85,
+      2
+    ],
+    [
+      351,
+      41,
+      301
+    ],
+    [
+      351,
+      45,
+      0
+    ],
+    [
+      351,
+      49,
+      0
+    ],
+    [
+      351,
+      53,
+      0
+    ],
+    [
+      351,
+      57,
+      0
+    ],
+    [
+      351,
+      61,
+      0
+    ],
+    [
+      352,
+      41,
+      300
+    ],
+    [
+      352,
+      45,
+      0
+    ],
+    [
+      352,
+      49,
+      0
+    ],
+    [
+      352,
+      53,
+      0
+    ],
+    [
+      352,
+      57,
+      0
+    ],
+    [
+      352,
+      61,
+      0
+    ],
+    [
+      4053,
+      73,
+      2
+    ]
+  ],
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "d41563313607474181eba8597fd0514f5508ecd5341450492ba8e8b8c6b05ea7",
+  "after_sha256": "96fbec88cca3105548ecfcaaf3e8b6aba14f03187db81ec64477a046eb3bd569",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "09eb2d9ffaa39eaf433819007bdef78194341642ae03a13ab5f12abce330f04c",
+    "before.dat.gz": "6cb26cecdfd4e69018583db02b431ad2fc2970c53a6699ef9958063530cd962a",
+    "dosbox.log": "a6d04fb06710afd63f94d39e3a1d04ebc24f16b04b06c35b9e45c87516f93fcc",
+    "sidefiles.json": "f04cdeee778d4aaa3932a9d1b514812083fa7eda662af1adba8568cec8d66d64",
+    "transcript.txt": "8fec2aa1f071776849d61043ec00f397c368f7a395c0b264398e79544d96d002"
+  }
+}
