@@ -455,3 +455,5 @@ Spies and intelligence history end on disconnect or logout; hires are not
 refunded. Direct radio history remains persistent and separate. Ship/cloak and
 disruption intelligence still need runtime evidence and are unavailable.
 [Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).
+
+Galactic newspaper gameplay remains outstanding. [Newspaper and news-history research](research/yt-newspaper/RECOVERY.md) covers original Today/Yesterday reading, public events, reconnect history and rotation; implementation is a separate milestone.

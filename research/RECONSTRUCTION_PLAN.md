@@ -404,3 +404,17 @@ the purchase remains spent. Empty-warp sectors safely hold position. World
 version 11 is unchanged. Ship/cloak and disruption reports, exact RNG parity,
 and other DOS trigger branches remain outstanding.
 [Scope, adaptations and validation](yt-spies/IMPLEMENTATION.md).
+
+
+## Galactic newspaper and news history — research
+
+Thirteen original DOS processes establish computer 8's Today/Yesterday choice,
+invalid/lowercase input, empty/missing files, EOF handling, real login and
+team-creation events, exact reconnect persistence and maintenance rotation.
+The same-day maintenance fallthrough also rotates history despite reporting
+maintenance unnecessary; preserve the modern once-per-UTC-day guard instead.
+No Go newspaper gameplay or save-format changes are included. Next: implement a
+bounded public dated journal and computer 8 / NEWS reading, with atomic event
+publication, private-field filtering, explicit UTC retention and safe pagination.
+Other event producers and exact long-file/color behavior remain bounded research.
+[Evidence, reproduction and implementation contract](yt-newspaper/RECOVERY.md).
