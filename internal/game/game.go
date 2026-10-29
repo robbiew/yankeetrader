@@ -458,6 +458,12 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 	return nil
 }
 func (w *World) Maintain(now time.Time) bool {
+	return w.maintain(now, prng.Float64)
+}
+
+// maintain shares a random source between desertion and route actions. Keeping
+// it injectable internally permits exact threshold and phase-order tests.
+func (w *World) maintain(now time.Time, rng func() float64) bool {
 	today := day(now)
 	if today <= w.LastMaintenance {
 		return false
@@ -474,8 +480,10 @@ func (w *World) Maintain(now time.Time) bool {
 			taxes += tax
 		}
 	}
-	// Existing groups act once. Fresh hires begin acting on the following day.
-	w.mercenaryActions(prng.Float64)
+	// Deserted groups join this day's stable route snapshot; fresh hires first
+	// act on the following day.
+	w.desertHumanDefenses(rng)
+	w.mercenaryActions(rng)
 	w.hireMercenaries(taxes)
 	for _, p := range w.Players {
 		p.Turns = 500

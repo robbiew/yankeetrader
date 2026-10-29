@@ -123,7 +123,9 @@ Go world where the first real account has ID 1.
   It accepts the 100 incoming Mercenaries and ends with 1,100 human fighters.
 
 Static anchors: `4664..47c6`. The sampled conversions do not establish empirical
-probabilities or a particular QuickBASIC random sequence.
+probabilities or a particular QuickBASIC random sequence. The subsequent
+[Go desertion phase](DESERTION.md) implements this strict comparison with modern
+player IDs and protected-Union policy.
 
 ## Movement is a route walk, not one adjacent hop
 

@@ -32,6 +32,7 @@ replaced or moved. These choices avoid the DOS capacity hang and partial debit.
 Hiring runs after port production/taxation and before score publication inside
 World.Maintain. Existing-group route actions now precede hiring; fresh groups
 first act on the following day, a deliberate modern scheduling policy.
+[Human-defense desertion](DESERTION.md) now precedes existing-group routing.
 The existing UTC date guard handles same-day replay and clock
 rollback. Missed days still perform one daily phase, following existing policy.
 Both the administrative -maint command and login run maintenance through the
@@ -86,5 +87,6 @@ Live BBS acceptance remains unverified.
 ## Outstanding
 
 [Route actions and planetary pickup](ROUTES.md) are now implemented as a
-separate follow-on. Desertion, reserved-base restoration, full NPC ship combat
-and bit-exact DOS RNG/MBF parity remain separate milestones.
+separate follow-on, as is [human-defense desertion](DESERTION.md). Reserved-base
+restoration, full NPC ship combat and bit-exact DOS RNG/MBF parity remain separate
+milestones.

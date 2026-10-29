@@ -12,7 +12,9 @@ The phase snapshots existing group identities in descending sector order. A
 moved group never gains another activation. A Mercenary group receiving incoming
 fighters also consumes its pending activation, preventing merged fighters from
 moving twice. A full receiver accepting no fighters keeps its pending action.
-No human-defense desertion or faction-base restoration is introduced here.
+The subsequent [desertion phase](DESERTION.md) now converts eligible human
+groups before this snapshot, giving them the same single route activation.
+Faction-base restoration remains separate.
 
 A source with any planet holds for a draw strictly below .66, regardless of title.
 Otherwise one different sector is sampled from the finite permitted destination
@@ -87,7 +89,7 @@ Go commands use the same temporary module-file dependency override documented
 in IMPLEMENTATION.md; committed module files stay unchanged. CI on this unpublished
 branch and live BBS acceptance remain unverified.
 
-Next: human-defense desertion, then reserved faction-base lifecycle with explicit
-ownership policy. Full NPC ship combat and exact QuickBASIC RNG/MBF parity remain
+Next: reserved faction-base lifecycle with explicit ownership policy.
+[Human-defense desertion](DESERTION.md) is implemented as a separate phase. Full NPC ship combat and exact QuickBASIC RNG/MBF parity remain
 separate. These route actions preserve the recovered rule structure while
 explicitly adapting protected sectors, work limits, quantity limits and scheduling.

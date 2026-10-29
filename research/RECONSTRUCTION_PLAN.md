@@ -466,12 +466,12 @@ elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
 recruitment or full-force defense combat. Login-local hostility, one-use quote
 tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
-Daily hiring and NPC route actions are implemented below. Human-defense
-desertion, faction-base restoration and full NPC ship combat remain separate
+Daily hiring, NPC route actions and human-defense desertion are implemented
+below. Faction-base restoration and full NPC ship combat remain separate
 milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
-## Mercenary daily maintenance — hiring and route actions implemented
+## Mercenary daily maintenance — hiring, routes and desertion implemented
 
 Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
 budget carry, group placement and human-defense desertion. Forty-one completed
@@ -494,8 +494,12 @@ defenses and planetary pickup. Merging consumes the receiver's pending action;
 partial-capacity transfers conserve force. Combat uses the recovered NPC batch
 rules with a per-group work allowance. Pickup preserves titles, ground and
 fractional/excess stocks. Invalid paths hold in place. No DOS capacity hang,
-failed-path teleportation or repeated activation is reproduced. Desertion and
-reserved-base restoration remain the next daily-faction slices.
+failed-path teleportation or repeated activation is reproduced. Human-defense
+desertion now runs first, converting only eligible human-owned groups outside
+the protected Union when RND*100 strictly exceeds their force. Converted groups
+join the stable route snapshot that day; publication reflects current ownership.
+[Desertion validation](yt-mercenary-maintenance/DESERTION.md). Reserved-base
+restoration with explicit ownership policy is the next daily-faction slice.
 [Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
 parity and additional faction lifecycle combinations remain research boundaries;
 live BBS acceptance is separate.
