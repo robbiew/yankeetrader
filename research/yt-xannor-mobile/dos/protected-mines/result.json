@@ -1,0 +1,64 @@
+{
+  "name": "protected-mines",
+  "patches": [
+    [
+      151,
+      41,
+      7
+    ],
+    [
+      58,
+      41,
+      1114
+    ],
+    [
+      58,
+      45,
+      0
+    ],
+    [
+      58,
+      49,
+      0
+    ],
+    [
+      58,
+      53,
+      0
+    ],
+    [
+      58,
+      57,
+      0
+    ],
+    [
+      58,
+      61,
+      0
+    ],
+    [
+      58,
+      129,
+      3
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "9d44a729a2c32d5af09799b9925e597dbf0425859087eeecd2bbfc05e8ebcf7d",
+  "after_sha256": "1e3cd4d14739f03a322d8d96a3889e906725e82814a690e220f73d5b617df454",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "a13630907f015581bf5f66f35e902cae985360c5409a027e8bd7835222534552",
+    "before.dat.gz": "0fd954104764429cd9992c8d1f2f498f100ea97e41fa6e2b81b0de7a4c0ca143",
+    "dosbox.log": "ba533ea3e5309240cbfecc8e0c03b8cda3a7d0538e7a6f92ec3db12d070ee2ae",
+    "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+  }
+}

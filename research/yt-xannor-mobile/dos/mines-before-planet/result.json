@@ -1,0 +1,54 @@
+{
+  "name": "mines-before-planet",
+  "patches": [
+    [
+      152,
+      129,
+      3
+    ],
+    [
+      152,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      2
+    ],
+    [
+      4053,
+      77,
+      500000
+    ],
+    [
+      4053,
+      117,
+      0
+    ],
+    [
+      4053,
+      129,
+      37
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "da5e680fcd8db3e63c773b12872fd894aad806365b16f8b1e659c90eeed3011d",
+  "after_sha256": "a320735d1ff1292c7907e95476dc9be00fb9be88c74a76b0a82cc4d0bb61e6ca",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "3caf680c3162a4e79b2810487f93ff3089baf2f669d7f105f6c3b76da517e35d",
+    "before.dat.gz": "a5b6d09c6b03a138a865cbca1cb9e725ddfe586c312a2962ea824e6b8b57859a",
+    "dosbox.log": "bede623c6caf296d0a770499c3e4ef5908d33280ecfeaa1de9ca770ba7cbfa2c",
+    "transcript.txt": "99dd5304d145c6c5e2dd5a755a34437c8c36abf598af7a87a32aff3222e18ce0"
+  }
+}

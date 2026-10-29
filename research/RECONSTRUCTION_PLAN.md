@@ -529,6 +529,30 @@ preserves unfinished battles. Game/store tests and real compact/classic terminal
 coverage validate accounting, capacity, capture, destruction, replay and rollback.
 [Implementation policies](yt-xannor-lifecycle/IMPLEMENTATION.md).
 
-Next recover mobile Xannor group splitting/targeting and route actions before
-implementing them. Full NPC ship combat, revenge/cloak searching and exact DOS
-RNG/MBF parity remain separate milestones.
+Mobile splitting/targeting and route-action research is now complete below.
+Full NPC ship combat, revenge/cloak searching and exact DOS RNG/MBF parity remain
+separate milestones.
+
+## Mobile Xannor groups — bounded implementation
+
+Forty-seven completed DOS controls, an exact next-day world chain and 22 REA byte
+observations establish nontruncated HQ split thresholds, four shrinking draws,
+normal/top/HQ target ordering, conditional shared pursuit, directed shortest
+paths and per-hop action dispatch. The controls distinguish Xannor uniform mine
+damage and 5000/500/1 sector-defense batches from Mercenary behavior. A ship loss
+can retain its sector as the next groups' preferred target; special top-player
+hunting is a separate 2.5-million-score gate. Union routes and planetary attacks
+are possible in DOS, while Union mines disappear in an earlier phase.
+[Evidence, boundaries and next implementation](yt-xannor-mobile/RECOVERY.md).
+
+Implemented bounded group splitting/selection, movement, uniform mine damage
+and 5000/500/1 sector battles on the explicit HQ model. A stable 19-group daily
+snapshot and original-HQ split budget prevent duplicate activations and reuse of
+returning force. Shared pursuit is explicit; merges and reserve capacity conserve
+force. Union routes are excluded. Live ships and foreign planets cause a safe
+hold before unsupported encounter mutations. World version remains 14.
+[Implementation policies and validation](yt-xannor-mobile/IMPLEMENTATION.md).
+
+Next recover full Xannor NPC ship battle rules, followed by planetary assaults,
+destruction and remaining revenge/cloak search behavior. Exact MBF/RNG parity
+and live BBS acceptance remain separate validation boundaries.

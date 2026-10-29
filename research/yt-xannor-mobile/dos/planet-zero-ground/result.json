@@ -1,0 +1,49 @@
+{
+  "name": "planet-zero-ground",
+  "patches": [
+    [
+      152,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      2
+    ],
+    [
+      4053,
+      77,
+      0
+    ],
+    [
+      4053,
+      117,
+      0
+    ],
+    [
+      4053,
+      129,
+      37
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "2f4a9aaa5bdb86e3239e809f70b7e99ec7eef94bc5f825de345f0b3870465d2d",
+  "after_sha256": "05c8b9def3c9150ba6852a861c80f3ebc5113d56fc56e30a1e3ecf1be5d4cd21",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "2f99aeb099045ecfab9501940c45291ebb0875240972dadbc1ba0e2d78676b4e",
+    "before.dat.gz": "dbab7a1dc9f697b3814ea70fb53073dbbb5ad8e1f2fbef397734d29a29c94ccb",
+    "dosbox.log": "50a9b0c784710a72d683839b553a88d4a7c6741cc2e4d5864c9d6eadab759399",
+    "transcript.txt": "2b2454009e26a6892e5e27bfcaee485dafb8b92e835dd0892ea8325b6842f76a"
+  }
+}

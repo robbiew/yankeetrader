@@ -1,0 +1,2107 @@
+{
+  "recipe": "xannor-mobile-isolation-v1",
+  "scenarios": [
+    {
+      "name": "return-empty",
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "after_sha256": "09c7a93bae30adfc0ac6212dcced2d2d1b4851a0b0165687aa010ae710e547ab",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "d8a107781629b4968487de046839d11bdd24b4540268ab97a462bf6e06b098e9",
+        "before.dat.gz": "e1e49a1c30793a115db453757a7f0cabbc17a42b91dd41997fdf89307dccfd77",
+        "dosbox.log": "32a96b0baf698922f1c7029a71f6d27d996fabfad0e4a74dd1ebce1c823c38c6",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "mines-origin",
+      "patches": [
+        [
+          151,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "00ae7fddf807b5945b52ddcccf103aebae5cca3692b4de349f22ae126d7b8865",
+      "after_sha256": "2d8f050fbf6f7b1a6320bafc4630c5debc38ecba3b024d99a51fa77b55fac656",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "3e738b0d49c92960af9a5f99f96d1ac7731d22525b8964b7d661303d503749d0",
+        "before.dat.gz": "3f7cc535fd9154ff7a611ab7d484a6db46d07c0e8a19bb11a23c1347ca6c36d8",
+        "dosbox.log": "612899db4c42a45d640092a618d5e3b90b07a31217d1bb08e8e6d86b13bb29f6",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "mines-hop-small",
+      "patches": [
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "31c06cf60200d2037281da11ada0fd60925b44eb6e6be97f0159e320923b2625",
+      "after_sha256": "d0679a966e81ab89d9e2a9f54ecab1ee1f626ce737ce51b39a03c504a8f754a2",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "680f3d363858a13427b12beda36250eb7fcee1538c00a4f1adfff1e5bdef4cdc",
+        "before.dat.gz": "8fa677d6b013632faec014b57fbee7fca86e86dfbe7dfaf61b6395058f4e921a",
+        "dosbox.log": "81d46c7ed71972ce80d280806b8e778a9757537c74f5dab0cf69d0555b40fd63",
+        "transcript.txt": "99dd5304d145c6c5e2dd5a755a34437c8c36abf598af7a87a32aff3222e18ce0"
+      }
+    },
+    {
+      "name": "mines-hop-large",
+      "patches": [
+        [
+          151,
+          81,
+          100000
+        ],
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "fb95397914effd243a8ac3a80243bab5576a4c9d8815687e80125183930f4797",
+      "after_sha256": "9dae3f839846ab275f1d86f1ccfaa59f983ac8cfdf2fffb24e6e730aed2a6f36",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8e4e07f9746900fa7e63a78aca017404bb95155103a50ed4902c16c82970d76f",
+        "before.dat.gz": "252c2a53cf31abd3ec037172a0a4a0720e0abd1e33f7f5f89343fa9fc207f502",
+        "dosbox.log": "5885cef3aa9d67f427f3c2a02c8e1cf9546e77a4480201640ac4057867bcf036",
+        "transcript.txt": "567e27776fee157d70b0a7bf75bc41a8ef302fca4a967d6080c9fd1f67f87cd7"
+      }
+    },
+    {
+      "name": "mines-hq",
+      "patches": [
+        [
+          1165,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "0500e7b4efc9683c1a30eec2808912e059883e914de2e59785b88e21c79c91d2",
+      "after_sha256": "cc9cd81eb61b91b2f815e6f4e84c703bbd37193dec024e5d9b501f552c1bbcb4",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "e96acd12115f884f56656e7083e3d5a9281d682ae3d0e67ddce77e0ae70d22d8",
+        "before.dat.gz": "40be9571282406ab803d7bfc0fcf3792e8d0f0195da3f6130f7f332c9054c98d",
+        "dosbox.log": "29f1836de5fbc665cc8e5053b6a8b6735041d404db776e7a528860cc248a2daa",
+        "transcript.txt": "8d56854b4ad239ff779f7b4d26f5d0cda29c07a1733493e945588abe7bba94ef"
+      }
+    },
+    {
+      "name": "defense-merc",
+      "patches": [
+        [
+          152,
+          81,
+          50
+        ],
+        [
+          152,
+          85,
+          -2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "0fd346a3e04a877b46b2334d68d6fb21832b1d00f7519ab30b8744b0a2bc7623",
+      "after_sha256": "6555aa110148487061bf3795757c4c7590a7420893b4e470718e421534cce7b4",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f846a4fa08b84bc5773bd62b4dbfc35a9d2ffd84280b37756d0b241ddc3dbbf1",
+        "before.dat.gz": "69e3e0309b2e92e33e902f285b6b591b8b84f51ffeeb2c9be74d857b6b71df82",
+        "dosbox.log": "1923ec66a9df9dca5e5da29b9da6172ea274b8a68a004deaf2dbf2e6b766a008",
+        "transcript.txt": "e9cdcb1a84eba1fde0d41b3b1a5fbcd123be63e6112dcca2f23b9cab6d865dd7"
+      }
+    },
+    {
+      "name": "defense-human",
+      "patches": [
+        [
+          152,
+          81,
+          50
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "8d3d932c1cc4fd46ef265a09bd8c08701ff396ba0e3f092e3636188373313d54",
+      "after_sha256": "6555aa110148487061bf3795757c4c7590a7420893b4e470718e421534cce7b4",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f846a4fa08b84bc5773bd62b4dbfc35a9d2ffd84280b37756d0b241ddc3dbbf1",
+        "before.dat.gz": "e7ec0739b16fda45400c18a7a90253f1ab47b4fe08dfe9744e7882d97ff6ba13",
+        "dosbox.log": "4de034f30adcbb72c019c1d6063c5e87a04dc03be3c7417869a0b580d0b2d516",
+        "transcript.txt": "30a5d2c5cbc5a3e995363393966fcd478825347d3209e65d73b0ff8920773a6c"
+      }
+    },
+    {
+      "name": "defense-human-strong",
+      "patches": [
+        [
+          152,
+          81,
+          100000
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "777c9b722dc1635a0511677ce2498c2ffcde1b2c0af7a6eae29d0098b67014a0",
+      "after_sha256": "3a8332a555bb8d0bb0fd5b435ef0f6cdda391eaea88c1196a422a2649b720e42",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "c8d25e26d126af8f3c198a24fd4b26906dc084320d279ad19b6e7a93192a7832",
+        "before.dat.gz": "a1435f3653ad8833a454925069da6bd26923cceccaa9335999cd6892a3e1ec66",
+        "dosbox.log": "718964cb5acfbdb0fe7db01bd8f08dae63b3a883e0594293666fa0df57767d3b",
+        "transcript.txt": "786fe22d5b958b7641a4616a20fc91cc084bed983b9e6ca9a9c7dd673ba5c5a8"
+      }
+    },
+    {
+      "name": "defense-xannor-unpointed",
+      "patches": [
+        [
+          152,
+          81,
+          50
+        ],
+        [
+          152,
+          85,
+          -1
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "f515861b615838179e0871a2ad25499da979633b7c2641289df3c24ab1c2245a",
+      "after_sha256": "318bf67ea964b133f25469fc18480a99d979373fc8d0a7d97716b3fd5ecbb6b9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "83a3206780fb4f71532bc997b6e20577eebca9d4069d1e727f23a53f0c06c5cb",
+        "before.dat.gz": "d07d66f00ebae3ab043613ae6f6112075b563b93a6653ad2f0de5bcd8bc91639",
+        "dosbox.log": "7ce13cd96fe91dcc32f695b88b384f3c9f484699738324273c55eb76a348f1c0",
+        "transcript.txt": "8a217e8ea198403d464b8f0358e29baae5cbb8f23e7d4f79f5e795a57fa0f7c9"
+      }
+    },
+    {
+      "name": "mines-before-defense",
+      "patches": [
+        [
+          152,
+          129,
+          3
+        ],
+        [
+          152,
+          81,
+          100000
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "d33395ff3482537bddb78e975312549c3a3d367442ef8ba66717f71ac46ac900",
+      "after_sha256": "0115a06595c2a446842257bddb89ff0b5765b1f6809e47ce2d6425c84e0aa945",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "1f3fd50c68a13ec5b2bd9b38abcb19f141098778fd3cf38b95ef5c89c84aee8a",
+        "before.dat.gz": "37a23b308311f8674a521a67b169639d8db84b8b991db042d0e2faa81bf06bd0",
+        "dosbox.log": "c734cda93f3de74b78e40ba983fdf56ba528a43642b112dd12289915e2d068dd",
+        "transcript.txt": "8e4fd2da35e5972f423c17e95881969f5aac27638a1277b31caa4619dea0ec8c"
+      }
+    },
+    {
+      "name": "planet-neutral",
+      "patches": [
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "79a941a907a19f9aa21d76eb0085978cc6e3a677f13d441580321975243b1fc6",
+      "after_sha256": "1f900abab377e7eaf8245975ce50cfee4bb432fd0f7aff74a83c9aea0ae13310",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "46bd7357fca7c4f285270a6e384b2de6b9dad98c39be15caef3d410f24577e69",
+        "before.dat.gz": "0e1dbd7b5d47bb084083c763ea22c901883dd07382951af504996efe9862469b",
+        "dosbox.log": "27ed35f880c9e749be05075d22135bb2a16ce1fc0d0e35a5142fc145cbe45805",
+        "transcript.txt": "2ed2e7d88f78c23cc363de1ff9810144271d72483753a0b8ed92a99ae7f70657"
+      }
+    },
+    {
+      "name": "planet-human",
+      "patches": [
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "f3e3284705c6a34f36e791edd35e87ec5512590435a120203fb164025f8591c0",
+      "after_sha256": "d0e83f0183182d3939bfd5079e0b9b04f775e1c3d444b26cff83b9fbf30b9f68",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8f6cd32539e948f37a82024d98ffbe99392ef3881a99dfe44f8864bfdb567a1e",
+        "before.dat.gz": "a864dc85a5f6f3fb9b992fee23c434c2117359696282513ec65411819a5f00d0",
+        "dosbox.log": "ffd507d772ad01d2c6a22b7d52399217b8677aede860a24806d2b52226083165",
+        "transcript.txt": "2ed2e7d88f78c23cc363de1ff9810144271d72483753a0b8ed92a99ae7f70657"
+      }
+    },
+    {
+      "name": "planet-xannor",
+      "patches": [
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          -1
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "322cef7b21b8437fdeed436c29585e1d761c578c8575189bf4600619d525b8e2",
+      "after_sha256": "1bd4e86ca456e50b0a5e3a7a999d53a93263b0bee3f13561f4eaa37e35fddea5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "14f51f5132a391a13834d8539d5f808eca4ccb8cd5663146ca101bc659e31093",
+        "before.dat.gz": "5c96c977cd0181489a80d9ec55a0f3884f136854f9260601cbbf3aea422a55d8",
+        "dosbox.log": "ecf69c862e18f6ab88cabf2682ef3c5269c280837f3b0213d844852c3f15c5ae",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "planet-origin",
+      "patches": [
+        [
+          151,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "8d0f7b2dbc457277a795e3af1cbbeb507f4b3b79d44ce80b240bd2e30624d10f",
+      "after_sha256": "a41dac34262552cbe679a1e5d7254a55137a5a643b87297119b812e5606339bf",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "782925aa81b1497696a90e6d4f8f84a8a9cf34d32348fdea46192e8726cfa046",
+        "before.dat.gz": "6566a9d0deef86f283e27366f7e14a658f4f1d2b86fa862752c9c2fa0b3720b8",
+        "dosbox.log": "828b47a8950f7881b104c0341953855fc43b47400b23c6e3b149e0bb709b60b7",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "defense-before-planet",
+      "patches": [
+        [
+          152,
+          81,
+          100000
+        ],
+        [
+          152,
+          85,
+          2
+        ],
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "35f0a3b2843b6704d279db945d14c42eb5723fe910cee93f66a35413efa9d0bf",
+      "after_sha256": "f8deb6a1c75ee53b086b2d4037238fdb854ce61e1fb79603cbb4f2c192d2115f",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "41e8f4bd0978d582151cb9d1418b086a2bd0f4c299378bc7b4dfb3cacdfc225e",
+        "before.dat.gz": "b159fd56a8dc7a4a8d7e6448af4d4fd383353b24f5549d345e27a28ad44e3d67",
+        "dosbox.log": "5ce170520195bdbf61ab340081a7adfabe5a379fe8eb3f62a977886114790d13",
+        "transcript.txt": "786fe22d5b958b7641a4616a20fc91cc084bed983b9e6ca9a9c7dd673ba5c5a8"
+      }
+    },
+    {
+      "name": "planet-zero-ground",
+      "patches": [
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          0
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "2f4a9aaa5bdb86e3239e809f70b7e99ec7eef94bc5f825de345f0b3870465d2d",
+      "after_sha256": "05c8b9def3c9150ba6852a861c80f3ebc5113d56fc56e30a1e3ecf1be5d4cd21",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "2f99aeb099045ecfab9501940c45291ebb0875240972dadbc1ba0e2d78676b4e",
+        "before.dat.gz": "dbab7a1dc9f697b3814ea70fb53073dbbb5ad8e1f2fbef397734d29a29c94ccb",
+        "dosbox.log": "50a9b0c784710a72d683839b553a88d4a7c6741cc2e4d5864c9d6eadab759399",
+        "transcript.txt": "2b2454009e26a6892e5e27bfcaee485dafb8b92e835dd0892ea8325b6842f76a"
+      }
+    },
+    {
+      "name": "path-protected-transit",
+      "patches": [
+        [
+          151,
+          41,
+          7
+        ],
+        [
+          58,
+          41,
+          1114
+        ],
+        [
+          58,
+          45,
+          0
+        ],
+        [
+          58,
+          49,
+          0
+        ],
+        [
+          58,
+          53,
+          0
+        ],
+        [
+          58,
+          57,
+          0
+        ],
+        [
+          58,
+          61,
+          0
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "535a0cdb3491822b8185a192780573dbfd85b1a2579a0712665d2946041e46f0",
+      "after_sha256": "1e3cd4d14739f03a322d8d96a3889e906725e82814a690e220f73d5b617df454",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "a13630907f015581bf5f66f35e902cae985360c5409a027e8bd7835222534552",
+        "before.dat.gz": "f7128dfdf7fc207df01c9b6a035a2d72f7507f7a5b4fdb455c19cc938dff3037",
+        "dosbox.log": "f3aa9cdc9c485c679336a5c1e3c0ff067b21c4570f57f8fe230b458630e8dc41",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "path-branch-order",
+      "patches": [
+        [
+          151,
+          41,
+          101
+        ],
+        [
+          151,
+          45,
+          102
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ],
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "4b8975f11f010dc9ad8d1566fcc5e33e2bac51646b1d59cb1a9dc080c8fdfbf4",
+      "after_sha256": "edac994c8249ed64fde107d55f7d1ac644a655292fd2582a27c04da416b9c931",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "cdf0a425b6a703c92563516408c0a4fed93812a2b63541af176a38264971a58c",
+        "before.dat.gz": "90c611db054491d9ddc890832c623005c6f38f3e663ea86b2605f734e418213f",
+        "dosbox.log": "195ded331c35d3f3b26ef0465500f3ce2a34ecf05ef52e99263d54cf3ce3bd18",
+        "transcript.txt": "99dd5304d145c6c5e2dd5a755a34437c8c36abf598af7a87a32aff3222e18ce0"
+      }
+    },
+    {
+      "name": "path-direct-first",
+      "patches": [
+        [
+          151,
+          41,
+          1114
+        ],
+        [
+          151,
+          45,
+          101
+        ],
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "9b94383be4bf2465ba564d8795e3a452e99fc4fc8fb4f8aede25a4db29a6f32f",
+      "after_sha256": "2f941b1441e6ad6ef1893b6883bb5757856dbfc4f9d8df064bcae5282975b3a5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "a9fd16fa759a2be026ad97d1c4451c7b8440a449b03da898a9e3c62f1bbaac13",
+        "before.dat.gz": "47e63a705ca805672b82235171cabba25c16374b323dc42b9a894831d17be062",
+        "dosbox.log": "24931a249b5c1a2a2c19ff73916ca29aa7a6a6182abb56f7b3979326f340df9a",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "path-branch-reversed",
+      "patches": [
+        [
+          151,
+          41,
+          102
+        ],
+        [
+          151,
+          45,
+          101
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ],
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "0641f4ff03994429b1e401f470a91ab848fdeb39f2f7b32fba517c75283e6f95",
+      "after_sha256": "d352f6032bfb3e5992f75af20b957842e2d2db3d84c4a0d77d1ec0ddfcca1e29",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "0528e3824b0224f6b27f7d601688b088c5975a1e2a8708eda18d11c73c8dc48b",
+        "before.dat.gz": "d816c8c6514c6de62faf76ab0c1111a7a752262b825edcbee16ee56cd7c6bb6e",
+        "dosbox.log": "6d11c8783c6695fd40a2828f9dd8c942938ce78e735978b35f4cafea245011f3",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "path-shorter-second",
+      "patches": [
+        [
+          151,
+          41,
+          101
+        ],
+        [
+          151,
+          45,
+          102
+        ],
+        [
+          152,
+          41,
+          103
+        ],
+        [
+          154,
+          41,
+          1114
+        ],
+        [
+          154,
+          45,
+          0
+        ],
+        [
+          154,
+          49,
+          0
+        ],
+        [
+          154,
+          53,
+          0
+        ],
+        [
+          154,
+          57,
+          0
+        ],
+        [
+          154,
+          61,
+          0
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ],
+        [
+          153,
+          49,
+          0
+        ],
+        [
+          153,
+          53,
+          0
+        ],
+        [
+          153,
+          57,
+          0
+        ],
+        [
+          153,
+          61,
+          0
+        ],
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "1dd900a067d016631653ca160e11da93b002b215e60e5803f2b5904dda231f35",
+      "after_sha256": "d992f7bb47e401258e83247db08c88c6e61ae4acc0dc45b7eb20d4c5228c3f3c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "fc0028e35bb93d419f52e9d7c44b0143851692d202b5256014df73730657fc34",
+        "before.dat.gz": "6e6af487812d099d4d40257d03b3d0c7150c166c8722e4258bfb752b13fb65c3",
+        "dosbox.log": "3bc506ed32e0913f2b0ba80fa62e8e7c5f3eeb7a4d9bed6619d0c5d6b73469a8",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "protected-mines",
+      "patches": [
+        [
+          151,
+          41,
+          7
+        ],
+        [
+          58,
+          41,
+          1114
+        ],
+        [
+          58,
+          45,
+          0
+        ],
+        [
+          58,
+          49,
+          0
+        ],
+        [
+          58,
+          53,
+          0
+        ],
+        [
+          58,
+          57,
+          0
+        ],
+        [
+          58,
+          61,
+          0
+        ],
+        [
+          58,
+          129,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "9d44a729a2c32d5af09799b9925e597dbf0425859087eeecd2bbfc05e8ebcf7d",
+      "after_sha256": "1e3cd4d14739f03a322d8d96a3889e906725e82814a690e220f73d5b617df454",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "a13630907f015581bf5f66f35e902cae985360c5409a027e8bd7835222534552",
+        "before.dat.gz": "0fd954104764429cd9992c8d1f2f498f100ea97e41fa6e2b81b0de7a4c0ca143",
+        "dosbox.log": "ba533ea3e5309240cbfecc8e0c03b8cda3a7d0538e7a6f92ec3db12d070ee2ae",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "defense-unowned",
+      "patches": [
+        [
+          152,
+          81,
+          50
+        ],
+        [
+          152,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "d40da19e890a49ece97257754fe20bfabaa7b938ec20e5b622f61a447915e9e7",
+      "after_sha256": "fb050095dd13f6aa3b00911569ab59ce6acc73d4e271e27664602f9c7e3dd964",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "9aedd57686b27cfde01b55a179bc589e9ac54c75025b94b15377c07b85cbc989",
+        "before.dat.gz": "141c5ab0497368c087daad95f84d2cd8a0d6e2e86d54028b6dc22ba3ab09cb68",
+        "dosbox.log": "d4af246789041a441f1d1fac9314b8978968d39d9e2d4ab1badd5946521dd825",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "mines-before-planet",
+      "patches": [
+        [
+          152,
+          129,
+          3
+        ],
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "da5e680fcd8db3e63c773b12872fd894aad806365b16f8b1e659c90eeed3011d",
+      "after_sha256": "a320735d1ff1292c7907e95476dc9be00fb9be88c74a76b0a82cc4d0bb61e6ca",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "3caf680c3162a4e79b2810487f93ff3089baf2f669d7f105f6c3b76da517e35d",
+        "before.dat.gz": "a5b6d09c6b03a138a865cbca1cb9e725ddfe586c312a2962ea824e6b8b57859a",
+        "dosbox.log": "bede623c6caf296d0a770499c3e4ef5908d33280ecfeaa1de9ca770ba7cbfa2c",
+        "transcript.txt": "99dd5304d145c6c5e2dd5a755a34437c8c36abf598af7a87a32aff3222e18ce0"
+      }
+    },
+    {
+      "name": "planet-stops-before-later-mines",
+      "patches": [
+        [
+          152,
+          41,
+          102
+        ],
+        [
+          153,
+          41,
+          1114
+        ],
+        [
+          153,
+          45,
+          0
+        ],
+        [
+          153,
+          49,
+          0
+        ],
+        [
+          153,
+          53,
+          0
+        ],
+        [
+          153,
+          57,
+          0
+        ],
+        [
+          153,
+          61,
+          0
+        ],
+        [
+          153,
+          129,
+          3
+        ],
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "e206d722fcc7d12bfe9e2d18008f8a7f37e4cab470440b97c6af07c04ecde508",
+      "after_sha256": "51efe180fd702ea461e796c8bd27541befa7e00202c5669f586b20bb39b2e594",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "b74dcf684412fb6f6bf0e33e627e3cccc09e673762b860bf86abac43abcee366",
+        "before.dat.gz": "8f0ff4b5f211ffbc21540bbe4218390e521311b059f2c5d57c879dbc5561920f",
+        "dosbox.log": "4d871a9d35fac1e649cc4c29cb75d1b7cc0c73b168ec76e6d3d48a632954087a",
+        "transcript.txt": "2ed2e7d88f78c23cc363de1ff9810144271d72483753a0b8ed92a99ae7f70657"
+      }
+    },
+    {
+      "name": "protected-planet",
+      "patches": [
+        [
+          151,
+          41,
+          7
+        ],
+        [
+          58,
+          41,
+          1114
+        ],
+        [
+          58,
+          45,
+          0
+        ],
+        [
+          58,
+          49,
+          0
+        ],
+        [
+          58,
+          53,
+          0
+        ],
+        [
+          58,
+          57,
+          0
+        ],
+        [
+          58,
+          61,
+          0
+        ],
+        [
+          58,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "69eb303caff4983965be3efd8b37f82174e81ea2cae7c510053027ca778e183e",
+      "after_sha256": "2128656fa6c6b00dbb62aa669db61cf421f8fb7ef182f62752aa156b677a6d8b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8bf5c7f1d35c03fd96c12eeb32671f7190e73bf4079efeae101229d3db01d0b5",
+        "before.dat.gz": "8ef62110b719186556ae92a7e4965cffb0b146f8a2366f35c897f1d937182a64",
+        "dosbox.log": "50064de276fddc3a48dedbfff9c95a7251b218ff5c67e73be062c42f11336a79",
+        "transcript.txt": "2ed2e7d88f78c23cc363de1ff9810144271d72483753a0b8ed92a99ae7f70657"
+      }
+    },
+    {
+      "name": "defense-then-planet",
+      "patches": [
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          2
+        ],
+        [
+          152,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          2
+        ],
+        [
+          4053,
+          77,
+          500000
+        ],
+        [
+          4053,
+          117,
+          0
+        ],
+        [
+          4053,
+          129,
+          37
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "b337da57b81ad329277d261a5947d560a028b67355f24b2a5ce4e95bcdc7eff7",
+      "after_sha256": "d0e83f0183182d3939bfd5079e0b9b04f775e1c3d444b26cff83b9fbf30b9f68",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8f6cd32539e948f37a82024d98ffbe99392ef3881a99dfe44f8864bfdb567a1e",
+        "before.dat.gz": "808fb0e03f003ac4b282d5b8b2524140352964d8466d19f520396a9300e1dfd7",
+        "dosbox.log": "792a90eb64b3676b466b588f0b509e5cdc3c9153d60b29165b83ce8f54c0af0f",
+        "transcript.txt": "3b470f115f12cf666484301e981604c3208c9b5c2a3884f55dd13efc7ce84e06"
+      }
+    },
+    {
+      "name": "split-equal",
+      "patches": [
+        [
+          1165,
+          81,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "5cb8005da08642f7dc1794ea1b22f0742bc21b4b98ffe23b4aa7e0860836663f",
+      "after_sha256": "969c15b7c07d246f594310ea03836ee5530c35ab1de068fcfa1577de8615914a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5e06ecbe6fbfbd81812f40fde0e8638aa008def080427e73cb756138222ada9f",
+        "before.dat.gz": "ec2d5aff218fcffbc79bb72767469f3ac23970c1b2c91a9d71e57aec952bc24e",
+        "dosbox.log": "162ea115bde72c74037227486a34c33b14a7dff7793f8988e824e85ab43bbb01",
+        "transcript.txt": "1dac71417d2c35651ecd88154cffa1cb74878dc5dc0362743701705aba53b5ed"
+      }
+    },
+    {
+      "name": "split-above",
+      "patches": [
+        [
+          1165,
+          81,
+          3
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "c360232f71851304a66faa719aa94c0a0d8b2f0f78ae5d78fcbbb7046b2cfb6f",
+      "after_sha256": "c8711384be784456ac6afb933a5e3e828b08c9050750b17580ca23dc3e7f79cd",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "80401756b29aa9ced21cc501979c4c569a3bbdd6dfe4bb51c3890be9a5988557",
+        "before.dat.gz": "75527a9944f882d71868afd51749064080af1804c062f5759509ba5ec4b032e3",
+        "dosbox.log": "72dc9ada13f8e0d3d817c88f7c52ed608f395d26fee1b2e226d46d64277404d4",
+        "transcript.txt": "2a14f8538051a006a52dabe58323e8dce0438d3595f153571be00a094aa5f4ca"
+      }
+    },
+    {
+      "name": "split-high",
+      "patches": [
+        [
+          1165,
+          81,
+          10000
+        ],
+        [
+          2,
+          109,
+          1000000
+        ],
+        [
+          151,
+          81,
+          100000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "b820da7a549e7ec2476832012ab7bccd569ab523ffc88f06b972bf86aecab5c9",
+      "after_sha256": "05b91bfa766ec27ee9bc6dfbb2d6bc93fa90b9a386352efc50d13450e4d35491",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "4cf13d4077fd2821a59d5d1bf55b93369659b1e90ec3664ba38f226397ca870c",
+        "before.dat.gz": "965c6d4fec8f421ccfa0ece28663f62bf2be180878f18ce441af394587dd7806",
+        "dosbox.log": "2c81f11ec5646a737e2aa2d6d21c393a6cfa8c841ed640ae4396905b6e601107",
+        "transcript.txt": "15fd9c512f16f5e01222162441c928430bc2c1d747814a27a9704897478e7f07"
+      }
+    },
+    {
+      "name": "split-score-1999",
+      "patches": [
+        [
+          2,
+          109,
+          1999
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "c7c8a096c122958d131a3bfc156648fa7b00ed959a5a909a3b81289a6c531511",
+      "after_sha256": "8b9881d2fc3aeba6751fe788e8dfa7ce22739bde5a60de143a72a07f807d89c9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8559a2280e5bed2434e68ad01be103a684a63437a17081657e0b5c329b8a313c",
+        "before.dat.gz": "7ea73891f870541c8d13c0d139d30157fd8c2d495282d7c7c81e29d5ff756dd6",
+        "dosbox.log": "5a6e83534bc6f82c9c8ca031aa7b51180333104fe21e3b29a3b4327d29d6dc74",
+        "transcript.txt": "9810d55f4b72c64582ca5c35bd7cc383f136c45a6b7df80d6012455cb4b40130"
+      }
+    },
+    {
+      "name": "split-score-2000",
+      "patches": [
+        [
+          2,
+          109,
+          2000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "d1379fbd126b440deb6075be83474572ef3d78bcbf6f62bd2efdd77cc1f49a80",
+      "after_sha256": "8b9881d2fc3aeba6751fe788e8dfa7ce22739bde5a60de143a72a07f807d89c9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8559a2280e5bed2434e68ad01be103a684a63437a17081657e0b5c329b8a313c",
+        "before.dat.gz": "eebf9b8e4268c46532eaf0370b1d92b3bd30e1d384deff847c56200d2f00bea6",
+        "dosbox.log": "364381727fb3137a7c6b883ae3c9541fc0cf773756270aab8ee1375fb6250842",
+        "transcript.txt": "9810d55f4b72c64582ca5c35bd7cc383f136c45a6b7df80d6012455cb4b40130"
+      }
+    },
+    {
+      "name": "split-score-2001",
+      "patches": [
+        [
+          2,
+          109,
+          2001
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "33a3f63f9892babeb9705427c0d3fc2eea85aaa211d47a02ed0744fea47a9c24",
+      "after_sha256": "09c7a93bae30adfc0ac6212dcced2d2d1b4851a0b0165687aa010ae710e547ab",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "d8a107781629b4968487de046839d11bdd24b4540268ab97a462bf6e06b098e9",
+        "before.dat.gz": "834ebfa287f4e5cde1effb3d07afc26c45ffcf142092b0e420fd66d2b103e725",
+        "dosbox.log": "8ec12250a9e48db846a79e5b7680ae03393dccafb82559cb52ba802f57e3832b",
+        "transcript.txt": "9dcd5b8dd18a35e2eb4adc869371a6b421da9739e313f95891ca69f2af5855b8"
+      }
+    },
+    {
+      "name": "battle-500",
+      "patches": [
+        [
+          151,
+          81,
+          500
+        ],
+        [
+          152,
+          81,
+          500
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "e2938e24ed160e676d5ab7bbbf91575115466f6b28e7760c7f97833809ece144",
+      "after_sha256": "854010fbf8125ea429e8570c2efb43b4d0e03b16cc9862df21584118c454cf14",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "710c659f59c2979faaf96034a4a673b8329d7472e27e460c2c5bd764385cce35",
+        "before.dat.gz": "493c9295d377b373a5944be1c401a1eaad28682083368aba86263233dfc5d21a",
+        "dosbox.log": "d37a2ae54849ff370073df2d622dd2f91c0cce83314e4dbae8e083f13c0d6bdb",
+        "transcript.txt": "6a5cf404c6cbc2d352d13d27bbb79747b84f0a02025c0b2a7dd67c8a55b7441c"
+      }
+    },
+    {
+      "name": "battle-5000",
+      "patches": [
+        [
+          151,
+          81,
+          5000
+        ],
+        [
+          152,
+          81,
+          5000
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "0ac46f8081093cab6daf03a09a3779b0d9b4a59b277f12ccbb510ee1a2985d13",
+      "after_sha256": "b555c9baa372246829cf76bc73c9b42e3ffdd1b9f9bb4761c8b713fad525b72e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "dc7558dc26ded6af97617e307e42f7c8f99bd828b6b11055a7f055e05469ee6a",
+        "before.dat.gz": "929319d6dddddc51894fcbd6d8b3c205279a64c5147c00579b37364cae81b520",
+        "dosbox.log": "d01e56561ad6c90d2a552cd54b05ad67b5bf7b47e84f3430b4ef526443ab9e07",
+        "transcript.txt": "533f419f6aaf1b9d3f9b005f822e26b975280b46bbe5c4a8a4287e3a2137a0df"
+      }
+    },
+    {
+      "name": "battle-5001",
+      "patches": [
+        [
+          151,
+          81,
+          5001
+        ],
+        [
+          152,
+          81,
+          5001
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "c5580586c72e87db22a7f44464ec109f501f252fb885e6c91336bcf18b27279d",
+      "after_sha256": "dbcfd31d636ad3c0e041c61c398742e8f2862ad4294ea749f2c4b4aa5c434f22",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "817f57ef2e78eb4909f7036d8f9a3049fda4e261893d05b43828f3a0cb0c617c",
+        "before.dat.gz": "05b301717b3a3c25eed573fb768bcf98900893e4dc4ffdef109848be6b70ccc7",
+        "dosbox.log": "bf2c93e489ca1b6ffb6dafbc0bb3d4c928ab4a924a323a7f68565294d07f236d",
+        "transcript.txt": "0b46b17acc160e79074edd22c6fdc1527e47b9746e3a13be434aff15f259159c"
+      }
+    },
+    {
+      "name": "top-threshold-below",
+      "full_groups": true,
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2499999
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "691bf3c58bcc8c48006899f967005adc596811adbe7dd4674c1ddd6036460956",
+      "after_sha256": "8bb1330060bc5dd0e8dcd4248606444150e77ed44729f59669a7c3c0ba36461a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8d10a231f2b33ed38235abb5ebf9961d2e69b7b487332d40763f6e6b3c8b5207",
+        "before.dat.gz": "9832aba25665efe0f7254532b55cb9dc81883234a886be69e05c92a19016a2af",
+        "dosbox.log": "6541eecc25731782ee3327babaeabaec311048d8d17bdd79c4af99ad134f694b",
+        "transcript.txt": "419218d6058e8278d84e6e7a9e7796439ed6a9365b8ed8b192d53b77c4e392e9"
+      }
+    },
+    {
+      "name": "top-threshold-equal",
+      "full_groups": true,
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "f23a0aee48cab171b6dbbd76c52f8465c3d1118df6f82013bfcfc1a976bdba65",
+      "after_sha256": "001974179c80ab3a0ca62067f8839dd68ec232b4d9ff1dc2ca222d1033ab9263",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "bbfb69e1df75588788dc029d7bf4838e1f032e83ae06dd77924392f0542499fb",
+        "before.dat.gz": "bd7cda2f60f18ae52516276af831363f57ccc6eda025cdcd78326e5b760bd7cd",
+        "dosbox.log": "3da18bfdc3f1ea05f7d649f05631c2668c331f59fdffe058736a53caaee9fb68",
+        "transcript.txt": "c9bde22bdf375bad124c3b6a40190ea9890c3d7bb195c8cbb4ee104842d64235"
+      }
+    },
+    {
+      "name": "top-hidden",
+      "full_groups": true,
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "c9ca098056b3677079882d44acc1cd5320b8b637942fabf5fa8adf41ea1ab368",
+      "after_sha256": "554de10ed006648e7450bd24184c3034318e4a564a278024736777e6bac4c32c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "60078e2d34de228d32419948afad049998d5df0bb6068a1bf2514097a4caae5d",
+        "before.dat.gz": "1307482670dde0222aeb8e2b159a0d2329f9befc22db05c160051e395738197a",
+        "dosbox.log": "79d8a5717efc02d07c25c58ff26f5b4ffa67e74072b577af952e40bde5acfd75",
+        "transcript.txt": "dd6ca037ad4bb3da34bb19525ace50d7da3ed4083ad19ec6c46de77cee88dcb1"
+      }
+    },
+    {
+      "name": "top-protected",
+      "full_groups": true,
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          7
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "5ab9772a9b7fe40599f096cf965857893cbd5a1574095bd587f0904ae7864b6d",
+      "after_sha256": "1405513b662c87f1e33a94028a496391726182d007537ff886bb1f1eb0a7c20c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "de18890d1a680a2c22fab1418cbd31db3b1df8692f51786af62ed7a5be8e9ffc",
+        "before.dat.gz": "0ec245af2359194408013eb78b3bb5b7d6c1a95d1016c900c9fe252e31c9cb0c",
+        "dosbox.log": "4dee3eea711e79dab9e16721683a60473093ec8d85c4e422ca6f5951aa7ffdc1",
+        "transcript.txt": "582420d4a6b77d855a7c398d320cb36c8db87484b14c9ad70af388c01c2e15f0"
+      }
+    },
+    {
+      "name": "top-cloak-one-00",
+      "full_groups": true,
+      "time": "00:00:00",
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "3c2b9ddaa97868c6f86c8c45869f8d5303e8871f0d2fe65e72242dd965ba1ebb",
+      "after_sha256": "e359922cdbab0218f6e1bc9e9f834a27fa03788a3a504f6b26036c4ba5edc3fe",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "53b9a82ac9c7e13d2ab8fcc5262a3227b0b021e9948527f22080ff19749e37a7",
+        "before.dat.gz": "179c30aababa3808cd458e4bc1573aac90979cf3fd851202953361fd2bfcad8e",
+        "dosbox.log": "496cf2d9e0bf68ba5e2b853ea944b6f5e47a52e0743929ad1c8d41d76b0e3668",
+        "transcript.txt": "93cdf8e8b91cc3cbb76377ac3c246cce1099d6c2cefa5447532d32175dedf3a3"
+      }
+    },
+    {
+      "name": "top-cloak-one-04",
+      "full_groups": true,
+      "time": "04:00:00",
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "3c2b9ddaa97868c6f86c8c45869f8d5303e8871f0d2fe65e72242dd965ba1ebb",
+      "after_sha256": "aa9b2a287e5674fd1a89678b3d021078ab90e6ac421e120a602b92ce2cd0193e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "21b6dc44174f046507a148c3e155c62484470f61e22b092643c45251570b8c95",
+        "after.dat.gz": "8ce31be3fc81e685a134a36e96f045255d40f1ff8b5b634f951fea21efe49da9",
+        "before.dat.gz": "179c30aababa3808cd458e4bc1573aac90979cf3fd851202953361fd2bfcad8e",
+        "dosbox.log": "c3d6de36764213d2c8432a3c10b087c5a1bd5cbfd857bb1603d6a8e4a8025035",
+        "transcript.txt": "00bcb09c3e812c4e3889831fef013ae94f6abfdde84c5e83dacc2b96fa66ac68"
+      }
+    },
+    {
+      "name": "top-cloak-one-08",
+      "full_groups": true,
+      "time": "08:00:00",
+      "patches": [
+        [
+          1165,
+          81,
+          1000000
+        ],
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          57,
+          250
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          53,
+          100000000
+        ],
+        [
+          2,
+          61,
+          100000000
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "3c2b9ddaa97868c6f86c8c45869f8d5303e8871f0d2fe65e72242dd965ba1ebb",
+      "after_sha256": "ec143c0b836d9e74d7448df5a2fe488dbffae5d8c454efe86a1cbbe5836fb620",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "ebd4ddfbd20135351ae6ff996ec06422292065cfda7d01dafb1a9b33a5cb4880",
+        "after.dat.gz": "0e5e68630fa4c94c2cb6c007976cffaaa41bebe4e7d869de2b40889b3fd09f97",
+        "before.dat.gz": "179c30aababa3808cd458e4bc1573aac90979cf3fd851202953361fd2bfcad8e",
+        "dosbox.log": "629897d9554c3a3682cec9bf56f35561ac23d2d3394e38aaaefb631a9e985756",
+        "transcript.txt": "5bffd6ad5294ebec7287a5298cea6c5ae3f2e24a5cbf863e283abf57498a090d"
+      }
+    },
+    {
+      "name": "path-unreachable",
+      "patches": [
+        [
+          151,
+          41,
+          0
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "0ab0dc30fa67e4d09621fed0c38d5675c4a5a2cd56696705c77ea03edf844c43",
+      "after_sha256": "7924d21c49c06169bee9b244eb2a2966a66425224da1ee13f554efcd94120fd9",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5c1d9abd2e637f5227ebda2a63afa00a0c4cf69223f44064b2b4cdf45fecf64d",
+        "before.dat.gz": "d5a0002113258a36c291c0b6b8381c598e6708a81eee6db50ec7ee798b122bb2",
+        "dosbox.log": "db50e11db1fccf1c37d023b31ccd59f14d8da1acaadd98ba1f426faa9af05867",
+        "transcript.txt": "8a536f3c945f40b283859e96860dbe7b76d529d574d1d52f92e7b7f532ab5cba"
+      }
+    },
+    {
+      "name": "preferred-sparse",
+      "small_groups": true,
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "5998b5d50d13ee124707960dec761d9cbad420247404e6ff9f216ed3eef06029",
+      "before_sha256": "5998b5d50d13ee124707960dec761d9cbad420247404e6ff9f216ed3eef06029",
+      "after_sha256": "b6e20733000d75910a810ce99ad161980872caeb981e43ad8a80cf394cc33144",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "78fb33dc0f5afb086ac061db31ea46cefd667b1cb5f28264b45ab58a49232097",
+        "before.dat.gz": "a2e4f6e563da17de065c07043f3035955e83f63b7ec20f0f15fc27ae3aaa2cf5",
+        "dosbox.log": "6410ed7f2c475009a263965c5831bcd9d510a70e496538c9c252a84fc649e1bc",
+        "transcript.txt": "a83db0882ee672d240796b24913edfc5db907d6ba2d5879f5ede26f00914a7ab"
+      }
+    },
+    {
+      "name": "preferred-no-probe",
+      "small_groups": true,
+      "patches": [
+        [
+          72,
+          93,
+          0
+        ],
+        [
+          95,
+          85,
+          0
+        ]
+      ],
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "5998b5d50d13ee124707960dec761d9cbad420247404e6ff9f216ed3eef06029",
+      "before_sha256": "67e174f3bdc90acac4513a02646b4bbd7f3fb1c3715bf096973c9b2aa16f03c9",
+      "after_sha256": "b4790539b5f6c3e829aea3952d3e513a33c626ef031915337d74aeac58d833af",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "32f621b2a767ed46dc8ff1c26769be3e61ec5f0a299b1feb0ea9a8f6dd6bc214",
+        "before.dat.gz": "bb3bf32b15c44e6511026770451740420dbd5d628012a0d9f1593d7e9e50fa29",
+        "dosbox.log": "18eb90850dda970b991e5a72bd36087f712d905e7a71f59bcca7c8735f556c0f",
+        "transcript.txt": "4b789c2c3e7d6c955ad72b6ec5104ad50cc57e3220558916b2f538159114e728"
+      }
+    },
+    {
+      "name": "return-next-day",
+      "parent": "return-empty",
+      "date": "10/26/2026",
+      "recipe": "xannor-mobile-isolation-v1",
+      "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+      "before_sha256": "09c7a93bae30adfc0ac6212dcced2d2d1b4851a0b0165687aa010ae710e547ab",
+      "after_sha256": "aab64fb9445a72e51fa372b6382146371232cce0de998698fcc06d8830b0f611",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "96bb7665447e5a7e9a898c02fd91bfab20a8100333e6017be789e12f3cb57598",
+        "before.dat.gz": "d8a107781629b4968487de046839d11bdd24b4540268ab97a462bf6e06b098e9",
+        "dosbox.log": "356df8d307c3d48c576c398f53e7c5fd4309e76f00175ce8f862a1cee18924ce",
+        "transcript.txt": "c436c01d51e1ac97839e1166a9273d9f1d6d73910f85446b9ba312f1566810f8"
+      }
+    }
+  ]
+}

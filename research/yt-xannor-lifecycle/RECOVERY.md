@@ -288,3 +288,7 @@ The bounded home/HQ portions above are now [implemented](IMPLEMENTATION.md),
 including persistent reserve, safe regeneration, reclaim and finite relocation.
 Mobile targeting/splitting, NPC ship attacks and revenge/cloak searches remain
 separate milestones; the evidence and legacy defects above remain unchanged.
+
+Subsequent [mobile Xannor research](../yt-xannor-mobile/RECOVERY.md) recovers
+splitting, target selection, directed paths and route dispatch. Full ship/planet
+battle formulas, revenge and exact RNG parity remain separate boundaries.

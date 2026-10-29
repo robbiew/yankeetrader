@@ -492,9 +492,10 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	w.desertHumanDefenses(rng)
 	w.mercenaryActions(rng)
 	w.hireMercenaries(taxes)
-	// Restore after faction actions so a new base cannot alter this day's routes.
+	// Restore after Mercenary routes; the following Xannor phases see the new homes.
 	w.restoreMercenaryBase(now, rng)
 	w.maintainXannor(now, rng)
+	w.xannorActions(rng)
 	for _, p := range w.Players {
 		p.Turns = 500
 		p.DockToken = ""

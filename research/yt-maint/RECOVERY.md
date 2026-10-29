@@ -295,3 +295,11 @@ Scenario creation intentionally refuses existing directory names, preserving the
 ## Project decision: fixes in the modern version
 
 The user subsequently specified that known defects and exploits should be fixed. This supersedes the compatibility-option suggestion above. Preserve original behavior for research, and track deliberate corrections in [Issues and exploits](../ISSUES_AND_EXPLOITS.md) and the [working plan](../RECONSTRUCTION_PLAN.md).
+
+Mobile splitting, targeting and route dispatch now have [47 focused DOS controls](../yt-xannor-mobile/RECOVERY.md).
+They establish the distinct mine/sector-defense rules and shared pursuit state;
+full ship/planet combat, revenge and exact RNG parity remain separate boundaries.
+
+Bounded Xannor splitting/selection, routes, mines and sector-defense combat are
+now [implemented](../yt-xannor-mobile/IMPLEMENTATION.md). Unsupported ship/planet
+encounters hold safely; full battles and revenge remain separate work.

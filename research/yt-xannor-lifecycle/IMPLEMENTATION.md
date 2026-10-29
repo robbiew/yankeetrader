@@ -62,7 +62,8 @@ the sum of all deployed Xannor defenses plus HQ reserve. Regeneration is
 strict cutoff, including regeneration at equality, and caps allocation at free
 HQ capacity. Dead retained aliases cannot fund it. Initial HQ force is zero;
 only this regeneration creates sector fighters. Existing mobile groups contribute
-to the cutoff but do not move or split in this milestone.
+to the cutoff; movement/splitting were added in the subsequent
+[bounded mobile milestone](../yt-xannor-mobile/IMPLEMENTATION.md).
 
 Existing HQ-owned defense is detached once into the local HQ force, combined
 with reserve and regeneration. A foreign defense at HQ is challenged, including
@@ -135,3 +136,6 @@ faction evidence verifiers and all 4,682 archive hashes; Linux/Windows
 cross-builds; Python syntax and changed relative documentation links. The old
 Mercenary route fixture now sets stored score zero to isolate it from Xannor
 regeneration while retaining its exact force/mine/title assertions.
+
+Current maintenance also runs [bounded mobile actions](../yt-xannor-mobile/IMPLEMENTATION.md)
+after HQ lifecycle processing and before score publication, without a schema bump.

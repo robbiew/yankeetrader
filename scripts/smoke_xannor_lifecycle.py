@@ -32,20 +32,25 @@ def exercise(guard):
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]
         assert 0 <= home['Ground'] <= 273 and 100000 <= home['Bank'] < 10100000
-        assert saved['Sectors'][str(hq)]['Defense'] == {'Owner': -1, 'Fighters': 2000}
+        groups = [(int(id), sector['Defense']['Fighters']) for id, sector in saved['Sectors'].items() if sector.get('Defense', {}).get('Owner') == -1]
+        assert sum(force for _, force in groups) == 2000
+        encounter = groups[0][0]
         assert saved['Planets']['99']['FactionHome'] == 'mercenaries'
         result = guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'],
                            check=True, capture_output=True, text=True, timeout=10)
         assert 'no daily phases repeated' in result.stdout
         assert json.loads(path.read_text()) == saved
-        saved['Players']['1']['Sector'] = hq
+        saved['Players']['1']['Sector'] = encounter
         path.write_text(json.dumps(saved))
         for classic in (False, True):
             text = guard.run(play, data, 'Captain', 'q;y' if classic else 'q', classic=classic)
             assert 'Hostile sector fighters block normal actions.' in text and 'BRIBE' in text, text
         # Simulate a cleared sector defense to isolate planetary landing rules.
         saved = json.loads(path.read_text())
-        saved['Sectors'][str(hq)].pop('Defense')
+        for sector in saved['Sectors'].values():
+            if sector.get('Defense', {}).get('Owner') == -1:
+                sector.pop('Defense')
+        saved['Players']['1']['Sector'] = hq
         saved['Planets']['100']['Ground'] = 100
         path.write_text(json.dumps(saved))
         text = guard.run(play, data, 'Captain', 'land;q')

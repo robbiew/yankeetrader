@@ -1,0 +1,34 @@
+{
+  "name": "defense-human",
+  "patches": [
+    [
+      152,
+      81,
+      50
+    ],
+    [
+      152,
+      85,
+      2
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "8d3d932c1cc4fd46ef265a09bd8c08701ff396ba0e3f092e3636188373313d54",
+  "after_sha256": "6555aa110148487061bf3795757c4c7590a7420893b4e470718e421534cce7b4",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "f846a4fa08b84bc5773bd62b4dbfc35a9d2ffd84280b37756d0b241ddc3dbbf1",
+    "before.dat.gz": "e7ec0739b16fda45400c18a7a90253f1ab47b4fe08dfe9744e7882d97ff6ba13",
+    "dosbox.log": "4de034f30adcbb72c019c1d6063c5e87a04dc03be3c7417869a0b580d0b2d516",
+    "transcript.txt": "30a5d2c5cbc5a3e995363393966fcd478825347d3209e65d73b0ff8920773a6c"
+  }
+}
