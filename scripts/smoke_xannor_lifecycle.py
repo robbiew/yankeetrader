@@ -21,6 +21,10 @@ def exercise(guard):
         world['Version'] = 13
         world.pop('NextBattleReport', None)
         world['Players']['1']['StoredScore'] = 1000000
+        # Isolate HQ regeneration/restoration from the now-enabled planetary routes.
+        for sector in world['Sectors'].values():
+            if sector['ID'] > 7:
+                sector['Warps'] = []
         world['LastMaintenance'] = (guard.day - datetime.timedelta(days=1)).isoformat()
         path.write_text(json.dumps(world))
         guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'],
@@ -28,7 +32,7 @@ def exercise(guard):
         saved = json.loads(path.read_text())
         home = saved['Planets']['100']
         hq = saved['Xannor']['HQ']
-        assert saved['Version'] == 15 and saved['Xannor']['Reserve'] == 0
+        assert saved['Version'] == 16 and saved['Xannor']['Reserve'] == 0
         assert hq > 7 and home['Sector'] == hq and saved['Sectors'][str(hq)]['Planet'] == 100
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]

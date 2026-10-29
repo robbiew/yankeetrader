@@ -12,20 +12,23 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
-	NewsLogin       NewsKind = "login"
-	NewsXannorDeath NewsKind = "xannor-death"
-	NewsTeamCreated NewsKind = "team-created"
+	NewsXannorPlanet NewsKind = "xannor-planet-assault"
+	NewsLogin        NewsKind = "login"
+	NewsXannorDeath  NewsKind = "xannor-death"
+	NewsTeamCreated  NewsKind = "team-created"
 )
 
 // NewsEvent stores only whitelisted public snapshots, never arbitrary message
 // text, authentication identities, account balances or invitation secrets.
 type NewsEvent struct {
-	ID       uint64
-	At       time.Time
-	Kind     NewsKind
-	Alias    string
-	Team     int    `json:",omitempty"`
-	TeamName string `json:",omitempty"`
+	PlanetName string `json:",omitempty"`
+	Outcome    string `json:",omitempty"`
+	ID         uint64
+	At         time.Time
+	Kind       NewsKind
+	Alias      string
+	Team       int    `json:",omitempty"`
+	TeamName   string `json:",omitempty"`
 }
 type Newspaper struct {
 	Date    string
@@ -49,10 +52,22 @@ func (w *World) validateNews() error {
 	cutoff := utcDay(reference).AddDate(0, 0, -1)
 	for _, e := range w.News {
 		_, offset := e.At.Zone()
-		if e.ID <= lastID || e.ID >= w.NextNews || e.At.IsZero() || offset != 0 || e.At.Before(w.Created) || e.At.Before(lastAt) || e.At.Before(cutoff) || !clean(e.Alias) {
+		if e.ID <= lastID || e.ID >= w.NextNews || e.At.IsZero() || offset != 0 || e.At.Before(w.Created) || e.At.Before(lastAt) || e.At.Before(cutoff) || (e.Kind != NewsXannorPlanet && !clean(e.Alias)) {
 			return errors.New("invalid newspaper event")
 		}
+		if e.Kind != NewsXannorPlanet && (e.PlanetName != "" || e.Outcome != "") {
+			return errors.New("unrelated news contains planetary details")
+		}
 		switch e.Kind {
+		case NewsXannorPlanet:
+			if e.Alias != "" || e.Team != 0 || e.TeamName != "" || !clean(e.PlanetName) {
+				return errors.New("invalid planetary news snapshot")
+			}
+			switch e.Outcome {
+			case "defended", "damaged", "neutralized", "destroyed", "unfinished":
+			default:
+				return errors.New("invalid planetary news outcome")
+			}
 		case NewsLogin, NewsXannorDeath:
 			if e.Team != 0 || e.TeamName != "" {
 				return errors.New("login newspaper event contains team details")

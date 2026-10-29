@@ -22,6 +22,22 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 16 {
+		for _, p := range w.Players {
+			if p != nil {
+				for _, report := range p.BattleReports {
+					if report.Planet != nil {
+						return errors.New("legacy world unexpectedly contains planetary battle state")
+					}
+				}
+			}
+		}
+		for _, e := range w.News {
+			if e.Kind == NewsXannorPlanet || e.PlanetName != "" || e.Outcome != "" {
+				return errors.New("legacy world unexpectedly contains planetary news")
+			}
+		}
+	}
 	if w.Version < 15 {
 		if w.NextBattleReport != 0 {
 			return errors.New("legacy world unexpectedly contains battle report state")
@@ -153,6 +169,9 @@ func (w *World) Upgrade() error {
 	if w.Version == 14 {
 		w.NextBattleReport = 1
 		w.Version = 15
+	}
+	if w.Version == 15 {
+		w.Version = 16
 	}
 	return nil
 }
@@ -513,4 +532,20 @@ func (w *World) PlanetStatus(id int, token string, now time.Time) (Planet, error
 		return Planet{}, e
 	}
 	return *planet, nil
+}
+
+// invalidatePlanetLandings also expires confirmations held by other sessions.
+// A subsequently reused planet slot cannot resurrect an old access token.
+func (w *World) invalidatePlanetLandings(id int) {
+	for _, player := range w.Players {
+		if player.LandedPlanet == id {
+			player.PlanetToken = ""
+			player.LandedPlanet = 0
+		}
+	}
+}
+func (w *World) destroyPlanet(planet *Planet) {
+	delete(w.Planets, planet.ID)
+	w.Sectors[planet.Sector].Planet = 0
+	w.invalidatePlanetLandings(planet.ID)
 }

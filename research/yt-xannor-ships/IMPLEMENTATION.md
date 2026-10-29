@@ -3,8 +3,8 @@
 Daily mobile Xannor movement now intercepts current living ships after mines and
 sector defenses. It uses the [recovered fighter/shield rules](RECOVERY.md), with
 finite shared work, generation-safe death, persistent private reports and atomic
-estate updates. Foreign planets still stop the group **before** mines or combat;
-planetary assault/destruction and remaining revenge search are later milestones.
+estate updates. The subsequent [planetary phase](../yt-xannor-planets/IMPLEMENTATION.md)
+now runs between sector defenses and ships; remaining revenge search is separate.
 
 ## Encounters and bounded work
 
@@ -160,3 +160,11 @@ newspaper, radio, spies, salvage, mines, missiles, teams, sector-fighter and
 planet-missile smokes; all three Xannor evidence verifiers and nine semantic
 corruption controls; all 4682 archive hashes; Linux/Windows cross-builds; Python
 syntax, changed documentation links and whitespace checks.
+
+
+The next [planetary research slice](../yt-xannor-planets/RECOVERY.md) is now
+complete with 71 original-DOS controls and explicit economic-phase boundaries.
+The subsequent [planetary implementation](../yt-xannor-planets/IMPLEMENTATION.md)
+supersedes foreign-planet holds and upgrades current saves to version 16 while
+preserving this ship history. Validation descriptions above record the original
+ship milestone; current smokes exercise planetary defenses before ship detection.

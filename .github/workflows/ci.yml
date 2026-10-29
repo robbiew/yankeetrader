@@ -57,6 +57,8 @@ jobs:
           python3 scripts/test_xannor_mobile_verifier.py
           python3 scripts/verify_xannor_ships.py
           python3 scripts/test_xannor_ships_verifier.py
+          python3 scripts/verify_xannor_planets.py
+          python3 scripts/test_xannor_planets_verifier.py
           python3 scripts/verify_rankings.py
           python3 scripts/verify_spies.py
           python3 scripts/verify_newspaper.py
@@ -116,6 +118,7 @@ jobs:
           python3 scripts/smoke_xannor_lifecycle.py
           python3 scripts/smoke_xannor_mobile.py
           python3 scripts/smoke_xannor_ships.py
+          python3 scripts/smoke_xannor_planets.py
           python3 scripts/smoke_planet_missiles.py
       - name: Cross-build Linux and Windows
         run: |

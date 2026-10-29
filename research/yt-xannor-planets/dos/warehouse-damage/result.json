@@ -1,0 +1,40 @@
+{
+  "name": "warehouse-damage",
+  "patches": [
+    [
+      4053,
+      57,
+      10000
+    ],
+    [
+      4053,
+      61,
+      20000
+    ],
+    [
+      4053,
+      65,
+      30000
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "7a38a6da93aa169a9e040b1f1fc73a7adef58baa555d13b6ed587c2f60a3ced2",
+  "after_sha256": "01608923ea7518aff0aba0f41316c54581f93d6a4d9e7379d78d4931549a32ef",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "3428d64450d3fe43a5185720bf6242bcc37e4319e4d23dbad0a78e6c2422da8f",
+    "before.dat.gz": "60f13242b359306fbbcbf73f5ff2fb270dfa769fb9b6f366469c79a2b9bd20ee",
+    "dosbox.log": "ce4e175537e26d0dea80892ac782b53ab4475b5b0fab4a1e2a410bf75c224fad",
+    "sidefiles.json": "1adf8bc21427af6cb4b7199b566ceb75d0f9b2511c13e706407a911de0fbb9d3",
+    "transcript.txt": "f71e9d2b1acb54164350b47c8f0423b88860c6a24a7f780a5424ddbaf1bb143e"
+  }
+}

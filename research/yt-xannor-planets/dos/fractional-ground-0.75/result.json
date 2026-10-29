@@ -1,0 +1,30 @@
+{
+  "name": "fractional-ground-0.75",
+  "patches": [
+    [
+      4053,
+      77,
+      0.75
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "e969b6f1259ae862fb0223b15a40153477ca9ff81ecb4a41e5124d13fa2fb933",
+  "after_sha256": "aff40984243e0d2d560c173d2e7cb3ac481ea91b17b53da60f9181a2b7cb6444",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "5d0cd6f4b4a2e021cf1f9c8a606366ce7b51a86558e314de8df427c91a2d403b",
+    "before.dat.gz": "9df63b0145f67c723255b79ad6fb3c09e5c41c3b491e9d366ab21ed5b3ad1046",
+    "dosbox.log": "32da3fbd9b6146c78247d6f9a8c6f066e7eceabfd0c9714d9b78197bf8a5f531",
+    "sidefiles.json": "1adf8bc21427af6cb4b7199b566ceb75d0f9b2511c13e706407a911de0fbb9d3",
+    "transcript.txt": "f71e9d2b1acb54164350b47c8f0423b88860c6a24a7f780a5424ddbaf1bb143e"
+  }
+}

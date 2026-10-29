@@ -1,0 +1,60 @@
+{
+  "name": "weapons-retained",
+  "patches": [
+    [
+      4053,
+      45,
+      0
+    ],
+    [
+      4053,
+      49,
+      0
+    ],
+    [
+      4053,
+      53,
+      0
+    ],
+    [
+      4053,
+      69,
+      100000
+    ],
+    [
+      4053,
+      113,
+      100000
+    ],
+    [
+      4053,
+      125,
+      100000
+    ],
+    [
+      4053,
+      129,
+      100000
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "cc45e079fc305f6456aa5be3e6dd20b73293c8450940fe91d1e8fc9528f1623c",
+  "after_sha256": "117b6b1b074f5b21a5316467c7725bc447175fabcf35756d5ad5487bef414c6f",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "a404e2a1b2348beb61de39dada4541d466b1f245743d18b00d2e63db89a09dea",
+    "before.dat.gz": "6e7591f68f4776d964898160e3c2eb51cd9eb952b9e78c88320e2a32bf46f27f",
+    "dosbox.log": "773564094167675fe166a6b4a66541a34033c4f3a1441f1b0fbdfd0b30787f32",
+    "sidefiles.json": "f7d0eea1b3adb56c5fdea1ba8382b842b5e1009d0b152bc480dcde8fcdf80f7f",
+    "transcript.txt": "609e7c64ae516116c6ef76a44bcfd14233c5dd50a073426ef85cf5f19eb6a5f8"
+  }
+}

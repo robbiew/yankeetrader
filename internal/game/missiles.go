@@ -494,14 +494,7 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			out.CargoBefore, out.CargoAfter = planetImpact.CargoBefore, planetImpact.CargoAfter
 			out.PlanetDestroyed = out.PlanetDestroyed || planetImpact.Destroyed
 			if destroyed {
-				delete(w.Planets, planet.ID)
-				sector.Planet = 0
-				for _, player := range w.Players {
-					if player.LandedPlanet == planet.ID {
-						player.PlanetToken = ""
-						player.LandedPlanet = 0
-					}
-				}
+				w.destroyPlanet(planet)
 			}
 			out.PlanetImpacts = append(out.PlanetImpacts, planetImpact)
 		}

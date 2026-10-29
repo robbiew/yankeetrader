@@ -338,31 +338,7 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 	validMobile(t, w)
 }
 
-func TestXannorUnsupportedEncountersHoldBeforeMutationAndSkipOwnStocks(t *testing.T) {
-	for _, mode := range []string{"human-planet", "neutral-planet", "captured-home"} {
-		w := mobileWorld(t, 12)
-		_, _ = w.Join("captain", "Captain")
-		group := mobileGroup(w, 9, 100)
-		w.Sectors[10].Minefield = []MineLayer{{Owner: 1, Count: 1}}
-		w.Sectors[10].Defense = &SectorDefense{Owner: 1, Fighters: 50}
-		owner := 1
-		if mode == "neutral-planet" {
-			owner = 0
-		}
-		planet := &Planet{ID: 2, Sector: 10, Owner: owner, Name: "Protected title", Updated: clock, Fighters: 37.5, Bank: 1234, Ground: 0}
-		if mode == "captured-home" {
-			planet.FactionHome = XannorHome
-		}
-		w.Planets[2], w.Sectors[10].Planet = planet, 2
-		before, _ := json.Marshal(w)
-		preferred := 0
-		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { t.Fatal("unsupported encounter drew RNG"); return 0 })
-		after, _ := json.Marshal(w)
-		if string(before) != string(after) {
-			t.Fatal("unsupported planet encounter mutated assets", mode)
-		}
-		validMobile(t, w)
-	}
+func TestXannorFriendlyPlanetStocksUntouched(t *testing.T) {
 	w := mobileWorld(t, 12)
 	group := mobileGroup(w, 9, 100)
 	home := &Planet{ID: 100, Sector: 10, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: clock, Fighters: 37.5, Ground: 10}

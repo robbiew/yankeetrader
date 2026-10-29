@@ -172,7 +172,7 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 15 || upgraded.NextBattleReport != 1 || len(upgraded.Players[1].BattleReports) != 0 {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.NextBattleReport != 1 || len(upgraded.Players[1].BattleReports) != 0 {
 		t.Fatal("migration", err)
 	}
 	unchanged, _ := os.ReadFile(path)
