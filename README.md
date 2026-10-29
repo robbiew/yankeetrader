@@ -2,6 +2,29 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+## Status
+
+**Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
+
+### Available in-game to test
+
+- **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest.
+- **Navigation and trading:** sector movement, adjacent sensors, cloak detection, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, port buyouts and treasury collection.
+- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
+- **Combat:** confirmed ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper currently records logins and team creation.
+- **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
+
+### Not shipped yet
+
+- NPC gameplay and the remaining daily-maintenance phases, including lottery and deletion.
+- Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
+- Danger/score scanners and player-commanded emergency warps (automatic combat/mine escape is available).
+- Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and newspaper events beyond logins/team creation.
+- Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
+
+See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
+
 ## Screenshots
 
 Captured from the current Go game in an 80×25 local ANSI terminal session.
@@ -174,7 +197,7 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 `PATH` and `AUTO` honor your 30 private avoid slots, including the start and destination. For example, `AVOID 1 2` routes around sector 2; `AVOID 1 0` clears that preference. Manual `M` movement and sensors still work normally. Avoid edits cost no turns and persist across logins—an intentional improvement over the DOS session-only list. If a list edit makes a plotted course unsafe, autopilot stops before the next hop and keeps completed moves saved. Existing saves begin with an empty list.
 
-Sensors show actual public sector/ship data. Defense deployment, danger scanners and manual emergency warps remain outside this slice. Minefields and safe automatic escape are implemented in the later milestones below. Cloak detection and direct fighter attacks are implemented in the later milestones below. Default worlds start without minefields; non-Earth combat wrecks can create them.
+Sensors show actual public sector/ship data. Danger scanners and manual emergency warps remain outside this slice; sector-defense deployment and combat are available as described below. Minefields and safe automatic escape are implemented in the later milestones below. Cloak detection and direct fighter attacks are implemented in the later milestones below. Default worlds start without minefields; non-Earth combat wrecks can create them.
 
 The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
 
@@ -263,7 +286,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 players, 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, NPCs, full universe generation parity, DOS save import/export, Genesis, and richer terminal menus remain future milestones. Their recovered rules are in `research`.
+NPCs, full universe generation parity, DOS save import/export, Genesis, and remaining terminal-menu actions remain future milestones. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
@@ -323,7 +346,7 @@ The explicit commands below apply to `-compact`. The default interface uses the 
 | `GARRISON <target>` | Set planetary ground forces using the ship's ground forces; zero releases ownership |
 | `LEAVE` | Leave the planet or port |
 
-Owners, members of the same nonzero team, and visitors to unguarded planets can land. Permission and current position are rechecked on every action. Team assignment and planetary combat are not implemented yet.
+Owners, members of the same nonzero team, and visitors to unguarded planets can land. Permission and current position are rechecked on every action. Team membership and shared access are available through the team menu. Missile bombardment of planets is available as described below; forced landing is not implemented yet.
 
 Production uses elapsed time capped at ten days. Visiting grows rates before production; daily maintenance produces before growing rates, matching the two recovered DOS paths. Banking reevaluates surplus production after changing the balance. Fractional stock is retained; only whole units move aboard. See [planet recovery](research/yt-combat/RECOVERY.md) and the packaged reports in `research/yt-combat` for the original evidence (report filenames are preserved).
 
