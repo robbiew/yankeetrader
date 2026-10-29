@@ -123,12 +123,13 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.NextNews = 0
 	w.Players[1].StoredScore = 0
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	os.WriteFile(path, data, 0600)
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 11 || upgraded.Players[1].StoredScore != 0 {
+	if err != nil || upgraded.Version != 12 || upgraded.Players[1].StoredScore != 0 {
 		t.Fatal(upgraded, err)
 	}
 	actual, _ := os.ReadFile(path)
@@ -140,6 +141,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.NextNews = 0
 	w.Players[1].StoredScore = 1
 	data, _ = json.Marshal(w)
 	os.WriteFile(path, data, 0600)
@@ -156,6 +158,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 8
+	w.NextNews = 0
 	w.Players[1].Credits = 100000
 	if err = w.CreatePlanet(1, "Zero", time.Now()); err != nil {
 		t.Fatal(err)
@@ -168,7 +171,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 11 || upgraded.Planets[2].Production != [3]float64{0, 20, 0} {
+	if err != nil || upgraded.Version != 12 || upgraded.Planets[2].Production != [3]float64{0, 20, 0} {
 		t.Fatal(upgraded, err)
 	}
 	disk, _ := os.ReadFile(path)
@@ -179,7 +182,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err = s.View()
-	if err != nil || upgraded.Version != 11 || upgraded.Planets[2].Production[0] != 0 {
+	if err != nil || upgraded.Version != 12 || upgraded.Planets[2].Production[0] != 0 {
 		t.Fatal(upgraded, err)
 	}
 }

@@ -1,0 +1,180 @@
+{
+  "today": {
+    "command": "C;8;T\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "TODAY LAST",
+      "Logged on"
+    ],
+    "absent": [
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "yesterday": {
+    "command": "C;8;Y\r~~1",
+    "contains": [
+      "YESTERDAY FIRST",
+      "YESTERDAY LAST"
+    ],
+    "absent": [
+      "TODAY FIRST",
+      "Logged on"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "yesterday"
+  },
+  "invalid-choice": {
+    "command": "C;8;X;T\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "TODAY LAST"
+    ],
+    "absent": [
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 2,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "lowercase": {
+    "command": "C;8;t\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "TODAY LAST"
+    ],
+    "absent": [
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "empty-today": {
+    "command": "C;8;T\r~~1",
+    "contains": [
+      "Logged on"
+    ],
+    "absent": [
+      "TODAY FIRST",
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "empty-yesterday": {
+    "command": "C;8;Y\r~~1",
+    "contains": [],
+    "absent": [
+      "TODAY FIRST",
+      "YESTERDAY FIRST",
+      "Logged on",
+      "NOT FOUND"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "yesterday"
+  },
+  "missing-yesterday": {
+    "command": "C;8;Y\r~~1",
+    "contains": [
+      "*** GAME FILE [YTYNEWS.DAT] NOT FOUND! ***"
+    ],
+    "absent": [
+      "TODAY FIRST",
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "yesterday"
+  },
+  "dos-eof": {
+    "command": "C;8;T\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "Logged on"
+    ],
+    "absent": [
+      "HIDDEN TAIL",
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "yesterday-eof": {
+    "command": "C;8;Y\r~~1",
+    "contains": [
+      "YESTERDAY FIRST"
+    ],
+    "absent": [
+      "HIDDEN TAIL",
+      "TODAY FIRST",
+      "Logged on"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "yesterday"
+  },
+  "team-created": {
+    "command": "T;2\r~~~~News Team\r~~~~ABCD\r~~~~1;C;8;T\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "TODAY LAST",
+      "Q  Created Team 1 -=- News Team"
+    ],
+    "absent": [
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": null,
+    "day": "today"
+  },
+  "team-reconnect": {
+    "command": "C;8;T\r~~1",
+    "contains": [
+      "TODAY FIRST",
+      "TODAY LAST",
+      "Q  Created Team 1 -=- News Team"
+    ],
+    "absent": [
+      "YESTERDAY FIRST"
+    ],
+    "prompts": 1,
+    "maintenance": null,
+    "parent": "team-created",
+    "day": "today"
+  },
+  "rotate-next-day": {
+    "command": "",
+    "contains": [],
+    "absent": [],
+    "prompts": 0,
+    "maintenance": "10/25/2026",
+    "parent": null,
+    "day": "today"
+  },
+  "rotate-same-day": {
+    "command": "",
+    "contains": [],
+    "absent": [],
+    "prompts": 0,
+    "maintenance": "10/24/2026",
+    "parent": null,
+    "day": "today"
+  }
+}

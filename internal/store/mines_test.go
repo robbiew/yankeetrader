@@ -147,13 +147,14 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 6
+	w.NextNews = 0
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 11 {
+	if err != nil || current.Version != 12 {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -165,6 +166,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 6
+	w.NextNews = 0
 	w.Sectors[2].Minefield = []game.MineLayer{{Owner: 0, Count: 1}}
 	data, _ = json.Marshal(w)
 	os.WriteFile(path, data, 0600)

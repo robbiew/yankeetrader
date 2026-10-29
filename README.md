@@ -38,7 +38,7 @@ In this interface `L` follows DOS and lands on a planet; `LOOK` displays the
 sector. The compact interface keeps its existing `L` look binding. Use
 `-compact` to skip the startup screens and retain the prior command workflow.
 The computer connects options 2 (port report), 3 (autopilot), 4 (player/team rankings), 5 (send radio), 6 (message history), 7 (avoid slots),
-9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
+8 (Galactic newspaper), 9 (planet report), 10 (path finder), 11 (your deployed sector fighters),
 12 (port treasuries), 13 (your planets), 14 (nearest ports), 15 (active spies), 16 (port pairs),
 and 17 (adjacent-port trade forecasts) to the implemented game rules.
 
@@ -100,6 +100,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
 | `RANK` / computer `C`, `4` | Rank players and teams from current assets and save all player scores; free |
 | `RANK OLD` / computer `C`, `4`, `O` | Stored scores with current aliases, teams and port counts; free |
+| `NEWS [TODAY|YESTERDAY]` / computer `C`, `8` | Read retained public news in five-entry pages; free |
 | `HIRE <sector> [sector ...]` / Earth option `9` | Hire up to three spies per login, 333,000 credits each; choose every starting sector |
 | `SPIES` / computer `C`, `15` | List this login's current spy hunt locations; free |
 | `INTEL` | Read this login's last 30 intelligence reports in five-report pages; free |
@@ -246,7 +247,7 @@ Sector-defense deployment/combat and reinforcement, NPCs, full universe generati
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 11 for saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 11. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 12 for a bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 12. Newspaper history begins empty on migration; past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -308,7 +309,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-10 worlds upgrade to version 11 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-11 worlds upgrade to version 12 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -370,7 +371,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 11; follow the stopped-world
+Earth remains free of mines. This build now uses save version 12; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the
@@ -455,3 +456,13 @@ Spies and intelligence history end on disconnect or logout; hires are not
 refunded. Direct radio history remains persistent and separate. Ship/cloak and
 disruption intelligence still need runtime evidence and are unavailable.
 [Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).
+
+The Galactic newspaper is available through computer option 8 and
+`NEWS [TODAY|YESTERDAY]`. It records successful logins and team creation with
+public alias/name snapshots. History uses UTC calendar dates, retains today and
+yesterday, and caps the combined journal at the newest 1,024 events. Five-entry
+pages are free to read; Enter continues and Q stops. Private radio and spy reports
+remain separate. Repeated maintenance preserves history; old saves start with
+empty news rather than reconstructed events. Combat, acquisition, registration
+and other newspaper event types remain outside this slice.
+[Research](research/yt-newspaper/RECOVERY.md) and [rules, migration and validation](research/yt-newspaper/IMPLEMENTATION.md).

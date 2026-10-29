@@ -1,0 +1,37 @@
+{
+  "name": "today",
+  "command": "C;8;T\r~~1",
+  "maintenance": null,
+  "parent": null,
+  "complete": true,
+  "source_sha256": "71681ff6384d50112ab613391147db0a2367e48f73d6bda38324443898a37c7c",
+  "baseline_sha256": "a2f53d46e6379766503e2a654e4b12de1ba6b8472ce72b33f8b89048040ebcb6",
+  "before_sha256": "a2f53d46e6379766503e2a654e4b12de1ba6b8472ce72b33f8b89048040ebcb6",
+  "after_sha256": "6d36597e3fa8fa03ecf9605ce7ead6bd323d51fc75b0b20403dfa39ff08eedd3",
+  "executable": "YT.EXE",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "news": {
+    "YTNEWS.DAT": {
+      "before_sha256": "db61459135ac1e4eb186d63f5230f76c1258d24cb3332eb86870091656ab2770",
+      "after_sha256": "a1e5e45e1c74ca73d56f76a534bc820a380866da6a7ce381b08c8e91a25c9452"
+    },
+    "YTYNEWS.DAT": {
+      "before_sha256": "0e91b0830959ab693f628d6d69ffffa034782d1a7bbc2c621349a2beade9aa17",
+      "after_sha256": "0e91b0830959ab693f628d6d69ffffa034782d1a7bbc2c621349a2beade9aa17"
+    }
+  },
+  "files": {
+    "before.dat.gz": "3af732b5e952a00b3412fab04a6e2a034d8cb810874983e3056c826595dfad44",
+    "YTNEWS.DAT.after.gz": "8addc632d28b577fbef371191462d94bb8f0425a7f91713e1331f041587b9e05",
+    "transcript.txt": "a234c70555660c707d0451dfe7a6f7906d7ba0841d9ca0a06e229311f806e47c",
+    "YTYNEWS.DAT.before.gz": "1d493958680e69102f16f90ae5807059e7cbbb7081bcd1fd17d0ef129f0e9e4d",
+    "dosbox.log": "c06d36206211329898f6590972c94ff4990900a9a56a9d7a3c3726e112e6c6cc",
+    "YTNEWS.DAT.before.gz": "c65bba7c674ba5e34a15aabac5390dcd6f94e714f4357ae4ff165157a16e2f4e",
+    "YTYNEWS.DAT.after.gz": "1d493958680e69102f16f90ae5807059e7cbbb7081bcd1fd17d0ef129f0e9e4d",
+    "after.dat.gz": "e45b74c72ffdb18f969f8aaf7597f1d4ce2d916cbeeddd60bd54569854d6cce2",
+    "KEYS.TXT": "0c57315a3a71d2c2fb0e8732d8ad861046c500eef9abd9de2372ad3b99b0c421"
+  }
+}

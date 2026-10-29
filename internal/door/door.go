@@ -177,6 +177,9 @@ func (s Session) Run() (runErr error) {
 		}
 	} else {
 		if e := s.Store.Update(func(w *game.World) error {
+			if !time.Now().Before(s.Deadline) {
+				return errors.New("session time expired")
+			}
 			w.Maintain(s.Now())
 			alias := s.Alias
 			for _, existing := range w.Players {
@@ -196,6 +199,12 @@ func (s Session) Run() (runErr error) {
 				p.DockToken = ""
 				p.PlanetToken = ""
 				p.LandedPlanet = 0
+			}
+			if e == nil {
+				e = w.RecordLogin(id, s.Now())
+			}
+			if e == nil && !time.Now().Before(s.Deadline) {
+				e = errors.New("session time expired")
 			}
 			return e
 		}); e != nil {
@@ -356,6 +365,8 @@ func (s Session) Run() (runErr error) {
 				cmd, args = "auto", []string{value}
 			case "2":
 				cmd = "portreport"
+			case "8":
+				cmd = "news"
 			case "9":
 				cmd = "planetreport"
 			case "13":
@@ -476,7 +487,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -598,6 +609,11 @@ func (s Session) Run() (runErr error) {
 			}
 		case "rank", "rankings":
 			e = s.rankings(id, args, &pending)
+			if errors.Is(e, io.EOF) {
+				return nil
+			}
+		case "news":
+			e = s.newspaper(id, args, &pending)
 			if errors.Is(e, io.EOF) {
 				return nil
 			}

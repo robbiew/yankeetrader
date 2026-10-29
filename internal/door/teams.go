@@ -111,7 +111,18 @@ func (s Session) teamMenu(id int, pending *[]string) error {
 			if err != nil {
 				break
 			}
-			err = s.Store.Update(func(w *game.World) error { return w.CreateTeam(id, name, password) })
+			err = s.Store.Update(func(w *game.World) error {
+				if !time.Now().Before(s.Deadline) {
+					return errors.New("session time expired")
+				}
+				if err := w.CreateTeamWithNews(id, name, password, s.Now()); err != nil {
+					return err
+				}
+				if !time.Now().Before(s.Deadline) {
+					return errors.New("session time expired")
+				}
+				return nil
+			})
 		case "3":
 			if team.ID != 0 {
 				err = errors.New("leave your current team first")
