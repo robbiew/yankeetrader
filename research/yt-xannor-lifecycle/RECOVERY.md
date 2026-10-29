@@ -4,7 +4,9 @@ This slice preserves **38 completed original-DOS runs and 76 completed-run save
 snapshots**, plus **three separate eight-second relocation stalls with six
 snapshots**. Eleven new REA byte observations and one reused random-helper
 observation corroborate the decisive branches. These are research artifacts;
-Go gameplay and save version 13 are unchanged by this milestone.
+Go gameplay and save version 13 were unchanged by the research commit.
+The subsequent [version-14 implementation](IMPLEMENTATION.md) adds bounded
+home/HQ lifecycle with explicit modern policies.
 
 Target: original `YTMAINT.EXE`, SHA-256
 `8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6`.
@@ -265,11 +267,11 @@ maintenance verifiers and all archive hashes pass; Python syntax/link/diff check
 are part of the research commit validation. No Go gameplay checks are claimed
 necessary for this documentation/evidence-only change.
 
-## Recommended implementation slice
+## Research recommendations and implementation
 
 Start with **explicit Xannor home identity and bounded home restoration**, using
-the same conservative captured-ownership policy as the Mercenary base. Existing
-version13 accepts only Mercenary home identity; extending it requires deliberate
+the same conservative captured-ownership policy as the Mercenary base. At research time,
+version13 accepted only Mercenary home identity; extending it required deliberate
 validation/migration coverage. Do not infer a home from a legacy name/slot or
 move a player's captured planet merely because an HQ pointer moved.
 
@@ -281,3 +283,8 @@ explicit supported combat/ownership operation handles them. Preserve conservatio
 when combining existing Xannor forces. Avoid the unbounded retry and stale-result
 spawn defects. Full NPC ship combat, revenge/cloak search behavior and exact
 QuickBASIC arithmetic remain separate milestones.
+
+The bounded home/HQ portions above are now [implemented](IMPLEMENTATION.md),
+including persistent reserve, safe regeneration, reclaim and finite relocation.
+Mobile targeting/splitting, NPC ship attacks and revenge/cloak searches remain
+separate milestones; the evidence and legacy defects above remain unchanged.

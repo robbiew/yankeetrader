@@ -62,7 +62,7 @@ Route length is bounded by the directed graph and groups are snapshotted once.
 The existing locked daily transaction commits route changes, hires, taxes, scores
 and date together. Abort or validation failure publishes no partial action. The
 same-day/rollback guard prevents replay. Route actions introduced no schema migration or faction owner. Current save
-version 13 supports the subsequent [Mercenary-base lifecycle](BASE.md).
+version 13 introduced the subsequent [Mercenary-base lifecycle](BASE.md).
 
 ## Validation and boundaries
 
@@ -94,3 +94,6 @@ policy. Further faction-home combinations remain separate.
 [Human-defense desertion](DESERTION.md) is implemented as a separate phase. Full NPC ship combat and exact QuickBASIC RNG/MBF parity remain
 separate. These route actions preserve the recovered rule structure while
 explicitly adapting protected sectors, work limits, quantity limits and scheduling.
+
+Current version 14 adds [Xannor HQ/home lifecycle](../yt-xannor-lifecycle/IMPLEMENTATION.md)
+after the existing Mercenary daily phases.

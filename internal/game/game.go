@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 13
+const WorldVersion = 14
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -57,7 +57,8 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
-	News     []NewsEvent `json:",omitempty"`
+	Xannor   *XannorState `json:",omitempty"`
+	News     []NewsEvent  `json:",omitempty"`
 	NextNews uint64
 
 	Radio           []RadioMessage `json:",omitempty"`
@@ -213,6 +214,9 @@ func (w *World) Validate() error {
 				return errors.New("invalid port economy")
 			}
 		}
+	}
+	if err := w.validateXannor(); err != nil {
+		return err
 	}
 	if err := w.validateMines(); err != nil {
 		return err
@@ -464,7 +468,7 @@ func (w *World) Maintain(now time.Time) bool {
 	return w.maintain(now, prng.Float64)
 }
 
-// maintain shares a random source between desertion and route actions. Keeping
+// maintain shares a random source between faction phases. Keeping
 // it injectable internally permits exact threshold and phase-order tests.
 func (w *World) maintain(now time.Time, rng func() float64) bool {
 	today := day(now)
@@ -490,6 +494,7 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	w.hireMercenaries(taxes)
 	// Restore after faction actions so a new base cannot alter this day's routes.
 	w.restoreMercenaryBase(now, rng)
+	w.maintainXannor(now, rng)
 	for _, p := range w.Players {
 		p.Turns = 500
 		p.DockToken = ""

@@ -42,7 +42,7 @@ The existing UTC maintenance marker and locked transaction cover desertion,
 routes, hiring, score publication and the day together. Same-day replay and clock
 rollback do not consume randomness or reroll a retained group. Abort or failed
 validation leaves the published save unchanged. The phase needs no new fields;
-desertion itself introduced no migration. Current version 13 adds
+desertion itself introduced no migration. Version 13 introduced
 [Mercenary-base identity and restoration](BASE.md).
 
 Deterministic game tests cover both player IDs 1 and 2, one/50/99-fighter strict
@@ -92,3 +92,5 @@ not yet verified.
 [Mercenary-base restoration](BASE.md) is now implemented with an explicit
 ownership policy. Full NPC ship combat and bit-exact DOS RNG/MBF parity remain
 separate.
+
+Current version 14 also adds [Xannor HQ/home lifecycle](../yt-xannor-lifecycle/IMPLEMENTATION.md).

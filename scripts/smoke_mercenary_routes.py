@@ -19,6 +19,8 @@ def exercise(root, today):
         data.mkdir()
         path = data / 'world.json'
         world = copy.deepcopy(original)
+        # Isolate Mercenary routes from the separate score-funded Xannor HQ phase.
+        world['Players']['1']['StoredScore'] = 0
         world['LastMaintenance'] = (today - datetime.timedelta(days=1)).isoformat()
         for sector in range(8, 13):
             world['Sectors'][str(sector)]['Warps'] = [sector + 1] if sector < 12 else []

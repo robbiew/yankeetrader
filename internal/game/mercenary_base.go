@@ -38,7 +38,7 @@ func (w *World) restoreMercenaryBase(now time.Time, rng func() float64) {
 	}
 	sectors := make([]int, 0, len(w.Sectors))
 	for id, sector := range w.Sectors {
-		if id > 7 && sector.Planet == 0 && (sector.Defense == nil || sector.Defense.Owner == MercenaryOwner) {
+		if id > 7 && (w.Xannor == nil || id != w.Xannor.HQ) && sector.Planet == 0 && (sector.Defense == nil || sector.Defense.Owner == MercenaryOwner) {
 			sectors = append(sectors, id)
 		}
 	}
