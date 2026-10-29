@@ -25,3 +25,7 @@
 /research/yt-mercenaries/dos/**/KEYS.TXT -text -diff
 /research/yt-mercenaries/dos/**/transcript.txt -text whitespace=-blank-at-eol
 /research/yt-mercenaries/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-mercenaries/hostility-dos/**/KEYS.TXT -text -diff
+/research/yt-mercenaries/hostility-dos/**/transcript.txt -text whitespace=-blank-at-eol
+/research/yt-mercenaries/hostility-dos/**/dosbox.log -text whitespace=-blank-at-eol

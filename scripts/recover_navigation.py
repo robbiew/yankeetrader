@@ -23,12 +23,13 @@ def main():
     parser.add_argument("--followup", action="store_true", help="Run the cloak/team/varied-warp follow-up suite")
     parser.add_argument("--hazards", action="store_true", help="Run disruption/scanner-damage/automatic-escape probes")
     parser.add_argument("--utilities", action="store_true", help="Run computer-report and fighter/NPC encounter probes")
+    parser.add_argument("--hostility", action="store_true", help="Run bribe hostility memory and planet controls")
     parser.add_argument("--bribes", action="store_true", help="Run mercenary offer-boundary and faction refusal probes")
     parser.add_argument("--commerce", action="store_true", help="Run route-commerce, spy-hiring and radio probes")
     parser.add_argument("--ownership", action="store_true", help="Run port acquisition, buyout and treasury probes")
     parser.add_argument("--dosbox", default="dosbox-staging", help="DOSBox Staging command or executable path")
     args = parser.parse_args()
-    if sum((args.followup, args.hazards, args.utilities, args.bribes, args.commerce, args.ownership, args.only is not None)) > 1:
+    if sum((args.followup, args.hazards, args.utilities, args.hostility, args.bribes, args.commerce, args.ownership, args.only is not None)) > 1:
         parser.error("choose a suite or --only")
     dosbox = shutil.which(args.dosbox)
     if dosbox is None:
@@ -163,6 +164,17 @@ def main():
     ]
     scenarios += [("npc-bribe-"+name,500,"M;101\r~~B\r~~"+offer,
                    {**defenders,**patches}) for name,offer,patches in bribes]
+    scenarios += [
+        ("npc-hostility-partial",500,"M;101\r~~A;10\r~~~~B\r~~50000",{**defenders,(152,81):1000}),
+        ("npc-hostility-fresh",500,"M;101\r~~B\r~~50000",{**defenders,(152,81):1000}),
+        ("npc-hostility-cross-merc",500,"M;101\r~~A;2000\r~~~~M;107\r~~B\r~~50000",{**defenders,(158,81):100,(158,85):-2}),
+        ("npc-hostility-cross-human",500,"M;101\r~~A;2000\r~~~~Y\r~~~~M;107\r~~B\r~~50000",{**defenders,(152,85):3,(158,81):100,(158,85):-2}),
+        ("npc-hostility-neutral-planet",500,"M;101\r~~B",{**defenders,(152,93):2,(4053,73):0}),
+        ("npc-hostility-foreign-planet",500,"M;101\r~~B",{**defenders,(152,93):2,(4053,73):3}),
+    ]
+    scenarios += [("npc-hostility-stop-after-partial",500,"M;101\r~~A;10",{**defenders,(152,81):1000}), ("npc-hostility-reconnect",499,"B\r~~50000",{})]
+    scenarios += [(f"npc-hostility-scan-{n:02d}",500,"S;"*n+"M;101\r~~B\r~~50000",{**defenders,(2,61):10,(3,125):.5}) for n in range(1,9)]
+    scenarios += [(f"npc-hostility-clock-{hour:02d}",500,"M;101\r~~B\r~~50000",{**defenders,(2,61):10}) for hour in range(1,9)]
     ports = {(158,65):3,(3054,41):3,(3054,45):297,(3054,49):1000,(3054,53):1000,
              (3054,57):1000,(3054,61):100,(3054,65):100,(3054,69):100,
              (3054,73):-50,(3054,77):50,(3054,81):-50,(3054,89):0,(3054,93):107,(3054,97):0}
@@ -206,10 +218,12 @@ def main():
     elif args.commerce:
         scenarios = [s for s in scenarios if s[0].startswith(("commerce-", "intel-", "radio-"))
                      and s[0] not in ("intel-reconnect", "radio-read", "radio-read-again")]
+    elif args.hostility:
+        scenarios = [s for s in scenarios if s[0].startswith("npc-hostility-") and s[0] != "npc-hostility-reconnect"]
     elif args.bribes:
         scenarios = [s for s in scenarios if s[0].startswith("npc-bribe-")]
     elif args.utilities:
-        scenarios = [s for s in scenarios if s[0].startswith(("utility-", "npc-")) and not s[0].startswith("npc-bribe-")]
+        scenarios = [s for s in scenarios if s[0].startswith(("utility-", "npc-")) and not s[0].startswith(("npc-bribe-", "npc-hostility-"))]
     elif args.hazards:
         scenarios = [s for s in scenarios if s[0].startswith("hazard-")]
     elif args.followup:
@@ -229,6 +243,8 @@ def main():
         varied_warp = name.startswith(("warp-scan-", "warp-clock-", "warp-look-", "hazard-", "utility-", "npc-", "commerce-", "intel-", "radio-", "ownership-"))
         dos_time = f"{int(name[-2:]):02d}:00:00" if "clock-" in name else "00:00:00"
         case_graph = {1:[2],2:[1]} if name.startswith("hazard-disrupt-") else graph
+        if name.startswith("npc-hostility-scan-"):
+            case_graph = {**graph,100:[101,103]}
         dest = args.destination / name
         dest.mkdir()
         for p in source.iterdir():
@@ -256,7 +272,7 @@ def main():
         mbf.put(data, 4053, 77, 12)
         for (record, offset), value in overrides.items():
             mbf.put(data, record, offset, value)
-        if name in ("intel-reconnect", "radio-read", "radio-read-again"):
+        if name in ("intel-reconnect", "radio-read", "radio-read-again", "npc-hostility-reconnect"):
             # Linked-session probes reopen the exact committed world, including
             # spent turns and position, instead of resetting the base fixture.
             data = bytearray((dest / "YTDATA.DAT").read_bytes())

@@ -1,0 +1,221 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Tester | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Tester!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Tester | Q  179:52  
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:52  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 100000      ║ Sector....... : 100  ║
+║ Turns.... : 500         ║ Holds........ : 100  ║
+║ Fighters. : 10          ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 10000       ║ Cloak Energy. : 0%   ║
+║ Forces... : 15          ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 100
+Warps lead to: 101, 103
+
+Time: 179:52  Main Command (?=Help)?  179:45   179:44  S 179:42  ;S;S;M;101
+
+[ Sensors Activated ]
+
+Sector: 101
+Port: Test Port, Selling: Org
+Fighters in sector: 100 (Belong to Mercenaries)
+Warps lead to: 107
+
+Sector: 103
+Warps lead to: 100
+
+[ End Sensor Scan ]
+
+Sector: 100
+Warps lead to: 101, 103
+
+Time: 179:42  Main Command (?=Help)? S
+
+[ Sensors Activated ]
+
+Sector: 101
+Port: Test Port, Selling: Org
+Fighters in sector: 100 (Belong to Mercenaries)
+Warps lead to: 107
+
+Sector: 103
+You detect the shimmering of a cloaking device!
+Other Ships: 
+    Enemy  - Fighters: 42 - Shields: 7
+Warps lead to: 100
+
+[ End Sensor Scan ]
+
+Sector: 100
+Warps lead to: 101, 103
+
+Time: 179:42  Main Command (?=Help)? S
+
+[ Sensors Activated ]
+
+Sector: 101
+Port: Test Port, Selling: Org
+Fighters in sector: 100 (Belong to Mercenaries)
+Warps lead to: 107
+
+Sector: 103
+Other Ships: 
+    Enemy  - Fighters: 42 - Shields: 7
+Warps lead to: 100
+
+[ End Sensor Scan ]
+
+Sector: 100
+Warps lead to: 101, 103
+
+Time: 179:42  Main Command (?=Help)? M
+
+Warps lead to, 101, 103
+
+Move to which sector? 101
+
+One Turn Deducted, 499 left.
+
+Sector: 101
+Port: Test Port, Selling: Org
+Fighters in sector: 100 (Belong to Mercenaries)
+Warps lead to: 107
+
+You have to defeat the fighters before you can enter this sector.
+
+Fighters: 10 / 100
+Option? (A,B,D,I,Q,S,T,W,?=Help):?  179:41   179:40   179:39   179:38  B
+
+We MAY join up if you pay us enough Q!
+You have 100000 credits. How much do you offer? -+> 179:37   179:36   179:35   179:34  50000
+
+Good Deal! We join up with you!
+
+Sector: 101
+Port: Test Port, Selling: Org
+Warps lead to: 107
+
+Time: 179:34  Main Command (?=Help)?  179:33   179:32   179:31   179:30   179:29   179:28   179:27   179:26  
+
+<Display>
+
+Sector: 101
+Port: Test Port, Selling: Org
+Warps lead to: 107
+
+Time: 179:26  Main Command (?=Help)? Q;Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:26  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 50000       ║ Sector....... : 101  ║
+║ Turns.... : 499         ║ Holds........ : 100  ║
+║ Fighters. : 110         ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 10000       ║ Cloak Energy. : 0%   ║
+║ Forces... : 15          ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:00:31
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%        9,990,250   None      0    Third                         
+  2  100.00%        9,990,250   None      0    Fourth                        
+  3  100.00%        9,990,250   None      0    Fifth                         
+  4   98.61%        9,851,250   None      0    Q                             
+  5    3.67%          367,050   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000    10.01%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...

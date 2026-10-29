@@ -1,5 +1,9 @@
 # Mercenary offers and faction refusal — bounded DOS recovery
 
+The initial research boundaries below are historical. The subsequent
+[hostility follow-up](HOSTILITY.md) resolves the flag, branch conditions and
+offer comparison before implementation.
+
 Nineteen controlled original Yankee Trader 3.6 sessions extend the nine faction
 encounters in [the earlier utility recovery](../yt-navigation/UTILITIES.md).
 They preserve 38 complete before/after saves, exact keys, transcripts, emulator

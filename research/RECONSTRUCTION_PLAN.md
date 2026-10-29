@@ -444,3 +444,15 @@ flag remain explicit research limits; no Go bribery gameplay is enabled. Next:
 resolve those branches or define a deliberate modern policy, then implement
 confirmed transactional bribery using the existing defense/aftermath safeguards.
 [Evidence, boundaries and implementation contract](yt-mercenaries/RECOVERY.md).
+
+
+## Mercenary hostility and negotiation rules — follow-up research
+
+Twenty-four additional original DOS sessions establish same-login anger after
+Mercenary casualties, carryover between groups, exact reconnect reset and
+planet-reference refusal regardless of planet owner. Three new REA byte reads
+and original BRUN30 handlers resolve the eager random draw order, 5%/weak-ship
+hostility checks, human retaliation and the strict offer threshold. Portable
+verifiers retain all 43 bribe sessions and 86 snapshots; input-consuming sensor
+probes are excluded. Exact MBF/RNG reproduction remains outside the modern
+integer-money contract. [Resolved rules and evidence](yt-mercenaries/HOSTILITY.md).

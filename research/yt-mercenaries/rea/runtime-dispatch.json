@@ -1,0 +1,54 @@
+{
+  "executable_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "dispatch_table_file_offset": 1421,
+  "fragments": [
+    {
+      "opcode": 114,
+      "runtime_cs_offset": 7796,
+      "file_offset": 8308,
+      "bytes_hex": "89365c0a893e5e0ae84400be1600a5a5a5a58b365c0a8b3e5e0acb89365c0a893e5e0ae82900bf1a00a5a58b365c0a8b3e5e0acb89365c0a893e5e0ae81000bf1600a5a5a5a58b365c0a8b3e5e0acb8f06600a5e1f"
+    },
+    {
+      "opcode": 130,
+      "runtime_cs_offset": 44450,
+      "file_offset": 44962,
+      "bytes_hex": "be1600eb06e81971bf1600e8bb718b4d068b44060ae474dd3aec770787f7910ae474d22ae5f6dc80fc3877c9d0e0d0d9918acdb50050578bf9ac8ae032c092ad91ad93ad80cc800bff746383ff0e7c180bd2740380"
+    },
+    {
+      "opcode": 146,
+      "runtime_cs_offset": 44859,
+      "file_offset": 45371,
+      "bytes_hex": "be1600eb06e8806fbf1600e822708b44060ae474e58b4d060aed74de32c180ec8180ed8002e570cd80c48050e82201740380ca01580bff780ed1e2d1d1d1d3d1d70ae47506ebb3fec474ace96cffbe1600eb06e832"
+    },
+    {
+      "opcode": 160,
+      "runtime_cs_offset": 43038,
+      "file_offset": 43550,
+      "bytes_hex": "e84a77b9040083c60683c706eb15be1a00eb06e88f76bf1a00e83177b9020003f103f98b048b1d0aff74190ae4740f32d8d0d07815730287f7fdf3a7fcc30affd0d3f5c30ae47402d0d0c357bf1a00a5a55f83ee04"
+    },
+    {
+      "opcode": 161,
+      "runtime_cs_offset": 43052,
+      "file_offset": 43564,
+      "bytes_hex": "be1a00eb06e88f76bf1a00e83177b9020003f103f98b048b1d0aff74190ae4740f32d8d0d07815730287f7fdf3a7fcc30affd0d3f5c30ae47402d0d0c357bf1a00a5a55f83ee04c70616000000c70618000000cb53"
+    },
+    {
+      "opcode": 162,
+      "runtime_cs_offset": 43027,
+      "file_offset": 43539,
+      "bytes_hex": "be1600eb06e8a876bf1600e84a77b9040083c60683c706eb15be1a00eb06e88f76bf1a00e83177b9020003f103f98b048b1d0aff74190ae4740f32d8d0d07815730287f7fdf3a7fcc30affd0d3f5c30ae47402d0d0"
+    },
+    {
+      "opcode": 166,
+      "runtime_cs_offset": 43032,
+      "file_offset": 43544,
+      "bytes_hex": "e8a876bf1600e84a77b9040083c60683c706eb15be1a00eb06e88f76bf1a00e83177b9020003f103f98b048b1d0aff74190ae4740f32d8d0d07815730287f7fdf3a7fcc30affd0d3f5c30ae47402d0d0c357bf1a00"
+    },
+    {
+      "opcode": 174,
+      "runtime_cs_offset": 44134,
+      "file_offset": 44646,
+      "bytes_hex": "8926080a893626025e1f50ac26803e1d000074052600061d00581e56061f8b36260273c6e9135de8e400ebd487f3e8d20087f351b90200e8770059cb87f3e8cd0087f351b90600e8670059cb8926080a87f3e8ae00"
+    }
+  ]
+}
