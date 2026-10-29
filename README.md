@@ -522,7 +522,14 @@ per day, encountering
 mines and sector defenses. They can merge, reinforce human defenses, fight, or
 stop at a planet to take whole stored fighters; planet titles and ground forces
 remain unchanged. Protected Union sectors are excluded from routes. Combat and
-mine work is bounded, leaving unfinished encounters for later days. Desertion,
-faction-base restoration and NPC ship combat remain outstanding.
+mine work is bounded, leaving unfinished encounters for later days.
+
+Before movement, human-owned sector groups outside the Union can desert when a
+random draw times 100 is strictly greater than their fighter count. Groups of
+100 or more cannot desert. Conversion preserves fighter count and changes only
+the deployed group's owner; ship fighters, planets and ground forces are untouched.
+Converted groups join that day's normal Mercenary route phase. Faction-base
+restoration and NPC ship combat remain outstanding.
+[Desertion rules and validation](research/yt-mercenary-maintenance/DESERTION.md).
 [Hiring policies](research/yt-mercenary-maintenance/IMPLEMENTATION.md) and
 [route rules and validation](research/yt-mercenary-maintenance/ROUTES.md).

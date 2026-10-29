@@ -106,6 +106,7 @@ jobs:
           python3 scripts/smoke_bribes.py
           python3 scripts/smoke_mercenary_hiring.py
           python3 scripts/smoke_mercenary_routes.py
+          python3 scripts/smoke_mercenary_desertion.py
           python3 scripts/smoke_planet_missiles.py
       - name: Cross-build Linux and Windows
         run: |
