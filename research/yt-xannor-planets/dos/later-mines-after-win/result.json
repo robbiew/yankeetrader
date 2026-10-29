@@ -1,0 +1,85 @@
+{
+  "name": "later-mines-after-win",
+  "patches": [
+    [
+      4053,
+      77,
+      0
+    ],
+    [
+      4053,
+      45,
+      0
+    ],
+    [
+      4053,
+      49,
+      0
+    ],
+    [
+      4053,
+      53,
+      0
+    ],
+    [
+      152,
+      41,
+      102
+    ],
+    [
+      153,
+      41,
+      1114
+    ],
+    [
+      153,
+      45,
+      0
+    ],
+    [
+      153,
+      49,
+      0
+    ],
+    [
+      153,
+      53,
+      0
+    ],
+    [
+      153,
+      57,
+      0
+    ],
+    [
+      153,
+      61,
+      0
+    ],
+    [
+      153,
+      129,
+      1
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "2ab35595544f622374d90330acce09d6a29cb0d4e95843d941528fa8eb49ddee",
+  "after_sha256": "5636d0ea556e934a321cce58e46fe7281153f9552a7f5bb066f5dd2c28043e22",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "142746aa653cb5a1260a37a8119904f6e12968a73aec8f707905b902dfafcd13",
+    "before.dat.gz": "a05ca52b3d4386c78fd518b301c3f05f3aaba3421e919df695c9f0c696387add",
+    "dosbox.log": "a8df77260358dae7ec2c44799e7de2d77b01bd68be1c38a9af57963678efb28f",
+    "sidefiles.json": "58273508816b73d9dd777c1d210d224023c7c459a833b3090417a1b077edc9fa",
+    "transcript.txt": "e639384bd5140b7ecf1ba22f263ddb4f157accafa4dc6bcd5f246a9a05660f91"
+  }
+}

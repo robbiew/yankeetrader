@@ -1,0 +1,30 @@
+{
+  "name": "mines-before-planet",
+  "patches": [
+    [
+      152,
+      129,
+      3
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "2982d1a2f77e145a0606dd41b21e8b01614d4cdee12f6e2dd02c03d819576e9f",
+  "after_sha256": "43e61e199c00e8f2dea7af49aa4a826777219cc5479306bbd8bc724a6e65909c",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "c2da33213351b0467243fe8ac5ac26cdd59d6537f454b79740e2b11197caec0c",
+    "before.dat.gz": "f0105a57ad0de39b79c9fe3a5bb7863e5d596627872eb94a551dbc1f19219888",
+    "dosbox.log": "74204c24edd978205fd0908e0ca4bc1e98f08fcb5db2afc2ffda9a1dbbb8077c",
+    "sidefiles.json": "1868174a86b999f5458b9f79e7d2e349fe4afae4c79579dca74fe94bfbf1828b",
+    "transcript.txt": "241bc084dd347ecb073d5309f85dd6c7b203e736f9e862099f582f6ec2d38e02"
+  }
+}

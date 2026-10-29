@@ -1,0 +1,35 @@
+{
+  "name": "friendly-screen",
+  "patches": [
+    [
+      152,
+      81,
+      50
+    ],
+    [
+      152,
+      85,
+      -1
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "e7cb8bde2cb6ac1574bc970f42b940ba1ac19f07f7e63fdfdaa8cfa3918686f0",
+  "after_sha256": "945b3ab91d520cf5d19bcf052e94acbb3e999188883199139777c4c27ba2766a",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "ea607589c264760c4c51790cac69fff471889bca96e9ff305fed3699467d1def",
+    "before.dat.gz": "2bb8c817ba1d5a9a497daf540039adbb8bc8fe0be9339704c614caa55e6ec750",
+    "dosbox.log": "cb6ab0f7cded281d208ffc5cf201c8c7f9429c2a0d0f7d4778eab86183eee879",
+    "sidefiles.json": "409981ae7939190a5d0e36c980dd71636c97c1b25dccd83dd65de5b44c53339f",
+    "transcript.txt": "53f842d7d9b85489dd0435dd4ba286205669bda267e2be833d38b2f0ad388528"
+  }
+}

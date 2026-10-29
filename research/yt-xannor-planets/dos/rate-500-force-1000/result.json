@@ -1,0 +1,45 @@
+{
+  "name": "rate-500-force-1000",
+  "patches": [
+    [
+      151,
+      81,
+      1000
+    ],
+    [
+      4053,
+      45,
+      500
+    ],
+    [
+      4053,
+      49,
+      500
+    ],
+    [
+      4053,
+      53,
+      500
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "79e4e7b1d848f19101dd08661febeeb4475e6b19186c8f29cfbf97b983a5d25d",
+  "after_sha256": "a501b836653e7a8521f1722b8ec8d3a6d8dc39431ae732b282d283376f6423af",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "0b507b20c07af0f7d1cc9c1b1a1ba1f9885abf07428292e78ff6481e69246358",
+    "before.dat.gz": "62e6142ec6ecbd83c0054945b6cffabff34df25e5079e8b4e3b6fd0a6bb15b64",
+    "dosbox.log": "d365dd9ddb930ae3f9362dbf10df1ffa1e388096fe48f6b54dd54094754706de",
+    "sidefiles.json": "94a10390d65a4a5706b4f2a0e2de208e0fad8682b3955a26263933f047c9e20b",
+    "transcript.txt": "56ae167b641d3a3561efc14c9ecdf57a1c8842033ed8739c1ad1737398acfb22"
+  }
+}

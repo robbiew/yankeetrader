@@ -160,3 +160,9 @@ newspaper, radio, spies, salvage, mines, missiles, teams, sector-fighter and
 planet-missile smokes; all three Xannor evidence verifiers and nine semantic
 corruption controls; all 4682 archive hashes; Linux/Windows cross-builds; Python
 syntax, changed documentation links and whitespace checks.
+
+
+The next [planetary research slice](../yt-xannor-planets/RECOVERY.md) is now
+complete with 71 original-DOS controls and explicit economic-phase boundaries.
+It does not enable Go planetary attacks: foreign-planet holds remain in place
+until bounded transactional assault/destruction is implemented.

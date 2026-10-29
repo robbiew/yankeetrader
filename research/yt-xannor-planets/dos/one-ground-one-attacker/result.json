@@ -1,0 +1,35 @@
+{
+  "name": "one-ground-one-attacker",
+  "patches": [
+    [
+      151,
+      81,
+      1
+    ],
+    [
+      4053,
+      77,
+      1
+    ]
+  ],
+  "recipe": "xannor-planet-isolation-v1",
+  "baseline_sha256": "c3e432bb8aef6e094a42fed4f2a22dabbd6c306079d19d455eb0d7b832619716",
+  "before_sha256": "b36c2e0aa6df09d0f80722a90420520641562fe56737eced6c1da500e3f145f3",
+  "after_sha256": "3db7ffd74eccb8c5c42a38bb91323a500eb982ab96c053f84f5900f7b5a8c798",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "3189d7547c26ad2ffda0550ad791806dcdc09bb670dbcd921ebcc4855103d4b9",
+    "before.dat.gz": "f56c5a02ba4efaa9fa90ee126230e862a1eaf1c61672a284fca1664937deeecb",
+    "dosbox.log": "1e183e0a814fea26bef503e38b68ccb34d5631a836213010dfddca0e6260facf",
+    "sidefiles.json": "53f958590bc82262de70f35a0701367835dc1c5fc09a2df1eb22d5618201f163",
+    "transcript.txt": "f545231bd5fde714a72fd41eeaf61c5a3dccdbd64eb426793652d56cdbb1176b"
+  }
+}

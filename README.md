@@ -626,3 +626,13 @@ last 32 retained reports. Public news announces deaths without disclosing force
 counts. Save version 15 preserves reports through replacement and upgrades old
 worlds without inventing past battles.
 [Policies, migration and validation](research/yt-xannor-ships/IMPLEMENTATION.md).
+
+### Xannor planetary assault research
+
+[71 original-DOS controls](research/yt-xannor-planets/RECOVERY.md) now recover
+ground volleys, production damage, warehouse caps, neutralization and logical
+destruction, with paired economic controls and runtime byte evidence. They also
+expose a production-batch subscript defect and distinguish stale inactive fields
+from surviving resources. This is research only: Go groups still hold before
+foreign planets. Next is bounded transactional planetary combat, with protected
+Union sectors, authoritative ownership and safe landing-token cleanup.

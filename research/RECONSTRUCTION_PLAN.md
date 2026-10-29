@@ -596,3 +596,21 @@ durability failure, replacement, privacy and output failure.
 Next: Xannor planetary assault/destruction research, then the remaining
 revenge/cloak candidate-search behavior. Exact RNG/MBF parity and live BBS/native
 Windows acceptance remain separate.
+
+
+## Xannor planetary assault and destruction — research complete
+
+Seventy-one completed DOS maintenance controls, paired non-arrival/economic
+worlds, an exact next-day chain and twenty game/runtime REA observations recover
+planetary eligibility, one-ground/1–1000-fighter volleys, independent production
+damage, warehouse caps, zero-ground neutralization and logical deletion. A
+location-subscript defect enables the 450 production batch with only one attacker.
+Earlier economic repair/flooring explains why raw zero/fractional inputs cannot
+be treated as the helper's entry state; these boundaries are explicitly verified.
+
+No Go gameplay or save-schema changes are included. Next implement bounded
+planetary encounters with corrected force accounting/batch policy, surviving-force
+eligibility for production/destruction, atomic title/resource updates, private
+owner reports and landing-token invalidation. Keep Union protection and captured
+home ownership explicit; remaining revenge/cloak searching and native acceptance
+are separate. [Evidence, limits and implementation contract](yt-xannor-planets/RECOVERY.md).
