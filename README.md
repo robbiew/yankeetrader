@@ -577,3 +577,13 @@ battles have finite work budgets. Save version remains 14.
 [Policies and validation](research/yt-xannor-mobile/IMPLEMENTATION.md) build on
 [47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge and
 full NPC combat remain separate milestones.
+
+### Xannor ship-combat research
+
+[42 original-DOS maintenance controls](research/yt-xannor-ships/RECOVERY.md) now
+establish ship detection, fighter-before-shield battles, casualty thresholds,
+multiple victims, route continuation and NPC death/ownership cleanup. They also
+expose dead-record targeting and stale shield/captain defects to avoid in Go.
+This is research only: mobile groups still hold before ships. The next step is
+bounded transactional Xannor ship combat, followed by planetary assaults and
+remaining revenge/cloak search behavior.

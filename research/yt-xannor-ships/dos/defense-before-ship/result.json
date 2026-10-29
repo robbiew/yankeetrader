@@ -1,0 +1,35 @@
+{
+  "name": "defense-before-ship",
+  "patches": [
+    [
+      152,
+      81,
+      100000
+    ],
+    [
+      152,
+      85,
+      2
+    ]
+  ],
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "625efec58227e7788c1da4a5bb59fd748a701bf1425a80bfe4d321e6f24a268b",
+  "after_sha256": "2554457424732feef6d84722ccabe0ff8a4cb702e2899b9295bb09bed0e98914",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "cd89d34933a0f35c16870a72c8329d30fcf5c441ef02c49e529042f19e4683d8",
+    "before.dat.gz": "dbc56ab4c7ed10df6d25c6dbe7ab2a6e69f6dd1515ab6caf5f32caf5216b27e7",
+    "dosbox.log": "65458b1158724a36deeab9a293f0ef7fda64496a90086779da0c3de2c03160b4",
+    "sidefiles.json": "bda1400770c88da08de6392b83c6f76653964110d23ee482786413ab2550e8cb",
+    "transcript.txt": "3e6211f30ba9fc921533f5c4c58f50b7f9280dbe0d3f48b1c115884161cef4ae"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "kill-team-captain",
+  "patches": [
+    [
+      2,
+      61,
+      0
+    ],
+    [
+      2,
+      53,
+      0
+    ],
+    [
+      2,
+      89,
+      1
+    ],
+    [
+      3,
+      89,
+      1
+    ],
+    [
+      3,
+      57,
+      7
+    ],
+    [
+      52,
+      73,
+      5
+    ],
+    [
+      52,
+      77,
+      2
+    ],
+    [
+      52,
+      109,
+      2
+    ],
+    [
+      52,
+      117,
+      3
+    ],
+    [
+      52,
+      121,
+      0
+    ],
+    [
+      52,
+      125,
+      0
+    ]
+  ],
+  "second": true,
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "ec00f49b436939bf7be10ccfb05fde822faf140f28e7930eb653ea9fcb4aaeb9",
+  "after_sha256": "807e8adb5e25234b8bf25e1a81573d53b5d7e9a6c5289a447e16c86728bd2ece",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "36a48ee138dad5f9aa862b2ddfcc686eda5b32ff2c01592736a0cf2087abece1",
+    "before.dat.gz": "dcb03245f39324e3bf56ba129271ac4eb87529c9e4acd4bd94b2a55695bedef0",
+    "dosbox.log": "19bb7167e017d8814bb7604863866dfc94c094d4a9eeb9efe11c779c40ec74ec",
+    "sidefiles.json": "09102306f0292e824c110110ee2abfa05b3348237cd78a0d8f575466620f2883",
+    "transcript.txt": "841d1ef639572a4d7719e38b5d8b01d38bc763092cb8fcfbcd4dd5d32854a972"
+  }
+}

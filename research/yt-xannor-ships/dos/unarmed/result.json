@@ -1,0 +1,40 @@
+{
+  "name": "unarmed",
+  "patches": [
+    [
+      2,
+      61,
+      0
+    ],
+    [
+      2,
+      53,
+      0
+    ],
+    [
+      151,
+      81,
+      100
+    ]
+  ],
+  "recipe": "xannor-ship-isolation-v1",
+  "baseline_sha256": "ffa58f171db5efe4e325846346fa826daee4e35c0193a3ba666546ec9fd666ef",
+  "before_sha256": "6adf6558d8b5d7e56847815dd61a820af6f2abb14e57308ec07c29b2af5c80ab",
+  "after_sha256": "d3205199c0962b6431df85fd7ddf598b3b22e0e3a7242986cc85cf359a893bce",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "eb74c26dbb2bd8a0a27b78c4cefcec9dd2efb73111c34944dd226e1ce8ce736c",
+    "before.dat.gz": "4992eb1dc4a932af997d27b4cbf95e34583122f4ecdd9f937402ee9c6bb6ecf1",
+    "dosbox.log": "e92987cfe3e6109a63618694c7891c25e201d2b8364c66934b20068e3954bd09",
+    "sidefiles.json": "371800c627a55addd6d2d3543149ad632bbd4c40d351045320f68f505a6463d8",
+    "transcript.txt": "290538c6defe73bf7b5f84c3bb1f467edd243a3faa962bffe68d2b5e625c24d5"
+  }
+}

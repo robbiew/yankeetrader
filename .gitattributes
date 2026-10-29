@@ -41,3 +41,7 @@
 /research/yt-xannor-mobile/dos/**/DOS*.LOG -text -diff
 /research/yt-xannor-mobile/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-xannor-mobile/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-xannor-ships/dos/**/DOS*.LOG -text -diff
+/research/yt-xannor-ships/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-xannor-ships/dos/**/dosbox.log -text whitespace=-blank-at-eol

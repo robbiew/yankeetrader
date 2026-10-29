@@ -553,6 +553,25 @@ force. Union routes are excluded. Live ships and foreign planets cause a safe
 hold before unsupported encounter mutations. World version remains 14.
 [Implementation policies and validation](yt-xannor-mobile/IMPLEMENTATION.md).
 
-Next recover full Xannor NPC ship battle rules, followed by planetary assaults,
-destruction and remaining revenge/cloak search behavior. Exact MBF/RNG parity
+Xannor ship battle research is complete in the following milestone. Planetary
+assault/destruction and remaining revenge/cloak search behavior follow it. Exact MBF/RNG parity
 and live BBS acceptance remain separate validation boundaries.
+
+
+## Xannor NPC ship battles — research complete
+
+Forty-two completed original-DOS maintenance controls, an exact next-day world
+chain, changed private/public side files and eleven REA byte observations recover
+normal interception, 5000/500/1 fighter and shield rounds, record-order multiple
+victims, route continuation and maintenance-specific death/estate cleanup.
+Valid full-cloak samples distinguish evasion from interception; missile stocks
+are unchanged. Diagnostic controls expose dead-record targeting, exhausted
+shields retaining old values, and a stale team captain after removal. These
+defects must not become modern gameplay rules.
+
+No Go combat or schema changes are included. Next implement bounded Xannor ship
+encounters with living-player/session revalidation, explicit NPC attribution,
+atomic aftermath and private event delivery. Define estate policies explicitly
+before reusing direct-player salvage/wreck rules. Planetary assaults/destruction,
+remaining revenge/cloak searches, exact RNG/MBF parity and live BBS acceptance
+remain separate. [Evidence and implementation contract](yt-xannor-ships/RECOVERY.md).
