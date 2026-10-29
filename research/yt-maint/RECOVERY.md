@@ -289,7 +289,7 @@ Scenario creation intentionally refuses existing directory names, preserving the
 1. Recover/instrument the QuickBASIC RNG and exact MBF32/MBF64 operation order for bit-for-bit results.
 2. Validate the exact plague/civil-war probability comparisons and damage distributions.
 3. Recover each Xannor targeting/combat branch, cloak detection, mine damage, and HQ relocation criteria beyond the demonstrated path.
-4. Implement the separately recovered [Mercenary hiring and route rules](../yt-mercenary-maintenance/RECOVERY.md), retaining the documented RNG/lifecycle boundaries; recover the other maintenance phases listed above.
+4. Recover/implement the remaining Mercenary phases: human-defense desertion and reserved-base restoration with explicit ownership policy. [Hiring](../yt-mercenary-maintenance/IMPLEMENTATION.md) and [route actions](../yt-mercenary-maintenance/ROUTES.md) are implemented; their documented RNG/lifecycle boundaries and the other maintenance phases listed above remain outstanding.
 5. Decide which original defects to preserve behind a compatibility option: same-day reprocessing and ten-day rewards after clock rollback are now demonstrated behaviors, not assumptions.
 
 ## Project decision: fixes in the modern version

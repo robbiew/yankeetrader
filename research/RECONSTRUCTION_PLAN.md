@@ -466,7 +466,9 @@ elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
 recruitment or full-force defense combat. Login-local hostility, one-use quote
 tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
-Daily hiring is implemented below; NPC route actions and full NPC ship combat remain separate milestones.
+Daily hiring and NPC route actions are implemented below. Human-defense
+desertion, faction-base restoration and full NPC ship combat remain separate
+milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
 ## Mercenary daily maintenance — hiring and route actions implemented
