@@ -1,0 +1,89 @@
+{
+  "name": "npc-hostility-foreign-planet",
+  "command": "M;101\r~~B",
+  "before_sha256": "8113126c2b3931dea427d2ccac3a82e0112d864a7dfb999bae635375841efb4e",
+  "after_sha256": "9952857bf1ac6a9f3fdba802c2c7177f5e3c0765e7b40f3c40e4e221a069969c",
+  "turns_before": 500,
+  "turns_after": 499,
+  "sector_before": 100,
+  "sector_after": 101,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [
+    {
+      "record": 2,
+      "offset": 61,
+      "value": 2000
+    },
+    {
+      "record": 2,
+      "offset": 93,
+      "value": 0
+    },
+    {
+      "record": 152,
+      "offset": 81,
+      "value": 100
+    },
+    {
+      "record": 152,
+      "offset": 85,
+      "value": -2
+    },
+    {
+      "record": 152,
+      "offset": 93,
+      "value": 2
+    },
+    {
+      "record": 4053,
+      "offset": 73,
+      "value": 3
+    }
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "keys_sha256": "403156e34f6037b822e3e2bc641675eff7469c99b298f784673875072a3e6858",
+  "transcript_sha256": "96a12d05b05e190b3181b118182bbf2445c28c7096ecad52eae1b41a0f339756",
+  "dosbox_log_sha256": "907efd196041c971f3e336b3bca733651c4bb4eb9291d3ef4348956276be30a3",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+}

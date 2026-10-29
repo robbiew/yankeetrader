@@ -1,0 +1,447 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Enemy. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Enemy.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Sector 8 | 10000 credits | 500 turns > bribe 300;y
+Attempt bribery of 100 fighters in sector 8 with 300 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N]
+Bribe cancelled.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Sector 8 | 10000 credits | 500 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 7 | 10000 credits | 500 turns > bribe 8 300
+Entering sector 8 spends one turn and may encounter 0 mines after negotiations.
+Attempt bribery of 100 fighters in sector 8 with 300 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N] y
+Bribe saved: paid 300 credits; 100 Mercenary fighters joined your ship.
+
+Sector 8 | 9700 credits | 499 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 8 | 9700 credits | 499 turns > bribe 300;i;q
+no hostile sector fighter group here
+Captain: holds 10; ore 0; organics 0; equipment 0
+Fighters 1100; shields 0; ground forces 0
+Missiles 0; mines 0; plasma 0
+Cloak energy: 100%
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Sector 8 | 10000 credits | 500 turns > bribe
+Attempt bribery of 100 fighters in sector 8 with 0 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N] y
+Bribe saved: faction refusal; no credits paid.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Sector 8 | 10000 credits | 500 turns > q
+Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 10000       | Sector....... : 8    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 1000        | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 8
+Port: Port 8, Selling: Ore
+Warps lead to: 7, 1, 5, 6, 2, 4
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Time: 179:59  Main Command (?=Help)? B
+Offer how many whole credits to the Mercenaries (blank cancels)? 300
+Attempt bribery of 100 fighters in sector 8 with 300 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N] n
+Bribe cancelled.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 10000       | Sector....... : 7    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 1000        | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 7
+Port: Port 7, Selling: Equ
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? bribe 8 300
+Entering sector 8 spends one turn and may encounter 0 mines after negotiations.
+Attempt bribery of 100 fighters in sector 8 with 300 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N] y
+Bribe saved: paid 300 credits; 100 Mercenary fighters joined your ship.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+You have been on today.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 9700        | Sector....... : 8    |
+| Turns.... : 499         | Holds........ : 10   |
+| Fighters. : 1100        | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 8
+Port: Port 8, Selling: Ore
+Warps lead to: 7, 1, 5, 6, 2, 4
+
+Time: 179:59  Main Command (?=Help)? bribe 300;I;Q;Y
+no hostile sector fighter group here
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 9700        | Sector....... : 8    |
+| Turns.... : 499         | Holds........ : 10   |
+| Fighters. : 1100        | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 10000       | Sector....... : 8    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 1000        | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 8
+Port: Port 8, Selling: Ore
+Warps lead to: 7, 1, 5, 6, 2, 4
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Time: 179:59  Main Command (?=Help)? bribe
+Attempt bribery of 100 fighters in sector 8 with 0 credits? Refusal or insult may commit ALL 1000 ship fighters; defeat forces emergency escape. [y/N] y
+Bribe saved: faction refusal; no credits paid.
+Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH 8 <fighters> or FLEE.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.

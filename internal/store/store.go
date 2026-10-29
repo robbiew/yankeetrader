@@ -29,10 +29,13 @@ type Store struct {
 	syncDirectory func(string) error
 }
 type shipSession struct {
-	spyMu      sync.Mutex
-	id         int
-	generation uint64
-	spies      *game.SpyNetwork
+	encounterMu      sync.Mutex
+	mercenaryHostile bool
+	bribeActive      string
+	spyMu            sync.Mutex
+	id               int
+	generation       uint64
+	spies            *game.SpyNetwork
 }
 
 // ForShip binds only this copy of the store to a login's ship generation.
@@ -244,6 +247,9 @@ func (s Store) DefenseEncounter(entry game.DefenseIntent, rng func() float64, no
 	if s.ship == nil || entry.Player != s.ship.id {
 		return game.DefenseOutcome{}, errors.New("defense encounter requires the bound player")
 	}
+	s.ship.encounterMu.Lock()
+	defer s.ship.encounterMu.Unlock()
+	s.ship.bribeActive = ""
 	var out game.DefenseOutcome
 	err := s.update(func(w *game.World) error {
 		if !time.Now().Before(deadline) {
@@ -256,5 +262,9 @@ func (s Store) DefenseEncounter(entry game.DefenseIntent, rng func() float64, no
 		}
 		return err
 	}, false, true)
+	var durability *DurabilityError
+	if (err == nil || errors.As(err, &durability)) && entry.Defense.Owner == game.MercenaryOwner && out.Battle.DefenderLosses > 0 {
+		s.ship.mercenaryHostile = true
+	}
 	return out, err
 }

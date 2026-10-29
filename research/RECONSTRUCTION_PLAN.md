@@ -431,3 +431,40 @@ maintenance leaves it alone. Save version 12 upgrades versions 1–11 without
 backfilling events. Other event producers, exact DOS colors/long-file interruption,
 NPC behavior and Genesis remain separate milestones.
 [Implementation rules and validation](yt-newspaper/IMPLEMENTATION.md).
+
+
+## Mercenary offers and faction refusals — research
+
+Nineteen controlled DOS sessions and 38 saved snapshots establish offer parsing,
+blank cancellation versus insulting zero, accepted exact debit/recruitment,
+over-budget combat, guarded-planet refusal, weak/zero-force recruitment and
+human/Xannor differences. Two REA byte observations correct an inline-runtime
+disassembly boundary. Exact negotiation probabilities and an additional hostility
+flag remain explicit research limits; no Go bribery gameplay is enabled. Next:
+resolve those branches or define a deliberate modern policy, then implement
+confirmed transactional bribery using the existing defense/aftermath safeguards.
+[Evidence, boundaries and implementation contract](yt-mercenaries/RECOVERY.md).
+
+
+## Mercenary hostility and negotiation rules — follow-up research
+
+Twenty-four additional original DOS sessions establish same-login anger after
+Mercenary casualties, carryover between groups, exact reconnect reset and
+planet-reference refusal regardless of planet owner. Three new REA byte reads
+and original BRUN30 handlers resolve the eager random draw order, 5%/weak-ship
+hostility checks, human retaliation and the strict offer threshold. Portable
+verifiers retain all 43 bribe sessions and 86 snapshots; input-consuming sensor
+probes are excluded. Exact MBF/RNG reproduction remains outside the modern
+integer-money contract. [Resolved rules and evidence](yt-mercenaries/HOSTILITY.md).
+
+
+## Mercenary bribery — implementation
+
+BRIBE [credits] negotiates in the current sector; BRIBE <sector> <credits> permits
+confirmed adjacent entry. Classic encounter B preserves normal B port acquisition
+elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
+recruitment or full-force defense combat. Login-local hostility, one-use quote
+tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
+prevent replay and partial transactions. No save-version change is required.
+NPC spawning/daily behavior and full NPC ship combat remain separate milestones.
+[Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
