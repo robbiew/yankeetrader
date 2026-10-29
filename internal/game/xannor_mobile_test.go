@@ -56,7 +56,7 @@ func TestXannorSplitThresholdAndReturningForceCannotReactivate(t *testing.T) {
 		mobileGroup(w, 8, 1)
 		mobileGroup(w, 9, 100)
 		draws := 0
-		w.xannorActions(func() float64 { draws++; return .99 })
+		w.xannorActions(clock, func() float64 { draws++; return .99 })
 		want := 9
 		if score == 2001 {
 			want = 3
@@ -75,7 +75,7 @@ func TestXannorSplitThresholdAndReturningForceCannotReactivate(t *testing.T) {
 	w.Sectors[9].Warps = []int{8}
 	w.Sectors[10].Warps = []int{8}
 	draws := 0
-	w.xannorActions(func() float64 { draws++; return .99 })
+	w.xannorActions(clock, func() float64 { draws++; return .99 })
 	if draws != 5 || w.Sectors[8].Defense.Fighters != 102 || w.Sectors[9].Defense != nil || w.Sectors[10].Defense != nil {
 		t.Fatal("returned force funded extra splits/activations", draws)
 	}
@@ -88,7 +88,7 @@ func TestXannorSplittingConservationBoundsAndFailedPathRefund(t *testing.T) {
 	p.StoredScore = 1000000
 	mobileGroup(w, 8, 2000)
 	draws := 0
-	w.xannorActions(func() float64 { draws++; return .5 })
+	w.xannorActions(clock, func() float64 { draws++; return .5 })
 	if xannorForce(w) != 2000 || draws > 115 || w.Sectors[11].Defense == nil || w.Sectors[11].Defense.Fighters < 1 {
 		t.Fatal("split force lost, duplicated or failed to deploy", draws)
 	}
@@ -98,19 +98,19 @@ func TestXannorSplittingConservationBoundsAndFailedPathRefund(t *testing.T) {
 	w.Sectors[8].Warps = nil
 	before, _ := json.Marshal(w)
 	draws = 0
-	w.xannorActions(func() float64 { draws++; return .99 })
+	w.xannorActions(clock, func() float64 { draws++; return .99 })
 	after, _ := json.Marshal(w)
 	if draws != 7 || string(before) != string(after) {
 		t.Fatal("failed split path lost force or reused refund", draws)
 	}
 	w = mobileWorld(t, 12)
-	w.xannorActions(func() float64 { t.Fatal("zero-force phase must not draw"); return 0 })
+	w.xannorActions(clock, func() float64 { t.Fatal("zero-force phase must not draw"); return 0 })
 	if xannorForce(w) != 0 {
 		t.Fatal("zero-bound helper invented force")
 	}
 	w.Xannor.Reserve = 100
 	w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: 10}
-	w.xannorActions(func() float64 { t.Fatal("undeployed contested reserve funded a split"); return 0 })
+	w.xannorActions(clock, func() float64 { t.Fatal("undeployed contested reserve funded a split"); return 0 })
 	if w.Xannor.Reserve != 100 {
 		t.Fatal("reserve force changed")
 	}
@@ -124,7 +124,7 @@ func TestXannorGroupLimitAndFriendlySnapshotActivations(t *testing.T) {
 		w.Sectors[id].Warps = nil
 	}
 	draws := 0
-	w.xannorActions(func() float64 { draws++; return .99 })
+	w.xannorActions(clock, func() float64 { draws++; return .99 })
 	if draws != 39 || xannorForce(w) != 2000 || w.Sectors[28].Defense.Fighters != 100 {
 		t.Fatal("group limit or snapshot identity failed", draws)
 	}
@@ -137,7 +137,7 @@ func TestXannorGroupLimitAndFriendlySnapshotActivations(t *testing.T) {
 		}
 		mobileGroup(w, receiver, 20)
 		draws = 0
-		w.xannorActions(func() float64 { draws++; return .99 })
+		w.xannorActions(clock, func() float64 { draws++; return .99 })
 		want := 3
 		if passing {
 			want = 5
@@ -153,7 +153,7 @@ func TestXannorGroupLimitAndFriendlySnapshotActivations(t *testing.T) {
 	}
 	before, _ := json.Marshal(w)
 	draws = 0
-	w.xannorActions(func() float64 { draws++; return .99 })
+	w.xannorActions(clock, func() float64 { draws++; return .99 })
 	after, _ := json.Marshal(w)
 	if draws > 115 || string(before) != string(after) {
 		t.Fatal("saturated sectors lost force or retried without a bound", draws)
@@ -233,7 +233,7 @@ func TestXannorMinesFIFOUniformDamageAndWorkBudget(t *testing.T) {
 	w.Sectors[10].Minefield = []MineLayer{{Owner: p.ID, Count: 1}, {Owner: other.ID, Count: 2}}
 	preferred := 0
 	draws := 0
-	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { draws++; return .5 })
+	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { draws++; return .5 })
 	if draws != 3 || len(w.Sectors[10].Minefield) != 0 || w.Sectors[11].Defense.Fighters != 100000-3*501 {
 		t.Fatal("Xannor mine damage used wrong bound/distribution or repeated mine", draws)
 	}
@@ -241,14 +241,14 @@ func TestXannorMinesFIFOUniformDamageAndWorkBudget(t *testing.T) {
 	w.Sectors[11].Defense = nil
 	w.Sectors[10].Minefield = []MineLayer{{Owner: p.ID, Count: 1}, {Owner: other.ID, Count: 2}}
 	draws = 0
-	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { draws++; return 0 })
+	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { draws++; return 0 })
 	if draws != 2 || xannorForce(w) != 0 || !reflect.DeepEqual(w.Sectors[10].Minefield, []MineLayer{{Owner: other.ID, Count: 1}}) || p.Death != nil || other.Death != nil {
 		t.Fatal("mine death dropped attribution, consumed excess mines or created a ship death")
 	}
 	group = mobileGroup(w, 9, MaxQuantity)
 	w.Sectors[10].Minefield = []MineLayer{{Owner: p.ID, Count: 20000}}
 	draws = 0
-	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { draws++; return 0 })
+	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { draws++; return 0 })
 	if draws != xannorWorkLimit-1 || w.Sectors[9].Defense.Fighters != MaxQuantity-int64(draws) || w.Sectors[10].Minefield[0].Count != 20000-int64(draws) {
 		t.Fatal("mine work was unbounded or unfinished survivors were misplaced", draws)
 	}
@@ -270,7 +270,7 @@ func TestXannorDefenseBatchesTieAndBoundedSurvivors(t *testing.T) {
 		w.Sectors[10].Defense = &SectorDefense{Owner: 1, Fighters: tc.defense}
 		preferred := 12
 		draws := 0
-		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { draws++; return tc.roll })
+		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { draws++; return tc.roll })
 		if draws != tc.rounds {
 			t.Fatal("wrong 5000/500/1 casualty boundary", tc, draws)
 		}
@@ -292,7 +292,7 @@ func TestXannorDefenseBatchesTieAndBoundedSurvivors(t *testing.T) {
 		w.Sectors[10].Defense = &SectorDefense{Owner: 1, Fighters: MaxQuantity}
 		preferred := 12
 		draws := 0
-		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { draws++; return roll })
+		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { draws++; return roll })
 		if draws != xannorWorkLimit-1 || w.Sectors[9].Defense == nil || w.Sectors[10].Defense == nil || preferred != 12 {
 			t.Fatal("unfinished battle did not retain both sides", draws)
 		}
@@ -312,7 +312,7 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 	w.Sectors[12].Minefield = []MineLayer{{Owner: 1, Count: 1}}
 	acted := map[*SectorDefense]bool{}
 	preferred := 0
-	w.walkXannor(group, []int{9, 10, 11, 12}, acted, &preferred, func() float64 { return 0 })
+	w.walkXannor(group, []int{9, 10, 11, 12}, acted, &preferred, clock, func() float64 { return 0 })
 	if w.Sectors[12].Defense.Fighters != MaxQuantity || w.Sectors[11].Defense.Fighters != 49 || len(w.Sectors[12].Minefield) != 0 || !acted[receiver] {
 		t.Fatal("partial merge bypassed mines or lost overflow/receiver activation")
 	}
@@ -322,7 +322,7 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 	group = mobileGroup(w, 9, 100)
 	receiver = mobileGroup(w, 10, MaxQuantity-50)
 	acted = map[*SectorDefense]bool{}
-	w.walkXannor(group, []int{9, 10, 11}, acted, &preferred, func() float64 { t.Fatal("capacity hold must not draw"); return 0 })
+	w.walkXannor(group, []int{9, 10, 11}, acted, &preferred, clock, func() float64 { t.Fatal("capacity hold must not draw"); return 0 })
 	if w.Sectors[9].Defense.Fighters != 100 || receiver.Fighters != MaxQuantity-50 || acted[receiver] {
 		t.Fatal("overfull friendly transit changed either participant")
 	}
@@ -331,7 +331,7 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 	group = mobileGroup(w, 9, 100)
 	w.Xannor.Reserve = MaxQuantity - 50
 	w.Sectors[8].Defense = &SectorDefense{Owner: 1, Fighters: 1}
-	w.walkXannor(group, []int{9, 8}, map[*SectorDefense]bool{}, &preferred, func() float64 { return 0 })
+	w.walkXannor(group, []int{9, 8}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { return 0 })
 	if w.Sectors[8].Defense.Fighters != 50 || w.Sectors[9].Defense.Fighters != 50 || w.Xannor.Reserve != MaxQuantity-50 {
 		t.Fatal("HQ entry overflowed reserve or discarded survivors")
 	}
@@ -339,34 +339,27 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 }
 
 func TestXannorUnsupportedEncountersHoldBeforeMutationAndSkipOwnStocks(t *testing.T) {
-	for _, mode := range []string{"human-planet", "neutral-planet", "captured-home", "ship", "cloaked-ship"} {
+	for _, mode := range []string{"human-planet", "neutral-planet", "captured-home"} {
 		w := mobileWorld(t, 12)
-		p, _ := w.Join("captain", "Captain")
+		_, _ = w.Join("captain", "Captain")
 		group := mobileGroup(w, 9, 100)
 		w.Sectors[10].Minefield = []MineLayer{{Owner: 1, Count: 1}}
 		w.Sectors[10].Defense = &SectorDefense{Owner: 1, Fighters: 50}
-		if mode == "ship" || mode == "cloaked-ship" {
-			p.Sector = 10
-			if mode == "cloaked-ship" {
-				p.Cloak = 1
-			}
-		} else {
-			owner := 1
-			if mode == "neutral-planet" {
-				owner = 0
-			}
-			planet := &Planet{ID: 2, Sector: 10, Owner: owner, Name: "Protected title", Updated: clock, Fighters: 37.5, Bank: 1234, Ground: 0}
-			if mode == "captured-home" {
-				planet.FactionHome = XannorHome
-			}
-			w.Planets[2], w.Sectors[10].Planet = planet, 2
+		owner := 1
+		if mode == "neutral-planet" {
+			owner = 0
 		}
+		planet := &Planet{ID: 2, Sector: 10, Owner: owner, Name: "Protected title", Updated: clock, Fighters: 37.5, Bank: 1234, Ground: 0}
+		if mode == "captured-home" {
+			planet.FactionHome = XannorHome
+		}
+		w.Planets[2], w.Sectors[10].Planet = planet, 2
 		before, _ := json.Marshal(w)
 		preferred := 0
-		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { t.Fatal("unsupported encounter drew RNG"); return 0 })
+		w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { t.Fatal("unsupported encounter drew RNG"); return 0 })
 		after, _ := json.Marshal(w)
 		if string(before) != string(after) {
-			t.Fatal("unsupported ship/planet encounter mutated assets", mode)
+			t.Fatal("unsupported planet encounter mutated assets", mode)
 		}
 		validMobile(t, w)
 	}
@@ -375,7 +368,7 @@ func TestXannorUnsupportedEncountersHoldBeforeMutationAndSkipOwnStocks(t *testin
 	home := &Planet{ID: 100, Sector: 10, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: clock, Fighters: 37.5, Ground: 10}
 	w.Planets[100], w.Sectors[10].Planet = home, 100
 	preferred := 0
-	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, func() float64 { t.Fatal("friendly home must not draw"); return 0 })
+	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { t.Fatal("friendly home must not draw"); return 0 })
 	if home.Fighters != 37.5 || home.Owner != XannorOwner || home.Ground != 10 || w.Sectors[11].Defense.Fighters != 100 {
 		t.Fatal("friendly planet became a Mercenary-style pickup")
 	}
@@ -391,7 +384,7 @@ func TestXannorProtectedPathsDailyOrderAndReplay(t *testing.T) {
 	w.Sectors[9].Warps = []int{7}
 	w.Sectors[7].Warps = []int{8}
 	before, _ := json.Marshal(w)
-	w.xannorActions(func() float64 { return 0 })
+	w.xannorActions(clock, func() float64 { return 0 })
 	after, _ := json.Marshal(w)
 	if string(before) != string(after) {
 		t.Fatal("mobile group used a protected transit shortcut")
@@ -428,7 +421,7 @@ func TestXannorSeededFriendlyConservation(t *testing.T) {
 		}
 		before := xannorForce(w)
 		draws := 0
-		w.xannorActions(func() float64 { draws++; return rng.Float64() })
+		w.xannorActions(clock, func() float64 { draws++; return rng.Float64() })
 		if xannorForce(w) != before || draws > 116 {
 			t.Fatal("friendly force was lost/created or phase retried", seed, before, xannorForce(w), draws)
 		}

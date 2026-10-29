@@ -216,3 +216,9 @@ results and require preserving a new observation set rather than overwriting
 these captures. Nine rehashed negative controls reject incorrect casualties,
 shield persistence, planetary/team cleanup, later mines, record order, force
 creation, broken world chain and private-message delivery.
+
+
+The [bounded Go implementation](IMPLEMENTATION.md) now enables these ship
+encounters with explicit corrections for stale lifecycle state. The original
+research above describes DOS observations; implementation policies and current
+save version 15 are documented separately.

@@ -268,3 +268,12 @@ func (s Store) DefenseEncounter(entry game.DefenseIntent, rng func() float64, no
 	}
 	return out, err
 }
+
+// AcknowledgeBattleReport is limited to the bound living recipient's read flag,
+// including while hostile fighters block ordinary resource mutations.
+func (s Store) AcknowledgeBattleReport(reportID uint64) error {
+	if s.ship == nil {
+		return errors.New("battle report acknowledgement requires a ship session")
+	}
+	return s.update(func(w *game.World) error { return w.AcknowledgeBattleReport(s.ship.id, reportID) }, true, true)
+}

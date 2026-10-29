@@ -120,6 +120,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
 | `RANK` / computer `C`, `4` | Rank players and teams from current assets and save all player scores; free |
 | `RANK OLD` / computer `C`, `4`, `O` | Stored scores with current aliases, teams and port counts; free |
+| `BATTLES` | Your private Xannor battle history; last 32 reports retained |
 | `NEWS [TODAY|YESTERDAY]` / computer `C`, `8` | Read retained public news in five-entry pages; free |
 | `HIRE <sector> [sector ...]` / Earth option `9` | Hire up to three spies per login, 333,000 credits each; choose every starting sector |
 | `SPIES` / computer `C`, `15` | List this login's current spy hunt locations; free |
@@ -267,7 +268,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 14 for explicit Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 14. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
+**Save rollback compatibility:** This build uses world version 15 for private Xannor battle reports and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 15. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Existing aliases, identities, assets, balances, login dates and avoid lists are preserved.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -329,7 +330,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-13 worlds upgrade to version 14 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-14 worlds upgrade to version 15 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -391,7 +392,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 14; follow the stopped-world
+Earth remains free of mines. This build now uses save version 15; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the
@@ -498,7 +499,7 @@ even a generous offer can be refused. Mercenaries remember your attacks until
 reconnect, and planet guards refuse to negotiate. Ordinary B still buys ports.
 
 Payment, recruitment, entry and mine aftermath save atomically. Unresolved groups
-continue blocking normal actions. The current save format is version 14. See the
+continue blocking normal actions. The current save format is version 15. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
 
@@ -517,7 +518,7 @@ remainders are discarded without carry or refund. Fresh hires first move on the
 following daily run.
 
 The same locked save commits taxes, groups and the daily date, including when
-maintenance runs at login. Saves now use version 14. Existing groups can travel one complete permitted route
+maintenance runs at login. Saves now use version 15. Existing groups can travel one complete permitted route
 per day, encountering
 mines and sector defenses. They can merge, reinforce human defenses, fight, or
 stop at a planet to take whole stored fighters; planet titles and ground forces
@@ -555,7 +556,7 @@ successfully reclaimed HQs can relocate, combining friendly force without loss.
 Full capacity safely defers creation or relocation. Captured and neutralized
 homes keep their title, resources and location; only an Xannor-owned home moves
 with its HQ. Defenders appear in the existing encounter and report interfaces.
-World version 14 preserves unfinished HQ battles across restarts and upgrades
+Introduced in version 14 and retained in version 15, saved HQ state preserves unfinished HQ battles across restarts and upgrades
 normal version-13 worlds without inferring homes from names or slots.
 [Rules, adaptations and validation](research/yt-xannor-lifecycle/IMPLEMENTATION.md)
 are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md).
@@ -570,13 +571,13 @@ sector defenses and combine friendly force without duplication or overflow.
 Returning fighters cannot be sent out again that day. Normal encounters and
 sensors show the resulting deployed groups after reconnect.
 
-Groups hold before live ships and foreign planets while full NPC ship/planet
-combat remains outstanding. Captured homes retain their title and resources;
+Groups hold before foreign planets while planetary NPC combat remains
+outstanding. Ship encounters are now implemented below. Captured homes retain their title and resources;
 friendly planetary stocks are not picked up. Target searches, mine bursts and
-battles have finite work budgets. Save version remains 14.
+battles have finite work budgets. The current save version is 15.
 [Policies and validation](research/yt-xannor-mobile/IMPLEMENTATION.md) build on
-[47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge and
-full NPC combat remain separate milestones.
+[47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge searches and
+planetary combat remain separate milestones.
 
 ### Xannor ship-combat research
 
@@ -584,6 +585,20 @@ full NPC combat remain separate milestones.
 establish ship detection, fighter-before-shield battles, casualty thresholds,
 multiple victims, route continuation and NPC death/ownership cleanup. They also
 expose dead-record targeting and stale shield/captain defects to avoid in Go.
-This is research only: mobile groups still hold before ships. The next step is
-bounded transactional Xannor ship combat, followed by planetary assaults and
-remaining revenge/cloak search behavior.
+The subsequent implementation now enables bounded transactional Xannor ship
+combat. Planetary assaults and remaining revenge/cloak search follow.
+
+### Xannor ship battles and private aftermath
+
+Mobile groups now intercept living ships outside the Union, fighting ship
+fighters before shields within the same finite route budget. Surviving groups
+can attack multiple ships and continue their route. A death atomically invalidates
+the old ship, releases ports, converts personal sector fighters to Mercenaries,
+cleans up team access and preserves planetary titles. NPCs receive no salvage,
+and these deaths create no wreck mines.
+
+Both interfaces deliver private casualty reports after login; `BATTLES` reads the
+last 32 retained reports. Public news announces deaths without disclosing force
+counts. Save version 15 preserves reports through replacement and upgrades old
+worlds without inventing past battles.
+[Policies, migration and validation](research/yt-xannor-ships/IMPLEMENTATION.md).

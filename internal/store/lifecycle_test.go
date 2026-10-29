@@ -101,6 +101,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 	hash := w.Teams[1].PasswordHash
 	w.NextRadio = 0
 	w.Version = 3
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	for _, p := range w.Players {
 		p.Cloak = 0

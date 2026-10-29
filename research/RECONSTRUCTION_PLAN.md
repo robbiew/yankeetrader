@@ -575,3 +575,24 @@ atomic aftermath and private event delivery. Define estate policies explicitly
 before reusing direct-player salvage/wreck rules. Planetary assaults/destruction,
 remaining revenge/cloak searches, exact RNG/MBF parity and live BBS acceptance
 remain separate. [Evidence and implementation contract](yt-xannor-ships/RECOVERY.md).
+
+
+## Bounded Xannor ship battles — implemented
+
+Mobile routes now use current living-player eligibility, separate cloak detection
+and recovered 5000/500/1 fighter-before-shield combat under the shared finite
+work budget. Multiple victims, survival/continuation, partial-work holding and
+final capacity-limited merges preserve force. Atomic NPC death invalidates stale
+sessions, releases ports, converts personal defenses, removes team access and
+retains planets, with no salvage or wreck mines. Actual zero shields replace the
+DOS stale-shield defect.
+
+Save version 15 adds bounded private battle history, recipient-only delivery and
+BATTLES in both interfaces; public death news excludes casualty counts. Legacy
+worlds migrate without invented events. Game/store/door regressions and real
+PTY validation cover replay, concurrent maintenance/login, rollback, committed
+durability failure, replacement, privacy and output failure.
+[Implementation and deliberate policies](yt-xannor-ships/IMPLEMENTATION.md).
+Next: Xannor planetary assault/destruction research, then the remaining
+revenge/cloak candidate-search behavior. Exact RNG/MBF parity and live BBS/native
+Windows acceptance remain separate.

@@ -147,6 +147,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 6
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
@@ -166,6 +167,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 6
+	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Sectors[2].Minefield = []game.MineLayer{{Owner: 0, Count: 1}}
 	data, _ = json.Marshal(w)
