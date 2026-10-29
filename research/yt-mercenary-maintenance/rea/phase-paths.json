@@ -1,0 +1,1016 @@
+{
+  "records": [
+    {
+      "evidence_id": "ev_44c1866763de651e0f461216a8fbae840a3e53026caff42abcca6806391e5d44",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14478",
+        "length": 145
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14478",
+        "requested_bytes": 145,
+        "returned_bytes": 145,
+        "bytes_hex": "bfa87ebee67acd3f879090bb1a00cd3d0390908bfecd3f7d90908bf7bfa47ecd3f9f90907303e9aa01bfa87ebee67acd3f879090bb1a00cd3d0390908bdfbfa47e8bd6cd3fa190907203e917008bf2bf047ccd3f7b90908bf3bf087ccd3f7b9090e92600bfa87ebee67acd3f879090bb1a00cd3d039090bf047ccd3f7d9090bf087cbea47ecd3f7b9090bf0c7cbe587fcd",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_44fe444185ba1bbaa00027ba82b8d3b26f57cfd5a944ccf13d270559d8c55691",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14534",
+        "length": 182
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14534",
+        "requested_bytes": 182,
+        "returned_bytes": 182,
+        "bytes_hex": "b86c7b50b8687b50cd3e8390909af37800101e07fcbfdc18be6c7bcd3f7f9090bfa47ecd3f819090bb1a00cd3e7b9090bb010033d2cd3e269090bb9018cd3d199090cd3fa9909077b7bb0e80cd3d1c9090ba9418cd3f5b9090bb047c8bd3cd3d1c90908bcaba9018cd3f5b90908bf9be0c7ccd3f7f90908bfecd3f7d9090bfdc18be6c7bcd3f7f9090bfa47ecd3f819090bb1a00cd3e7b9090bb010033d2cd3e289090bed67acd3f7f9090bfd67acd3f7d90908bf7bf",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_9490dc70b1b895a4a574f0db0b159a35fcaaef89dfc65f8c9592a57a3385f52f",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14804",
+        "length": 117
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14804",
+        "requested_bytes": 117,
+        "returned_bytes": 117,
+        "bytes_hex": "bb9018cd3d199090cd3f749090bf207ccd3f7e9090bb9418cd3d1990908bdfbf0e80cd3fa19090ba000074014a8bf3cd3fa89090b900007501490bca23c97403e9d10abb9c18cd3d199090cd3fa99090bb000076014bcd3d349090bfde87cd3fa19090ba000073014a23d323d27403e9a20abb9e85",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_14c5873be29602a67f79b656b223cb6d118a2f1704e55c29db44e3a3bb082ec0",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x149d4",
+        "length": 107
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x149d4",
+        "requested_bytes": 107,
+        "returned_bytes": 107,
+        "bytes_hex": "bfdc18be287ccd3f7f9090bb1a00cd3e7b9090bb010033d2cd3e269090bb9c18cd3d199090bf2c7ccd3f7d9090bb9018cd3d199090cd3f749090bf907bcd3f7e9090bbc418cd3d199090bf307ccd3f7d9090bb9418cd3d1990908bdfbfec18cd3f7d90908bf38bd3cd3f1d",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_a806f47c30513c3586e1bd93f781e96c90f105ec43d9f4b15b69f3accac65995",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14c7f",
+        "length": 123
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14c7f",
+        "requested_bytes": 123,
+        "returned_bytes": 123,
+        "bytes_hex": "bf0e80beec18cd3f9f9090bb000075014bcd3fa79090ba000075014a0bd3be2c7c8bde8bcbcd3f75909023da23db7503e9110287f9bee418cd3f7f9090bb1a00cd3e7b9090bb010033d2cd3e2690908bc3bbc418cd3d199090bb1a00cd3d0390908bdfbff87bcd3f7d9090bb9418cd3d199090cd3f77909087d3bb",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_1e59958b8f388dcf265df00ba29a49cbe6a74d5e3179c41eedfd501e4712ff1f",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14fb1",
+        "length": 75
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14fb1",
+        "requested_bytes": 75,
+        "returned_bytes": 75,
+        "bytes_hex": "beec18cd3fa79090bb000073014bcd3d349090bfde88cd3fa19090ba000076014a0bd323d27503e90e02bb207ccd3d129090b89e80cd3f5590908bc3bbe288cd3f5590908bd3bb907bcd3d",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_e1ad239cb6bfc17242677e3c898cf69b3451506eb8d8da72f527a8a7d4c912ea",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x1504e",
+        "length": 175
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x1504e",
+        "requested_bytes": 175,
+        "returned_bytes": 175,
+        "bytes_hex": "be907bcd3fa89090bb000076014b8bd6be207ccd3fa89090b9000076014923cb23c97503e9850087f2bf1689cd3fa09090bb000076014b8bf2cd3fa09090b9000076014923cb23c97503e90e00bf407cbe1e89cd3f7b9090e90b00bf407cbea47ecd3f7b9090cd3d349090bf2085cd3fa190907203e91a00be407ccd3f739090be907bcd3f9c90908bfecd3f7e9090e91700be407ccd3f739090be207ccd3f9c90908bfecd3f7e9090e954ffbe207c",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_12f91fb537a8a8e8e94c74543edc7c39a49139480ef063e7a57873f7bf5853b3",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x143e9",
+        "length": 121
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x143e9",
+        "requested_bytes": 121,
+        "returned_bytes": 121,
+        "bytes_hex": "bfa07ebed818cd3f7f9090bb1a00cd3e7b9090bb010033d2cd3e269090bb0e80cd3d1c9090ba8818cd3f5b9090bb8c18cd3d199090bfa47ecd3fa190907203e90f008bd3bb4687cd3d1c9090cd3f5b9090bbbc18cd3d199090cd3fa990907403e90f008bd3bb4a87cd3d1c9090cd3f5b9090bfa07ebed818cd",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_f861352a8945dd4fc4c44082c8a3180ef49c9d6717a14cc4b171ede90f897df0",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x15318",
+        "length": 66
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x15318",
+        "requested_bytes": 66,
+        "returned_bytes": 66,
+        "bytes_hex": "bf187cbe1c7ccd3f7f9090bf1c7ccd3f7d9090be187ccd3fa790907203e912008bf7bf147ccd3f9f90907203e9abf4e91000bf147cbe1c7ccd3f9f90907703e998f4",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_0f6c2129b0226d1759f837d9bfe8665a7175ae49e1fe3ac233b940c5a4ed120e",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x17939",
+        "length": 159
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x17939",
+        "requested_bytes": 159,
+        "returned_bytes": 159,
+        "bytes_hex": "cd3f539090cd3d439090bb1a00cd3e0990908b7606cd3fa79090bb000075014b8b7608cd3fa79090ba000075014a0bd323d27403e96800bf507d8b7606cd3f7b9090bea47ecd3f6f9090e93e00bba47ecd3d3390908b7e08cd3f9190908bd3bb1a00cd3d03909087facd3f8190908bdf8b7e0acd3f7d909087fa8bf2cd3f7b90908bfbbe547dcd3f7f9090bf547dcd3f7d90908bf7bf507dcd3f9f909076ae",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_0486520c08264ee9783000deae0e98a2b8fbb24dfd8c021540f5c2821235d1db",
+      "subject": {
+        "name": "YTMAINT.EXE",
+        "digest": {
+          "sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+        },
+        "local_path": "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/archive/dos-original/YTMAINT.EXE",
+        "format": "dos-mz",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "dos-mz",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "function-body-call-coverage-v5",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "procedure_file_offset_resolution": "address-first-unique-target-source-mapping-v2",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-without-synthetic-entry-v2",
+          "function_boundary_observations": "ghidra-function-boundary-limitations-v4",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "load_image_evidence": "independent-mz-mapping-relocations-v2",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "MzLoader",
+          "language_id": "x86:LE:16:Real Mode",
+          "compiler_spec_id": "default",
+          "load_segment": "0x1000",
+          "address_coordinates": "linear-byte-offset",
+          "analyzer_preset": "ghidra-default",
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7c248f097b8d2da919ace5922b89e57e7bd711397944d920da8a116756ea602e"
+          }
+        },
+        "digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "read_bytes",
+      "parameters": {
+        "address": "0x14a78",
+        "length": 83
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "address": "0x14a78",
+        "requested_bytes": 83,
+        "returned_bytes": 83,
+        "bytes_hex": "bfb07bbed07fcd3f7b90908bdfbf087cbe1081cd3f7b9090b86c7b508bc7508bc350cd3e8390909a397900101e07fcbe6c7bcd3f739090bf207c8bdecd3fa290907703e90e008bf7cd3f7990908bfbcd3f7d90",
+        "complete": true
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+        "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+        "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+        "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+        "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+        "macOS sessions require a matching executable Ghidra native decompiler; REA checks for it but does not build native components or change Gatekeeper quarantine state.",
+        "DOS MZ uses 16-bit x86 real mode with the Ghidra load segment 0x1000. Returned addresses are linear byte coordinates; they do not identify a unique segment:offset alias.",
+        "Static DOS analysis does not emulate BIOS, DOS interrupts, device ports, or self-modifying unpacking code. Packed targets require a separately identified unpacked artifact for original-program analysis; appended overlays are not the initialized load module."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  ]
+}

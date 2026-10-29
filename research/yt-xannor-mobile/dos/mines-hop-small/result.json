@@ -1,0 +1,29 @@
+{
+  "name": "mines-hop-small",
+  "patches": [
+    [
+      152,
+      129,
+      3
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "31c06cf60200d2037281da11ada0fd60925b44eb6e6be97f0159e320923b2625",
+  "after_sha256": "d0679a966e81ab89d9e2a9f54ecab1ee1f626ce737ce51b39a03c504a8f754a2",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "680f3d363858a13427b12beda36250eb7fcee1538c00a4f1adfff1e5bdef4cdc",
+    "before.dat.gz": "8fa677d6b013632faec014b57fbee7fca86e86dfbe7dfaf61b6395058f4e921a",
+    "dosbox.log": "81d46c7ed71972ce80d280806b8e778a9757537c74f5dab0cf69d0555b40fd63",
+    "transcript.txt": "99dd5304d145c6c5e2dd5a755a34437c8c36abf598af7a87a32aff3222e18ce0"
+  }
+}

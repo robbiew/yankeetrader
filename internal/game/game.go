@@ -14,6 +14,9 @@ import (
 const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
+// WorldVersion is the current persisted schema, independent of the app release.
+const WorldVersion = 14
+
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
@@ -54,7 +57,8 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
-	News     []NewsEvent `json:",omitempty"`
+	Xannor   *XannorState `json:",omitempty"`
+	News     []NewsEvent  `json:",omitempty"`
 	NextNews uint64
 
 	Radio           []RadioMessage `json:",omitempty"`
@@ -74,7 +78,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 12, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: WorldVersion, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -117,7 +121,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 12 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != WorldVersion || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -211,6 +215,9 @@ func (w *World) Validate() error {
 			}
 		}
 	}
+	if err := w.validateXannor(); err != nil {
+		return err
+	}
 	if err := w.validateMines(); err != nil {
 		return err
 	}
@@ -284,7 +291,7 @@ func (w *World) canMove(p *Player, to int) error {
 	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]
 		if owner == nil || p.Team == 0 || owner.Team != p.Team {
-			return errors.New("hostile sector fighters block this warp; use BREACH")
+			return errors.New("hostile sector fighters block this warp; use BRIBE <sector> <credits> or BREACH")
 		}
 	}
 	if p.Turns < 1 {
@@ -458,6 +465,12 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 	return nil
 }
 func (w *World) Maintain(now time.Time) bool {
+	return w.maintain(now, prng.Float64)
+}
+
+// maintain shares a random source between faction phases. Keeping
+// it injectable internally permits exact threshold and phase-order tests.
+func (w *World) maintain(now time.Time, rng func() float64) bool {
 	today := day(now)
 	if today <= w.LastMaintenance {
 		return false
@@ -465,12 +478,24 @@ func (w *World) Maintain(now time.Time) bool {
 	for _, planet := range w.Planets {
 		planet.update(now, false)
 	}
+	var taxes int64
 	for _, p := range w.Ports {
 		update(p, now)
 		if p.ID != 1 {
-			p.Treasury -= p.Treasury / 10
+			tax := p.Treasury / 10
+			p.Treasury -= tax
+			taxes += tax
 		}
 	}
+	// Deserted groups join this day's stable route snapshot; fresh hires first
+	// act on the following day.
+	w.desertHumanDefenses(rng)
+	w.mercenaryActions(rng)
+	w.hireMercenaries(taxes)
+	// Restore after Mercenary routes; the following Xannor phases see the new homes.
+	w.restoreMercenaryBase(now, rng)
+	w.maintainXannor(now, rng)
+	w.xannorActions(rng)
 	for _, p := range w.Players {
 		p.Turns = 500
 		p.DockToken = ""

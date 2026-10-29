@@ -431,3 +431,128 @@ maintenance leaves it alone. Save version 12 upgrades versions 1–11 without
 backfilling events. Other event producers, exact DOS colors/long-file interruption,
 NPC behavior and Genesis remain separate milestones.
 [Implementation rules and validation](yt-newspaper/IMPLEMENTATION.md).
+
+
+## Mercenary offers and faction refusals — research
+
+Nineteen controlled DOS sessions and 38 saved snapshots establish offer parsing,
+blank cancellation versus insulting zero, accepted exact debit/recruitment,
+over-budget combat, guarded-planet refusal, weak/zero-force recruitment and
+human/Xannor differences. Two REA byte observations correct an inline-runtime
+disassembly boundary. Exact negotiation probabilities and an additional hostility
+flag remain explicit research limits; no Go bribery gameplay is enabled. Next:
+resolve those branches or define a deliberate modern policy, then implement
+confirmed transactional bribery using the existing defense/aftermath safeguards.
+[Evidence, boundaries and implementation contract](yt-mercenaries/RECOVERY.md).
+
+
+## Mercenary hostility and negotiation rules — follow-up research
+
+Twenty-four additional original DOS sessions establish same-login anger after
+Mercenary casualties, carryover between groups, exact reconnect reset and
+planet-reference refusal regardless of planet owner. Three new REA byte reads
+and original BRUN30 handlers resolve the eager random draw order, 5%/weak-ship
+hostility checks, human retaliation and the strict offer threshold. Portable
+verifiers retain all 43 bribe sessions and 86 snapshots; input-consuming sensor
+probes are excluded. Exact MBF/RNG reproduction remains outside the modern
+integer-money contract. [Resolved rules and evidence](yt-mercenaries/HOSTILITY.md).
+
+
+## Mercenary bribery — implementation
+
+BRIBE [credits] negotiates in the current sector; BRIBE <sector> <credits> permits
+confirmed adjacent entry. Classic encounter B preserves normal B port acquisition
+elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
+recruitment or full-force defense combat. Login-local hostility, one-use quote
+tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
+prevent replay and partial transactions. No save-version change is required.
+Daily hiring, NPC route actions and human-defense desertion are implemented
+below. Mercenary-base restoration is implemented below; full NPC ship combat remains
+a separate milestone.
+[Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
+
+## Mercenary daily maintenance — hiring, routes, desertion and base restoration
+
+Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
+budget carry, group placement and human-defense desertion. Forty-one completed
+DOS runs and one bounded timeout cover route walks, merges, mines, defense
+combat, planetary fighter pickup without title/ground transfer, and reserved-base
+restoration. Static byte checks protect the distinct NPC battle threshold and
+nested mine rolls. [Evidence and boundaries](yt-mercenary-maintenance/RECOVERY.md).
+
+Daily maintenance now hires from summed per-port integer taxes with the recovered
+rounding rules and finite distinct placement. Protected Union sectors and existing
+defenses are excluded. Missing space and the modern force limit discard unused
+funding without carry/refund. Tax debits, hires and date persist atomically, once
+per UTC day; these phases introduced no schema changes. Base restoration
+introduced version 13; current version 14 also supports Xannor HQ/home state.
+Game/store regressions and a real
+maintenance/reconnect smoke cover saturation, replay and persistence.
+[Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
+
+Existing Mercenary groups now receive one stable daily activation before new
+hiring, following a whole directed route outside protected sectors. Mines precede
+defenses and planetary pickup. Merging consumes the receiver's pending action;
+partial-capacity transfers conserve force. Combat uses the recovered NPC batch
+rules with a per-group work allowance. Pickup preserves titles, ground and
+fractional/excess stocks. Invalid paths hold in place. No DOS capacity hang,
+failed-path teleportation or repeated activation is reproduced. Human-defense
+desertion now runs first, converting only eligible human-owned groups outside
+the protected Union when RND*100 strictly exceeds their force. Converted groups
+join the stable route snapshot that day; publication reflects current ownership.
+[Desertion validation](yt-mercenary-maintenance/DESERTION.md). Mercenary-base
+restoration now uses explicit identity, validated references and
+finite free-slot/sector selection. Captured or neutralized titles are preserved;
+only empty reserves on Mercenary-owned homes replenish. Missing homes rebuild
+without commandeering legacy slot/name matches. Version-12 saves upgrade without
+inferring home identity or creating assets during read-only loading.
+[Base lifecycle and migration](yt-mercenary-maintenance/BASE.md).
+[Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
+parity and additional faction lifecycle combinations remain research boundaries;
+live BBS acceptance is separate.
+
+## Xannor HQ and Xannoron lifecycle — implemented
+
+Thirty-eight completed original-DOS runs, three bounded relocation stalls, two
+exact next-day world chains and eleven new REA byte observations establish
+recreation predicates, retained/reset stocks, ground/bank restoration, forced
+retitling, group normalization/regeneration, reclaim thresholds and relocation
+rules. Candidate controls distinguish one/two foreign fighters and expose an
+unbounded search. A zero-HQ control ties phantom strength to a stale RNG helper
+result. [Evidence, boundaries and proposed implementation](yt-xannor-lifecycle/RECOVERY.md).
+
+Implemented explicit Xannor-home identity, bounded restoration, HQ/reserve state,
+living stored-score regeneration, bounded reclaim and finite relocation, with
+captured-home ownership preserved. World version 14 migrates without inferring
+legacy homes or HQs. Sector defenses remain the unique deployed groups; reserve
+preserves unfinished battles. Game/store tests and real compact/classic terminal
+coverage validate accounting, capacity, capture, destruction, replay and rollback.
+[Implementation policies](yt-xannor-lifecycle/IMPLEMENTATION.md).
+
+Mobile splitting/targeting and route-action research is now complete below.
+Full NPC ship combat, revenge/cloak searching and exact DOS RNG/MBF parity remain
+separate milestones.
+
+## Mobile Xannor groups — bounded implementation
+
+Forty-seven completed DOS controls, an exact next-day world chain and 22 REA byte
+observations establish nontruncated HQ split thresholds, four shrinking draws,
+normal/top/HQ target ordering, conditional shared pursuit, directed shortest
+paths and per-hop action dispatch. The controls distinguish Xannor uniform mine
+damage and 5000/500/1 sector-defense batches from Mercenary behavior. A ship loss
+can retain its sector as the next groups' preferred target; special top-player
+hunting is a separate 2.5-million-score gate. Union routes and planetary attacks
+are possible in DOS, while Union mines disappear in an earlier phase.
+[Evidence, boundaries and next implementation](yt-xannor-mobile/RECOVERY.md).
+
+Implemented bounded group splitting/selection, movement, uniform mine damage
+and 5000/500/1 sector battles on the explicit HQ model. A stable 19-group daily
+snapshot and original-HQ split budget prevent duplicate activations and reuse of
+returning force. Shared pursuit is explicit; merges and reserve capacity conserve
+force. Union routes are excluded. Live ships and foreign planets cause a safe
+hold before unsupported encounter mutations. World version remains 14.
+[Implementation policies and validation](yt-xannor-mobile/IMPLEMENTATION.md).
+
+Next recover full Xannor NPC ship battle rules, followed by planetary assaults,
+destruction and remaining revenge/cloak search behavior. Exact MBF/RNG parity
+and live BBS acceptance remain separate validation boundaries.

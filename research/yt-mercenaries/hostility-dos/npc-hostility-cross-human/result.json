@@ -1,0 +1,89 @@
+{
+  "name": "npc-hostility-cross-human",
+  "command": "M;101\r~~A;2000\r~~~~Y\r~~~~M;107\r~~B\r~~50000",
+  "before_sha256": "9e476c6229a4f8523a24da3def572fcd35b4011aca5c468c9d122aae7841cbe5",
+  "after_sha256": "4a2584fec6277683d9db112987d1c529aecce93e34f02e11a08925c8ec5ff4e8",
+  "turns_before": 500,
+  "turns_after": 498,
+  "sector_before": 100,
+  "sector_after": 107,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [
+    {
+      "record": 2,
+      "offset": 61,
+      "value": 2000
+    },
+    {
+      "record": 2,
+      "offset": 93,
+      "value": 0
+    },
+    {
+      "record": 152,
+      "offset": 81,
+      "value": 100
+    },
+    {
+      "record": 152,
+      "offset": 85,
+      "value": 3
+    },
+    {
+      "record": 158,
+      "offset": 81,
+      "value": 100
+    },
+    {
+      "record": 158,
+      "offset": 85,
+      "value": -2
+    }
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "keys_sha256": "a7f5dc2bb072015346fba8b46b68aaf0db5535e2dd781ad6dc44d64fc2ed31b4",
+  "transcript_sha256": "b7092aa3176f189f7efcab9af94b62e7fd2f8684cb69483cc68729bf0f218ed7",
+  "dosbox_log_sha256": "9bb32d3ac923f15939c116f8f3a3f57bc5b7377dfebc4ea86865f806f2d44d86",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+}

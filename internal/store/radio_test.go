@@ -118,7 +118,7 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 12 || upgraded.NextRadio != 1 || len(upgraded.Radio) != 0 || upgraded.Players[1].MineGraceSector != 8 {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.NextRadio != 1 || len(upgraded.Radio) != 0 || upgraded.Players[1].MineGraceSector != 8 {
 		t.Fatal("radio upgrade invented messages or lost grace", err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -129,7 +129,7 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 		t.Fatal(err)
 	}
 	persisted, err := s.View()
-	if err != nil || persisted.Version != 12 || persisted.NextRadio != 1 {
+	if err != nil || persisted.Version != game.WorldVersion || persisted.NextRadio != 1 {
 		t.Fatal("radio upgrade not persisted", err)
 	}
 	w.NextRadio = 1

@@ -1,0 +1,89 @@
+{
+  "name": "npc-bribe-planet",
+  "command": "M;101\r~~B\r~~50000",
+  "before_sha256": "b52114949fba282bad39161bfda62473882d8cf173eac5f50af525f6cd592098",
+  "after_sha256": "1f34c78bea7653938ad02307faf6c40c7cb8d2cd7979c19a9ce9a661055419fb",
+  "turns_before": 500,
+  "turns_after": 499,
+  "sector_before": 100,
+  "sector_after": 101,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [
+    {
+      "record": 2,
+      "offset": 61,
+      "value": 2000
+    },
+    {
+      "record": 2,
+      "offset": 93,
+      "value": 0
+    },
+    {
+      "record": 152,
+      "offset": 81,
+      "value": 100
+    },
+    {
+      "record": 152,
+      "offset": 85,
+      "value": -2
+    },
+    {
+      "record": 152,
+      "offset": 93,
+      "value": 2
+    },
+    {
+      "record": 4053,
+      "offset": 73,
+      "value": -2
+    }
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "keys_sha256": "57349f3e4db41a4967426e1847448d0bffaebee6b510cfc681381d04e1c8b6ee",
+  "transcript_sha256": "98b368cd7ac536fa4d2a73b5067e42029cc9cdb80a2a75e65c3bcdf7bb5ffef8",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "dosbox_log_sha256": "c93750b67b7d73db991d4f1e90cb21ef9f9e3887c061adf6ff9ace67dc8d08c5"
+}

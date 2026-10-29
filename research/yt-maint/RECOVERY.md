@@ -176,7 +176,7 @@ new_treasury = treasury - tax
 | 7 | 1,005 | 905 | 815 |
 | 8 | 1,000,000 | 900,000 | 810,000 |
 
-The first run reported 100,112 credits in taxes and 10,010 hired mercenaries. The second reported 90,100 in taxes and 9,010 mercenaries. The exact group-allocation/remainder formula for mercenary hiring has not yet been recovered; it should not be inferred simply by dividing the displayed totals.
+The first run reported 100,112 credits in taxes and 10,010 hired mercenaries. The second reported 90,100 in taxes and 9,010 mercenaries. The later [Mercenary maintenance recovery](../yt-mercenary-maintenance/RECOVERY.md) establishes the two rounding stages and group allocation with isolated and chained runs; final force counts also reflect later combat and merging.
 
 ### Maintenance is not idempotent
 
@@ -192,7 +192,7 @@ A modern version needs an explicit decision about reproducing or fixing this beh
 
 There are 20 group slots: one headquarters group and 19 mobile groups. Sector records 1..20 use offset 105 as group-location pointers. The maintenance phase caches, merges/clears duplicate or invalid group entries, operates on the groups, and writes the updated state back.
 
-The strongest active player's **stored score at the start of maintenance** controls regeneration. The fixtures deliberately supplied this field; the scoreboard later recalculates scores and is not the value used for this test.
+The greatest **stored score among named player records after earlier cleanup** controls regeneration. The local selection loop does not directly test a death marker; see the [focused lifecycle boundaries](../yt-xannor-lifecycle/RECOVERY.md). The fixtures deliberately supplied this field; the scoreboard later recalculates scores and is not the value used for this test.
 
 Let `T` be that top stored score and `X` the cached aggregate group strength:
 
@@ -235,16 +235,16 @@ Static evidence: 2AC4–2F3F (HQ handling), 2FAB–30EA (revenge pointer), 311E�
 
 Clearing both the HQ sector's planet reference and the old planet's active-name field caused the original program to report that the Xannor had made a planet and to recreate Xannoron.
 
-Observed initial values for the rebuilt planet:
+Observed final values for the rebuilt planet after the complete maintenance run:
 
 - Name `Xannoron`, name length 8, owner -1.
 - Daily ore, organics, equipment production **100,000 each**.
 - Zero cargo stocks, missiles, mines, and fighters in the measured recreated record.
 - Randomized ground forces and bank balance: 175 ground forces and 3,980,002.5 credits in this run.
 
-The static creation code indicates ground forces from `floor(RND * 250)` and bank balance from `RND * 10,000,000 + 100,000`, with BASIC rounding/conversion. The observed sample fits those ranges; their full distributions have not been measured.
+The static creation code begins ground forces with `floor(RND * 250)` and bank balance with `RND * 10,000,000 + 100,000`, with BASIC rounding/conversion. The subsequent existing-home block adds another `floor(RND * 25)` to ground. The [focused lifecycle recovery](../yt-xannor-lifecycle/RECOVERY.md) also shows fighters/plasma can survive recreation while mines/cargo/missiles reset; the zero-stock sample above is not a universal reset rule. Full distributions have not been measured.
 
-A first missing-planet probe only cleared its name length while leaving the sector reference alive; it did not recreate the planet and is excluded as an invalid deletion fixture. The corrected experiment is `missing-xannoron-v2`.
+A first missing-planet probe only cleared name length while leaving the sector reference alive, so it is not evidence of failure to recreate a deleted planet. The corrected old experiment is `missing-xannoron-v2`; later isolated controls establish that clearing the HQ reference alone is sufficient. The name-only case is retained as a deliberate negative control in the [lifecycle research](../yt-xannor-lifecycle/RECOVERY.md).
 
 Evidence: 20AD–2331, especially 21AB–228C.
 
@@ -289,9 +289,17 @@ Scenario creation intentionally refuses existing directory names, preserving the
 1. Recover/instrument the QuickBASIC RNG and exact MBF32/MBF64 operation order for bit-for-bit results.
 2. Validate the exact plague/civil-war probability comparisons and damage distributions.
 3. Recover each Xannor targeting/combat branch, cloak detection, mine damage, and HQ relocation criteria beyond the demonstrated path.
-4. Recover full mercenary spending/group allocation and other maintenance phases listed above.
+4. Mercenary-base restoration is [implemented with explicit ownership policy](../yt-mercenary-maintenance/BASE.md). Bounded Xannor HQ/home restoration, regeneration, reclaim and relocation are [implemented](../yt-xannor-lifecycle/IMPLEMENTATION.md); mobile targeting and further faction lifecycle combinations remain outstanding. [Hiring](../yt-mercenary-maintenance/IMPLEMENTATION.md), [route actions](../yt-mercenary-maintenance/ROUTES.md) and [human-defense desertion](../yt-mercenary-maintenance/DESERTION.md) are implemented; their documented RNG/lifecycle boundaries and the other maintenance phases listed above remain outstanding.
 5. Decide which original defects to preserve behind a compatibility option: same-day reprocessing and ten-day rewards after clock rollback are now demonstrated behaviors, not assumptions.
 
 ## Project decision: fixes in the modern version
 
 The user subsequently specified that known defects and exploits should be fixed. This supersedes the compatibility-option suggestion above. Preserve original behavior for research, and track deliberate corrections in [Issues and exploits](../ISSUES_AND_EXPLOITS.md) and the [working plan](../RECONSTRUCTION_PLAN.md).
+
+Mobile splitting, targeting and route dispatch now have [47 focused DOS controls](../yt-xannor-mobile/RECOVERY.md).
+They establish the distinct mine/sector-defense rules and shared pursuit state;
+full ship/planet combat, revenge and exact RNG parity remain separate boundaries.
+
+Bounded Xannor splitting/selection, routes, mines and sector-defense combat are
+now [implemented](../yt-xannor-mobile/IMPLEMENTATION.md). Unsupported ship/planet
+encounters hold safely; full battles and revenge remain separate work.

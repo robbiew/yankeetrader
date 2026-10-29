@@ -1,0 +1,31 @@
+{
+  "name": "regen-1000000",
+  "human": true,
+  "patches": [
+    [
+      2,
+      109,
+      1000000
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "4a58695648063d7d047da9a0624c4a58e496efc0a33ed22508acad9a47b2d531",
+  "after_sha256": "3420ed801fbb3444ac83d6e7901ba35fc658e5a877fd6f41bcfdf63c571be26a",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "b407e38d883d15e851f473723768a7a7db7e3607e409114fabb6e3936037375d",
+    "transcript.txt": "ced1a7211bafa8b5baa51edbe3242b30236b31b1aa4981b5bb726a132f1ce061",
+    "before.dat.gz": "0e467e756e0ea5be9fd21ef6f08e88f40c388f8882f201590e35054039f55bcc",
+    "after.dat.gz": "98ac7ce1248e72116d3106173e67a09c78167e2d313c83caec18630c3abb212b"
+  }
+}

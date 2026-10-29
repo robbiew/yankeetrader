@@ -1,0 +1,58 @@
+{
+  "name": "npc-hostility-reconnect",
+  "command": "B\r~~50000",
+  "before_sha256": "0b46f3babd57332bb512889d98a06f86ee77888fff707c9b4ff524e6de89fe97",
+  "after_sha256": "22c229675296c1da8640fd4aecea9697423d8f8bf3c4a8e1f51f61e961e32444",
+  "turns_before": 499,
+  "turns_after": 499,
+  "sector_before": 101,
+  "sector_after": 101,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [],
+  "source_sha256": "0b46f3babd57332bb512889d98a06f86ee77888fff707c9b4ff524e6de89fe97",
+  "keys_sha256": "3bcfb9a68a427a928b9a150c962dad545173eac7838187fb329fe7ea4742579d",
+  "transcript_sha256": "c447545293b1247a0a7299c229f3bb8d445af362b752638abf05020b733b1353",
+  "dosbox_log_sha256": "8669882b9319b1425be5183b8dc14c449e15bf4904a8880440f8b1812fb998c0",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+}

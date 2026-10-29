@@ -1,0 +1,81 @@
+{
+  "name": "planet-human-origin",
+  "human": true,
+  "patches": [
+    [
+      151,
+      41,
+      101
+    ],
+    [
+      151,
+      45,
+      0
+    ],
+    [
+      151,
+      49,
+      0
+    ],
+    [
+      151,
+      53,
+      0
+    ],
+    [
+      151,
+      57,
+      0
+    ],
+    [
+      151,
+      61,
+      0
+    ],
+    [
+      151,
+      81,
+      100
+    ],
+    [
+      151,
+      85,
+      -2
+    ],
+    [
+      151,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      2
+    ],
+    [
+      4053,
+      129,
+      37
+    ]
+  ],
+  "recipe": "mercenary-maintenance-isolation-v1",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "a4e8113eae026133410b0ac3155abdb636d6c786ff0a8c773cf393c27358fc93",
+  "before_sha256": "0351bbe2921afc1fd17c3b5f2a56fea1a84c44fd1cdcf21b0302be5fa8546c80",
+  "after_sha256": "ab8a0925a31d5cc5e9ea909340ab6271dbf8d08ce78dbfb489251770dde34887",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "before.dat.gz": "0f0011677376f8355662a185f4de882a8afe3becdfa746f9644a5ed80dde1c46",
+    "transcript.txt": "0afdd827c0a1d647a95468915570c115a9e35b2f9a035ab3c77c1f9f3dfb351d",
+    "dosbox.log": "d6344241df5d565e6ebe8b84d6cd7280da803ff0e0edb5e81713f346fe9865eb",
+    "after.dat.gz": "500f751b0b625f90be120cd3be5f227a5ff380e2561bb868f83f473ce3a0c628"
+  }
+}

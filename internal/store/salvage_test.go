@@ -127,7 +127,7 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if upgraded.Version != 12 || upgraded.Players[1].Death == nil || upgraded.Players[1].ShipGeneration != 1 || upgraded.Ports[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || upgraded.Players[2].Credits != 1005 {
+	if upgraded.Version != game.WorldVersion || upgraded.Players[1].Death == nil || upgraded.Players[1].ShipGeneration != 1 || upgraded.Ports[2].Owner != 1 || upgraded.Ports[2].Treasury != 777 || upgraded.Players[2].Credits != 1005 {
 		t.Fatal("upgrade replayed an old death")
 	}
 	disk, _ := os.ReadFile(s.Dir + "/world.json")

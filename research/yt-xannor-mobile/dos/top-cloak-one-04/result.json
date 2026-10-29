@@ -1,0 +1,55 @@
+{
+  "name": "top-cloak-one-04",
+  "full_groups": true,
+  "time": "04:00:00",
+  "patches": [
+    [
+      1165,
+      81,
+      1000000
+    ],
+    [
+      2,
+      109,
+      2500000
+    ],
+    [
+      2,
+      57,
+      250
+    ],
+    [
+      2,
+      125,
+      1
+    ],
+    [
+      2,
+      53,
+      100000000
+    ],
+    [
+      2,
+      61,
+      100000000
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "3c2b9ddaa97868c6f86c8c45869f8d5303e8871f0d2fe65e72242dd965ba1ebb",
+  "after_sha256": "aa9b2a287e5674fd1a89678b3d021078ab90e6ac421e120a602b92ce2cd0193e",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "21b6dc44174f046507a148c3e155c62484470f61e22b092643c45251570b8c95",
+    "after.dat.gz": "8ce31be3fc81e685a134a36e96f045255d40f1ff8b5b634f951fea21efe49da9",
+    "before.dat.gz": "179c30aababa3808cd458e4bc1573aac90979cf3fd851202953361fd2bfcad8e",
+    "dosbox.log": "c3d6de36764213d2c8432a3c10b087c5a1bd5cbfd857bb1603d6a8e4a8025035",
+    "transcript.txt": "00bcb09c3e812c4e3889831fef013ae94f6abfdde84c5e83dacc2b96fa66ac68"
+  }
+}

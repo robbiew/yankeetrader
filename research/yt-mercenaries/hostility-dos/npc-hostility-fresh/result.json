@@ -1,0 +1,79 @@
+{
+  "name": "npc-hostility-fresh",
+  "command": "M;101\r~~B\r~~50000",
+  "before_sha256": "67f4b0f267915eba8539038db4522a708a918cc4598431f11c3879c24e17039e",
+  "after_sha256": "8c5b4dc86c5456cb4abb1b2dc455187ade3571b24fad3f55c2e50f1afaf44c88",
+  "turns_before": 500,
+  "turns_after": 499,
+  "sector_before": 100,
+  "sector_after": 101,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [
+    {
+      "record": 2,
+      "offset": 61,
+      "value": 2000
+    },
+    {
+      "record": 2,
+      "offset": 93,
+      "value": 0
+    },
+    {
+      "record": 152,
+      "offset": 81,
+      "value": 1000
+    },
+    {
+      "record": 152,
+      "offset": 85,
+      "value": -2
+    }
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "keys_sha256": "57349f3e4db41a4967426e1847448d0bffaebee6b510cfc681381d04e1c8b6ee",
+  "transcript_sha256": "04e51d7c47dab479468420ca59163e9d32a4abc6a589fad8a074eecd051cc44f",
+  "dosbox_log_sha256": "915b19d009b2fa0a72042bf9ab173272f7bca0d05ea8386d1417b85bce1d474d",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+}

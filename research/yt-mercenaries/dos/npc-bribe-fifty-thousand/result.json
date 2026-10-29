@@ -1,0 +1,79 @@
+{
+  "name": "npc-bribe-fifty-thousand",
+  "command": "M;101\r~~B\r~~50000",
+  "before_sha256": "5f32c67f5b393a8f2556bc7d61dc467863544da6f38642dfc745e6639b333650",
+  "after_sha256": "f96cfee6d1ea6dc21382c16868ee7b5eb4fbe49687550888874dd179d99b669e",
+  "turns_before": 500,
+  "turns_after": 499,
+  "sector_before": 100,
+  "sector_after": 101,
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "dos_time": "00:00:00",
+  "graph": {
+    "100": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "101": [
+      107
+    ],
+    "102": [
+      108
+    ],
+    "103": [
+      100
+    ],
+    "104": [
+      100
+    ],
+    "105": [
+      100
+    ],
+    "106": [
+      100
+    ],
+    "107": [
+      109
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ]
+  },
+  "patches": [
+    {
+      "record": 2,
+      "offset": 61,
+      "value": 2000
+    },
+    {
+      "record": 2,
+      "offset": 93,
+      "value": 0
+    },
+    {
+      "record": 152,
+      "offset": 81,
+      "value": 100
+    },
+    {
+      "record": 152,
+      "offset": 85,
+      "value": -2
+    }
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "keys_sha256": "57349f3e4db41a4967426e1847448d0bffaebee6b510cfc681381d04e1c8b6ee",
+  "transcript_sha256": "86679cdcd13a1d5f31b3c8fd96e9697fa0bad62dff5d75dd984649b43f81d496",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "dosbox_log_sha256": "98e9d8bda28f3d050ad82fea9fa6b98be47f23e95151c9f4a66e55d4363265e4"
+}

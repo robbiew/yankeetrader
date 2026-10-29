@@ -12,6 +12,7 @@ import (
 
 // Nonfinancial production/stocks retain fractions. Spendable credits never use floats.
 type Planet struct {
+	FactionHome                       string `json:",omitempty"`
 	ID, Sector, Owner                 int
 	Name                              string
 	Updated                           time.Time
@@ -21,6 +22,23 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 14 {
+		if w.Xannor != nil {
+			return errors.New("legacy world unexpectedly contains Xannor HQ state")
+		}
+		for _, planet := range w.Planets {
+			if planet != nil && planet.FactionHome == XannorHome {
+				return errors.New("legacy world unexpectedly contains Xannor home identity")
+			}
+		}
+	}
+	if w.Version < 13 {
+		for _, planet := range w.Planets {
+			if planet != nil && planet.FactionHome != "" {
+				return errors.New("legacy world unexpectedly contains faction-home identity")
+			}
+		}
+	}
 	if w.Version == 1 {
 		if len(w.Planets) != 0 {
 			return errors.New("version-one world unexpectedly contains planets")
@@ -110,6 +128,12 @@ func (w *World) Upgrade() error {
 		w.NextNews = 1
 		w.Version = 12
 	}
+	if w.Version == 12 {
+		w.Version = 13
+	}
+	if w.Version == 13 {
+		w.Version = 14
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
@@ -138,8 +162,22 @@ func (w *World) validatePlanets() error {
 			}
 		}
 	}
+	homes := map[string]bool{}
 	for id, p := range w.Planets {
-		if p == nil || id < 2 || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || p.Owner < 0 || (p.Owner != 0 && w.Players[p.Owner] == nil) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
+		if p == nil {
+			return errors.New("invalid planet")
+		}
+		if p.FactionHome != "" {
+			if (p.FactionHome != MercenaryHome && p.FactionHome != XannorHome) || p.Sector <= 7 {
+				return errors.New("invalid faction home")
+			}
+			if homes[p.FactionHome] {
+				return errors.New("duplicate faction home")
+			}
+			homes[p.FactionHome] = true
+		}
+		factionOwner := (p.Owner == MercenaryOwner && p.FactionHome == MercenaryHome) || (p.Owner == XannorOwner && p.FactionHome == XannorHome)
+		if id < 2 || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || (!factionOwner && (p.Owner < 0 || (p.Owner != 0 && w.Players[p.Owner] == nil))) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid planet")
 		}
 		for _, x := range append(append([]float64{}, p.Production[:]...), append(p.Cargo[:], p.Fighters, p.Missiles, p.Mines, p.Plasma)...) {

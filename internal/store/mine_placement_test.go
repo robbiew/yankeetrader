@@ -71,7 +71,7 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 12 || upgraded.Players[1].MineGraceSector != 0 {
+	if err != nil || upgraded.Version != game.WorldVersion || upgraded.Players[1].MineGraceSector != 0 {
 		t.Fatal("version-nine upgrade failed", err)
 	}
 	unchanged, _ := os.ReadFile(path)
