@@ -1,0 +1,23 @@
+{
+  "name": "return-next-day",
+  "parent": "return-empty",
+  "date": "10/26/2026",
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "09c7a93bae30adfc0ac6212dcced2d2d1b4851a0b0165687aa010ae710e547ab",
+  "after_sha256": "aab64fb9445a72e51fa372b6382146371232cce0de998698fcc06d8830b0f611",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "96bb7665447e5a7e9a898c02fd91bfab20a8100333e6017be789e12f3cb57598",
+    "before.dat.gz": "d8a107781629b4968487de046839d11bdd24b4540268ab97a462bf6e06b098e9",
+    "dosbox.log": "356df8d307c3d48c576c398f53e7c5fd4309e76f00175ce8f862a1cee18924ce",
+    "transcript.txt": "c436c01d51e1ac97839e1166a9273d9f1d6d73910f85446b9ba312f1566810f8"
+  }
+}

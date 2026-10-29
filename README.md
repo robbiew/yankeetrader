@@ -561,3 +561,13 @@ normal version-13 worlds without inferring homes from names or slots.
 are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md).
 Mobile targeting, NPC ship attacks, revenge/cloak searches and exact DOS RNG
 parity remain future milestones.
+
+### Mobile Xannor research
+
+[Mobile Xannor evidence and recovered rules](research/yt-xannor-mobile/RECOVERY.md)
+now cover 47 completed DOS controls, an exact next-day world chain, and 22 REA
+observations. The research establishes group splitting thresholds, target
+selection and shared pursuit, directed routes, mine/defense rules and planetary
+attack ordering. It also distinguishes early Union mine cleanup from mobile
+hazard behavior. Mobile Xannor gameplay remains the next implementation slice;
+full NPC ship/planet battle integration and revenge/cloak behavior remain separate.

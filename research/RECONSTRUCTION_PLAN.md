@@ -529,6 +529,24 @@ preserves unfinished battles. Game/store tests and real compact/classic terminal
 coverage validate accounting, capacity, capture, destruction, replay and rollback.
 [Implementation policies](yt-xannor-lifecycle/IMPLEMENTATION.md).
 
-Next recover mobile Xannor group splitting/targeting and route actions before
-implementing them. Full NPC ship combat, revenge/cloak searching and exact DOS
-RNG/MBF parity remain separate milestones.
+Mobile splitting/targeting and route-action research is now complete below.
+Full NPC ship combat, revenge/cloak searching and exact DOS RNG/MBF parity remain
+separate milestones.
+
+## Mobile Xannor groups — research
+
+Forty-seven completed DOS controls, an exact next-day world chain and 22 REA byte
+observations establish nontruncated HQ split thresholds, four shrinking draws,
+normal/top/HQ target ordering, conditional shared pursuit, directed shortest
+paths and per-hop action dispatch. The controls distinguish Xannor uniform mine
+damage and 5000/500/1 sector-defense batches from Mercenary behavior. A ship loss
+can retain its sector as the next groups' preferred target; special top-player
+hunting is a separate 2.5-million-score gate. Union routes and planetary attacks
+are possible in DOS, while Union mines disappear in an earlier phase.
+[Evidence, boundaries and next implementation](yt-xannor-mobile/RECOVERY.md).
+
+Next implement bounded group allocation/selection, movement, mine and sector
+fighter actions on the explicit HQ model. Preserve force, captured titles and
+protected Union policy; make shared pursuit deliberate. Full NPC ship/planet
+combat, revenge/cloak integration and exact MBF/RNG parity remain separate
+milestones. No Go gameplay or save schema is changed by this research.

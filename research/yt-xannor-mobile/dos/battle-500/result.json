@@ -1,0 +1,39 @@
+{
+  "name": "battle-500",
+  "patches": [
+    [
+      151,
+      81,
+      500
+    ],
+    [
+      152,
+      81,
+      500
+    ],
+    [
+      152,
+      85,
+      2
+    ]
+  ],
+  "recipe": "xannor-mobile-isolation-v1",
+  "baseline_sha256": "601337e3cc2776bc6edb2faac04e055e0eaddd959dff57122c0c262df5aabbe0",
+  "before_sha256": "e2938e24ed160e676d5ab7bbbf91575115466f6b28e7760c7f97833809ece144",
+  "after_sha256": "854010fbf8125ea429e8570c2efb43b4d0e03b16cc9862df21584118c454cf14",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "710c659f59c2979faaf96034a4a673b8329d7472e27e460c2c5bd764385cce35",
+    "before.dat.gz": "493c9295d377b373a5944be1c401a1eaad28682083368aba86263233dfc5d21a",
+    "dosbox.log": "d37a2ae54849ff370073df2d622dd2f91c0cce83314e4dbae8e083f13c0d6bdb",
+    "transcript.txt": "6a5cf404c6cbc2d352d13d27bbb79747b84f0a02025c0b2a7dd67c8a55b7441c"
+  }
+}
