@@ -284,7 +284,7 @@ func (w *World) canMove(p *Player, to int) error {
 	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]
 		if owner == nil || p.Team == 0 || owner.Team != p.Team {
-			return errors.New("hostile sector fighters block this warp; use BREACH")
+			return errors.New("hostile sector fighters block this warp; use BRIBE <sector> <credits> or BREACH")
 		}
 	}
 	if p.Turns < 1 {

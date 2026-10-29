@@ -269,7 +269,7 @@ func (s Session) Run() (runErr error) {
 			return errors.New("player no longer exists")
 		}
 		if len(pending) == 0 && w.HostileDefense(id, p.Sector) {
-			if e = s.Terminal.Printf("Hostile sector fighters block normal actions. Use BREACH %d <fighters> or FLEE.\r\n", p.Sector); e != nil {
+			if e = s.Terminal.Printf("Hostile sector fighters block normal actions. Use BRIBE [credits], BREACH %d <fighters> or FLEE.\r\n", p.Sector); e != nil {
 				return e
 			}
 		}
@@ -443,6 +443,9 @@ func (s Session) Run() (runErr error) {
 				}
 			}
 		}
+		if s.Classic && cmd == "b" && w.HostileDefense(id, p.Sector) {
+			cmd = "bribe"
+		}
 		if s.Classic && cmd == "a" && planetToken == "" {
 			cmd = "attack"
 		}
@@ -487,7 +490,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBRIBE [credits] or BRIBE <sector> <credits> | BREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -548,6 +551,11 @@ func (s Session) Run() (runErr error) {
 			e = s.setSectorFighters(id, args, &pending, false)
 		case "reinforce":
 			e = s.setSectorFighters(id, args, &pending, true)
+		case "bribe":
+			e = s.bribe(id, args, &pending)
+			if errors.Is(e, io.EOF) {
+				return nil
+			}
 		case "breach", "flee":
 			e = s.defenseEncounter(id, args, &pending, cmd == "flee")
 			if errors.Is(e, io.EOF) {

@@ -467,9 +467,17 @@ empty news rather than reconstructed events. Combat, acquisition, registration
 and other newspaper event types remain outside this slice.
 [Research](research/yt-newspaper/RECOVERY.md) and [rules, migration and validation](research/yt-newspaper/IMPLEMENTATION.md).
 
-### Mercenary bribery research
+### Mercenary bribery
 
-Bribery is not playable yet. Nineteen original-DOS probes now document offer
-boundaries, recruitment, faction refusals and guarded-planet behavior. Exact
-negotiation randomness remains a research boundary. See the
-[recovery and implementation contract](research/yt-mercenaries/RECOVERY.md).
+`BRIBE [credits]` negotiates with the current hostile fighter group;
+`BRIBE <adjacent sector> <credits>` enters and negotiates with an adjacent group
+for one turn. Classic B also works during an encounter. Enter a positive whole
+amount and confirm with a fresh Y. Accepted offers pay that exact amount and
+recruit the entire group. Refusal or insult can commit all ship fighters to combat;
+even a generous offer can be refused. Mercenaries remember your attacks until
+reconnect, and planet guards refuse to negotiate. Ordinary B still buys ports.
+
+Payment, recruitment, entry and mine aftermath save atomically. Unresolved groups
+continue blocking normal actions. The save format remains version 12. See the
+[recovered rules](research/yt-mercenaries/HOSTILITY.md) and
+[implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).

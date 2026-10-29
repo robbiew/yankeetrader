@@ -456,3 +456,15 @@ hostility checks, human retaliation and the strict offer threshold. Portable
 verifiers retain all 43 bribe sessions and 86 snapshots; input-consuming sensor
 probes are excluded. Exact MBF/RNG reproduction remains outside the modern
 integer-money contract. [Resolved rules and evidence](yt-mercenaries/HOSTILITY.md).
+
+
+## Mercenary bribery — implementation
+
+BRIBE [credits] negotiates in the current sector; BRIBE <sector> <credits> permits
+confirmed adjacent entry. Classic encounter B preserves normal B port acquisition
+elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
+recruitment or full-force defense combat. Login-local hostility, one-use quote
+tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
+prevent replay and partial transactions. No save-version change is required.
+NPC spawning/daily behavior and full NPC ship combat remain separate milestones.
+[Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
