@@ -70,10 +70,10 @@ func TestMercenaryHiringIndividualPortTaxesAndNoCarry(t *testing.T) {
 	if _, force := mercenaryGroups(w); force != 10 {
 		t.Fatal("wrong first hire", force)
 	}
-	// This test isolates tax-funded hires. Autonomous base production/pickup
-	// has its own integration coverage and must not inflate the counted force.
+	// Isolate tax-funded hires from both faction homes. Mercenary routes can
+	// collect Xannoron stocks too; production/pickup has separate coverage.
 	for _, planet := range w.Planets {
-		if planet.FactionHome == MercenaryHome {
+		if planet.FactionHome != "" {
 			planet.Updated = clock.Add(48 * time.Hour)
 		}
 	}

@@ -2,9 +2,9 @@
 
 This research preserves **47 completed original-DOS maintenance runs**, 94
 before/after world snapshots, one exact next-day world chain, and **22 complete
-REA byte observations**. It answers the bounded questions below. No Go gameplay
-or save-format change is part of this research; the lifecycle implementation in
-PR #36 remains version 14.
+REA byte observations**. It answers the bounded questions below. The research
+commit changed no Go gameplay or save format. The subsequent bounded mobile
+[implementation](IMPLEMENTATION.md) retains world version 14.
 
 Target: original `YTMAINT.EXE`, SHA-256
 `8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6`.
@@ -211,7 +211,7 @@ byte-identical complete final worlds. That pair proves early cleanup interferenc
 it cannot establish a special Union exception inside the mobile mine helper.
 Modern protected-spawn policy must be explicit rather than copied from routing.
 
-## Verification, replay and next implementation
+## Verification, replay and subsequent implementation
 
 [Manifest](dos/results.json), [frozen declarations](dos/recipe.json), before/after
 snapshots, original transcripts, DOS clock and emulator logs are preserved per
@@ -235,7 +235,8 @@ The destination must not exist. Use `--only` for selected controls and
 verifies artifacts without DOSBox or REA. Modern engine, live BBS and native
 Windows acceptance are not claimed by this research-only commit.
 
-Next implement bounded mobile group allocation/selection, directed movement,
+The implementation scope derived from this research is bounded group
+allocation/selection, directed movement,
 mines and sector-defense actions on the explicit modern HQ model. Keep each
 participant unique and conserve overflow; permit no force creation from stale
 output. Give targeting/reroutes/mines/battles finite work budgets and protect
@@ -254,4 +255,10 @@ negative controls were rejected for their intended semantic reasons: phantom
 force, wrong mine remainder, invented planetary pickup, path teleportation,
 truncated split threshold, discarded pursuit, changed child input, misattributed
 Union cleanup and falsified DOS clock. CI runs these controls without an emulator.
-No Go gameplay tests or live BBS acceptance are claimed for this research slice.
+The research commit did not require Go gameplay tests; current implementation
+validation is documented separately. Live BBS acceptance remains unverified.
+
+The bounded splitting/selection, movement, mine and sector-defense portions are
+now [implemented](IMPLEMENTATION.md), with explicit modern identity, work and
+unsupported-encounter policies. The original research observations and remaining
+full ship/planet combat boundaries above are unchanged.

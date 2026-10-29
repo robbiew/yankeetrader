@@ -263,7 +263,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 players, 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle is also implemented below. Full NPC ship combat, mobile Xannor targeting, full universe generation parity, DOS save import/export, Genesis, and remaining terminal menus are future milestones. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full NPC ship/planet combat, full universe generation parity, DOS save import/export, Genesis, and remaining terminal menus are future milestones. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
@@ -562,12 +562,18 @@ are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md
 Mobile targeting, NPC ship attacks, revenge/cloak searches and exact DOS RNG
 parity remain future milestones.
 
-### Mobile Xannor research
+### Mobile Xannor groups
 
-[Mobile Xannor evidence and recovered rules](research/yt-xannor-mobile/RECOVERY.md)
-now cover 47 completed DOS controls, an exact next-day world chain, and 22 REA
-observations. The research establishes group splitting thresholds, target
-selection and shared pursuit, directed routes, mine/defense rules and planetary
-attack ordering. It also distinguishes early Union mine cleanup from mobile
-hazard behavior. Mobile Xannor gameplay remains the next implementation slice;
-full NPC ship/planet battle integration and revenge/cloak behavior remain separate.
+Xannor forces now split from HQ and receive bounded daily movement outside the
+Union. They select targets, follow directed routes, hit attributed mines, fight
+sector defenses and combine friendly force without duplication or overflow.
+Returning fighters cannot be sent out again that day. Normal encounters and
+sensors show the resulting deployed groups after reconnect.
+
+Groups hold before live ships and foreign planets while full NPC ship/planet
+combat remains outstanding. Captured homes retain their title and resources;
+friendly planetary stocks are not picked up. Target searches, mine bursts and
+battles have finite work budgets. Save version remains 14.
+[Policies and validation](research/yt-xannor-mobile/IMPLEMENTATION.md) build on
+[47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge and
+full NPC combat remain separate milestones.
