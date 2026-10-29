@@ -41,9 +41,10 @@ hire or date changes. A directory-sync warning after replacement is committed;
 retrying that day does not hire or tax again. Random selection need not be
 replayed identically after an aborted update, because no world was published.
 
-Groups use the existing MercenaryOwner and SectorDefense representation. Save
-version 12 and migration behavior are unchanged. No new balance field, NPC title,
-base, public journal event or player command is introduced.
+Groups use the existing MercenaryOwner and SectorDefense representation. Hiring
+itself introduced no save-format change. Current version 13 adds explicit
+[Mercenary-base identity and title](BASE.md). Hiring itself adds no balance field,
+public journal event or player command.
 
 ## Validation
 
@@ -87,6 +88,5 @@ Live BBS acceptance remains unverified.
 ## Outstanding
 
 [Route actions and planetary pickup](ROUTES.md) are now implemented as a
-separate follow-on, as is [human-defense desertion](DESERTION.md). Reserved-base
-restoration, full NPC ship combat and bit-exact DOS RNG/MBF parity remain separate
-milestones.
+separate follow-on, as is [human-defense desertion](DESERTION.md). [Mercenary-base restoration](BASE.md) is implemented separately. Full NPC ship
+combat and bit-exact DOS RNG/MBF parity remain separate milestones.

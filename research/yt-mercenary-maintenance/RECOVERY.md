@@ -240,6 +240,9 @@ The reserved record identity and restoration bounds are static and dynamically
 corroborated (`413a..4473`). A modern implementation must validate an active,
 consistent planet reference. Automatic retitling of a captured base is a separate
 faction-home policy, not permission to overwrite arbitrary human ownership.
+The subsequent [Go base lifecycle](BASE.md) preserves captured ownership and
+uses explicit identity with finite placement instead of inferring a home from
+a legacy slot or name.
 
 ## Evidence, reproduction and verifier
 

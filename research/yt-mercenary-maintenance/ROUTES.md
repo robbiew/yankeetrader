@@ -14,7 +14,7 @@ fighters also consumes its pending activation, preventing merged fighters from
 moving twice. A full receiver accepting no fighters keeps its pending action.
 The subsequent [desertion phase](DESERTION.md) now converts eligible human
 groups before this snapshot, giving them the same single route activation.
-Faction-base restoration remains separate.
+[Mercenary-base restoration](BASE.md) is now implemented as a later phase.
 
 A source with any planet holds for a draw strictly below .66, regardless of title.
 Otherwise one different sector is sampled from the finite permitted destination
@@ -61,8 +61,8 @@ Route length is bounded by the directed graph and groups are snapshotted once.
 
 The existing locked daily transaction commits route changes, hires, taxes, scores
 and date together. Abort or validation failure publishes no partial action. The
-same-day/rollback guard prevents replay. Existing save version 12 represents all
-changes, so no schema migration or new faction owner is needed.
+same-day/rollback guard prevents replay. Route actions introduced no schema migration or faction owner. Current save
+version 13 supports the subsequent [Mercenary-base lifecycle](BASE.md).
 
 ## Validation and boundaries
 
@@ -89,7 +89,8 @@ Go commands use the same temporary module-file dependency override documented
 in IMPLEMENTATION.md; committed module files stay unchanged. CI on this unpublished
 branch and live BBS acceptance remain unverified.
 
-Next: reserved faction-base lifecycle with explicit ownership policy.
+[Mercenary-base lifecycle](BASE.md) is now implemented with explicit ownership
+policy. Further faction-home combinations remain separate.
 [Human-defense desertion](DESERTION.md) is implemented as a separate phase. Full NPC ship combat and exact QuickBASIC RNG/MBF parity remain
 separate. These route actions preserve the recovered rule structure while
 explicitly adapting protected sectors, work limits, quantity limits and scheduling.

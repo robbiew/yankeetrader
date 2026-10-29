@@ -70,6 +70,13 @@ func TestMercenaryHiringIndividualPortTaxesAndNoCarry(t *testing.T) {
 	if _, force := mercenaryGroups(w); force != 10 {
 		t.Fatal("wrong first hire", force)
 	}
+	// This test isolates tax-funded hires. Autonomous base production/pickup
+	// has its own integration coverage and must not inflate the counted force.
+	for _, planet := range w.Planets {
+		if planet.FactionHome == MercenaryHome {
+			planet.Updated = clock.Add(48 * time.Hour)
+		}
+	}
 	before, _ := json.Marshal(w)
 	if w.Maintain(clock.Add(24*time.Hour)) || w.Maintain(clock) {
 		t.Fatal("maintenance repeated")
