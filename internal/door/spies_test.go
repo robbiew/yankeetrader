@@ -89,7 +89,7 @@ func TestSpyOutputFailurePreservesUnreadAndStaleReadRejects(t *testing.T) {
 		t.Fatal(err)
 	}
 	s.Store = st.ForShip(1, 0)
-	if err := s.Store.HireSpies(token, []int{3}, s.Now(), s.Deadline); err != nil {
+	if err := s.Store.HireSpies(token, []int{3}, s.Now, s.Deadline); err != nil {
 		t.Fatal(err)
 	}
 	if err := s.Store.UpdateWithSpies(func(w *game.World) error { return w.Move(1, 2) }, s.Now(), s.Deadline); err != nil {
@@ -161,7 +161,7 @@ func TestIntelligencePagingAcknowledgesOnlyDisplayedReports(t *testing.T) {
 		t.Fatal(err)
 	}
 	s.Store = st.ForShip(1, 0)
-	if err := s.Store.HireSpies(token, []int{3, 8}, s.Now(), s.Deadline); err != nil {
+	if err := s.Store.HireSpies(token, []int{3, 8}, s.Now, s.Deadline); err != nil {
 		t.Fatal(err)
 	}
 	for i := 0; i < 5; i++ {

@@ -4,7 +4,10 @@ Earth's normal shop option 9 hires spies; compact callers dock with `P` and use
 `HIRE <starting sector> [starting sector ...]`. Each costs 333,000 credits,
 with at most three active per login. All requested starts, the current Earth
 docking token/expiry, ship generation, session deadline and funds are checked
-under the world lock. Partial or rejected hires charge nothing. The original
+under the world lock. The injectable game clock is sampled after both the
+login mutex and world lock are acquired; time spent queued cannot extend docking
+validity. Regression tests advance the clock across expiry while each lock is held.
+Partial or rejected hires charge nothing. The original
 docking turn is the only purchase turn cost. Computer 15 / `SPIES` lists current
 hunt locations. These are ordinary player commands, with no research/debug path.
 
@@ -43,10 +46,16 @@ report acknowledgements. The three-spy cap applies to each login. No spy state
 is serialized and no save version changes are needed (version 11).
 
 The store clones network state under the same lock as each eligible action and
-publishes the clone only after the world validates and saves. Failed actions,
-invalid RNG, validation/save failures and expired sessions publish no spy
-movement/reports. A fatal movement action still saves its death; the obsolete
-login cannot access the prior network. Replaced ships cannot hire, list, read or
+publishes the clone after the validated world replaces `world.json`. Failed
+actions, invalid RNG, validation failures, save failures before replacement and
+expired sessions publish no spy movement/reports. Directory-sync errors after
+replacement return a typed committed-update warning and still publish the clone,
+so visible credit deductions or movement never lose their corresponding spy
+state. Hiring displays that warning with the granted spies, rather than reporting
+a rejected purchase. The directory-sync boundary has an isolated failure-injection
+regression in addition to the real obstructed-rename rollback control. A fatal
+movement action still saves its death; the obsolete login cannot access the
+prior network. Replaced ships cannot hire, list, read or
 acknowledge the previous incarnation's reports. Encounter guards remain in place;
 read-only list/history work like radio reads without permitting world mutations.
 

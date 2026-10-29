@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/store"
 )
 
 func (s Session) hireSpies(token string, args []string, pending *[]string) error {
@@ -46,8 +47,14 @@ func (s Session) hireSpies(token string, args []string, pending *[]string) error
 			return errors.New("choose an existing starting sector for every spy")
 		}
 	}
-	if err := s.Store.HireSpies(token, sectors, s.Now(), s.Deadline); err != nil {
-		return err
+	if err := s.Store.HireSpies(token, sectors, s.Now, s.Deadline); err != nil {
+		var durability *store.DurabilityError
+		if !errors.As(err, &durability) {
+			return err
+		}
+		if err = s.Terminal.Printf("Spies hired. %s\r\n", err); err != nil {
+			return err
+		}
 	}
 	return s.listSpies()
 }

@@ -9,7 +9,8 @@ import (
 )
 
 // UpdateWithSpies advances this login's spies once per supported successful
-// action. Failed actions, failed saves and expired sessions publish no reports.
+// action. Failures before replacement and expired sessions publish no reports.
+// A post-replacement durability warning preserves committed spy state.
 func (s Store) UpdateWithSpies(fn func(*game.World) error, now, deadline time.Time) error {
 	return s.updateState(func(w *game.World) error {
 		if !time.Now().Before(deadline) {
@@ -33,12 +34,24 @@ func (s Store) UpdateWithSpies(fn func(*game.World) error, now, deadline time.Ti
 		return nil
 	})
 }
-func (s Store) HireSpies(token string, sectors []int, now, deadline time.Time) error {
+
+// HireSpies samples its clock after both session and world locks are held so
+// waiting for either lock cannot extend the lifetime of a docking token.
+func (s Store) HireSpies(token string, sectors []int, now func() time.Time, deadline time.Time) error {
+	if now == nil {
+		return errors.New("spy hiring requires a clock")
+	}
 	return s.updateState(func(w *game.World) error { return nil }, false, false, func(w *game.World, n *game.SpyNetwork) error {
 		if !time.Now().Before(deadline) {
 			return errors.New("session time expired")
 		}
-		return n.Hire(w, token, sectors, now)
+		if err := n.Hire(w, token, sectors, now()); err != nil {
+			return err
+		}
+		if !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		return nil
 	})
 }
 
