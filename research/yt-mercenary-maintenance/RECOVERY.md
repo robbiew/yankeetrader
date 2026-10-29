@@ -287,9 +287,11 @@ The subsequent [implementation](IMPLEMENTATION.md) adds **tax-funded hiring with
 finite placement**, within the existing
 once-per-UTC-day locked transaction. Preserve integer accounting and define
 unplaced-budget handling explicitly. Do not introduce arbitrary NPC owners or
-world fields without validation/migration coverage. Remaining work: integrate route actions
-using stable phase participants, valid paths, conserved merges, current ownership
-and existing attributed mine/death machinery. Snapshotting eliminates repeated
+world fields without validation/migration coverage. The subsequent
+[route implementation](ROUTES.md) uses stable phase participants,
+valid paths, conserved merges, current ownership and attributed mine layers.
+NPC losses do not invent player deaths. Further faction lifecycle work remains.
+Snapshotting eliminates repeated
 activation; path failure must not relocate a force. Planet-fighter pickup must
 not accidentally retitle planets or debit ground forces. Keep faction base
 restoration and movement balance decisions explicit and independently tested.

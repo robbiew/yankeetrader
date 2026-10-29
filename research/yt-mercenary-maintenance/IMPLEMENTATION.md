@@ -30,7 +30,9 @@ replaced or moved. These choices avoid the DOS capacity hang and partial debit.
 ## Transactions and compatibility
 
 Hiring runs after port production/taxation and before score publication inside
-World.Maintain. The existing UTC date guard handles same-day replay and clock
+World.Maintain. Existing-group route actions now precede hiring; fresh groups
+first act on the following day, a deliberate modern scheduling policy.
+The existing UTC date guard handles same-day replay and clock
 rollback. Missed days still perform one daily phase, following existing policy.
 Both the administrative -maint command and login run maintenance through the
 existing locked Store.Update transaction. A rejected update publishes no tax,
@@ -83,7 +85,6 @@ Live BBS acceptance remains unverified.
 
 ## Outstanding
 
-Route actions, desertion, planetary fighter pickup, reserved-base restoration,
-full NPC ship combat and bit-exact DOS RNG/MBF parity remain separate milestones.
-Movement must use stable phase participants and valid paths to avoid repeated
-activation and failed-path teleportation documented by the DOS controls.
+[Route actions and planetary pickup](ROUTES.md) are now implemented as a
+separate follow-on. Desertion, reserved-base restoration, full NPC ship combat
+and bit-exact DOS RNG/MBF parity remain separate milestones.

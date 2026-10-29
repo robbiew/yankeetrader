@@ -474,6 +474,8 @@ func (w *World) Maintain(now time.Time) bool {
 			taxes += tax
 		}
 	}
+	// Existing groups act once. Fresh hires begin acting on the following day.
+	w.mercenaryActions(prng.Float64)
 	w.hireMercenaries(taxes)
 	for _, p := range w.Players {
 		p.Turns = 500

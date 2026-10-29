@@ -469,7 +469,7 @@ prevent replay and partial transactions. No save-version change is required.
 Daily hiring is implemented below; NPC route actions and full NPC ship combat remain separate milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
-## Mercenary daily maintenance — research complete, hiring implemented
+## Mercenary daily maintenance — hiring and route actions implemented
 
 Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
 budget carry, group placement and human-defense desertion. Forty-one completed
@@ -486,6 +486,14 @@ per UTC day; version 12 remains current. Game/store regressions and a real
 maintenance/reconnect smoke cover saturation, replay and persistence.
 [Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
 
-Next integrate stable phase participants and valid route actions. Do not reproduce the DOS capacity hang, failed-path
-teleportation or repeated activation. Exact RNG/MBF parity and additional faction
-lifecycle combinations remain research boundaries; live BBS acceptance is separate.
+Existing Mercenary groups now receive one stable daily activation before new
+hiring, following a whole directed route outside protected sectors. Mines precede
+defenses and planetary pickup. Merging consumes the receiver's pending action;
+partial-capacity transfers conserve force. Combat uses the recovered NPC batch
+rules with a per-group work allowance. Pickup preserves titles, ground and
+fractional/excess stocks. Invalid paths hold in place. No DOS capacity hang,
+failed-path teleportation or repeated activation is reproduced. Desertion and
+reserved-base restoration remain the next daily-faction slices.
+[Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
+parity and additional faction lifecycle combinations remain research boundaries;
+live BBS acceptance is separate.
