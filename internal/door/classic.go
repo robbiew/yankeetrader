@@ -332,6 +332,12 @@ func (s *Session) classicStartup() (int, error) {
 		generation = p.ShipGeneration
 		p.LastLogin = s.Now().UTC().Format("2006-01-02")
 		p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0
+		if err := live.RecordLogin(id, s.Now()); err != nil {
+			return err
+		}
+		if !time.Now().Before(s.Deadline) {
+			return errors.New("session time expired")
+		}
 		return nil
 	})
 	if err != nil {

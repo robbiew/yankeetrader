@@ -418,3 +418,16 @@ bounded public dated journal and computer 8 / NEWS reading, with atomic event
 publication, private-field filtering, explicit UTC retention and safe pagination.
 Other event producers and exact long-file/color behavior remain bounded research.
 [Evidence, reproduction and implementation contract](yt-newspaper/RECOVERY.md).
+
+
+## Galactic newspaper and news history — implementation
+
+Computer 8 and NEWS [TODAY|YESTERDAY] now read a bounded public journal in five-entry
+pages. Successful authenticated logins and player-facing team creation publish
+whitelisted public snapshots atomically with their actions. UTC today/yesterday
+retention, a combined 1,024-event cap, stable read snapshots and stale/deadline
+checks are explicit. Forward maintenance prunes old history; same-day/rollback
+maintenance leaves it alone. Save version 12 upgrades versions 1–11 without
+backfilling events. Other event producers, exact DOS colors/long-file interruption,
+NPC behavior and Genesis remain separate milestones.
+[Implementation rules and validation](yt-newspaper/IMPLEMENTATION.md).

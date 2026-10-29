@@ -64,13 +64,14 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 9
+	w.NextNews = 0
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 11 || upgraded.Players[1].MineGraceSector != 0 {
+	if err != nil || upgraded.Version != 12 || upgraded.Players[1].MineGraceSector != 0 {
 		t.Fatal("version-nine upgrade failed", err)
 	}
 	unchanged, _ := os.ReadFile(path)

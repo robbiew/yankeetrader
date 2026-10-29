@@ -54,6 +54,9 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
+	News     []NewsEvent `json:",omitempty"`
+	NextNews uint64
+
 	Radio           []RadioMessage `json:",omitempty"`
 	NextRadio       uint64
 	Version         int
@@ -71,7 +74,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: 11, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Version: 12, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
@@ -114,7 +117,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 11 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != 12 || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -220,7 +223,10 @@ func (w *World) Validate() error {
 	if err := w.validatePlanets(); err != nil {
 		return err
 	}
-	return w.validateRadio()
+	if err := w.validateRadio(); err != nil {
+		return err
+	}
+	return w.validateNews()
 }
 func (w *World) Join(identity, alias string) (*Player, error) {
 	alias = strings.TrimSpace(alias)
@@ -472,6 +478,7 @@ func (w *World) Maintain(now time.Time) bool {
 		p.LandedPlanet = 0
 	}
 	w.publishRankings(w.rankingSnapshot(false))
+	w.pruneNews(now)
 	w.LastMaintenance = today
 	return true
 }

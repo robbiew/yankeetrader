@@ -18,6 +18,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 5
+	w.NextNews = 0
 	w.Players[1].Cloak = 0
 	data, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
@@ -25,7 +26,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 		t.Fatal(err)
 	}
 	current, err := s.View()
-	if err != nil || current.Version != 11 || current.Players[1].Cloak != 0 {
+	if err != nil || current.Version != 12 || current.Players[1].Cloak != 0 {
 		t.Fatal(current, err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -38,11 +39,12 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 	saved, _ := os.ReadFile(path)
 	var header struct{ Version int }
 	json.Unmarshal(saved, &header)
-	if header.Version != 11 {
+	if header.Version != 12 {
 		t.Fatal("migration not saved")
 	}
 	w.NextRadio = 0
 	w.Version = 5
+	w.NextNews = 0
 	w.Players[1].Cloak = .1
 	data, _ = json.Marshal(w)
 	os.WriteFile(path, data, 0600)

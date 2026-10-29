@@ -1,5 +1,8 @@
 # Galactic newspaper and news history — research
 
+Follow-up: [newspaper implementation](IMPLEMENTATION.md) connects computer 8,
+Today/Yesterday reading and the verified public login/team-creation producers.
+
 Thirteen isolated original DOS processes (eleven YT.EXE sessions and two
 YTMAINT.EXE runs) establish computer option 8, Today/Yesterday selection,
 public login/team-creation events, persistence and maintenance rotation.

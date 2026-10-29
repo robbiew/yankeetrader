@@ -103,6 +103,13 @@ func (w *World) Upgrade() error {
 		w.NextRadio = 1
 		w.Version = 11
 	}
+	if w.Version == 11 {
+		if len(w.News) != 0 || w.NextNews != 0 {
+			return errors.New("version-eleven world unexpectedly contains newspaper state")
+		}
+		w.NextNews = 1
+		w.Version = 12
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {

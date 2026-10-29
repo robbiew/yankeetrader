@@ -68,7 +68,7 @@ with tempfile.TemporaryDirectory(prefix='yt-team-smoke-') as temp:
     transcript = play(data, 'Captain', 'create Home;land;bank 1000;leave;team;2;Orion', 'ABCD')
     transcript += play(data, 'Member', 'team;3;1', 'abcd', '1;land;bank 0;leave;treasury;q')
     world = json.loads(path.read_text())
-    assert world['Version'] == 11 and world['Players']['2']['Team'] == 1
+    assert world['Version'] == 12 and world['Players']['2']['Team'] == 1
     assert world['Players']['2']['Credits'] == 2005 and world['Planets']['2']['Bank'] == 0
     assert world['Ports']['2']['Treasury'] == 777, 'teammate collected private port balance'
     transcript += play(data, 'Captain', 'team;7;2;y;1;q')
