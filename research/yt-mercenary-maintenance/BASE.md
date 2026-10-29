@@ -85,7 +85,8 @@ production so it continues to measure hires independently of NPC stock pickup.
 Store tests cover version-12 migration and read-only preservation, next-update
 persistence, legacy marker rejection, rollback, concurrent creation, reload and
 captured-title persistence. Existing migration chains now assert WorldVersion;
-terminal version assertions advance to 13 while legacy inputs remain legacy.
+the original base milestone advanced terminal assertions to 13. They now follow
+current version 14 while legacy inputs remain legacy.
 The new real-process smoke exercises version-12 migration through -maint,
 creation, landing denial, reserve repair, replay and captured-base access in a
 separate GoDoors process. Whole disposable fixtures retry on UTC rollover with
@@ -99,5 +100,10 @@ worktree builds use a temporary module-file override to the existing GoDoors
 checkout, leaving committed module files unchanged. CI on this unpublished
 branch and live BBS acceptance remain unverified.
 
-Remaining work: further Xannor/faction-home lifecycle combinations, full NPC ship
-combat and bit-exact QuickBASIC RNG/MBF parity.
+[Xannor lifecycle research](../yt-xannor-lifecycle/RECOVERY.md) now establishes the
+bounded home/HQ rules. Their implementation, further faction-home combinations,
+full NPC ship combat and bit-exact QuickBASIC RNG/MBF parity remain separate.
+
+Current version 14 extends faction identity for [Xannor HQ/home lifecycle](../yt-xannor-lifecycle/IMPLEMENTATION.md).
+Mercenary base creation also preserves an existing Xannor HQ sector, even while
+its home is destroyed; version-13 home identities and assets migrate unchanged.

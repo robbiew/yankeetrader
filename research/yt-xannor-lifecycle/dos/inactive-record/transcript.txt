@@ -1,0 +1,84 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 12 
+  -  Group: 3               Size: 343 
+  -  Group: 4               Size: 913 
+  -  Group: 5               Size: 560 
+  -  Group: 6               Size: 70 
+  -  Group: 7               Size: 16 
+  -  Group: 8               Size: 2 
+  -  Group: 9               Size: 116 
+  -  Group: 10              Size: 471 
+  -  Group: 11              Size: 506 
+  -  Group: 12              Size: 26 
+  -  Group: 13              Size: 28 
+  -  Group: 14              Size: 314 
+  -  Group: 15              Size: 1167 
+  -  Group: 16              Size: 429 
+ *** 429 Xannor attacked the planet "The Wanderer"
+ *** Planet "The Wanderer" destroyed!
+  -  Group: 17              Size: 52 
+  -  Group: 18              Size: 153 
+  -  Group: 19              Size: 87 
+  -  Group: 20              Size: 52 
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-25-2026 00:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+          998,700   100.00%                  0    0.00%
+
+
+Daily Maintenance Completed OK

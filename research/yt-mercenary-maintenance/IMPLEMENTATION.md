@@ -42,7 +42,7 @@ retrying that day does not hire or tax again. Random selection need not be
 replayed identically after an aborted update, because no world was published.
 
 Groups use the existing MercenaryOwner and SectorDefense representation. Hiring
-itself introduced no save-format change. Current version 13 adds explicit
+itself introduced no save-format change. Version 13 introduced explicit
 [Mercenary-base identity and title](BASE.md). Hiring itself adds no balance field,
 public journal event or player command.
 
@@ -90,3 +90,5 @@ Live BBS acceptance remains unverified.
 [Route actions and planetary pickup](ROUTES.md) are now implemented as a
 separate follow-on, as is [human-defense desertion](DESERTION.md). [Mercenary-base restoration](BASE.md) is implemented separately. Full NPC ship
 combat and bit-exact DOS RNG/MBF parity remain separate milestones.
+
+Current version 14 also adds [Xannor HQ/home lifecycle](../yt-xannor-lifecycle/IMPLEMENTATION.md).

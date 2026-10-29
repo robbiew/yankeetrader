@@ -52,6 +52,7 @@ jobs:
           python3 scripts/verify_bribes.py
           python3 scripts/verify_bribe_hostility.py
           python3 scripts/verify_mercenary_maintenance.py
+          python3 scripts/verify_xannor_lifecycle.py
           python3 scripts/verify_rankings.py
           python3 scripts/verify_spies.py
           python3 scripts/verify_newspaper.py
@@ -108,6 +109,7 @@ jobs:
           python3 scripts/smoke_mercenary_routes.py
           python3 scripts/smoke_mercenary_desertion.py
           python3 scripts/smoke_mercenary_base.py
+          python3 scripts/smoke_xannor_lifecycle.py
           python3 scripts/smoke_planet_missiles.py
       - name: Cross-build Linux and Windows
         run: |

@@ -1,0 +1,35 @@
+{
+  "name": "zero-reserves",
+  "patches": [
+    [
+      4151,
+      77,
+      0
+    ],
+    [
+      4151,
+      117,
+      0
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "efcdeff0b353c2965e0874501941ec5c7c59c25aebe8cb9856da45d872a0d205",
+  "before_sha256": "b21c4262396ba3ce0a986644abcd47eb534d66e24f146ac591d19d1f0a2c5d60",
+  "after_sha256": "4d676ce853988451862dfd9f256d6b59eeb0c0a038ed7c0aecf9f449f634672b",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "d409402f6915b7a6ffbc97658c44dbfd55584769c6dbdcc3e7d71c55a557c04c",
+    "transcript.txt": "6af56e2ae1264ed70b36f23b8de2cfcf0d12ffeb4d26522264ec897060a59169",
+    "before.dat.gz": "8f45e1a5fd12970fc7886a42142cde9f18cafea099a8731850a2d76a3ac59da5",
+    "after.dat.gz": "390a33a678820a97c888c7bdf0f79deb6fa57b146983ea63584dcef7699c7d63"
+  }
+}

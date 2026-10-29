@@ -1,0 +1,44 @@
+{
+  "name": "candidate-merc-two",
+  "small": true,
+  "human": false,
+  "patches": [
+    [
+      72,
+      81,
+      2
+    ],
+    [
+      72,
+      85,
+      -2
+    ],
+    [
+      72,
+      93,
+      0
+    ]
+  ],
+  "expect_timeout": true,
+  "timeout": 8,
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+  "before_sha256": "4cc09c5742203da4b96f1f26d095653ca4db71ce70f03fb94b45e04ded9ac6ff",
+  "after_sha256": "a54b49f8a9c5f8a6339fce6a5a1616f21cce0f4da14970a0bb2240b9626416dd",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": true,
+  "timeout_seconds": 8,
+  "complete": false,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "fbe887f8d15789e95d3747eba80cd425c4f34a7a4d4d3b4b3b4b3ea00c249436",
+    "transcript.txt": "8d810ba102754293a86bfbb82171d236ba5d1939fbf851bd7eb67d4cb976667b",
+    "before.dat.gz": "22a897533c5168d5d9708242b141eabb156a4ce7f64818b11285f64849d65708",
+    "after.dat.gz": "302c24b922f9be477ecf6f517949d2150f545c7b44c4960a4fe3cebe72bd3797"
+  }
+}

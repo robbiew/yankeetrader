@@ -484,8 +484,9 @@ Daily maintenance now hires from summed per-port integer taxes with the recovere
 rounding rules and finite distinct placement. Protected Union sectors and existing
 defenses are excluded. Missing space and the modern force limit discard unused
 funding without carry/refund. Tax debits, hires and date persist atomically, once
-per UTC day; these phases introduced no schema changes. Base restoration now
-uses version 13. Game/store regressions and a real
+per UTC day; these phases introduced no schema changes. Base restoration
+introduced version 13; current version 14 also supports Xannor HQ/home state.
+Game/store regressions and a real
 maintenance/reconnect smoke cover saturation, replay and persistence.
 [Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
 
@@ -509,3 +510,25 @@ inferring home identity or creating assets during read-only loading.
 [Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
 parity and additional faction lifecycle combinations remain research boundaries;
 live BBS acceptance is separate.
+
+## Xannor HQ and Xannoron lifecycle — implemented
+
+Thirty-eight completed original-DOS runs, three bounded relocation stalls, two
+exact next-day world chains and eleven new REA byte observations establish
+recreation predicates, retained/reset stocks, ground/bank restoration, forced
+retitling, group normalization/regeneration, reclaim thresholds and relocation
+rules. Candidate controls distinguish one/two foreign fighters and expose an
+unbounded search. A zero-HQ control ties phantom strength to a stale RNG helper
+result. [Evidence, boundaries and proposed implementation](yt-xannor-lifecycle/RECOVERY.md).
+
+Implemented explicit Xannor-home identity, bounded restoration, HQ/reserve state,
+living stored-score regeneration, bounded reclaim and finite relocation, with
+captured-home ownership preserved. World version 14 migrates without inferring
+legacy homes or HQs. Sector defenses remain the unique deployed groups; reserve
+preserves unfinished battles. Game/store tests and real compact/classic terminal
+coverage validate accounting, capacity, capture, destruction, replay and rollback.
+[Implementation policies](yt-xannor-lifecycle/IMPLEMENTATION.md).
+
+Next recover mobile Xannor group splitting/targeting and route actions before
+implementing them. Full NPC ship combat, revenge/cloak searching and exact DOS
+RNG/MBF parity remain separate milestones.

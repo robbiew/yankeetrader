@@ -1,0 +1,42 @@
+{
+  "name": "candidate-xannor-two",
+  "small": true,
+  "human": false,
+  "patches": [
+    [
+      72,
+      81,
+      2
+    ],
+    [
+      72,
+      85,
+      -1
+    ],
+    [
+      72,
+      93,
+      0
+    ]
+  ],
+  "recipe": "xannor-lifecycle-isolation-v1",
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "ac866590b47102579dcc2438e369a65ac282d055fb5a935b1e6d6ad96a6ef676",
+  "before_sha256": "b8cdc10c0108a5a378f5f237b273e1a1b79e7904ee32871cccca83a07d2cfa36",
+  "after_sha256": "e2cb535979c2a1626166154d81db273e99e6f6df4b42629a10cc925bcc1e0471",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "dosbox.log": "4d275f1ff10f245932329d2f106d5f77887d64b20a42770ec673a542b10bb46c",
+    "transcript.txt": "935805fd534681267e8bac83ca267170dd66146233b2b806cf1486702cac57df",
+    "before.dat.gz": "c10ec21fa7d5fbe4ce8e59efbc71ba31b235a60643fbfa1e490b2aec7aebe398",
+    "after.dat.gz": "b75f5cf44e80d96c17d7d6fd5fb46ee83fb9b451851da76a22486eef1d19c445"
+  }
+}

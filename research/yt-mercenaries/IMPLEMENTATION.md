@@ -61,7 +61,7 @@ An unresolved group continues blocking ordinary actions, including after a
 noncombat refusal. Successful output is not required to preserve a committed
 world change, and a durability warning must not trigger automatic replay.
 
-Bribery itself introduced no save-format change. Current version 13 adds
+Bribery itself introduced no save-format change. Version 13 introduced
 [Mercenary-base identity and restoration](../yt-mercenary-maintenance/BASE.md).
 [Daily hiring](../yt-mercenary-maintenance/IMPLEMENTATION.md) and
 [NPC route actions](../yt-mercenary-maintenance/ROUTES.md) are implemented
@@ -90,3 +90,6 @@ It never retries an unclassified failure. The transcript is
 `evidence/bribes-smoke.txt`. CI runs this and both original-DOS evidence verifiers.
 Full race-enabled tests, vet, relevant terminal/evidence checks and Linux/Windows
 cross-builds are local evidence; live target-BBS acceptance remains separate.
+
+Current version 14 also adds [Xannor HQ/home lifecycle](../yt-xannor-lifecycle/IMPLEMENTATION.md),
+without changing session-local Mercenary hostility.
