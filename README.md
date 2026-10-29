@@ -653,3 +653,10 @@ The shared route work limit, atomic daily save and replay guard apply throughout
 Save version 16 preserves existing ship history and upgrades older worlds without
 inventing events. [Rules, migration and validation](research/yt-xannor-planets/IMPLEMENTATION.md).
 Remaining revenge/cloak searches and native/live BBS acceptance are outstanding.
+
+
+## Documentation upkeep
+
+Update this README with every project change, including features, fixes and
+research milestones. Keep playable status, outstanding work, usage, save
+compatibility and validation claims current in the same commit or pull request.
