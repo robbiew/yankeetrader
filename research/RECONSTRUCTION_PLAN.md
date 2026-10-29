@@ -431,3 +431,16 @@ maintenance leaves it alone. Save version 12 upgrades versions 1–11 without
 backfilling events. Other event producers, exact DOS colors/long-file interruption,
 NPC behavior and Genesis remain separate milestones.
 [Implementation rules and validation](yt-newspaper/IMPLEMENTATION.md).
+
+
+## Mercenary offers and faction refusals — research
+
+Nineteen controlled DOS sessions and 38 saved snapshots establish offer parsing,
+blank cancellation versus insulting zero, accepted exact debit/recruitment,
+over-budget combat, guarded-planet refusal, weak/zero-force recruitment and
+human/Xannor differences. Two REA byte observations correct an inline-runtime
+disassembly boundary. Exact negotiation probabilities and an additional hostility
+flag remain explicit research limits; no Go bribery gameplay is enabled. Next:
+resolve those branches or define a deliberate modern policy, then implement
+confirmed transactional bribery using the existing defense/aftermath safeguards.
+[Evidence, boundaries and implementation contract](yt-mercenaries/RECOVERY.md).

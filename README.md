@@ -466,3 +466,10 @@ remain separate. Repeated maintenance preserves history; old saves start with
 empty news rather than reconstructed events. Combat, acquisition, registration
 and other newspaper event types remain outside this slice.
 [Research](research/yt-newspaper/RECOVERY.md) and [rules, migration and validation](research/yt-newspaper/IMPLEMENTATION.md).
+
+### Mercenary bribery research
+
+Bribery is not playable yet. Nineteen original-DOS probes now document offer
+boundaries, recruitment, faction refusals and guarded-planet behavior. Exact
+negotiation randomness remains a research boundary. See the
+[recovery and implementation contract](research/yt-mercenaries/RECOVERY.md).

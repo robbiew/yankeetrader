@@ -23,11 +23,12 @@ def main():
     parser.add_argument("--followup", action="store_true", help="Run the cloak/team/varied-warp follow-up suite")
     parser.add_argument("--hazards", action="store_true", help="Run disruption/scanner-damage/automatic-escape probes")
     parser.add_argument("--utilities", action="store_true", help="Run computer-report and fighter/NPC encounter probes")
+    parser.add_argument("--bribes", action="store_true", help="Run mercenary offer-boundary and faction refusal probes")
     parser.add_argument("--commerce", action="store_true", help="Run route-commerce, spy-hiring and radio probes")
     parser.add_argument("--ownership", action="store_true", help="Run port acquisition, buyout and treasury probes")
     parser.add_argument("--dosbox", default="dosbox-staging", help="DOSBox Staging command or executable path")
     args = parser.parse_args()
-    if sum((args.followup, args.hazards, args.utilities, args.commerce, args.ownership, args.only is not None)) > 1:
+    if sum((args.followup, args.hazards, args.utilities, args.bribes, args.commerce, args.ownership, args.only is not None)) > 1:
         parser.error("choose a suite or --only")
     dosbox = shutil.which(args.dosbox)
     if dosbox is None:
@@ -147,6 +148,21 @@ def main():
         ("npc-warp-cancel",500,"M;101\r~~W;N",defenders),
         ("npc-warp-escape",500,"M;101\r~~W;Y",defenders),
     ]
+    bribes = [
+        ("blank", "", {}), ("zero", "0", {}), ("negative", "-1", {}),
+        ("one", "1", {}), ("hundred", "100", {}), ("thousand", "1000", {}),
+        ("two-hundred", "200", {}), ("three-hundred", "300", {}),
+        ("ten-thousand", "10000", {}), ("fifty-thousand", "50000", {}),
+        ("all-credits", "100000", {}), ("over-budget", "100001", {}),
+        ("fraction", "50000.5", {}), ("text", "abc", {}),
+        ("planet", "50000", {(152,93):2,(4053,73):-2}),
+        ("merc-weak", "50000", {(2,61):10}),
+        ("merc-zero-force", "50000", {(2,61):0}),
+        ("human-weak", "", {(152,85):3,(2,61):10}),
+        ("xannor", "", {(152,85):-1}),
+    ]
+    scenarios += [("npc-bribe-"+name,500,"M;101\r~~B\r~~"+offer,
+                   {**defenders,**patches}) for name,offer,patches in bribes]
     ports = {(158,65):3,(3054,41):3,(3054,45):297,(3054,49):1000,(3054,53):1000,
              (3054,57):1000,(3054,61):100,(3054,65):100,(3054,69):100,
              (3054,73):-50,(3054,77):50,(3054,81):-50,(3054,89):0,(3054,93):107,(3054,97):0}
@@ -190,8 +206,10 @@ def main():
     elif args.commerce:
         scenarios = [s for s in scenarios if s[0].startswith(("commerce-", "intel-", "radio-"))
                      and s[0] not in ("intel-reconnect", "radio-read", "radio-read-again")]
+    elif args.bribes:
+        scenarios = [s for s in scenarios if s[0].startswith("npc-bribe-")]
     elif args.utilities:
-        scenarios = [s for s in scenarios if s[0].startswith(("utility-", "npc-"))]
+        scenarios = [s for s in scenarios if s[0].startswith(("utility-", "npc-")) and not s[0].startswith("npc-bribe-")]
     elif args.hazards:
         scenarios = [s for s in scenarios if s[0].startswith("hazard-")]
     elif args.followup:
@@ -281,6 +299,7 @@ def main():
                 "source_sha256": hashlib.sha256((source / "YTDATA.DAT").read_bytes()).hexdigest(),
                 "keys_sha256": hashlib.sha256(keys).hexdigest(),
                 "transcript_sha256": hashlib.sha256((dest / "transcript.txt").read_bytes()).hexdigest(),
+                "dosbox_log_sha256": hashlib.sha256((dest / "dosbox.log").read_bytes()).hexdigest(),
                 "keyfeed_sha256": hashlib.sha256((dest / "KEYFEED.COM").read_bytes()).hexdigest(),
             })
         if name.startswith(("commerce-", "intel-", "radio-")):
