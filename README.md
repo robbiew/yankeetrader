@@ -501,3 +501,28 @@ Payment, recruitment, entry and mine aftermath save atomically. Unresolved group
 continue blocking normal actions. The save format remains version 12. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
+
+### Daily Mercenary hiring and routes
+
+[Original-DOS maintenance evidence](research/yt-mercenary-maintenance/RECOVERY.md)
+now establishes tax-funded hiring, group allocation, route movement, mines,
+defense encounters, planetary fighter pickup and reserved-base restoration.
+The evidence includes 41 completed runs and a bounded capacity-stall control.
+The DOS “captured planet” message does not transfer ownership or ground forces.
+Daily maintenance now uses ordinary-port taxes to hire Mercenary sector fighters.
+Hiring preserves both rounding stages: one small group, or ten equal groups for
+larger budgets. New groups occupy distinct undefended sectors outside the Union
+(sectors 1–7). A full universe completes normally; unused funding and rounding
+remainders are discarded without carry or refund. Fresh hires first move on the
+following daily run.
+
+The same locked save commits taxes, groups and the daily date, including when
+maintenance runs at login. Saves remain version 12. Existing groups can travel one complete permitted route
+per day, encountering
+mines and sector defenses. They can merge, reinforce human defenses, fight, or
+stop at a planet to take whole stored fighters; planet titles and ground forces
+remain unchanged. Protected Union sectors are excluded from routes. Combat and
+mine work is bounded, leaving unfinished encounters for later days. Desertion,
+faction-base restoration and NPC ship combat remain outstanding.
+[Hiring policies](research/yt-mercenary-maintenance/IMPLEMENTATION.md) and
+[route rules and validation](research/yt-mercenary-maintenance/ROUTES.md).

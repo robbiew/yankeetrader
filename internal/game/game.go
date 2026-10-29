@@ -465,12 +465,18 @@ func (w *World) Maintain(now time.Time) bool {
 	for _, planet := range w.Planets {
 		planet.update(now, false)
 	}
+	var taxes int64
 	for _, p := range w.Ports {
 		update(p, now)
 		if p.ID != 1 {
-			p.Treasury -= p.Treasury / 10
+			tax := p.Treasury / 10
+			p.Treasury -= tax
+			taxes += tax
 		}
 	}
+	// Existing groups act once. Fresh hires begin acting on the following day.
+	w.mercenaryActions(prng.Float64)
+	w.hireMercenaries(taxes)
 	for _, p := range w.Players {
 		p.Turns = 500
 		p.DockToken = ""

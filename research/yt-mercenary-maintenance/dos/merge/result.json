@@ -1,0 +1,75 @@
+{
+  "name": "merge",
+  "patches": [
+    [
+      152,
+      41,
+      100
+    ],
+    [
+      152,
+      45,
+      0
+    ],
+    [
+      152,
+      49,
+      0
+    ],
+    [
+      152,
+      53,
+      0
+    ],
+    [
+      152,
+      57,
+      0
+    ],
+    [
+      152,
+      61,
+      0
+    ],
+    [
+      151,
+      81,
+      100
+    ],
+    [
+      151,
+      85,
+      -2
+    ],
+    [
+      152,
+      81,
+      200
+    ],
+    [
+      152,
+      85,
+      -2
+    ]
+  ],
+  "recipe": "mercenary-maintenance-isolation-v1",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "a4e8113eae026133410b0ac3155abdb636d6c786ff0a8c773cf393c27358fc93",
+  "before_sha256": "cd56d5c301fd9dfff6a804f79ee3c2666310cefa80f1b66b6ceb5d57221cf31c",
+  "after_sha256": "3e6261cf44f488b5063c86d0b1bf0e5e7880341f3a31980c8a9dc42768999c78",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "before.dat.gz": "3522bfdb3c10e63e27ae2857ec7e544a45a682bf99377dab1267b8cfb9a9f322",
+    "transcript.txt": "5fbbb3d079a94ff70cba3ae2fa09a8b2df2435365b8387f134ac384a8109b5ce",
+    "dosbox.log": "61f8de399139b0497a569c3faa23ac9cc8f3aa54078ffa4eaae4a0edfba87a7b",
+    "after.dat.gz": "5ecd234a74360f46accbd406d0496b3c0b11c5be91e67b15403d77bc79bd941b"
+  }
+}

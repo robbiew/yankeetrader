@@ -1,0 +1,76 @@
+{
+  "name": "human-defense",
+  "human": true,
+  "patches": [
+    [
+      151,
+      41,
+      101
+    ],
+    [
+      151,
+      45,
+      0
+    ],
+    [
+      151,
+      49,
+      0
+    ],
+    [
+      151,
+      53,
+      0
+    ],
+    [
+      151,
+      57,
+      0
+    ],
+    [
+      151,
+      61,
+      0
+    ],
+    [
+      151,
+      81,
+      100
+    ],
+    [
+      151,
+      85,
+      -2
+    ],
+    [
+      152,
+      81,
+      50
+    ],
+    [
+      152,
+      85,
+      2
+    ]
+  ],
+  "recipe": "mercenary-maintenance-isolation-v1",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "a4e8113eae026133410b0ac3155abdb636d6c786ff0a8c773cf393c27358fc93",
+  "before_sha256": "3d788b9cf11d4ce1ca2f86126d6cf272d2107f883a06d0fe5e22683c5af05438",
+  "after_sha256": "437c6d5d5d28fbccb7e3c26cbacccccdb6bb616e9bba3fb0bd8175c5d470d812",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "before.dat.gz": "e6dc67a8fd6498391474e31a92549f953a8ca96504b63fd84dde314462572b83",
+    "transcript.txt": "bb9fbfd242101771e10cdc7ae068177ccf3d60e9064d2d79ef53e3009fbb51ef",
+    "dosbox.log": "674f7278c9614db2038fd64daa435dde28c0c6f75ad45ab7e8bce3760b7d2155",
+    "after.dat.gz": "4fd3b1758f07ec5cf3fe865960b3d313289b150797af870ca4d326bf62a61ec6"
+  }
+}

@@ -466,5 +466,36 @@ elsewhere. Recovered hostility/refusal rules lead to exact debit and whole-group
 recruitment or full-force defense combat. Login-local hostility, one-use quote
 tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
-NPC spawning/daily behavior and full NPC ship combat remain separate milestones.
+Daily hiring and NPC route actions are implemented below. Human-defense
+desertion, faction-base restoration and full NPC ship combat remain separate
+milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
+
+## Mercenary daily maintenance — hiring and route actions implemented
+
+Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
+budget carry, group placement and human-defense desertion. Forty-one completed
+DOS runs and one bounded timeout cover route walks, merges, mines, defense
+combat, planetary fighter pickup without title/ground transfer, and reserved-base
+restoration. Static byte checks protect the distinct NPC battle threshold and
+nested mine rolls. [Evidence and boundaries](yt-mercenary-maintenance/RECOVERY.md).
+
+Daily maintenance now hires from summed per-port integer taxes with the recovered
+rounding rules and finite distinct placement. Protected Union sectors and existing
+defenses are excluded. Missing space and the modern force limit discard unused
+funding without carry/refund. Tax debits, hires and date persist atomically, once
+per UTC day; version 12 remains current. Game/store regressions and a real
+maintenance/reconnect smoke cover saturation, replay and persistence.
+[Implementation policies](yt-mercenary-maintenance/IMPLEMENTATION.md).
+
+Existing Mercenary groups now receive one stable daily activation before new
+hiring, following a whole directed route outside protected sectors. Mines precede
+defenses and planetary pickup. Merging consumes the receiver's pending action;
+partial-capacity transfers conserve force. Combat uses the recovered NPC batch
+rules with a per-group work allowance. Pickup preserves titles, ground and
+fractional/excess stocks. Invalid paths hold in place. No DOS capacity hang,
+failed-path teleportation or repeated activation is reproduced. Desertion and
+reserved-base restoration remain the next daily-faction slices.
+[Route policies and validation](yt-mercenary-maintenance/ROUTES.md). Exact RNG/MBF
+parity and additional faction lifecycle combinations remain research boundaries;
+live BBS acceptance is separate.
