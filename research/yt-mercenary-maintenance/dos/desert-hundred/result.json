@@ -1,0 +1,36 @@
+{
+  "name": "desert-hundred",
+  "human": true,
+  "patches": [
+    [
+      151,
+      81,
+      100
+    ],
+    [
+      151,
+      85,
+      2
+    ]
+  ],
+  "recipe": "mercenary-maintenance-isolation-v1",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "a4e8113eae026133410b0ac3155abdb636d6c786ff0a8c773cf393c27358fc93",
+  "before_sha256": "f52c6a2cb89c866c8a93a5a5ed8fbe5983e93e3948cae496258baa13fee6f4e5",
+  "after_sha256": "5c25fb8344b9ff4c1670ff65d1395847322589aecee340cbb7ac7234d25d0b9d",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "before.dat.gz": "e5b09c7f759f484583bfaa539071e5ec032bcb747172d07d152b822b0c58924b",
+    "transcript.txt": "c06a109c29896477e6f11a75d74787169615d2eec221d26a2029b016f6e19137",
+    "dosbox.log": "a115cea0cac6300d7d84a9c2381f7f3484f0a1cacb5af84ebbad89b07e116b8f",
+    "after.dat.gz": "62f6db4325662eff525b7e66c97a32a8db521ec05fa2b71d6f095a74a693b4d3"
+  }
+}

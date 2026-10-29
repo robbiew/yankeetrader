@@ -1,0 +1,30 @@
+{
+  "name": "base-orphan-reference",
+  "patches": [
+    [
+      4150,
+      85,
+      0
+    ]
+  ],
+  "recipe": "mercenary-maintenance-isolation-v1",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "source_sha256": "a5cc0a7a06909d156802a4bcd55d5971d8b0472d03686a2fad4b9b4b406b1f59",
+  "baseline_sha256": "a4e8113eae026133410b0ac3155abdb636d6c786ff0a8c773cf393c27358fc93",
+  "before_sha256": "fb506992099007418891056133729b2da8adc31a41bde18f1b095b1001be66e5",
+  "after_sha256": "c161af6ab9a39b5cbd566ce63e2bf6a5751350e97e886b7b0c83da5c62588ae1",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "before.dat.gz": "f5690b77c2205605b5f8cf79db63dca1bd551c68b37259a67d8ab0bd89091984",
+    "transcript.txt": "da4fe79124a864c68a4f9c632a62bf5031afcb2dcbfa376466bc74fe38378b78",
+    "dosbox.log": "309d7e761732fc2651d66315e3c4d79d4d075b21d3f7c8e3322fec017a2ff7f2",
+    "after.dat.gz": "02464ce35cfdb05fce91104dedc69658380988a76cc08183c67d3f7caf023260"
+  }
+}

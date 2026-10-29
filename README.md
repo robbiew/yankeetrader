@@ -481,3 +481,14 @@ Payment, recruitment, entry and mine aftermath save atomically. Unresolved group
 continue blocking normal actions. The save format remains version 12. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
+
+### Mercenary daily-maintenance research
+
+[Original-DOS maintenance evidence](research/yt-mercenary-maintenance/RECOVERY.md)
+now establishes tax-funded hiring, group allocation, route movement, mines,
+defense encounters, planetary fighter pickup and reserved-base restoration.
+The evidence includes 41 completed runs and a bounded capacity-stall control.
+The DOS “captured planet” message does not transfer ownership or ground forces.
+These rules are research only; autonomous Mercenary daily actions remain
+outstanding. The next implementation slice is tax-funded hiring with finite
+placement inside the daily transaction, followed by safe route actions.

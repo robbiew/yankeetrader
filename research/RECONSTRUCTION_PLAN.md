@@ -468,3 +468,18 @@ tokens, stale/deadline checks, capacity, entry turns and atomic mine aftermath
 prevent replay and partial transactions. No save-version change is required.
 NPC spawning/daily behavior and full NPC ship combat remain separate milestones.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
+
+## Mercenary daily maintenance — research complete, implementation pending
+
+Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
+budget carry, group placement and human-defense desertion. Forty-one completed
+DOS runs and one bounded timeout cover route walks, merges, mines, defense
+combat, planetary fighter pickup without title/ground transfer, and reserved-base
+restoration. Static byte checks protect the distinct NPC battle threshold and
+nested mine rolls. [Evidence and boundaries](yt-mercenary-maintenance/RECOVERY.md).
+
+Next implement finite tax-funded hiring in the existing daily transaction with
+explicit unplaced-budget policy. Then integrate stable phase participants and
+valid route actions. Do not reproduce the DOS capacity hang, failed-path
+teleportation or repeated activation. Exact RNG/MBF parity and additional faction
+lifecycle combinations remain research boundaries; live BBS acceptance is separate.

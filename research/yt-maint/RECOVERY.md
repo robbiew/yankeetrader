@@ -176,7 +176,7 @@ new_treasury = treasury - tax
 | 7 | 1,005 | 905 | 815 |
 | 8 | 1,000,000 | 900,000 | 810,000 |
 
-The first run reported 100,112 credits in taxes and 10,010 hired mercenaries. The second reported 90,100 in taxes and 9,010 mercenaries. The exact group-allocation/remainder formula for mercenary hiring has not yet been recovered; it should not be inferred simply by dividing the displayed totals.
+The first run reported 100,112 credits in taxes and 10,010 hired mercenaries. The second reported 90,100 in taxes and 9,010 mercenaries. The later [Mercenary maintenance recovery](../yt-mercenary-maintenance/RECOVERY.md) establishes the two rounding stages and group allocation with isolated and chained runs; final force counts also reflect later combat and merging.
 
 ### Maintenance is not idempotent
 
@@ -289,7 +289,7 @@ Scenario creation intentionally refuses existing directory names, preserving the
 1. Recover/instrument the QuickBASIC RNG and exact MBF32/MBF64 operation order for bit-for-bit results.
 2. Validate the exact plague/civil-war probability comparisons and damage distributions.
 3. Recover each Xannor targeting/combat branch, cloak detection, mine damage, and HQ relocation criteria beyond the demonstrated path.
-4. Recover full mercenary spending/group allocation and other maintenance phases listed above.
+4. Implement the separately recovered [Mercenary hiring and route rules](../yt-mercenary-maintenance/RECOVERY.md), retaining the documented RNG/lifecycle boundaries; recover the other maintenance phases listed above.
 5. Decide which original defects to preserve behind a compatibility option: same-day reprocessing and ten-day rewards after clock rollback are now demonstrated behaviors, not assumptions.
 
 ## Project decision: fixes in the modern version

@@ -29,3 +29,7 @@
 /research/yt-mercenaries/hostility-dos/**/KEYS.TXT -text -diff
 /research/yt-mercenaries/hostility-dos/**/transcript.txt -text whitespace=-blank-at-eol
 /research/yt-mercenaries/hostility-dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-mercenary-maintenance/dos/**/DOS*.LOG -text -diff
+/research/yt-mercenary-maintenance/dos/**/transcript.txt -text whitespace=-blank-at-eol
+/research/yt-mercenary-maintenance/dos/**/dosbox.log -text whitespace=-blank-at-eol
