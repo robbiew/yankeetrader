@@ -64,6 +64,9 @@ func (s Session) newspaper(id int, args []string, pending *[]string) error {
 		if _, err = s.Store.View(); err != nil {
 			return err
 		}
+		if !time.Now().Before(s.Deadline) {
+			return errors.New("session time expired")
+		}
 		end := min(offset+5, len(report.Entries))
 		for _, entry := range report.Entries[offset:end] {
 			if entry.Kind == game.NewsLogin {

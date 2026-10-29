@@ -7,7 +7,7 @@ arguments outside the numbered computer menu. Headers show the selected UTC date
 and an empty day says no news is retained. Queries spend no resources and never
 rewrite the journal. Enter advances a five-entry page; Q (or other nonblank input)
 stops. Paging keeps one snapshot/date while rechecking the live ship generation
-and deadline before each page. A partial terminal write never changes history.
+and deadline before each page, including after a world-lock wait. A partial terminal write never changes history.
 
 ## Proven producers and privacy
 
@@ -75,12 +75,15 @@ retention, forward/repeated/backward maintenance, clock rejection and malformed
 archives. Store tests cover old-save migration/no backfill, atomic rollback,
 concurrent writers and committed directory-sync warnings. Door tests cover both
 interfaces, real team creation, read paging/stop, stale generations, expiry,
-aborted login and failed output. Existing legacy upgrade tests preserve their
+aborted login, failed output and expiry while waiting for a page read lock. Existing legacy upgrade tests preserve their
 original-format inputs and now assert version 12 as the current saved format.
 
 `scripts/smoke_newspaper.py` drives real GoDoors PTYs through compact and classic
 computer 8, invalid/lowercase selection, public team events, password exclusion,
 reconnect, Yesterday reading, version-11 migration, paging and maintenance replay.
+A UTC-date rollover restarts the entire disposable fixture (at most three attempts),
+including rollover during a failed subprocess; failures on a stable date propagate.
+Focused Python tests simulate midnight, genuine failures and retry exhaustion.
 Its transcript is `evidence/newspaper-smoke.txt`; CI runs it alongside the
 [preserved DOS evidence verifier](RECOVERY.md). Local PTY and cross-build checks
 remain distinct from native/live BBS acceptance. Exact DOS color/paging/Ctrl-X

@@ -138,3 +138,42 @@ func TestExpiredAndAbortedLoginDoesNotPublishNews(t *testing.T) {
 		t.Fatal("aborted registration wrote public history")
 	}
 }
+
+func TestNewspaperPageLockWaitCannotOutliveSession(t *testing.T) {
+	term := &radioReadTerminal{scripted: &scripted{lines: []string{""}}}
+	s, st := navigationSession(t, term)
+	if err := st.Update(func(w *game.World) error {
+		_, _ = w.Join("nav", "Navigator")
+		for i := 0; i < 8; i++ {
+			if err := w.RecordLogin(1, s.Now()); err != nil {
+				return err
+			}
+		}
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	s.Store = st.ForShip(1, 0)
+	s.Deadline = time.Now().Add(500 * time.Millisecond)
+	holderDone := make(chan error, 1)
+	term.beforeRead = func(int) error {
+		held := make(chan struct{})
+		release := make(chan struct{})
+		go func() { holderDone <- st.Update(func(*game.World) error { close(held); <-release; return nil }) }()
+		<-held
+		go func() { time.Sleep(time.Until(s.Deadline) + 20*time.Millisecond); close(release) }()
+		return nil
+	}
+	err := s.newspaper(1, []string{"today"}, &[]string{})
+	select {
+	case holderErr := <-holderDone:
+		if holderErr != nil {
+			t.Fatal(holderErr)
+		}
+	case <-time.After(2 * time.Second):
+		t.Fatal("page never reached lock contention")
+	}
+	if err == nil || !strings.Contains(err.Error(), "session time expired") || strings.Count(term.output.String(), "Navigator  Logged on") != 5 {
+		t.Fatal("lock wait let an expired reader see another page", err, term.output.String())
+	}
+}
