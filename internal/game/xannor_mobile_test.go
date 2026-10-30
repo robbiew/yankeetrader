@@ -57,9 +57,9 @@ func TestXannorSplitThresholdAndReturningForceCannotReactivate(t *testing.T) {
 		mobileGroup(w, 9, 100)
 		draws := 0
 		w.xannorActions(clock, func() float64 { draws++; return .99 })
-		want := 9
+		want := 12
 		if score == 2001 {
-			want = 3
+			want = 5
 		}
 		if draws != want || xannorForce(w) != 101 {
 			t.Fatal("wrong fractional threshold or force accounting", score, draws, xannorForce(w))
@@ -76,7 +76,7 @@ func TestXannorSplitThresholdAndReturningForceCannotReactivate(t *testing.T) {
 	w.Sectors[10].Warps = []int{8}
 	draws := 0
 	w.xannorActions(clock, func() float64 { draws++; return .99 })
-	if draws != 5 || w.Sectors[8].Defense.Fighters != 102 || w.Sectors[9].Defense != nil || w.Sectors[10].Defense != nil {
+	if draws != 8 || w.Sectors[8].Defense.Fighters != 102 || w.Sectors[9].Defense != nil || w.Sectors[10].Defense != nil {
 		t.Fatal("returned force funded extra splits/activations", draws)
 	}
 	validMobile(t, w)
@@ -89,7 +89,7 @@ func TestXannorSplittingConservationBoundsAndFailedPathRefund(t *testing.T) {
 	mobileGroup(w, 8, 2000)
 	draws := 0
 	w.xannorActions(clock, func() float64 { draws++; return .5 })
-	if xannorForce(w) != 2000 || draws > 115 || w.Sectors[11].Defense == nil || w.Sectors[11].Defense.Fighters < 1 {
+	if xannorForce(w) != 2000 || draws > 135 || w.Sectors[11].Defense == nil || w.Sectors[11].Defense.Fighters < 1 {
 		t.Fatal("split force lost, duplicated or failed to deploy", draws)
 	}
 	validMobile(t, w)
@@ -155,7 +155,7 @@ func TestXannorGroupLimitAndFriendlySnapshotActivations(t *testing.T) {
 	draws = 0
 	w.xannorActions(clock, func() float64 { draws++; return .99 })
 	after, _ := json.Marshal(w)
-	if draws > 115 || string(before) != string(after) {
+	if draws > 135 || string(before) != string(after) {
 		t.Fatal("saturated sectors lost force or retried without a bound", draws)
 	}
 	validMobile(t, w)
@@ -167,11 +167,12 @@ func TestXannorPreferredTopAndHQTargetOrdering(t *testing.T) {
 	p.Sector, p.Cloak = 10, .5
 	ids := []int{8, 9, 10, 11, 12}
 	preferred := 11
-	target := w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, mobileRNG(t, .99, .5, .5))
+	target := w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, false, mobileRNG(t, .99, .5, .5))
 	if target != 11 || preferred != 11 {
 		t.Fatal("ordinary cloak tie or shared target lost")
 	}
-	target = w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, mobileRNG(t, .99, .5, .50001))
+	preferred = 0
+	target = w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, false, mobileRNG(t, .99, .5, .50001))
 	if target != 10 || preferred != 10 {
 		t.Fatal("visible player not selected")
 	}
@@ -179,7 +180,7 @@ func TestXannorPreferredTopAndHQTargetOrdering(t *testing.T) {
 	for _, strength := range []int64{1, 2} {
 		w.Sectors[10].Defense = &SectorDefense{Owner: 1, Fighters: strength}
 		preferred = 11
-		target = w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, mobileRNG(t, .99, .5))
+		target = w.xannorTarget(2, 9, ids, 12, 0, 0, &preferred, false, mobileRNG(t, .99, .5))
 		want := 11
 		if strength == 2 {
 			want = 10
@@ -189,11 +190,11 @@ func TestXannorPreferredTopAndHQTargetOrdering(t *testing.T) {
 		}
 	}
 	preferred = 11
-	target = w.xannorTarget(20, 9, ids, 12, 2000, 1, &preferred, mobileRNG(t, .99, .5))
+	target = w.xannorTarget(20, 9, ids, 12, 2000, 1, &preferred, false, mobileRNG(t, .99, .5))
 	if target != 12 {
 		t.Fatal("group20 top override was not last normal preference")
 	}
-	target = w.xannorTarget(20, 9, ids, 12, 2001, 1, &preferred, mobileRNG(t, .99, .5))
+	target = w.xannorTarget(20, 9, ids, 12, 2001, 1, &preferred, false, mobileRNG(t, .99, .5))
 	if target != 8 {
 		t.Fatal("fractional low-HQ override did not beat top target")
 	}
@@ -203,7 +204,7 @@ func TestXannorPreferredTopAndHQTargetOrdering(t *testing.T) {
 		sector, want int
 		rolls        []float64
 	}{
-		{2499999, 0, 10, 12, []float64{.99}},
+		{2499999, 0, 10, 12, []float64{.99, .99}},
 		{2500000, 0, 10, 10, []float64{0}},
 		{2500000, 1, 10, 12, []float64{.66, .99}},
 		{2500000, 1, 10, 10, []float64{.67}},
@@ -398,7 +399,7 @@ func TestXannorSeededFriendlyConservation(t *testing.T) {
 		before := xannorForce(w)
 		draws := 0
 		w.xannorActions(clock, func() float64 { draws++; return rng.Float64() })
-		if xannorForce(w) != before || draws > 116 {
+		if xannorForce(w) != before || draws > 136 {
 			t.Fatal("friendly force was lost/created or phase retried", seed, before, xannorForce(w), draws)
 		}
 		validMobile(t, w)

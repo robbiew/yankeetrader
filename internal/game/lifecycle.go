@@ -118,6 +118,9 @@ func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 
 // recordDeath is infallible after deathTarget validates the locked live ship.
 func (w *World) recordDeath(p *Player, context DeathContext, now time.Time) {
+	if w.Xannor != nil && w.Xannor.Revenge != nil && w.Xannor.Revenge.Player == p.ID {
+		w.Xannor.Revenge = nil
+	}
 	p.Death = &Death{At: now.UTC(), Cause: context.Cause, Killer: context.Killer, Sector: p.Sector}
 	p.ShipGeneration++
 	p.Sector = 0

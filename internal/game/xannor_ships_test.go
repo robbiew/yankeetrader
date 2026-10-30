@@ -70,16 +70,16 @@ func TestXannorShipThresholdsTiesAndStageOrder(t *testing.T) {
 }
 
 func TestXannorShipDetectionAndUnattackableShips(t *testing.T) {
-	for _, delta := range []float64{0, .000001} {
+	for _, delta := range []float64{-.000001, 0, .000001} {
 		w, p := shipWorld(t, 500, 0)
 		p.Cloak = 1
 		roll := p.Cloak - .33 + delta
 		force, work, preferred := int64(500), 100, 0
 		draws := 0
 		w.xannorShips(10, &force, &work, &preferred, clock, func() float64 { draws++; return roll })
-		if delta == 0 {
+		if delta < 0 {
 			if draws != 1 || force != 500 || len(p.BattleReports) != 0 {
-				t.Fatal("cloak equality must evade")
+				t.Fatal("below cloak threshold must evade")
 			}
 		} else if force != 0 || len(p.BattleReports) != 1 {
 			t.Fatal("full cloak grants immunity")

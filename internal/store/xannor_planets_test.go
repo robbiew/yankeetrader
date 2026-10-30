@@ -166,7 +166,7 @@ func TestVersionFifteenPlanetMigrationPreservesShipHistoryUntilWrite(t *testing.
 		t.Fatal(err)
 	}
 	saved, _ := s.View()
-	if saved.Version != 16 {
+	if saved.Version != game.WorldVersion {
 		t.Fatal("upgrade not saved")
 	}
 }

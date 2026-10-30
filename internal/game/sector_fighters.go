@@ -239,6 +239,7 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 	p.Fighters = p.Fighters - out.Battle.AttackerLosses + out.Battle.Joined
 	s := w.Sectors[entry.To]
 	if out.Battle.Defenders == 0 {
+		w.queueXannorRevenge(p.ID, entry.To, entry.Defense.Owner)
 		s.Defense = nil
 	} else {
 		s.Defense.Fighters = out.Battle.Defenders

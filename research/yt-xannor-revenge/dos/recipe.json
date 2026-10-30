@@ -1,0 +1,884 @@
+{
+  "recipe": "xannor-revenge-isolation-v1",
+  "scenarios": [
+    {
+      "name": "ordinary",
+      "patches": []
+    },
+    {
+      "name": "revenge-active",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "revenge-hidden",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "revenge-negative",
+      "patches": [
+        [
+          72,
+          105,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "revenge-sector-0",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          57,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-sector-7",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          57,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "revenge-sector-8",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          57,
+          8
+        ]
+      ]
+    },
+    {
+      "name": "revenge-dead-positive",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "revenge-unnamed-live",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          85,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-unnamed-protected",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          85,
+          0
+        ],
+        [
+          2,
+          57,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "revenge-unnamed-zero",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          85,
+          0
+        ],
+        [
+          2,
+          57,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-inactive-slot-three",
+      "patches": [
+        [
+          72,
+          105,
+          3
+        ],
+        [
+          3,
+          57,
+          260
+        ]
+      ]
+    },
+    {
+      "name": "revenge-top-other",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "revenge-top-protected",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          7
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "revenge-top-hidden",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          10
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "revenge-top-below",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2499999
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "revenge-top-dead",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          1
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "revenge-hq-override",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          1165,
+          81,
+          1
+        ],
+        [
+          2,
+          109,
+          4000
+        ]
+      ]
+    },
+    {
+      "name": "top-tie",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "top-unnamed",
+      "patches": [
+        [
+          2,
+          109,
+          4000
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ],
+        [
+          3,
+          85,
+          0
+        ]
+      ],
+      "second": true
+    },
+    {
+      "name": "top-no-score",
+      "patches": [
+        [
+          2,
+          109,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-0",
+      "patches": [
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-0",
+      "patches": [
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-0.025",
+      "patches": [
+        [
+          2,
+          125,
+          0.025
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-0.025",
+      "patches": [
+        [
+          2,
+          125,
+          0.025
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-0.05",
+      "patches": [
+        [
+          2,
+          125,
+          0.05
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-0.05",
+      "patches": [
+        [
+          2,
+          125,
+          0.05
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-0.1",
+      "patches": [
+        [
+          2,
+          125,
+          0.1
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-0.1",
+      "patches": [
+        [
+          2,
+          125,
+          0.1
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-1",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-1",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak-10",
+      "patches": [
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak-10",
+      "patches": [
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-cloak--1",
+      "patches": [
+        [
+          2,
+          125,
+          -1
+        ],
+        [
+          72,
+          105,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "revenge-cloak--1",
+      "patches": [
+        [
+          2,
+          125,
+          -1
+        ],
+        [
+          72,
+          105,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "revenge-top-other-clock-4",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true,
+      "time": "04:00:00"
+    },
+    {
+      "name": "revenge-top-other-clock-8",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ],
+        [
+          3,
+          109,
+          2500000
+        ],
+        [
+          3,
+          57,
+          260
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ],
+      "second": true,
+      "time": "08:00:00"
+    },
+    {
+      "name": "revenge-arrival-cloak-0",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ],
+      "arrival": true
+    },
+    {
+      "name": "revenge-arrival-cloak-10",
+      "patches": [
+        [
+          72,
+          105,
+          2
+        ],
+        [
+          2,
+          125,
+          10
+        ]
+      ],
+      "arrival": true
+    },
+    {
+      "name": "candidate-force-1-owner-0",
+      "patches": [],
+      "candidate_screen": [
+        1,
+        0
+      ]
+    },
+    {
+      "name": "candidate-force-2-owner-0",
+      "patches": [],
+      "candidate_screen": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "candidate-force-2-owner--1",
+      "patches": [],
+      "candidate_screen": [
+        2,
+        -1
+      ]
+    },
+    {
+      "name": "candidate-force-2-owner--2",
+      "patches": [],
+      "candidate_screen": [
+        2,
+        -2
+      ]
+    },
+    {
+      "name": "candidate-force-2-owner-2",
+      "patches": [],
+      "candidate_screen": [
+        2,
+        2
+      ]
+    },
+    {
+      "name": "candidate-planets",
+      "patches": [],
+      "candidate_planets": true
+    },
+    {
+      "name": "candidate-planet-one",
+      "patches": [],
+      "candidate_planets": 1
+    },
+    {
+      "name": "hunt-cloak-1-clock-0",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "00:00:00"
+    },
+    {
+      "name": "hunt-cloak-1-clock-4",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "04:00:00"
+    },
+    {
+      "name": "hunt-cloak-1-clock-8",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "time": "08:00:00"
+    },
+    {
+      "name": "hunt-cloak-10-clock-0",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          10
+        ]
+      ],
+      "time": "00:00:00"
+    },
+    {
+      "name": "hunt-cloak-10-clock-4",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          10
+        ]
+      ],
+      "time": "04:00:00"
+    },
+    {
+      "name": "hunt-cloak-10-clock-8",
+      "patches": [
+        [
+          2,
+          109,
+          2500000
+        ],
+        [
+          2,
+          125,
+          10
+        ]
+      ],
+      "time": "08:00:00"
+    },
+    {
+      "name": "revenge-next-day",
+      "patches": [],
+      "parent": "revenge-active",
+      "date": "10/26/2026"
+    }
+  ]
+}

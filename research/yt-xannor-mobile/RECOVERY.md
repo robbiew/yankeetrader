@@ -262,3 +262,10 @@ The bounded splitting/selection, movement, mine and sector-defense portions are
 now [implemented](IMPLEMENTATION.md), with explicit modern identity, work and
 unsupported-encounter policies. The original research observations and remaining
 full ship/planet combat boundaries above are unchanged.
+
+
+The [revenge/cloak follow-up](../yt-xannor-revenge/RECOVERY.md) now adds 53
+maintenance and three player-command controls. It establishes the HQ producer,
+separates maximum 25 attempts from eager draws/retained preference, and corrects
+the ordinary ship-interception equality interpretation using BRUN operands and
+flags. This historical slice's deferred items should be read with that report.

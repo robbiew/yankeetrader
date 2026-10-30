@@ -13,6 +13,7 @@ func (w *World) xannorActions(now time.Time, rng func() float64) {
 	if w.Xannor == nil {
 		return
 	}
+	revenge, preferred := w.consumeXannorRevenge()
 	ids := make([]int, 0, len(w.Sectors))
 	for id := range w.Sectors {
 		if id > 7 {
@@ -49,7 +50,6 @@ func (w *World) xannorActions(now time.Time, rng func() float64) {
 	}
 	topSector := w.xannorHuntSector(ids, top, rng)
 	acted := map[*SectorDefense]bool{}
-	preferred := 0
 	for slot := 2; slot <= 20; slot++ {
 		from := w.Xannor.HQ
 		var group *SectorDefense
@@ -79,7 +79,7 @@ func (w *World) xannorActions(now time.Time, rng func() float64) {
 			budget -= amount
 			group = &SectorDefense{Owner: XannorOwner, Fighters: amount}
 		}
-		target := w.xannorTarget(slot, from, ids, topSector, score, budget, &preferred, rng)
+		target := w.xannorTarget(slot, from, ids, topSector, score, budget, &preferred, revenge, rng)
 		path, err := w.path(from, target, []int{1, 2, 3, 4, 5, 6, 7})
 		if err != nil {
 			if spawned {
@@ -94,7 +94,7 @@ func (w *World) xannorActions(now time.Time, rng func() float64) {
 func (w *World) xannorTopPlayer() *Player {
 	var top *Player
 	for _, p := range w.Players {
-		if p.Death == nil && (top == nil || p.StoredScore > top.StoredScore || p.StoredScore == top.StoredScore && p.ID < top.ID) {
+		if p.Death == nil && p.StoredScore > 0 && (top == nil || p.StoredScore > top.StoredScore || p.StoredScore == top.StoredScore && p.ID < top.ID) {
 			top = p
 		}
 	}
@@ -102,47 +102,69 @@ func (w *World) xannorTopPlayer() *Player {
 }
 
 func (w *World) xannorHuntSector(ids []int, top *Player, rng func() float64) int {
-	if top != nil && top.StoredScore >= 2500000 && rng() >= top.Cloak-.33 && top.Sector > 7 {
-		return top.Sector
+	// The detection draw is eager for a positive-score leader, even below the
+	// hunt threshold. Current locked position replaces the legacy cache/.25 draw.
+	if top != nil {
+		detected := rng() >= top.Cloak-.33
+		if detected && top.StoredScore >= 2500000 && top.Sector > 7 && w.Sectors[top.Sector] != nil {
+			return top.Sector
+		}
 	}
 	return ids[int(rng()*float64(len(ids)))]
 }
 
-func (w *World) xannorTarget(slot, from int, ids []int, topSector int, score, budget int64, preferred *int, rng func() float64) int {
-	others := make([]int, 0, len(ids)-1)
+func (w *World) xannorTarget(slot, from int, ids []int, topSector int, score, budget int64, preferred *int, revenge bool, rng func() float64) int {
+	// Choose directly from a finite non-Union pool, with no same-location retry.
+	others := make([]int, 0, len(ids))
 	for _, id := range ids {
 		if id != from {
 			others = append(others, id)
 		}
 	}
+	if len(others) == 0 {
+		return from
+	}
 	target := others[int(rng()*float64(len(others)))]
-	candidate := ids[int(rng()*float64(len(ids)))]
-	s := w.Sectors[candidate]
-	qualifies := s.Planet != 0 || s.Defense != nil && s.Defense.Owner != XannorOwner && s.Defense.Fighters > 1
-	if !qualifies {
-		players := []int{}
-		for id, p := range w.Players {
-			if p.Death == nil && p.Sector == candidate {
-				players = append(players, id)
-			}
+	if *preferred <= 7 || w.Sectors[*preferred] == nil {
+		*preferred = 0
+	}
+	players := []int{}
+	for id, p := range w.Players {
+		if p.Death == nil {
+			players = append(players, id)
 		}
-		sort.Ints(players)
+	}
+	sort.Ints(players)
+	attempts := 1
+	if revenge {
+		attempts = 25
+	}
+	for attempt := 0; attempt < attempts; attempt++ {
+		candidate := ids[int(rng()*float64(len(ids)))]
+		s := w.Sectors[candidate]
+		if w.Planets[s.Planet] != nil || s.Defense != nil && s.Defense.Owner != XannorOwner && s.Defense.Fighters > 1 {
+			*preferred = candidate
+		}
+		// A retained preference stops after this candidate, before player scanning.
+		if *preferred != 0 {
+			break
+		}
 		for _, id := range players {
-			if rng() > w.Players[id].Cloak {
-				qualifies = true
+			p := w.Players[id]
+			detected := rng() > p.Cloak // eager even for other sectors and revenge
+			if p.Sector == candidate && (detected || revenge) {
+				*preferred = candidate
 				break
 			}
 		}
-	}
-	if qualifies {
-		*preferred = candidate
+		if *preferred != 0 {
+			break
+		}
 	}
 	if *preferred > 7 {
 		target = *preferred
 	}
-	// Revenge is not enabled in this slice. World locking supplies one coherent
-	// current player position, so DOS's stale-vs-cached position draw is omitted.
-	if slot == 20 {
+	if slot == 20 || revenge && slot > 15 && topSector != 0 {
 		target = topSector
 	}
 	if budget*2000 < score {

@@ -120,7 +120,7 @@ func (w *World) xannorShips(sector int, force *int64, work *int, preferred *int,
 			return false
 		}
 		*work-- // One detection/dispatch step, even for an unarmed or hidden target.
-		if rng() <= p.Cloak-.33 {
+		if rng() < p.Cloak-.33 {
 			continue
 		}
 		initial, fighters, shields := *force, p.Fighters, p.Shields

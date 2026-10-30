@@ -86,7 +86,9 @@ counted as evidence for the conclusions here.
 The initial maintenance cache (`052e–0636`) uses active-name field 85. Positive
 cloak loses .05 and is clamped at zero before being saved/cached. Normal route
 interception (`3baa–3c66`) compares cached position and the `.33` detection
-adjustment. Full cloak therefore becomes approximately .95, with a threshold
+adjustment. The [runtime-aware follow-up](../yt-xannor-revenge/RECOVERY.md)
+clarifies that exact equality permits interception (`RND>=cached_cloak-.33`);
+this is static-derived rather than an observed native exact-tie run. Full cloak therefore becomes approximately .95, with a threshold
 near .62. At 00/04/08/12/16 the captured full-cloak runs skip the ship; at 20:00
 the ship is intercepted and loses 115 fighters. These are samples, not a
 measured probability or bit-exact RNG guarantee. Diagnostic cloak 10 isolates a
