@@ -19,7 +19,7 @@ func TestRadioConcurrentSendRetryReadAndRollback(t *testing.T) {
 	w, _ := s.View()
 	address, _ := w.FindRadioRecipient(1, "Enemy")
 	draft, _ := w.PrepareRadio(1, address, "Only once", time.Now())
-	bound := s.ForShip(1, w.Players[1].ShipGeneration)
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
 	abort := errors.New("abort send")
 	if err := bound.Update(func(w *game.World) error {
 		_, err := w.CommitRadio(draft, time.Now())
@@ -54,7 +54,7 @@ func TestRadioConcurrentSendRetryReadAndRollback(t *testing.T) {
 	if len(w.Radio) != 1 || w.NextRadio != 2 {
 		t.Fatal("retry duplicated message")
 	}
-	receiver := s.ForShip(2, w.Players[2].ShipGeneration)
+	receiver := s.ForShip(2, w.Players[2].ShipGeneration, 1)
 	if err := receiver.AcknowledgeRadio(1); err != nil {
 		t.Fatal(err)
 	}
@@ -92,7 +92,7 @@ func TestRadioAcknowledgementDoesNotOpenEncounterMutationGate(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	bound := s.ForShip(2, w.Players[2].ShipGeneration)
+	bound := s.ForShip(2, w.Players[2].ShipGeneration, 1)
 	if err := bound.AcknowledgeRadio(1); err != nil {
 		t.Fatal(err)
 	}
@@ -110,6 +110,8 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 	s := create(t)
 	w, _ := s.View()
 	w.Version, w.NextRadio = 10, 0
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0
 	w.NextNews = 0
 	w.Players[1].Sector, w.Players[1].MineGraceSector = 8, 8

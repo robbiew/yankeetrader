@@ -21,7 +21,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 - Teams, captain roles/succession, membership, shared access, and asset retention: [recovery](yt-teams/RECOVERY.md). Twenty-one DOS sessions validate the four-member roster, permissions, rejoining after banishment, selective sharing, and post-departure ownership.
 - Player calculator formulas: [assessment](ytcalc/FINDINGS.md). Treat unverified spreadsheet formulas as hypotheses.
 
-## Next implementation stages
+## Original implementation stages (historical; current status below)
 
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
@@ -994,7 +994,7 @@ updated in the same research milestone. No Go gameplay or schema changes are
 included; save version remains 22 and Genesis remains unavailable.
 [Research and concrete safe-reset contract](yt-genesis/SAFE_RESET.md).
 
-Next: implement bounded Genesis endgame with authoritative ownership recount,
+Historical next-step contract (implemented below): bounded Genesis endgame with authoritative ownership recount,
 fresh destructive confirmation, stable season epoch captured inside login, and
 winner history in the same atomic replacement as the new world. Audit every
 session/cache/acknowledgement path for epoch binding, especially direct spy
@@ -1007,3 +1007,22 @@ races, concurrent winners, rollback/durability/replay, history/epoch exhaustion,
 read-only migration and both real terminal interfaces. Update README alongside
 implementation; native/live acceptance and full DOS RNG/numeric fidelity remain
 separate.
+
+
+## Bounded Genesis endgame and atomic season reset — implemented
+
+[Implementation](yt-genesis/IMPLEMENTATION.md) completes the bounded contract:
+actual non-Earth title recount, explicit 0/20–300 configuration (default 300),
+fresh literal GENESIS confirmation, finite generation and explicit supported-home
+bootstrap, monotonic epoch captured inside both login transactions, and a bounded
+public winner archive in the same atomic world replacement. Save version 23
+migrates legacy worlds to season one without reset or history backfill. Old bound
+reads/mutations/scores/acknowledgements/caches and pending intents reject ID reuse.
+`G`/`GENESIS` and `SEASONS` are available in both interfaces. README and CI are
+updated in this same milestone. See validation log for rollback/durability,
+concurrency/process interruption, exact confirmations and terminal coverage.
+
+Remaining candidates: planetary thrusters/forced landing research, native/live
+acceptance, full universe generation and numeric/RNG parity, unsupported
+communication/intelligence and remaining random events. Explicit season archive
+export/admin reset tooling and The Wanderer lifecycle remain unimplemented.

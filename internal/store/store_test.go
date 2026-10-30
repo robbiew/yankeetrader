@@ -173,6 +173,8 @@ func TestVersionOneUpgradePreservesExistingPlayers(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 1
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	for _, p := range w.Players {

@@ -1,5 +1,9 @@
 # Genesis endgame and safe season reset — bounded research follow-up
 
+**Historical research baseline:** the bounded contract is now implemented in
+[Genesis and safe resets](IMPLEMENTATION.md), using save version 23. Statements
+below about unavailable Go behavior describe the research milestone.
+
 This extends the [original Genesis recovery](RECOVERY.md). It adds **24 returned
 DOS controls, 48 before/after worlds, two exact parent-world/auxiliary follow-ups
 and 13 native byte observations**. It is research and an implementation contract:

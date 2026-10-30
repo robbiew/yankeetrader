@@ -94,7 +94,7 @@ func TestRadioRechecksRecipientAfterComposition(t *testing.T) {
 	term := &radioReadTerminal{scripted: &scripted{lines: []string{"private text", "s"}}}
 	s, st := radioSession(t, term)
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	term.beforeRead = func(n int) error {
 		if n == 2 {
 			return st.Update(func(w *game.World) error { w.Players[2].Alias = "Changed"; return nil })
@@ -132,7 +132,7 @@ func TestRadioOutputFailureKeepsMessageUnread(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	s.Store = st.ForShip(2, w.Players[2].ShipGeneration)
+	s.Store = st.ForShip(2, w.Players[2].ShipGeneration, 1)
 	if err := s.deliverRadio(2); err == nil {
 		t.Fatal("output failure ignored")
 	}
@@ -179,7 +179,7 @@ func TestRadioHistoryPagingLeavesUndisplayedUnread(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	s.Store = st.ForShip(2, w.Players[2].ShipGeneration)
+	s.Store = st.ForShip(2, w.Players[2].ShipGeneration, 1)
 	if err := s.radioHistory(2, nil, true); err != nil {
 		t.Fatal(err)
 	}

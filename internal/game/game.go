@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 22
+const WorldVersion = 23
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -65,7 +65,11 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
-	LotteryDailyLimit *int `json:",omitempty"`
+	Season            uint64
+	GenerationSeed    *int64         `json:",omitempty"`
+	GenesisPorts      *int           `json:",omitempty"`
+	SeasonResults     []SeasonResult `json:",omitempty"`
+	LotteryDailyLimit *int           `json:",omitempty"`
 	NextBattleReport  uint64
 	Xannor            *XannorState `json:",omitempty"`
 	News              []NewsEvent  `json:",omitempty"`
@@ -88,17 +92,23 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Version: WorldVersion, NextBattleReport: 1, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{Season: 1, GenerationSeed: &seed, Version: WorldVersion, NextBattleReport: 1, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1
 		s := &Sector{ID: i, Warps: []int{prev, next}}
 		w.Sectors[i] = s
-		for len(s.Warps) < 6 {
-			n := rng.Intn(count) + 1
-			if n != i && !contains(s.Warps, n) {
-				s.Warps = append(s.Warps, n)
+		// Finite partial shuffle: four distinct extra destinations without rejection sampling.
+		choices := make([]int, 0, count-3)
+		for n := 1; n <= count; n++ {
+			if n != i && n != prev && n != next {
+				choices = append(choices, n)
 			}
+		}
+		for j := 0; j < 4; j++ {
+			k := j + rng.Intn(len(choices)-j)
+			choices[j], choices[k] = choices[k], choices[j]
+			s.Warps = append(s.Warps, choices[j])
 		}
 		if i <= 1000 {
 			s.Port = i
@@ -136,6 +146,9 @@ func (w *World) Validate() error {
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
 		return errors.New("invalid maintenance date")
+	}
+	if err := w.validateSeasons(); err != nil {
+		return err
 	}
 	if err := w.validateLottery(); err != nil {
 		return err

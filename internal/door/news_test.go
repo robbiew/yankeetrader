@@ -76,7 +76,7 @@ func TestNewspaperPagingStopsAndRechecksShip(t *testing.T) {
 			}); err != nil {
 				t.Fatal(err)
 			}
-			s.Store = st.ForShip(1, 0)
+			s.Store = st.ForShip(1, 0, 1)
 			if mode == "stale" {
 				term.lines = []string{""}
 				term.beforeRead = func(int) error {
@@ -153,7 +153,7 @@ func TestNewspaperPageLockWaitCannotOutliveSession(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	s.Deadline = time.Now().Add(500 * time.Millisecond)
 	holderDone := make(chan error, 1)
 	term.beforeRead = func(int) error {
@@ -189,7 +189,7 @@ func TestDailyMaintenanceNewsRendersWithoutPrivateLocation(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	if err := s.newspaper(1, []string{"today"}, &[]string{}); err != nil {
 		t.Fatal(err)
 	}
@@ -221,7 +221,7 @@ func TestOvercrowdingNewsRendersActualEventsWithoutPrivateAssets(t *testing.T) {
 		}); err != nil {
 			t.Fatal(err)
 		}
-		s.Store = st.ForShip(1, 0)
+		s.Store = st.ForShip(1, 0, 1)
 		if err := s.newspaper(1, []string{"today"}, &[]string{}); err != nil {
 			t.Fatal(err)
 		}

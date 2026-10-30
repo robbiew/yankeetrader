@@ -119,7 +119,7 @@ func TestMaintenanceAwardRetirementAtomicRollbackValidationAndConcurrency(t *tes
 		t.Fatal("award got same-day catch-up")
 	}
 	// The old bound session cannot read after retirement or fresh reactivation.
-	if _, err = s.ForShip(1, 0).View(); err == nil {
+	if _, err = s.ForShip(1, 0, 1).View(); err == nil {
 		t.Fatal("destroyed session survived")
 	}
 	if err = s.Update(func(w *game.World) error { return w.LoginShip(1, now) }); err != nil {
@@ -133,7 +133,7 @@ func TestMaintenanceAwardRetirementAtomicRollbackValidationAndConcurrency(t *tes
 	if err != nil || len(history) != 1 || history[0].FromAlias != "Visitor" {
 		t.Fatal("private history lost/misattributed", err, history)
 	}
-	if _, err = s.ForShip(1, 0).View(); err == nil {
+	if _, err = s.ForShip(1, 0, 1).View(); err == nil {
 		t.Fatal("pre-retirement session gained fresh ship")
 	}
 	other, err := w.RadioHistory(2, 0, 20, false)
@@ -174,6 +174,8 @@ func TestVersion17RetirementAwardMigrationReadOnlyAndRejection(t *testing.T) {
 	s, _ := dailyAwardStore(t)
 	w, _ := s.View()
 	w.Version = 17
+	w.Season = 0
+	w.GenerationSeed = nil
 	raw, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
@@ -221,7 +223,7 @@ func TestPostAssaultAwardCannotReviveOldLanding(t *testing.T) {
 	if saved.Planets[50].Fighters != 0 || saved.Planets[50].Bank != 500000 || saved.Planets[50].Updated != next {
 		t.Fatal("new award inherited old estate")
 	}
-	if err = s.ForShip(1, 0).Update(func(w *game.World) error { return w.Bank(1, oldToken, 0, next) }); err == nil {
+	if err = s.ForShip(1, 0, 1).Update(func(w *game.World) error { return w.Bank(1, oldToken, 0, next) }); err == nil {
 		t.Fatal("old landing reached newly awarded planet")
 	}
 }

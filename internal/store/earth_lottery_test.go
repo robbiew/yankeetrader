@@ -31,7 +31,7 @@ func paidStore(t *testing.T) (Store, Store, time.Time, string) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	return s, s.ForShip(1, 0), at, token
+	return s, s.ForShip(1, 0, 1), at, token
 }
 func jackpotDigit() (int, error) { return 1, nil }
 func TestPaidLotteryStoreRollbackDurabilityAndReplay(t *testing.T) {
@@ -109,7 +109,7 @@ func TestPaidLotteryConcurrentNetZeroAndIdentityBinding(t *testing.T) {
 	}
 	clock := func() time.Time { return at }
 	deadline := time.Now().Add(time.Minute)
-	b := s.ForShip(1, 0)
+	b := s.ForShip(1, 0, 1)
 	ea, err := a.PrepareLottery(token, "111111", clock, deadline)
 	if err != nil {
 		t.Fatal(err)
@@ -157,7 +157,7 @@ func TestPaidLotteryConcurrentNetZeroAndIdentityBinding(t *testing.T) {
 	if wins != 1 || draws.Load() != 6 || p.Credits != game.MaxMoney || p.LotteryPlays != 1 || p.LotterySequence != 1 || len(w.News) != 1 || w.News[0].LotteryPrize != 5 {
 		t.Fatal("concurrent replay", wins, draws.Load(), p)
 	}
-	if _, err = s.ForShip(1, 0).PrepareLottery(token, "111111", clock, deadline); err == nil {
+	if _, err = s.ForShip(1, 0, 1).PrepareLottery(token, "111111", clock, deadline); err == nil {
 		t.Fatal("reconnect quota reset")
 	}
 }
@@ -223,6 +223,8 @@ func TestPaidLotteryMigrationReadOnlyThenWrite(t *testing.T) {
 		t.Fatal(err)
 	}
 	w.Version = 21
+	w.Season = 0
+	w.GenerationSeed = nil
 	raw, err := json.MarshalIndent(w, "", "  ")
 	if err != nil {
 		t.Fatal(err)
@@ -233,7 +235,7 @@ func TestPaidLotteryMigrationReadOnlyThenWrite(t *testing.T) {
 		t.Fatal(err)
 	}
 	loaded, err := s.View()
-	if err != nil || loaded.Version != 22 || loaded.Players[1].LotterySequence != 0 {
+	if err != nil || loaded.Version != game.WorldVersion || loaded.Players[1].LotterySequence != 0 {
 		t.Fatal(loaded, err)
 	}
 	saved, _ := os.ReadFile(path)
@@ -245,7 +247,7 @@ func TestPaidLotteryMigrationReadOnlyThenWrite(t *testing.T) {
 	}
 	saved, _ = os.ReadFile(path)
 	var upgraded game.World
-	if err = json.Unmarshal(saved, &upgraded); err != nil || upgraded.Version != 22 || upgraded.Players[1].Credits != 100000 {
+	if err = json.Unmarshal(saved, &upgraded); err != nil || upgraded.Version != game.WorldVersion || upgraded.Players[1].Credits != 100000 {
 		t.Fatal("migration gifts", err)
 	}
 }

@@ -45,7 +45,7 @@ func xannorShipStore(t *testing.T) (Store, time.Time) {
 
 func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T) {
 	s, next := xannorShipStore(t)
-	stale := s.ForShip(1, 0)
+	stale := s.ForShip(1, 0, 1)
 	path := s.Dir + "/world.json"
 	before, _ := os.ReadFile(path)
 	abort := errors.New("abort after death and report")
@@ -113,7 +113,7 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 	if _, err := stale.View(); !errors.Is(err, game.ErrShipChanged) {
 		t.Fatal("old generation survived replacement", err)
 	}
-	live := s.ForShip(1, 2)
+	live := s.ForShip(1, 2, 1)
 	if err := live.AcknowledgeBattleReport(1); err != nil {
 		t.Fatal(err)
 	}
@@ -138,8 +138,8 @@ func TestXannorReportAcknowledgementIsBoundAndDoesNotBypassEncounters(t *testing
 	}); err != nil {
 		t.Fatal(err)
 	}
-	bound := s.ForShip(1, 2)
-	wrong := s.ForShip(2, 0)
+	bound := s.ForShip(1, 2, 1)
+	wrong := s.ForShip(2, 0, 1)
 	if err := wrong.AcknowledgeBattleReport(1); err == nil {
 		t.Fatal("wrong recipient read report")
 	}
@@ -165,6 +165,8 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 	s, _ := xannorShipStore(t)
 	w, _ := s.View()
 	w.Version = 14
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0
 	raw, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
@@ -185,6 +187,8 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 	for _, mode := range []string{"counter", "report", "death", "news"} {
 		candidate, _ := s.View()
 		candidate.Version = 14
+		candidate.Season = 0
+		candidate.GenerationSeed = nil
 		candidate.NextBattleReport = 0
 		switch mode {
 		case "counter":

@@ -22,6 +22,9 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 23 && (w.Season != 0 || w.GenerationSeed != nil || w.GenesisPorts != nil || len(w.SeasonResults) != 0) {
+		return errors.New("legacy world unexpectedly contains season state")
+	}
 	if w.Version < 22 {
 		if w.LotteryDailyLimit != nil {
 			return errors.New("legacy world unexpectedly contains paid lottery configuration")
@@ -251,6 +254,10 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 21 {
 		w.Version = 22
+	}
+	if w.Version == 22 {
+		w.Season = 1
+		w.Version = 23
 	}
 	return nil
 }

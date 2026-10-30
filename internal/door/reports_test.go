@@ -96,7 +96,7 @@ func TestPlanetReportRechecksOwnershipAfterSectorPrompt(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	term.beforeInput = func() {
 		if err := st.Update(func(w *game.World) error { w.Planets[2].Owner = 2; return nil }); err != nil {
 			t.Fatal(err)

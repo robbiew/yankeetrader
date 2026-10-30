@@ -26,7 +26,7 @@ func TestLogoutScoresAreBoundMetadataDuringEncounters(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	bound := s.ForShip(1, w.Players[1].ShipGeneration)
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
 	if err := s.RefreshScoresOnLogout(time.Now().Add(time.Minute)); err == nil {
 		t.Fatal("unbound publication")
 	}

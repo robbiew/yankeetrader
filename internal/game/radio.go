@@ -40,6 +40,7 @@ type RadioAddress struct {
 type RadioDraft struct {
 	from, to             int
 	generation           uint64
+	season               uint64
 	alias, text, request string
 	expires              time.Time
 }
@@ -145,12 +146,12 @@ func (w *World) PrepareRadio(id int, address RadioAddress, text string, now time
 	if _, err := rand.Read(token[:]); err != nil {
 		return RadioDraft{}, err
 	}
-	return RadioDraft{from: id, to: to.ID, generation: p.ShipGeneration, alias: to.Alias, text: text, request: hex.EncodeToString(token[:]), expires: now.Add(5 * time.Minute)}, nil
+	return RadioDraft{from: id, to: to.ID, season: w.Season, generation: p.ShipGeneration, alias: to.Alias, text: text, request: hex.EncodeToString(token[:]), expires: now.Add(5 * time.Minute)}, nil
 }
 
 // CommitRadio is idempotent for one prepared draft. It must run in Store.Update.
 func (w *World) CommitRadio(d RadioDraft, now time.Time) (uint64, error) {
-	if err := w.CheckShip(d.from, d.generation); err != nil {
+	if err := w.CheckSession(d.from, d.generation, d.season); err != nil {
 		return 0, err
 	}
 	for _, m := range w.Radio {

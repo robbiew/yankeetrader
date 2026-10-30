@@ -12,6 +12,7 @@ const maxMissileRounds = 1_000_000
 
 type MissileDamage struct{ Spent, Fighters, Shields int64 }
 type MissileIntent struct {
+	Season           uint64
 	Player, From, To int
 	Generation       uint64
 	Count            int64
@@ -176,7 +177,7 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if err != nil {
 		return MissileIntent{}, errors.New("no warp route reaches that missile target")
 	}
-	intent := MissileIntent{Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Route: route}
+	intent := MissileIntent{Season: w.Season, Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Route: route}
 	intent.Sectors, err = w.snapshotMissileRoute(id, route, v, true)
 	if err != nil {
 		return MissileIntent{}, err
@@ -256,7 +257,7 @@ func (w *World) snapshotMissileRoute(shooter int, route []int, visibility *Visib
 // CommitMissile saves both volleys and every consequence in the caller's single
 // store Update. A surviving target may fire once; that response cannot recurse.
 func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() float64, now time.Time) (MissileResult, error) {
-	if err := w.CheckShip(intent.Player, intent.Generation); err != nil {
+	if err := w.CheckSession(intent.Player, intent.Generation, intent.Season); err != nil {
 		return MissileResult{}, err
 	}
 	fresh, err := w.PrepareMissile(intent.Player, intent.To, intent.Count, v)

@@ -77,7 +77,7 @@ func (w *World) PrepareAntiCloak(id int, token string, v *Visibility, now time.T
 	if count == math.MaxUint64 {
 		return AntiCloakIntent{}, errors.New("anti-cloak activation counter exhausted")
 	}
-	return AntiCloakIntent{Ship: travelShip(p), DockUntil: p.DockUntil, Maintenance: w.LastMaintenance, Activation: count}, nil
+	return AntiCloakIntent{Ship: w.travelShip(p), DockUntil: p.DockUntil, Maintenance: w.LastMaintenance, Activation: count}, nil
 }
 
 // CommitAntiCloak runs against a staged login cache in the same transaction as
@@ -127,7 +127,7 @@ func (w *World) CommitAntiCloak(e AntiCloakIntent, v *Visibility, now time.Time)
 // The private clone can change freely; ordinary rollback publishes nothing.
 func (v *Visibility) StageAntiCloak() (*Visibility, func(bool)) {
 	v.mu.Lock()
-	staged := &Visibility{observer: v.observer, generation: v.generation, revealed: make(map[int]uint64, len(v.revealed)), antiActivations: v.antiActivations}
+	staged := &Visibility{observer: v.observer, generation: v.generation, season: v.season, revealed: make(map[int]uint64, len(v.revealed)), antiActivations: v.antiActivations}
 	for id, generation := range v.revealed {
 		staged.revealed[id] = generation
 	}

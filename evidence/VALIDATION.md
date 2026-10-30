@@ -349,3 +349,84 @@ unchanged; Genesis remains unavailable. Native winner reconstruction in other BB
 mappings, mid-write crash/concurrent DOS resets, full RNG/MBF equivalence and
 live/native acceptance remain unverified. See the
 [bounded research and implementation contract](../research/yt-genesis/SAFE_RESET.md).
+
+
+## 2026-10-30 — Bounded Genesis and safe season resets
+
+Implemented on `feat/genesis-season-reset`, following the locally committed
+24-control [research contract](../research/yt-genesis/SAFE_RESET.md).
+[Implementation, usage and boundaries](../research/yt-genesis/IMPLEMENTATION.md).
+README and reconstruction plan are updated in this same implementation milestone.
+No active BBS universe was reset, no archival files changed, and nothing was
+published as part of implementation.
+
+Save version **23** adds monotonic season epochs, optional generation seed and
+Genesis threshold, and up to 128 public winner results in world.json. Legacy
+versions establish epoch one without reset, awards, historical seed invention,
+history backfill or read-only writes. Configuration omission remains distinct
+from explicit zero, including a zero-disabled paid lottery. The bounded generator
+retains the connected ring and adds four unique destinations by finite shuffle.
+
+Eligibility recounts actual non-Earth personally owned ports (default 300; explicit
+zero disables, 20–300 valid). A quote binds sorted ownership, live public score,
+ship/incarnation, epoch, settings, geometry and maintenance state. A two-minute
+quote and real post-lock session deadline limit authorization. Both interfaces
+require a new exact GENESIS line after queued input is discarded. Candidate
+bootstrap, archive append and epoch advance commit in one replacement under the
+existing lock inode. New stock and implemented faction homes exist before the
+first new player. Same-day maintenance does not repeat initialization.
+
+Completed validation:
+
+- Full `go test -race -count=1 ./...` and `go vet ./...`, using a temporary module
+  override for the existing local GoDoors checkout. Repository go.mod/go.sum are
+  unchanged. Linux/amd64 and Windows/amd64 builds passed; native Windows execution
+  and durability were not tested.
+- Focused race regressions cover threshold minus/equal/above, disabled/invalid and
+  unreachable defaults, authoritative title counts versus cached scores, supported
+  custom port geometry, rich old accounts/assets/teams/messages/news/mines/defenses/
+  factions being replaced, optional settings, minimum/maximum generation, bootstrap
+  idempotence, live public scores and archive privacy/capacity/continuity.
+- Stale ownership/settings/ship/clock/epoch and altered quote rejection; generation,
+  nil-candidate, bootstrap and validation fault injection; byte-exact storage
+  rollback; post-rename DurabilityError with committed result; single-use/revoked
+  confirmations; concurrent eligible logins committing exactly one result.
+- Actual child-process termination before replacement preserves the old bytes;
+  termination after replacement leaves a valid complete new epoch/history. The
+  persistent world.lock inode is unchanged. These are local process-kill controls,
+  not power-loss durability evidence.
+- Old logins reject new-season views, updates, logout score publication, radio,
+  battle and spy acknowledgements, spy snapshots/hiring, and new confirmations
+  after reusing the exact player ID/generation. Visibility/spy caches and prepared
+  attack, missile, bribe, defense, mine entry/placement, scanner, warp, radio,
+  lottery and anti-cloak values also reject epoch reuse before RNG or mutation.
+- A captured-login/binding interleaving rejects an old epoch after another reset.
+  The final audit also found and fixed classic startup retaining an ID from its
+  screen lookup if the identity disappeared before authentication. Its actual
+  identity decision now repeats under the login lock; a regression resets between
+  lookup and authentication, reuses the ID for another BBS identity, and verifies
+  the original caller receives only its own newly registered slot.
+- Joined committed-warning/output failures remain discoverable, including EOF;
+  successful or durability-warning resets end the invoking login and never query
+  the obsolete player to reconstruct a receipt.
+- All **45 real terminal invocations** configured in CI pass, including new
+  `smoke_genesis.py`, compact/classic cancellation of queued/lowercase/chained
+  answers, one exact saved reset receipt/logout, fully initialized new world,
+  reconnect/public history, disabled-lottery retention, configuration CLI bounds
+  and no replay. The newspaper date-rollover helper tests pass. Existing smoke
+  fixtures now assert save version 23; deliberately old fixtures exclude the new
+  fields. The first startup check caught an unnecessary help overlay; it was
+  removed, and startup was rerun successfully with all 23 original menu rows and
+  attributes intact (including the existing G entry).
+- All **52 preserved-evidence verifier/control commands** configured in CI pass,
+  including Genesis's 24 DOS controls/13 native reads/42 corruption controls and
+  all **4,682 archive hashes**. No DOS or REA rerun was needed for implementation.
+  The 148 tracked terminal captures regenerated by smoke checks were individually
+  inventoried and backed up, then restored to their exact prior committed hashes;
+  only this validation log is retained as the evidence-directory change.
+
+Remaining: live BBS gameplay/door acceptance, native Windows crash durability,
+full DOS generator/RNG/MBF equivalence, original winner mapping and mid-write DOS
+reset behavior, The Wanderer lifecycle, explicit season archive export/admin reset
+and remaining unimplemented game systems. Local tests/cross-builds do not establish
+those outcomes.

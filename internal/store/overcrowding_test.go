@@ -167,6 +167,8 @@ func TestVersion18OvercrowdingMigrationPreservesStateAndRejectsFutureNews(t *tes
 	st, _ := overcrowdingStore(t)
 	w, _ := st.View()
 	w.Version = 18
+	w.Season = 0
+	w.GenerationSeed = nil
 	raw, _ := json.Marshal(w)
 	path := st.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
@@ -178,6 +180,8 @@ func TestVersion18OvercrowdingMigrationPreservesStateAndRejectsFutureNews(t *tes
 	}
 	original := *loaded
 	original.Version = 18
+	original.Season = 0
+	original.GenerationSeed = nil
 	if !reflect.DeepEqual(&original, w) {
 		t.Fatal("migration changed assets, sessions or history")
 	}

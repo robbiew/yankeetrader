@@ -9,6 +9,7 @@ import (
 // AttackIntent binds confirmation to both ship incarnations and the encounter.
 // Frontends must use visible candidates and recheck this intent on commit.
 type AttackIntent struct {
+	Season                               uint64
 	Attacker, Target, Sector             int
 	AttackerGeneration, TargetGeneration uint64
 	Fighters                             int64
@@ -64,7 +65,7 @@ func (w *World) PrepareAttack(attacker, target int, fighters int64) (AttackInten
 	if fighters < 1 || fighters > a.Fighters {
 		return AttackIntent{}, errors.New("choose available fighters to commit")
 	}
-	return AttackIntent{Attacker: a.ID, Target: d.ID, Sector: a.Sector, AttackerGeneration: a.ShipGeneration, TargetGeneration: d.ShipGeneration, Fighters: fighters}, nil
+	return AttackIntent{Season: w.Season, Attacker: a.ID, Target: d.ID, Sector: a.Sector, AttackerGeneration: a.ShipGeneration, TargetGeneration: d.ShipGeneration, Fighters: fighters}, nil
 }
 
 // CommitAttack must run inside a store Update whose caller returns every error.
@@ -82,7 +83,7 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	if err != nil {
 		return ShipDuelResult{}, err
 	}
-	if a.Sector != intent.Sector || a.ShipGeneration != intent.AttackerGeneration || d.ShipGeneration != intent.TargetGeneration {
+	if w.Season != intent.Season || a.Sector != intent.Sector || a.ShipGeneration != intent.AttackerGeneration || d.ShipGeneration != intent.TargetGeneration {
 		return ShipDuelResult{}, errors.New("attack confirmation is stale")
 	}
 	if visibility != nil {

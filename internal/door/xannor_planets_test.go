@@ -72,7 +72,7 @@ func (t *planetOutputFailure) Printf(format string, args ...any) error {
 }
 func TestPlanetReportDisconnectRemainsUnread(t *testing.T) {
 	s, st := planetReportSession(t, &planetOutputFailure{&scripted{}})
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	if err := s.battleReports(1, true); err == nil {
 		t.Fatal("output failure hidden")
 	}

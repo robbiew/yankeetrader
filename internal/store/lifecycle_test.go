@@ -35,7 +35,7 @@ func TestShipGenerationRejectsOldProcessSessionAfterReplacement(t *testing.T) {
 	if err := s.Update(func(w *game.World) error { _, err := w.Join("killer", "Killer"); w.Players[1].Turns = 37; return err }); err != nil {
 		t.Fatal(err)
 	}
-	old := s.ForShip(1, 0)
+	old := s.ForShip(1, 0, 1)
 	cmd := exec.Command(os.Args[0], "-test.run=^TestLifecycleWorker$")
 	cmd.Env = append(os.Environ(), "YT_LIFECYCLE_WORKER=1", "YT_LIFECYCLE_DIR="+s.Dir)
 	if out, err := cmd.CombinedOutput(); err != nil {
@@ -55,7 +55,7 @@ func TestShipGenerationRejectsOldProcessSessionAfterReplacement(t *testing.T) {
 	if w.Players[1].ShipGeneration != 2 || w.Players[1].Credits != 1005 || w.Players[1].Turns != 37 {
 		t.Fatal("replacement overwritten", w.Players[1])
 	}
-	fresh := s.ForShip(1, 2)
+	fresh := s.ForShip(1, 2, 1)
 	if err = fresh.Update(func(w *game.World) error { return w.Move(1, 2) }); err != nil {
 		t.Fatal(err)
 	}
@@ -79,7 +79,7 @@ func TestFailedDeathTransactionRollsBackAttributionAndInvalidation(t *testing.T)
 	if string(before) != string(after) {
 		t.Fatal("failed settlement partly saved death")
 	}
-	if _, err := s.ForShip(1, 0).View(); err != nil {
+	if _, err := s.ForShip(1, 0, 1).View(); err != nil {
 		t.Fatal("failed death invalidated session", err)
 	}
 }
@@ -101,6 +101,8 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 	hash := w.Teams[1].PasswordHash
 	w.NextRadio = 0
 	w.Version = 3
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	for _, p := range w.Players {

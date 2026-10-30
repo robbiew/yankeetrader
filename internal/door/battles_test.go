@@ -68,7 +68,7 @@ func TestBattleReportOutputFailureAndStaleGenerationRemainUnread(t *testing.T) {
 	term := &battleOutputFailure{&scripted{}}
 	s, st := battleSession(t, term)
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	if err := s.battleReports(1, true); err == nil {
 		t.Fatal("output failure hidden")
 	}
@@ -107,7 +107,7 @@ func TestBattleReportsStopBeforeUndisplayedPageAndAfterDeadline(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	if err := s.battleReports(1, false); err != nil {
 		t.Fatal(err)
 	}

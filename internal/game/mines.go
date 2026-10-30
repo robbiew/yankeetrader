@@ -24,11 +24,13 @@ type MineOutcome struct {
 	Killer, Sector     int
 }
 type MineEntry struct {
+	Season           uint64
 	Player, From, To int
 	Generation       uint64
 	Layers           []MineLayer
 }
 type MinePlacement struct {
+	Season         uint64
 	Player, Sector int
 	Generation     uint64
 	Stock, Count   int64
@@ -122,7 +124,7 @@ func (w *World) PrepareMinePlacement(id int, count int64) (MinePlacement, error)
 	if s == nil {
 		return MinePlacement{}, errors.New("current sector does not exist")
 	}
-	return MinePlacement{Player: id, Sector: p.Sector, Generation: p.ShipGeneration,
+	return MinePlacement{Season: w.Season, Player: id, Sector: p.Sector, Generation: p.ShipGeneration,
 		Stock: p.Mines, Count: count, Layers: append([]MineLayer(nil), s.Minefield...)}, nil
 }
 
@@ -132,7 +134,7 @@ func (w *World) CommitMinePlacement(placement MinePlacement) (int64, error) {
 		return 0, err
 	}
 	s := w.Sectors[placement.Sector]
-	if s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
+	if w.Season != placement.Season || s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
 		p.Mines != placement.Stock || !slices.Equal(placement.Layers, s.Minefield) {
 		return 0, errors.New("mine placement warning or ship changed; confirm again")
 	}
@@ -382,14 +384,14 @@ func (w *World) PrepareMineEntry(id, to int) (MineEntry, error) {
 	if err = w.canMove(p, to); err != nil {
 		return MineEntry{}, err
 	}
-	return MineEntry{Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...)}, nil
+	return MineEntry{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...)}, nil
 }
 func (w *World) CommitMineEntry(entry MineEntry, rng func() float64, now time.Time) (MineOutcome, error) {
 	p, err := w.player(entry.Player)
 	if err != nil {
 		return MineOutcome{}, err
 	}
-	if p.Sector != entry.From || p.ShipGeneration != entry.Generation || w.Sectors[entry.To] == nil || !slices.Equal(entry.Layers, w.Sectors[entry.To].Minefield) {
+	if w.Season != entry.Season || p.Sector != entry.From || p.ShipGeneration != entry.Generation || w.Sectors[entry.To] == nil || !slices.Equal(entry.Layers, w.Sectors[entry.To].Minefield) {
 		return MineOutcome{}, errors.New("mine warning or ship changed; confirm again")
 	}
 	if err = w.canMove(p, entry.To); err != nil {

@@ -259,6 +259,8 @@ func TestPaidLotteryRejectionsHaveNoResourceOrDrawEffects(t *testing.T) {
 func TestPaidLotteryVersion22MigrationAndValidation(t *testing.T) {
 	w, p := paidWorld(t)
 	w.Version = 21
+	w.Season = 0
+	w.GenerationSeed = nil
 	before := *p
 	if err := w.Upgrade(); err != nil || w.Version != WorldVersion || !reflect.DeepEqual(before, *p) || w.LotteryLimit() != 5 {
 		t.Fatal("migration gifts", err)
@@ -287,6 +289,8 @@ func TestPaidLotteryVersion22MigrationAndValidation(t *testing.T) {
 				t.Fatal("invalid state accepted")
 			}
 			w.Version = 21
+			w.Season = 0
+			w.GenerationSeed = nil
 			if err := w.Upgrade(); err == nil {
 				t.Fatal("future fields accepted in legacy save")
 			}

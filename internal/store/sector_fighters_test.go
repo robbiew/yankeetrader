@@ -18,7 +18,7 @@ func TestDefenseBoundGateRollbackAndExpiredConfirmation(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	bound := s.ForShip(1, 0)
+	bound := s.ForShip(1, 0, 1)
 	called := false
 	if err := bound.Update(func(w *game.World) error { called = true; w.Players[1].Credits++; return nil }); !errors.Is(err, game.ErrDefenseEncounter) || called {
 		t.Fatal(err, called)
@@ -95,7 +95,7 @@ func TestDefenseVictoryAndMineFailureRollbackTogether(t *testing.T) {
 	}
 	before, _ := json.Marshal(w)
 	// Surrender needs no draw; invalid mine RNG follows the entry and transfers.
-	if _, err = s.ForShip(1, 0).DefenseEncounter(entry, func() float64 { return math.NaN() }, time.Now(), time.Now().Add(time.Hour)); err == nil {
+	if _, err = s.ForShip(1, 0, 1).DefenseEncounter(entry, func() float64 { return math.NaN() }, time.Now(), time.Now().Add(time.Hour)); err == nil {
 		t.Fatal("invalid aftermath")
 	}
 	w, _ = s.View()

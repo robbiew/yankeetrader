@@ -39,7 +39,7 @@ func cloakStore(t *testing.T) (Store, Store, time.Time, string, *game.Visibility
 	}
 	w, _ = s.View()
 	v, _ := w.NewVisibility(1)
-	return s, s.ForShip(1, 0), at, token, v
+	return s, s.ForShip(1, 0, 1), at, token, v
 }
 func cloakSeen(t *testing.T, s Store, v *game.Visibility) bool {
 	t.Helper()
@@ -126,7 +126,7 @@ func TestCloakStoreAtomicFailureAndCommittedDurability(t *testing.T) {
 }
 func TestCloakStoreConcurrentActivationAndBoundVisibility(t *testing.T) {
 	s, a, at, token, va := cloakStore(t)
-	b := s.ForShip(1, 0)
+	b := s.ForShip(1, 0, 1)
 	w, _ := s.View()
 	vb, _ := w.NewVisibility(1)
 	deadline := time.Now().Add(time.Minute)

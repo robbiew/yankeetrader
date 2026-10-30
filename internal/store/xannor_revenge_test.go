@@ -68,7 +68,7 @@ func TestXannorRevengeQueueAtomicRollbackConcurrentAndStaleCommit(t *testing.T) 
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			_, err := s.ForShip(1, entry.Generation).DefenseEncounter(entry, func() float64 { return .9 }, next.Add(-24*time.Hour), time.Now().Add(time.Minute))
+			_, err := s.ForShip(1, entry.Generation, 1).DefenseEncounter(entry, func() float64 { return .9 }, next.Add(-24*time.Hour), time.Now().Add(time.Minute))
 			results <- err
 		}()
 	}
@@ -88,7 +88,7 @@ func TestXannorRevengeQueueAtomicRollbackConcurrentAndStaleCommit(t *testing.T) 
 		t.Fatal("queue/force roundtrip", err)
 	}
 	before, _ = os.ReadFile(path)
-	if _, err := s.ForShip(1, entry.Generation).DefenseEncounter(entry, func() float64 { t.Fatal("stale fight drew"); return 0 }, next, time.Now().Add(time.Minute)); err == nil {
+	if _, err := s.ForShip(1, entry.Generation, 1).DefenseEncounter(entry, func() float64 { t.Fatal("stale fight drew"); return 0 }, next, time.Now().Add(time.Minute)); err == nil {
 		t.Fatal("stale victory replayed")
 	}
 	after, _ = os.ReadFile(path)
@@ -99,7 +99,7 @@ func TestXannorRevengeQueueAtomicRollbackConcurrentAndStaleCommit(t *testing.T) 
 func pendingRevengeStore(t *testing.T) (Store, time.Time) {
 	t.Helper()
 	s, next, entry := revengeStore(t)
-	if _, err := s.ForShip(1, entry.Generation).DefenseEncounter(entry, func() float64 { return .9 }, next.Add(-24*time.Hour), time.Now().Add(time.Minute)); err != nil {
+	if _, err := s.ForShip(1, entry.Generation, 1).DefenseEncounter(entry, func() float64 { return .9 }, next.Add(-24*time.Hour), time.Now().Add(time.Minute)); err != nil {
 		t.Fatal(err)
 	}
 	// A later returning fighter makes the HQ stable; a full route passes the
@@ -202,6 +202,8 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 		t.Fatal("replacement inherited revenge")
 	}
 	w.Version = 16
+	w.Season = 0
+	w.GenerationSeed = nil
 	// A genuine old save predates the new victory announcement.
 	w.News = nil
 	raw, _ := json.Marshal(w)
@@ -225,6 +227,8 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 		t.Fatal("migration not saved")
 	}
 	upgraded.Version = 16
+	upgraded.Season = 0
+	upgraded.GenerationSeed = nil
 	upgraded.Xannor.Revenge = &game.XannorRevengeTarget{Player: 1, Generation: upgraded.Players[1].ShipGeneration}
 	raw, _ = json.Marshal(upgraded)
 	if err := os.WriteFile(path, raw, 0600); err != nil {

@@ -16,6 +16,7 @@ const DangerScannerPrice int64 = 250_000
 type TravelShip struct {
 	Player, Sector, Team, MineGrace                                           int
 	Generation                                                                uint64
+	Season                                                                    uint64
 	Credits, Turns, Holds, Fighters, Shields, Ground, Missiles, Mines, Plasma int64
 	Cargo                                                                     [3]int64
 	Cloak                                                                     float64
@@ -23,8 +24,8 @@ type TravelShip struct {
 	DockToken, PlanetToken                                                    string
 }
 
-func travelShip(p *Player) TravelShip {
-	return TravelShip{p.ID, p.Sector, p.Team, p.MineGraceSector, p.ShipGeneration, p.Credits, p.Turns, p.Holds, p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma, p.Cargo, p.Cloak, p.DangerScanner, p.DockToken, p.PlanetToken}
+func (w *World) travelShip(p *Player) TravelShip {
+	return TravelShip{p.ID, p.Sector, p.Team, p.MineGraceSector, p.ShipGeneration, w.Season, p.Credits, p.Turns, p.Holds, p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma, p.Cargo, p.Cloak, p.DangerScanner, p.DockToken, p.PlanetToken}
 }
 
 // ScannerEntry captures a free warning; it grants no authority to reuse a stale hop.
@@ -50,7 +51,7 @@ func (w *World) PrepareScannerEntry(id, to int) (ScannerEntry, error) {
 	if err = w.canMoveBase(p, to); err != nil {
 		return ScannerEntry{}, err
 	}
-	e := ScannerEntry{Ship: travelShip(p), To: to, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...), Maintenance: w.LastMaintenance}
+	e := ScannerEntry{Ship: w.travelShip(p), To: to, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...), Maintenance: w.LastMaintenance}
 	if w.HostileDefense(id, to) {
 		d := *w.Sectors[to].Defense
 		e.Defense = &d
@@ -106,7 +107,7 @@ func (w *World) PrepareWarp(id int) (WarpIntent, error) {
 	if p.WarpSequence == math.MaxUint64 {
 		return WarpIntent{}, errors.New("emergency warp sequence exhausted")
 	}
-	return WarpIntent{Ship: travelShip(p), Sequence: p.WarpSequence, Maintenance: w.LastMaintenance}, nil
+	return WarpIntent{Ship: w.travelShip(p), Sequence: p.WarpSequence, Maintenance: w.LastMaintenance}, nil
 }
 
 // CommitWarp must run in one store Update. Work is bounded to 139 heat steps;

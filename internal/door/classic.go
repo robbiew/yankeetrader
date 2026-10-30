@@ -300,7 +300,7 @@ func (s *Session) classicStartup() (int, error) {
 		}
 	}
 	previousDay := ""
-	var generation uint64
+	var generation, season uint64
 	replaced := false
 	reactivated := false
 	err = s.Store.Update(func(live *game.World) error {
@@ -308,30 +308,20 @@ func (s *Session) classicStartup() (int, error) {
 			return errors.New("session time expired")
 		}
 		live.Maintain(s.Now())
-		for _, p := range live.Players {
-			if p.Identity == s.Identity {
-				id = p.ID
-				previousDay = p.LastLogin
-				break
-			}
+		// The screen lookup may describe an ended season. Resolve identity again
+		// under this lock; never retain its old numeric ID when no match exists.
+		p, joinErr := classicLoginPlayer(live, s.Identity, alias)
+		if joinErr != nil {
+			return joinErr
 		}
-		if id == 0 {
-			if err := game.ClassicAlias(live, alias); err != nil {
-				return err
-			}
-			p, joinErr := live.Join(s.Identity, alias)
-			if joinErr != nil {
-				return joinErr
-			}
-			id = p.ID
-		}
-		p := live.Players[id]
+		id, previousDay = p.ID, p.LastLogin
 		replaced = p.Death != nil
 		reactivated = !p.RetiredAt.IsZero()
 		if err := live.LoginShip(id, s.Now()); err != nil {
 			return err
 		}
 		generation = p.ShipGeneration
+		season = live.Season
 		p.LastLogin = s.Now().UTC().Format("2006-01-02")
 		p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0
 		if err := live.RecordLogin(id, s.Now()); err != nil {
@@ -345,7 +335,7 @@ func (s *Session) classicStartup() (int, error) {
 	if err != nil {
 		return 0, err
 	}
-	s.Store = s.Store.ForShip(id, generation)
+	s.Store = s.Store.ForShip(id, generation, season)
 	if reactivated {
 		if err = s.retirementNotice(); err != nil {
 			return 0, err
@@ -607,4 +597,18 @@ func (s Session) exitMusic() error {
 
 func (s Session) retirementNotice() error {
 	return s.Terminal.Printf("Your inactive account has returned from retirement. Released estates are not restored; private history is preserved.\r\n")
+}
+
+// classicLoginPlayer is called only inside the authenticated login transaction.
+// Its lookup starts fresh; an ID remembered by startup is never authentication.
+func classicLoginPlayer(live *game.World, identity, alias string) (*game.Player, error) {
+	for _, p := range live.Players {
+		if p.Identity == identity {
+			return p, nil
+		}
+	}
+	if err := game.ClassicAlias(live, alias); err != nil {
+		return nil, err
+	}
+	return live.Join(identity, alias)
 }

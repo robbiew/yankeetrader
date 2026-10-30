@@ -98,7 +98,7 @@ func TestTradeReportPagingRefreshesAccessAndPreservesQueuedCommands(t *testing.T
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	term.beforeInput = func() {
 		if err := st.Update(func(w *game.World) error {
 			w.Sectors[8].Defense = &game.SectorDefense{Owner: 2, Fighters: 50}

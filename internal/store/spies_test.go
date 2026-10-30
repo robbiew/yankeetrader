@@ -28,7 +28,7 @@ func spyStore(t *testing.T) (Store, Store, string) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	return s, s.ForShip(1, w.Players[1].ShipGeneration), token
+	return s, s.ForShip(1, w.Players[1].ShipGeneration, 1), token
 }
 func TestSpyTransactionsRollbackAndReconnectIsolation(t *testing.T) {
 	s, bound, token := spyStore(t)
@@ -67,7 +67,7 @@ func TestSpyTransactionsRollbackAndReconnectIsolation(t *testing.T) {
 	if err != nil || len(reports) != 1 || reports[0].Mines != 7 {
 		t.Fatal(reports, err)
 	}
-	fresh := s.ForShip(1, 0)
+	fresh := s.ForShip(1, 0, 1)
 	positions, other, err := fresh.SpySnapshot(false)
 	if err != nil || len(positions) != 0 || len(other) != 0 {
 		t.Fatal("reconnect inherited spies")

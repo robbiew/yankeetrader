@@ -142,7 +142,7 @@ func (w *World) PrepareLottery(id int, token, ticket string, now time.Time) (Lot
 	if p.LotteryDay == day(now) {
 		used = p.LotteryPlays
 	}
-	return LotteryIntent{Ship: travelShip(p), DockUntil: p.DockUntil, Maintenance: w.LastMaintenance, Day: day(now), Ticket: ticket, Sequence: p.LotterySequence, Used: used, Limit: w.LotteryLimit()}, nil
+	return LotteryIntent{Ship: w.travelShip(p), DockUntil: p.DockUntil, Maintenance: w.LastMaintenance, Day: day(now), Ticket: ticket, Sequence: p.LotterySequence, Used: used, Limit: w.LotteryLimit()}, nil
 }
 
 // CommitLottery draws exactly six digits and validates every fallible input before

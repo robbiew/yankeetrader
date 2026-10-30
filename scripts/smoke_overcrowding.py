@@ -32,7 +32,7 @@ def exercise(guard):
             w['NextNews']=3
             path.write_text(json.dumps(w))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
-            saved=json.loads(path.read_text());assert saved['Version']==22
+            saved=json.loads(path.read_text());assert saved['Version']==23
             news=[e for e in saved['News'] if e['Kind']=='port-plague']
             assert len(news)==1 and news[0]['PortCount']==12 and news[0]['ID']==3
             for p in saved['Ports'].values():

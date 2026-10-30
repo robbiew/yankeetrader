@@ -267,6 +267,8 @@ func TestXannorRevengeMigrationAndInvalidTargets(t *testing.T) {
 		switch mode {
 		case "legacy":
 			candidate.Version = 16
+			candidate.Season = 0
+			candidate.GenerationSeed = nil
 		case "missing":
 			candidate.Xannor.Revenge.Player = 50
 		case "dead":
@@ -284,6 +286,8 @@ func TestXannorRevengeMigrationAndInvalidTargets(t *testing.T) {
 	}
 	old := mobileWorld(t, 12)
 	old.Version = 16
+	old.Season = 0
+	old.GenerationSeed = nil
 	before := *old.Xannor
 	if err := old.Upgrade(); err != nil || old.Version != WorldVersion || !reflect.DeepEqual(before, *old.Xannor) {
 		t.Fatal("v16 migration invented revenge", err)

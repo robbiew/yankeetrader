@@ -51,7 +51,7 @@ func TestMissileRetaliationRollbackAfterDamageAndSettlement(t *testing.T) {
 			s, intent, v := missileStore(t)
 			before, _ := s.View()
 			saved, _ := json.Marshal(before)
-			err := s.ForShip(1, 0).Update(func(w *game.World) error {
+			err := s.ForShip(1, 0, 1).Update(func(w *game.World) error {
 				draws := 0
 				_, err := w.CommitMissile(intent, v, func() float64 {
 					draws++
@@ -85,7 +85,7 @@ func TestConcurrentRetaliationDeathSettlesOnceAndKeepsBudget(t *testing.T) {
 	}
 	results := make(chan error, 2)
 	for i := 0; i < 2; i++ {
-		go func() { results <- s.ForShip(1, 0).Update(apply) }()
+		go func() { results <- s.ForShip(1, 0, 1).Update(apply) }()
 	}
 	wins := 0
 	for i := 0; i < 2; i++ {
@@ -103,7 +103,7 @@ func TestConcurrentRetaliationDeathSettlesOnceAndKeepsBudget(t *testing.T) {
 	// One shot defeats the ship; the remaining five selected missiles dissipate.
 	// The defender then salvages eight of the attacker's nine unlaunched missiles.
 	// No recursive response consumes more stock.
-	if _, err := s.ForShip(1, 0).View(); !errors.Is(err, game.ErrShipDestroyed) {
+	if _, err := s.ForShip(1, 0, 1).View(); !errors.Is(err, game.ErrShipDestroyed) {
 		t.Fatal(err)
 	}
 	if err := s.Update(func(w *game.World) error { return w.LoginShip(1, time.Now()) }); err != nil {
@@ -123,6 +123,8 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 0
@@ -142,6 +144,8 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 7
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 1
@@ -160,6 +164,8 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 8
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].Credits = 100000
@@ -202,7 +208,7 @@ func TestMissileSalvageCapacityFailureRestoresLaunchAndVictim(t *testing.T) {
 	}
 	before, _ := s.View()
 	saved, _ := json.Marshal(before)
-	err := s.ForShip(1, 0).Update(func(w *game.World) error {
+	err := s.ForShip(1, 0, 1).Update(func(w *game.World) error {
 		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, time.Now())
 		return err
 	})
@@ -241,7 +247,7 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	}
 	saved, _ := json.Marshal(before)
 	draws := 0
-	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+	err = s.ForShip(1, 0, 1).Update(func(w *game.World) error {
 		_, err := w.CommitMissile(intent, v, func() float64 {
 			draws++
 			if draws > 2 {
@@ -259,7 +265,7 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	if string(saved) != string(actual) {
 		t.Fatal("partial planetary launch saved")
 	}
-	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+	err = s.ForShip(1, 0, 1).Update(func(w *game.World) error {
 		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, now)
 		if err != nil {
 			return err
@@ -274,7 +280,7 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	if string(saved) != string(actual) {
 		t.Fatal("late abort persisted planet destruction")
 	}
-	err = s.ForShip(1, 0).Update(func(w *game.World) error {
+	err = s.ForShip(1, 0, 1).Update(func(w *game.World) error {
 		_, err := w.CommitMissile(intent, v, func() float64 { return .5 }, now)
 		return err
 	})

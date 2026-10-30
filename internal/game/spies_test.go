@@ -22,7 +22,7 @@ func spyWorld(t *testing.T) (*World, *Player, *SpyNetwork) {
 	if err := w.Dock(p.ID, w.Created); err != nil {
 		t.Fatal(err)
 	}
-	return w, p, NewSpyNetwork(p.ID, p.ShipGeneration)
+	return w, p, NewSpyNetwork(p.ID, p.ShipGeneration, 1)
 }
 func TestSpiesMatchDOSSupportedCases(t *testing.T) {
 	raw, err := os.ReadFile("../../research/yt-spies/expected.json")
@@ -238,7 +238,7 @@ func TestSpyPlanetProjectionAndForeignOwnerLabels(t *testing.T) {
 		}
 	}
 	for _, owner := range []int{MercenaryOwner, XannorOwner} {
-		other := NewSpyNetwork(p.ID, p.ShipGeneration)
+		other := NewSpyNetwork(p.ID, p.ShipGeneration, 1)
 		if err := other.Hire(w, p.DockToken, []int{101}, w.Created); err != nil {
 			t.Fatal(err)
 		}

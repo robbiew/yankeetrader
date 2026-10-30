@@ -16,7 +16,7 @@ func TestRankingsAtomicPublicationRollbackAndSessionGuard(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	bound := s.ForShip(1, w.Players[1].ShipGeneration)
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
 	before, _ := os.ReadFile(s.Dir + "/world.json")
 	abort := errors.New("rollback")
 	err := bound.Update(func(w *game.World) error {

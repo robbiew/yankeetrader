@@ -10,6 +10,7 @@ import (
 // BribeIntent is a warning snapshot, not authority to reuse an old offer.
 // The store adds a login-local, single-use Nonce before showing confirmation.
 type BribeIntent struct {
+	Season                       uint64
 	Player, From, Sector, Planet int
 	Generation                   uint64
 	Nonce                        string
@@ -70,7 +71,7 @@ func (w *World) PrepareBribeAt(id, to int, offer int64, hostile bool) (BribeInte
 			return BribeIntent{}, errors.New("recruitment would exceed ship fighter capacity")
 		}
 	}
-	return BribeIntent{Player: id, From: p.Sector, Sector: to, Planet: s.Planet, Generation: p.ShipGeneration, Defense: *s.Defense, Credits: p.Credits, Fighters: p.Fighters, Turns: p.Turns, Cloak: p.Cloak, Offer: offer, Hostile: hostile, Mines: append([]MineLayer(nil), s.Minefield...)}, nil
+	return BribeIntent{Season: w.Season, Player: id, From: p.Sector, Sector: to, Planet: s.Planet, Generation: p.ShipGeneration, Defense: *s.Defense, Credits: p.Credits, Fighters: p.Fighters, Turns: p.Turns, Cloak: p.Cloak, Offer: offer, Hostile: hostile, Mines: append([]MineLayer(nil), s.Minefield...)}, nil
 }
 
 // ResolveBribeDecision follows the recovered eager draw order. It intentionally
@@ -121,7 +122,7 @@ func ResolveBribeDecision(owner int, defenders, fighters, offer int64, planet, h
 }
 
 func (w *World) CommitBribe(entry BribeIntent, hostile bool, rng func() float64, now time.Time) (BribeOutcome, error) {
-	if err := w.CheckShip(entry.Player, entry.Generation); err != nil {
+	if err := w.CheckSession(entry.Player, entry.Generation, entry.Season); err != nil {
 		return BribeOutcome{}, err
 	}
 	if w.Players[entry.Player].Sector != entry.From {
