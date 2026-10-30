@@ -1,0 +1,90 @@
+{
+  "name": "fighter-empty",
+  "action": "none",
+  "actor": 2,
+  "hq": 100,
+  "target": 100,
+  "owner": -1,
+  "defenders": 0,
+  "amount": 1,
+  "patches": [],
+  "applied_patches": [
+    [
+      1,
+      117,
+      100
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "1420023d41510938d58aa81f49c9df6d99b33ec3f2995b05da495b9fba07db5b",
+  "after_sha256": "602675998aab60dd063423aa4600afc68d417f60870c78f2d4003798e2b807b9",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "8095449ee5e86bc0f507826acb75ab4dd66dea6c403013014e761d37a3306f6d",
+    "after.dat.gz": "58d097497554858e733bee3ade63fbd8c91a4a80b1a628df6b8a2bc6ada747f7",
+    "before.dat.gz": "03abcc4aa8292e90e52370d9139af7d03693e626c85258ef9db923c73d7b9e9c",
+    "dosbox.log": "4b64a2568e918e1fb5c601245dbaf0380b65540fe4900b34cbb2556893be5e53",
+    "transcript.txt": "8faa53dac0b0cc82017a36e55da75d5a9c8c2aac269bf7b1efc2804d7061fe00",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "dd7e69e807d81b41ba28da807d2cfd544ea10f6a3d40927a83df1cd82410d0cb"
+  }
+}

@@ -61,7 +61,9 @@ The YT reward helper `1f42:a7de–a9b5` displays XANNORHQ.TXT, awards the millio
 HQ bonus, then writes the current player ID to record `playerBoundary+21`, field 105
 (`a978–a9af`). In the standard layout that is record 72/offset105. It is a single
 pending victim, not a saved target-sector cache or a list. Victory text alone can
-precede the write: the original HQ text pause must be answered.
+precede the write: the original HQ text pause comes first. Later
+[reward research](../yt-xannor-hq-reward/RECOVERY.md) confirms that the pause can
+finish on a key or timer expiry; a key is not strictly required.
 
 The new `xannor-hq-win` control defeats a one-fighter HQ in sector 100, receives
 the bonus and saves pointer 2. `ordinary-xannor-win` defeats the same force at100

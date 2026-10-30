@@ -1,0 +1,90 @@
+{
+  "name": "plasma-empty",
+  "action": "plasma",
+  "actor": 2,
+  "hq": 101,
+  "target": 101,
+  "owner": -1,
+  "defenders": 0,
+  "amount": 1,
+  "patches": [],
+  "applied_patches": [
+    [
+      1,
+      117,
+      101
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "57b2135aafc242d847437e3c4a7317ee6c67b6331f45e16494fd62563a6d6352",
+  "after_sha256": "b405e86a6859c8605eee00068e94918720a9af5b2b08e58706951a89da9458e3",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+    "after.dat.gz": "912dc1ee0e1b348f2d10151be85abd3bb8cbdad0576d20af505f024b8cdbec41",
+    "before.dat.gz": "7a660d0c5caab949f029e27fe4be515b04d6a6fc4d4c14572104811e1c8fd46a",
+    "dosbox.log": "8d86b43d6cc829e6302cd3b30851e3019458d7341b3cd76971e3483900dcffbc",
+    "transcript.txt": "9b14e7cd250420410f74a43ae38e4347ce616c60762687c4cf9e5f742d1052c5",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "aa818a902637bd7ff31d5eda6170d020834d196c2caadba2f9e160f351ff8efb"
+  }
+}

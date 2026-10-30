@@ -1,0 +1,101 @@
+{
+  "name": "fighter-balance-zero",
+  "action": "fighter",
+  "actor": 2,
+  "hq": 100,
+  "target": 100,
+  "owner": -1,
+  "defenders": 1,
+  "amount": 10001,
+  "patches": [
+    [
+      2,
+      81,
+      0
+    ]
+  ],
+  "applied_patches": [
+    [
+      1,
+      117,
+      100
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      151,
+      81,
+      1
+    ],
+    [
+      151,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ],
+    [
+      2,
+      81,
+      0
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "1c98e5c838407cd3a3910e3c3de93b5c55638bcc8e7384b05eadd673b609672b",
+  "after_sha256": "cc9773386b3e7e5889b80cab9cb4087eab775154fbbb88d126714826dd43ac7e",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+    "after.dat.gz": "29b955e0cb990bc906ae53e4a86acf057ee875853ff7f7d5f1fd7f4e2c3669fa",
+    "before.dat.gz": "c9149bd86e9a6718f33d19a313df3179dfda5df2707af443cb01972f9971e931",
+    "dosbox.log": "6ceda3b5053cbebd39c7f53ab90bf09e74139ec882942969e278239fb5b73198",
+    "transcript.txt": "71bc8004db93003db04bb4097fc82e15758c5e514b90c7ef1634770cabb32bf7",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "15f0e74d4640c2dcb3e5af7bc109e98b57d338628f90f0f4da109c6f1b79b152"
+  }
+}

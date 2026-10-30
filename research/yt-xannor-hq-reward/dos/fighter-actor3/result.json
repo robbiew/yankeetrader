@@ -1,0 +1,251 @@
+{
+  "name": "fighter-actor3",
+  "action": "fighter",
+  "actor": 3,
+  "hq": 100,
+  "target": 100,
+  "owner": -1,
+  "defenders": 1,
+  "amount": 10001,
+  "patches": [],
+  "team": true,
+  "applied_patches": [
+    [
+      1,
+      117,
+      100
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      151,
+      81,
+      1
+    ],
+    [
+      151,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ],
+    [
+      3,
+      41,
+      297.0
+    ],
+    [
+      3,
+      45,
+      0.0
+    ],
+    [
+      3,
+      49,
+      500.0
+    ],
+    [
+      3,
+      53,
+      2000000.0
+    ],
+    [
+      3,
+      57,
+      100.0
+    ],
+    [
+      3,
+      61,
+      2000000.0
+    ],
+    [
+      3,
+      65,
+      10.0
+    ],
+    [
+      3,
+      69,
+      0.0
+    ],
+    [
+      3,
+      73,
+      0.0
+    ],
+    [
+      3,
+      77,
+      0.0
+    ],
+    [
+      3,
+      89,
+      0.0
+    ],
+    [
+      3,
+      93,
+      0.0
+    ],
+    [
+      3,
+      97,
+      1.0
+    ],
+    [
+      3,
+      101,
+      0.0
+    ],
+    [
+      3,
+      105,
+      0.0
+    ],
+    [
+      3,
+      109,
+      -1.0
+    ],
+    [
+      3,
+      113,
+      10.0
+    ],
+    [
+      3,
+      117,
+      0.0
+    ],
+    [
+      3,
+      121,
+      0.0
+    ],
+    [
+      3,
+      125,
+      1.0
+    ],
+    [
+      3,
+      129,
+      0.0
+    ],
+    [
+      3,
+      57,
+      100
+    ],
+    [
+      3,
+      81,
+      765432
+    ],
+    [
+      3,
+      85,
+      6
+    ],
+    [
+      2,
+      89,
+      1
+    ],
+    [
+      3,
+      89,
+      1
+    ],
+    [
+      52,
+      73,
+      11
+    ],
+    [
+      52,
+      77,
+      3
+    ],
+    [
+      52,
+      109,
+      2
+    ],
+    [
+      52,
+      117,
+      3
+    ],
+    [
+      52,
+      121,
+      0
+    ],
+    [
+      52,
+      125,
+      0
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "120aa7b31ff2c8a3047c05aac62b6dfca01bced61af1f82b08d07094575e497f",
+  "after_sha256": "e6cafb14adf01f1545fb7d5e6139701181e8375d61713114461233df73252658",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+    "after.dat.gz": "843201aacdcfbb3133ec03fc74e923cd11af3ffaf75c9856bce94e0b10a41e97",
+    "before.dat.gz": "09b8e8bddfe472db1d8a587904a52765b2c198cdf6bb9f1b687d5948bcece1d7",
+    "dosbox.log": "e878bf10ccbf0ed3f218cf4243d0e7c460edd5d54e1634a93caf0af454425456",
+    "transcript.txt": "044b1da589cb4750a4d6bad763b7d208bec2ee936492d507d1d8a1bf0508864a",
+    "side-before.json.gz": "26ca99481430f97034eca92c67081c1ff8c3750a666f7d4b21ce7b8b3a6bfc34",
+    "sidefiles.json.gz": "1876a209a331457866220b0d53e16947d25bafa33c9c7d01feecea477321397b"
+  }
+}

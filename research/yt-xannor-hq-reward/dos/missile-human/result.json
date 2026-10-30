@@ -1,0 +1,90 @@
+{
+  "name": "missile-human",
+  "action": "missile",
+  "actor": 2,
+  "hq": 101,
+  "target": 101,
+  "owner": 3,
+  "defenders": 1,
+  "amount": 20,
+  "patches": [],
+  "applied_patches": [
+    [
+      1,
+      117,
+      101
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      1
+    ],
+    [
+      152,
+      85,
+      3
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "9d00e2c0882f166bbf05c8cc2ae742d02a46c221f9176750cfbc19aae488a291",
+  "after_sha256": "b338edc8fd5a2aa54ba36faf800e099a119d2596fdecf329fce95d6de2c38e6e",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+    "after.dat.gz": "20d2312661a50266c669933a7a03a2c58aaad9cfb774079be154848c64fa373d",
+    "before.dat.gz": "ed5e9853c4e904c17441eec574e19de2212a62198fbbf1d332217b2b9bbd8557",
+    "dosbox.log": "2e808dc655f3282c225aac846380802fd70018c970dffa96e8e7803f1501dcd1",
+    "transcript.txt": "c582693a74ab127ab55ab047157009e72f6c0bc155a4b49a18fee5a8ef3dea2c",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "350e574665758df3ee7cb01cb40b7398e0d82667292e0c77be79f3da46dc1b27"
+  }
+}

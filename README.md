@@ -722,6 +722,22 @@ Save version 18 records these changes atomically with maintenance; replay and
 clock rollback do not repeat them. [Policies, migration and validation](research/yt-maintenance-lottery/IMPLEMENTATION.md).
 
 
+### Xannor HQ victory credit reward research
+
+[38 completed original-DOS sessions and 12 native byte observations](research/yt-xannor-hq-reward/RECOVERY.md)
+establish the fixed million-credit reward, current-actor recipient, fighter/missile
+eligibility, routed HQ interception, team nonsharing, repeat eligibility and
+public/broadcast notices. They confirm a plasma owner-check defect and native
+single-precision rounding that can enlarge or erase the credited bonus. Exact
+parent-session chains separate a fresh restored-HQ victory from reconnect replay.
+An independent verifier and 16 rehashed corruption controls preserve the findings.
+
+This research adds no Go gameplay or save-format changes. The modern game still
+queues revenge after supported HQ victories, but does not yet pay the credit
+reward. Next is bounded integer payment in the existing atomic combat save, with
+actual prior Xannor ownership, credit-limit handling and an accurate receipt.
+
+
 ## Documentation upkeep
 
 Update this README with every project change, including features, fixes and

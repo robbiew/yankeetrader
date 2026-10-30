@@ -726,3 +726,28 @@ Next: recover the remaining random port/planet maintenance events, including
 plague and civil-war rules, before their bounded implementation. HQ victory
 credit rewards, other equipment, exact RNG/rounding and native/live acceptance
 remain distinct work.
+
+
+## Xannor HQ victory credit reward — research complete
+
+Thirty-eight completed original-DOS sessions, two exact world/auxiliary follow-ups
+and 12 REA byte observations establish fixed current-actor payment, caller gates,
+HQ interception along routes, team nonsharing, native precision, public/broadcast
+reporting, pause expiry and repeat eligibility. Plasma's absent owner guard is
+confirmed through ordinary commands against Mercenary, human and own fighters.
+An existing revenge pointer does not suppress payment; a normal reconnect without
+a new victory does. Large-balance receipts can claim a million despite no increase.
+
+The independent verifier and 16 rehashed corruption controls check inputs, chains,
+financial noninterference, exact arithmetic, fresh messages and original bytes.
+README is updated in this same research milestone. No Go gameplay or save-format
+change is included. Plague/civil-war implementation is tracked separately in
+[PR #43](https://github.com/robbiew/yankeetrader/pull/43).
+[Recovered reward rules, evidence and proposed implementation contract](yt-xannor-hq-reward/RECOVERY.md).
+
+Next: implement bounded HQ credit awards for supported fighter/missile victories
+with actual prior Xannor ownership, exact integer capacity handling, accurate
+credited-amount receipts and atomic force/reward/revenge/aftermath persistence.
+Keep repeated confirmations, concurrent contenders, stale generations and durability
+recovery safe. Other equipment, complete RNG/MBF parity and native/live acceptance
+remain separate work.

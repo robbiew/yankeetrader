@@ -1,0 +1,91 @@
+{
+  "name": "plasma-route",
+  "action": "plasma",
+  "actor": 2,
+  "hq": 101,
+  "target": 101,
+  "owner": -1,
+  "defenders": 1,
+  "amount": 1,
+  "patches": [],
+  "destination": 102,
+  "applied_patches": [
+    [
+      1,
+      117,
+      101
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      1
+    ],
+    [
+      152,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+  "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "79fa747795a652a1d0797cd66b180df0e76a4fd4a90d152a10214b6ae12c6eee",
+    "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+    "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+    "dosbox.log": "48c7aff30e21689f591d4c061db90b0e9420594f99dc9963f1eef9a21ee37ad5",
+    "transcript.txt": "f20faf0501597fb2ba286b876cda48dcf36c21e57d3be3a13a9e514582791582",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+  }
+}
