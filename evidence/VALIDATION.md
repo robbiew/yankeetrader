@@ -181,3 +181,28 @@ This milestone adds research and evidence tooling, not Go gameplay. Save version
 observers, target replacement during activation, live BBS acceptance and native
 Windows durability remain unverified. See the
 [research report and proposed implementation](../research/yt-cloak-equipment/RECOVERY.md).
+
+
+## Bounded cloak purchasing and login-local anti-cloak
+
+Validated locally on macOS arm64, 2026-10-30: full race-enabled Go suite and vet,
+exact whole-point recharge limits/debits/defaults, paid activation/repeats/empty
+results, score and ordinary decay preservation, stale login/ship/cache/nonce
+checks, parallel spending, world/cache-lock expiry, byte-exact rollback and committed
+directory-sync/reload/replay, and concurrent sensors waiting for the cache outcome.
+Compact/classic tests check exact saved receipts and safe fresh decisions.
+
+Twelve real terminal smoke scripts plus the ASCII port variant pass: new cloak
+purchasing/activation, Earth-port parity, cloak, attacks, scanner/warp, startup,
+idle clock, ports, navigation, missiles, bribery and spies. The new flow verifies
+exact balances, blank defaults, zero-new-target paid repeats, reconnect/observer
+isolation, unchanged victim energy and normal cloak decay during activation.
+Historical generated captures were restored. The 37-session/10-native-observation
+cloak evidence verifier, 23 corruption controls, existing 41-session scanner/warp
+verifier and all 4,682 archive hashes pass. Linux/Windows cross-builds pass.
+
+Save version 21 is unchanged: existing energy persists and anti-cloak remains
+login-local. README, usage and CI are updated. Validation uses an external module
+file for the existing local GoDoors checkout; repository module files and GoDoors
+sources are unchanged. Live BBS acceptance and native Windows durability remain
+unverified. See [implemented policies and compatibility](../research/yt-cloak-equipment/IMPLEMENTATION.md).

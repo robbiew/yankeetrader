@@ -1,7 +1,8 @@
 # Cloak-energy purchasing and anti-cloak activation — research
 
-This is a research milestone, not a Go gameplay update. World version 21 remains
-current. Earth options 1 and 6 are still unavailable in the modern door. The
+Historical research milestone. The later [bounded implementation](IMPLEMENTATION.md)
+now supports these purchases and activation in the Go door, retaining version 21.
+The observations and proposed contract below describe the research boundary. The
 preceding scanner/manual-warp implementation was merged in
 [PR #45](https://github.com/robbiew/yankeetrader/pull/45).
 

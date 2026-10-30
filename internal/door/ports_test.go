@@ -38,7 +38,7 @@ func portSession(t *testing.T, earth bool) (Session, int, string) {
 
 func TestEarthNumberedShop(t *testing.T) {
 	s, id, token := portSession(t, true)
-	pending := []string{"1", "2", "1", "3", "2", "7", "1", "8", "3", "3", "-1", "3", "1.5", "3", "999999999999999999999999", "3", "", "0"}
+	pending := []string{"4", "2", "1", "3", "2", "7", "1", "8", "3", "3", "-1", "3", "1.5", "3", "999999999999999999999999", "3", "", "0"}
 	if err := s.classicPort(id, token, &pending); err != nil {
 		t.Fatal(err)
 	}

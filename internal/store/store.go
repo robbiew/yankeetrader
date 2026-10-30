@@ -32,6 +32,8 @@ type shipSession struct {
 	encounterMu      sync.Mutex
 	mercenaryHostile bool
 	warpActive       string
+	antiActive       string
+	antiVisibility   *game.Visibility
 	bribeActive      string
 	spyMu            sync.Mutex
 	id               int

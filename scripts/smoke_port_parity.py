@@ -30,7 +30,7 @@ def compare(actual,expected,first,earth=False,last=24):
             # These fixtures have no scanner and enough credits before/after each purchase.
             assert ''.join(c[0] for c in actual[y][33:]).strip()=='1'
             masks.update((y,x) for x in range(33,80))
-        if earth and text.startswith(('[1]','[4]','[6]')):
+        if earth and text.startswith('[4]'):
             assert ''.join(c[0] for c in actual[y][33:]).strip()=='N/A'
             masks.update((y,x) for x in range(33,80))
     for y in range(first-1,last):

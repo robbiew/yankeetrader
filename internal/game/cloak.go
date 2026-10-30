@@ -3,14 +3,17 @@ package game
 import (
 	"errors"
 	"math"
+	"sync"
 )
 
 // Visibility belongs to one live caller session, never the saved world.
 // Detection grants are bound to both observer and target ship incarnations.
 type Visibility struct {
-	observer   int
-	generation uint64
-	revealed   map[int]uint64
+	mu              sync.Mutex
+	antiActivations uint64
+	observer        int
+	generation      uint64
+	revealed        map[int]uint64
 }
 
 func (w *World) NewVisibility(id int) (*Visibility, error) {
@@ -21,12 +24,23 @@ func (w *World) NewVisibility(id int) (*Visibility, error) {
 	return &Visibility{observer: id, generation: p.ShipGeneration, revealed: map[int]uint64{}}, nil
 }
 func (w *World) checkVisibility(id int, v *Visibility) error {
-	if v == nil || v.observer != id || v.revealed == nil {
+	if v == nil || v.observer != id {
 		return errors.New("visibility belongs to another session")
+	}
+	v.mu.Lock()
+	initialized := v.revealed != nil
+	v.mu.Unlock()
+	if !initialized {
+		return errors.New("visibility is not initialized")
 	}
 	return w.CheckShip(id, v.generation)
 }
 func (v *Visibility) sees(p *Player) bool {
+	v.mu.Lock()
+	defer v.mu.Unlock()
+	return v.seesLocked(p)
+}
+func (v *Visibility) seesLocked(p *Player) bool {
 	generation, ok := v.revealed[p.ID]
 	return p.Cloak == 0 || (ok && generation == p.ShipGeneration)
 }
@@ -43,6 +57,10 @@ func (w *World) ScanVisible(id int, v *Visibility, rng func() float64) ([]Sensor
 			return nil, err
 		}
 	}
+	if v != nil {
+		v.mu.Lock()
+		defer v.mu.Unlock()
+	}
 	reports, err := w.scanRaw(id)
 	if err != nil {
 		return nil, err
@@ -54,7 +72,7 @@ func (w *World) ScanVisible(id int, v *Visibility, rng func() float64) ([]Sensor
 			p := w.Players[ship.ID]
 			visible := p.Cloak == 0
 			if v != nil {
-				visible = v.sees(p)
+				visible = v.seesLocked(p)
 				if !visible && rng != nil {
 					r := rng()
 					if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {

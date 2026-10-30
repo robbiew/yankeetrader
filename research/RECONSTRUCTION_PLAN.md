@@ -900,3 +900,28 @@ anti-cloak into permanent inventory or erase victims' stored energy. Concurrent
 observer/target replacement behavior, large-balance and exact MBF/RNG boundaries,
 Earth's paid lottery, Genesis, thrusters/forced landing and native/live acceptance
 remain separate work.
+
+
+## Bounded cloak-energy purchasing and login-local anti-cloak — implemented
+
+Earth item 1/compact EQUIP cloak now buys whole points at 1,000 exact credits, with
+classic affordable/missing blank defaults, capacity/docking/deadline guards and
+saved debit/balance/energy receipts. Earth item 6/compact ANTICLOAK requires a fresh
+500,000-credit confirmation, clears queued approval and stages existing living
+ship-generation reveals with its debit. Repeats and empty activations remain paid;
+receipts identify the actual new reveals. Other logins, reconnects, replacements
+and future targets inherit no activation authority. Victim stored energy/assets,
+score publication and ordinary modern cloak decay remain unchanged.
+
+Ordinary failure rolls back world and cache; committed durability warnings retain
+both effects and consume the confirmation. Session/cache locks follow world-lock
+ordering, keeping staged reveals unavailable to concurrent sensors until outcome.
+Save version 21 remains unchanged; no new saved fields or migration gifts. Tests
+cover credits/capacity/defaults, stale quotes, session binding, parallel spending,
+post-lock expiry, rollback/committed durability, target replacement and real
+terminal receipts/visibility in both interfaces. README and CI updated together.
+[Implementation and validation](yt-cloak-equipment/IMPLEMENTATION.md).
+
+The research contract above is historical. Remaining work includes Earth's paid
+lottery, Genesis, planetary thrusters/forced landing, broader communication/intel,
+full random-event/RNG/MBF fidelity and native/live acceptance.
