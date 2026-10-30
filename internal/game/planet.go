@@ -22,6 +22,22 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 22 {
+		if w.LotteryDailyLimit != nil {
+			return errors.New("legacy world unexpectedly contains paid lottery configuration")
+		}
+		for _, p := range w.Players {
+			if p != nil && (p.LotteryDay != "" || p.LotteryPlays != 0 || p.LotterySequence != 0) {
+				return errors.New("legacy world unexpectedly contains paid lottery state")
+			}
+		}
+		for _, e := range w.News {
+			if e.Kind == NewsLottery || e.LotteryMatches != 0 || e.LotteryPrize != 0 {
+				return errors.New("legacy world unexpectedly contains paid lottery news")
+			}
+		}
+	}
+
 	if w.Version < 21 {
 		for _, p := range w.Players {
 			if p != nil && (p.DangerScanner || p.WarpSequence != 0) {
@@ -232,6 +248,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 20 {
 		w.Version = 21
+	}
+	if w.Version == 21 {
+		w.Version = 22
 	}
 	return nil
 }

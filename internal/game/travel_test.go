@@ -270,7 +270,7 @@ func TestTravelVersion20UpgradeNoGiftAndLegacyFutureState(t *testing.T) {
 	w, p := travelWorld(t)
 	w.Version = 20
 	before := *p
-	if err := w.Upgrade(); err != nil || w.Version != 21 || !reflect.DeepEqual(before, *p) {
+	if err := w.Upgrade(); err != nil || w.Version != WorldVersion || !reflect.DeepEqual(before, *p) {
 		t.Fatal("migration changed player", err)
 	}
 	for _, scanner := range []bool{false, true} {

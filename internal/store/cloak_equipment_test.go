@@ -195,7 +195,7 @@ func TestCloakStoreRechargeConcurrencyAndRollback(t *testing.T) {
 		}
 	}
 	w, _ := s.View()
-	if wins != 1 || w.Players[1].Credits != 0 || w.Players[1].Cloak != .1 || w.Version != 21 {
+	if wins != 1 || w.Players[1].Credits != 0 || w.Players[1].Cloak != .1 || w.Version != game.WorldVersion {
 		t.Fatal("concurrent recharge", wins, w.Players[1])
 	}
 	if err := s.Update(func(w *game.World) error { w.Players[1].Credits = 10000; return nil }); err != nil {

@@ -15,11 +15,14 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 21
+const WorldVersion = 22
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
+	LotteryDay                                       string         `json:",omitempty"`
+	LotteryPlays                                     int            `json:",omitempty"`
+	LotterySequence                                  uint64         `json:",omitempty"`
 	DangerScanner                                    bool           `json:",omitempty"`
 	WarpSequence                                     uint64         `json:",omitempty"`
 	LastActivity                                     string         `json:",omitempty"`
@@ -62,10 +65,11 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
-	NextBattleReport uint64
-	Xannor           *XannorState `json:",omitempty"`
-	News             []NewsEvent  `json:",omitempty"`
-	NextNews         uint64
+	LotteryDailyLimit *int `json:",omitempty"`
+	NextBattleReport  uint64
+	Xannor            *XannorState `json:",omitempty"`
+	News              []NewsEvent  `json:",omitempty"`
+	NextNews          uint64
 
 	Radio           []RadioMessage `json:",omitempty"`
 	NextRadio       uint64
@@ -132,6 +136,9 @@ func (w *World) Validate() error {
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
 		return errors.New("invalid maintenance date")
+	}
+	if err := w.validateLottery(); err != nil {
+		return err
 	}
 	if err := w.validateLifecycle(); err != nil {
 		return err

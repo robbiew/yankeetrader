@@ -32,7 +32,7 @@ def exercise(guard):
             path.write_text(json.dumps(w))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());retired=saved['Players']['2']
-            assert saved['Version']==21 and retired['RetiredAt'].startswith(guard.day.isoformat()) and retired['Turns']==0
+            assert saved['Version']==22 and retired['RetiredAt'].startswith(guard.day.isoformat()) and retired['Turns']==0
             assert saved['Planets']['3']['Owner']==0 and saved['Ports']['2']['Owner']==0
             text=guard.run(play,data,'Captain','messages;news today;q;y'if classic else'messages;news;q',classic=classic)
             assert message in text and 'Won a PLANET in the SUPER LOTTERY!'in text and 'Retired after inactivity'in text,text

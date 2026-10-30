@@ -953,3 +953,26 @@ README in the same implementation commit. Do not copy original floating-point
 money defects or pre-input/non-atomic charging order. Full original RNG/numeric
 parity, interrupted/concurrent DOS entry, year rollover, Genesis, planetary
 thrusters/forced landing and native/live acceptance remain separate work.
+
+
+## Bounded paid Earth lottery — implemented
+
+Earth item 4 and compact LOTTERY now use six-digit tickets, a five-credit fee,
+multiset matching and recovered prize tiers. Fresh literal confirmation clears
+queued approvals. Account quotas default to five per UTC date (validated optional
+0–9 configuration), persist through reconnect/death/replacement, project forward
+without read-time writes and reject rollback or a midnight-stale quote.
+
+Six OS-random digit calls, exact fee/actual capped award, quota and sequence, and
+four-plus-match typed public news settle under the existing atomic world lock.
+Receipts report actual draw/matches/payment/caps/balance/quota, including committed
+storage warnings without replay. Score-cache publication remains explicit and
+public news contains no balance, ticket, draw or identity. Save version 22 upgrades
+older worlds without gifts and preserves read-only file bytes. Tests cover all
+prizes, duplicates/permutations, dates, stale/tampered bindings, parallel net-zero
+caps, expiry, rollback/durability/reload/replay and both real terminal interfaces.
+README is updated together. [Policies and validation](yt-earth-lottery/IMPLEMENTATION.md).
+
+The preceding research contract is historical. Remaining work includes Genesis
+and season-reset implementation, planetary thrusters/forced landing, broader
+communication/intel, full original RNG/MBF fidelity and native/live acceptance.

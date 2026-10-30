@@ -12,6 +12,7 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsLottery      NewsKind = "paid-lottery"
 	NewsXannorHQ     NewsKind = "xannor-hq-victory"
 	NewsPortPlague   NewsKind = "port-plague"
 	NewsPlanetPlague NewsKind = "planet-plague"
@@ -27,15 +28,17 @@ const (
 // NewsEvent stores only whitelisted public snapshots, never arbitrary message
 // text, authentication identities, account balances or invitation secrets.
 type NewsEvent struct {
-	PortCount  int    `json:",omitempty"`
-	PlanetName string `json:",omitempty"`
-	Outcome    string `json:",omitempty"`
-	ID         uint64
-	At         time.Time
-	Kind       NewsKind
-	Alias      string
-	Team       int    `json:",omitempty"`
-	TeamName   string `json:",omitempty"`
+	LotteryMatches int    `json:",omitempty"`
+	LotteryPrize   int64  `json:",omitempty"`
+	PortCount      int    `json:",omitempty"`
+	PlanetName     string `json:",omitempty"`
+	Outcome        string `json:",omitempty"`
+	ID             uint64
+	At             time.Time
+	Kind           NewsKind
+	Alias          string
+	Team           int    `json:",omitempty"`
+	TeamName       string `json:",omitempty"`
 }
 type Newspaper struct {
 	Date    string
@@ -72,7 +75,15 @@ func (w *World) validateNews() error {
 		if e.Kind != NewsPortPlague && e.PortCount != 0 {
 			return errors.New("unrelated news contains port count")
 		}
+		if e.Kind != NewsLottery && (e.LotteryMatches != 0 || e.LotteryPrize != 0) {
+			return errors.New("unrelated news contains paid lottery details")
+		}
 		switch e.Kind {
+		case NewsLottery:
+			if e.Team != 0 || e.TeamName != "" || e.LotteryMatches < 4 || e.LotteryMatches > 6 || e.LotteryPrize < LotteryPrice || e.LotteryPrize > LotteryPrize(e.LotteryMatches) {
+				return errors.New("invalid paid lottery news")
+			}
+
 		case NewsPortPlague:
 			if e.PortCount < 1 || e.PortCount > 3000 || e.Alias != "" || e.Team != 0 || e.TeamName != "" {
 				return errors.New("invalid port plague news")

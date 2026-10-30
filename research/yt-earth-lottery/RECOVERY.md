@@ -1,9 +1,10 @@
 # Earth's paid Pick-6 lottery — research
 
-Research milestone only. Earth item **4 remains unavailable in the Go door**;
-this report supplies the bounded contract for its implementation. The separate
+Historical research milestone. The later [bounded implementation](IMPLEMENTATION.md)
+now supports Earth item **4** in the Go door. This report retains its research-stage
+contract and evidence boundary. The separate
 [maintenance lottery](../yt-maintenance-lottery/RECOVERY.md) awards super-planets
-and is not this paid shop action. Current save version **21 is unchanged**.
+and is not this paid shop action. The research stage retained save version **21**; implementation introduces version **22**.
 
 ## Evidence and scope
 
@@ -183,7 +184,7 @@ command with the following contract:
   calls, UTC reset/rollback policy, concurrency, rollback/reload, committed
   durability warnings and both real terminal interfaces. Update README together.
 
-This is a proposal, not implemented behavior. Deliberate changes are exact money,
+The proposal above is historical; the later implementation documents its final behavior and deliberate differences. Deliberate changes are exact money,
 atomic settlement, explicit cancellation/confirmation, guarded dates and replay,
 and accurate capped receipts. Original RNG/animation sequence parity, arbitrary
 fractional/malformed counter/configuration values, interrupted originals,

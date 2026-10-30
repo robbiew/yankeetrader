@@ -9,7 +9,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Available in-game to test
 
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
-- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, port buyouts and treasury collection.
+- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
@@ -20,7 +20,6 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
-- Earth's paid lottery (item `4`) remains unavailable and shows `N/A`; [its price, daily limits, matching and all payout tiers are now researched](research/yt-earth-lottery/RECOVERY.md).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -236,7 +235,7 @@ page four entries at a time; Enter shows more and Q stops. Each page refreshes
 current access and prices, so changing state can change the remaining results.
 See [trade-report scope and validation](research/yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
 
-In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `1` cloak energy, `2` holds, `3` fighters, `5` danger scanner, `6` anti-cloak activation, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Item `4`, the paid lottery, retains its original label and price with `N/A` affordability; selecting it reports that it is unavailable. An empty ordinary equipment quantity cancels that purchase. Cloak energy uses its displayed affordable/missing default on blank input; zero cancels. Selecting item `5` buys one scanner for 250,000 credits immediately, without a quantity prompt; duplicate or unaffordable purchases do not charge. The shop refreshes your credits after each saved purchase.
+In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `1` cloak energy, `2` holds, `3` fighters, `4` paid lottery, `5` danger scanner, `6` anti-cloak activation, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Item `4` buys a five-credit, six-digit lottery ticket after a fresh Y confirmation; blank at ticket entry cancels. The default quota is five plays per UTC date, preserved across reconnects and replacement ships. Compact callers dock and use `LOTTERY [six digits]`. The saved receipt reports the actual draw, matches, fee, prize/cap adjustment, balance and plays remaining. An empty ordinary equipment quantity cancels that purchase. Cloak energy uses its displayed affordable/missing default on blank input; zero cancels. Selecting item `5` buys one scanner for 250,000 credits immediately, without a quantity prompt; duplicate or unaffordable purchases do not charge. The shop refreshes your credits after each saved purchase.
 
 Ordinary ports offer commodities in ore/organics/equipment order. Enter a quantity (`0` skips), then agree with `Y` or Enter; `N` declines. Enter at the quantity prompt selects the displayed maximum, limited by current stock/demand, cargo space, cargo aboard, and credits. Invalid quantities skip that commodity without a transaction. Docking costs one turn, including a visit with no purchases. A replaced or expired docking session cannot complete an old prompt. `-compact` keeps the explicit `BUY`, `SELL`, and `EQUIP` workflow.
 
@@ -296,7 +295,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 21 for persisted danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 21. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 22 for persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 22. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -358,7 +357,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-20 worlds upgrade to version 21 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-21 worlds upgrade to version 22 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -420,7 +419,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 21; follow the stopped-world
+Earth remains free of mines. This build now uses save version 22; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the
@@ -527,7 +526,7 @@ even a generous offer can be refused. Mercenaries remember your attacks until
 reconnect, and planet guards refuse to negotiate. Ordinary B still buys ports.
 
 Payment, recruitment, entry and mine aftermath save atomically. Unresolved groups
-continue blocking normal actions. The current save format is version 21. See the
+continue blocking normal actions. The current save format is version 22. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
 
@@ -546,7 +545,7 @@ remainders are discarded without carry or refund. Fresh hires first move on the
 following daily run.
 
 The same locked save commits taxes, groups and the daily date, including when
-maintenance runs at login. Saves now use version 21. Existing groups can travel one complete permitted route
+maintenance runs at login. Saves now use version 22. Existing groups can travel one complete permitted route
 per day, encountering
 mines and sector defenses. They can merge, reinforce human defenses, fight, or
 stop at a planet to take whole stored fighters; planet titles and ground forces
@@ -584,7 +583,7 @@ successfully reclaimed HQs can relocate, combining friendly force without loss.
 Full capacity safely defers creation or relocation. Captured and neutralized
 homes keep their title, resources and location; only an Xannor-owned home moves
 with its HQ. Defenders appear in the existing encounter and report interfaces.
-Introduced in version 14 and retained in version 21, saved HQ state preserves unfinished HQ battles across restarts and upgrades
+Introduced in version 14 and retained in version 22, saved HQ state preserves unfinished HQ battles across restarts and upgrades
 normal version-13 worlds without inferring homes from names or slots.
 [Rules, adaptations and validation](research/yt-xannor-lifecycle/IMPLEMENTATION.md)
 are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md).
@@ -602,7 +601,7 @@ sensors show the resulting deployed groups after reconnect.
 Groups now assault foreign planets before intercepting ships. Captured homes
 retain their title and resources outside actual combat; friendly planetary
 stocks are not picked up. Target searches, mine bursts and
-battles have finite work budgets. The current save version is 17.
+battles have finite work budgets. The current save version is 22.
 [Policies and validation](research/yt-xannor-mobile/IMPLEMENTATION.md) build on
 [47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge and cloak candidate-search implementation is described below.
 
@@ -626,7 +625,7 @@ and these deaths create no wreck mines.
 
 Both interfaces deliver private casualty reports after login; `BATTLES` reads the
 last 32 retained reports. Public news announces deaths without disclosing force
-counts. Save version 21 preserves reports through replacement and upgrades old
+counts. Save version 22 preserves reports through replacement and upgrades old
 worlds without inventing past battles.
 [Policies, migration and validation](research/yt-xannor-ships/IMPLEMENTATION.md).
 
@@ -652,7 +651,7 @@ Destruction removes the planet and expires every landing/confirmation grant,
 without creating loot or collateral ship deaths. Both interfaces deliver private
 owner reports through `BATTLES`; public news reveals only planet name and outcome.
 The shared route work limit, atomic daily save and replay guard apply throughout.
-Save version 21 preserves existing ship history and upgrades older worlds without
+Save version 22 preserves existing ship history and upgrades older worlds without
 inventing events. [Rules, migration and validation](research/yt-xannor-planets/IMPLEMENTATION.md).
 Native/live BBS acceptance remains outstanding; revenge/candidate selection follows below.
 
@@ -688,7 +687,7 @@ ordering are preserved. Discovery uses strict `RND>cloak`; actual ship encounter
 now permit equality at `cloak-.33` for every group. Revenge never removes the
 combat cloak check, and cloak remains turn-based.
 
-Save version 21 retains the ship-generation-bound pending target introduced in
+Save version 22 retains the ship-generation-bound pending target introduced in
 version 17, along with existing assets and histories. Queue creation and daily
 consumption save atomically with combat/maintenance, and replay does not repeat them.
 [Rules, migration and validation](research/yt-xannor-revenge/IMPLEMENTATION.md).
@@ -723,7 +722,7 @@ award a fully initialized planet. Failed occupied, defended, mined, HQ or reserv
 placement gets no retry. The winner receives private system radio naming the
 sector; public newspaper news names only the winner. MESSAGES/INBOX and ordinary
 login delivery handle the award. Full private-message capacity prevents an award.
-Save version 21 records these changes atomically with maintenance; replay and
+Save version 22 records these changes atomically with maintenance; replay and
 clock rollback do not repeat them. [Policies, migration and validation](research/yt-maintenance-lottery/IMPLEMENTATION.md).
 
 
@@ -744,7 +743,7 @@ atomic saves prevent repeated damage. Existing daily docking/landing sessions
 expire. Newspaper entries report the port count or planet name without exposing
 private forces, balances or expenditure. No legacy stale expense text is copied.
 
-Plague/civil-war news was introduced in version 19 and is retained in version 21
+Plague/civil-war news was introduced in version 19 and is retained in version 22
 with existing assets and history.
 Read-only migration does not rewrite old saves. If news IDs are exhausted or its
 clock is ahead, unreportable damage is deferred. See the
@@ -779,7 +778,7 @@ addition before that aftermath. Public newspaper news names the victor without
 revealing private amounts or balances, and counter-volley awards belong to the
 retaliating actor. Existing score publication rules remain in effect.
 
-HQ victory news was introduced in version 20 and is retained in version 21. Older saves upgrade on the next
+HQ victory news was introduced in version 20 and is retained in version 22. Older saves upgrade on the next
 successful write without retroactive rewards or invented notices. Full race tests,
 19 real terminal smoke scripts, evidence checks and Linux/Windows cross-builds
 passed locally; live BBS acceptance and native Windows durability remain separate.
@@ -837,7 +836,7 @@ the receipt distinguishes that outcome. Cancellation, stale/expired warnings and
 failed saves never print a success receipt. A committed storage warning cannot
 replay a zero-cost/same-sector warp from an old confirmation.
 
-Save version 21 preserves scanner ownership and a monotonic warp sequence. Older
+Save version 22 preserves scanner ownership and a monotonic warp sequence. Older
 saves upgrade on their next successful write without granting equipment or moving
 ships; read-only loading leaves files unchanged. Full race tests, vet, 20 terminal
 smoke scripts, evidence verification, archive checks and Linux/Windows cross-builds
@@ -894,7 +893,8 @@ the real stored energy and labels active anti-cloak separately. Ordinary cloak
 consumption continues, deliberately avoiding the original decay-suppression side
 effect. No new score bonus or public event is generated.
 
-Save version **21 remains unchanged**: recharge uses the existing cloak field and
+The cloak milestone added no saved fields; its existing state is retained in
+version **22**. Recharge uses the existing cloak field and
 anti-cloak state is never serialized. No migration grants energy, credits or
 reveals. Full race tests, vet, focused rollback/concurrency/expiry/durability
 coverage, both interfaces and affected real terminal scripts pass, along with
@@ -905,6 +905,7 @@ acceptance and native Windows durability remain unverified.
 
 ### Earth's paid Pick-6 lottery — research complete
 
+This research contract is implemented in the following section.
 Original-DOS controls establish Earth item `4` at five credits per six-digit
 ticket, leading zeroes, input retries, finite configured daily limits and saved
 same-day eligibility. The next-date login resets the used count. Digits match
@@ -921,12 +922,37 @@ Native money rounding can erase the fee or distort a jackpot. The proposed
 implementation uses exact credits, bounded draws, guarded dates and atomic
 fee/prize/play-count/news saves with accurate capped receipts.
 
-This milestone changes research, documentation and evidence checks only. **The
-paid lottery remains unavailable in-game**, and save version **21 is unchanged**.
+That research milestone changed documentation and evidence checks only; item `4`
+was then unavailable and version **21** unchanged. The implementation below
+completes the playable flow in version **22**.
 It is separate from the implemented daily super-planet lottery. Interrupted or
 concurrent original callers, year rollover, full RNG/MBF parity and live/native
 acceptance remain unverified.
 [Recovered rules, evidence, limits and next implementation contract](research/yt-earth-lottery/RECOVERY.md).
+
+
+### Bounded paid Earth lottery — implemented
+
+Earth item `4` or compact `LOTTERY [six digits]` buys a ticket for five exact
+credits after a fresh Y confirmation. Leading zeroes survive, duplicates match
+once each and position does not matter. The default five-play UTC quota persists
+across reconnects, death and replacement; optional `LotteryDailyLimit` accepts
+0–9 (zero disables; omission uses five). Blank ticket entry and declined or stale
+confirmation spend neither credits nor a play.
+
+Six OS-random digits determine the recovered prize tiers, up to 100,000,000.
+Fee, actual capped prize, daily count, monotonic replay sequence and four-or-more
+match public news save atomically. Receipts state entered/drawn digits, matches,
+fee, gross/actual prize, cap reduction, balance and remaining plays. Public news
+contains only alias, matches and actual prize, with nominal prize in its wording.
+A committed storage warning retains the saved settlement, ends the login and cannot repay it.
+
+Save version **22** upgrades version 1–21 worlds without granting tickets, money
+or history; read-only loading leaves files untouched. Both interfaces, all prize
+tiers, quota/date/cap guards, rollback/concurrency/replay and actual random terminal
+receipts are tested. Exact DOS RNG/MBF/animation parity, live BBS gameplay and
+native Windows durability remain separate.
+[Implementation, compatibility and validation](research/yt-earth-lottery/IMPLEMENTATION.md).
 
 
 ## Documentation upkeep
