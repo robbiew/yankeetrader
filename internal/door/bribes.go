@@ -99,6 +99,11 @@ func (s Session) bribe(id int, args []string, pending *[]string) error {
 		if err = s.Terminal.Printf("Forced defense combat: %d attackers lost, %d defenders destroyed.\r\n", out.Defense.Battle.AttackerLosses, out.Defense.Battle.DefenderLosses); err != nil {
 			return err
 		}
+		if out.Defense.HQReward != nil {
+			if err = s.showHQReward(*out.Defense.HQReward); err != nil {
+				return err
+			}
+		}
 		if out.Defense.Escaped {
 			return s.Terminal.Printf("Emergency escape reached safe sector %d.\r\n", out.Defense.Sector)
 		}

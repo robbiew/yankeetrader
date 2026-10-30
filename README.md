@@ -766,7 +766,8 @@ a new qualifying victory against a restored force from earning another award.
 Empty targets, partial damage, cancelled/stale confirmations and ordinary
 reconnects do not pay.
 
-The receipt appears after a successful save and states the credits actually added,
+The receipt appears after a successful save, including forced combat after a
+refused Xannor bribe, and states the credits actually added,
 including one or zero at the ship credit limit. Force removal, payment, revenge,
 public news and subsequent combat/mine aftermath save together. Later destruction
 still follows ordinary death and replacement rules; the receipt reports the

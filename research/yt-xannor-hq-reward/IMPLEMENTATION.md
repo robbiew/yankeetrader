@@ -68,7 +68,8 @@ policy.
 ## Receipts and public privacy
 
 Both interfaces print `Credits added: N` with the actual bounded addition after a
-successful save. A partial or zero addition also explains the ship credit cap.
+successful save, including forced defense combat following a refused HQ bribe.
+A partial or zero addition also explains the ship credit cap.
 The number describes the addition before subsequent aftermath, not a promise of
 post-death spendable funds. Cancellation, rejection and rolled-back saves print
 no reward success receipt.
@@ -101,10 +102,11 @@ Validated locally on macOS arm64 on 2026-10-30 with Go 1.27.3:
   eight concurrent callers/two contenders, reload, read-only version-19 migration,
   future-kind rejection, fatal mine/replacement and committed directory-sync
   failure without repayment. Door tests cover both interfaces, actual amount/cap
-  receipts, cancellation, rejected saves and public/private separation.
-- Nineteen real terminal smoke scripts passed, including the new fighter/missile
-  reward smoke through normal, one-credit, full-account and cancellation cases in
-  both interfaces. That smoke also checks newspaper privacy and reconnect without
+  receipts, forced-bribe-combat victories, cancellation, rejected saves and
+  public/private separation.
+- Nineteen real terminal smoke scripts passed, including the new fighter/missile/
+  forced-bribe reward smoke through normal, one-credit, full-account and cancellation
+  cases in both interfaces, including adjacent-HQ bribe refusals that force combat. That smoke also checks newspaper privacy and reconnect without
   repayment. The other 18 cover newspaper, awards, Mercenary base, mines, missiles,
   radio, salvage, spies, teams, Xannor lifecycle/mobile/planet/revenge/ship combat,
   ports, reports, trade reports and overcrowding.

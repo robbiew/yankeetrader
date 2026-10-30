@@ -108,3 +108,9 @@ An external temporary module-file override points to the local GoDoors checkout;
 repository module files and GoDoors sources are unchanged. Live BBS acceptance and
 native Windows durability remain unverified. See the
 [implemented policy and compatibility](../research/yt-xannor-hq-reward/IMPLEMENTATION.md).
+
+PR #44 receipt follow-up: a new regression reproduced the missing success receipt
+after forced combat from a refused HQ bribe. The bribe handler now displays the
+same saved actual-credit/cap receipt before mine aftermath. Compact/classic tests
+cover full, one-credit and zero-credit awards, cancellation and an aborted save;
+the real HQ reward smoke also exercises adjacent-HQ forced bribe combat.

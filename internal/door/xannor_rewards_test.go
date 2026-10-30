@@ -1,6 +1,7 @@
 package door
 
 import (
+	"fmt"
 	"strings"
 	"testing"
 
@@ -101,6 +102,66 @@ func TestHQRewardReceiptsMatchActualCreditAndPublicPrivacy(t *testing.T) {
 					t.Fatal("public payout leak/missing victory", text)
 				}
 			}
+		}
+	}
+}
+
+func TestHQRewardReceiptAfterForcedBribeCombat(t *testing.T) {
+	for _, classic := range []bool{false, true} {
+		for _, mode := range []string{"full-bonus", "one-credit", "at-limit", "cancel", "metadata"} {
+			t.Run(fmt.Sprintf("classic=%v/%s", classic, mode), func(t *testing.T) {
+				answer := "y"
+				if mode == "cancel" {
+					answer = "n"
+				}
+				term := &scripted{lines: []string{answer}}
+				s, st := bribeSession(t, term)
+				s.Classic = classic
+				balance, want := int64(1005), game.XannorHQBonus
+				if mode == "one-credit" {
+					balance, want = game.MaxMoney-1, 1
+				} else if mode == "at-limit" {
+					balance, want = game.MaxMoney, 0
+				}
+				if err := st.Update(func(w *game.World) error {
+					w.Players[1].Credits = balance
+					w.Players[1].Fighters = 10000
+					w.Sectors[8].Defense = &game.SectorDefense{Owner: game.XannorOwner, Fighters: 1}
+					w.Xannor = &game.XannorState{HQ: 8}
+					if mode == "metadata" {
+						w.NextNews = ^uint64(0)
+					}
+					return nil
+				}); err != nil {
+					t.Fatal(err)
+				}
+				s.Store = st.ForShip(1, 0)
+				err := s.bribe(1, []string{"8", "1"}, &[]string{})
+				w, viewErr := st.View()
+				if viewErr != nil {
+					t.Fatal(viewErr)
+				}
+				text := term.output.String()
+				if mode == "cancel" || mode == "metadata" {
+					if w.Players[1].Credits != balance || w.Sectors[8].Defense == nil || len(w.News) != 0 || strings.Contains(text, "Credits added:") {
+						t.Fatal("unsaved bribe reward receipt", err, text)
+					}
+					if mode == "metadata" && err == nil {
+						t.Fatal("unreportable victory accepted")
+					}
+					if mode == "cancel" && err != nil {
+						t.Fatal(err)
+					}
+					return
+				}
+				if err != nil || w.Players[1].Credits != balance+want || w.Sectors[8].Defense != nil || len(w.News) != 1 || w.News[0].Kind != game.NewsXannorHQ {
+					t.Fatal("forced combat reward not saved", err, text)
+				}
+				receipt := fmt.Sprintf("Xannor HQ victory in sector 8. Credits added: %d.", want)
+				if !strings.Contains(text, "Forced defense combat:") || strings.Count(text, receipt) != 1 || strings.Contains(text, "Ship credit limit capped this bonus.") != (want < game.XannorHQBonus) {
+					t.Fatal("missing/inaccurate forced combat receipt", text)
+				}
+			})
 		}
 	}
 }

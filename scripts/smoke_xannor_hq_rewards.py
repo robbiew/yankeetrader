@@ -13,7 +13,7 @@ def exercise(guard):
         guard.run(play,seed,'Captain','q');guard.run(play,seed,'Visitor','q')
         original=json.loads((seed/'world.json').read_text())
         for classic in (False,True):
-            for weapon in ('fighters','missiles'):
+            for weapon in ('fighters','missiles','bribe'):
                 for mode,balance,want in [('normal',1005,1000000),('one-credit',MAX-1,1),('full',MAX,0),('cancel',MAX-1,0)]:
                     data=root/(weapon+mode+str(classic));data.mkdir();path=data/'world.json';w=copy.deepcopy(original)
                     w['Players']['1'].update(Sector=7,Fighters=10000,Shields=100,Missiles=3,Credits=balance,Cloak=0)
@@ -24,6 +24,8 @@ def exercise(guard):
                     answer=b'n\r'if mode=='cancel'else b'y\r'
                     if weapon=='fighters':
                         command='breach 8 10000';replies=[(b'Accept human surrender if offered during this battle? [Y/n] ',b'y\r'),(b'defeat forces emergency escape. [y/N] ',answer),(prompt,ending)]
+                    elif weapon=='bribe':
+                        command='bribe 8 1';replies=[(b'[y/N] ',answer),(prompt,ending)]
                     else:
                         command='missile 8 3';replies=[(b'[y/N] ',answer),(prompt,ending)]
                     text=guard.run(play,data,'Captain',command,classic=classic,followups=replies)
@@ -47,7 +49,7 @@ def exercise(guard):
                     after=json.loads(path.read_text())
                     assert 'Credits added:'not in reconnect and after['Players']['1']['Credits']==balance+want
                     assert len([e for e in after['News']if e['Kind']=='xannor-hq-victory'])==1
-    print('HQ reward PTY passed: real fighter/missile victories, normal/one-credit/full receipts, cancellation, classic/compact public privacy and reconnect without repayment.')
+    print('HQ reward PTY passed: real fighter/missile/forced-bribe victories, normal/one-credit/full receipts, cancellation, classic/compact public privacy and reconnect without repayment.')
 
 
 if __name__=='__main__':run_on_stable_date(exercise)
