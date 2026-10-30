@@ -1,0 +1,422 @@
+{
+  "recipe": "earth-paid-lottery-v1",
+  "scenarios": [
+    {
+      "name": "control-earth",
+      "command": "P;0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-0",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-1",
+      "command": "P;4\r~~111111\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-2",
+      "command": "P;4\r~~222222\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-3",
+      "command": "P;4\r~~333333\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-4",
+      "command": "P;4\r~~444444\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-5",
+      "command": "P;4\r~~555555\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-6",
+      "command": "P;4\r~~666666\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-7",
+      "command": "P;4\r~~777777\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-8",
+      "command": "P;4\r~~888888\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "digit-9",
+      "command": "P;4\r~~999999\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "ticket-baseline",
+      "command": "P;4\r~~123456\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "cash-below",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          4
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "cash-exact",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          5
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "cash-above",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          6
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-zero",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          1,
+          101,
+          0
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-reached",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          105,
+          5
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-above",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          105,
+          6
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-negative",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          1,
+          101,
+          -1
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "input-blank",
+      "command": "P;4\r~~\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-short",
+      "command": "P;4\r~~12345\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-long",
+      "command": "P;4\r~~1234567\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-letter",
+      "command": "P;4\r~~12A456\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-sign",
+      "command": "P;4\r~~-12345\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-point",
+      "command": "P;4\r~~12.456\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "input-space",
+      "command": "P;4\r~~12 456\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "repeat-limit-two",
+      "command": "P;4\r~~000000\r~~~~~~~~~~~~4\r~~000000\r~~~~~~~~~~~~4\r~~0",
+      "patches": [
+        [
+          1,
+          101,
+          2
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "same-day-reconnect",
+      "command": "P;4\r~~0",
+      "patches": [],
+      "port_rescue": true,
+      "parent": "repeat-limit-two"
+    },
+    {
+      "name": "next-day-reset",
+      "command": "I",
+      "patches": [],
+      "port_rescue": true,
+      "parent": "repeat-limit-two",
+      "date": "10/25/2026"
+    },
+    {
+      "name": "next-day-play",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true,
+      "parent": "next-day-reset",
+      "date": "10/25/2026"
+    },
+    {
+      "name": "large-loss-24",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          16777216
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "large-loss-27",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          134217728
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "large-loss-40",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          1099511627776
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-0",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-1",
+      "command": "P;4\r~~100000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-2",
+      "command": "P;4\r~~120000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-3",
+      "command": "P;4\r~~126000\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-4",
+      "command": "P;4\r~~126700\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-5",
+      "command": "P;4\r~~126780\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "tier-6",
+      "command": "P;4\r~~126788\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "jackpot-permuted",
+      "command": "P;4\r~~887621\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "duplicates-limited",
+      "command": "P;4\r~~888888\r~~~~\r~0",
+      "patches": [],
+      "port_rescue": true
+    },
+    {
+      "name": "jackpot-poor",
+      "command": "P;4\r~~126788\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          5
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "large-win-24",
+      "command": "P;4\r~~126788\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          16777216
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "large-win-27",
+      "command": "P;4\r~~126788\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          134217728
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "large-win-40",
+      "command": "P;4\r~~126788\r~~~~\r~0",
+      "patches": [
+        [
+          2,
+          81,
+          1099511627776
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-nine-last",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          1,
+          101,
+          9
+        ],
+        [
+          2,
+          105,
+          8
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-nine-reached",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          1,
+          101,
+          9
+        ],
+        [
+          2,
+          105,
+          9
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "limit-high",
+      "command": "P;4\r~~000000\r~~~~\r~0",
+      "patches": [
+        [
+          1,
+          101,
+          10
+        ]
+      ],
+      "port_rescue": true
+    }
+  ]
+}

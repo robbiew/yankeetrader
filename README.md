@@ -20,7 +20,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
-- Earth's paid lottery (item `4`) remains unavailable and shows `N/A`.
+- Earth's paid lottery (item `4`) remains unavailable and shows `N/A`; [its price, daily limits, matching and all payout tiers are now researched](research/yt-earth-lottery/RECOVERY.md).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -901,6 +901,32 @@ coverage, both interfaces and affected real terminal scripts pass, along with
 research verification, archive checks and Linux/Windows cross-builds. Live BBS
 acceptance and native Windows durability remain unverified.
 [Implementation, deliberate differences and validation](research/yt-cloak-equipment/IMPLEMENTATION.md).
+
+
+### Earth's paid Pick-6 lottery — research complete
+
+Original-DOS controls establish Earth item `4` at five credits per six-digit
+ticket, leading zeroes, input retries, finite configured daily limits and saved
+same-day eligibility. The next-date login resets the used count. Digits match
+without regard to order, with each duplicate used once; one through six matches
+advertise 100, 1,000, 10,000, 100,000, 1,000,000 and 100,000,000 credits. Only four
+or more matches append public lottery-win news.
+
+The 49 completed controls include all payout tiers, a permuted natural jackpot,
+duplicate limits, affordability, repeat/reconnect/day chains and large-balance
+boundaries, with twelve complete REA byte observations. Independent verification
+checks exact setup, keyboard/world/auxiliary chains, credits/counts/scores/news,
+conserved bytes and native bytes, with rehashed semantic corruption controls.
+Native money rounding can erase the fee or distort a jackpot. The proposed
+implementation uses exact credits, bounded draws, guarded dates and atomic
+fee/prize/play-count/news saves with accurate capped receipts.
+
+This milestone changes research, documentation and evidence checks only. **The
+paid lottery remains unavailable in-game**, and save version **21 is unchanged**.
+It is separate from the implemented daily super-planet lottery. Interrupted or
+concurrent original callers, year rollover, full RNG/MBF parity and live/native
+acceptance remain unverified.
+[Recovered rules, evidence, limits and next implementation contract](research/yt-earth-lottery/RECOVERY.md).
 
 
 ## Documentation upkeep

@@ -206,3 +206,33 @@ login-local. README, usage and CI are updated. Validation uses an external modul
 file for the existing local GoDoors checkout; repository module files and GoDoors
 sources are unchanged. Live BBS acceptance and native Windows durability remain
 unverified. See [implemented policies and compatibility](../research/yt-cloak-equipment/IMPLEMENTATION.md).
+
+
+## Earth's paid Pick-6 lottery research
+
+Validated locally on macOS arm64, 2026-10-30: 49 normally completed original-DOS
+controls, 98 before/after worlds, three exact parent-world/auxiliary reload edges
+and twelve complete REA native byte observations. The corpus covers five-credit
+affordability, valid/invalid/leading-zero input, configured daily bounds and
+fallback, repeated play/refusal, same-date reconnect, next-date reset, duplicate
+and permutation matching, all six advertised payout tiers, public-news threshold,
+score publication and high-balance MBF defects. Excluded mistimed or incomplete
+diagnostic streams are not counted as successful controls.
+
+The independent verifier rebuilds declared setup, freezes the recipe, checks
+clock/keyboard/binary/file identity and exact reload chains, validates credits,
+counts, turns, days, score caches, scoreboard and news scope, and rejects every
+unexplained world/auxiliary change. Twenty-seven corruption controls include
+rehashed credit, daily count/reset, cached/printed score, payout/input/refusal
+receipts, public-news additions/omissions, parent auxiliary input, declared-clock
+binding, native bytes, completion and frozen-recipe attacks. Existing cloak and
+scanner/warp evidence verifiers and their 23 corruption controls each pass; all
+4,682 archived-file hashes pass. REA evidence was exported and sessions closed.
+
+README, plan, capture attributes and CI evidence checks are updated in this same
+milestone. No Go gameplay or save schema changes are included: version 21 is
+unchanged and paid Earth item 4 remains unavailable. The next implementation
+contract deliberately uses exact integer money and atomic fee/prize/quota/news
+settlement. Original interrupted/concurrent callers, year rollover, full RNG/MBF
+parity, live BBS acceptance and native Windows durability remain unverified.
+See [recovered rules and evidence](../research/yt-earth-lottery/RECOVERY.md).

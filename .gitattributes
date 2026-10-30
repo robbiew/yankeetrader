@@ -80,3 +80,8 @@
 /research/yt-cloak-equipment/dos/**/DOS*.LOG -text -diff
 /research/yt-cloak-equipment/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-cloak-equipment/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-earth-lottery/dos/**/KEYS.TXT -text -diff
+/research/yt-earth-lottery/dos/**/DOS*.LOG -text -diff
+/research/yt-earth-lottery/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-earth-lottery/dos/**/dosbox.log -text whitespace=-blank-at-eol

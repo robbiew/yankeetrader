@@ -925,3 +925,31 @@ terminal receipts/visibility in both interfaces. README and CI updated together.
 The research contract above is historical. Remaining work includes Earth's paid
 lottery, Genesis, planetary thrusters/forced landing, broader communication/intel,
 full random-event/RNG/MBF fidelity and native/live acceptance.
+
+
+## Earth's paid Pick-6 lottery — research complete
+
+Forty-nine completed original-DOS controls and twelve REA byte observations
+establish five-credit admission, exactly six digits, retry behavior, configured
+zero-through-nine daily limits and invalid-limit fallback, same-day persistence,
+next-date login reset, duplicate-limited order-independent matching, every gross
+payout tier and the four-match public-news threshold. Natural fixed-clock tickets
+reach the jackpot without binary/RNG patches. Large balances expose MBF fee and
+award rounding; native paths show separate pre-input count, prize and fee saves.
+The independent verifier checks complete worlds and auxiliary chains, exact
+inputs, semantic outcomes and loaded bytes; rehashed corruption controls challenge
+these claims. README is updated in this milestone. No Go gameplay or schema
+change is included; current version remains 21 and item4 remains unavailable.
+[Evidence, boundaries and proposed contract](yt-earth-lottery/RECOVERY.md).
+
+Next: implement bounded paid Earth lottery with exact integer credits, six-digit
+multiset matching, validated finite daily quota, fresh ticket confirmation,
+post-lock expiry/date/identity checks, bounded draws and atomic fee/actual capped
+prize/count/sequence/news settlement. Receipts must distinguish nominal prize,
+actual award, fee, balance and remaining plays, including committed storage
+warnings. Keep cancellation safe and score publication consistent. Add focused
+concurrency, replay, rollback, date, migration and real terminal checks, updating
+README in the same implementation commit. Do not copy original floating-point
+money defects or pre-input/non-atomic charging order. Full original RNG/numeric
+parity, interrupted/concurrent DOS entry, year rollover, Genesis, planetary
+thrusters/forced landing and native/live acceptance remain separate work.
