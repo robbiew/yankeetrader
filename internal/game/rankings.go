@@ -71,6 +71,9 @@ func (w *World) rankingSnapshot(stored bool) Rankings {
 	report := Rankings{}
 	totals := map[int]int64{}
 	for _, p := range w.Players {
+		if !p.RetiredAt.IsZero() {
+			continue
+		}
 		score := int64(0)
 		if p.Death == nil {
 			if stored {

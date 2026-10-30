@@ -76,7 +76,7 @@ func (w *World) PrepareBribeAt(id, to int, offer int64, hostile bool) (BribeInte
 // ResolveBribeDecision follows the recovered eager draw order. It intentionally
 // uses modern [0,1) randomness and integer money rather than QuickBASIC MBF/RNG.
 func ResolveBribeDecision(owner int, defenders, fighters, offer int64, planet, hostile bool, rng func() float64) (reason string, combat bool, err error) {
-	if owner == 0 || owner < MercenaryOwner || owner > 50 || defenders < 1 || defenders > MaxQuantity || fighters < 0 || fighters > MaxQuantity || offer < 0 || offer > MaxMoney {
+	if owner == 0 || owner < MercenaryOwner || owner > MaxPlayerIdentities || defenders < 1 || defenders > MaxQuantity || fighters < 0 || fighters > MaxQuantity || offer < 0 || offer > MaxMoney {
 		return "", false, errors.New("invalid bribe inputs")
 	}
 	draw := func() (float64, error) {

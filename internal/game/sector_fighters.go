@@ -117,7 +117,7 @@ func (w *World) ReinforceSector(id int, count int64) error {
 }
 
 func ResolveSectorBattle(committed, defenders int64, cloak float64, owner int, accept bool, rng func() float64) (SectorBattle, error) {
-	if committed < 1 || committed > MaxQuantity || defenders < 1 || defenders > MaxQuantity || owner == 0 || owner < MercenaryOwner || owner > 50 || math.IsNaN(cloak) || math.IsInf(cloak, 0) || cloak < 0 || cloak > 1 || rng == nil {
+	if committed < 1 || committed > MaxQuantity || defenders < 1 || defenders > MaxQuantity || owner == 0 || owner < MercenaryOwner || owner > MaxPlayerIdentities || math.IsNaN(cloak) || math.IsInf(cloak, 0) || cloak < 0 || cloak > 1 || rng == nil {
 		return SectorBattle{}, errors.New("invalid sector battle inputs")
 	}
 	out := SectorBattle{Survivors: committed, Defenders: defenders}

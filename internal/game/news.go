@@ -12,6 +12,8 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsSuperPlanet  NewsKind = "super-planet"
+	NewsRetirement   NewsKind = "retirement"
 	NewsXannorPlanet NewsKind = "xannor-planet-assault"
 	NewsLogin        NewsKind = "login"
 	NewsXannorDeath  NewsKind = "xannor-death"
@@ -68,7 +70,7 @@ func (w *World) validateNews() error {
 			default:
 				return errors.New("invalid planetary news outcome")
 			}
-		case NewsLogin, NewsXannorDeath:
+		case NewsLogin, NewsXannorDeath, NewsSuperPlanet, NewsRetirement:
 			if e.Team != 0 || e.TeamName != "" {
 				return errors.New("login newspaper event contains team details")
 			}
@@ -135,6 +137,7 @@ func (w *World) RecordLogin(id int, now time.Time) error {
 		return err
 	}
 	w.appendNews(NewsEvent{At: now.UTC(), Kind: NewsLogin, Alias: p.Alias})
+	p.LastActivity = day(now)
 	return nil
 }
 

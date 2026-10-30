@@ -302,6 +302,7 @@ func (s *Session) classicStartup() (int, error) {
 	previousDay := ""
 	var generation uint64
 	replaced := false
+	reactivated := false
 	err = s.Store.Update(func(live *game.World) error {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
@@ -326,6 +327,7 @@ func (s *Session) classicStartup() (int, error) {
 		}
 		p := live.Players[id]
 		replaced = p.Death != nil
+		reactivated = !p.RetiredAt.IsZero()
 		if err := live.LoginShip(id, s.Now()); err != nil {
 			return err
 		}
@@ -344,6 +346,11 @@ func (s *Session) classicStartup() (int, error) {
 		return 0, err
 	}
 	s.Store = s.Store.ForShip(id, generation)
+	if reactivated {
+		if err = s.retirementNotice(); err != nil {
+			return 0, err
+		}
+	}
 	if replaced {
 		if err := s.replacementNotice(id); err != nil {
 			return 0, err
@@ -589,4 +596,8 @@ func (s Session) exitMusic() error {
 		return nil
 	}
 	return s.Terminal.Printf("%s", gd.MusicSequence(exitTune))
+}
+
+func (s Session) retirementNotice() error {
+	return s.Terminal.Printf("Your inactive account has returned from retirement. Released estates are not restored; private history is preserved.\r\n")
 }

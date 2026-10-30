@@ -14,6 +14,7 @@ const MaxRadioMessages = 4096
 const MaxRadioText = 74
 
 type RadioMessage struct {
+	System                   string `json:",omitempty"`
 	ID                       uint64
 	RequestID                string
 	From, To                 int
@@ -62,9 +63,13 @@ func (w *World) validateRadio() error {
 	last := uint64(0)
 	requests := map[string]bool{}
 	for _, m := range w.Radio {
+		system := m.System == "super-planet"
+		if (m.System != "" && !system) || (system && (m.From != 0 || m.FromAlias != "Super Lottery")) || (!system && m.From == 0) {
+			return errors.New("invalid system radio")
+		}
 		_, err := hex.DecodeString(m.RequestID)
 		key := strconv.Itoa(m.From) + ":" + m.RequestID
-		if m.ID <= last || m.ID >= w.NextRadio || err != nil || len(m.RequestID) != 32 || requests[key] || w.Players[m.From] == nil || w.Players[m.To] == nil || !clean(m.FromAlias) || !clean(m.ToAlias) || !validRadioText(m.Text) || m.Sent.IsZero() || m.Sent.Before(w.Created) {
+		if m.ID <= last || m.ID >= w.NextRadio || err != nil || len(m.RequestID) != 32 || requests[key] || (!system && w.Players[m.From] == nil) || w.Players[m.To] == nil || !clean(m.FromAlias) || !clean(m.ToAlias) || !validRadioText(m.Text) || m.Sent.IsZero() || m.Sent.Before(w.Created) {
 			return errors.New("invalid radio message")
 		}
 		requests[key] = true
@@ -86,7 +91,7 @@ func (w *World) FindRadioRecipient(id int, query string) (RadioAddress, error) {
 		return RadioAddress{}, errors.New("broadcast and team radio are not available yet; choose one player")
 	}
 	if n, err := strconv.Atoi(query); err == nil {
-		if target := w.Players[n]; target != nil {
+		if target := w.Players[n]; target != nil && target.RetiredAt.IsZero() {
 			return RadioAddress{ID: n, Alias: target.Alias}, nil
 		}
 		return RadioAddress{}, errors.New("radio recipient not found")
@@ -96,6 +101,9 @@ func (w *World) FindRadioRecipient(id int, query string) (RadioAddress, error) {
 	}
 	var matches, exact []RadioAddress
 	for _, target := range w.Players {
+		if !target.RetiredAt.IsZero() {
+			continue
+		}
 		if strings.EqualFold(query, target.Alias) {
 			exact = append(exact, RadioAddress{ID: target.ID, Alias: target.Alias})
 		}
@@ -121,7 +129,7 @@ func (w *World) PrepareRadio(id int, address RadioAddress, text string, now time
 		return RadioDraft{}, err
 	}
 	to := w.Players[address.ID]
-	if to == nil || to.Alias != address.Alias {
+	if to == nil || !to.RetiredAt.IsZero() || to.Alias != address.Alias {
 		return RadioDraft{}, errors.New("recipient changed; choose and confirm again")
 	}
 	if !validRadioText(text) {
@@ -151,7 +159,7 @@ func (w *World) CommitRadio(d RadioDraft, now time.Time) (uint64, error) {
 		}
 	}
 	to := w.Players[d.to]
-	if to == nil || to.Alias != d.alias || now.IsZero() || now.Before(w.Created) || !now.Before(d.expires) || !validRadioText(d.text) || len(d.request) != 32 {
+	if to == nil || !to.RetiredAt.IsZero() || to.Alias != d.alias || now.IsZero() || now.Before(w.Created) || !now.Before(d.expires) || !validRadioText(d.text) || len(d.request) != 32 {
 		return 0, errors.New("radio draft expired or recipient changed; compose again")
 	}
 	if len(w.Radio) >= MaxRadioMessages || w.NextRadio == 0 || w.NextRadio == math.MaxUint64 {

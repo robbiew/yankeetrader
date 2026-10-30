@@ -177,3 +177,24 @@ func TestNewspaperPageLockWaitCannotOutliveSession(t *testing.T) {
 		t.Fatal("lock wait let an expired reader see another page", err, term.output.String())
 	}
 }
+
+func TestDailyMaintenanceNewsRendersWithoutPrivateLocation(t *testing.T) {
+	term := &scripted{}
+	s, st := navigationSession(t, term)
+	if err := st.Update(func(w *game.World) error {
+		_, _ = w.Join("nav", "Navigator")
+		w.News = []game.NewsEvent{{ID: 1, At: s.Now().UTC(), Kind: game.NewsSuperPlanet, Alias: "Winner"}, {ID: 2, At: s.Now().UTC(), Kind: game.NewsRetirement, Alias: "Retired"}}
+		w.NextNews = 3
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	s.Store = st.ForShip(1, 0)
+	if err := s.newspaper(1, []string{"today"}, &[]string{}); err != nil {
+		t.Fatal(err)
+	}
+	text := term.output.String()
+	if !strings.Contains(text, "Winner  Won a PLANET in the SUPER LOTTERY!") || !strings.Contains(text, "Retired  Retired after inactivity") || strings.Contains(text, "sector") {
+		t.Fatal(text)
+	}
+}

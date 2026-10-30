@@ -5,7 +5,7 @@ exact before/after worlds and auxiliary-file chains, and **18 complete REA byte
 observations** from the original maintenance executable and BASIC runtime. It
 adds an executable static rule model and independent semantic verification,
 including eleven deliberately rehashed corruptions that must fail verification.
-**No Go gameplay or save-schema change is included; save version remains 17.**
+**This research introduced no Go gameplay or schema changes (version17 at research completion). The [subsequent implementation](IMPLEMENTATION.md) now enables bounded awards and retirement in version18.**
 
 ## Recovered rules
 
@@ -203,8 +203,8 @@ original transactions or crash safety.
 
 ## Bounded implementation contract for the next milestone
 
-Research is complete for this slice; these are recommended modern boundaries,
-not implemented or shipped behavior:
+At research completion these were recommended modern boundaries. The
+[subsequent implementation](IMPLEMENTATION.md) now documents the shipped policy:
 
 - Add daily super-planet awards and old-dead-player retirement to the existing
   locked, atomic maintenance update, once per saved day. Keep normal account

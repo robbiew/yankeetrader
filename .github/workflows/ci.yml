@@ -102,6 +102,7 @@ jobs:
           python3 scripts/smoke_spies.py
           python3 -m unittest discover -s scripts -p test_smoke_newspaper.py
           python3 scripts/smoke_newspaper.py
+          python3 scripts/smoke_maintenance_awards.py
           python3 scripts/smoke_reports.py
           python3 scripts/smoke_trade_reports.py
           python3 scripts/smoke.py

@@ -699,3 +699,30 @@ modern replay guard explicit; do not copy stale-slot, orphan-title, duplicate-al
 or same-day legacy defects. Confirm identity/store reference coverage before
 choosing how retirement is represented. Remaining maintenance events, HQ credit
 rewards, equipment and exact DOS RNG/rounding remain separate scoped work.
+
+
+## Bounded super-planet awards and safe inactive-player retirement — implemented
+
+Save version18 adds inactive identity records, successful-login activity dates
+and private typed system radio. Old dead accounts retire at the inclusive14-day
+cutoff after both activity and death, before economics/NPC phases. Released
+ownership/access/mine layers and membership are settled without reusing identity
+IDs or deleting private history. Returning authenticated identities get fresh
+ships when active capacity allows; the bounded256-identity archive is explicit.
+
+After NPC actions, one-shot living-player awards use ordinary slots and safe
+non-Union placement, complete fresh initialization, whole-credit banks and
+private sector notices. Public news carries only the winner. Exhausted metadata,
+full capacity, occupied/hazardous placement and daily replay cannot partially
+award or retire. Version17 migration does not invent historical events.
+
+Focused and seeded game tests, atomic store/concurrency/rollback/durability and
+migration tests, real compact/classic terminal coverage, full race suite/vet,
+research/archive verification and Linux/Windows cross-builds validate the
+milestone. README is updated in the same commit.
+[Rules, deliberate policies and limits](yt-maintenance-lottery/IMPLEMENTATION.md).
+
+Next: recover the remaining random port/planet maintenance events, including
+plague and civil-war rules, before their bounded implementation. HQ victory
+credit rewards, other equipment, exact RNG/rounding and native/live acceptance
+remain distinct work.
