@@ -358,6 +358,7 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			out.SectorFightersDestroyed += intercepted.FightersDestroyed
 			sector.Defense.Fighters -= intercepted.FightersDestroyed
 			if sector.Defense.Fighters == 0 {
+				w.queueXannorRevenge(shooter, sectorID, sector.Defense.Owner)
 				sector.Defense = nil
 			}
 			remaining -= spent

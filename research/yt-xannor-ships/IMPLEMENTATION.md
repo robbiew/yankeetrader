@@ -15,9 +15,10 @@ step even for an unarmed or hidden target. Eligible players are current living
 ships in the entered sector, sorted by player ID; ID 1 is a valid modern player.
 Protected Union sectors 1–7 remain excluded from routes and NPC death attribution.
 
-Normal ship detection currently uses `RND > current_cloak - .33`. The later
-[runtime-aware research](../yt-xannor-revenge/RECOVERY.md) corrects the original
-DOS equality boundary to `>=`; adjusting the Go comparison remains a follow-up. Full cloak can evade or
+Normal ship detection now uses `RND >= current_cloak - .33`. The later
+[runtime-aware research](../yt-xannor-revenge/RECOVERY.md) established the equality
+boundary; the [revenge implementation](../yt-xannor-revenge/IMPLEMENTATION.md)
+corrects the earlier strict Go comparison for every mobile group. Full cloak can evade or
 be intercepted; it is not immunity. This phase uses the authoritative persisted
 cloak at the transaction's time. It does not add DOS's separate .05 maintenance
 cache drain; exact cache/RNG parity remains outside this implementation. The

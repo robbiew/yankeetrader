@@ -4,8 +4,8 @@ This slice preserves **53 completed original-DOS maintenance controls**, **three
 normally exited player-command controls**, paired before/after worlds, an exact
 next-day chain, private/public side files and **23 complete REA byte observations**
 from YTMAINT, YT and BRUN30. It recovers the revenge producer/consumer, candidate
-search and top-player overrides. It adds no Go gameplay or save-schema changes:
-revenge remains unimplemented and current saves remain version 16.
+search and top-player overrides. This research introduced no Go gameplay or schema changes. The subsequent
+[bounded implementation](IMPLEMENTATION.md) now enables revenge in save version 17.
 
 ## Finding ledger
 
@@ -141,9 +141,9 @@ the compare core and register-restoring wrapper preserve flags. Equality yields
 CF0/ZF1. At YTMAINT `25ae`/`3c1c`, JBE leaves the rejection mask zero, so hunting
 or ordinary battle proceeds. Candidate `335e–3379` instead builds an acceptance
 mask from strict RND>cloak. This runtime-aware trace corrects the prior ordinary
-interception interpretation. The Go ship implementation currently uses strict
-`>` and needs the equality adjustment in the implementation follow-up; this
-research does not silently change gameplay.
+interception interpretation. At research completion the Go ship implementation used strict `>`. The
+[subsequent implementation](IMPLEMENTATION.md) now corrects that equality boundary;
+this evidence slice itself introduced no gameplay changes.
 
 The arrival pair separates selection from combat: with revenge active, groups 2–15
 reach sector 250 in both cases. At cloak 0 all 14 fight and lose their 100 fighters;

@@ -13,12 +13,19 @@ const xannorWorkLimit = 10000
 // once, without DOS pointer aliases. Reserve holds only undeployed HQ fighters
 // during an unfinished reclaim; it is never also present in a sector defense.
 type XannorState struct {
+	Revenge *XannorRevengeTarget `json:",omitempty"`
 	HQ      int
 	Reserve int64
 }
 
 func (w *World) validateXannor() error {
 	if x := w.Xannor; x != nil {
+		if target := x.Revenge; target != nil {
+			player := w.Players[target.Player]
+			if player == nil || player.Death != nil || player.ShipGeneration != target.Generation {
+				return errors.New("invalid Xannor revenge target")
+			}
+		}
 		if x.HQ <= 7 || w.Sectors[x.HQ] == nil || x.Reserve < 0 || x.Reserve > MaxQuantity {
 			return errors.New("invalid Xannor HQ state")
 		}

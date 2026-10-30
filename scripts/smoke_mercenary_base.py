@@ -22,7 +22,7 @@ def exercise(root, today):
     subprocess.run([BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
     created = json.loads(path.read_text())
     base = created['Planets']['99']
-    assert created['Version'] == 16 and created['Sectors']['8']['Planet'] == 99
+    assert created['Version'] == 17 and created['Sectors']['8']['Planet'] == 99
     assert base['FactionHome'] == 'mercenaries' and base['Owner'] == -2
     assert base['Production'] == [100000, 100000, 100000]
     assert base['Ground'] == 150000 and base['Bank'] == 25000000

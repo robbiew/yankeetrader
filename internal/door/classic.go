@@ -463,6 +463,9 @@ func (s Session) classicInfo(w *game.World, id int, pause bool) error {
 		team = strconv.Itoa(p.Team)
 	}
 	cellText(cells, 9, 1, 80, "Team  : "+team)
+	if w.HasXannorRevenge(id) {
+		cellText(cells, 11, 1, 80, "Xannor revenge pending for this ship.")
+	}
 	owned := int64(0)
 	for _, port := range w.Ports {
 		if port.Owner == id {

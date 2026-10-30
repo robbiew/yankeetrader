@@ -522,6 +522,9 @@ func (s Session) Run() (runErr error) {
 			if e == nil {
 				e = s.Terminal.Printf("Cloak energy: %.0f%%\r\n", p.Cloak*100)
 			}
+			if e == nil && w.HasXannorRevenge(id) {
+				e = s.Terminal.Printf("Xannor revenge pending for this ship.\r\n")
+			}
 		case "l", "look":
 			if s.Classic {
 				e = s.classicSector(w, id)

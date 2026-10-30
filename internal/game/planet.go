@@ -22,6 +22,9 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 17 && w.Xannor != nil && w.Xannor.Revenge != nil {
+		return errors.New("legacy world unexpectedly contains Xannor revenge state")
+	}
 	if w.Version < 16 {
 		for _, p := range w.Players {
 			if p != nil {
@@ -172,6 +175,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 15 {
 		w.Version = 16
+	}
+	if w.Version == 16 {
+		w.Version = 17
 	}
 	return nil
 }
