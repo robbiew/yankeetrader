@@ -22,6 +22,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 19 {
+		for _, e := range w.News {
+			if e.Kind == NewsPortPlague || e.Kind == NewsPlanetPlague || e.Kind == NewsCivilWar || e.PortCount != 0 {
+				return errors.New("legacy world unexpectedly contains overcrowding news")
+			}
+		}
+	}
 	if w.Version < 18 {
 		for _, p := range w.Players {
 			if p != nil && (!p.RetiredAt.IsZero() || p.LastActivity != "") {
@@ -201,6 +208,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 17 {
 		w.Version = 18
+	}
+	if w.Version == 18 {
+		w.Version = 19
 	}
 	return nil
 }

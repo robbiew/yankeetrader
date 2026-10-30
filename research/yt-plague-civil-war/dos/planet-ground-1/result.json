@@ -1,0 +1,56 @@
+{
+  "name": "planet-ground-1",
+  "patches": [
+    [
+      4053,
+      45,
+      1000
+    ],
+    [
+      4053,
+      49,
+      1000
+    ],
+    [
+      4053,
+      53,
+      1000
+    ],
+    [
+      4053,
+      77,
+      1
+    ],
+    [
+      4053,
+      117,
+      0
+    ],
+    [
+      4053,
+      73,
+      0
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "11a044e38293e23f34f05985060c5bf33d1cec9ee5a9fecbc029b3c25a904894",
+  "after_sha256": "d3b37a08cc2688f1c66fbd20ef77e03792373a80797837c96ba93c21a12204d9",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "0fe17e011494e1a8800ce7e56da9173a6ad98e7c4e3e012dfa951464d72d0497",
+    "before.dat.gz": "b84287fc7f1543dba2a6382a30199b5c818a4de71ba2a035ef657b8229d1af53",
+    "dosbox.log": "b5f3646cf1ea3acd95b1be1ace23129b5670fd7c5e1386a8680a24668fdc5364",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "5160d62472a779ca8616baa26b2c4c9472a97267170b07ad7ccb03189605cc6f",
+    "transcript.txt": "2157578ab52e05120bc84ed5c5230c67e0e76fc7ba369c32fd91c7d4c3197537"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "planet-next-day",
+  "patches": [],
+  "parent": "planet-civil-bank-1000000000",
+  "date": "10/26/2026",
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "c5080bb4c8758ffddf244b7d1154d60ab5306d44230c8c038ebf071c5736461a",
+  "after_sha256": "cc13e16010d9f84fa6697416392a482e214799bfbcf0ae54518669840e336ef2",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "055213f0e1df99652dcf87c5419136bc86c26692a29c2dfb144c1c84da7c96cd",
+    "before.dat.gz": "222a15b33e19c2e2e8847ecea0e8adf1c3dfcddccb7b84f611ac7dbf1e5299ad",
+    "dosbox.log": "97e1dbb5a4f1bdc83c59a45898ef1dd44bcd510295a90f245dfb8cdb3e722803",
+    "side-before.json": "7b8b5ff396c89826e63621b5f034124c147efae09c77d725e96f108a9624acc6",
+    "sidefiles.json": "d96fddff7207b490d573889bc744c8630d02015159dfa14e17a2857249dcbb33",
+    "transcript.txt": "51e55865dbcb627306c1e3af409d0026738fed61f74bbfcc1b63d8882b151b5d"
+  }
+}

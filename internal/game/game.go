@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 18
+const WorldVersion = 19
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -492,7 +492,7 @@ func (w *World) MaintainWithRandom(now time.Time, rng func() float64) bool {
 	return w.maintain(now, rng)
 }
 
-// maintain shares a random source between faction phases. Keeping
+// maintain shares a random source between economic and faction phases. Keeping
 // it injectable internally permits exact threshold and phase-order tests.
 func (w *World) maintain(now time.Time, rng func() float64) bool {
 	today := day(now)
@@ -500,12 +500,9 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 		return false
 	}
 	w.retireInactivePlayers(now)
-	for _, planet := range w.Planets {
-		planet.update(now, false)
-	}
+	w.overcrowding(now, rng)
 	var taxes int64
 	for _, p := range w.Ports {
-		update(p, now)
 		if p.ID != 1 {
 			tax := p.Treasury / 10
 			p.Treasury -= tax

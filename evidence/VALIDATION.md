@@ -49,3 +49,32 @@ game/store tests exercise deterministic award creation.
 
 Live BBS acceptance and native Windows durability remain unverified. See
 [implementation policies and compatibility](../research/yt-maintenance-lottery/IMPLEMENTATION.md).
+
+
+## Bounded plague and civil-war maintenance
+
+Validated locally on macOS arm64, 2026-10-30, with Go 1.27.3. Save version 19
+adds typed public outbreak news while preserving the existing atomic store.
+
+- Full race-enabled Go suite and vet pass. Focused rules cover strict gates,
+  conditional/eager draws, post-growth effects, near-cutoff rate increases,
+  one-pass outbreaks, caps, civil override, exact bounded credit debits,
+  whole-unit ground, preserved title/home/weapons and public privacy.
+- Capacity/ordering checks exercise 1,000 ports and 99 planets, full/exhausted
+  journals and 32 deterministic seeded worlds. Store regressions cover abort and
+  validation rollback, eight concurrent callers, reload, replay/clock rollback,
+  committed directory-sync failure and read-only version-18 migration/rejection.
+- Eighteen real terminal smoke scripts pass: new overcrowding, newspaper, awards,
+  Mercenary base, mines, missiles, radio, salvage, spies, teams, Xannor lifecycle,
+  mobile, planetary, revenge and ship combat, ports, reports and trade reports.
+  The new smoke uses actual CLI maintenance for port outbreaks and replay;
+  retained typed planet news checks UI delivery. Actual planetary event/damage
+  behavior is deterministic in game, store and door tests. Older combat smoke
+  garrisons now sit at the strict civil-war threshold to isolate assault rules.
+- The 56-run DOS verifier, 16 rehashed semantic corruption controls and all 4,682
+  original archive hashes pass. Linux/amd64 and Windows/amd64 cross-builds pass.
+
+Validation used an external temporary module-file override pointing to the local
+GoDoors checkout; repository module files and GoDoors sources are unchanged.
+Live BBS acceptance and native Windows durability remain unverified. See the
+[implemented policies and compatibility](../research/yt-plague-civil-war/IMPLEMENTATION.md).

@@ -1,0 +1,70 @@
+date       time         | 
+2026-10-29 19:51:49.609 | arguments: /opt/homebrew/bin/dosbox-staging --noprimaryconf --nolocalconf --set cpu_cycles=200000 --set nosound=true -c mount\ c\ /Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/research/yt-plague-civil-war/dos/planet-order-reverse -c c: -c date\ 10/25/2026 -c time\ 00:00:00 -c date\ >\ dosdate.log -c time\ >\ dostime.log -c ytmaint\ >\ maint.log -c exit
+2026-10-29 19:51:49.609 | Current dir: /Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader
+2026-10-29 19:51:49.609 | stderr verbosity: 0
+2026-10-29 19:51:49.609 | -----------------------------------
+2026-10-29 19:51:49.609 | dosbox-staging version 0.83.0 ()
+2026-10-29 19:51:49.609 | ---
+2026-10-29 19:51:49.609 | Loguru version 2.1.0 initialised
+2026-10-29 19:51:49.613 | LOCALE: Using internal English language messages (detected from 'en-US; GUI: en-US')
+2026-10-29 19:51:49.613 | SDL: Version 2.32.74 initialised
+2026-10-29 19:51:49.613 | SDL: dummy video initialised
+2026-10-29 19:51:49.723 | VIDEO: Using the DOS video modes' refresh rate
+2026-10-29 19:51:49.723 | DOS: Setting hard disk disk speed to maximum
+2026-10-29 19:51:49.723 | DOS: Setting floppy disk speed to maximum
+2026-10-29 19:51:49.725 | MEMORY: Using 4096 DOS memory pages (16 MB) at address: 0x696c00000
+2026-10-29 19:51:49.725 | CPU: Setting fixed 200000 cycles. Try setting 'core = dynamic' for increased performance if you need more than 20000 cycles.
+2026-10-29 19:51:49.725 | FPU: Using reduced-precision floating-point emulation
+2026-10-29 19:51:49.725 | VIDEO: Initialised S3 Trio64 VESA 2.0 compatible with 4 MB of FP DRAM supporting 89 modes
+2026-10-29 19:51:49.726 | VOODOO: Initialized with 4 MB of RAM, 12 threads, and bilinear filtering
+2026-10-29 19:51:49.726 | CAPTURE: Image capturer started
+2026-10-29 19:51:49.726 | MIXER: Sound output disabled ('nosound' mode)
+2026-10-29 19:51:49.726 | MIXER: Reverb disabled
+2026-10-29 19:51:49.726 | MIXER: Master compressor enabled
+2026-10-29 19:51:49.726 | MPU-401: Running in intelligent mode on ports 330h and 331h
+2026-10-29 19:51:49.742 | MIDI: Opened device 'coremidi'
+2026-10-29 19:51:49.742 | OPL: Operating at 49716 Hz and downsampling to the output rate
+2026-10-29 19:51:49.742 | OPL: Noise gate enabled
+2026-10-29 19:51:49.742 | OPL: Running OPL3 on ports 220h and 388h
+2026-10-29 19:51:49.742 | OPL: Sound Blaster 16 OPL output filter enabled
+2026-10-29 19:51:49.742 | DMA: Initialised primary controller
+2026-10-29 19:51:49.742 | DMA: Initialised secondary controller
+2026-10-29 19:51:49.742 | SB: Operating at 22050 Hz and upsampling to the output rate
+2026-10-29 19:51:49.742 | SB16: Modern DAC output filter enabled
+2026-10-29 19:51:49.742 | SB16: Setting 'BLASTER' environment variable to 'A220 I7 D1 H5 T6'
+2026-10-29 19:51:49.742 | SB16: Running on port 220h, IRQ 7, DMA 1, and high DMA 5
+2026-10-29 19:51:49.743 | PCSPEAKER: Operating at 32000 Hz and upsampling to the output rate
+2026-10-29 19:51:49.743 | PCSPEAKER: Initialised impulse model
+2026-10-29 19:51:49.743 | PCSPEAKER: High-pass filter enabled (18 dB/oct at 120 Hz)
+2026-10-29 19:51:49.743 | PCSPEAKER: Low-pass filter enabled (18 dB/oct at 4300 Hz)
+2026-10-29 19:51:49.746 | LOCALE: Country detected from 'en-US'
+2026-10-29 19:51:49.746 | LOCALE: Loading native locale for country 1 - 'United States'
+2026-10-29 19:51:49.747 | LOCALE: Using numeric/time/date format detected from host OS
+2026-10-29 19:51:49.747 | LOCALE: Keyboard layout and code page detected from '0 (U.S.)'
+2026-10-29 19:51:49.747 | LOCALE: Loaded keyboard layout 'us' - 'US (standard, QWERTY/national)'
+2026-10-29 19:51:49.747 | CONFIG: Loaded auto-mounted drive config file '/opt/homebrew/Cellar/dosbox-staging/0.83.0/share/dosbox-staging/drives/y.conf'
+2026-10-29 19:51:49.747 | DISPLAY: Using 758x569 window size in windowed mode on display-0
+2026-10-29 19:51:49.747 | OPENGL: Error creating window: OpenGL support is either not configured in SDL or not available in current SDL video driver (dummy) or platform
+2026-10-29 19:51:49.747 | OPENGL: Error initialising OpenGL renderer, falling back to SDL renderer
+2026-10-29 19:51:49.773 | SDL: Using 'software' SDL render driver
+2026-10-29 19:51:49.773 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-29 19:51:49.773 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-29 19:51:49.773 | MOUSE: Will be captured after the first left or right button click
+2026-10-29 19:51:49.773 | MOUSE: Middle button will capture/release the mouse (clicks not sent to the game/program)
+2026-10-29 19:51:49.773 | RENDER: Deinterlacing disabled
+2026-10-29 19:51:49.773 | RENDER: Dedithering disabled
+2026-10-29 19:51:49.783 | MAPPER: No joysticks found
+2026-10-29 19:51:49.783 | MAPPER: Loaded default key bindings
+2026-10-29 19:51:49.784 | RENDER: Auto-switched to P22 CRT color profile
+2026-10-29 19:51:49.784 | RENDER: Auto-switched to 7800K colour temperature
+2026-10-29 19:51:49.784 | DISPLAY: VGA 720x400 16-colour text mode 03h at 70.087 Hz, scaled to 758x569 pixels with 1:1.35 (20:27) pixel aspect ratio
+2026-10-29 19:51:49.784 | DISPLAY: Presenting at DOS rate without vsync
+2026-10-29 19:51:49.784 | MOUSE (DOS): Built-in driver is simulating a 2 buttons model
+2026-10-29 19:51:50.011 | PCSPEAKER: Shutting down impulse model
+2026-10-29 19:51:50.011 | OPL: Shutting down OPL3
+2026-10-29 19:51:50.011 | SB16: Shutting down
+2026-10-29 19:51:50.012 | MPU-401: Shutting down
+2026-10-29 19:51:50.015 | CAPTURE: Image capturer shutting down
+2026-10-29 19:51:50.015 | DMA: Shutting down primary controller
+2026-10-29 19:51:50.015 | DMA: Shutting down secondary controller
+2026-10-29 19:51:50.016 | atexit
