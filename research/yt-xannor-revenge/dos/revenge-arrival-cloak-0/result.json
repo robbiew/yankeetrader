@@ -1,0 +1,36 @@
+{
+  "name": "revenge-arrival-cloak-0",
+  "patches": [
+    [
+      72,
+      105,
+      2
+    ],
+    [
+      2,
+      125,
+      0
+    ]
+  ],
+  "arrival": true,
+  "recipe": "xannor-revenge-isolation-v1",
+  "baseline_sha256": "bf34079e27215d2c086ec750fc2b4fd30d90d4c869eb0bb26227d654a0292bc9",
+  "before_sha256": "8509839fbcea12b2cd38514620c92bafab0b3fc4ebb6fd16a5a5e2b982164723",
+  "after_sha256": "08569d03adc2bb9addd5a67634cdf03a56725a612130cd0600fda047bb919591",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "a2043d89c4a63ba0e945fa1ccc4de8d9f9e99b9762f332749d8835e88a896236",
+    "before.dat.gz": "2e4f4e5df358e7d9ba5ab083495da936a79490f1c79d4a202fe21a6ca1da49d5",
+    "dosbox.log": "0a707e3e6760385a04aa49690c338a557098fad0843864c4b3cfe8c8d2bcd64f",
+    "sidefiles.json": "a55118516664daa2e4992af685bfd33253e19e291f2b7d3a3c4f3958cedda290",
+    "transcript.txt": "743cf4b35e16bb7a26c013f2f4b3a673a5a9643ddb9684e659b065dd4b41d1df"
+  }
+}

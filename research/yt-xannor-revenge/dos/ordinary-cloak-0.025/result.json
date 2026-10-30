@@ -1,0 +1,35 @@
+{
+  "name": "ordinary-cloak-0.025",
+  "patches": [
+    [
+      2,
+      125,
+      0.025
+    ],
+    [
+      72,
+      105,
+      0
+    ]
+  ],
+  "recipe": "xannor-revenge-isolation-v1",
+  "baseline_sha256": "bf34079e27215d2c086ec750fc2b4fd30d90d4c869eb0bb26227d654a0292bc9",
+  "before_sha256": "f9aba10b87959242cf96e3b1ca05d657e323366fdbde621aaa10fbc3c09b1d78",
+  "after_sha256": "2308fe1ed9c17c7fd0e08b0feeeff1238243b5e3f2056e56ff7bca9b29283b57",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "0c92b109f647963d01258a514f6bd5ca9f9ea2e6dc93e5d906dcb2934f426386",
+    "before.dat.gz": "0dd4131a09918e0b86d190ce36b136ee254431aa9d662018a0cb8b5ae2d81488",
+    "dosbox.log": "da978c877d89fa8dec890a0767524d4e83de3646c35cc1c7d8d75e4ce2f6c213",
+    "sidefiles.json": "65011614a35043b2e1bbba135bab111c9e2e20218d562c718ba55649ece8fc65",
+    "transcript.txt": "b3bf9ab8877667609fa708c9e6b0859e9ee507d8cb3a74eca58dcec72ccf2fc8"
+  }
+}

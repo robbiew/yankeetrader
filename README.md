@@ -18,7 +18,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ### Not shipped yet
 
-- Remaining Xannor revenge/cloak searches and daily-maintenance phases, including lottery and deletion.
+- Xannor revenge/cloak candidate-search implementation (research complete below), and remaining daily-maintenance phases including lottery and deletion.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
 - Danger/score scanners and player-commanded emergency warps (automatic combat/mine escape is available).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
@@ -653,6 +653,22 @@ The shared route work limit, atomic daily save and replay guard apply throughout
 Save version 16 preserves existing ship history and upgrades older worlds without
 inventing events. [Rules, migration and validation](research/yt-xannor-planets/IMPLEMENTATION.md).
 Remaining revenge/cloak searches and native/live BBS acceptance are outstanding.
+
+
+### Xannor revenge and cloak search research
+
+[53 original-DOS maintenance controls and three player-command controls](research/yt-xannor-revenge/RECOVERY.md)
+now establish HQ revenge creation/consumption, candidate search, separate cloak
+checks, top-player selection and group overrides. They distinguish up-to-25
+search attempts from guaranteed retries and correct the ordinary interception
+comparison at exact equality. A readable model and 23 game/runtime byte
+observations preserve the rules and limits.
+
+This is research only: revenge/candidate changes are not yet playable, current
+ship interception retains its previous equality behavior, and saves remain
+version16. Next is bounded transactional revenge and candidate-search
+implementation with current living targets, Union protection and explicit cloak
+policy. Exact DOS RNG/MBF parity and native/live BBS acceptance remain separate.
 
 
 ## Documentation upkeep

@@ -636,3 +636,22 @@ reuse, rollback, concurrency, replay, reload and committed durability failure.
 
 Next: remaining Xannor revenge/cloak candidate-search research. Exact RNG/MBF
 parity and live BBS/native Windows acceptance remain separate.
+
+
+## Xannor revenge and cloak candidate-search — research complete
+
+53 completed maintenance controls, three normally exited player-command controls,
+23 complete game/runtime REA observations and ten rehashed corruption controls
+recover the HQ-victory pending target, positive-pointer consumption, live/cache
+distinction, eager 1/25 candidate search, top-player ties/overrides and separate
+cloak gates. Native arrivals distinguish revenge selection from interception.
+Runtime operand/flag tracing corrects ordinary `.33` equality to `>=`; the
+current Go strict comparison remains an explicit implementation gap.
+
+No Go gameplay or schema changes are included. Next implement persistent, atomic
+revenge from actual Xannor-owned HQ defeats, living/generation-safe targets,
+finite candidate/fallback work and documented cloak/group 20 policies. Do not
+inherit stale-cache/dead-record targeting, plasma's missing-owner guard or
+unbounded legacy retries. The report explicitly bounds dense-screen phase
+interference, exact ties/draw counts, concurrent cache divergence and malformed
+pointer coverage. [Evidence and implementation contract](yt-xannor-revenge/RECOVERY.md).

@@ -1,0 +1,30 @@
+{
+  "name": "xannor-hq-loss",
+  "hq": 100,
+  "defenders": 1000000,
+  "attack": 1,
+  "recipe": "xannor-revenge-queue-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "e449f8670aedaaee5be7fbca18c25322b712e75ed23a5598999f2250ff623da8",
+  "after_sha256": "308c62324b66eab1d62c7630b0e3b0b3a22185df3e13a7e840513ff5da7a17df",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "352d8ed4aee0fe9e388ecc45218841761c06e98ea3168a6954d5b784063800b4",
+    "after.dat.gz": "4e3e0d15055eaf44b925c621cd23737413128566a8e094822277809555af4f9d",
+    "before.dat.gz": "94a53c803ef0b49dae19d567dc70acd6ca5ef7ded3e1e1df8c1f3783fd04bf52",
+    "dosbox.log": "7c9a789161d63b4a1cc14dc2af5f827406f39dc4666af2cca90717cdf49d64ac",
+    "transcript.txt": "099ffcfab0263020ee6541426cdda1169fc99fc3163459c9b0fd22a1d9713852"
+  }
+}

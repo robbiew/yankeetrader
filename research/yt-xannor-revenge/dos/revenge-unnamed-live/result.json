@@ -1,0 +1,35 @@
+{
+  "name": "revenge-unnamed-live",
+  "patches": [
+    [
+      72,
+      105,
+      2
+    ],
+    [
+      2,
+      85,
+      0
+    ]
+  ],
+  "recipe": "xannor-revenge-isolation-v1",
+  "baseline_sha256": "bf34079e27215d2c086ec750fc2b4fd30d90d4c869eb0bb26227d654a0292bc9",
+  "before_sha256": "2f8177aae6a40f4a38f79f62f6eb23a67324aa94f719d28f538f96b6357de38e",
+  "after_sha256": "7ad1223a2a60214e6560ecfce1641014648de181d045eb56d52edd3950a98f3e",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "30fd5f66d3b2f2993aa4439aebc2f4809b6867deada3c97213adb00894c5a3ac",
+    "before.dat.gz": "03e18453a955a47b3de78b91a8581201e2a64329b336b9b939005054c3c461a7",
+    "dosbox.log": "88429172475620c7d396975e357480a2799b5d64e15676410818fa1b0de1c52f",
+    "sidefiles.json": "fc41aefa8e53252de7243270648b8e6cbdc91f42cb167d83be76396a05c46f0b",
+    "transcript.txt": "ccbba394c813d8b0fb6994ae95f7640c1ddb2792b26b33822aa3631d0e0d24b4"
+  }
+}

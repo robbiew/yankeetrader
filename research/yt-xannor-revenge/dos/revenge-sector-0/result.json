@@ -1,0 +1,35 @@
+{
+  "name": "revenge-sector-0",
+  "patches": [
+    [
+      72,
+      105,
+      2
+    ],
+    [
+      2,
+      57,
+      0
+    ]
+  ],
+  "recipe": "xannor-revenge-isolation-v1",
+  "baseline_sha256": "bf34079e27215d2c086ec750fc2b4fd30d90d4c869eb0bb26227d654a0292bc9",
+  "before_sha256": "71c5c33f0817eb91dc7ddcd39795e9723e8e44cd829888eedd65b4d2293d547b",
+  "after_sha256": "ac23704e8a6d62c476191c8dd64d43552256d33dd7748563ee18b698e236f924",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "8ce2d926e6d10bf7d0f2c3ff8a3ac01ea2f4eb23d85750fa95b71c367df33088",
+    "before.dat.gz": "13eeb0ac03b8a636bee6d5e7f29a20449a7a663e5db07a2d90776939d20982d7",
+    "dosbox.log": "62c9e970a88ded6270439e27f569b88f942f381cbd10a877d3bb219d8b884bb9",
+    "sidefiles.json": "2f49253cdf926e6ce8779917a098e8ec20a3ff92bc9809566b8fb4d8f90e8da7",
+    "transcript.txt": "d3d156f015d565d463172d4c275db3838634f96124e1c6014d1718be2e6eddef"
+  }
+}

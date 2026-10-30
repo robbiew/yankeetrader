@@ -1,0 +1,23 @@
+{
+  "recipe": "xannor-revenge-queue-v1",
+  "scenarios": [
+    {
+      "name": "ordinary-xannor-win",
+      "hq": 1114,
+      "defenders": 1,
+      "attack": 10001
+    },
+    {
+      "name": "xannor-hq-win",
+      "hq": 100,
+      "defenders": 1,
+      "attack": 10001
+    },
+    {
+      "name": "xannor-hq-loss",
+      "hq": 100,
+      "defenders": 1000000,
+      "attack": 1
+    }
+  ]
+}

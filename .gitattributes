@@ -49,3 +49,11 @@
 /research/yt-xannor-planets/dos/**/DOS*.LOG -text -diff
 /research/yt-xannor-planets/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-xannor-planets/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-xannor-revenge/dos/**/DOS*.LOG -text -diff
+/research/yt-xannor-revenge/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-xannor-revenge/dos/**/dosbox.log -text whitespace=-blank-at-eol
+/research/yt-xannor-revenge/queue/**/DOS*.LOG -text -diff
+/research/yt-xannor-revenge/queue/**/KEYS.TXT -text -diff
+/research/yt-xannor-revenge/queue/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-xannor-revenge/queue/**/dosbox.log -text whitespace=-blank-at-eol
