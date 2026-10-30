@@ -1,5 +1,12 @@
 # Genesis and universe reset
 
+This is the historical first recovery. A [bounded safe-reset follow-up](SAFE_RESET.md)
+adds 24 fresh returned DOS controls, thirteen native observations and a concrete
+implementation contract. At that research milestone Genesis was unavailable in
+the Go door and save version 22 was unchanged. The subsequent
+[bounded implementation](IMPLEMENTATION.md) makes Genesis playable with save
+version 23; these historical DOS observations did not perform a live reset.
+
 Recovered from the original YT.EXE and RMT-INIT.EXE and validated in isolated DOSBox runs. Original files remain unchanged. This is the global `G` endgame command, distinct from buying a planet with a Genesis Device.
 
 ## Eligibility and confirmation
@@ -37,10 +44,10 @@ It replaces today's/yesterday's newspapers, resets the alias file to `Dummy,Dumm
 
 ## Evidence and reconstruction decisions
 
-- `../yt-combat/experiments/gen-*`: isolated DOS logs, input streams, before/after saves, and copied original executables. Some sessions end at the emulator deadline; successful resets are established by completion messages and full file-state checks, not by normal logout.
-- `qb-annotated.txt`, `qb-listing.txt`, `listing.txt`, `decompiled.c`, `program.txt`, and Ghidra logs: remote initializer recovery. Runtime-aware listing is more useful than automatic C output for QuickBASIC. `annotate.py` resolves near-data descriptors. Some variable-length runtime table calls remain undecoded.
+- `archive/analysis/yt-combat/experiments/gen-*`: isolated DOS logs, input streams, before/after saves, and copied original executables. Some sessions end at the emulator deadline; successful resets are established by completion messages and full file-state checks, not by normal logout.
+- Archived `archive/analysis/yt-genesis/{qb-annotated.txt,qb-listing.txt,listing.txt,decompiled.c,program.txt}` and Ghidra logs: remote initializer recovery. Runtime-aware listing is more useful than automatic C output for QuickBASIC. `annotate.py` resolves near-data descriptors. Some variable-length runtime table calls remain undecoded.
 - `recovered-genesis.bas`: semantic pseudocode for eligibility and handoff.
-- `fixtures.py` and `scenarios.json`: fixture construction and exact input streams/date/snapshot hashes. Run from the YT36 root; the fixture builder intentionally refuses to overwrite existing evidence. Use `analysis/yt-combat/run_clock_session.py` with a fresh destination, the matching source fixture, recorded keys, and a 55-second deadline. `gen-postmaint` is a copy of completed `gen-300` with the original YTMAINT run on 10/24/2026.
-- `validate.py`: replayable assertions over saved DOS evidence and original executable hashes.
+- Historical `archive/analysis/yt-genesis/fixtures.py` and `scenarios.json` record the original construction/input provenance; their old `analysis/` paths are not active regeneration commands. Do not run old fixture writers against the preserved archive. Use the repository-root `scripts/recover_genesis_reset.py` command in the follow-up report with a fresh disposable destination. `gen-postmaint` remains the archived copy of completed `gen-300` with YTMAINT run on 10/24/2026.
+- Historical `archive/analysis/yt-genesis/validate.py` preserves the old assertions. The active portable follow-up verifier is `scripts/verify_genesis_reset.py`, with rehashed corruption controls in `scripts/test_genesis_reset_verifier.py`.
 
 For Go, make a season reset transactional, invalidate existing sessions, archive the winner before deleting players, regenerate the world and complete initial maintenance before reopening play. Recount owned ports in the same transaction used for eligibility. Treat the hidden <20→200 fallback and >300 disable behavior as explicit compatibility/configuration decisions rather than silently copying them. Crash recovery and concurrent sessions during a DOS reset remain untested; atomicity is a requirement for the new implementation, not an asserted DOS guarantee.

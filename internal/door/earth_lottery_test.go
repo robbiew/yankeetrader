@@ -15,7 +15,7 @@ func lotterySession(t *testing.T, term *scripted) (Session, int, string) {
 	t.Helper()
 	s, id, token := portSession(t, true)
 	s.Terminal = term
-	s.Store = s.Store.ForShip(id, 0)
+	s.Store = s.Store.ForShip(id, 0, 1)
 	return s, id, token
 }
 func TestPaidLotteryDoorExactSavedReceiptAndFreshConfirmation(t *testing.T) {

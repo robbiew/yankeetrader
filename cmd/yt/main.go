@@ -30,6 +30,7 @@ func run() error {
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
+	genesisPorts := flag.Int("genesis-ports", 300, "initial Genesis threshold: 0 disables; 20..300; omitted defaults to 300")
 	local := flag.String("local", "", "local player name")
 	compact := flag.Bool("compact", false, "skip DOS startup and use the compact command interface")
 	ascii := flag.Bool("ascii", false, "disable ANSI color and cursor control")
@@ -46,11 +47,26 @@ func run() error {
 	if *initWorld && *maint {
 		return errors.New("choose either -init or -maint")
 	}
+	genesisConfigured := false
+	flag.Visit(func(f *flag.Flag) {
+		if f.Name == "genesis-ports" {
+			genesisConfigured = true
+		}
+	})
+	if genesisConfigured && !*initWorld {
+		return errors.New("-genesis-ports is only supported with -init")
+	}
 	st := store.Store{Dir: *data}
 	if *initWorld {
 		w, e := game.New(time.Now(), *seed, *sectors)
 		if e != nil {
 			return e
+		}
+		if genesisConfigured {
+			w.GenesisPorts = genesisPorts
+			if e = w.Validate(); e != nil {
+				return e
+			}
 		}
 		if e = st.Create(w); e != nil {
 			return e

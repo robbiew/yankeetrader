@@ -24,6 +24,8 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 	w.Version = 13
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.Planets[100] = &game.Planet{ID: 100, Sector: 9, Owner: 1, Name: "Xannoron", Ground: 123, Bank: 456, Updated: w.Created}
 	w.Sectors[9].Planet = 100
@@ -42,6 +44,7 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 	}
 	expected := *w
 	expected.Version = game.WorldVersion
+	expected.Season = 1
 	expected.NextBattleReport = 1
 	want, _ := json.Marshal(expected)
 	got, _ := json.Marshal(current)
@@ -62,6 +65,8 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 	}
 	for _, mode := range []string{"state", "home"} {
 		w.Version = 13
+		w.Season = 0
+		w.GenerationSeed = nil
 		w.NextBattleReport = 0 // This fixture represents a pre-report save.
 		w.Xannor = nil
 		w.Planets[100].FactionHome = ""

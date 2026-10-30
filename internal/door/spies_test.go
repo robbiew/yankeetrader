@@ -88,7 +88,7 @@ func TestSpyOutputFailurePreservesUnreadAndStaleReadRejects(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	if err := s.Store.HireSpies(token, []int{3}, s.Now, s.Deadline); err != nil {
 		t.Fatal(err)
 	}
@@ -131,7 +131,7 @@ func TestExpiredSpyHireAfterPromptDoesNotCharge(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	s.Deadline = time.Now().Add(-time.Second)
 	pending := []string{"1", "3"}
 	if err := s.hireSpies(token, nil, &pending); err == nil {
@@ -160,7 +160,7 @@ func TestIntelligencePagingAcknowledgesOnlyDisplayedReports(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	if err := s.Store.HireSpies(token, []int{3, 8}, s.Now, s.Deadline); err != nil {
 		t.Fatal(err)
 	}

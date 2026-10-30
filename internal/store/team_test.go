@@ -101,6 +101,8 @@ func TestTeamSaveUpgradeAndMalformedLegacyMembership(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 2
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	for _, p := range w.Players {

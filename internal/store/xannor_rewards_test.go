@@ -186,6 +186,8 @@ func TestHQRewardVersion19MigrationNoBackfillAndFutureRejection(t *testing.T) {
 	st, _, _, _, _ := rewardStore(t, false)
 	w, _ := st.View()
 	w.Version = 19
+	w.Season = 0
+	w.GenerationSeed = nil
 	// A pending target from an old victory must never become a payment claim.
 	w.Xannor.Revenge = &game.XannorRevengeTarget{Player: 1, Generation: w.Players[1].ShipGeneration}
 	raw, _ := json.Marshal(w)
@@ -199,6 +201,7 @@ func TestHQRewardVersion19MigrationNoBackfillAndFutureRejection(t *testing.T) {
 	}
 	expected := *w
 	expected.Version = game.WorldVersion
+	expected.Season = 1
 	if !reflect.DeepEqual(&expected, loaded) {
 		t.Fatal("migration paid/backfilled/altered old state")
 	}
@@ -269,7 +272,7 @@ func TestHQRewardAtomicFatalMineAftermathAndReplacement(t *testing.T) {
 	if err != nil || saved.Players[1].Death == nil || len(saved.News) != 1 || saved.Sectors[8].Defense != nil {
 		t.Fatal("aftermath reload", err)
 	}
-	if _, err = fresh.ForShip(1, fi.Generation).DefenseEncounter(fi, func() float64 { return .9 }, at, time.Now().Add(time.Minute)); err == nil {
+	if _, err = fresh.ForShip(1, fi.Generation, 1).DefenseEncounter(fi, func() float64 { return .9 }, at, time.Now().Add(time.Minute)); err == nil {
 		t.Fatal("dead incarnation redeemed reward")
 	}
 	if err = fresh.Update(func(w *game.World) error { return w.LoginShip(1, at) }); err != nil {

@@ -65,7 +65,7 @@ func TestTravelManualWarpReceiptsConfirmationsAndErrors(t *testing.T) {
 				if err := st.Update(func(w *game.World) error { _, e := w.Join("nav", "Navigator"); return e }); err != nil {
 					t.Fatal(err)
 				}
-				s.Store = st.ForShip(1, 0)
+				s.Store = st.ForShip(1, 0, 1)
 				i := 0
 				rng := func() float64 {
 					i++
@@ -197,7 +197,7 @@ func TestTravelWarpReceiptIncludesAutomaticMineEscape(t *testing.T) {
 	}); e != nil {
 		t.Fatal(e)
 	}
-	s.Store = st.ForShip(1, 0)
+	s.Store = st.ForShip(1, 0, 1)
 	draws := []float64{0, 0, .2, 0, .99, 0, .9, 0, 0, 0, 0, .99}
 	i := 0
 	e := s.warpWithRandom(1, nil, &[]string{}, func() float64 {

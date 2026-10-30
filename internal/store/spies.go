@@ -22,7 +22,7 @@ func (s Store) UpdateWithSpies(fn func(*game.World) error, now, deadline time.Ti
 			return errors.New("session time expired")
 		}
 		// A fatal action must still commit. The obsolete login cannot read its spies.
-		if err := w.CheckShip(s.ship.id, s.ship.generation); err != nil {
+		if err := w.CheckSession(s.ship.id, s.ship.generation, s.ship.season); err != nil {
 			return nil
 		}
 		if err := n.Advance(w, now, rand.Float64); err != nil {
@@ -94,6 +94,9 @@ func (s Store) AcknowledgeSpy(report uint64) error {
 		}
 		if s.ship == nil {
 			return errors.New("spies require a bound ship session")
+		}
+		if e = s.checkShip(w); e != nil {
+			return e
 		}
 		return s.ship.spies.Acknowledge(w, report)
 	})

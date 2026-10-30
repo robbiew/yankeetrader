@@ -39,18 +39,21 @@ type shipSession struct {
 	spyMu            sync.Mutex
 	id               int
 	generation       uint64
+	season           uint64
+	genesisActive    *game.GenesisIntent
 	spies            *game.SpyNetwork
 }
 
-// ForShip binds only this copy of the store to a login's ship generation.
+// ForShip binds this copy to the epoch and incarnation captured during login.
+// Never infer the epoch from a later View: a reset may reuse the same player ID.
 // Administrative maintenance and fresh login use the unbound store.
-func (s Store) ForShip(id int, generation uint64) Store {
-	s.ship = &shipSession{id: id, generation: generation, spies: game.NewSpyNetwork(id, generation)}
+func (s Store) ForShip(id int, generation, season uint64) Store {
+	s.ship = &shipSession{id: id, generation: generation, season: season, spies: game.NewSpyNetwork(id, generation, season)}
 	return s
 }
 func (s Store) checkShip(w *game.World) error {
 	if s.ship != nil {
-		return w.CheckShip(s.ship.id, s.ship.generation)
+		return w.CheckSession(s.ship.id, s.ship.generation, s.ship.season)
 	}
 	return nil
 }

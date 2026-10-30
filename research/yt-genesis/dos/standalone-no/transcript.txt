@@ -1,0 +1,5 @@
+
+
+Running stand alone... re-initializing using old sysop defined defaults.
+
+Do you wish to re-init Y.T. using your old default values?N

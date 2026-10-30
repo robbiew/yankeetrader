@@ -269,6 +269,8 @@ func TestDangerScannerMineLossBranches(t *testing.T) {
 func TestTravelVersion20UpgradeNoGiftAndLegacyFutureState(t *testing.T) {
 	w, p := travelWorld(t)
 	w.Version = 20
+	w.Season = 0
+	w.GenerationSeed = nil
 	before := *p
 	if err := w.Upgrade(); err != nil || w.Version != WorldVersion || !reflect.DeepEqual(before, *p) {
 		t.Fatal("migration changed player", err)
@@ -276,6 +278,8 @@ func TestTravelVersion20UpgradeNoGiftAndLegacyFutureState(t *testing.T) {
 	for _, scanner := range []bool{false, true} {
 		w, p = travelWorld(t)
 		w.Version = 20
+		w.Season = 0
+		w.GenerationSeed = nil
 		p.DangerScanner = scanner
 		if !scanner {
 			p.WarpSequence = 1

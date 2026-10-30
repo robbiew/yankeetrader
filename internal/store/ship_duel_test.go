@@ -50,7 +50,7 @@ func TestConcurrentCreditSalvageClaimsPayOnce(t *testing.T) {
 	if paid != 1 || w.Players[2].Credits != 7694 || w.Players[1].Credits != 5656 || w.Players[1].Death == nil || w.Players[1].Credits+w.Players[2].Credits != initial {
 		t.Fatal("salvage paid twice or lost money", paid, w.Players)
 	}
-	if _, err = s.ForShip(1, 0).View(); !errors.Is(err, game.ErrShipDestroyed) {
+	if _, err = s.ForShip(1, 0, 1).View(); !errors.Is(err, game.ErrShipDestroyed) {
 		t.Fatal("victim session survived settlement", err)
 	}
 }
@@ -93,7 +93,7 @@ func TestDamageAndCreditSalvageRollBackTogether(t *testing.T) {
 	if w.Players[1].Death != nil || w.Players[1].Fighters != 10 || w.Players[1].Shields != 10 || w.Players[2].Fighters != 1000 || w.Players[2].Credits != 1005 {
 		t.Fatal("partial combat settlement saved")
 	}
-	if err := s.ForShip(2, 0).Update(apply); err != nil {
+	if err := s.ForShip(2, 0, 1).Update(apply); err != nil {
 		t.Fatal(err)
 	}
 	w, _ = s.View()

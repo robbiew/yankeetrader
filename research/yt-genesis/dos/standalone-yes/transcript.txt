@@ -1,0 +1,113 @@
+
+
+Running stand alone... re-initializing using old sysop defined defaults.
+
+Do you wish to re-init Y.T. using your old default values?Y
+
+
+          Yankee Trader Remote Initialization Program v2.2
+                         By Alan Davenport
+
+
+Re-creating main data file: YTDATA.DAT
+
+Starting player info:
+  # of fighters at start: 25
+  # of credits at start: 1005
+  # of cargo holds at start: 10
+  # of days inactivity until an dead player is deleted: 14
+  Last day maintenance run: Yesterday
+  # of turns per day: 500
+  # of times per day a user may play the lottery: 5
+  Xannor Headquarters placed in sector: 849
+  Ports needed to initiate Genesis: 300
+  Maximum Cargo holds set to: 1000
+  Scoreboard bulletin name and path is: YTSCORE.ASC
+
+
+Generating Player Records for 50 Players.
+
+Initializing sectors...
+
+Generating Randomized Universe... Please be patient...
+
+Wormholes (Long Warps)..
+
+ 84 - 2717     107 - 2201    142 - 91      154 - 2193    261 - 435
+ 351 - 1828    409 - 744     654 - 1553    689 - 2935    717 - 1904
+ 735 - 2057    742 - 2126    745 - 2853    868 - 1350    970 - 508
+ 1231 - 1108   1243 - 1168   1250 - 2842   1295 - 1346   1297 - 2110
+ 1364 - 2200   1367 - 986    1412 - 2315   1454 - 2404   1549 - 433
+ 1560 - 2374   1582 - 1614   1595 - 1784   1598 - 2092   1707 - 2508
+ 1756 - 282    1795 - 216    1952 - 792    1971 - 109    2010 - 280
+ 2081 - 326    2163 - 1432   2242 - 398    2330 - 2326   2502 - 92
+ 2561 - 40     2580 - 2383   2602 - 2797   2714 - 1165   2783 - 2469
+ 2869 - 2345   2900 - 566    2957 - 1306   2967 - 2216  
+
+Verifying warps.. linking isolated sectors.
+
+*** Error - No Path to sector 35!!
+Sector 35 has been linked to sector 14
+*** Error - No Path to sector 338!!
+Sector 338 has been linked to sector 212
+*** Error - No Path to sector 339!!
+Sector 339 has been linked to sector 269
+*** Error - No Path to sector 374!!
+Sector 374 has been linked to sector 103
+*** Error - No Path to sector 614!!
+Sector 614 has been linked to sector 502
+*** Error - No Path to sector 636!!
+Sector 636 has been linked to sector 270
+*** Error - No Path to sector 874!!
+Sector 874 has been linked to sector 296
+*** Error - No Path to sector 1100!!
+Sector 1100 has been linked to sector 86
+*** Error - No Path to sector 1405!!
+Sector 1405 has been linked to sector 503
+*** Error - No Path to sector 1469!!
+Sector 1469 has been linked to sector 307
+*** Error - No Path to sector 1570!!
+Sector 1570 has been linked to sector 39
+*** Error - No Path to sector 1578!!
+Sector 1578 has been linked to sector 255
+*** Error - No Path to sector 2489!!
+Sector 2489 has been linked to sector 602
+*** Error - No Path to sector 2762!!
+Sector 2762 has been linked to sector 2407
+*** Error - No Path to sector 2913!!
+Sector 2913 has been linked to sector 87
+*** Error - No Path to sector 2927!!
+Sector 2927 has been linked to sector 1022
+*** Error - No Path to sector 2944!!
+Sector 2944 has been linked to sector 578
+*** Error - No Path to sector 2963!!
+Sector 2963 has been linked to sector 2008
+*** Error - No Path to sector 2968!!
+Sector 2968 has been linked to sector 2535
+
+ ** Warp verification complete!! **
+
+ ** Building shortcuts back to sector 1
+
+Random sector data generated and verified. Writing..............................
+.................................
+
+Initializing ports... (Be patient)
+
+   They started producing 10 days ago...........................................
+..........................
+
+Initializing planets...
+   Maximum number of planets: 100
+
+Initializing the Xannor...
+
+Setting up newspaper file.
+
+Setting up yesterday's newspaper file.
+
+Initializing the alias file (Matches real name to alias.)
+
+Clearing YTRMSG.DAT  (Radio message file)
+
+Initialization completed sucessfully!

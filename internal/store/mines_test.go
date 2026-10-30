@@ -19,7 +19,7 @@ func TestMineEntryRollbackAndBoundActionGate(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	bound := s.ForShip(1, 0)
+	bound := s.ForShip(1, 0, 1)
 	w, _ := s.View()
 	entry, err := w.PrepareMineEntry(1, 2)
 	if err != nil {
@@ -130,7 +130,7 @@ func TestChainedMineDeathAtomicReplayAndReplacement(t *testing.T) {
 	if after.Players[1].Death.Cause != "mines" || after.Players[1].Death.Killer != 2 || after.Players[2].Death.Killer != 1 || after.Ports[2].Owner != 0 {
 		t.Fatal("chain attribution/estate lost")
 	}
-	if _, err := s.ForShip(1, 0).View(); !errors.Is(err, game.ErrShipDestroyed) {
+	if _, err := s.ForShip(1, 0, 1).View(); !errors.Is(err, game.ErrShipDestroyed) {
 		t.Fatal(err)
 	}
 	if err := s.Update(func(w *game.World) error { return w.LoginShip(1, time.Now()) }); err != nil {
@@ -147,6 +147,8 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 6
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	data, _ := json.Marshal(w)
@@ -167,6 +169,8 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	}
 	w.NextRadio = 0
 	w.Version = 6
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Sectors[2].Minefield = []game.MineLayer{{Owner: 0, Count: 1}}

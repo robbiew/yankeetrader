@@ -28,7 +28,7 @@ func TestEarthAttackAftermathRollbackAndConcurrentClaims(t *testing.T) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	oldSession := s.ForShip(1, 0)
+	oldSession := s.ForShip(1, 0, 1)
 	before, _ := s.View()
 	saved, _ := json.Marshal(before)
 	apply := func(w *game.World) error {

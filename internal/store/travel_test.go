@@ -20,7 +20,7 @@ func travelStore(t *testing.T) (Store, Store, time.Time) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	return s, s.ForShip(1, 0), w.Created
+	return s, s.ForShip(1, 0, 1), w.Created
 }
 func travelBytes(t *testing.T, s Store) []byte {
 	t.Helper()
@@ -84,7 +84,7 @@ func TestTravelAtomicAbortValidationAndLateMineFailure(t *testing.T) {
 }
 func TestTravelConcurrentZeroCostSameSectorAndCommittedDurability(t *testing.T) {
 	s, a, at := travelStore(t)
-	b := s.ForShip(1, 0)
+	b := s.ForShip(1, 0, 1)
 	deadline := time.Now().Add(time.Minute)
 	ea, err := a.PrepareWarp(deadline)
 	if err != nil {
@@ -159,7 +159,7 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			results <- s.ForShip(1, 0).Update(func(w *game.World) error { return w.Equip(1, token, "scanner", 1, at) })
+			results <- s.ForShip(1, 0, 1).Update(func(w *game.World) error { return w.Equip(1, token, "scanner", 1, at) })
 		}()
 	}
 	wg.Wait()
@@ -176,8 +176,11 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 	}
 	w.Players[1].DangerScanner = false
 	w.Version = 20
+	w.Season = 0
+	w.GenerationSeed = nil
 	expected := *w
 	expected.Version = game.WorldVersion
+	expected.Season = 1
 	raw, _ := json.Marshal(w)
 	if err := os.WriteFile(s.Dir+"/world.json", raw, 0600); err != nil {
 		t.Fatal(err)
@@ -195,6 +198,8 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 	}
 	for _, scanner := range []bool{false, true} {
 		w.Version = 20
+		w.Season = 0
+		w.GenerationSeed = nil
 		w.Players[1].DangerScanner = scanner
 		if !scanner {
 			w.Players[1].WarpSequence = 1

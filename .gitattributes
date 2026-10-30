@@ -85,3 +85,9 @@
 /research/yt-earth-lottery/dos/**/DOS*.LOG -text -diff
 /research/yt-earth-lottery/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-earth-lottery/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-genesis/dos/**/KEYS.TXT -text -diff
+/research/yt-genesis/dos/**/DOS*.LOG -text -diff
+/research/yt-genesis/dos/**/RETURN.LOG -text -diff
+/research/yt-genesis/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-genesis/dos/**/dosbox.log -text whitespace=-blank-at-eol

@@ -303,6 +303,8 @@ func TestHQRewardNewsCapacityAndValidation(t *testing.T) {
 	}
 	before := w.Players[p.ID].Credits
 	w.Version = 19
+	w.Season = 0
+	w.GenerationSeed = nil
 	if w.Upgrade() == nil {
 		t.Fatal("legacy accepted victory news")
 	}

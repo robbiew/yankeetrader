@@ -87,7 +87,7 @@ func (s Store) Warp(entry game.WarpIntent, rng func() float64, now func() time.T
 		if !time.Now().Before(deadline) {
 			return errors.New("session time expired")
 		}
-		if w.CheckShip(s.ship.id, s.ship.generation) != nil {
+		if w.CheckSession(s.ship.id, s.ship.generation, s.ship.season) != nil {
 			return nil
 		}
 		if e := n.Advance(w, now(), rand.Float64); e != nil {

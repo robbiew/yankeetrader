@@ -55,7 +55,7 @@ func TestHQRewardReceiptsMatchActualCreditAndPublicPrivacy(t *testing.T) {
 				}); err != nil {
 					t.Fatal(err)
 				}
-				s.Store = st.ForShip(1, 0)
+				s.Store = st.ForShip(1, 0, 1)
 				var err error
 				if missiles {
 					v, _ := func() (*game.Visibility, error) {
@@ -135,7 +135,7 @@ func TestHQRewardReceiptAfterForcedBribeCombat(t *testing.T) {
 				}); err != nil {
 					t.Fatal(err)
 				}
-				s.Store = st.ForShip(1, 0)
+				s.Store = st.ForShip(1, 0, 1)
 				err := s.bribe(1, []string{"8", "1"}, &[]string{})
 				w, viewErr := st.View()
 				if viewErr != nil {

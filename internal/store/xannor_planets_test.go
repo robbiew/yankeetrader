@@ -74,7 +74,7 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		_ = s.ForShip(1, 0).Update(func(w *game.World) error { return w.Land(1, next) })
+		_ = s.ForShip(1, 0, 1).Update(func(w *game.World) error { return w.Land(1, next) })
 	}()
 	wg.Wait()
 	close(errs)
@@ -111,7 +111,7 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 	if count != 1 || news != 1 {
 		t.Fatal("duplicated/lost outcomes", count, news)
 	}
-	if err := s.ForShip(1, 0).Update(func(w *game.World) error { return w.Bank(1, token, 0, next) }); err == nil {
+	if err := s.ForShip(1, 0, 1).Update(func(w *game.World) error { return w.Bank(1, token, 0, next) }); err == nil {
 		t.Fatal("pending bank confirmation survived")
 	}
 	before, _ = os.ReadFile(path)
@@ -155,6 +155,8 @@ func TestVersionFifteenPlanetMigrationPreservesShipHistoryUntilWrite(t *testing.
 	s, _ := xannorShipStore(t)
 	w, _ := s.View()
 	w.Version = 15
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.Players[1].BattleReports = []game.BattleReport{{ID: 1, At: w.Created, Sector: 10, XannorLost: 3, Unread: true}}
 	w.NextBattleReport = 2
 	raw, _ := json.Marshal(w)

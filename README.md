@@ -8,6 +8,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ### Available in-game to test
 
+- **Seasons:** confirmed Genesis endgame, authoritative port ownership, atomic universe reset, public winner history and epoch guards that end old logins.
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
 - **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
@@ -19,7 +20,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
+- Planetary thrusters and forced landing; explicit season archive export/administrative reset tooling.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -291,11 +292,11 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 active accounts with a 256-identity lifetime archive (IDs are never reused), 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full universe generation parity, DOS save import/export, Genesis, and remaining terminal menus are future milestones. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full universe generation parity, DOS save import/export and remaining terminal menus are future milestones. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 22 for persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 22. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 23 for season epochs, recorded fresh generation seeds, explicit Genesis thresholds and bounded public winner results, alongside persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21/version-22 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 23. Migration assigns season one without resetting, awarding, inventing a historical seed or backfilling winner history. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -953,6 +954,72 @@ tiers, quota/date/cap guards, rollback/concurrency/replay and actual random term
 receipts are tested. Exact DOS RNG/MBF/animation parity, live BBS gameplay and
 native Windows durability remain separate.
 [Implementation, compatibility and validation](research/yt-earth-lottery/IMPLEMENTATION.md).
+
+
+### Genesis endgame and safe season reset — bounded research complete
+
+Fresh original-DOS controls confirm the default 300-port endgame, threshold
+bounds, cancellation and the cached-count weakness: cached ownership can win with
+no actual ports, while actual ownership with a stale zero cache is refused. The
+initializer clears accounts, titles and most auxiliary history, but can retain a
+stale scoreboard. A missing initializer leaves a handoff marker that later resumes
+without fresh confirmation; an invalid dropfile consumes it before failing.
+
+The 24 returned controls include thirteen successful resets, eight refusals or
+cancellations, two expected fault outcomes and one first-maintenance run, with
+48 world snapshots, two exact reload edges, thirteen native byte observations
+and 42 rehashed corruption controls. Zero-disabled lottery settings become one, out-of-range cargo caps become 50,
+and standalone Genesis bounds differ from the in-game gate. A tested case-paired
+alias mapping still produces a blank winner, so that native identity path remains
+unresolved. Mid-write DOS crashes and concurrent resetters were not tested.
+
+The proposed Go contract recounts actual non-Earth ownership, captures the winner
+before replacing accounts, archives bounded season results inside the same atomic
+save, and binds every login/cache/intent to a new monotonic season epoch. It also
+requires finite generation, complete bootstrap before admission, unchanged lock
+identity, rollback/durability handling and accurate saved receipts. These were
+implementation requirements at the research baseline; the implementation below now provides the bounded reset contract.
+
+**Historical research milestone:** Genesis was unavailable and save version 22 unchanged at this point; the implementation below supersedes that restriction. README, plan and
+CI evidence checks are updated with this research; no Go gameplay or live-world
+reset is included.
+[Evidence, findings, boundaries and next implementation contract](research/yt-genesis/SAFE_RESET.md).
+
+
+### Genesis endgame and safe season resets — implemented
+
+Use main command `G` or `GENESIS` in either interface. The default requirement is
+300 **actual personally owned non-Earth ports**; team titles and stored-score
+caches cannot qualify. The prompt explains that the entire universe, its players,
+assets and messages will be replaced. Only a separately entered, exact uppercase
+`GENESIS` confirms; queued commands, blank, No, lowercase and chained answers do
+not authorize a reset. The quote expires after two minutes or changed state.
+
+The old winner's public result and the new season are saved in one atomic world
+replacement. Fresh ports, Mercenary Base and Xannoron/HQ are initialized before
+admitting new players; same-day maintenance cannot repeat bootstrap. Old logins,
+private caches and pending confirmations reject the new epoch even if player
+numbers and ship generations are reused. Classic login rechecks the authenticated
+BBS identity under the same lock. The saved receipt ends the winning
+login; reconnect to register in the new season. `SEASONS` displays public winners.
+History is bounded to 128 completed seasons; a full archive safely refuses a reset.
+History pages reuse one immutable snapshot, with a live season check after each
+paging pause rather than reopening and validating the save for every row.
+
+New worlds can use `./bin/yt -data test-world -init -sectors 32 -genesis-ports 20`
+for a reachable test threshold, or `-genesis-ports 0` to disable Genesis. Omission
+retains the default 300; explicit values must be zero or 20–300. Small universes
+never silently reduce the default. Supported settings survive reset, including a
+zero-disabled lottery. New seeds are recorded; legacy seed provenance is unknown.
+
+Save version **23** requires upgrading all nodes together after a stopped-world
+backup. Pre-replacement failures preserve the old world. A post-rename durability
+warning is a committed reset: its receipt is retained, the login ends and replay
+is refused. Full Go race/vet, local process-interruption, evidence, real terminal
+and cross-build validation are recorded in the validation log. Live BBS acceptance,
+native Windows crash durability, full DOS generation/numeric parity and The
+Wanderer's absent lifecycle remain separate work.
+[Implementation and safety contract](research/yt-genesis/IMPLEMENTATION.md).
 
 
 ## Documentation upkeep

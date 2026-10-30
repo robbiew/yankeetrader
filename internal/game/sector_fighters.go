@@ -16,6 +16,7 @@ type SectorBattle struct {
 	SurrenderConsidered                                          bool
 }
 type DefenseIntent struct {
+	Season                   uint64
 	Player, From, To         int
 	Generation               uint64
 	Fighters                 int64
@@ -176,7 +177,7 @@ func (w *World) PrepareDefenseFight(id, to int, count int64, accept bool) (Defen
 	if count < 1 || count > p.Fighters {
 		return DefenseIntent{}, errors.New("choose available fighters to commit")
 	}
-	return DefenseIntent{Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Fighters: count, Defense: *w.Sectors[to].Defense, Mines: append([]MineLayer(nil), w.Sectors[to].Minefield...), AcceptSurrender: accept}, nil
+	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Fighters: count, Defense: *w.Sectors[to].Defense, Mines: append([]MineLayer(nil), w.Sectors[to].Minefield...), AcceptSurrender: accept}, nil
 }
 func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	p, err := w.player(id)
@@ -189,10 +190,10 @@ func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
-	return DefenseIntent{Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
+	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
 }
 func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.Time) (DefenseOutcome, error) {
-	if err := w.CheckShip(entry.Player, entry.Generation); err != nil {
+	if err := w.CheckSession(entry.Player, entry.Generation, entry.Season); err != nil {
 		return DefenseOutcome{}, err
 	}
 	p := w.Players[entry.Player]

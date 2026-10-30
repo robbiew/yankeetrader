@@ -26,7 +26,7 @@ func bribeFixture(t *testing.T) (Store, Store) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	return s, s.ForShip(1, 0)
+	return s, s.ForShip(1, 0, 1)
 }
 func bribeDeadline() time.Time { return time.Now().Add(time.Minute) }
 
@@ -168,7 +168,7 @@ func TestMercenaryHostilityPublishesWithCommitAndResetsOnReconnect(t *testing.T)
 			if err != nil || !entry.Hostile {
 				t.Fatal(entry, err)
 			}
-			fresh := s.ForShip(1, 0)
+			fresh := s.ForShip(1, 0, 1)
 			entry, err = fresh.PrepareBribe(300, bribeDeadline())
 			if err != nil || entry.Hostile {
 				t.Fatal("reconnect retained hostility", err)
@@ -212,7 +212,7 @@ func TestBribeSessionTokenAndUnchangedRefusalCannotReplay(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	second := s.ForShip(1, 0)
+	second := s.ForShip(1, 0, 1)
 	fresh, err := second.PrepareBribe(0, bribeDeadline())
 	if err != nil {
 		t.Fatal(err)

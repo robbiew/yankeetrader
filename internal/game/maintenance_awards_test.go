@@ -284,6 +284,8 @@ func TestMaintenanceRetirementOrderingReplayAndMetadataExhaustion(t *testing.T) 
 func TestVersion18MigrationAndFutureFields(t *testing.T) {
 	w, _ := setup(t)
 	w.Version = 17
+	w.Season = 0
+	w.GenerationSeed = nil
 	raw, _ := json.Marshal(w)
 	if err := w.Upgrade(); err != nil || w.Version != WorldVersion {
 		t.Fatal(err)

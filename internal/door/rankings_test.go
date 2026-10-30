@@ -77,7 +77,7 @@ func TestRankingsPagingStopsForInvalidatedSession(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	term.beforeRead = func(n int) error {
 		return st.Update(func(w *game.World) error {
 			return w.RecordDeath(game.DeathContext{Victim: 1, Generation: w.Players[1].ShipGeneration, Sector: w.Players[1].Sector, Cause: "hazard"}, s.Now())
@@ -95,7 +95,7 @@ func TestRankingsPagingStopsForInvalidatedSession(t *testing.T) {
 func TestRankingsExpiredSessionCannotPublish(t *testing.T) {
 	s, st := radioSession(t, &scripted{})
 	w, _ := st.View()
-	s.Store = st.ForShip(1, w.Players[1].ShipGeneration)
+	s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
 	s.Deadline = time.Now().Add(-time.Second)
 	pending := []string{}
 	if err := s.rankings(1, nil, &pending); err == nil {

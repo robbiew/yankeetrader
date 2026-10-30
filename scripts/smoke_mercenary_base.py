@@ -15,7 +15,7 @@ def exercise(root, today):
     path = data / 'world.json'
     world = json.loads(path.read_text())
     # A version-12 save migrates without inventing a base until maintenance.
-    world['Version'] = 12
+    world['Version'] = 12; world.pop("Season",None); world.pop("GenerationSeed",None)
     for p in world['Players'].values():p.pop('LastActivity',None)
     world.pop('NextBattleReport', None)
     world['LastMaintenance'] = (today - datetime.timedelta(days=1)).isoformat()
@@ -23,7 +23,7 @@ def exercise(root, today):
     subprocess.run([BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
     created = json.loads(path.read_text())
     base = created['Planets']['99']
-    assert created['Version'] == 22 and created['Sectors']['8']['Planet'] == 99
+    assert created['Version'] == 23 and created['Sectors']['8']['Planet'] == 99
     assert base['FactionHome'] == 'mercenaries' and base['Owner'] == -2
     assert base['Production'] == [100000, 100000, 100000]
     assert base['Ground'] == 150000 and base['Bank'] == 25000000

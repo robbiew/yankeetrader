@@ -16,6 +16,7 @@ const SpyHistoryLimit = 30
 type SpyNetwork struct {
 	owner        int
 	generation   uint64
+	season       uint64
 	locations    []int
 	lastReported []int
 	reports      []SpyReport
@@ -32,8 +33,8 @@ type SpyReport struct {
 	Unread          bool
 }
 
-func NewSpyNetwork(id int, generation uint64) *SpyNetwork {
-	return &SpyNetwork{owner: id, generation: generation, next: 1}
+func NewSpyNetwork(id int, generation, season uint64) *SpyNetwork {
+	return &SpyNetwork{owner: id, generation: generation, season: season, next: 1}
 }
 func (n *SpyNetwork) Clone() *SpyNetwork {
 	c := *n
@@ -46,7 +47,7 @@ func (n *SpyNetwork) check(w *World) error {
 	if n == nil {
 		return errors.New("spies require a live login")
 	}
-	return w.CheckShip(n.owner, n.generation)
+	return w.CheckSession(n.owner, n.generation, n.season)
 }
 func (n *SpyNetwork) Locations(w *World) ([]int, error) {
 	if err := n.check(w); err != nil {

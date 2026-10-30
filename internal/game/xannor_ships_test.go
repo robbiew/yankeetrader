@@ -285,6 +285,8 @@ func TestXannorBattleHistoryRetentionValidationAndPrivacy(t *testing.T) {
 	// Migration starts empty and rejects future fields instead of backfilling events.
 	old := mobileWorld(t, 12)
 	old.Version = 14
+	old.Season = 0
+	old.GenerationSeed = nil
 	old.NextBattleReport = 0
 	if err := old.Upgrade(); err != nil || old.Version != WorldVersion || old.NextBattleReport != 1 {
 		t.Fatal("v14 migration", err)

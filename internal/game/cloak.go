@@ -13,6 +13,7 @@ type Visibility struct {
 	antiActivations uint64
 	observer        int
 	generation      uint64
+	season          uint64
 	revealed        map[int]uint64
 }
 
@@ -21,7 +22,7 @@ func (w *World) NewVisibility(id int) (*Visibility, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &Visibility{observer: id, generation: p.ShipGeneration, revealed: map[int]uint64{}}, nil
+	return &Visibility{observer: id, generation: p.ShipGeneration, season: w.Season, revealed: map[int]uint64{}}, nil
 }
 func (w *World) checkVisibility(id int, v *Visibility) error {
 	if v == nil || v.observer != id {
@@ -33,7 +34,7 @@ func (w *World) checkVisibility(id int, v *Visibility) error {
 	if !initialized {
 		return errors.New("visibility is not initialized")
 	}
-	return w.CheckShip(id, v.generation)
+	return w.CheckSession(id, v.generation, v.season)
 }
 func (v *Visibility) sees(p *Player) bool {
 	v.mu.Lock()

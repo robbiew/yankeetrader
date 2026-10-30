@@ -19,7 +19,7 @@ func TestBlockedPlanetReportChargeIsAtomicAndRollsBack(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	bound := s.ForShip(1, w.Players[1].ShipGeneration)
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
 	abort := errors.New("aborted report")
 	if err := bound.Update(func(w *game.World) error {
 		if _, err := w.RemotePlanetReport(1, 2, time.Now()); err != nil {

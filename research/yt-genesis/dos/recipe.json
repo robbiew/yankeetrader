@@ -1,0 +1,293 @@
+{
+  "recipe": "genesis-reset-v1",
+  "scenarios": [
+    {
+      "name": "owned-299",
+      "cached": 299,
+      "owned": 299,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "owned-300",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game"
+    },
+    {
+      "name": "owned-301",
+      "cached": 301,
+      "owned": 301,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game"
+    },
+    {
+      "name": "cancel-no",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "N",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "cancel-blank",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "cached-only",
+      "cached": 300,
+      "owned": 0,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game"
+    },
+    {
+      "name": "records-only",
+      "cached": 0,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "fallback-short",
+      "cached": 199,
+      "owned": 199,
+      "threshold": 19,
+      "reply": "Y",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "fallback-200",
+      "cached": 200,
+      "owned": 200,
+      "threshold": 19,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game"
+    },
+    {
+      "name": "threshold-20",
+      "cached": 20,
+      "owned": 20,
+      "threshold": 20,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game"
+    },
+    {
+      "name": "disabled-301",
+      "cached": 999,
+      "owned": 999,
+      "threshold": 301,
+      "reply": "Y",
+      "expect": "refusal",
+      "mode": "game"
+    },
+    {
+      "name": "lottery-zero",
+      "cached": 20,
+      "owned": 20,
+      "threshold": 20,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game",
+      "patches": [
+        [
+          1,
+          101,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "cargo-low",
+      "cached": 20,
+      "owned": 20,
+      "threshold": 20,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game",
+      "patches": [
+        [
+          1,
+          121,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "cargo-high",
+      "cached": 20,
+      "owned": 20,
+      "threshold": 20,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game",
+      "patches": [
+        [
+          1,
+          121,
+          1001
+        ]
+      ]
+    },
+    {
+      "name": "custom-defaults",
+      "cached": 20,
+      "owned": 20,
+      "threshold": 20,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game",
+      "patches": [
+        [
+          1,
+          49,
+          777
+        ],
+        [
+          1,
+          65,
+          31
+        ],
+        [
+          1,
+          69,
+          4321
+        ],
+        [
+          1,
+          73,
+          17
+        ],
+        [
+          1,
+          77,
+          9
+        ],
+        [
+          1,
+          101,
+          7
+        ],
+        [
+          1,
+          121,
+          850
+        ],
+        [
+          1,
+          125,
+          7000
+        ]
+      ]
+    },
+    {
+      "name": "winner-mapping",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "game",
+      "alias_case_pair": true,
+      "score_sentinel": true
+    },
+    {
+      "name": "standalone-no",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "N",
+      "expect": "standalone-cancel",
+      "mode": "standalone"
+    },
+    {
+      "name": "standalone-blank",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "",
+      "expect": "standalone-cancel",
+      "mode": "standalone"
+    },
+    {
+      "name": "standalone-yes",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "standalone"
+    },
+    {
+      "name": "standalone-threshold-high",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 301,
+      "reply": "Y",
+      "expect": "reset",
+      "mode": "standalone"
+    },
+    {
+      "name": "missing-initializer",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "chain-error",
+      "mode": "game",
+      "alias_case_pair": true,
+      "omit": [
+        "RMT-INIT.EXE"
+      ]
+    },
+    {
+      "name": "malformed-marker",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "marker-error",
+      "mode": "standalone",
+      "marker": "\"MISSING.DEF\"\r\n"
+    },
+    {
+      "name": "marker-resume",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "N",
+      "expect": "reset",
+      "mode": "standalone",
+      "parent": "missing-initializer"
+    },
+    {
+      "name": "first-maintenance",
+      "cached": 300,
+      "owned": 300,
+      "threshold": 300,
+      "reply": "Y",
+      "expect": "maintenance",
+      "mode": "maintenance",
+      "parent": "winner-mapping"
+    }
+  ]
+}

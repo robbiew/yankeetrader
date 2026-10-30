@@ -31,7 +31,7 @@ func cloakSession(t *testing.T, term *scripted) (Session, int, string) {
 	}); err != nil {
 		t.Fatal(err)
 	}
-	s.Store = s.Store.ForShip(id, 0)
+	s.Store = s.Store.ForShip(id, 0, 1)
 	w, _ := s.Store.View()
 	s.visibility, _ = w.NewVisibility(id)
 	return s, id, token

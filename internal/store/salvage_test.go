@@ -15,7 +15,7 @@ func TestFullSalvageWorker(t *testing.T) {
 	if os.Getenv("YT_SALVAGE_WORKER") == "" {
 		return
 	}
-	s := Store{Dir: os.Getenv("YT_SALVAGE_DIR")}.ForShip(2, 0)
+	s := Store{Dir: os.Getenv("YT_SALVAGE_DIR")}.ForShip(2, 0, 1)
 	if err := s.Update(func(w *game.World) error {
 		p := w.Players[1]
 		_, err := w.SettleShipSalvage(game.DeathContext{Victim: 1, Generation: p.ShipGeneration, Sector: p.Sector, Killer: 2, Cause: "combat"}, func() float64 { return .5 }, time.Now())
@@ -71,7 +71,7 @@ func TestFullSalvageAndEstateAtomicAcrossConcurrentClaims(t *testing.T) {
 	results := make(chan error, 2)
 	for i := 0; i < 2; i++ {
 		wg.Add(1)
-		go func() { defer wg.Done(); results <- s.ForShip(2, 0).Update(apply) }()
+		go func() { defer wg.Done(); results <- s.ForShip(2, 0, 1).Update(apply) }()
 	}
 	wg.Wait()
 	close(results)
@@ -89,7 +89,7 @@ func TestFullSalvageAndEstateAtomicAcrossConcurrentClaims(t *testing.T) {
 	if success != 1 || p.Death == nil || k.Credits != 6005 || p.Credits != 5000 || k.Holds != 60 || p.Holds != 50 || w.Ports[2].Owner != 2 || w.Ports[2].Treasury != 777 || p.Team != 0 || len(w.Teams) != 0 || w.Sectors[3].Defense.Owner != game.MercenaryOwner {
 		t.Fatal("duplicate/incomplete salvage", success, p, k)
 	}
-	if _, err = s.ForShip(1, 0).View(); !errors.Is(err, game.ErrShipDestroyed) {
+	if _, err = s.ForShip(1, 0, 1).View(); !errors.Is(err, game.ErrShipDestroyed) {
 		t.Fatal("victim session survived", err)
 	}
 }
@@ -109,6 +109,8 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 4
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	for _, p := range w.Players {

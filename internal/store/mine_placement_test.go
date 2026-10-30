@@ -19,7 +19,7 @@ func TestMinePlacementGraceAtomicPersistence(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := s.View()
-	bound := s.ForShip(1, w.Players[1].ShipGeneration)
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
 	intent, _ := w.PrepareMinePlacement(1, 5)
 	abort := errors.New("abort placement")
 	if err := bound.Update(func(w *game.World) error {
@@ -64,6 +64,8 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 	w, _ := s.View()
 	w.NextRadio = 0
 	w.Version = 9
+	w.Season = 0
+	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	data, _ := json.Marshal(w)

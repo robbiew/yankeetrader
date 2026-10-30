@@ -235,6 +235,8 @@ func TestXannorSeededPlanetConservation(t *testing.T) {
 func TestVersionFifteenPlanetBattleMigrationAndValidation(t *testing.T) {
 	w, p, _ := assaultWorld(t, 0, [3]float64{}, [3]float64{})
 	w.Version = 15
+	w.Season = 0
+	w.GenerationSeed = nil
 	old, _ := json.Marshal(w)
 	if err := w.Upgrade(); err != nil || w.Version != WorldVersion {
 		t.Fatal("migration", err)
@@ -252,9 +254,13 @@ func TestVersionFifteenPlanetBattleMigrationAndValidation(t *testing.T) {
 		switch mode {
 		case "future-report":
 			candidate.Version = 15
+			candidate.Season = 0
+			candidate.GenerationSeed = nil
 			candidate.News = nil
 		case "future-news":
 			candidate.Version = 15
+			candidate.Season = 0
+			candidate.GenerationSeed = nil
 			candidate.Players[p.ID].BattleReports = nil
 		case "negative":
 			r.Planet.CargoAfter[0] = -1
