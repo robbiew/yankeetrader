@@ -294,3 +294,58 @@ cleanup retain committed warnings for the session-ending guard. Focused race-ena
 vet and the real compact/classic lottery terminal flow passed after the fix.
 The finding was summary-only, with no inline review thread to resolve. README
 and implementation notes were updated in the same fix commit.
+
+
+## Genesis endgame and safe season-reset research
+
+Validated locally on macOS arm64, 2026-10-30: 24 normally returned isolated DOS
+controls, 48 before/after worlds, two exact parent-world/auxiliary follow-ups and
+thirteen complete REA native byte observations across YT.EXE and RMT-INIT.EXE.
+The corpus separates thirteen successful resets, six in-game refusals or
+cancellations, two standalone cancellations, two deliberate fault outcomes and
+one first-maintenance run. No timed-out preparatory alias-registration probe is
+counted. Every retained control returns to a batch-written DOS completion marker;
+raw CP437 logs and their decoded transcripts agree.
+
+Controls verify cached versus actual admission at the 300-port default, equality,
+19-to-200 fallback, threshold 20, in-game disabled 301, standalone normalization,
+blank/No cancellation, record clearing/map reachability/configuration carryover,
+zero-lottery-to-one and invalid-cargo-to-50 changes, stale-scoreboard retention,
+blank winner reporting despite a case-paired mapping, missing initializer/error53,
+consumed invalid markers, marker-based resume without fresh confirmation and the
+separate required first maintenance. The records-only control retains cached
+player117 zero after logout; no claimed ownership-cache repair occurred.
+
+The independent verifier freezes declarations, reconstructs every input/parent
+world and auxiliary chain, checks binary/file/date/clock/keyboard/return identity,
+validates complete reset record patterns and directed reachability, and bounds
+nonreset changes. Independent full-world hashes preserve legal native noncanonical
+MBF zeros and broader maintenance effects; complete news/scoreboard witnesses also
+bound the one maintenance follow-up. This supplements semantic checks without
+claiming complete YTMAINT formula parity.
+
+All 42 rehashed semantic/provenance corruption controls pass: altered setup,
+accounts/titles/treasuries/configuration/stocks/warps/planet residue, cached count,
+score, noncanonical zero bytes, maintenance dates/homes/stocks/auxiliary files,
+completion/winner/confirmation notices, aliases/radio/news/scoreboard/marker
+outcomes, exact parent auxiliary inputs, keys/clock/date/return/completion claims,
+native bytes and frozen declarations are rejected. Notice attacks modify and
+rehash both raw logs and decoded transcripts. The existing 49-control paid-lottery
+verifier and its 27 corruption controls pass; all 4,682 archive hashes pass. REA
+sessions were exported and closed, and archived originals remained unchanged.
+
+The modern source audit identifies season-ID reuse, direct spy/cache binding,
+nonpersistent winner news, immediate maintenance no-op and unbounded generator
+rejection risks for a future reset. The proposed contract requires a monotonic
+epoch captured inside login, actual owned-port recount, bounded winner results
+inside the same atomic world replacement, finite generation, explicit bootstrap,
+preserved supported settings, stable world.lock identity, accurate saved receipts
+and rollback/durability/replay tests. These are requirements, not implemented
+behavior or reproduced current reset vulnerabilities.
+
+README, plan, provenance guidance, capture attributes and CI evidence checks are
+updated in the same research milestone. Go gameplay and save version22 are
+unchanged; Genesis remains unavailable. Native winner reconstruction in other BBS
+mappings, mid-write crash/concurrent DOS resets, full RNG/MBF equivalence and
+live/native acceptance remain unverified. See the
+[bounded research and implementation contract](../research/yt-genesis/SAFE_RESET.md).

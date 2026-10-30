@@ -976,3 +976,34 @@ README is updated together. [Policies and validation](yt-earth-lottery/IMPLEMENT
 The preceding research contract is historical. Remaining work includes Genesis
 and season-reset implementation, planetary thrusters/forced landing, broader
 communication/intel, full original RNG/MBF fidelity and native/live acceptance.
+
+
+## Genesis endgame and safe season-reset contract — research follow-up
+
+Twenty-four fresh returned DOS controls (thirteen resets, eight refusals or
+cancellations, two deliberate faults and one maintenance run), 48 world snapshots,
+two exact parent-world/auxiliary follow-ups and thirteen native observations
+establish cached admission, threshold/cancel behavior, destructive reset scope,
+configuration normalizations, stale scoreboard retention and marker failure/resume
+ordering. The tested alias case-pair still yields blank winner announcements;
+original BBS identity reconstruction and mid-write/concurrent reset behavior remain
+unresolved. The independent verifier checks semantic record layouts, topology,
+resource/default changes and provenance; frozen complete output hashes also
+preserve native noncanonical zeros and the bounded maintenance witness. README is
+updated in the same research milestone. No Go gameplay or schema changes are
+included; save version remains 22 and Genesis remains unavailable.
+[Research and concrete safe-reset contract](yt-genesis/SAFE_RESET.md).
+
+Next: implement bounded Genesis endgame with authoritative ownership recount,
+fresh destructive confirmation, stable season epoch captured inside login, and
+winner history in the same atomic replacement as the new world. Audit every
+session/cache/acknowledgement path for epoch binding, especially direct spy
+acknowledgements; keep the existing world.lock inode. Use finite generation and
+explicit bootstrap (New sets maintenance current, so Maintain immediately skips),
+carry supported configuration without re-enabling disabled lottery play, and
+validate the candidate before admission. Do not claim an unknown old seed or a
+currently absent Wanderer lifecycle. Test same-ID/generation reuse, login/reset
+races, concurrent winners, rollback/durability/replay, history/epoch exhaustion,
+read-only migration and both real terminal interfaces. Update README alongside
+implementation; native/live acceptance and full DOS RNG/numeric fidelity remain
+separate.

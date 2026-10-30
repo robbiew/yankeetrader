@@ -19,7 +19,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
+- Genesis, planetary thrusters and forced landing; the [Genesis reset contract now has fresh research](research/yt-genesis/SAFE_RESET.md), but the endgame command remains unavailable.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -953,6 +953,36 @@ tiers, quota/date/cap guards, rollback/concurrency/replay and actual random term
 receipts are tested. Exact DOS RNG/MBF/animation parity, live BBS gameplay and
 native Windows durability remain separate.
 [Implementation, compatibility and validation](research/yt-earth-lottery/IMPLEMENTATION.md).
+
+
+### Genesis endgame and safe season reset — bounded research complete
+
+Fresh original-DOS controls confirm the default 300-port endgame, threshold
+bounds, cancellation and the cached-count weakness: cached ownership can win with
+no actual ports, while actual ownership with a stale zero cache is refused. The
+initializer clears accounts, titles and most auxiliary history, but can retain a
+stale scoreboard. A missing initializer leaves a handoff marker that later resumes
+without fresh confirmation; an invalid dropfile consumes it before failing.
+
+The 24 returned controls include thirteen successful resets, eight refusals or
+cancellations, two expected fault outcomes and one first-maintenance run, with
+48 world snapshots, two exact reload edges, thirteen native byte observations
+and 42 rehashed corruption controls. Zero-disabled lottery settings become one, out-of-range cargo caps become 50,
+and standalone Genesis bounds differ from the in-game gate. A tested case-paired
+alias mapping still produces a blank winner, so that native identity path remains
+unresolved. Mid-write DOS crashes and concurrent resetters were not tested.
+
+The proposed Go contract recounts actual non-Earth ownership, captures the winner
+before replacing accounts, archives bounded season results inside the same atomic
+save, and binds every login/cache/intent to a new monotonic season epoch. It also
+requires finite generation, complete bootstrap before admission, unchanged lock
+identity, rollback/durability handling and accurate saved receipts. These are
+implementation requirements, not existing reset behavior.
+
+**Genesis remains unavailable; save version 22 is unchanged.** README, plan and
+CI evidence checks are updated with this research; no Go gameplay or live-world
+reset is included.
+[Evidence, findings, boundaries and next implementation contract](research/yt-genesis/SAFE_RESET.md).
 
 
 ## Documentation upkeep

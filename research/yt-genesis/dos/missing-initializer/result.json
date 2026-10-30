@@ -1,0 +1,41 @@
+{
+  "name": "missing-initializer",
+  "cached": 300,
+  "owned": 300,
+  "threshold": 300,
+  "reply": "Y",
+  "expect": "chain-error",
+  "mode": "game",
+  "alias_case_pair": true,
+  "omit": [
+    "RMT-INIT.EXE"
+  ],
+  "recipe": "genesis-reset-v1",
+  "baseline_sha256": "faf2c99341bcaceaa37770831d1548e5ebb066642ed146c2c665d679e27d65ca",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 120,
+  "timed_out": false,
+  "program_returned": true,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "cd7843db9fa2c31e562b06ff2f1da46fc5d09cd65afdc95ac91e75208e49f239",
+    "RETURN.LOG": "62ec4c854f91d90853a63bb041e5ee059f6594ad79e0311efb41f3e4ac4bff24",
+    "after.dat.gz": "a6ffbe3f0571236d1c1ef4c3b91d23e211c8cd87229965b42eb71fd65703b6d4",
+    "before.dat.gz": "a6ffbe3f0571236d1c1ef4c3b91d23e211c8cd87229965b42eb71fd65703b6d4",
+    "dosbox.log": "db147464e367294015793c6741fde737098e79de8e9eedb497e6b4c5eeb4b1af",
+    "game.log.gz": "5dfbebc87f7f88b8fc4894e34a50b8f58237d67617a519fc85bfcf6f734b9cfd",
+    "side-before.json.gz": "3a09fc241a62bf9427011ba7a1153a27b2756ab59540f8250406ffa7ccaf1c8f",
+    "sidefiles.json.gz": "c0104374c55a4cf8699757c51a88e29e294691e0880eede428ad1184b81aa71b",
+    "transcript.txt": "90f53909327583de9f56bb3dbed94934f12bcfb41faefe7059c4c1b029eb929c"
+  }
+}
