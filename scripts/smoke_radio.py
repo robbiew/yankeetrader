@@ -71,7 +71,7 @@ with tempfile.TemporaryDirectory(prefix="yt-radio-smoke-") as temp:
     message = "YT RADIO PROBE; literal/"
     transcript = play(data, "Sender", "radio Enemy;y;ignored;s", body=message)
     saved = json.loads(path.read_text())
-    assert saved["Version"] == 18 and len(saved["Radio"]) == 1
+    assert saved["Version"] == 19 and len(saved["Radio"]) == 1
     assert saved["Radio"][0]["Text"] == message and saved["Radio"][0]["Unread"]
     assert saved["Players"] == before["Players"], "Radio spent assets or turns"
     text = play(data, "Visitor", "messages;q")

@@ -8,17 +8,17 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ### Available in-game to test
 
-- **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards and safe retirement of inactive dead accounts.
+- **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
 - **Navigation and trading:** sector movement, adjacent sensors, cloak detection, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, port buyouts and treasury collection.
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories queue ship-bound revenge and bounded candidate searches.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths and planetary assaults.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement and plague/civil-war events.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
 ### Not shipped yet
 
-- Remaining random maintenance events (including plague/civil-war parity), and the original HQ victory credit reward.
+- The original HQ victory credit reward and remaining random-event parity.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
 - Danger/score scanners and player-commanded emergency warps (automatic combat/mine escape is available).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
@@ -292,7 +292,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 18 for safe retirement/activity records and private system award mail, retaining generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 18. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 19 for typed plague/civil-war news, retaining safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 19. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -354,7 +354,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-17 worlds upgrade to version 18 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-18 worlds upgrade to version 19 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -416,7 +416,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 18; follow the stopped-world
+Earth remains free of mines. This build now uses save version 19; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the
@@ -523,7 +523,7 @@ even a generous offer can be refused. Mercenaries remember your attacks until
 reconnect, and planet guards refuse to negotiate. Ordinary B still buys ports.
 
 Payment, recruitment, entry and mine aftermath save atomically. Unresolved groups
-continue blocking normal actions. The current save format is version 18. See the
+continue blocking normal actions. The current save format is version 19. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
 
@@ -542,7 +542,7 @@ remainders are discarded without carry or refund. Fresh hires first move on the
 following daily run.
 
 The same locked save commits taxes, groups and the daily date, including when
-maintenance runs at login. Saves now use version 18. Existing groups can travel one complete permitted route
+maintenance runs at login. Saves now use version 19. Existing groups can travel one complete permitted route
 per day, encountering
 mines and sector defenses. They can merge, reinforce human defenses, fight, or
 stop at a planet to take whole stored fighters; planet titles and ground forces
@@ -580,7 +580,7 @@ successfully reclaimed HQs can relocate, combining friendly force without loss.
 Full capacity safely defers creation or relocation. Captured and neutralized
 homes keep their title, resources and location; only an Xannor-owned home moves
 with its HQ. Defenders appear in the existing encounter and report interfaces.
-Introduced in version 14 and retained in version 18, saved HQ state preserves unfinished HQ battles across restarts and upgrades
+Introduced in version 14 and retained in version 19, saved HQ state preserves unfinished HQ battles across restarts and upgrades
 normal version-13 worlds without inferring homes from names or slots.
 [Rules, adaptations and validation](research/yt-xannor-lifecycle/IMPLEMENTATION.md)
 are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md).
@@ -622,7 +622,7 @@ and these deaths create no wreck mines.
 
 Both interfaces deliver private casualty reports after login; `BATTLES` reads the
 last 32 retained reports. Public news announces deaths without disclosing force
-counts. Save version 18 preserves reports through replacement and upgrades old
+counts. Save version 19 preserves reports through replacement and upgrades old
 worlds without inventing past battles.
 [Policies, migration and validation](research/yt-xannor-ships/IMPLEMENTATION.md).
 
@@ -648,7 +648,7 @@ Destruction removes the planet and expires every landing/confirmation grant,
 without creating loot or collateral ship deaths. Both interfaces deliver private
 owner reports through `BATTLES`; public news reveals only planet name and outcome.
 The shared route work limit, atomic daily save and replay guard apply throughout.
-Save version 18 preserves existing ship history and upgrades older worlds without
+Save version 19 preserves existing ship history and upgrades older worlds without
 inventing events. [Rules, migration and validation](research/yt-xannor-planets/IMPLEMENTATION.md).
 Native/live BBS acceptance remains outstanding; revenge/candidate selection follows below.
 
@@ -683,9 +683,9 @@ ordering are preserved. Discovery uses strict `RND>cloak`; actual ship encounter
 now permit equality at `cloak-.33` for every group. Revenge never removes the
 combat cloak check, and cloak remains turn-based.
 
-Save version 18 preserves existing assets and histories while adding the
-ship-generation-bound pending target. Queue creation and daily consumption save
-atomically with combat/maintenance, and replay does not repeat them.
+Save version 19 retains the ship-generation-bound pending target introduced in
+version 17, along with existing assets and histories. Queue creation and daily
+consumption save atomically with combat/maintenance, and replay does not repeat them.
 [Rules, migration and validation](research/yt-xannor-revenge/IMPLEMENTATION.md).
 
 
@@ -718,21 +718,32 @@ award a fully initialized planet. Failed occupied, defended, mined, HQ or reserv
 placement gets no retry. The winner receives private system radio naming the
 sector; public newspaper news names only the winner. MESSAGES/INBOX and ordinary
 login delivery handle the award. Full private-message capacity prevents an award.
-Save version 18 records these changes atomically with maintenance; replay and
+Save version 19 records these changes atomically with maintenance; replay and
 clock rollback do not repeat them. [Policies, migration and validation](research/yt-maintenance-lottery/IMPLEMENTATION.md).
 
 
-### Plague and civil-war research
+### Daily plague and civil-war events
 
-[56 completed original-DOS controls and 18 native byte observations](research/yt-plague-civil-war/RECOVERY.md)
-now establish port plague's post-growth production threshold, planetary random
-gates and civil-war override, damage/caps, unchanged titles and public notices.
-Native controls demonstrate a near-cutoff port rate increase, one-pass outbreaks,
-stale civil-war expense text and the legacy clock-quantization catch-up defect.
-An independent verifier and 16 rehashed corruption controls preserve these findings.
+Daily maintenance now applies a single bounded outbreak pass after ordinary
+port/planet growth. Ports, including Earth, contract plague when total updated
+production exceeds 1,000,000. Eligible rates use the recovered random reduction
+formula, cargo is capped, and the highest-stock commodity becomes the one sold.
+A near-cutoff rate can increase and an outbreak can remain above the threshold.
+Planetary plague uses production-based random gates; ground-based civil war takes
+priority, reduces production/ground and additionally spends a random whole-credit
+amount from the post-interest bank. Plague never debits its bank.
 
-These events are research-complete but are not playable yet. The next milestone
-is bounded implementation with atomic saves, quantity/credit limits, news that protects private assets and the existing daily replay/rollback policy. Saves remain version 18.
+Events preserve titles, names, links and weapon stocks. Ground results are floored
+to whole units; zero production remains valid. Same-day/rollback safeguards and
+atomic saves prevent repeated damage. Existing daily docking/landing sessions
+expire. Newspaper entries report the port count or planet name without exposing
+private forces, balances or expenditure. No legacy stale expense text is copied.
+
+Save version 19 preserves existing assets/history while adding typed event news.
+Read-only migration does not rewrite old saves. If news IDs are exhausted or its
+clock is ahead, unreportable damage is deferred. See the
+[implementation policies and validation](research/yt-plague-civil-war/IMPLEMENTATION.md)
+and [56 original-DOS controls, 18 native byte observations and recovered limits](research/yt-plague-civil-war/RECOVERY.md).
 
 
 ## Documentation upkeep

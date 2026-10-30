@@ -7,7 +7,8 @@ observations**, an executable static model and an independent verifier with
 damage, caps, ownership and reporting, with explicit economic/NPC boundaries.
 
 **Research only:** no Go gameplay or schema changes are included. Plague and
-civil-war events remain unimplemented; current saves remain version 18.
+civil-war events were unimplemented at this research commit (save version 18).
+The subsequent [bounded implementation](IMPLEMENTATION.md) adds them with save version 19.
 
 ## Finding ledger
 

@@ -750,3 +750,21 @@ selection and whitelisted public news. Preserve current identity/home, private
 asset, zero-rate and replay/rollback invariants; do not copy stale expenses or
 clock-induced overproduction. HQ credit rewards, other equipment, exact RNG/MBF
 parity and native/live acceptance remain separate work.
+
+
+## Bounded plague and civil-war events — implemented
+
+Daily maintenance now runs one stable port/planet event pass after ordinary growth,
+with strict recovered gates, civil-war priority, conditional damage draws, capped
+cargo and stable commodity selection. Earth and faction homes participate without
+changing their identity/protection rules. Modern rules floor ground to whole units,
+keep exact bounded credit debits and avoid stale expenses and rollback catch-up.
+Typed public news retains only port counts or planet names. Existing locked atomic
+saves include damage, news, date, tokens and scores together. Save version 19 adds
+these news types; legacy input upgrades without inventing events or changing assets.
+The preceding research-only status and implementation contract are historical.
+[Implemented policies, numerical differences and validation](yt-plague-civil-war/IMPLEMENTATION.md).
+
+Next: recover the original Xannor HQ victory credit reward before its bounded
+implementation. Remaining equipment/actions, complete random-event/RNG/MBF parity
+and native/live operational acceptance remain separate work.

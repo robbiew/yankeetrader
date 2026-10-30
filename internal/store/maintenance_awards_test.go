@@ -180,7 +180,7 @@ func TestVersion17RetirementAwardMigrationReadOnlyAndRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, err := s.View()
-	if err != nil || upgraded.Version != 18 || !reflect.DeepEqual(upgraded.Players, w.Players) || !reflect.DeepEqual(upgraded.Radio, w.Radio) {
+	if err != nil || upgraded.Version != game.WorldVersion || !reflect.DeepEqual(upgraded.Players, w.Players) || !reflect.DeepEqual(upgraded.Radio, w.Radio) {
 		t.Fatal("migration altered accounts/history", err)
 	}
 	unchanged, _ := os.ReadFile(path)
@@ -191,7 +191,7 @@ func TestVersion17RetirementAwardMigrationReadOnlyAndRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	saved, _ := s.View()
-	if saved.Version != 18 {
+	if saved.Version != game.WorldVersion {
 		t.Fatal("migration not saved")
 	}
 	for _, edit := range []func(*game.World){func(w *game.World) { w.Players[1].RetiredAt = w.Created.AddDate(0, 0, 14) }, func(w *game.World) { w.Radio[0].System = "super-planet" }, func(w *game.World) { w.News = []game.NewsEvent{{Kind: game.NewsRetirement}} }} {
