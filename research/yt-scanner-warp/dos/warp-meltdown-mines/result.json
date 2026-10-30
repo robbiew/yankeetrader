@@ -1,0 +1,142 @@
+{
+  "name": "warp-meltdown-mines",
+  "command": "W;Y",
+  "patches": [
+    [
+      2,
+      93,
+      -1
+    ],
+    [
+      270,
+      129,
+      1
+    ]
+  ],
+  "time": "02:00:00",
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      103
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      0
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      93,
+      -1
+    ],
+    [
+      270,
+      129,
+      1
+    ]
+  ],
+  "date": "10/24/2026",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "6e656fea830f2250825a3f844f0bf3e2d5f0afd49fd3205b8ceb5bafb102774d",
+    "KEYS.TXT": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+    "after.dat.gz": "0b50e9f3c6e53b390320ef33a2cd2f81e13fb4c78a8e53f4d4f822e899274c50",
+    "before.dat.gz": "15e07d8e2210a8bd9ba67dfdb9e84163ac83ea54a79dc06ff0f75ce2ddf47878",
+    "dosbox.log": "9b7dc6a1e27c08356f340e6f271202cf4aee7f50b660a1c5e011ab9358e0ea92",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "41c863c3274867a0ef2860dc46e120309b499c5d372412927040823135b8223b",
+    "transcript.txt": "d6f21281206f2d25f65d4e5bd34f7913692b9ac013b47434eab879ef6e52a7fd"
+  }
+}

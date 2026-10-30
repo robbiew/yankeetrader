@@ -30,7 +30,7 @@ def exercise(guard):
                         command='missile 8 3';replies=[(b'[y/N] ',answer),(prompt,ending)]
                     text=guard.run(play,data,'Captain',command,classic=classic,followups=replies)
                     saved=json.loads(path.read_text());p=saved['Players']['1']
-                    assert saved['Version']==20 and p['Credits']==balance+want,(mode,text)
+                    assert saved['Version']==21 and p['Credits']==balance+want,(mode,text)
                     news=[e for e in saved['News']if e['Kind']=='xannor-hq-victory']
                     if mode=='cancel':
                         assert saved['Sectors']['8']['Defense']['Fighters']==1 and not news and 'Credits added:'not in text,text

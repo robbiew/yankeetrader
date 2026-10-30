@@ -1,0 +1,31 @@
+{
+  "name": "shop-reconnect",
+  "command": "P;5\r~~0",
+  "patches": [],
+  "parent": "shop-exact",
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "4b84e47f0f931d3d4a4750978ffc45df31d3f3fb09591c896a09bcb686237af6",
+    "after.dat.gz": "13bae8e7de7800a2103022eb3b8af7ed577d91d337ce919d1bfdd6769cf09b7d",
+    "before.dat.gz": "e899c898bfdfabf2170ce2bb3fd432b2af76a1a8429b59c032dbf56c85f5be67",
+    "dosbox.log": "eaa1a84fbbe4b37e10836394ed510637215bb1b3c3cbcf97f4879658e741772a",
+    "side-before.json.gz": "896d71ed9ed4868a90995e836d068f3c71799593dffeea672a601868f3f13bd0",
+    "sidefiles.json.gz": "4c855ba3e718661ac00f2ec31f3d5efe282ecb78ee5b000d4ed5e082faa130ce",
+    "transcript.txt": "9d67846600b2f305ed0fdf66683165ada569727ae4624dbcd6b0327d46466f43"
+  }
+}

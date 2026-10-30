@@ -48,7 +48,7 @@ def exercise(guard):
                 assert 'Xannor revenge pending for this ship.' in text, text
                 saved = json.loads(path.read_text())
                 p = saved['Players']['1']
-                assert saved['Version'] == 20 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
+                assert saved['Version'] == 21 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
                 assert not saved['Sectors']['8'].get('Defense') and p['Credits'] == world['Players']['1']['Credits']+1000000
                 outsider = guard.run(play, data, 'Visitor', 'i;news;q')
                 assert 'revenge pending' not in outsider

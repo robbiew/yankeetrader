@@ -63,6 +63,8 @@ jobs:
           python3 scripts/test_xannor_revenge_verifier.py
           python3 scripts/verify_xannor_hq_reward.py
           python3 scripts/test_xannor_hq_reward_verifier.py
+          python3 scripts/verify_scanner_manual_warp.py
+          python3 scripts/test_scanner_manual_warp_verifier.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py
@@ -131,6 +133,7 @@ jobs:
           python3 scripts/smoke_xannor_planets.py
           python3 scripts/smoke_xannor_revenge.py
           python3 scripts/smoke_xannor_hq_rewards.py
+          python3 scripts/smoke_scanner_warp.py
           python3 scripts/smoke_planet_missiles.py
       - name: Cross-build Linux and Windows
         run: |

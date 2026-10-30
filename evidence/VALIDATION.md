@@ -114,3 +114,45 @@ after forced combat from a refused HQ bribe. The bribe handler now displays the
 same saved actual-credit/cap receipt before mine aftermath. Compact/classic tests
 cover full, one-credit and zero-credit awards, cancellation and an aborted save;
 the real HQ reward smoke also exercises adjacent-HQ forced bribe combat.
+
+
+## Bounded danger scanner and manual emergency warp
+
+Validated locally on macOS arm64, 2026-10-30, with Go 1.27.3. Save version 21
+adds persisted scanner ownership and a warp replay sequence without granting
+legacy ships equipment or changing their location/resources.
+
+- Full race-enabled Go suite and vet pass. Tests cover exact Earth scanner debit,
+  duplicate/quantity/affordability/docking errors, installed asset score value,
+  scanner loss, own/team warnings, stale state, partial autopilot, finite bounded
+  warp work, 64 seeded worlds, capped recharge, zero-cost same-sector replay,
+  meltdown and daily turn reset and mine/defense/fatal arrival consequences.
+- Store validation covers byte-exact rollback after callbacks, invalid final state
+  and late mine errors; eight concurrent purchase/warp contenders; current state
+  rechecks; lock-wait expiry during preparation and commit; committed directory-sync
+  failure, reload and retry; death/replacement generations; version-20 read-only
+  migration and future-state rejection. Door tests verify real saved receipts,
+  fresh/stacked/cancelled/disconnected confirmation and extra automatic-escape debit.
+- Twenty real terminal smoke scripts pass, including the new compact/classic
+  scanner purchase/reload, exact debit/duplicate refusal, scanner manual/autopilot
+  warnings, hostile entry and normal/one-turn random warp receipts. The other 19
+  affected terminal scripts also pass. Historical regenerated captures are restored.
+- The 41-session/10-native-observation scanner/warp verifier, 23 rehashed semantic
+  corruption controls, 46-session hazard verifier and all 4,682 archive hashes pass.
+  Linux/amd64 and Windows/amd64 cross-builds pass.
+
+An external temporary module-file override points to the existing local GoDoors
+checkout; repository module files and GoDoors sources are unchanged. Live BBS
+acceptance and native Windows durability remain unverified. The modern daily-turn
+reset is validated; original next-day engine repair and lethal warp-arrival parity
+remain unverified. See [implementation and compatibility](../research/yt-scanner-warp/IMPLEMENTATION.md).
+
+
+PR #45 review/CI follow-up: mixed-draw regressions failed before the fix and
+passed after caching the warp heat budget once, including exact draw count,
+destination, heat, recharge and persisted turn checks. The Earth port parity
+smoke now checks real scanner availability while retaining unsupported-item and
+DOS character/color assertions. All ten port parity cases and the scanner/warp
+terminal smoke passed. The full race-enabled suite, vet, scanner evidence and
+semantic corruption checks, and Linux/Windows cross-builds were rerun for the fix.
+Regenerated historical port captures were restored.

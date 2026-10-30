@@ -121,6 +121,7 @@ func (w *World) recordDeath(p *Player, context DeathContext, now time.Time) {
 	if w.Xannor != nil && w.Xannor.Revenge != nil && w.Xannor.Revenge.Player == p.ID {
 		w.Xannor.Revenge = nil
 	}
+	p.DangerScanner = false
 	p.Death = &Death{At: now.UTC(), Cause: context.Cause, Killer: context.Killer, Sector: p.Sector}
 	p.ShipGeneration++
 	p.Sector = 0
@@ -163,6 +164,7 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 		p.Turns = 500
 	}
 	p.Cloak = 1
+	p.DangerScanner = false
 	p.Sector = 1
 	p.MineGraceSector = 0
 	p.Credits, p.Holds, p.Fighters, p.Shields = 1005, 10, 25, 100
@@ -202,7 +204,7 @@ func (w *World) validateLifecycle() error {
 			continue
 		}
 		death := p.Death
-		if p.ShipGeneration == 0 || p.Sector != 0 || w.Sectors[death.Sector] == nil || death.At.IsZero() || death.At.Before(w.Created) || p.DockToken != "" || p.PlanetToken != "" || p.LandedPlanet != 0 || !p.DockUntil.IsZero() || p.DockPrices != [3]int64{} {
+		if p.DangerScanner || p.ShipGeneration == 0 || p.Sector != 0 || w.Sectors[death.Sector] == nil || death.At.IsZero() || death.At.Before(w.Created) || p.DockToken != "" || p.PlanetToken != "" || p.LandedPlanet != 0 || !p.DockUntil.IsZero() || p.DockPrices != [3]int64{} {
 			return errors.New("invalid destroyed ship")
 		}
 		switch death.Cause {

@@ -147,26 +147,8 @@ func (w *World) Course(id, to int) ([]int, error) {
 // FollowCourse revalidates each hop against authoritative state. A stale course
 // must stop, rather than resume from another session's new position.
 func (w *World) FollowCourse(id int, course []int) error {
-	p, err := w.player(id)
-	if err != nil {
+	if err := w.CheckCourse(id, course); err != nil {
 		return err
-	}
-	if len(course) < 2 {
-		return errors.New("autopilot stopped: no next hop")
-	}
-	if p.Sector != course[0] {
-		return errors.New("autopilot stopped: ship position changed; plot a new course")
-	}
-	if int64(len(course)-1) > p.Turns {
-		return errors.New("autopilot stopped: not enough turns left")
-	}
-	for i, sector := range course {
-		if contains(p.AvoidSectors, sector) {
-			return errors.New("autopilot stopped: course now crosses your avoid list; plot a new course")
-		}
-		if w.Sectors[sector] == nil || (i > 0 && !contains(w.Sectors[course[i-1]].Warps, sector)) {
-			return errors.New("autopilot stopped: warp route changed; plot a new course")
-		}
 	}
 	return w.Move(id, course[1])
 }

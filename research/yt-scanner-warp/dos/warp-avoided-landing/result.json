@@ -1,0 +1,121 @@
+{
+  "name": "warp-avoided-landing",
+  "command": "C;7;1;881;1;W;Y",
+  "patches": [],
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      103
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      0
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "e46d34d1d0da189d6b3a7655e505b98ad021fb87dac945070373faaf5fa3b901",
+    "after.dat.gz": "1266c6a7b90e2a3fd87987d861d5ec6a334396af6df7c35d960def76c6b1c3e4",
+    "before.dat.gz": "f4c4d6178716ca192d9cb24f9da6399d431f66eb1bdefcc9117fb510325fd3ec",
+    "dosbox.log": "5c08d057f9db48aa0386b9ca1c6a938b2f08a4f1bcc9b4e5b8e68e78d6c15bef",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "d02f6a1a2a454f0cba5785bc801d677b1c70e6dd1f04a41187555cdf8512e757",
+    "transcript.txt": "bce671eb221dae23e631ea0e212547a6f6a04edfdeb7ca291563bb489573e31f"
+  }
+}

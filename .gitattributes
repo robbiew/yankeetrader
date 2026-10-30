@@ -70,3 +70,8 @@
 /research/yt-xannor-hq-reward/dos/**/DOS*.LOG -text -diff
 /research/yt-xannor-hq-reward/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-xannor-hq-reward/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-scanner-warp/dos/**/KEYS.TXT -text -diff
+/research/yt-scanner-warp/dos/**/DOS*.LOG -text -diff
+/research/yt-scanner-warp/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-scanner-warp/dos/**/dosbox.log -text whitespace=-blank-at-eol

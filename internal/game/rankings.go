@@ -45,7 +45,7 @@ func rankPercent(score, leader int64) string {
 
 // PlayerRankings computes a detached, coherent report. With stored=true, scores
 // come from the last published cache; ownership and membership remain current.
-// Unsupported scanners/NPCs and private planetary assets are not synthesized.
+// Unsupported score scanners/NPCs and private planetary assets are not synthesized.
 func (w *World) PlayerRankings(id int, stored bool) (Rankings, error) {
 	if _, err := w.player(id); err != nil {
 		return Rankings{}, err
@@ -80,6 +80,9 @@ func (w *World) rankingSnapshot(stored bool) Rankings {
 				score = p.StoredScore
 			} else {
 				score = defenses[p.ID]
+				if p.DangerScanner {
+					score = scoreAdd(score, 1, DangerScannerPrice)
+				}
 				for _, part := range [][2]int64{{p.Shields, 50}, {p.Fighters, 100}, {p.Holds, 2500},
 					{p.Cargo[0], 20}, {p.Cargo[1], 30}, {p.Cargo[2], 40}, {p.Credits, 1},
 					{p.Missiles, 1000}, {p.Plasma, 1000000}, {int64(ports[p.ID]), 50000}, {p.Ground, 750}, {p.Mines, 2500}} {

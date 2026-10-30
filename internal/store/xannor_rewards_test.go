@@ -210,7 +210,7 @@ func TestHQRewardVersion19MigrationNoBackfillAndFutureRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	saved, _ := st.View()
-	if saved.Version != 20 || saved.Players[1].Credits != 1005 || len(saved.News) != 0 {
+	if saved.Version != game.WorldVersion || saved.Players[1].Credits != 1005 || len(saved.News) != 0 {
 		t.Fatal("migration invented reward")
 	}
 	w.News = []game.NewsEvent{{ID: 1, At: w.Created, Kind: game.NewsXannorHQ, Alias: "Captain"}}

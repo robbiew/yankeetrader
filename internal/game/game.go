@@ -15,11 +15,13 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 20
+const WorldVersion = 21
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
+	DangerScanner                                    bool           `json:",omitempty"`
+	WarpSequence                                     uint64         `json:",omitempty"`
 	LastActivity                                     string         `json:",omitempty"`
 	RetiredAt                                        time.Time      `json:",omitempty"`
 	BattleReports                                    []BattleReport `json:",omitempty"`
@@ -293,7 +295,7 @@ func (w *World) Move(id, to int) error {
 	w.move(p, to)
 	return nil
 }
-func (w *World) canMove(p *Player, to int) error {
+func (w *World) canMoveBase(p *Player, to int) error {
 	if w.HostileDefense(p.ID, p.Sector) {
 		return ErrDefenseEncounter
 	}
@@ -303,14 +305,20 @@ func (w *World) canMove(p *Player, to int) error {
 	if !contains(w.Sectors[p.Sector].Warps, to) {
 		return errors.New("that sector is not an adjacent warp")
 	}
+	if p.Turns < 1 {
+		return errors.New("no turns left today")
+	}
+	return nil
+}
+func (w *World) canMove(p *Player, to int) error {
+	if err := w.canMoveBase(p, to); err != nil {
+		return err
+	}
 	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]
 		if owner == nil || p.Team == 0 || owner.Team != p.Team {
 			return errors.New("hostile sector fighters block this warp; use BRIBE <sector> <credits> or BREACH")
 		}
-	}
-	if p.Turns < 1 {
-		return errors.New("no turns left today")
 	}
 	return nil
 }
@@ -445,6 +453,20 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 	if q < 1 || q > MaxQuantity {
 		return errors.New("enter a positive whole quantity")
 	}
+	if item == "scanner" {
+		if q != 1 {
+			return errors.New("buy one danger scanner")
+		}
+		if p.DangerScanner {
+			return errors.New("danger scanner is already installed")
+		}
+		if p.Credits < DangerScannerPrice {
+			return errors.New("not enough credits for danger scanner")
+		}
+		p.Credits -= DangerScannerPrice
+		p.DangerScanner = true
+		return nil
+	}
 	var asset *int64
 	var price, limit int64
 	switch item {
@@ -465,7 +487,7 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 		price = 750
 		limit = MaxQuantity
 	default:
-		return errors.New("choose holds, fighters, shields, or forces")
+		return errors.New("choose holds, fighters, shields, forces, or scanner")
 	}
 	if q > limit-*asset {
 		return errors.New("equipment limit exceeded")

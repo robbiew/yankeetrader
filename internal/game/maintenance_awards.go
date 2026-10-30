@@ -88,6 +88,7 @@ func (w *World) retireInactivePlayers(now time.Time) {
 		p.Credits, p.Turns, p.Holds, p.Fighters, p.Shields, p.Ground = 0, 0, 0, 0, 0, 0
 		p.Cargo = [3]int64{}
 		p.Missiles, p.Mines, p.Plasma = 0, 0, 0
+		p.DangerScanner = false
 		p.Cloak = 0
 		p.StoredScore = 0
 		p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0

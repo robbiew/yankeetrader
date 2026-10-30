@@ -91,6 +91,12 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 			if i == 1 || i == 2 || i == 6 || i == 7 || i == 8 {
 				afford = strconv.FormatInt(p.Credits/costs[i], 10)
 			}
+			if i == 4 {
+				afford = "0"
+				if !p.DangerScanner && p.Credits >= game.DangerScannerPrice {
+					afford = "1"
+				}
+			}
 			if err = s.Terminal.Printf("%-22s* %-7d* %s\r\n", label, costs[i], afford); err != nil {
 				return err
 			}
@@ -108,6 +114,14 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 		if strings.EqualFold(choice, "i") {
 			if err = s.classicInfo(w, id, true); err != nil {
 				return err
+			}
+			continue
+		}
+		if choice == "5" {
+			if err = s.buyScanner(id, token, 1); err != nil {
+				if err = s.Terminal.Printf("Purchase rejected: %s\r\n", err); err != nil {
+					return err
+				}
 			}
 			continue
 		}

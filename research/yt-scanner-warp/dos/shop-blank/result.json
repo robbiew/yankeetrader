@@ -1,0 +1,152 @@
+{
+  "name": "shop-blank",
+  "command": "P;\r~~0",
+  "patches": [
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      2,
+      81,
+      250000
+    ]
+  ],
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      103
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      0
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      2,
+      81,
+      250000
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "4fa47c165607602f19effe615a44ad1439bb593f78d2d12291be35dbaafd455e",
+    "after.dat.gz": "d123f0569c7953d0cab85cf64179ea42ccabd87a14451b2ece24cf0566d23696",
+    "before.dat.gz": "55a1731ce3d6d6a338ecf5d3e6cc84469dc3b86fd8709a7460fde93903fdac74",
+    "dosbox.log": "dc44f3fafe6d142530c63c61344cf831f7dcd71ddaa08a63a5bcb2f3ddb224e0",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "509b8ccc4ba4f1fcce9c55905641ffeafc9753566538a126f45700db5662d9d0",
+    "transcript.txt": "b0603ddaeffa90b3584e8e535e1e158775d72accd9e2450d13b9cbdddb0adc7b"
+  }
+}

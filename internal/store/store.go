@@ -31,6 +31,7 @@ type Store struct {
 type shipSession struct {
 	encounterMu      sync.Mutex
 	mercenaryHostile bool
+	warpActive       string
 	bribeActive      string
 	spyMu            sync.Mutex
 	id               int
