@@ -1,0 +1,147 @@
+{
+  "name": "energy-one-above",
+  "command": "P;1;1\r~~0",
+  "patches": [
+    [
+      2,
+      81,
+      1001
+    ],
+    [
+      2,
+      125,
+      0
+    ]
+  ],
+  "recipe": "cloak-energy-anticloak-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      81,
+      1001
+    ],
+    [
+      2,
+      125,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "4cbc9976e748bdcf7a293a9249e70bd3131a95dd5cef536c40b5e2530613dfc6",
+    "after.dat.gz": "9afd907a478690fcdd15078bf331f874538efb11bbb958ac0be2c87ae89cd221",
+    "before.dat.gz": "fb88a49d723b7ecac5255c529e737c957b19189a1240802fc0b4bb9dc24da980",
+    "dosbox.log": "d51792c7cbf32b5f760f6708c5db8ffc1d665164285482ba79c7206baf9c8f90",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "322617c6ec2a7dc3ba95dbfa608fb807f57ed5271e677508c34a8bfe08f42046",
+    "transcript.txt": "c75693630fac4086eeaa3118db39f59a8bc793c814692d85f0a4a4f9525b4117"
+  }
+}

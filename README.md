@@ -20,7 +20,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
-- Score scanners and remaining Earth equipment options marked `N/A`.
+- Cloak-energy recharge, anti-cloak activation and Earth's paid lottery remain unavailable; their shop options show `N/A`.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -842,6 +842,32 @@ ships; read-only loading leaves files unchanged. Full race tests, vet, 20 termin
 smoke scripts, evidence verification, archive checks and Linux/Windows cross-builds
 passed locally. Live BBS and native Windows durability remain unverified.
 [Implementation policies, compatibility and validation](research/yt-scanner-warp/IMPLEMENTATION.md).
+
+
+### Cloak-energy purchasing and anti-cloak activation — research complete
+
+Original-DOS controls establish Earth item 1 at 1,000 credits per percentage
+point, whole-point quantity handling, missing/affordable blank defaults,
+over-capacity rejection, consecutive purchases and saved recharge across reconnects.
+Earth item 6 costs 500,000 credits for one login's activation. Fresh acceptance
+clears cached cloak and exposes ships without changing their stored energy;
+repeated and empty activations still charge. Declines preserve resources.
+
+The buyer's native information display reports FAIL while active, despite intact
+stored energy. A paired turn-boundary control confirms that the original session
+flag suppresses the buyer's ordinary cloak decay. Reconnect rebuilds concealment
+and restores normal decay; a linked recharge remains saved. These are recovered
+rules, not newly playable Go features or a permanent anti-cloak installation.
+
+The research retains 37 completed DOS controls, four exact world/auxiliary
+reconnect chains and ten complete REA byte observations, with independent
+verification and 23 corruption controls, including rehashed semantic attacks.
+The proposed implementation keeps
+exact debit, staged session effects, current ship generations, accurate receipts
+and normal modern cloak consumption. No Go gameplay or schema changes are made;
+version 21 remains current. Full concurrent-observer and replacement-target DOS
+behavior, exact numeric/RNG parity and native/live acceptance remain separate.
+[Recovered rules, evidence, limits and proposed contract](research/yt-cloak-equipment/RECOVERY.md).
 
 
 ## Documentation upkeep

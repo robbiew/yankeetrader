@@ -1,0 +1,31 @@
+{
+  "name": "anti-recharge-reconnect",
+  "command": "I;S",
+  "patches": [],
+  "parent": "anti-recharge-after",
+  "recipe": "cloak-energy-anticloak-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "e09406c7a12e2b8656d91697b1e5b770bcaa8622588223f43b66a42fb5d2b61f",
+    "after.dat.gz": "3a4d9e438373af88fc73224ece823bd83ccf341d473ba93404741ad236e72c44",
+    "before.dat.gz": "3a4d9e438373af88fc73224ece823bd83ccf341d473ba93404741ad236e72c44",
+    "dosbox.log": "8aec2516c7b45c1813b59ab2754661f643372a9c68ccae1d96031c4bd78e19e1",
+    "side-before.json.gz": "8bc0395884514a9421e3b6493c0ed9cd3ee8a2fa51445c918263454c54de695d",
+    "sidefiles.json.gz": "b9e6f81e30a7d989f67757adac129924f31f5d85a4e7121a1c7cad307decc76f",
+    "transcript.txt": "ad32372fd2170cee3e4a67dbfd721dfeaa9e388e5e456324fd3a5d4bc4f79f24"
+  }
+}

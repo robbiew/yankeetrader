@@ -75,3 +75,8 @@
 /research/yt-scanner-warp/dos/**/DOS*.LOG -text -diff
 /research/yt-scanner-warp/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-scanner-warp/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-cloak-equipment/dos/**/KEYS.TXT -text -diff
+/research/yt-cloak-equipment/dos/**/DOS*.LOG -text -diff
+/research/yt-cloak-equipment/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-cloak-equipment/dos/**/dosbox.log -text whitespace=-blank-at-eol

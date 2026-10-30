@@ -1,0 +1,157 @@
+{
+  "name": "control-decay",
+  "command": "P;0;M;2",
+  "patches": [
+    [
+      2,
+      125,
+      1
+    ],
+    [
+      2,
+      81,
+      1000000
+    ],
+    [
+      2,
+      49,
+      477
+    ]
+  ],
+  "recipe": "cloak-energy-anticloak-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      125,
+      1
+    ],
+    [
+      2,
+      81,
+      1000000
+    ],
+    [
+      2,
+      49,
+      477
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "d3fd518aaaf68b2adf0f115f36986f2566fd7688976503e6dc158c1b14abcc70",
+    "after.dat.gz": "c4ad6bf17fad3a08ae340d1666ef6a7dde425eb527ddddce7c5d886a66910ff5",
+    "before.dat.gz": "5c2d3703ba8074978ce3c51bd34367db0d547365cb2dc5aea58617ecb6588cc8",
+    "dosbox.log": "7b210b4345430b91ff26eaec8928948922a798228dfca5984bee4443a28d991f",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "6a40c984dcf0bad626ce916730b9383cc3e36126b88a82082277a5a222075b7c",
+    "transcript.txt": "2a7d8c80649d7d0104cee661a55190a3fea3315f153bffa79401de6b3dd7f68c"
+  }
+}

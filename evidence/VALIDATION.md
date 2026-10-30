@@ -156,3 +156,28 @@ DOS character/color assertions. All ten port parity cases and the scanner/warp
 terminal smoke passed. The full race-enabled suite, vet, scanner evidence and
 semantic corruption checks, and Linux/Windows cross-builds were rerun for the fix.
 Regenerated historical port captures were restored.
+
+
+## Cloak-energy and anti-cloak research
+
+Validated locally on macOS arm64, 2026-10-30: 37 normally completed original-DOS
+controls, 74 before/after snapshots, four exact world/auxiliary reconnect chains
+and ten complete REA native byte observations. The independent verifier rebuilds
+the declared input graph/port/player setup, freezes the recipe, checks all hashes
+and input streams, rejects unexplained world bytes, and verifies exact credits,
+MBF energy, turns, score effects, activation/decline/repeat behavior, global and
+adjacent visibility, the original own-decay suppression and reconnect reset.
+
+Twenty-three corruption controls include rehashed payments, energy, saved target
+state, turn debit, scores, notices, confirmations and sensor output; altered
+parent auxiliary inputs, keyboard streams, completion claims, native bytes and
+frozen declarations are also rejected. The existing 41-session scanner/warp
+verifier and its 23 corruption controls still pass, as do all 4,682 archived-file
+hashes. REA's Ghidra session was exported and closed. Failed or preparatory probes
+remain outside the retained corpus. README, plan and CI checks are updated.
+
+This milestone adds research and evidence tooling, not Go gameplay. Save version
+21 remains unchanged. Whole-program random/numeric parity, concurrent original
+observers, target replacement during activation, live BBS acceptance and native
+Windows durability remain unverified. See the
+[research report and proposed implementation](../research/yt-cloak-equipment/RECOVERY.md).
