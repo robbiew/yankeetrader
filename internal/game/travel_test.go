@@ -353,3 +353,47 @@ func TestManualWarpMeltdownUsesExistingDailyTurnReset(t *testing.T) {
 		t.Fatal("hidden engine cooldown", err)
 	}
 }
+
+func TestManualWarpFixedHeatBudgetDrawOrder(t *testing.T) {
+	for _, tc := range []struct {
+		name              string
+		budget            int
+		initial, heatDraw float64
+		heat              int
+	}{{"shrinking", 70, .5, 0, 0}, {"growing", 14, .1, .9, 14}} {
+		t.Run(tc.name, func(t *testing.T) {
+			w, p := travelWorld(t)
+			e, err := w.PrepareWarp(p.ID)
+			if err != nil {
+				t.Fatal(err)
+			}
+			draws := 0
+			out, err := w.CommitWarp(e, func() float64 {
+				i := draws
+				draws++
+				switch {
+				case i < 2:
+					return tc.initial
+				case i < tc.budget+2:
+					return tc.heatDraw
+				case i == tc.budget+2:
+					return .5 // Sector 5 in the eight-sector fixture.
+				case i == tc.budget+3:
+					return .125 // Recovered overwritten draw.
+				case i == tc.budget+4:
+					return .875 // Three-turn recharge jitter.
+				default:
+					t.Fatal("warp drew beyond its fixed budget")
+					return 0
+				}
+			}, clock)
+			wantCost := int64(4*tc.heat + 3)
+			if err != nil || draws != tc.budget+5 || out.Heat != tc.heat || out.Destination != 5 || out.FinalSector != 5 || p.Sector != 5 || out.RechargeTurns != wantCost || out.TurnsSpent != wantCost || p.Turns != 500-wantCost || out.Meltdown {
+				t.Fatalf("fixed budget/draw order: outcome=%+v draws=%d turns=%d err=%v", out, draws, p.Turns, err)
+			}
+			if err := w.Validate(); err != nil {
+				t.Fatal(err)
+			}
+		})
+	}
+}

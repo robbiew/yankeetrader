@@ -60,7 +60,8 @@ A new risk confirmation discards queued input; this is a modern safety policy
 rather than the original acceptance of stacked `W;Y`.
 
 Heat work is bounded to 139 steps, using the mathematical integer part of
-`70*(RND+RND)`. Each strict `RND>.75` adds a heat mark, stopping at 31. A single
+`70*(RND+RND)`, fixed once from the first two draws. Later heat draws do not
+recalculate the budget or shift the destination/recharge draw order. Each strict `RND>.75` adds a heat mark, stopping at 31. A single
 indexed draw chooses from sorted actual sector IDs, preserving current-sector,
 avoid-list and nonadjacent eligibility. The recovered overwritten draw is consumed.
 Normal recharge is `min(remaining turns, 4*heat + floor(4*RND))`; 31 marks spends
@@ -139,3 +140,10 @@ Historical regenerated smoke captures are preserved. Native Windows durability
 and live BBS acceptance remain unverified. Complete disruptions/black holes,
 next-day original-engine repair, lethal-arrival DOS parity and exact RNG/MBF
 boundaries remain separate work.
+
+PR #45 review follow-up: a deterministic mixed-draw regression reproduced an
+incorrectly recalculated loop limit. The budget is now cached before heat draws;
+shrinking/growing draw patterns assert the exact step count, destination, heat,
+recharge and saved turns. The Earth screen parity smoke now asserts actual
+scanner availability (one affordable installation in its fixtures), retaining
+N/A checks for unsupported items and the original character/color comparisons.

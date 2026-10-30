@@ -146,3 +146,13 @@ checkout; repository module files and GoDoors sources are unchanged. Live BBS
 acceptance and native Windows durability remain unverified. The modern daily-turn
 reset is validated; original next-day engine repair and lethal warp-arrival parity
 remain unverified. See [implementation and compatibility](../research/yt-scanner-warp/IMPLEMENTATION.md).
+
+
+PR #45 review/CI follow-up: mixed-draw regressions failed before the fix and
+passed after caching the warp heat budget once, including exact draw count,
+destination, heat, recharge and persisted turn checks. The Earth port parity
+smoke now checks real scanner availability while retaining unsupported-item and
+DOS character/color assertions. All ten port parity cases and the scanner/warp
+terminal smoke passed. The full race-enabled suite, vet, scanner evidence and
+semantic corruption checks, and Linux/Windows cross-builds were rerun for the fix.
+Regenerated historical port captures were restored.

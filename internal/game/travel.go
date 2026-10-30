@@ -138,8 +138,9 @@ func (w *World) CommitWarp(e WarpIntent, rng func() float64, now time.Time) (War
 	if err != nil {
 		return WarpOutcome{}, err
 	}
+	budget := min(139, int(math.Floor(70*(r+r2))))
 	heat := 0
-	for i := 0; i < min(139, int(math.Floor(70*(r+r2)))); i++ {
+	for i := 0; i < budget; i++ {
 		r, err = draw()
 		if err != nil {
 			return WarpOutcome{}, err

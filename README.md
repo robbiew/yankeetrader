@@ -823,9 +823,11 @@ fighter entry remain available to ships without scanners.
 `W` or `WARP` offers a fresh emergency-risk confirmation in both interfaces,
 including during hostile fighter encounters. It requires at least one turn and
 no purchased equipment. Landing may be in the current, avoided or any other
-existing sector. Recharge uses bounded heat work and available whole turns;
-meltdown spends every remaining turn. Receipts identify the random landing,
-recharge, any additional arrival-escape debit and actual total turns spent.
+existing sector. Recharge fixes the bounded heat budget from its first two random
+draws, then uses available whole turns; later heat draws cannot change that budget
+or shift the destination/recharge draw order. Meltdown spends every remaining
+turn. Receipts identify the random landing, recharge, any additional arrival-escape
+debit and actual total turns spent.
 
 Destination, turns, cloak consumption, access invalidation, mine damage/scanner
 loss and any death/estate cleanup save atomically. Hostile fighters at the landing

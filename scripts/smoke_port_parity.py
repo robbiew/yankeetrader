@@ -19,14 +19,18 @@ def original(name,index):
 
 
 def compare(actual,expected,first,earth=False,last=24):
-    """Ignore only live clock fields and explicitly unsupported Earth affordability."""
+    """Ignore live clock fields and assert current Earth equipment availability."""
     masks=set()
     for y,row in enumerate(expected[:24]):
         text=''.join(c[0] for c in row)
         if text.startswith('Commerce report for '):
             start=text.index(': ')+2
             masks.update((y,x) for x in range(start,start+19))
-        if earth and text.startswith(('[1]','[4]','[5]','[6]')):
+        if earth and text.startswith('[5]'):
+            # These fixtures have no scanner and enough credits before/after each purchase.
+            assert ''.join(c[0] for c in actual[y][33:]).strip()=='1'
+            masks.update((y,x) for x in range(33,80))
+        if earth and text.startswith(('[1]','[4]','[6]')):
             assert ''.join(c[0] for c in actual[y][33:]).strip()=='N/A'
             masks.update((y,x) for x in range(33,80))
     for y in range(first-1,last):
