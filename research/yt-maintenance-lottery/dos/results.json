@@ -1,0 +1,1441 @@
+{
+  "recipe": "maintenance-lottery-isolation-v1",
+  "scenarios": [
+    {
+      "name": "lottery-all-clock-0",
+      "patches": [],
+      "all_players": true,
+      "time": "00:00:00",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "1bec377b94b3365b342cb8e8cf28c3b2a3eefb7708e1726d2239a5b299d759cd",
+      "after_sha256": "7cbdc3515b1ecd0671581865a22eb244d7a082760cd8a303fde9987e25f9b164",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5912737d3c7918417a4ed5427ecd0149f7a581493a7524b34b0f713d9fe19315",
+        "before.dat.gz": "4529a64af2e827f3acffacf72e812eb22b5b2daa328a5f82912101d331541bb0",
+        "dosbox.log": "c89784d5f7117d097061a0683defd0156f6f358126240a421693c824d3fa01b8",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "58fd738c455dbb59015fc2ece62d0288097012ad2add057d482b486b66dd7054",
+        "transcript.txt": "418a57b3d627d00213c4e8b0588c0749d8e1b2fd2cfd4af96d7529a14ef215f0"
+      }
+    },
+    {
+      "name": "lottery-all-clock-4",
+      "patches": [],
+      "all_players": true,
+      "time": "04:00:00",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "1bec377b94b3365b342cb8e8cf28c3b2a3eefb7708e1726d2239a5b299d759cd",
+      "after_sha256": "ecb721342fbc156b96cbeedfca2ec9786a3cfc38d03fcb688a5a053ecb800c9d",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "21b6dc44174f046507a148c3e155c62484470f61e22b092643c45251570b8c95",
+        "after.dat.gz": "e2940bbfe9d9e3d758dadc3010ea1a15af274612bb2705e26cd12f2df3cab45a",
+        "before.dat.gz": "4529a64af2e827f3acffacf72e812eb22b5b2daa328a5f82912101d331541bb0",
+        "dosbox.log": "a55562a8fc1cec98bc255f882463b729b17e41bb369ab2e1e1b7bfd9fd0e733b",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "7786a100a89222959dc6b27743c6b1cc6df98ea17a6319e2d334430a483feec8",
+        "transcript.txt": "34b845b61b94d7f4d94934158eb418eb225db0da3f989cbd2c81e474f9a0f907"
+      }
+    },
+    {
+      "name": "lottery-all-clock-8",
+      "patches": [],
+      "all_players": true,
+      "time": "08:00:00",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "1bec377b94b3365b342cb8e8cf28c3b2a3eefb7708e1726d2239a5b299d759cd",
+      "after_sha256": "d4f7e7b4d5b84eceebb0e4d03a0f4025762f5f568a845b2baff82f4e53ecda5f",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "ebd4ddfbd20135351ae6ff996ec06422292065cfda7d01dafb1a9b33a5cb4880",
+        "after.dat.gz": "ea83f8832bff0fd6d94638a8d829d2763b98f8d516d3a770377f985103f2e864",
+        "before.dat.gz": "4529a64af2e827f3acffacf72e812eb22b5b2daa328a5f82912101d331541bb0",
+        "dosbox.log": "416c68ef4dcfc0bf03a616e6accedf7df24a63befd338245dd8fe420ee8f4128",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "d8f58816484c68ee4c31f0446e1e726d9d44a2ad5ed79525a7e90d52949a6b4e",
+        "transcript.txt": "0e19966163dd9b97cea7738f9a6636f30b93ca2c486942bcd9f4ee972c0c2437"
+      }
+    },
+    {
+      "name": "lottery-dirty-free-slots",
+      "patches": [],
+      "all_players": true,
+      "dirty_slots": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "740d7c8e798dc68ef7449c6b767de529fe2c77b10ed0132aef4be382c618a331",
+      "after_sha256": "729aa1953b3cbe7fd78c7d8e7d153a31917c1ebebdc6725c55d8561512574c74",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "19c49da394241322365b1aff6d3601de79430da95bfbfc0334d465ca4cfee68c",
+        "before.dat.gz": "20a8d31b941008eac8c2f850ea49a7586287860de8833ee7bc358f9bf281d24f",
+        "dosbox.log": "a8e6fc0905502a6de7c6b7ae180db3291012a902bc1edc1b670e99ee7c621347",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "58fd738c455dbb59015fc2ece62d0288097012ad2add057d482b486b66dd7054",
+        "transcript.txt": "418a57b3d627d00213c4e8b0588c0749d8e1b2fd2cfd4af96d7529a14ef215f0"
+      }
+    },
+    {
+      "name": "lottery-all-dead-recent",
+      "patches": [],
+      "all_players": true,
+      "player_death": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "3f147d1686fde507e90e6c5fe8a546eb9226303363482909d5afad3ac6b6748f",
+      "after_sha256": "54b7bfdfca95da1d6f5b2f633fd3a2950c5a7bdf9aaf2a2f152941db7f5a6189",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "d333817df70077f5146585622b78cf9b16fe0c870a1f4c9262e4b829bd68166c",
+        "before.dat.gz": "0158e8eb0ee72208081a75b815619e437b94d64167ef0ed4da74dee46a0173da",
+        "dosbox.log": "e146d1e50f77d4153ea8b2c695f1e69ba62488fdbd2ae04c49baf8808cd38d42",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "a0fc6251411e843c2fa41cf2c7d70f2b68842f63e0f7eb461ff47e72c1647c46",
+        "transcript.txt": "a321ebf5b7c39ffb2d2e72773efcea3b63a84353359f277a7871ded8647a8453"
+      }
+    },
+    {
+      "name": "lottery-all-dead-old",
+      "patches": [],
+      "all_players": true,
+      "player_delete": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "a4c0d408c25cb70098cbdb9be02e9ee5e611b08b0b339fd69188024bd88285ac",
+      "after_sha256": "b4a2fc48a1f4c4bb6e2bba903230d3cc0ba6adebd00e6487a97cbe84d928ed6d",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "a5a49c89522750f748908645a66e49a6c758cf1852cd9699c0f4d949e21be1a6",
+        "before.dat.gz": "56de509dad72553b95d01958e2b9e173ca2bba009d5112e631d464d46f6d6d70",
+        "dosbox.log": "6cb93a6fedd41ac09019e9e7498cf56ee110d27a832346a65c90c532662f7193",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "07d81b245fdfe4a775065f87de9dd530be3e454b707e7f6906684e86ff691a39",
+        "transcript.txt": "28d3cf58709bd39ab51747c9f6da58c561992dc0a6c2620ca133b8481ab95f5a"
+      }
+    },
+    {
+      "name": "lottery-empty-players",
+      "patches": [],
+      "empty_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "e05bf8d905f04c76ea01d6bffa4015517b6fb198021e7e2153c8c52bd40fb2ef",
+      "after_sha256": "73a3b5d34dd4549f918a2ec5102d97a5a63a014e085fb53e6299310ccdb43512",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "3ce9ef75393ee0e8b9a2098ed767527c77fe98dfd24d6ebb194191f362012f11",
+        "before.dat.gz": "cd8663faa518879358a7bd5c479e40b4ae6dd66deeb52944d24cceb3e14a3209",
+        "dosbox.log": "0ada5cd50c87523b2adc92f0bec0414c929af3434256b9c1c8361d9eefcf89fd",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "5160d62472a779ca8616baa26b2c4c9472a97267170b07ad7ccb03189605cc6f",
+        "transcript.txt": "2157578ab52e05120bc84ed5c5230c67e0e76fc7ba369c32fd91c7d4c3197537"
+      }
+    },
+    {
+      "name": "lottery-full-planets",
+      "patches": [],
+      "all_players": true,
+      "full_planets": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "416709e0e0909d83e01724c444654b7a8c9f5810caad9fc5f8e0dba50f774ed7",
+      "after_sha256": "59d59b6877fb15f6a61fd1fc42d00f815c8cd937359af7c37073323f4d512a0e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "7f101101b0949ce9e2e7a6ff36a5bc6aae1d258d57eabf930f9cf3e693a88ebe",
+        "before.dat.gz": "1b7d42c55bdb7cdcb3a510d2dc20e8494ffb2f871ed26f6b7b3f33dd977c9a38",
+        "dosbox.log": "d6c183495ecc4487d6557c4cc9bf728f42437bad93a68f6315d53f1013f9c16f",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "5a10dd072d1691c97764ddfd3c30ba1bcfba4213262d52d73f0acd5201b11ccd",
+        "transcript.txt": "50ec78adc1f8b3b4e0fcfabed274b9a1f5e8cd6d5655a8f804f3bab5586ead8f"
+      }
+    },
+    {
+      "name": "lottery-cloaked-players",
+      "patches": [],
+      "all_players": true,
+      "cloaked_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "030880e23d7075f6243e01ccf34d3c5d1ebecf71ccc8471c54839d9be5ad34b5",
+      "after_sha256": "0ca93303528e6458a50a7d132a7cdf3528dfb17d43ec85a7d79f3078516e683b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8702d85255dd76a90916767fa8f18ee83b9f7af878420d00c069b21339fa6e03",
+        "before.dat.gz": "99b778a1f555b43b9b2785add5659287bbd0b111c9651c99b6a2695a9c0b3c48",
+        "dosbox.log": "ca3d65042dfe8769e560ead2a4e054b87459cd2193c6b0285fa1144b248449d9",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "1cbfa4d843dc9f637d4234b2a765f600f09ad1263af909988b0166f4bdec5eb5",
+        "transcript.txt": "3e1542a31c831448533f282ab9b8a5178d34c184c9e30fa41c5ac536ef635f0d"
+      }
+    },
+    {
+      "name": "lottery-union-only",
+      "patches": [],
+      "all_players": true,
+      "union_only": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "58851dacf8fb2f69ea3d04c036c88c491ef4f08d2f7c94ac8b28919eff00cfe3",
+      "after_sha256": "ebe9845f39ea03dfe10148b73e3fb44dfa71a9b7d6b94e1914ec064db6be0248",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "373408b27033b6ac58aaed8f66faf077fcdfcb21c0759d0e3ab9061bfd0ac705",
+        "before.dat.gz": "091d04e9ba823012192c928a93835a59b25216226eee60c264cdaf6c680433d7",
+        "dosbox.log": "772f83a132beff997006eaaa93b03595a317e3843c69c7a86498b05c5053b3a8",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "29e83485f3553e42035e00fe0cd7f4ccff51d6f41642fe96f21012e590f908db",
+        "transcript.txt": "57bb34645867c9eac85378ecbf200bb1b0f31c7132def45ca31661e1c93b9744"
+      }
+    },
+    {
+      "name": "lottery-selected-player-empty",
+      "patches": [
+        [
+          12,
+          85,
+          0
+        ]
+      ],
+      "all_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "b90ad49775f985dc201437ed9e3525e2c8c9d84f06a52aa5076c34735236bc8a",
+      "after_sha256": "f4bfa82e83010ec076c51be0c88f2d09da56657a29e22608ecf55f94a4873c0d",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "cd4c73bdb872513980669cfea0f2c5503457dc3ec24c09be26609500829aa4af",
+        "before.dat.gz": "744e539683a8d356676660a0785ffa2cb7a82b34a9bc08ddbfea23bcb7bd9dd8",
+        "dosbox.log": "9152a2df31df1a13bad01aa5604465d33353b002d7ab84a0ff5abb528a3a4abf",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "5962f0431726897069740d05c82d91a885be9ccde0b79938c65e097bf10357ca",
+        "transcript.txt": "08dfcfaf6704b307bcc8ed15c3e244ae53ed4973758b291aec81c28757f43428"
+      }
+    },
+    {
+      "name": "lottery-selected-sector-occupied",
+      "patches": [
+        [
+          2216,
+          93,
+          2
+        ]
+      ],
+      "all_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "60bc7a39ec61981bdb0133918a0b8a10752d1462d0350f103c85ef7512311ec3",
+      "after_sha256": "19158515b801bb4e9adc158eb9f1ac991372bb08fff09151e4dd67bc98c18fb2",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "741d651f42ea30aa55eafd02b126cadbf3434daf33d5c7d67b2ed02fc20d0c34",
+        "before.dat.gz": "25cd79fa946dfed3ad20a30d9824359d050520584879156394af8b528c35daee",
+        "dosbox.log": "34c71ad5d7a8beb4b7a556bcf438aea35c73bb30ccb3b3832b1ce53c0e8a9941",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "cf4de0ccc4f7c3623583afd7662928746c7d3e0bc7cf0f182d87b6331c1bdda0",
+        "transcript.txt": "14c90fb3a00f191471ff08e6334349c2dfa66c8447039f4af5484d53eed03aa0"
+      }
+    },
+    {
+      "name": "lottery-selected-sector-mined",
+      "patches": [
+        [
+          2216,
+          129,
+          5
+        ]
+      ],
+      "all_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "bf3d183281089a5b978f0ccd47eb8b7f538702c40199a29775fb514683a5131b",
+      "after_sha256": "cd085db2a7d6ea27dd542f4d1b75fb77872360c3087376bfb71f783f5423f1e6",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "caf03e242abccb0d711df80522739bc53885dd27f48adb1976fa9440bd39f88b",
+        "before.dat.gz": "af9ae7031f8dbebc26ca423ff683cd06ad59f7b785b3d841716740943017b9f1",
+        "dosbox.log": "f07939f02d9517bfdda20dd1c016d880d8c5d4c749370e1bc47c98320444522a",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "58fd738c455dbb59015fc2ece62d0288097012ad2add057d482b486b66dd7054",
+        "transcript.txt": "418a57b3d627d00213c4e8b0588c0749d8e1b2fd2cfd4af96d7529a14ef215f0"
+      }
+    },
+    {
+      "name": "lottery-selected-sector-xannor",
+      "patches": [
+        [
+          2216,
+          81,
+          1
+        ],
+        [
+          2216,
+          85,
+          -1
+        ]
+      ],
+      "all_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "70d49d7e75cbf40da3ef052e92c552fb978051f45e26e74a122948d65de6fa2c",
+      "after_sha256": "8b84545d79bdb9d8be39500001b6f829aac6e5456860826736b6be526a8d087c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "8a0a4b94bc6443d239f1b6cde5532d6b8030ff9604beca92b100a10fe403d5ad",
+        "before.dat.gz": "fc2204e83f62da14eca78b84fd313af8c2a257df76be66f04dfb94bf874d35a5",
+        "dosbox.log": "ef76ca6cb211fe658933955c1c0c9a342f7d6ae7923663d481adbe1ef60c42d1",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "15eccc6562ff6f8706e486db9968e6c9b02d018cb632174bd139b04811620cc0",
+        "transcript.txt": "fb2116655e1391a6eee9cc50c97d6d393df129c7306a973bb4d350d91be318bd"
+      }
+    },
+    {
+      "name": "lottery-selected-slot-occupied",
+      "patches": [
+        [
+          4096,
+          85,
+          8
+        ],
+        [
+          4096,
+          41,
+          298
+        ],
+        [
+          4096,
+          77,
+          1
+        ]
+      ],
+      "all_players": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "b8f7f69fc2fd6cfaa9ab7bd67eb8047554505258186045a620a675868c362d8a",
+      "after_sha256": "9d797dff3712e7f6f07e1447f6cf3d3002ff121deaa44081550b5c587d10171e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "d168903f451b512174256791e04302de16e255b5a060ee7f5e533d57b17464a2",
+        "before.dat.gz": "e9d711effa244119bfe6dfb9e09c4bd00e3d9e527d417127c1c12b0a65b5d5a7",
+        "dosbox.log": "714f20ad2f40c4271649cdab4f245997f07f635e2113a54d5c051a277bf2c9f0",
+        "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+        "sidefiles.json": "e3749bc67e58b502db44203f0f95b6b2b6a22dd1abc08c23bc29b443fac305b9",
+        "transcript.txt": "c52133b5fa47da9e62ef1902ea16648b70ca9c3006369475149ebb6ce741c51a"
+      }
+    },
+    {
+      "name": "inactive-port-live",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          3053,
+          97,
+          2
+        ],
+        [
+          3053,
+          89,
+          9
+        ],
+        [
+          3053,
+          101,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "84ddeac5fa097bb1ac8db97ceb028e6592916711f1e525b358ae27068eaca7f5",
+      "after_sha256": "9f6f8ebcfe870e3d5387aa6e2ed5295ac180131d5a12615bbfddaf680ee6679c",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "1a14fb5470d2ebd657b70b66b052fb591bc3fdfe2376c90faac7c4c8454e0632",
+        "before.dat.gz": "0b162d5b1c10a1478e4b2eac47ebd2bb784494004caccfe73997f13821ea5669",
+        "dosbox.log": "6050d5518b0bcd9c44fbef48f5f8bffd3080beee003d33e65066a4783f985f91",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "da6648e4d476fd512533f703659b8380860b86312fa6b728e732b099c0e81750",
+        "transcript.txt": "e6ca92ecf697a1459f674c44c62fad2e671eac81e824fb6140efc2f0da3af8f7"
+      }
+    },
+    {
+      "name": "inactive-port-deleted",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          3053,
+          97,
+          2
+        ],
+        [
+          3053,
+          89,
+          9
+        ],
+        [
+          3053,
+          101,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "c313a2fb8ff477f0f12a6d86369ac4235cb31c3270f8784a75cd1629193d4f30",
+      "after_sha256": "0b0e7d06d6db1ae56a612388415149c760858d38d823b251dfe5be9d4f3791df",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "e88b304739e5190f137149bafe47308f5110d258562435522090fb1367bab971",
+        "before.dat.gz": "1029015d78ecc448a94655b36b674becfdd19f1a8c7111221ae0cbec09eea9d9",
+        "dosbox.log": "376aa52fae8da1c4602c5f341bed9de10a1f868cf5faf2c76bb6c458b5228afc",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-year-end",
+      "patches": [
+        [
+          2,
+          41,
+          352
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          3,
+          41,
+          365
+        ]
+      ],
+      "cleanup": true,
+      "date": "12/31/2026",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "b9cc061fa146142eb5a57cb60d9c9c81fedabadb3f3d350d7dcb2b1179aeffdc",
+      "after_sha256": "ae162ad6be5bb4a6b7b8d461c88958faee2c15cb57fcdfcfeacc1e93477e42d6",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "839352ee800a7fb61969ac0be4dfaf8ccd9576c88f6065c2600d53921c74549e",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "c76be168d92be6ca925550beef5ec27bccf0c1cf7c6637ce00fa9c9563439187",
+        "before.dat.gz": "aca6f9771a0ade441d9cead36e1c1424c53116f30b55fa7bcffcbea7b347ea54",
+        "dosbox.log": "abdc35e1a55ff60f5c21b3d6677d08f60315d6a71c9944f68f50c428344a836a",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "f48e57ce61f90ee87929baf4185fd731de7eed58ddcf154d86c9baa269226fe3",
+        "transcript.txt": "47d256822d02075fc82c44fd421dbfec83730b72941bc5b97585f0a9c41cd846"
+      }
+    },
+    {
+      "name": "inactive-age-13-death-0",
+      "patches": [
+        [
+          2,
+          41,
+          285
+        ],
+        [
+          2,
+          45,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "b3361fdbd985d08afc8dce5a7a6ca939537941951d3e12288ff6e6cc7644908b",
+      "after_sha256": "71b3a0c0be3894ca0608753c2a303d080267bd5b38b245221741035b502b0576",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "a64708492dfa4af3f64fa6aac81907156ede6b54de0ff7df51c9d159c16922fd",
+        "before.dat.gz": "f4449e00d8aa381ca9dccf46b3659c393773995f0281af0152001b1e0e9cef58",
+        "dosbox.log": "68b857378fbe07647f0e391832c523d138bd15abc037a460348a9588b060ea5a",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "da6648e4d476fd512533f703659b8380860b86312fa6b728e732b099c0e81750",
+        "transcript.txt": "e6ca92ecf697a1459f674c44c62fad2e671eac81e824fb6140efc2f0da3af8f7"
+      }
+    },
+    {
+      "name": "inactive-age-13-death-1",
+      "patches": [
+        [
+          2,
+          41,
+          285
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "d11b2ed481c93bb40bd836af6f5f1b80c2b721aacff6874c515ebdd4fc9ee073",
+      "after_sha256": "a75e2f673f460b43142c164ce35b063d87eb3ec7e22fbd5458a41e5b31af2a28",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "489c40cab04e41013b1b5e6b30c11e4cffed58d3f914eff7862d229e73a977f3",
+        "before.dat.gz": "841c3d4192491fd0f2116dc41f788cff29b35c4f204f63cc9ed4155cae782c32",
+        "dosbox.log": "8e00114600156541f5161b22f41545d3d0f8aed2ce094e7825685fe90fc3c8d4",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "c9cc85deba967b0642d9a4585e58d5bd1d1161483a5a5988453144e4b64ec5b7",
+        "transcript.txt": "407cccc68b403b66c557845f8a3941a0051d93df8ffc6319befd04bb91026099"
+      }
+    },
+    {
+      "name": "inactive-age-13-death--1",
+      "patches": [
+        [
+          2,
+          41,
+          285
+        ],
+        [
+          2,
+          45,
+          -1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "f90ba0611f0b62e8a90f11e3b42206a51b7709450beccbf162563f0721910ff0",
+      "after_sha256": "b5d2f7a8dab3f8d66b7ccf82cf33b56fa85dd8d264bbf8fffc8c724501e29ad1",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "69d0edc430008468eb50738bc65506854170e7c3c6ae36f0927867f032f1273d",
+        "before.dat.gz": "e6bc6c6327a40ada419740cde858bf3a50e6dd799a9c5ba7a748ae7a9a629238",
+        "dosbox.log": "7a03378a6a8088fe5f42dbd906096688d2edaf3e6ff40cb998d18ce822292bcd",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "c9cc85deba967b0642d9a4585e58d5bd1d1161483a5a5988453144e4b64ec5b7",
+        "transcript.txt": "407cccc68b403b66c557845f8a3941a0051d93df8ffc6319befd04bb91026099"
+      }
+    },
+    {
+      "name": "inactive-age-14-death-0",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "098a7324e806a67f4ae2703d18613fc9b36e8826954b8c230041935d13426005",
+      "after_sha256": "06b26d91898046c5541a814daf845c85f427ce830f488d527e8a0186b4e70370",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "39e9d6dcd12bed1d79d5d1c07acc517fa9f331eaf1874116244507f9aa5d6329",
+        "before.dat.gz": "50162e2f4b4ef7b0a9cd1b2ca0bf8b1942153f52a261c31796e3b125bd87fd7a",
+        "dosbox.log": "480db4d70733806576841b90bc96c047a4305f04d0748f74f0a63b8c618d0581",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "da6648e4d476fd512533f703659b8380860b86312fa6b728e732b099c0e81750",
+        "transcript.txt": "e6ca92ecf697a1459f674c44c62fad2e671eac81e824fb6140efc2f0da3af8f7"
+      }
+    },
+    {
+      "name": "inactive-age-14-death-1",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "12d6e7858b2eaddfe6ffd55c456c3d206ac5d33f39ebb18e89365f179a96dc9e",
+      "after_sha256": "b12406786033db8c412b90dd22bc7edd7d6897111cf813664d7a50247b36d310",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "091616484e0f48b06fe6582fe3645e9d2c4244c98da675c3a2fa218d60d571b6",
+        "before.dat.gz": "3ff5be17c3fd3519978c5e0fbbc8c263a664a4296f263fe79a08c56da23c5fe3",
+        "dosbox.log": "d57af62da1ccf0347cfbcde0ed17187325d277d1586cae23902880442c3f2eb8",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-age-14-death--1",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          -1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "46e9f3dac139b88965c7ccfa37831962430e4b009326095ea10cf81476a4ffeb",
+      "after_sha256": "82bb0e0fc3044a3f37b69980dd410a307304d53191c772ff89f654894e6501ff",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "812f29ebfbb7f29975097d9ff84935c05258bf00ec053a75edde77b0d5962606",
+        "before.dat.gz": "b5e456f1a76f2552de012b49f393e15c6d97090de638005d878562aee6004bf0",
+        "dosbox.log": "948d382c4f11e0076d8900aa57e75410a0b3151022ebd7f0922b5c0e30ad7fa2",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-age-15-death-0",
+      "patches": [
+        [
+          2,
+          41,
+          283
+        ],
+        [
+          2,
+          45,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "40ec740de977fba6d7ca43c715cc38c2289a75547c2eb2b83691c063d63b64d8",
+      "after_sha256": "e9327c27d2eeb4fa2b8fae2b24ab683cc445a46fb4f2fb5c5fbf02542de2f86e",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "02121b11a5799dcdb479ad761881222838e80e10c3fadc5ecd71aaab08bce660",
+        "before.dat.gz": "d74993bf93d51af7bc04fd031f89eafcaad0735b5502b5d3af20c4357e74227a",
+        "dosbox.log": "00fc8000e2bb624b783680a5d6eb5ccc772483ed4672bd711420ef95522d8290",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "da6648e4d476fd512533f703659b8380860b86312fa6b728e732b099c0e81750",
+        "transcript.txt": "e6ca92ecf697a1459f674c44c62fad2e671eac81e824fb6140efc2f0da3af8f7"
+      }
+    },
+    {
+      "name": "inactive-age-15-death-1",
+      "patches": [
+        [
+          2,
+          41,
+          283
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "5617511e47302d788e8c37da73326f26663105c6935d1baf9bda0f2a009954cf",
+      "after_sha256": "5ec55f32d42f38486bc2f910512b1377c9aee860b307c73fb9fa38f6ef5484a4",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "c740c8edc684b5cebdcd9152bdbf79a8016fd99ca581a3cc86ea6d0346d5f7ba",
+        "before.dat.gz": "6132d5fab42ecb7fcf471f625b073a69c298c5bd774ef4b8a62469d878d199e0",
+        "dosbox.log": "718d41d94e4a063329ab8bb85bd7cc0e5e0fadba77e317e5a6cf6ace0f0afcd8",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-age-15-death--1",
+      "patches": [
+        [
+          2,
+          41,
+          283
+        ],
+        [
+          2,
+          45,
+          -1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "89e7f3420f66f840770b14141c4cd9caa5a51e430c4dad21e0eeca178104d716",
+      "after_sha256": "3a87d6071699f680321d4a3d0a1fc971f4d79596f2704afab53688340c21b482",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f7a83743f29273087d3985eec0aee182a2c97cbf65fc9a53993dfdc895599e13",
+        "before.dat.gz": "e2e57cf000a81bb9b7753e7080b67f2e46ebf24bcc140265413f2a8d338fe14f",
+        "dosbox.log": "613a8a3d3f88c91503ff676139d0a8436934747812a4c7c000418d396dc25f7c",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-cloak-0.01",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          2,
+          125,
+          0.01
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "fac49aef0dd023a40c174039364a0c5687a231e43d251357ece63570152fa8fc",
+      "after_sha256": "0fce9706883d208fa5387f94620219964772fba1a3416a2baf526f0228453ff6",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "e9b86255ec187dece0678218d378ac109b18f6d4728c914ae5ae459c03c3bb99",
+        "before.dat.gz": "17d7e320241d20eb251fc50c821785c6a8e6a08b1f550166cf8075b3f97d13b5",
+        "dosbox.log": "f7d1f36527369912502891ea62230f60566a0073be87bf532a77acc2716934f2",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "dc7c8a2160cf8f0ac9b5f45253dfd4bcea81fcdbafd69dddf92e52938dc9b21c",
+        "transcript.txt": "c6092c86769c675a39fe34dbbeacafa3046916b4ad139b43ce2c11063a5fa100"
+      }
+    },
+    {
+      "name": "inactive-cloak-0.05",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          2,
+          125,
+          0.05
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "83d722814afb61620856583dc2505dd37d26398953df0e96a469b1fc1fbfcb72",
+      "after_sha256": "26aaa275e05e22bd493c2aabbd4664d224d957a79c7a5586b91d3e9e7bee64be",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "f82880ef3b7fa4bbb4c7ec079741ccc93189b0e2e8156681690258268f447987",
+        "before.dat.gz": "50055bbe1ccc4a7702743286c6bc041023d24fbda3e7dcf0a8130d239bca7ef0",
+        "dosbox.log": "a9148f685a726685c3c7264e2425647feb190ac7ed7a4a28181fbd48ec5df2a3",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "dc7c8a2160cf8f0ac9b5f45253dfd4bcea81fcdbafd69dddf92e52938dc9b21c",
+        "transcript.txt": "c6092c86769c675a39fe34dbbeacafa3046916b4ad139b43ce2c11063a5fa100"
+      }
+    },
+    {
+      "name": "inactive-cloak-0.1",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          2,
+          125,
+          0.1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "fa86bcdcc395ff77f3bf8e464b1ec3ba7a866223c22a4da639089db6cfa2ee5c",
+      "after_sha256": "af928b311933372ae02687992d023f5b79bacbe87ceacd26f1984cbd90816268",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ee785605be33761679091fc4ebc83ab27cb40d645ff30406ecd3004978cedd13",
+        "before.dat.gz": "0163dc9501d18f56eb5acaab9c11f2d61b006e4df0d49f1cd4966ebaa58f72e4",
+        "dosbox.log": "62e82a6c7c7137206b8e2979d349cbbaae882fcda245564f889b58d096076940",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-cloak--1",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          2,
+          125,
+          -1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "fd5ae7d47d7367d91d3cd97c6ddaa8a6e38737f65a2a43f103eac3177528a28c",
+      "after_sha256": "0fe5ebcd7563a20a4dba00e165b5684aa9ff507a9c5423c8ff3124f41bb4a813",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "78984555ad10b5c5e9927a39d6eecca008d6ea0ba4fcca107e6ea4bdfa8e63a9",
+        "before.dat.gz": "466d7d6960bcc1cf9ec33cbc6290c2aaf9bfad81174a64da2b44cad427498122",
+        "dosbox.log": "fb174c982fd7a5617a33bae55204238db31736d003b2a495464e162c69e1f78b",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "inactive-unnamed",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          2,
+          85,
+          0
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "f75688447398c52da26d0044112591d3406c6128457226df1105c0d0e6cd84dd",
+      "after_sha256": "dee75196d9deb2232d7d12dd7cbe3a6fb73f5bd7ef2a215b847df1841e7778ab",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "389bca20bf13c51ab1bdbf301c92c1e240c75682111945020e34010bc7a61c7b",
+        "before.dat.gz": "dd5d0c88ac41cc3260285eff1fba925b280fc2518b511fb21b097f6ec4c6a7c8",
+        "dosbox.log": "b3ae45fcb4185a8b762a435f17758754830cec59085ebaef0ef93893c6f126fc",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "eb4bd4441fb7fdcc19187d933549ff15da0a5a762599f5f849c4571986d98a2c",
+        "transcript.txt": "0f55984e02a8598d98860c55282b37c8450fc0f362e2452b0b9eda8e2c311988"
+      }
+    },
+    {
+      "name": "inactive-delay-0",
+      "patches": [
+        [
+          1,
+          77,
+          0
+        ],
+        [
+          2,
+          41,
+          298
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "9bf9ef325935f2fa02e16880bd361c1ebe4e77a4d75b8f753466f06507b5cd64",
+      "after_sha256": "e52b9de51bbded24ffa56e1a27e606ffddbb4e485947c10ca14b71f19f5625f7",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "5748da1b9939fae638a116c783a9dcd6523f3d9e510ee15c9550232667469e80",
+        "before.dat.gz": "203a0a55590b7fe71124da06295ecaedd80c75aff9b097064ce4275074037a90",
+        "dosbox.log": "425870099e2c726ec17ed917309f1934013c0ac3a1dbc5daa529e80055327444",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "7b43be54d68f3d67d00e761f0717bbccc3478d80c9d8075db4c8d385bd948abb",
+        "transcript.txt": "c46eed11334c06bf47c8bc094682645e55983da4f785dd955943d91513cf1332"
+      }
+    },
+    {
+      "name": "inactive-delay--1",
+      "patches": [
+        [
+          1,
+          77,
+          -1
+        ],
+        [
+          2,
+          41,
+          298
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "01e8efaed4cd81255ffcb0a23970d78cac6e4fa5b302c027feb95e68cf71f49f",
+      "after_sha256": "3e5de2017b340c663670aa857979d7ddb76ff836474e4a4286b1c77bf26021a0",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "20c6122d9a3672e56e3f95926abb277fdb23a3cc6593dcf13e1b6fc07dbfb597",
+        "before.dat.gz": "76db60e523aaa623334369e31831548ec50514d7c956fbc92fc8718944bdabf4",
+        "dosbox.log": "db670c8f12482783dc2dd9611ea16ad6d2a7933b7062ffa1acb48b3005ee1c7c",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "7b43be54d68f3d67d00e761f0717bbccc3478d80c9d8075db4c8d385bd948abb",
+        "transcript.txt": "c46eed11334c06bf47c8bc094682645e55983da4f785dd955943d91513cf1332"
+      }
+    },
+    {
+      "name": "inactive-delay-30",
+      "patches": [
+        [
+          1,
+          77,
+          30
+        ],
+        [
+          2,
+          41,
+          298
+        ],
+        [
+          2,
+          45,
+          1
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "86ab25d9067d518015420b921eed1cb8b83300bd7695b1f81814a1064248666d",
+      "after_sha256": "f0523ba13c410efe1d584a20ab3f9f39d09e6c9756f6c223738900e1ec1337d5",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ddb0b57f0786e1bdd1a8a0fc086451511636c681817546743d54a7079fd07f0f",
+        "before.dat.gz": "7d9b2770110de823cb56d0d3420d672e54a990ac5b124ea35456ec7231e2c727",
+        "dosbox.log": "1f20aa4ae16d7cb28d6fe5ec63040b6a5adf12392811496c7c161d798409a5ee",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "c9cc85deba967b0642d9a4585e58d5bd1d1161483a5a5988453144e4b64ec5b7",
+        "transcript.txt": "407cccc68b403b66c557845f8a3941a0051d93df8ffc6319befd04bb91026099"
+      }
+    },
+    {
+      "name": "inactive-rich-planet",
+      "patches": [
+        [
+          2,
+          41,
+          284
+        ],
+        [
+          2,
+          45,
+          1
+        ],
+        [
+          4053,
+          117,
+          1000000
+        ],
+        [
+          4053,
+          41,
+          297
+        ]
+      ],
+      "cleanup": true,
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "5bda2c12a5e1597c21effbfeaee4b7a4bbd66174f54bead4c209609d9e3ee31b",
+      "after_sha256": "88765510b02b73ed33eccdb522c88b647ce7daa94c2d09c8d531df2c1b741a8b",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "92fddc0519dfb4f0e10f1cf5900007964143af2627a6620d43f10b6465e3da1f",
+        "before.dat.gz": "95bd0e359e1b31e0c5b4d954a0b766d40063cb62b98678b11c44e15ac6434564",
+        "dosbox.log": "cbc91a8a5f00d92e34de308e1d424719440105a70f74f295c6ab452846ff8bb9",
+        "side-before.json": "8e6c390a017902ec5cb0c93c2622c1228ce41548c1ea3f663bbbbfb18428590d",
+        "sidefiles.json": "17defca91ac01134baebcb7dfd33a32279e9417f14e0be674e2b653a180f658c",
+        "transcript.txt": "056ec8315ab664d1a9ddb3647aa621f7c12a49020ad4421ad8d13a859b11915c"
+      }
+    },
+    {
+      "name": "lottery-same-day",
+      "patches": [],
+      "parent": "lottery-dirty-free-slots",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "729aa1953b3cbe7fd78c7d8e7d153a31917c1ebebdc6725c55d8561512574c74",
+      "after_sha256": "ea6462658ee7e73a963f26d0bacf652e91a36c91df85d2243df1b3dfedeb5f98",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "date": "10/25/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "45ac83482a17bc9b41a26eb4bd27061e42f0d1b5583527a9e12a1ed5b9c18380",
+        "before.dat.gz": "19c49da394241322365b1aff6d3601de79430da95bfbfc0334d465ca4cfee68c",
+        "dosbox.log": "07dc1baa71b06a092770d101569b5585e470c752cd450753bcd9e924f11d064d",
+        "side-before.json": "2b7ae03d1ffb94ad6740c0870ebc4486a683478b6cfb3d04a6fe5b87e81426da",
+        "sidefiles.json": "098139e6ca984caa82c2766f59c84532e61e48aac12a01b9903b4547f64fd45f",
+        "transcript.txt": "bb814522b2a67372a830b27e392eeb4f4120f90cbfa10e0d39c1a2994c2d404b"
+      }
+    },
+    {
+      "name": "inactive-deleted-next-day",
+      "patches": [],
+      "cleanup": true,
+      "parent": "inactive-age-14-death-1",
+      "date": "10/26/2026",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "b12406786033db8c412b90dd22bc7edd7d6897111cf813664d7a50247b36d310",
+      "after_sha256": "154d18f9b7e12bfafb8a7a36a8254476165c9bdc300c5fb7d8e4791c916137f3",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "ca5861d7ad14a30f7f267a90ec0864578bdf123013a548af86d9ecddbdd8c13d",
+        "before.dat.gz": "091616484e0f48b06fe6582fe3645e9d2c4244c98da675c3a2fa218d60d571b6",
+        "dosbox.log": "99627b59e6c6a2d616b177b62ad7b09b0f7f4192e518a97cec0f5aabb3e6f05e",
+        "side-before.json": "a3a25dac209fa18f617e64587f2bcc342314fcba807df5cb503e77f01d3fd705",
+        "sidefiles.json": "fae34044857a9a885cc1fd2335209ea1055b4125b20d86661c8f0cd86a2b0689",
+        "transcript.txt": "397e27996af9f235fa9b8ccddedbe47a2a0faa4f0608184c6d5b0ee644d5625d"
+      }
+    },
+    {
+      "name": "lottery-next-day",
+      "patches": [],
+      "parent": "lottery-dirty-free-slots",
+      "date": "10/26/2026",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "729aa1953b3cbe7fd78c7d8e7d153a31917c1ebebdc6725c55d8561512574c74",
+      "after_sha256": "a4082471f4292461d245ed0c5b7fe957de31f9ff69867a9c3572d61c5ee8f87a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "141090e09749a62ec23f7ca455cbf8cc2afabfbc67c4995a7a535eb02c3ff473",
+        "before.dat.gz": "19c49da394241322365b1aff6d3601de79430da95bfbfc0334d465ca4cfee68c",
+        "dosbox.log": "69d0db757beb6f384fc0e7b3ac2702d7912d849e910c958e755c5cb638ce414e",
+        "side-before.json": "2b7ae03d1ffb94ad6740c0870ebc4486a683478b6cfb3d04a6fe5b87e81426da",
+        "sidefiles.json": "629a4f945ee7657d5be20b41d37d5b82b46cfdd61dfe308663973845ab8b2c5f",
+        "transcript.txt": "80b12b5f9ab0ec00710da22ab9c14092cde83f4874562856166b1aebc4d8a81c"
+      }
+    },
+    {
+      "name": "inactive-year-start",
+      "patches": [],
+      "cleanup": true,
+      "parent": "inactive-year-end",
+      "date": "01/01/2027",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "ae162ad6be5bb4a6b7b8d461c88958faee2c15cb57fcdfcfeacc1e93477e42d6",
+      "after_sha256": "3f07f55ac56605b63d65f92f4ec6d635c03a1e71e54eedf56aaf34e47bbfc64a",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "b145359d61b7257043c11ef35fc0b643b0e1cfe1ff7dcd79f2d09f193a287c1a",
+        "before.dat.gz": "c76be168d92be6ca925550beef5ec27bccf0c1cf7c6637ce00fa9c9563439187",
+        "dosbox.log": "f74978f50a3298e8233c60d592995337ad027c50d376169b4c1739e98adf1d5e",
+        "side-before.json": "9d436a99166b988d24d984c04318f07ffb0028c35fa3eb1473a072dc6b278cc6",
+        "sidefiles.json": "19df2a84a7507213729c1ff18f974c58948695dbf0efca7826cb6797979541b5",
+        "transcript.txt": "a5327ad0f6b490dce84c9d9709e372d1ba9472b90a88d38bf348281c8ffb4e36"
+      }
+    },
+    {
+      "name": "inactive-expiry-next-day",
+      "patches": [],
+      "cleanup": true,
+      "parent": "inactive-cloak-0.01",
+      "date": "10/26/2026",
+      "recipe": "maintenance-lottery-isolation-v1",
+      "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+      "before_sha256": "0fce9706883d208fa5387f94620219964772fba1a3416a2baf526f0228453ff6",
+      "after_sha256": "543413ea01343f4bcf4992f419ebb25cd8a0432d57edecbfcc4776c9566bfd27",
+      "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+      "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+      "time": "00:00:00",
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "complete": true,
+      "files": {
+        "DOSDATE.LOG": "3c87b043b3a96ae187b3db267dec8a108bf47a45090c2e437b379ce34e48bfd3",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "after.dat.gz": "2c5e1c78a84389e7431b197817efc6f62ab7fc89fbfae071b25896e64304753c",
+        "before.dat.gz": "e9b86255ec187dece0678218d378ac109b18f6d4728c914ae5ae459c03c3bb99",
+        "dosbox.log": "31b18c63edd6f06e15142ae351f9a670ef63f5672e95482ae503874f4679cd2f",
+        "side-before.json": "3990451c9d2c8d0058b2f896eced4e4287e575072ffd8945e102912923c57519",
+        "sidefiles.json": "0fbcf833b4315f0cf9d92b799158e51530d22d9943368696af5039ee2935fb0a",
+        "transcript.txt": "415406d26023989b3c60af2222d1be09d5e8ce385ab43433487050bf83856040"
+      }
+    }
+  ]
+}

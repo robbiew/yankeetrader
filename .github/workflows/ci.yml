@@ -61,6 +61,8 @@ jobs:
           python3 scripts/test_xannor_planets_verifier.py
           python3 scripts/verify_xannor_revenge.py
           python3 scripts/test_xannor_revenge_verifier.py
+          python3 scripts/verify_maintenance_lottery.py
+          python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_rankings.py
           python3 scripts/verify_spies.py
           python3 scripts/verify_newspaper.py

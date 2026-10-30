@@ -1,0 +1,27 @@
+{
+  "name": "lottery-dirty-free-slots",
+  "patches": [],
+  "all_players": true,
+  "dirty_slots": true,
+  "recipe": "maintenance-lottery-isolation-v1",
+  "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+  "before_sha256": "740d7c8e798dc68ef7449c6b767de529fe2c77b10ed0132aef4be382c618a331",
+  "after_sha256": "729aa1953b3cbe7fd78c7d8e7d153a31917c1ebebdc6725c55d8561512574c74",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "19c49da394241322365b1aff6d3601de79430da95bfbfc0334d465ca4cfee68c",
+    "before.dat.gz": "20a8d31b941008eac8c2f850ea49a7586287860de8833ee7bc358f9bf281d24f",
+    "dosbox.log": "a8e6fc0905502a6de7c6b7ae180db3291012a902bc1edc1b670e99ee7c621347",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "58fd738c455dbb59015fc2ece62d0288097012ad2add057d482b486b66dd7054",
+    "transcript.txt": "418a57b3d627d00213c4e8b0588c0749d8e1b2fd2cfd4af96d7529a14ef215f0"
+  }
+}

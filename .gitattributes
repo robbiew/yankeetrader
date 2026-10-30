@@ -57,3 +57,7 @@
 /research/yt-xannor-revenge/queue/**/KEYS.TXT -text -diff
 /research/yt-xannor-revenge/queue/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-xannor-revenge/queue/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-maintenance-lottery/dos/**/DOS*.LOG -text -diff
+/research/yt-maintenance-lottery/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maintenance-lottery/dos/**/dosbox.log -text whitespace=-blank-at-eol

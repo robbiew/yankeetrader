@@ -676,3 +676,26 @@ and real fighter/missile PTYs. README is updated in the same milestone.
 Next: research the remaining daily maintenance phases (lottery, inactivity
 deletion and their ordering). HQ victory rewards, other equipment and exact
 DOS RNG/rounding parity remain scoped work; native/live acceptance is separate.
+
+
+## Daily super-planet lottery and inactivity deletion — research complete
+
+Forty-one normally completed DOS runs, exact world/auxiliary-file chains and
+18 complete native REA observations establish one-shot award gates, old-dead
+retirement thresholds, cloak-expiry deferral and phase ordering. Native controls
+cover inclusive cutoff, zero/negative delays, year rollover, ordinary orphan port
+titles, roster/captain divergence, two-stage radio removal, retained planet stocks
+and timestamps, same-day fallthrough, and earlier-phase RNG interference.
+
+No Go gameplay or save-schema change is included; version 17 remains current.
+The independent verifier and eleven rehashed corruptions enforce semantic results,
+not only hashes. README is updated in the same research milestone.
+[Evidence, limits and next implementation contract](yt-maintenance-lottery/RECOVERY.md).
+
+Next: implement bounded daily super-planet awards and safe inactive dead-player
+retirement in atomic maintenance. Keep living/current-generation eligibility,
+complete new-planet initialization, ownership/team/history invariants and the
+modern replay guard explicit; do not copy stale-slot, orphan-title, duplicate-alias
+or same-day legacy defects. Confirm identity/store reference coverage before
+choosing how retirement is represented. Remaining maintenance events, HQ credit
+rewards, equipment and exact DOS RNG/rounding remain separate scoped work.

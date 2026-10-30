@@ -18,7 +18,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ### Not shipped yet
 
-- Remaining daily-maintenance phases including lottery and deletion, plus the original HQ victory credit reward.
+- Daily super-planet awards and inactive dead-player retirement (research complete), remaining maintenance phases, and the original HQ victory credit reward.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
 - Danger/score scanners and player-commanded emergency warps (automatic combat/mine escape is available).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
@@ -687,6 +687,21 @@ Save version 17 preserves existing assets and histories while adding the
 ship-generation-bound pending target. Queue creation and daily consumption save
 atomically with combat/maintenance, and replay does not repeat them.
 [Rules, migration and validation](research/yt-xannor-revenge/IMPLEMENTATION.md).
+
+
+### Daily lottery and inactivity research
+
+[41 completed original-DOS controls and 18 native byte observations](research/yt-maintenance-lottery/RECOVERY.md)
+now establish the one-shot super-planet lottery, inclusive old-dead-player cutoff,
+cloak-expiry deferral and maintenance ordering. Exact saved chains show New Year
+handling, delayed radio removal, same-day reprocessing and stale planet-slot
+catch-up growth. An independent verifier and eleven rehashed negative controls
+preserve these findings.
+
+This is research only: daily awards and account retirement are not playable yet,
+and saves remain version 17. The next implementation must preserve the modern
+replay guard, current identities, private history and ownership/team invariants,
+initialize new planets completely, and keep maintenance changes atomic.
 
 
 ## Documentation upkeep
