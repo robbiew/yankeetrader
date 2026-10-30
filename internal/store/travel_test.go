@@ -190,7 +190,7 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 		t.Fatal(err)
 	}
 	saved, _ := s.View()
-	if saved.Version != 21 || saved.Players[1].DangerScanner {
+	if saved.Version != game.WorldVersion || saved.Players[1].DangerScanner {
 		t.Fatal("migration granted scanner")
 	}
 	for _, scanner := range []bool{false, true} {

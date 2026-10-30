@@ -206,3 +206,91 @@ login-local. README, usage and CI are updated. Validation uses an external modul
 file for the existing local GoDoors checkout; repository module files and GoDoors
 sources are unchanged. Live BBS acceptance and native Windows durability remain
 unverified. See [implemented policies and compatibility](../research/yt-cloak-equipment/IMPLEMENTATION.md).
+
+
+## Earth's paid Pick-6 lottery research
+
+Validated locally on macOS arm64, 2026-10-30: 49 normally completed original-DOS
+controls, 98 before/after worlds, three exact parent-world/auxiliary reload edges
+and twelve complete REA native byte observations. The corpus covers five-credit
+affordability, valid/invalid/leading-zero input, configured daily bounds and
+fallback, repeated play/refusal, same-date reconnect, next-date reset, duplicate
+and permutation matching, all six advertised payout tiers, public-news threshold,
+score publication and high-balance MBF defects. Excluded mistimed or incomplete
+diagnostic streams are not counted as successful controls.
+
+The independent verifier rebuilds declared setup, freezes the recipe, checks
+clock/keyboard/binary/file identity and exact reload chains, validates credits,
+counts, turns, days, score caches, scoreboard and news scope, and rejects every
+unexplained world/auxiliary change. Twenty-seven corruption controls include
+rehashed credit, daily count/reset, cached/printed score, payout/input/refusal
+receipts, public-news additions/omissions, parent auxiliary input, declared-clock
+binding, native bytes, completion and frozen-recipe attacks. Existing cloak and
+scanner/warp evidence verifiers and their 23 corruption controls each pass; all
+4,682 archived-file hashes pass. REA evidence was exported and sessions closed.
+
+README, plan, capture attributes and CI evidence checks are updated in this same
+milestone. No Go gameplay or save schema changes are included: version 21 is
+unchanged and paid Earth item 4 remains unavailable. The next implementation
+contract deliberately uses exact integer money and atomic fee/prize/quota/news
+settlement. Original interrupted/concurrent callers, year rollover, full RNG/MBF
+parity, live BBS acceptance and native Windows durability remain unverified.
+See [recovered rules and evidence](../research/yt-earth-lottery/RECOVERY.md).
+
+
+## Bounded paid Earth lottery
+
+Validated locally on macOS arm64, 2026-10-30: full race-enabled Go suite and vet,
+all seven outcome tiers, permuted/duplicate tickets, exact five-credit fees at
+small and large balances, all winning credit caps, finite default/configured
+quotas, same-date persistence, UTC next-date/rollback/midnight guards, and actual
+death/replacement without quota reset. Schema version 22 migration upgrades
+version-21 saves in memory without changing file bytes, then writes only on a
+successful update; legacy future fields and malformed lottery state/news reject.
+
+Store checks cover immutable ticket/nonce binding, stale/cancelled/cross-login
+quotes, parallel capped net-zero outcomes, authoritative sequence/quota replay
+protection, post-world-lock and clock-callback expiry, deadlines around random
+calls, entropy failure, byte-exact rollback, directory-sync committed warnings,
+reload and replay. An expiry regression exposed a missing deadline recheck after
+the clock callback; it passes after adding that check before any random draw.
+Neither failed storage nor expired calls print a saved receipt; committed storage
+warnings retain the actual settlement and cannot repay a ticket. The main loop
+now ends the login on a propagated committed warning; a receipt-boundary typed
+warning regression verifies that later queued commands do not buy another ticket.
+
+Both interface tests verify exact saved receipts, fresh literal confirmations,
+blank/No/stacked/invalid/disconnected/expired paths, classic item 4 and compact
+LOTTERY dispatch, and actual capped-win public wording. The new real PTY script
+passes for both interfaces: five OS-random tickets each, independently checked
+multiset outcomes and every fee/gross/actual award/cap/balance/remaining-play field,
+invalid/cancelled/typeahead safety, news threshold/scope, persisted exhausted quota
+across reconnect, and a typed capped-news rendering fixture.
+
+All 44 real terminal invocations (41 distinct smoke scripts plus three ASCII
+variants) pass, including the new lottery flow; the newspaper rollover helper
+tests also pass. The port parity smoke now compares the implemented lottery
+credit-affordability column directly against the preserved DOS characters/colors.
+All 148 regenerated historical captures were inventoried against their script
+output paths, backed up, and restored to their prior hashes rather than included
+as feature changes. The 49-session/12-native-observation paid lottery verifier and
+27 rehashed corruption controls, existing cloak and scanner verifiers and their
+23 corruption controls each, and all 4,682 archive hashes pass. Linux/amd64 and
+Windows/amd64 cross-builds pass.
+
+README, playable status, usage, save compatibility, reconstruction plan and CI
+are updated in the same implementation commit. An external temporary module-file
+override points to the existing local GoDoors checkout; repository module files
+and GoDoors sources are unchanged. Live BBS gameplay and native Windows durability
+remain unverified, as does full original RNG/MBF/animation parity. See
+[implementation policies and compatibility](../research/yt-earth-lottery/IMPLEMENTATION.md).
+
+
+PR #48 receipt-error follow-up: both regressions failed before the fix: a non-EOF
+receipt failure lost the committed durability warning, and a joined EOF warning
+was treated as a normal compact-session disconnect. The receipt path now joins
+storage/output errors, and both compact EOF handling and deferred disconnect
+cleanup retain committed warnings for the session-ending guard. Focused race-enabled door/store tests, affected-package
+vet and the real compact/classic lottery terminal flow passed after the fix.
+The finding was summary-only, with no inline review thread to resolve. README
+and implementation notes were updated in the same fix commit.

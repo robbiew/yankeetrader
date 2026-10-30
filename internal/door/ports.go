@@ -89,7 +89,7 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 		costs := []int64{1000, 500, 100, 5, 250000, 500000, 750, 50, 333000}
 		for i, label := range labels {
 			afford := "N/A"
-			if i == 0 || i == 1 || i == 2 || i == 5 || i == 6 || i == 7 || i == 8 {
+			if i == 0 || i == 1 || i == 2 || i == 3 || i == 5 || i == 6 || i == 7 || i == 8 {
 				afford = strconv.FormatInt(p.Credits/costs[i], 10)
 			}
 			if i == 4 {
@@ -118,9 +118,11 @@ func (s Session) earthShop(id int, token string, pending *[]string) error {
 			}
 			continue
 		}
-		if choice == "1" || choice == "6" {
+		if choice == "1" || choice == "4" || choice == "6" {
 			if choice == "1" {
 				err = s.classicRecharge(id, token, pending)
+			} else if choice == "4" {
+				err = s.paidLottery(token, nil, pending)
 			} else {
 				err = s.activateAntiCloak(token, nil, pending)
 			}

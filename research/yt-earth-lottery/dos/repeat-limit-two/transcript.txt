@@ -1,0 +1,260 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+                                                                                Yankee Trader   | Tester | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Tester!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Tester | Q  179:52  
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:52  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 100000      ║ Sector....... : 1    ║
+║ Turns.... : 500         ║ Holds........ : 100  ║
+║ Fighters. : 1000        ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 10000       ║ Cloak Energy. : 0%   ║
+║ Forces... : 15          ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 1
+Port: Earth, Selling: Ore
+Warps lead to: 2, 100
+
+Time: 179:52  Main Command (?=Help)?  179:45   179:44  P 179:42  ;4
+<Port>
+
+Docking, One Turn Deducted, 499 left.
+
+Commerce report for Earth: 10-24-2026 00:00:14
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 100
+[2] Cargo Holds       * 500    * 200
+[3] Fighters          * 100    * 1000
+[4] Play Lottery      * 5      * 20000
+[5] Danger Scanner    * 250000 * 0
+[6] Anti-Cloak Device * 500000 * 0
+[7] Ground Forces     * 750    * 133
+[8] Shield Power      * 50     * 2000
+[9] Hire Spies (Each) * 333000 * 0
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 100000 -=*=- Buy Which Item? -=>4
+
+You may play 2 times daily.
+You've played 0 times already.
+
+Welcome to the Intergalactic Pick-6 Lottery!
+
+Enter a 6 digit number for the lottery computer -+> 179:41   179:40   179:39  00 179:38  0000
+
+The Galactic Lottery Computer picked: 660667577713532808745630661617710687767110744663205762568301556100479966566113819192907418253085323946047365362282
+
+Sorry, you didn't win this time.
+
+Commerce report for Earth: 10-24-2026 00:00:33
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 99
+[2] Cargo Holds       * 500    * 199
+[3] Fighters          * 100    * 999
+[4] Play Lottery      * 5      * 19999
+[5] Danger Scanner    * 250000 * 0
+[6] Anti-Cloak Device * 500000 * 0
+[7] Ground Forces     * 750    * 133
+[8] Shield Power      * 50     * 1999
+[9] Hire Spies (Each) * 333000 * 0
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 99995 -=*=- Buy Which Item? -=> 179:23   179:22   179:21   179:20   179:19   179:18   179:17   179:16   179:15  4
+
+You may play 2 times daily.
+You've played 1 times already.
+
+Special clearance sale! The Trader's Guild is selling Fighters for 56% off!
+
+Welcome to the Intergalactic Pick-6 Lottery!
+
+Enter a 6 digit number for the lottery computer -+> 179:14   179:13   179:12   179:11  000000
+
+The Galactic Lottery Computer picked: 211345349371729055829244581166910402074183016799565662594228160907583222671883329727650060708374662023728026297851
+
+Sorry, you didn't win this time.
+
+Commerce report for Earth: 10-24-2026 00:01:01
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 99
+[2] Cargo Holds       * 500    * 199
+[3] Fighters          * 43     * 2325
+[4] Play Lottery      * 5      * 19998
+[5] Danger Scanner    * 250000 * 0
+[6] Anti-Cloak Device * 500000 * 0
+[7] Ground Forces     * 750    * 133
+[8] Shield Power      * 50     * 1999
+[9] Hire Spies (Each) * 333000 * 0
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 99990 -=*=- Buy Which Item? -=> 178:55   178:54   178:53   178:52   178:51   178:50   178:49   178:48   178:47  4
+
+You may play 2 times daily.
+You will be allowed to play again tomorrow.
+You've played 2 times already.
+
+Commerce report for Earth: 10-24-2026 00:01:13
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 99
+[2] Cargo Holds       * 500    * 199
+[3] Fighters          * 43     * 2325
+[4] Play Lottery      * 5      * 19998
+[5] Danger Scanner    * 250000 * 0
+[6] Anti-Cloak Device * 500000 * 0
+[7] Ground Forces     * 750    * 133
+[8] Shield Power      * 50     * 1999
+[9] Hire Spies (Each) * 333000 * 0
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 99990 -=*=- Buy Which Item? -=> 178:43  0 178:42  
+
+Sector: 1
+Port: Earth, Selling: Ore
+Warps lead to: 2, 100
+
+Time: 178:42  Main Command (?=Help)?  178:41   178:40   178:39   178:38   178:37   178:36   178:35  
+
+<Display>
+
+Sector: 1
+Port: Earth, Selling: Ore
+Warps lead to: 2, 100
+
+Time: 178:35  Main Command (?=Help)? 0
+
+Invalid command.
+
+Time: 178:35  Main Command (?=Help)?  178:34   178:33  Q;Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Q 
+Time  : 178:33  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 99990       ║ Sector....... : 1    ║
+║ Turns.... : 499         ║ Holds........ : 100  ║
+║ Fighters. : 1000        ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 10000       ║ Cloak Energy. : 0%   ║
+║ Forces... : 15          ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:01:25
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%        9,990,250   None      0    Third                         
+  2  100.00%        9,990,250   None      0    Fourth                        
+  3  100.00%        9,990,250   None      0    Fifth                         
+  4  100.00%        9,990,240   None      0    Q                             
+  5    3.67%          367,050   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000    10.01%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...

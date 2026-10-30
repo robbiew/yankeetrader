@@ -1,0 +1,32 @@
+{
+  "name": "next-day-play",
+  "command": "P;4\r~~000000\r~~~~\r~0",
+  "patches": [],
+  "port_rescue": true,
+  "parent": "next-day-reset",
+  "date": "10/25/2026",
+  "recipe": "earth-paid-lottery-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "89c5c21402674ccc473b90fb9d081f93712a7df2108ad30b58008015cb47a31a",
+    "after.dat.gz": "9849ab8789bfb67dfb7d0c82c9cfdb45ae22ae9f244a678194f794f63386e699",
+    "before.dat.gz": "9c29c44ae3cdf7f848a9a4e4039d61b2b351c316ce8a88751fb9ed9ef8dae4df",
+    "dosbox.log": "61bada5b7d7039fb564e7432e3bfd089715fda2f2e8f398c03a8d3ebc47c71c4",
+    "side-before.json.gz": "28ea6219dd84db3ac6ae3f62df4270010ff0f9fbdb3cdd292eb4ecb579d8c8ca",
+    "sidefiles.json.gz": "613a966816163ce9775534ed8e25962b928d36948a897a84d55c51f72b699981",
+    "transcript.txt": "93da6191ed700d0baf5e3ddea9de855b0459f89f4aeff6d3b67d9b9b2ec3dd27"
+  }
+}
