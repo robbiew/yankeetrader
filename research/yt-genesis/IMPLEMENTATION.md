@@ -55,6 +55,9 @@ winner display alias and season-scoped player number, actual port count,
 requirement and live public score. It contains no login identity, passwords,
 private inventory, balance or message contents. Capacity is 128 results; a full
 archive refuses safely rather than discarding winners. Public history is paged.
+Each page reuses the original immutable history snapshot. The initial read checks
+page one; after each paging pause a live season check rejects an ended login.
+Rows within a page do not reread or validate the whole save.
 No marker file, external initializer, second winner file or automatic retry is
 part of authorization or commit.
 

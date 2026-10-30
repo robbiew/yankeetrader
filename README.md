@@ -1003,6 +1003,8 @@ numbers and ship generations are reused. Classic login rechecks the authenticate
 BBS identity under the same lock. The saved receipt ends the winning
 login; reconnect to register in the new season. `SEASONS` displays public winners.
 History is bounded to 128 completed seasons; a full archive safely refuses a reset.
+History pages reuse one immutable snapshot, with a live season check after each
+paging pause rather than reopening and validating the save for every row.
 
 New worlds can use `./bin/yt -data test-world -init -sectors 32 -genesis-ports 20`
 for a reachable test threshold, or `-genesis-ports 0` to disable Genesis. Omission

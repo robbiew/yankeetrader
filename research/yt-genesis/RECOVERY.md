@@ -2,8 +2,10 @@
 
 This is the historical first recovery. A [bounded safe-reset follow-up](SAFE_RESET.md)
 adds 24 fresh returned DOS controls, thirteen native observations and a concrete
-implementation contract. Genesis is still unavailable in the Go door; research
-does not perform a live reset or change save version 22.
+implementation contract. At that research milestone Genesis was unavailable in
+the Go door and save version 22 was unchanged. The subsequent
+[bounded implementation](IMPLEMENTATION.md) makes Genesis playable with save
+version 23; these historical DOS observations did not perform a live reset.
 
 Recovered from the original YT.EXE and RMT-INIT.EXE and validated in isolated DOSBox runs. Original files remain unchanged. This is the global `G` endgame command, distinct from buying a planet with a Genesis Device.
 

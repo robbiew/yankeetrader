@@ -430,3 +430,24 @@ full DOS generator/RNG/MBF equivalence, original winner mapping and mid-write DO
 reset behavior, The Wanderer lifecycle, explicit season archive export/admin reset
 and remaining unimplemented game systems. Local tests/cross-builds do not establish
 those outcomes.
+
+## 2026-10-30 — PR49 history paging review fix
+
+Verified review finding 4429293900: SEASONS reopened and validated world.json for
+all 128 history rows in addition to its initial snapshot, holding the shared lock
+for 129 reads. The first snapshot now validates page one; subsequent live session
+checks happen only after paging pauses. A full 128-result report performs seven
+reads, while each page renders the original immutable history snapshot.
+
+The new real-store regression temporarily removes world.json during page rendering
+and restores it at paging prompts. It failed before the fix for 20/21/128 results,
+and now passes for 0/1/20/21/128. Separate compact/classic controls reset the world
+and reuse the same numeric player/ship ID during a paging pause; the obsolete
+login rejects before displaying row 21. The full race-enabled door suite,
+affected-package vet, real compact/classic Genesis terminal smoke, the 24-control
+Genesis evidence verifier and all 42 semantic corruption controls passed.
+
+Also addressed the review's summary-only documentation note: RECOVERY.md now
+explicitly scopes the unavailable/schema22 statement to its historical research
+milestone and links the playable schema23 implementation. README and implementation
+notes are updated in this same fix commit. No save schema or archival data changed.

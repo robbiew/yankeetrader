@@ -2,9 +2,12 @@ package door
 
 import (
 	"errors"
+	"fmt"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"github.com/robbiew/yankeetrader/internal/store"
 	"io"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
@@ -189,5 +192,97 @@ func TestClassicGenesisResetBetweenScreenLookupAndAuthentication(t *testing.T) {
 	live, err := s.Store.ForShip(id, generation, epoch).View()
 	if err != nil || live.Players[oldID].Credits != 123456 || live.Players[oldID].Identity != "different-bbs-identity" || live.Players[id].Identity != s.Identity || epoch == oldEpoch {
 		t.Fatal("wrong authenticated incarnation", err)
+	}
+}
+
+// Remove the saved world only while a history page is being rendered. An
+// immutable page must not reopen it for each row; restore it before paging input
+// so the next page can perform its required live-session validation.
+type genesisHistoryPageTerminal struct {
+	scripted
+	path        string
+	rows, pages int
+}
+
+func (t *genesisHistoryPageTerminal) Printf(format string, args ...any) error {
+	if strings.HasPrefix(format, "Season %d:") {
+		if t.rows%20 == 0 {
+			if err := os.Rename(t.path, t.path+".page"); err != nil {
+				return err
+			}
+		}
+		t.rows++
+	}
+	if strings.Contains(format, "Enter for more season results") {
+		t.pages++
+		if err := os.Rename(t.path+".page", t.path); err != nil {
+			return err
+		}
+	}
+	return t.scripted.Printf(format, args...)
+}
+func genesisHistorySession(t *testing.T, count int) (Session, *scripted) {
+	t.Helper()
+	s, term := genesisSession(t, nil)
+	if err := s.Store.Update(func(w *game.World) error {
+		w.Season = uint64(count + 1)
+		for i := 0; i < count; i++ {
+			started := w.Created.Add(-time.Duration(count-i) * time.Hour)
+			w.SeasonResults = append(w.SeasonResults, game.SeasonResult{Season: uint64(i + 1), Started: started, Ended: started.Add(time.Hour), Winner: "Prior Winner", Player: 1, Ports: 20, Threshold: 20, Score: 123})
+		}
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	s.Store = s.Store.ForShip(1, 0, uint64(count+1))
+	return s, term
+}
+func TestGenesisHistoryUsesOneSnapshotPerPage(t *testing.T) {
+	for _, count := range []int{0, 1, 20, 21, 128} {
+		t.Run(fmt.Sprint(count), func(t *testing.T) {
+			s, _ := genesisHistorySession(t, count)
+			term := &genesisHistoryPageTerminal{path: filepath.Join(s.Store.Dir, "world.json"), scripted: scripted{lines: make([]string, 6)}}
+			s.Terminal = term
+			defer func() { _ = os.Rename(term.path+".page", term.path) }()
+			if err := s.seasonHistory(nil); err != nil {
+				t.Fatalf("history reopened save inside a page: %v (rows %d)", err, term.rows)
+			}
+			if term.rows != count || term.pages != max(0, (count-1)/20) {
+				t.Fatal("incorrect page boundaries", term.rows, term.pages)
+			}
+		})
+	}
+}
+func TestGenesisHistoryRejectsResetAcrossPagingPause(t *testing.T) {
+	for _, classic := range []bool{false, true} {
+		t.Run(fmt.Sprint(classic), func(t *testing.T) {
+			s, term := genesisHistorySession(t, 21)
+			s.Classic = classic
+			term.lines = []string{""}
+			admin := store.Store{Dir: s.Store.Dir}
+			s.Terminal = &ownershipChanged{term, func() {
+				if err := admin.Update(func(w *game.World) error {
+					e, err := w.PrepareGenesis(1, s.Now())
+					if err != nil {
+						return err
+					}
+					replacement, _, err := w.GenesisCandidate(e, s.Now(), 99)
+					if err != nil {
+						return err
+					}
+					*w = *replacement
+					_, err = w.Join("different-person", "Different Person")
+					return err
+				}); err != nil {
+					t.Fatal(err)
+				}
+			}}
+			if err := s.seasonHistory(nil); !errors.Is(err, game.ErrSeasonChanged) {
+				t.Fatal("obsolete login resumed history", err)
+			}
+			if strings.Contains(term.output.String(), "Season 21:") || strings.Count(term.output.String(), "Prior Winner (#1)") != 20 {
+				t.Fatal("displayed the obsolete next page", term.output.String())
+			}
+		})
 	}
 }

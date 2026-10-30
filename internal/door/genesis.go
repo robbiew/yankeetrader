@@ -72,9 +72,11 @@ func (s Session) seasonHistory(args []string) error {
 			if _, err = s.readLiteralLine(); err != nil {
 				return err
 			}
-		}
-		if _, err = s.Store.View(); err != nil {
-			return err
+			// The initial View validates page one; only a paging pause needs a
+			// new live check. Rows within a page share the immutable snapshot.
+			if _, err = s.Store.View(); err != nil {
+				return err
+			}
 		}
 		if err = s.Terminal.Printf("Season %d: %s (#%d); %d ports / %d required; score %d; %s to %s UTC.\r\n", r.Season, r.Winner, r.Player, r.Ports, r.Threshold, r.Score, r.Started.UTC().Format("2006-01-02 15:04:05"), r.Ended.UTC().Format("2006-01-02 15:04:05")); err != nil {
 			return err
