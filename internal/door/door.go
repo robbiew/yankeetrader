@@ -166,6 +166,7 @@ func (s Session) Run() (runErr error) {
 	var id int
 	var generation uint64
 	replaced := false
+	reactivated := false
 	if s.Classic {
 		var err error
 		id, err = s.classicStartup()
@@ -192,6 +193,7 @@ func (s Session) Run() (runErr error) {
 			if e == nil {
 				id = p.ID
 				replaced = p.Death != nil
+				reactivated = !p.RetiredAt.IsZero()
 				if e = w.LoginShip(id, s.Now()); e != nil {
 					return e
 				}
@@ -211,6 +213,11 @@ func (s Session) Run() (runErr error) {
 			return e
 		}
 		s.Store = s.Store.ForShip(id, generation)
+		if reactivated {
+			if err := s.retirementNotice(); err != nil {
+				return err
+			}
+		}
 		if replaced {
 			if err := s.replacementNotice(id); err != nil {
 				return err

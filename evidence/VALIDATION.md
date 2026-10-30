@@ -26,3 +26,26 @@ Build dependencies were available locally. Go module checksums are preserved in 
 Planet validation adds 19 original-DOS golden scenarios, with source snapshot hashes verified against 96 packaged evidence files. Cases cover creation, access, production, bank changes, investment and transfers. The two large-bank cases intentionally assert corrected integer debits rather than reproducing DOS rounding. Fractional production comparisons allow small DOS floating-point/time differences; this is not bit-for-bit MBF parity.
 
 Tests additionally cover exact interest, maintenance-versus-visit ordering, clock rollback, rejected-action rollback, simultaneous bank updates, competing cargo pickup, stale access and version-1 migration. A real PTY/GoDoors playthrough creates a planet, deposits funds, invests, transfers and reloads cargo, reconnects and withdraws its bank balance. Daily planet ordering is covered by recovered-rule assertions; the 19 DOS golden cases exercise the interactive path.
+
+
+## Bounded daily awards and inactive-player retirement
+
+Save version 18 adds one-shot super-planet awards after NPC actions and safe
+retirement before production. Retirement preserves stable authenticated identity,
+death attribution and private history while releasing estates and active capacity.
+The cutoff requires 14 days since both last authenticated activity and death;
+returning identities receive new ship generations. Limits are 50 active accounts
+and 256 lifetime identities, with no ID reuse.
+
+Validation for this milestone: full race-enabled Go suite and vet; focused gate,
+cutoff, capacity, fresh initialization, public/private separation, team/history,
+post-assault landing-token and migration checks; 32 seeded worlds with 32 award
+attempts each; atomic rollback/validation/concurrency and committed-durability
+store tests; 14 affected real terminal smokes including the new compact/classic
+maintenance smoke; research verifier with 11 rehashed semantic corruption controls;
+all 4682 archive hashes; Linux/Windows cross-builds. The new terminal smoke uses a
+saved award fixture for UI delivery and actual CLI maintenance for retirement;
+game/store tests exercise deterministic award creation.
+
+Live BBS acceptance and native Windows durability remain unverified. See
+[implementation policies and compatibility](../research/yt-maintenance-lottery/IMPLEMENTATION.md).

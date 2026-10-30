@@ -31,12 +31,13 @@ func xannorPlanetStore(t *testing.T) (Store, time.Time, string) {
 	return s, next, token
 }
 func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
+	// Keep this destruction test independent of an unrelated post-assault award.
 	s, next, token := xannorPlanetStore(t)
 	path := s.Dir + "/world.json"
 	before, _ := os.ReadFile(path)
 	abort := errors.New("abort destruction")
 	if err := s.Update(func(w *game.World) error {
-		w.Maintain(next)
+		w.MaintainWithRandom(next, func() float64 { return .49 })
 		if w.Planets[2] != nil || w.Players[1].PlanetToken != "" || w.Players[1].BattleReports[0].Planet == nil {
 			t.Fatal("fixture did not destroy")
 		}
@@ -48,7 +49,11 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 	if string(before) != string(after) {
 		t.Fatal("callback failure committed destruction")
 	}
-	if err := s.Update(func(w *game.World) error { w.Maintain(next); w.NextBattleReport = 0; return nil }); err == nil {
+	if err := s.Update(func(w *game.World) error {
+		w.MaintainWithRandom(next, func() float64 { return .49 })
+		w.NextBattleReport = 0
+		return nil
+	}); err == nil {
 		t.Fatal("invalid destruction committed")
 	}
 	after, _ = os.ReadFile(path)
@@ -59,7 +64,10 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 	errs := make(chan error, 6)
 	for i := 0; i < 6; i++ {
 		wg.Add(1)
-		go func() { defer wg.Done(); errs <- s.Update(func(w *game.World) error { w.Maintain(next); return nil }) }()
+		go func() {
+			defer wg.Done()
+			errs <- s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return .49 }); return nil })
+		}()
 	}
 	// Concurrent landing must either finish before destruction and be revoked, or
 	// fail against the absent object. Neither ordering can leave a live old token.
@@ -108,7 +116,7 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 	}
 	before, _ = os.ReadFile(path)
 	if err := s.Update(func(w *game.World) error {
-		if w.Maintain(next) || w.Maintain(next.Add(-time.Hour)) {
+		if w.MaintainWithRandom(next, func() float64 { return .49 }) || w.MaintainWithRandom(next.Add(-time.Hour), func() float64 { return .49 }) {
 			t.Fatal("replayed")
 		}
 		return nil
@@ -123,7 +131,7 @@ func TestXannorPlanetAtomicRollbackConcurrentLandingReplayReload(t *testing.T) {
 func TestXannorPlanetCommittedDurabilityFailureDoesNotReplay(t *testing.T) {
 	s, next, _ := xannorPlanetStore(t)
 	s.syncDirectory = func(string) error { return errors.New("directory sync") }
-	err := s.Update(func(w *game.World) error { w.Maintain(next); return nil })
+	err := s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return .49 }); return nil })
 	var committed *DurabilityError
 	if !errors.As(err, &committed) {
 		t.Fatal("expected committed error", err)
@@ -131,7 +139,7 @@ func TestXannorPlanetCommittedDurabilityFailureDoesNotReplay(t *testing.T) {
 	normal := Store{Dir: s.Dir}
 	before, _ := normal.View()
 	if err := normal.Update(func(w *game.World) error {
-		if w.Maintain(next) {
+		if w.MaintainWithRandom(next, func() float64 { return .49 }) {
 			t.Fatal("replayed committed destruction")
 		}
 		return nil

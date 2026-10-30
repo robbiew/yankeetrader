@@ -61,7 +61,7 @@ func (w *World) validateMines() error {
 			return errors.New("too many mine sources")
 		}
 		for _, layer := range s.Minefield {
-			if layer.Owner < 0 || (layer.Owner > 0 && w.Players[layer.Owner] == nil) || layer.Count < 1 || layer.Count > MaxQuantity || owners[layer.Owner] {
+			if layer.Owner < 0 || (layer.Owner > 0 && (w.Players[layer.Owner] == nil || !w.Players[layer.Owner].RetiredAt.IsZero())) || layer.Count < 1 || layer.Count > MaxQuantity || owners[layer.Owner] {
 				return errors.New("invalid minefield")
 			}
 			total += layer.Count

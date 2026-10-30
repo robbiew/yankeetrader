@@ -22,6 +22,26 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 18 {
+		for _, p := range w.Players {
+			if p != nil && (!p.RetiredAt.IsZero() || p.LastActivity != "") {
+				return errors.New("legacy world unexpectedly contains retirement state")
+			}
+		}
+		for _, m := range w.Radio {
+			if m.System != "" {
+				return errors.New("legacy world unexpectedly contains system radio")
+			}
+		}
+		for _, e := range w.News {
+			if e.Kind == NewsSuperPlanet || e.Kind == NewsRetirement {
+				return errors.New("legacy world unexpectedly contains maintenance news")
+			}
+		}
+		if len(w.Players) > 50 || w.NextPlayer > 51 {
+			return errors.New("legacy world exceeds player identity bounds")
+		}
+	}
 	if w.Version < 17 && w.Xannor != nil && w.Xannor.Revenge != nil {
 		return errors.New("legacy world unexpectedly contains Xannor revenge state")
 	}
@@ -179,6 +199,9 @@ func (w *World) Upgrade() error {
 	if w.Version == 16 {
 		w.Version = 17
 	}
+	if w.Version == 17 {
+		w.Version = 18
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
@@ -222,7 +245,7 @@ func (w *World) validatePlanets() error {
 			homes[p.FactionHome] = true
 		}
 		factionOwner := (p.Owner == MercenaryOwner && p.FactionHome == MercenaryHome) || (p.Owner == XannorOwner && p.FactionHome == XannorHome)
-		if id < 2 || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || (!factionOwner && (p.Owner < 0 || (p.Owner != 0 && w.Players[p.Owner] == nil))) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
+		if id < 2 || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || (!factionOwner && (p.Owner < 0 || (p.Owner != 0 && (w.Players[p.Owner] == nil || !w.Players[p.Owner].RetiredAt.IsZero())))) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid planet")
 		}
 		for _, x := range append(append([]float64{}, p.Production[:]...), append(p.Cargo[:], p.Fighters, p.Missiles, p.Mines, p.Plasma)...) {

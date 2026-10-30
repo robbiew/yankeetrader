@@ -21,6 +21,7 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.Planets[99] = &game.Planet{ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: w.Created, Ground: 123, Bank: 1234}
 	w.Sectors[8].Planet = 99
+	w.Players[1].LastActivity = "" // Pre-version-18 saves have no activity field.
 	old, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, old, 0600); err != nil {

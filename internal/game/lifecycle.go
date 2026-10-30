@@ -146,6 +146,10 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 	if p.Death == nil {
 		return errors.New("this ship is still alive")
 	}
+	retired := !p.RetiredAt.IsZero()
+	if retired && (w.activePlayers() >= MaxActivePlayers || now.Before(p.RetiredAt)) {
+		return errors.New("no active player slot is available or login predates retirement")
+	}
 	if now.Before(p.Death.At) || p.ShipGeneration == math.MaxUint64 {
 		return errors.New("invalid replacement time or exhausted ship generation")
 	}
@@ -154,6 +158,10 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 	}
 	p.ShipGeneration++
 	p.Death = nil
+	p.RetiredAt = time.Time{}
+	if retired {
+		p.Turns = 500
+	}
 	p.Cloak = 1
 	p.Sector = 1
 	p.MineGraceSector = 0
@@ -183,6 +191,12 @@ func (w *World) validateLifecycle() error {
 	for _, p := range w.Players {
 		if p == nil {
 			return errors.New("invalid player")
+		}
+		if !p.RetiredAt.IsZero() {
+			_, offset := p.RetiredAt.Zone()
+			if p.Death == nil || p.RetiredAt.Before(p.Death.At) || offset != 0 || p.Team != 0 || p.Credits != 0 || p.Turns != 0 || p.Holds != 0 || p.Fighters != 0 || p.Shields != 0 || p.Ground != 0 || p.Cargo != [3]int64{} || p.Missiles != 0 || p.Mines != 0 || p.Plasma != 0 || p.Cloak != 0 || p.StoredScore != 0 {
+				return errors.New("invalid retired player")
+			}
 		}
 		if p.Death == nil {
 			continue

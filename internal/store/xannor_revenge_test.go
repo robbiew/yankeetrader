@@ -219,7 +219,7 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 		t.Fatal(err)
 	}
 	upgraded, _ = s.View()
-	if upgraded.Version != 17 {
+	if upgraded.Version != game.WorldVersion {
 		t.Fatal("migration not saved")
 	}
 	upgraded.Version = 16

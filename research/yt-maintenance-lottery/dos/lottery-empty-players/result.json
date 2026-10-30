@@ -1,0 +1,26 @@
+{
+  "name": "lottery-empty-players",
+  "patches": [],
+  "empty_players": true,
+  "recipe": "maintenance-lottery-isolation-v1",
+  "baseline_sha256": "f33c07c40113b4c89b73acf9892fdeb54abb04d1c9694885d8fd4e54b920f339",
+  "before_sha256": "e05bf8d905f04c76ea01d6bffa4015517b6fb198021e7e2153c8c52bd40fb2ef",
+  "after_sha256": "73a3b5d34dd4549f918a2ec5102d97a5a63a014e085fb53e6299310ccdb43512",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "3ce9ef75393ee0e8b9a2098ed767527c77fe98dfd24d6ebb194191f362012f11",
+    "before.dat.gz": "cd8663faa518879358a7bd5c479e40b4ae6dd66deeb52944d24cceb3e14a3209",
+    "dosbox.log": "0ada5cd50c87523b2adc92f0bec0414c929af3434256b9c1c8361d9eefcf89fd",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "5160d62472a779ca8616baa26b2c4c9472a97267170b07ad7ccb03189605cc6f",
+    "transcript.txt": "2157578ab52e05120bc84ed5c5230c67e0e76fc7ba369c32fd91c7d4c3197537"
+  }
+}

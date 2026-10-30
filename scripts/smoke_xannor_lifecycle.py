@@ -19,6 +19,7 @@ def exercise(guard):
         # Deliberate disposable save overrides: pre-feature schema, an unpublished
         # stored score, and an overdue daily run. No live account is involved.
         world['Version'] = 13
+        for p in world['Players'].values():p.pop('LastActivity',None)
         world.pop('NextBattleReport', None)
         world['Players']['1']['StoredScore'] = 1000000
         # Isolate HQ regeneration/restoration from the now-enabled planetary routes.
@@ -32,7 +33,7 @@ def exercise(guard):
         saved = json.loads(path.read_text())
         home = saved['Planets']['100']
         hq = saved['Xannor']['HQ']
-        assert saved['Version'] == 17 and saved['Xannor']['Reserve'] == 0
+        assert saved['Version'] == 18 and saved['Xannor']['Reserve'] == 0
         assert hq > 7 and home['Sector'] == hq and saved['Sectors'][str(hq)]['Planet'] == 100
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]

@@ -23,6 +23,9 @@ def exercise(guard):
             data.mkdir()
             path = data / 'world.json'
             world = copy.deepcopy(original)
+            # A full read archive blocks unrelated lottery placement after destruction.
+            world['Radio']=[dict(ID=i,RequestID=f'{i:032x}',From=2,To=2,FromAlias='Visitor',ToAlias='Visitor',Text='CAPACITY FIXTURE',Sent=stamp,Unread=False)for i in range(1,4097)]
+            world['NextRadio']=4097
             world['LastMaintenance'] = (guard.day - datetime.timedelta(days=1)).isoformat()
             world['Players']['1'].update(Sector=1, StoredScore=4000, Cloak=0)
             world['Players']['2'].update(Sector=1, StoredScore=0)
@@ -47,7 +50,7 @@ def exercise(guard):
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
             p = saved['Players']['1']
-            assert saved['Version'] == 17 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
+            assert saved['Version'] == 18 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
             for asset in ('Credits', 'Fighters', 'Missiles', 'Mines', 'Plasma', 'Cargo'):
                 assert p[asset] == world['Players']['1'][asset], (asset, p)
             reports = p['BattleReports']

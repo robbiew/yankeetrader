@@ -31,6 +31,7 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 	path := s.Dir + "/world.json"
+	w.Players[1].LastActivity = "" // Pre-version-18 saves have no activity field.
 	old, _ := json.Marshal(w)
 	if err := os.WriteFile(path, old, 0600); err != nil {
 		t.Fatal(err)

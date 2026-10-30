@@ -676,3 +676,53 @@ and real fighter/missile PTYs. README is updated in the same milestone.
 Next: research the remaining daily maintenance phases (lottery, inactivity
 deletion and their ordering). HQ victory rewards, other equipment and exact
 DOS RNG/rounding parity remain scoped work; native/live acceptance is separate.
+
+
+## Daily super-planet lottery and inactivity deletion — research complete
+
+Forty-one normally completed DOS runs, exact world/auxiliary-file chains and
+18 complete native REA observations establish one-shot award gates, old-dead
+retirement thresholds, cloak-expiry deferral and phase ordering. Native controls
+cover inclusive cutoff, zero/negative delays, year rollover, ordinary orphan port
+titles, roster/captain divergence, two-stage radio removal, retained planet stocks
+and timestamps, same-day fallthrough, and earlier-phase RNG interference.
+
+No Go gameplay or save-schema change is included; version 17 remains current.
+The independent verifier and eleven rehashed corruptions enforce semantic results,
+not only hashes. README is updated in the same research milestone.
+[Evidence, limits and next implementation contract](yt-maintenance-lottery/RECOVERY.md).
+
+Next: implement bounded daily super-planet awards and safe inactive dead-player
+retirement in atomic maintenance. Keep living/current-generation eligibility,
+complete new-planet initialization, ownership/team/history invariants and the
+modern replay guard explicit; do not copy stale-slot, orphan-title, duplicate-alias
+or same-day legacy defects. Confirm identity/store reference coverage before
+choosing how retirement is represented. Remaining maintenance events, HQ credit
+rewards, equipment and exact DOS RNG/rounding remain separate scoped work.
+
+
+## Bounded super-planet awards and safe inactive-player retirement — implemented
+
+Save version18 adds inactive identity records, successful-login activity dates
+and private typed system radio. Old dead accounts retire at the inclusive14-day
+cutoff after both activity and death, before economics/NPC phases. Released
+ownership/access/mine layers and membership are settled without reusing identity
+IDs or deleting private history. Returning authenticated identities get fresh
+ships when active capacity allows; the bounded256-identity archive is explicit.
+
+After NPC actions, one-shot living-player awards use ordinary slots and safe
+non-Union placement, complete fresh initialization, whole-credit banks and
+private sector notices. Public news carries only the winner. Exhausted metadata,
+full capacity, occupied/hazardous placement and daily replay cannot partially
+award or retire. Version17 migration does not invent historical events.
+
+Focused and seeded game tests, atomic store/concurrency/rollback/durability and
+migration tests, real compact/classic terminal coverage, full race suite/vet,
+research/archive verification and Linux/Windows cross-builds validate the
+milestone. README is updated in the same commit.
+[Rules, deliberate policies and limits](yt-maintenance-lottery/IMPLEMENTATION.md).
+
+Next: recover the remaining random port/planet maintenance events, including
+plague and civil-war rules, before their bounded implementation. HQ victory
+credit rewards, other equipment, exact RNG/rounding and native/live acceptance
+remain distinct work.

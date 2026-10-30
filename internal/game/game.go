@@ -15,11 +15,13 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 17
+const WorldVersion = 18
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
 type Player struct {
+	LastActivity                                     string         `json:",omitempty"`
+	RetiredAt                                        time.Time      `json:",omitempty"`
 	BattleReports                                    []BattleReport `json:",omitempty"`
 	MineGraceSector                                  int            `json:",omitempty"`
 	StoredScore                                      int64          `json:",omitempty"`
@@ -123,7 +125,7 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
-	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != WorldVersion || len(w.Sectors) < 8 || len(w.Players) > 50 || w.NextPlayer < 1 || w.NextPlayer > 51 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
+	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != WorldVersion || len(w.Sectors) < 8 || len(w.Players) > MaxPlayerIdentities || w.activePlayers() > MaxActivePlayers || w.NextPlayer < 1 || w.NextPlayer > MaxPlayerIdentities+1 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
 	if _, err := time.Parse("2006-01-02", w.LastMaintenance); err != nil {
@@ -138,6 +140,11 @@ func (w *World) Validate() error {
 			return errors.New("invalid player identity or position")
 		}
 		ids[p.Identity] = true
+		if p.LastActivity != "" {
+			if _, err := time.Parse("2006-01-02", p.LastActivity); err != nil {
+				return errors.New("invalid last activity date")
+			}
+		}
 		if p.LastLogin != "" {
 			if _, err := time.Parse("2006-01-02", p.LastLogin); err != nil {
 				return errors.New("invalid last login date")
@@ -200,7 +207,7 @@ func (w *World) Validate() error {
 		}
 	}
 	for id, p := range w.Ports {
-		if p == nil || p.ID != id || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Port != id || !clean(p.Name) || p.Updated.IsZero() || p.Treasury < 0 || p.Treasury > MaxMoney || p.Owner < 0 || (p.Owner != 0 && w.Players[p.Owner] == nil) {
+		if p == nil || p.ID != id || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Port != id || !clean(p.Name) || p.Updated.IsZero() || p.Treasury < 0 || p.Treasury > MaxMoney || p.Owner < 0 || (p.Owner != 0 && (w.Players[p.Owner] == nil || !w.Players[p.Owner].RetiredAt.IsZero())) {
 			return errors.New("invalid port")
 		}
 		if id == 1 && p.Owner != 0 {
@@ -251,8 +258,11 @@ func (w *World) Join(identity, alias string) (*Player, error) {
 			return p, nil
 		}
 	}
-	if len(w.Players) >= 50 {
+	if w.activePlayers() >= MaxActivePlayers {
 		return nil, errors.New("all player slots are occupied")
+	}
+	if w.NextPlayer > MaxPlayerIdentities {
+		return nil, errors.New("player identity archive is full; identities are never reassigned")
 	}
 	p := &Player{Cloak: 1, ID: w.NextPlayer, Identity: identity, Alias: alias, Sector: 1, Credits: 1005, Turns: 500, Holds: 10, Fighters: 25}
 	w.NextPlayer++
@@ -473,6 +483,15 @@ func (w *World) Maintain(now time.Time) bool {
 	return w.maintain(now, prng.Float64)
 }
 
+// MaintainWithRandom permits reproducible simulations of all daily phases.
+// Like Maintain, call inside the locked store transaction. Draws must be in [0,1).
+func (w *World) MaintainWithRandom(now time.Time, rng func() float64) bool {
+	if rng == nil {
+		return false
+	}
+	return w.maintain(now, rng)
+}
+
 // maintain shares a random source between faction phases. Keeping
 // it injectable internally permits exact threshold and phase-order tests.
 func (w *World) maintain(now time.Time, rng func() float64) bool {
@@ -480,6 +499,7 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	if today <= w.LastMaintenance {
 		return false
 	}
+	w.retireInactivePlayers(now)
 	for _, planet := range w.Planets {
 		planet.update(now, false)
 	}
@@ -501,7 +521,11 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	w.restoreMercenaryBase(now, rng)
 	w.maintainXannor(now, rng)
 	w.xannorActions(now, rng)
+	w.superPlanetLottery(now, rng)
 	for _, p := range w.Players {
+		if !p.RetiredAt.IsZero() {
+			continue
+		}
 		p.Turns = 500
 		p.DockToken = ""
 		p.PlanetToken = ""

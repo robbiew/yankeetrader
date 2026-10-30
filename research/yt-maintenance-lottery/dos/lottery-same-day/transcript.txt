@@ -1,0 +1,155 @@
+
+Maintenance not needed!
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Group 20 will hunt for P2 
+
+Calculated Dynamic Xannor Regeneration is 19980 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 888 
+*** Error - Sector path not found - from sector 1114 to sector  2137
+  -  Group: 3               Size: 6250 
+*** Error - Sector path not found - from sector 1114 to sector  1673
+  -  Group: 4               Size: 300 
+*** Error - Sector path not found - from sector 1114 to sector  2040
+  -  Group: 5               Size: 1127 
+*** Error - Sector path not found - from sector 1114 to sector  2408
+  -  Group: 6               Size: 92 
+*** Error - Sector path not found - from sector 1114 to sector  1979
+  -  Group: 7               Size: 3757 
+*** Error - Sector path not found - from sector 1114 to sector  2346
+  -  Group: 8               Size: 15 
+*** Error - Sector path not found - from sector 1114 to sector  2714
+  -  Group: 9               Size: 1956 
+*** Error - Sector path not found - from sector 1114 to sector  2285
+  -  Group: 10              Size: 215 
+*** Error - Sector path not found - from sector 1114 to sector  2653
+  -  Group: 11              Size: 889 
+*** Error - Sector path not found - from sector 1114 to sector  20
+  -  Group: 12              Size: 983 
+*** Error - Sector path not found - from sector 1114 to sector  2591
+  -  Group: 13              Size: 850 
+*** Error - Sector path not found - from sector 1114 to sector  2959
+  -  Group: 14              Size: 297 
+*** Error - Sector path not found - from sector 1114 to sector  326
+  -  Group: 15              Size: 2846 
+*** Error - Sector path not found - from sector 1114 to sector  2897
+  -  Group: 16              Size: 369 
+*** Error - Sector path not found - from sector 1114 to sector  265
+  -  Group: 17              Size: 1587 
+*** Error - Sector path not found - from sector 1114 to sector  632
+  -  Group: 18              Size: 195 
+*** Error - Sector path not found - from sector 1114 to sector  203
+  -  Group: 19              Size: 325 
+*** Error - Sector path not found - from sector 1114 to sector  571
+  -  Group: 20              Size: 908 
+*** Error - Sector path not found - from sector 1114 to sector  406
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-25-2026 00:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%        9,990,250   None      0    P2                            
+  2  100.00%        9,990,250   None      0    P3                            
+  3  100.00%        9,990,250   None      0    P4                            
+  4  100.00%        9,990,250   None      0    P5                            
+  5  100.00%        9,990,250   None      0    P6                            
+  6  100.00%        9,990,250   None      0    P7                            
+  7  100.00%        9,990,250   None      0    P8                            
+  8  100.00%        9,990,250   None      0    P9                            
+  9  100.00%        9,990,250   None      0    P10                           
+ 10  100.00%        9,990,250   None      0    P11                           
+ 11  100.00%        9,990,250   None      0    P12                           
+ 12  100.00%        9,990,250   None      0    P13                           
+ 13  100.00%        9,990,250   None      0    P14                           
+ 14  100.00%        9,990,250   None      0    P15                           
+ 15  100.00%        9,990,250   None      0    P16                           
+ 16  100.00%        9,990,250   None      0    P17                           
+ 17  100.00%        9,990,250   None      0    P18                           
+ 18  100.00%        9,990,250   None      0    P19                           
+ 19  100.00%        9,990,250   None      0    P20                           
+ 20  100.00%        9,990,250   None      0    P21                           
+ 21  100.00%        9,990,250   None      0    P22                           
+ 22  100.00%        9,990,250   None      0    P23                           
+ 23  100.00%        9,990,250   None      0    P24                           
+ 24  100.00%        9,990,250   None      0    P25                           
+ 25  100.00%        9,990,250   None      0    P26                           
+ 26  100.00%        9,990,250   None      0    P27                           
+ 27  100.00%        9,990,250   None      0    P28                           
+ 28  100.00%        9,990,250   None      0    P29                           
+ 29  100.00%        9,990,250   None      0    P30                           
+ 30  100.00%        9,990,250   None      0    P31                           
+ 31  100.00%        9,990,250   None      0    P32                           
+ 32  100.00%        9,990,250   None      0    P33                           
+ 33  100.00%        9,990,250   None      0    P34                           
+ 34  100.00%        9,990,250   None      0    P35                           
+ 35  100.00%        9,990,250   None      0    P36                           
+ 36  100.00%        9,990,250   None      0    P37                           
+ 37  100.00%        9,990,250   None      0    P38                           
+ 38  100.00%        9,990,250   None      0    P39                           
+ 39  100.00%        9,990,250   None      0    P40                           
+ 40  100.00%        9,990,250   None      0    P41                           
+ 41  100.00%        9,990,250   None      0    P42                           
+ 42  100.00%        9,990,250   None      0    P43                           
+ 43  100.00%        9,990,250   None      0    P44                           
+ 44  100.00%        9,990,250   None      0    P45                           
+ 45  100.00%        9,990,250   None      0    P46                           
+ 46  100.00%        9,990,250   None      0    P47                           
+ 47  100.00%        9,990,250   None      0    P48                           
+ 48  100.00%        9,990,250   None      0    P49                           
+ 49  100.00%        9,990,250   None      0    P50                           
+ 50  100.00%        9,990,250   None      0    P51                           
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        2,998,000    30.01%                  0    0.00%
+
+
+Daily Maintenance Completed OK
