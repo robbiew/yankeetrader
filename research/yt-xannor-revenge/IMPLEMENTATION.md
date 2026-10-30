@@ -12,7 +12,9 @@ helper only after that force reaches zero. A non-HQ victory, partial damage,
 retreat/loss, Mercenary or human garrison, and planetary destruction do not queue
 revenge. NPC maintenance fights do not create human targets. Plasma remains an
 unimplemented player weapon; no legacy missing-owner plasma defect is imported.
-This milestone adds no million-credit HQ reward.
+This revenge milestone originally added no credit reward. The later
+[HQ reward implementation](../yt-xannor-hq-reward/IMPLEMENTATION.md) now pays
+qualifying victories in the same combat transaction.
 
 `Xannor.Revenge` stores one player ID and ship generation. A later committed HQ
 victory replaces the pending target. The target tracks that ship's **current**

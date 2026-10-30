@@ -33,7 +33,7 @@ def exercise(guard):
         saved = json.loads(path.read_text())
         home = saved['Planets']['100']
         hq = saved['Xannor']['HQ']
-        assert saved['Version'] == 19 and saved['Xannor']['Reserve'] == 0
+        assert saved['Version'] == 20 and saved['Xannor']['Reserve'] == 0
         assert hq > 7 and home['Sector'] == hq and saved['Sectors'][str(hq)]['Planet'] == 100
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]

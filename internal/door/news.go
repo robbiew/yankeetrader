@@ -73,6 +73,8 @@ func (s Session) newspaper(id int, args []string, pending *[]string) error {
 				err = s.Terminal.Printf("%s %s  Logged on\r\n", entry.At.Format("15:04:05"), entry.Alias)
 			} else if entry.Kind == game.NewsXannorDeath {
 				err = s.Terminal.Printf("%s %s  Destroyed by the Xannor\r\n", entry.At.Format("15:04:05"), entry.Alias)
+			} else if entry.Kind == game.NewsXannorHQ {
+				err = s.Terminal.Printf("%s %s  Defeated the Xannor HQ!\r\n", entry.At.Format("15:04:05"), entry.Alias)
 			} else if entry.Kind == game.NewsSuperPlanet {
 				err = s.Terminal.Printf("%s %s  Won a PLANET in the SUPER LOTTERY!\r\n", entry.At.Format("15:04:05"), entry.Alias)
 			} else if entry.Kind == game.NewsRetirement {

@@ -22,6 +22,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 20 {
+		for _, e := range w.News {
+			if e.Kind == NewsXannorHQ {
+				return errors.New("legacy world unexpectedly contains HQ victory news")
+			}
+		}
+	}
 	if w.Version < 19 {
 		for _, e := range w.News {
 			if e.Kind == NewsPortPlague || e.Kind == NewsPlanetPlague || e.Kind == NewsCivilWar || e.PortCount != 0 {
@@ -211,6 +218,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 18 {
 		w.Version = 19
+	}
+	if w.Version == 19 {
+		w.Version = 20
 	}
 	return nil
 }

@@ -78,3 +78,33 @@ Validation used an external temporary module-file override pointing to the local
 GoDoors checkout; repository module files and GoDoors sources are unchanged.
 Live BBS acceptance and native Windows durability remain unverified. See the
 [implemented policies and compatibility](../research/yt-plague-civil-war/IMPLEMENTATION.md).
+
+
+## Bounded Xannor HQ victory credit rewards
+
+Validated locally on macOS arm64, 2026-10-30, with Go 1.27.3. Save version 20 adds
+typed HQ victory news. Exact integer payment is capped to ship credit capacity,
+with receipts reporting the actual addition after a successful atomic combat save.
+
+- Full race-enabled Go suite and vet pass. Focused tests cover fighter/missile
+  eligibility, remote route interception, current actor/team isolation, large/full/
+  near-full balances, stale confirmations/generations, restored-force repeat wins,
+  mine/retaliation death, counter-volley attribution, news capacity and privacy.
+- Store regressions pass for byte-exact abort/validation rollback, late news errors,
+  eight concurrent callers/two contenders, reload, fatal mine/replacement, committed
+  directory-sync failure and read-only version-19 migration without retroactive
+  payment. Door tests cover accurate normal/partial/zero receipts and cap text in
+  both interfaces, cancellation, aborted saves and public-news privacy.
+- Nineteen real terminal smoke scripts pass: new HQ rewards, newspaper, awards,
+  Mercenary base, mines, missiles, radio, salvage, spies, teams, Xannor lifecycle,
+  mobile, planets, revenge and ships, ports, reports, trade reports and overcrowding.
+  The new smoke exercises actual fighter/missile victories, normal/one-credit/full
+  additions, cancellation, both interfaces, public privacy and reconnect without
+  repayment. Historical regenerated smoke captures are preserved unchanged.
+- Reward/revenge evidence verification, 16 reward semantic corruption controls,
+  all 4,682 archive hashes and Linux/Windows amd64 cross-builds pass.
+
+An external temporary module-file override points to the local GoDoors checkout;
+repository module files and GoDoors sources are unchanged. Live BBS acceptance and
+native Windows durability remain unverified. See the
+[implemented policy and compatibility](../research/yt-xannor-hq-reward/IMPLEMENTATION.md).

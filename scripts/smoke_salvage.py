@@ -88,7 +88,7 @@ with tempfile.TemporaryDirectory(prefix='yt-salvage-smoke-') as temp:
     transcript += output
     assert code == 0 and 'Remaining turns: 37' in output, output
     world = json.loads(path.read_text())
-    assert world['Version'] == 19 and world['Players']['2']['Credits'] == 6782
+    assert world['Version'] == 20 and world['Players']['2']['Credits'] == 6782
     assert world['Players']['1']['Team'] == 0 and world['Players']['1']['ShipGeneration'] == 2
     assert world['Ports']['2']['Owner'] == 2 and world['Ports']['2']['Treasury'] == 0
     (ROOT/'evidence/salvage-smoke.txt').write_text(transcript)

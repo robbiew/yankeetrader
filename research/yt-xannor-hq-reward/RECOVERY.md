@@ -5,7 +5,8 @@ before/after worlds, parent auxiliary-file chains, **12 REA byte observations**,
 a narrow executable model and **16 rehashed semantic corruption controls**.
 It covers the three reward callers, recipient, arithmetic, reporting, repeat
 eligibility and pause behavior. No Go gameplay or save-format changes are made.
-The million-credit reward is still unimplemented in the modern game.
+This is the historical research slice. The supported modern fighter/missile
+reward is now implemented; see [bounded policies and validation](IMPLEMENTATION.md).
 
 ## Finding ledger
 
@@ -152,7 +153,7 @@ broadcasts on negatives and checks its recipients. Public text identifies the
 victor; it does not print the ship's account balance. Reconnect does not consume
 or duplicate a monetary award just because the revenge pointer remains pending.
 
-## Next bounded implementation contract — proposed, not shipped here
+## Historical bounded implementation contract — proposed by this research
 
 - Reuse supported fighter/missile HQ-victory hooks and require actual prior Xannor
   ownership plus removal of a positive defending force. Do not infer eligibility
@@ -175,8 +176,10 @@ or duplicate a monetary award just because the revenge pointer remains pending.
   simultaneous contenders, rollback/replay, generation invalidation, committed
   durability and any required save migration. Update README's playable status.
 
-These policy probes in the executable model are analyst proposals, not new Go
-features or observations of DOS behavior.
+These policy probes in the executable model are analyst proposals, not
+observations of DOS behavior. The later [implementation](IMPLEMENTATION.md) adopts
+the bounded payment and atomic-save policies while preserving existing score-cache
+publication instead of publishing scores during each combat payment.
 
 ## Verification and reproduction
 

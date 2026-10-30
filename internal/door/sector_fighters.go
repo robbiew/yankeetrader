@@ -120,6 +120,11 @@ func (s Session) defenseEncounter(id int, args []string, pending *[]string, retr
 	if err = s.Terminal.Printf("Defense encounter saved: %d attackers lost, %d defenders destroyed, %d surrendered.\r\n", out.Battle.AttackerLosses, out.Battle.DefenderLosses, out.Battle.Joined); err != nil {
 		return err
 	}
+	if out.HQReward != nil {
+		if err = s.showHQReward(*out.HQReward); err != nil {
+			return err
+		}
+	}
 	if out.Escaped {
 		return s.Terminal.Printf("Emergency escape reached safe sector %d.\r\n", out.Sector)
 	}
@@ -127,4 +132,16 @@ func (s Session) defenseEncounter(id int, args []string, pending *[]string, retr
 		return err
 	}
 	return s.showMineOutcome(out.Mines)
+}
+
+// Display only after the store reports success. A committed durability error is
+// handled by the existing error path; never promise a rollback or repeat payment.
+func (s Session) showHQReward(reward game.XannorHQReward) error {
+	if err := s.Terminal.Printf("Xannor HQ victory in sector %d. Credits added: %d.\r\n", reward.Sector, reward.Credits); err != nil {
+		return err
+	}
+	if reward.Credits < game.XannorHQBonus {
+		return s.Terminal.Printf("Ship credit limit capped this bonus.\r\n")
+	}
+	return nil
 }

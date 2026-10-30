@@ -12,6 +12,7 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsXannorHQ     NewsKind = "xannor-hq-victory"
 	NewsPortPlague   NewsKind = "port-plague"
 	NewsPlanetPlague NewsKind = "planet-plague"
 	NewsCivilWar     NewsKind = "civil-war"
@@ -89,7 +90,7 @@ func (w *World) validateNews() error {
 			default:
 				return errors.New("invalid planetary news outcome")
 			}
-		case NewsLogin, NewsXannorDeath, NewsSuperPlanet, NewsRetirement:
+		case NewsLogin, NewsXannorDeath, NewsSuperPlanet, NewsRetirement, NewsXannorHQ:
 			if e.Team != 0 || e.TeamName != "" {
 				return errors.New("login newspaper event contains team details")
 			}

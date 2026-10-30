@@ -84,7 +84,7 @@ func TestXannorRevengeQueueAtomicRollbackConcurrentAndStaleCommit(t *testing.T) 
 		t.Fatal("duplicate HQ settlement", wins)
 	}
 	saved, err := (Store{Dir: s.Dir}).View()
-	if err != nil || !saved.HasXannorRevenge(1) || saved.Sectors[8].Defense != nil || saved.Players[1].Credits != 1005 {
+	if err != nil || !saved.HasXannorRevenge(1) || saved.Sectors[8].Defense != nil || saved.Players[1].Credits != 1005+game.XannorHQBonus {
 		t.Fatal("queue/force roundtrip", err)
 	}
 	before, _ = os.ReadFile(path)
@@ -202,6 +202,8 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 		t.Fatal("replacement inherited revenge")
 	}
 	w.Version = 16
+	// A genuine old save predates the new victory announcement.
+	w.News = nil
 	raw, _ := json.Marshal(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {

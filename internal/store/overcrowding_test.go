@@ -189,7 +189,7 @@ func TestVersion18OvercrowdingMigrationPreservesStateAndRejectsFutureNews(t *tes
 		t.Fatal(err)
 	}
 	saved, _ := st.View()
-	if saved.Version != 19 {
+	if saved.Version != game.WorldVersion {
 		t.Fatal("migration not persisted")
 	}
 	for _, e := range []game.NewsEvent{{Kind: game.NewsPortPlague, PortCount: 1}, {Kind: game.NewsPlanetPlague, PlanetName: "Crowded"}, {Kind: game.NewsCivilWar, PlanetName: "Crowded"}, {Kind: game.NewsLogin, Alias: "Docked", PortCount: 1}} {
