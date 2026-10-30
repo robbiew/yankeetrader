@@ -198,3 +198,43 @@ func TestDailyMaintenanceNewsRendersWithoutPrivateLocation(t *testing.T) {
 		t.Fatal(text)
 	}
 }
+
+func TestOvercrowdingNewsRendersActualEventsWithoutPrivateAssets(t *testing.T) {
+	for _, classic := range []bool{false, true} {
+		term := &scripted{}
+		s, st := navigationSession(t, term)
+		s.Classic = classic
+		if err := st.Update(func(w *game.World) error {
+			p, _ := w.Join("nav", "Navigator")
+			p.Sector = 1
+			now := s.Now()
+			w.LastMaintenance = now.Add(-24 * time.Hour).UTC().Format("2006-01-02")
+			port := w.Ports[1]
+			port.Updated = now
+			port.Production = [3]float64{2000000, 500, 500}
+			w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: p.ID, Name: "Plague World", Updated: now, Production: [3]float64{2000000, 0, 0}, Bank: 12345}
+			w.Planets[3] = &game.Planet{ID: 3, Sector: 3, Owner: p.ID, Name: "Civil World", Updated: now, Ground: 4000000, Bank: 12345}
+			w.Sectors[2].Planet = 2
+			w.Sectors[3].Planet = 3
+			w.MaintainWithRandom(now, func() float64 { return .5 })
+			return nil
+		}); err != nil {
+			t.Fatal(err)
+		}
+		s.Store = st.ForShip(1, 0)
+		if err := s.newspaper(1, []string{"today"}, &[]string{}); err != nil {
+			t.Fatal(err)
+		}
+		text := term.output.String()
+		for _, want := range []string{"Ports struck by plague: 1.", "Plague struck Plague World.", "Civil war erupted on Civil World."} {
+			if !strings.Contains(text, want) {
+				t.Fatal("missing event", want, text)
+			}
+		}
+		for _, secret := range []string{"12345", "6172", "6173", "4000000", "sector", "nav", "credits", "ground"} {
+			if strings.Contains(text, secret) {
+				t.Fatal("private event data leaked", secret, text)
+			}
+		}
+	}
+}

@@ -1,0 +1,71 @@
+{
+  "name": "planet-stock-cap",
+  "patches": [
+    [
+      4053,
+      45,
+      100000000
+    ],
+    [
+      4053,
+      49,
+      100000000
+    ],
+    [
+      4053,
+      53,
+      100000000
+    ],
+    [
+      4053,
+      77,
+      100
+    ],
+    [
+      4053,
+      117,
+      0
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      57,
+      1000000000
+    ],
+    [
+      4053,
+      61,
+      1000000000
+    ],
+    [
+      4053,
+      65,
+      1000000000
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "f4e440ec95d1f544a547f14973c1639ed85326dd6d1b48a98bb49b01f4ce41d5",
+  "after_sha256": "7a23bb2bd9f7ec263c910bffa39bb11f07042f3076569b082d7b4793aa625dee",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "f28b280e3d198fc409e8418215e2242754d0a8460801fd4796031d1fb5cc078c",
+    "before.dat.gz": "bc4645954f2d3cfb76c3b3e66581243983675dcc5abbf1f7cf967653bb042f98",
+    "dosbox.log": "696879584af08c54ec477c36e24cc421a96d1bf46426c28619454e46a0a8ef43",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "b901c7a5f4fd3999099886b5827c733528410b3f55283fd3536128f665e7559f",
+    "transcript.txt": "5baa36d5f8893a94fd083dd640ad0530945d0dc1fc35451f5b2850bb54cfb118"
+  }
+}

@@ -30,20 +30,21 @@ def exercise(guard):
                 world['Planets'][str(slot)]=dict(ID=slot,Sector=sector,Owner=owner,FactionHome=faction,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=100,Bank=1)
                 world['Sectors'][str(sector)]['Planet']=slot
             if mode=='planet-ground':
-                world['Planets']['2']=dict(ID=2,Sector=10,Owner=0,Name='Neutral probe',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1000000000,Bank=1234)
+                # At the strict civil-war threshold: isolate NPC ground combat.
+                world['Planets']['2']=dict(ID=2,Sector=10,Owner=0,Name='Neutral probe',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1000000,Bank=1234)
                 world['Sectors']['10']['Planet']=2
                 world['Sectors']['10']['Minefield']=[dict(Owner=1,Count=3)]
             if mode=='defense-stop':world['Sectors']['10']['Defense']=dict(Owner=2,Fighters=1000000)
             path.write_text(json.dumps(world))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());p=saved['Players']['1']
-            assert saved['Version']==18 and saved['Xannor']==dict(HQ=8,Reserve=0)
+            assert saved['Version']==19 and saved['Xannor']==dict(HQ=8,Reserve=0)
             if mode in ('planet-ground','defense-stop'):
                 assert not p.get('Death') and not p.get('BattleReports'),p
                 if mode=='planet-ground':
                     assert not saved['Sectors']['9'].get('Defense')
                     assert sum(x['Count'] for x in saved['Sectors']['10'].get('Minefield',[]))<3
-                    assert saved['Planets']['2']['Ground']>=1000000000-100
+                    assert saved['Planets']['2']['Ground']>=1000000-100
                 continue
             reports=p['BattleReports'];assert len(reports)==1 and reports[0]['Unread']
             report=reports[0];assert report['Sector']==10 and saved['NextBattleReport']==2

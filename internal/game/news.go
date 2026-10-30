@@ -12,6 +12,9 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsPortPlague   NewsKind = "port-plague"
+	NewsPlanetPlague NewsKind = "planet-plague"
+	NewsCivilWar     NewsKind = "civil-war"
 	NewsSuperPlanet  NewsKind = "super-planet"
 	NewsRetirement   NewsKind = "retirement"
 	NewsXannorPlanet NewsKind = "xannor-planet-assault"
@@ -23,6 +26,7 @@ const (
 // NewsEvent stores only whitelisted public snapshots, never arbitrary message
 // text, authentication identities, account balances or invitation secrets.
 type NewsEvent struct {
+	PortCount  int    `json:",omitempty"`
 	PlanetName string `json:",omitempty"`
 	Outcome    string `json:",omitempty"`
 	ID         uint64
@@ -35,6 +39,10 @@ type NewsEvent struct {
 type Newspaper struct {
 	Date    string
 	Entries []NewsEvent
+}
+
+func planetaryNews(kind NewsKind) bool {
+	return kind == NewsXannorPlanet || kind == NewsPlanetPlague || kind == NewsCivilWar
 }
 
 func utcDay(t time.Time) time.Time {
@@ -54,13 +62,24 @@ func (w *World) validateNews() error {
 	cutoff := utcDay(reference).AddDate(0, 0, -1)
 	for _, e := range w.News {
 		_, offset := e.At.Zone()
-		if e.ID <= lastID || e.ID >= w.NextNews || e.At.IsZero() || offset != 0 || e.At.Before(w.Created) || e.At.Before(lastAt) || e.At.Before(cutoff) || (e.Kind != NewsXannorPlanet && !clean(e.Alias)) {
+		if e.ID <= lastID || e.ID >= w.NextNews || e.At.IsZero() || offset != 0 || e.At.Before(w.Created) || e.At.Before(lastAt) || e.At.Before(cutoff) || (!planetaryNews(e.Kind) && e.Kind != NewsPortPlague && !clean(e.Alias)) {
 			return errors.New("invalid newspaper event")
 		}
-		if e.Kind != NewsXannorPlanet && (e.PlanetName != "" || e.Outcome != "") {
+		if !planetaryNews(e.Kind) && (e.PlanetName != "" || e.Outcome != "") {
 			return errors.New("unrelated news contains planetary details")
 		}
+		if e.Kind != NewsPortPlague && e.PortCount != 0 {
+			return errors.New("unrelated news contains port count")
+		}
 		switch e.Kind {
+		case NewsPortPlague:
+			if e.PortCount < 1 || e.PortCount > 3000 || e.Alias != "" || e.Team != 0 || e.TeamName != "" {
+				return errors.New("invalid port plague news")
+			}
+		case NewsPlanetPlague, NewsCivilWar:
+			if !clean(e.PlanetName) || e.Outcome != "" || e.Alias != "" || e.Team != 0 || e.TeamName != "" {
+				return errors.New("invalid overcrowding news")
+			}
 		case NewsXannorPlanet:
 			if e.Alias != "" || e.Team != 0 || e.TeamName != "" || !clean(e.PlanetName) {
 				return errors.New("invalid planetary news snapshot")

@@ -1,0 +1,107 @@
+{
+  "name": "planet-order-reverse",
+  "patches": [
+    [
+      4053,
+      45,
+      100000000
+    ],
+    [
+      4053,
+      49,
+      100000000
+    ],
+    [
+      4053,
+      53,
+      100000000
+    ],
+    [
+      4053,
+      77,
+      100
+    ],
+    [
+      4053,
+      117,
+      12345
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4055,
+      45,
+      1000
+    ],
+    [
+      4055,
+      49,
+      1000
+    ],
+    [
+      4055,
+      53,
+      1000
+    ],
+    [
+      4055,
+      77,
+      100000000
+    ],
+    [
+      4055,
+      117,
+      1000000000
+    ],
+    [
+      4055,
+      73,
+      0
+    ],
+    [
+      55,
+      93,
+      4
+    ],
+    [
+      4055,
+      85,
+      10
+    ],
+    [
+      4055,
+      41,
+      298
+    ]
+  ],
+  "names": [
+    [
+      4055,
+      "Civil Last"
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "db9e0d10643d24df0732923d6df51485078c8d77d9cf5ca285782b45dac896dd",
+  "after_sha256": "30c3352c009aa22e9476df4f3ff66a3ae955cc125ab0d96f3d51599c862848fb",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "d09b7c0a472b3c3f11a04e08f75c41e531ce8951d5744fe0dbd021301b1f3a57",
+    "before.dat.gz": "209ab5342c81621090b05765efc4173460aeb2c99089d39447dba58718c2c21a",
+    "dosbox.log": "4863eb59555ed0511885b7686522269379279839176fa7180f61d88e7e9beac2",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "8c224d8e37532a445b4bd45c1c9c1dd7af2da223c4248616f446506b9c1eb9d7",
+    "transcript.txt": "a9f562caf3ac92ae1c7f8edcd244ddb73dfcf572a5f2e2a1fb6f06bc2be18a6d"
+  }
+}

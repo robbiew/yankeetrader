@@ -285,7 +285,7 @@ func TestVersion18MigrationAndFutureFields(t *testing.T) {
 	w, _ := setup(t)
 	w.Version = 17
 	raw, _ := json.Marshal(w)
-	if err := w.Upgrade(); err != nil || w.Version != 18 {
+	if err := w.Upgrade(); err != nil || w.Version != WorldVersion {
 		t.Fatal(err)
 	}
 	for _, edit := range []func(*World){func(w *World) { w.Players[1].RetiredAt = clock },

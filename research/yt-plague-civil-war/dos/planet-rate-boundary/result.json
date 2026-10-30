@@ -1,0 +1,56 @@
+{
+  "name": "planet-rate-boundary",
+  "patches": [
+    [
+      4053,
+      45,
+      1
+    ],
+    [
+      4053,
+      49,
+      1
+    ],
+    [
+      4053,
+      53,
+      99998
+    ],
+    [
+      4053,
+      77,
+      1000000
+    ],
+    [
+      4053,
+      117,
+      0
+    ],
+    [
+      4053,
+      73,
+      0
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "902858a8cb7f7a5259b033b849049dec42afe27e0fa69e4782aeda93eee8f42d",
+  "after_sha256": "31c0a557330df5d8774298d51ed64a156dcff9952425a4d3f2776d3416917b1e",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "6b9f2c82fc9902dc0028ddd9674c79ab61e51f4c59a1aec01e30c1b5e4ab3e8e",
+    "before.dat.gz": "42dfdcf2cda4bde7a3ed89325cd1be209df20b331fc8364423b24acd7bc72aec",
+    "dosbox.log": "fa1b6b8910f04b20fca43163551e5dba7dfd93deed7be8b48edb52c35e3f30e3",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "5160d62472a779ca8616baa26b2c4c9472a97267170b07ad7ccb03189605cc6f",
+    "transcript.txt": "2157578ab52e05120bc84ed5c5230c67e0e76fc7ba369c32fd91c7d4c3197537"
+  }
+}
