@@ -784,6 +784,27 @@ Plasma, exact legacy floating-point behavior and interrupted DOS writes remain
 outside this milestone.
 
 
+
+### Danger scanner and manual emergency-warp research
+
+[41 new completed DOS controls and 10 native byte observations](research/yt-scanner-warp/RECOVERY.md)
+now establish the 250,000-credit scanner purchase, duplicate/affordability rules,
+installation persistence and precise warning/autopilot boundaries. Accepting a
+warning completes only that hop; declining a later hop retains earlier moves.
+
+Manual warp needs turns, not purchased equipment. Controls verify same-sector,
+avoided and empty-exit destinations, capped recharge, a natural meltdown and
+same-date reconnect. Mined arrivals apply damage; hostile fighters remain an
+encounter gate, including with a scanner installed. An independent verifier and
+23 rehashed semantic corruption controls validate the retained evidence.
+
+This milestone adds no Go gameplay or schema changes; save version 20 remains
+current. Danger scanner purchases and player-commanded emergency warp remain
+unavailable. Next is their bounded implementation with fresh confirmations,
+accurate receipts and atomic purchase/warp/arrival saves. Score scanners, other
+equipment, exact RNG/MBF parity and native/live acceptance remain separate work.
+
+
 ## Documentation upkeep
 
 Update this README with every project change, including features, fixes and

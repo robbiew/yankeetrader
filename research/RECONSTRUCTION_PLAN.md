@@ -816,3 +816,28 @@ corruption controls, all 4,682 archive hashes and Linux/Windows cross-builds.
 Remaining: other equipment/actions, complete random-event/RNG/MBF parity and
 native/live operational acceptance. Plasma's recovered ownership defect and DOS
 floating-point credit rounding are intentionally not copied.
+
+
+## Danger scanner and manual emergency warp — research complete
+
+Forty-one fresh completed DOS sessions and ten complete REA byte observations
+close purchase/persistence, warning queue, autopilot partial progress and hazardous
+warp-arrival gaps. Exact Earth item-5 payment is 250,000 credits; duplicate and
+poor purchases preserve funds. W has no purchased-equipment requirement. New
+controls establish actual same-sector and same-login avoided-sector landings,
+empty-exit destinations, capped recharge, natural meltdown and same-date reload.
+Mines resolve on arrival and hostile fighters remain an unresolved encounter gate.
+
+Frozen setup/parent/auxiliary chains, independent semantic verification and 23
+rehashed corruption controls pass, alongside existing encounter/hazard checks and
+all 4,682 archived-file hashes. Original binaries were not patched; only disposable
+world copies were mounted. No Go gameplay or schema changes are included; version
+20 remains current. README is updated in the same research commit.
+[Recovered rules, retained evidence, limits and proposed contract](yt-scanner-warp/RECOVERY.md).
+
+Next: implement bounded danger-scanner purchasing/persistence and manual emergency
+warp in both interfaces, with fresh warnings/confirmations, exact credit/turn
+receipts, bounded destination/heat work, atomic arrival/aftermath and stale-session
+validation. Preserve protected-Earth and existing attribution/generation rules.
+Next-day engine repair, lethal-arrival DOS controls, complete disruption behavior,
+other equipment, RNG/MBF parity and native/live acceptance remain separate work.

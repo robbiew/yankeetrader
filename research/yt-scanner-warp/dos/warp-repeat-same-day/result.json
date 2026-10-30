@@ -1,0 +1,31 @@
+{
+  "name": "warp-repeat-same-day",
+  "command": "W;Y",
+  "patches": [],
+  "parent": "warp-clear",
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+    "after.dat.gz": "23e62d19340fafe51435552ad58ad1f93e24ef1eb7518a1ca0ae59a95764e330",
+    "before.dat.gz": "eadb7f92a96ad2760e68df785f6115675911366c30c45e17ace0e4638bb29394",
+    "dosbox.log": "6ea2883a116302a154e0f615ed07aa84aa589bc38eb618c91c18690b5f65044d",
+    "side-before.json.gz": "fbb21d3bb73550b942c5acbe1e935645f6f85a8cfbd866bc0072b1646b754e94",
+    "sidefiles.json.gz": "924484e61f8fbd661b79d237d82d965f4531ef6f88d299dad945c3664ab6ab20",
+    "transcript.txt": "31a816bedcf00c76dc48ee19891251550741c13a389a22c719525722abf08d8e"
+  }
+}

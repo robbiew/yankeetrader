@@ -1,0 +1,696 @@
+{
+  "recipe": "scanner-manual-warp-integration-v1",
+  "scenarios": [
+    {
+      "name": "shop-exact",
+      "command": "P;5\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          250000
+        ]
+      ]
+    },
+    {
+      "name": "shop-below",
+      "command": "P;5\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          249999
+        ]
+      ]
+    },
+    {
+      "name": "shop-above",
+      "command": "P;5\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          250001
+        ]
+      ]
+    },
+    {
+      "name": "shop-repeat",
+      "command": "P;5;5\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          500000
+        ]
+      ]
+    },
+    {
+      "name": "shop-installed-poor",
+      "command": "P;5\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          0
+        ],
+        [
+          2,
+          93,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "shop-leave",
+      "command": "P;0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          250000
+        ]
+      ]
+    },
+    {
+      "name": "shop-blank",
+      "command": "P;\r~~0",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          2,
+          81,
+          250000
+        ]
+      ]
+    },
+    {
+      "name": "shop-reconnect",
+      "command": "P;5\r~~0",
+      "patches": [],
+      "parent": "shop-exact"
+    },
+    {
+      "name": "shop-installed-use",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ],
+      "parent": "shop-exact"
+    },
+    {
+      "name": "scanner-xannor",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-mercenary",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          -2
+        ]
+      ]
+    },
+    {
+      "name": "scanner-human",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "scanner-combined",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          3
+        ],
+        [
+          152,
+          129,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "scanner-autopilot-first-yes",
+      "command": "C;3;110;Y\r~~Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-autopilot-second-no",
+      "command": "C;3;110;Y\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          158,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-autopilot-second-yes",
+      "command": "C;3;110;Y\r~~Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          158,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-stacked-no-fresh-yes",
+      "command": "M;101;N\r~~Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-decline-then-warp",
+      "command": "M;101\r~~N\r~~W;Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-invalid-nonadjacent",
+      "command": "M;110",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          161,
+          129,
+          10
+        ]
+      ]
+    },
+    {
+      "name": "scanner-flag-1",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          1
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-flag--2",
+      "command": "M;101\r~~N",
+      "patches": [
+        [
+          2,
+          93,
+          -2
+        ],
+        [
+          152,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-disruption-combined",
+      "command": "M;2\r~~N",
+      "patches": [
+        [
+          1,
+          57,
+          53
+        ],
+        [
+          1,
+          61,
+          53
+        ],
+        [
+          1,
+          93,
+          53
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          3,
+          57,
+          1
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          53,
+          129,
+          10
+        ],
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ],
+      "small": true
+    },
+    {
+      "name": "warp-clear",
+      "command": "W;Y",
+      "patches": []
+    },
+    {
+      "name": "warp-meltdown",
+      "command": "W;Y",
+      "patches": [],
+      "time": "02:00:00"
+    },
+    {
+      "name": "warp-landing-mines",
+      "command": "W;Y",
+      "patches": [
+        [
+          111,
+          129,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "warp-landing-fighters",
+      "command": "W;Y",
+      "patches": [
+        [
+          111,
+          81,
+          100
+        ],
+        [
+          111,
+          85,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "warp-landing-both",
+      "command": "W;Y",
+      "patches": [
+        [
+          111,
+          129,
+          3
+        ],
+        [
+          111,
+          81,
+          100
+        ],
+        [
+          111,
+          85,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "warp-landing-own",
+      "command": "W;Y",
+      "patches": [
+        [
+          111,
+          81,
+          100
+        ],
+        [
+          111,
+          85,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "warp-installed-mines",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          111,
+          129,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "warp-installed-fighters",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          111,
+          81,
+          100
+        ],
+        [
+          111,
+          85,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "warp-meltdown-mines",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          270,
+          129,
+          1
+        ]
+      ],
+      "time": "02:00:00"
+    },
+    {
+      "name": "warp-avoid-destination",
+      "command": "C;7;1;60;1;W;Y",
+      "patches": []
+    },
+    {
+      "name": "warp-empty-exits",
+      "command": "W;Y",
+      "patches": [
+        [
+          111,
+          41,
+          0
+        ],
+        [
+          111,
+          45,
+          0
+        ],
+        [
+          111,
+          49,
+          0
+        ],
+        [
+          111,
+          53,
+          0
+        ],
+        [
+          111,
+          57,
+          0
+        ],
+        [
+          111,
+          61,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "warp-avoided-landing",
+      "command": "C;7;1;881;1;W;Y",
+      "patches": []
+    },
+    {
+      "name": "warp-same-sector",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          57,
+          2665
+        ]
+      ]
+    },
+    {
+      "name": "warp-current-sector",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          57,
+          60
+        ]
+      ]
+    },
+    {
+      "name": "warp-from-earth",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          57,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "warp-one-turn",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          49,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "warp-zero-turns",
+      "command": "W;Y",
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "warp-reconnect-meltdown",
+      "command": "I",
+      "patches": [],
+      "parent": "warp-meltdown"
+    },
+    {
+      "name": "warp-repeat-same-day",
+      "command": "W;Y",
+      "patches": [],
+      "parent": "warp-clear"
+    }
+  ]
+}

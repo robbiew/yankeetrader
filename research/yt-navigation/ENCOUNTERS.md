@@ -1,8 +1,11 @@
 # Danger scanner and emergency warp — bounded DOS recovery
 
-Recovered 2026-10-26 from original Yankee Trader 3.6. This is research for the
-next implementation stage; the Go game still has no combat hazards or emergency
-warp command. Original binaries and archived experiments remain unchanged.
+Recovered 2026-10-26 from original Yankee Trader 3.6. This is a historical
+research slice: combat/mine hazards and automatic escape are now implemented.
+The purchasable danger scanner and manual emergency-warp command remain pending;
+[the later integration research](../yt-scanner-warp/RECOVERY.md) closes their
+purchase, queue and arrival gaps. Original binaries and archived experiments
+remain unchanged.
 
 ## Controlled results
 

@@ -1,0 +1,182 @@
+{
+  "name": "warp-empty-exits",
+  "command": "W;Y",
+  "patches": [
+    [
+      111,
+      41,
+      0
+    ],
+    [
+      111,
+      45,
+      0
+    ],
+    [
+      111,
+      49,
+      0
+    ],
+    [
+      111,
+      53,
+      0
+    ],
+    [
+      111,
+      57,
+      0
+    ],
+    [
+      111,
+      61,
+      0
+    ]
+  ],
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      103
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      0
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      111,
+      41,
+      0
+    ],
+    [
+      111,
+      45,
+      0
+    ],
+    [
+      111,
+      49,
+      0
+    ],
+    [
+      111,
+      53,
+      0
+    ],
+    [
+      111,
+      57,
+      0
+    ],
+    [
+      111,
+      61,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "aeaf6f654b40a7659cacd13213b429c4618bb2eaacb82d66762092e092c1a211",
+    "after.dat.gz": "87b2ca864fe4b94040ff50c6f3905fa1a1982302d8498607a94b68797e6f6d31",
+    "before.dat.gz": "6ce4c22482ddc5adbf61d576ac07f14bc23613bb347b0dfdffd6370af31cc982",
+    "dosbox.log": "2edd40adfdd24924a6885472c2391e9312e7848940288425bb707ad0d9a8061d",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "ee69403626f8736c4421b57f9a341b57462c90639b3564bcf73d8769d7ac1a1e",
+    "transcript.txt": "5b6d1aa1e948fbf298d519356be03110a777850cb4bef0f6d27626e1a98bed09"
+  }
+}

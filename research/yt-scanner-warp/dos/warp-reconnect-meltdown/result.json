@@ -1,0 +1,31 @@
+{
+  "name": "warp-reconnect-meltdown",
+  "command": "I",
+  "patches": [],
+  "parent": "warp-meltdown",
+  "recipe": "scanner-manual-warp-integration-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "bf475fd04617f2ecc423179c5092cd67bf926f9682956755382c7fba9801e0ef",
+    "after.dat.gz": "d98f2448b3f83c6be55c7333a8365afba33bc8b0a50d0aa053da99114693f5a0",
+    "before.dat.gz": "d98f2448b3f83c6be55c7333a8365afba33bc8b0a50d0aa053da99114693f5a0",
+    "dosbox.log": "bf6c785463b844375aa8890486b6133827950f44700e264a0627897ab00ad823",
+    "side-before.json.gz": "769cfc8ec59b55edbd4174906fa77142b7f244a1b801c0b630b59a55c0a96aed",
+    "sidefiles.json.gz": "ddd586e8e5216f7697bc804997ab837c1e057f9b4f25e6761670cf3f81c877c0",
+    "transcript.txt": "77f2d2016bd86fcbc9bfde28231b26ea497a2c949a461cf7998010181c949b7d"
+  }
+}
