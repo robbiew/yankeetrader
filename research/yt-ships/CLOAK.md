@@ -2,6 +2,11 @@
 
 Follow-up: [player-facing fighter attacks](PLAYER_ATTACKS.md) now use these visibility APIs; pending-command statements below describe the original cloak milestone.
 
+Later follow-up: [bounded cloak purchases and login-local anti-cloak](../yt-cloak-equipment/IMPLEMENTATION.md)
+now add Earth recharge and paid activation. Restrictions below describe the
+original cloak foundation milestone; the later policy keeps normal stored energy
+and decay rather than copying the original anti-cloak FAIL/decay-suppression side effect.
+
 ## Recovered rules and implementation
 
 [Ship recovery](RECOVERY.md#cloaking-and-anti-cloak) establishes new/replacement

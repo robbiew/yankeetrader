@@ -453,6 +453,21 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 	if q < 1 || q > MaxQuantity {
 		return errors.New("enter a positive whole quantity")
 	}
+	if item == "cloak" {
+		if now.IsZero() || now.Before(w.Created) {
+			return errors.New("invalid cloak purchase clock")
+		}
+		if q > cloakCapacity(p) {
+			return ErrCloakCapacity
+		}
+		cost := q * CloakPointPrice
+		if p.Credits < cost {
+			return errors.New("not enough credits for cloak energy")
+		}
+		p.Credits -= cost
+		p.Cloak = math.Min(1, p.Cloak+float64(q)/100)
+		return nil
+	}
 	if item == "scanner" {
 		if q != 1 {
 			return errors.New("buy one danger scanner")
@@ -487,7 +502,7 @@ func (w *World) Equip(id int, token, item string, q int64, now time.Time) error 
 		price = 750
 		limit = MaxQuantity
 	default:
-		return errors.New("choose holds, fighters, shields, forces, or scanner")
+		return errors.New("choose holds, fighters, shields, forces, scanner, or cloak")
 	}
 	if q > limit-*asset {
 		return errors.New("equipment limit exceeded")

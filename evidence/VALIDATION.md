@@ -156,3 +156,53 @@ DOS character/color assertions. All ten port parity cases and the scanner/warp
 terminal smoke passed. The full race-enabled suite, vet, scanner evidence and
 semantic corruption checks, and Linux/Windows cross-builds were rerun for the fix.
 Regenerated historical port captures were restored.
+
+
+## Cloak-energy and anti-cloak research
+
+Validated locally on macOS arm64, 2026-10-30: 37 normally completed original-DOS
+controls, 74 before/after snapshots, four exact world/auxiliary reconnect chains
+and ten complete REA native byte observations. The independent verifier rebuilds
+the declared input graph/port/player setup, freezes the recipe, checks all hashes
+and input streams, rejects unexplained world bytes, and verifies exact credits,
+MBF energy, turns, score effects, activation/decline/repeat behavior, global and
+adjacent visibility, the original own-decay suppression and reconnect reset.
+
+Twenty-three corruption controls include rehashed payments, energy, saved target
+state, turn debit, scores, notices, confirmations and sensor output; altered
+parent auxiliary inputs, keyboard streams, completion claims, native bytes and
+frozen declarations are also rejected. The existing 41-session scanner/warp
+verifier and its 23 corruption controls still pass, as do all 4,682 archived-file
+hashes. REA's Ghidra session was exported and closed. Failed or preparatory probes
+remain outside the retained corpus. README, plan and CI checks are updated.
+
+This milestone adds research and evidence tooling, not Go gameplay. Save version
+21 remains unchanged. Whole-program random/numeric parity, concurrent original
+observers, target replacement during activation, live BBS acceptance and native
+Windows durability remain unverified. See the
+[research report and proposed implementation](../research/yt-cloak-equipment/RECOVERY.md).
+
+
+## Bounded cloak purchasing and login-local anti-cloak
+
+Validated locally on macOS arm64, 2026-10-30: full race-enabled Go suite and vet,
+exact whole-point recharge limits/debits/defaults, paid activation/repeats/empty
+results, score and ordinary decay preservation, stale login/ship/cache/nonce
+checks, parallel spending, world/cache-lock expiry, byte-exact rollback and committed
+directory-sync/reload/replay, and concurrent sensors waiting for the cache outcome.
+Compact/classic tests check exact saved receipts and safe fresh decisions.
+
+Twelve real terminal smoke scripts plus the ASCII port variant pass: new cloak
+purchasing/activation, Earth-port parity, cloak, attacks, scanner/warp, startup,
+idle clock, ports, navigation, missiles, bribery and spies. The new flow verifies
+exact balances, blank defaults, zero-new-target paid repeats, reconnect/observer
+isolation, unchanged victim energy and normal cloak decay during activation.
+Historical generated captures were restored. The 37-session/10-native-observation
+cloak evidence verifier, 23 corruption controls, existing 41-session scanner/warp
+verifier and all 4,682 archive hashes pass. Linux/Windows cross-builds pass.
+
+Save version 21 is unchanged: existing energy persists and anti-cloak remains
+login-local. README, usage and CI are updated. Validation uses an external module
+file for the existing local GoDoors checkout; repository module files and GoDoors
+sources are unchanged. Live BBS acceptance and native Windows durability remain
+unverified. See [implemented policies and compatibility](../research/yt-cloak-equipment/IMPLEMENTATION.md).

@@ -1,0 +1,31 @@
+{
+  "name": "energy-reconnect",
+  "command": "I",
+  "patches": [],
+  "parent": "energy-ten",
+  "recipe": "cloak-energy-anticloak-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "bf475fd04617f2ecc423179c5092cd67bf926f9682956755382c7fba9801e0ef",
+    "after.dat.gz": "0f43e26bbb2b463e5d6dbd7ab30209719703af436e530ffb9e412905344bae06",
+    "before.dat.gz": "0f43e26bbb2b463e5d6dbd7ab30209719703af436e530ffb9e412905344bae06",
+    "dosbox.log": "c9331d5b5ebd1970797d81111ee1966a370d633cb999747520b30427f99aa95c",
+    "side-before.json.gz": "836a882134e3478927a864f8d594c7156ee4b1e9ad574984213e0fb79d0e7ae9",
+    "sidefiles.json.gz": "8f9740df3f6c18f0a8c0794c092d6f707bd728276ab35c319e40128d43df01ab",
+    "transcript.txt": "3114d582c6b4ca5e4877fc80a12d9a7dd5d60eea1d82b0dd60b4d5ce3d4c3fe4"
+  }
+}

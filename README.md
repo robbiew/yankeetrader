@@ -9,7 +9,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Available in-game to test
 
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
-- **Navigation and trading:** sector movement, adjacent sensors, cloak detection, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, port buyouts and treasury collection.
+- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, port buyouts and treasury collection.
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
@@ -20,7 +20,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Genesis, planetary thrusters and forced landing; Earth equipment options marked `N/A` are unavailable.
-- Score scanners and remaining Earth equipment options marked `N/A`.
+- Earth's paid lottery (item `4`) remains unavailable and shows `N/A`.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -159,7 +159,8 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `PROFITS` / computer `C`, `17` | Trade forecasts for your current port's outgoing adjacent ports; free |
 | `$` / `COLLECT` | Collect all personal port balances from any sector |
 | `BUY ore 5` / `SELL ore 5` | Trade cargo in the direction the port supports |
-| `EQUIP fighters 1` / `EQUIP scanner 1` | Buy equipment while docked at Earth |
+| `EQUIP fighters 1` / `EQUIP scanner 1` / `EQUIP cloak 10` | Buy Earth equipment; cloak is in whole percentage points |
+| `ANTICLOAK` | Confirm a 500,000-credit activation for the current login while docked at Earth |
 | `W` / `WARP` | Confirm a random emergency warp and its recharge/meltdown risk |
 | `LEAVE` | Leave port |
 | `Q` or Escape | Exit |
@@ -178,7 +179,7 @@ maintenance. An abrupt disconnect, declined logout or expired/stale session
 does not trigger logout publication.
 An installed danger scanner contributes its 250,000-credit asset value to live
 scores; stored-score publication keeps the existing timing above. Individual scores
-cap at 9,000,000,000,000,000 points. Score scanners, NPC rankings and
+cap at 9,000,000,000,000,000 points. Other unsupported equipment, NPC rankings and
 historical scoreboard files remain outside this slice. See [scoring rules,
 cache timing and validation](research/yt-rankings/IMPLEMENTATION.md).
 
@@ -235,7 +236,7 @@ page four entries at a time; Enter shows more and Q stops. Each page refreshes
 current access and prices, so changing state can change the remaining results.
 See [trade-report scope and validation](research/yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
 
-In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `2` holds, `3` fighters, `5` danger scanner, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Other historical equipment options retain their original labels and prices, with `N/A` affordability; selecting one reports that it is unavailable. An empty equipment quantity cancels that purchase. Selecting item `5` buys one scanner for 250,000 credits immediately, without a quantity prompt; duplicate or unaffordable purchases do not charge. The shop refreshes your credits after each saved purchase.
+In the default DOS-style interface, `P` opens Earth's numbered shop or the current port's cargo report. Earth keeps the original item numbers: `1` cloak energy, `2` holds, `3` fighters, `5` danger scanner, `6` anti-cloak activation, `7` ground forces, `8` shields, `I` ship information, and `0` leave. Item `4`, the paid lottery, retains its original label and price with `N/A` affordability; selecting it reports that it is unavailable. An empty ordinary equipment quantity cancels that purchase. Cloak energy uses its displayed affordable/missing default on blank input; zero cancels. Selecting item `5` buys one scanner for 250,000 credits immediately, without a quantity prompt; duplicate or unaffordable purchases do not charge. The shop refreshes your credits after each saved purchase.
 
 Ordinary ports offer commodities in ore/organics/equipment order. Enter a quantity (`0` skips), then agree with `Y` or Enter; `N` declines. Enter at the quantity prompt selects the displayed maximum, limited by current stock/demand, cargo space, cargo aboard, and credits. Invalid quantities skip that commodity without a transaction. Docking costs one turn, including a visit with no purchases. A replaced or expired docking session cannot complete an old prompt. `-compact` keeps the explicit `BUY`, `SELL`, and `EQUIP` workflow.
 
@@ -295,7 +296,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 21 for persisted danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Older binaries cannot read version 21. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 21 for persisted danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 21. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -842,6 +843,64 @@ ships; read-only loading leaves files unchanged. Full race tests, vet, 20 termin
 smoke scripts, evidence verification, archive checks and Linux/Windows cross-builds
 passed locally. Live BBS and native Windows durability remain unverified.
 [Implementation policies, compatibility and validation](research/yt-scanner-warp/IMPLEMENTATION.md).
+
+
+### Cloak-energy purchasing and anti-cloak activation — research complete
+
+This historical research contract is implemented in the following section.
+Original-DOS controls establish Earth item 1 at 1,000 credits per percentage
+point, whole-point quantity handling, missing/affordable blank defaults,
+over-capacity rejection, consecutive purchases and saved recharge across reconnects.
+Earth item 6 costs 500,000 credits for one login's activation. Fresh acceptance
+clears cached cloak and exposes ships without changing their stored energy;
+repeated and empty activations still charge. Declines preserve resources.
+
+The buyer's native information display reports FAIL while active, despite intact
+stored energy. A paired turn-boundary control confirms that the original session
+flag suppresses the buyer's ordinary cloak decay. Reconnect rebuilds concealment
+and restores normal decay; a linked recharge remains saved. Those were recovered
+rules at the research stage, with no permanent anti-cloak installation.
+
+The research retains 37 completed DOS controls, four exact world/auxiliary
+reconnect chains and ten complete REA byte observations, with independent
+verification and 23 corruption controls, including rehashed semantic attacks.
+The proposed implementation keeps
+exact debit, staged session effects, current ship generations, accurate receipts
+and normal modern cloak consumption. That research stage made no Go gameplay
+or schema changes and retained version 21; the implementation below completes it. Full concurrent-observer and replacement-target DOS
+behavior, exact numeric/RNG parity and native/live acceptance remain separate.
+[Recovered rules, evidence, limits and proposed contract](research/yt-cloak-equipment/RECOVERY.md).
+
+
+### Bounded cloak purchases and login-local anti-cloak — implemented
+
+Earth item `1` or compact `EQUIP cloak <points>` buys whole percentage points at
+1,000 exact credits each. The classic blank default is bounded by missing energy
+and affordability; zero cancels. Full, over-capacity, malformed, unaffordable,
+remote and expired purchases do not charge. Recharge persists across reconnects;
+its post-save receipt reports points, exact debit/balance and energy before/after.
+
+Earth item `6` or compact `ANTICLOAK` confirms a 500,000-credit activation for the
+current login. Queued answers are cleared and a fresh Y is required. It reveals
+existing cloaked ship incarnations to that login without changing victims' saved
+energy, locations or assets. The receipt reports actual newly revealed ships;
+repeat and empty activations still charge, with zero new reveals stated plainly.
+
+Debit and staged visibility publish together. Failed or expired saves expose no
+unpaid reveal; a committed storage warning preserves both committed effects and
+cannot replay its confirmation. Reconnect discards activation, another login does
+not inherit it, and replacement/future ships need a new reveal. Information keeps
+the real stored energy and labels active anti-cloak separately. Ordinary cloak
+consumption continues, deliberately avoiding the original decay-suppression side
+effect. No new score bonus or public event is generated.
+
+Save version **21 remains unchanged**: recharge uses the existing cloak field and
+anti-cloak state is never serialized. No migration grants energy, credits or
+reveals. Full race tests, vet, focused rollback/concurrency/expiry/durability
+coverage, both interfaces and affected real terminal scripts pass, along with
+research verification, archive checks and Linux/Windows cross-builds. Live BBS
+acceptance and native Windows durability remain unverified.
+[Implementation, deliberate differences and validation](research/yt-cloak-equipment/IMPLEMENTATION.md).
 
 
 ## Documentation upkeep

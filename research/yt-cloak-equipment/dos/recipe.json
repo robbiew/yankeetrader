@@ -1,0 +1,615 @@
+{
+  "recipe": "cloak-energy-anticloak-v1",
+  "scenarios": [
+    {
+      "name": "energy-one-exact",
+      "command": "P;1;1\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-one-below",
+      "command": "P;1;1\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          999
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-one-above",
+      "command": "P;1;1\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1001
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-ten",
+      "command": "P;1;10\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-partial",
+      "command": "P;1;10\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0.37
+        ]
+      ]
+    },
+    {
+      "name": "energy-fill",
+      "command": "P;1;10\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0.9
+        ]
+      ]
+    },
+    {
+      "name": "energy-overfill",
+      "command": "P;1;11;0\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0.9
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "energy-over100",
+      "command": "P;1;101;0\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "energy-full-positive",
+      "command": "P;1;1;0\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "port_rescue": true
+    },
+    {
+      "name": "energy-zero",
+      "command": "P;1;0\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-negative",
+      "command": "P;1;-1\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-fraction",
+      "command": "P;1;1.9\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-invalid",
+      "command": "P;1;junk\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-blank",
+      "command": "P;1\r~~\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0.9
+        ]
+      ]
+    },
+    {
+      "name": "energy-poor-blank",
+      "command": "P;1\r~~\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1999
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "energy-full-blank",
+      "command": "P;1\r~~\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "energy-repeat",
+      "command": "P;1;10;1;20\r~~0",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ]
+      ]
+    },
+    {
+      "name": "energy-reconnect",
+      "command": "I",
+      "patches": [],
+      "parent": "energy-ten"
+    },
+    {
+      "name": "control-look",
+      "command": "S",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          81,
+          500000
+        ]
+      ]
+    },
+    {
+      "name": "control-earth",
+      "command": "P;0;S",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          81,
+          500000
+        ]
+      ]
+    },
+    {
+      "name": "control-decay",
+      "command": "P;0;M;2",
+      "patches": [
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          49,
+          477
+        ]
+      ]
+    },
+    {
+      "name": "anti-exact",
+      "command": "P;6\r~~Y\r~~~~\r~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          500000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-above",
+      "command": "P;6\r~~Y\r~~~~\r~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          500001
+        ],
+        [
+          2,
+          125,
+          0.5
+        ],
+        [
+          3,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-own-full",
+      "command": "P;6\r~~Y\r~~~~\r~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          3,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-empty",
+      "command": "P;6\r~~Y\r~~~~\r~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          500000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          125,
+          0
+        ],
+        [
+          4,
+          125,
+          0
+        ],
+        [
+          5,
+          125,
+          0
+        ],
+        [
+          6,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "anti-far",
+      "command": "P;6\r~~Y\r~~~~\r~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          3,
+          57,
+          103
+        ]
+      ]
+    },
+    {
+      "name": "anti-poor",
+      "command": "P;6\r~~0;S",
+      "patches": [
+        [
+          2,
+          81,
+          499999
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-decline",
+      "command": "P;6\r~~N\r~~0;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-blank",
+      "command": "P;6\r~~\r~~0;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-invalid",
+      "command": "P;6\r~~X\r~~N\r~~0;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-repeat",
+      "command": "P;6\r~~Y\r~~~~\r~6\r~~Y\r~~~~\r~0;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "anti-recharge-after",
+      "command": "P;6\r~~Y\r~~~~\r~1;10\r~~0;I;S",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "anti-decay",
+      "command": "P;6\r~~Y\r~~~~\r~0;M;2;I",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          49,
+          477
+        ]
+      ]
+    },
+    {
+      "name": "anti-before-boundary",
+      "command": "P;6\r~~Y\r~~~~\r~0;I",
+      "patches": [
+        [
+          2,
+          81,
+          1000000
+        ],
+        [
+          2,
+          125,
+          1
+        ],
+        [
+          2,
+          49,
+          477
+        ]
+      ]
+    },
+    {
+      "name": "anti-reconnect",
+      "command": "I;S",
+      "patches": [],
+      "parent": "anti-own-full"
+    },
+    {
+      "name": "anti-recharge-reconnect",
+      "command": "I;S",
+      "patches": [],
+      "parent": "anti-recharge-after"
+    },
+    {
+      "name": "anti-boundary-reconnect",
+      "command": "M;2;I",
+      "patches": [],
+      "parent": "anti-before-boundary"
+    }
+  ]
+}

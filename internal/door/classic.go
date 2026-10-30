@@ -470,6 +470,9 @@ func (s Session) classicInfo(w *game.World, id int, pause bool) error {
 		team = strconv.Itoa(p.Team)
 	}
 	cellText(cells, 9, 1, 80, "Team  : "+team)
+	if s.visibility.AntiCloakActivations() > 0 {
+		cellText(cells, 10, 1, 80, "Anti-cloak active for this login; normal cloak consumption applies.")
+	}
 	if w.HasXannorRevenge(id) {
 		cellText(cells, 11, 1, 80, "Xannor revenge pending for this ship.")
 	}
