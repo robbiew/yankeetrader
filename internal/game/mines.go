@@ -17,6 +17,7 @@ type MineLayer struct {
 	Count int64
 }
 type MineOutcome struct {
+	ScannerLost        bool
 	Bursts             int
 	Spent, Dropped     int64
 	Destroyed, Escaped bool
@@ -181,8 +182,18 @@ func mineBurst(p *Player, burst int64, rng func() float64) error {
 			return err
 		}
 		p.Shields = max(0, p.Shields-damage*burst)
+		if p.DangerScanner && p.Shields > 0 {
+			r, err := scaledSalvageDraw(1<<53, rng)
+			if err != nil {
+				return err
+			}
+			if float64(r)/(1<<53) > .95 {
+				p.DangerScanner = false
+			}
+		}
 		return nil
 	}
+	p.DangerScanner = false
 	if p.Fighters > 0 {
 		loss, err := nestedMineDraw(40000*burst, rng)
 		if err != nil {
@@ -251,9 +262,11 @@ func (w *World) ResolveMinefield(id int, rng func() float64, now time.Time) (Min
 		}
 		out.Bursts++
 		out.Spent += burst
+		hadScanner := p.DangerScanner
 		if err = mineBurst(p, burst, rng); err != nil {
 			return MineOutcome{}, err
 		}
+		out.ScannerLost = out.ScannerLost || hadScanner && !p.DangerScanner
 		if p.Holds == 0 {
 			source := p.Sector
 			out.Destroyed = true

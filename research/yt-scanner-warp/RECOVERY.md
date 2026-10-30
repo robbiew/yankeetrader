@@ -1,8 +1,8 @@
 # Danger scanner and manual emergency warp — integration research
 
-Research only, 2026-10-30. The modern Go game still has no purchasable danger
-scanner or player-commanded emergency warp. Existing combat/mine escape remains
-playable. This slice closes specific purchase, command-queue and arrival gaps in
+Historical research slice, 2026-10-30. The later bounded danger-scanner and
+manual-warp [implementation](IMPLEMENTATION.md) now follows these controls.
+Existing combat/mine escape remains playable. This slice closes specific purchase, command-queue and arrival gaps in
 the [earlier encounter research](../yt-navigation/ENCOUNTERS.md); it does not
 claim complete DOS RNG or operational parity.
 
@@ -54,6 +54,11 @@ more turn, while its duplicate refusal spends no credits.
 The scanner is player-record offset 93, a four-byte MBF single: canonical absent
 0 and installed −1. Noncanonical 1 and −2 also activate warnings in two declared
 robustness controls; this does not recommend nonboolean modern save state.
+
+The retained post-logout scores also establish the scanner asset value:
+`shop-exact` (cash 0, installed) and `shop-leave` (cash 250,000, absent) both
+store score 10,140,250. `shop-above` stores 10,140,251. This corroborates counting
+an installed scanner as 250,000 points; it does not change score-cache timing.
 
 ## Warnings and queued travel — observed
 
@@ -190,7 +195,8 @@ fractional boundary remain unverified.
 
 These are modern implementation policies informed by the original controls, not
 claims that DOS uses atomic transactions, modern bounds or fresh W confirmation.
-Research leaves the modern schema at version 20 and changes no Go gameplay.
+The research milestone left schema version 20 unchanged. The later
+[implementation](IMPLEMENTATION.md) adds version 21 and the supported gameplay.
 
 ## Reproduction and verification
 

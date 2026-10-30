@@ -22,6 +22,14 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 21 {
+		for _, p := range w.Players {
+			if p != nil && (p.DangerScanner || p.WarpSequence != 0) {
+				return errors.New("legacy world unexpectedly contains scanner/warp state")
+			}
+		}
+	}
+
 	if w.Version < 20 {
 		for _, e := range w.News {
 			if e.Kind == NewsXannorHQ {
@@ -221,6 +229,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 19 {
 		w.Version = 20
+	}
+	if w.Version == 20 {
+		w.Version = 21
 	}
 	return nil
 }

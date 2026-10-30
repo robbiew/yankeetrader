@@ -500,7 +500,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nBATTLES (private Xannor reports; last 32)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBRIBE [credits] or BRIBE <sector> <credits> | BREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces> <quantity> (Earth)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nBATTLES (private Xannor reports; last 32)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nW/WARP emergency warp (random destination; fresh Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBRIBE [credits] or BRIBE <sector> <credits> | BREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces|scanner> <quantity> (Earth; scanner quantity 1)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -528,6 +528,9 @@ func (s Session) Run() (runErr error) {
 			e = s.Terminal.Printf("%s: holds %d; ore %d; organics %d; equipment %d\r\nFighters %d; shields %d; ground forces %d\r\nMissiles %d; mines %d; plasma %d\r\n", p.Alias, p.Holds, p.Cargo[0], p.Cargo[1], p.Cargo[2], p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma)
 			if e == nil {
 				e = s.Terminal.Printf("Cloak energy: %.0f%%\r\n", p.Cloak*100)
+			}
+			if e == nil {
+				e = s.Terminal.Printf("Danger scanner installed: %t\r\n", p.DangerScanner)
 			}
 			if e == nil && w.HasXannorRevenge(id) {
 				e = s.Terminal.Printf("Xannor revenge pending for this ship.\r\n")
@@ -702,6 +705,11 @@ func (s Session) Run() (runErr error) {
 					}
 				}
 			}
+		case "w", "warp":
+			e = s.manualWarp(id, args, &pending)
+			if errors.Is(e, io.EOF) {
+				return nil
+			}
 		case "auto", "autopilot":
 			if len(args) != 1 {
 				e = errors.New("use AUTO <destination sector>")
@@ -749,6 +757,14 @@ func (s Session) Run() (runErr error) {
 							}
 							if !time.Now().Before(s.Deadline) {
 								return errors.New("session time expired")
+							}
+							handled, scanErr := s.scannedMove(id, path[hop], &pending, path[hop-1:])
+							if handled || scanErr != nil {
+								if errors.Is(scanErr, io.EOF) {
+									return nil
+								}
+								e = scanErr
+								break
 							}
 							e = s.Store.UpdateWithSpies(func(w *game.World) error { return w.FollowCourse(id, path[hop-1:]) }, s.Now(), s.Deadline)
 							if e != nil {
@@ -901,7 +917,7 @@ func (s Session) Run() (runErr error) {
 					e = s.classicPort(id, token, &pending)
 					token = ""
 				} else if port.ID == 1 {
-					e = s.Terminal.Printf("Earth: holds 500, fighters 100, shields 50, forces 750 credits each.\r\nSpies: 333000 each; HIRE <starting sector> [sector ...], max 3 this login.\r\n")
+					e = s.Terminal.Printf("Earth: holds 500, fighters 100, shields 50, forces 750 credits each. Danger scanner: 250000 (one).\r\nSpies: 333000 each; HIRE <starting sector> [sector ...], max 3 this login.\r\n")
 				} else {
 					for i, name := range game.Goods {
 						direction := "buys"
@@ -965,9 +981,13 @@ func (s Session) Run() (runErr error) {
 			} else {
 				q, e = strconv.ParseInt(args[1], 10, 64)
 				if e == nil {
-					e = s.Store.Update(func(w *game.World) error { return w.Equip(id, token, strings.ToLower(args[0]), q, s.Now()) })
+					if strings.EqualFold(args[0], "scanner") {
+						e = s.buyScanner(id, token, q)
+					} else {
+						e = s.Store.Update(func(w *game.World) error { return w.Equip(id, token, strings.ToLower(args[0]), q, s.Now()) })
+					}
 				}
-				if e == nil {
+				if e == nil && !strings.EqualFold(args[0], "scanner") {
 					e = s.Terminal.Printf("Equipment purchased and saved.\r\n")
 				}
 			}

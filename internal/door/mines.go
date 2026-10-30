@@ -15,6 +15,11 @@ func (s Session) showMineOutcome(out game.MineOutcome) error {
 	if err := s.Terminal.Printf("Mine encounter saved: %d mines exploded in %d bursts.\r\n", out.Spent, out.Bursts); err != nil {
 		return err
 	}
+	if out.ScannerLost {
+		if err := s.Terminal.Printf("Danger scanner destroyed by mines.\r\n"); err != nil {
+			return err
+		}
+	}
 	if out.Destroyed {
 		if out.Killer == 0 {
 			if err := s.Terminal.Printf("Your ship was destroyed by unowned mines. Reconnect for a replacement.\r\n"); err != nil {
@@ -47,6 +52,9 @@ func (s Session) resolveCurrentMines(id int) error {
 	return s.showMineOutcome(out)
 }
 func (s Session) moveShip(id, to int, pending *[]string) error {
+	if handled, err := s.scannedMove(id, to, pending, nil); handled || err != nil {
+		return err
+	}
 	w, err := s.Store.View()
 	if err != nil {
 		return err

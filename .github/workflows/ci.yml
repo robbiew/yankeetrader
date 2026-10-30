@@ -133,6 +133,7 @@ jobs:
           python3 scripts/smoke_xannor_planets.py
           python3 scripts/smoke_xannor_revenge.py
           python3 scripts/smoke_xannor_hq_rewards.py
+          python3 scripts/smoke_scanner_warp.py
           python3 scripts/smoke_planet_missiles.py
       - name: Cross-build Linux and Windows
         run: |

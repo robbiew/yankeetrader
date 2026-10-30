@@ -39,7 +39,7 @@ func TestSensorsRespectCloakAndDisplayPersistedEnergy(t *testing.T) {
 	}
 }
 
-func TestClassicInfoUsesCloakFieldAndKeepsScannerUnavailable(t *testing.T) {
+func TestClassicInfoUsesCloakFieldAndActualScanner(t *testing.T) {
 	w, _ := game.New(time.Now(), 36, 8)
 	p, _ := w.Join("observer", "Observer")
 	p.Cloak = .37
@@ -49,7 +49,7 @@ func TestClassicInfoUsesCloakFieldAndKeepsScannerUnavailable(t *testing.T) {
 		t.Fatal(err)
 	}
 	output := term.output.String()
-	if !strings.Contains(output, "Scanner.. : N/A") || !strings.Contains(output, "Cloak Energy. : 37%") {
+	if !strings.Contains(output, "Scanner.. : NONE") || !strings.Contains(output, "Cloak Energy. : 37%") {
 		t.Fatal(output)
 	}
 }

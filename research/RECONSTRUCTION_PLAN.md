@@ -841,3 +841,34 @@ receipts, bounded destination/heat work, atomic arrival/aftermath and stale-sess
 validation. Preserve protected-Earth and existing attribution/generation rules.
 Next-day engine repair, lethal-arrival DOS controls, complete disruption behavior,
 other equipment, RNG/MBF parity and native/live acceptance remain separate work.
+
+
+## Bounded danger scanner and manual emergency warp — implemented
+
+Earth item 5/compact EQUIP scanner 1 now installs one scanner for 250,000 exact
+credits, with duplicate/affordability/docking guards, saved receipts and actual
+ship-info status. Scanner warnings snapshot real mines and hostile defenses,
+respect own/team passage, clear queued travel and preserve completed autopilot
+hops. Accepted entry resolves mines while hostile fighters continue blocking
+normal actions. Mine scanner loss, death and replacement are persisted.
+
+Manual W/WARP now uses a fresh risk confirmation, bounded heat/destination draws
+and exact capped whole-turn debit. It can land in current/avoided/hostile sectors;
+mines and fatal estate cleanup save in the same transaction. Receipts separate
+random landing/recharge from later automatic escape and its total debit. Login-local
+one-use confirmation plus a saved per-account warp sequence prevent replay even
+for zero-cost same-sector outcomes. Existing score-cache publication is preserved;
+live scores now count the recovered scanner asset value.
+
+Save version 21 adds the boolean scanner and warp sequence, upgrading older saves
+without granting equipment or moving ships. Validation includes full race tests,
+vet, 64 seeded warp worlds, stale/team/turn/sequence and locked-deadline guards,
+rollback/concurrency/durability/migration/fatal-arrival tests, both interfaces and
+20 real terminal smoke scripts. The 41-session/10-observation evidence verifier,
+23 semantic corruption controls, hazard verifier, all 4,682 archive hashes and
+Linux/Windows cross-builds pass. README is updated in the same commit.
+[Policies and validation](yt-scanner-warp/IMPLEMENTATION.md).
+
+The preceding research contract is historical. Remaining work includes score
+scanners, other equipment, full disruption/black-hole and original RNG/MBF parity,
+next-day original-engine repair/lethal-arrival research and native/live acceptance.
