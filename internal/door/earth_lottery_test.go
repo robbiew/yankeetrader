@@ -145,14 +145,17 @@ func TestPaidLotteryClassicItemAndCompactDispatch(t *testing.T) {
 // Store tests exercise actual post-rename faults. This receipt-boundary injection
 // checks the main loop's handling of that same committed-warning type without
 // adding a production fault switch to storage or the terminal.
-type lotteryWarningTerminal struct{ scripted }
+type lotteryWarningTerminal struct {
+	scripted
+	outputError error
+}
 
 func (t *lotteryWarningTerminal) Printf(format string, args ...any) error {
 	if err := t.scripted.Printf(format, args...); err != nil {
 		return err
 	}
 	if strings.Contains(format, "Lottery saved:") {
-		return &store.DurabilityError{Err: errors.New("simulated committed storage warning")}
+		return errors.Join(&store.DurabilityError{Err: errors.New("simulated committed storage warning")}, t.outputError)
 	}
 	return nil
 }
@@ -173,5 +176,47 @@ func TestPaidLotterySessionStopsAfterCommittedWarning(t *testing.T) {
 	}
 	if w.Players[id].LotterySequence != 1 || w.Players[id].LotteryPlays != 1 || len(term.lines) != 3 || strings.Count(term.output.String(), "Lottery saved:") != 1 {
 		t.Fatal("continued or lost committed settlement", term.output.String())
+	}
+}
+
+type lotteryOutputFailure struct {
+	scripted
+	failure error
+}
+
+func (t *lotteryOutputFailure) Printf(format string, args ...any) error {
+	if strings.Contains(format, "Lottery saved:") {
+		return t.failure
+	}
+	return t.scripted.Printf(format, args...)
+}
+func TestLotteryReceiptWriteRetainsCommittedWarning(t *testing.T) {
+	for _, failure := range []error{errors.New("output failed"), io.ErrClosedPipe, io.EOF} {
+		terminal := &lotteryOutputFailure{failure: failure}
+		warning := &store.DurabilityError{Err: errors.New("sync failed after replacement")}
+		err := (Session{Terminal: terminal}).lotteryReceipt(game.LotteryReceipt{Ticket: "000000", Draw: "111111", Fee: 5, Balance: 1000}, warning)
+		var committed *store.DurabilityError
+		if !errors.As(err, &committed) || committed != warning || !errors.Is(err, failure) {
+			t.Fatalf("lost committed/output error: %v", err)
+		}
+	}
+}
+func TestLotteryCommittedWarningWithEOFStillEndsAsWarning(t *testing.T) {
+	s, id, _ := portSession(t, true)
+	terminal := &lotteryWarningTerminal{scripted: scripted{lines: []string{"p;lottery 000000", "y", "lottery 000000", "y", "q"}}, outputError: io.EOF}
+	s.Terminal = terminal
+	s.Identity = "port-test"
+	s.Alias = "Trader"
+	err := s.Run()
+	var warning *store.DurabilityError
+	if !errors.As(err, &warning) || !errors.Is(err, io.EOF) {
+		t.Fatal("committed warning swallowed as ordinary disconnect", err)
+	}
+	w, e := s.Store.View()
+	if e != nil {
+		t.Fatal(e)
+	}
+	if w.Players[id].LotterySequence != 1 || len(terminal.lines) != 3 {
+		t.Fatal("continued after warning")
 	}
 }

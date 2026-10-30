@@ -67,7 +67,9 @@ sequence and optional typed public news save together through the existing atomi
 store. Ordinary failures expose no saved receipt and preserve the file exactly.
 A directory-sync warning after replacement retains the committed settlement and
 prints its exact receipt, then ends the session with the storage warning. It
-cannot replay or repay that ticket. A new confirmation is needed after any
+cannot replay or repay that ticket. If receipt output also fails, both errors
+remain inspectable; EOF does not hide the committed warning as a normal disconnect.
+A new confirmation is needed after any
 attempted settlement, including an ordinary rollback.
 
 ## Save compatibility and deliberate differences

@@ -146,7 +146,8 @@ type Session struct {
 func (s Session) Run() (runErr error) {
 	var visibility *game.Visibility
 	defer func() {
-		if errors.Is(runErr, io.EOF) {
+		var committed *store.DurabilityError
+		if errors.Is(runErr, io.EOF) && !errors.As(runErr, &committed) {
 			runErr = nil
 		}
 	}()
@@ -720,7 +721,8 @@ func (s Session) Run() (runErr error) {
 			}
 		case "lottery":
 			e = s.paidLottery(token, args, &pending)
-			if errors.Is(e, io.EOF) {
+			var committed *store.DurabilityError
+			if errors.Is(e, io.EOF) && !errors.As(e, &committed) {
 				return nil
 			}
 		case "anticloak", "anti-cloak":

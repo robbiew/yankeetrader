@@ -50,12 +50,18 @@ func (s Session) lotteryWithDraw(token string, args []string, pending *[]string,
 		return s.Terminal.Printf("Lottery cancelled; no credits or plays spent.\r\n")
 	}
 	out, err := s.Store.PlayLottery(entry, draw, s.Now, s.Deadline)
+	return s.lotteryReceipt(out, err)
+}
+
+func (s Session) lotteryReceipt(out game.LotteryReceipt, err error) error {
 	var committed *store.DurabilityError
 	if err != nil && !errors.As(err, &committed) {
 		return err
 	}
 	if e := s.Terminal.Printf("Lottery saved: ticket %s; drawn %s; matches %d. Fee: %d. Gross prize: %d. Awarded: %d. Credit cap reduction: %d. Balance: %d. Plays remaining: %d (UTC).\r\n", out.Ticket, out.Draw, out.Matches, out.Fee, out.Gross, out.Award, out.Capped, out.Balance, out.Remaining); e != nil {
-		return e
+		// The receipt may fail after a visible save with uncertain durability. Keep
+		// that warning discoverable even when the output error is also EOF.
+		return errors.Join(err, e)
 	}
 	// Return the committed storage warning after the exact saved receipt; the main
 	// session ends instead of presenting an unsaved failure or retrying the ticket.

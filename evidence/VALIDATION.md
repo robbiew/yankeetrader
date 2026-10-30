@@ -284,3 +284,13 @@ override points to the existing local GoDoors checkout; repository module files
 and GoDoors sources are unchanged. Live BBS gameplay and native Windows durability
 remain unverified, as does full original RNG/MBF/animation parity. See
 [implementation policies and compatibility](../research/yt-earth-lottery/IMPLEMENTATION.md).
+
+
+PR #48 receipt-error follow-up: both regressions failed before the fix: a non-EOF
+receipt failure lost the committed durability warning, and a joined EOF warning
+was treated as a normal compact-session disconnect. The receipt path now joins
+storage/output errors, and both compact EOF handling and deferred disconnect
+cleanup retain committed warnings for the session-ending guard. Focused race-enabled door/store tests, affected-package
+vet and the real compact/classic lottery terminal flow passed after the fix.
+The finding was summary-only, with no inline review thread to resolve. README
+and implementation notes were updated in the same fix commit.

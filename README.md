@@ -945,7 +945,7 @@ Fee, actual capped prize, daily count, monotonic replay sequence and four-or-mor
 match public news save atomically. Receipts state entered/drawn digits, matches,
 fee, gross/actual prize, cap reduction, balance and remaining plays. Public news
 contains only alias, matches and actual prize, with nominal prize in its wording.
-A committed storage warning retains the saved settlement, ends the login and cannot repay it.
+A committed storage warning retains the saved settlement, ends the login and cannot repay it. Receipt-output failures, including EOF, preserve the storage warning and still end the login.
 
 Save version **22** upgrades version 1–21 worlds without granting tickets, money
 or history; read-only loading leaves files untouched. Both interfaces, all prize
