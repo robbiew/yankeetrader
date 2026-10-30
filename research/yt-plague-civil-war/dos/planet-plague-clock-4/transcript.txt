@@ -1,0 +1,104 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+  -  A PLAGUE has struck planet Probe Planet as a result of overcrowding!
+  -  Productivity reduced from 3E+08 units to 1.287656E+08 units!
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 14 
+*** Error - Sector path not found - from sector 1114 to sector  2613
+  -  Group: 3               Size: 10 
+*** Error - Sector path not found - from sector 1114 to sector  1633
+  -  Group: 4               Size: 41 
+*** Error - Sector path not found - from sector 1114 to sector  653
+  -  Group: 5               Size: 285 
+*** Error - Sector path not found - from sector 1114 to sector  470
+  -  Group: 6               Size: 32 
+*** Error - Sector path not found - from sector 1114 to sector  2490
+  -  Group: 7               Size: 42 
+*** Error - Sector path not found - from sector 1114 to sector  2307
+  -  Group: 8               Size: 3685 
+*** Error - Sector path not found - from sector 1114 to sector  1327
+  -  Group: 9               Size: 1315 
+*** Error - Sector path not found - from sector 1114 to sector  347
+  -  Group: 10              Size: 23 
+*** Error - Sector path not found - from sector 1114 to sector  164
+  -  Group: 11              Size: 342 
+*** Error - Sector path not found - from sector 1114 to sector  2184
+  -  Group: 12              Size: 48 
+*** Error - Sector path not found - from sector 1114 to sector  2001
+  -  Group: 13              Size: 13 
+*** Error - Sector path not found - from sector 1114 to sector  1021
+  -  Group: 14              Size: 17 
+*** Error - Sector path not found - from sector 1114 to sector  41
+  -  Group: 15              Size: 44 
+*** Error - Sector path not found - from sector 1114 to sector  2858
+  -  Group: 16              Size: 116 
+*** Error - Sector path not found - from sector 1114 to sector  1878
+  -  Group: 17              Size: 72 
+*** Error - Sector path not found - from sector 1114 to sector  1695
+  -  Group: 18              Size: 657 
+*** Error - Sector path not found - from sector 1114 to sector  715
+  -  Group: 19              Size: 302 
+*** Error - Sector path not found - from sector 1114 to sector  2735
+  -  Group: 20              Size: 1 
+*** Error - Sector path not found - from sector 1114 to sector  2175
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-25-2026 04:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000   100.00%                  0    0.00%
+
+
+Daily Maintenance Completed OK

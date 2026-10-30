@@ -703,7 +703,7 @@ rewards, equipment and exact DOS RNG/rounding remain separate scoped work.
 
 ## Bounded super-planet awards and safe inactive-player retirement — implemented
 
-Save version18 adds inactive identity records, successful-login activity dates
+Save version 18 adds inactive identity records, successful-login activity dates
 and private typed system radio. Old dead accounts retire at the inclusive14-day
 cutoff after both activity and death, before economics/NPC phases. Released
 ownership/access/mine layers and membership are settled without reusing identity
@@ -726,3 +726,27 @@ Next: recover the remaining random port/planet maintenance events, including
 plague and civil-war rules, before their bounded implementation. HQ victory
 credit rewards, other equipment, exact RNG/rounding and native/live acceptance
 remain distinct work.
+
+
+## Port plague and planetary plague/civil war — research complete
+
+Fifty-six normally completed original-DOS runs, exact same-day/next-day world
+and auxiliary chains and 18 complete REA byte observations establish post-growth
+port thresholds, conditional rate draws, Earth coverage, caps/commodity switching,
+planetary strict gates, civil override, fractional ground damage and bank loss.
+The corpus separates growth from events, retains the 08:00 precision-triggered
+catch-up defect, and proves stale expense text without a second bank debit.
+Ownership/name/link/weapon and public/private reporting boundaries are explicit.
+
+An independent verifier, executable model and 16 rehashed corruption controls
+validate semantics, chronology, original bytes and clocks. All 4,682 original
+archive hashes pass. No Go gameplay or schema changes are included; save version 18
+remains current. README is updated in this same research milestone.
+[Recovered rules, evidence, limits and implementation contract](yt-plague-civil-war/RECOVERY.md).
+
+Next: implement bounded port and planetary overcrowding events in atomic daily
+maintenance, with strict gates, explicit rounding/quantity policy, safe commodity
+selection and whitelisted public news. Preserve current identity/home, private
+asset, zero-rate and replay/rollback invariants; do not copy stale expenses or
+clock-induced overproduction. HQ credit rewards, other equipment, exact RNG/MBF
+parity and native/live acceptance remain separate work.

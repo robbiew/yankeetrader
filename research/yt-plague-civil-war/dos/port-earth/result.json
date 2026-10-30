@@ -1,0 +1,56 @@
+{
+  "name": "port-earth",
+  "patches": [
+    [
+      3052,
+      49,
+      10
+    ],
+    [
+      3052,
+      53,
+      10
+    ],
+    [
+      3052,
+      57,
+      10
+    ],
+    [
+      3052,
+      61,
+      1000001
+    ],
+    [
+      3052,
+      65,
+      1
+    ],
+    [
+      3052,
+      69,
+      1
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "438bbfc22736fef81e62a2720ddfe043274f9e73223363f5c26910a8b0ac288d",
+  "after_sha256": "b90779e42e017dc987931888e949305a8803c07465562a2d38764a0817c691f7",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "07be5210926f1b1c171e6b047525397d676ab433f5d8b9fe825717deb3f7048a",
+    "before.dat.gz": "004f249c779e3f4c37447754987a2fa5f0054793af52fd69668223ee68ffcafa",
+    "dosbox.log": "a56a9bd7164d9d316cd2dacf495bc51bbd03dc0618689371b6081b778aca9dbb",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "842ac1da15f65cb713d2062dce620eaf7a4d8a87b4a5db644299066a5907c33e",
+    "transcript.txt": "f8a6e8268cee7a4dc7d21cc71e1e6d57b4764929f00ffacb280d44ae6bec5ff5"
+  }
+}

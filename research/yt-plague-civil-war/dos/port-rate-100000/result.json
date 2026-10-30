@@ -1,0 +1,56 @@
+{
+  "name": "port-rate-100000",
+  "patches": [
+    [
+      3053,
+      49,
+      100
+    ],
+    [
+      3053,
+      53,
+      10
+    ],
+    [
+      3053,
+      57,
+      10
+    ],
+    [
+      3053,
+      61,
+      100000
+    ],
+    [
+      3053,
+      65,
+      1000001
+    ],
+    [
+      3053,
+      69,
+      1
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "310cf1c37caa47a744b6a1fc031c761afb56547902f1441b37978b256df470a8",
+  "after_sha256": "a40c3bf65365c0cbf25573a75520a8038999439f1469535cde0bf2fd4347ddc1",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "2cd1155d0e30a2170da3d8ca2bc92a856fb03a328e8918c6d3522cc7c0263f73",
+    "before.dat.gz": "b8cce153bf2d0a3e54c509f77879ad2a88d05402d6677b88d4d590c5a09938ee",
+    "dosbox.log": "00e370b9de8ca521f24f861c6c86babb7c2f7420f890f3fd0f466b20e39c4fcb",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "8cdfbd7f3eb4cf8a04bd2f798f27b8f67816f05165ff79d55343969990a42617",
+    "transcript.txt": "649d2fa8cf9edce1bba51b8e1a0d3e9b01b633f9b2d04913e9596cd60f7b0eb2"
+  }
+}

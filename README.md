@@ -722,6 +722,19 @@ Save version 18 records these changes atomically with maintenance; replay and
 clock rollback do not repeat them. [Policies, migration and validation](research/yt-maintenance-lottery/IMPLEMENTATION.md).
 
 
+### Plague and civil-war research
+
+[56 completed original-DOS controls and 18 native byte observations](research/yt-plague-civil-war/RECOVERY.md)
+now establish port plague's post-growth production threshold, planetary random
+gates and civil-war override, damage/caps, unchanged titles and public notices.
+Native controls demonstrate a near-cutoff port rate increase, one-pass outbreaks,
+stale civil-war expense text and the legacy clock-quantization catch-up defect.
+An independent verifier and 16 rehashed corruption controls preserve these findings.
+
+These events are research-complete but are not playable yet. The next milestone
+is bounded implementation with atomic saves, quantity/credit limits, news that protects private assets and the existing daily replay/rollback policy. Saves remain version 18.
+
+
 ## Documentation upkeep
 
 Update this README with every project change, including features, fixes and

@@ -1,0 +1,156 @@
+{
+  "name": "planet-order-quiet",
+  "patches": [
+    [
+      4053,
+      45,
+      1000
+    ],
+    [
+      4053,
+      49,
+      1000
+    ],
+    [
+      4053,
+      53,
+      1000
+    ],
+    [
+      4053,
+      77,
+      100000000
+    ],
+    [
+      4053,
+      117,
+      1000000000
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4055,
+      45,
+      100000000
+    ],
+    [
+      4055,
+      49,
+      100000000
+    ],
+    [
+      4055,
+      53,
+      100000000
+    ],
+    [
+      4055,
+      77,
+      100
+    ],
+    [
+      4055,
+      117,
+      12345
+    ],
+    [
+      4055,
+      73,
+      0
+    ],
+    [
+      55,
+      93,
+      4
+    ],
+    [
+      4055,
+      85,
+      11
+    ],
+    [
+      4055,
+      41,
+      298
+    ],
+    [
+      4054,
+      45,
+      1000
+    ],
+    [
+      4054,
+      49,
+      1000
+    ],
+    [
+      4054,
+      53,
+      1000
+    ],
+    [
+      4054,
+      77,
+      100
+    ],
+    [
+      4054,
+      117,
+      0
+    ],
+    [
+      4054,
+      73,
+      0
+    ],
+    [
+      54,
+      93,
+      3
+    ],
+    [
+      4054,
+      85,
+      12
+    ],
+    [
+      4054,
+      41,
+      298
+    ]
+  ],
+  "names": [
+    [
+      4055,
+      "Plague Last"
+    ],
+    [
+      4054,
+      "Middle Probe"
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "610d242d915ed17d003d03b96fc234c6678b043e46d19f1b539524c260f233ea",
+  "after_sha256": "423d089f655e5212bb83e10a017d25f20d69d1625374e54efe2ea1185123cfb0",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "1af637f6bbf24efa01d172a8d6dda75908e305977f4ee3f83522381ccb705864",
+    "before.dat.gz": "3290e4d5318493291cc27d4fb5eb68f625024a864de4a6495e4d7d76c1bfc9c7",
+    "dosbox.log": "279d59e85c6b4f7a5b10e3365240ecb8e81b033ec6cb0f7a48491719d70f0e2f",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "3f2576ee056f5ab9d6b2b742c2be726693688f87bfc1d26e66a355d7784ac0d6",
+    "transcript.txt": "ef12ef8101c7e1a93817b987eb6569f2e31bbdc01e62cebbde98b97f638d3589"
+  }
+}

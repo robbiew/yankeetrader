@@ -1,0 +1,116 @@
+{
+  "name": "port-three",
+  "patches": [
+    [
+      3052,
+      49,
+      10
+    ],
+    [
+      3052,
+      53,
+      10
+    ],
+    [
+      3052,
+      57,
+      10
+    ],
+    [
+      3052,
+      61,
+      1000001
+    ],
+    [
+      3052,
+      65,
+      1
+    ],
+    [
+      3052,
+      69,
+      1
+    ],
+    [
+      3053,
+      49,
+      10
+    ],
+    [
+      3053,
+      53,
+      10
+    ],
+    [
+      3053,
+      57,
+      10
+    ],
+    [
+      3053,
+      61,
+      1000001
+    ],
+    [
+      3053,
+      65,
+      1
+    ],
+    [
+      3053,
+      69,
+      1
+    ],
+    [
+      3054,
+      49,
+      10
+    ],
+    [
+      3054,
+      53,
+      10
+    ],
+    [
+      3054,
+      57,
+      10
+    ],
+    [
+      3054,
+      61,
+      1000001
+    ],
+    [
+      3054,
+      65,
+      1
+    ],
+    [
+      3054,
+      69,
+      1
+    ]
+  ],
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "15b5109a87e32ea550c2d22330afffdf65c38c633f28fbd66eb97dd2b00e775a",
+  "after_sha256": "aff80b960f53fd99bb7801e6ed777b34b91b47b8594b76845bd7297012f2286c",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "ab535496a1ddf75b4e83b9ca5dfe14a4390ae62231888f16846b6872c650bab6",
+    "before.dat.gz": "ba4d7d97d4161f6137ffa22098cfb23c2bcd87d375d9b350cd5af76139816174",
+    "dosbox.log": "9273875c1708257259e47b5b40ba5610fe836d34cc4eaae71c4b20b7255b4b1d",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "07b0b083ff33f3f1428c5bac768cb5f252f83455f24533966eb046ec95d4b538",
+    "transcript.txt": "daa0c2bdf3539ad2d2fb4c8a7c8b49e9052117e6d9dd343bff953f8330624c37"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "planet-owner-2",
+  "patches": [
+    [
+      4053,
+      45,
+      100000000
+    ],
+    [
+      4053,
+      49,
+      100000000
+    ],
+    [
+      4053,
+      53,
+      100000000
+    ],
+    [
+      4053,
+      77,
+      100
+    ],
+    [
+      4053,
+      117,
+      12345
+    ],
+    [
+      4053,
+      73,
+      2
+    ]
+  ],
+  "human": true,
+  "recipe": "plague-civil-war-isolation-v1",
+  "baseline_sha256": "ad34a8f17e91395a5456f797f27fff4d4d636159b3257314ca4a2f4fa2f83ac7",
+  "before_sha256": "341495bc03732b86e7e65b5efb42d09f2c3f7d586a213629adc0af0821407f7d",
+  "after_sha256": "2d606de6113017309fe7f4aae2ea4446928b34f1e7854552b68f2424db4a21c5",
+  "executable_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "date": "10/25/2026",
+  "time": "00:00:00",
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "complete": true,
+  "files": {
+    "DOSDATE.LOG": "bb0e929ec4fc33dc774beb374ac1eed17b2029e700786ae84fd3d98c46a116ed",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after.dat.gz": "0e9bc4ae80c7daf34debb3d26078be5f0b29ad05af72ffb173d55401aac9e00d",
+    "before.dat.gz": "0a9d64a1f9c5f731f19e9f995c6f1a7dce0b200ff263af31aa9bfd8d5e58aa3a",
+    "dosbox.log": "0ee3f5457e7e4246136bcd0a4f43f729b759dc26e5affce34c81e5b6bc65acda",
+    "side-before.json": "2c9784b1cf3f491aacc7c0549fedbf69198d70bbc34dda03ede3662e382c9baa",
+    "sidefiles.json": "8ec3f4570f5ed2ab5670f5b686836a82e4e53771705cb285cdaed0f8bfaa0724",
+    "transcript.txt": "111d8a38b4e38318ebae5733b5a80ae01a19eb1a47d34c411916c3ae3bffda28"
+  }
+}
