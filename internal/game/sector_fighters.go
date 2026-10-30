@@ -24,10 +24,11 @@ type DefenseIntent struct {
 	AcceptSurrender, Retreat bool
 }
 type DefenseOutcome struct {
-	Battle  SectorBattle
-	Sector  int
-	Escaped bool
-	Mines   MineOutcome
+	HQReward *XannorHQReward
+	Battle   SectorBattle
+	Sector   int
+	Escaped  bool
+	Mines    MineOutcome
 }
 
 type SectorFighterGroup struct {
@@ -233,14 +234,22 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 	if out.Battle.Joined > MaxQuantity-(p.Fighters-out.Battle.AttackerLosses) {
 		return DefenseOutcome{}, errors.New("surrender exceeds ship fighter capacity")
 	}
+	if out.Battle.Defenders == 0 && w.hqRewardEligible(p.ID, entry.To, entry.Defense) {
+		if err := w.prepareNews(now); err != nil {
+			return DefenseOutcome{}, err
+		}
+	}
 	if entry.To != entry.From {
 		w.move(p, entry.To)
 	}
 	p.Fighters = p.Fighters - out.Battle.AttackerLosses + out.Battle.Joined
 	s := w.Sectors[entry.To]
 	if out.Battle.Defenders == 0 {
-		w.queueXannorRevenge(p.ID, entry.To, entry.Defense.Owner)
 		s.Defense = nil
+		out.HQReward, err = w.awardXannorHQ(p.ID, entry.To, entry.Defense, now)
+		if err != nil {
+			return DefenseOutcome{}, err
+		}
 	} else {
 		s.Defense.Fighters = out.Battle.Defenders
 	}

@@ -70,12 +70,14 @@ func TestNewspaperRetentionAndIdempotentMaintenance(t *testing.T) {
 	if err := w.RecordLogin(p.ID, w.Created); err != nil {
 		t.Fatal(err)
 	}
+	// Isolate expiration from random maintenance events that legitimately add news.
+	maintain := func(at time.Time) bool { return w.MaintainWithRandom(at, func() float64 { return 0 }) }
 	nextDay := w.Created.Add(2 * time.Minute)
-	if !w.Maintain(nextDay) {
+	if !maintain(nextDay) {
 		t.Fatal("forward maintenance skipped")
 	}
 	before, _ := json.Marshal(w)
-	if w.Maintain(nextDay.Add(time.Hour)) || w.Maintain(w.Created) {
+	if maintain(nextDay.Add(time.Hour)) || maintain(w.Created) {
 		t.Fatal("same-day/rollback maintenance ran")
 	}
 	after, _ := json.Marshal(w)
@@ -92,7 +94,7 @@ func TestNewspaperRetentionAndIdempotentMaintenance(t *testing.T) {
 	}
 	lastID := w.NextNews
 	future := nextDay.AddDate(0, 0, 3)
-	if !w.Maintain(future) || len(w.News) != 0 || w.NextNews != lastID {
+	if !maintain(future) || len(w.News) != 0 || w.NextNews != lastID {
 		t.Fatal("maintenance did not expire old history")
 	}
 	if err := w.RecordLogin(p.ID, nextDay); err == nil {

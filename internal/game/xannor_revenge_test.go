@@ -70,8 +70,12 @@ func TestXannorRevengeQueuesOnlyActualHQVictory(t *testing.T) {
 			if w.HasXannorRevenge(p.ID) != tc.want || w.Sectors[tc.sector].Defense != nil {
 				t.Fatal("incorrect revenge producer", tc, missiles)
 			}
-			if p.Credits != 1005 {
-				t.Fatal("revenge invented HQ reward")
+			wantCredits := int64(1005)
+			if tc.want {
+				wantCredits += XannorHQBonus
+			}
+			if p.Credits != wantCredits {
+				t.Fatal("HQ reward eligibility")
 			}
 			validMobile(t, w)
 		}

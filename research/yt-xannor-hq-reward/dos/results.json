@@ -1,0 +1,3653 @@
+{
+  "recipe": "xannor-hq-reward-v1",
+  "scenarios": [
+    {
+      "name": "fighter-hq",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "5783d7d50991cf9a0cbb55808aa40d5b4452a280cc80f4aa9853b55b9caf2235",
+      "after_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "before.dat.gz": "004f85f0a317db642a0d4f7f6ab1f3d4405e88943ae1b627362dc021ce38dcb8",
+        "dosbox.log": "2129cc5a964ae246c0150bedf51e2f15fd831165f232ccd7fd58b82fca4584a8",
+        "transcript.txt": "e33c70bd857c6c663e442ddf75a43db3aca04072bb7ffda38bc15676c5122cd3",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "7963747b7c9411b293c245005d65a51867ded9107dacda78cdf2776bce38dd3f"
+      }
+    },
+    {
+      "name": "missile-hq",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+      "after_sha256": "d12a9e093c30ee342c33e3770a481d5ecee8688f91b2801baba99a6a64c7d240",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "641f1a6dfd2ca9d6eb48748348087fb5f0b3c75e79b8398ece04412e6d830655",
+        "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+        "dosbox.log": "32231ff485febb7f49af5d260881f56e58539fc290137c27fa07363b537cd47b",
+        "transcript.txt": "bf1c5df0777f8769abf061ecbccf52342de3d52ff0a47d1b6ee8cf5051a6f3a3",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "72580dc71b2abf831040278321886b2d24d415874afc7631b56300879f0df27a"
+      }
+    },
+    {
+      "name": "plasma-hq",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+      "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+        "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+        "dosbox.log": "8db98a5c705c7486e5b3112990f80f07d6ddfdfc6479a69049a00eb90d4c1aaa",
+        "transcript.txt": "e2e45ee0a40e516b02055008079dca425c9cdca10b7cc455a0b682fe5d40648c",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+      }
+    },
+    {
+      "name": "fighter-away",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 1114,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          1114
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "856f39332ed9de453a3094830dd5933ac2b3203bb51aedff94a3d1c2e035737a",
+      "after_sha256": "5e51b7009e287c0a93ff27feeef20a198c8a6a9f972e6e2e3ab4193f5794c725",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "1b731b8dd503e046cc44131eae5464c20828483a1eff2bba76c9f1fbf5ab4c4f",
+        "before.dat.gz": "cb5aa04dc57208ca5643f424b5c619927fc29f567c59a3007efaad4c538e9894",
+        "dosbox.log": "ea39d61bf544c5a9c6b9481652c7a5876f08ba98d1997c753df4c06f33ea41d7",
+        "transcript.txt": "73f19a8dac02ec7669841a1b540f70a40965dc6d7f8fc62475a7574d1eb10786",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "9fb87b075b08bb834f03c642ea48a92cf18f8c727abc695a3eb8778b9af1934f"
+      }
+    },
+    {
+      "name": "fighter-mercenary",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -2,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -2
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "52713a46802386de794a03e3a572ce16397eb240d6054c7637db1f750baf8385",
+      "after_sha256": "503d62e4892460f09133b65154c8f1aefeaa77d86fd2f9104e44722ad95675c7",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "a748ead2f57ba50998f51eb1571ba5fce21f543afa618092c2f77df57922678d",
+        "before.dat.gz": "8852221a9baea5109420e33a0d4a10a7b8275fa316e9e852330035acf1a82dc2",
+        "dosbox.log": "81be244834d2a091ab644610ca9334bf0c8eda58911941af001731e2e3b7ff0a",
+        "transcript.txt": "4e1af16a2059697c2c76f240ca97c8d3795835d683a899dbf15ee81fb1c52912",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "d6d41fad268709c4fe2c58704da346a26c60d66f104fc26efb406d2d67fd9037"
+      }
+    },
+    {
+      "name": "fighter-human",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": 3,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          3
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "b58372baa0bc1b4ceefe2697e90bfd729d567885c12dbfecc782607c1d0e7e10",
+      "after_sha256": "598e70eba13fd96cce46ca530935555fc0f3698e136a53354e1188124b385b05",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "3d1a5bbc8b2286cf682457dac665536dab30315a2e8ba63a236474e4c73d0beb",
+        "before.dat.gz": "7be555a900b721bdf339c60bc306519a7d9c8c3ab4513452453627a54011e3be",
+        "dosbox.log": "716ed4829b91cef502d2511872371b3655b2b58ef3a877f78940d3c3a6b6f320",
+        "transcript.txt": "db4aaa07ae2e319ed326635c633fd888479c825ebe7c7fbe7c62c0b378a337dc",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "e332eba1c65c70eab454823e3520c2f63350ae2dc7fbf6018548136edd5d86ef"
+      }
+    },
+    {
+      "name": "fighter-partial",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1000000,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1000000
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "ff07ba196c3934ba53c2f6631b55bf7c860804cdab2079966fc86d4259fb75a0",
+      "after_sha256": "cbe14444c6a8fa0c4d1891e259b4556fbd43d6143154dd95e301a79a8c4a4a98",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "352d8ed4aee0fe9e388ecc45218841761c06e98ea3168a6954d5b784063800b4",
+        "after.dat.gz": "58d10e866d9cd28289238266f84d146ab37780f01d56594c3c0ebcea1bd04243",
+        "before.dat.gz": "7a989b0b8c1762bf35fc6d3e572d82791169c192d06e8d9383e35a6251d1486b",
+        "dosbox.log": "dfe302760a749eac1fada2482ed87f64e8ea54a199bbadf6ac716c58292ae63b",
+        "transcript.txt": "c531e7b8f463d40741e3c1801d6de3871e4314a27d0c52bb72cff160adbc98a3",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "ee0a8372f290b7df9cb2a841ead88e0af1ac6a397f0f5f1d6974876a5fc7a9e7"
+      }
+    },
+    {
+      "name": "fighter-empty",
+      "action": "none",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 0,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "1420023d41510938d58aa81f49c9df6d99b33ec3f2995b05da495b9fba07db5b",
+      "after_sha256": "602675998aab60dd063423aa4600afc68d417f60870c78f2d4003798e2b807b9",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "8095449ee5e86bc0f507826acb75ab4dd66dea6c403013014e761d37a3306f6d",
+        "after.dat.gz": "58d097497554858e733bee3ade63fbd8c91a4a80b1a628df6b8a2bc6ada747f7",
+        "before.dat.gz": "03abcc4aa8292e90e52370d9139af7d03693e626c85258ef9db923c73d7b9e9c",
+        "dosbox.log": "4b64a2568e918e1fb5c601245dbaf0380b65540fe4900b34cbb2556893be5e53",
+        "transcript.txt": "8faa53dac0b0cc82017a36e55da75d5a9c8c2aac269bf7b1efc2804d7061fe00",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "dd7e69e807d81b41ba28da807d2cfd544ea10f6a3d40927a83df1cd82410d0cb"
+      }
+    },
+    {
+      "name": "fighter-abort",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 0,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "5783d7d50991cf9a0cbb55808aa40d5b4452a280cc80f4aa9853b55b9caf2235",
+      "after_sha256": "5d13731e0a9ae32497400be1ed7f538c0868b3db54bc73b7ceb69be33a839294",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "7a52b4ae60afc9d2b064997bb00bb4bb36a2cf8491e02bacd737f17d1c1e3809",
+        "after.dat.gz": "3f9d505290a799d8d22c2687dd3aa6cf0f80b0a89d84b8ad0470ec90704bb055",
+        "before.dat.gz": "004f85f0a317db642a0d4f7f6ab1f3d4405e88943ae1b627362dc021ce38dcb8",
+        "dosbox.log": "1a06442bf5bfa9a3c3647e15307cf3445506f494b56711fcdbdbb3309180ef92",
+        "transcript.txt": "b393c021062f6dd36424896c1af5068d2d454f83c1a2a399868dc3487a01c593",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "d76256ab108d6acb000405c2d1c7d738a2774c0a07a2dcda4413a54fbccd85a3"
+      }
+    },
+    {
+      "name": "missile-away",
+      "action": "missile",
+      "actor": 2,
+      "hq": 102,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          102
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "093d2701df896d701131193980ceeefac4f211c50b627c43f0bdf8a730a30e5c",
+      "after_sha256": "30dba50078ba78a31f5bcdbc71bdbee7ce98be63527fef92499e8a9275577545",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "7d75023e56dfefaa424a03c401458a12176c7ae32208fd03f5c7e0020479668f",
+        "before.dat.gz": "5e3946c9c17c1cf409e51a8d1f7f9a31f30d0782d9dedfb859cadcf4df43d995",
+        "dosbox.log": "642521f59e4326e1e0e98dab35346fbf08d4d3067e2fc11a4213a70b5dc0df09",
+        "transcript.txt": "231b8d51a1bbc90af2fadec7abfb8c9e88108e1da6f2dc7398dada1471e8f1b7",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "350e574665758df3ee7cb01cb40b7398e0d82667292e0c77be79f3da46dc1b27"
+      }
+    },
+    {
+      "name": "missile-mercenary",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -2,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -2
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "2fb4fd28897807ada0444ca59b414064eb941334c7903651a3cb96b0d66a1b7c",
+      "after_sha256": "b338edc8fd5a2aa54ba36faf800e099a119d2596fdecf329fce95d6de2c38e6e",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "20d2312661a50266c669933a7a03a2c58aaad9cfb774079be154848c64fa373d",
+        "before.dat.gz": "b91a941cdbf8eb0fce2533a63747635cecf1bd4fd02a925738733d1904a64617",
+        "dosbox.log": "a4c5bc17841bc0c9fa1b66fce55c76954d15df76e41b54c26bae44a0befd78ae",
+        "transcript.txt": "19098e7d76e288ad5c0cebd17aba43b099fb2b0576f856c4b555e7ba5dfb8f58",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "350e574665758df3ee7cb01cb40b7398e0d82667292e0c77be79f3da46dc1b27"
+      }
+    },
+    {
+      "name": "missile-human",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": 3,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          3
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "9d00e2c0882f166bbf05c8cc2ae742d02a46c221f9176750cfbc19aae488a291",
+      "after_sha256": "b338edc8fd5a2aa54ba36faf800e099a119d2596fdecf329fce95d6de2c38e6e",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "20d2312661a50266c669933a7a03a2c58aaad9cfb774079be154848c64fa373d",
+        "before.dat.gz": "ed5e9853c4e904c17441eec574e19de2212a62198fbbf1d332217b2b9bbd8557",
+        "dosbox.log": "2e808dc655f3282c225aac846380802fd70018c970dffa96e8e7803f1501dcd1",
+        "transcript.txt": "c582693a74ab127ab55ab047157009e72f6c0bc155a4b49a18fee5a8ef3dea2c",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "350e574665758df3ee7cb01cb40b7398e0d82667292e0c77be79f3da46dc1b27"
+      }
+    },
+    {
+      "name": "missile-own",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": 2,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          2
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "b1a91a4b41986b10d8458828c6616cf79bd692caaae8b2ffb7486e17c01a0786",
+      "after_sha256": "080a056b1332f449876c58b71c0e0fc13db2c6b3aab5e81842bfe1fb52484897",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "c6df358dc1515244dbbc76a09337d4a9f8a996c4db2222b365d90be673f048b7",
+        "before.dat.gz": "d2c43fa90462d035df3d65cbf67a0dd44ed1d18c48a712e5c848452f5a211e70",
+        "dosbox.log": "4e38fcfbeeaa47d1a43a9fd56472cf5704154f92358dce6f3a7b5648dccedc5f",
+        "transcript.txt": "1f09dd555a9aedba98f8975cdf838564a5e1ac7ae0fd73e25d5cb67d3d96c6e6",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "0359b2ba41ac659a9d04b874ec8bd4d6b70b3b9cddd7488317f137c556ffb1ae"
+      }
+    },
+    {
+      "name": "missile-empty",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 0,
+      "amount": 20,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "57b2135aafc242d847437e3c4a7317ee6c67b6331f45e16494fd62563a6d6352",
+      "after_sha256": "c15eb13c671cb082a8bfcae80cbdbc4967232ffce853731cbf2a4ef61e021b96",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "84de1a56be95a1a21cbe37e99119603a03fe7ffaf6bd41aad41a9750ed0d3b18",
+        "after.dat.gz": "708a205a9ba7eaf13442ce9a08bee1fac17e35bde0f88dfc6612b2fef3c051f0",
+        "before.dat.gz": "7a660d0c5caab949f029e27fe4be515b04d6a6fc4d4c14572104811e1c8fd46a",
+        "dosbox.log": "408633d3bb971b1ad8a49951da4b1755325f63876169cddf5e9e01bf7f369f29",
+        "transcript.txt": "30a0c8b10549b7549573a486578b6faa9b2dcdf1d4606eee9e8baf0a64cf832e",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "350e574665758df3ee7cb01cb40b7398e0d82667292e0c77be79f3da46dc1b27"
+      }
+    },
+    {
+      "name": "missile-partial",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1000000,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1000000
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "9ec12a6ca27e16e7a5c77c9f8780ca177487916606e9a0f128dfdd47a5a8010e",
+      "after_sha256": "e978ca2392fb468eef2f4ebc4b87cd15c256037044d2736f78b8a2060834252b",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "9b20d63f7aea0881b59fe43a275c315c026f7b217fbfbbe94f2a15ce2cf0177f",
+        "after.dat.gz": "2d9a5cb5069b6b291cb2699a718d1aba7c79c60bea8b9b42f489b35c5bd2125b",
+        "before.dat.gz": "fa021a6a6ab473129b3afcfc3f3964f691c230e0666d4931b0bfa92ac0cfa767",
+        "dosbox.log": "527f68d6c76440549ce3044907744b0098697e42df0d020a70e8b86d7572add0",
+        "transcript.txt": "a82ca97da69ad3b0611f2d2ae47ebf9a9bd538275fa5ef3295e435c31fb4514e",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "065e2b01746a487c4f22bb37202c0ed96960966d5fe66ef4b148b1549858a143"
+      }
+    },
+    {
+      "name": "missile-route",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 20,
+      "patches": [],
+      "destination": 102,
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+      "after_sha256": "d12a9e093c30ee342c33e3770a481d5ecee8688f91b2801baba99a6a64c7d240",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5a94f8022c77db24b2ec8202b25a89c6a41c4a860d69eb5b4674cd7044c5963b",
+        "after.dat.gz": "641f1a6dfd2ca9d6eb48748348087fb5f0b3c75e79b8398ece04412e6d830655",
+        "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+        "dosbox.log": "f3217dee0dd5a3437f694442f729ec5b8da8b25036ca22e340b24c3cbddcf807",
+        "transcript.txt": "42c0abfa2e537ac6b3ca636f641301fafaa8f4f789b533df34a027980517d798",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "72580dc71b2abf831040278321886b2d24d415874afc7631b56300879f0df27a"
+      }
+    },
+    {
+      "name": "plasma-away",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 102,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          102
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "093d2701df896d701131193980ceeefac4f211c50b627c43f0bdf8a730a30e5c",
+      "after_sha256": "213a58731fe3784bf3a40ccd524f43571341a600626c7d9152da71d7bd62c19a",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "3033a4138637d79e7866debad8de2905a08f5bee56fead6f93f47cdb6a384ff9",
+        "before.dat.gz": "5e3946c9c17c1cf409e51a8d1f7f9a31f30d0782d9dedfb859cadcf4df43d995",
+        "dosbox.log": "8626be5c77ac51bc8fe1fc30b91c6db6a7cac00924c1cb6af151960de5b57c6d",
+        "transcript.txt": "8d8c363cf1509292144bf9228f413137f7c83ff7465a15980e3c748dc101e4ea",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "aa818a902637bd7ff31d5eda6170d020834d196c2caadba2f9e160f351ff8efb"
+      }
+    },
+    {
+      "name": "plasma-mercenary",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -2,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -2
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "2fb4fd28897807ada0444ca59b414064eb941334c7903651a3cb96b0d66a1b7c",
+      "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+        "before.dat.gz": "b91a941cdbf8eb0fce2533a63747635cecf1bd4fd02a925738733d1904a64617",
+        "dosbox.log": "283dc95807a27fd9b317d30ef34386f709fb58fc292abfab0688dbcb1f0335a6",
+        "transcript.txt": "954fd4f8d11aa51a65cd51bf4d55890657d7478fc92f10282817e777b5a8e73b",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+      }
+    },
+    {
+      "name": "plasma-human",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": 3,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          3
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "9d00e2c0882f166bbf05c8cc2ae742d02a46c221f9176750cfbc19aae488a291",
+      "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+        "before.dat.gz": "ed5e9853c4e904c17441eec574e19de2212a62198fbbf1d332217b2b9bbd8557",
+        "dosbox.log": "9a4687b2911f256b6b9e578816d67260214189782c410ad3bb69bb68469c8a7e",
+        "transcript.txt": "1f93bff9e4e4fffed91a2030e9527159500d0d4e183f9f522e16c9306789bd1f",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+      }
+    },
+    {
+      "name": "plasma-own",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": 2,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          2
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "b1a91a4b41986b10d8458828c6616cf79bd692caaae8b2ffb7486e17c01a0786",
+      "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+        "before.dat.gz": "d2c43fa90462d035df3d65cbf67a0dd44ed1d18c48a712e5c848452f5a211e70",
+        "dosbox.log": "9a5c3a8af0d112e490d33ef7acd321b06fb99f7d33ac720c3c0544860156b440",
+        "transcript.txt": "c153d59901144b0cc74865114c382048c094151cb9279b78d2cc17748621ca59",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+      }
+    },
+    {
+      "name": "plasma-empty",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 0,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "57b2135aafc242d847437e3c4a7317ee6c67b6331f45e16494fd62563a6d6352",
+      "after_sha256": "b405e86a6859c8605eee00068e94918720a9af5b2b08e58706951a89da9458e3",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "912dc1ee0e1b348f2d10151be85abd3bb8cbdad0576d20af505f024b8cdbec41",
+        "before.dat.gz": "7a660d0c5caab949f029e27fe4be515b04d6a6fc4d4c14572104811e1c8fd46a",
+        "dosbox.log": "8d86b43d6cc829e6302cd3b30851e3019458d7341b3cd76971e3483900dcffbc",
+        "transcript.txt": "9b14e7cd250420410f74a43ae38e4347ce616c60762687c4cf9e5f742d1052c5",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "aa818a902637bd7ff31d5eda6170d020834d196c2caadba2f9e160f351ff8efb"
+      }
+    },
+    {
+      "name": "plasma-partial",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1000000,
+      "amount": 1,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1000000
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "9ec12a6ca27e16e7a5c77c9f8780ca177487916606e9a0f128dfdd47a5a8010e",
+      "after_sha256": "8558b7a160cee92ec22577c2af8975ca57100a56d65e8cbb90026e58c0565774",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5dc04c7376e05626c985ec9bd5c93ee8f8a45d5ba6de904ca5e6c3436e8e182a",
+        "after.dat.gz": "f9aab0a57496558d082b3bf68868c6356b50e0e7cead5f0542ed680dac21d286",
+        "before.dat.gz": "fa021a6a6ab473129b3afcfc3f3964f691c230e0666d4931b0bfa92ac0cfa767",
+        "dosbox.log": "6dca6589c7f1aa707148b3c65b9c8448dea7ce77c7a32e6431e6eb52cfdc7393",
+        "transcript.txt": "63aa3942a026a01c51a04d54080497a9cc7425e902fed54ab052747283342993",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "da4764994a4f4f21c0bc51d4445d079d5dc6c0abc94351b4b810138e9c692d7c"
+      }
+    },
+    {
+      "name": "plasma-route",
+      "action": "plasma",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "destination": 102,
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+      "after_sha256": "e8ce28e28537ebe1ac5239a82f553eb3ab36aa3b4d745ee49245652470c97936",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "79fa747795a652a1d0797cd66b180df0e76a4fd4a90d152a10214b6ae12c6eee",
+        "after.dat.gz": "7794f06b477eef0bfc617891a9da9cfa1c49be9a6fb334bae14637b8c38f4f4d",
+        "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+        "dosbox.log": "48c7aff30e21689f591d4c061db90b0e9420594f99dc9963f1eef9a21ee37ad5",
+        "transcript.txt": "f20faf0501597fb2ba286b876cda48dcf36c21e57d3be3a13a9e514582791582",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "010850ad91e18e489ddfd2453c943b52730390283f42a42b2b03b22ec3c3a4fa"
+      }
+    },
+    {
+      "name": "missile-insufficient",
+      "action": "missile",
+      "actor": 2,
+      "hq": 101,
+      "target": 101,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 101,
+      "patches": [],
+      "applied_patches": [
+        [
+          1,
+          117,
+          101
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+      "after_sha256": "7d320a1df4993efcc1f5a25e7b8116fde0816fc1cfe0a0577b8d9cdbe14a6508",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "5478f9fc6ad9fb6870c7c35fa3316ff802623ea7d216a4c2df68ac6d931e12e1",
+        "after.dat.gz": "161742dc69742b031ffa869d99707ab24e0affcc896278682873501b06138794",
+        "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+        "dosbox.log": "a0d29a876384d041c2e2cd34836240ab91ca85a88b6eabcc66c7ef2b8a1b99ac",
+        "transcript.txt": "22c12dc6f5e31a76ac45697fe84044101e50ee6199246468b5688430cc4d5d9b",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "412af84526e6e678b788bb87ae2622c86390d7cf03158824f2c104a9efa95749"
+      }
+    },
+    {
+      "name": "fighter-team",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "team": true,
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ],
+        [
+          52,
+          73,
+          11
+        ],
+        [
+          52,
+          77,
+          2
+        ],
+        [
+          52,
+          109,
+          2
+        ],
+        [
+          52,
+          117,
+          3
+        ],
+        [
+          52,
+          121,
+          0
+        ],
+        [
+          52,
+          125,
+          0
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "fe67e67ecd87a660acc86f303c12c53964c102f509d6b82217b23637d53d9b24",
+      "after_sha256": "bb334cd2db4709767b2470a03946be11a5f63e6d332c7b6e5e565bb3320dfe51",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "97a39300d5145099e0f77181b73596988fcae27faa6717f92055b1b38cb14ca5",
+        "before.dat.gz": "53339ad90622c463065a7368702b316129cc8618e1dafce44754da60ab1f23e7",
+        "dosbox.log": "860a10ae072c35eec1733cbb7957c0c9c1fa854c0fcfef1e0a8e2cbf1077a17d",
+        "transcript.txt": "195a62399da181aff925e1af52beeb0ec05426fe2b6d32902dc1bf3d0040ae3d",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "b1ccc092ff988c184bb5fc0fcf7b3d8eafedbc68273f87aed213b5a4acb2e95c"
+      }
+    },
+    {
+      "name": "fighter-actor3",
+      "action": "fighter",
+      "actor": 3,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "team": true,
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          3,
+          41,
+          297.0
+        ],
+        [
+          3,
+          45,
+          0.0
+        ],
+        [
+          3,
+          49,
+          500.0
+        ],
+        [
+          3,
+          53,
+          2000000.0
+        ],
+        [
+          3,
+          57,
+          100.0
+        ],
+        [
+          3,
+          61,
+          2000000.0
+        ],
+        [
+          3,
+          65,
+          10.0
+        ],
+        [
+          3,
+          69,
+          0.0
+        ],
+        [
+          3,
+          73,
+          0.0
+        ],
+        [
+          3,
+          77,
+          0.0
+        ],
+        [
+          3,
+          89,
+          0.0
+        ],
+        [
+          3,
+          93,
+          0.0
+        ],
+        [
+          3,
+          97,
+          1.0
+        ],
+        [
+          3,
+          101,
+          0.0
+        ],
+        [
+          3,
+          105,
+          0.0
+        ],
+        [
+          3,
+          109,
+          -1.0
+        ],
+        [
+          3,
+          113,
+          10.0
+        ],
+        [
+          3,
+          117,
+          0.0
+        ],
+        [
+          3,
+          121,
+          0.0
+        ],
+        [
+          3,
+          125,
+          1.0
+        ],
+        [
+          3,
+          129,
+          0.0
+        ],
+        [
+          3,
+          57,
+          100
+        ],
+        [
+          3,
+          81,
+          765432
+        ],
+        [
+          3,
+          85,
+          6
+        ],
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ],
+        [
+          52,
+          73,
+          11
+        ],
+        [
+          52,
+          77,
+          3
+        ],
+        [
+          52,
+          109,
+          2
+        ],
+        [
+          52,
+          117,
+          3
+        ],
+        [
+          52,
+          121,
+          0
+        ],
+        [
+          52,
+          125,
+          0
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "120aa7b31ff2c8a3047c05aac62b6dfca01bced61af1f82b08d07094575e497f",
+      "after_sha256": "e6cafb14adf01f1545fb7d5e6139701181e8375d61713114461233df73252658",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "843201aacdcfbb3133ec03fc74e923cd11af3ffaf75c9856bce94e0b10a41e97",
+        "before.dat.gz": "09b8e8bddfe472db1d8a587904a52765b2c198cdf6bb9f1b687d5948bcece1d7",
+        "dosbox.log": "e878bf10ccbf0ed3f218cf4243d0e7c460edd5d54e1634a93caf0af454425456",
+        "transcript.txt": "044b1da589cb4750a4d6bad763b7d208bec2ee936492d507d1d8a1bf0508864a",
+        "side-before.json.gz": "26ca99481430f97034eca92c67081c1ff8c3750a666f7d4b21ce7b8b3a6bfc34",
+        "sidefiles.json.gz": "1876a209a331457866220b0d53e16947d25bafa33c9c7d01feecea477321397b"
+      }
+    },
+    {
+      "name": "fighter-balance-zero",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          0
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          0
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "1c98e5c838407cd3a3910e3c3de93b5c55638bcc8e7384b05eadd673b609672b",
+      "after_sha256": "cc9773386b3e7e5889b80cab9cb4087eab775154fbbb88d126714826dd43ac7e",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "29b955e0cb990bc906ae53e4a86acf057ee875853ff7f7d5f1fd7f4e2c3669fa",
+        "before.dat.gz": "c9149bd86e9a6718f33d19a313df3179dfda5df2707af443cb01972f9971e931",
+        "dosbox.log": "6ceda3b5053cbebd39c7f53ab90bf09e74139ec882942969e278239fb5b73198",
+        "transcript.txt": "71bc8004db93003db04bb4097fc82e15758c5e514b90c7ef1634770cabb32bf7",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "15f0e74d4640c2dcb3e5af7bc109e98b57d338628f90f0f4da109c6f1b79b152"
+      }
+    },
+    {
+      "name": "fighter-balance-fraction",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          1005.75
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          1005.75
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "f27129d5f495597f833be55fd4eb8d414ce7a91a8b671eb6469e3a5eb5525d66",
+      "after_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "before.dat.gz": "b291e61a124c35c413a9284b723b184d7cb7b314edc3bf5f43c0ec082f035834",
+        "dosbox.log": "ee744d62ee9b08726f2bc450f6ef7ff364f288041317632abff12c79ade89953",
+        "transcript.txt": "68bbf1ee0376d3aec751c0882f03cfac706af5eaba15f9806f46d5536d93b36d",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "7963747b7c9411b293c245005d65a51867ded9107dacda78cdf2776bce38dd3f"
+      }
+    },
+    {
+      "name": "fighter-balance-2p24-edge",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          16777215
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          16777215
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "60652992ba6589676c97f4fff8b6b06abb6a59b1e67ce238f76129b718b1bcbb",
+      "after_sha256": "da96316f916680f7524d87ae728b68205c06f20e26eadc555947a193ba1c034b",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "b23b437b878b9c1ddd7176903ed8fec5c247c52f1b7fc79a035b438bb44551b1",
+        "before.dat.gz": "315f5ff7e5fc8ae9a75aae8243a5cb685cb2db23f971907a1ff9b28eb8155945",
+        "dosbox.log": "30a8984e95f7fb21091c422549d42908620c433a2c9790f49414aea66e910ba5",
+        "transcript.txt": "45f7c7d971b7678eb86076c7f11691f927d9c6a1bbc8e57972de1da3f3aaf7de",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "e0b6686a91d8c7a6680a601552fa54b8f20b70e60b8627f6061fbf7535ba162f"
+      }
+    },
+    {
+      "name": "fighter-balance-2p30-even",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          1073741824
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          1073741824
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "6896f84b3c12d532f8c6164ab025ca8a1807b2bb4b787c530044a71828b9e63b",
+      "after_sha256": "6c8bca4fb5bec2413c31510f612f1513262706e72f6e5dbec848f7b9869fb837",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "f74005724c9ea39fc48b865854884db94ff6498b74631033e45f5c1c3d099db0",
+        "before.dat.gz": "e57e5edf81974987e128c664907639feecb6d525c22b40362aa7b663a9fca4ee",
+        "dosbox.log": "d7710221885606b1d15e9b96e35280030303d800287473b05a6cdbe5ab71440a",
+        "transcript.txt": "daa2f9d54b41c248cdbe93844b169dec7b8963ee1aae40ea3e61f0ceb4e3e181",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "f9a65b8eca6a5a686b41a823b28f50b495c7cc36eafc480b8c59375fdd78c7e9"
+      }
+    },
+    {
+      "name": "fighter-balance-2p30-odd",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          1073741952
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          1073741952
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "7786254ef1e4711eefe5eccb5f55e93ba8755e972a73ef830b9d706fbbe9dba1",
+      "after_sha256": "ad56f46efb5be54fb33da3a372a3c6faaf6dd31876fea560e68b2d5315b23f3a",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "1c29d5a18a03e5480186a7d89d8e546063ede6e685ec2c73a51baeae24a63842",
+        "before.dat.gz": "314aca12808ff63525f3684a26c21411e657901062f13f6254ef172cf1b02d09",
+        "dosbox.log": "98c23782e57dd83bf9eb64694f4cc51b54ee304776dfe2d9e7169c6e78c8c4a8",
+        "transcript.txt": "bd40bff585a8609a6b5be9b3e6b796694447c0c394c2da89cd4dd2ca0ec8ac26",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "460b666979447086a4ed8773679dcac894c4db7dac75e0804682fba245b3886e"
+      }
+    },
+    {
+      "name": "fighter-balance-2p43",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          8796093022208
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          8796093022208
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "a0cc6c390ae2f00306aa4e359d11241f51d463ed7ddff795ec35feb9ffdc03e2",
+      "after_sha256": "215766f073f853c8e33872638e4e019b81a60f72b1bdbc76a7f36b83c8773afe",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "831d9359a78b377a34e3826cb894ffc75867b258867a379c956fc5d9df636c6a",
+        "before.dat.gz": "fa8240517af427a2fddde7ede53c7e2525edf5cfe2ead4a774a24c02dfbdc7eb",
+        "dosbox.log": "c61ae99c8c8530a5cd65c123fab8764e4e69f8e61ee8c5e40e322e16a2c346ba",
+        "transcript.txt": "0968357ea1f3e650feef2bb503db33f3166993bfe80569fbc52251ef62a6ba71",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "7e25564c8ab3ed8b478de7b4948da9bbfb4356715551dfed4d1aaf21c23cabd0"
+      }
+    },
+    {
+      "name": "fighter-balance-2p44",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          17592186044416
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          17592186044416
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "6b6f6225b0b5dd71d261d1e0ea8174d7543719cd1a3ea5525e30dae1f506996e",
+      "after_sha256": "1394e8e7917304beff6539466a3ed2352445b69e75a9f219b6e41685d8b8ed7b",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "64a8026506332aaa8ee4e48c46773eed47a2bd98a4489965e47e7eace6683839",
+        "before.dat.gz": "1e4cc19c132ef1b55a72f03002eb451b2984a51d7e5b4df4981d266b281ae0ab",
+        "dosbox.log": "01f878754d5d047abb1ce2d4036a617da94965002115bfb2f8966a3fa2eb67f4",
+        "transcript.txt": "df9bfd0a0b708ad576e941895ed98222ac5a2710f7489d3d5be07c69c00d5410",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "f6bf936ac6436f917ffcd5244bb25417256343a2350b4302527a1abc3cbab02e"
+      }
+    },
+    {
+      "name": "fighter-balance-modern-limit",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          2,
+          81,
+          9000000000000000
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          2,
+          81,
+          9000000000000000
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "26013764908deb5fa67f287b96aea34be7a14a064dff6f86493bbe8018e227f6",
+      "after_sha256": "f6dc1a9d981d4ec1845382c1f3b565570e4fd16dfa72dc9fc739f8c58108bb74",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "ad5dc7a4b98dcbb0cf2dc5ab2ee9d5350de777cbd8588e1f2ea8824405c75538",
+        "before.dat.gz": "6878484914a800d005b9a8c4de45177b445c847a86e0ef419eb2d78c6af89fa9",
+        "dosbox.log": "760178dd78af1a917aaafbf283dc739e6277227d25c06b78922b2aec56104e02",
+        "transcript.txt": "919ef1d88df4cbdeaf6ab6f4b2a12737fe725d8748041ff9eed2282142b613f3",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "3203c89319ab64573b4ac9aa98a5103eaeff7b70a6720bde9af6c0bc5b16f375"
+      }
+    },
+    {
+      "name": "fighter-existing-queue",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          72,
+          105,
+          3
+        ]
+      ],
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ],
+        [
+          72,
+          105,
+          3
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "d94abf50101cf074f360abe1ce833821c951bc994145c3ef25342794cac7f3b5",
+      "after_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "before.dat.gz": "46ae9c4c9c5061756ad83f43f9970f969424410158bdd3f090fc4f476b2cb9f9",
+        "dosbox.log": "638024082c912fc76b980344a8910ed16f034c75e66bb53422e861ca28593c09",
+        "transcript.txt": "e33c70bd857c6c663e442ddf75a43db3aca04072bb7ffda38bc15676c5122cd3",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "7963747b7c9411b293c245005d65a51867ded9107dacda78cdf2776bce38dd3f"
+      }
+    },
+    {
+      "name": "fighter-pause-auto",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [],
+      "pause_auto": true,
+      "timeout_seconds": 180,
+      "applied_patches": [
+        [
+          1,
+          117,
+          100
+        ],
+        [
+          72,
+          105,
+          0
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          0
+        ],
+        [
+          152,
+          85,
+          0
+        ],
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ],
+        [
+          2,
+          113,
+          10
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "5783d7d50991cf9a0cbb55808aa40d5b4452a280cc80f4aa9853b55b9caf2235",
+      "after_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "fab15a90e1feb1aa7d750268296df3403995adf26c12f3b352586a6ae8482424",
+        "after.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "before.dat.gz": "004f85f0a317db642a0d4f7f6ab1f3d4405e88943ae1b627362dc021ce38dcb8",
+        "dosbox.log": "ef42650a6e47dca110489de775b55936c04becb33b8f3e11c9132a440af2049f",
+        "transcript.txt": "437adca7e00f5cf7ce16cbf3c1e3319fa48118f905f98dc1badf3391850e2a91",
+        "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+        "sidefiles.json.gz": "12bb6fd6143cdafb704068a8482fdeea8d667afc281918bbc2813d7f2370324e"
+      }
+    },
+    {
+      "name": "reconnect-no-repeat",
+      "action": "none",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 1,
+      "patches": [],
+      "parent": "fighter-hq",
+      "no_setup": true,
+      "time": "00:02:00",
+      "applied_patches": [],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "after_sha256": "05c6713529173af8292b7f40493c9a40d95a5f7941d0c2f729dc4140b270e104",
+      "date": "10/24/2026",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "b030003c2760b8cab17e6a44a3e245117b4577dd2ede4af8b5e614f2de144ff6",
+        "KEYS.TXT": "8095449ee5e86bc0f507826acb75ab4dd66dea6c403013014e761d37a3306f6d",
+        "after.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "before.dat.gz": "ab9fd6ad13ddbaa7b7fef21e0d7058def285623c483203a0cdf490a556074298",
+        "dosbox.log": "7f4648eee07fc159ebc8707a5f80474721b651265adee02f1c949e6ee29d6a6a",
+        "transcript.txt": "c10020baa8ecb9147df17fc638ded1f1afe4cb5b47e882b848393c36f6c012bd",
+        "side-before.json.gz": "38716e37faac8f2d695b2d58004e9343800a4c8308a54fba1e26267344448404",
+        "sidefiles.json.gz": "f0ebc3f9efcb015dc64a1d69a1ec097b93643a5130444041d9ddce4081db20e5"
+      }
+    },
+    {
+      "name": "restored-hq-repeat",
+      "action": "fighter",
+      "actor": 2,
+      "hq": 100,
+      "target": 100,
+      "owner": -1,
+      "defenders": 1,
+      "amount": 10001,
+      "patches": [
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "parent": "fighter-hq",
+      "no_setup": true,
+      "time": "00:02:00",
+      "applied_patches": [
+        [
+          151,
+          81,
+          1
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "recipe": "xannor-hq-reward-v1",
+      "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+      "before_sha256": "d4b5f98732687de207f990ee166b8cd3e9fff32c7aa82dc07ab59a2f34cc508e",
+      "after_sha256": "eca456ccd3416971e2402500864afb85c722578c49f0d7f644809a9d4d4eae2f",
+      "date": "10/24/2026",
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "b030003c2760b8cab17e6a44a3e245117b4577dd2ede4af8b5e614f2de144ff6",
+        "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+        "after.dat.gz": "42c8d9aa5293efb82d72e010b4523deee4db60e4075740f4cc7a6b19f90f049f",
+        "before.dat.gz": "44c622e312708492b605e428dbb7ed07b3fbaffad560caa3149479b76f6eb0da",
+        "dosbox.log": "af517bc69b01048154e7e8117ee9ef161c6519703bf3a4851bea7f657fe3741e",
+        "transcript.txt": "bc0fea3436d6389ecca05ff47cbee5dc6b694ea0268a672eb88513b5dc6fe65b",
+        "side-before.json.gz": "38716e37faac8f2d695b2d58004e9343800a4c8308a54fba1e26267344448404",
+        "sidefiles.json.gz": "bcc8d6461e1bebd5d41fbaa630c97e9e1a1491db0ad39c8be6a37ce59fe393db"
+      }
+    }
+  ]
+}

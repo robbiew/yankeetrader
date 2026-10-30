@@ -65,3 +65,8 @@
 /research/yt-plague-civil-war/dos/**/DOS*.LOG -text -diff
 /research/yt-plague-civil-war/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-plague-civil-war/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+/research/yt-xannor-hq-reward/dos/**/KEYS.TXT -text -diff
+/research/yt-xannor-hq-reward/dos/**/DOS*.LOG -text -diff
+/research/yt-xannor-hq-reward/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-xannor-hq-reward/dos/**/dosbox.log -text whitespace=-blank-at-eol

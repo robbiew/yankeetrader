@@ -35,6 +35,7 @@ type MissileShipTarget struct {
 	ReturnSectors     []MissileRouteSector
 }
 type MissileImpact struct {
+	HQRewards                                   []XannorHQReward
 	SectorMissiles                              int64
 	PlanetID                                    int
 	GroundBefore, GroundAfter, PlanetMissiles   int64
@@ -356,10 +357,17 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			intercepted.FightersDestroyed = min(killed, sector.Defense.Fighters)
 			out.SectorMissiles += spent
 			out.SectorFightersDestroyed += intercepted.FightersDestroyed
+			prior := *sector.Defense
 			sector.Defense.Fighters -= intercepted.FightersDestroyed
 			if sector.Defense.Fighters == 0 {
-				w.queueXannorRevenge(shooter, sectorID, sector.Defense.Owner)
 				sector.Defense = nil
+				reward, err := w.awardXannorHQ(shooter, sectorID, prior, now)
+				if err != nil {
+					return MissileImpact{}, err
+				}
+				if reward != nil {
+					out.HQRewards = append(out.HQRewards, *reward)
+				}
 			}
 			remaining -= spent
 		}

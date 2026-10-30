@@ -103,6 +103,15 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	if err = s.showMissileImpact("Missile launch saved", name, "You", result.Primary); err != nil {
 		return err
 	}
+	for _, reward := range result.Primary.HQRewards {
+		if reward.Player == id {
+			if err = s.showHQReward(reward); err != nil {
+				return err
+			}
+		}
+	}
+	// Counter-volley rewards belong to the retaliator; its private credited
+	// amount must not be displayed to the original launcher.
 	if result.Counter.Launched == 0 {
 		return nil
 	}

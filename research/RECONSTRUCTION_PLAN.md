@@ -765,6 +765,54 @@ these news types; legacy input upgrades without inventing events or changing ass
 The preceding research-only status and implementation contract are historical.
 [Implemented policies, numerical differences and validation](yt-plague-civil-war/IMPLEMENTATION.md).
 
-Next: recover the original Xannor HQ victory credit reward before its bounded
-implementation. Remaining equipment/actions, complete random-event/RNG/MBF parity
-and native/live operational acceptance remain separate work.
+The subsequent HQ reward research and implementation below complete that
+follow-up. Remaining equipment/actions, complete random-event/RNG/MBF parity and
+native/live operational acceptance remain separate work.
+
+## Xannor HQ victory credit reward — research complete
+
+Thirty-eight completed original-DOS sessions, two exact world/auxiliary follow-ups
+and 12 REA byte observations establish fixed current-actor payment, caller gates,
+HQ interception along routes, team nonsharing, native precision, public/broadcast
+reporting, pause expiry and repeat eligibility. Plasma's absent owner guard is
+confirmed through ordinary commands against Mercenary, human and own fighters.
+An existing revenge pointer does not suppress payment; a normal reconnect without
+a new victory does. Large-balance receipts can claim a million despite no increase.
+
+The independent verifier and 16 rehashed corruption controls check inputs, chains,
+financial noninterference, exact arithmetic, fresh messages and original bytes.
+README is updated in this same research milestone. No Go gameplay or save-format
+change is included. Plague/civil-war implementation is tracked separately in
+[PR #43](https://github.com/robbiew/yankeetrader/pull/43).
+[Recovered reward rules, evidence and proposed implementation contract](yt-xannor-hq-reward/RECOVERY.md).
+
+The implementation contract above is historical; the implementation below now
+completes this follow-up.
+
+## Bounded Xannor HQ victory credit rewards — implemented
+
+Supported fighter and missile victories now require a positive prior Xannor-owned
+force at the authoritative HQ, including an intercepted HQ along a missile route.
+Only the acting player receives exact integer credit up to remaining capacity;
+full accounts receive zero. Saved force removal, credits, revenge, typed public
+news and subsequent mine/combat aftermath are one transaction. Private receipts
+report the actual addition after save success; public notices retain only the
+victor's alias. A counter-volley award belongs to its retaliator. Existing live
+rankings and explicit/login/logout/daily score-cache publication remain unchanged.
+
+Each newly restored force may pay on a new qualifying victory. Existing intent
+validation and ship generations reject stale/repeated confirmations, and competing
+contenders cannot both claim the removed force. No receipt or revenge pointer is
+a redeemable payment token. Save version 20 adds typed victory news; upgrades
+preserve assets/history without paying old pending revenge or backfilling notices.
+README is updated in this same implementation milestone.
+
+Validation: full race-enabled Go suite and vet, focused actor/cap/route/death and
+journal tests, atomic rollback/concurrency/durability/migration regressions,
+19 real terminal smoke scripts, reward/revenge DOS verification, 16 reward semantic
+corruption controls, all 4,682 archive hashes and Linux/Windows cross-builds.
+[Implemented policies and validation](yt-xannor-hq-reward/IMPLEMENTATION.md).
+
+Remaining: other equipment/actions, complete random-event/RNG/MBF parity and
+native/live operational acceptance. Plasma's recovered ownership defect and DOS
+floating-point credit rounding are intentionally not copied.

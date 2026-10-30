@@ -1,0 +1,91 @@
+{
+  "name": "missile-route",
+  "action": "missile",
+  "actor": 2,
+  "hq": 101,
+  "target": 101,
+  "owner": -1,
+  "defenders": 1,
+  "amount": 20,
+  "patches": [],
+  "destination": 102,
+  "applied_patches": [
+    [
+      1,
+      117,
+      101
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      1
+    ],
+    [
+      152,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "89890b480b9de6d2a24c54cc15aaf6ec4c68c6b76694a26529dfad607bb91a58",
+  "after_sha256": "d12a9e093c30ee342c33e3770a481d5ecee8688f91b2801baba99a6a64c7d240",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "5a94f8022c77db24b2ec8202b25a89c6a41c4a860d69eb5b4674cd7044c5963b",
+    "after.dat.gz": "641f1a6dfd2ca9d6eb48748348087fb5f0b3c75e79b8398ece04412e6d830655",
+    "before.dat.gz": "b1ce6d3dc47bdf442f41ed3200d58e7707d1ef3eb899460c3b367bc2e467ea24",
+    "dosbox.log": "f3217dee0dd5a3437f694442f729ec5b8da8b25036ca22e340b24c3cbddcf807",
+    "transcript.txt": "42c0abfa2e537ac6b3ca636f641301fafaa8f4f789b533df34a027980517d798",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "72580dc71b2abf831040278321886b2d24d415874afc7631b56300879f0df27a"
+  }
+}

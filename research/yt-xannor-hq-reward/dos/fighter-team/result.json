@@ -1,0 +1,131 @@
+{
+  "name": "fighter-team",
+  "action": "fighter",
+  "actor": 2,
+  "hq": 100,
+  "target": 100,
+  "owner": -1,
+  "defenders": 1,
+  "amount": 10001,
+  "patches": [],
+  "team": true,
+  "applied_patches": [
+    [
+      1,
+      117,
+      100
+    ],
+    [
+      72,
+      105,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      151,
+      81,
+      1
+    ],
+    [
+      151,
+      85,
+      -1
+    ],
+    [
+      2,
+      97,
+      100
+    ],
+    [
+      2,
+      113,
+      10
+    ],
+    [
+      2,
+      89,
+      1
+    ],
+    [
+      3,
+      89,
+      1
+    ],
+    [
+      52,
+      73,
+      11
+    ],
+    [
+      52,
+      77,
+      2
+    ],
+    [
+      52,
+      109,
+      2
+    ],
+    [
+      52,
+      117,
+      3
+    ],
+    [
+      52,
+      121,
+      0
+    ],
+    [
+      52,
+      125,
+      0
+    ]
+  ],
+  "recipe": "xannor-hq-reward-v1",
+  "baseline_sha256": "cd1f9d5e99ef1d251fbbe9196ebeb21a8e401d6765419a2c7157ff729ed1cfb6",
+  "before_sha256": "fe67e67ecd87a660acc86f303c12c53964c102f509d6b82217b23637d53d9b24",
+  "after_sha256": "bb334cd2db4709767b2470a03946be11a5f63e6d332c7b6e5e565bb3320dfe51",
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "XANNORHQ.TXT": "72719e94dc04c655d7239e76f824b79ae6846e0f48c62148d48b9b07b9e694df",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "59247b8a6baf7a0e9a63f3c657069a619cba678891711e34098036286ba5356a",
+    "after.dat.gz": "97a39300d5145099e0f77181b73596988fcae27faa6717f92055b1b38cb14ca5",
+    "before.dat.gz": "53339ad90622c463065a7368702b316129cc8618e1dafce44754da60ab1f23e7",
+    "dosbox.log": "860a10ae072c35eec1733cbb7957c0c9c1fa854c0fcfef1e0a8e2cbf1077a17d",
+    "transcript.txt": "195a62399da181aff925e1af52beeb0ec05426fe2b6d32902dc1bf3d0040ae3d",
+    "side-before.json.gz": "c3bc1db916b5095e7bb665863cfcd59427a8e13a4cac4d8afddf4d13a89df0df",
+    "sidefiles.json.gz": "b1ccc092ff988c184bb5fc0fcf7b3d8eafedbc68273f87aed213b5a4acb2e95c"
+  }
+}
