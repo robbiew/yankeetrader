@@ -22,7 +22,7 @@ Bounded disruption and black-hole arrivals are now available in-game to test. Ea
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling, remaining disruption combat/spy intelligence and exact DOS random/numeric fidelity remain outstanding.
+- Plasma-bolt firing and black-hole combat redirection (research only), explicit season archive export/administrative reset tooling, remaining disruption spy intelligence and exact DOS random/numeric fidelity remain outstanding.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1159,3 +1159,24 @@ failures. Reconnecting selects new login-local holes; it does not replay the old
 receipt. See [validation](evidence/VALIDATION.md) for executed checks. Exact original
 RNG/MBF parity, unrelated disruption combat/spy branches, long-running balance and
 native/live acceptance remain open.
+
+
+## Plasma launch, routing and disruption research
+
+The [plasma recovery](research/yt-plasma/RECOVERY.md) extends the older absorption
+study with 62 normally returned original-DOS controls, two exact reload chains,
+13 native byte observations and a reconstructed load image. It separates
+indiscriminate physical damage from what a receipt may reveal, and distinguishes
+[recovered native rules](research/yt-plasma/NATIVE.md) from the proposed
+[bounded implementation contract](research/yt-plasma/CONTRACT.md).
+
+**Research only:** plasma inventory, production and transfers already exist, but
+plasma firing is not available in the Go game. This milestone changes no Go code
+or save version **25**. Bounded, atomic launch and aftermath remain the next
+implementation step. Exact DOS random/numeric parity, Mercenary plasma sales,
+live BBS acceptance and native Windows durability remain separate.
+
+Run `python3 scripts/verify_plasma.py` and
+`python3 scripts/test_plasma_verifier.py` to verify the retained corpus and all
+53 corruption controls. The optional capture writer runs only disposable copies;
+see the research report for its command and environment requirements.

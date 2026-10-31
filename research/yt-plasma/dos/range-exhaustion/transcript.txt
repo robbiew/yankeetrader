@@ -1,0 +1,201 @@
+
+Yankee Trader Local Logon Program v2.1
+Copyright (c) 1990,1991 by Alan Davenport
+
+
+Loading...
+Local Console Mode
+
+
+
+
+                                 Yankee Trader
+                               By Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                 BBS Number 1-717-686-3037 -=- Fidonet 1:13/75
+
+                     Version 3.6 * YT * Compiled 03/16/94
+
+                         UNREGISTERED EVALUATION COPY!
+
+              PLEASE ENCOURAGE YOUR SYSOP TO REGISTER THIS GAME.
+
+
+
+*** You can't get there without going someplace you dont want to!
+                                                                                Yankee Trader   | Tester | 
+Cntl-X to Stop
+
+
+Welcome to .....
+
+Y A N K E E   T R A D E R ! ! !
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+
+Initializing...
+
+Welcome Tester!
+Searching my records for your name.
+
+You have been on today.
+                                                                                Yankee Trader   | Tester | Q  179:52  
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:52  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 100000      ║ Sector....... : 100  ║
+║ Turns.... : 500         ║ Holds........ : 100  ║
+║ Fighters. : 10000       ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 1000000     ║ Cloak Energy. : 100% ║
+║ Forces... : 1000        ║ Plasma Bolts. : 9    ║
+╚═════════════════════════╩══════════════════════╝
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+None Found.
+
+Sector: 100
+Warps lead to: 101
+
+Time: 179:52  Main Command (?=Help)?  179:45   179:44  +; 179:42  160;1
+
+You have 9. Send your plasma bolt to what sector? [ 1 to 3000 ] ?160
+Send how many? [0] ?1
+
+One Turn Deducted, 499 left.
+
+Loading course into targeting computer.
+Plasma bolts targeted... firing 2500000 megawatts!
+
+Firing 1!
+
+* Tracking Report *
+
+Bolt entering sector 101. 2500000 Megawatts remaining.
+Bolt entering sector 102. 2450000 Megawatts remaining.
+Bolt entering sector 103. 2400000 Megawatts remaining.
+Bolt entering sector 104. 2350000 Megawatts remaining.
+Bolt entering sector 105. 2300000 Megawatts remaining.
+Bolt entering sector 106. 2250000 Megawatts remaining.
+Bolt entering sector 107. 2200000 Megawatts remaining.
+Bolt entering sector 108. 2150000 Megawatts remaining.
+Bolt entering sector 109. 2100000 Megawatts remaining.
+Bolt entering sector 110. 2050000 Megawatts remaining.
+Bolt entering sector 111. 2000000 Megawatts remaining.
+Bolt entering sector 112. 1950000 Megawatts remaining.
+Bolt entering sector 113. 1900000 Megawatts remaining.
+Bolt entering sector 114. 1850000 Megawatts remaining.
+Bolt entering sector 115. 1800000 Megawatts remaining.
+Bolt entering sector 116. 1750000 Megawatts remaining.
+Bolt entering sector 117. 1700000 Megawatts remaining.
+Bolt entering sector 118. 1650000 Megawatts remaining.
+Bolt entering sector 119. 1600000 Megawatts remaining.
+Bolt entering sector 120. 1550000 Megawatts remaining.
+Bolt entering sector 121. 1500000 Megawatts remaining.
+Bolt entering sector 122. 1450000 Megawatts remaining.
+Bolt entering sector 123. 1400000 Megawatts remaining.
+Bolt entering sector 124. 1350000 Megawatts remaining.
+Bolt entering sector 125. 1300000 Megawatts remaining.
+Bolt entering sector 126. 1250000 Megawatts remaining.
+Bolt entering sector 127. 1200000 Megawatts remaining.
+Bolt entering sector 128. 1150000 Megawatts remaining.
+Bolt entering sector 129. 1100000 Megawatts remaining.
+Bolt entering sector 130. 1050000 Megawatts remaining.
+Bolt entering sector 131. 1000000 Megawatts remaining.
+Bolt entering sector 132. 950000 Megawatts remaining.
+Bolt entering sector 133. 900000 Megawatts remaining.
+Bolt entering sector 134. 850000 Megawatts remaining.
+Bolt entering sector 135. 800000 Megawatts remaining.
+Bolt entering sector 136. 750000 Megawatts remaining.
+Bolt entering sector 137. 700000 Megawatts remaining.
+Bolt entering sector 138. 650000 Megawatts remaining.
+Bolt entering sector 139. 600000 Megawatts remaining.
+Bolt entering sector 140. 550000 Megawatts remaining.
+Bolt entering sector 141. 500000 Megawatts remaining.
+Bolt entering sector 142. 450000 Megawatts remaining.
+Bolt entering sector 143. 400000 Megawatts remaining.
+Bolt entering sector 144. 350000 Megawatts remaining.
+Bolt entering sector 145. 300000 Megawatts remaining.
+Bolt entering sector 146. 250000 Megawatts remaining.
+Bolt entering sector 147. 200000 Megawatts remaining.
+Bolt entering sector 148. 150000 Megawatts remaining.
+Bolt entering sector 149. 100000 Megawatts remaining.
+Bolt entering sector 150. 50000 Megawatts remaining.
+
+Plasma bolts dissipated.
+
+
+Sector: 100
+Warps lead to: 101
+
+Time: 179:42  Main Command (?=Help)?  179:18   179:17   179:16   179:15   179:14   179:13   179:12   179:10  Q;Y
+<Quit>
+Are you sure (Y/N)? Y
+
+                    [ Info ]
+
+Name  : Q 
+Time  : 179:10  
+Team  : None
+
+╔═════════════════════════╦══════════════════════╗
+║ Credits.. : 100000      ║ Sector....... : 100  ║
+║ Turns.... : 499         ║ Holds........ : 100  ║
+║ Fighters. : 10000       ║ Ore.......... : 10   ║
+║ Mines.... : 8           ║ Organics..... : 20   ║
+║ Missiles. : 7           ║ Equipment.... : 30   ║
+║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
+║ Shields.. : 1000000     ║ Cloak Energy. : 100% ║
+║ Forces... : 1000        ║ Plasma Bolts. : 8    ║
+╚═════════════════════════╩══════════════════════╝
+
+Generating ScoreBoard....
+
+Cntl-X to Stop
+
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-24-2026 00:00:47
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%       60,129,000   None      0    Q                             
+  2    0.87%          524,845   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+                0     0.00%                  0    0.00%
+
+
+PLEASE HELP YOUR SYSOP REGISTER THIS GAME.
+
+Returning to Yankee Trader Local Logon Program...

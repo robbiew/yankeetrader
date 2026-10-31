@@ -885,3 +885,38 @@ using the temporary validation modfile for the supported local GoDoors checkout.
 Go formatting, edited links and diff checks passed. Production Go code, save 25,
 dependencies, and retained DOS/terminal evidence are unchanged. GitHub must still
 complete the full check sequence on the new pushed head before merge readiness.
+
+## Plasma launch, routing and disruption research (2026-10-31)
+
+Research only; no Go gameplay or save change. The retained corpus has 62 normally
+returned DOS controls, 124 complete world snapshots, two exact world/auxiliary
+reload chains, 13 complete native byte reads and an independently reconstructed
+MZ image with all 870 relocations. Native decision/impact coverage ends at the
+plasma return opcode; its final two operand bytes are outside this fresh read
+set. Existing historical listings are not presented as additional runtime runs.
+
+The independent verifier checks original binary/base identities, exact controlled
+setup, clocks/keys/return markers, complete raw CP437 and auxiliary witnesses,
+launch resources, route/energy and indiscriminate damage receipts, deaths/wrecks,
+planet projection/destruction and full saved-world mutation footprints. All
+53 corruption controls pass: 47 rehashed DOS semantic/provenance changes and six
+native/declaration changes. Matched non-firing projection controls prevent raw
+warehouse-derived production from being mistaken for unconditional plasma damage.
+Numeric score checks allow bounded original MBF rounding; exact retained bytes
+are additionally pinned. Fresh clocks are not required to reproduce casualty
+counts or an unrecovered random sequence.
+
+All 60 current CI evidence/control commands passed locally, including the new
+plasma verifier/corruptions, existing milestone verifiers and all 4682 immutable
+archive hashes. A separate fresh quiet-origin capture-writer control returned
+normally from a disposable copied DOS world. Final capture declarations match all
+62 retained controls; research document links and diff whitespace checks pass.
+CI adds the two new portable plasma checks without removing existing checks.
+
+Go sources, dependencies and schema25 are unchanged; the full Go race/vet suite,
+terminal smokes and cross-builds were not rerun for these research-only edits.
+Plasma firing remains unimplemented. The candidate contract separates original
+rules from finite-budget, atomic-save, self/friendly death and privacy policies.
+Live BBS acceptance and native Windows crash durability remain unverified. See
+[recovery and reproduction](../research/yt-plasma/RECOVERY.md) and
+[the proposed implementation](../research/yt-plasma/CONTRACT.md).

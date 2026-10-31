@@ -117,3 +117,11 @@
 /research/yt-disruption/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-disruption/dos/**/dosbox.log whitespace=-blank-at-eol
 /research/yt-disruption/diagnostics/** -text -diff
+
+# Exact plasma-control input, date/time, return markers and CP437 witnesses.
+/research/yt-plasma/dos/** -text
+/research/yt-plasma/dos/**/KEYS.TXT -diff
+/research/yt-plasma/dos/**/DOS*.LOG -diff
+/research/yt-plasma/dos/**/RETURN.LOG -diff
+/research/yt-plasma/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-plasma/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

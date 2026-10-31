@@ -1,0 +1,1209 @@
+{
+  "recipe": "plasma-routing-v1",
+  "source": "archive/analysis/yt-combat/experiments/fixture-planet-transfer",
+  "scenarios": [
+    {
+      "name": "quiet-origin",
+      "command": "I",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "empty-adjacent",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "no-bolts",
+      "command": "+",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          113,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "zero-turns",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "one-turn",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          49,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "zero-sector-reprompt",
+      "command": "+;0\r~~~101\r~~0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "blank-sector",
+      "command": "+\r~~\r",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "cancel-count",
+      "command": "+;101;0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "negative-count",
+      "command": "+;101;-1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "oversized-count",
+      "command": "+;101;10",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "invalid-sector",
+      "command": "+;3001\r~~~101\r~~0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "own-sector",
+      "command": "+;100;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "own-sector-cloaked",
+      "command": "+;100;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "earth-target",
+      "command": "+;1;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          1
+        ]
+      }
+    },
+    {
+      "name": "two-hop",
+      "command": "+;102;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "three-hop",
+      "command": "+;103;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "route-dead-end",
+      "command": "+;200;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": []
+      }
+    },
+    {
+      "name": "route-tie",
+      "command": "+;104;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          102,
+          101
+        ],
+        "101": [
+          104
+        ],
+        "102": [
+          104
+        ]
+      }
+    },
+    {
+      "name": "repeat-volley",
+      "command": "+;101;1;+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "fighters-enemy",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1000000
+        ],
+        [
+          152,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "fighters-self",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1000000
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "fighters-two-bolts",
+      "command": "+;101;2",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1000000
+        ],
+        [
+          152,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "fighter-spill",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          3
+        ],
+        [
+          152,
+          129,
+          10000
+        ]
+      ]
+    },
+    {
+      "name": "mines-only",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          129,
+          10000
+        ]
+      ]
+    },
+    {
+      "name": "enemy-ship",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1000000
+        ],
+        [
+          3,
+          61,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "cloaked-ship",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1000000
+        ],
+        [
+          3,
+          61,
+          0
+        ],
+        [
+          3,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "team-ship",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1000000
+        ],
+        [
+          3,
+          61,
+          0
+        ],
+        [
+          2,
+          89,
+          7
+        ],
+        [
+          3,
+          89,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "ship-fighters",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1000000
+        ],
+        [
+          3,
+          61,
+          1000000
+        ]
+      ]
+    },
+    {
+      "name": "two-ships",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1000000
+        ],
+        [
+          3,
+          61,
+          0
+        ],
+        [
+          4,
+          41,
+          297
+        ],
+        [
+          4,
+          57,
+          101
+        ],
+        [
+          4,
+          53,
+          1000000
+        ],
+        [
+          4,
+          61,
+          0
+        ],
+        [
+          4,
+          85,
+          6
+        ],
+        [
+          4,
+          109,
+          0
+        ],
+        [
+          4,
+          125,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "lethal-ship",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1
+        ],
+        [
+          3,
+          61,
+          0
+        ],
+        [
+          3,
+          65,
+          10
+        ],
+        [
+          3,
+          69,
+          0
+        ],
+        [
+          3,
+          73,
+          0
+        ],
+        [
+          3,
+          77,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "planet-productive",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true
+    },
+    {
+      "name": "planet-zero-projection",
+      "command": "L\r~~~N",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          151,
+          93,
+          2
+        ],
+        [
+          152,
+          93,
+          0
+        ]
+      ],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          0
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-small-projection",
+      "command": "L\r~~~N",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          151,
+          93,
+          2
+        ],
+        [
+          152,
+          93,
+          0
+        ]
+      ],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-small",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-zero",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          0
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-organic-small",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          0
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          61,
+          0
+        ],
+        [
+          65,
+          0
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-no-ore-stock",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          57,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "mixed-defense",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          3
+        ],
+        [
+          152,
+          129,
+          1
+        ],
+        [
+          3,
+          57,
+          101
+        ],
+        [
+          3,
+          53,
+          1
+        ],
+        [
+          3,
+          61,
+          0
+        ]
+      ],
+      "planet": true
+    },
+    {
+      "name": "hole-592",
+      "command": "+;592;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          592
+        ],
+        "592": [
+          101
+        ]
+      }
+    },
+    {
+      "name": "hole-1051",
+      "command": "+;1051;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          1051
+        ],
+        "1051": [
+          101
+        ]
+      }
+    },
+    {
+      "name": "hole-target-defenses",
+      "command": "+;592;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          643,
+          81,
+          1000000
+        ],
+        [
+          643,
+          85,
+          3
+        ]
+      ],
+      "graph": {
+        "100": [
+          592
+        ]
+      }
+    },
+    {
+      "name": "hole-enroute",
+      "command": "+;102;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          592
+        ],
+        "592": [
+          102
+        ]
+      }
+    },
+    {
+      "name": "hole-sensors",
+      "command": "S",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          592,
+          1051,
+          101
+        ]
+      }
+    },
+    {
+      "name": "adjacent-clock-01",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "time": "01:00:00"
+    },
+    {
+      "name": "fractional-count",
+      "command": "+;101;1.9",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "avoid-route",
+      "command": "C;7;1;101;1;+;102;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "route-tie-reverse",
+      "command": "+;104;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          101,
+          102
+        ],
+        "101": [
+          104
+        ],
+        "102": [
+          104
+        ]
+      }
+    },
+    {
+      "name": "range-exhaustion",
+      "command": "+;160;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "timeout": 180
+    },
+    {
+      "name": "empty-two-bolts",
+      "command": "+;103;2",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "self-lethal",
+      "command": "+;100;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          53,
+          1
+        ],
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          65,
+          1
+        ],
+        [
+          2,
+          69,
+          0
+        ],
+        [
+          2,
+          73,
+          0
+        ],
+        [
+          2,
+          77,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "friendly-small",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          152,
+          81,
+          1
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "planet-self",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          73,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "planet-team",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2,
+          89,
+          7
+        ],
+        [
+          3,
+          89,
+          7
+        ]
+      ],
+      "planet": true
+    },
+    {
+      "name": "planet-ore-only-full",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          10000
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          57,
+          1000
+        ],
+        [
+          61,
+          0
+        ],
+        [
+          65,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "planet-ore-only-empty",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          10000
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          61,
+          0
+        ],
+        [
+          65,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "planet-impact-zero",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          0
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          61,
+          0
+        ],
+        [
+          65,
+          0
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "planet-zero-empty",
+      "command": "+;101;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "planet": true,
+      "planet_patches": [
+        [
+          45,
+          0
+        ],
+        [
+          49,
+          0
+        ],
+        [
+          53,
+          0
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          77,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "hole-rebuilt-route",
+      "command": "+;592;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [
+        [
+          2419,
+          81,
+          1000000
+        ],
+        [
+          2419,
+          85,
+          3
+        ]
+      ],
+      "graph": {
+        "100": [
+          592
+        ],
+        "592": [
+          2368
+        ]
+      }
+    },
+    {
+      "name": "hole-back-through-self",
+      "command": "+;592;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          592,
+          2368
+        ],
+        "592": [
+          100
+        ]
+      }
+    },
+    {
+      "name": "hole-two-redirects",
+      "command": "+;592;1",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "graph": {
+        "100": [
+          592
+        ],
+        "592": [
+          1051
+        ],
+        "1051": [
+          2368
+        ]
+      }
+    },
+    {
+      "name": "volley-reload",
+      "command": "I",
+      "sectors": 3000,
+      "start": null,
+      "standard": true,
+      "patches": [],
+      "parent": "repeat-volley",
+      "time": "00:01:00"
+    },
+    {
+      "name": "planet-reload",
+      "command": "I",
+      "sectors": 3000,
+      "start": null,
+      "standard": true,
+      "patches": [],
+      "parent": "planet-small",
+      "time": "00:01:00"
+    }
+  ]
+}

@@ -1189,3 +1189,35 @@ checks, quiet historical-fixture selection and CI include the milestone.
 Remaining: exact DOS RNG/MBF parity, unrelated disruption combat/spy branches,
 broader balance, season archive export/admin reset tooling and native/live BBS
 acceptance. Consult evidence/VALIDATION.md for checks actually executed.
+
+
+## Plasma launch, routing and disruption research (2026-10-31)
+
+Completed the [research slice](yt-plasma/RECOVERY.md): 62 normally returned DOS
+controls, 124 full world snapshots, two exact world/auxiliary reload chains,
+13 native byte reads and a reconstructed MZ load image with 870 relocations.
+Original binaries and the archive remain unchanged. This extends the older
+absorption corpus rather than recounting those sessions as new work.
+
+Recovered positive-turn/stock admission and launch debit, blank cancellation and
+fresh invalid-input reprompts, directed BFS/tie order/avoid bypass, fixed launch
+energy attenuation and the 50-entry empty-course limit. Actual login holes reroute
+the projectile before absorption and rebuild a course; they do not teleport the
+ship. Controls cover self/friendly/cloaked hits, shared fighter/mine/ship/planet
+absorption, wreck mines, death and saved salvage, lazy warehouse-derived production,
+true zero-impact-rate retirement and logical planet cleanup. Native interpretation
+and raw execution remain separate; whole estates, exact RNG/MBF parity, protected
+world policy and every maximal input are not newly proved.
+
+Independent portable verification and 53 rehashed corruption controls are wired
+into CI. README and validation notes describe the research boundary. No Go gameplay
+or save change: schema25 and the published disruption implementation are preserved.
+
+**Next implementation:** [bounded plasma launch and atomic aftermath](yt-plasma/CONTRACT.md).
+Choose concrete shared work/quantity bounds and explicit self/friendly/posthumous
+source policies; add fresh sealed consent, privacy-aware saved receipts and a
+single store transaction for the origin cost, redirects, damage, deaths, wrecks,
+estates, planet removal and qualifying HQ reward/revenge. Do not copy missile
+friendship/cloak/self filters or the DOS HQ owner-check exploit. Mercenary sales,
+other spy/disruption branches, live BBS acceptance and native Windows durability
+remain separate.

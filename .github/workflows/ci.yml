@@ -69,6 +69,8 @@ jobs:
           python3 scripts/test_genesis_reset_verifier.py
           python3 scripts/verify_wanderer.py
           python3 scripts/test_wanderer_verifier.py
+          python3 scripts/verify_plasma.py
+          python3 scripts/test_plasma_verifier.py
           python3 scripts/verify_disruption.py
           python3 scripts/test_disruption_verifier.py
           python3 scripts/verify_planet_mobility.py
