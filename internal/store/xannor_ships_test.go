@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"reflect"
@@ -33,7 +32,7 @@ func xannorShipStore(t *testing.T) (Store, time.Time) {
 		id, sector, owner int
 		kind, name        string
 	}{{99, 11, game.MercenaryOwner, game.MercenaryHome, "Mercenary Base"}, {100, 8, game.XannorOwner, game.XannorHome, "Xannoron"}} {
-		w.Planets[home.id] = &game.Planet{ID: home.id, Sector: home.sector, Owner: home.owner, FactionHome: home.kind, Name: home.name, Updated: now.Add(48 * time.Hour), Ground: 100, Bank: 1}
+		w.Planets[home.id] = &game.Planet{Generation: uint64(home.id), ID: home.id, Sector: home.sector, Owner: home.owner, FactionHome: home.kind, Name: home.name, Updated: now.Add(48 * time.Hour), Ground: 100, Bank: 1}
 		w.Sectors[home.sector].Planet = home.id
 	}
 	s := Store{Dir: t.TempDir()}
@@ -168,7 +167,7 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 	w.Season = 0
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)
@@ -200,7 +199,7 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 		case "news":
 			candidate.News = []game.NewsEvent{{Kind: game.NewsXannorDeath}}
 		}
-		bad, _ := json.Marshal(candidate)
+		bad, _ := marshalHistoricalWorld(candidate)
 		if err := os.WriteFile(path, bad, 0600); err != nil {
 			t.Fatal(err)
 		}

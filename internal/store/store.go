@@ -29,6 +29,8 @@ type Store struct {
 	syncDirectory func(string) error
 }
 type shipSession struct {
+	planetActive     string
+	planetDigest     [32]byte
 	lotteryActive    *game.LotteryIntent
 	encounterMu      sync.Mutex
 	mercenaryHostile bool

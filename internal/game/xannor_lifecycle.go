@@ -104,7 +104,11 @@ func (w *World) restoreXannoron(now time.Time, rng func() float64) {
 	if w.Xannor == nil {
 		w.Xannor = &XannorState{HQ: sector}
 	}
-	p := &Planet{ID: slot, Sector: sector, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: now.UTC(), Production: [3]float64{100000, 100000, 100000}, Ground: int64(rng() * 250), Bank: 100000 + int64(rng()*10000000)}
+	generation, err := w.allocatePlanetGeneration()
+	if err != nil {
+		return
+	}
+	p := &Planet{Generation: generation, ID: slot, Sector: sector, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: now.UTC(), Production: [3]float64{100000, 100000, 100000}, Ground: int64(rng() * 250), Bank: 100000 + int64(rng()*10000000)}
 	p.Ground += int64(rng() * 25)
 	w.Planets[slot], w.Sectors[sector].Planet = p, slot
 }

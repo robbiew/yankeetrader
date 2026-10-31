@@ -47,7 +47,11 @@ func (w *World) restoreMercenaryBase(now time.Time, rng func() float64) {
 	}
 	sort.Ints(sectors)
 	sector := sectors[int(rng()*float64(len(sectors)))]
-	w.Planets[slot] = &Planet{ID: slot, Sector: sector, Owner: MercenaryOwner, FactionHome: MercenaryHome,
+	generation, err := w.allocatePlanetGeneration()
+	if err != nil {
+		return
+	}
+	w.Planets[slot] = &Planet{Generation: generation, ID: slot, Sector: sector, Owner: MercenaryOwner, FactionHome: MercenaryHome,
 		Name: "Mercenary Base", Updated: now.UTC(), Production: [3]float64{100000, 100000, 100000},
 		Ground: 150000, Bank: 25000000}
 	w.Sectors[sector].Planet = slot

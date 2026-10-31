@@ -70,13 +70,13 @@ func TestXannoronFinitePlacementAndLegacyPreservation(t *testing.T) {
 			case "mercenary-one":
 				w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: 1}
 			case "unrelated-planet":
-				w.Planets[100] = &Planet{ID: 100, Sector: 8, Owner: 1, Name: "Xannoron", Updated: clock}
+				w.Planets[100] = &Planet{Generation: uint64(100), ID: 100, Sector: 8, Owner: 1, Name: "Xannoron", Updated: clock}
 				w.Sectors[8].Planet = 100
 			case "mines":
 				w.Sectors[8].Minefield = []MineLayer{{Owner: 1, Count: 1}}
 			case "slots-full":
 				for id := 2; id <= 100; id++ {
-					w.Planets[id] = &Planet{ID: id, Sector: id + 6, Name: "Occupied", Updated: clock}
+					w.Planets[id] = &Planet{Generation: uint64(id), ID: id, Sector: id + 6, Name: "Occupied", Updated: clock}
 					w.Sectors[id+6].Planet = id
 				}
 			}
@@ -93,7 +93,7 @@ func TestXannoronFinitePlacementAndLegacyPreservation(t *testing.T) {
 	}
 	w := routeWorld(t)
 	_, _ = w.Join("captain", "Captain")
-	legacy := &Planet{ID: 100, Sector: 9, Owner: 1, Name: "Xannoron", Updated: clock, Ground: 100, Bank: 123}
+	legacy := &Planet{Generation: uint64(100), ID: 100, Sector: 9, Owner: 1, Name: "Xannoron", Updated: clock, Ground: 100, Bank: 123}
 	w.Planets[100], w.Sectors[9].Planet = legacy, 100
 	before := *legacy
 	w.restoreMercenaryBase(clock, func() float64 { return 0 })
@@ -201,7 +201,7 @@ func TestXannorRelocationConservesForceAndPreservesCapturedHome(t *testing.T) {
 	w.Sectors[8].Defense = &SectorDefense{Owner: 1, Fighters: 1}
 	w.Sectors[9].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: 1}
 	w.Sectors[10].Defense = &SectorDefense{Owner: XannorOwner, Fighters: 20}
-	w.Planets[2] = &Planet{ID: 2, Sector: 11, Name: "Unrelated", Updated: clock}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 11, Name: "Unrelated", Updated: clock}
 	w.Sectors[11].Planet = 2
 	w.Sectors[12].Defense = &SectorDefense{Owner: XannorOwner, Fighters: MaxQuantity}
 	w.maintainXannor(clock, func() float64 { return 0 })

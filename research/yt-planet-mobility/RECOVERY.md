@@ -1,9 +1,9 @@
 # Planetary thrusters and player forced landing — bounded follow-up
 
 This extends the [first planet recovery](../yt-planets/RECOVERY.md) and
-[earlier ground-assault recovery](../yt-missiles/RECOVERY.md). It is research,
-not a Go gameplay implementation. Thrusters and player forced landing remain
-unavailable in the Go door; save version **23** is unchanged. Every DOS run uses
+[earlier ground-assault recovery](../yt-missiles/RECOVERY.md). The capture milestone was research only and retained save version **23**.
+The subsequent [Go implementation](IMPLEMENTATION.md) now provides bounded ordinary
+thrusters and player forced landing with atomic saves and save version **24**. Every DOS run uses
 an independently copied fixture; no active game or original archive was reset.
 
 The retained corpus contains **55 normally returned controls**, 110 world
@@ -29,7 +29,7 @@ The final validation log records their completed count and command results.
 | Forced-landing admission, commitment, win/loss and replay | Answered within the seeded states | `force-*`, `land-*`, two exact parent follow-ups |
 | Tiny/fractional input and defenses | Answered within the tested values | `force-one`, `force-fraction`, `land-fractional-defender` |
 | Arbitrary RNG/MBF parity, mid-write DOS crash or concurrent ownership change | Unresolved | Neither a finite corpus nor static interpretation establishes these |
-| Safe modern implementation | Proposed below | Current Go source audit; no new Go action or schema here |
+| Safe modern implementation | Now implemented separately | [Bounded Go actions and save24](IMPLEMENTATION.md); research evidence below remains unchanged |
 
 ## Setup and provenance
 
@@ -201,9 +201,10 @@ interrupted or concurrent native combat safety, exact RNG state reproduction,
 maximum numeric-force handling, every rare simultaneous-exhaustion outcome or
 native BBS socket behavior.
 
-## Proposed Go implementation contract
+## Recovered implementation contract (completed in the linked Go milestone)
 
-These are modern design choices, not additional recovered DOS facts:
+These are modern design choices, not additional recovered DOS facts. The linked
+implementation records the resulting policies and validation:
 
 1. Keep landed `!` for thrusters and the denied-LAND force prompt; main `!` already
    launches missiles and must retain that meaning. Provide clear compact commands.

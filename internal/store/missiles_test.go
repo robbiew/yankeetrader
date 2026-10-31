@@ -128,7 +128,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 0
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	os.WriteFile(path, data, 0600)
 	upgraded, err := s.View()
@@ -149,7 +149,7 @@ func TestStoredScorePersistenceAndVersionSevenUpgrade(t *testing.T) {
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].StoredScore = 1
-	data, _ = json.Marshal(w)
+	data, _ = marshalHistoricalWorld(w)
 	os.WriteFile(path, data, 0600)
 	if _, err = s.View(); err == nil {
 		t.Fatal("malformed legacy score accepted")
@@ -174,7 +174,7 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 	}
 	w.Planets[2].Production = [3]float64{0, 20, 0}
 	w.Planets[2].Cargo = [3]float64{0, 200, 0}
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err = os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
@@ -227,7 +227,7 @@ func TestPlanetBombardmentRollbackIncludesInterceptionAndLazyUpdate(t *testing.T
 	now := time.Now().UTC()
 	if err := s.Update(func(w *game.World) error {
 		w.Players[2].Sector = 3
-		w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: now.Add(-time.Hour), Ground: 25, Production: [3]float64{1, 1, 1}, Bank: 0}
+		w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: now.Add(-time.Hour), Ground: 25, Production: [3]float64{1, 1, 1}, Bank: 0}
 		w.Sectors[2].Planet = 2
 		landed, err := w.Join("landed", "Landed")
 		if err != nil {

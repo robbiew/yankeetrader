@@ -36,7 +36,7 @@ func TestMercenaryBaseCreationAndReserveRestoration(t *testing.T) {
 func TestMercenaryBasePreservesLegacySlotAndCapturedOwnership(t *testing.T) {
 	w := routeWorld(t)
 	_, _ = w.Join("captain", "Captain")
-	legacy := &Planet{ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: clock, Ground: 123, Bank: 1234}
+	legacy := &Planet{Generation: uint64(99), ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: clock, Ground: 123, Bank: 1234}
 	w.Planets[99], w.Sectors[8].Planet = legacy, 99
 	before := *legacy
 	w.restoreMercenaryBase(clock, func() float64 { return 0 })
@@ -69,7 +69,7 @@ func TestMercenaryBaseFinitePlacementAndCapacity(t *testing.T) {
 			_, _ = w.Join("owner", "Captain")
 			switch mode {
 			case "planet-full":
-				w.Planets[2] = &Planet{ID: 2, Sector: 8, Name: "Occupied", Updated: clock}
+				w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 8, Name: "Occupied", Updated: clock}
 				w.Sectors[8].Planet = 2
 			case "human-defense":
 				w.Sectors[8].Defense = &SectorDefense{Owner: 1, Fighters: 1000}
@@ -78,7 +78,7 @@ func TestMercenaryBaseFinitePlacementAndCapacity(t *testing.T) {
 			case "slots-full":
 				for id := 2; id <= 100; id++ {
 					sector := id + 6
-					w.Planets[id] = &Planet{ID: id, Sector: sector, Name: "Occupied", Updated: clock}
+					w.Planets[id] = &Planet{Generation: uint64(id), ID: id, Sector: sector, Name: "Occupied", Updated: clock}
 					w.Sectors[sector].Planet = id
 				}
 			}

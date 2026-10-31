@@ -32,7 +32,7 @@ def exercise(root, today):
             world['Sectors']['9']['Planet'] = 2
             # Suppress unrelated production while isolating title/stock changes.
             stamp = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=2)).isoformat().replace('+00:00', 'Z')
-            world['Planets']['2'] = dict(ID=2, Sector=9, Owner=1, Name='Probe', Updated=stamp,
+            world['Planets']['2'] = dict(Generation=2,ID=2, Sector=9, Owner=1, Name='Probe', Updated=stamp,
                                         Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.75,
                                         Missiles=0, Mines=0, Plasma=0, Ground=500000, Bank=0)
         path.write_text(json.dumps(world))

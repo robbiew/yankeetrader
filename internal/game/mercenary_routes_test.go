@@ -88,7 +88,7 @@ func TestMercenaryRoutesPlanetPickupPreservesTitleGroundAndFractions(t *testing.
 		_, _ = w.Join("planet", "Captain")
 		w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: 100}
 		w.Sectors[9].Planet = 2
-		w.Planets[2] = &Planet{ID: 2, Sector: 9, Name: "Probe", Owner: owner, Ground: 500000, Fighters: 37.75, Updated: clock}
+		w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 9, Name: "Probe", Owner: owner, Ground: 500000, Fighters: 37.75, Updated: clock}
 		w.mercenaryActions(func() float64 { return 0 })
 		p := w.Planets[2]
 		if w.Sectors[9].Defense == nil || w.Sectors[9].Defense.Fighters != 137 || p.Owner != owner || p.Ground != 500000 || p.Fighters != .75 {
@@ -169,7 +169,7 @@ func TestMercenaryRoutesPlanetHoldStrictBoundary(t *testing.T) {
 		w := routeWorld(t)
 		w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: 100}
 		w.Sectors[8].Planet = 2
-		w.Planets[2] = &Planet{ID: 2, Sector: 8, Name: "Origin", Fighters: 37, Updated: clock}
+		w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 8, Name: "Origin", Fighters: 37, Updated: clock}
 		w.mercenaryActions(func() float64 { return roll })
 		if (w.Sectors[8].Defense != nil) != (roll < .66) || w.Planets[2].Fighters != 37 {
 			t.Fatal("planet hold threshold or origin pickup", roll)
@@ -198,7 +198,7 @@ func TestMercenaryRoutesDefenseOrderingAndCombatThreshold(t *testing.T) {
 			w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: tc.force}
 			w.Sectors[9].Defense = &SectorDefense{Owner: tc.owner, Fighters: tc.defenders}
 			w.Sectors[9].Planet = 2
-			w.Planets[2] = &Planet{ID: 2, Sector: 9, Name: "Probe", Fighters: 37, Updated: clock}
+			w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 9, Name: "Probe", Fighters: 37, Updated: clock}
 			draws := 0
 			w.walkMercenaries(w.Sectors[8].Defense, []int{8, 9, 10, 11, 12}, map[*SectorDefense]bool{}, func() float64 { draws++; return tc.roll })
 			_, force := mercenaryGroups(w)
@@ -241,7 +241,7 @@ func TestMercenaryRoutesCapacityConservesForce(t *testing.T) {
 	w := routeWorld(t)
 	w.Sectors[8].Defense = &SectorDefense{Owner: MercenaryOwner, Fighters: MaxQuantity - 20}
 	w.Sectors[9].Planet = 2
-	w.Planets[2] = &Planet{ID: 2, Sector: 9, Name: "Probe", Fighters: 37.75, Updated: clock}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 9, Name: "Probe", Fighters: 37.75, Updated: clock}
 	w.walkMercenaries(w.Sectors[8].Defense, []int{8, 9}, map[*SectorDefense]bool{}, func() float64 { return 0 })
 	if w.Planets[2].Fighters != 17.75 || w.Sectors[9].Defense.Fighters != MaxQuantity {
 		t.Fatal("planet pickup discarded overflow")

@@ -19,12 +19,12 @@ def exercise(guard):
             w['Sectors']['8']['Defense']=dict(Owner=-1,Fighters=1)
             for sector in range(8,13):w['Sectors'][str(sector)]['Warps']=[]
             for slot,sector,owner,home,name in [(99,11,-2,'mercenaries','Mercenary Base'),(100,12,-1,'xannor','Xannoron')]:
-                w['Planets'][str(slot)]=dict(ID=slot,Sector=sector,Owner=owner,FactionHome=home,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=1)
+                w['Planets'][str(slot)]=dict(Generation=slot,ID=slot,Sector=sector,Owner=owner,FactionHome=home,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=1)
                 w['Sectors'][str(sector)]['Planet']=slot
             q=w['Players']['2'];q.update(Death=dict(At=dead.isoformat(),Cause='hazard',Killer=0,Sector=1),Sector=0,ShipGeneration=1,LastLogin=dead.date().isoformat(),LastActivity=dead.date().isoformat())
-            w['Planets']['2']=dict(ID=2,Sector=10,Owner=1,Name="Captain's Planet",Updated=stamp,Production=[750,750,750],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=250000)
+            w['Planets']['2']=dict(Generation=2,ID=2,Sector=10,Owner=1,Name="Captain's Planet",Updated=stamp,Production=[750,750,750],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=250000)
             w['Sectors']['10']['Planet']=2
-            w['Planets']['3']=dict(ID=3,Sector=9,Owner=2,Name='Released Estate',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=99,Bank=0)
+            w['Planets']['3']=dict(Generation=3,ID=3,Sector=9,Owner=2,Name='Released Estate',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=99,Bank=0)
             w['Sectors']['9']['Planet']=3;w['Ports']['2'].update(Owner=2,Treasury=900)
             message='You won a PLANET in the SUPER-LOTTERY! Look in sector 10!'
             w['Radio']=[dict(System='super-planet',ID=1,RequestID='00000000000000000000000000000001',From=0,To=1,FromAlias='Super Lottery',ToAlias='Captain',Text=message,Sent=stamp,Unread=True)];w['NextRadio']=2
@@ -32,7 +32,7 @@ def exercise(guard):
             path.write_text(json.dumps(w))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());retired=saved['Players']['2']
-            assert saved['Version']==23 and retired['RetiredAt'].startswith(guard.day.isoformat()) and retired['Turns']==0
+            assert saved['Version']==24 and retired['RetiredAt'].startswith(guard.day.isoformat()) and retired['Turns']==0
             assert saved['Planets']['3']['Owner']==0 and saved['Ports']['2']['Owner']==0
             text=guard.run(play,data,'Captain','messages;news today;q;y'if classic else'messages;news;q',classic=classic)
             assert message in text and 'Won a PLANET in the SUPER LOTTERY!'in text and 'Retired after inactivity'in text,text

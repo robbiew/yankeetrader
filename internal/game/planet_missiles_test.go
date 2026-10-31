@@ -11,7 +11,7 @@ import (
 func planetMissileWorld(t *testing.T) (*World, *Player, *Planet, *Visibility) {
 	w, a, d, v := missileWorld(t)
 	d.Sector = 3
-	planet := &Planet{ID: 2, Sector: 2, Owner: d.ID, Name: "Target", Updated: clock, Ground: 5000, Production: [3]float64{100, 200, 300}, Cargo: [3]float64{10, 20, 30}, Bank: 10000}
+	planet := &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: d.ID, Name: "Target", Updated: clock, Ground: 5000, Production: [3]float64{100, 200, 300}, Cargo: [3]float64{10, 20, 30}, Bank: 10000}
 	w.Planets[2] = planet
 	w.Sectors[2].Planet = 2
 	return w, a, planet, v

@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 23
+const WorldVersion = 24
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -65,15 +65,16 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
-	Season            uint64
-	GenerationSeed    *int64         `json:",omitempty"`
-	GenesisPorts      *int           `json:",omitempty"`
-	SeasonResults     []SeasonResult `json:",omitempty"`
-	LotteryDailyLimit *int           `json:",omitempty"`
-	NextBattleReport  uint64
-	Xannor            *XannorState `json:",omitempty"`
-	News              []NewsEvent  `json:",omitempty"`
-	NextNews          uint64
+	NextPlanetGeneration uint64
+	Season               uint64
+	GenerationSeed       *int64         `json:",omitempty"`
+	GenesisPorts         *int           `json:",omitempty"`
+	SeasonResults        []SeasonResult `json:",omitempty"`
+	LotteryDailyLimit    *int           `json:",omitempty"`
+	NextBattleReport     uint64
+	Xannor               *XannorState `json:",omitempty"`
+	News                 []NewsEvent  `json:",omitempty"`
+	NextNews             uint64
 
 	Radio           []RadioMessage `json:",omitempty"`
 	NextRadio       uint64
@@ -92,7 +93,7 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
-	w := &World{Season: 1, GenerationSeed: &seed, Version: WorldVersion, NextBattleReport: 1, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
+	w := &World{NextPlanetGeneration: 101, Season: 1, GenerationSeed: &seed, Version: WorldVersion, NextBattleReport: 1, NextNews: 1, NextRadio: 1, Teams: map[int]*Team{}, Planets: map[int]*Planet{}, Created: now.UTC(), LastMaintenance: day(now), NextPlayer: 1, Players: map[int]*Player{}, Sectors: map[int]*Sector{}, Ports: map[int]*Port{}}
 	rng := prng.New(prng.NewSource(seed))
 	for i := 1; i <= count; i++ {
 		prev, next := (i+count-2)%count+1, i%count+1

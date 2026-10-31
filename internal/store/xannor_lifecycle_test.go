@@ -18,7 +18,7 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 	_, _ = w.Join("captain", "Captain")
-	w.Planets[99] = &game.Planet{ID: 99, Sector: 8, Owner: game.MercenaryOwner, FactionHome: game.MercenaryHome, Name: "Mercenary Base", Ground: 150000, Bank: 25000000, Updated: w.Created}
+	w.Planets[99] = &game.Planet{Generation: uint64(99), ID: 99, Sector: 8, Owner: game.MercenaryOwner, FactionHome: game.MercenaryHome, Name: "Mercenary Base", Ground: 150000, Bank: 25000000, Updated: w.Created}
 	w.Sectors[8].Planet = 99
 	if err := s.Create(w); err != nil {
 		t.Fatal(err)
@@ -27,14 +27,14 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 	w.Season = 0
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
-	w.Planets[100] = &game.Planet{ID: 100, Sector: 9, Owner: 1, Name: "Xannoron", Ground: 123, Bank: 456, Updated: w.Created}
+	w.Planets[100] = &game.Planet{Generation: uint64(100), ID: 100, Sector: 9, Owner: 1, Name: "Xannoron", Ground: 123, Bank: 456, Updated: w.Created}
 	w.Sectors[9].Planet = 100
 	if err := w.RecordLogin(1, w.Created); err != nil {
 		t.Fatal(err)
 	}
 	path := s.Dir + "/world.json"
 	w.Players[1].LastActivity = "" // Pre-version-18 saves have no activity field.
-	old, _ := json.Marshal(w)
+	old, _ := marshalHistoricalWorld(w)
 	if err := os.WriteFile(path, old, 0600); err != nil {
 		t.Fatal(err)
 	}
@@ -77,7 +77,7 @@ func TestXannorVersionThirteenMigrationPreservesLegacyAssets(t *testing.T) {
 			w.Planets[100].FactionHome = game.XannorHome
 			w.Planets[100].Owner = game.XannorOwner
 		}
-		bad, _ := json.Marshal(w)
+		bad, _ := marshalHistoricalWorld(w)
 		if err := os.WriteFile(path, bad, 0600); err != nil {
 			t.Fatal(err)
 		}
@@ -97,7 +97,7 @@ func TestXannorAtomicMaintenanceReserveReplayAndCapture(t *testing.T) {
 	w.Xannor = &game.XannorState{HQ: 8, Reserve: game.MaxQuantity}
 	w.Sectors[8].Defense = &game.SectorDefense{Owner: 1, Fighters: game.MaxQuantity}
 	// A captured home must not move or refill during the sector reclaim battle.
-	w.Planets[100] = &game.Planet{ID: 100, Sector: 8, Owner: 1, FactionHome: game.XannorHome, Name: "Captured", Updated: now.Add(72 * time.Hour)}
+	w.Planets[100] = &game.Planet{Generation: uint64(100), ID: 100, Sector: 8, Owner: 1, FactionHome: game.XannorHome, Name: "Captured", Updated: now.Add(72 * time.Hour)}
 	w.Sectors[8].Planet = 100
 	s := Store{Dir: t.TempDir()}
 	if err := s.Create(w); err != nil {

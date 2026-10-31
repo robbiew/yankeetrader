@@ -138,7 +138,11 @@ func (w *World) superPlanetLottery(now time.Time, rng func() float64) {
 	if len(alias) > 32 {
 		alias = alias[:32]
 	}
-	planet := &Planet{ID: slot, Sector: sector.ID, Owner: winner.ID, Name: alias + "'s Planet", Updated: now.UTC()}
+	generation, err := w.allocatePlanetGeneration()
+	if err != nil {
+		return
+	}
+	planet := &Planet{Generation: generation, ID: slot, Sector: sector.ID, Owner: winner.ID, Name: alias + "'s Planet", Updated: now.UTC()}
 	for i := range planet.Production {
 		planet.Production[i] = rng() * rng() * 3000
 	}

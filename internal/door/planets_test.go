@@ -31,7 +31,7 @@ func planetSession(t *testing.T) (Session, int) {
 	p.Plasma = 9
 	p.Ground = 15
 	p.Sector = 2
-	planet := &game.Planet{ID: 2, Sector: 2, Owner: p.ID, Name: "Test Planet", Updated: now, Production: [3]float64{10, 20, 30}, Cargo: [3]float64{100, 200, 300}, Fighters: 600, Missiles: 70, Mines: 80, Plasma: 90, Ground: 100}
+	planet := &game.Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: p.ID, Name: "Test Planet", Updated: now, Production: [3]float64{10, 20, 30}, Cargo: [3]float64{100, 200, 300}, Fighters: 600, Missiles: 70, Mines: 80, Plasma: 90, Ground: 100}
 	w.Planets[2] = planet
 	w.Sectors[2].Planet = 2
 	st := store.Store{Dir: t.TempDir()}
@@ -212,7 +212,7 @@ func TestPlanetCancelZeroAndDefaultQuantities(t *testing.T) {
 		{"cancel cargo", []string{"1", "0", "l"}, 100000, 10000, 10, 15},
 		{"remove garrison", []string{"f", "0", "l"}, 100000, 10000, 10, 115},
 		{"one credit", []string{"$", "1", "l"}, 99999, 10000, 10, 15},
-		{"unavailable", []string{"!", "l"}, 100000, 10000, 10, 15},
+		{"unavailable", []string{"x", "l"}, 100000, 10000, 10, 15},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			s, id := planetSession(t)

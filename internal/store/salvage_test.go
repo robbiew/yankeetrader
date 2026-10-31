@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"sync"
@@ -119,7 +118,7 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 	// Simulate the legacy, already-committed death policy. Upgrading must not
 	// award loot, replay deaths or silently transfer previously saved property.
 	w.Ports[2].Owner = 1
-	b, err := json.Marshal(w)
+	b, err := marshalHistoricalWorld(w)
 	if err != nil {
 		t.Fatal(err)
 	}

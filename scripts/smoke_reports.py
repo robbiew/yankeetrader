@@ -67,7 +67,7 @@ with tempfile.TemporaryDirectory(prefix="yt-reports-smoke-") as temp:
     stamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
     for planet_id, sector, owner, name, bank in [(2, 3, 2, "Private World", 9876543), (3, 4, 1, "Home", 34567)]:
         world["Sectors"][str(sector)]["Planet"] = planet_id
-        world["Planets"][str(planet_id)] = dict(ID=planet_id, Sector=sector, Owner=owner,
+        world["Planets"][str(planet_id)] = dict(Generation=planet_id,ID=planet_id, Sector=sector, Owner=owner,
             Name=name, Bank=bank, Ground=12, Updated=stamp, Production=[1, 2, 3], Cargo=[4, 5, 6])
     path.write_text(json.dumps(world))
     # Normalize hand-written fixture fields through Go's save encoder before

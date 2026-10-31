@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"os"
 	"sync"
 	"testing"
@@ -109,7 +108,7 @@ func TestTeamSaveUpgradeAndMalformedLegacyMembership(t *testing.T) {
 		p.Cloak = 0
 	}
 	w.Teams = nil
-	b, _ := json.Marshal(w)
+	b, _ := marshalHistoricalWorld(w)
 	if err := os.WriteFile(s.Dir+"/world.json", b, 0600); err != nil {
 		t.Fatal(err)
 	}
@@ -130,7 +129,7 @@ func TestTeamSaveUpgradeAndMalformedLegacyMembership(t *testing.T) {
 	}
 	// Experimental, manually assigned legacy IDs cannot grant invented membership.
 	w.Players[1].Team = 1
-	b, _ = json.Marshal(w)
+	b, _ = marshalHistoricalWorld(w)
 	if err = os.WriteFile(s.Dir+"/world.json", b, 0600); err != nil {
 		t.Fatal(err)
 	}

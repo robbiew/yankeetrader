@@ -528,3 +528,55 @@ planet/ship/season identities, current permissions and lazy projection, finite
 work, whole-command atomic outcomes, grant revocation, explicit faction policy,
 accurate saved receipts and fault/concurrency/replay tests. Native Windows crash
 durability and live BBS acceptance remain separate.
+
+## Planetary thrusters and player forced landing — 2026-10-31
+
+Implemented locally on `feat/planet-thrusters-forced-landing`, following the
+55-control [research](../research/yt-planet-mobility/RECOVERY.md) and the
+[bounded implementation contract](../research/yt-planet-mobility/IMPLEMENTATION.md).
+Save version 24 adds a monotonic planet-incarnation allocator and typed player ground news;
+version-1 through version-23 reads upgrade in memory and write only on a successful transaction.
+All constructors, including both faction restorations, super awards and Genesis
+bootstrap, allocate identities. Faction homes remain immovable after capture.
+
+Validation completed locally:
+
+- Full `go test -race ./...` passed, including migration, rollback, concurrency,
+  replay, committed durability and complete-session capture-grant revocation.
+  This managed checkout used an external temporary `-modfile` pointing at the
+  existing GoDoors checkout; repository dependency files were unchanged.
+- `go vet ./...` and Linux/amd64 and Windows/amd64 cross-builds passed.
+- Game/store/door regressions cover 9/10/19/20/21-turn affordability, shortest-route
+  confirmation snapshots, collision/stress prefixes and zero fighters, multiple
+  landed callers, hostile/friendly sector defenses, mine damage/fatal self-source
+  attribution and late-hazard rollback; strict troop quantities, capture/defeat,
+  vacant-government unrest, 4096-round exhaustion/no-refund retreats, 32 seeded
+  conservation worlds, lazy economic projection, exact same-slot replacements,
+  epochs, current permissions, modified routes/resources/hazards, concurrent movers
+  and attackers, nonce tampering/cross-login/replay, lock/action deadline expiry,
+  read-only migration and rejected legacy future fields.
+- All 47 CI terminal command invocations passed locally, including ANSI/ASCII DOS
+  comparisons and the existing startup, commerce, ownership, teams, radio/intel,
+  combat, faction, scanner/warp, lottery and Genesis scenarios. The new real PTY
+  milestone checks ten movement/collision/cancellation/assault/adoption cases
+  across classic and compact interfaces, with a reconnect after each. The final
+  build repeated all ten new cases successfully. Fresh confirmation ignores
+  queued answers; saved receipts show actual positions, costs, losses, retreats,
+  garrisons and remaining stock. A cancelled compact trip retains its leave
+  handle. Capture revalidates its exact saved grant before displaying the planet.
+- All 54 preserved-evidence verifier/control commands passed, including 55 returned
+  mobility DOS controls, 19 native byte reads/MZ mapping, 41 rehashed mobility
+  corruption controls and all 4682 original archive hashes. Archive files were
+  unchanged. Updated Python sources parsed; 167 local documentation links resolved.
+- Generated existing terminal captures were inventoried and backed up outside the
+  repository, then all 148 tracked outputs were restored and verified against HEAD
+  hashes. Preserved research/screens were not replaced by this implementation.
+  README, plan, implementation notes and CI/active schema fixtures are included
+  with this milestone.
+
+These results establish local bounded modern behavior, not full native RNG/MBF
+parity, a measured stress distribution, Wanderer/disruption transport, long-running
+balance, live BBS acceptance or native Windows crash durability. Every physical
+prefix/collision/assault/mined-arrival outcome saves once under the world lock;
+software/RNG/validation failures discard the full candidate. Committed directory
+sync warnings remain joined with receipt-output failures and end the login.

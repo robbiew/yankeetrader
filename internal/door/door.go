@@ -512,7 +512,7 @@ func (s Session) Run() (runErr error) {
 				}
 				break
 			}
-			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nBATTLES (private Xannor reports; last 32)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nG/GENESIS end season (actual owned ports; fresh literal GENESIS)\r\nSEASONS (public winner history)\r\nW/WARP emergency warp (random destination; fresh Y/N)\r\nLOTTERY [six digits] (Earth; 5 credits; fresh Y/N)\r\nANTICLOAK (Earth; 500000 for this login; fresh Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBRIBE [credits] or BRIBE <sector> <credits> | BREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces|scanner|cloak> <quantity> (Earth; scanner quantity 1; cloak in whole points)\r\nLAND | CREATE <name> (25000) | PLANET status\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
+			e = s.Terminal.Printf("I info | L look | S sensors (free) | M <sector> move\r\nPORTREPORT [sector] | PLANETREPORT [sector] | MYPLANETS\r\nNEAREST [all|own|team|enemy|unowned] or <good> <buy|sell>\r\nPAIRS (reachable port pairs) | PROFITS (current port neighbors)\r\nRANK [OLD] (player/team scores)\r\nBATTLES (private Xannor reports; last 32)\r\nNEWS [TODAY|YESTERDAY] (public journal)\r\nSPIES (active locations) | INTEL (this login's last 30 reports)\r\nHIRE <starting sector> [starting sector ...] (Earth; 333000 each; max 3)\r\nRADIO [alias or player number] | MESSAGES (history) | INBOX (unread)\r\nPATH <from> <to> (free) | AUTO <sector> (confirm Y/N)\r\nG/GENESIS end season (actual owned ports; fresh literal GENESIS)\r\nSEASONS (public winner history)\r\nW/WARP emergency warp (random destination; fresh Y/N)\r\nLOTTERY [six digits] (Earth; 5 credits; fresh Y/N)\r\nANTICLOAK (Earth; 500000 for this login; fresh Y/N)\r\nAVOID [<slot 1-30> <sector, or 0 to clear>] (free)\r\nATTACK [<ship number> <fighters>] (fresh Y/N confirmation)\r\nMISSILE [<sector> <quantity>] (routed; fresh Y/N; may trigger retaliation)\r\nD/DROP [<quantity>] mines in current sector (fresh Y/N)\r\nF/DEFEND <final quantity> | REINFORCE <quantity>\r\nBRIBE [credits] or BRIBE <sector> <credits> | BREACH <sector> <fighters> | FLEE (fresh confirmation)\r\nP dock (1 turn)\r\nBUY/SELL <ore|organics|equipment> <quantity>\r\nT/TEAM team menu (free)\r\nACQUIRE port (confirm Y/N) | TREASURY report | COLLECT personal treasuries\r\nEQUIP <holds|fighters|shields|forces|scanner|cloak> <quantity> (Earth; scanner quantity 1; cloak in whole points)\r\nLAND (denied access offers ground assault) | CREATE <name> (25000) | PLANET status\r\nTHRUST <sector> (landed; 10 turns/hop; fresh confirmation)\r\nTAKE <item> <qty> | A take all | TRANSFER <item> [qty]\r\nBANK <target balance> | INVEST <credits> | GARRISON <target>\r\nLEAVE port/planet | Q quit. Stack commands with semicolons.\r\n")
 		case "c":
 			if s.Classic {
 				computer = true
@@ -830,6 +830,10 @@ func (s Session) Run() (runErr error) {
 			if s.Classic {
 				e = s.classicLand(id, &pending)
 				if errors.Is(e, io.EOF) {
+					var committed *store.DurabilityError
+					if errors.As(e, &committed) {
+						return e
+					}
 					return nil
 				}
 				token, planetToken = "", ""
@@ -844,9 +848,33 @@ func (s Session) Run() (runErr error) {
 				status = *w.Planets[w.Players[id].LandedPlanet]
 				return nil
 			})
-			if e == nil {
+			if e != nil && e.Error() == "permission to land is denied by ground defenses" {
+				planetToken, e = s.forceLanding(id, &pending)
+				if e == nil && planetToken != "" {
+					current, viewErr := s.Store.View()
+					e = viewErr
+					if e == nil {
+						status, e = current.PlanetStatus(id, planetToken, s.Now())
+					}
+				}
+			}
+			if e == nil && planetToken != "" {
 				token = ""
 				e = showPlanet(s.Terminal, status)
+			}
+		case "thrust", "thrusters":
+			e = s.thrusters(planetToken, args, &pending)
+			if e == nil {
+				current, viewErr := s.Store.View()
+				e = viewErr
+				if e == nil {
+					if current.Players[id].PlanetToken != planetToken {
+						planetToken = ""
+					}
+					if current.Players[id].DockToken != token {
+						token = ""
+					}
+				}
 			}
 		case "planet":
 			var status game.Planet

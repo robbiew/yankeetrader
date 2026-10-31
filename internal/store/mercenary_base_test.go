@@ -21,10 +21,10 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 	w.Season = 0
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
-	w.Planets[99] = &game.Planet{ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: w.Created, Ground: 123, Bank: 1234}
+	w.Planets[99] = &game.Planet{Generation: uint64(99), ID: 99, Sector: 8, Owner: 1, Name: "Mercenary Base", Updated: w.Created, Ground: 123, Bank: 1234}
 	w.Sectors[8].Planet = 99
 	w.Players[1].LastActivity = "" // Pre-version-18 saves have no activity field.
-	old, _ := json.Marshal(w)
+	old, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, old, 0600); err != nil {
 		t.Fatal(err)
@@ -60,7 +60,7 @@ func TestFactionHomeVersionTwelveMigrationAndLegacyIdentityRejection(t *testing.
 		w.GenerationSeed = nil
 		w.NextBattleReport = 0 // This fixture represents a pre-report save.
 		w.Planets[99].FactionHome = game.MercenaryHome
-		bad, _ := json.Marshal(w)
+		bad, _ := marshalHistoricalWorld(w)
 		if err := os.WriteFile(path, bad, 0600); err != nil {
 			t.Fatal(err)
 		}

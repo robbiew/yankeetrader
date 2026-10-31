@@ -12,7 +12,7 @@ func assaultWorld(t *testing.T, ground int64, rates, cargo [3]float64) (*World, 
 	t.Helper()
 	w, p := shipWorld(t, 123, 456)
 	p.Sector = 1
-	planet := &Planet{ID: 2, Sector: 10, Owner: p.ID, Name: "New Eden", Updated: clock, Ground: ground, Production: rates, Cargo: cargo, Bank: 1234, Fighters: 37.5, Missiles: 100, Mines: 200, Plasma: 300}
+	planet := &Planet{Generation: uint64(2), ID: 2, Sector: 10, Owner: p.ID, Name: "New Eden", Updated: clock, Ground: ground, Production: rates, Cargo: cargo, Bank: 1234, Fighters: 37.5, Missiles: 100, Mines: 200, Plasma: 300}
 	w.Planets[2], w.Sectors[10].Planet = planet, 2
 	return w, p, planet
 }
@@ -98,7 +98,7 @@ func TestXannorPlanetDestructionInvalidatesEveryLandingAndRetainsSnapshot(t *tes
 		t.Fatal("history escaped by pointer")
 	}
 	// Slot reuse does not make the old token or report point at a new planet.
-	w.Planets[2] = &Planet{ID: 2, Sector: 10, Name: "Replacement", Updated: clock}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 10, Name: "Replacement", Updated: clock}
 	w.Sectors[10].Planet = 2
 	if _, _, err := w.landed(p.ID, "0123456789abcdef0123456789abcdef", clock); err == nil {
 		t.Fatal("old confirmation revived")
@@ -235,6 +235,10 @@ func TestXannorSeededPlanetConservation(t *testing.T) {
 func TestVersionFifteenPlanetBattleMigrationAndValidation(t *testing.T) {
 	w, p, _ := assaultWorld(t, 0, [3]float64{}, [3]float64{})
 	w.Version = 15
+	w.NextPlanetGeneration = 0
+	for _, planet := range w.Planets {
+		planet.Generation = 0
+	}
 	w.Season = 0
 	w.GenerationSeed = nil
 	old, _ := json.Marshal(w)
@@ -254,11 +258,19 @@ func TestVersionFifteenPlanetBattleMigrationAndValidation(t *testing.T) {
 		switch mode {
 		case "future-report":
 			candidate.Version = 15
+			candidate.NextPlanetGeneration = 0
+			for _, planet := range candidate.Planets {
+				planet.Generation = 0
+			}
 			candidate.Season = 0
 			candidate.GenerationSeed = nil
 			candidate.News = nil
 		case "future-news":
 			candidate.Version = 15
+			candidate.NextPlanetGeneration = 0
+			for _, planet := range candidate.Planets {
+				planet.Generation = 0
+			}
 			candidate.Season = 0
 			candidate.GenerationSeed = nil
 			candidate.Players[p.ID].BattleReports = nil

@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"sync"
@@ -115,7 +114,7 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 	w.NextBattleReport = 0
 	w.NextNews = 0
 	w.Players[1].Sector, w.Players[1].MineGraceSector = 8, 8
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
@@ -136,7 +135,7 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 		t.Fatal("radio upgrade not persisted", err)
 	}
 	w.NextRadio = 1
-	data, _ = json.Marshal(w)
+	data, _ = marshalHistoricalWorld(w)
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
 	}

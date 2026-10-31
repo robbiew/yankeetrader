@@ -267,6 +267,10 @@ func TestXannorRevengeMigrationAndInvalidTargets(t *testing.T) {
 		switch mode {
 		case "legacy":
 			candidate.Version = 16
+			candidate.NextPlanetGeneration = 0
+			for _, planet := range candidate.Planets {
+				planet.Generation = 0
+			}
 			candidate.Season = 0
 			candidate.GenerationSeed = nil
 		case "missing":
@@ -286,6 +290,10 @@ func TestXannorRevengeMigrationAndInvalidTargets(t *testing.T) {
 	}
 	old := mobileWorld(t, 12)
 	old.Version = 16
+	old.NextPlanetGeneration = 0
+	for _, planet := range old.Planets {
+		planet.Generation = 0
+	}
 	old.Season = 0
 	old.GenerationSeed = nil
 	before := *old.Xannor

@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"os/exec"
@@ -108,7 +107,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 	for _, p := range w.Players {
 		p.Cloak = 0
 	}
-	b, err := json.Marshal(w)
+	b, err := marshalHistoricalWorld(w)
 	if err != nil {
 		t.Fatal(err)
 	}

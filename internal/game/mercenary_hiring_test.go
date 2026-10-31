@@ -105,7 +105,7 @@ func TestMercenaryHiringFiniteCapacityAndExistingAssets(t *testing.T) {
 		if free > 0 {
 			w.Sectors[8].Minefield = []MineLayer{{Owner: player.ID, Count: 3}}
 			w.Sectors[8].Planet = 2
-			w.Planets[2] = &Planet{ID: 2, Sector: 8, Name: "Guarded", Owner: player.ID, Ground: 500, Fighters: 37, Updated: clock.Add(24 * time.Hour)}
+			w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 8, Name: "Guarded", Owner: player.ID, Ground: 500, Fighters: 37, Updated: clock.Add(24 * time.Hour)}
 		}
 		w.Ports[2].Treasury = 1000
 		w.Maintain(clock.Add(24 * time.Hour))

@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"reflect"
@@ -22,7 +21,7 @@ func xannorPlanetStore(t *testing.T) (Store, time.Time, string) {
 		p.Shields = 1
 		p.LandedPlanet = 2
 		p.PlanetToken = token
-		w.Planets[2] = &game.Planet{ID: 2, Sector: 10, Owner: 1, Name: "Condemned", Updated: next.Add(24 * time.Hour), Bank: 1234, Missiles: 5000, Fighters: 1234}
+		w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 10, Owner: 1, Name: "Condemned", Updated: next.Add(24 * time.Hour), Bank: 1234, Missiles: 5000, Fighters: 1234}
 		w.Sectors[10].Planet = 2
 		return nil
 	}); err != nil {
@@ -159,7 +158,7 @@ func TestVersionFifteenPlanetMigrationPreservesShipHistoryUntilWrite(t *testing.
 	w.GenerationSeed = nil
 	w.Players[1].BattleReports = []game.BattleReport{{ID: 1, At: w.Created, Sector: 10, XannorLost: 3, Unread: true}}
 	w.NextBattleReport = 2
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)

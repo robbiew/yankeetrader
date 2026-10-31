@@ -342,7 +342,7 @@ func TestXannorFriendlyTransitPartialMergeAndHQReserveCapacity(t *testing.T) {
 func TestXannorFriendlyPlanetStocksUntouched(t *testing.T) {
 	w := mobileWorld(t, 12)
 	group := mobileGroup(w, 9, 100)
-	home := &Planet{ID: 100, Sector: 10, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: clock, Fighters: 37.5, Ground: 10}
+	home := &Planet{Generation: uint64(100), ID: 100, Sector: 10, Owner: XannorOwner, FactionHome: XannorHome, Name: "Xannoron", Updated: clock, Fighters: 37.5, Ground: 10}
 	w.Planets[100], w.Sectors[10].Planet = home, 100
 	preferred := 0
 	w.walkXannor(group, []int{9, 10, 11}, map[*SectorDefense]bool{}, &preferred, clock, func() float64 { t.Fatal("friendly home must not draw"); return 0 })

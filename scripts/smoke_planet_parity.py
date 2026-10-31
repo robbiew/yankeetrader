@@ -41,7 +41,7 @@ def seed(data,name,research='yt-planet-screens'):
     w['Players']['2']=other;w['NextPlayer']=3
     if name!='create':
         record=4053;start=(record-1)*137
-        planet=dict(ID=2,Sector=2,Owner=int(get(source,record,73))-1,Name=source[start:start+41].decode('cp437').strip(),Updated=datetime.datetime.now(datetime.timezone.utc).isoformat(),Production=[get(source,record,o) for o in [45,49,53]],Cargo=[get(source,record,o) for o in [57,61,65]])
+        planet=dict(Generation=2,ID=2,Sector=2,Owner=int(get(source,record,73))-1,Name=source[start:start+41].decode('cp437').strip(),Updated=datetime.datetime.now(datetime.timezone.utc).isoformat(),Production=[get(source,record,o) for o in [45,49,53]],Cargo=[get(source,record,o) for o in [57,61,65]])
         for field,offset in [('Bank',117),('Ground',77),('Fighters',129),('Missiles',69),('Mines',125),('Plasma',113)]:planet[field]=int(get(source,record,offset))
         w['Planets']['2']=planet;w['Sectors']['2']['Planet']=2
     path.write_text(json.dumps(w))

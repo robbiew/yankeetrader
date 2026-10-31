@@ -20,7 +20,7 @@ func hqRewardWorld(t *testing.T) (*World, *Player, *Player) {
 	w.Sectors[8].Defense = &SectorDefense{Owner: XannorOwner, Fighters: 1}
 	w.Ports[2].Owner = other.ID
 	w.Ports[2].Treasury = 9876
-	w.Planets[2] = &Planet{ID: 2, Sector: 10, Owner: other.ID, Name: "Private Bank", Updated: clock, Ground: 100, Bank: 765432}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 10, Owner: other.ID, Name: "Private Bank", Updated: clock, Ground: 100, Bank: 765432}
 	w.Sectors[10].Planet = 2
 	return w, p, other
 }
@@ -303,6 +303,10 @@ func TestHQRewardNewsCapacityAndValidation(t *testing.T) {
 	}
 	before := w.Players[p.ID].Credits
 	w.Version = 19
+	w.NextPlanetGeneration = 0
+	for _, planet := range w.Planets {
+		planet.Generation = 0
+	}
 	w.Season = 0
 	w.GenerationSeed = nil
 	if w.Upgrade() == nil {

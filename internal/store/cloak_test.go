@@ -23,7 +23,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].Cloak = 0
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err = os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
@@ -52,7 +52,7 @@ func TestCloakPersistsAndLegacyUpgradeDoesNotInventEnergy(t *testing.T) {
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Players[1].Cloak = .1
-	data, _ = json.Marshal(w)
+	data, _ = marshalHistoricalWorld(w)
 	os.WriteFile(path, data, 0600)
 	if _, err = s.View(); err == nil {
 		t.Fatal("malformed legacy cloak accepted")

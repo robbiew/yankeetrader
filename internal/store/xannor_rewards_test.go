@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"reflect"
@@ -190,7 +189,7 @@ func TestHQRewardVersion19MigrationNoBackfillAndFutureRejection(t *testing.T) {
 	w.GenerationSeed = nil
 	// A pending target from an old victory must never become a payment claim.
 	w.Xannor.Revenge = &game.XannorRevengeTarget{Player: 1, Generation: w.Players[1].ShipGeneration}
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := st.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)
@@ -218,7 +217,7 @@ func TestHQRewardVersion19MigrationNoBackfillAndFutureRejection(t *testing.T) {
 	}
 	w.News = []game.NewsEvent{{ID: 1, At: w.Created, Kind: game.NewsXannorHQ, Alias: "Captain"}}
 	w.NextNews = 2
-	raw, _ = json.Marshal(w)
+	raw, _ = marshalHistoricalWorld(w)
 	_ = os.WriteFile(path, raw, 0600)
 	if _, err = st.View(); err == nil {
 		t.Fatal("legacy input accepted new victory news")

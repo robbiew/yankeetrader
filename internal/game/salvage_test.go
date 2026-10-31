@@ -67,7 +67,7 @@ func TestSalvageSettlementConservesInventoryAndRevokesAccess(t *testing.T) {
 	if err := w.Dock(other.ID, clock); err != nil {
 		t.Fatal(err)
 	}
-	w.Planets[2] = &Planet{ID: 2, Sector: 2, Owner: victim.ID, Name: "Home", Updated: clock, Production: [3]float64{1, 1, 1}, Ground: 100, Bank: 1000}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: victim.ID, Name: "Home", Updated: clock, Production: [3]float64{1, 1, 1}, Ground: 100, Bank: 1000}
 	w.Sectors[2].Planet = 2
 	member, _ := w.Join("member", "Member")
 	member.Sector = 2

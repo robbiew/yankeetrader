@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"testing"
@@ -68,7 +67,7 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
@@ -82,7 +81,7 @@ func TestVersionNineMineGraceUpgradeAndInvalidLegacyState(t *testing.T) {
 		t.Fatal("read rewrote legacy save")
 	}
 	w.Players[1].Sector, w.Players[1].MineGraceSector = 8, 8
-	data, _ = json.Marshal(w)
+	data, _ = marshalHistoricalWorld(w)
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
 	}
