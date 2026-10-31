@@ -580,3 +580,61 @@ balance, live BBS acceptance or native Windows crash durability. Every physical
 prefix/collision/assault/mined-arrival outcome saves once under the world lock;
 software/RNG/validation failures discard the full candidate. Committed directory
 sync warnings remain joined with receipt-output failures and end the login.
+
+## The Wanderer lifecycle and transport research — 2026-10-31
+
+Completed the bounded [Wanderer recovery](../research/yt-wanderer/RECOVERY.md)
+on `feat/wanderer-lifecycle-research`, following the ordinary mobility milestone.
+This update contains research, capture/verification tools, README/plan and CI
+changes only. Go gameplay, dependencies and save version 24 are unchanged.
+
+Evidence retained and independently checked:
+
+- 57 normally returned original DOS controls, 114 world snapshots and nine exact
+  parent-world/complete-auxiliary chains. Capture uses copied original files,
+  declared state/name/occupancy/hazard patches, preserved clocks/keys/redirection,
+  raw CP437 program logs and a normal-return batch marker. Controls cover direct
+  YT-INIT versus standalone RMT-INIT/bootstrap, reference-driven partial restoration,
+  inactive/duplicate/renamed states, daily governor reset and zero-bank refill,
+  source/Earth/mined/guarded/disconnected placement, same/next/backward dates,
+  ordinary landing/team/adoption/name/bank/transfer operations, whole-quote
+  affordability, one-edge ship/planet separation, cancellation, collisions,
+  separate planned/random hazards and reconnect/maintenance follow-ups.
+- One eight-second no-candidate diagnostic explicitly requires timeout/nonreturn,
+  partial restoration and absent accepted link despite optimistic warp messages.
+  One additional normally returned maintenance diagnostic requires relocation
+  before later Xannor assaults/destruction. Neither is counted as an isolated
+  normal control. Pointer saturation is an explicit malformed-reference fixture,
+  not a claim that the original supports 3000 distinct planets.
+- 14 REA byte observations, three verified MZ load images and all 1006 relocation
+  fixups across YT-INIT/YTMAINT/YT. Full inline Evidence, executable identities,
+  addresses, mappings, limitations and an Evidence-ID ledger are retained. Every
+  opened native session was exported and closed. These static reads corroborate
+  selected code, rather than purporting to observe execution.
+- `verify_wanderer.py` passed independent setup/semantic/privacy/provenance checks,
+  frozen complete-world/auxiliary witnesses and both classified diagnostics.
+  `test_wanderer_verifier.py` rejected 55 deliberately rehashed corruptions:
+  51 ordinary semantic/setup/clock/key/return/native/privacy mutations and four
+  timeout/interference mutations. The final two-test run passed in 69.356 seconds.
+- All 56 CI evidence-verifier/control commands passed locally, including the new
+  pair, existing research and all 4682 original archive hashes. Original archive
+  files were unchanged. Three new Python sources parsed and 167 local documentation
+  targets resolved. No Go tests or terminal smoke suite was rerun for this
+  research-only delta; prior gameplay validation remains in the preceding entry.
+- A fresh one-control DOS reproduction verified that the corrected capture writer
+  retains compressed per-case metadata and satisfies independent semantics/file
+  hashes. Repeated original metadata is stored losslessly compressed. Three
+  duplicate per-case metadata files from corrected captures were reconstructed
+  deterministically from their untouched complete top-level manifests after fixing
+  a cleanup omission; captured values/worlds/logs were not edited. The original
+  invalid reentry input is excluded; the retained control explicitly declines a
+  new purchase with N and uses its exact transport parent.
+
+Boundaries: finite controls and selected native ranges do not establish universal
+RNG distributions, bit-exact MBF economics, stress probability, concurrent/mid-write
+DOS safety, live BBS gameplay or native Windows durability. The follow-up contract
+requires explicit mobile identity/capacity/migration, finite placement, modern
+once-per-date maintenance, clean restoration, atomic links/title/assets/grants/
+NPC aftermath and known-versus-hidden location receipts. The native destination
+remains concealed; no public Wanderer movement notice is invented. The existing
+Go door still has no active Wanderer lifecycle or special transport branch.

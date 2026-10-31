@@ -67,6 +67,8 @@ jobs:
           python3 scripts/test_scanner_manual_warp_verifier.py
           python3 scripts/verify_genesis_reset.py
           python3 scripts/test_genesis_reset_verifier.py
+          python3 scripts/verify_wanderer.py
+          python3 scripts/test_wanderer_verifier.py
           python3 scripts/verify_planet_mobility.py
           python3 scripts/test_planet_mobility_verifier.py
           python3 scripts/verify_earth_lottery.py

@@ -22,7 +22,7 @@ Planetary thrusters and forced landing are now available in-game to test, with a
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling; Wanderer transport and targeted thruster/disruption fidelity remain outstanding.
+- Explicit season archive export/administrative reset tooling; The Wanderer lifecycle/transport ([research complete](research/yt-wanderer/RECOVERY.md), gameplay not implemented) and targeted thruster/disruption fidelity remain outstanding.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1058,3 +1058,33 @@ and [55-control DOS recovery](research/yt-planet-mobility/RECOVERY.md).
 
 Wanderer transport, targeted disruption arrival, complete DOS RNG/MBF parity,
 live BBS gameplay and native Windows crash durability remain separate acceptance.
+
+
+### The Wanderer lifecycle and transport — research complete
+
+[The focused recovery](research/yt-wanderer/RECOVERY.md) retains 57 normally
+returned DOS controls, nine exact world/auxiliary reload chains, 14 native byte
+reads and three verified executable load images. An independent verifier and
+55 rehashed corruption controls check the corpus. Two diagnostics keep a bounded
+no-vacancy timeout and later Xannor interference separate from isolated outcomes.
+
+Daily native relocation clears The Wanderer's governor, refills its bank only
+when zero, and regenerates missing sector links through a partial P.H.O.E.N.I.X.
+restore. A linked but inactive record is moved without regeneration. Same-day
+and backward-date native maintenance can repeat movement/economic effects;
+those defects are not a requirement to weaken modern daily guards. Direct
+YT-INIT includes maintenance bootstrap, while standalone RMT-INIT needs a later
+maintenance run to create The Wanderer.
+
+Special thrusters require the full quoted route budget but stop after one paid
+edge. The ship follows its planned next sector while the planet chooses an
+independent empty sector. Ship-arrival hazards apply at the ship's location;
+mines/fighters at the planet's different location do not damage that ship. The
+native UI conceals the random destination, so future receipts must preserve that
+knowledge boundary. Finite placement, persistent mobile identity, fresh restoration
+incarnations, atomic relocation/grant revocation, explicit season bootstrap and
+truthful receipts are documented as the next implementation contract.
+
+This milestone changes no Go gameplay, dependencies or save schema: version 24
+is unchanged, and The Wanderer is not yet playable in Go. Full original RNG/MBF
+parity, live BBS acceptance and native Windows durability remain separate.

@@ -1075,3 +1075,35 @@ updated with this milestone. Current validation is recorded in evidence/VALIDATI
 
 Remaining: Wanderer transport and actual thruster/disruption controls, original
 RNG/MBF fidelity, broader long-running balance, live BBS and native Windows durability.
+
+
+## The Wanderer lifecycle and transport — bounded research complete
+
+[Recovery and implementation contract](yt-wanderer/RECOVERY.md) retains 57
+normally returned DOS controls, 114 world snapshots, 9 exact parent/auxiliary chains,
+14 native byte reads and 3 verified MZ load images/1006 relocation fixups. Independent
+verification and 55 rehashed corruption controls bind setup, clock/keys, returned
+program markers, semantic mutations, privacy and frozen complete world/auxiliary
+witnesses. A bounded nonreturning no-candidate probe and a complete but later
+NPC-confounded destruction run are classified separately.
+
+Recovered daily movement follows the first slot1 link, clears its governor and
+refills exact-zero bank. Missing references cause partial restoration; an inactive
+but linked record does not. Duplicate links, same-day replay and backward-date
+repeat economics are native defects/limitations, not modern safety requirements.
+YT-INIT invokes maintenance bootstrap; standalone RMT-INIT does not. Special
+transport requires its full quote but charges/stops after one edge, with the
+planet and ship at different destinations and distinct hazard roles. Native
+receipts hide the random planet destination. Later NPC destruction must be
+separated from a successful preceding relocation.
+
+Next: implement bounded Wanderer bootstrap/restoration/daily movement and special
+transport with persistent identity, explicit capacity/migration, finite candidate
+selection, protected existing assets, once-per-date maintenance, atomic links/
+resources/title/grants/aftermath, fresh incarnation on restoration and appropriate
+hidden-location receipts. Integrate Genesis explicitly without repeating daily
+awards or backdated catch-up grants. Keep normal movement incarnation stable,
+never identify the mobile planet by name/slot accident, and preserve existing
+faction-home rules. README is updated in this research milestone; save version 24 and Go
+gameplay are unchanged. Exact RNG/MBF, actual disruption transport, balance and
+native/live acceptance remain open.
