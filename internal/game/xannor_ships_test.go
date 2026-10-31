@@ -137,7 +137,7 @@ func TestXannorShipMultipleVictimsEstateAndNoWreck(t *testing.T) {
 		t.Fatal(err)
 	}
 	w.Sectors[12].Defense = &SectorDefense{Owner: p.ID, Fighters: 37}
-	planet := &Planet{ID: 2, Sector: 11, Owner: p.ID, Name: "Estate", Updated: clock, Ground: 500, Bank: 1234}
+	planet := &Planet{Generation: uint64(2), ID: 2, Sector: 11, Owner: p.ID, Name: "Estate", Updated: clock, Ground: 500, Bank: 1234}
 	w.Planets[2], w.Sectors[11].Planet = planet, 2
 	force, work, preferred := int64(100), 100, 12
 	w.xannorShips(10, &force, &work, &preferred, clock, func() float64 { return .5 })
@@ -285,6 +285,10 @@ func TestXannorBattleHistoryRetentionValidationAndPrivacy(t *testing.T) {
 	// Migration starts empty and rejects future fields instead of backfilling events.
 	old := mobileWorld(t, 12)
 	old.Version = 14
+	old.NextPlanetGeneration = 0
+	for _, planet := range old.Planets {
+		planet.Generation = 0
+	}
 	old.Season = 0
 	old.GenerationSeed = nil
 	old.NextBattleReport = 0

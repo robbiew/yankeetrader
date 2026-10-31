@@ -37,10 +37,10 @@ def exercise(guard):
             world['Sectors']['8']['Defense'] = dict(Owner=-1, Fighters=1)
             world['Sectors']['9']['Defense'] = dict(Owner=-1, Fighters=100)
             for slot, sector, owner, faction, name in [(99, 11, -2, 'mercenaries', 'Mercenary Base'), (100, 8, -1, 'xannor', 'Xannoron')]:
-                world['Planets'][str(slot)] = dict(ID=slot, Sector=sector, Owner=owner, FactionHome=faction, Name=name, Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=0, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
+                world['Planets'][str(slot)] = dict(Generation=slot,ID=slot, Sector=sector, Owner=owner, FactionHome=faction, Name=name, Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=0, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
                 world['Sectors'][str(sector)]['Planet'] = slot
             # Ground-victory stays at the strict civil-war threshold, isolating assault.
-            planet = dict(ID=2, Sector=10, Owner=1, Name='Assault probe', Updated=stamp, Production=[.1, .1, .1] if mode == 'production' else [0, 0, 0], Cargo=[3, 4, 5], Fighters=1234, Missiles=5678, Mines=4321, Plasma=8765, Ground=1000000 if mode == 'ground-victory' else 0, Bank=123456)
+            planet = dict(Generation=2,ID=2, Sector=10, Owner=1, Name='Assault probe', Updated=stamp, Production=[.1, .1, .1] if mode == 'production' else [0, 0, 0], Cargo=[3, 4, 5], Fighters=1234, Missiles=5678, Mines=4321, Plasma=8765, Ground=1000000 if mode == 'ground-victory' else 0, Bank=123456)
             if mode == 'captured-home':
                 del world['Planets']['100']
                 world['Sectors']['8']['Planet'] = 0
@@ -51,7 +51,7 @@ def exercise(guard):
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
             p = saved['Players']['1']
-            assert saved['Version'] == 23 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
+            assert saved['Version'] == 24 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
             for asset in ('Credits', 'Fighters', 'Missiles', 'Mines', 'Plasma', 'Cargo'):
                 assert p[asset] == world['Players']['1'][asset], (asset, p)
             reports = p['BattleReports']

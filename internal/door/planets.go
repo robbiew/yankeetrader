@@ -110,21 +110,26 @@ func (s Session) classicLand(id int, pending *[]string) error {
 		if err = s.planetColor(3); err != nil {
 			return err
 		}
-		answer, err := s.planetAnswer(fmt.Sprintf("\r\n\r\nSensors report ground forces of %d units. You have %d.\r\nDo you wish to try to force a landing? [y/N] ", planet.Ground, p.Ground), pending, 3)
+		token, err = s.forceLanding(id, pending)
 		if err != nil {
 			return err
 		}
-		if strings.EqualFold(answer, "y") {
-			if err = s.Terminal.Printf("\r\nForced landing is not available in this edition yet.\r\n"); err != nil {
-				return err
-			}
+		if token != "" {
+			return s.finishClassicLanding(id, token, pending)
 		}
+
 		w, err = s.Store.View()
 		if err != nil {
 			return err
 		}
 		return s.classicSector(w, id)
 	}
+	return s.finishClassicLanding(id, token, pending)
+}
+
+func (s Session) finishClassicLanding(id int, token string, pending *[]string) error {
+	var err error
+
 	if err = s.classicPlanet(id, token, pending); err != nil {
 		return err
 	}
@@ -138,7 +143,7 @@ func (s Session) classicLand(id int, pending *[]string) error {
 	}); err != nil {
 		return err
 	}
-	w, err = s.Store.View()
+	w, err := s.Store.View()
 	if err != nil {
 		return err
 	}
@@ -257,6 +262,9 @@ func (s Session) classicPlanet(id int, token string, pending *[]string) error {
 			err = s.planetDisplay(p, planet)
 		case "a", "":
 			err = s.planetTakeAll(id, token)
+		case "!", "thrust", "thrusters":
+			err = s.thrusters(token, nil, pending)
+			return err
 		case "n":
 			err = s.planetRename(id, token, pending)
 		case "t":

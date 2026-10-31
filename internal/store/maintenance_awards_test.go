@@ -29,7 +29,7 @@ func dailyAwardStore(t *testing.T) (Store, time.Time) {
 	}
 	w.Ports[2].Owner = p.ID
 	w.Ports[2].Treasury = 900
-	w.Planets[2] = &game.Planet{ID: 2, Sector: 9, Owner: p.ID, Name: "Estate", Updated: at, Ground: 99, Bank: 1000000}
+	w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 9, Owner: p.ID, Name: "Estate", Updated: at, Ground: 99, Bank: 1000000}
 	w.Sectors[9].Planet = 2
 	w.Xannor = &game.XannorState{HQ: 8}
 	w.Sectors[8].Defense = &game.SectorDefense{Owner: game.XannorOwner, Fighters: 1}
@@ -37,7 +37,7 @@ func dailyAwardStore(t *testing.T) (Store, time.Time) {
 		id, sector, owner int
 		home, name        string
 	}{{99, 11, -2, game.MercenaryHome, "Mercenary Base"}, {100, 12, -1, game.XannorHome, "Xannoron"}} {
-		w.Planets[spec.id] = &game.Planet{ID: spec.id, Sector: spec.sector, Owner: spec.owner, FactionHome: spec.home, Name: spec.name, Updated: now, Ground: 1, Bank: 1}
+		w.Planets[spec.id] = &game.Planet{Generation: uint64(spec.id), ID: spec.id, Sector: spec.sector, Owner: spec.owner, FactionHome: spec.home, Name: spec.name, Updated: now, Ground: 1, Bank: 1}
 		w.Sectors[spec.sector].Planet = spec.id
 	}
 	for _, sector := range w.Sectors {
@@ -176,7 +176,7 @@ func TestVersion17RetirementAwardMigrationReadOnlyAndRejection(t *testing.T) {
 	w.Version = 17
 	w.Season = 0
 	w.GenerationSeed = nil
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)

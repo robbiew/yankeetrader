@@ -212,8 +212,8 @@ func TestOvercrowdingNewsRendersActualEventsWithoutPrivateAssets(t *testing.T) {
 			port := w.Ports[1]
 			port.Updated = now
 			port.Production = [3]float64{2000000, 500, 500}
-			w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: p.ID, Name: "Plague World", Updated: now, Production: [3]float64{2000000, 0, 0}, Bank: 12345}
-			w.Planets[3] = &game.Planet{ID: 3, Sector: 3, Owner: p.ID, Name: "Civil World", Updated: now, Ground: 4000000, Bank: 12345}
+			w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: p.ID, Name: "Plague World", Updated: now, Production: [3]float64{2000000, 0, 0}, Bank: 12345}
+			w.Planets[3] = &game.Planet{Generation: uint64(3), ID: 3, Sector: 3, Owner: p.ID, Name: "Civil World", Updated: now, Ground: 4000000, Bank: 12345}
 			w.Sectors[2].Planet = 2
 			w.Sectors[3].Planet = 3
 			w.MaintainWithRandom(now, func() float64 { return .5 })

@@ -181,7 +181,7 @@ func TestVersionOneUpgradePreservesExistingPlayers(t *testing.T) {
 		p.Cloak = 0
 	}
 	w.Planets = nil
-	b, _ := json.Marshal(w)
+	b, _ := marshalHistoricalWorld(w)
 	if e := os.WriteFile(s.Dir+"/world.json", b, 0600); e != nil {
 		t.Fatal(e)
 	}

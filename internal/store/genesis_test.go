@@ -2,7 +2,6 @@ package store
 
 import (
 	"bytes"
-	"encoding/json"
 	"errors"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"os"
@@ -266,12 +265,12 @@ func TestGenesisVersion22MigrationNoResetOrBackfill(t *testing.T) {
 	w.Season = 0
 	w.GenerationSeed = nil
 	w.GenesisPorts = nil
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	if e := os.WriteFile(s.Dir+"/world.json", raw, 0600); e != nil {
 		t.Fatal(e)
 	}
 	loaded, e := s.View()
-	if e != nil || loaded.Season != 1 || loaded.Version != 23 || loaded.GenerationSeed != nil || loaded.GenesisPorts != nil || len(loaded.SeasonResults) != 0 || len(loaded.Players) != 2 {
+	if e != nil || loaded.Season != 1 || loaded.Version != game.WorldVersion || loaded.GenerationSeed != nil || loaded.GenesisPorts != nil || len(loaded.SeasonResults) != 0 || len(loaded.Players) != 2 {
 		t.Fatal(loaded, e)
 	}
 	if !bytes.Equal(raw, travelBytes(t, s)) {
@@ -284,7 +283,7 @@ func TestGenesisVersion22MigrationNoResetOrBackfill(t *testing.T) {
 		t.Fatal("write did not migrate")
 	}
 	w.Season = 1
-	bad, _ := json.Marshal(w)
+	bad, _ := marshalHistoricalWorld(w)
 	_ = os.WriteFile(s.Dir+"/world.json", bad, 0600)
 	if _, e = s.View(); e == nil {
 		t.Fatal("legacy future state accepted")

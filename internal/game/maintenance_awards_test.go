@@ -119,7 +119,7 @@ func TestLotteryReservedSlotsAndBounds(t *testing.T) {
 	_, _ = full.Join("only", "Only")
 	for i := 2; i <= 100; i++ {
 		s := 6 + i
-		full.Planets[i] = &Planet{ID: i, Sector: s, Name: "Full", Updated: clock}
+		full.Planets[i] = &Planet{Generation: uint64(i), ID: i, Sector: s, Name: "Full", Updated: clock}
 		full.Sectors[s].Planet = i
 	}
 	if err = full.Validate(); err != nil {
@@ -141,7 +141,7 @@ func retirementWorld(t *testing.T) (*World, *Player, *Player) {
 		t.Fatal(err)
 	}
 	// Dead accounts may retain planets and mines until retirement.
-	w.Planets[2] = &Planet{ID: 2, Sector: 8, Owner: p.ID, Name: "Estate", Updated: clock, Ground: 99, Bank: 1000000}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 8, Owner: p.ID, Name: "Estate", Updated: clock, Ground: 99, Bank: 1000000}
 	w.Sectors[8].Planet = 2
 	w.Sectors[7].Minefield = []MineLayer{{Owner: other.ID, Count: 1}, {Owner: p.ID, Count: 2}, {Owner: 0, Count: 3}}
 	w.Ports[2].Owner = p.ID
@@ -284,6 +284,10 @@ func TestMaintenanceRetirementOrderingReplayAndMetadataExhaustion(t *testing.T) 
 func TestVersion18MigrationAndFutureFields(t *testing.T) {
 	w, _ := setup(t)
 	w.Version = 17
+	w.NextPlanetGeneration = 0
+	for _, planet := range w.Planets {
+		planet.Generation = 0
+	}
 	w.Season = 0
 	w.GenerationSeed = nil
 	raw, _ := json.Marshal(w)

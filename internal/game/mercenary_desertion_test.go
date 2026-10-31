@@ -47,7 +47,7 @@ func TestHumanDefenseDesertionScopeAndConservation(t *testing.T) {
 	p.Sector, p.Fighters, p.Ground, p.Credits = 8, 1000, 500, 12345
 	w.Ports[8].Owner, w.Ports[8].Treasury = p.ID, 123
 	w.Sectors[8].Planet = 2
-	w.Planets[2] = &Planet{ID: 2, Sector: 8, Owner: p.ID, Name: "Probe", Fighters: 37.75, Ground: 500000, Bank: 1234, Updated: clock}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 8, Owner: p.ID, Name: "Probe", Fighters: 37.75, Ground: 500000, Bank: 1234, Updated: clock}
 	w.Sectors[7].Defense = &SectorDefense{Owner: p.ID, Fighters: 1}
 	w.Sectors[8].Defense = &SectorDefense{Owner: p.ID, Fighters: 1}
 	w.Sectors[9].Defense = &SectorDefense{Owner: XannorOwner, Fighters: 1}

@@ -25,7 +25,7 @@ func TestMineEntryRollbackAndBoundActionGate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	before, _ := json.Marshal(w)
+	before, _ := marshalHistoricalWorld(w)
 	err = bound.Update(func(w *game.World) error {
 		draws := 0
 		_, err := w.CommitMineEntry(entry, func() float64 {
@@ -151,7 +151,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
-	data, _ := json.Marshal(w)
+	data, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, data, 0600); err != nil {
 		t.Fatal(err)
@@ -174,7 +174,7 @@ func TestVersionSixMineUpgradeAndMalformedState(t *testing.T) {
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
 	w.Sectors[2].Minefield = []game.MineLayer{{Owner: 0, Count: 1}}
-	data, _ = json.Marshal(w)
+	data, _ = marshalHistoricalWorld(w)
 	os.WriteFile(path, data, 0600)
 	if _, err = s.View(); err == nil {
 		t.Fatal("legacy mine data accepted")

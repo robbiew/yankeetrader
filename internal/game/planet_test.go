@@ -44,6 +44,7 @@ func fixturePlanet(t *testing.T, c planetCase) *World {
 		}
 	}
 	p := c.Before
+	p.Generation = 2
 	if c.Name == "create" || c.Name == "poor" || c.Name == "full" {
 		p.Sector = 101
 	} else {
@@ -57,6 +58,7 @@ func fixturePlanet(t *testing.T, c planetCase) *World {
 		for id := 2; id <= 100; id++ {
 			v := p
 			v.ID = id
+			v.Generation = uint64(id)
 			v.Sector = id - 1
 			w.Planets[id] = &v
 			w.Sectors[v.Sector].Planet = id

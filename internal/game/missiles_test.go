@@ -225,7 +225,7 @@ func TestUnsupportedMissileEncountersAreRejectedWithoutSpending(t *testing.T) {
 				w.Players[2].Sector = 3
 			case "own planet":
 				w.Sectors[2].Planet = 2
-				w.Planets[2] = &Planet{ID: 2, Sector: 2, Owner: a.ID, Updated: clock, Name: "Home", Ground: 100}
+				w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: a.ID, Updated: clock, Name: "Home", Ground: 100}
 			case "no turns":
 				a.Turns = 0
 			case "no stock":
@@ -338,7 +338,7 @@ func TestMissileIntermediatePlanetPrecedesFartherShip(t *testing.T) {
 	w, a, d, v := missileWorld(t)
 	routeTwoHop(w, d, 0)
 	d.Fighters, d.Shields = MaxQuantity, MaxQuantity
-	planet := &Planet{ID: 2, Sector: 2, Owner: d.ID, Name: "Waystation", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
+	planet := &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: d.ID, Name: "Waystation", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
 	w.Planets[planet.ID] = planet
 	w.Sectors[2].Planet = planet.ID
 	intent, err := w.PrepareMissile(a.ID, 3, 2, v)
@@ -376,7 +376,7 @@ func TestMissileContinuesFromDestroyedShipToSecondShipAndPlanet(t *testing.T) {
 	t.Run("planet", func(t *testing.T) {
 		w, a, first, v := missileWorld(t)
 		first.Fighters, first.Shields = 1, 1
-		planet := &Planet{ID: 2, Sector: 2, Owner: first.ID, Name: "Target", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
+		planet := &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: first.ID, Name: "Target", Updated: clock, Production: [3]float64{1_000_000, 1_000_000, 1_000_000}}
 		w.Planets[planet.ID] = planet
 		w.Sectors[2].Planet = planet.ID
 		intent, err := w.PrepareMissile(a.ID, 2, 2, v)
@@ -504,7 +504,7 @@ func TestMissilePreflightSnapshotsPlanetOnReturnPath(t *testing.T) {
 	a.StoredScore = 1
 	d.Missiles = 1
 	w.Sectors[a.Sector].Planet = 2
-	w.Planets[2] = &Planet{ID: 2, Sector: a.Sector, Owner: a.ID, Name: "Home", Updated: clock, Ground: 100}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: a.Sector, Owner: a.ID, Name: "Home", Updated: clock, Ground: 100}
 
 	intent, err := w.PrepareMissile(a.ID, d.Sector, 1, v)
 	if err != nil {

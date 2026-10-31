@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"os"
 	"reflect"
@@ -206,7 +205,7 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 	w.GenerationSeed = nil
 	// A genuine old save predates the new victory announcement.
 	w.News = nil
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)
@@ -230,7 +229,7 @@ func TestXannorRevengeDeathReplacementAndVersionSixteenMigration(t *testing.T) {
 	upgraded.Season = 0
 	upgraded.GenerationSeed = nil
 	upgraded.Xannor.Revenge = &game.XannorRevengeTarget{Player: 1, Generation: upgraded.Players[1].ShipGeneration}
-	raw, _ = json.Marshal(upgraded)
+	raw, _ = marshalHistoricalWorld(upgraded)
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)
 	}

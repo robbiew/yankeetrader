@@ -24,7 +24,7 @@ def exercise(guard):
             w['Sectors']['8']['Defense']=dict(Owner=-1,Fighters=1)
             for sector in w['Sectors'].values():sector['Warps']=[]
             for slot,sector,owner,home,name in [(99,11,-2,'mercenaries','Mercenary Base'),(100,12,-1,'xannor','Xannoron')]:
-                w['Planets'][str(slot)]=dict(ID=slot,Sector=sector,Owner=owner,FactionHome=home,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=1)
+                w['Planets'][str(slot)]=dict(Generation=slot,ID=slot,Sector=sector,Owner=owner,FactionHome=home,Name=name,Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=1)
                 w['Sectors'][str(sector)]['Planet']=slot
             # Retained typed planet announcements test rendering without needing
             # a probabilistic native CLI outbreak to hit a fixed test seed.
@@ -32,7 +32,7 @@ def exercise(guard):
             w['NextNews']=3
             path.write_text(json.dumps(w))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
-            saved=json.loads(path.read_text());assert saved['Version']==23
+            saved=json.loads(path.read_text());assert saved['Version']==24
             news=[e for e in saved['News'] if e['Kind']=='port-plague']
             assert len(news)==1 and news[0]['PortCount']==12 and news[0]['ID']==3
             for p in saved['Ports'].values():

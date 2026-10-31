@@ -33,7 +33,7 @@ def exercise(guard):
             force = 100000 if mode == 'mines' else 100
             world['Sectors']['9']['Defense'] = dict(Owner=-1, Fighters=force)
             for slot, sector, owner, faction, name, stock in [(99, 11, -2, 'mercenaries', 'Mercenary Base', 0), (100, 8, -1, 'xannor', 'Xannoron', 37.5)]:
-                world['Planets'][str(slot)] = dict(ID=slot, Sector=sector, Owner=owner, FactionHome=faction, Name=name, Updated=stamp,
+                world['Planets'][str(slot)] = dict(Generation=slot,ID=slot, Sector=sector, Owner=owner, FactionHome=faction, Name=name, Updated=stamp,
                     Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=stock, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
                 world['Sectors'][str(sector)]['Planet'] = slot
             if mode != 'return':
@@ -42,12 +42,12 @@ def exercise(guard):
                 world['Sectors']['10']['Defense'] = dict(Owner=1, Fighters=100)
             if mode == 'planet':
                 # At the strict civil-war threshold: isolate NPC ground combat.
-                world['Planets']['2'] = dict(ID=2, Sector=10, Owner=0, Name='Neutral probe', Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.5, Missiles=0, Mines=0, Plasma=0, Ground=1000000, Bank=1234)
+                world['Planets']['2'] = dict(Generation=2,ID=2, Sector=10, Owner=0, Name='Neutral probe', Updated=stamp, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=37.5, Missiles=0, Mines=0, Plasma=0, Ground=1000000, Bank=1234)
                 world['Sectors']['10']['Planet'] = 2
             path.write_text(json.dumps(world))
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
-            assert saved['Version'] == 23 and saved['Xannor'] == dict(HQ=8, Reserve=0)
+            assert saved['Version'] == 24 and saved['Xannor'] == dict(HQ=8, Reserve=0)
             assert saved['Planets']['100']['Fighters'] == 37.5
             assert saved['Players']['1']['Fighters'] == world['Players']['1']['Fighters'] and not saved['Players']['1'].get('Death')
             if mode == 'planet':

@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"github.com/robbiew/yankeetrader/internal/game"
 	"os"
@@ -19,7 +18,7 @@ func TestNewspaperVersionElevenMigrationDoesNotBackfill(t *testing.T) {
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
-	old, _ := json.Marshal(w)
+	old, _ := marshalHistoricalWorld(w)
 	path := s.Dir + "/world.json"
 	if err := os.WriteFile(path, old, 0600); err != nil {
 		t.Fatal(err)
@@ -40,7 +39,7 @@ func TestNewspaperVersionElevenMigrationDoesNotBackfill(t *testing.T) {
 		t.Fatal(saved, err)
 	}
 	w.NextNews = 7
-	malformed, _ := json.Marshal(w)
+	malformed, _ := marshalHistoricalWorld(w)
 	if err = os.WriteFile(path, malformed, 0600); err != nil {
 		t.Fatal(err)
 	}

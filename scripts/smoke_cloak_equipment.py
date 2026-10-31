@@ -27,7 +27,7 @@ def exercise(guard):
     command='p;1;1;0;i;'+ending if classic else'p;equip cloak 1;i;'+ending
     text=guard.run(play,data,'Captain',command,classic=classic)
     saved=json.loads(path.read_text());p=saved['Players']['1'];bought=cash>=1000
-    assert p['Credits']==cash-1000*int(bought) and abs(p.get('Cloak',0)-.01*int(bought))<1e-12 and p['Turns']==499 and saved['Version']==23,text
+    assert p['Credits']==cash-1000*int(bought) and abs(p.get('Cloak',0)-.01*int(bought))<1e-12 and p['Turns']==499 and saved['Version']==24,text
     assert text.count('Cloak energy purchased and saved:')==int(bought),text
     if bought:assert f'credits spent: 1000. Balance: {cash-1000}.'in text,text
    if classic:

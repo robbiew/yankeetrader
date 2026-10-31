@@ -225,7 +225,7 @@ func TestPaidLotteryMigrationReadOnlyThenWrite(t *testing.T) {
 	w.Version = 21
 	w.Season = 0
 	w.GenerationSeed = nil
-	raw, err := json.MarshalIndent(w, "", "  ")
+	raw, err := marshalHistoricalWorld(w)
 	if err != nil {
 		t.Fatal(err)
 	}

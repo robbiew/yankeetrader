@@ -12,6 +12,7 @@ import (
 
 // Nonfinancial production/stocks retain fractions. Spendable credits never use floats.
 type Planet struct {
+	Generation                        uint64
 	FactionHome                       string `json:",omitempty"`
 	ID, Sector, Owner                 int
 	Name                              string
@@ -22,6 +23,22 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 24 {
+		for _, e := range w.News {
+			if e.Kind == NewsPlayerPlanet || e.GroundCommitted != 0 || e.GroundRemaining != 0 {
+				return errors.New("legacy world contains player assault news")
+			}
+		}
+		if w.NextPlanetGeneration != 0 {
+			return errors.New("legacy world unexpectedly contains planet allocator")
+		}
+		for _, p := range w.Planets {
+			if p != nil && p.Generation != 0 {
+				return errors.New("legacy world unexpectedly contains planet generation")
+			}
+		}
+	}
+
 	if w.Version < 23 && (w.Season != 0 || w.GenerationSeed != nil || w.GenesisPorts != nil || len(w.SeasonResults) != 0) {
 		return errors.New("legacy world unexpectedly contains season state")
 	}
@@ -259,11 +276,22 @@ func (w *World) Upgrade() error {
 		w.Season = 1
 		w.Version = 23
 	}
+	if w.Version == 23 {
+		// Reserve 1..100 for deterministic legacy identities. New allocations start
+		// above every legacy slot and never reuse a destroyed planet's identity.
+		w.NextPlanetGeneration = 101
+		for id, p := range w.Planets {
+			if p != nil {
+				p.Generation = uint64(id)
+			}
+		}
+		w.Version = 24
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
-	if len(w.Planets) > 99 {
-		return errors.New("too many planets")
+	if w.NextPlanetGeneration < 101 || len(w.Planets) > 99 {
+		return errors.New("invalid planet allocator or planet count")
 	}
 	for _, p := range w.Players {
 		if p.Team < 0 || p.Team > 50 || p.Missiles < 0 || p.Missiles > MaxQuantity || p.Mines < 0 || p.Mines > MaxQuantity || p.Plasma < 0 || p.Plasma > MaxQuantity {
@@ -287,11 +315,16 @@ func (w *World) validatePlanets() error {
 			}
 		}
 	}
+	seen := map[uint64]bool{}
 	homes := map[string]bool{}
 	for id, p := range w.Planets {
 		if p == nil {
 			return errors.New("invalid planet")
 		}
+		if p.Generation == 0 || p.Generation >= w.NextPlanetGeneration || seen[p.Generation] {
+			return errors.New("invalid planet incarnation")
+		}
+		seen[p.Generation] = true
 		if p.FactionHome != "" {
 			if (p.FactionHome != MercenaryHome && p.FactionHome != XannorHome) || p.Sector <= 7 {
 				return errors.New("invalid faction home")
@@ -335,7 +368,11 @@ func (w *World) CreatePlanet(id int, name string, now time.Time) error {
 	if slot > 100 {
 		return errors.New("all planet slots are occupied")
 	}
-	planet := &Planet{ID: slot, Sector: p.Sector, Owner: id, Name: name, Updated: now.UTC(), Production: [3]float64{1, 1, 1}, Cargo: [3]float64{10, 10, 10}, Fighters: 30, Ground: 1}
+	generation, e := w.allocatePlanetGeneration()
+	if e != nil {
+		return e
+	}
+	planet := &Planet{Generation: generation, ID: slot, Sector: p.Sector, Owner: id, Name: name, Updated: now.UTC(), Production: [3]float64{1, 1, 1}, Cargo: [3]float64{10, 10, 10}, Fighters: 30, Ground: 1}
 	w.Planets[slot] = planet
 	w.Sectors[p.Sector].Planet = slot
 	p.Credits -= 25000

@@ -33,7 +33,7 @@ def exercise(guard):
                     world['Sectors'][str(i)]['Warps'] = []
                 world['Sectors']['8']['Defense'] = dict(Owner=-1, Fighters=1)
                 for slot, sector, owner, kind, name in [(99, 11, -2, 'mercenaries', 'Mercenary Base'), (100, 12, -1, 'xannor', 'Xannoron')]:
-                    world['Planets'][str(slot)] = dict(ID=slot, Sector=sector, Owner=owner, FactionHome=kind, Name=name, Updated=future, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=0, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
+                    world['Planets'][str(slot)] = dict(Generation=slot,ID=slot, Sector=sector, Owner=owner, FactionHome=kind, Name=name, Updated=future, Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=0, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
                     world['Sectors'][str(sector)]['Planet'] = slot
                 path.write_text(json.dumps(world))
                 prompt = b'Main Command (?=Help)?' if classic else b'> '
@@ -48,7 +48,7 @@ def exercise(guard):
                 assert 'Xannor revenge pending for this ship.' in text, text
                 saved = json.loads(path.read_text())
                 p = saved['Players']['1']
-                assert saved['Version'] == 23 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
+                assert saved['Version'] == 24 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
                 assert not saved['Sectors']['8'].get('Defense') and p['Credits'] == world['Players']['1']['Credits']+1000000
                 outsider = guard.run(play, data, 'Visitor', 'i;news;q')
                 assert 'revenge pending' not in outsider

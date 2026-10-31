@@ -1026,3 +1026,52 @@ Remaining candidates: planetary thrusters/forced landing research, native/live
 acceptance, full universe generation and numeric/RNG parity, unsupported
 communication/intelligence and remaining random events. Explicit season archive
 export/admin reset tooling and The Wanderer lifecycle remain unimplemented.
+
+
+## Planetary thrusters and player forced landing — bounded research complete
+
+[Follow-up research and contract](yt-planet-mobility/RECOVERY.md) retains 55
+normally returned DOS controls, 110 world snapshots, two exact parent/auxiliary
+chains and 19 native byte reads plus a verified MZ mapping. Ten-turn route budgets,
+first/later collisions and paid prefixes, owner/team/unguarded permission,
+reserved-slot handling, mine/fighter arrival, ordinary Earth relocation, ground
+commitment/win/loss, faction owners, fractional inputs/defenses, adoption/unrest and
+reentry/retry are tested within declared bounds. Raw sector133 is unmapped and its
+negative controls are not black-hole evidence. The Wanderer's ship and planet can
+end in different sectors. The original route saves per edge and ground combat
+charges before its loop; modern atomicity is a deliberate requirement, not a
+claim about DOS concurrency or crash safety. Independent semantic/provenance
+verification and rehashed corruption controls accompany the corpus. README and
+CI are updated in the same research milestone; no Go gameplay/schema change.
+
+Historical implementation contract (completed below): bounded ordinary planetary thrusters and player forced landing
+with fresh exact risk confirmation, captured season/ship/planet incarnation,
+current team/access and route/hazard binding, whole-number commitments, finite
+route/battle work and atomic outcome/cost/capture/destruction/aftermath. Revoke all
+landing grants when a planet moves or dies; do not teleport other landed callers.
+Protect faction identity explicitly instead of slot/name guesses; retain main !
+for missiles and landed ! for thrusters. Audit every planet constructor if a
+nonreusable incarnation allocator is added, with an explicit migration. Keep lazy
+projection distinct from persisted quote identity, preserve rollback/committed
+warnings and return actual saved receipts. Test concurrent movers/attackers,
+destroy/recreate ABA, successful-prefix failures, mines/fighter stops, work/RNG
+faults and both terminal interfaces. Unsupported Wanderer/disruption lifecycle,
+full original RNG/MBF parity and native/live acceptance remain separate.
+
+
+## Planetary thrusters and forced landing — implementation complete
+
+[Implementation contract](yt-planet-mobility/IMPLEMENTATION.md): save24 adds a
+validated planet-generation allocator, deterministic older-save migration and
+constructor coverage for ordinary creation, both faction restorations, super
+awards and Genesis homes. Fresh login-sealed, single-use two-minute intents bind
+planet/ship/season/access, copied shortest routes and hazards. Thrusters preserve
+physical prefixes/collisions, revoke grants, resolve mines and stop at hostile
+fighters in one save. Ground combat has 4096-round work bounds, strict commitments,
+explicit no-refund retreats, captured survivors, vacant-government unrest and typed
+public player news. Both interfaces return saved resource/casualty/capture receipts
+and preserve committed durability warnings. README, terminal fixtures and CI are
+updated with this milestone. Current validation is recorded in evidence/VALIDATION.md.
+
+Remaining: Wanderer transport and actual thruster/disruption controls, original
+RNG/MBF fidelity, broader long-running balance, live BBS and native Windows durability.

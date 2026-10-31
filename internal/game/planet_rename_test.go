@@ -40,7 +40,7 @@ func TestRenameUsesLandingPermissionAndOnlyChangesName(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			planet := &Planet{ID: 2, Sector: 2, Owner: p.ID, Name: "Old Name", Updated: clock, Production: [3]float64{10, 20, 30}, Cargo: [3]float64{100, 200, 300}, Ground: 100, Bank: 10000}
+			planet := &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: p.ID, Name: "Old Name", Updated: clock, Production: [3]float64{10, 20, 30}, Cargo: [3]float64{100, 200, 300}, Ground: 100, Bank: 10000}
 			w.Planets[2] = planet
 			w.Sectors[2].Planet = 2
 			switch mode {

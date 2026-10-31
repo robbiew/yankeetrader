@@ -128,7 +128,7 @@ func TestPlanetBombardmentWarningCancellationAndReceipt(t *testing.T) {
 			s, st := missileSession(t, term)
 			if err := st.Update(func(w *game.World) error {
 				w.Players[2].Sector = 3
-				w.Planets[2] = &game.Planet{ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: s.Now(), Ground: 5000, Production: [3]float64{1, 1, 1}}
+				w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: 2, Name: "Target", Updated: s.Now(), Ground: 5000, Production: [3]float64{1, 1, 1}}
 				w.Sectors[2].Planet = 2
 				return nil
 			}); err != nil {

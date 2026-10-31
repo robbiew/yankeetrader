@@ -48,7 +48,7 @@ with tempfile.TemporaryDirectory(prefix='yt-planet-missile-smoke-') as temp:
     world['Players']['2'].update(Sector=3,Cloak=0)
     world['Sectors']['1']['Warps']=[2];world['Sectors']['2']['Warps']=[1,3]
     world['Sectors']['2']['Planet']=2
-    world['Planets']['2']=dict(ID=2,Sector=2,Owner=2,Name='Target',Updated=datetime.datetime.now(datetime.timezone.utc).isoformat(),Ground=25,Bank=0,Production=[100,200,300],Cargo=[10,20,30])
+    world['Planets']['2']=dict(Generation=2,ID=2,Sector=2,Owner=2,Name='Target',Updated=datetime.datetime.now(datetime.timezone.utc).isoformat(),Ground=25,Bank=0,Production=[100,200,300],Cargo=[10,20,30])
     path.write_text(json.dumps(world))
     text=play(data,'Launcher','missile 2 4;y',answer='');transcript+=text
     assert 'Target; 25 ground forces; production 100/200/300' in text and 'Missile launch cancelled.' in text,text

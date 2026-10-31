@@ -15,7 +15,7 @@ func reportWorld(t *testing.T) (*World, *Player, *Player) {
 		t.Fatal(err)
 	}
 	w.Sectors[102].Planet = 2
-	w.Planets[2] = &Planet{ID: 2, Sector: 102, Owner: other.ID, Name: "Test Planet", Updated: w.Created,
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 102, Owner: other.ID, Name: "Test Planet", Updated: w.Created,
 		Ground: 12, Bank: 10000, Production: [3]float64{10, 20, 30}, Cargo: [3]float64{40, 50, 60}, Fighters: 70, Missiles: 8, Mines: 9, Plasma: 2}
 	return w, p, other
 }
@@ -209,8 +209,8 @@ func TestRemotePlanetReportChecksRegeneratedGroundBeforeDisclosure(t *testing.T)
 func TestOwnPlanetFinderDoesNotIncludeTeamOrForeignPlanets(t *testing.T) {
 	w, p, enemy := reportWorld(t)
 	w.Planets[2].Owner = p.ID
-	w.Planets[3] = &Planet{ID: 3, Name: "Earlier", Sector: 101, Owner: p.ID}
-	w.Planets[4] = &Planet{ID: 4, Name: "Shared", Sector: 103, Owner: enemy.ID}
+	w.Planets[3] = &Planet{Generation: uint64(3), ID: 3, Name: "Earlier", Sector: 101, Owner: p.ID}
+	w.Planets[4] = &Planet{Generation: uint64(4), ID: 4, Name: "Shared", Sector: 103, Owner: enemy.ID}
 	p.Team, enemy.Team = 1, 1
 	got, err := w.OwnPlanets(p.ID)
 	want := []PlanetLocation{{Name: "Earlier", ID: 3, Sector: 101}, {Name: "Test Planet", ID: 2, Sector: 102}}

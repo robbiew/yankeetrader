@@ -269,6 +269,10 @@ func TestDangerScannerMineLossBranches(t *testing.T) {
 func TestTravelVersion20UpgradeNoGiftAndLegacyFutureState(t *testing.T) {
 	w, p := travelWorld(t)
 	w.Version = 20
+	w.NextPlanetGeneration = 0
+	for _, planet := range w.Planets {
+		planet.Generation = 0
+	}
 	w.Season = 0
 	w.GenerationSeed = nil
 	before := *p
@@ -278,6 +282,10 @@ func TestTravelVersion20UpgradeNoGiftAndLegacyFutureState(t *testing.T) {
 	for _, scanner := range []bool{false, true} {
 		w, p = travelWorld(t)
 		w.Version = 20
+		w.NextPlanetGeneration = 0
+		for _, planet := range w.Planets {
+			planet.Generation = 0
+		}
 		w.Season = 0
 		w.GenerationSeed = nil
 		p.DangerScanner = scanner

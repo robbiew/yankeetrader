@@ -44,7 +44,7 @@ func TestSpiesMatchDOSSupportedCases(t *testing.T) {
 			case "populated":
 				w.Sectors[101].Minefield = []MineLayer{{Count: 7}}
 				w.Sectors[101].Planet = 2
-				w.Planets[2] = &Planet{ID: 2, Sector: 101, Name: "Test Planet", Ground: 12, Updated: w.Created, Bank: 12345, Cargo: [3]float64{1, 2, 3}, Fighters: 1000}
+				w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 101, Name: "Test Planet", Ground: 12, Updated: w.Created, Bank: 12345, Cargo: [3]float64{1, 2, 3}, Fighters: 1000}
 			case "defenders":
 				enemy, _ := w.Join("enemy", "Enemy")
 				w.Sectors[101].Defense = &SectorDefense{Owner: enemy.ID, Fighters: 42}
@@ -214,7 +214,7 @@ func TestSpyPlanetProjectionAndForeignOwnerLabels(t *testing.T) {
 	enemy.Team = 1
 	w.Teams[1] = &Team{ID: 1, Name: "Orion", PasswordHash: "secret"}
 	w.Sectors[101].Planet = 2
-	w.Planets[2] = &Planet{ID: 2, Sector: 101, Name: "Private Planet", Owner: enemy.ID, Updated: w.Created, Ground: 100, Bank: 10000, Fighters: 123456, Missiles: 9876}
+	w.Planets[2] = &Planet{Generation: uint64(2), ID: 2, Sector: 101, Name: "Private Planet", Owner: enemy.ID, Updated: w.Created, Ground: 100, Bank: 10000, Fighters: 123456, Missiles: 9876}
 	w.Sectors[101].Defense = &SectorDefense{Owner: enemy.ID, Fighters: 42}
 	if err := n.Hire(w, p.DockToken, []int{101}, w.Created); err != nil {
 		t.Fatal(err)

@@ -259,6 +259,10 @@ func TestPaidLotteryRejectionsHaveNoResourceOrDrawEffects(t *testing.T) {
 func TestPaidLotteryVersion22MigrationAndValidation(t *testing.T) {
 	w, p := paidWorld(t)
 	w.Version = 21
+	w.NextPlanetGeneration = 0
+	for _, planet := range w.Planets {
+		planet.Generation = 0
+	}
 	w.Season = 0
 	w.GenerationSeed = nil
 	before := *p
@@ -289,6 +293,10 @@ func TestPaidLotteryVersion22MigrationAndValidation(t *testing.T) {
 				t.Fatal("invalid state accepted")
 			}
 			w.Version = 21
+			w.NextPlanetGeneration = 0
+			for _, planet := range w.Planets {
+				planet.Generation = 0
+			}
 			w.Season = 0
 			w.GenerationSeed = nil
 			if err := w.Upgrade(); err == nil {

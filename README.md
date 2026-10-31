@@ -4,6 +4,8 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
+Planetary thrusters and forced landing are now available in-game to test, with atomic saves and exact outcome receipts (save version 24). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
+
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
 ### Available in-game to test
@@ -11,8 +13,8 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 - **Seasons:** confirmed Genesis endgame, authoritative port ownership, atomic universe reset, public winner history and epoch guards that end old logins.
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
 - **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
-- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons; team creation/joining, captain controls and shared planet access.
-- **Combat:** confirmed ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
+- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing; team creation/joining, captain controls and shared planet access.
+- **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
 - **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
@@ -20,7 +22,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Planetary thrusters and forced landing; explicit season archive export/administrative reset tooling.
+- Explicit season archive export/administrative reset tooling; Wanderer transport and targeted thruster/disruption fidelity remain outstanding.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -205,7 +207,7 @@ Sensors work even when no turns remain. `AUTO` asks before moving; an empty answ
 
 Sensors show actual public sector/ship data. Danger-scanner purchasing and manual emergency warp are implemented below; sector-defense deployment and combat are available as described below. Minefields and safe automatic escape are implemented in the later milestones below. Cloak detection and direct fighter attacks are implemented in the later milestones below. Default worlds start without minefields; non-Earth combat wrecks can create them.
 
-The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Thrusters and forced landing are not implemented yet. See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
+The default planet interface now follows the original DOS landing/report, help and transfer menus, with cyan text, original columns, gray answers and captured warning/receipt colors. Press `L` to land (or create a planet when none exists), `?` for planet help, `D` to redisplay, `N` to rename, `1`–`6`/`9` to take an item, Enter/`A` to take all, `T` to deposit items, `B` for the bank, `$` to invest, `F` to set the planetary garrison, and `L` to leave. Bank and garrison prompts ask for a **final target**, not a transfer amount. Empty bank/investment/garrison inputs cancel; empty take quantities choose the displayed maximum. Planet creation requires purchase and name confirmation. Landed `!` uses planetary thrusters. Denied landing can offer a separately confirmed ground assault; see [movement and ground actions](research/yt-planet-mobility/IMPLEMENTATION.md). See [37 captured planet stages and comparison boundaries](research/yt-planet-screens/RECOVERY.md).
 
 Planet renaming uses the original name/confirmation prompts and colors. Blank names cancel; `N` at confirmation retries; Enter accepts. Names receive DOS word casing/space cleanup and are clipped to 41 characters. Renaming costs no credits or turns and uses the current landing permission, including shared/unguarded access. Reserved names and the final special planet slot remain protected. See [rename rules, 45 DOS captures and comparison boundaries](research/yt-planet-rename/RECOVERY.md).
 
@@ -296,7 +298,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 23 for season epochs, recorded fresh generation seeds, explicit Genesis thresholds and bounded public winner results, alongside persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21/version-22 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 23. Migration assigns season one without resetting, awarding, inventing a historical seed or backfilling winner history. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 24 for nonreusable planet incarnations and typed player ground-action news, alongside season epochs, recorded fresh generation seeds, explicit Genesis thresholds and bounded public winner results, alongside persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21/version-22/version-23 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 24. Planet migration deterministically assigns the old slot identities 1–100, reserves a counter starting at 101 for every later creation, and rejects allocator exhaustion. Confirmations also bind the season epoch, so a reset cannot make an old quote valid. Earlier season migration assigns season one without resetting, awarding, inventing a historical seed or backfilling winner history. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -352,13 +354,13 @@ The explicit commands below apply to `-compact`. The default interface uses the 
 | `GARRISON <target>` | Set planetary ground forces using the ship's ground forces; zero releases ownership |
 | `LEAVE` | Leave the planet or port |
 
-Owners, members of the same nonzero team, and visitors to unguarded planets can land. Permission and current position are rechecked on every action. Team membership and shared access are available through the team menu. Missile bombardment of planets is available as described below; forced landing is not implemented yet.
+Owners, members of the same nonzero team, and visitors to unguarded planets can land. Permission and current position are rechecked on every action. Team membership and shared access are available through the team menu. Missile bombardment and separately confirmed ground assaults are available. A vacant unowned or dead governor can be adopted without spending carried troops; unrest reduces the existing garrison. Teammates and unguarded foreign visitors retain their existing access and governor.
 
 Production uses elapsed time capped at ten days. Visiting grows rates before production; daily maintenance produces before growing rates, matching the two recovered DOS paths. Banking reevaluates surplus production after changing the balance. Fractional stock is retained; only whole units move aboard. See [planet recovery](research/yt-combat/RECOVERY.md) and the packaged reports in `research/yt-combat` for the original evidence (report filenames are preserved).
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-21 worlds upgrade to version 22 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-23 worlds upgrade to version 24 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -1022,8 +1024,37 @@ Wanderer's absent lifecycle remain separate work.
 [Implementation and safety contract](research/yt-genesis/IMPLEMENTATION.md).
 
 
-## Documentation upkeep
+### Planetary thrusters and forced landing — implemented for testing
 
-Update this README with every project change, including features, fixes and
-research milestones. Keep playable status, outstanding work, usage, save
-compatibility and validation claims current in the same commit or pull request.
+Landed `!` in the classic planet menu, or `THRUST <sector>` in compact mode,
+quotes the shortest directed route using your avoid list and stored warp-order
+route ties. Confirm separately: the full quote requires 10 turns per hop. Only
+completed hops are charged. A collision or rare stress failure destroys the
+moving planet and can lose fighters while retaining completed progress; the
+stationary planet is preserved. Reached mines resolve atomically, and hostile
+sector fighters stop the route for their normal encounter. Movement or destruction
+revokes every landing grant, leaves other callers' ships in place, and returns
+the mover to the sector interface. Both faction homes stay immovable after capture.
+Main-sector `!` retains its missile command.
+
+Denied `LAND`/classic `L` offers forced landing when carried ground is available.
+Choose a positive whole quantity, then confirm separately. No turn fee applies.
+The entire commitment leaves the ship; a capture puts surviving attackers on the
+planet, keeping its bank, weapons and economy. Defeat keeps the other governor.
+Combat stops after at most 4096 rounds; surviving committed attackers retreat
+without refund and are reported separately from casualties. Vacant government
+adoption spends no carried troops and records the actual unrest-reduced garrison.
+Self/team/unguarded ordinary access retains its governor.
+
+Both actions save costs, links, capture/destruction, supported mine aftermath and
+public ground news together. Confirmations expire after two minutes, are sealed
+to one login and are consumed even when an attempted commit rolls back. Changed
+ships, planet incarnations, permissions, routes, hazards or material ground growth
+require a new confirmation. Receipts describe the actual saved result, including
+prefix progress, troop losses/retreats, remaining resources and committed durability
+warnings; a durability warning ends the login. Save version **24** upgrades older
+worlds without resetting them. See the [implementation and validation contract](research/yt-planet-mobility/IMPLEMENTATION.md)
+and [55-control DOS recovery](research/yt-planet-mobility/RECOVERY.md).
+
+Wanderer transport, targeted disruption arrival, complete DOS RNG/MBF parity,
+live BBS gameplay and native Windows crash durability remain separate acceptance.

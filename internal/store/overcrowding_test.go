@@ -29,7 +29,7 @@ func overcrowdingStore(t *testing.T) (Store, time.Time) {
 	port.Production = [3]float64{2000000, 500, 501}
 	port.Supply = [3]float64{20000000, 5000, 5010}
 	for id := 2; id <= 3; id++ {
-		p := &game.Planet{ID: id, Sector: id, Owner: b.ID, Name: "Crowded", Updated: now,
+		p := &game.Planet{Generation: uint64(id), ID: id, Sector: id, Owner: b.ID, Name: "Crowded", Updated: now,
 			Production: [3]float64{100, 100, 100}, Cargo: [3]float64{1000, 1000, 1000}, Ground: 4000000, Bank: 12345, Fighters: 11, Missiles: 13, Mines: 17, Plasma: 19}
 		if id == 3 {
 			p.Production = [3]float64{2000000, 0, 0}
@@ -121,7 +121,7 @@ func TestOvercrowdingAtomicAbortValidationConcurrentReloadAndReplay(t *testing.T
 		t.Fatal(err)
 	}
 	assertOutbreaks(t, w)
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	for _, at := range []time.Time{now, now.Add(time.Hour), now.Add(-24 * time.Hour)} {
 		if err = fresh.Update(func(w *game.World) error {
 			if w.MaintainWithRandom(at, func() float64 { t.Fatal("replay consumed randomness"); return 0 }) {
@@ -169,7 +169,7 @@ func TestVersion18OvercrowdingMigrationPreservesStateAndRejectsFutureNews(t *tes
 	w.Version = 18
 	w.Season = 0
 	w.GenerationSeed = nil
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	path := st.Dir + "/world.json"
 	if err := os.WriteFile(path, raw, 0600); err != nil {
 		t.Fatal(err)

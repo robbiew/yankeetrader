@@ -21,8 +21,8 @@ func reportSession(t *testing.T, term Terminal) (Session, store.Store) {
 		}
 		w.Ports[2].Name = "Trading Post"
 		w.Sectors[3].Planet, w.Sectors[4].Planet = 2, 3
-		w.Planets[2] = &game.Planet{ID: 2, Sector: 3, Owner: 2, Name: "Private World", Ground: 12, Bank: 9876543, Updated: s.Now(), Production: [3]float64{1, 2, 3}}
-		w.Planets[3] = &game.Planet{ID: 3, Sector: 4, Owner: 1, Name: "Home", Ground: 1, Updated: s.Now(), Production: [3]float64{1, 2, 3}}
+		w.Planets[2] = &game.Planet{Generation: uint64(2), ID: 2, Sector: 3, Owner: 2, Name: "Private World", Ground: 12, Bank: 9876543, Updated: s.Now(), Production: [3]float64{1, 2, 3}}
+		w.Planets[3] = &game.Planet{Generation: uint64(3), ID: 3, Sector: 4, Owner: 1, Name: "Home", Ground: 1, Updated: s.Now(), Production: [3]float64{1, 2, 3}}
 		return nil
 	}); err != nil {
 		t.Fatal(err)

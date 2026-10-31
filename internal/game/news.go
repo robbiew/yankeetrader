@@ -12,6 +12,7 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsPlayerPlanet NewsKind = "player-planet-assault"
 	NewsLottery      NewsKind = "paid-lottery"
 	NewsXannorHQ     NewsKind = "xannor-hq-victory"
 	NewsPortPlague   NewsKind = "port-plague"
@@ -28,17 +29,18 @@ const (
 // NewsEvent stores only whitelisted public snapshots, never arbitrary message
 // text, authentication identities, account balances or invitation secrets.
 type NewsEvent struct {
-	LotteryMatches int    `json:",omitempty"`
-	LotteryPrize   int64  `json:",omitempty"`
-	PortCount      int    `json:",omitempty"`
-	PlanetName     string `json:",omitempty"`
-	Outcome        string `json:",omitempty"`
-	ID             uint64
-	At             time.Time
-	Kind           NewsKind
-	Alias          string
-	Team           int    `json:",omitempty"`
-	TeamName       string `json:",omitempty"`
+	GroundCommitted, GroundRemaining int64  `json:",omitempty"`
+	LotteryMatches                   int    `json:",omitempty"`
+	LotteryPrize                     int64  `json:",omitempty"`
+	PortCount                        int    `json:",omitempty"`
+	PlanetName                       string `json:",omitempty"`
+	Outcome                          string `json:",omitempty"`
+	ID                               uint64
+	At                               time.Time
+	Kind                             NewsKind
+	Alias                            string
+	Team                             int    `json:",omitempty"`
+	TeamName                         string `json:",omitempty"`
 }
 type Newspaper struct {
 	Date    string
@@ -46,7 +48,7 @@ type Newspaper struct {
 }
 
 func planetaryNews(kind NewsKind) bool {
-	return kind == NewsXannorPlanet || kind == NewsPlanetPlague || kind == NewsCivilWar
+	return kind == NewsPlayerPlanet || kind == NewsXannorPlanet || kind == NewsPlanetPlague || kind == NewsCivilWar
 }
 
 func utcDay(t time.Time) time.Time {
@@ -78,7 +80,27 @@ func (w *World) validateNews() error {
 		if e.Kind != NewsLottery && (e.LotteryMatches != 0 || e.LotteryPrize != 0) {
 			return errors.New("unrelated news contains paid lottery details")
 		}
+		if e.Kind != NewsPlayerPlanet && (e.GroundCommitted != 0 || e.GroundRemaining != 0) {
+			return errors.New("unrelated news contains ground assault details")
+		}
 		switch e.Kind {
+		case NewsPlayerPlanet:
+			if !clean(e.Alias) || !clean(e.PlanetName) || e.Team != 0 || e.TeamName != "" || e.GroundCommitted < 0 || e.GroundCommitted > MaxQuantity || e.GroundRemaining < 0 || e.GroundRemaining > MaxQuantity {
+				return errors.New("invalid player planetary news")
+			}
+			switch e.Outcome {
+			case "captured", "defended", "unfinished":
+				if e.GroundCommitted == 0 {
+					return errors.New("missing assault commitment")
+				}
+			case "adopted":
+				if e.GroundCommitted != 0 {
+					return errors.New("adoption charged troops")
+				}
+			default:
+				return errors.New("invalid player planetary outcome")
+			}
+
 		case NewsLottery:
 			if e.Team != 0 || e.TeamName != "" || e.LotteryMatches < 4 || e.LotteryMatches > 6 || e.LotteryPrize < LotteryPrice || e.LotteryPrize > LotteryPrize(e.LotteryMatches) {
 				return errors.New("invalid paid lottery news")

@@ -26,7 +26,7 @@ func eventSequence(t *testing.T, values ...float64) (func() float64, *int) {
 func eventWorld(t *testing.T) (*World, *Planet) {
 	t.Helper()
 	w, p := setup(t)
-	planet := &Planet{ID: 2, Sector: 2, Owner: p.ID, Name: "Crowded", Updated: clock,
+	planet := &Planet{Generation: uint64(2), ID: 2, Sector: 2, Owner: p.ID, Name: "Crowded", Updated: clock,
 		Production: [3]float64{100, 200, 300}, Cargo: [3]float64{1000, 2000, 3000},
 		Ground: 100, Bank: 12345, Fighters: 11, Missiles: 13, Mines: 17, Plasma: 19}
 	w.Planets[2] = planet
@@ -247,7 +247,7 @@ func TestOvercrowdingBoundedFullWorldStableOrderAndMetadata(t *testing.T) {
 		p.Production = [3]float64{1000000, 1000, 1000}
 	}
 	for id := 2; id <= 100; id++ {
-		w.Planets[id] = &Planet{ID: id, Sector: id, Name: "Crowded", Updated: clock, Production: [3]float64{2000000, 0, 0}}
+		w.Planets[id] = &Planet{Generation: uint64(id), ID: id, Sector: id, Name: "Crowded", Updated: clock, Production: [3]float64{2000000, 0, 0}}
 		w.Sectors[id].Planet = id
 	}
 	calls := 0

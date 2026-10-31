@@ -1,7 +1,6 @@
 package store
 
 import (
-	"encoding/json"
 	"errors"
 	"math"
 	"os"
@@ -181,7 +180,7 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 	expected := *w
 	expected.Version = game.WorldVersion
 	expected.Season = 1
-	raw, _ := json.Marshal(w)
+	raw, _ := marshalHistoricalWorld(w)
 	if err := os.WriteFile(s.Dir+"/world.json", raw, 0600); err != nil {
 		t.Fatal(err)
 	}
@@ -204,7 +203,7 @@ func TestTravelPurchaseConcurrencyAndMigration(t *testing.T) {
 		if !scanner {
 			w.Players[1].WarpSequence = 1
 		}
-		raw, _ = json.Marshal(w)
+		raw, _ = marshalHistoricalWorld(w)
 		_ = os.WriteFile(s.Dir+"/world.json", raw, 0600)
 		if _, e := s.View(); e == nil {
 			t.Fatal("legacy accepted future state")
