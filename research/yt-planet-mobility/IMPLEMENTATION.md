@@ -42,7 +42,9 @@ Hostile sector fighters stop the route without inventing a paid battle. Every
 movement/destruction revokes all landing grants; other ships do not teleport.
 The mover returns to its sector interface. Faction identity protects both homes
 from transport even after capture, keeping HQ/restoration coordination explicit.
-No Wanderer or unsupported disruption behavior is invented.
+At this milestone no Wanderer or unsupported disruption behavior was implemented.
+The subsequent [Wanderer implementation](../yt-wanderer/IMPLEMENTATION.md) adds
+its explicit lifecycle and split-destination transport in save25.
 
 Ground rounds use separate selector/magnitude draws and recovered floor-after-
 subtraction arithmetic. At most 4096 rounds execute. The selected commitment is
@@ -86,4 +88,5 @@ both interfaces' movement, collision, cancellation, assault, adoption and reconn
 Current command results are in [validation notes](../../evidence/VALIDATION.md).
 
 Live BBS gameplay, native Windows crash durability, maximum-load balance, exact
-DOS RNG/MBF behavior and targeted disruption/Wanderer controls remain unverified.
+DOS RNG/MBF behavior and targeted disruption controls remain unverified. The
+subsequent bounded Wanderer controls and validation are documented separately.

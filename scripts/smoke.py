@@ -48,8 +48,9 @@ with tempfile.TemporaryDirectory(prefix='yt-smoke-') as temp:
  world=json.loads((data/'world.json').read_text());p=world['Players']['2']
  assert len(world['Players'])==2 and p['Identity']=='door32:smoke:42' and p['Alias']=='RemoteRenamed',world['Players']
  assert (p['Credits'],p['Fighters'],p['Turns'])==(905,26,499),p
+ # Build in an empty sector; the new Wanderer bootstrap may occupy Earth.
  # Controlled builder fixture; the production CLI has no free-credit/debug flag.
- p=world['Players']['1'];p['Credits']=100000;p['Holds']=100;p['Cargo']=[10,20,30];p['Sector']=1;p['DockToken']='';p['PlanetToken']='';p['LandedPlanet']=0
+ p=world['Players']['1'];p['Credits']=100000;p['Holds']=100;p['Cargo']=[10,20,30];p['Sector']=2;p['DockToken']='';p['PlanetToken']='';p['LandedPlanet']=0
  (data/'world.json').write_text(json.dumps(world))
  transcript+=play(['-data',str(data),'-local','Tester'],'create New Eden;land;bank 15000;invest 251;transfer cargo;a;planet;leave;q')
  world=json.loads((data/'world.json').read_text());p=world['Players']['1'];planet=world['Planets']['2']

@@ -52,7 +52,7 @@ func (w *World) CanRenamePlanet(id int, token string, now time.Time) error {
 	if err != nil {
 		return err
 	}
-	if planet.ID == 1 || planet.ID == 100 {
+	if planet.Wanderer || planet.ID == 100 {
 		return ErrProtectedPlanetRename
 	}
 	return nil

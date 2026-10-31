@@ -255,7 +255,7 @@ func TestPlanetAllocatorMigrationAndFactionRestriction(t *testing.T) {
 	w.Version = 23
 	w.NextPlanetGeneration = 0
 	planet.Generation = 0
-	if err := w.Upgrade(); err != nil || w.Version != 24 || planet.Generation != uint64(planet.ID) || w.NextPlanetGeneration != 101 {
+	if err := w.Upgrade(); err != nil || w.Version != WorldVersion || planet.Generation != uint64(planet.ID) || w.NextPlanetGeneration != 101 {
 		t.Fatal(err, planet)
 	}
 	old := planet.Generation

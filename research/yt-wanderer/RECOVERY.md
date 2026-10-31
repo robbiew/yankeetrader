@@ -1,7 +1,8 @@
 # The Wanderer — lifecycle and special transport research
 
-This is research, not a Go gameplay implementation. The current Go door remains
-save version **24** and has no active Wanderer. Ordinary planetary thrusters and
+This records the research stage, when the Go door used save **24** and had no
+active Wanderer. The subsequent [bounded implementation](IMPLEMENTATION.md) uses
+save25; historical native findings and limitations below remain unchanged. Ordinary planetary thrusters and
 forced landing are implemented in the preceding
 [mobility milestone](../yt-planet-mobility/IMPLEMENTATION.md).
 
@@ -194,7 +195,7 @@ planet. Phase order and all later supported aftermath must compose in one modern
 transaction; restoration should wait until the next eligible maintenance phase
 rather than recursively replacing a planet repeatedly attacked in the same run.
 
-Future implementation choices, explicitly distinct from additional DOS facts:
+Research-stage implementation choices (now implemented in [the save25 contract](IMPLEMENTATION.md)), explicitly distinct from additional DOS facts:
 
 1. Add persistent mobile-planet identity/reference with deliberate migration and
    validation/capacity rules. Current save version 24 has no valid slot1 planet and at most
@@ -233,7 +234,7 @@ Future implementation choices, explicitly distinct from additional DOS facts:
    destinations, account identities, banks or tokens. Resolve all later NPC effects
    before describing the final daily outcome. Keep native/live acceptance separate.
 
-Required future tests include bootstrap/minimum capacity, reserved/full slots,
+The implementation regression scope includes bootstrap/minimum capacity, reserved/full slots,
 origin-only/no-candidate placement, generation/RNG exhaustion, preserved and
 restored identities, current permissions/title resets, same-day/rollback dates,
 multiple landed callers and concurrent maintenance/transport, stale planet/epoch

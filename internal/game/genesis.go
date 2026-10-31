@@ -191,6 +191,12 @@ func (w *World) genesisCandidate(e GenesisIntent, now time.Time, seed int64, gen
 	if !mercenary {
 		return nil, out, errors.New("new season has no Mercenary base")
 	}
+	if _, err = candidate.BootstrapWanderer(now, rng.Float64); err != nil {
+		return nil, out, err
+	}
+	if candidate.wanderer() == nil {
+		return nil, out, errors.New("new season has no room for The Wanderer")
+	}
 	if err = candidate.Validate(); err != nil {
 		return nil, out, err
 	}

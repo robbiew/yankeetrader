@@ -63,26 +63,28 @@ with tempfile.TemporaryDirectory(prefix='yt-team-smoke-') as temp:
     path = data/'world.json'
     world = json.loads(path.read_text())
     world['Players']['1']['Credits'] = 100000
+    # Use a vacant ordinary-planet sector rather than the Wanderer at Earth.
+    world['Players']['1']['Sector'] = 2
     world['Ports']['2'].update(Owner=1, Treasury=777)
     path.write_text(json.dumps(world))
     transcript = play(data, 'Captain', 'create Home;land;bank 1000;leave;team;2;Orion', 'ABCD')
-    transcript += play(data, 'Member', 'team;3;1', 'abcd', '1;land;bank 0;leave;treasury;q')
+    transcript += play(data, 'Member', 'm 2;team;3;1', 'abcd', '1;land;bank 0;leave;treasury;q')
     world = json.loads(path.read_text())
-    assert world['Version'] == 24 and world['Players']['2']['Team'] == 1
+    assert world['Version'] == 25 and world['Players']['2']['Team'] == 1
     assert world['Players']['2']['Credits'] == 2005 and world['Planets']['2']['Bank'] == 0
     assert world['Ports']['2']['Treasury'] == 777, 'teammate collected private port balance'
     transcript += play(data, 'Captain', 'team;7;2;y;1;q')
     transcript += play(data, 'Member', 'land;q')
     assert 'permission to land is denied' in transcript
     # Removal is a kick, not a permanent ban: the unchanged invitation still works.
-    transcript += play(data, 'Member', 'team;3;1', 'ABCD')
+    transcript += play(data, 'Member', 'm 2;team;3;1', 'ABCD')
     transcript += play(data, 'Captain', 'team;4;y;1;collect;q')
     transcript += play(data, 'Member', 'team;1;q')
     world = json.loads(path.read_text())
     assert world['Teams']['1']['Captain'] == 2 and world['Players']['1']['Team'] == 0
     assert world['Planets']['2']['Owner'] == 1 and world['Ports']['2']['Owner'] == 1
     assert world['Ports']['2']['Treasury'] == 0 and world['Players']['1']['Credits'] == 74777
-    assert world['Players']['1']['Turns'] == world['Players']['2']['Turns'] == 500
+    assert world['Players']['1']['Turns'] == 500 and world['Players']['2']['Turns'] == 499  # member travelled to the vacant home sector
     assert b'ABCD' not in path.read_bytes() and b'abcd' not in path.read_bytes()
     (root/'evidence/team-smoke.txt').write_text(transcript)
     print('PTY teams passed: masked invitations, creation/join, shared banking, personal port accounts, removal/rejoin, retained assets and visiting-member captain succession.')

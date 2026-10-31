@@ -10,6 +10,8 @@ import (
 	"github.com/robbiew/yankeetrader/internal/game"
 	"github.com/robbiew/yankeetrader/internal/store"
 	"github.com/robbiew/yankeetrader/internal/version"
+	"io"
+	prng "math/rand"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -68,6 +70,9 @@ func run() error {
 				return e
 			}
 		}
+		if _, e = w.BootstrapWanderer(w.Created, prng.New(prng.NewSource(*seed)).Float64); e != nil {
+			return e
+		}
 		if e = st.Create(w); e != nil {
 			return e
 		}
@@ -75,17 +80,13 @@ func run() error {
 		return nil
 	}
 	if *maint {
-		ran := false
-		e := st.Update(func(w *game.World) error { ran = w.Maintain(time.Now()); return nil })
-		if e != nil {
-			return e
-		}
-		if ran {
-			fmt.Println("Daily economy maintenance completed.")
-		} else {
-			fmt.Println("Maintenance already current; no daily phases repeated.")
-		}
-		return nil
+		var receipt game.MaintenanceReceipt
+		e := st.Update(func(w *game.World) error {
+			var err error
+			receipt, err = w.RunMaintenance(time.Now(), prng.Float64)
+			return err
+		})
+		return printMaintenanceReceipt(os.Stdout, receipt, e)
 	}
 	if (*local == "") == (*drop == "") {
 		return errors.New("choose -local <name> or -drop <directory>")
@@ -158,4 +159,31 @@ func door32Identity(dir string) (int, string, error) {
 		name = strings.TrimSpace(scan.Text())
 	}
 	return n, name, nil
+}
+
+// A committed durability warning must retain both the saved outcome and any
+// output failure. An aborted transaction must never print a success receipt.
+func printMaintenanceReceipt(dst io.Writer, receipt game.MaintenanceReceipt, err error) error {
+	var committed *store.DurabilityError
+	if err != nil && !errors.As(err, &committed) {
+		return err
+	}
+	var text strings.Builder
+	if receipt.Ran {
+		text.WriteString("Daily economy maintenance completed.\n")
+		if receipt.Wanderer.Status != "" {
+			fmt.Fprintf(&text, "Wanderer maintenance saved: %s", receipt.Wanderer.Status)
+			if receipt.Wanderer.Reason != "" {
+				fmt.Fprintf(&text, " (%s)", receipt.Wanderer.Reason)
+			}
+			if receipt.Wanderer.Destroyed {
+				text.WriteString("; destroyed by later daily actions")
+			}
+			text.WriteString(".\n")
+		}
+	} else {
+		text.WriteString("Maintenance already current; no daily phases repeated.\n")
+	}
+	_, output := io.WriteString(dst, text.String())
+	return errors.Join(err, output)
 }

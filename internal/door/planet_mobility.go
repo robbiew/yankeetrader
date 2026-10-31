@@ -40,6 +40,11 @@ func (s Session) thrustersWithRandom(token string, args []string, pending *[]str
 		return err
 	}
 	defer s.Store.CancelPlanetAction(entry)
+	if entry.Planet.Wanderer {
+		if err = s.Terminal.Printf("The Wanderer requires the full route budget but stops after one charged edge. Its random destination is hidden; your ship follows the first planned edge.\r\n"); err != nil {
+			return err
+		}
+	}
 	if err = s.freshPlanetPrompt(pending, fmt.Sprintf("Planet route %v; quote %d turns (10 per hop). Collision or stress can destroy the planet and fighters. Reached mines stop travel and can damage, warp or destroy your ship; hostile fighters stop the route for an encounter. Completed hops remain spent. Engage? [y/N] ", entry.Path, 10*(len(entry.Path)-1))); err != nil {
 		return err
 	}
@@ -152,7 +157,11 @@ func (s Session) planetActionReceipt(out game.PlanetReceipt, err error) error {
 	}
 	var output error
 	if out.Kind == "thrusters" {
-		output = s.Terminal.Printf("Planet thrusters saved: %s; completed %d hops, sector %d -> %d (destination %d). Transport %d turns; aftermath %d; total %d; remaining %d. Planet destroyed: %t; planet sector %d; stop: %s. Fighters lost %d; remaining %d. All landing grants revoked.\r\n", terminalLabel(out.Name), out.Hops, out.From, out.FinalSector, out.Destination, out.TransportTurns, out.AftermathTurns, out.TurnsSpent, out.TurnsRemaining, out.Destroyed, out.PlanetSector, out.Stop, out.FightersLost, out.FightersRemaining)
+		if out.Vanished {
+			output = s.Terminal.Printf("Planet thrusters saved: %s; completed %d hops, sector %d -> %d (destination %d). Transport %d turns; aftermath %d; total %d; remaining %d. The Wanderer vanishes from your sensors; planet location unknown. Stop: %s. Fighters lost %d; remaining %d. All landing grants revoked.\r\n", terminalLabel(out.Name), out.Hops, out.From, out.FinalSector, out.Destination, out.TransportTurns, out.AftermathTurns, out.TurnsSpent, out.TurnsRemaining, out.Stop, out.FightersLost, out.FightersRemaining)
+		} else {
+			output = s.Terminal.Printf("Planet thrusters saved: %s; completed %d hops, sector %d -> %d (destination %d). Transport %d turns; aftermath %d; total %d; remaining %d. Planet destroyed: %t; planet sector %d; stop: %s. Fighters lost %d; remaining %d. All landing grants revoked.\r\n", terminalLabel(out.Name), out.Hops, out.From, out.FinalSector, out.Destination, out.TransportTurns, out.AftermathTurns, out.TurnsSpent, out.TurnsRemaining, out.Destroyed, out.PlanetSector, out.Stop, out.FightersLost, out.FightersRemaining)
+		}
 		if output == nil {
 			output = s.showMineOutcome(out.Mines)
 		}

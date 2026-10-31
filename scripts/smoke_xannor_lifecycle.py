@@ -18,6 +18,9 @@ def exercise(guard):
         world = json.loads(path.read_text())
         # Deliberate disposable save overrides: pre-feature schema, an unpublished
         # stored score, and an overdue daily run. No live account is involved.
+        # Remove post-schema-24 bootstrap assets from this historical input fixture.
+        mobile=world['Planets'].pop('1',None)
+        if mobile:world['Sectors'][str(mobile['Sector'])]['Planet']=0
         world['Version'] = 13; world.pop("Season",None); world.pop("GenerationSeed",None)
         world.pop("NextPlanetGeneration",None)
         for planet in world.get("Planets",{}).values(): planet.pop("Generation",None)
@@ -35,7 +38,7 @@ def exercise(guard):
         saved = json.loads(path.read_text())
         home = saved['Planets']['100']
         hq = saved['Xannor']['HQ']
-        assert saved['Version'] == 24 and saved['Xannor']['Reserve'] == 0
+        assert saved['Version'] == 25 and saved['Xannor']['Reserve'] == 0
         assert hq > 7 and home['Sector'] == hq and saved['Sectors'][str(hq)]['Planet'] == 100
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]

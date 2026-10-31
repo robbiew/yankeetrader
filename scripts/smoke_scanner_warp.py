@@ -18,7 +18,7 @@ def exercise(guard):
    command='p;5;5;0;i;q;y'if classic else'p;equip scanner 1;equip scanner 1;i;q'
    text=guard.run(play,data,'Captain',command,classic=classic)
    saved=json.loads(path.read_text());p=saved['Players']['1']
-   assert saved['Version']==24 and p['DangerScanner']and p['Credits']==1 and p['Turns']==499
+   assert saved['Version']==25 and p['DangerScanner']and p['Credits']==1 and p['Turns']==499
    assert text.count('Credits spent: 250000. Balance: 1.')==1 and 'already installed'in text,text
    reconnect=guard.run(play,data,'Captain','i;q;y'if classic else'i;q',classic=classic)
    assert 'Installed'in reconnect if classic else'Danger scanner installed: true'in reconnect

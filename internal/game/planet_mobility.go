@@ -28,19 +28,21 @@ type PlanetRouteSector struct {
 // PlanetIntent keeps persisted state separate from its lazy economic projection.
 // Store seals the complete snapshot to one live login and consumes it once.
 type PlanetIntent struct {
-	Kind, Nonce string
-	Ship        TravelShip
-	Planet      Planet
-	OwnerTeam   int
-	OwnerDead   bool
-	Maintenance string
-	Path        []int
-	Route       []PlanetRouteSector
-	Quantity    int64
-	QuotedAt    time.Time
+	WandererCandidates []int
+	Kind, Nonce        string
+	Ship               TravelShip
+	Planet             Planet
+	OwnerTeam          int
+	OwnerDead          bool
+	Maintenance        string
+	Path               []int
+	Route              []PlanetRouteSector
+	Quantity           int64
+	QuotedAt           time.Time
 }
 
 type PlanetReceipt struct {
+	Vanished                                                           bool
 	LandingToken                                                       string
 	Retreated                                                          int64
 	Kind, Stop, Name                                                   string
@@ -106,6 +108,9 @@ func (w *World) PreparePlanetAction(id int, kind, token string, destination int,
 			return PlanetIntent{}, errors.New("not enough turns: planetary thrusters cost 10 turns per hop")
 		}
 		e.Path = path
+		if planet.Wanderer {
+			e.WandererCandidates = w.wandererCandidates(planet.Sector)
+		}
 		// Include every outgoing edge of the chosen route and every reached hazard.
 		// A new shorter path also changes the fresh path comparison at commit.
 		for _, sid := range path {
@@ -210,10 +215,18 @@ func (w *World) CommitPlanetAction(e PlanetIntent, rng func() float64, now time.
 				out.PlanetSector = 0
 				break
 			}
+			planetTo := to
+			if planet.Wanderer {
+				planetTo, err = chooseWanderer(e.WandererCandidates, rng)
+				if err != nil {
+					return PlanetReceipt{}, err
+				}
+				out.Vanished = true
+			}
 			w.invalidatePlanetLandings(planet.ID)
 			w.Sectors[planet.Sector].Planet = 0
-			planet.Sector = to
-			w.Sectors[to].Planet = planet.ID
+			planet.Sector = planetTo
+			w.Sectors[planetTo].Planet = planet.ID
 			p.Sector = to
 			p.DockToken = ""
 			p.MineGraceSector = 0
@@ -221,13 +234,17 @@ func (w *World) CommitPlanetAction(e PlanetIntent, rng func() float64, now time.
 			p.Turns -= 10
 			out.TransportTurns += 10
 			out.Hops++
-			out.PlanetSector = to
+			out.PlanetSector = planetTo
 			if len(w.Sectors[to].Minefield) > 0 || w.HostileDefense(p.ID, to) {
 				out.Stop = "defenses"
 				out.Mines, err = w.ResolveMinefield(p.ID, rng, now)
 				if err != nil {
 					return PlanetReceipt{}, err
 				}
+				break
+			}
+			if planet.Wanderer {
+				out.Stop = "wanderer"
 				break
 			}
 		}

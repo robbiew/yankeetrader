@@ -1002,7 +1002,7 @@ acknowledgements; keep the existing world.lock inode. Use finite generation and
 explicit bootstrap (New sets maintenance current, so Maintain immediately skips),
 carry supported configuration without re-enabling disabled lottery play, and
 validate the candidate before admission. Do not claim an unknown old seed or a
-currently absent Wanderer lifecycle. Test same-ID/generation reuse, login/reset
+Wanderer lifecycle (implemented below). Test same-ID/generation reuse, login/reset
 races, concurrent winners, rollback/durability/replay, history/epoch exhaustion,
 read-only migration and both real terminal interfaces. Update README alongside
 implementation; native/live acceptance and full DOS RNG/numeric fidelity remain
@@ -1025,7 +1025,7 @@ concurrency/process interruption, exact confirmations and terminal coverage.
 Remaining candidates: planetary thrusters/forced landing research, native/live
 acceptance, full universe generation and numeric/RNG parity, unsupported
 communication/intelligence and remaining random events. Explicit season archive
-export/admin reset tooling and The Wanderer lifecycle remain unimplemented.
+export/admin reset tooling remains unimplemented; Wanderer lifecycle is implemented below.
 
 
 ## Planetary thrusters and player forced landing — bounded research complete
@@ -1055,7 +1055,7 @@ nonreusable incarnation allocator is added, with an explicit migration. Keep laz
 projection distinct from persisted quote identity, preserve rollback/committed
 warnings and return actual saved receipts. Test concurrent movers/attackers,
 destroy/recreate ABA, successful-prefix failures, mines/fighter stops, work/RNG
-faults and both terminal interfaces. Unsupported Wanderer/disruption lifecycle,
+faults and both terminal interfaces. Historical unsupported Wanderer/disruption lifecycle,
 full original RNG/MBF parity and native/live acceptance remain separate.
 
 
@@ -1073,7 +1073,7 @@ public player news. Both interfaces return saved resource/casualty/capture recei
 and preserve committed durability warnings. README, terminal fixtures and CI are
 updated with this milestone. Current validation is recorded in evidence/VALIDATION.md.
 
-Remaining: Wanderer transport and actual thruster/disruption controls, original
+Remaining: actual targeted thruster/disruption controls, original
 RNG/MBF fidelity, broader long-running balance, live BBS and native Windows durability.
 
 
@@ -1097,7 +1097,7 @@ planet and ship at different destinations and distinct hazard roles. Native
 receipts hide the random planet destination. Later NPC destruction must be
 separated from a successful preceding relocation.
 
-Next: implement bounded Wanderer bootstrap/restoration/daily movement and special
+Research-stage contract (completed below): bounded Wanderer bootstrap/restoration/daily movement and special
 transport with persistent identity, explicit capacity/migration, finite candidate
 selection, protected existing assets, once-per-date maintenance, atomic links/
 resources/title/grants/aftermath, fresh incarnation on restoration and appropriate
@@ -1107,3 +1107,27 @@ never identify the mobile planet by name/slot accident, and preserve existing
 faction-home rules. README is updated in this research milestone; save version 24 and Go
 gameplay are unchanged. Exact RNG/MBF, actual disruption transport, balance and
 native/live acceptance remain open.
+
+
+## The Wanderer lifecycle and special transport — implementation complete
+
+[Save25 implementation](yt-wanderer/IMPLEMENTATION.md) adds explicit unique mobile
+identity in reserved slot 1, 100-planet capacity and asset-preserving older-save
+migration. Initializer/Genesis bootstrap a clean current-dated neutral planet.
+Forward-only daily maintenance relocates an existing Wanderer after economics,
+clears its governor, refills only a zero bank and invalidates all grants. Missing
+restoration follows faction-home placement priority, precedes mobile Xannor work,
+and allocates a fresh incarnation. Final daily receipts account for subsequent
+NPC destruction without recreating it twice in one run.
+
+Confirmed thrusters bind finite candidate occupancy and existing ship/season/
+planet/access/route hazards. The full quote must be affordable; successful transport
+spends 10 turns, stops after one edge and places ship/planet independently. Planned
+collision/stress precedes random placement; reached ship hazards remain atomic.
+Fresh confirmation, rollback, stale-incarnation/candidate checks, warning handling
+and hidden-destination receipts apply in both interfaces. README, schema migration
+assertions, isolated historical fixtures and the Wanderer terminal check are part
+of this milestone. See evidence/VALIDATION.md for executed checks.
+
+Remaining: targeted disruption controls, exact DOS RNG/MBF fidelity, broader balance,
+season archive export/admin reset tooling and native/live acceptance.

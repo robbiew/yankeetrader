@@ -33,6 +33,9 @@ def compare(actual,expected,first,last=24):
 
 def seed(data,name,research='yt-planet-screens'):
     path=data/'world.json';w=json.loads(path.read_text());p=w['Players']['1']
+    # Match the captured isolated ordinary-planet fixture, without the new bootstrap.
+    mobile=w['Planets'].pop('1',None)
+    if mobile:w['Sectors'][str(mobile['Sector'])]['Planet']=0
     prov=json.loads((ROOT/'research'/research/name/'provenance.json').read_text())
     source=(ROOT/'archive/analysis/yt-combat/experiments'/prov['fixture']/'before.dat').read_bytes()
     for field,offset in [('Credits',81),('Turns',49),('Holds',65),('Fighters',61),('Shields',53),('Ground',121),('Missiles',97),('Mines',129),('Plasma',113)]:p[field]=int(get(source,2,offset))

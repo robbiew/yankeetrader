@@ -15,6 +15,9 @@ def exercise(root, today):
     path = data / 'world.json'
     world = json.loads(path.read_text())
     # A version-12 save migrates without inventing a base until maintenance.
+    # Remove post-schema-24 bootstrap assets from this historical input fixture.
+    mobile=world['Planets'].pop('1',None)
+    if mobile:world['Sectors'][str(mobile['Sector'])]['Planet']=0
     world['Version'] = 12; world.pop("Season",None); world.pop("GenerationSeed",None)
     world.pop("NextPlanetGeneration",None)
     for planet in world.get("Planets",{}).values(): planet.pop("Generation",None)
@@ -25,7 +28,7 @@ def exercise(root, today):
     subprocess.run([BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
     created = json.loads(path.read_text())
     base = created['Planets']['99']
-    assert created['Version'] == 24 and created['Sectors']['8']['Planet'] == 99
+    assert created['Version'] == 25 and created['Sectors']['8']['Planet'] == 99
     assert base['FactionHome'] == 'mercenaries' and base['Owner'] == -2
     assert base['Production'] == [100000, 100000, 100000]
     assert base['Ground'] == 150000 and base['Bank'] == 25000000
@@ -46,7 +49,7 @@ def exercise(root, today):
         path.write_text(json.dumps(world))
         subprocess.run([BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
         saved = json.loads(path.read_text())
-        assert len(saved['Planets']) == 1 and saved['Planets']['99']['FactionHome'] == 'mercenaries'
+        assert len(saved['Planets']) == 2 and saved['Planets']['99']['FactionHome'] == 'mercenaries'
         restored = saved['Planets']['99']
         assert restored['Owner'] == (1 if captured else -2)
         assert restored['Ground'] == (0 if captured else 150000)
