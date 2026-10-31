@@ -171,6 +171,9 @@ def main():
         assert 'Resurrection - 0.1.0' in opening and 'https://github.com/robbiew/yankeetrader' in opening,opening
         assert 'Original game by Alan Davenport' in opening and 'Based on Yankee Trader Version 3.6' in opening,opening
         assert '717' not in opening and '9600 HST' not in opening,opening
+        subtitle='Resurrection - 0.1.0'
+        opening_row=''.join(c[0] for c in frames['opening'][6])
+        assert opening_row.index(subtitle)==(80-len(subtitle))//2,opening_row
         for y,row in enumerate(frames['title']):
             for x,cell in enumerate(row):
                 ch,attr=raw[(y*80+x)*2:(y*80+x)*2+2];expected=[bytes([ch]).decode('cp437') if ch>=32 else ' ',attr&15,(attr>>4)&7]
