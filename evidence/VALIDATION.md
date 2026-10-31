@@ -972,3 +972,45 @@ retained separately. README, reconstruction plan, implementation policies and CI
 are updated in the same implementation commit. Concrete limits, financial policy,
 privacy and unsupported follow-ups are in
 [IMPLEMENTATION.md](../research/yt-plasma/IMPLEMENTATION.md).
+
+## Mercenary plasma acquisition research — 2026-10-31
+
+Research-only update on feat/mercenary-plasma-sales-research, based on the
+published bounded plasma feature and its propagated disruption review fix.
+No Go gameplay, dependencies or save26 fields changed.
+
+- Retained 17 normally returned original DOS 3.6 controls, 34 complete world
+  snapshots and two exact saved-world/auxiliary reload chains. Fourteen complete
+  exact-declaration controls reused verified baseline/file hashes; corrected
+  deposit and both reloads were freshly executed. The incomplete deposit pilot
+  that entered quit confirmation is excluded from the canonical corpus.
+- A separate fresh quiet capture completed normally through the committed
+  writer recipe in a new disposable directory. Child captures refuse incomplete
+  parents. Archived executables/worlds were copied before execution.
+- Independent acquisition verifier passed all 17 controls, exact setup/raw-log/
+  menu/stock/credit/turn witnesses and both reload chains. Reload assertions allow
+  observed fractional planetary production and bank growth without replaying the
+  transfer.
+- Twelve retained native byte reads and one reconstructed MZ load image match
+  the original YT.EXE after all 870 relocations. Static interpretations and bounded
+  search coverage are documented separately from runtime observations.
+- All 38 acquisition corruption controls passed (30 rehashed DOS semantic and
+  provenance cases, six native/declaration cases and two altered archived-document
+  cases). Related plasma verification passed all 62 controls, two reload chains
+  and all 53 corruption controls. All 4,682 immutable archive hashes verified.
+- README, plan, prior plasma backlog notes and CI evidence commands were updated.
+  Syntax, relative documentation links and diff checks passed.
+
+Commands: scripts/verify_mercenary_plasma.py,
+scripts/test_mercenary_plasma_verifier.py, scripts/verify_plasma.py,
+scripts/test_plasma_verifier.py and scripts/verify_archive.py, each run with
+Python 3. No full Go, terminal smoke or cross-build suite was rerun for this
+research-only update; the original DOS capture is not Go/live BBS acceptance.
+Native Windows durability and complete DOS RNG/MBF parity remain separate.
+
+The versioned sources establish Mother Ship sales introduced in 3.3 at
+5,000,000 credits per bolt and explicitly removed in 3.4; the 3.6 Mercenary
+home planet is distinct. Current Earth and planet acquisition controls
+corroborate that removal within the inspected paths. Historical 3.3 seller
+eligibility, caps, hostility and write order remain unproved. No new merchant
+implementation is pending for DOS 3.6 parity.

@@ -125,3 +125,11 @@
 /research/yt-plasma/dos/**/RETURN.LOG -diff
 /research/yt-plasma/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-plasma/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Acquisition controls retain exact DOS keys, clocks, returns and transcript padding.
+/research/yt-mercenary-plasma/dos/** -text
+/research/yt-mercenary-plasma/dos/**/KEYS.TXT -diff
+/research/yt-mercenary-plasma/dos/**/DOS*.LOG -diff
+/research/yt-mercenary-plasma/dos/**/RETURN.LOG -diff
+/research/yt-mercenary-plasma/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-mercenary-plasma/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

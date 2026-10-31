@@ -1218,8 +1218,7 @@ Choose concrete shared work/quantity bounds and explicit self/friendly/posthumou
 source policies; add fresh sealed consent, privacy-aware saved receipts and a
 single store transaction for the origin cost, redirects, damage, deaths, wrecks,
 estates, planet removal and qualifying HQ reward/revenge. Do not copy missile
-friendship/cloak/self filters or the DOS HQ owner-check exploit. Mercenary sales,
-other spy/disruption branches, live BBS acceptance and native Windows durability
+friendship/cloak/self filters or the DOS HQ owner-check exploit. Other spy/disruption branches, live BBS acceptance and native Windows durability
 remain separate.
 
 
@@ -1253,7 +1252,24 @@ errors have focused regression coverage. Version1–25 saves upgrade without ass
 README documents save26 and actual playable/remaining status. The original DOS
 corpus is unchanged. See validation notes for executed checks and limits.
 
-Remaining work includes Mercenary plasma sales, additional spy/intelligence and
+Remaining work includes additional spy/intelligence and
 public-message/newspaper paths, exact original RNG/numeric parity, balance tuning,
 live BBS acceptance and native Windows crash durability. Those are separate from
 this completed bounded firing path.
+
+
+## Mercenary plasma acquisition — removed sales backlog correction (2026-10-31)
+
+The [versioned acquisition research](yt-mercenary-plasma/RECOVERY.md) closes the
+previous Mercenary plasma-sales item as obsolete. DOS 3.3 added a Mother Ship at
+5,000,000 credits per bolt; 3.4 explicitly removed it after adding planetary
+production. The Mercenary home planet added in 3.6 is a distinct capture target.
+Current Earth/planet dispatch evidence and copied-world DOS controls corroborate
+planetary acquisition within their stated search boundary. No claim of exhaustive
+universal absence, historical 3.3 purchase semantics or new purchase API is made.
+
+No Go gameplay or save26 change. README and prior plasma backlog references are
+corrected together; portable acquisition evidence verification is included in CI.
+Remaining candidates are additional ship/cloak/disruption spy intelligence,
+broadcast/team radio and multiline editing, remaining newspaper events, original
+universe/save parity, balance and native/live acceptance.

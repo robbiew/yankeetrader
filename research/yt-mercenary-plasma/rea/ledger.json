@@ -1,0 +1,120 @@
+{
+  "target": "archive/dos-original/YT.EXE",
+  "target_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "header_bytes": 3584,
+  "module_bytes": 170737,
+  "relocations": 870,
+  "load_segment": "0x1000",
+  "analysis_profile_digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029",
+  "reads": [
+    {
+      "label": "Main shell dispatch entry",
+      "evidence_id": "ev_fb361deb2b9d28e471cf64db96e8b744fb157013c3e4bd8120774b958d63c8d0",
+      "address": "0x11659",
+      "length": 528,
+      "file_offset": 9305,
+      "file_bytes_sha256": "5c889ee4591f559a125d8d9ae543ab3392bbf8127fd97dc5f52f6167d4c859f4",
+      "loaded_bytes_sha256": "d2f28e1aa50c276041b77c2b285641b655c52b2fc564c8c59e2ea90966954820"
+    },
+    {
+      "label": "Movement dispatch suffix",
+      "evidence_id": "ev_a8f5116f9c4b3f7f65062af6918d528030a27d0e87ca38c3590ed250a92a217e",
+      "address": "0x11ac0",
+      "length": 1152,
+      "file_offset": 10432,
+      "file_bytes_sha256": "0205ad1d341dce666b368a170b4ea5dee6fccac19caa0e3271193ea13b1c0283",
+      "loaded_bytes_sha256": "60cb0bd2510eaef8512ee6c20dfaecbab975b86682d08d44cf865856adfe8f5c"
+    },
+    {
+      "label": "Plasma firing admission prefix only",
+      "evidence_id": "ev_7049ed4bc8d32cc9d2d6cc8071ff9808e2976e7d27dcf899f754c927f6acd126",
+      "address": "0x12079",
+      "length": 16,
+      "file_offset": 11897,
+      "file_bytes_sha256": "0370ff12726d236a4d1a1aaa6358f975d087f0c39d8cb3bda34f235055d356e1",
+      "loaded_bytes_sha256": "0370ff12726d236a4d1a1aaa6358f975d087f0c39d8cb3bda34f235055d356e1"
+    },
+    {
+      "label": "Planet thruster confirmation context (not sales admission)",
+      "evidence_id": "ev_fdc76e0bc436fb94db44f15223c5a53c3b118c728b2ffa946f0556109917847e",
+      "address": "0x13240",
+      "length": 1024,
+      "file_offset": 16448,
+      "file_bytes_sha256": "2689b0f1342e70d7b014f18f30bea1e034912213781a8e41f8372a053ca04b53",
+      "loaded_bytes_sha256": "98ca5d39fd7b2a1084355a13cb6ba8317dbae35c7e1cc041769aa419b52a0190"
+    },
+    {
+      "label": "Planet take dispatch, amount parsing and initial writes",
+      "evidence_id": "ev_089aa58363eb6d73ea33114b401e078b668a09ee53e6b0fa79f8692d5be9249e",
+      "address": "0x13e61",
+      "length": 1536,
+      "file_offset": 19553,
+      "file_bytes_sha256": "42a69c0358a138972e40cc4f8ee28c9d77f53b4845d1b5c27ded43f556920ded",
+      "loaded_bytes_sha256": "42a69c0358a138972e40cc4f8ee28c9d77f53b4845d1b5c27ded43f556920ded"
+    },
+    {
+      "label": "Planet take plasma decrement and final save",
+      "evidence_id": "ev_c602a24c8cc873d6c39d6e2cdf7037cd86cabac0e4259643145f0e3d8aafe54e",
+      "address": "0x144a1",
+      "length": 320,
+      "file_offset": 21153,
+      "file_bytes_sha256": "5dd3d145f7b56535421336ef5fb30b6ca2524e556e545159003ea3f1147fbb6c",
+      "loaded_bytes_sha256": "5dd3d145f7b56535421336ef5fb30b6ca2524e556e545159003ea3f1147fbb6c"
+    },
+    {
+      "label": "Planet deposit menu and plasma full-stock transfer",
+      "evidence_id": "ev_5c3cd9d3e4eeab1ba3497315747f6155ce15afd4752993a735e792b3752930b7",
+      "address": "0x148b0",
+      "length": 1536,
+      "file_offset": 22192,
+      "file_bytes_sha256": "53e54f373a57b3c298e5bcc17c049e0fe33e70c19775025df9cd4c227c33fcdf",
+      "loaded_bytes_sha256": "1ac56b0d12413f7516b662eb0f89538087c77e5c8da5fb40e97f054db00f9474"
+    },
+    {
+      "label": "Port positive-turn gate and Earth selection",
+      "evidence_id": "ev_496d9278968384588ee4305d9568e35dcec59eb5c35e36377bada215b237765c",
+      "address": "0x1660d",
+      "length": 512,
+      "file_offset": 29709,
+      "file_bytes_sha256": "5ca048359d6f68901c4fd4f01d0c8ae2fec049e07742a33f5ec3f331afbb2475",
+      "loaded_bytes_sha256": "dffc853c82bc92d1ec84c5f3240d20e079e8f33481af22c25521655d1c035335"
+    },
+    {
+      "label": "Ordinary port pricing projection",
+      "evidence_id": "ev_8da0a7335ea77d77f744a8adb412536093dc64376efe808a1119c4b5713a71da",
+      "address": "0x168e0",
+      "length": 640,
+      "file_offset": 30432,
+      "file_bytes_sha256": "34fffc889ad407c05a5773ab2d1148144d9afb7c1d6b3c4922c93ec1d31ca68b",
+      "loaded_bytes_sha256": "34fffc889ad407c05a5773ab2d1148144d9afb7c1d6b3c4922c93ec1d31ca68b"
+    },
+    {
+      "label": "Earth menu, dispatcher and item handlers",
+      "evidence_id": "ev_111011b9d4ba9e16cf8e23bd1183eda8853f57de270202a099db7e3a6a2434f5",
+      "address": "0x16d00",
+      "length": 4096,
+      "file_offset": 31488,
+      "file_bytes_sha256": "3727b2432c43b575e30ae83bc92d087656d5cc8cc1ff8de5b7726c08d6c1ed1f",
+      "loaded_bytes_sha256": "1175037b690e7b21f019ad0376dff59df2ae5dc9a06801182d868b25f8b651d1"
+    },
+    {
+      "label": "Planet take and transfer labels",
+      "evidence_id": "ev_add1d7a47e8f32cd4c06fb17e9af3d8e293cbc80abebb443d4836a8e19916642",
+      "address": "0x3415a",
+      "length": 800,
+      "file_offset": 151386,
+      "file_bytes_sha256": "fe7a694092924c26c14834223723a5b6a9ac5ac179eed522cc9133ab6007dc27",
+      "loaded_bytes_sha256": "fe7a694092924c26c14834223723a5b6a9ac5ac179eed522cc9133ab6007dc27"
+    },
+    {
+      "label": "Earth menu labels and input prompts",
+      "evidence_id": "ev_e83d443bc5d9bf3be107b83aa0ed12a89ecf1b3edca77c6bd7326256089c3e43",
+      "address": "0x34ef6",
+      "length": 1480,
+      "file_offset": 154870,
+      "file_bytes_sha256": "8d2efa876275732ddd3d6ee52dca87728e1bf8ecf566ecf1e615065e90af0e68",
+      "loaded_bytes_sha256": "8d2efa876275732ddd3d6ee52dca87728e1bf8ecf566ecf1e615065e90af0e68"
+    }
+  ],
+  "load_image_evidence_id": "ev_03514cdc41e9c75482e17cee3453202b476020e2c67335ece260857148a762e9"
+}

@@ -178,7 +178,7 @@ output errors. The real terminal smoke covers ten compact/classic scenarios and
 nonfatal reconnects. See [the validation record](../../evidence/VALIDATION.md) for
 completed checks and platform limits.
 
-Mercenary plasma sales, extra spy/intelligence or newspaper event types, exact
+Mercenary sales were [removed in DOS 3.4](../yt-mercenary-plasma/RECOVERY.md), so no shop is pending for 3.6 parity. Extra spy/intelligence or newspaper event types, exact
 DOS RNG/MBF parity, balance tuning, live BBS acceptance and native Windows crash
 durability remain separate. The [research corpus](RECOVERY.md) is preserved as
 historical evidence rather than rewritten to imply Go implementation parity.

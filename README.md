@@ -6,6 +6,11 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> <quantity>` or classic `+` with 1–64 bolts and fresh confirmation. The shared energy pool follows directed routes, can be redirected by login-local black holes and can damage friendly, cloaked or your own ships and planets. Costs, damage, wreck mines and death/estate cleanup save atomically. Save version **26** adds explicit plasma death semantics; back up the stopped door and update all nodes together. [Rules and limits](research/yt-plasma/IMPLEMENTATION.md).
 
+Mercenary plasma sales are removed historical behavior, not an unfinished DOS 3.6
+feature: the mother ship was added in 3.3 and removed in 3.4. The 3.6 Mercenary
+home planet is a capture target; plasma comes from planetary stocks. See
+[acquisition research](research/yt-mercenary-plasma/RECOVERY.md).
+
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
 ### Available in-game to test
@@ -22,7 +27,7 @@ Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Mercenary plasma sales, explicit season archive export/administrative reset tooling and remaining disruption spy intelligence.
+- Explicit season archive export/administrative reset tooling and remaining disruption spy intelligence.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1178,7 +1183,7 @@ indiscriminate physical damage from what a receipt may reveal, and distinguishes
 
 **Historical research boundary:** this stage changed no Go code or save version
 25 and did not make firing available. The [implementation below](#bounded-plasma-launching)
-now supplies that playable flow in save 26. Exact DOS random/numeric parity, Mercenary plasma sales,
+now supplies that playable flow in save 26. Exact DOS random/numeric parity,
 live BBS acceptance and native Windows durability remain separate.
 
 Run `python3 scripts/verify_plasma.py` and
@@ -1219,7 +1224,7 @@ Save **26** upgrades supported older saves without new inventory. Work limits
 are 128 entered sectors, 32 redirects, 100,000 absorption rounds and 200,000 random
 draws for the entire launch; exceeding a limit aborts intact. Nonfinancial float64
 arithmetic is bounded, with exact integer money/stock accounting. Original DOS
-RNG/MBF parity, Mercenary plasma sales, live BBS acceptance and native Windows
+RNG/MBF parity, live BBS acceptance and native Windows
 crash durability remain separate. See [implementation policies and tests](research/yt-plasma/IMPLEMENTATION.md)
 and [real terminal evidence](evidence/plasma-smoke.txt).
 
@@ -1230,3 +1235,26 @@ commands and Linux/Windows cross-builds. Public-history terminal readers also
 handle additional pages from legitimate daily awards, with a forced paging
 fixture; production newspaper rules are unchanged. Historical captures remain
 preserved. [Validation scope](evidence/VALIDATION.md).
+
+
+## Mercenary plasma sales — historical feature removed
+
+The original change log explicitly added a Mercenary Mother Ship selling bolts
+for 5,000,000 credits in **3.3**, then removed it in **3.4** when planetary
+production replaced that supply. The defended Mercenary home planet added in
+**3.6** is a different feature. This closes the obsolete sales backlog item;
+there is no current purchase API or shop to implement for DOS 3.6 parity.
+
+[Acquisition research](research/yt-mercenary-plasma/RECOVERY.md) distinguishes
+versioned documentation, bounded current-binary inspection and isolated DOS
+controls. Current planetary take/deposit paths remain the supported supply
+mechanism. Restoring a Mother Ship shop would be a new optional design rather
+than a recovered 3.6 rule. This research changes no Go gameplay or save26 fields.
+
+Validation retained 17 completed DOS controls, two exact reload chains and 12
+native byte observations with all 870 relocations checked. All 38 corruption
+controls pass; all 4,682 archive hashes remain unchanged. Run the acquisition
+verifier and corruption controls with Python 3:
+
+    python3 scripts/verify_mercenary_plasma.py
+    python3 scripts/test_mercenary_plasma_verifier.py
