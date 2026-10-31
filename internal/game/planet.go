@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 26 {
+		for _, p := range w.Players {
+			if p != nil && p.Death != nil && p.Death.Cause == "plasma" {
+				return errors.New("legacy world unexpectedly contains plasma death")
+			}
+		}
+	}
 	if w.Version < 25 {
 		for _, p := range w.Planets {
 			if p != nil && p.Wanderer {
@@ -297,6 +304,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 24 {
 		w.Version = 25
+	}
+	if w.Version == 25 {
+		w.Version = 26
 	}
 	return nil
 }

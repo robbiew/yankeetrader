@@ -885,3 +885,90 @@ using the temporary validation modfile for the supported local GoDoors checkout.
 Go formatting, edited links and diff checks passed. Production Go code, save 25,
 dependencies, and retained DOS/terminal evidence are unchanged. GitHub must still
 complete the full check sequence on the new pushed head before merge readiness.
+
+## Plasma launch, routing and disruption research (2026-10-31)
+
+Research only; no Go gameplay or save change. The retained corpus has 62 normally
+returned DOS controls, 124 complete world snapshots, two exact world/auxiliary
+reload chains, 13 complete native byte reads and an independently reconstructed
+MZ image with all 870 relocations. Native decision/impact coverage ends at the
+plasma return opcode; its final two operand bytes are outside this fresh read
+set. Existing historical listings are not presented as additional runtime runs.
+
+The independent verifier checks original binary/base identities, exact controlled
+setup, clocks/keys/return markers, complete raw CP437 and auxiliary witnesses,
+launch resources, route/energy and indiscriminate damage receipts, deaths/wrecks,
+planet projection/destruction and full saved-world mutation footprints. All
+53 corruption controls pass: 47 rehashed DOS semantic/provenance changes and six
+native/declaration changes. Matched non-firing projection controls prevent raw
+warehouse-derived production from being mistaken for unconditional plasma damage.
+Numeric score checks allow bounded original MBF rounding; exact retained bytes
+are additionally pinned. Fresh clocks are not required to reproduce casualty
+counts or an unrecovered random sequence.
+
+All 60 current CI evidence/control commands passed locally, including the new
+plasma verifier/corruptions, existing milestone verifiers and all 4682 immutable
+archive hashes. A separate fresh quiet-origin capture-writer control returned
+normally from a disposable copied DOS world. Final capture declarations match all
+62 retained controls; research document links and diff whitespace checks pass.
+CI adds the two new portable plasma checks without removing existing checks.
+
+Go sources, dependencies and schema25 are unchanged; the full Go race/vet suite,
+terminal smokes and cross-builds were not rerun for these research-only edits.
+Plasma firing remains unimplemented. The candidate contract separates original
+rules from finite-budget, atomic-save, self/friendly death and privacy policies.
+Live BBS acceptance and native Windows crash durability remain unverified. See
+[recovery and reproduction](../research/yt-plasma/RECOVERY.md) and
+[the proposed implementation](../research/yt-plasma/CONTRACT.md).
+
+## Bounded plasma launching and atomic aftermath (2026-10-31)
+
+Plasma is now available in both interfaces as `PLASMA`/`+`, separately from the
+historical research-only stage above. The launch uses fresh single-use consent,
+one shared bounded energy pool, directed/hole-rebuilt courses and indiscriminate
+physical damage. Costs, death/estate/salvage, wreck mines, local arrival, planet
+cleanup and qualifying HQ reward/revenge/news commit together. Schema26 adds
+explicit plasma death semantics; supported older saves migrate without assets.
+
+Validation on macOS arm64 with Go1.27.3 and the local GoDoors dependency override:
+
+- Full final `go test -race -count=1 ./...` and `go vet ./...` pass. Repository
+  module/checksum files and the GoDoors checkout are unchanged.
+- Focused rules/storage/interface checks cover 32 seeded conservation worlds,
+  zero/invalid RNG and work limits, stored-exit ties/range, friendly/self/cloaked
+  hits, resource/energy sharing, stock-derived production, retirement and landing
+  revocation, actual HQ owner/headroom, self/friendly/posthumous attribution,
+  surviving/fatal local wreck-mine chains and remaining-layer conservation.
+- Store coverage includes byte-identical rollback after death/loot/late hazards
+  and HQ publication, capacity failures, competing logins, altered/replayed/cancelled
+  consent, real Genesis reset with reused IDs, world/cache lock expiry, expiry
+  during a random draw, read-only version25 migration and committed durability.
+- Both interfaces cover exact fresh confirmation, strict integer input, EOF,
+  concealed-state changes, self-death login termination/replacement timing and
+  preservation of committed storage warnings through receipt-output failures.
+- All **51 current CI terminal/control commands** pass locally. The new real
+  GoDoors smoke retains **ten compact/classic scenarios**, with accepted/cancelled/
+  stale launches, hidden physical hits, self death, mixed wreck/planet impacts and
+  surviving reconnects without replay. Its current transcript is
+  [plasma-smoke.txt](plasma-smoke.txt).
+- The broader terminal run reproduced an old public-newspaper test hang when a
+  legitimate random award added a page. Public-history viewer checks now opt into
+  bounded automatic page answers and a fresh quit. A deterministic six-event
+  fixture exercises that path; explicit pager-choice tests retain their default
+  behavior. No production newspaper or random-award rule was changed. Older
+  smoke assertions now expect current schema26 while historical input versions
+  remain intact.
+- All **60 current CI evidence/control commands** pass, including the 62-control
+  plasma corpus, its 53 corruption controls and every one of the **4682 original
+  archive hashes**. No new original-DOS runtime or RNG parity is claimed by the
+  implementation tests.
+- Linux/amd64 and Windows/amd64 final cross-builds pass. This is build evidence;
+  native Windows file/socket/crash durability and live BBS play remain untested.
+
+Before the broad run, all 226 existing evidence files were backed up; 148
+regenerated historical captures were restored byte-for-byte. Only this validation
+note intentionally changes among those files; the new plasma transcript is
+retained separately. README, reconstruction plan, implementation policies and CI
+are updated in the same implementation commit. Concrete limits, financial policy,
+privacy and unsupported follow-ups are in
+[IMPLEMENTATION.md](../research/yt-plasma/IMPLEMENTATION.md).

@@ -19,6 +19,11 @@ func (w *World) applyDeathEstate(victim *Player, context DeathContext) {
 	if context.Cause == "combat" || context.Cause == "retaliation" || context.Cause == "missile" {
 		recipient = context.Killer
 	}
+	if context.Cause == "plasma" && context.Killer != victim.ID {
+		if source := w.Players[context.Killer]; source != nil && source.Death == nil {
+			recipient = source.ID
+		}
+	}
 	affected := map[int]bool{}
 	for _, port := range w.Ports {
 		if port.ID != 1 && port.Owner == victim.ID {

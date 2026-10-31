@@ -20,7 +20,7 @@ def exercise(guard):
                     w['Xannor']=dict(HQ=8,Reserve=0);w['Sectors']['7']['Warps']=[8];w['Sectors']['8']['Warps']=[7]
                     w['Sectors']['8']['Defense']=dict(Owner=-1,Fighters=1)
                     path.write_text(json.dumps(w));prompt=b'Main Command (?=Help)?'if classic else b'> '
-                    ending=b'news today;q;y\r'if classic else b'news;q\r'
+                    ending=b'news today\r'if classic else b'news\r'
                     answer=b'n\r'if mode=='cancel'else b'y\r'
                     if weapon=='fighters':
                         command='breach 8 10000';replies=[(b'Accept human surrender if offered during this battle? [Y/n] ',b'y\r'),(b'defeat forces emergency escape. [y/N] ',answer),(prompt,ending)]
@@ -28,9 +28,10 @@ def exercise(guard):
                         command='bribe 8 1';replies=[(b'[y/N] ',answer),(prompt,ending)]
                     else:
                         command='missile 8 3';replies=[(b'[y/N] ',answer),(prompt,ending)]
-                    text=guard.run(play,data,'Captain',command,classic=classic,followups=replies)
+                    replies.append((prompt,b'q;y\r'if classic else b'q\r'))
+                    text=guard.run(play,data,'Captain',command,classic=classic,followups=replies,page_news=True)
                     saved=json.loads(path.read_text());p=saved['Players']['1']
-                    assert saved['Version']==25 and p['Credits']==balance+want,(mode,text)
+                    assert saved['Version']==26 and p['Credits']==balance+want,(mode,text)
                     news=[e for e in saved['News']if e['Kind']=='xannor-hq-victory']
                     if mode=='cancel':
                         assert saved['Sectors']['8']['Defense']['Fighters']==1 and not news and 'Credits added:'not in text,text
@@ -41,7 +42,7 @@ def exercise(guard):
                     assert not saved['Sectors']['8'].get('Defense') and saved['Xannor']['Revenge']['Player']==1
                     assert saved['Players']['2']['Credits']==original['Players']['2']['Credits']
                     # A different caller sees public victory, never the private credited amount.
-                    public=guard.run(play,data,'Visitor','news;q')
+                    public=guard.run(play,data,'Visitor','news',followups=[(b'> ',b'q\r')],page_news=True)
                     assert 'Captain  Defeated the Xannor HQ!'in public and 'Credits added:'not in public and str(MAX)not in public,public
                     assert 'Ship credit limit capped'not in public
                     # Returning is not another victory; no deferred receipt or money redemption.

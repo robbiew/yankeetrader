@@ -51,7 +51,7 @@ def exercise(guard):
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
             p = saved['Players']['1']
-            assert saved['Version'] == 25 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
+            assert saved['Version'] == 26 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
             for asset in ('Credits', 'Fighters', 'Missiles', 'Mines', 'Plasma', 'Cargo'):
                 assert p[asset] == world['Players']['1'][asset], (asset, p)
             reports = p['BattleReports']
@@ -78,7 +78,7 @@ def exercise(guard):
             before = path.read_bytes()
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             assert path.read_bytes() == before, 'maintenance replayed assault'
-            public = guard.run(play, data, 'Visitor', 'battles;news;q')
+            public = guard.run(play, data, 'Visitor', 'battles;news', followups=[(b'> ', b'q\r')], page_news=True)
             assert 'Xannor assault on Assault probe:' in public and 'Private Xannor' not in public
             assert 'ground ' not in public and 'Production ' not in public and 'Cargo ' not in public
             private = f"Assault probe: Xannor lost {report['XannorLost']} fighters; ground {battle['GroundBefore']} -> {battle['GroundAfter']}."

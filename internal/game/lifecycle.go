@@ -83,6 +83,10 @@ func (w *World) deathTarget(context DeathContext, now time.Time) (*Player, error
 				}
 			}
 		}
+	case "plasma":
+		if context.Killer < 1 || w.Players[context.Killer] == nil {
+			return nil, errors.New("invalid plasma source")
+		}
 	case "mines":
 		if context.Killer < 0 || (context.Killer > 0 && w.Players[context.Killer] == nil) {
 			return nil, errors.New("invalid mine source")
@@ -130,10 +134,13 @@ func (w *World) recordDeath(p *Player, context DeathContext, now time.Time) {
 	p.DockUntil = time.Time{}
 	p.DockPrices = [3]int64{}
 	w.applyDeathEstate(p, context)
-	if context.Cause == "xannor" {
+	if context.Cause == "xannor" || context.Cause == "plasma" {
 		p.Credits, p.Holds, p.Fighters, p.Shields, p.Ground = 0, 0, 0, 0, 0
 		p.Cargo = [3]int64{}
 		p.Missiles, p.Mines, p.Plasma = 0, 0, 0
+	}
+	if context.Cause == "plasma" {
+		p.Cloak = 0
 	}
 }
 
@@ -154,7 +161,7 @@ func (w *World) ReplaceShip(id int, now time.Time) error {
 	if now.Before(p.Death.At) || p.ShipGeneration == math.MaxUint64 {
 		return errors.New("invalid replacement time or exhausted ship generation")
 	}
-	if p.Death.Cause == "self" && day(now) <= day(p.Death.At) {
+	if (p.Death.Cause == "self" || p.Death.Cause == "plasma" && p.Death.Killer == p.ID) && day(now) <= day(p.Death.At) {
 		return errors.New("self-destroyed ships may be replaced tomorrow (UTC)")
 	}
 	p.ShipGeneration++
@@ -211,6 +218,10 @@ func (w *World) validateLifecycle() error {
 		case "combat", "retaliation", "missile":
 			if death.Killer == p.ID || w.Players[death.Killer] == nil {
 				return errors.New("invalid enemy killer")
+			}
+		case "plasma":
+			if death.Killer < 1 || w.Players[death.Killer] == nil || p.Cloak != 0 || p.Credits != 0 || p.Holds != 0 || p.Fighters != 0 || p.Shields != 0 || p.Ground != 0 || p.Cargo != [3]int64{} || p.Missiles != 0 || p.Mines != 0 || p.Plasma != 0 {
+				return errors.New("invalid plasma death")
 			}
 		case "mines":
 			if death.Killer < 0 || (death.Killer > 0 && w.Players[death.Killer] == nil) {

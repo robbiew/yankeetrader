@@ -1,0 +1,504 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > plasma 8 1;y
+Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 1/0; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/0.
+
+Sector 1 | 100000 credits | 499 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > plasma 8 1;y
+Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] n
+Plasma launch cancelled.
+
+Sector 1 | 100000 credits | 500 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > plasma 8 1;y
+Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+plasma confirmation changed; reconsider the launch
+
+Sector 1 | 100000 credits | 500 turns > q
+Saved. Safe travels, Captain.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > plasma 1 1;y
+Launch 1 plasma bolts toward sector 1 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 0; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 1/1; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 1 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/3.
+Self-inflicted plasma death: replacement is available after the next UTC midnight.
+Your ship was destroyed during the launch aftermath; this login has ended.
+your ship was destroyed; reconnect for a replacement
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Captain. Actions save automatically. Type ? for help.
+
+Sector 1 | 100000 credits | 500 turns > plasma 8 1;y
+Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 3. Ships struck/destroyed: 1/1; planets struck/destroyed: 1/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 66 credits, 1 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 3/0.
+
+Sector 1 | 100066 credits | 499 turns > q
+Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 0           | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 1000000     | Cloak Energy. : 0%   |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? +;8;1;y
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 1/0; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/0.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 0           | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 1000000     | Cloak Energy. : 0%   |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? +;8;1;y
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] n
+Plasma launch cancelled.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 0           | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 1000000     | Cloak Energy. : 0%   |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? +;8;1;y
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+plasma confirmation changed; reconsider the launch
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 0           | Ore.......... : 0    |
+| Mines.... : 3           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 1           | Cloak Energy. : 0%   |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? +;1;1;y
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 1 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 0; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 1/1; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 1 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/3.
+Self-inflicted plasma death: replacement is available after the next UTC midnight.
+Your ship was destroyed during the launch aftermath; this login has ended.
+your ship was destroyed; reconnect for a replacement
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Captain!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Captain
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 100000      | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 0           | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 1000000     | Cloak Energy. : 0%   |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Warps lead to: 8
+
+Time: 179:59  Main Command (?=Help)? +;8;1;y
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 8 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 499. Sector fighters destroyed: 0; mines destroyed: 3. Ships struck/destroyed: 1/1; planets struck/destroyed: 1/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 32 credits, 3 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 3/0.
+
+Time: 179:59  Main Command (?=Help)? q;y
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Captain.

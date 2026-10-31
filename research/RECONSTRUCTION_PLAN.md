@@ -1189,3 +1189,71 @@ checks, quiet historical-fixture selection and CI include the milestone.
 Remaining: exact DOS RNG/MBF parity, unrelated disruption combat/spy branches,
 broader balance, season archive export/admin reset tooling and native/live BBS
 acceptance. Consult evidence/VALIDATION.md for checks actually executed.
+
+
+## Plasma launch, routing and disruption research (2026-10-31)
+
+Completed the [research slice](yt-plasma/RECOVERY.md): 62 normally returned DOS
+controls, 124 full world snapshots, two exact world/auxiliary reload chains,
+13 native byte reads and a reconstructed MZ load image with 870 relocations.
+Original binaries and the archive remain unchanged. This extends the older
+absorption corpus rather than recounting those sessions as new work.
+
+Recovered positive-turn/stock admission and launch debit, blank cancellation and
+fresh invalid-input reprompts, directed BFS/tie order/avoid bypass, fixed launch
+energy attenuation and the 50-entry empty-course limit. Actual login holes reroute
+the projectile before absorption and rebuild a course; they do not teleport the
+ship. Controls cover self/friendly/cloaked hits, shared fighter/mine/ship/planet
+absorption, wreck mines, death and saved salvage, lazy warehouse-derived production,
+true zero-impact-rate retirement and logical planet cleanup. Native interpretation
+and raw execution remain separate; whole estates, exact RNG/MBF parity, protected
+world policy and every maximal input are not newly proved.
+
+Independent portable verification and 53 rehashed corruption controls are wired
+into CI. README and validation notes describe the research boundary. No Go gameplay
+or save change: schema25 and the published disruption implementation are preserved.
+
+**Next implementation:** [bounded plasma launch and atomic aftermath](yt-plasma/CONTRACT.md).
+Choose concrete shared work/quantity bounds and explicit self/friendly/posthumous
+source policies; add fresh sealed consent, privacy-aware saved receipts and a
+single store transaction for the origin cost, redirects, damage, deaths, wrecks,
+estates, planet removal and qualifying HQ reward/revenge. Do not copy missile
+friendship/cloak/self filters or the DOS HQ owner-check exploit. Mercenary sales,
+other spy/disruption branches, live BBS acceptance and native Windows durability
+remain separate.
+
+
+## Bounded plasma launch and atomic aftermath (2026-10-31)
+
+Implemented the [researched plasma contract](yt-plasma/IMPLEMENTATION.md) on a
+separate feature branch. Both interfaces now expose `PLASMA`/`+` with fresh sealed
+consent and 1–64 available bolts. Own/empty and unreachable courses retain their
+explicit recovered financial behavior. Directed BFS/stored-exit ties, avoids
+bypass, fixed energy attenuation, hole-first rerouting and shared defense/mine/
+ship/planet absorption are bounded by per-launch limits. No RNG is consumed by
+read-only previews; all possible redirect targets are covered by the sealed world
+and login context. Changed or replayed consent cannot spend resources.
+
+Ship deaths use schema26's explicit plasma cause, with self/friendly/posthumous
+attribution, consistent ship cleanup and living-recipient estate rules. Self
+plasma death keeps the next-UTC-day cooldown; other victims receive normal fresh
+login replacements without refilling turns. All carried wreck mines are excluded
+from salvage, attributed to their carrier, absorbed before later targets and
+resolved locally before saving when they endanger the surviving launcher. Earth
+remains mine-free. Reached planets project lazily and receive bounded damage,
+caps, governor clearing and generation/access-safe removal. Unreached planets
+are untouched. Qualifying HQ rewards/revenge/news remain atomic and retain the
+actual-Xannor-owner guard. No invented missile retaliation is introduced.
+
+The store consumes a login-local nonce and commits costs, consequences, hazards,
+loot, deaths, estates, cleanup and HQ publication together. Private saved receipts
+omit concealed aliases, private banks and projectile/hole coordinates; late
+failure, concurrency, real reset with reused IDs and committed output/storage
+errors have focused regression coverage. Version1–25 saves upgrade without assets;
+README documents save26 and actual playable/remaining status. The original DOS
+corpus is unchanged. See validation notes for executed checks and limits.
+
+Remaining work includes Mercenary plasma sales, additional spy/intelligence and
+public-message/newspaper paths, exact original RNG/numeric parity, balance tuning,
+live BBS acceptance and native Windows crash durability. Those are separate from
+this completed bounded firing path.
