@@ -29,6 +29,12 @@ type Store struct {
 	syncDirectory func(string) error
 }
 type shipSession struct {
+	arrivalMu        sync.Mutex
+	disruption       *game.Disruption
+	arrivalRNG       func() float64
+	arrivalNow       func() time.Time
+	arrivalDeadline  time.Time
+	arrivalReceipt   game.ArrivalOutcome
 	planetActive     string
 	planetDigest     [32]byte
 	lotteryActive    *game.LotteryIntent
@@ -152,6 +158,10 @@ func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool)
 	return s.updateState(fn, allowMines, allowDefense, nil)
 }
 func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense bool, spyFn func(*game.World, *game.SpyNetwork) error) error {
+	if s.ship != nil {
+		s.ship.arrivalMu.Lock()
+		defer s.ship.arrivalMu.Unlock()
+	}
 	if spyFn != nil && s.ship != nil {
 		s.ship.spyMu.Lock()
 		defer s.ship.spyMu.Unlock()
@@ -164,6 +174,21 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 		if e = s.checkShip(w); e != nil {
 			return e
 		}
+		var originSector int
+		var originSequence uint64
+		if s.ship != nil && s.ship.disruption != nil {
+			if !time.Now().Before(s.ship.arrivalDeadline) {
+				return errors.New("session time expired")
+			}
+			if e = w.BindDisruption(*s.ship.disruption, s.ship.arrivalRNG, s.ship.arrivalNow); e != nil {
+				return e
+			}
+			originSector = w.Players[s.ship.id].Sector
+			originSequence = w.Players[s.ship.id].WarpSequence
+			if w.Disrupted(s.ship.id, originSector) && !(allowMines && allowDefense) {
+				return errors.New("resolve the current disruption before acting")
+			}
+		}
 		if s.ship != nil && !allowMines && w.HasMineEncounter(s.ship.id) {
 			return game.ErrMineEncounter
 		}
@@ -172,6 +197,23 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 		}
 		if e = fn(w); e != nil {
 			return e
+		}
+		if s.ship != nil && s.ship.disruption != nil {
+			p := w.Players[s.ship.id]
+			if w.Season != s.ship.season {
+				return game.ErrSeasonChanged
+			}
+			if p == nil || (p.ShipGeneration != s.ship.generation && !(p.Death != nil && p.ShipGeneration-1 == s.ship.generation)) {
+				return game.ErrShipChanged
+			}
+			if p.Sector != originSector || p.WarpSequence != originSequence {
+				if e = w.FinishArrival(); e != nil {
+					return e
+				}
+			}
+			if !time.Now().Before(s.ship.arrivalDeadline) {
+				return errors.New("session time expired")
+			}
 		}
 		var staged *game.SpyNetwork
 		if spyFn != nil {
@@ -191,10 +233,20 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 		if staged != nil {
 			*s.ship.spies = *staged
 		}
+		if s.ship != nil && s.ship.disruption != nil {
+			out := w.ArrivalOutcome()
+			if len(out.Warps) > 0 {
+				s.ship.arrivalReceipt = out
+			}
+		}
 		return e
 	})
 }
 func (s Store) View() (*game.World, error) {
+	if s.ship != nil {
+		s.ship.arrivalMu.Lock()
+		defer s.ship.arrivalMu.Unlock()
+	}
 	var w *game.World
 	err := s.locked(func() error { var e error; w, e = s.load(); return e })
 	if err == nil {
@@ -202,6 +254,9 @@ func (s Store) View() (*game.World, error) {
 	}
 	if err != nil {
 		return nil, err
+	}
+	if s.ship != nil && s.ship.disruption != nil {
+		err = w.BindDisruption(*s.ship.disruption, nil, nil)
 	}
 	return w, err
 }

@@ -1,4 +1,5 @@
 """Verify saved cloak and hidden/visible sensor output through real GoDoors PTYs."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -13,6 +14,7 @@ root = Path(__file__).resolve().parents[1]
 binary = str(root / "bin/yt")
 
 
+@without_disruption
 def play(data, commands, confirmation=None):
     master,slave = pty.openpty()
     proc = subprocess.Popen([binary,'-compact',"-data",str(data),"-local","Navigator"],stdin=slave,stdout=slave,stderr=slave)
@@ -30,6 +32,7 @@ def play(data, commands, confirmation=None):
                     raise
                 if not chunk: break
                 chunks.append(chunk)
+                reject_disruption(b''.join(chunks))
                 text = b"".join(chunks)
                 if not sent and b"> " in text:
                     os.write(master,commands)

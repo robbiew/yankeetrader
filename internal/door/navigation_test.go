@@ -22,7 +22,7 @@ func navigationSession(t *testing.T, term Terminal) (Session, store.Store) {
 	if err := st.Create(w); err != nil {
 		t.Fatal(err)
 	}
-	return Session{Store: st, Terminal: term, Identity: "nav", Alias: "Navigator", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}, st
+	return Session{disruptionRandom: func() float64 { return .7 }, Store: st, Terminal: term, Identity: "nav", Alias: "Navigator", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}, st
 }
 
 func TestNavigationCommandsAndConfirmation(t *testing.T) {
@@ -189,6 +189,7 @@ func TestSensorEarthSellsEquipment(t *testing.T) {
 func TestAvoidCommandsPersistAcrossReconnect(t *testing.T) {
 	term := &scripted{lines: []string{"avoid 1 2;avoid;path 1 4;auto 4;n;q"}}
 	s, st := navigationSession(t, term)
+	s.disruptionRandom = func() float64 { return .999999 } // Sector7 is outside this avoid-route fixture.
 	if err := st.Update(func(w *game.World) error {
 		w.Sectors[1].Warps = []int{2, 5}
 		w.Sectors[5].Warps = []int{6}

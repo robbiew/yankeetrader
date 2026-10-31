@@ -38,7 +38,7 @@ func planetSession(t *testing.T) (Session, int) {
 	if err = st.Create(w); err != nil {
 		t.Fatal(err)
 	}
-	return Session{Store: st, Terminal: &scripted{}, Now: func() time.Time { return now }, Deadline: time.Now().Add(time.Minute)}, p.ID
+	return Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: &scripted{}, Now: func() time.Time { return now }, Deadline: time.Now().Add(time.Minute)}, p.ID
 }
 
 func TestClassicPlanetTransactionsAndLeave(t *testing.T) {

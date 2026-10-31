@@ -27,12 +27,14 @@ type MineEntry struct {
 	Season           uint64
 	Player, From, To int
 	Generation       uint64
+	Sequence         uint64
 	Layers           []MineLayer
 }
 type MinePlacement struct {
 	Season         uint64
 	Player, Sector int
 	Generation     uint64
+	Sequence       uint64
 	Stock, Count   int64
 	Layers         []MineLayer
 }
@@ -124,7 +126,7 @@ func (w *World) PrepareMinePlacement(id int, count int64) (MinePlacement, error)
 	if s == nil {
 		return MinePlacement{}, errors.New("current sector does not exist")
 	}
-	return MinePlacement{Season: w.Season, Player: id, Sector: p.Sector, Generation: p.ShipGeneration,
+	return MinePlacement{Season: w.Season, Player: id, Sector: p.Sector, Generation: p.ShipGeneration, Sequence: p.WarpSequence,
 		Stock: p.Mines, Count: count, Layers: append([]MineLayer(nil), s.Minefield...)}, nil
 }
 
@@ -134,7 +136,7 @@ func (w *World) CommitMinePlacement(placement MinePlacement) (int64, error) {
 		return 0, err
 	}
 	s := w.Sectors[placement.Sector]
-	if w.Season != placement.Season || s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
+	if p.WarpSequence != placement.Sequence || w.Season != placement.Season || s == nil || p.Sector != placement.Sector || p.ShipGeneration != placement.Generation ||
 		p.Mines != placement.Stock || !slices.Equal(placement.Layers, s.Minefield) {
 		return 0, errors.New("mine placement warning or ship changed; confirm again")
 	}
@@ -231,9 +233,9 @@ func mineBurst(p *Player, burst int64, rng func() float64) error {
 	return nil
 }
 
-// ResolveMinefield must run inside one store Update. Every error must abort
-// that callback so damage, depleted fields, escape and death all roll back.
-func (w *World) ResolveMinefield(id int, rng func() float64, now time.Time) (MineOutcome, error) {
+// resolveMinefield applies physical hazards after the arrival-order decision.
+// Every error must abort the store callback, including depleted fields and death.
+func (w *World) resolveMinefield(id int, rng func() float64, now time.Time) (MineOutcome, error) {
 	p, err := w.player(id)
 	if err != nil {
 		return MineOutcome{}, err
@@ -304,33 +306,10 @@ func (w *World) ResolveMinefield(id int, rng func() float64, now time.Time) (Min
 // Unlike the DOS repeated-hazard loop, emergency warp selects only safe sectors.
 // Earth is always eligible, so a valid non-Earth world has a safe escape.
 func (w *World) escapeMines(p *Player, rng func() float64) error {
-	draw := func() (float64, error) {
-		r := rng()
-		if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
-			return 0, errors.New("invalid escape RNG")
-		}
-		return r, nil
-	}
-	r, err := draw()
+	draw := func() (float64, error) { return warpDraw(rng) }
+	heat, err := warpHeat(rng)
 	if err != nil {
 		return err
-	}
-	r2, err := draw()
-	if err != nil {
-		return err
-	}
-	heat := 0
-	for i := 0; i < int(math.Floor(70*(r+r2))); i++ {
-		r, err = draw()
-		if err != nil {
-			return err
-		}
-		if r > .75 {
-			heat++
-		}
-		if heat >= 31 {
-			break
-		}
 	}
 	var safe []int
 	for id, s := range w.Sectors {
@@ -349,7 +328,7 @@ func (w *World) escapeMines(p *Player, rng func() float64) error {
 	if len(safe) == 0 {
 		return errors.New("no safe emergency destination")
 	}
-	r, err = draw()
+	r, err := draw()
 	if err != nil {
 		return err
 	}
@@ -384,14 +363,14 @@ func (w *World) PrepareMineEntry(id, to int) (MineEntry, error) {
 	if err = w.canMove(p, to); err != nil {
 		return MineEntry{}, err
 	}
-	return MineEntry{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...)}, nil
+	return MineEntry{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Sequence: p.WarpSequence, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...)}, nil
 }
 func (w *World) CommitMineEntry(entry MineEntry, rng func() float64, now time.Time) (MineOutcome, error) {
 	p, err := w.player(entry.Player)
 	if err != nil {
 		return MineOutcome{}, err
 	}
-	if w.Season != entry.Season || p.Sector != entry.From || p.ShipGeneration != entry.Generation || w.Sectors[entry.To] == nil || !slices.Equal(entry.Layers, w.Sectors[entry.To].Minefield) {
+	if w.Season != entry.Season || p.WarpSequence != entry.Sequence || p.Sector != entry.From || p.ShipGeneration != entry.Generation || w.Sectors[entry.To] == nil || !slices.Equal(entry.Layers, w.Sectors[entry.To].Minefield) {
 		return MineOutcome{}, errors.New("mine warning or ship changed; confirm again")
 	}
 	if err = w.canMove(p, entry.To); err != nil {

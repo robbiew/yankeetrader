@@ -505,6 +505,11 @@ func (s Session) classicSector(w *game.World, id int) error {
 	if err := s.Terminal.Printf("\r\nSector: %d\r\n", p.Sector); err != nil {
 		return err
 	}
+	if w.Disrupted(id, p.Sector) {
+		if err := s.Terminal.Printf("** Space-time disruption detected! **\r\n"); err != nil {
+			return err
+		}
+	}
 	if port := w.Ports[sector.Port]; port != nil {
 		selling := []string{}
 		for i, c := range port.Coefficient {

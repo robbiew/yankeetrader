@@ -26,7 +26,7 @@ func ownershipSession(t *testing.T, lines []string) (Session, *scripted) {
 		t.Fatal(err)
 	}
 	term := &scripted{lines: lines}
-	return Session{Store: st, Terminal: term, Identity: "buyer", Alias: "Buyer", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}, term
+	return Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "buyer", Alias: "Buyer", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}, term
 }
 
 func TestPortOwnershipCommandsPersistAndReconnect(t *testing.T) {

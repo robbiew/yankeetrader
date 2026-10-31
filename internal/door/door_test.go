@@ -38,7 +38,7 @@ func TestPlayableLoopAndReconnect(t *testing.T) {
 		t.Fatal(e)
 	}
 	term := &scripted{lines: []string{"?; i; l; p; equip fighters 1; m 2; p; buy ore 5; m 3; p; sell ore 5; q"}}
-	session := Session{Store: st, Terminal: term, Identity: "user:7", Alias: "Trader", Deadline: time.Now().Add(time.Minute), Now: func() time.Time { return now }}
+	session := Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "user:7", Alias: "Trader", Deadline: time.Now().Add(time.Minute), Now: func() time.Time { return now }}
 	if e = session.Run(); e != nil {
 		t.Fatal(e)
 	}
@@ -70,7 +70,7 @@ func TestDisconnectSavesCommittedActionsAndDoesNotSpendOnRejectedTrade(t *testin
 	w, _ := game.New(now, 36, 8)
 	_ = st.Create(w)
 	term := &scripted{lines: []string{"m 2;p;buy ore -1;buy ore 11;buy ore 3"}}
-	s := Session{Store: st, Terminal: term, Identity: "user:1", Alias: "Trader", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}
+	s := Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "user:1", Alias: "Trader", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}
 	if e := s.Run(); e != nil {
 		t.Fatal(e)
 	}
@@ -99,7 +99,7 @@ func TestPlanetCommandsSaveAndReconnect(t *testing.T) {
 		t.Fatal(e)
 	}
 	term := &scripted{lines: []string{"create New Eden;land;bank 15000;invest 251;transfer cargo;a;planet;leave;m 2;bank 0;q"}}
-	session := Session{Store: st, Terminal: term, Identity: "planet:1", Alias: "Builder", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}
+	session := Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "planet:1", Alias: "Builder", Deadline: now.Add(time.Minute), Now: func() time.Time { return now }}
 	if e := session.Run(); e != nil {
 		t.Fatal(e)
 	}

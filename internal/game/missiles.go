@@ -15,6 +15,7 @@ type MissileIntent struct {
 	Season           uint64
 	Player, From, To int
 	Generation       uint64
+	Sequence         uint64
 	Count            int64
 	Route            []int
 	Sectors          []MissileRouteSector
@@ -29,6 +30,7 @@ type MissileRouteSector struct {
 type MissileShipTarget struct {
 	Player, Team      int
 	Generation        uint64
+	Sequence          uint64
 	Alias             string
 	Fighters, Shields int64
 	Cloak             float64
@@ -177,7 +179,7 @@ func (w *World) PrepareMissile(id, to int, count int64, v *Visibility) (MissileI
 	if err != nil {
 		return MissileIntent{}, errors.New("no warp route reaches that missile target")
 	}
-	intent := MissileIntent{Season: w.Season, Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Count: count, Route: route}
+	intent := MissileIntent{Season: w.Season, Player: id, From: a.Sector, To: to, Generation: a.ShipGeneration, Sequence: a.WarpSequence, Count: count, Route: route}
 	intent.Sectors, err = w.snapshotMissileRoute(id, route, v, true)
 	if err != nil {
 		return MissileIntent{}, err
@@ -238,7 +240,7 @@ func (w *World) snapshotMissileRoute(shooter int, route []int, visibility *Visib
 				if p.ID == shooter || p.Death != nil || p.Sector != sectorID || actor.Team != 0 && actor.Team == p.Team || !visibility.sees(p) {
 					continue
 				}
-				target := MissileShipTarget{Player: p.ID, Team: p.Team, Generation: p.ShipGeneration, Alias: p.Alias, Fighters: p.Fighters, Shields: p.Shields, Cloak: p.Cloak}
+				target := MissileShipTarget{Player: p.ID, Team: p.Team, Generation: p.ShipGeneration, Sequence: p.WarpSequence, Alias: p.Alias, Fighters: p.Fighters, Shields: p.Shields, Cloak: p.Cloak}
 				if back, err := w.path(sectorID, route[0], nil); err == nil {
 					target.ReturnRoute = back
 					target.ReturnSectors, err = w.snapshotMissileRoute(p.ID, back, nil, false)

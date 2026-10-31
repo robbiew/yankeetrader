@@ -1,4 +1,5 @@
 """Exercise public newspaper history through real GoDoors terminals."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import datetime
 import errno
@@ -15,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = str(ROOT / "bin/yt")
 
 
+@without_disruption
 def play(data, alias, commands, classic=False, followups=()):
     master, slave = pty.openpty()
     options = ["-ascii"] if classic else ["-compact"]
@@ -40,13 +42,17 @@ def play(data, alias, commands, classic=False, followups=()):
             if not chunk:
                 break
             output += chunk
+            reject_disruption(output)
             pending += chunk
             if step < len(steps) and steps[step][0] in pending:
                 marker, answer = steps[step]
                 pending = pending.split(marker, 1)[1]
                 os.write(master, answer)
                 step += 1
-        proc.wait(timeout=2)
+        try:
+            proc.wait(timeout=2)
+        except subprocess.TimeoutExpired as error:
+            raise AssertionError(('terminal command did not return',step,steps[step:],output.decode(errors='replace'))) from error
         text = output.decode(errors="replace").replace("\r", "")
         assert proc.returncode == 0 and step == len(steps), text
         return text

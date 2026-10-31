@@ -9,6 +9,9 @@ import (
 )
 
 func (s Session) showMineOutcome(out game.MineOutcome) error {
+	if handled, e := s.finishArrival(nil, nil); handled || e != nil {
+		return e
+	}
 	if out.Bursts == 0 {
 		return nil
 	}
@@ -37,19 +40,22 @@ func (s Session) showMineOutcome(out game.MineOutcome) error {
 	}
 	return nil
 }
-func (s Session) resolveCurrentMines(id int) error {
+
+// resolveCurrentMines reports an arrival interruption so the command loop can
+// restart before dispatch, including when another login moved this ship.
+func (s Session) resolveCurrentMines(id int, pending *[]string) (bool, error) {
 	w, err := s.Store.View()
 	if err != nil {
-		return err
+		return false, err
 	}
-	if !w.HasMineEncounter(id) {
-		return nil
+	if !w.HasMineEncounter(id) && !w.Disrupted(id, w.Players[id].Sector) {
+		return false, nil
 	}
 	out, err := s.Store.ResolveMines(s.Now(), rand.Float64)
-	if err != nil {
-		return err
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return handled, e
 	}
-	return s.showMineOutcome(out)
+	return false, s.showMineOutcome(out)
 }
 func (s Session) moveShip(id, to int, pending *[]string) error {
 	if handled, err := s.scannedMove(id, to, pending, nil); handled || err != nil {
@@ -64,8 +70,9 @@ func (s Session) moveShip(id, to int, pending *[]string) error {
 		return err
 	}
 	if len(entry.Layers) == 0 {
-		if err = s.Store.UpdateWithSpies(func(w *game.World) error { return w.Move(id, to) }, s.Now(), s.Deadline); err != nil {
-			return err
+		err = s.Store.UpdateWithSpies(func(w *game.World) error { return w.Move(id, to) }, s.Now(), s.Deadline)
+		if handled, e := s.finishArrival(err, pending); handled || e != nil {
+			return e
 		}
 		return s.Terminal.Printf("Moved to sector %d.\r\n", to)
 	}
@@ -101,8 +108,8 @@ func (s Session) moveShip(id, to int, pending *[]string) error {
 		}
 		return err
 	}, s.Now(), s.Deadline)
-	if err != nil {
-		return err
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return e
 	}
 	if err = s.Terminal.Printf("Moved into sector %d.\r\n", to); err != nil {
 		return err

@@ -333,6 +333,13 @@ func (w *World) CommitPlanetAction(e PlanetIntent, rng func() float64, now time.
 			out.LandingToken = p.PlanetToken
 		}
 	}
+	if e.Kind == "thrusters" && p.Death == nil {
+		extra, err := w.ResolveMinefield(p.ID, rng, now)
+		if err != nil {
+			return PlanetReceipt{}, err
+		}
+		out.Mines = mergeMines(out.Mines, extra)
+	}
 	out.FinalSector = p.Sector
 	out.TurnsSpent = beforeTurns - p.Turns
 	out.AftermathTurns = out.TurnsSpent - out.TransportTurns

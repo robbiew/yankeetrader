@@ -69,6 +69,8 @@ jobs:
           python3 scripts/test_genesis_reset_verifier.py
           python3 scripts/verify_wanderer.py
           python3 scripts/test_wanderer_verifier.py
+          python3 scripts/verify_disruption.py
+          python3 scripts/test_disruption_verifier.py
           python3 scripts/verify_planet_mobility.py
           python3 scripts/test_planet_mobility_verifier.py
           python3 scripts/verify_earth_lottery.py
@@ -147,6 +149,8 @@ jobs:
           python3 scripts/smoke_earth_lottery.py
           python3 scripts/smoke_planet_mobility.py
           python3 scripts/smoke_wanderer.py
+          python3 scripts/smoke_disruption.py
+          python3 scripts/test_smoke_arrival_control.py
           python3 scripts/smoke_genesis.py
           python3 scripts/smoke_cloak_equipment.py
           python3 scripts/smoke_planet_missiles.py

@@ -13,6 +13,7 @@ type BribeIntent struct {
 	Season                       uint64
 	Player, From, Sector, Planet int
 	Generation                   uint64
+	Sequence                     uint64
 	Nonce                        string
 	Defense                      SectorDefense
 	Credits, Fighters            int64
@@ -71,7 +72,7 @@ func (w *World) PrepareBribeAt(id, to int, offer int64, hostile bool) (BribeInte
 			return BribeIntent{}, errors.New("recruitment would exceed ship fighter capacity")
 		}
 	}
-	return BribeIntent{Season: w.Season, Player: id, From: p.Sector, Sector: to, Planet: s.Planet, Generation: p.ShipGeneration, Defense: *s.Defense, Credits: p.Credits, Fighters: p.Fighters, Turns: p.Turns, Cloak: p.Cloak, Offer: offer, Hostile: hostile, Mines: append([]MineLayer(nil), s.Minefield...)}, nil
+	return BribeIntent{Season: w.Season, Player: id, From: p.Sector, Sector: to, Planet: s.Planet, Generation: p.ShipGeneration, Sequence: p.WarpSequence, Defense: *s.Defense, Credits: p.Credits, Fighters: p.Fighters, Turns: p.Turns, Cloak: p.Cloak, Offer: offer, Hostile: hostile, Mines: append([]MineLayer(nil), s.Minefield...)}, nil
 }
 
 // ResolveBribeDecision follows the recovered eager draw order. It intentionally
@@ -132,11 +133,19 @@ func (w *World) CommitBribe(entry BribeIntent, hostile bool, rng func() float64,
 	if err != nil {
 		return BribeOutcome{}, err
 	}
-	if fresh.From != entry.From || fresh.Sector != entry.Sector || fresh.Planet != entry.Planet || fresh.Defense != entry.Defense || fresh.Credits != entry.Credits || fresh.Fighters != entry.Fighters || fresh.Turns != entry.Turns || fresh.Cloak != entry.Cloak || fresh.Hostile != entry.Hostile || !slices.Equal(fresh.Mines, entry.Mines) {
+	if fresh.Sequence != entry.Sequence || fresh.From != entry.From || fresh.Sector != entry.Sector || fresh.Planet != entry.Planet || fresh.Defense != entry.Defense || fresh.Credits != entry.Credits || fresh.Fighters != entry.Fighters || fresh.Turns != entry.Turns || fresh.Cloak != entry.Cloak || fresh.Hostile != entry.Hostile || !slices.Equal(fresh.Mines, entry.Mines) {
 		return BribeOutcome{}, errors.New("bribe warning or ship changed; confirm again")
 	}
 	if now.IsZero() || now.Before(w.Created) {
 		return BribeOutcome{}, errors.New("invalid bribe time")
+	}
+	if entry.From != entry.Sector && w.Disrupted(entry.Player, entry.Sector) {
+		p := w.Players[entry.Player]
+		w.move(p, entry.Sector)
+		out := BribeOutcome{Reason: "disruption interrupted approach"}
+		out.Defense.Mines, err = w.ResolveMinefield(p.ID, rng, now)
+		out.Defense.Sector = p.Sector
+		return out, err
 	}
 	reason, combat, err := ResolveBribeDecision(entry.Defense.Owner, entry.Defense.Fighters, entry.Fighters, entry.Offer, entry.Planet != 0, hostile, rng)
 	if err != nil {
@@ -153,7 +162,11 @@ func (w *World) CommitBribe(entry BribeIntent, hostile bool, rng func() float64,
 			if err = w.escapeMines(p, rng); err != nil {
 				return BribeOutcome{}, err
 			}
-			out.Defense = DefenseOutcome{Escaped: true, Sector: p.Sector}
+			mines, e := w.ResolveMinefield(p.ID, rng, now)
+			if e != nil {
+				return BribeOutcome{}, e
+			}
+			out.Defense = DefenseOutcome{Escaped: true, Sector: p.Sector, Mines: mines}
 			return out, nil
 		}
 		battle, err = w.PrepareDefenseFight(entry.Player, entry.Sector, entry.Fighters, false)

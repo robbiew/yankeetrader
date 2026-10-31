@@ -4,7 +4,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-The Wanderer lifecycle and special transport are now available in-game to test, with bounded placement, atomic saves and hidden-destination receipts (save version 25). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
+Bounded disruption and black-hole arrivals are now available in-game to test. Each login has its own hidden location pair; forced warp resolves before local mines/fighters, stops queued travel and saves the origin action with its aftermath. The Wanderer retains independent ship/planet transport. Save version **25** is unchanged; update all running nodes together. [Rules and limits](research/yt-disruption/IMPLEMENTATION.md).
 
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
@@ -12,7 +12,7 @@ The Wanderer lifecycle and special transport are now available in-game to test, 
 
 - **Seasons:** confirmed Genesis endgame, authoritative port ownership, atomic universe reset, public winner history and epoch guards that end old logins.
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
-- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
+- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, bounded automatic black-hole arrivals, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
@@ -22,7 +22,7 @@ The Wanderer lifecycle and special transport are now available in-game to test, 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling and targeted thruster/disruption fidelity remain outstanding.
+- Explicit season archive export/administrative reset tooling, remaining disruption combat/spy intelligence and exact DOS random/numeric fidelity remain outstanding.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1026,7 +1026,7 @@ warning is a committed reset: its receipt is retained, the login ends and replay
 is refused. Full Go race/vet, local process-interruption, evidence, real terminal
 and cross-build validation are recorded in the validation log. Live BBS acceptance,
 native Windows crash durability, full DOS generation/numeric parity and The
-targeted disruption fidelity remain separate work; Wanderer lifecycle is implemented below.
+exact disruption RNG/numeric fidelity remain separate work; bounded arrival and Wanderer lifecycle are implemented below.
 [Implementation and safety contract](research/yt-genesis/IMPLEMENTATION.md).
 
 
@@ -1062,8 +1062,8 @@ warnings; a durability warning ends the login. Save version **24** upgrades olde
 worlds without resetting them. See the [implementation and validation contract](research/yt-planet-mobility/IMPLEMENTATION.md)
 and [55-control DOS recovery](research/yt-planet-mobility/RECOVERY.md).
 
-Targeted disruption arrival, complete DOS RNG/MBF parity,
-live BBS gameplay and native Windows crash durability remain separate acceptance.
+Disruption arrival is implemented below. Complete DOS RNG/MBF parity, live BBS
+gameplay and native Windows crash durability remain separate acceptance.
 
 
 ### The Wanderer lifecycle and transport — available in-game to test
@@ -1112,5 +1112,52 @@ repeat spending or restoration. `-maint` prints a saved final lifecycle outcome
 without coordinates, retaining committed storage warnings and output errors.
 
 Local regression and terminal checks are recorded in [validation](evidence/VALIDATION.md).
-Full original RNG/MBF parity, targeted disruption, live BBS acceptance and native
-Windows durability remain separate.
+Disruption arrival is implemented below; full original RNG/MBF parity, live BBS
+acceptance and native Windows durability remain separate.
+
+### Disruption and black-hole arrivals — research and implementation complete
+
+[The recovery](research/yt-disruption/RECOVERY.md) retains **61 normally returned
+DOS controls**, four exact world/auxiliary reload chains, 15 native byte reads and
+one independently reconstructed executable image. Narrow branch controls and
+full 3000-sector header controls are distinguished. A separate unsupported
+one-sector, 40-second nonreturning probe is diagnostic only. Independent
+verification checks world/auxiliary conservation, receipt arithmetic, raw logs,
+privacy and provenance, with 65 rehashed corruption tests.
+
+Two independently drawn login-local holes may coincide. Arrival checks them
+before local mines/fighters and automatically warps even with zero turns, then
+rechecks the destination. Autopilot stops after the interruption. Ordinary planet
+routes can pass a bare intermediate hole, but their final/helper-return arrival
+can send the ship away while leaving the planet behind. Wanderer controls confirm
+independent final ship/planet positions. Local sector/scanner warnings reveal
+observed danger; generic news does not disclose the hidden pair or random planet
+location. Raw sector field 133 does not identify a black hole.
+
+Run `python3 scripts/verify_disruption.py` and
+`python3 scripts/test_disruption_verifier.py` to check retained evidence; optional
+fresh DOS reproduction uses `scripts/recover_disruption.py` in a new disposable
+directory. [Native rules](research/yt-disruption/NATIVE.md) separate static
+interpretation from observed outcomes. The [research-stage contract](research/yt-disruption/CONTRACT.md)
+was the research-stage proposal; [the implemented rules](research/yt-disruption/IMPLEMENTATION.md)
+now apply in both interfaces. Save **25** is unchanged; the hidden pair is local to
+the captured ship/season login and the existing warp sequence invalidates stale
+confirmations, including same-sector/zero-cost warps.
+
+Entering a hole automatically warps the ship before local mines/fighters, even at
+zero turns. Installed scanners warn before voluntary entry; refusal spends
+nothing. Each forced recharge preserves cloak and may consume all remaining
+turns. The actual destination can be current, avoided, disconnected or hazardous.
+Reached mines, escape/death and hostile encounter gates still apply. Planetary
+routes check disruption on helper return, leaving a transported planet behind
+when only its ship warps. Autopilot and queued commands stop on interruption, including when another login moves the same ship into this login’s disruption sector between commands or while input is waiting. A forced current-sector arrival returns to a fresh prompt before dispatch.
+
+One atomic save includes the origin action and reached aftermath. A chain is
+bounded to **32 forced disruption warps**; exceeding it aborts the entire action
+without a partial resource debit or free escape. Saved receipts report each known
+warp, final sector and actual spent/remaining turns, conceal the hidden pair and
+Wanderer destination, and retain committed storage warnings through output
+failures. Reconnecting selects new login-local holes; it does not replay the old
+receipt. See [validation](evidence/VALIDATION.md) for executed checks. Exact original
+RNG/MBF parity, unrelated disruption combat/spy branches, long-running balance and
+native/live acceptance remain open.

@@ -1,0 +1,807 @@
+{
+  "recipe": "disruption-arrival-v1",
+  "source": "archive/analysis/yt-combat/experiments/fixture-planet-transfer",
+  "scenarios": [
+    {
+      "name": "quiet-origin",
+      "command": "I",
+      "sectors": 3,
+      "start": 1,
+      "patches": []
+    },
+    {
+      "name": "ordinary-arrival",
+      "command": "M;2",
+      "sectors": 3,
+      "start": 1,
+      "patches": []
+    },
+    {
+      "name": "startup-arrival",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": []
+    },
+    {
+      "name": "upper-safe",
+      "command": "I",
+      "sectors": 3,
+      "start": 3,
+      "patches": []
+    },
+    {
+      "name": "upper-raw-133",
+      "command": "I",
+      "sectors": 3,
+      "start": 3,
+      "patches": [
+        [
+          54,
+          133,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-decline",
+      "command": "M;2\r~~N",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "scanner-accept",
+      "command": "M;2\r~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "arrival-zero-turns",
+      "command": "M;2",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          49,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "startup-zero-turns",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "startup-low-turns",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          2,
+          49,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "startup-cloak-zero",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "startup-cloak-fraction",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          2,
+          125,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "startup-hole-mines",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          53,
+          129,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-hole-fighters",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-hole-both",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          53,
+          129,
+          3
+        ],
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-landing-mines",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          54,
+          129,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-landing-fighters",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          54,
+          81,
+          100
+        ],
+        [
+          54,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-landing-both",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          54,
+          129,
+          3
+        ],
+        [
+          54,
+          81,
+          100
+        ],
+        [
+          54,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "startup-landing-lethal",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [
+        [
+          54,
+          129,
+          30
+        ],
+        [
+          2,
+          53,
+          0
+        ],
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          65,
+          1
+        ],
+        [
+          2,
+          69,
+          0
+        ],
+        [
+          2,
+          73,
+          0
+        ],
+        [
+          2,
+          77,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "ordinary-hole-both",
+      "command": "M;2",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          53,
+          129,
+          3
+        ],
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "scanner-combined-decline",
+      "command": "M;2\r~~N",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          53,
+          129,
+          3
+        ],
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "scanner-combined-accept",
+      "command": "M;2\r~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ],
+        [
+          53,
+          129,
+          3
+        ],
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "autopilot",
+      "command": "C;3;3;Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": []
+    },
+    {
+      "name": "autopilot-scanner-decline",
+      "command": "C;3;3;Y\r~~N",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "autopilot-scanner-accept",
+      "command": "C;3;3;Y\r~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          93,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "manual-warp",
+      "command": "W;Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": []
+    },
+    {
+      "name": "thruster-final",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 2
+    },
+    {
+      "name": "thruster-intermediate",
+      "command": "L;!;3\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 2
+    },
+    {
+      "name": "thruster-intermediate-mines",
+      "command": "L;!;3\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          53,
+          129,
+          3
+        ]
+      ],
+      "planet": 2
+    },
+    {
+      "name": "thruster-intermediate-fighters",
+      "command": "L;!;3\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          53,
+          81,
+          100
+        ],
+        [
+          53,
+          85,
+          3
+        ]
+      ],
+      "planet": 2
+    },
+    {
+      "name": "thruster-final-collision",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 2,
+      "collision": true
+    },
+    {
+      "name": "thruster-ten-turns",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          49,
+          10
+        ]
+      ],
+      "planet": 2
+    },
+    {
+      "name": "thruster-cancel",
+      "command": "L;!;2\r~~~~N",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 2
+    },
+    {
+      "name": "wanderer-final",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 1
+    },
+    {
+      "name": "wanderer-clock-0001",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 1,
+      "time": "00:01:00"
+    },
+    {
+      "name": "wanderer-clock-0100",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 1,
+      "time": "01:00:00"
+    },
+    {
+      "name": "wanderer-clock-0200",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 1,
+      "time": "02:00:00"
+    },
+    {
+      "name": "wanderer-clock-0300",
+      "command": "L;!;2\r~~~~Y",
+      "sectors": 3,
+      "start": 1,
+      "patches": [],
+      "planet": 1,
+      "time": "03:00:00"
+    },
+    {
+      "name": "two-sector-arrival",
+      "command": "M;2",
+      "sectors": 2,
+      "start": 1,
+      "patches": []
+    },
+    {
+      "name": "startup-clock-01",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [],
+      "time": "01:00:00"
+    },
+    {
+      "name": "startup-clock-02",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [],
+      "time": "02:00:00"
+    },
+    {
+      "name": "startup-clock-03",
+      "command": "I",
+      "sectors": 3,
+      "start": 2,
+      "patches": [],
+      "time": "03:00:00"
+    },
+    {
+      "name": "eight-sector-sensors",
+      "command": "S",
+      "sectors": 8,
+      "start": 8,
+      "patches": [],
+      "graph": {
+        "8": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "name": "eight-sector-arrival-3",
+      "command": "M;3",
+      "sectors": 8,
+      "start": 8,
+      "patches": [],
+      "graph": {
+        "8": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "name": "eight-sector-arrival-4",
+      "command": "M;4",
+      "sectors": 8,
+      "start": 8,
+      "patches": [],
+      "graph": {
+        "8": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "name": "normal-width-origin",
+      "command": "I",
+      "sectors": 3000,
+      "start": 100,
+      "patches": [],
+      "standard": true
+    },
+    {
+      "name": "normal-width-adjacent",
+      "command": "M;101",
+      "sectors": 3000,
+      "start": 100,
+      "patches": [],
+      "standard": true
+    },
+    {
+      "name": "normal-width-thruster",
+      "command": "L;!;101\r~~~~Y",
+      "sectors": 3000,
+      "start": 100,
+      "patches": [],
+      "standard": true,
+      "planet": 2
+    },
+    {
+      "name": "normal-width-sensors",
+      "command": "S",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      }
+    },
+    {
+      "name": "normal-width-sensors-repeat",
+      "command": "S;S",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      }
+    },
+    {
+      "name": "normal-width-arrival-592",
+      "command": "M;592",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      }
+    },
+    {
+      "name": "normal-width-arrival-1051",
+      "command": "M;1051",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      }
+    },
+    {
+      "name": "normal-width-thruster-hole",
+      "command": "L;!;592\r~~~~Y",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      },
+      "planet": 2
+    },
+    {
+      "name": "normal-width-wanderer-hole",
+      "command": "L;!;592\r~~~~Y",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      },
+      "planet": 1
+    },
+    {
+      "name": "normal-width-startup-hole",
+      "command": "I",
+      "sectors": 3000,
+      "start": 592,
+      "patches": [],
+      "standard": true
+    },
+    {
+      "name": "normal-width-upper-safe",
+      "command": "I",
+      "sectors": 3000,
+      "start": 3000,
+      "patches": [],
+      "standard": true
+    },
+    {
+      "name": "normal-width-earth-safe",
+      "command": "I",
+      "sectors": 3000,
+      "start": 1,
+      "patches": [],
+      "standard": true
+    },
+    {
+      "name": "normal-width-reconnect",
+      "command": "S",
+      "sectors": 3000,
+      "start": null,
+      "patches": [],
+      "standard": true,
+      "graph": {
+        "3000": [
+          592,
+          1051
+        ]
+      },
+      "parent": "normal-width-sensors",
+      "time": "00:01:00"
+    },
+    {
+      "name": "ordinary-reconnect",
+      "command": "I",
+      "sectors": 3,
+      "start": null,
+      "patches": [],
+      "parent": "ordinary-arrival",
+      "time": "00:01:00"
+    },
+    {
+      "name": "wanderer-reconnect",
+      "command": "I",
+      "sectors": 3,
+      "start": null,
+      "patches": [],
+      "parent": "wanderer-final",
+      "time": "00:01:00"
+    },
+    {
+      "name": "eight-sector-reconnect",
+      "command": "S",
+      "sectors": 8,
+      "start": null,
+      "patches": [],
+      "graph": {
+        "8": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "parent": "eight-sector-sensors",
+      "time": "00:01:00"
+    }
+  ]
+}

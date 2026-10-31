@@ -169,6 +169,10 @@ func (s Session) planetActionReceipt(out game.PlanetReceipt, err error) error {
 			output = s.Terminal.Printf("Planet thrusters saved: %s; completed %d hops, sector %d -> %d (destination %d). Transport %d turns; aftermath %d; total %d; remaining %d. Planet destroyed: %t; planet sector %d; stop: %s. Fighters lost %d; remaining %d. All landing grants revoked.\r\n", terminalLabel(out.Name), out.Hops, out.From, out.FinalSector, out.Destination, out.TransportTurns, out.AftermathTurns, out.TurnsSpent, out.TurnsRemaining, out.Destroyed, out.PlanetSector, out.Stop, out.FightersLost, out.FightersRemaining)
 		}
 		if output == nil {
+			handled, arrivalErr := s.finishArrival(err, nil)
+			if handled {
+				return arrivalErr
+			}
 			output = s.showMineOutcome(out.Mines)
 		}
 		if output == nil && out.HostileDefense {

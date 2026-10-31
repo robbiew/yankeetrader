@@ -1,4 +1,5 @@
 """Use real PTY/GoDoors and a separate test worker to invalidate live ships."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -13,6 +14,7 @@ root = Path(__file__).resolve().parents[1]
 binary = str(root/'bin/yt')
 
 
+@without_disruption
 def play(data, commands, interrupt=None):
     master, slave = pty.openpty()
     proc = subprocess.Popen([binary, '-compact', '-data', str(data), '-local', 'Victim'],
@@ -33,6 +35,7 @@ def play(data, commands, interrupt=None):
                 if not chunk:
                     break
                 output += chunk
+                reject_disruption(output)
                 if not sent and b'> ' in output:
                     if interrupt:
                         interrupt()

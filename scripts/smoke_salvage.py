@@ -1,4 +1,5 @@
 """Real PTY/GoDoors callers observe one atomic internal salvage/estate update."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = str(ROOT/'bin/yt')
 
 
+@without_disruption
 def play(data, alias, commands, action=None):
     master, slave = pty.openpty()
     proc = subprocess.Popen([BINARY, '-compact', '-data', str(data), '-local', alias],
@@ -33,6 +35,7 @@ def play(data, alias, commands, action=None):
                 if not chunk:
                     break
                 output += chunk
+                reject_disruption(output)
                 if not sent and b'> ' in output:
                     if action:
                         action()

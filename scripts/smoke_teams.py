@@ -1,4 +1,5 @@
 """Exercise team invitations, sharing and revocation through real PTY/GoDoors."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -13,6 +14,7 @@ root = Path(__file__).resolve().parents[1]
 binary = str(root/'bin/yt')
 
 
+@without_disruption
 def play(data, alias, commands, password=None, after='1;q'):
     master, slave = pty.openpty()
     proc = subprocess.Popen([binary, '-compact', '-data', str(data), '-local', alias],
@@ -37,6 +39,7 @@ def play(data, alias, commands, password=None, after='1;q'):
                 if not chunk:
                     break
                 output += chunk
+                reject_disruption(output)
                 while steps:
                     at = output.find(steps[0][0], cursor)
                     if at < 0:
