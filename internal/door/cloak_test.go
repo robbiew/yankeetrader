@@ -25,7 +25,7 @@ func TestSensorsRespectCloakAndDisplayPersistedEnergy(t *testing.T) {
 		t.Fatal(err)
 	}
 	term := &scripted{lines: []string{"s;s;i;q"}}
-	session := Session{Store: st, Terminal: term, Identity: "observer", Alias: "Observer", Deadline: now.Add(time.Minute)}
+	session := Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "observer", Alias: "Observer", Deadline: now.Add(time.Minute)}
 	if err := session.Run(); err != nil {
 		t.Fatal(err)
 	}
@@ -44,7 +44,7 @@ func TestClassicInfoUsesCloakFieldAndActualScanner(t *testing.T) {
 	p, _ := w.Join("observer", "Observer")
 	p.Cloak = .37
 	term := &scripted{}
-	s := Session{Terminal: term, Deadline: time.Now().Add(time.Minute)}
+	s := Session{disruptionRandom: func() float64 { return .999999 }, Terminal: term, Deadline: time.Now().Add(time.Minute)}
 	if err := s.classicInfo(w, p.ID, false); err != nil {
 		t.Fatal(err)
 	}

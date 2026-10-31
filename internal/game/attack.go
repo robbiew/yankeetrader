@@ -12,6 +12,7 @@ type AttackIntent struct {
 	Season                               uint64
 	Attacker, Target, Sector             int
 	AttackerGeneration, TargetGeneration uint64
+	AttackerSequence, TargetSequence     uint64
 	Fighters                             int64
 }
 
@@ -65,7 +66,7 @@ func (w *World) PrepareAttack(attacker, target int, fighters int64) (AttackInten
 	if fighters < 1 || fighters > a.Fighters {
 		return AttackIntent{}, errors.New("choose available fighters to commit")
 	}
-	return AttackIntent{Season: w.Season, Attacker: a.ID, Target: d.ID, Sector: a.Sector, AttackerGeneration: a.ShipGeneration, TargetGeneration: d.ShipGeneration, Fighters: fighters}, nil
+	return AttackIntent{Season: w.Season, Attacker: a.ID, Target: d.ID, Sector: a.Sector, AttackerGeneration: a.ShipGeneration, TargetGeneration: d.ShipGeneration, AttackerSequence: a.WarpSequence, TargetSequence: d.WarpSequence, Fighters: fighters}, nil
 }
 
 // CommitAttack must run inside a store Update whose caller returns every error.
@@ -83,7 +84,7 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	if err != nil {
 		return ShipDuelResult{}, err
 	}
-	if w.Season != intent.Season || a.Sector != intent.Sector || a.ShipGeneration != intent.AttackerGeneration || d.ShipGeneration != intent.TargetGeneration {
+	if a.WarpSequence != intent.AttackerSequence || d.WarpSequence != intent.TargetSequence || w.Season != intent.Season || a.Sector != intent.Sector || a.ShipGeneration != intent.AttackerGeneration || d.ShipGeneration != intent.TargetGeneration {
 		return ShipDuelResult{}, errors.New("attack confirmation is stale")
 	}
 	if visibility != nil {

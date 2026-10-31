@@ -1,4 +1,5 @@
 """Drive DOS-style startup over real PTYs; compare title cells and capture live screens."""
+from smoke_arrival_control import without_disruption, reject_disruption
 import argparse
 import codecs
 import errno
@@ -85,6 +86,7 @@ class Screen:
     def snapshot(self):return json.loads(json.dumps(self.cells))
 
 
+@without_disruption
 def capture(data,alias,new=False,ascii=False,abort=False,after_info=None,check_pauses=False,title_key=b'\r'):
     master,slave=pty.openpty();fcntl.ioctl(slave,termios.TIOCSWINSZ,struct.pack('HHHH',25,80,0,0))
     command=[str(ROOT/'bin/yt'),'-data',str(data),'-local',alias]
@@ -113,7 +115,7 @@ def capture(data,alias,new=False,ascii=False,abort=False,after_info=None,check_p
                     if e.errno==errno.EIO:break
                     raise
                 if not raw:break
-                chunk=decoder.decode(raw);text+=chunk;screen.feed(chunk)
+                chunk=decoder.decode(raw);text+=chunk;reject_disruption(text.encode());screen.feed(chunk)
                 if waiting is None and step<len(phases):
                     name,marker,keys=phases[step]
                     if marker in text[phase_start:]:

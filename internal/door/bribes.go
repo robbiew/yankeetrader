@@ -83,8 +83,8 @@ func (s Session) bribe(id int, args []string, pending *[]string) error {
 		return s.Terminal.Printf("Bribe cancelled.\r\n")
 	}
 	out, err := s.Store.Bribe(entry, rand.Float64, s.Now, s.Deadline)
-	if err != nil {
-		return err
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return e
 	}
 	if out.Joined > 0 {
 		if err = s.Terminal.Printf("Bribe saved: paid %d credits; %d Mercenary fighters joined your ship.\r\n", out.Paid, out.Joined); err != nil {

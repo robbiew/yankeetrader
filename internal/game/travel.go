@@ -22,10 +22,11 @@ type TravelShip struct {
 	Cloak                                                                     float64
 	Scanner                                                                   bool
 	DockToken, PlanetToken                                                    string
+	Sequence                                                                  uint64
 }
 
 func (w *World) travelShip(p *Player) TravelShip {
-	return TravelShip{p.ID, p.Sector, p.Team, p.MineGraceSector, p.ShipGeneration, w.Season, p.Credits, p.Turns, p.Holds, p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma, p.Cargo, p.Cloak, p.DangerScanner, p.DockToken, p.PlanetToken}
+	return TravelShip{p.ID, p.Sector, p.Team, p.MineGraceSector, p.ShipGeneration, w.Season, p.Credits, p.Turns, p.Holds, p.Fighters, p.Shields, p.Ground, p.Missiles, p.Mines, p.Plasma, p.Cargo, p.Cloak, p.DangerScanner, p.DockToken, p.PlanetToken, p.WarpSequence}
 }
 
 // ScannerEntry captures a free warning; it grants no authority to reuse a stale hop.
@@ -35,10 +36,11 @@ type ScannerEntry struct {
 	Defense       *SectorDefense
 	Layers        []MineLayer
 	Maintenance   string
+	Disruption    bool
 }
 
 // Dangerous reports the supported hazards that require a scanner decision.
-func (e ScannerEntry) Dangerous() bool { return len(e.Layers) > 0 || e.Defense != nil }
+func (e ScannerEntry) Dangerous() bool { return e.Disruption || len(e.Layers) > 0 || e.Defense != nil }
 
 func (w *World) PrepareScannerEntry(id, to int) (ScannerEntry, error) {
 	p, err := w.player(id)
@@ -51,7 +53,7 @@ func (w *World) PrepareScannerEntry(id, to int) (ScannerEntry, error) {
 	if err = w.canMoveBase(p, to); err != nil {
 		return ScannerEntry{}, err
 	}
-	e := ScannerEntry{Ship: w.travelShip(p), To: to, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...), Maintenance: w.LastMaintenance}
+	e := ScannerEntry{Disruption: w.Disrupted(id, to), Ship: w.travelShip(p), To: to, Layers: append([]MineLayer(nil), w.Sectors[to].Minefield...), Maintenance: w.LastMaintenance}
 	if w.HostileDefense(id, to) {
 		d := *w.Sectors[to].Defense
 		e.Defense = &d
@@ -124,34 +126,10 @@ func (w *World) CommitWarp(e WarpIntent, rng func() float64, now time.Time) (War
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
 		return WarpOutcome{}, errors.New("invalid emergency warp inputs")
 	}
-	draw := func() (float64, error) {
-		r := rng()
-		if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
-			return 0, errors.New("invalid emergency warp RNG")
-		}
-		return r, nil
-	}
-	r, err := draw()
+	draw := func() (float64, error) { return warpDraw(rng) }
+	heat, err := warpHeat(rng)
 	if err != nil {
 		return WarpOutcome{}, err
-	}
-	r2, err := draw()
-	if err != nil {
-		return WarpOutcome{}, err
-	}
-	budget := min(139, int(math.Floor(70*(r+r2))))
-	heat := 0
-	for i := 0; i < budget; i++ {
-		r, err = draw()
-		if err != nil {
-			return WarpOutcome{}, err
-		}
-		if r > .75 {
-			heat++
-		}
-		if heat == 31 {
-			break
-		}
 	}
 	sectors := make([]int, 0, len(w.Sectors))
 	for id := range w.Sectors {
@@ -161,7 +139,7 @@ func (w *World) CommitWarp(e WarpIntent, rng func() float64, now time.Time) (War
 	if len(sectors) == 0 || len(sectors) > 3000 {
 		return WarpOutcome{}, errors.New("invalid emergency destinations")
 	}
-	r, err = draw()
+	r, err := draw()
 	if err != nil {
 		return WarpOutcome{}, err
 	}

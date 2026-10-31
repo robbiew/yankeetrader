@@ -1,6 +1,7 @@
 # Disruption and black-hole arrival recovery
 
-Research completed 2026-10-31. This milestone changes evidence, tooling and
+Research completed 2026-10-31. The subsequent [Go implementation](IMPLEMENTATION.md)
+is documented separately; the statements below preserve the research-stage boundary. This milestone changes evidence, tooling and
 interpretation only. **Go gameplay and save version 25 are unchanged; disruption
 arrivals are not implemented.** The next milestone is the bounded, atomic arrival
 resolver described in the [candidate implementation contract](CONTRACT.md).

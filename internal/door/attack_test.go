@@ -27,7 +27,7 @@ func attackSession(t *testing.T, terminal Terminal) (Session, store.Store) {
 	if err := st.Create(w); err != nil {
 		t.Fatal(err)
 	}
-	return Session{Store: st, Terminal: terminal, Identity: "attacker", Alias: "Attacker", Deadline: now.Add(time.Minute)}, st
+	return Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: terminal, Identity: "attacker", Alias: "Attacker", Deadline: now.Add(time.Minute)}, st
 }
 
 func TestAttackRequiresSeparateExactConfirmation(t *testing.T) {
@@ -159,7 +159,7 @@ func TestAttackConfirmationDoesNotUseCommandRepeat(t *testing.T) {
 		}
 		return r, gd.KeyNone, nil
 	}}
-	s := Session{Terminal: g, Deadline: time.Now().Add(time.Minute)}
+	s := Session{disruptionRandom: func() float64 { return .999999 }, Terminal: g, Deadline: time.Now().Add(time.Minute)}
 	answer, err := s.readAttackConfirmation()
 	if err != nil || answer != "y/" || g.savedLine != "" || !g.commandMode {
 		t.Fatal(answer, err, g.savedLine)

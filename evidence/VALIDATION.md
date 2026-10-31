@@ -786,3 +786,76 @@ bounded session-local disruption gameplay. Exact BRUN30 random state/MBF extreme
 boundaries, unrelated disruption combat/spy branches, broad balance and native
 Windows/live BBS acceptance remain open. No Go suite, terminal smoke or cross-build
 is claimed for these research-only changes.
+
+## Bounded disruption and black-hole arrivals — 2026-10-31
+
+Implemented the [arrival contract](../research/yt-disruption/IMPLEMENTATION.md)
+on macOS arm64. Save **25** and repository dependencies are unchanged. Two
+independently selected, possibly duplicate interior holes belong to the captured
+ship/season login. No location pair, draw state or synthetic map flag is saved.
+Startup and reached arrivals force warp before local mines/fighters, including
+at zero turns. Origin movement/transport, recharge and reached mine/escape/death
+or defense aftermath share one atomic replacement. Ordinary planetary helper-
+return timing, independent Wanderer/ship positions and private receipts remain.
+
+Executed validation:
+
+- The full **race-enabled Go suite** and **vet** passed on the final source.
+  Validation used the temporary modfile selecting the local supported GoDoors
+  checkout; no repository module/dependency change was made.
+- Game regressions cover independent interval/duplicate draws, no persisted
+  runtime state, stale epochs, nil/invalid draws and clocks, zero/low turns,
+  preserved cloak, initial mines/fighters bypassed, reached damage/death and
+  hostile gates, 32-step chain exhaustion, sequence capacity, scanner warnings,
+  ordinary/Wanderer helper-return positions and adjacent bribe/battle precedence.
+  **32 seeded worlds** check bounded work and asset/turn conservation. Mine
+  escape can reach a login-local hole and reenter the arrival resolver; its
+  intermediate receipt remains distinct from the final ship position.
+- Shared heat accounting caches the original two-draw budget. Shrinking/growing
+  mixed-draw regressions assert exact mine-escape draw counts, destinations and
+  costs; manual and physical-safe escape destination/cloak policies remain
+  distinct from forced disruption. Same-position warp sequences invalidate
+  travel, mine entry/placement, bribe/defense, attack and missile confirmations.
+- Store regressions cover whole-save callback/validation/late-RNG/chain rollback,
+  concurrent action serialization, lock-wait expiry, captured epoch/incarnation,
+  committed directory-sync warnings, one-time receipts and reconnect without
+  replay. A valid fatal mine aftermath advances the generation and commits before
+  the obsolete login ends; unexpected replacement/season changes are rejected.
+  The fatal-generation regression corrected a failure caught by the real mine
+  smoke. A separate startup mine-only regression checks that damage/death is
+  reported even when no black-hole warp occurred.
+- Both interfaces pass startup/move/autopilot and EOF/closed-pipe/other receipt
+  failure regressions. Committed warnings survive output errors and EOF paths;
+  interruptions discard queued commands. Aborted calculations print no saved
+  success. Receipts show known warp costs/heat, actual final sector and balances;
+  hidden pairs and Wanderer destinations are excluded from public output.
+- All **50 CI terminal/control commands** passed. The new unseeded compact and
+  classic controls use actual sensors to find a current-session hole, test fresh
+  acceptance/refusal, mine/fighter bypass, recharge arithmetic, autopilot
+  interruption, zero-turn startup and public/private separation. The ten new
+  scenarios were repeated against the final build. Existing transport, ground
+  actions, NPCs, reports, equipment, Genesis and chained mine-death checks passed.
+- Historical terminal fixtures explicitly select quiet login paths. A forced
+  warp or disruption scanner warning stops the disposable attempt; after its
+  process is stopped, exact pre-login save bytes are restored before a fresh
+  login, at most 128 attempts. Ordinary sensor observations are retained, other
+  failures propagate, and dedicated disruption controls run unfiltered. All
+  **five helper regressions** passed, including stable lock inode and real-error
+  propagation. Two older maintenance failures reproduced on the unchanged code
+  were isolated from unrelated Wanderer production/random events without
+  weakening their original resource/report assertions.
+- All **58 evidence/control commands** passed, including the unchanged 61 returned
+  DOS disruption controls, four exact reload chains, separately incomplete
+  diagnostic, 15 native byte observations, all 65 rehashed corruption controls and
+  **4,682 archive hashes**.
+- Linux/amd64 and Windows/amd64 cross-builds passed. Changed Python scripts parse;
+  edited relative links and diff whitespace checks pass. **148 regenerated
+  captures** were restored; all **226 pre-existing evidence files** then matched
+  the pre-suite path/hash snapshot before appending these validation notes.
+
+README, implementation/recovery/plan notes, regression/terminal checks and CI
+include the milestone. CI now allows 30 minutes for the expanded bounded suite.
+Exact BRUN30/MBF fidelity, remaining disruption combat/spy intelligence,
+long-running balance, live BBS acceptance and native Windows crash durability
+remain unverified/separate. Cross-builds and PTYs do not establish native/live
+acceptance.

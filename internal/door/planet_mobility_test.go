@@ -130,7 +130,7 @@ func TestPlanetReceiptRetainsCommittedWarningOnOutputFailure(t *testing.T) {
 	for _, kind := range []string{"thrusters", "assault"} {
 		for _, output := range []error{nil, io.EOF, io.ErrClosedPipe, errors.New("write failed")} {
 			term := &mobilityOutputFailure{failure: output}
-			s := Session{Terminal: term}
+			s := Session{disruptionRandom: func() float64 { return .999999 }, Terminal: term}
 			warning := &store.DurabilityError{Err: errors.New("directory sync failed")}
 			err := s.planetActionReceipt(game.PlanetReceipt{Kind: kind, Name: "Mobile", Hops: 1, TurnsSpent: 10}, warning)
 			var committed *store.DurabilityError

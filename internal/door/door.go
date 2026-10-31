@@ -132,6 +132,7 @@ func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 }
 
 type Session struct {
+	disruptionRandom     func() float64 // Test injection only; production uses independent login draws.
 	visibility           *game.Visibility
 	RealName             string
 	Store                store.Store
@@ -173,7 +174,7 @@ func (s Session) Run() (runErr error) {
 		var err error
 		id, err = s.classicStartup()
 		if errors.Is(err, io.EOF) {
-			return nil
+			return sessionInputEnd(err)
 		}
 		if err != nil {
 			return err
@@ -231,6 +232,14 @@ func (s Session) Run() (runErr error) {
 		if e := s.Terminal.Printf("\r\n%s\r\nWelcome, %s. Actions save automatically. Type ? for help.\r\n", version.String(), s.Alias); e != nil {
 			return e
 		}
+	}
+	rng := s.disruptionRandom
+	if rng == nil {
+		rng = prng.Float64
+	}
+	startErr := s.Store.StartDisruption(rng, s.Now, s.Deadline)
+	if _, err := s.finishArrival(startErr, nil); err != nil {
+		return err
 	}
 	if terminal, ok := s.Terminal.(*GoDoors); ok {
 		terminal.commandMode = true
@@ -328,7 +337,7 @@ func (s Session) Run() (runErr error) {
 				terminal.onIdle = nil
 			}
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 			if e != nil {
 				return e
@@ -488,7 +497,7 @@ func (s Session) Run() (runErr error) {
 			if s.Classic {
 				answer, err := s.classicArgument("\r\n<Quit>\r\nAre you sure (Y/N)? ", &pending)
 				if errors.Is(err, io.EOF) {
-					return nil
+					return sessionInputEnd(err)
 				}
 				if err != nil {
 					return err
@@ -559,6 +568,9 @@ func (s Session) Run() (runErr error) {
 			}
 			sector := w.Sectors[p.Sector]
 			e = s.Terminal.Printf("Warps: %v\r\n", sector.Warps)
+			if e == nil && w.Disrupted(id, p.Sector) {
+				e = s.Terminal.Printf("** Space-time disruption detected! **\r\n")
+			}
 			if e == nil && sector.Port != 0 {
 				e = s.Terminal.Printf("Port: %s\r\n", w.Ports[sector.Port].Name)
 			}
@@ -572,13 +584,13 @@ func (s Session) Run() (runErr error) {
 			if e == nil {
 				e = s.launchMissiles(id, args, &pending, visibility)
 				if errors.Is(e, io.EOF) {
-					return nil
+					return sessionInputEnd(e)
 				}
 			}
 		case "d", "drop", "lay":
 			e = s.placeMines(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "f", "defend":
 			e = s.setSectorFighters(id, args, &pending, false)
@@ -587,12 +599,12 @@ func (s Session) Run() (runErr error) {
 		case "bribe":
 			e = s.bribe(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "breach", "flee":
 			e = s.defenseEncounter(id, args, &pending, cmd == "flee")
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "attack":
 			if visibility == nil {
@@ -601,7 +613,7 @@ func (s Session) Run() (runErr error) {
 			if e == nil {
 				e = s.attackShip(id, args, &pending, visibility)
 				if errors.Is(e, io.EOF) {
-					return nil
+					return sessionInputEnd(e)
 				}
 			}
 		case "s", "scan", "sensors":
@@ -651,12 +663,12 @@ func (s Session) Run() (runErr error) {
 		case "rank", "rankings":
 			e = s.rankings(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "news":
 			e = s.newspaper(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "spies":
 			if len(args) != 0 {
@@ -683,27 +695,27 @@ func (s Session) Run() (runErr error) {
 				e = s.battleReports(id, false)
 			}
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "radio":
 			e = s.sendRadio(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "messages", "inbox":
 			e = s.radioHistory(id, args, cmd == "inbox")
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "nearest", "pairs", "profits":
 			e = s.tradeReport(id, cmd, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "portreport", "planetreport", "myplanets":
 			e = s.computerReport(id, cmd, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "path":
 			if len(args) != 2 {
@@ -739,12 +751,12 @@ func (s Session) Run() (runErr error) {
 		case "anticloak", "anti-cloak":
 			e = s.activateAntiCloak(token, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "w", "warp":
 			e = s.manualWarp(id, args, &pending)
 			if errors.Is(e, io.EOF) {
-				return nil
+				return sessionInputEnd(e)
 			}
 		case "auto", "autopilot":
 			if len(args) != 1 {
@@ -764,7 +776,7 @@ func (s Session) Run() (runErr error) {
 					if len(pending) == 0 {
 						answer, e = s.Terminal.ReadLine(s.Deadline)
 						if errors.Is(e, io.EOF) {
-							return nil
+							return sessionInputEnd(e)
 						}
 						if e != nil {
 							return e
@@ -797,13 +809,15 @@ func (s Session) Run() (runErr error) {
 							handled, scanErr := s.scannedMove(id, path[hop], &pending, path[hop-1:])
 							if handled || scanErr != nil {
 								if errors.Is(scanErr, io.EOF) {
-									return nil
+									return sessionInputEnd(scanErr)
 								}
 								e = scanErr
 								break
 							}
 							e = s.Store.UpdateWithSpies(func(w *game.World) error { return w.FollowCourse(id, path[hop-1:]) }, s.Now(), s.Deadline)
-							if e != nil {
+							interrupted, arrivalErr := s.finishArrival(e, &pending)
+							e = arrivalErr
+							if e != nil || interrupted {
 								break
 							}
 							token, planetToken = "", ""
@@ -950,7 +964,7 @@ func (s Session) Run() (runErr error) {
 				if e == nil {
 					e = s.moveShip(id, to, &pending)
 					if errors.Is(e, io.EOF) {
-						return nil
+						return sessionInputEnd(e)
 					}
 				}
 				if e == nil {
@@ -1081,6 +1095,9 @@ func (s Session) Run() (runErr error) {
 				e = errors.New("unknown command; type ? for help")
 			}
 		}
+		if _, arrivalErr := s.finishArrival(e, &pending); arrivalErr != nil {
+			e = arrivalErr
+		}
 		if errors.Is(e, game.ErrShipDestroyed) || errors.Is(e, game.ErrShipChanged) || errors.Is(e, game.ErrSeasonChanged) {
 			return e
 		}
@@ -1118,6 +1135,11 @@ func showSensors(t Terminal, reports []game.SensorReport) error {
 				selling = "no cargo"
 			}
 			if err := t.Printf("Port: %s | Selling: %s\r\n", r.PortName, selling); err != nil {
+				return err
+			}
+		}
+		if r.Disruption {
+			if err := t.Printf("** Space-time disruption detected! **\r\n"); err != nil {
 				return err
 			}
 		}

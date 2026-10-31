@@ -114,8 +114,8 @@ func (s Session) defenseEncounter(id int, args []string, pending *[]string, retr
 		return s.Terminal.Printf("Defense encounter cancelled.\r\n")
 	}
 	out, err := s.Store.DefenseEncounter(entry, rand.Float64, s.Now(), s.Deadline)
-	if err != nil {
-		return err
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return e
 	}
 	if err = s.Terminal.Printf("Defense encounter saved: %d attackers lost, %d defenders destroyed, %d surrendered.\r\n", out.Battle.AttackerLosses, out.Battle.DefenderLosses, out.Battle.Joined); err != nil {
 		return err

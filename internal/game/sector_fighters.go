@@ -19,6 +19,7 @@ type DefenseIntent struct {
 	Season                   uint64
 	Player, From, To         int
 	Generation               uint64
+	Sequence                 uint64
 	Fighters                 int64
 	Defense                  SectorDefense
 	Mines                    []MineLayer
@@ -177,7 +178,7 @@ func (w *World) PrepareDefenseFight(id, to int, count int64, accept bool) (Defen
 	if count < 1 || count > p.Fighters {
 		return DefenseIntent{}, errors.New("choose available fighters to commit")
 	}
-	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Fighters: count, Defense: *w.Sectors[to].Defense, Mines: append([]MineLayer(nil), w.Sectors[to].Minefield...), AcceptSurrender: accept}, nil
+	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: to, Generation: p.ShipGeneration, Sequence: p.WarpSequence, Fighters: count, Defense: *w.Sectors[to].Defense, Mines: append([]MineLayer(nil), w.Sectors[to].Minefield...), AcceptSurrender: accept}, nil
 }
 func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	p, err := w.player(id)
@@ -190,7 +191,7 @@ func (w *World) PrepareDefenseRetreat(id int) (DefenseIntent, error) {
 	if w.HasMineEncounter(p.ID) {
 		return DefenseIntent{}, ErrMineEncounter
 	}
-	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
+	return DefenseIntent{Season: w.Season, Player: id, From: p.Sector, To: p.Sector, Generation: p.ShipGeneration, Sequence: p.WarpSequence, Defense: *w.Sectors[p.Sector].Defense, Retreat: true}, nil
 }
 func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.Time) (DefenseOutcome, error) {
 	if err := w.CheckSession(entry.Player, entry.Generation, entry.Season); err != nil {
@@ -207,15 +208,25 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 	if err != nil {
 		return DefenseOutcome{}, err
 	}
-	if fresh.From != entry.From || fresh.To != entry.To || fresh.Defense != entry.Defense || !slices.Equal(fresh.Mines, entry.Mines) {
+	if fresh.Sequence != entry.Sequence || fresh.From != entry.From || fresh.To != entry.To || fresh.Defense != entry.Defense || !slices.Equal(fresh.Mines, entry.Mines) {
 		return DefenseOutcome{}, errors.New("defense warning or ship changed; confirm again")
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
 		return DefenseOutcome{}, errors.New("invalid defense encounter inputs")
 	}
 	out := DefenseOutcome{Sector: p.Sector}
+	if entry.To != entry.From && w.Disrupted(p.ID, entry.To) {
+		w.move(p, entry.To)
+		out.Mines, err = w.ResolveMinefield(p.ID, rng, now)
+		out.Sector = p.Sector
+		return out, err
+	}
 	if entry.Retreat {
 		if err = w.escapeMines(p, rng); err != nil {
+			return DefenseOutcome{}, err
+		}
+		out.Mines, err = w.ResolveMinefield(p.ID, rng, now)
+		if err != nil {
 			return DefenseOutcome{}, err
 		}
 		out.Escaped = true
@@ -256,6 +267,10 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 	}
 	if out.Battle.Survivors == 0 {
 		if err = w.escapeMines(p, rng); err != nil {
+			return DefenseOutcome{}, err
+		}
+		out.Mines, err = w.ResolveMinefield(p.ID, rng, now)
+		if err != nil {
 			return DefenseOutcome{}, err
 		}
 		out.Escaped = true

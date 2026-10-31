@@ -1,8 +1,10 @@
 """Exercise real PTY/GoDoors I/O, Door32 identity, and persistence in a temp world."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import tempfile,subprocess,os,pty,select,time,json,errno
 root=Path(__file__).resolve().parents[1]
 binary=str(root/'bin/yt')
+@without_disruption
 def play(args,commands):
  master,slave=pty.openpty()
  proc=subprocess.Popen([binary,'-compact',*args],stdin=slave,stdout=slave,stderr=slave,close_fds=True)
@@ -16,6 +18,7 @@ def play(args,commands):
      raise
     if not b:break
     chunks.append(b)
+    reject_disruption(b''.join(chunks))
     if not sent and b'> ' in b''.join(chunks):
      os.write(master,commands.encode()+b'\r');sent=True
   proc.wait(timeout=2)

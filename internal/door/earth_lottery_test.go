@@ -194,7 +194,7 @@ func TestLotteryReceiptWriteRetainsCommittedWarning(t *testing.T) {
 	for _, failure := range []error{errors.New("output failed"), io.ErrClosedPipe, io.EOF} {
 		terminal := &lotteryOutputFailure{failure: failure}
 		warning := &store.DurabilityError{Err: errors.New("sync failed after replacement")}
-		err := (Session{Terminal: terminal}).lotteryReceipt(game.LotteryReceipt{Ticket: "000000", Draw: "111111", Fee: 5, Balance: 1000}, warning)
+		err := (Session{disruptionRandom: func() float64 { return .999999 }, Terminal: terminal}).lotteryReceipt(game.LotteryReceipt{Ticket: "000000", Draw: "111111", Fee: 5, Balance: 1000}, warning)
 		var committed *store.DurabilityError
 		if !errors.As(err, &committed) || committed != warning || !errors.Is(err, failure) {
 			t.Fatalf("lost committed/output error: %v", err)

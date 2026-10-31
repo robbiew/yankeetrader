@@ -1,9 +1,11 @@
 """Exercise port buyout and remote collection through actual PTY/GoDoors I/O."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno, json, os, pty, select, subprocess, tempfile, time
 root = Path(__file__).resolve().parents[1]
 binary = str(root/'bin/yt')
 
+@without_disruption
 def play(data, alias, commands):
     master, slave = pty.openpty()
     proc = subprocess.Popen([binary,'-compact','-data',str(data),'-local',alias],stdin=slave,stdout=slave,stderr=slave)
@@ -17,6 +19,7 @@ def play(data, alias, commands):
                     raise
                 if not chunk: break
                 output+=chunk
+                reject_disruption(output)
                 if not sent and b'> ' in output:
                     os.write(master,commands.encode()+b'\r');sent=True
         proc.wait(timeout=2)

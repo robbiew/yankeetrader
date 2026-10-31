@@ -32,7 +32,7 @@ func genesisSession(t *testing.T, lines []string) (Session, *scripted) {
 		t.Fatal(err)
 	}
 	term := &scripted{lines: lines}
-	return Session{Store: st, Terminal: term, Identity: "winner", Alias: "Winner", Deadline: time.Now().Add(time.Minute), Now: func() time.Time { return at }}, term
+	return Session{disruptionRandom: func() float64 { return .999999 }, Store: st, Terminal: term, Identity: "winner", Alias: "Winner", Deadline: time.Now().Add(time.Minute), Now: func() time.Time { return at }}, term
 }
 func TestGenesisBothInterfacesCommitOnceAndEndLogin(t *testing.T) {
 	for _, classic := range []bool{false, true} {
@@ -110,7 +110,7 @@ func TestGenesisReceiptPreservesCommittedAndOutputErrors(t *testing.T) {
 	for _, output := range []error{io.EOF, io.ErrClosedPipe, errors.New("terminal failed"), errors.Join(&store.DurabilityError{Err: errors.New("storage warning")}, io.EOF)} {
 		warning := &store.DurabilityError{Err: errors.New("committed sync failure")}
 		term := &genesisFailureTerminal{failure: output}
-		err := (Session{Terminal: term}).genesisReceipt(game.GenesisReceipt{}, warning)
+		err := (Session{disruptionRandom: func() float64 { return .999999 }, Terminal: term}).genesisReceipt(game.GenesisReceipt{}, warning)
 		var committed *store.DurabilityError
 		if !errors.As(err, &committed) || committed != warning || !errors.Is(err, output) {
 			t.Fatal("lost committed warning", err)

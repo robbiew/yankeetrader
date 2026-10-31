@@ -1154,12 +1154,38 @@ is not claimed. The native loop has no chain cap, so modern bounded exhaustion
 needs an explicit policy. Current Go mine-escape heat-budget recomputation is a
 source discrepancy to audit during the shared-kernel work, not an incidental fix.
 
-Next: implement bounded session-local disruption and automatic arrival composition
+Research-stage next step (implemented below): bounded session-local disruption and automatic arrival composition
 with finite selection/chains, narrow encounter authority, captured ship/season
 identity, fresh voluntary intent checks and one atomic origin/aftermath save.
 Keep transport and recharge costs distinct, preserve independent planet positions,
 stop queued navigation, retain killer/estate rules and committed durability
 warnings, and expose only supported local warnings/private saved receipts.
 Update README, tests and validation together. This research changes no Go code or
-save25 fields. Remaining: implementation, exact random/numeric parity, unrelated
+save25 fields. Historical remaining work (arrival implementation completed below): exact random/numeric parity, unrelated
 disruption combat/spy branches, balance and native/live acceptance.
+
+
+## Bounded disruption arrivals — implementation complete
+
+[Implementation](yt-disruption/IMPLEMENTATION.md) binds two independently sampled,
+possibly duplicate interior holes to each live ship/season login. Save25 remains
+unchanged; the existing warp sequence now counts forced warps and invalidates
+travel/mine/bribe/defense/attack/missile confirmations. Startup, ordinary movement,
+accepted warnings, manual/mine escapes and planetary helper returns compose
+hole-first arrival with the origin action and reached aftermath in one save.
+Ordinary thruster intermediate-edge timing and independent Wanderer/ship positions
+are retained. Adjacent bribe/breach approaches skip a hole's fighters before
+payment/combat. Forced recharge does not decay cloak. Shared heat accounting
+caches the original two-draw budget while retaining separate destination policies.
+
+Work is capped at 32 disruption warps, 139 heat steps per warp and existing mine
+burst bounds. Exhaustion or invalid/stale inputs abort the whole action, rather
+than publish an arbitrary prefix or free escape. Local sensors/scanners expose
+observed warnings; generic news and saves conceal the hidden pair. Both interfaces
+print committed known-position/resource receipts, stop queued navigation and
+retain committed warnings through output failures. README, regression/real PTY
+checks, quiet historical-fixture selection and CI include the milestone.
+
+Remaining: exact DOS RNG/MBF parity, unrelated disruption combat/spy branches,
+broader balance, season archive export/admin reset tooling and native/live BBS
+acceptance. Consult evidence/VALIDATION.md for checks actually executed.

@@ -65,6 +65,7 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
+	arrival              *arrivalContext // Bound-login runtime only; never serialized.
 	NextPlanetGeneration uint64
 	Season               uint64
 	GenerationSeed       *int64         `json:",omitempty"`
@@ -334,6 +335,11 @@ func (w *World) canMoveBase(p *Player, to int) error {
 func (w *World) canMove(p *Player, to int) error {
 	if err := w.canMoveBase(p, to); err != nil {
 		return err
+	}
+	// A known login-local hole resolves before destination fighter admission.
+	// The store must compose that forced arrival in the same move transaction.
+	if w.Disrupted(p.ID, to) {
+		return nil
 	}
 	if defense := w.Sectors[to].Defense; defense != nil && defense.Owner != p.ID {
 		owner := w.Players[defense.Owner]

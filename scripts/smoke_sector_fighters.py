@@ -1,4 +1,5 @@
 """Exercise deployment, surrender confirmation and interception through real PTYs."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -12,6 +13,7 @@ import time
 ROOT=Path(__file__).resolve().parents[1]
 BINARY=str(ROOT/'bin/yt')
 
+@without_disruption
 def play(data,alias,command,answers=(),missile=False):
     master,slave=pty.openpty()
     proc=subprocess.Popen([BINARY,'-compact','-data',str(data),'-local',alias],stdin=slave,stdout=slave,stderr=slave)
@@ -28,6 +30,7 @@ def play(data,alias,command,answers=(),missile=False):
                     raise
                 if not chunk:break
                 output+=chunk
+                reject_disruption(output)
                 if not sent and b'> ' in output:
                     os.write(master,command.encode()+b'\r');sent=True
                 if answered<len(answers) and markers[answered] in output:

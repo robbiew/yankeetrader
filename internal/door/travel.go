@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/store"
 )
 
 func (s Session) buyScanner(id int, token string, quantity int64) error {
@@ -57,25 +58,24 @@ func (s Session) warpWithRandom(id int, args []string, pending *[]string, rng fu
 	if !strings.EqualFold(strings.TrimSpace(answer), "y") {
 		return s.Terminal.Printf("Emergency warp cancelled.\r\n")
 	}
-	out, err := s.Store.Warp(entry, rng, s.Now, s.Deadline)
-	if err != nil {
-		return err
+	out, actionErr := s.Store.Warp(entry, rng, s.Now, s.Deadline)
+	var warning *store.DurabilityError
+	if actionErr != nil && !errors.As(actionErr, &warning) {
+		return actionErr
 	}
-	if err = s.Terminal.Printf("Emergency warp saved: landed in sector %d; heat %d/31; recharge %d turns; aftermath %d turns; total spent %d.\r\n", out.Destination, out.Heat, out.RechargeTurns, out.AftermathTurns, out.TurnsSpent); err != nil {
-		return err
+	output := s.Terminal.Printf("Emergency warp saved: landed in sector %d; heat %d/31; recharge %d turns; aftermath %d turns; total spent %d.\r\n", out.Destination, out.Heat, out.RechargeTurns, out.AftermathTurns, out.TurnsSpent)
+	if output != nil {
+		return errors.Join(actionErr, output)
 	}
 	if out.Meltdown {
-		if err = s.Terminal.Printf("Engine meltdown consumed every remaining turn. Daily maintenance restores turns.\r\n"); err != nil {
-			return err
+		if output = s.Terminal.Printf("Engine meltdown consumed every remaining turn. Daily maintenance restores turns.\r\n"); output != nil {
+			return errors.Join(actionErr, output)
 		}
 	}
-	if err = s.showMineOutcome(out.Mines); err != nil {
-		return err
+	if handled, e := s.finishArrival(actionErr, pending); handled || e != nil {
+		return e
 	}
-	if out.HostileDefense {
-		return s.Terminal.Printf("Hostile fighters guard sector %d. Resolve the defense encounter before normal actions.\r\n", out.FinalSector)
-	}
-	return nil
+	return errors.Join(actionErr, s.showMineOutcome(out.Mines))
 }
 
 // scannedMove handles only an installed scanner's dangerous hop. A warning
@@ -108,6 +108,11 @@ func (s Session) scannedMove(id, to int, pending *[]string, course []int) (bool,
 	}
 	if err = s.Terminal.Printf("Danger scanner has detected the following in sector %d!\r\n", to); err != nil {
 		return true, err
+	}
+	if entry.Disruption {
+		if err = s.Terminal.Printf("** Space-time disruption detected! **\r\n"); err != nil {
+			return true, err
+		}
 	}
 	var mines int64
 	for _, l := range entry.Layers {
@@ -153,8 +158,8 @@ func (s Session) scannedMove(id, to int, pending *[]string, course []int) (bool,
 		out, e = w.CommitScannerEntry(entry, rand.Float64, s.Now())
 		return e
 	}, s.Now(), s.Deadline)
-	if err != nil {
-		return true, err
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return true, e
 	}
 	if err = s.Terminal.Printf("Scanner entry saved into sector %d. One movement turn spent.\r\n", to); err != nil {
 		return true, err

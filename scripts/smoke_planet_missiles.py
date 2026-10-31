@@ -1,4 +1,5 @@
 """Real terminal cancellation and persisted planetary production destruction."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import datetime
 import errno
@@ -12,6 +13,7 @@ import time
 ROOT=Path(__file__).resolve().parents[1]
 BINARY=str(ROOT/'bin/yt')
 
+@without_disruption
 def play(data,alias,command,answer=None):
     master,slave=pty.openpty()
     proc=subprocess.Popen([BINARY,'-compact','-data',str(data),'-local',alias],stdin=slave,stdout=slave,stderr=slave)
@@ -25,6 +27,7 @@ def play(data,alias,command,answer=None):
                     raise
                 if not chunk:break
                 output+=chunk
+                reject_disruption(output)
                 if not sent and b'> ' in output:
                     os.write(master,command.encode()+b'\r');sent=True
                 if answer is not None and not confirmed and b'Hostile planets along the course may be damaged or destroyed. [y/N] ' in output:

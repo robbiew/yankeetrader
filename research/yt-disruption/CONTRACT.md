@@ -1,6 +1,7 @@
 # Disruption arrival: candidate modern implementation contract
 
-This is a source-backed reconstruction contract for a **future** implementation.
+Historical research-stage contract, now implemented in [IMPLEMENTATION.md](IMPLEMENTATION.md).
+This document preserves the source-backed proposal for that implementation.
 It changes no Go gameplay or save format. The native and completed DOS controls
 below establish the recovered behavior; the later policies are explicit modern
 safety requirements, not claims that DOS had atomic saves or bounded execution.

@@ -1,4 +1,5 @@
 """Real terminal nearest-port filters and directed trade forecasts; no trades."""
+from smoke_arrival_control import without_disruption, reject_disruption
 from pathlib import Path
 import errno
 import json
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = str(ROOT / "bin/yt")
 
 
+@without_disruption
 def play(data, alias, commands, classic=False):
     master, slave = pty.openpty()
     options = ["-ascii"] if classic else ["-compact"]
@@ -37,6 +39,7 @@ def play(data, alias, commands, classic=False):
             if not chunk:
                 break
             output += chunk
+            reject_disruption(output)
             pending += chunk
             if step < len(steps) and steps[step][0] in pending:
                 marker, answer = steps[step]
