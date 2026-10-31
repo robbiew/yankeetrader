@@ -1,9 +1,10 @@
 # Planetary production damage and destruction research
 
-This research now guides the playable Go implementation. One-hop missile attacks
+This research now guides the playable Go implementation. Routed missile attacks
 apply production damage after ground forces reach zero and logically destroy a
 planet when all three rates reach zero. This file remains the evidence and
-compatibility record.
+compatibility record. See [wider routes](WIDER_ROUTES.md) for current multi-hop,
+mixed-encounter and return-fire behavior.
 
 ## Results
 
@@ -118,11 +119,13 @@ trace of every operation.
   It does not transfer bank, inventory or credits, and does not kill the owner.
 - The recovered cached-ore round-count asymmetry is preserved. A symmetric
   live-rate termination rule would be a modern policy change.
-- Missiles left after the production loop ends dissipate; they create no extra
-  effects or refund. Route continuation after destruction remains a later scope.
-- Do not infer ship damage, estate transfer, faction behavior, return fire,
-  allied-planet targeting or route continuation from these isolated planets.
-  Wider/mixed encounters remain a separate research and implementation milestone.
+- Missiles left after the production loop continue through later routed encounters;
+  any unused volley at the end of the route dissipates without a refund.
+- These isolated-planet experiments do not establish ship damage, estate transfer,
+  faction behavior, return fire, allied-planet targeting or route continuation.
+  The later [wider-route milestone](WIDER_ROUTES.md) supplies separate evidence
+  and documents implemented mixed encounters, friendly-planet protection and
+  continuation after destruction.
 
 ## Verification and limits
 
@@ -140,6 +143,9 @@ For fresh experiments, first prepare a new disposable directory using
 `research/yt-missiles/production/run_cases.py <new-recovery-directory>`.
 The runner uses the existing local DOSBox/KEYFEED tools, creates new fixture/result
 directories and refuses existing ones. Never run it against the immutable archive.
-Original RNG capture, bit-exact MBF32 rounding, larger/fractional numeric
-boundaries and routing after destruction remain open. Native BBS acceptance is
-also still distinct from the local PTY smoke and race-tested transaction.
+Original RNG capture, bit-exact MBF32 rounding and larger/fractional numeric
+boundaries remain open. Routing after destruction is implemented; unresolved
+route-selection and encounter-ordering fidelity is listed in
+[remaining research and validation](WIDER_ROUTES.md#remaining-research-and-validation).
+Native BBS acceptance is still distinct from the local PTY smoke and race-tested
+transaction.

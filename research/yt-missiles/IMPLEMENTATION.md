@@ -3,7 +3,7 @@
 This document preserves the initial one-hop integration scope. The current
 routed and mixed-encounter behavior is in [WIDER_ROUTES.md](WIDER_ROUTES.md).
 
-## Playable scope
+## Initial playable scope (historical)
 
 `MISSILE <sector> <quantity>` and classic `!` offer a fresh, separately entered Y
 confirmation. Missing sector/quantity are prompted. Stacked Y, command replay,
@@ -164,13 +164,16 @@ fixtures make the lethal paths independent of random damage magnitude; no
 production binary or RNG is patched. Transcript: `evidence/missiles-smoke.txt`.
 CI reruns the model, saved DOS evidence and terminal checks.
 
-World format is **8**. Supported versions 1–7 upgrade in memory and persist on the
-next successful update, with no historical death replay. Version-7 headers must
+This milestone introduced world format **8**. At that stage, versions 1–7
+upgraded in memory and persisted on the next successful update, with no historical death replay. Version-7 headers must
 not already carry new nonzero score or missile-death state. Read-only loads do
 not rewrite files. Back up the stopped world, upgrade all nodes together, and use
 the matching backup to revert binaries; rollback loses later progress.
 
-Next: sector-fighter interception/deployment/combat, multi-ship and longer missile
-routes, planetary bombardment, mine placement and scoreboard/complete maintenance.
-Native BBS combat/durability acceptance and full economic exploit-chain playtests
-remain open; cross-builds and local PTYs are separate evidence.
+The original follow-up list included sector-fighter interception/deployment/combat,
+multi-ship and longer missile routes, planetary bombardment, mine placement and
+scoreboard/maintenance integration. Those features have since been implemented;
+this list is retained as milestone history, not a current backlog. See the
+[README](../../README.md) for current gameplay and
+[remaining missile research and validation](WIDER_ROUTES.md#remaining-research-and-validation)
+for unresolved fidelity and acceptance work.
