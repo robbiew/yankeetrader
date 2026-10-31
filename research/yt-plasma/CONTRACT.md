@@ -1,5 +1,9 @@
 # Plasma launch and disruption: candidate modern contract
 
+**Historical research-stage document.** The subsequent [Go implementation](IMPLEMENTATION.md)
+now completes bounded plasma launching in save26. The research-stage statements
+below retain their original scope and do not describe today's playable status.
+
 Research-stage proposal only. This document changes no Go gameplay or save
 format. The fresh [recovery report](RECOVERY.md) and [native analysis](NATIVE.md)
 are the authority for this milestone's original-DOS observations. Policies below

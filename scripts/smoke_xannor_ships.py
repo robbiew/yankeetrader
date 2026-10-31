@@ -47,7 +47,7 @@ def exercise(guard):
             path.write_text(json.dumps(world))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());p=saved['Players']['1']
-            assert saved['Version']==25 and saved['Xannor']==dict(HQ=8,Reserve=0)
+            assert saved['Version']==26 and saved['Xannor']==dict(HQ=8,Reserve=0)
             if mode in ('planet-ground','defense-stop'):
                 assert not p.get('Death') and not p.get('BattleReports'),p
                 if mode=='planet-ground':
@@ -71,7 +71,16 @@ def exercise(guard):
             result=guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,text=True,timeout=10)
             assert 'no daily phases repeated' in result.stdout and path.read_bytes()==before
             private=f"Xannor lost {report['XannorLost']} fighters. You lost {report['FightersLost']} fighters and {report['ShieldsLost']} shields."
-            other=guard.run(play,data,'Visitor','battles;news;q')
+            # Always exercise multiple pages. Legitimate random awards can also
+            # add pages; queued Q is intentionally discarded at that prompt.
+            if mode=='death':
+                current=json.loads(path.read_text())
+                for i in range(6):
+                    current.setdefault('News',[]).append(dict(ID=current['NextNews'],At=guard.clock().isoformat(),Kind='login',Alias=f'Paging fixture {i}'))
+                    current['NextNews']+=1
+                path.write_text(json.dumps(current))
+            other=guard.run(play,data,'Visitor','battles;news',followups=[(b'> ',b'q\r')],page_news=True)
+            if mode=='death':assert 'More news? [Enter=more, Q=stop]'in other and 'Paging fixture 5'in other
             assert private not in other and 'Private Xannor battle report'not in other
             if mode=='death':assert 'Captain  Destroyed by the Xannor'in other
             for classic in (False,True):

@@ -151,6 +151,7 @@ jobs:
           python3 scripts/smoke_earth_lottery.py
           python3 scripts/smoke_planet_mobility.py
           python3 scripts/smoke_wanderer.py
+          python3 scripts/smoke_plasma.py
           python3 scripts/smoke_disruption.py
           python3 scripts/test_smoke_arrival_control.py
           python3 scripts/smoke_genesis.py

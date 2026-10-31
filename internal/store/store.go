@@ -29,6 +29,7 @@ type Store struct {
 	syncDirectory func(string) error
 }
 type shipSession struct {
+	plasmaActive     *game.PlasmaIntent
 	arrivalMu        sync.Mutex
 	disruption       *game.Disruption
 	arrivalRNG       func() float64

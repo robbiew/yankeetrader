@@ -17,7 +17,7 @@ BINARY = str(ROOT / "bin/yt")
 
 
 @without_disruption
-def play(data, alias, commands, classic=False, followups=()):
+def play(data, alias, commands, classic=False, followups=(), page_news=False):
     master, slave = pty.openpty()
     options = ["-ascii"] if classic else ["-compact"]
     proc = subprocess.Popen([BINARY, *options, "-data", str(data), "-local", alias],
@@ -28,6 +28,7 @@ def play(data, alias, commands, classic=False, followups=()):
     steps += list(followups)
     output = pending = b""
     step = 0
+    pages = 0
     deadline = time.monotonic() + 20
     try:
         while time.monotonic() < deadline:
@@ -44,6 +45,15 @@ def play(data, alias, commands, classic=False, followups=()):
             output += chunk
             reject_disruption(output)
             pending += chunk
+            # Opt-in for callers inspecting all public news rather than testing
+            # a particular paging choice. Other flows retain explicit steps.
+            marker=b"More news? [Enter=more, Q=stop] "
+            if page_news and marker in pending:
+                pages+=1
+                assert pages<=64, "unexpected unbounded newspaper paging"
+                pending=pending.split(marker,1)[1]
+                os.write(master,b"\r")
+                continue
             if step < len(steps) and steps[step][0] in pending:
                 marker, answer = steps[step]
                 pending = pending.split(marker, 1)[1]
@@ -108,7 +118,7 @@ def run_fixture(guard):
         assert "Galactic Newspaper - Yesterday" in transcript and "No news retained for this date." in transcript
         assert "Captain  Logged on" in transcript
         path=data/"world.json";saved=json.loads(path.read_text())
-        assert saved["Version"]==25 and len(saved["News"])==1 and saved["NextNews"]==2
+        assert saved["Version"]==26 and len(saved["News"])==1 and saved["NextNews"]==2
         assert saved["Players"]["1"]["Credits"]==1005 and saved["Players"]["1"]["Turns"]==500
         text=guard.run(play,data,"Captain","team;2;News Team",followups=[
             (b"Team password (4 characters; entered separately): ",b"ABCD\r"),
@@ -141,7 +151,7 @@ def run_fixture(guard):
         path.write_text(json.dumps(current))
         text=guard.run(play,data,"Captain","news yesterday;q");transcript+=text
         assert "No news retained for this date." in text
-        migrated=json.loads(path.read_text());assert migrated["Version"]==25 and len(migrated["News"])==1 and migrated["NextNews"]==2
+        migrated=json.loads(path.read_text());assert migrated["Version"]==26 and len(migrated["News"])==1 and migrated["NextNews"]==2
         text=guard.run(play,data,"Captain","c;8;x;y;8;t;1;q;y",classic=True);transcript+=text
         assert text.count("Do you want to read [T]oday's or [Y]esterday's news?")==3 and "Choose T or Y." in text
         assert "Galactic Newspaper - Today" in text and "Captain  Logged on" in text

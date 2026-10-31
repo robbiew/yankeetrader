@@ -1,5 +1,9 @@
 # Plasma launch, routing and disruption recovery
 
+**Historical research-stage document.** The subsequent [Go implementation](IMPLEMENTATION.md)
+now completes bounded plasma launching in save26. The research-stage statements
+below retain their original scope and do not describe today's playable status.
+
 Research completed 2026-10-31. **Research only: no Go gameplay or save-format
 change. Plasma firing remains unavailable; save version 25 is unchanged.**
 The next implementation is the separate [bounded candidate contract](CONTRACT.md).

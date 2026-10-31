@@ -920,3 +920,55 @@ rules from finite-budget, atomic-save, self/friendly death and privacy policies.
 Live BBS acceptance and native Windows crash durability remain unverified. See
 [recovery and reproduction](../research/yt-plasma/RECOVERY.md) and
 [the proposed implementation](../research/yt-plasma/CONTRACT.md).
+
+## Bounded plasma launching and atomic aftermath (2026-10-31)
+
+Plasma is now available in both interfaces as `PLASMA`/`+`, separately from the
+historical research-only stage above. The launch uses fresh single-use consent,
+one shared bounded energy pool, directed/hole-rebuilt courses and indiscriminate
+physical damage. Costs, death/estate/salvage, wreck mines, local arrival, planet
+cleanup and qualifying HQ reward/revenge/news commit together. Schema26 adds
+explicit plasma death semantics; supported older saves migrate without assets.
+
+Validation on macOS arm64 with Go1.27.3 and the local GoDoors dependency override:
+
+- Full final `go test -race -count=1 ./...` and `go vet ./...` pass. Repository
+  module/checksum files and the GoDoors checkout are unchanged.
+- Focused rules/storage/interface checks cover 32 seeded conservation worlds,
+  zero/invalid RNG and work limits, stored-exit ties/range, friendly/self/cloaked
+  hits, resource/energy sharing, stock-derived production, retirement and landing
+  revocation, actual HQ owner/headroom, self/friendly/posthumous attribution,
+  surviving/fatal local wreck-mine chains and remaining-layer conservation.
+- Store coverage includes byte-identical rollback after death/loot/late hazards
+  and HQ publication, capacity failures, competing logins, altered/replayed/cancelled
+  consent, real Genesis reset with reused IDs, world/cache lock expiry, expiry
+  during a random draw, read-only version25 migration and committed durability.
+- Both interfaces cover exact fresh confirmation, strict integer input, EOF,
+  concealed-state changes, self-death login termination/replacement timing and
+  preservation of committed storage warnings through receipt-output failures.
+- All **51 current CI terminal/control commands** pass locally. The new real
+  GoDoors smoke retains **ten compact/classic scenarios**, with accepted/cancelled/
+  stale launches, hidden physical hits, self death, mixed wreck/planet impacts and
+  surviving reconnects without replay. Its current transcript is
+  [plasma-smoke.txt](plasma-smoke.txt).
+- The broader terminal run reproduced an old public-newspaper test hang when a
+  legitimate random award added a page. Public-history viewer checks now opt into
+  bounded automatic page answers and a fresh quit. A deterministic six-event
+  fixture exercises that path; explicit pager-choice tests retain their default
+  behavior. No production newspaper or random-award rule was changed. Older
+  smoke assertions now expect current schema26 while historical input versions
+  remain intact.
+- All **60 current CI evidence/control commands** pass, including the 62-control
+  plasma corpus, its 53 corruption controls and every one of the **4682 original
+  archive hashes**. No new original-DOS runtime or RNG parity is claimed by the
+  implementation tests.
+- Linux/amd64 and Windows/amd64 final cross-builds pass. This is build evidence;
+  native Windows file/socket/crash durability and live BBS play remain untested.
+
+Before the broad run, all 226 existing evidence files were backed up; 148
+regenerated historical captures were restored byte-for-byte. Only this validation
+note intentionally changes among those files; the new plasma transcript is
+retained separately. README, reconstruction plan, implementation policies and CI
+are updated in the same implementation commit. Concrete limits, financial policy,
+privacy and unsupported follow-ups are in
+[IMPLEMENTATION.md](../research/yt-plasma/IMPLEMENTATION.md).

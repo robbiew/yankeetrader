@@ -47,7 +47,7 @@ def exercise(guard):
             path.write_text(json.dumps(world))
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
-            assert saved['Version'] == 25 and saved['Xannor'] == dict(HQ=8, Reserve=0)
+            assert saved['Version'] == 26 and saved['Xannor'] == dict(HQ=8, Reserve=0)
             assert saved['Planets']['100']['Fighters'] == 37.5
             assert saved['Players']['1']['Fighters'] == world['Players']['1']['Fighters'] and not saved['Players']['1'].get('Death')
             if mode == 'planet':
