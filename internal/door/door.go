@@ -256,7 +256,7 @@ func (s Session) Run() (runErr error) {
 	pending := []string{}
 	token := ""
 	planetToken := ""
-	if err := s.resolveCurrentMines(id); err != nil {
+	if _, err := s.resolveCurrentMines(id, &pending); err != nil {
 		return err
 	}
 	if err := s.Store.Update(func(w *game.World) error {
@@ -273,8 +273,10 @@ func (s Session) Run() (runErr error) {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
 		}
-		if err := s.resolveCurrentMines(id); err != nil {
+		if interrupted, err := s.resolveCurrentMines(id, &pending); err != nil {
 			return err
+		} else if interrupted {
+			continue
 		}
 		if err := s.intelligence(true); err != nil {
 			return err
@@ -347,8 +349,10 @@ func (s Session) Run() (runErr error) {
 		// Input may have waited while another process destroyed/replaced the
 		// ship. Refresh before even a read-only dispatch; mutations recheck
 		// again under the transaction lock.
-		if err := s.resolveCurrentMines(id); err != nil {
+		if interrupted, err := s.resolveCurrentMines(id, &pending); err != nil {
 			return err
+		} else if interrupted {
+			continue
 		}
 		w, e = s.Store.View()
 		if e != nil {

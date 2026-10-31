@@ -40,19 +40,22 @@ func (s Session) showMineOutcome(out game.MineOutcome) error {
 	}
 	return nil
 }
-func (s Session) resolveCurrentMines(id int) error {
+
+// resolveCurrentMines reports an arrival interruption so the command loop can
+// restart before dispatch, including when another login moved this ship.
+func (s Session) resolveCurrentMines(id int, pending *[]string) (bool, error) {
 	w, err := s.Store.View()
 	if err != nil {
-		return err
+		return false, err
 	}
 	if !w.HasMineEncounter(id) && !w.Disrupted(id, w.Players[id].Sector) {
-		return nil
+		return false, nil
 	}
 	out, err := s.Store.ResolveMines(s.Now(), rand.Float64)
-	if handled, e := s.finishArrival(err, nil); handled || e != nil {
-		return e
+	if handled, e := s.finishArrival(err, pending); handled || e != nil {
+		return handled, e
 	}
-	return s.showMineOutcome(out)
+	return false, s.showMineOutcome(out)
 }
 func (s Session) moveShip(id, to int, pending *[]string) error {
 	if handled, err := s.scannedMove(id, to, pending, nil); handled || err != nil {
