@@ -183,7 +183,9 @@ func (s Session) Run() (runErr error) {
 			if !time.Now().Before(s.Deadline) {
 				return errors.New("session time expired")
 			}
-			w.Maintain(s.Now())
+			if _, e := w.RunMaintenance(s.Now(), prng.Float64); e != nil {
+				return e
+			}
 			alias := s.Alias
 			for _, existing := range w.Players {
 				if existing.Identity == s.Identity && existing.LastLogin != "" {

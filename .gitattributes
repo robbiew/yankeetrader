@@ -99,3 +99,12 @@
 /research/yt-planet-mobility/dos/**/RETURN.LOG -diff
 /research/yt-planet-mobility/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-planet-mobility/dos/**/dosbox.log whitespace=-blank-at-eol
+
+# Original Wanderer controls preserve exact DOS clocks, keys and return markers.
+/research/yt-wanderer/dos/** -text
+/research/yt-wanderer/dos/**/KEYS.TXT -diff
+/research/yt-wanderer/dos/**/DOS*.LOG -diff
+/research/yt-wanderer/dos/**/RETURN.LOG -diff
+/research/yt-wanderer/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-wanderer/dos/**/dosbox.log whitespace=-blank-at-eol
+/research/yt-wanderer/exploratory/** -text -diff

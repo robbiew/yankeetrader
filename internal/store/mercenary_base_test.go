@@ -99,7 +99,7 @@ func TestMercenaryBaseAtomicCreationConcurrentDailyAndCapture(t *testing.T) {
 		}
 	}
 	w, err := (Store{Dir: s.Dir}).View()
-	if err != nil || len(w.Planets) != 1 || w.Planets[99].FactionHome != game.MercenaryHome || w.Planets[99].Bank != 25000000 || w.Sectors[8].Planet != 99 {
+	if err != nil || len(w.Planets) != 2 || w.Planets[99].FactionHome != game.MercenaryHome || w.Planets[99].Bank != 25000000 || w.Sectors[8].Planet != 99 {
 		t.Fatal("daily base creation duplicated or not persisted", err)
 	}
 	before, _ = os.ReadFile(s.Dir + "/world.json")
@@ -123,7 +123,7 @@ func TestMercenaryBaseAtomicCreationConcurrentDailyAndCapture(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, err = s.View()
-	if err != nil || len(w.Planets) != 1 || w.Planets[99].Owner != 1 || w.Planets[99].Ground != 0 || w.Planets[99].Bank != 0 {
+	if err != nil || len(w.Planets) != 2 || w.Planets[99].Owner != 1 || w.Planets[99].Ground != 0 || w.Planets[99].Bank != 0 {
 		t.Fatal("captured base retitled, refilled or duplicated", err)
 	}
 }

@@ -12,6 +12,7 @@ import (
 
 // Nonfinancial production/stocks retain fractions. Spendable credits never use floats.
 type Planet struct {
+	Wanderer                          bool `json:",omitempty"`
 	Generation                        uint64
 	FactionHome                       string `json:",omitempty"`
 	ID, Sector, Owner                 int
@@ -23,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 25 {
+		for _, p := range w.Planets {
+			if p != nil && p.Wanderer {
+				return errors.New("legacy world unexpectedly contains Wanderer identity")
+			}
+		}
+	}
 	if w.Version < 24 {
 		for _, e := range w.News {
 			if e.Kind == NewsPlayerPlanet || e.GroundCommitted != 0 || e.GroundRemaining != 0 {
@@ -287,10 +295,13 @@ func (w *World) Upgrade() error {
 		}
 		w.Version = 24
 	}
+	if w.Version == 24 {
+		w.Version = 25
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
-	if w.NextPlanetGeneration < 101 || len(w.Planets) > 99 {
+	if w.NextPlanetGeneration < 101 || len(w.Planets) > 100 {
 		return errors.New("invalid planet allocator or planet count")
 	}
 	for _, p := range w.Players {
@@ -317,6 +328,7 @@ func (w *World) validatePlanets() error {
 	}
 	seen := map[uint64]bool{}
 	homes := map[string]bool{}
+	mobile := false
 	for id, p := range w.Planets {
 		if p == nil {
 			return errors.New("invalid planet")
@@ -325,6 +337,13 @@ func (w *World) validatePlanets() error {
 			return errors.New("invalid planet incarnation")
 		}
 		seen[p.Generation] = true
+		if p.Wanderer {
+			if mobile || p.FactionHome != "" || p.ID != 1 {
+				return errors.New("invalid Wanderer identity")
+			}
+			mobile = true
+		}
+
 		if p.FactionHome != "" {
 			if (p.FactionHome != MercenaryHome && p.FactionHome != XannorHome) || p.Sector <= 7 {
 				return errors.New("invalid faction home")
@@ -335,7 +354,7 @@ func (w *World) validatePlanets() error {
 			homes[p.FactionHome] = true
 		}
 		factionOwner := (p.Owner == MercenaryOwner && p.FactionHome == MercenaryHome) || (p.Owner == XannorOwner && p.FactionHome == XannorHome)
-		if id < 2 || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || (!factionOwner && (p.Owner < 0 || (p.Owner != 0 && (w.Players[p.Owner] == nil || !w.Players[p.Owner].RetiredAt.IsZero())))) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
+		if id < 1 || id == 1 && !p.Wanderer || id > 100 || p.ID != id || !clean(p.Name) || p.Updated.IsZero() || w.Sectors[p.Sector] == nil || w.Sectors[p.Sector].Planet != id || (!factionOwner && (p.Owner < 0 || (p.Owner != 0 && (w.Players[p.Owner] == nil || !w.Players[p.Owner].RetiredAt.IsZero())))) || p.Bank < 0 || p.Bank > MaxMoney || p.Ground < 0 || p.Ground > MaxQuantity {
 			return errors.New("invalid planet")
 		}
 		for _, x := range append(append([]float64{}, p.Production[:]...), append(p.Cargo[:], p.Fighters, p.Missiles, p.Mines, p.Plasma)...) {

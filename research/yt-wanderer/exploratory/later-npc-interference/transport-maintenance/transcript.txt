@@ -1,0 +1,104 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 23258 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 213 
+  -  Group: 3               Size: 8 
+  -  Group: 4               Size: 252 
+  -  Group: 5               Size: 2035 
+ *** 2035 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 6               Size: 960 
+ *** 960 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 7               Size: 615 
+ *** 615 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 8               Size: 5 
+ *** 5 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 9               Size: 1661 
+ *** 1661 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 10              Size: 159 
+ *** 159 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 11              Size: 2764 
+ *** 2764 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 12              Size: 2540 
+ *** 2540 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 13              Size: 81 
+ *** 81 Xannor attacked the planet "The Wanderer"
+ *** Xannor fighters destroyed!
+  -  Group: 14              Size: 235 
+ *** 235 Xannor attacked the planet "The Wanderer"
+ *** Planet "The Wanderer" destroyed!
+  -  Group: 15              Size: 147 
+  -  Group: 16              Size: 227 
+  -  Group: 17              Size: 414 
+  -  Group: 18              Size: 45 
+  -  Group: 19              Size: 164 
+  -  Group: 20              Size: 7 
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 10-25-2026 00:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+  1  100.00%       11,629,000   None      0    Q                             
+  2    2.38%          276,345   None      0    Enemy                         
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,229,300    10.57%                  0    0.00%
+
+
+Daily Maintenance Completed OK

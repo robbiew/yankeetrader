@@ -203,7 +203,7 @@ func TestPlanetVersion23ReadOnlyMigrationAndFutureFieldRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	loaded, err := s.View()
-	if err != nil || loaded.Planets[2].Generation != 2 || loaded.NextPlanetGeneration != 101 || loaded.Version != 24 {
+	if err != nil || loaded.Planets[2].Generation != 2 || loaded.NextPlanetGeneration != 101 || loaded.Version != game.WorldVersion {
 		t.Fatal(loaded, err)
 	}
 	if !bytes.Equal(raw, travelBytes(t, s)) {
@@ -213,7 +213,7 @@ func TestPlanetVersion23ReadOnlyMigrationAndFutureFieldRejection(t *testing.T) {
 		t.Fatal(err)
 	}
 	var saved game.World
-	if err = json.Unmarshal(travelBytes(t, s), &saved); err != nil || saved.Version != 24 || saved.Planets[2].Generation != 2 {
+	if err = json.Unmarshal(travelBytes(t, s), &saved); err != nil || saved.Version != game.WorldVersion || saved.Planets[2].Generation != 2 {
 		t.Fatal(err)
 	}
 	// A version23 file must not smuggle new allocator/identity state.
