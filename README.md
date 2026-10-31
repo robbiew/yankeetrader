@@ -20,7 +20,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Planetary thrusters and forced landing; explicit season archive export/administrative reset tooling.
+- Planetary thrusters and forced landing ([bounded research complete](research/yt-planet-mobility/RECOVERY.md), gameplay not enabled); explicit season archive export/administrative reset tooling.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1020,6 +1020,36 @@ and cross-build validation are recorded in the validation log. Live BBS acceptan
 native Windows crash durability, full DOS generation/numeric parity and The
 Wanderer's absent lifecycle remain separate work.
 [Implementation and safety contract](research/yt-genesis/IMPLEMENTATION.md).
+
+
+### Planetary thrusters and forced landing — research complete
+
+The follow-up now has 55 normally returned original-DOS controls, 110 world
+snapshots, two exact reload/auxiliary chains and 19 native byte reads plus a
+verified MZ load-image observation. It extends the earlier relocation and ground
+assault evidence; it does not enable either Go command or change save version 23.
+
+Thrusters quote ten turns per hop and require the full route's budget. Later
+collisions retain earlier paid movement, destroy the moving planet and preserve
+the destination planet; failed collision hops do not charge ten turns. Mines and
+hostile fighters stop the route after movement, followed by normal arrival
+handling. Owner, teammate and unguarded foreign access are distinguished, along
+with the reserved Xannoron slot and the Wanderer's split planet/ship relocation.
+
+Forced landing consumes the committed ground troops, leaves winning survivors as
+the captured garrison and costs no turns in these controls. Partial defeat retains
+uncommitted ship troops; exact parent-world follow-ups verify capture reentry and
+another failed attack. Neutral/dead-governor adoption, zero/fractional defenses,
+input truncation and hostile faction owners are separate tested branches.
+
+The independent verifier checks setup, routing/links, resource and troop accounting,
+news/scores, clocks/keyboard/normal return and relocation-aware native bytes.
+All 41 rehashed corruption controls reject altered claims. The implementation contract
+covers bounded work, fresh planet/ship/season identity, permissions, other landed
+callers, atomic outcomes and accurate receipts. Stress distributions, true
+session-random disruption encounters, concurrent/interrupted DOS actions and full
+RNG/MBF equivalence remain unverified.
+[Evidence, limits and next implementation contract](research/yt-planet-mobility/RECOVERY.md).
 
 
 ## Documentation upkeep

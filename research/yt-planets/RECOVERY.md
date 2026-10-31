@@ -1,5 +1,10 @@
 # Planet management and economy
 
+A [bounded thruster and forced-landing follow-up](../yt-planet-mobility/RECOVERY.md)
+now extends relocation/access with 55 normally returned controls and native byte
+evidence. The earlier limits below describe this original recovery milestone.
+Neither Go action is enabled by the research.
+
 Recovered from the original Yankee Trader 3.6 YT.EXE, with controlled DOSBox sessions. This completes the first pass through planet creation, cargo/equipment transfers, production investment, banking, ordinary landing permissions, garrison management, and relocation. It builds on the earlier [maintenance recovery](../yt-maint/RECOVERY.md) and [planetary assault recovery](../yt-missiles/RECOVERY.md).
 
 Validation: **190 checks pass across 24 original DOS sessions**. These are field, action, model and integrity checks, not 190 independent playthroughs. Original executable hashes still match the archived inventory.

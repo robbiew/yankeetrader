@@ -1,0 +1,1880 @@
+{
+  "recipe": "planet-mobility-v1",
+  "graph": {
+    "1": [
+      100
+    ],
+    "100": [
+      101,
+      106
+    ],
+    "101": [
+      102
+    ],
+    "102": [
+      103
+    ],
+    "103": [
+      104
+    ],
+    "104": [
+      105
+    ],
+    "105": [
+      100,
+      1
+    ],
+    "106": [
+      107
+    ],
+    "107": [
+      108
+    ],
+    "108": [
+      109
+    ],
+    "109": [
+      110
+    ],
+    "110": [
+      100
+    ],
+    "3000": []
+  },
+  "common_patches": [
+    [
+      52,
+      41,
+      100
+    ],
+    [
+      52,
+      45,
+      0
+    ],
+    [
+      52,
+      49,
+      0
+    ],
+    [
+      52,
+      53,
+      0
+    ],
+    [
+      52,
+      57,
+      0
+    ],
+    [
+      52,
+      61,
+      0
+    ],
+    [
+      52,
+      81,
+      0
+    ],
+    [
+      52,
+      85,
+      0
+    ],
+    [
+      52,
+      93,
+      0
+    ],
+    [
+      52,
+      129,
+      0
+    ],
+    [
+      151,
+      41,
+      101
+    ],
+    [
+      151,
+      45,
+      106
+    ],
+    [
+      151,
+      49,
+      0
+    ],
+    [
+      151,
+      53,
+      0
+    ],
+    [
+      151,
+      57,
+      0
+    ],
+    [
+      151,
+      61,
+      0
+    ],
+    [
+      151,
+      81,
+      0
+    ],
+    [
+      151,
+      85,
+      0
+    ],
+    [
+      151,
+      93,
+      0
+    ],
+    [
+      151,
+      129,
+      0
+    ],
+    [
+      152,
+      41,
+      102
+    ],
+    [
+      152,
+      45,
+      0
+    ],
+    [
+      152,
+      49,
+      0
+    ],
+    [
+      152,
+      53,
+      0
+    ],
+    [
+      152,
+      57,
+      0
+    ],
+    [
+      152,
+      61,
+      0
+    ],
+    [
+      152,
+      81,
+      0
+    ],
+    [
+      152,
+      85,
+      0
+    ],
+    [
+      152,
+      93,
+      0
+    ],
+    [
+      152,
+      129,
+      0
+    ],
+    [
+      153,
+      41,
+      103
+    ],
+    [
+      153,
+      45,
+      0
+    ],
+    [
+      153,
+      49,
+      0
+    ],
+    [
+      153,
+      53,
+      0
+    ],
+    [
+      153,
+      57,
+      0
+    ],
+    [
+      153,
+      61,
+      0
+    ],
+    [
+      153,
+      81,
+      0
+    ],
+    [
+      153,
+      85,
+      0
+    ],
+    [
+      153,
+      93,
+      0
+    ],
+    [
+      153,
+      129,
+      0
+    ],
+    [
+      154,
+      41,
+      104
+    ],
+    [
+      154,
+      45,
+      0
+    ],
+    [
+      154,
+      49,
+      0
+    ],
+    [
+      154,
+      53,
+      0
+    ],
+    [
+      154,
+      57,
+      0
+    ],
+    [
+      154,
+      61,
+      0
+    ],
+    [
+      154,
+      81,
+      0
+    ],
+    [
+      154,
+      85,
+      0
+    ],
+    [
+      154,
+      93,
+      0
+    ],
+    [
+      154,
+      129,
+      0
+    ],
+    [
+      155,
+      41,
+      105
+    ],
+    [
+      155,
+      45,
+      0
+    ],
+    [
+      155,
+      49,
+      0
+    ],
+    [
+      155,
+      53,
+      0
+    ],
+    [
+      155,
+      57,
+      0
+    ],
+    [
+      155,
+      61,
+      0
+    ],
+    [
+      155,
+      81,
+      0
+    ],
+    [
+      155,
+      85,
+      0
+    ],
+    [
+      155,
+      93,
+      0
+    ],
+    [
+      155,
+      129,
+      0
+    ],
+    [
+      156,
+      41,
+      100
+    ],
+    [
+      156,
+      45,
+      1
+    ],
+    [
+      156,
+      49,
+      0
+    ],
+    [
+      156,
+      53,
+      0
+    ],
+    [
+      156,
+      57,
+      0
+    ],
+    [
+      156,
+      61,
+      0
+    ],
+    [
+      156,
+      81,
+      0
+    ],
+    [
+      156,
+      85,
+      0
+    ],
+    [
+      156,
+      93,
+      0
+    ],
+    [
+      156,
+      129,
+      0
+    ],
+    [
+      157,
+      41,
+      107
+    ],
+    [
+      157,
+      45,
+      0
+    ],
+    [
+      157,
+      49,
+      0
+    ],
+    [
+      157,
+      53,
+      0
+    ],
+    [
+      157,
+      57,
+      0
+    ],
+    [
+      157,
+      61,
+      0
+    ],
+    [
+      157,
+      81,
+      0
+    ],
+    [
+      157,
+      85,
+      0
+    ],
+    [
+      157,
+      93,
+      0
+    ],
+    [
+      157,
+      129,
+      0
+    ],
+    [
+      158,
+      41,
+      108
+    ],
+    [
+      158,
+      45,
+      0
+    ],
+    [
+      158,
+      49,
+      0
+    ],
+    [
+      158,
+      53,
+      0
+    ],
+    [
+      158,
+      57,
+      0
+    ],
+    [
+      158,
+      61,
+      0
+    ],
+    [
+      158,
+      81,
+      0
+    ],
+    [
+      158,
+      85,
+      0
+    ],
+    [
+      158,
+      93,
+      0
+    ],
+    [
+      158,
+      129,
+      0
+    ],
+    [
+      159,
+      41,
+      109
+    ],
+    [
+      159,
+      45,
+      0
+    ],
+    [
+      159,
+      49,
+      0
+    ],
+    [
+      159,
+      53,
+      0
+    ],
+    [
+      159,
+      57,
+      0
+    ],
+    [
+      159,
+      61,
+      0
+    ],
+    [
+      159,
+      81,
+      0
+    ],
+    [
+      159,
+      85,
+      0
+    ],
+    [
+      159,
+      93,
+      0
+    ],
+    [
+      159,
+      129,
+      0
+    ],
+    [
+      160,
+      41,
+      110
+    ],
+    [
+      160,
+      45,
+      0
+    ],
+    [
+      160,
+      49,
+      0
+    ],
+    [
+      160,
+      53,
+      0
+    ],
+    [
+      160,
+      57,
+      0
+    ],
+    [
+      160,
+      61,
+      0
+    ],
+    [
+      160,
+      81,
+      0
+    ],
+    [
+      160,
+      85,
+      0
+    ],
+    [
+      160,
+      93,
+      0
+    ],
+    [
+      160,
+      129,
+      0
+    ],
+    [
+      161,
+      41,
+      100
+    ],
+    [
+      161,
+      45,
+      0
+    ],
+    [
+      161,
+      49,
+      0
+    ],
+    [
+      161,
+      53,
+      0
+    ],
+    [
+      161,
+      57,
+      0
+    ],
+    [
+      161,
+      61,
+      0
+    ],
+    [
+      161,
+      81,
+      0
+    ],
+    [
+      161,
+      85,
+      0
+    ],
+    [
+      161,
+      93,
+      0
+    ],
+    [
+      161,
+      129,
+      0
+    ],
+    [
+      3051,
+      41,
+      0
+    ],
+    [
+      3051,
+      45,
+      0
+    ],
+    [
+      3051,
+      49,
+      0
+    ],
+    [
+      3051,
+      53,
+      0
+    ],
+    [
+      3051,
+      57,
+      0
+    ],
+    [
+      3051,
+      61,
+      0
+    ],
+    [
+      3051,
+      81,
+      0
+    ],
+    [
+      3051,
+      85,
+      0
+    ],
+    [
+      3051,
+      93,
+      0
+    ],
+    [
+      3051,
+      129,
+      0
+    ],
+    [
+      151,
+      93,
+      2
+    ],
+    [
+      2,
+      41,
+      297
+    ],
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      53,
+      10000
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      61,
+      10000
+    ],
+    [
+      2,
+      65,
+      100
+    ],
+    [
+      2,
+      69,
+      10
+    ],
+    [
+      2,
+      73,
+      20
+    ],
+    [
+      2,
+      77,
+      30
+    ],
+    [
+      2,
+      81,
+      100000
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      97,
+      7
+    ],
+    [
+      2,
+      113,
+      9
+    ],
+    [
+      2,
+      121,
+      1000
+    ],
+    [
+      2,
+      125,
+      1
+    ],
+    [
+      2,
+      129,
+      8
+    ],
+    [
+      4053,
+      41,
+      297
+    ],
+    [
+      4053,
+      45,
+      10
+    ],
+    [
+      4053,
+      49,
+      20
+    ],
+    [
+      4053,
+      53,
+      30
+    ],
+    [
+      4053,
+      57,
+      100
+    ],
+    [
+      4053,
+      61,
+      200
+    ],
+    [
+      4053,
+      65,
+      300
+    ],
+    [
+      4053,
+      69,
+      70
+    ],
+    [
+      4053,
+      73,
+      2
+    ],
+    [
+      4053,
+      77,
+      100
+    ],
+    [
+      4053,
+      85,
+      11
+    ],
+    [
+      4053,
+      89,
+      0
+    ],
+    [
+      4053,
+      113,
+      90
+    ],
+    [
+      4053,
+      117,
+      1234
+    ],
+    [
+      4053,
+      125,
+      80
+    ],
+    [
+      4053,
+      129,
+      600
+    ]
+  ],
+  "scenarios": [
+    {
+      "name": "control-owned",
+      "command": "L;L",
+      "patches": [],
+      "expect": "landing"
+    },
+    {
+      "name": "move-one",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-two",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "move-four",
+      "command": "L;!;104\r~~~~Y",
+      "patches": [],
+      "expect": "route",
+      "destination": 104,
+      "hops": 4
+    },
+    {
+      "name": "move-cancel",
+      "command": "L;!;101\r~~~~N",
+      "patches": [],
+      "expect": "cancel",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-blank",
+      "command": "L;!;101\r~~~~",
+      "patches": [],
+      "expect": "cancel",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-current",
+      "command": "L;!;100\r~~~~Y",
+      "patches": [],
+      "expect": "invalid-route",
+      "destination": 100,
+      "hops": 0
+    },
+    {
+      "name": "move-zero",
+      "command": "L;!;0\r~~~~Y",
+      "patches": [],
+      "expect": "invalid-route",
+      "destination": 0,
+      "hops": 0
+    },
+    {
+      "name": "move-negative",
+      "command": "L;!;-1\r~~~~Y",
+      "patches": [],
+      "expect": "invalid-route",
+      "destination": -1,
+      "hops": 0
+    },
+    {
+      "name": "move-outside",
+      "command": "L;!;3001\r~~~~Y",
+      "patches": [],
+      "expect": "invalid-route",
+      "destination": 3001,
+      "hops": 0
+    },
+    {
+      "name": "move-unreachable",
+      "command": "L;!;3000\r~~~~Y",
+      "patches": [],
+      "expect": "invalid-route",
+      "destination": 3000,
+      "hops": 0
+    },
+    {
+      "name": "turns-one-below",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          9
+        ]
+      ],
+      "expect": "insufficient",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "turns-one-exact",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          10
+        ]
+      ],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "turns-two-below",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          19
+        ]
+      ],
+      "expect": "insufficient",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "turns-two-exact",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          20
+        ]
+      ],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "turns-two-above",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          21
+        ]
+      ],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "collision-first",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          152,
+          93,
+          3
+        ],
+        [
+          2,
+          61,
+          10000
+        ]
+      ],
+      "expect": "collision",
+      "destination": 101,
+      "hops": 1,
+      "planet_copies": [
+        [
+          2,
+          3
+        ]
+      ],
+      "collision_sector": 101
+    },
+    {
+      "name": "collision-later",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          153,
+          93,
+          3
+        ],
+        [
+          2,
+          61,
+          10000
+        ]
+      ],
+      "expect": "collision",
+      "destination": 102,
+      "hops": 2,
+      "planet_copies": [
+        [
+          2,
+          3
+        ]
+      ],
+      "collision_sector": 102
+    },
+    {
+      "name": "collision-one-fighter",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          152,
+          93,
+          3
+        ],
+        [
+          2,
+          61,
+          1
+        ]
+      ],
+      "expect": "collision",
+      "destination": 101,
+      "hops": 1,
+      "planet_copies": [
+        [
+          2,
+          3
+        ]
+      ],
+      "collision_sector": 101
+    },
+    {
+      "name": "collision-zero-fighters",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          152,
+          93,
+          3
+        ],
+        [
+          2,
+          61,
+          0
+        ]
+      ],
+      "expect": "collision",
+      "destination": 101,
+      "hops": 1,
+      "planet_copies": [
+        [
+          2,
+          3
+        ]
+      ],
+      "collision_sector": 101
+    },
+    {
+      "name": "move-unguarded",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          0
+        ]
+      ],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-teammate",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ]
+      ],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-neutral",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          0
+        ]
+      ],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "move-captured-xannoron",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          151,
+          93,
+          100
+        ],
+        [
+          4053,
+          85,
+          0
+        ],
+        [
+          1165,
+          93,
+          0
+        ]
+      ],
+      "expect": "reserved-home",
+      "destination": 101,
+      "hops": 1,
+      "planet_copies": [
+        [
+          2,
+          100
+        ]
+      ],
+      "source_slot": 100
+    },
+    {
+      "name": "move-wanderer",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          151,
+          93,
+          1
+        ],
+        [
+          4053,
+          85,
+          0
+        ],
+        [
+          636,
+          93,
+          0
+        ]
+      ],
+      "expect": "wanderer",
+      "destination": 102,
+      "hops": 2,
+      "planet_copies": [
+        [
+          2,
+          1
+        ]
+      ],
+      "source_slot": 1
+    },
+    {
+      "name": "move-mines",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          152,
+          129,
+          3
+        ]
+      ],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "move-hostile-fighters",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          3
+        ]
+      ],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "move-own-fighters",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          152,
+          81,
+          100
+        ],
+        [
+          152,
+          85,
+          2
+        ]
+      ],
+      "expect": "route",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "move-later-hostile",
+      "command": "L;!;103\r~~~~Y",
+      "patches": [
+        [
+          153,
+          81,
+          100
+        ],
+        [
+          153,
+          85,
+          3
+        ]
+      ],
+      "expect": "route",
+      "destination": 103,
+      "hops": 3
+    },
+    {
+      "name": "move-anomaly-first",
+      "command": "L;!;102\r~~~~Y",
+      "patches": [
+        [
+          152,
+          133,
+          1
+        ]
+      ],
+      "expect": "anomaly",
+      "destination": 102,
+      "hops": 2
+    },
+    {
+      "name": "move-anomaly-later",
+      "command": "L;!;103\r~~~~Y",
+      "patches": [
+        [
+          153,
+          133,
+          1
+        ]
+      ],
+      "expect": "anomaly",
+      "destination": 103,
+      "hops": 3
+    },
+    {
+      "name": "move-earth",
+      "command": "L;!;1\r~~~~Y",
+      "patches": [],
+      "expect": "route",
+      "destination": 1,
+      "hops": 6
+    },
+    {
+      "name": "move-cloak-boundary",
+      "command": "L;!;101\r~~~~Y",
+      "patches": [
+        [
+          2,
+          49,
+          35
+        ],
+        [
+          2,
+          125,
+          1
+        ]
+      ],
+      "expect": "route",
+      "destination": 101,
+      "hops": 1
+    },
+    {
+      "name": "force-decline",
+      "command": "L\r~~N",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "decline",
+      "committed": null
+    },
+    {
+      "name": "force-blank",
+      "command": "L\r~~",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "decline",
+      "committed": null
+    },
+    {
+      "name": "force-no-troops",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          0
+        ]
+      ],
+      "expect": "no-troops",
+      "committed": null
+    },
+    {
+      "name": "force-zero",
+      "command": "L\r~~Y\r~~0",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "invalid-force",
+      "committed": 0
+    },
+    {
+      "name": "force-negative",
+      "command": "L\r~~Y\r~~-1",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "invalid-force",
+      "committed": -1
+    },
+    {
+      "name": "force-over",
+      "command": "L\r~~Y\r~~1001",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "invalid-force",
+      "committed": 1001
+    },
+    {
+      "name": "force-invalid",
+      "command": "L\r~~Y\r~~junk",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "invalid-force",
+      "committed": "junk"
+    },
+    {
+      "name": "force-full",
+      "command": "L\r~~Y\r~~1000",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1000
+    },
+    {
+      "name": "force-partial",
+      "command": "L\r~~Y\r~~100",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          10
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 100
+    },
+    {
+      "name": "force-loss",
+      "command": "L\r~~Y\r~~10",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          10000
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 10
+    },
+    {
+      "name": "force-one",
+      "command": "L\r~~Y\r~~1",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          1
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1
+    },
+    {
+      "name": "force-fraction",
+      "command": "L\r~~Y\r~~1.9",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          2
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1.9
+    },
+    {
+      "name": "land-fractional-defender",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          0.25
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "landing",
+      "committed": null
+    },
+    {
+      "name": "land-unguarded",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          0
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "landing",
+      "committed": null
+    },
+    {
+      "name": "land-neutral-defended",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "permission",
+      "committed": null
+    },
+    {
+      "name": "land-teammate",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ],
+        [
+          2,
+          89,
+          1
+        ],
+        [
+          3,
+          89,
+          1
+        ]
+      ],
+      "expect": "landing",
+      "committed": null
+    },
+    {
+      "name": "land-dead-governor",
+      "command": "L",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ],
+        [
+          3,
+          45,
+          2
+        ]
+      ],
+      "expect": "permission",
+      "committed": null
+    },
+    {
+      "name": "force-mercenary",
+      "command": "L\r~~Y\r~~1000",
+      "patches": [
+        [
+          4053,
+          73,
+          -2
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1000
+    },
+    {
+      "name": "force-xannor",
+      "command": "L\r~~Y\r~~1000",
+      "patches": [
+        [
+          4053,
+          73,
+          -1
+        ],
+        [
+          4053,
+          77,
+          100
+        ],
+        [
+          2,
+          121,
+          1000
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1000
+    },
+    {
+      "name": "force-no-ship-defenses",
+      "command": "L\r~~Y\r~~1000",
+      "patches": [
+        [
+          4053,
+          73,
+          3
+        ],
+        [
+          4053,
+          77,
+          10
+        ],
+        [
+          2,
+          121,
+          1000
+        ],
+        [
+          2,
+          61,
+          0
+        ],
+        [
+          2,
+          53,
+          0
+        ]
+      ],
+      "expect": "assault",
+      "committed": 1000
+    },
+    {
+      "name": "captured-reentry",
+      "command": "L;L",
+      "patches": [],
+      "expect": "reentry",
+      "parent": "force-partial",
+      "time": "00:01:00"
+    },
+    {
+      "name": "failed-retry",
+      "command": "L\r~~Y\r~~10",
+      "patches": [],
+      "expect": "assault",
+      "committed": 10,
+      "parent": "force-loss",
+      "time": "00:01:00"
+    }
+  ]
+}

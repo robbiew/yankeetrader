@@ -451,3 +451,80 @@ Also addressed the review's summary-only documentation note: RECOVERY.md now
 explicitly scopes the unavailable/schema22 statement to its historical research
 milestone and links the playable schema23 implementation. README and implementation
 notes are updated in this same fix commit. No save schema or archival data changed.
+
+## 2026-10-30 — Planetary thrusters and player forced-landing research
+
+Completed a bounded follow-up to the historical planet/missile recovery on
+`feat/planet-thrusters-landing-research`. This is research only: no Go gameplay,
+dependency or save-schema changes; both actions remain unavailable and schema23
+is unchanged. README, reconstruction plan, original recovery's follow-up pointer,
+CI verification and capture-byte attributes are updated in this same milestone.
+[Findings, bounds and proposed implementation contract](../research/yt-planet-mobility/RECOVERY.md).
+
+Retained evidence: **55 normally returned DOS controls**, **110 before/after world
+snapshots**, **two exact parent-world/auxiliary reload chains**, **19 native byte
+reads** and **one verified DOS-MZ load-image observation**. Every executable ran
+only against copied fixture files in newly created disposable directories. The
+baseline is the exact archived fixture-planet-transfer world, SHA256
+`2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19`.
+All archived originals remained unchanged; the independent archive verifier
+passes all **4,682 hashes**. The REA native session was exported and closed.
+
+Completed observations include ten-turn-per-hop/full-route budget checks at
+9/10/19/20/21 turns, blank/No/invalid/current/unreachable targets, four-hop movement
+and ordinary Earth placement, first/later collision with successful-prefix
+persistence, zero/one fighters without ship death, owner/team/unguarded access,
+reserved slot100 refusal and Wanderer's separate planet/ship destinations. Mines
+and hostile fighters stop after entering a paid edge; normal shell arrival can
+then consume mines and damage shields. Raw133 controls are negative unmapped-field
+checks, not black-hole tests. The35→25-turn witness keeps cloak unchanged.
+
+Forced-landing controls distinguish denial/no-troops/cancellation/invalid
+commitments, full/partial win, loss, one-on-one, fractional-input truncation,
+fractional defense admission, neutral/dead-governor unrest, teammate/unguarded
+access, faction owners at ordinary slots, and a ship with no fighters/shields.
+Captured survivors remain as garrison; no combat turn debit is observed. Exact
+follow-ups show captured reentry without another assault and retry990→980 carried
+ground while defenders10000→9989. Static unrest uses INT(G*RND*RND), not a fixed60%.
+Native random/MBF arithmetic is kept separate from runtime observations and modern
+bounded/atomic policy.
+
+Validation passed:
+
+- Independent positive verifier reconstructs every baseline/common/case patch and
+  slot copy, exact parent and auxiliary chain, returned marker, clock, key stream,
+  transcript/raw log identity, all retained file hashes, narrow world mutation
+  scopes, routes/turns/planet links, collision target preservation, mine aftermath,
+  separate Wanderer relocation, public scores/news and ground trace/conservation.
+  Frozen complete world and auxiliary witnesses supplement bounds for native
+  timing/MBF effects; this is not a universal lazy-growth formula claim.
+- All **41 rehashed corruption controls** reject with intended semantic/provenance
+  diagnostics: setup, movement/turns/cloak/links, death/collision/Wanderer/mines,
+  troops/capture/loss/fractional admission, team recount, production/bank/weapons,
+  unrelated cargo, completion/battle/news/score, keys/date/clock/return/auxiliary
+  chains/declarations, native bytes and MZ relocation tampering.
+- All19 read observations match the original executable after independently
+  applying its **870 MZ relocations**. The load-image witness also verifies file
+  identity, sizes, entrypoint, exact relocation records and backed memory mapping.
+- All **52 existing CI evidence/control commands** pass, including prior Genesis
+  24-control/13-native/42-corruption verification and original archive hashes.
+  The two new verifier commands are added to CI. New Python sources parse and
+  whitespace checks pass. No Go/terminal regression rerun was needed because no
+  application source or interface implementation changed.
+
+Input-quality exclusions are explicit: initial probe1's blank landed Enter invoked
+Take All after cancellation, so the entire exploratory probe is excluded. A first
+fractional-defender probe landed without an assault prompt and consumed later
+keys as planet-menu input; it was replaced by a clean L-only control. Slot-copy
+controls were recaptured with complete common-stage metadata. Final retained
+raw worlds/logs/keys and result metadata were copied unchanged, not rewritten to
+fit expected outcomes.
+
+Remaining research/acceptance boundaries include true session-random disruption
+arrival, stress explosion frequency, maximum/rare/simultaneous ground outcomes,
+exact original RNG/MBF parity, interrupted/concurrent DOS actions and native BBS
+socket behavior. The safe Go contract still needs implementation: fresh intent and
+planet/ship/season identities, current permissions and lazy projection, finite
+work, whole-command atomic outcomes, grant revocation, explicit faction policy,
+accurate saved receipts and fault/concurrency/replay tests. Native Windows crash
+durability and live BBS acceptance remain separate.

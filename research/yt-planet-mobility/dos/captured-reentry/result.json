@@ -1,0 +1,35 @@
+{
+  "name": "captured-reentry",
+  "command": "L;L",
+  "patches": [],
+  "expect": "reentry",
+  "parent": "force-partial",
+  "time": "00:01:00",
+  "recipe": "planet-mobility-v1",
+  "baseline_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "timeout_seconds": 120,
+  "timed_out": false,
+  "program_returned": true,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "d405a100c58cdead7e4c42481dd5e5c7444e212ced2457ad9006f94776e3e123",
+    "KEYS.TXT": "8ef2eec42ed9765653bf59e826c9689b8f610abfcf07b62e1780d183a38c0ee3",
+    "RETURN.LOG": "23f20c713c21f65d1e0700fd03b0fadee7a01d1967c30076a9bbc65382653c00",
+    "after.dat.gz": "e4bce4d770984efa3c0b29b14807349391fc5fabe3c2864ad4274bd1c2ecf1f7",
+    "before.dat.gz": "b4eab3e66c7e759397c0d5e926be0602518473744016eaf23f7d4fb7d1dd26a1",
+    "dosbox.log": "ea975a5ca1dfb45af4442f324ca28411c9cc50fc33a6c31c1dfd6c2880517708",
+    "game.log.gz": "c5d318c30f2dbde3d84fcf1ffc98b38c0563af3b8fb613e6b81ec3022f264bd7",
+    "side-before.json.gz": "809a06a03582a064ce837f638ca7825ecda1b98f9fc57f4477565d235c656c53",
+    "sidefiles.json.gz": "9b087d48b927c7438567e9ed04e4191af96c6684b713415ac8a2751d5698a03e",
+    "transcript.txt": "3b3b06e6b4e51b3f65ee622949d92d8b129c86fc0865d769551f003e50bbeb0c"
+  }
+}

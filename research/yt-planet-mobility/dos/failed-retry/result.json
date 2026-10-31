@@ -1,0 +1,36 @@
+{
+  "name": "failed-retry",
+  "command": "L\r~~Y\r~~10",
+  "patches": [],
+  "expect": "assault",
+  "committed": 10,
+  "parent": "force-loss",
+  "time": "00:01:00",
+  "recipe": "planet-mobility-v1",
+  "baseline_sha256": "2a63d12af095a59227840946be57fd4b7e4dafb5724d4019de694da7c4194b19",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "timeout_seconds": 120,
+  "timed_out": false,
+  "program_returned": true,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "d405a100c58cdead7e4c42481dd5e5c7444e212ced2457ad9006f94776e3e123",
+    "KEYS.TXT": "fa9a4a317020a51c6d14320c4fa795f5af85fc26daa4744cff79b5f5c8ab3672",
+    "RETURN.LOG": "23f20c713c21f65d1e0700fd03b0fadee7a01d1967c30076a9bbc65382653c00",
+    "after.dat.gz": "54ac7983ef3e849ad4e3ce16bfe26dc3e31f17a6238a7a2579ae1e08aded2d54",
+    "before.dat.gz": "5e4371ed4a24f3cbbdfda779890a55b80ced9d42561053185fd258e0d251857a",
+    "dosbox.log": "dbefcdc4213b76bd087a9a5c52b4029cac1e5c0b2a68ff360d495a936c6ef183",
+    "game.log.gz": "711535f5084344472287816cdb6c6b525c2873a1b408b32bf0cf9859699d74d4",
+    "side-before.json.gz": "0d04b298b98f7858fabb6408e555651aaea6038001f03804c816bbe0b408769f",
+    "sidefiles.json.gz": "67f05ce0465021e25967f09f85b1a146d9acda138cfb3882fa5f884b7436715f",
+    "transcript.txt": "c3fd35de7e90c71c98261c545575a5eaa2093b83b0268884caca7b7518d67c11"
+  }
+}

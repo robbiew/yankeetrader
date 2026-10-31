@@ -91,3 +91,11 @@
 /research/yt-genesis/dos/**/RETURN.LOG -text -diff
 /research/yt-genesis/dos/**/transcript.txt -text whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-genesis/dos/**/dosbox.log -text whitespace=-blank-at-eol
+
+# Original DOS planetary mobility evidence includes exact CRLF and control bytes.
+/research/yt-planet-mobility/dos/** -text
+/research/yt-planet-mobility/dos/**/KEYS.TXT -diff
+/research/yt-planet-mobility/dos/**/DOS*.LOG -diff
+/research/yt-planet-mobility/dos/**/RETURN.LOG -diff
+/research/yt-planet-mobility/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-planet-mobility/dos/**/dosbox.log whitespace=-blank-at-eol
