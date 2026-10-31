@@ -31,6 +31,8 @@ See [Play locally](#play-locally) for commands and the feature sections below fo
 ## Screenshots
 
 Captured from the current Go game in an 80×25 local ANSI terminal session.
+The opening artwork capture includes the centered Resurrection version subtitle;
+the startup smoke check verifies its alignment.
 Click any screenshot to view it at full size.
 
 <table>
