@@ -4,7 +4,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-Planetary thrusters and forced landing are now available in-game to test, with atomic saves and exact outcome receipts (save version 24). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
+The Wanderer lifecycle and special transport are now available in-game to test, with bounded placement, atomic saves and hidden-destination receipts (save version 25). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
 
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
@@ -13,7 +13,7 @@ Planetary thrusters and forced landing are now available in-game to test, with a
 - **Seasons:** confirmed Genesis endgame, authoritative port ownership, atomic universe reset, public winner history and epoch guards that end old logins.
 - **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
 - **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
-- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing; team creation/joining, captain controls and shared planet access.
+- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
 - **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
@@ -22,7 +22,7 @@ Planetary thrusters and forced landing are now available in-game to test, with a
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling; Wanderer transport and targeted thruster/disruption fidelity remain outstanding.
+- Explicit season archive export/administrative reset tooling and targeted thruster/disruption fidelity remain outstanding.
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -298,7 +298,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version 24 for nonreusable planet incarnations and typed player ground-action news, alongside season epochs, recorded fresh generation seeds, explicit Genesis thresholds and bounded public winner results, alongside persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21/version-22/version-23 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 24. Planet migration deterministically assigns the old slot identities 1–100, reserves a counter starting at 101 for every later creation, and rejects allocator exhaustion. Confirmations also bind the season epoch, so a reset cannot make an old quote valid. Earlier season migration assigns season one without resetting, awarding, inventing a historical seed or backfilling winner history. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
+**Save rollback compatibility:** This build uses world version 25 for explicit Wanderer identity and nonreusable planet incarnations and typed player ground-action news, alongside season epochs, recorded fresh generation seeds, explicit Genesis thresholds and bounded public winner results, alongside persisted paid-lottery account quotas/replay sequences and typed win news, alongside danger scanners and warp replay sequences, retaining typed HQ victory news alongside typed plague/civil-war news, safe retirement/activity records and private system award mail, generation-bound Xannor revenge, private ship/planetary battle reports, public planetary assault news and explicit NPC death attribution, alongside Xannor HQ/reserve state and both faction homes, alongside the bounded public newspaper journal, in addition to saved radio messages and persistent mine-departure grace, zero-rate planetary production and a stored score cache, alongside attributed minefields and persisted cloak energy, in addition to loot/estate settlement and optional sector defenses. Existing version-1/version-2 saves with no team memberships and normal version-3/version-4/version-5/version-6/version-7/version-8/version-9/version-10/version-11/version-12/version-13/version-14/version-15/version-16/version-17/version-18/version-19/version-20/version-21/version-22/version-23/version-24 saves upgrade in memory and persist on the next successful update; read-only loading does not rewrite them. Experimental legacy membership IDs without team metadata are rejected. Binaries supporting only earlier save versions cannot read version 25. Save25 adds an explicit Wanderer identity in reserved slot 1 (100 total planet slots). Version24 migration creates no planets or free assets; the initializer/Genesis explicitly bootstrap The Wanderer, and a later eligible daily run restores a missing one. Movement preserves its incarnation, restoration allocates a fresh one, and names never infer special identity. Planet migration deterministically assigns the old slot identities 1–100, reserves a counter starting at 101 for every later creation, and rejects allocator exhaustion. Confirmations also bind the season epoch, so a reset cannot make an old quote valid. Earlier season migration assigns season one without resetting, awarding, inventing a historical seed or backfilling winner history. Legacy player planets are never inferred to be faction homes from their name or slot. Newspaper history starts empty only for pre-journal saves; existing version-12 history is preserved. Past events are not reconstructed. Back up the data directory with the door stopped, upgrade every node together, and restore the matching backup if reverting binaries. Restoring a backup discards later progress. Migration preserves existing aliases, identities, assets, balances, login dates and avoid lists; subsequent daily maintenance can retire qualifying inactive dead accounts under the rules below.
 
 `world.json` is the versioned authoritative save. `world.lock` is a persistent lock-file name backed by an OS lock: process death releases the lock without deleting it. All processes must use the same data directory on a local filesystem. Network filesystems are not supported or tested.
 
@@ -307,6 +307,10 @@ Updates serialize through the lock, validate the complete world, write and sync 
 If a save error occurs, stop and inspect the filesystem before retrying a purchase: an error syncing the directory after replacement can mean the new state is visible even though durability was not confirmed.
 
 ## Build and validate
+
+CI allows 30 minutes for the complete race, evidence, terminal and cross-build
+sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
+random encounters while retaining their resource, replay and durability checks.
 
 Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
 
@@ -360,7 +364,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-23 worlds upgrade to version 24 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-24 worlds upgrade to version 25 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -1020,7 +1024,7 @@ warning is a committed reset: its receipt is retained, the login ends and replay
 is refused. Full Go race/vet, local process-interruption, evidence, real terminal
 and cross-build validation are recorded in the validation log. Live BBS acceptance,
 native Windows crash durability, full DOS generation/numeric parity and The
-Wanderer's absent lifecycle remain separate work.
+targeted disruption fidelity remain separate work; Wanderer lifecycle is implemented below.
 [Implementation and safety contract](research/yt-genesis/IMPLEMENTATION.md).
 
 
@@ -1056,5 +1060,55 @@ warnings; a durability warning ends the login. Save version **24** upgrades olde
 worlds without resetting them. See the [implementation and validation contract](research/yt-planet-mobility/IMPLEMENTATION.md)
 and [55-control DOS recovery](research/yt-planet-mobility/RECOVERY.md).
 
-Wanderer transport, targeted disruption arrival, complete DOS RNG/MBF parity,
+Targeted disruption arrival, complete DOS RNG/MBF parity,
 live BBS gameplay and native Windows crash durability remain separate acceptance.
+
+
+### The Wanderer lifecycle and transport — available in-game to test
+
+[The focused recovery](research/yt-wanderer/RECOVERY.md) retains 57 normally
+returned DOS controls, nine exact world/auxiliary reload chains, 14 native byte
+reads and three verified executable load images. An independent verifier and
+55 rehashed corruption controls check the corpus. Two diagnostics keep a bounded
+no-vacancy timeout and later Xannor interference separate from isolated outcomes.
+
+Daily native relocation clears The Wanderer's governor, refills its bank only
+when zero, and regenerates missing sector links through a partial P.H.O.E.N.I.X.
+restore. A linked but inactive record is moved without regeneration. Same-day
+and backward-date native maintenance can repeat movement/economic effects;
+those defects are not a requirement to weaken modern daily guards. Direct
+YT-INIT includes maintenance bootstrap, while standalone RMT-INIT needs a later
+maintenance run to create The Wanderer.
+
+Special thrusters require the full quoted route budget but stop after one paid
+edge. The ship follows its planned next sector while the planet chooses an
+independent empty sector. Ship-arrival hazards apply at the ship's location;
+mines/fighters at the planet's different location do not damage that ship. The
+native UI conceals the random destination; implemented receipts preserve that
+knowledge boundary. Finite placement, persistent mobile identity, fresh restoration
+incarnations, atomic relocation/grant revocation and explicit season bootstrap are
+covered by the [implementation contract](research/yt-wanderer/IMPLEMENTATION.md).
+
+Save **25** validates a unique marked Wanderer in reserved slot 1, allowing 100 total
+planets. Initialization and Genesis bootstrap a neutral clean planet with rates
+5000/5000/5000, bank 250,000, no stocks/weapons/garrison and a current timestamp.
+Older-save migration creates no assets; eligible forward-only daily maintenance
+restores it if absent. Existing daily movement follows economic updates, clears
+its governor, refills only an exactly empty bank, preserves other legitimate
+assets and revokes every landing grant without moving other ships. Faction homes
+have priority over a missing Wanderer when space is scarce. Later NPC destruction
+is reported accurately and never triggers a second restoration in that run.
+
+While landed, classic `!` or compact `THRUST <sector>` requests the existing fresh
+risk confirmation. The whole route must be affordable; success charges 10 turns,
+moves the ship one planned edge and relocates the planet independently. Planned
+collision/stress occurs first; ship hazards use the ship's reached sector. A
+successful receipt reports actual costs and the ship's position, then says the
+planet's location is unknown. No public movement notice or secret destination is
+printed. Same-day maintenance, stale quotes and warning/reconnect paths cannot
+repeat spending or restoration. `-maint` prints a saved final lifecycle outcome
+without coordinates, retaining committed storage warnings and output errors.
+
+Local regression and terminal checks are recorded in [validation](evidence/VALIDATION.md).
+Full original RNG/MBF parity, targeted disruption, live BBS acceptance and native
+Windows durability remain separate.

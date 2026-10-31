@@ -106,7 +106,7 @@ func TestMercenaryBaseDestroyedThenRebuiltAndDailyReplay(t *testing.T) {
 	// does. The daily guard prevents immediate same-day resurrection.
 	delete(w.Planets, 99)
 	w.Sectors[8].Planet = 0
-	if w.maintain(now, nil) || w.maintain(clock, nil) || len(w.Planets) != 0 {
+	if w.maintain(now, nil) || w.maintain(clock, nil) || w.Planets[99] != nil {
 		t.Fatal("base rebuilt on replay/clock rollback")
 	}
 	w.maintain(now.Add(24*time.Hour), func() float64 { return 0 })

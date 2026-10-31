@@ -103,7 +103,7 @@ with tempfile.TemporaryDirectory(prefix='yt-mines-smoke-') as temp:
         assert code==0 and f'Remaining turns: {turns}' in text,text
         transcript+=text
     world=json.loads(path.read_text())
-    assert world['Version']==24 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
+    assert world['Version']==25 and all(world['Players'][str(i)]['Sector']==1 for i in (1,2))
 
     data=temp/'deploy'
     subprocess.run([BINARY,'-data',str(data),'-init','-sectors','8'],check=True,capture_output=True)

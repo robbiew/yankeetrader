@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	prng "math/rand"
 	"strconv"
 	"strings"
 	"time"
@@ -307,7 +308,9 @@ func (s *Session) classicStartup() (int, error) {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
 		}
-		live.Maintain(s.Now())
+		if _, e := live.RunMaintenance(s.Now(), prng.Float64); e != nil {
+			return e
+		}
 		// The screen lookup may describe an ended season. Resolve identity again
 		// under this lock; never retain its old numeric ID when no match exists.
 		p, joinErr := classicLoginPlayer(live, s.Identity, alias)

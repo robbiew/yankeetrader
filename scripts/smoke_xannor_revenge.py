@@ -48,7 +48,7 @@ def exercise(guard):
                 assert 'Xannor revenge pending for this ship.' in text, text
                 saved = json.loads(path.read_text())
                 p = saved['Players']['1']
-                assert saved['Version'] == 24 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
+                assert saved['Version'] == 25 and saved['Xannor']['Revenge'] == dict(Player=1, Generation=p.get('ShipGeneration', 0))
                 assert not saved['Sectors']['8'].get('Defense') and p['Credits'] == world['Players']['1']['Credits']+1000000
                 outsider = guard.run(play, data, 'Visitor', 'i;news;q')
                 assert 'revenge pending' not in outsider
@@ -64,6 +64,15 @@ def exercise(guard):
                 saved['Sectors']['9']['Warps'] = [10]
                 saved['Sectors']['10']['Warps'] = [8]
                 saved['LastMaintenance'] = (guard.day - datetime.timedelta(days=1)).isoformat()
+                # Keep the independently moving Wanderer out of this isolated
+                # revenge/ship encounter without changing the CLI or its RNG.
+                # Empty neutral fixtures cannot consume attacker force or create
+                # private owner reports before the intended ship encounter.
+                for sector in (8,9,10):
+                    if saved['Sectors'][str(sector)].get('Planet',0):continue
+                    slot=20+sector
+                    saved['Planets'][str(slot)]=dict(Generation=slot,ID=slot,Sector=sector,Owner=0,Name='Inert fixture',Updated=future,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=0,Bank=0)
+                    saved['Sectors'][str(sector)]['Planet']=slot
                 path.write_text(json.dumps(saved))
                 guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
                 after = json.loads(path.read_text())

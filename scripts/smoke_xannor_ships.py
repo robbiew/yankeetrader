@@ -35,10 +35,19 @@ def exercise(guard):
                 world['Sectors']['10']['Planet']=2
                 world['Sectors']['10']['Minefield']=[dict(Owner=1,Count=3)]
             if mode=='defense-stop':world['Sectors']['10']['Defense']=dict(Owner=2,Fighters=1000000)
+            # Restrict Wanderer placement to Union sectors for this isolated ship
+            # battle. Empty neutral zero-rate planets on unused combat sectors
+            # cost no force to clear, create no private owner report, and keep
+            # a random Wanderer arrival from intercepting the tested ship battle.
+            for sector in (9,10,12):
+                if world['Sectors'][str(sector)].get('Planet',0):continue
+                slot=20+sector
+                world['Planets'][str(slot)]=dict(Generation=slot,ID=slot,Sector=sector,Owner=0,Name='Inert fixture',Updated=stamp,Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=0,Bank=0)
+                world['Sectors'][str(sector)]['Planet']=slot
             path.write_text(json.dumps(world))
             guard.run(subprocess.run,[BINARY,'-data',str(data),'-maint'],check=True,capture_output=True,timeout=10)
             saved=json.loads(path.read_text());p=saved['Players']['1']
-            assert saved['Version']==24 and saved['Xannor']==dict(HQ=8,Reserve=0)
+            assert saved['Version']==25 and saved['Xannor']==dict(HQ=8,Reserve=0)
             if mode in ('planet-ground','defense-stop'):
                 assert not p.get('Death') and not p.get('BattleReports'),p
                 if mode=='planet-ground':

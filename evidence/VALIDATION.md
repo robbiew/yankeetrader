@@ -474,7 +474,7 @@ Completed observations include ten-turn-per-hop/full-route budget checks at
 9/10/19/20/21 turns, blank/No/invalid/current/unreachable targets, four-hop movement
 and ordinary Earth placement, first/later collision with successful-prefix
 persistence, zero/one fighters without ship death, owner/team/unguarded access,
-reserved slot100 refusal and Wanderer's separate planet/ship destinations. Mines
+reserved slot 100 refusal and Wanderer's separate planet/ship destinations. Mines
 and hostile fighters stop after entering a paid edge; normal shell arrival can
 then consume mines and damage shields. Raw133 controls are negative unmapped-field
 checks, not black-hole tests. The35→25-turn witness keeps cloak unchanged.
@@ -581,6 +581,123 @@ prefix/collision/assault/mined-arrival outcome saves once under the world lock;
 software/RNG/validation failures discard the full candidate. Committed directory
 sync warnings remain joined with receipt-output failures and end the login.
 
+## The Wanderer lifecycle and transport research — 2026-10-31
+
+Completed the bounded [Wanderer recovery](../research/yt-wanderer/RECOVERY.md)
+on `feat/wanderer-lifecycle-research`, following the ordinary mobility milestone.
+This update contains research, capture/verification tools, README/plan and CI
+changes only. Go gameplay, dependencies and save version 24 are unchanged.
+
+Evidence retained and independently checked:
+
+- 57 normally returned original DOS controls, 114 world snapshots and nine exact
+  parent-world/complete-auxiliary chains. Capture uses copied original files,
+  declared state/name/occupancy/hazard patches, preserved clocks/keys/redirection,
+  raw CP437 program logs and a normal-return batch marker. Controls cover direct
+  YT-INIT versus standalone RMT-INIT/bootstrap, reference-driven partial restoration,
+  inactive/duplicate/renamed states, daily governor reset and zero-bank refill,
+  source/Earth/mined/guarded/disconnected placement, same/next/backward dates,
+  ordinary landing/team/adoption/name/bank/transfer operations, whole-quote
+  affordability, one-edge ship/planet separation, cancellation, collisions,
+  separate planned/random hazards and reconnect/maintenance follow-ups.
+- One eight-second no-candidate diagnostic explicitly requires timeout/nonreturn,
+  partial restoration and absent accepted link despite optimistic warp messages.
+  One additional normally returned maintenance diagnostic requires relocation
+  before later Xannor assaults/destruction. Neither is counted as an isolated
+  normal control. Pointer saturation is an explicit malformed-reference fixture,
+  not a claim that the original supports 3000 distinct planets.
+- 14 REA byte observations, three verified MZ load images and all 1006 relocation
+  fixups across YT-INIT/YTMAINT/YT. Full inline Evidence, executable identities,
+  addresses, mappings, limitations and an Evidence-ID ledger are retained. Every
+  opened native session was exported and closed. These static reads corroborate
+  selected code, rather than purporting to observe execution.
+- `verify_wanderer.py` passed independent setup/semantic/privacy/provenance checks,
+  frozen complete-world/auxiliary witnesses and both classified diagnostics.
+  `test_wanderer_verifier.py` rejected 55 deliberately rehashed corruptions:
+  51 ordinary semantic/setup/clock/key/return/native/privacy mutations and four
+  timeout/interference mutations. The final two-test run passed in 69.356 seconds.
+- All 56 CI evidence-verifier/control commands passed locally, including the new
+  pair, existing research and all 4682 original archive hashes. Original archive
+  files were unchanged. Three new Python sources parsed and 167 local documentation
+  targets resolved. No Go tests or terminal smoke suite was rerun for this
+  research-only delta; prior gameplay validation remains in the preceding entry.
+- A fresh one-control DOS reproduction verified that the corrected capture writer
+  retains compressed per-case metadata and satisfies independent semantics/file
+  hashes. Repeated original metadata is stored losslessly compressed. Three
+  duplicate per-case metadata files from corrected captures were reconstructed
+  deterministically from their untouched complete top-level manifests after fixing
+  a cleanup omission; captured values/worlds/logs were not edited. The original
+  invalid reentry input is excluded; the retained control explicitly declines a
+  new purchase with N and uses its exact transport parent.
+
+Boundaries: finite controls and selected native ranges do not establish universal
+RNG distributions, bit-exact MBF economics, stress probability, concurrent/mid-write
+DOS safety, live BBS gameplay or native Windows durability. The follow-up contract
+requires explicit mobile identity/capacity/migration, finite placement, modern
+once-per-date maintenance, clean restoration, atomic links/title/assets/grants/
+NPC aftermath and known-versus-hidden location receipts. The native destination
+remains concealed; no public Wanderer movement notice is invented. The existing
+Go door still has no active Wanderer lifecycle or special transport branch.
+
+## Bounded Wanderer lifecycle and special transport — 2026-10-31
+
+Implemented the [save25 Wanderer contract](../research/yt-wanderer/IMPLEMENTATION.md)
+on top of the 57-control recovery. Unique persistent identity in reserved slot 1
+allows 100 total planets without taking ordinary slots 2–100. Older-save loading
+upgrades in memory without minting assets or rewriting the file. Initializer and
+Genesis bootstrap a clean current-dated Wanderer; daily restoration uses a fresh
+incarnation, finite sorted placement and explicit faction-home priority. Daily
+movement clears its governor, refills only a post-economy zero bank, preserves
+other legitimate assets and revokes landing grants. Final receipts reflect later
+NPC destruction, without restoring a second Wanderer during the same run.
+
+Special transport retains full-route affordability, but successful movement
+charges/stops after one edge. Planet and ship destinations differ; planned-edge
+collision/stress precedes random relocation, and ship hazards resolve only at the
+ship's reached sector. Both interfaces seal candidate occupancy, planet/ship/
+season identity, permission, budget and hazards into fresh single-use confirmation.
+Saved receipts report actual costs and known ship position while concealing the
+random planet destination. Administrative receipts likewise omit coordinates and
+join committed storage warnings with output failures.
+
+Executed locally:
+
+- Full `go test -race` suite and `go vet` passed. The temporary validation modfile
+  selected the local supported GoDoors checkout; repository dependencies did not
+  change. Additional race-enabled Wanderer game/store tests passed after adding
+  the 100-planet capacity and competing-mover regressions.
+- Game/store/door/CLI regressions passed for clean template, finite/deferred
+  placement, invalid draws, schema24 read-only migration, marker validation,
+  movement/restoration incarnations, asset/grant conservation, forward-only daily
+  guards, final NPC destruction, captured private history, full-route turn budgets,
+  split positions and planned/random hazard roles. Atomic callbacks, late RNG and
+  validation failure roll back the whole save; concurrent daily runs and movers
+  commit once. Changed candidate occupancy, daily relocation and replacement
+  invalidate quotes. Committed durability warnings survive failed receipt writes,
+  including EOF/closed-pipe failures; aborted saves print no success receipt.
+- All **48 CI terminal commands** passed, including the new Wanderer compact/classic
+  initialization, budget refusal, fresh cancellation, one-edge or physical
+  stress/collision outcome, hidden receipt, reconnect, daily neutralization/refill
+  and no-replay scenarios. Genesis verifies three fully bootstrapped planets.
+  Existing transport, NPC battles/revenge, equipment, trade, reports and lifecycle
+  scripts passed with save25 assertions. Isolated historical save/DOS fixtures
+  remove post-schema bootstrap assets; ordinary creation scenarios use an empty
+  sector. Empty neutral occupancy fixtures keep a random Wanderer from intercepting
+  isolated ship/revenge battles without a debug RNG flag or weaker assertions.
+  The ordinary collision fixture uses canonical whole-second timestamps so Go's
+  fractional-second serialization cannot fail its untouched-target comparison.
+- All **56 CI evidence/control commands** passed, including 57 returned Wanderer
+  controls, both separately classified diagnostics, 14 native byte observations,
+  all55 rehashed Wanderer corruption controls and **4682 archive hashes**.
+- Linux/amd64 and Windows/amd64 cross-builds passed; formatting, edited relative
+  links and diff whitespace checks passed. Generated terminal captures were backed
+  up, inventoried and restored by verified path/hash, preserving historical evidence.
+
+README, implementation/recovery/plan notes, terminal fixtures and CI include this
+milestone. Full DOS RNG/MBF fidelity, targeted disruption, long-running balance,
+live BBS gameplay and native Windows crash durability remain unverified/separate.
+Cross-builds and PTYs are not live/native acceptance.
+
 ## PR50 assault-preview correction — 2026-10-31
 
 Validated review finding4432205875: another session could change the planet or its
@@ -604,3 +721,36 @@ native reads and all41 semantic/provenance corruption controls. Temporary valida
 modfile selected the supported local GoDoors checkout; dependencies and save24 are
 unchanged. README and implementation notes are included in the fix. Live BBS and
 native Windows durability remain separate acceptance.
+
+The verified PR50 correction was then merged locally into the unpublished
+Wanderer milestone, preserving its complete implementation/research documentation.
+Race-enabled Wanderer/assault-preview/ground-action game, door and store tests,
+affected-package vet, all ten ordinary transport/landing PTY scenarios and the
+Wanderer compact/classic PTY scenarios passed after propagation. Save25 and the
+Wanderer destination/privacy rules remain intact; this merge was not published.
+
+## PR51 CI time budget and maintenance fixture isolation — 2026-10-31
+
+The current-head CI job 124596023177 on 3fa74b9258c9bc7889541e81f75e034045401791
+was cancelled after reaching its configured 15-minute limit. GitHub's annotation
+explicitly reports maximum execution time, rather than a failed game assertion.
+Formatting, race tests/vet and preserved evidence checks succeeded. The terminal
+step continued passing through human-defense desertion before cancellation;
+Linux/Windows cross-builds had not yet run. Evidence alone took 7m17s, leaving
+insufficient room for the complete 48-command terminal/control sequence.
+
+The job now permits 30 minutes. Its name, required commands, action pins, race
+flags, evidence verifiers, terminal checks and cross-builds are otherwise exactly
+unchanged; no check is skipped or bypassed. README documents the budget.
+
+Two independently reproduced Wanderer-related intermittent fixtures are isolated
+without weakening their existing assertions: the tax/recruitment test freezes
+unrelated production for every planet, including The Wanderer; the revenge
+consumption/concurrency/durability test supplies deterministic maintenance draws.
+Their unchanged-head versions reproduced extra route pickups or intercepted
+revenge battles, respectively. Each fixed test passed 25 race-enabled repetitions.
+The full `go test -race -count=1 ./...` suite and `go vet ./...` passed locally
+using the temporary validation modfile for the supported local GoDoors checkout.
+Go formatting, edited links and diff checks passed. Production Go code, save 25,
+dependencies, and retained DOS/terminal evidence are unchanged. GitHub must still
+complete the full check sequence on the new pushed head before merge readiness.

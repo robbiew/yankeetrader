@@ -15,7 +15,9 @@ def exercise(guard):
         original=json.loads((seed/"world.json").read_text())
         p=original["Players"]["1"];p.update(Sector=8,Credits=100000,Ground=1000000,Fighters=10000,Shields=1000000)
         original["Sectors"]["8"]["Warps"]=[9];original["Sectors"]["9"]["Warps"]=[10]
-        original["Planets"]["2"]=dict(Generation=2,ID=2,Sector=8,Owner=1,Name="Mobile",Updated=guard.clock().isoformat().replace("+00:00","Z"),Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=0)
+        # Canonical whole-second timestamps keep exact untouched-target checks
+        # independent of Go trimming trailing fractional-second zeroes.
+        original["Planets"]["2"]=dict(Generation=2,ID=2,Sector=8,Owner=1,Name="Mobile",Updated=guard.clock().replace(microsecond=0).isoformat().replace("+00:00","Z"),Production=[0,0,0],Cargo=[0,0,0],Fighters=0,Missiles=0,Mines=0,Plasma=0,Ground=1,Bank=0)
         original["Sectors"]["8"]["Planet"]=2
         for classic in (False,True):
             for mode in ("move","collision","assault","adoption","cancel"):
@@ -43,7 +45,7 @@ def exercise(guard):
                     followups += [(b"Engage? [y/N] ",b"n\r" if mode=="cancel" else b"y\r"),(main,quit_keys)]
                 text=guard.run(play,data,"Mover",command,classic=classic,followups=followups)
                 saved=json.loads(path.read_text());ship=saved["Players"]["1"]
-                assert saved["Version"]==24 and saved["NextPlanetGeneration"]>=101,text
+                assert saved["Version"]==25 and saved["NextPlanetGeneration"]>=101,text
                 if mode=="cancel":assert ship["Sector"]==8 and ship["Turns"]==500 and saved["Planets"]["2"]["Sector"]==8 and "thrusters saved:" not in text,text
                 elif mode in ("move","collision"):
                     assert text.count("Planet thrusters saved:")==1,text

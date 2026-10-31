@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 24
+const WorldVersion = 25
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -553,12 +553,25 @@ func (w *World) MaintainWithRandom(now time.Time, rng func() float64) bool {
 // maintain shares a random source between economic and faction phases. Keeping
 // it injectable internally permits exact threshold and phase-order tests.
 func (w *World) maintain(now time.Time, rng func() float64) bool {
+	out, err := w.RunMaintenance(now, rng)
+	return err == nil && out.Ran
+}
+func (w *World) maintenancePhases(now time.Time, rng func() float64) (MaintenanceReceipt, error) {
+	out := MaintenanceReceipt{}
 	today := day(now)
 	if today <= w.LastMaintenance {
-		return false
+		return out, nil
 	}
 	w.retireInactivePlayers(now)
 	w.overcrowding(now, rng)
+	missingWanderer := w.wanderer() == nil
+	if !missingWanderer {
+		var err error
+		out.Wanderer, err = w.relocateWanderer(now, rng)
+		if err != nil {
+			return out, err
+		}
+	}
 	var taxes int64
 	for _, p := range w.Ports {
 		if p.ID != 1 {
@@ -575,6 +588,15 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	// Restore after Mercenary routes; the following Xannor phases see the new homes.
 	w.restoreMercenaryBase(now, rng)
 	w.maintainXannor(now, rng)
+	// Give faction restorations first claim on scarce space. Existing Wanderers
+	// already moved before routes; a missing one is born before mobile Xannor work.
+	if missingWanderer {
+		var err error
+		out.Wanderer, err = w.BootstrapWanderer(now, rng)
+		if err != nil {
+			return out, err
+		}
+	}
 	w.xannorActions(now, rng)
 	w.superPlanetLottery(now, rng)
 	for _, p := range w.Players {
@@ -589,7 +611,12 @@ func (w *World) maintain(now time.Time, rng func() float64) bool {
 	w.publishRankings(w.rankingSnapshot(false))
 	w.pruneNews(now)
 	w.LastMaintenance = today
-	return true
+	out.Ran = true
+	if out.Wanderer.Generation != 0 {
+		p := w.wanderer()
+		out.Wanderer.Destroyed = p == nil || p.Generation != out.Wanderer.Generation
+	}
+	return out, nil
 }
 
 // ClassicAlias validates a new DOS-style in-game alias without creating a player.

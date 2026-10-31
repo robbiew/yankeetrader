@@ -123,7 +123,7 @@ func TestGenesisCandidateClearsStateAndBootstrapsOnce(t *testing.T) {
 			if string(before) != string(after) {
 				t.Fatal("candidate mutated original")
 			}
-			if next.Season != 2 || out.NewSeason != 2 || len(next.Players) != 0 || next.NextPlayer != 1 || len(next.Radio) != 0 || len(next.News) != 0 || next.NextNews != 1 || next.NextRadio != 1 || next.NextBattleReport != 1 || len(next.Teams) != 0 || len(next.Planets) != 2 || next.Xannor == nil || next.Xannor.Revenge != nil || next.Xannor.Reserve != 0 || next.GenerationSeed == nil || *next.GenerationSeed != 99 || next.LotteryDailyLimit == nil || *next.LotteryDailyLimit != 0 || next.GenesisPorts == w.GenesisPorts {
+			if next.Season != 2 || out.NewSeason != 2 || len(next.Players) != 0 || next.NextPlayer != 1 || len(next.Radio) != 0 || len(next.News) != 0 || next.NextNews != 1 || next.NextRadio != 1 || next.NextBattleReport != 1 || len(next.Teams) != 0 || len(next.Planets) != 3 || next.Xannor == nil || next.Xannor.Revenge != nil || next.Xannor.Reserve != 0 || next.GenerationSeed == nil || *next.GenerationSeed != 99 || next.LotteryDailyLimit == nil || *next.LotteryDailyLimit != 0 || next.GenesisPorts == w.GenesisPorts {
 				t.Fatal("reset lost config or retained old state", next)
 			}
 			if len(next.SeasonResults) != 1 || out.Result.Score == MaxMoney || out.Result.Ports != 20 || out.Result.Winner != "Winner" || out.Result.Season != 1 || out.Result.Player != 1 {

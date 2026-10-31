@@ -23,7 +23,7 @@ func validatePlanetBattle(r BattleReport) error {
 	if p == nil {
 		return nil
 	}
-	if p.ID < 2 || p.ID > 100 || !clean(p.Name) || r.FightersLost != 0 || r.ShieldsLost != 0 || p.GroundBefore < 0 || p.GroundBefore > MaxQuantity || p.GroundAfter < 0 || p.GroundAfter > p.GroundBefore || (p.Neutralized || r.Destroyed) && p.GroundAfter != 0 || r.Destroyed && p.Interrupted {
+	if p.ID < 1 || p.ID > 100 || !clean(p.Name) || r.FightersLost != 0 || r.ShieldsLost != 0 || p.GroundBefore < 0 || p.GroundBefore > MaxQuantity || p.GroundAfter < 0 || p.GroundAfter > p.GroundBefore || (p.Neutralized || r.Destroyed) && p.GroundAfter != 0 || r.Destroyed && p.Interrupted {
 		return errors.New("invalid planetary battle report")
 	}
 	for i := range p.ProductionBefore {

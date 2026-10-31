@@ -49,7 +49,7 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 	before, _ := os.ReadFile(path)
 	abort := errors.New("abort after death and report")
 	if err := s.Update(func(w *game.World) error {
-		w.Maintain(next)
+		w.MaintainWithRandom(next, func() float64 { return 0 })
 		if w.Players[1].Death == nil {
 			t.Fatal("fixture did not kill")
 		}
@@ -62,7 +62,11 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 		t.Fatal("partial death/report saved on callback failure")
 	}
 	// A validation failure after the entire maintenance phase must also roll back.
-	if err := s.Update(func(w *game.World) error { w.Maintain(next); w.NextBattleReport = 0; return nil }); err == nil {
+	if err := s.Update(func(w *game.World) error {
+		w.MaintainWithRandom(next, func() float64 { return 0 })
+		w.NextBattleReport = 0
+		return nil
+	}); err == nil {
 		t.Fatal("invalid report saved")
 	}
 	after, _ = os.ReadFile(path)
@@ -73,7 +77,10 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 	errs := make(chan error, 6)
 	for i := 0; i < 6; i++ {
 		wg.Add(1)
-		go func() { defer wg.Done(); errs <- s.Update(func(w *game.World) error { w.Maintain(next); return nil }) }()
+		go func() {
+			defer wg.Done()
+			errs <- s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return 0 }); return nil })
+		}()
 	}
 	wg.Wait()
 	close(errs)
@@ -95,7 +102,7 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 	}
 	before, _ = os.ReadFile(path)
 	if err := s.Update(func(w *game.World) error {
-		if w.Maintain(next) || w.Maintain(next.Add(-time.Hour)) {
+		if w.MaintainWithRandom(next, func() float64 { return 0 }) || w.Maintain(next.Add(-time.Hour)) {
 			return errors.New("maintenance replay")
 		}
 		return nil
@@ -125,7 +132,7 @@ func TestXannorShipMaintenanceAtomicDeathConcurrentReplayAndReload(t *testing.T)
 func TestXannorReportAcknowledgementIsBoundAndDoesNotBypassEncounters(t *testing.T) {
 	s, next := xannorShipStore(t)
 	if err := s.Update(func(w *game.World) error {
-		w.Maintain(next)
+		w.MaintainWithRandom(next, func() float64 { return 0 })
 		if err := w.LoginShip(1, next); err != nil {
 			return err
 		}
@@ -215,14 +222,14 @@ func TestVersionFourteenReportMigrationAndFutureStateRejection(t *testing.T) {
 func TestXannorShipCommittedDurabilityFailureDoesNotReplay(t *testing.T) {
 	s, next := xannorShipStore(t)
 	s.syncDirectory = func(string) error { return errors.New("simulated directory sync failure") }
-	err := s.Update(func(w *game.World) error { w.Maintain(next); return nil })
+	err := s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return 0 }); return nil })
 	var committed *DurabilityError
 	if !errors.As(err, &committed) {
 		t.Fatal("expected committed durability error", err)
 	}
 	normal := Store{Dir: s.Dir}
 	if err := normal.Update(func(w *game.World) error {
-		if w.Maintain(next) {
+		if w.MaintainWithRandom(next, func() float64 { return 0 }) {
 			t.Fatal("committed maintenance replayed")
 		}
 		return nil
@@ -239,7 +246,9 @@ func TestXannorShipConcurrentFreshLoginKeepsOneDeathAndReport(t *testing.T) {
 	for i := 0; i < 6; i++ {
 		s, next := xannorShipStore(t)
 		errs := make(chan error, 2)
-		go func() { errs <- s.Update(func(w *game.World) error { w.Maintain(next); return nil }) }()
+		go func() {
+			errs <- s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return 0 }); return nil })
+		}()
 		go func() { errs <- s.Update(func(w *game.World) error { return w.LoginShip(1, next) }) }()
 		for j := 0; j < 2; j++ {
 			if err := <-errs; err != nil {
