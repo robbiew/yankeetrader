@@ -90,3 +90,19 @@ Current command results are in [validation notes](../../evidence/VALIDATION.md).
 Live BBS gameplay, native Windows crash durability, maximum-load balance, exact
 DOS RNG/MBF behavior and targeted disruption controls remain unverified. The
 subsequent bounded Wanderer controls and validation are documented separately.
+
+## PR50 review correction: bind the initial assault preview
+
+Consent and troop selection now stay bound to the originally displayed planet
+identity/incarnation, name, sector, governor, projected integer garrison and
+assault/adoption status. The fresh sealed intent projects its own snapshot at
+its quote time before comparing the preview. A replacement in the same slot with
+the same name, a rename, owner/garrison change or elapsed material growth requires
+landing again before the final prompt. Carried troop changes likewise require
+reconsidering the commitment. Sub-integer growth that does not change the displayed
+garrison remains valid; existing commit-time checks cover changes after the final
+prompt. The failed preview intent is cancelled without draws or troop spending.
+
+The regression failed before the correction for both interfaces and both consent/
+quantity pauses, spending troops despite changed state. It passes after the fix;
+separate game checks cover integer growth and changing assault/adoption status.

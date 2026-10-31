@@ -4,7 +4,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-The Wanderer lifecycle and special transport are now available in-game to test, with bounded placement, atomic saves and hidden-destination receipts (save version 25).
+The Wanderer lifecycle and special transport are now available in-game to test, with bounded placement, atomic saves and hidden-destination receipts (save version 25). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
 
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 

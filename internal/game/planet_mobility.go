@@ -358,3 +358,15 @@ func (w *World) LandingTarget(id int, now time.Time) (Planet, bool, error) {
 	projected.update(now, true)
 	return projected, w.vacantGovernor(planet), nil
 }
+
+// CheckLandingPreview binds troop selection to the identity and defenses the
+// caller saw before answering consent/quantity prompts. Project only the new
+// sealed snapshot, so elapsed economic growth is checked without saving it.
+func (e PlanetIntent) CheckLandingPreview(target Planet, adopt bool) error {
+	current := e.Planet
+	current.update(e.QuotedAt, true)
+	if e.Kind != "assault" || current.ID != target.ID || current.Generation != target.Generation || current.Sector != target.Sector || current.Name != target.Name || current.Owner != target.Owner || current.Ground != target.Ground || (current.Owner == 0 || e.OwnerDead) != adopt {
+		return errors.New("planet or defenses changed while choosing troops; land again and reconsider your commitment")
+	}
+	return nil
+}

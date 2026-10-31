@@ -127,6 +127,12 @@ func (s Session) forceLandingWithRandom(id int, pending *[]string, rng func() fl
 		return "", err
 	}
 	defer s.Store.CancelPlanetAction(entry)
+	if err = entry.CheckLandingPreview(target, adopt); err != nil {
+		return "", err
+	}
+	if entry.Ship.Ground != w.Players[id].Ground {
+		return "", errors.New("carried ground forces changed while choosing troops; land again and reconsider your commitment")
+	}
 	prompt := fmt.Sprintf("Force landing on %s with %d ground forces? Committed troops are spent; captured survivors become its garrison. Combat is bounded to %d rounds; unfinished survivors retreat without refund. No turn fee. [y/N] ", terminalLabel(target.Name), quantity, game.MaxGroundRounds)
 	if adopt {
 		prompt = fmt.Sprintf("Adopt the vacant government on %s? Unrest reduces its garrison; no carried troops or turns are spent. [y/N] ", terminalLabel(target.Name))

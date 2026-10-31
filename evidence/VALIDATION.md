@@ -697,3 +697,34 @@ README, implementation/recovery/plan notes, terminal fixtures and CI include thi
 milestone. Full DOS RNG/MBF fidelity, targeted disruption, long-running balance,
 live BBS gameplay and native Windows crash durability remain unverified/separate.
 Cross-builds and PTYs are not live/native acceptance.
+
+## PR50 assault-preview correction — 2026-10-31
+
+Validated review finding4432205875: another session could change the planet or its
+garrison while the caller answered initial consent/troop-quantity prompts. The
+new sealed intent accepted that newer state while the final question retained the
+old displayed name/defenses. Both classic/compact regressions failed before the
+fix at both pauses, drawing combat RNG and spending10 troops against changed state.
+
+The sealed assault intent now checks the original identity/incarnation, sector,
+name, governor, projected integer garrison and assault/adoption status before the
+final question; a changed carried ground stock also requires reconsideration.
+Material elapsed growth is projected from the fresh intent without saving it.
+An unchanged displayed integer garrison remains valid. A rejected preview cancels
+its intent, performs no draw, spends no troops and prints no saved receipt.
+
+Validation passed: full race-enabled Go suite and vet, 24 classic/compact prompt-
+interleaving regressions (garrison, same-name replacement, rename, elapsed growth,
+governor and carried troop changes at both pauses), game projection/adoption checks,
+all ten real classic/compact mobility PTY scenarios, 55 retained DOS controls/19
+native reads and all41 semantic/provenance corruption controls. Temporary validation
+modfile selected the supported local GoDoors checkout; dependencies and save24 are
+unchanged. README and implementation notes are included in the fix. Live BBS and
+native Windows durability remain separate acceptance.
+
+The verified PR50 correction was then merged locally into the unpublished
+Wanderer milestone, preserving its complete implementation/research documentation.
+Race-enabled Wanderer/assault-preview/ground-action game, door and store tests,
+affected-package vet, all ten ordinary transport/landing PTY scenarios and the
+Wanderer compact/classic PTY scenarios passed after propagation. Save25 and the
+Wanderer destination/privacy rules remain intact; this merge was not published.
