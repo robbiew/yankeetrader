@@ -229,7 +229,8 @@ func (s *Session) classicStartup() (int, error) {
 		// the clock; some terminals ignore the original CSI s/u sequences.
 		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
 		// Brand the live page without changing the preserved DOS source art.
-		art += "\x1b[7;1H\x1b[2K\x1b[0;96m                         Resurrection - " + version.Version +
+		subtitle := "Resurrection - " + version.Version
+		art += "\x1b[7;1H\x1b[2K\x1b[0;96m" + strings.Repeat(" ", (80-len(subtitle))/2) + subtitle +
 			"\x1b[15;1H\x1b[2K\x1b[0;37m" + strings.Repeat(" ", (80-len(version.BasedOn))/2) + version.BasedOn +
 			"\x1b[16;1H\x1b[2K\x1b[0;31m" + strings.Repeat(" ", (80-len(version.OriginalCredit))/2) + version.OriginalCredit +
 			"\x1b[17;1H\x1b[2K\x1b[0;37m                     " + version.Repository +

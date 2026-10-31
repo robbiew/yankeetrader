@@ -67,7 +67,7 @@ Cntl-X to Stop
 [12;20H"Whee fyte to the DEETH Hoo-m7
 8an Slyme!"[18;34H9600 [33mH[35m7
 8S[31mT[11D [0m
-[7;1H[2K[0;96m                         Resurrection - 0.1.0[15;1H[2K[0;37m                       Based on Yankee Trader Version 3.6[16;1H[2K[0;31m                        Original game by Alan Davenport[17;1H[2K[0;37m                     https://github.com/robbiew/yankeetrader[18;1H[2K[19;1H
+[7;1H[2K[0;96m                              Resurrection - 0.1.0[15;1H[2K[0;37m                       Based on Yankee Trader Version 3.6[16;1H[2K[0;31m                        Original game by Alan Davenport[17;1H[2K[0;37m                     https://github.com/robbiew/yankeetrader[18;1H[2K[19;1H
 [ Press any Key ]
 Initializing...
 
