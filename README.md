@@ -1148,7 +1148,7 @@ nothing. Each forced recharge preserves cloak and may consume all remaining
 turns. The actual destination can be current, avoided, disconnected or hazardous.
 Reached mines, escape/death and hostile encounter gates still apply. Planetary
 routes check disruption on helper return, leaving a transported planet behind
-when only its ship warps. Autopilot and queued commands stop on interruption.
+when only its ship warps. Autopilot and queued commands stop on interruption, including when another login moves the same ship into this login’s disruption sector between commands or while input is waiting. A forced current-sector arrival returns to a fresh prompt before dispatch.
 
 One atomic save includes the origin action and reached aftermath. A chain is
 bounded to **32 forced disruption warps**; exceeding it aborts the entire action

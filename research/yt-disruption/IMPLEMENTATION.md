@@ -130,3 +130,15 @@ See [executed validation](../../evidence/VALIDATION.md) for current results. Exa
 BRUN30/MBF numeric and RNG parity, disruption combat/spy extensions, long-running
 balance, live BBS gameplay and native Windows crash durability remain separate.
 PTYs and cross-builds do not establish live/native acceptance.
+
+### Current-sector queued input review fix
+
+Both command-loop arrival checks now pass the pending command queue to the
+committed-arrival receipt and restart the input loop before dispatch. This covers
+a second login moving the same ship into a hidden disruption sector between
+queued commands or during the input wait. Startup still resolves before normal
+actions. The save schema and hazard rules are unchanged.
+
+Four real-store regressions (compact/classic, both interleavings) failed before
+the fix and pass afterward: stale commands are discarded, a fresh command line
+is read, and zero-turn forced arrival remains committed.

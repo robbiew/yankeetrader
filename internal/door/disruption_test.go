@@ -161,3 +161,84 @@ func TestStartupMinesWithoutBlackHoleStillReportFatalSave(t *testing.T) {
 		t.Fatal(e)
 	}
 }
+
+// A second login may move the same ship while this login has queued input.
+// Exercise both current-sector checks in Run, not just action-driven arrival.
+type concurrentDisruptionTerminal struct {
+	commandReads int
+	*scripted
+	move      func()
+	afterRead bool
+	moved     bool
+}
+
+func (term *concurrentDisruptionTerminal) ReadLine(deadline time.Time) (string, error) {
+	line, err := term.scripted.ReadLine(deadline)
+	if strings.HasPrefix(line, "i;") {
+		term.commandReads++
+	}
+	if term.afterRead && strings.HasPrefix(line, "i;") && !term.moved {
+		term.moved = true
+		term.move()
+	}
+	return line, err
+}
+func (term *concurrentDisruptionTerminal) Printf(format string, args ...any) error {
+	err := term.scripted.Printf(format, args...)
+	if !term.afterRead && term.commandReads > 0 && (strings.Contains(format, "%s: holds") || strings.Contains(fmt.Sprintf(format, args...), "[ Info ]")) && !term.moved {
+		term.moved = true
+		term.move()
+	}
+	return err
+}
+func TestCurrentSectorDisruptionDiscardsQueuedCommandsBothInterfaces(t *testing.T) {
+	for _, classic := range []bool{false, true} {
+		for _, afterRead := range []bool{false, true} {
+			t.Run(fmt.Sprintf("classic=%t/afterRead=%t", classic, afterRead), func(t *testing.T) {
+				lines := []string{}
+				if classic {
+					lines = append(lines, "", "", "")
+				}
+				lines = append(lines, "i;i;q;y", "i;q;y")
+				term := &concurrentDisruptionTerminal{scripted: &scripted{lines: lines}, afterRead: afterRead}
+				s, st := navigationSession(t, term)
+				s.Classic = classic
+				if err := st.Update(func(w *game.World) error {
+					p, err := w.Join("nav", "Navigator")
+					if err == nil {
+						p.Turns = 0
+					}
+					return err
+				}); err != nil {
+					t.Fatal(err)
+				}
+				term.move = func() {
+					if err := st.Update(func(w *game.World) error { w.Players[1].Sector = 2; return nil }); err != nil {
+						t.Fatal(err)
+					}
+				}
+				s.disruptionRandom = doorArrivalRandom(t, 0, 0, 0, 0, .99, 0, 0)
+				if err := s.Run(); err != nil {
+					t.Fatal(err)
+				}
+				saved, err := st.View()
+				if err != nil {
+					t.Fatal(err)
+				}
+				text := term.output.String()
+				wantInfo := 2
+				if afterRead {
+					wantInfo = 1
+				}
+				marker := "Navigator: holds"
+				if classic {
+					marker = "[ Info ]"
+					wantInfo++
+				}
+				if !term.moved || strings.Count(text, marker) != wantInfo || !strings.Contains(text, "Forced warp saved:") || saved.Players[1].Sector == 2 || saved.Players[1].WarpSequence == 0 || saved.Players[1].Turns != 0 || term.commandReads != 2 {
+					t.Fatalf("queued commands survived arrival: player=%+v output=%s", saved.Players[1], text)
+				}
+			})
+		}
+	}
+}
