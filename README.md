@@ -308,6 +308,10 @@ If a save error occurs, stop and inspect the filesystem before retrying a purcha
 
 ## Build and validate
 
+CI allows 30 minutes for the complete race, evidence, terminal and cross-build
+sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
+random encounters while retaining their resource, replay and durability checks.
+
 Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
 
 ```sh

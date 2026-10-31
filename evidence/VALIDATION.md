@@ -728,3 +728,29 @@ Race-enabled Wanderer/assault-preview/ground-action game, door and store tests,
 affected-package vet, all ten ordinary transport/landing PTY scenarios and the
 Wanderer compact/classic PTY scenarios passed after propagation. Save25 and the
 Wanderer destination/privacy rules remain intact; this merge was not published.
+
+## PR51 CI time budget and maintenance fixture isolation — 2026-10-31
+
+The current-head CI job 124596023177 on 3fa74b9258c9bc7889541e81f75e034045401791
+was cancelled after reaching its configured 15-minute limit. GitHub's annotation
+explicitly reports maximum execution time, rather than a failed game assertion.
+Formatting, race tests/vet and preserved evidence checks succeeded. The terminal
+step continued passing through human-defense desertion before cancellation;
+Linux/Windows cross-builds had not yet run. Evidence alone took 7m17s, leaving
+insufficient room for the complete 48-command terminal/control sequence.
+
+The job now permits 30 minutes. Its name, required commands, action pins, race
+flags, evidence verifiers, terminal checks and cross-builds are otherwise exactly
+unchanged; no check is skipped or bypassed. README documents the budget.
+
+Two independently reproduced Wanderer-related intermittent fixtures are isolated
+without weakening their existing assertions: the tax/recruitment test freezes
+unrelated production for every planet, including The Wanderer; the revenge
+consumption/concurrency/durability test supplies deterministic maintenance draws.
+Their unchanged-head versions reproduced extra route pickups or intercepted
+revenge battles, respectively. Each fixed test passed 25 race-enabled repetitions.
+The full `go test -race -count=1 ./...` suite and `go vet ./...` passed locally
+using the temporary validation modfile for the supported local GoDoors checkout.
+Go formatting, edited links and diff checks passed. Production Go code, save 25,
+dependencies, and retained DOS/terminal evidence are unchanged. GitHub must still
+complete the full check sequence on the new pushed head before merge readiness.

@@ -120,7 +120,7 @@ func TestXannorRevengeConsumptionConcurrentReplayAndDurability(t *testing.T) {
 		before, _ := os.ReadFile(path)
 		abort := errors.New("abort consumed revenge")
 		if err := s.Update(func(w *game.World) error {
-			w.Maintain(next)
+			w.MaintainWithRandom(next, func() float64 { return .5 })
 			if w.Xannor.Revenge != nil {
 				t.Fatal("not consumed")
 			}
@@ -134,7 +134,7 @@ func TestXannorRevengeConsumptionConcurrentReplayAndDurability(t *testing.T) {
 		}
 		if durability {
 			s.syncDirectory = func(string) error { return errors.New("directory sync") }
-			err := s.Update(func(w *game.World) error { w.Maintain(next); return nil })
+			err := s.Update(func(w *game.World) error { w.MaintainWithRandom(next, func() float64 { return .5 }); return nil })
 			var committed *DurabilityError
 			if !errors.As(err, &committed) {
 				t.Fatal("expected committed error", err)
@@ -146,7 +146,10 @@ func TestXannorRevengeConsumptionConcurrentReplayAndDurability(t *testing.T) {
 				wg.Add(1)
 				go func() {
 					defer wg.Done()
-					errs <- s.Update(func(w *game.World) error { w.Maintain(next); return w.LoginShip(1, next) })
+					errs <- s.Update(func(w *game.World) error {
+						w.MaintainWithRandom(next, func() float64 { return .5 })
+						return w.LoginShip(1, next)
+					})
 				}()
 			}
 			wg.Wait()
@@ -168,7 +171,7 @@ func TestXannorRevengeConsumptionConcurrentReplayAndDurability(t *testing.T) {
 		snapshot := *saved.Players[1]
 		before, _ = os.ReadFile(path)
 		if err := normal.Update(func(w *game.World) error {
-			if w.Maintain(next) || w.Maintain(next.Add(-time.Hour)) {
+			if w.MaintainWithRandom(next, func() float64 { return .5 }) || w.Maintain(next.Add(-time.Hour)) {
 				t.Fatal("daily replay")
 			}
 			return nil

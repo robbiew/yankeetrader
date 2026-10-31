@@ -73,9 +73,8 @@ func TestMercenaryHiringIndividualPortTaxesAndNoCarry(t *testing.T) {
 	// Isolate tax-funded hires from both faction homes. Mercenary routes can
 	// collect Xannoron stocks too; production/pickup has separate coverage.
 	for _, planet := range w.Planets {
-		if planet.FactionHome != "" {
-			planet.Updated = clock.Add(48 * time.Hour)
-		}
+		// Include the Wanderer: unrelated production must not feed route pickups.
+		planet.Updated = clock.Add(48 * time.Hour)
 	}
 	before, _ := json.Marshal(w)
 	if w.Maintain(clock.Add(24*time.Hour)) || w.Maintain(clock) {
