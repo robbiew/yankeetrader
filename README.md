@@ -4,7 +4,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-Planetary thrusters and forced landing are now available in-game to test, with atomic saves and exact outcome receipts (save version 24).
+Planetary thrusters and forced landing are now available in-game to test, with atomic saves and exact outcome receipts (save version 24). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
 
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
