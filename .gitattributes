@@ -108,3 +108,12 @@
 /research/yt-wanderer/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-wanderer/dos/**/dosbox.log whitespace=-blank-at-eol
 /research/yt-wanderer/exploratory/** -text -diff
+
+# Original disruption controls preserve exact DOS keys, clocks and returned markers.
+/research/yt-disruption/dos/** -text
+/research/yt-disruption/dos/**/KEYS.TXT -diff
+/research/yt-disruption/dos/**/DOS*.LOG -diff
+/research/yt-disruption/dos/**/RETURN.LOG -diff
+/research/yt-disruption/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-disruption/dos/**/dosbox.log whitespace=-blank-at-eol
+/research/yt-disruption/diagnostics/** -text -diff

@@ -4,7 +4,7 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-The Wanderer lifecycle and special transport are now available in-game to test, with bounded placement, atomic saves and hidden-destination receipts (save version 25). Forced landing also rechecks the originally displayed planet, projected garrison and carried troops after choosing a commitment; changes require a new landing attempt before any troops are spent.
+The Wanderer lifecycle and special transport are available in-game to test (save version 25). Disruption and black-hole arrival research is complete: 61 returned DOS controls and native analysis establish session-local holes, forced-warp ordering and independent ship/planet aftermath. [Gameplay implementation is next](research/yt-disruption/CONTRACT.md); this research does not change the playable game or save format. Forced landing retains its original-preview revalidation before troops are spent.
 
 **Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
 
@@ -22,7 +22,7 @@ The Wanderer lifecycle and special transport are now available in-game to test, 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling and targeted thruster/disruption fidelity remain outstanding.
+- Explicit season archive export/administrative reset tooling and disruption arrival gameplay remain outstanding. [Targeted black-hole/transport research is complete](research/yt-disruption/RECOVERY.md).
 - Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
@@ -1056,8 +1056,9 @@ warnings; a durability warning ends the login. Save version **24** upgrades olde
 worlds without resetting them. See the [implementation and validation contract](research/yt-planet-mobility/IMPLEMENTATION.md)
 and [55-control DOS recovery](research/yt-planet-mobility/RECOVERY.md).
 
-Targeted disruption arrival, complete DOS RNG/MBF parity,
-live BBS gameplay and native Windows crash durability remain separate acceptance.
+Targeted disruption arrival research is complete below; its Go implementation,
+complete DOS RNG/MBF parity, live BBS gameplay and native Windows crash durability
+remain separate work.
 
 
 ### The Wanderer lifecycle and transport — available in-game to test
@@ -1106,5 +1107,35 @@ repeat spending or restoration. `-maint` prints a saved final lifecycle outcome
 without coordinates, retaining committed storage warnings and output errors.
 
 Local regression and terminal checks are recorded in [validation](evidence/VALIDATION.md).
-Full original RNG/MBF parity, targeted disruption, live BBS acceptance and native
-Windows durability remain separate.
+Targeted disruption research is complete below; its gameplay implementation, full
+original RNG/MBF parity, live BBS acceptance and native Windows durability remain
+separate.
+
+### Disruption and black-hole arrivals — research complete; gameplay not shipped
+
+[The recovery](research/yt-disruption/RECOVERY.md) retains **61 normally returned
+DOS controls**, four exact world/auxiliary reload chains, 15 native byte reads and
+one independently reconstructed executable image. Narrow branch controls and
+full 3000-sector header controls are distinguished. A separate unsupported
+one-sector, 40-second nonreturning probe is diagnostic only. Independent
+verification checks world/auxiliary conservation, receipt arithmetic, raw logs,
+privacy and provenance, with 65 rehashed corruption tests.
+
+Two independently drawn login-local holes may coincide. Arrival checks them
+before local mines/fighters and automatically warps even with zero turns, then
+rechecks the destination. Autopilot stops after the interruption. Ordinary planet
+routes can pass a bare intermediate hole, but their final/helper-return arrival
+can send the ship away while leaving the planet behind. Wanderer controls confirm
+independent final ship/planet positions. Local sector/scanner warnings reveal
+observed danger; generic news does not disclose the hidden pair or random planet
+location. Raw sector field 133 does not identify a black hole.
+
+Run `python3 scripts/verify_disruption.py` and
+`python3 scripts/test_disruption_verifier.py` to check retained evidence; optional
+fresh DOS reproduction uses `scripts/recover_disruption.py` in a new disposable
+directory. [Native rules](research/yt-disruption/NATIVE.md) separate static
+interpretation from observed outcomes. The [next implementation contract](research/yt-disruption/CONTRACT.md)
+requires finite chain work, explicit session lifetime, atomic origin/arrival
+aftermath, identity checks and truthful private receipts. Go gameplay and save
+**25** are unchanged. Exact original RNG/MBF parity, unrelated disruption combat/
+spy branches, long-running balance and native/live acceptance remain open.

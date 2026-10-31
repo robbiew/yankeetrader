@@ -1,0 +1,21 @@
+{
+  "recipe": "disruption-arrival-v1",
+  "source": "archive/analysis/yt-combat/experiments/fixture-planet-transfer",
+  "scenarios": [
+    {
+      "name": "one-sector-loop",
+      "command": "I",
+      "sectors": 1,
+      "start": 1,
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ],
+      "timeout": 40,
+      "diagnostic": "bounded-native-reentry-loop"
+    }
+  ]
+}

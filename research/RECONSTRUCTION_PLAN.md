@@ -1073,7 +1073,7 @@ public player news. Both interfaces return saved resource/casualty/capture recei
 and preserve committed durability warnings. README, terminal fixtures and CI are
 updated with this milestone. Current validation is recorded in evidence/VALIDATION.md.
 
-Remaining: actual targeted thruster/disruption controls, original
+Historical boundary (targeted controls completed below): original
 RNG/MBF fidelity, broader long-running balance, live BBS and native Windows durability.
 
 
@@ -1105,7 +1105,7 @@ hidden-location receipts. Integrate Genesis explicitly without repeating daily
 awards or backdated catch-up grants. Keep normal movement incarnation stable,
 never identify the mobile planet by name/slot accident, and preserve existing
 faction-home rules. README is updated in this research milestone; save version 24 and Go
-gameplay are unchanged. Exact RNG/MBF, actual disruption transport, balance and
+gameplay are unchanged. Historical scope: targeted disruption transport is recovered below; exact RNG/MBF, balance and
 native/live acceptance remain open.
 
 
@@ -1129,5 +1129,37 @@ and hidden-destination receipts apply in both interfaces. README, schema migrati
 assertions, isolated historical fixtures and the Wanderer terminal check are part
 of this milestone. See evidence/VALIDATION.md for executed checks.
 
-Remaining: targeted disruption controls, exact DOS RNG/MBF fidelity, broader balance,
+Targeted disruption controls are completed below. Remaining: disruption gameplay, exact DOS RNG/MBF fidelity, broader balance,
 season archive export/admin reset tooling and native/live acceptance.
+
+
+## Disruption and black-hole arrival — bounded research complete
+
+[Recovery](yt-disruption/RECOVERY.md), [native observations](yt-disruption/NATIVE.md)
+and [candidate implementation contract](yt-disruption/CONTRACT.md) retain 61
+returned controls/122 full snapshots, four exact world/auxiliary reloads, 15 native
+byte reads and a relocated MZ image with 870 fixups. One unsupported one-sector
+40-second no-return diagnostic is separate. Narrow declared tables and normal
+3000-sector/full-header controls have independent setup verification. The latter
+locate real session holes through the original sensors and exercise both arrivals.
+
+Recovered: two independent session-local locations may coincide; startup and
+returned-shell arrivals force warp before mines/fighters, even at zero turns,
+and recheck destinations. Autopilot stops. Safe internal planetary edges do not
+check disruption until helper return; hazard stops return early. Forced warp
+moves only the ship, preserving ordinary/Wanderer planet positions. Heat/turn
+receipts, later mine escape/death, hidden-location privacy and changed-session
+sensors are checked separately. Raw 133 is not a hole flag; exact RNG/MBF parity
+is not claimed. The native loop has no chain cap, so modern bounded exhaustion
+needs an explicit policy. Current Go mine-escape heat-budget recomputation is a
+source discrepancy to audit during the shared-kernel work, not an incidental fix.
+
+Next: implement bounded session-local disruption and automatic arrival composition
+with finite selection/chains, narrow encounter authority, captured ship/season
+identity, fresh voluntary intent checks and one atomic origin/aftermath save.
+Keep transport and recharge costs distinct, preserve independent planet positions,
+stop queued navigation, retain killer/estate rules and committed durability
+warnings, and expose only supported local warnings/private saved receipts.
+Update README, tests and validation together. This research changes no Go code or
+save25 fields. Remaining: implementation, exact random/numeric parity, unrelated
+disruption combat/spy branches, balance and native/live acceptance.
