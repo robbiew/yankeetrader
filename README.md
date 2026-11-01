@@ -207,7 +207,8 @@ has its own unread flag and archive slot. Former members retain their addressed
 copies; new members cannot read old team mail. Team sending uses the existing
 version-26 mailbox format without a migration. [Team rules, DOS evidence and
 validation](research/yt-team-radio/IMPLEMENTATION.md). Broadcast delivery and
-the DOS multiline editor remain open.
+the DOS multiline editor remain open. Evidence checks compare exact decoded
+mailbox fields and preserve scanner equipment, with corruption controls for both.
 See [radio scope and validation](research/yt-navigation/RADIO_IMPLEMENTATION.md).
 
 Sensors work even when no turns remain. `AUTO` asks before moving; an empty answer cancels. You can stack the response, for example `PATH 1 3; AUTO 3; Y; I`. Ctrl-X stops autopilot between hops. Every completed hop saves immediately and remains spent after interruption or disconnect. Courses stop if another session changes your position or leaves too few turns. See [navigation recovery and DOS comparisons](research/yt-navigation/RECOVERY.md).

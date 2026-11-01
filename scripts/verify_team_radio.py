@@ -71,9 +71,9 @@ def check(path=ROOT/'research/yt-team-radio/dos'):
   text=(d/'transcript.txt').read_text()
   assert 'Returning to Yankee Trader Local Logon Program...'in text and 'Entering a new player'not in text and 'Entering a new ship'not in text
   actor=3 if c.get('actor')=='ENEMY'else 2
-  for offset in (49,53,57,61,65,69,73,77,81,97,105,113,121,125,129):assert mbf.get(before,actor,offset)==mbf.get(after,actor,offset),(n,'resource',offset)
+  for offset in (49,53,57,61,65,69,73,77,81,93,97,105,113,121,125,129):assert mbf.get(before,actor,offset)==mbf.get(after,actor,offset),(n,'resource',offset)
   mail=rawafter['YTRMSG.DAT'];assert len(mail)%86==0
-  packets=[(int(mbf.get(mail[i:i+86],1,0)),int(mbf.get(mail[i:i+86],1,4)),int(mbf.get(mail[i:i+86],1,8)),mail[i+12:i+86].rstrip())for i in range(0,len(mail),86)]
+  packets=[(mbf.get(mail[i:i+86],1,0),mbf.get(mail[i:i+86],1,4),mbf.get(mail[i:i+86],1,8),mail[i+12:i+86].rstrip())for i in range(0,len(mail),86)]
   if n in ('team-abort','no-team'):
    assert not packets and 'Transmission successful!'not in text
    if n=='no-team':assert "You Don't belong to a team!"in text

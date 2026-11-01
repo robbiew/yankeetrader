@@ -15,22 +15,23 @@ class Controls(unittest.TestCase):
  def test_preserved(self):
   with contextlib.redirect_stdout(io.StringIO()):v.check()
  def test_corruptions(self):
-  for mode in ('missing','binary','incomplete','roster','world','resources','destination','shared-read','outsider','late-join','chain','keys'):
+  for mode in ('missing','binary','incomplete','roster','world','resources','destination','shared-read','outsider','late-join','chain','keys','scanner','fraction-destination','fraction-sender','fraction-unread'):
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as temp:
     path=Path(temp)/'dos';shutil.copytree(ROOT/'research/yt-team-radio/dos',path)
     summary=json.loads((path/'results.json').read_text())
-    name={'shared-read':'recipient-read','outsider':'outsider-read','late-join':'late-join','chain':'recipient-left'}.get(mode,'team-send')
+    name={'shared-read':'recipient-read','outsider':'outsider-read','late-join':'late-join','chain':'recipient-left','scanner':'recipient-read','fraction-destination':'sender-read','fraction-sender':'sender-read','fraction-unread':'sender-read'}.get(mode,'team-send')
     r=next(r for r in summary['scenarios']if r['name']==name);d=path/name
     if mode=='missing':summary['scenarios'].pop()
     elif mode=='binary':r['binaries']['YT.EXE']='0'*64
     elif mode=='incomplete':r['complete']=False
     elif mode=='roster':r['roster']=[2,3]
-    elif mode in ('world','resources'):
-     f='before.dat.gz'if mode=='world'else'after.dat.gz';b=bytearray(gzip.decompress((d/f).read_bytes()));v.mbf.put(b,2,81,123)
+    elif mode in ('world','resources','scanner'):
+     f='before.dat.gz'if mode=='world'else'after.dat.gz';b=bytearray(gzip.decompress((d/f).read_bytes()));v.mbf.put(b,3 if mode=='scanner'else 2,93 if mode=='scanner'else 81,0 if mode=='scanner'else 123)
      (d/f).write_bytes(gzip.compress(b))
-    elif mode in ('destination','shared-read','late-join'):
+    elif mode in ('destination','shared-read','late-join','fraction-destination','fraction-sender','fraction-unread'):
      f=d/'sidefiles.json.gz';side=json.loads(gzip.decompress(f.read_bytes()));b=bytearray.fromhex(side['YTRMSG.DAT']['hex'])
      if mode=='destination':v.mbf.put(b,1,4,5)
+     elif mode.startswith('fraction-'):v.mbf.put(b,1,{'fraction-destination':4,'fraction-sender':8,'fraction-unread':0}[mode],.5 if mode=='fraction-unread'else 2.5)
      elif mode=='shared-read':v.mbf.put(b,1,0,0)
      else:
       packet=bytearray(b[:86]);v.mbf.put(packet,1,4,3);b+=packet

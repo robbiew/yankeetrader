@@ -979,7 +979,8 @@ privacy and unsupported follow-ups are in
   sender, independent unread flags, abort/no-team rejection and recipient-at-send
   delivery after membership changes. The independent verifier checks exact
   world/auxiliary chains, binaries, keys, packet contents and conserved resources.
-  Twelve corruption controls passed. Existing commerce/direct-radio and fourteen
+  Sixteen corruption controls passed, including fractional routing/read flags and
+  scanner removal with refreshed hashes. Existing commerce/direct-radio and fourteen
   team-membership evidence controls also passed; all 4,682 archive hashes matched.
 - Full `go test -race ./...` and `go vet ./...` passed. Final recipient-preview and
   committed-durability-warning changes passed targeted race-enabled radio tests.
