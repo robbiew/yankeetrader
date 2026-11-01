@@ -1,0 +1,37 @@
+{
+  "name": "disruption",
+  "complete": true,
+  "command": "P;9;1;2\r~~~~\r~~0;P;0;C;15;1;P;0;C;15;1",
+  "patches": [
+    [
+      1,
+      57,
+      54
+    ],
+    [
+      53,
+      41,
+      3
+    ],
+    [
+      54,
+      41,
+      2
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "bd62a22c86f3776f56a85f17f7868ff5c40638a2108d36c04486887070b6ecbd",
+  "before_sha256": "952a457598b456678b5a0ad07cecfb76fc702f6df1d34b224d69de62f03a7b5d",
+  "after_sha256": "53fb81d6e83f5770cd31445233af5f7db19c0525884e34ac09a66cc144237680",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "scoreboard.txt": "011dcc8677334b310408d2cd32ba8979d60ad34568af71c3c9901c3cf5633dae",
+    "transcript.txt": "78cc7780d7685ae6ceadf0d1aa4dd0ff4e535db76d10343b5c5ca232b2f19165",
+    "KEYS.TXT": "bfc2a23912c3976784502c4d82efc3b279b0feac58008ee7d98f1303712e188c",
+    "dosbox.log": "09c337cf6eed0663de273e2aac79b8987200f2c01e60d48a503e400a6ed1fafd"
+  },
+  "actor_turns": 497.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

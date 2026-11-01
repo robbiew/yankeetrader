@@ -16,14 +16,14 @@ Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> 
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing and indiscriminate damage, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Mercenary plasma sales, explicit season archive export/administrative reset tooling and remaining disruption spy intelligence.
-- The DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
+- Mercenary plasma sales and explicit season archive export/administrative reset tooling.
+- The DOS multiline message editor, remaining spy trigger/notification parity, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -359,6 +359,10 @@ python3 scripts/verify_avoid_evidence.py
 
 The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt).
 
+The Mercenary-route smoke fixture starts with The Wanderer missing so normal
+restoration runs after route actions. This keeps mine/pickup assertions isolated
+from unrelated random Wanderer movement; gameplay behavior is unchanged.
+
 The tests also cover rejected-action rollback, malformed saves, competing goroutines/processes, a killed lock holder, stale docking tokens, exact-money persistence, and DOS trading examples. Successful cross-compilation is recorded separately from native runtime/BBS validation in [validation evidence](evidence/VALIDATION.md).
 
 ## Planet management
@@ -524,19 +528,30 @@ after destruction are implemented. Remaining work concerns original DOS RNG and
 rounding fidelity, numeric boundaries, unresolved routing/target-ordering rules,
 and native BBS acceptance testing.
 
+Spies now report other living ships' names, team numbers, fighters and shields,
+plus this login's space-time disruptions. Partial-cloak detection may produce a
+shimmering notice; successful detections stay within the spy network and are
+bound to the target ship generation. Saved cloak energy, combat visibility and
+durable radio stay unchanged. Exact DOS RNG odds and target notification remain
+outside this bounded slice. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
+No save-format change is required (world version 26). The DOS evidence verifier
+checks complete ordered ship records, including exact shield values; corruption
+controls reject altered values even when transcript hashes are refreshed.
+
 Spies are available at Earth for 333,000 credits each, up to three per login.
 Choose their starting sectors through Earth option 9 or compact `HIRE` while
 docked. Computer option 15 / `SPIES` lists their locations. Successful movement
 (including autopilot hops), docking and sector-fighter transfers search each
 spy's current sector, then move it along a random outgoing warp. Reports cover
-mines, planet names/ground forces and other owners' sector defenses. Repeated
+mines, planet names/ground forces, other owners' sector defenses, ships and
+this login's disruptions. Repeated
 findings in the last reported sector are suppressed; zero-warp sectors safely
 hold position. Spy work has no extra turn charge beyond the triggering action.
 
 Reports appear between commands; `INTEL` retains the last 30 for this login.
 Spies and intelligence history end on disconnect or logout; hires are not
-refunded. Direct radio history remains persistent and separate. Ship/cloak and
-disruption intelligence still need runtime evidence and are unavailable.
+refunded. Direct/team radio history remains persistent and separate. Exact
+cloak-detection odds, target notification and broader trigger parity remain open.
 [Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).
 
 The Galactic newspaper is available through computer option 8 and

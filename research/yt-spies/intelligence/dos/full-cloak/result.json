@@ -1,0 +1,32 @@
+{
+  "name": "full-cloak",
+  "complete": true,
+  "command": "P;9;1;101\r~~~~\r~~0;M;100;C;15;1;M;1;C;15;1",
+  "patches": [
+    [
+      3,
+      57,
+      101
+    ],
+    [
+      3,
+      125,
+      1
+    ]
+  ],
+  "source_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "baseline_sha256": "bd62a22c86f3776f56a85f17f7868ff5c40638a2108d36c04486887070b6ecbd",
+  "before_sha256": "80d1517223ff0cb9fe5f9c67a31c5d79453d57f3dda5c9bdd808ac98d2a2fd03",
+  "after_sha256": "ae0584b938d75babc7c636d18844572498eca1e82ae7d58351f34f2582bf3881",
+  "executable_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "keyfeed_sha256": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596",
+  "files": {
+    "scoreboard.txt": "284e2546791d41f20f9aaaf54ae2b9c85c2d381e13d938cfe76aa6d07c5c8830",
+    "transcript.txt": "84df37759be57b3a077d8494e208294cd2e933f0207e3bf8936c15e644260c0c",
+    "KEYS.TXT": "0bf12419684f4a9ab71abde984e9ffc18ab5b8f44751a71a00976cde53168829",
+    "dosbox.log": "a432dcc1dc1c81f8c9191a36026172efb473a13c7881765d6b40045fb8396abf"
+  },
+  "actor_turns": 497.0,
+  "dos_date": "10/24/2026",
+  "dos_time": "00:00:00"
+}

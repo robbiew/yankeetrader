@@ -1259,6 +1259,16 @@ live BBS acceptance and native Windows crash durability. Those are separate from
 this completed bounded firing path.
 
 
+## Ship, cloak and disruption spy intelligence
+
+Six new completed DOS controls establish ship details, full-cloak suppression,
+a positive partial-cloak shimmering report, ordered multiple ships, caller
+exclusion and login-local disruption reporting. The Go spy network now exposes
+these findings with generation-bound private detection memory, nested-copy
+isolation and unchanged saved cloak/combat visibility. World version 26 stays
+unchanged. Original RNG odds/ties, target notification and broader triggers
+remain open. [Evidence and bounded policies](yt-spies/intelligence/IMPLEMENTATION.md).
+
 ## Team radio
 
 Nine completed DOS controls establish roster fanout, self-copy, independent

@@ -177,3 +177,28 @@ func TestIntelligencePagingAcknowledgesOnlyDisplayedReports(t *testing.T) {
 		t.Fatal("page acknowledged undisplayed reports", len(unread), err)
 	}
 }
+
+func TestSpyShipIntelligenceOutput(t *testing.T) {
+	term := &scripted{lines: []string{"p;hire 3;m 2;intel;q"}}
+	s, st := spyDoor(t, term)
+	if err := st.Update(func(w *game.World) error {
+		p, e := w.Join("enemy-private-identity", "Enemy")
+		if e != nil {
+			return e
+		}
+		p.Sector = 3
+		p.Cloak = 0
+		p.Fighters = 42
+		p.Shields = 10
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	if err := s.Run(); err != nil {
+		t.Fatal(err)
+	}
+	out := term.output.String()
+	if strings.Count(out, "Enemy - Team: 0 - Fighters: 42 - Shields: 10") != 2 || strings.Contains(out, "enemy-private-identity") {
+		t.Fatal(out)
+	}
+}
