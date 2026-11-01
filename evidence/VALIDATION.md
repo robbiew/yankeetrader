@@ -993,3 +993,13 @@ privacy and unsupported follow-ups are in
 World version remains 26. Native BBS acceptance, target notifications, shared
 combat visibility, broader triggers and exact DOS RNG/numeric parity remain
 outside this slice. See [policies and evidence](../research/yt-spies/intelligence/IMPLEMENTATION.md).
+
+
+### Mercenary-route fixture isolation
+
+PR #56 CI exposed a route-smoke assumption: an existing Wanderer can relocate
+into sector 8 before Mercenary actions and legitimately hold the test group.
+The disposable fixture now starts without The Wanderer, allowing normal
+restoration after route actions. Mine and pickup assertions remain unchanged;
+no gameplay RNG or production code is altered. Three fresh route smokes and
+the dedicated compact/classic Wanderer smoke passed locally.

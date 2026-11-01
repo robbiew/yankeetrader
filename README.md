@@ -341,6 +341,10 @@ python3 scripts/verify_avoid_evidence.py
 
 The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt).
 
+The Mercenary-route smoke fixture starts with The Wanderer missing so normal
+restoration runs after route actions. This keeps mine/pickup assertions isolated
+from unrelated random Wanderer movement; gameplay behavior is unchanged.
+
 The tests also cover rejected-action rollback, malformed saves, competing goroutines/processes, a killed lock holder, stale docking tokens, exact-money persistence, and DOS trading examples. Successful cross-compilation is recorded separately from native runtime/BBS validation in [validation evidence](evidence/VALIDATION.md).
 
 ## Planet management

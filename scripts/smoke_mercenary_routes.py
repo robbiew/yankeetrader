@@ -14,6 +14,14 @@ def exercise(root, today):
     subprocess.run([BINARY, '-data', str(seed), '-init', '-sectors', '12'], check=True, capture_output=True)
     play(seed, 'Captain', 'q')
     original = json.loads((seed / 'world.json').read_text())
+    # An existing Wanderer moves before Mercenary actions and can legitimately
+    # hold the group at sector 8 or become an unintended pickup on its route.
+    # A missing Wanderer is restored after routes, keeping that phase active
+    # while isolating these mine/pickup assertions from its random placement.
+    for key, planet in list(original['Planets'].items()):
+        if planet.get('Wanderer'):
+            original['Sectors'][str(planet['Sector'])]['Planet'] = 0
+            del original['Planets'][key]
     for mode in ('mines', 'planet'):
         data = root / mode
         data.mkdir()
