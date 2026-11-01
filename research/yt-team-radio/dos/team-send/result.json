@@ -1,0 +1,182 @@
+{
+  "name": "team-send",
+  "command": "C;5;TEAM\r~~YT TEAM PROBE\r\r~~S\r~~~~6;1",
+  "patches": [
+    [
+      2,
+      89,
+      1
+    ],
+    [
+      3,
+      89,
+      1
+    ],
+    [
+      4,
+      89,
+      1
+    ],
+    [
+      5,
+      89,
+      0
+    ],
+    [
+      6,
+      89,
+      0
+    ]
+  ],
+  "roster": [
+    2,
+    3,
+    4
+  ],
+  "recipe": "team-radio-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      89,
+      1
+    ],
+    [
+      3,
+      89,
+      1
+    ],
+    [
+      4,
+      89,
+      1
+    ],
+    [
+      5,
+      89,
+      0
+    ],
+    [
+      6,
+      89,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "913287dc3fae1e3fb07cfb7c00f4966f2144c9cde0af81790e82994051e52e90",
+    "after.dat.gz": "c508df14df8cfd6fc0f5dec1127351f7bcaa3b61675dd3de04e1d8c2b41d12c7",
+    "before.dat.gz": "8faea7e3ea891972b1c0107957c70a588924ecd6569f37b32ab60ff5f11a46d8",
+    "dosbox.log": "f1b2358f37ffb2eba7856c93d6cc06d8607027e07c2fbcd5359364344a5a8227",
+    "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+    "sidefiles.json.gz": "79ca2523dc1f428f1873a11518264304715a73bcdd08e27a57e801e027b6b053",
+    "transcript.txt": "06e03cbbd58488e083d1e2d11a3c577513ab8b50a469f50c36341956ff557c8f"
+  }
+}
