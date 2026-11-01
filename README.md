@@ -239,7 +239,8 @@ shared delivery counter.
 Native BBS acceptance remains open.
 
 Use `RADIO EDIT <alias, player number, TEAM or ALL>` for the opt-in multiline
-composer, or enter `EDIT <recipient>` at computer option 5. Enter up to 20
+composer, or enter `EDIT <recipient>` at computer option 5. Recipient aliases
+beginning with `Edit ` retain their complete name after the editor keyword. Enter up to 20
 printable ASCII lines of 74 characters; a blank line opens List, Send, Abort,
 Continue and Edit. Continue appends to the last line. Edit replaces the first
 case-sensitive matching section and asks before keeping it. Abort requires

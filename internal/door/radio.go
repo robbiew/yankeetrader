@@ -26,7 +26,7 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 			return err
 		}
 	}
-	if len(query) > 5 && strings.EqualFold(query[:5], "EDIT ") {
+	if !multiline && len(query) > 5 && strings.EqualFold(query[:5], "EDIT ") {
 		multiline = true
 		query = strings.TrimSpace(query[5:])
 	}

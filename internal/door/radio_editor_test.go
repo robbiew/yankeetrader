@@ -91,3 +91,20 @@ func TestEditAliasStillUsesSingleLineComposer(t *testing.T) {
 		t.Fatal(w.Radio)
 	}
 }
+
+func TestMultilineEditPrefixAlias(t *testing.T) {
+	for _, command := range []string{"radio EDIT Edit Enemy;y", "radio;EDIT Edit Enemy;y"} {
+		term := &scripted{lines: []string{command, "FIRST", "", "S", "s", "q"}}
+		s, st := radioSession(t, term)
+		if err := st.Update(func(w *game.World) error { w.Players[2].Alias = "Edit Enemy"; w.Players[3].Alias = "Enemy"; return nil }); err != nil {
+			t.Fatal(err)
+		}
+		if err := s.Run(); err != nil {
+			t.Fatal(err)
+		}
+		w, _ := st.View()
+		if len(w.Radio) != 1 || w.Radio[0].To != 2 || w.Radio[0].ToAlias != "Edit Enemy" {
+			t.Fatal(command, w.Radio, term.output.String())
+		}
+	}
+}
