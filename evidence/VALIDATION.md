@@ -1025,3 +1025,9 @@ the dedicated compact/classic Wanderer smoke passed locally.
 World format remains 26; team radio reuses ordinary private mailbox records.
 Native BBS acceptance, broadcast and DOS multiline editing remain open.
 [Evidence and policies](../research/yt-team-radio/IMPLEMENTATION.md).
+
+
+The combined spy/team state after verified PR #57 integration passed the full
+race-enabled Go suite and vet, plus spy, team-radio and isolated Mercenary-route
+PTY checks. Spy evidence and all fourteen corruption controls passed again.
+Incidental regenerated terminal captures were restored.

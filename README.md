@@ -533,14 +533,15 @@ Choose their starting sectors through Earth option 9 or compact `HIRE` while
 docked. Computer option 15 / `SPIES` lists their locations. Successful movement
 (including autopilot hops), docking and sector-fighter transfers search each
 spy's current sector, then move it along a random outgoing warp. Reports cover
-mines, planet names/ground forces and other owners' sector defenses. Repeated
+mines, planet names/ground forces, other owners' sector defenses, ships and
+this login's disruptions. Repeated
 findings in the last reported sector are suppressed; zero-warp sectors safely
 hold position. Spy work has no extra turn charge beyond the triggering action.
 
 Reports appear between commands; `INTEL` retains the last 30 for this login.
 Spies and intelligence history end on disconnect or logout; hires are not
-refunded. Direct radio history remains persistent and separate. Ship/cloak and
-disruption intelligence still need runtime evidence and are unavailable.
+refunded. Direct/team radio history remains persistent and separate. Exact
+cloak-detection odds, target notification and broader trigger parity remain open.
 [Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).
 
 The Galactic newspaper is available through computer option 8 and
