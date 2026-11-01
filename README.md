@@ -1362,3 +1362,7 @@ entry has expired. Public reading never acknowledges anyone's private copy.
 Local validation for this milestone is recorded in
 [broadcast publication validation](evidence/BROADCAST_NEWSPAPER_VALIDATION.md).
 Live BBS acceptance and native Windows crash durability remain unverified.
+
+Radio compatibility follow-ups explicitly distinguish historical version-26 private
+copies from current version-27 public ALL publication; older binaries cannot read
+version-27 saves.

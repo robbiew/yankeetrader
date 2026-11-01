@@ -1146,7 +1146,10 @@ newspaper result was checked directly against canonical saved YTNEWS.DAT bytes.
   4,682 archive hashes matched. Linux/amd64 and Windows/amd64 cross-builds passed;
   these do not establish native BBS transport or crash durability.
 
-World version remains 26. DOS shared-counter lifetime, simultaneous original
+This historical private-copy milestone used version 26. Current public ALL
+publication uses version 27; older binaries cannot read those saves. See
+[broadcast publication validation](BROADCAST_NEWSPAPER_VALIDATION.md).
+DOS shared-counter lifetime, simultaneous original
 writers, multiline editing and native BBS acceptance remain separate work.
 [Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).
 
