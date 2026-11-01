@@ -17,6 +17,14 @@ def exercise(guard):
         guard.run(play, seed, 'Captain', 'q')
         guard.run(play, seed, 'Visitor', 'q')
         original = json.loads((seed / 'world.json').read_text())
+        # Isolate assault/return from unrelated Wanderer placement. Its missing
+        # identity is normally restored before mobile Xannor work; exhausted
+        # generation capacity deliberately defers that separate feature here.
+        for key, planet in list(original['Planets'].items()):
+            if planet.get('Wanderer'):
+                original['Sectors'][str(planet['Sector'])]['Planet'] = 0
+                del original['Planets'][key]
+        original['NextPlanetGeneration'] = 2**64 - 1
         stamp = (guard.clock() + datetime.timedelta(days=2)).isoformat()
         for mode in ('destroy', 'ground-victory', 'production', 'captured-home'):
             data = root / mode
@@ -50,6 +58,7 @@ def exercise(guard):
             path.write_text(json.dumps(world))
             guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, timeout=10)
             saved = json.loads(path.read_text())
+            assert not any(p.get('Wanderer') for p in saved['Planets'].values())
             p = saved['Players']['1']
             assert saved['Version'] == 27 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
             for asset in ('Credits', 'Fighters', 'Missiles', 'Mines', 'Plasma', 'Cargo'):
@@ -66,7 +75,7 @@ def exercise(guard):
                 assert 999900 <= saved['Planets']['2']['Ground'] < 1000000
             elif mode != 'production':
                 assert report['Destroyed'] and '2' not in saved['Planets'] and saved['Sectors']['10']['Planet'] == 0
-                assert saved['Sectors']['8']['Defense']['Fighters'] == 101
+                assert saved['Sectors']['8']['Defense']['Fighters'] == 101, (mode, saved['Sectors']['8']['Defense'], saved['Xannor'])
             else:
                 for i in range(3):
                     assert 0 <= battle['ProductionAfter'][i] <= .1

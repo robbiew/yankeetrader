@@ -1152,3 +1152,8 @@ publication uses version 27; older binaries cannot read those saves. See
 DOS shared-counter lifetime, simultaneous original
 writers, multiline editing and native BBS acceptance remain separate work.
 [Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).
+
+CI fixture correction: reproduced captured-home return with only one HQ fighter
+when the unrelated Wanderer occupied the emptied HQ. The fixture now removes
+the Wanderer and exhausts planet-generation capacity so its separate restoration
+is deferred. All exact assault, return, privacy and replay assertions remain.

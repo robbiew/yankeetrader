@@ -1353,3 +1353,7 @@ Live BBS acceptance and native Windows crash durability remain unverified.
 Radio compatibility follow-ups explicitly distinguish historical version-26 private
 copies from current version-27 public ALL publication; older binaries cannot read
 version-27 saves.
+
+The Xannor planetary smoke fixture defers unrelated Wanderer restoration using
+exhausted planet-generation capacity, isolating captured-home return assertions
+from random HQ occupancy while retaining the exact return-force check.
