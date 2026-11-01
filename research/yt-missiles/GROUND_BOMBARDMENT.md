@@ -8,8 +8,8 @@ Routed and mixed ship/planet encounters are documented in
 
 # Planetary ground bombardment
 
-`MISSILE <adjacent sector> <quantity>` now supports a hostile planet with no
-eligible visible enemy ship in the same sector. The existing fresh confirmation
+In this historical slice, `MISSILE <adjacent sector> <quantity>` supported a
+hostile planet with no eligible visible enemy ship in the same sector. The existing fresh confirmation
 names the planet, reports its saved ground forces, and identifies this as ground-only
 bombardment. Personal and teammate planets are protected. One movement turn and
 the whole selected ammunition quantity are spent, as with ship volleys.
@@ -62,7 +62,10 @@ checks oversized-volley refusal, queued-confirmation cancellation, the planet
 warning and exact agreement between the receipt and saved ground/ammunition/turns.
 CI runs both the independent verifier and terminal smoke.
 
-Production bombardment, clamping/destruction and the ore-only loop-entry case
-still need focused DOS fixtures. Longer/one-way missile routes and multiple ship
-or mixed visible ship/planet encounters remain blocked. Native BBS combat and
-long-running balance acceptance remain open.
+The later [production/destruction milestone](PRODUCTION_DESTRUCTION.md) added
+focused DOS fixtures for production damage, clamping, destruction and ore-only
+loop entry, and implemented those behaviors. The [wider-route milestone](WIDER_ROUTES.md)
+added longer/one-way routes and multiple ship or mixed ship/planet encounters.
+The ground-only volley restriction and mixed-encounter refusal above describe
+this earlier slice only. See [remaining research and validation](WIDER_ROUTES.md#remaining-research-and-validation)
+for current fidelity and acceptance gaps.

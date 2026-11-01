@@ -499,7 +499,12 @@ at zero and matching warehouses cap at ten times their resulting rate. Recovered
 cached-ore round eligibility is preserved. If all rates reach zero, the planet
 is removed from its sector and every landing token for it is revoked. The launch,
 interception, growth, damage and deletion save atomically. Planet bank, ownership,
-attacker cash and ships are not transferred by destruction. [Rules, evidence and remaining work](research/yt-missiles/PRODUCTION_DESTRUCTION.md).
+attacker cash and ships are not transferred by destruction. [Bombardment rules and evidence](research/yt-missiles/PRODUCTION_DESTRUCTION.md)
+and [routed encounters and remaining validation](research/yt-missiles/WIDER_ROUTES.md#remaining-research-and-validation).
+Ground/production bombardment, destruction, mixed encounters and continuation
+after destruction are implemented. Remaining work concerns original DOS RNG and
+rounding fidelity, numeric boundaries, unresolved routing/target-ordering rules,
+and native BBS acceptance testing.
 
 Spies are available at Earth for 333,000 credits each, up to three per login.
 Choose their starting sectors through Earth option 9 or compact `HIRE` while

@@ -29,8 +29,6 @@ The preserved DOS transcripts, key feeds, emulator logs, compressed before/after
 | `route-2-intermediate-planet` | Hostile planet lies between launcher and ship | Planet intercepted attack; farther ship untouched |
 | `route-2-oneway` | Remove reverse connection from target sector | Outbound attack succeeded; no target return fire observed |
 
-## Implementation guidance
-
 ## Go implementation
 
 The current Go door routes over directed warps using a shortest path. Equal-length
@@ -59,3 +57,30 @@ missile stock or turn is spent. No save-format change was required.
 The Go implementation does not claim recovered behavior for equal-path ties,
 black-hole redirection, or every target ordering edge case. Native BBS
 acceptance remains separate from the captured DOS reference runs.
+
+## Remaining research and validation
+
+The routed Go implementation includes sector-fighter and mine interception,
+multiple visible ships, mixed ship/planet encounters, production damage and
+planet destruction, continuation with remaining missiles, and directed return
+fire. These are completed gameplay features, rather than pending milestones.
+
+The remaining gaps are:
+
+- Original RNG seeding/state and bit-exact MBF32 intermediate rounding; injected
+  RNG checks do not reproduce the original DOS random sequence.
+- Larger and fractional numeric boundary cases for planetary bombardment.
+- DOS behavior for equal-length outbound and return paths, black-hole
+  redirection, and target-ordering edge cases. Go uses shortest directed paths
+  with stored warp order for ties and player-ID order for visible ships; these
+  are documented modern policies, not fully recovered DOS rules.
+- Broader DOS evidence for friendly transit planets and return-path selection
+  when multiple routes exist.
+- Native BBS combat/durability acceptance and long-running economic balance
+  playtests. Local PTYs, model checks, race tests and cross-builds provide
+  separate evidence.
+
+See [production/destruction evidence](PRODUCTION_DESTRUCTION.md) for the isolated
+planet cases. The [initial one-hop integration](IMPLEMENTATION.md) and
+[ground-only slice](GROUND_BOMBARDMENT.md) retain historical milestone boundaries;
+their former restrictions do not describe the current playable scope.
