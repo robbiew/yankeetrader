@@ -107,6 +107,26 @@ func (s Session) intelligence(unread bool) error {
 		if err = s.Terminal.Printf("\r\n*** RADIO MESSAGE FROM SPY #%d! The following was found in sector %d:\r\n", report.Spy, report.Sector); err != nil {
 			return err
 		}
+		if report.Disruption {
+			if err = s.Terminal.Printf("** Space-time disruption detected! **\r\n"); err != nil {
+				return err
+			}
+		}
+		if len(report.Ships) > 0 {
+			if err = s.Terminal.Printf("Other Ships:\r\n"); err != nil {
+				return err
+			}
+			for _, ship := range report.Ships {
+				if ship.Shimmering {
+					if err = s.Terminal.Printf("The spy detected the shimmering of a cloaking device!\r\n"); err != nil {
+						return err
+					}
+				}
+				if err = s.Terminal.Printf("    %s - Team: %d - Fighters: %d - Shields: %d\r\n", ship.Alias, ship.Team, ship.Fighters, ship.Shields); err != nil {
+					return err
+				}
+			}
+		}
 		if report.Mines > 0 {
 			if err = s.Terminal.Printf("** WARNING! SECTOR HAS %d MINES! **\r\n", report.Mines); err != nil {
 				return err

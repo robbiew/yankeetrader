@@ -68,10 +68,13 @@ with tempfile.TemporaryDirectory(prefix="yt-spies-smoke-") as temp:
     data=Path(temp)/"world"
     subprocess.run([BINARY,"-data",str(data),"-init","-sectors","8"],check=True,capture_output=True)
     play(data,"Trader","q")
+    play(data,"Enemy","q")
     path=data/"world.json"
     world=json.loads(path.read_text())
     player=world["Players"]["1"]
     player["Credits"]=2000000
+    enemy=world["Players"]["2"]
+    enemy.update(Sector=8, Cloak=0, Fighters=42, Shields=10)
     world["Sectors"]["1"]["Warps"]=[2]
     world["Sectors"]["8"]["Warps"]=[]
     world["Sectors"]["8"]["Minefield"]=[{"Count":7}]
@@ -82,6 +85,8 @@ with tempfile.TemporaryDirectory(prefix="yt-spies-smoke-") as temp:
     assert "SECTOR HAS 7 MINES" in transcript and "Fighters in sector: 42 (Belong to The Xannor)" in transcript
     saved=json.loads(path.read_text())
     assert saved["Players"]["1"]["Credits"]==1667000 and saved["Players"]["1"]["Turns"]==498
+    assert "Enemy - Team: 0 - Fighters: 42 - Shields: 10" in transcript,transcript
+    assert saved["Players"]["2"].get("Cloak",0)==0
     assert saved["Version"]==26 and not saved.get("Radio")
     text=play(data,"Trader","spies;intel;q")
     assert "You do not have any spies!" in text and "No intelligence reports this login." in text

@@ -1270,9 +1270,19 @@ universal absence, historical 3.3 purchase semantics or new purchase API is made
 
 No Go gameplay or save26 change. README and prior plasma backlog references are
 corrected together; portable acquisition evidence verification is included in CI.
-Remaining candidates are additional ship/cloak/disruption spy intelligence,
+Remaining candidates are broader spy triggers/notifications,
 broadcast radio and multiline editing, remaining newspaper events, original
 universe/save parity, balance and native/live acceptance.
+
+## Ship, cloak and disruption spy intelligence
+
+Six new completed DOS controls establish ship details, full-cloak suppression,
+a positive partial-cloak shimmering report, ordered multiple ships, caller
+exclusion and login-local disruption reporting. The Go spy network now exposes
+these findings with generation-bound private detection memory, nested-copy
+isolation and unchanged saved cloak/combat visibility. World version 26 stays
+unchanged. Original RNG odds/ties, target notification and broader triggers
+remain open. [Evidence and bounded policies](yt-spies/intelligence/IMPLEMENTATION.md).
 
 ## Team radio
 

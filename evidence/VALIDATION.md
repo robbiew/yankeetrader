@@ -1015,6 +1015,37 @@ corroborate that removal within the inspected paths. Historical 3.3 seller
 eligibility, caps, hostility and write order remain unproved. No new merchant
 implementation is pending for DOS 3.6 parity.
 
+## Ship, cloak and disruption spy intelligence
+
+- Six fresh completed original-DOS controls and the independent verifier establish
+  ship name/team/fighter/shield reports, full-cloak suppression, one positive
+  partial-cloak shimmering branch, ordered multiple ships, caller exclusion and
+  a login-local disruption notice. All retain 1,667,000 credits, 497 turns and
+  unchanged saved cloak. Fourteen corruption controls reject altered provenance,
+  keys, snapshots, cloak state, ship details and report types, including shield-only
+  changes with refreshed transcript hashes.
+- Full `go test -race ./...` and `go vet ./...` passed. A targeted race run covers
+  the final additional shared-detection, ship-order and private-disruption tests.
+- Real compact and classic GoDoors PTY spy smoke passed with actual ship details,
+  history, resource charges, unchanged cloak and reconnect isolation; the updated
+  transcript is `evidence/spies-smoke.txt`.
+- The original seven spy sessions/REA-byte verifier and all 4,682 archive hashes
+  passed. No original random-stream or exact probability claim is made.
+
+World version remains 26. Native BBS acceptance, target notifications, shared
+combat visibility, broader triggers and exact DOS RNG/numeric parity remain
+outside this slice. See [policies and evidence](../research/yt-spies/intelligence/IMPLEMENTATION.md).
+
+
+### Mercenary-route fixture isolation
+
+PR #56 CI exposed a route-smoke assumption: an existing Wanderer can relocate
+into sector 8 before Mercenary actions and legitimately hold the test group.
+The disposable fixture now starts without The Wanderer, allowing normal
+restoration after route actions. Mine and pickup assertions remain unchanged;
+no gameplay RNG or production code is altered. Three fresh route smokes and
+the dedicated compact/classic Wanderer smoke passed locally.
+
 ## Team radio
 
 - Nine completed DOS 3.6 sessions establish private roster fanout including the
@@ -1036,3 +1067,18 @@ implementation is pending for DOS 3.6 parity.
 World format remains 26; team radio reuses ordinary private mailbox records.
 Native BBS acceptance, broadcast and DOS multiline editing remain open.
 [Evidence and policies](../research/yt-team-radio/IMPLEMENTATION.md).
+
+
+The combined spy/team state after verified PR #57 integration passed the full
+race-enabled Go suite and vet, plus spy, team-radio and isolated Mercenary-route
+PTY checks. Spy evidence and all fourteen corruption controls passed again.
+Incidental regenerated terminal captures were restored.
+
+### PR #59 reload-clock review correction
+
+Confirmed both retained reloads declare 00:00:00 and record 0:00:00.00am in
+DOSTIME.LOG and the DOSBox command stream. Corrected the report's erroneous
+00:01:00 description and stated that exact saved-state chains do not establish
+one minute of elapsed time. Capture bytes and gameplay are unchanged. README
+was updated in the same fix; current-main spy-intelligence changes and their
+validation history are preserved.

@@ -3,23 +3,28 @@ Yankee Trader: Resurrection 0.1.0
 Welcome, Trader. Actions save automatically. Type ? for help.
 
 Sector 1 | 2000000 credits | 500 turns > p;hire 8;spies;s;spies;m 2;spies;intel;q
-Earth: holds 500, fighters 100, shields 50, forces 750 credits each.
+Earth: holds 500, fighters 100, shields 50, forces 750 credits each. Danger scanner: 250000 (one). Cloak: 1000 per point; ANTICLOAK: 500000 per login activation.
+LOTTERY [six digits]: 5 credits, finite daily plays, fresh Y/N.
 Spies: 333000 each; HIRE <starting sector> [sector ...], max 3 this login.
 Spy # 1 will hunt in sector 8.
 Spy # 1 will hunt in sector 8.
 [ Sensors Activated ]
-Sector: 2 | Warps: [1 3 7 4 5 6]
+Sector: 2 | Warps: [1 3 6 7 8 5]
 Port: Port 2 | Selling: ore
 [ End Sensor Scan ]
 Spy # 1 will hunt in sector 8.
 Moved to sector 2.
 
 *** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10
 ** WARNING! SECTOR HAS 7 MINES! **
 Fighters in sector: 42 (Belong to The Xannor)
 Spy # 1 will hunt in sector 8.
 
 *** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10
 ** WARNING! SECTOR HAS 7 MINES! **
 Fighters in sector: 42 (Belong to The Xannor)
 Saved. Safe travels, Trader.
@@ -100,7 +105,7 @@ Team  : None
 | Fighters. : 25          | Ore.......... : 0    |
 | Mines.... : 0           | Organics..... : 0    |
 | Missiles. : 0           | Equipment.... : 0    |
-| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
 | Shields.. : 0           | Cloak Energy. : 100% |
 | Forces... : 0           | Plasma Bolts. : 0    |
 +-------------------------+----------------------+
@@ -111,6 +116,7 @@ Checking for Radio Messages.
 
 Sector: 1
 Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
 Warps lead to: 2
 
 Time: 179:59  Main Command (?=Help)? p;9;1;8;0;c;15;1;m;2;c;15;1;intel;q;y
@@ -118,17 +124,17 @@ Time: 179:59  Main Command (?=Help)? p;9;1;8;0;c;15;1;m;2;c;15;1;intel;q;y
 
 Docking, One Turn Deducted, 497 left.
 
-Commerce report for Earth: 10-28-2026 16:40:32
+Commerce report for Earth: 11-01-2026 08:12:37
 
 ----------------------*--------*------------
          ITEM         *  COST  * CAN AFFORD
 ----------------------*--------*------------
-[1] Cloak Energy      * 1000   * N/A
+[1] Cloak Energy      * 1000   * 1667
 [2] Cargo Holds       * 500    * 3334
 [3] Fighters          * 100    * 16670
-[4] Play Lottery      * 5      * N/A
-[5] Danger Scanner    * 250000 * N/A
-[6] Anti-Cloak Device * 500000 * N/A
+[4] Play Lottery      * 5      * 333400
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 3
 [7] Ground Forces     * 750    * 2222
 [8] Shield Power      * 50     * 33340
 [9] Hire Spies (Each) * 333000 * 5
@@ -138,17 +144,17 @@ Commerce report for Earth: 10-28-2026 16:40:32
 
 Credits: 1667000 -=*=- Buy Which Item? -=>Hire how many spies? [0]? Start spy # 1 in what sector? Spy # 1 will hunt in sector 8.
 
-Commerce report for Earth: 10-28-2026 16:40:32
+Commerce report for Earth: 11-01-2026 08:12:37
 
 ----------------------*--------*------------
          ITEM         *  COST  * CAN AFFORD
 ----------------------*--------*------------
-[1] Cloak Energy      * 1000   * N/A
+[1] Cloak Energy      * 1000   * 1334
 [2] Cargo Holds       * 500    * 2668
 [3] Fighters          * 100    * 13340
-[4] Play Lottery      * 5      * N/A
-[5] Danger Scanner    * 250000 * N/A
-[6] Anti-Cloak Device * 500000 * N/A
+[4] Play Lottery      * 5      * 266800
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 2
 [7] Ground Forces     * 750    * 1778
 [8] Shield Power      * 50     * 26680
 [9] Hire Spies (Each) * 333000 * 4
@@ -159,6 +165,7 @@ Commerce report for Earth: 10-28-2026 16:40:32
 Credits: 1334000 -=*=- Buy Which Item? -=>
 Sector: 1
 Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
 Warps lead to: 2
 
 <Computer activated>
@@ -168,10 +175,13 @@ Spy # 1 will hunt in sector 8.
 
 Sector: 1
 Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
 Warps lead to: 2
 Move to which sector? Moved to sector 2.
 
 *** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10
 ** WARNING! SECTOR HAS 7 MINES! **
 Fighters in sector: 42 (Belong to The Xannor)
 
@@ -182,9 +192,11 @@ Spy # 1 will hunt in sector 8.
 
 Sector: 2
 Port: Port 2, Selling: Ore
-Warps lead to: 1, 3, 7, 4, 5, 6
+Warps lead to: 1, 3, 6, 7, 8, 5
 
 *** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10
 ** WARNING! SECTOR HAS 7 MINES! **
 Fighters in sector: 42 (Belong to The Xannor)
 

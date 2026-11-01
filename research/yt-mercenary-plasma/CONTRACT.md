@@ -30,7 +30,7 @@ optional extension with new policy, rather than a missing DOS 3.6 milestone.
 
 ## Remaining work
 
-Additional ship/cloak/disruption spy intelligence, broadcast radio and DOS
+Broader spy triggers/notifications, broadcast radio and DOS
 multiline editing, public event types, exact original numeric/RNG behavior,
 original world/save interchange, balance and native/live acceptance remain
 separate. A historical 3.3 purchase reconstruction would require a matching

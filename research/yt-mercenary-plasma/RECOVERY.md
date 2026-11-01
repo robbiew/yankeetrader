@@ -81,7 +81,10 @@ Each control retains the original binary hashes, exact input, DOS date/time,
 normal-return witness, raw CP437 log, rendered transcript, full before/after
 worlds and auxiliary bytes, and file hashes in compressed metadata.
 
-Date is 10/24/2026; independent controls start at 00:00:00, reloads use 00:01:00.
+Date is 10/24/2026. Both independent controls and reloads explicitly reset the
+DOS clock to 00:00:00, as recorded in metadata, DOSTIME.LOG and dosbox.log.
+The reload chains preserve exact saved world/auxiliary bytes; they do not
+establish a one-minute elapsed interval or monotonic clock progression.
 The reviewed corpus reuses 14 completed exact-declaration controls after checking
 normal return, baseline identity and every retained file hash; corrected
 deposit and both reloads are fresh observations. An earlier deposit input

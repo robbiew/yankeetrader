@@ -91,7 +91,9 @@ fixture places the same target there with cloak fraction one. Neither produces
 a ship line. Consequently these probes do **not** establish ship eligibility,
 cloak detection odds, or a cloak-based visibility difference. Those paths above
 are static interpretation only and need a successful positive runtime control
-before implementation. The sensor probe's `S` command is a sensor scan, not ship
+before implementation. The [intelligence follow-up](intelligence/IMPLEMENTATION.md)
+now supplies those positive controls: the original populated fixture retained
+full cloak from its baseline rather than clearing it. The sensor probe's `S` command is a sensor scan, not ship
 status. Extra input retries may produce an invalid-command line; the verifier
 requires the intended lists, moves, reports, resource totals and clean return,
 not merely process exit.
