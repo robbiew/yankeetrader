@@ -1,0 +1,164 @@
+{
+  "recipe": "mercenary-plasma-acquisition-v1",
+  "source": "archive/analysis/yt-combat/experiments/fixture-planet-transfer",
+  "scenarios": [
+    {
+      "name": "quiet",
+      "command": "I",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "main-help",
+      "command": "?",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "earth-menu",
+      "command": "P;0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "location": 1
+    },
+    {
+      "name": "earth-no-plasma-item",
+      "command": "P;PLASMA\r~~~0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "location": 1
+    },
+    {
+      "name": "earth-poor-menu",
+      "command": "P;0",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "location": 1,
+      "cash": 0
+    },
+    {
+      "name": "base-look",
+      "command": "S",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "base-land-refuse",
+      "command": "L\r~~~N",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": []
+    },
+    {
+      "name": "captured-base-menu",
+      "command": "L;?;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "owner": 2
+    },
+    {
+      "name": "captured-base-take",
+      "command": "L;9;1;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "owner": 2
+    },
+    {
+      "name": "ordinary-planet-take",
+      "command": "L;9;1;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 2
+    },
+    {
+      "name": "ordinary-take-all",
+      "command": "L;A;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 2
+    },
+    {
+      "name": "ordinary-deposit",
+      "command": "L;T;B;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 2
+    },
+    {
+      "name": "unowned-planet-take",
+      "command": "L;9;1;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 0,
+      "ground": 0
+    },
+    {
+      "name": "mother-ship-name",
+      "command": "L;?;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 2,
+      "planet_name": "Mercenary Mother Ship"
+    },
+    {
+      "name": "take-zero",
+      "command": "L;9;0;L",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "slot": 2,
+      "owner": 2
+    },
+    {
+      "name": "take-reload",
+      "command": "I",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "parent": "ordinary-planet-take"
+    },
+    {
+      "name": "deposit-reload",
+      "command": "I",
+      "sectors": 3000,
+      "start": 100,
+      "standard": true,
+      "patches": [],
+      "parent": "ordinary-deposit"
+    }
+  ]
+}

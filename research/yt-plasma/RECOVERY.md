@@ -213,7 +213,7 @@ private receipt rules, finite failure behavior and schema needs. All origin
 costs, casualties, wreck hazards, estates, planet cleanup, HQ reward/revenge and
 reports must commit together or roll back together.
 
-Mercenary plasma sales, other disruption/spy branches, exact DOS RNG/MBF parity,
+The former Mercenary-sales backlog was later [closed as removed historical behavior](../yt-mercenary-plasma/RECOVERY.md). Other disruption/spy branches, exact DOS RNG/MBF parity,
 broad balance changes, live BBS gameplay and native Windows crash durability
 remain separate. No full Go/terminal regression suite was rerun for this
 research-only milestone; its portable evidence checks and immutable-archive
