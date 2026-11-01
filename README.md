@@ -16,14 +16,14 @@ Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> 
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing and indiscriminate damage, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Mercenary plasma sales and explicit season archive export/administrative reset tooling.
-- Broadcast radio, the DOS multiline message editor, remaining spy trigger/notification parity, and remaining newspaper event types.
+- The DOS multiline message editor, remaining spy trigger/notification parity, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -153,7 +153,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `HIRE <sector> [sector ...]` / Earth option `9` | Hire up to three spies per login, 333,000 credits each; choose every starting sector |
 | `SPIES` / computer `C`, `15` | List this login's current spy hunt locations; free |
 | `INTEL` | Read this login's last 30 intelligence reports in five-report pages; free |
-| `RADIO [alias, player number or TEAM]` / computer `C`, `5` | Compose a private message or confirmed team copies, then Send or Abort; free |
+| `RADIO [alias, player number, TEAM or ALL]` / computer `C`, `5` | Compose a private message or confirmed team/ALL copies, then Send or Abort; free |
 | `MESSAGES` / computer `C`, `6` | Your sent and received message history; free |
 | `INBOX` | Unread received messages; free |
 | `MYPLANETS` / computer `C`, `13` | List personally owned planets and sectors; free |
@@ -206,9 +206,19 @@ if membership or team details change while composing, confirm again. Each copy
 has its own unread flag and archive slot. Former members retain their addressed
 copies; new members cannot read old team mail. Team sending uses the existing
 version-26 mailbox format without a migration. [Team rules, DOS evidence and
-validation](research/yt-team-radio/IMPLEMENTATION.md). Broadcast delivery and
-the DOS multiline editor remain open. Evidence checks compare exact decoded
-mailbox fields and preserve scanner equipment, with corruption controls for both.
+validation](research/yt-team-radio/IMPLEMENTATION.md). The DOS multiline editor remains open. Evidence checks compare exact decoded
+mailbox fields, preserve scanner equipment and anchor root auxiliary files and
+login identities to the source fixtures, with rehashed corruption controls.
+`RADIO ALL` (or `ALL` at computer option 5) confirms a broadcast to all current
+active accounts, including you, and saves every private copy together. Offline
+and dead accounts receive their own mail; retired and future accounts do not.
+Each copy has an independent unread flag and uses an archive slot. The whole
+broadcast must fit the 4,096-message archive. Roster changes require confirmation
+again. This version-26 implementation deliberately uses private copies rather
+than the original DOS shared broadcast counter; no migration is required.
+[Broadcast evidence, policies and validation](research/yt-broadcast-radio/IMPLEMENTATION.md).
+The DOS multiline editor and native BBS acceptance remain open.
+
 See [radio scope and validation](research/yt-navigation/RADIO_IMPLEMENTATION.md).
 
 Sensors work even when no turns remain. `AUTO` asks before moving; an empty answer cancels. You can stack the response, for example `PATH 1 3; AUTO 3; Y; I`. Ctrl-X stops autopilot between hops. Every completed hop saves immediately and remains spent after interruption or disconnect. Courses stop if another session changes your position or leaves too few turns. See [navigation recovery and DOS comparisons](research/yt-navigation/RECOVERY.md).

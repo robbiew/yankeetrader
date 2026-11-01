@@ -69,3 +69,12 @@ format for confirmed, atomic roster copies, including the sender. Independent
 read flags and existing history/delivery permissions apply; no save migration
 is needed. The earlier direct-only restrictions in this milestone are historical.
 Broadcast and the DOS multiline editor remain separate work.
+
+
+## Broadcast follow-up
+
+[Broadcast radio](../yt-broadcast-radio/IMPLEMENTATION.md) now confirms ALL
+current active accounts and saves ordinary private copies atomically, including
+the sender. This is an explicit modern policy; retained DOS controls document
+a distinct shared record and repeat-delivery behavior. World format stays 26.
+Multiline editing and native BBS acceptance remain separate work.

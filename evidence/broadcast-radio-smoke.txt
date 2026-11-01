@@ -1,0 +1,202 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio ALL;y;ignored;s
+Send to ALL 3 current active accounts (including you)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): ALL BROADCAST; literal/
+To: ALL 3 current active accounts (including you)
+ALL BROADCAST; literal/
+[S] Send [A] Abort -=> s
+Transmission successful! 3 broadcast copies saved.
+
+New radio messages:
+
+Radio #1 [NEW] | 2026-11-01 16:40 UTC
+Message to: Sender * From: Sender
+ALL BROADCAST; literal/
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Able. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #2 [NEW] | 2026-11-01 16:40 UTC
+Message to: Able * From: Sender
+ALL BROADCAST; literal/
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #2 | 2026-11-01 16:40 UTC
+Message to: Able * From: Sender
+ALL BROADCAST; literal/
+Saved. Safe travels, Able.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Able. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Able.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Baker. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #3 [NEW] | 2026-11-01 16:40 UTC
+Message to: Baker * From: Sender
+ALL BROADCAST; literal/
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #3 | 2026-11-01 16:40 UTC
+Message to: Baker * From: Sender
+ALL BROADCAST; literal/
+Saved. Safe travels, Baker.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Later. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+No matching radio messages.
+Saved. Safe travels, Later.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio all;y
+Send to ALL 4 current active accounts (including you)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): ABORT BROADCAST
+To: ALL 4 current active accounts (including you)
+ABORT BROADCAST
+[S] Send [A] Abort -=> a
+Radio cancelled.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Sender.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Sender!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Sender
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
+
+Time: 179:59  Main Command (?=Help)? c;5;ALL;y
+
+<Computer activated>
+Send a message to who? (alias search, player number, TEAM or ALL) Send to ALL 4 current active accounts (including you)? [y/N] Message (one line, 1-74 ASCII characters; blank cancels): CLASSIC BROADCAST
+To: ALL 4 current active accounts (including you)
+CLASSIC BROADCAST
+[S] Send [A] Abort -=> s
+Transmission successful! 4 broadcast copies saved.
+
+New radio messages:
+
+Radio #4 [NEW] | 2026-11-01 16:40 UTC
+Message to: Sender * From: Sender
+CLASSIC BROADCAST
+
+Time: 179:59  Computer command (?=help)? 1;q;y
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Later. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #7 [NEW] | 2026-11-01 16:40 UTC
+Message to: Later * From: Sender
+CLASSIC BROADCAST
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #7 | 2026-11-01 16:40 UTC
+Message to: Later * From: Sender
+CLASSIC BROADCAST
+Saved. Safe travels, Later.

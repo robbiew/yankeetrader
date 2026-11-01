@@ -1,0 +1,41 @@
+{
+  "recipe": "broadcast-radio-v1",
+  "scenarios": [
+    {
+      "name": "broadcast-send",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "broadcast-abort",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~A;Y\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "recipient-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY"
+    },
+    {
+      "name": "sender-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send"
+    },
+    {
+      "name": "recipient-again",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "actor": "ENEMY"
+    },
+    {
+      "name": "sender-after-recipient",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read"
+    }
+  ]
+}
