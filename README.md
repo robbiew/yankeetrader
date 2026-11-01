@@ -35,7 +35,7 @@ home planet is a capture target; plasma comes from planetary stocks. See
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Explicit season archive export/administrative reset tooling.
-- The DOS multiline message editor, remaining spy trigger/notification parity, and remaining newspaper event types.
+- Remaining spy trigger/notification parity, newspaper event types, and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -218,7 +218,7 @@ if membership or team details change while composing, confirm again. Each copy
 has its own unread flag and archive slot. Former members retain their addressed
 copies; new members cannot read old team mail. Team sending uses the existing
 version-26 mailbox format without a migration. [Team rules, DOS evidence and
-validation](research/yt-team-radio/IMPLEMENTATION.md). The DOS multiline editor remains open. Evidence checks compare exact decoded
+validation](research/yt-team-radio/IMPLEMENTATION.md). The bounded multiline editor is described below. Evidence checks compare exact decoded
 mailbox fields, preserve scanner equipment and anchor root auxiliary files and
 login identities to the source fixtures, with rehashed corruption controls.
 `RADIO ALL` (or `ALL` at computer option 5) confirms all current active accounts,
@@ -236,7 +236,19 @@ Version 27 introduces typed public broadcast news without backfilling old privat
 copies. Independent radio read flags remain a deliberate adaptation of the DOS
 shared delivery counter.
 [Broadcast evidence, policies and validation](research/yt-broadcast-radio/IMPLEMENTATION.md).
-The DOS multiline editor and native BBS acceptance remain open.
+Native BBS acceptance remains open.
+
+Use `RADIO EDIT <alias, player number, TEAM or ALL>` for the opt-in multiline
+composer, or enter `EDIT <recipient>` at computer option 5. Enter up to 20
+printable ASCII lines of 74 characters; a blank line opens List, Send, Abort,
+Continue and Edit. Continue appends to the last line. Edit replaces the first
+case-sensitive matching section and asks before keeping it. Abort requires
+confirmation. Editor Send opens a complete preview; a fresh final `S` saves all
+lines and recipient copies together, including one public newspaper event per
+ALL line. Expiry, interruption or a changed recipient snapshot saves nothing.
+The one-line composer remains available. Overlong input is rejected rather than
+DOS character-level wrapping, and public lines render as separate typed events.
+World version 27 is unchanged. [DOS controls, limits and validation](research/yt-radio-editor/IMPLEMENTATION.md).
 
 See [radio scope and validation](research/yt-navigation/RADIO_IMPLEMENTATION.md).
 

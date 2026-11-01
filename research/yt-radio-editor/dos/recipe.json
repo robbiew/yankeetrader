@@ -1,0 +1,35 @@
+{
+  "recipe": "radio-editor-v1",
+  "scenarios": [
+    {
+      "name": "list-continue",
+      "command": "C;5;Enemy;Y\r~~FIRST\rSECOND\r\r~~L\r~~C\r~~THIRD\r\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "edit-accept",
+      "command": "C;5;Enemy;Y\r~~alpha alpha\rSECOND\r\r~~E\r~1\r~alpha\r~BETA\r~Y\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "edit-reject",
+      "command": "C;5;Enemy;Y\r~~alpha alpha\r\r~~E\r~1\r~alpha\r~BETA\r~N\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "abort",
+      "command": "C;5;Enemy;Y\r~~FIRST\rSECOND\r\r~~A;Y",
+      "patches": []
+    },
+    {
+      "name": "limit",
+      "command": "C;5;Enemy;Y\r~~LINE01\rLINE02\rLINE03\rLINE04\rLINE05\rLINE06\rLINE07\rLINE08\rLINE09\rLINE10\rLINE11\rLINE12\rLINE13\rLINE14\rLINE15\rLINE16\rLINE17\rLINE18\rLINE19\rLINE20\r~~~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "public-two",
+      "command": "C;5;ALL\r~~PUBLIC FIRST\rPUBLIC SECOND\r\r~~S\r~~~~6;1",
+      "patches": []
+    }
+  ]
+}

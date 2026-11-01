@@ -162,3 +162,10 @@
 /research/yt-broadcast-radio/dos/**/DOS*.LOG -diff
 /research/yt-broadcast-radio/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-broadcast-radio/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact original multiline editor witnesses.
+/research/yt-radio-editor/dos/** -text
+/research/yt-radio-editor/dos/**/KEYS.TXT -diff
+/research/yt-radio-editor/dos/**/DOS*.LOG -diff
+/research/yt-radio-editor/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-radio-editor/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

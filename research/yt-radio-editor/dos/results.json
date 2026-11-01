@@ -1,0 +1,761 @@
+{
+  "recipe": "radio-editor-v1",
+  "scenarios": [
+    {
+      "name": "list-continue",
+      "command": "C;5;Enemy;Y\r~~FIRST\rSECOND\r\r~~L\r~~C\r~~THIRD\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "9b13a502dcec5313ea3a41d1244a2361374042bae974528b979c72a92af66fed",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "489dc932fc6f851920b39249da516a268d89262277bc9c59891246e9dfad7aac",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "17d0c11dedf12f15d901805a82ed0c53f35e161c5b59297e09a0b9c3b0702e7e",
+        "transcript.txt": "779536d53c09349852ce917673066943f25721198c3bbbd129b3779bbea19e3b"
+      }
+    },
+    {
+      "name": "edit-accept",
+      "command": "C;5;Enemy;Y\r~~alpha alpha\rSECOND\r\r~~E\r~1\r~alpha\r~BETA\r~Y\r~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "8d5a297b83341bc8cb2e2755f52263a2b5713d01e7071201aff6e21760f270ab",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "6f352aa2c963489590903bc7ece8bc328ea1b4ee0df2b79341eaa8c6c1b5128c",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "4f9c0189dbee23431de2ec379f36736e2c5a599e44e78abe84bcd7f62b27d281",
+        "transcript.txt": "382058d4bc2216902d885e24310c02f4c2f65ff49f9f71ffbc0c3cc8750a122f"
+      }
+    },
+    {
+      "name": "edit-reject",
+      "command": "C;5;Enemy;Y\r~~alpha alpha\r\r~~E\r~1\r~alpha\r~BETA\r~N\r~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "a256d23f9f6fbed3d8d3f76b2c9c41ff4b1b4d318981c5b5a6e62d98cb39baf4",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "31a34546d2b5c0985df96b3d887acc023b78d421cc2825f99f7a792d6b925853",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "3546516f726855061ba7925800e3e0eb25c1786f308f1ccb80a00da5a8680f45",
+        "transcript.txt": "4bd5e415665a92e83568f2a0bf264c1852d16a80cda9062e5e24938c466b8c2c"
+      }
+    },
+    {
+      "name": "abort",
+      "command": "C;5;Enemy;Y\r~~FIRST\rSECOND\r\r~~A;Y",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f306c2a6c142bda79656e2191d25e57fcd419e606071cecd2f1e10c275231856",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "2e307a2f6877e9876238338c3ea071af08758191ee3422dfb16f19026007a3f4",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "f5d5db4c5be378f7bb41ef680368ce80b45acd57d797e623511b5fdbe0affa78",
+        "transcript.txt": "32a0a77f91afadc9bea64ebc66fbb2d16d65517aaae4ac98b521996f32bf5da5"
+      }
+    },
+    {
+      "name": "limit",
+      "command": "C;5;Enemy;Y\r~~LINE01\rLINE02\rLINE03\rLINE04\rLINE05\rLINE06\rLINE07\rLINE08\rLINE09\rLINE10\rLINE11\rLINE12\rLINE13\rLINE14\rLINE15\rLINE16\rLINE17\rLINE18\rLINE19\rLINE20\r~~~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "b91cef687ae0dce36502179f6c7314966a1251bdd560077172a5d63b6caa14ba",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "adfbd0208b1f7ce62bcfc7d2755f7afa2cba7b633db6c1c0eeb459f4a05acfd3",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "8e7e80564f23c6f82097fa442c3cc3755a938d03ec5c6ce86d879e01c6aa670e",
+        "transcript.txt": "be49f2662f9786049f0ad338f5b28c54cf26aa781e4c7fba50f620c8c729a4a4"
+      }
+    },
+    {
+      "name": "public-two",
+      "command": "C;5;ALL\r~~PUBLIC FIRST\rPUBLIC SECOND\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "radio-editor-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "525aa81305f12ed660f9b67e3182f1a175e55d64f3500b0f79c1ffa04f6b935f",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "90f83388dfe250d2466af321ccff4e18691f7c4783d9293ce644c54af8ed90b6",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "14d1638485f6ef626bfea8170673420a96fb9f3615150387474d31c100f900e1",
+        "transcript.txt": "0d4cfc18390f824a8fb5e4e62e9fb0f7296a6a37d6e01b5a2bffedc800402dcd"
+      }
+    }
+  ]
+}

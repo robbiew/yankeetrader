@@ -1149,3 +1149,18 @@ newspaper result was checked directly against canonical saved YTNEWS.DAT bytes.
 World version remains 26. DOS shared-counter lifetime, simultaneous original
 writers, multiline editing and native BBS acceptance remain separate work.
 [Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).
+
+## Multiline radio editor
+
+See [implementation and native controls](../research/yt-radio-editor/IMPLEMENTATION.md)
+and [compact/classic PTY transcript](radio-editor-smoke.txt). Six native controls
+and sixteen semantic corruption controls accompany atomic game/store and door
+confirmation tests. Character-level DOS wrapping and live BBS acceptance remain
+separate.
+
+Local validation passed: full Go race tests and vet, focused editor tests, six
+DOS controls, sixteen rehashed corruption controls, all 4,682 immutable archive
+files, and Linux/Windows amd64 cross-builds. These are local checks; hosted CI
+has not run for this branch.
+
+Existing direct, team and broadcast PTY regression checks also passed.
