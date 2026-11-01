@@ -198,3 +198,73 @@ func TestRadioHistoryPagingLeavesUndisplayedUnread(t *testing.T) {
 		t.Fatal("remaining page was not delivered")
 	}
 }
+
+func TestTeamRadioComposerSendAbortAndLiteralText(t *testing.T) {
+	for _, action := range []string{"s", "a", "s;q"} {
+		t.Run(action, func(t *testing.T) {
+			term := &scripted{lines: []string{"radio team;y;discarded", "hold; then reply/", action, "messages;q"}}
+			s, st := radioSession(t, term)
+			if err := st.Update(func(w *game.World) error {
+				if err := w.CreateTeam(1, "Orion", "ABCD"); err != nil {
+					return err
+				}
+				return w.JoinTeam(2, 1, "ABCD")
+			}); err != nil {
+				t.Fatal(err)
+			}
+			if err := s.Run(); err != nil {
+				t.Fatal(err)
+			}
+			w, _ := st.View()
+			if action != "s" {
+				if len(w.Radio) != 0 {
+					t.Fatal("aborted/stacked send delivered copies")
+				}
+				return
+			}
+			if len(w.Radio) != 2 || w.Radio[0].To != 1 || w.Radio[1].To != 2 || w.Radio[1].Text != "hold; then reply/" || !w.Radio[1].Unread {
+				t.Fatal(w.Radio)
+			}
+			out := term.output.String()
+			if (!strings.Contains(out, "team Orion (#1)") || !strings.Contains(out, "  Navigator (#1)") || !strings.Contains(out, "  Enemy (#2)")) || !strings.Contains(out, "2 team copies saved.") {
+				t.Fatal(out)
+			}
+			if w.Players[1].Turns != 500 {
+				t.Fatal("radio charged turns")
+			}
+		})
+	}
+}
+
+func TestTeamRadioRejectsRosterChangeDuringComposition(t *testing.T) {
+	for _, at := range []int{1, 2} {
+		t.Run(fmt.Sprint(at), func(t *testing.T) {
+			term := &radioReadTerminal{scripted: &scripted{lines: []string{"private text", "s"}}}
+			s, st := radioSession(t, term)
+			if err := st.Update(func(w *game.World) error {
+				if err := w.CreateTeam(1, "Orion", "ABCD"); err != nil {
+					return err
+				}
+				return w.JoinTeam(2, 1, "ABCD")
+			}); err != nil {
+				t.Fatal(err)
+			}
+			w, _ := st.View()
+			s.Store = st.ForShip(1, w.Players[1].ShipGeneration, 1)
+			term.beforeRead = func(n int) error {
+				if n == at {
+					return st.Update(func(w *game.World) error { return w.JoinTeam(3, 1, "ABCD") })
+				}
+				return nil
+			}
+			pending := []string{"y"}
+			if err := s.sendRadio(1, []string{"team"}, &pending); err == nil {
+				t.Fatal("new recipient silently added")
+			}
+			w, _ = st.View()
+			if len(w.Radio) != 0 {
+				t.Fatal("stale team send persisted")
+			}
+		})
+	}
+}

@@ -1,0 +1,54 @@
+{
+  "name": "recipient-left",
+  "command": "\r~~~~C;6;1",
+  "patches": [
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      52,
+      117,
+      0
+    ]
+  ],
+  "parent": "team-send",
+  "actor": "ENEMY",
+  "recipe": "team-radio-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      52,
+      117,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+    "after.dat.gz": "b155c48f2a2241ea950c65fd1f6bb7b304f80659b49c08319ca91a57669b163b",
+    "before.dat.gz": "b155c48f2a2241ea950c65fd1f6bb7b304f80659b49c08319ca91a57669b163b",
+    "dosbox.log": "a79989229bc43ee7a3031595841551702e31d40a6214c68ac4fc9428d65c95b9",
+    "side-before.json.gz": "76afb37e6d79e0ed4b25f6522292abe478d164ef3224dc7d16d4446d1135fda3",
+    "sidefiles.json.gz": "29d0e6d2fc7b7c83716fb5f032a1dd82560f5131422be534aa9382ee45e612b8",
+    "transcript.txt": "e6c985577f650a099ca9cdb5c9cec862b28656e696af52aa473390265c109e7e"
+  }
+}

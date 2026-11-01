@@ -132,3 +132,10 @@
 /research/yt-spies/intelligence/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-spies/intelligence/dos/**/scoreboard.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-spies/intelligence/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Team-radio DOS witnesses retain exact keys, clocks and CP437 transcript spacing.
+/research/yt-team-radio/dos/** -text
+/research/yt-team-radio/dos/**/KEYS.TXT -diff
+/research/yt-team-radio/dos/**/DOS*.LOG -diff
+/research/yt-team-radio/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-team-radio/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

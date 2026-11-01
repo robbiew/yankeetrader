@@ -60,3 +60,12 @@ Send/Abort, sender/recipient history, third-party exclusion and reconnect;
 its transcript is `evidence/radio-smoke.txt`. CI runs this smoke alongside the
 preserved commerce evidence verifier. These checks do not constitute native
 live-BBS acceptance or full DOS screen/editor parity.
+
+
+## Team-radio follow-up
+
+[Team radio](../yt-team-radio/IMPLEMENTATION.md) now uses the same private-message
+format for confirmed, atomic roster copies, including the sender. Independent
+read flags and existing history/delivery permissions apply; no save migration
+is needed. The earlier direct-only restrictions in this milestone are historical.
+Broadcast and the DOS multiline editor remain separate work.
