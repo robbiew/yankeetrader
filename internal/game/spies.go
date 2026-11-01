@@ -2,8 +2,10 @@ package game
 
 import (
 	"errors"
+	"maps"
 	"math"
 	"slices"
+	"sort"
 	"time"
 )
 
@@ -21,8 +23,18 @@ type SpyNetwork struct {
 	lastReported []int
 	reports      []SpyReport
 	next         uint64
+	revealed     map[int]uint64
 }
+type SpyShip struct {
+	Alias             string
+	Team              int
+	Fighters, Shields int64
+	Shimmering        bool
+}
+
 type SpyReport struct {
+	Disruption      bool
+	Ships           []SpyShip
 	ID              uint64
 	Spy, Sector     int
 	Mines           int64
@@ -34,14 +46,22 @@ type SpyReport struct {
 }
 
 func NewSpyNetwork(id int, generation, season uint64) *SpyNetwork {
-	return &SpyNetwork{owner: id, generation: generation, season: season, next: 1}
+	return &SpyNetwork{owner: id, generation: generation, season: season, next: 1, revealed: map[int]uint64{}}
 }
 func (n *SpyNetwork) Clone() *SpyNetwork {
 	c := *n
 	c.locations = slices.Clone(n.locations)
 	c.lastReported = slices.Clone(n.lastReported)
-	c.reports = slices.Clone(n.reports)
+	c.revealed = maps.Clone(n.revealed)
+	c.reports = cloneSpyReports(n.reports)
 	return &c
+}
+func cloneSpyReports(reports []SpyReport) []SpyReport {
+	out := slices.Clone(reports)
+	for i := range out {
+		out[i].Ships = slices.Clone(out[i].Ships)
+	}
+	return out
 }
 func (n *SpyNetwork) check(w *World) error {
 	if n == nil {
@@ -65,7 +85,7 @@ func (n *SpyNetwork) Reports(w *World, unread bool) ([]SpyReport, error) {
 			reports = append(reports, r)
 		}
 	}
-	return reports, nil
+	return cloneSpyReports(reports), nil
 }
 func (n *SpyNetwork) Acknowledge(w *World, reportID uint64) error {
 	if err := n.check(w); err != nil {
@@ -106,8 +126,8 @@ func (n *SpyNetwork) Hire(w *World, token string, sectors []int, now time.Time) 
 	return nil
 }
 
-// Advance searches before moving. Only the runtime-confirmed findings are
-// emitted: mines, planet ground forces and nonpersonal sector defenses.
+// Advance searches before moving and stages findings and detection memory.
+// Ship detection never changes the saved cloak or grants combat access.
 // A zero-warp sector safely holds position. Selection among nonzero warps is
 // uniform, equivalent to rejecting empty slots in the original six-slot table.
 func (n *SpyNetwork) Advance(w *World, now time.Time, rng func() float64) error {
@@ -124,7 +144,35 @@ func (n *SpyNetwork) Advance(w *World, now time.Time, rng func() float64) error 
 			return errors.New("spy sector no longer exists")
 		}
 		if staged.lastReported[i] != location {
-			report := SpyReport{ID: staged.next, Spy: i + 1, Sector: location, Unread: true}
+			report := SpyReport{ID: staged.next, Spy: i + 1, Sector: location, Unread: true,
+				Disruption: w.Disrupted(n.owner, location)}
+			var ids []int
+			for id, p := range w.Players {
+				if id != n.owner && p != nil && p.Death == nil && p.RetiredAt.IsZero() && p.Sector == location {
+					ids = append(ids, id)
+				}
+			}
+			sort.Ints(ids)
+			for _, id := range ids {
+				p := w.Players[id]
+				shimmering := false
+				generation, detected := staged.revealed[id]
+				if p.Cloak > 0 && !(detected && generation == p.ShipGeneration) {
+					if rng == nil {
+						return errors.New("spy detection requires RNG")
+					}
+					r := rng()
+					if math.IsNaN(r) || math.IsInf(r, 0) || r < 0 || r >= 1 {
+						return errors.New("spy RNG must return a finite value in [0,1)")
+					}
+					if r <= p.Cloak {
+						continue
+					}
+					staged.revealed[id] = p.ShipGeneration
+					shimmering = true
+				}
+				report.Ships = append(report.Ships, SpyShip{Alias: p.Alias, Team: p.Team, Fighters: p.Fighters, Shields: p.Shields, Shimmering: shimmering})
+			}
 			for _, layer := range sector.Minefield {
 				report.Mines += layer.Count
 			}
@@ -149,7 +197,7 @@ func (n *SpyNetwork) Advance(w *World, now time.Time, rng func() float64) error 
 					}
 				}
 			}
-			if report.Mines > 0 || report.Planet != "" || report.DefenseFighters > 0 {
+			if report.Disruption || len(report.Ships) > 0 || report.Mines > 0 || report.Planet != "" || report.DefenseFighters > 0 {
 				staged.reports = append(staged.reports, report)
 				staged.next++
 				if len(staged.reports) > SpyHistoryLimit {

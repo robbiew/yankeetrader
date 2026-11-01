@@ -972,3 +972,23 @@ retained separately. README, reconstruction plan, implementation policies and CI
 are updated in the same implementation commit. Concrete limits, financial policy,
 privacy and unsupported follow-ups are in
 [IMPLEMENTATION.md](../research/yt-plasma/IMPLEMENTATION.md).
+
+## Ship, cloak and disruption spy intelligence
+
+- Six fresh completed original-DOS controls and the independent verifier establish
+  ship name/team/fighter/shield reports, full-cloak suppression, one positive
+  partial-cloak shimmering branch, ordered multiple ships, caller exclusion and
+  a login-local disruption notice. All retain 1,667,000 credits, 497 turns and
+  unchanged saved cloak. Twelve corruption controls reject altered provenance,
+  keys, snapshots, cloak state, ship details and report types.
+- Full `go test -race ./...` and `go vet ./...` passed. A targeted race run covers
+  the final additional shared-detection, ship-order and private-disruption tests.
+- Real compact and classic GoDoors PTY spy smoke passed with actual ship details,
+  history, resource charges, unchanged cloak and reconnect isolation; the updated
+  transcript is `evidence/spies-smoke.txt`.
+- The original seven spy sessions/REA-byte verifier and all 4,682 archive hashes
+  passed. No original random-stream or exact probability claim is made.
+
+World version remains 26. Native BBS acceptance, target notifications, shared
+combat visibility, broader triggers and exact DOS RNG/numeric parity remain
+outside this slice. See [policies and evidence](../research/yt-spies/intelligence/IMPLEMENTATION.md).

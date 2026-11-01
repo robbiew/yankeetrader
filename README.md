@@ -16,14 +16,14 @@ Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> 
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing and indiscriminate damage, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets and sector defenses during the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Mercenary plasma sales, explicit season archive export/administrative reset tooling and remaining disruption spy intelligence.
-- Broadcast/team radio, the DOS multiline message editor, ship/cloak and disruption spy intelligence, and remaining newspaper event types.
+- Mercenary plasma sales and explicit season archive export/administrative reset tooling.
+- Broadcast/team radio, the DOS multiline message editor, remaining spy trigger/notification parity, and remaining newspaper event types.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -500,6 +500,14 @@ cached-ore round eligibility is preserved. If all rates reach zero, the planet
 is removed from its sector and every landing token for it is revoked. The launch,
 interception, growth, damage and deletion save atomically. Planet bank, ownership,
 attacker cash and ships are not transferred by destruction. [Rules, evidence and remaining work](research/yt-missiles/PRODUCTION_DESTRUCTION.md).
+
+Spies now report other living ships' names, team numbers, fighters and shields,
+plus this login's space-time disruptions. Partial-cloak detection may produce a
+shimmering notice; successful detections stay within the spy network and are
+bound to the target ship generation. Saved cloak energy, combat visibility and
+durable radio stay unchanged. Exact DOS RNG odds and target notification remain
+outside this bounded slice. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
+No save-format change is required (world version 26).
 
 Spies are available at Earth for 333,000 credits each, up to three per login.
 Choose their starting sectors through Earth option 9 or compact `HIRE` while

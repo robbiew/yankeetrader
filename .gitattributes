@@ -125,3 +125,10 @@
 /research/yt-plasma/dos/**/RETURN.LOG -diff
 /research/yt-plasma/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-plasma/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact DOS spy intelligence witnesses preserve CRLF, keys and trailing spaces.
+/research/yt-spies/intelligence/dos/** -text
+/research/yt-spies/intelligence/dos/**/KEYS.TXT -diff
+/research/yt-spies/intelligence/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-spies/intelligence/dos/**/scoreboard.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-spies/intelligence/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

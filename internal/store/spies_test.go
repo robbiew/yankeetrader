@@ -273,3 +273,49 @@ func TestSpyAdvancePublishesAfterReplacementSyncFailure(t *testing.T) {
 		t.Fatal("committed movement lost spy movement/reports", locations, reports, viewErr, spyErr)
 	}
 }
+
+func TestSpyShipReportsSaveFailureAndSnapshotIsolation(t *testing.T) {
+	s, bound, token := spyStore(t)
+	if err := s.Update(func(w *game.World) error {
+		p, e := w.Join("private-enemy-account", "Enemy")
+		if e != nil {
+			return e
+		}
+		p.Sector = 2
+		p.Cloak = 0
+		p.Fighters = 42
+		p.Shields = 10
+		return nil
+	}); err != nil {
+		t.Fatal(err)
+	}
+	deadline := time.Now().Add(time.Minute)
+	if err := bound.HireSpies(token, []int{2}, time.Now, deadline); err != nil {
+		t.Fatal(err)
+	}
+	// The report is staged but the invalid world cannot replace the saved world.
+	if err := bound.UpdateWithSpies(func(w *game.World) error { w.Players[1].Credits = -1; return nil }, time.Now(), deadline); err == nil {
+		t.Fatal("invalid world saved")
+	}
+	_, reports, err := bound.SpySnapshot(false)
+	if err != nil || len(reports) != 0 {
+		t.Fatal(reports, err)
+	}
+	if err := bound.UpdateWithSpies(func(w *game.World) error { return nil }, time.Now(), deadline); err != nil {
+		t.Fatal(err)
+	}
+	_, reports, err = bound.SpySnapshot(false)
+	if err != nil || len(reports) != 1 || len(reports[0].Ships) != 1 || reports[0].Ships[0].Alias != "Enemy" {
+		t.Fatal(reports, err)
+	}
+	reports[0].Ships[0].Alias = "tampered"
+	_, again, err := bound.SpySnapshot(false)
+	if err != nil || again[0].Ships[0].Alias != "Enemy" {
+		t.Fatal(again, err)
+	}
+	fresh := s.ForShip(1, 0, 1)
+	_, reports, err = fresh.SpySnapshot(false)
+	if err != nil || len(reports) != 0 {
+		t.Fatal("report leaked across logins", reports, err)
+	}
+}
