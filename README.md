@@ -1287,3 +1287,26 @@ verifier and corruption controls with Python 3:
 
     python3 scripts/verify_mercenary_plasma.py
     python3 scripts/test_mercenary_plasma_verifier.py
+
+
+## Broadcast radio: shared lifetime and public-news research
+
+[Extended broadcast research](research/yt-broadcast-radio/extended/RECOVERY.md)
+supplements the separate [broadcast implementation PR #58](https://github.com/robbiew/yankeetrader/pull/58).
+Original DOS ALL writes one public radio record per line, also publishes the
+text to the newspaper, and spends a shared delivery budget on startup reads.
+Computer history does not spend that budget. This differs from PR #58's
+documented private-copy adaptation with independent recipient read flags.
+
+This research changes no Go gameplay or save26 fields. The
+[follow-up contract](research/yt-broadcast-radio/extended/CONTRACT.md) separates
+public newspaper projection and an original-style shared archive from the
+existing adaptation; neither is silently enabled by these evidence files.
+
+Validation retains 16 completed DOS controls, four exact reload edges and four
+explicit mailbox-budget variations. Eleven native byte observations and both
+YT/maintenance load images independently match all 978 relocations; all 43
+corruption controls pass. Run the portable checks with Python 3:
+
+    python3 scripts/verify_broadcast_lifetime.py
+    python3 scripts/test_broadcast_lifetime_verifier.py

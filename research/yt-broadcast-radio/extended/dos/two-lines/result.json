@@ -1,0 +1,129 @@
+{
+  "name": "two-lines",
+  "command": "C;5;ALL\r~~YT BROADCAST FIRST\rYT BROADCAST SECOND\r\r~~S\r~~~~6;1",
+  "patches": [],
+  "program_returned": true,
+  "recipe": "broadcast-radio-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "7096633ef76876c9f0f411f1a26f004a73ffdce65e268f1a4a21bd5afb472e34",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+    "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+    "dosbox.log": "45d0801ce7684f7ec89cdd95c2fefe649d92df7f455426c13f6ba29b9fdd124d",
+    "game.log.gz": "ceb46abc6cee2165227a436847e1ed1f90379312e56a0abe7e34e82613e60d5e",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "f59e953d3ad93cc75bebd57a7b55f577488e4d5d90a7499da810dc678ca97307",
+    "transcript.txt": "4eeacbd9d339abcade39ad28516ce780ccf4b339eb801f1e8a6d252305dd464c"
+  }
+}

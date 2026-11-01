@@ -147,3 +147,11 @@
 /research/yt-team-radio/dos/**/DOS*.LOG -diff
 /research/yt-team-radio/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-team-radio/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Extended broadcast controls preserve exact DOS clocks, keys and CP437 spacing.
+/research/yt-broadcast-radio/extended/dos/** -text
+/research/yt-broadcast-radio/extended/dos/**/KEYS.TXT -diff
+/research/yt-broadcast-radio/extended/dos/**/DOS*.LOG -diff
+/research/yt-broadcast-radio/extended/dos/**/RETURN.LOG -diff
+/research/yt-broadcast-radio/extended/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-broadcast-radio/extended/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

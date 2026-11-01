@@ -1,0 +1,1341 @@
+{
+  "recipe": "broadcast-radio-v1",
+  "scenarios": [
+    {
+      "name": "broadcast-send",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "b115ab4a6c28a8d1cc81945f009d7d8fd7c3f76c9f88938d17a27c4426dc0b3a",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "698709415181ff3119c7e9933cf6aeb39a8473cdd8e40012f43676604a7309b8",
+        "game.log.gz": "1902cbd6615f40443039f939e361515ca8de2bd1160e26a075c10d8622838e5b",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "22d8bac4d0b823f03286bddabfb9e4b86b2ede94bd01e5e4b67aeb4604ea7f72",
+        "transcript.txt": "b32fb165dbac724d765cbc35396a984f0035a3b76fa28755f82e721fe55c603b"
+      }
+    },
+    {
+      "name": "broadcast-abort",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~A;Y\r~~~~6;1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "0412e75c904a9771dcdc8e7954270db93b3b09330154b6759628ad27592426b9",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "bd28683e4184028bdbc07430846b320636386e4354bbcf2fdd52072e46bc9890",
+        "game.log.gz": "c5a47b718415c01a8ad896c982374d6ec65a35f5c851b06266c26632e640c034",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "37b325bea0fc81b53d14e394b68caf3e142e3571598e59c7926988acc590dd01",
+        "transcript.txt": "396a26f734e99999a746e139cd3854b0ae199d1db33c2d8f3f13b20590d5d9c6"
+      }
+    },
+    {
+      "name": "broadcast-lowercase",
+      "command": "C;5;all\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "86e3f22acf400b37e3fa2b1f65eb2cd0bb5b49176bcb8cf4ad9e1e2b69309d93",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "9750b19878669112a0db33b68406c54cadf37f4011570c342fee39be75181c2b",
+        "game.log.gz": "94236a861288bbfcc354ed32649d25fe07ce086a62efea60eef7fd82081f3d4d",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "22d8bac4d0b823f03286bddabfb9e4b86b2ede94bd01e5e4b67aeb4604ea7f72",
+        "transcript.txt": "f49876cb5abc79931a05b633045d9c67fe790c89876079e703c9604297cbca1e"
+      }
+    },
+    {
+      "name": "broadcast-zero-turns",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          0
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "b115ab4a6c28a8d1cc81945f009d7d8fd7c3f76c9f88938d17a27c4426dc0b3a",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "fbddaa3dffcee783381e7efa59b074d47228e7a97bf3a9b8cb0477da19e587da",
+        "before.dat.gz": "54655438bfc0d72f8f91fbb3d1b331b3f735b168c151ecbd7499e5d7dff7dc76",
+        "dosbox.log": "19faaf3ef3c84df8993bdd7eeeaf0f5d429f090fd5dd1d23470e02910858b006",
+        "game.log.gz": "5bf1ebfc869f5c35ac192654b524d71be118a062ea76aea266fb58e8b1b14408",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "22d8bac4d0b823f03286bddabfb9e4b86b2ede94bd01e5e4b67aeb4604ea7f72",
+        "transcript.txt": "5127c46957904f05ab9e9549f5cc30e6fbcda0287f2c078533836c060bff9834"
+      }
+    },
+    {
+      "name": "broadcast-team-member",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [
+        [
+          2,
+          89,
+          1
+        ]
+      ],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          89,
+          1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "b115ab4a6c28a8d1cc81945f009d7d8fd7c3f76c9f88938d17a27c4426dc0b3a",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "7fe597c607f5f1753dced85f8e43e9186913d34ae6f565e65505a6a9bee02f2c",
+        "before.dat.gz": "49f9afbcb18edbe33354fd689fa0ca7510dd40f3357bb0533d6de4a2dce1c0f8",
+        "dosbox.log": "3ed7aedbc0ded68ac7b2d65ed5929b451ed566936b5b338c9437b0905c428446",
+        "game.log.gz": "26ca82e9408dfbccb617e48c82a4c9456d101e36027661ddf244895c904511ed",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "d195837d312bcc0a751a644859d7d693ccffa30022e30290cf2a77dfffbe84ff",
+        "transcript.txt": "7ed16643eeeef00a889b563b41c62bb5c707897ff9efeba2bc7ccb5c5af0fff8"
+      }
+    },
+    {
+      "name": "blank-recipient",
+      "command": "C;5\r~~\r~~~1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "9e8792f3b8d95f3606067b200cf76cab957cb9bcf053b4da15b850f2ce8e807b",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "ccc9608027cf5d8acd083aef60ca311906a20df7005ba13adfc5abac507341c6",
+        "game.log.gz": "51f8fe3441574ded45e4b1585f45b8ce573fc233d43b3dc0675757ae02e14695",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "1e9a4319e969f9b2035ea67b57ce2b3a6200423f5ff3f8e8d17685345b307eaf",
+        "transcript.txt": "c105db54db0aea307ea521857521e2e785c8ec4d7f5d1659b0d6365c08e4c628"
+      }
+    },
+    {
+      "name": "blank-body-abort",
+      "command": "C;5;ALL\r~~\r~~A;Y\r~~~~1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "983bfd6ff7d1266c0361e6ce3f85e8405f981f8eeae1f22b04e7dfcb0631fe48",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "4558b153897fde6d6dd8533d4b6534142874ea3628374efc925d20b35a8deee0",
+        "game.log.gz": "b2631624c39090528d4a94dab64da56b11a34dc17dd999278592ba6f6bae97da",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "87f43a0a97e30c967ca854b09f8719b736e16e4230ab3607a0257460322e1782",
+        "transcript.txt": "c6deca387856a0d08cdf46bb84a10b3a6beb3f24fb8658a17457fd9d84f3a61d"
+      }
+    },
+    {
+      "name": "two-lines",
+      "command": "C;5;ALL\r~~YT BROADCAST FIRST\rYT BROADCAST SECOND\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "7096633ef76876c9f0f411f1a26f004a73ffdce65e268f1a4a21bd5afb472e34",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "45d0801ce7684f7ec89cdd95c2fefe649d92df7f455426c13f6ba29b9fdd124d",
+        "game.log.gz": "ceb46abc6cee2165227a436847e1ed1f90379312e56a0abe7e34e82613e60d5e",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "f59e953d3ad93cc75bebd57a7b55f577488e4d5d90a7499da810dc678ca97307",
+        "transcript.txt": "4eeacbd9d339abcade39ad28516ce780ccf4b339eb801f1e8a6d252305dd464c"
+      }
+    },
+    {
+      "name": "recipient-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "dccbeb2410acba1d7ccc32e962f0f06d8e10f5c9460f420b3186357707ff9683",
+        "game.log.gz": "930f352e0d7e353929f930686a160c3569dcbf9e342898594ae2109eaabaf122",
+        "side-before.json.gz": "8d9b620fe9a7bdc258109837f6344a6c5d31df9cff72bc4b493ad82e1e0edc4a",
+        "sidefiles.json.gz": "635a5cef1a30fa5ad7a13222c81874c5c5255f2c62b62c3cebb4e65e38c07c7a",
+        "transcript.txt": "a96852bb8de87316458797a6552eedc6062fa8a487fa75389e59baae67c83d24"
+      }
+    },
+    {
+      "name": "sender-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "e9a348bf8222f9d1a96f4a3427e3b8ae345fcf4565b2d16f97fa216991568b40",
+        "game.log.gz": "d364cbe68c8d0702ecaa5f3a62a9d400a895dcc3d3c1d18a8859742a56fe3c36",
+        "side-before.json.gz": "8d9b620fe9a7bdc258109837f6344a6c5d31df9cff72bc4b493ad82e1e0edc4a",
+        "sidefiles.json.gz": "f479bef67d615aff7bc43ae71f3039449913b936ad3145a343e59c1738609266",
+        "transcript.txt": "ed2bab48a38926ecdfdba475fabd56877699b299cc58875436e0b4284c0b9ecb"
+      }
+    },
+    {
+      "name": "budget-two",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 2,
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "28391ce6fcf166b26ac010669264c594d05217b79fb1b636577e04ad422c9945",
+        "game.log.gz": "6cf821a5a9e16b3611e07f31aac0505aa8faa17f2c031b6c2c31245b11f1134c",
+        "side-before.json.gz": "5a864892cf69e4a1a838881a832a18f7fd8e7c4a9c53233f449abe6c40a0114b",
+        "sidefiles.json.gz": "fd423e61969287b8213223b4fe82e1a81aa0479a3b1cfa5546a8c1bed3c27d40",
+        "transcript.txt": "c8d038bf9a3433a5107ebefb0a9984de55da8dc4a7b793d4fe088dd58b3f56a9"
+      }
+    },
+    {
+      "name": "budget-one",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 1,
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "892ca8f142520b09295e6f1a525f2121fa9ca6767b9342401538b496173a37bb",
+        "game.log.gz": "f8f0976bc7bf990bfd18515908cf29b590378ad0de576dbb9fc02709d13b4af4",
+        "side-before.json.gz": "83391de28e9c3f5b343625c21a71e7bd7eab0468d0fa0f8cf73d06d917b4d458",
+        "sidefiles.json.gz": "54e8319e50c5087decd5f119e2f1634ae7739d6e93874655fd85496a2a6c8473",
+        "transcript.txt": "05ce639dc2e2cf9b6d0cd331fb358ba26595abcf7b7ea9589fec090511944ad4"
+      }
+    },
+    {
+      "name": "budget-zero",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 0,
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "bc18ebe118dae4274f5e5614e511643a2ab457e84b1db2ce4a7f9146471111aa",
+        "game.log.gz": "f8f0976bc7bf990bfd18515908cf29b590378ad0de576dbb9fc02709d13b4af4",
+        "side-before.json.gz": "a6b03c404013489bb33b14d202360d92b05065359e3faa2d4072d626db0d8f90",
+        "sidefiles.json.gz": "0501fb5e095ee5db44ed88dfa44e4607e5069da8fe54f5f0e37c7224bf5a2aaf",
+        "transcript.txt": "05ce639dc2e2cf9b6d0cd331fb358ba26595abcf7b7ea9589fec090511944ad4"
+      }
+    },
+    {
+      "name": "budget-negative-one",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": -1,
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "dde8b42261af84ef84c71f7bf021c5370ac94bb9361a9ca6fed85e591ba00120",
+        "game.log.gz": "f8f0976bc7bf990bfd18515908cf29b590378ad0de576dbb9fc02709d13b4af4",
+        "side-before.json.gz": "dbce495f73c9745c5cf74a5391e1f018886d1d9fcd17ab2deb5b13ea77571184",
+        "sidefiles.json.gz": "ce882928a9ce2f73029198d780513c221eab11ce18277f585bb09609cb5d5b2b",
+        "transcript.txt": "05ce639dc2e2cf9b6d0cd331fb358ba26595abcf7b7ea9589fec090511944ad4"
+      }
+    },
+    {
+      "name": "recipient-repeat",
+      "command": "\r~~~~C;6;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "actor": "ENEMY",
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "cfa324a7795f05dd813e587d3680a536616913512a02d56d78b59f7f62f7e0d6",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "d7317c8452bfa3be43a8c17825df68cc1537ea5cf1a3362dcc355100c9f87eba",
+        "game.log.gz": "2c8e5eeadf6b343b74d0760878eed775b737e888231f222487e3cf366c39aa92",
+        "side-before.json.gz": "6c68fa39fc7019edaacca3dd1d8240ea7e36cb1b4819d1685ebd0caa0c71ed2e",
+        "sidefiles.json.gz": "48501b28459c58117c027d4f6d8155ddd0582d78418f78d78852cca8521b2469",
+        "transcript.txt": "a30d9eb221fe916c7434b30eae48292f42c2e1e7634be6b606361ba882c2226b"
+      }
+    },
+    {
+      "name": "sender-after-recipient",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "program_returned": true,
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "d28467f0855db0090a8a9976b4275a8f61fff35b19d3497def2f608a4d066eb0",
+        "game.log.gz": "d364cbe68c8d0702ecaa5f3a62a9d400a895dcc3d3c1d18a8859742a56fe3c36",
+        "side-before.json.gz": "6c68fa39fc7019edaacca3dd1d8240ea7e36cb1b4819d1685ebd0caa0c71ed2e",
+        "sidefiles.json.gz": "81ddc9e9dd725562e8aa0c9a9899077261f7ed21ed22c28ae98eb4da934c6e93",
+        "transcript.txt": "ed2bab48a38926ecdfdba475fabd56877699b299cc58875436e0b4284c0b9ecb"
+      }
+    }
+  ]
+}

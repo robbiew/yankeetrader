@@ -92,6 +92,8 @@ jobs:
           python3 scripts/verify_newspaper.py
           python3 scripts/verify_commerce_evidence.py
           python3 scripts/verify_team_radio.py
+          python3 scripts/verify_broadcast_lifetime.py
+          python3 scripts/test_broadcast_lifetime_verifier.py
           python3 scripts/test_team_radio_verifier.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py

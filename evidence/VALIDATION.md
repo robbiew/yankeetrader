@@ -1082,3 +1082,45 @@ DOSTIME.LOG and the DOSBox command stream. Corrected the report's erroneous
 one minute of elapsed time. Capture bytes and gameplay are unchanged. README
 was updated in the same fix; current-main spy-intelligence changes and their
 validation history are preserved.
+
+## Broadcast public-record and shared-lifetime research — 2026-11-01
+
+Research-only on feat/broadcast-radio-research, based on PR #59's reviewed
+e83d231 tree. No Go gameplay, dependencies or save26 fields changed. This is
+separate from PR #58's private-copy adaptation and preserves its six-control
+corpus rather than overwriting or recounting it.
+
+- Sixteen fresh normally returned DOS controls retain 32 full before/after
+  worlds, raw CP437/rendered logs, explicit DOS clocks, return markers and all
+  mutable auxiliary bytes. Four unpatched parent edges preserve exact world
+  and auxiliary state; four other children declare only mailbox-budget edits.
+- Every capture explicitly resets DOS date/time to 10/24/2026 00:00:00. No
+  elapsed-minute or monotonic-clock inference is made. A fresh send and a fresh
+  abort capture-writer check returned normally outside the canonical corpus.
+- Independent verifier passed packet structure, negative broadcast destination,
+  integer budget 30→28→26, repeat-reader and nonmutating-history behavior,
+  budget 2/1/0/-1 visibility, resource conservation and public newspaper header/
+  body publication. The two-line control binds one packet per line and one
+  newspaper sender header. Aborts do not create publication.
+- Nine YT byte reads and two maintenance byte reads plus their two complete
+  MZ load-image observations independently match original bytes after all 870
+  YT and 108 maintenance relocations. Both REA sessions were closed.
+- All 43 corruption controls passed: 34 rehashed DOS semantic/provenance cases,
+  including public-news header/body deletion and fractional fields, and nine
+  native/declaration cases. Existing nine-session team-radio evidence and its
+  corruption tests passed. All 4,682 immutable archive hashes matched.
+- Three new Python scripts parse, relative documentation links resolve, and
+  diff checks pass. README, plan, exact DOS evidence attributes and CI evidence
+  commands are updated in the same research commit.
+
+Executed: scripts/verify_broadcast_lifetime.py,
+scripts/test_broadcast_lifetime_verifier.py, scripts/verify_team_radio.py,
+scripts/test_team_radio_verifier.py and scripts/verify_archive.py, with Python 3.
+No full Go race/vet, Go PTY or cross-build suite was rerun for this research-only
+slice. Original DOS controls are not native BBS or Windows durability acceptance.
+
+Maintenance pruning is static-only evidence; no maintenance process was run
+against these captures. Its 72/74-byte text declaration mismatch, exhausted
+author-history eligibility, new/dead account runtime cases, concurrent original
+writers and the complete multiline editor remain explicit limits. The public
+newspaper result was checked directly against canonical saved YTNEWS.DAT bytes.

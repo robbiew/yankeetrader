@@ -1,0 +1,93 @@
+{
+  "target": "archive/dos-original/YT.EXE",
+  "target_sha256": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+  "header_bytes": 3584,
+  "module_bytes": 170737,
+  "relocations": 870,
+  "load_segment": "0x1000",
+  "analysis_profile_digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029",
+  "reads": [
+    {
+      "label": "Radio file open and FIELD declaration",
+      "evidence_id": "ev_3009eae74cffa186891b4969c04eab2250c31c8f5ac78fdd5c23ebe578a08b1f",
+      "address": "0x21479",
+      "length": 75,
+      "file_offset": 74361,
+      "file_bytes_sha256": "c3d1e9a4116f1f2d4f38c06301997df2e4fe3c1c5904d4f08a265e77aeeece42",
+      "loaded_bytes_sha256": "c3d1e9a4116f1f2d4f38c06301997df2e4fe3c1c5904d4f08a265e77aeeece42"
+    },
+    {
+      "label": "Broadcast newspaper append helper with contextual suffix",
+      "evidence_id": "ev_3b7633d692a846edf606ebe1b15cfa36f6d748933a8e186ac2bdc67c3abbabfa",
+      "address": "0x20ebb",
+      "length": 225,
+      "file_offset": 72891,
+      "file_bytes_sha256": "8d987636eeac493362eab0cbf9e6f1b8be28b60d1ca44df9585310fdc2599439",
+      "loaded_bytes_sha256": "279467a68993eab6f8525fe8d98e44455d59f34ed81754ab88b6c0721d3b9955"
+    },
+    {
+      "label": "Radio writer and delivery/history reader",
+      "evidence_id": "ev_4562df73fab00b489c0fd32083b5c28aa4da3bfea1a4efc2c15de814a2223fb4",
+      "address": "0x21981",
+      "length": 1114,
+      "file_offset": 75649,
+      "file_bytes_sha256": "03158f4eeba55c84f9bfc77c2ff95c005e2eedca60e1d787d37c6f652cb607ae",
+      "loaded_bytes_sha256": "ea8b53aee3cfb4b69b534cd6c4ff0dfd010215db8f23464e7138c6d10118ae2d"
+    },
+    {
+      "label": "Startup mailbox delivery call",
+      "evidence_id": "ev_67532e34d0221e1a0ba01322975fa8843b98161b451b6204549c27ef8a4162dc",
+      "address": "0x10802",
+      "length": 29,
+      "file_offset": 5634,
+      "file_bytes_sha256": "c5cdc954733f0ebdd9042abf307cf00b7292c3b3b197bb8dc0ba0e52cfafe5d6",
+      "loaded_bytes_sha256": "3ea9e747af6546628d5f21fbf27d4208664a4c875e495d5a1f49c4bec24a8c4b"
+    },
+    {
+      "label": "Single-precision shared radio constants and context",
+      "evidence_id": "ev_7fa075eb491e06482140065ae30728ba3f5e400b03ac15f5249747b46c2f983a",
+      "address": "0x36590",
+      "length": 1200,
+      "file_offset": 160656,
+      "file_bytes_sha256": "e6eb541597ff198281150f62184ac0816e536e72b81680d3e3887372a8799ebe",
+      "loaded_bytes_sha256": "e6eb541597ff198281150f62184ac0816e536e72b81680d3e3887372a8799ebe"
+    },
+    {
+      "label": "Radio selector/editor/send labels",
+      "evidence_id": "ev_880164852c75e6f0b7b75a9f8fdfb5ff88e95de05df6e8f47ee95085e7464a37",
+      "address": "0x35cf0",
+      "length": 960,
+      "file_offset": 158448,
+      "file_bytes_sha256": "21cf260a5325567228bfdcc7a147bfdbea5986052d99d0ac8f506bbf7fe1034d",
+      "loaded_bytes_sha256": "21cf260a5325567228bfdcc7a147bfdbea5986052d99d0ac8f506bbf7fe1034d"
+    },
+    {
+      "label": "Computer radio history dispatch",
+      "evidence_id": "ev_8d52d463868d4e8e765ffe4739fbdf4cf2cd2c2d22e2dbd070509215611109e4",
+      "address": "0x18c77",
+      "length": 45,
+      "file_offset": 39543,
+      "file_bytes_sha256": "475cb2ef3c7916fd51883da8cd996be36cf0f1529675cf369dee82c26997408b",
+      "loaded_bytes_sha256": "37a827ffacad93149d66fbfafb96c70fd6e92a7fe4d60eac16b4fa0ee2ab8895"
+    },
+    {
+      "label": "Radio file/read labels and constants",
+      "evidence_id": "ev_92682363ea90ad33f9785c61528324cffac7805c6813ca65b17f97a538f16a9f",
+      "address": "0x36b20",
+      "length": 500,
+      "file_offset": 162080,
+      "file_bytes_sha256": "2ad5f4b4154863b888fa6d87859ff07cb54bb186f44e7229671f516a3f288e3d",
+      "loaded_bytes_sha256": "2ad5f4b4154863b888fa6d87859ff07cb54bb186f44e7229671f516a3f288e3d"
+    },
+    {
+      "label": "Radio selector, editor and send dispatcher with bounded suffix",
+      "evidence_id": "ev_f69df1baa2cb8dca2247fe09feaebde9d75485535ecb72911782f7b8a301cdd3",
+      "address": "0x193a1",
+      "length": 3055,
+      "file_offset": 41377,
+      "file_bytes_sha256": "c8f81d8c00e3439332a51c9342d662c75c09427b17bf4d57d67bfd82e7bed496",
+      "loaded_bytes_sha256": "e97a3379f805423bd984f97c00b30d3cba5afa29673fc22382fc10a3d72fdf8e"
+    }
+  ],
+  "load_image_evidence_id": "ev_03514cdc41e9c75482e17cee3453202b476020e2c67335ece260857148a762e9"
+}

@@ -1,0 +1,30 @@
+{
+  "target": "archive/dos-original/YTMAINT.EXE",
+  "target_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "header_bytes": 512,
+  "module_bytes": 42673,
+  "relocations": 108,
+  "load_segment": "0x1000",
+  "analysis_profile_digest": "92fec87c3e8c374652fd603898f727129f4c0cecccf8cee1c17c98a90aced029",
+  "reads": [
+    {
+      "label": "Maintenance radio-file declaration",
+      "evidence_id": "ev_29cb79843e134545e0c974e4638aec1bad726d3268b81c095c99d4bba3e73eed",
+      "address": "0x17155",
+      "length": 85,
+      "file_offset": 29525,
+      "file_bytes_sha256": "e00ff494e0ca7ba19eca6ba417d196eef3e74ddd657211d11936e7cecaaa4ab2",
+      "loaded_bytes_sha256": "e00ff494e0ca7ba19eca6ba417d196eef3e74ddd657211d11936e7cecaaa4ab2"
+    },
+    {
+      "label": "Daily nonzero-message compression and newspaper rotation",
+      "evidence_id": "ev_dda450b3eec63a105b926448f55e88c1644923d85b38be8e10ab5b9a72fd6b6c",
+      "address": "0x1672d",
+      "length": 499,
+      "file_offset": 26925,
+      "file_bytes_sha256": "09556d0798c6365245f0c5dfca9325573ad6a6ae5557dc4f5acda05a134609e2",
+      "loaded_bytes_sha256": "071e2a36ef6e709bc5adce11d1dc52660b5bcebf23a6268f0d7fc0405d8c519f"
+    }
+  ],
+  "load_image_evidence_id": "ev_c0b1f0d925c95b6699340df487158ca0aa9f97d90b6cdd026a9f7c8c5b3f594c"
+}

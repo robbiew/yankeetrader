@@ -1294,3 +1294,20 @@ history and delivery are reused; no migration is required. Tests cover stale
 drafts, concurrent retry, failures and compact/classic terminal flows.
 [Evidence, policies and limits](yt-team-radio/IMPLEMENTATION.md). Broadcast,
 multiline editing and native BBS acceptance remain open.
+
+
+## Broadcast public records and shared lifetime — extended research
+
+The [extended radio research](yt-broadcast-radio/extended/RECOVERY.md) supplements
+the separate PR #58 private-copy implementation. Original ALL uses a global
+record per line with budget30, decremented by two on automatic delivery;
+computer history does not decrement it. The original also writes a public
+newspaper header/body. Exhaustion and maintenance are distinct from calendar
+expiry. Current Go fanout remains an explicit adaptation, not shared-record
+parity.
+
+The [research disposition](yt-broadcast-radio/extended/CONTRACT.md) requires
+an explicit choice before adding newspaper publication or a shared global
+archive. Private/team mail must remain private, publication and acknowledgements
+must be atomic and bounded, and any new persisted scope needs deliberate
+migration. No Go gameplay or save26 change is included in this research.
