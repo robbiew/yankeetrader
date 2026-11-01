@@ -994,3 +994,28 @@ privacy and unsupported follow-ups are in
 World format remains 26; team radio reuses ordinary private mailbox records.
 Native BBS acceptance, broadcast and DOS multiline editing remain open.
 [Evidence and policies](../research/yt-team-radio/IMPLEMENTATION.md).
+
+## Bounded broadcast radio
+
+- Six completed original-DOS controls verify send/abort and exact chained
+  recipient/sender reads, including the shared mailbox leading field changing
+  30 → 28 → 26 and repeat-reader delivery. Sixteen corruption controls reject
+  rehashed field, scanner, counter, clock, chain, header and startup changes.
+  The Go private-copy policy is explicitly distinct from that DOS shared record.
+- Full `go test -race ./...` and `go vet ./...` passed. Tests cover 50-account
+  fanout, dead/retired eligibility, future-account isolation, stale confirmation,
+  independent reads, expiry, capacity/overflow, partial publication, concurrent
+  retry and committed directory-sync warnings. Team radio exercises the same
+  shared private-copy commit helper.
+- Compact/classic GoDoors PTY broadcast checks passed, with explicit ALL count
+  confirmation, literal text, abort, offline delivery, separate acknowledgements,
+  no repeated notification and late-account isolation. The new transcript is
+  `evidence/broadcast-radio-smoke.txt`. Existing team and direct PTY checks passed
+  separately; their incidental regenerated captures were restored.
+- Team-radio evidence and all sixteen team corruption controls passed, and all
+  4,682 archive hashes matched. Linux/amd64 and Windows/amd64 cross-builds passed;
+  these do not establish native BBS transport or crash durability.
+
+World version remains 26. DOS shared-counter lifetime, simultaneous original
+writers, multiline editing and native BBS acceptance remain separate work.
+[Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).

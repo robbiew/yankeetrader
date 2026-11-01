@@ -1,0 +1,383 @@
+{
+  "recipe": "broadcast-radio-v1",
+  "scenarios": [
+    {
+      "name": "broadcast-send",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [],
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "b115ab4a6c28a8d1cc81945f009d7d8fd7c3f76c9f88938d17a27c4426dc0b3a",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "f3dae8e022ee9931bcc00e04aa6065fdbf74c2c429225b94f7e0475aaf787e2d",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "19b4247cf5f88b8416fd74c18cdc14b75c3f5f09a103615bdfbb7eac3ced96ef",
+        "transcript.txt": "b32fb165dbac724d765cbc35396a984f0035a3b76fa28755f82e721fe55c603b"
+      }
+    },
+    {
+      "name": "broadcast-abort",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~A;Y\r~~~~6;1",
+      "patches": [],
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "0412e75c904a9771dcdc8e7954270db93b3b09330154b6759628ad27592426b9",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+        "dosbox.log": "7defec1f1a944f7548d2df156b0572b7055c3cadf0e4554d83f970b95f03a369",
+        "side-before.json.gz": "9449609548e2653114633009c3d402bc2652a39c643e95c63123ee45ffdd046d",
+        "sidefiles.json.gz": "d12f56c861733fd4e43c4ea1e58289cf2bf166db0ac06b50df8eff677c01c866",
+        "transcript.txt": "396a26f734e99999a746e139cd3854b0ae199d1db33c2d8f3f13b20590d5d9c6"
+      }
+    },
+    {
+      "name": "recipient-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "ba4316f9d8ddc29570fe1730f02641a398be214e7e5a8347372002090464aaf1",
+        "side-before.json.gz": "9347c7d5c993a58ac37e9d6383511803ffba3c49c1710993c307e521068448ee",
+        "sidefiles.json.gz": "b1a6dc710526b5e0499f44605df31ddd9b80196263b00bf651e6fd6c4c002bab",
+        "transcript.txt": "a96852bb8de87316458797a6552eedc6062fa8a487fa75389e59baae67c83d24"
+      }
+    },
+    {
+      "name": "sender-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "a3245a99963c77c4d38c7860b520278d4d0fc733548c85431a57082c1fea920d",
+        "side-before.json.gz": "9347c7d5c993a58ac37e9d6383511803ffba3c49c1710993c307e521068448ee",
+        "sidefiles.json.gz": "f9cce03b122ebeea22ee4df0ca354fc0d2ec30f15c4a7964b2b48ca2eb6b3186",
+        "transcript.txt": "ed2bab48a38926ecdfdba475fabd56877699b299cc58875436e0b4284c0b9ecb"
+      }
+    },
+    {
+      "name": "recipient-again",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "actor": "ENEMY",
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "ae58bdc7798bfa05c87f290a428a14e8424f64c2119960424d485153b9df8f76",
+        "side-before.json.gz": "43bd36635f6dd1ca97f7dbbdbfaf7dd993eef566dd8ac61b749c81b6538a0611",
+        "sidefiles.json.gz": "c77101419a182255bf196562d652314f539f89396bb549a9446f3bae4f1ac522",
+        "transcript.txt": "a96852bb8de87316458797a6552eedc6062fa8a487fa75389e59baae67c83d24"
+      }
+    },
+    {
+      "name": "sender-after-recipient",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "recipe": "broadcast-radio-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "f0df26b32d388153cf80f574028891b85df46ea4634eb586e4f65877b0a6814d",
+        "after.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "before.dat.gz": "f7c9fc8ca6956f25caf8eeb4c0c7fbd6376a7ba9b11daff14379467dc221786d",
+        "dosbox.log": "0ce21fc06e1dc2deb1a375947afc819a2438821e81e28508839dddbdeb8eaf41",
+        "side-before.json.gz": "43bd36635f6dd1ca97f7dbbdbfaf7dd993eef566dd8ac61b749c81b6538a0611",
+        "sidefiles.json.gz": "d898eec00e8a0e34ce8c16f630bd58760681b21756431d3b972019829cfe61f1",
+        "transcript.txt": "ed2bab48a38926ecdfdba475fabd56877699b299cc58875436e0b4284c0b9ecb"
+      }
+    }
+  ]
+}

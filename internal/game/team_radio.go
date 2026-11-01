@@ -77,45 +77,14 @@ func (w *World) CommitTeamRadio(d TeamRadioDraft, now time.Time) ([]uint64, erro
 	if len(d.drafts) < 1 || len(d.drafts) > 4 || len(d.drafts) != len(d.address.Recipients) {
 		return nil, errors.New("invalid team radio draft")
 	}
-	first := d.drafts[0]
-	if err := w.CheckSession(first.from, first.generation, first.season); err != nil {
-		return nil, err
-	}
-	existing := make([]uint64, len(d.drafts))
-	found := 0
-	for i, draft := range d.drafts {
-		for _, m := range w.Radio {
-			if m.From == draft.from && m.RequestID == draft.request {
-				existing[i] = m.ID
-				found++
-				break
-			}
-		}
-	}
-	// A successful retry stays successful after a subsequent roster change.
-	if found == len(d.drafts) {
-		return existing, nil
-	}
-	if found != 0 {
-		return nil, errors.New("incomplete team radio batch; compose again")
-	}
-	current, err := w.FindTeamRadioRecipients(first.from)
-	if err != nil {
-		return nil, err
-	}
-	if !sameTeamRadioAddress(current, d.address) {
-		return nil, errors.New("team or recipients changed; compose again")
-	}
-	candidate := *w
-	candidate.Radio = slices.Clone(w.Radio)
-	ids := make([]uint64, 0, len(d.drafts))
-	for _, draft := range d.drafts {
-		id, err := candidate.CommitRadio(draft, now)
+	return w.commitRadioBatch(d.drafts, now, func() error {
+		current, err := w.FindTeamRadioRecipients(d.drafts[0].from)
 		if err != nil {
-			return nil, err
+			return err
 		}
-		ids = append(ids, id)
-	}
-	w.Radio, w.NextRadio = candidate.Radio, candidate.NextRadio
-	return ids, nil
+		if !sameTeamRadioAddress(current, d.address) {
+			return errors.New("team or recipients changed; compose again")
+		}
+		return nil
+	})
 }

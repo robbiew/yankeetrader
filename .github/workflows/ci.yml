@@ -89,6 +89,8 @@ jobs:
           python3 scripts/verify_commerce_evidence.py
           python3 scripts/verify_team_radio.py
           python3 scripts/test_team_radio_verifier.py
+          python3 scripts/verify_broadcast_radio.py
+          python3 scripts/test_broadcast_radio_verifier.py
           python3 scripts/verify_avoid_evidence.py
           python3 scripts/verify_planet_evidence.py
           python3 scripts/verify_salvage_model.py
@@ -122,6 +124,7 @@ jobs:
           python3 scripts/smoke_rankings.py
           python3 scripts/smoke_radio.py
           python3 scripts/smoke_team_radio.py
+          python3 scripts/smoke_broadcast_radio.py
           python3 scripts/smoke_spies.py
           python3 -m unittest discover -s scripts -p test_smoke_newspaper.py
           python3 scripts/smoke_newspaper.py

@@ -107,3 +107,11 @@ terminal flows, evidence verification and corruption controls.
 
 Native BBS transport/crash acceptance, simultaneous original-DOS writers,
 full multiline editing and broadcast radio remain outside this slice.
+
+
+## Broadcast follow-up
+
+[Bounded broadcast radio](../yt-broadcast-radio/IMPLEMENTATION.md) now offers
+explicit ALL confirmation with private copies for current active accounts. It
+shares the staged batch helper and preserves this milestone's team behavior.
+The earlier broadcast exclusion above describes the team-only milestone.
