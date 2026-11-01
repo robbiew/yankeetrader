@@ -89,7 +89,7 @@ func (w *World) FindRadioRecipient(id int, query string) (RadioAddress, error) {
 		return RadioAddress{}, errors.New("you don't belong to a team")
 	}
 	if strings.EqualFold(query, "all") || strings.EqualFold(query, "team") {
-		return RadioAddress{}, errors.New("broadcast and team radio are not available yet; choose one player")
+		return RadioAddress{}, errors.New("choose one player here; broadcast radio is not available yet")
 	}
 	if n, err := strconv.Atoi(query); err == nil {
 		if target := w.Players[n]; target != nil && target.RetiredAt.IsZero() {

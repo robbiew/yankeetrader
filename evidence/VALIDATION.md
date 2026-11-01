@@ -1014,3 +1014,25 @@ home planet is distinct. Current Earth and planet acquisition controls
 corroborate that removal within the inspected paths. Historical 3.3 seller
 eligibility, caps, hostility and write order remain unproved. No new merchant
 implementation is pending for DOS 3.6 parity.
+
+## Team radio
+
+- Nine completed DOS 3.6 sessions establish private roster fanout including the
+  sender, independent unread flags, abort/no-team rejection and recipient-at-send
+  delivery after membership changes. The independent verifier checks exact
+  world/auxiliary chains, binaries, keys, packet contents and conserved resources.
+  Sixteen corruption controls passed, including fractional routing/read flags and
+  scanner removal with refreshed hashes. Existing commerce/direct-radio and fourteen
+  team-membership evidence controls also passed; all 4,682 archive hashes matched.
+- Full `go test -race ./...` and `go vet ./...` passed. Final recipient-preview and
+  committed-durability-warning changes passed targeted race-enabled radio tests.
+- Real compact/classic GoDoors PTY checks passed for actual team creation/join,
+  private copies, abort, sender/recipient delivery, leaving and late joining.
+  The new transcript is `evidence/team-radio-smoke.txt`. The existing direct-radio
+  smoke passed separately; its incidental regenerated capture was restored.
+- Linux/amd64 and Windows/amd64 cross-builds passed. These are build checks, not
+  native platform socket/crash acceptance.
+
+World format remains 26; team radio reuses ordinary private mailbox records.
+Native BBS acceptance, broadcast and DOS multiline editing remain open.
+[Evidence and policies](../research/yt-team-radio/IMPLEMENTATION.md).

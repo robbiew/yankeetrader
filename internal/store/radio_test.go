@@ -143,3 +143,111 @@ func TestVersionTenRadioUpgradeAndMalformedArchive(t *testing.T) {
 		t.Fatal("unversioned radio metadata accepted")
 	}
 }
+
+func TestTeamRadioConcurrentRetryAndRollback(t *testing.T) {
+	s := create(t)
+	if err := s.Update(func(w *game.World) error {
+		if _, err := w.Join("recipient", "Enemy"); err != nil {
+			return err
+		}
+		if err := w.CreateTeam(1, "Orion", "ABCD"); err != nil {
+			return err
+		}
+		return w.JoinTeam(2, 1, "ABCD")
+	}); err != nil {
+		t.Fatal(err)
+	}
+	w, _ := s.View()
+	address, _ := w.FindTeamRadioRecipients(1)
+	draft, err := w.PrepareTeamRadio(1, address, "One atomic batch", time.Now())
+	if err != nil {
+		t.Fatal(err)
+	}
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
+	abort := errors.New("abort")
+	if err := bound.Update(func(w *game.World) error {
+		if _, err := w.CommitTeamRadio(draft, time.Now()); err != nil {
+			return err
+		}
+		return abort
+	}); !errors.Is(err, abort) {
+		t.Fatal(err)
+	}
+	w, _ = s.View()
+	if len(w.Radio) != 0 || w.NextRadio != 1 {
+		t.Fatal("aborted batch persisted")
+	}
+	var wg sync.WaitGroup
+	results := make(chan error, 8)
+	for i := 0; i < 8; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			results <- bound.Update(func(w *game.World) error { _, err := w.CommitTeamRadio(draft, time.Now()); return err })
+		}()
+	}
+	wg.Wait()
+	close(results)
+	for err := range results {
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+	w, _ = s.View()
+	if len(w.Radio) != 2 || w.NextRadio != 3 {
+		t.Fatal("retry duplicated batch", w.Radio)
+	}
+	receiver := s.ForShip(2, w.Players[2].ShipGeneration, 1)
+	if err := receiver.AcknowledgeRadio(2); err != nil {
+		t.Fatal(err)
+	}
+	w, _ = s.View()
+	if w.Radio[1].Unread || !w.Radio[0].Unread {
+		t.Fatal("shared read receipt")
+	}
+	// Reopening the same files retains separate private copies.
+	reopened, err := s.View()
+	if err != nil || len(reopened.Radio) != 2 {
+		t.Fatal(err)
+	}
+}
+
+func TestTeamRadioCommittedSyncWarningRetainsWholeBatch(t *testing.T) {
+	s := create(t)
+	if err := s.Update(func(w *game.World) error {
+		if _, err := w.Join("recipient", "Enemy"); err != nil {
+			return err
+		}
+		if err := w.CreateTeam(1, "Orion", "ABCD"); err != nil {
+			return err
+		}
+		return w.JoinTeam(2, 1, "ABCD")
+	}); err != nil {
+		t.Fatal(err)
+	}
+	w, _ := s.View()
+	address, _ := w.FindTeamRadioRecipients(1)
+	draft, err := w.PrepareTeamRadio(1, address, "Committed once", time.Now())
+	if err != nil {
+		t.Fatal(err)
+	}
+	bound := s.ForShip(1, w.Players[1].ShipGeneration, 1)
+	bound.syncDirectory = func(string) error { return errors.New("injected sync failure") }
+	err = bound.Update(func(w *game.World) error { _, err := w.CommitTeamRadio(draft, time.Now()); return err })
+	var durability *DurabilityError
+	if !errors.As(err, &durability) {
+		t.Fatal(err)
+	}
+	w, _ = s.View()
+	if len(w.Radio) != 2 || w.NextRadio != 3 {
+		t.Fatal("committed batch lost", w.Radio)
+	}
+	bound.syncDirectory = nil
+	if err := bound.Update(func(w *game.World) error { _, err := w.CommitTeamRadio(draft, time.Now()); return err }); err != nil {
+		t.Fatal(err)
+	}
+	w, _ = s.View()
+	if len(w.Radio) != 2 {
+		t.Fatal("retry after committed warning duplicated mail")
+	}
+}
