@@ -24,10 +24,12 @@ battle/escape triggers and full daily spy behavior are not claimed.
 Each spy reports mine count, planet name/projected ground forces and sector
 fighters belonging to someone other than the caller, including teammate and
 Xannor/Mercenary groups. Defense owner/team labels are captured at report time.
-No planet balances, production, warehouse stock, weapons, account identities,
-session credentials, ships or cloak state enter a report. Planet projection
+The [ship/cloak/disruption follow-up](intelligence/IMPLEMENTATION.md) adds
+ship names, team numbers, fighters/shields, shimmering notices and login-local
+disruptions. No planet balances, production, warehouse stock, carried weapons,
+account identities or session credentials enter a report. Planet projection
 uses current lazy growth on a copy and does not mutate the planet. Intel grants
-no landing or combat access and cannot change/reveal a target's cloak.
+no landing or combat access and does not change saved cloak energy or combat visibility.
 
 A finding records its sector as that spy's last reported sector. While hunting
 there again, the spy suppresses contents and continues moving. An empty sector
@@ -43,7 +45,7 @@ Each login has its own network, bound to the caller and ship generation;
 reconnect starts empty without refunding committed hires, matching the observed
 DOS save/reconnect slice. Separate simultaneous logins do not share spies or
 report acknowledgements. The three-spy cap applies to each login. No spy state
-is serialized and no save version changes are needed (version 11).
+is serialized and no save version changes are needed (current version 26).
 
 The store clones network state under the same lock as each eligible action and
 publishes the clone after the validated world replaces `world.json`. Failed
@@ -83,9 +85,10 @@ history, exact resource charges, zero-warp safety and reconnect loss. The transc
 is `evidence/spies-smoke.txt`, and CI repeats it. This is local terminal validation;
 live BBS transport acceptance remains a separate check.
 
-Ship/cloak runtime eligibility, shimmering odds, target notification, disruption
-reports, broader original triggers and exact MBF/RNG equivalence remain research
-boundaries. No speculative report types are advertised as playable.
+Ship/cloak and disruption findings now have positive runtime controls in the
+[follow-up](intelligence/IMPLEMENTATION.md). Exact shimmering odds, target
+notification, broader original triggers and MBF/RNG equivalence remain research
+boundaries.
 
 Validation passed: full race-enabled Go suite and vet; spy/commerce evidence and
 4,682-file archive verification; spy, port, navigation, mine, sector-fighter,
