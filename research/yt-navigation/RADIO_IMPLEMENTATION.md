@@ -76,5 +76,8 @@ Broadcast and the DOS multiline editor remain separate work.
 [Broadcast radio](../yt-broadcast-radio/IMPLEMENTATION.md) now confirms ALL
 current active accounts and saves ordinary private copies atomically, including
 the sender. This is an explicit modern policy; retained DOS controls document
-a distinct shared record and repeat-delivery behavior. World format stays 26.
+a distinct shared record and repeat-delivery behavior. The private-copy milestone
+used version 26; current ALL sends also publish typed newspaper entries atomically
+and require version 27. Older binaries cannot read version-27 saves. See
+[publication validation](../../evidence/BROADCAST_NEWSPAPER_VALIDATION.md).
 Multiline editing and native BBS acceptance remain separate work.
