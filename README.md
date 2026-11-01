@@ -1366,3 +1366,6 @@ Live BBS acceptance and native Windows crash durability remain unverified.
 Radio compatibility follow-ups explicitly distinguish historical version-26 private
 copies from current version-27 public ALL publication; older binaries cannot read
 version-27 saves.
+
+Editor evidence rejects newspaper publication of aborted FIRST/SECOND input,
+including rehashed captures with an empty mailbox.

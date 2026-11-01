@@ -91,7 +91,7 @@ def check(path=ROOT/'research/yt-radio-editor/dos'):
   news=rawafter['YTNEWS.DAT']
   if n=='public-two':assert news.endswith(b'  -  Message from: Q \r\n  -  PUBLIC FIRST\r\n  -  PUBLIC SECOND\r\n\x1a')
   else:
-   for line in LINES[n]:assert b'  -  '+line.encode()+b'\r\n'not in news
+   for line in (['FIRST','SECOND']if n=='abort'else LINES[n]):assert b'  -  '+line.encode()+b'\r\n'not in news
  print('Verified 6 DOS editor controls: exact inputs, baseline auxiliary files, actor, line packets, first replacement, Continue, rejection, abort, 20-line cap and public text.')
 
 

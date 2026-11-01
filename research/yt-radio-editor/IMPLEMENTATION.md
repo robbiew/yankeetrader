@@ -15,7 +15,7 @@ writes one author header followed by the document lines to the newspaper.
 
 The independent verifier checks source auxiliary baselines, binary hashes,
 login identities, keys, clocks, normal return, unchanged resources and exact
-74-byte mailbox text. Sixteen rehashed corruptions exercise its semantic checks.
+74-byte mailbox text. Seventeen rehashed corruptions exercise its semantic checks.
 
 ## Implementation and deliberate limits
 

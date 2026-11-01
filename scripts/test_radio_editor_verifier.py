@@ -7,8 +7,8 @@ class Controls(unittest.TestCase):
  def test_preserved(self):
   with contextlib.redirect_stdout(io.StringIO()):v.check()
  def test_corruption(self):
-  modes=('root','actor','keys','resource','fraction-to','fraction-flag','second-match','rejected-edit','continue-newline','missing20','extra21','padding','abort-send','public-missing','private-news','incomplete')
-  names={'second-match':'edit-accept','rejected-edit':'edit-reject','missing20':'limit','extra21':'limit','abort-send':'abort','public-missing':'public-two'}
+  modes=('root','actor','keys','resource','fraction-to','fraction-flag','second-match','rejected-edit','continue-newline','missing20','extra21','padding','abort-send','abort-news','public-missing','private-news','incomplete')
+  names={'second-match':'edit-accept','rejected-edit':'edit-reject','missing20':'limit','extra21':'limit','abort-send':'abort','abort-news':'abort','public-missing':'public-two'}
   for mode in modes:
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as temp:
     path=Path(temp)/'dos';shutil.copytree(ROOT/'research/yt-radio-editor/dos',path)
@@ -34,11 +34,11 @@ class Controls(unittest.TestCase):
      elif mode=='padding':mail[85]=9
      elif mode=='abort-send':
       other=json.loads(gzip.decompress((path/'list-continue/sidefiles.json.gz').read_bytes()));mail=bytearray.fromhex(other['YTRMSG.DAT']['hex'])[:86]
-     elif mode in ('public-missing','private-news'):
+     elif mode in ('public-missing','private-news','abort-news'):
       news=bytes.fromhex(side['YTNEWS.DAT']['hex']);changed=news.replace(b'PUBLIC SECOND',b'OMITTED')if mode=='public-missing'else news+b'  -  FIRST\r\n';assert changed!=news
       side['YTNEWS.DAT'].update(hex=changed.hex(),after_sha256=v.SHA(changed))
      else:raise AssertionError('unknown corruption')
-     if mode not in ('root','public-missing','private-news'):assert bytes(mail)!=old
+     if mode not in ('root','public-missing','private-news','abort-news'):assert bytes(mail)!=old
      side['YTRMSG.DAT'].update(hex=mail.hex(),after_sha256=v.SHA(mail));p.write_bytes(gzip.compress(json.dumps(side).encode()))
     for f in r['files']:r['files'][f]=v.SHA((d/f).read_bytes())
     (d/'result.json').write_text(json.dumps(r));(path/'results.json').write_text(json.dumps(summary))

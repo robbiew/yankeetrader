@@ -1167,3 +1167,7 @@ files, and Linux/Windows amd64 cross-builds. These are local checks; hosted CI
 has not run for this branch.
 
 Existing direct, team and broadcast PTY regression checks also passed.
+
+Editor verifier review fix: a seventeenth rehashed corruption reproduces an
+Abort newspaper leak with no delivered mailbox records; the verifier now rejects
+both aborted input lines independently of the expected delivered lines.
