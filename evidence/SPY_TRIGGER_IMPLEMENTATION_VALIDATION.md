@@ -72,3 +72,12 @@ These are local tests and cross-builds, not GitHub CI results, live BBS acceptan
 or native Windows crash-durability tests. Original DOS random streams, exact MBF
 arithmetic and unconfirmed/indirect spy paths remain unresolved. No persistent
 target notification is invented beyond the tested original detection boundary.
+
+## Publication prerequisite integration
+
+Before publication, PR #62's current head `83c990a` was merged into this branch.
+README and validation append conflicts were resolved retaining both histories.
+The prerequisite adds only its isolated Xannor planetary smoke fixture and docs;
+the production Go tree remains identical to validated `a074705`. The updated real
+Xannor planetary PTY passed ground victory, production/caps, captured-home
+destruction, no-loot/replay and compact/classic private-history checks.

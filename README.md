@@ -1384,6 +1384,10 @@ version-27 saves.
 Editor evidence rejects newspaper publication of aborted FIRST/SECOND input,
 including rehashed captures with an empty mailbox.
 
+The Xannor planetary smoke fixture defers unrelated Wanderer restoration using
+exhausted planet-generation capacity, isolating captured-home return assertions
+from random HQ occupancy while retaining the exact return-force check.
+
 
 ## Spy triggers and login-local shared visibility
 
