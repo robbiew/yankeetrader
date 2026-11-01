@@ -1344,3 +1344,21 @@ and confirmed Abort for up to 20 lines. Direct, team and ALL documents commit
 atomically using version-27 records. Earlier editor deferrals above are historical;
 character-level wrapping/backspace parity and live BBS acceptance remain open.
 See [native controls and implementation](yt-radio-editor/IMPLEMENTATION.md).
+
+
+## Spy triggers, observer visibility and target notifications — researched
+
+The 36-control original-DOS matrix and three exact target-relogin auxiliary chains
+recover command gates and per-spy last-report suppression. Native evidence adds
+20 complete byte ranges, all 870 relocations and four direct main-code trigger
+encodings. The old2253 fighter-deployment interpretation is corrected to shared
+missile/plasma launching. Accepted fighter transfers do not advance spies in the
+tested DOS path; unavailable Computer-9 planet queries consume a turn and advance.
+
+Spy detection shares an observer-local cache with sensors and attack eligibility,
+while saved target cloak remains unchanged. No persistent target warning was
+observed on the tested detection route; do not invent one from the old backlog.
+No Go/save27 changes are included. Next: implement the confirmed trigger/shared-
+visibility differences with atomic action saves, current-session/generation/season
+checks and accurate private receipts, following the [scoped contract](yt-spies/triggers/CONTRACT.md).
+See [recovery and limits](yt-spies/triggers/RECOVERY.md).

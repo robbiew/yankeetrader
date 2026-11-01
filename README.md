@@ -4,6 +4,13 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
+**Research complete; gameplay follow-up pending:** original-DOS spy controls now
+recover accepted/failed command triggers, per-spy report suppression and shared
+observer visibility. A spy reveal can expose a ship to sensors and attack choices
+without draining its saved cloak. No persistent target warning was observed on
+the tested exact-relogin paths. These findings do not change current Go behavior
+or save version 27. [Evidence and implementation boundary](research/yt-spies/triggers/RECOVERY.md).
+
 Broadcast newspaper publication is now available in-game to test. `RADIO ALL`
 (or classic computer option 5) previews the public text and sender alias, then
 saves one newspaper entry with all private copies. Abort publishes neither.
@@ -35,7 +42,7 @@ home planet is a capture target; plasma comes from planetary stocks. See
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Explicit season archive export/administrative reset tooling.
-- Remaining spy trigger/notification parity, newspaper event types, and character-level DOS editor wrapping/backspace parity.
+- Spy trigger/shared-visibility alignment (research complete; implementation pending), remaining newspaper event types, and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -1369,3 +1376,34 @@ version-27 saves.
 
 Editor evidence rejects newspaper publication of aborted FIRST/SECOND input,
 including rehashed captures with an empty mailbox.
+
+
+## Spy triggers and target-notification research
+
+Thirty-six normally returned DOS controls, three exact target world/auxiliary
+reload chains and 20 complete native byte observations distinguish actual command
+triggers from free information reads. The native load image verifies all 870
+relocations; a bounded complete main-code search anchors four direct trigger
+encodings. Accepted fighter transfers differ from current Go policy; positive
+launch and unavailable-planet-query paths need deliberate integration.
+
+The public/private boundary stays intact: no new radio packet or spy newspaper
+warning was observed in the tested detection path. Ordinary login news is
+accounted for separately. Shared visibility is observer-local, and neither the
+saved target cloak nor another login's detection state is cleared by these
+findings. The original shared cache is corroborated by sensor and declined
+attack-choice controls, without claiming exact RNG or battle-outcome parity.
+
+Portable validation and rehashed corruption controls:
+
+    python3 scripts/verify_spy_triggers.py
+    python3 scripts/test_spy_triggers_verifier.py
+
+The independent checker verifies fixture/actor identity, declared patches, raw
+logs, clock/return markers, ordered reports, action-specific resource effects and
+exact auxiliary chains. [Recovery](research/yt-spies/triggers/RECOVERY.md),
+[native evidence](research/yt-spies/triggers/NATIVE.md) and the
+[separate implementation contract](research/yt-spies/triggers/CONTRACT.md) retain
+remaining limits. All 74 portable evidence/control commands, all 42 new
+corruption controls and all 4,682 archive hashes pass. No Go source, schema,
+dependency or live BBS data was changed.

@@ -169,3 +169,11 @@
 /research/yt-radio-editor/dos/**/DOS*.LOG -diff
 /research/yt-radio-editor/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-radio-editor/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact copied-world spy trigger and notification witnesses.
+/research/yt-spies/triggers/dos/** -text
+/research/yt-spies/triggers/dos/**/KEYS.TXT -diff
+/research/yt-spies/triggers/dos/**/DOS*.LOG -diff
+/research/yt-spies/triggers/dos/**/RETURN.LOG -diff
+/research/yt-spies/triggers/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-spies/triggers/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

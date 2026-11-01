@@ -36,8 +36,8 @@ the new sessions do not independently test reconnect or message-file retention.
   fee and stores locations in session array DS:4b74; DS:50ae is active count.
   Computer option 15 (`1000:a382..a419`) lists those current hunt locations.
 - Main `1000:a6e4..a6f2` calls sub2 `2e79:1d3a..257a` with active count.
-  Callers of the enclosing routine include manual movement (`1cae`), fighter
-  deployment (`2253`), docking (`6693`) and an unavailable-information branch
+  Callers of the enclosing routine include manual movement (`1cae`), validated missile/plasma
+  launching (`2253`), docking (`6693`) and an unavailable-information branch
   (`a1da`). This is not evidence that every command or every spent turn runs it.
 - Each spy examines its current sector before choosing its next warp. A
   remembered last-reported sector (array index plus four) suppresses scanning
@@ -97,3 +97,16 @@ full cloak from its baseline rather than clearing it. The sensor probe's `S` com
 status. Extra input retries may produce an invalid-command line; the verifier
 requires the intended lists, moves, reports, resource totals and clean return,
 not merely process exit.
+
+
+## Trigger and notification follow-up
+
+[Fresh controls and native evidence](triggers/RECOVERY.md) correct the earlier
+fighter-deployment interpretation of main2253: that site is missile/plasma
+launching. Accepted fighter transfers do not advance spies in the tested DOS
+path. Unavailable Computer-9 planet information, successful docking/movement and
+validated positive launch input have separate trigger gates. Spy detection shares
+the observer's sensor/attack visibility cache without changing saved target cloak;
+no persistent target warning was observed on the tested exact-relogin paths.
+Current Go differences and remaining evidence limits are listed separately in the
+[follow-up contract](triggers/CONTRACT.md). This remains research-only.

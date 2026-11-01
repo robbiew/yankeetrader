@@ -80,3 +80,14 @@ PTY spy smoke covers ship details in compact and classic flows, history and
 unchanged saved cloak. Full race tests and vet are recorded at delivery.
 Native BBS acceptance, target notification, exact odds/RNG/MBF arithmetic and
 broader DOS spy triggers remain open.
+
+
+## Subsequent trigger and shared-visibility research
+
+[The new research](../triggers/RECOVERY.md) establishes further original-DOS
+trigger rules and shared observer visibility, with no persistent target warning
+on its tested detection/relogin route. The spy-only detection memory described
+above remains the current Go policy; it has not silently become sensor/combat
+visibility. The version-26 statement describes this historical implementation
+slice; the current build is version 27. See the separate
+[implementation contract](../triggers/CONTRACT.md) before aligning gameplay.

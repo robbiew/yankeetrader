@@ -1171,3 +1171,32 @@ Existing direct, team and broadcast PTY regression checks also passed.
 Editor verifier review fix: a seventeenth rehashed corruption reproduces an
 Abort newspaper leak with no delivered mailbox records; the verifier now rejects
 both aborted input lines independently of the expected delivered lines.
+
+
+## Spy triggers and target notifications — original-DOS research
+
+The [recovery report](../research/yt-spies/triggers/RECOVERY.md) retains 36
+normally returned DOS controls, 72 full world snapshots, three exact target
+world/auxiliary reload chains, raw/normalized logs, keys and DOS clock/return
+markers. Initial fixture/looting pilots informed clean controls and are not used
+to claim empty-sector traversal or spy-only resource conservation.
+
+Twenty complete REA byte observations, all 870 reconstructed MZ relocations and
+a bounded complete main-code search anchor four direct trigger encodings. The
+independent verifier checks actual branch execution, ordered spy/ship details,
+actor/alias identity, declared world patches, unchanged private target cloak,
+normal bookkeeping and weapon-specific effects. Ordinary plasma-hit news is
+separate from a spy warning. All 42 rehashed semantic/provenance/native corruption
+controls pass, and a positive changed elapsed-display control passes without
+relying on a full-output golden hash.
+
+Run `python3 scripts/verify_spy_triggers.py` and
+`python3 scripts/test_spy_triggers_verifier.py`. Fresh copied captures can be
+checked through `--dos <capture-directory>` without replacing the retained native
+dossier. All 4,682 original archive hashes are independently verified. All 74 portable CI evidence/control commands pass for this milestone, including
+new spy checks and the existing radio/editor/evidence regressions.
+
+No Go, saved schema27, dependency, archive or live BBS change is included. Full
+Go/PTY/cross-build suites are not rerun for this research-only update; their
+previous results remain historical. Exact RNG/ties, broader indirect dispatch,
+simultaneous DOS processes and native/live acceptance remain explicit limits.
