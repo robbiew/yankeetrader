@@ -1257,3 +1257,15 @@ Remaining work includes Mercenary plasma sales, additional spy/intelligence and
 public-message/newspaper paths, exact original RNG/numeric parity, balance tuning,
 live BBS acceptance and native Windows crash durability. Those are separate from
 this completed bounded firing path.
+
+
+## Team radio
+
+Nine completed DOS controls establish roster fanout, self-copy, independent
+read flags and recipient-at-send membership semantics. `RADIO TEAM` and computer
+5 now confirm the roster and save every private copy atomically, rechecking
+membership and aliases before commit. Existing version-26 mailbox records,
+history and delivery are reused; no migration is required. Tests cover stale
+drafts, concurrent retry, failures and compact/classic terminal flows.
+[Evidence, policies and limits](yt-team-radio/IMPLEMENTATION.md). Broadcast,
+multiline editing and native BBS acceptance remain open.

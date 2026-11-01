@@ -7,13 +7,14 @@ import (
 	"time"
 
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/store"
 )
 
 func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	query := strings.Join(args, " ")
 	if query == "" {
 		var err error
-		query, err = s.classicArgument("Send a message to who? (alias search or player number) ", pending)
+		query, err = s.classicArgument("Send a message to who? (alias search, player number or TEAM) ", pending)
 		if err != nil {
 			return err
 		}
@@ -25,11 +26,28 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	if err != nil {
 		return err
 	}
-	address, err := w.FindRadioRecipient(id, query)
+	isTeam := strings.EqualFold(strings.TrimSpace(query), "team")
+	var address game.RadioAddress
+	var team game.TeamRadioAddress
+	var label string
+	if isTeam {
+		team, err = w.FindTeamRadioRecipients(id)
+		if err == nil {
+			label = fmt.Sprintf("team %s (#%d)", team.Name, team.ID)
+		}
+	} else {
+		address, err = w.FindRadioRecipient(id, query)
+		label = fmt.Sprintf("%s (#%d)", address.Alias, address.ID)
+	}
 	if err != nil {
 		return err
 	}
-	answer, err := s.classicArgument(fmt.Sprintf("Send to %s (#%d)? [y/N] ", address.Alias, address.ID), pending)
+	if isTeam {
+		if err = s.teamRadioRecipients(team); err != nil {
+			return err
+		}
+	}
+	answer, err := s.classicArgument(fmt.Sprintf("Send to %s? [y/N] ", label), pending)
 	if err != nil {
 		return err
 	}
@@ -56,7 +74,13 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	if err != nil {
 		return err
 	}
-	draft, err := w.PrepareRadio(id, address, text, s.Now())
+	var draft game.RadioDraft
+	var teamDraft game.TeamRadioDraft
+	if isTeam {
+		teamDraft, err = w.PrepareTeamRadio(id, team, text, s.Now())
+	} else {
+		draft, err = w.PrepareRadio(id, address, text, s.Now())
+	}
 	if err != nil {
 		return err
 	}
@@ -65,7 +89,15 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 			return err
 		}
 	}
-	if err = s.Terminal.Printf("To: %s (#%d)\r\n%s\r\n[S] Send [A] Abort -=> ", address.Alias, address.ID, text); err != nil {
+	if err = s.Terminal.Printf("To: %s\r\n", label); err != nil {
+		return err
+	}
+	if isTeam {
+		if err = s.teamRadioRecipients(team); err != nil {
+			return err
+		}
+	}
+	if err = s.Terminal.Printf("%s\r\n[S] Send [A] Abort -=> ", text); err != nil {
 		return err
 	}
 	answer, err = s.readLiteralLine()
@@ -76,19 +108,31 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 		return s.Terminal.Printf("Radio cancelled.\r\n")
 	}
 	var messageID uint64
+	var messageIDs []uint64
 	err = s.Store.Update(func(w *game.World) error {
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired; radio cancelled")
 		}
 		var err error
-		messageID, err = w.CommitRadio(draft, s.Now())
+		if isTeam {
+			messageIDs, err = w.CommitTeamRadio(teamDraft, s.Now())
+		} else {
+			messageID, err = w.CommitRadio(draft, s.Now())
+		}
 		if err == nil && !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired; radio cancelled")
 		}
 		return err
 	})
 	if err != nil {
-		return err
+		var durability *store.DurabilityError
+		if !isTeam || !errors.As(err, &durability) {
+			return err
+		}
+		return s.Terminal.Printf("%d team copies saved. %s\r\n", len(messageIDs), err)
+	}
+	if isTeam {
+		return s.Terminal.Printf("Transmission successful! %d team copies saved.\r\n", len(messageIDs))
 	}
 	return s.Terminal.Printf("Transmission successful! Message #%d saved.\r\n", messageID)
 }
@@ -166,4 +210,16 @@ func (s Session) radioHistory(id int, args []string, unreadOnly bool) error {
 			return nil
 		}
 	}
+}
+
+func (s Session) teamRadioRecipients(team game.TeamRadioAddress) error {
+	if err := s.Terminal.Printf("Recipients (including you):\r\n"); err != nil {
+		return err
+	}
+	for _, recipient := range team.Recipients {
+		if err := s.Terminal.Printf("  %s (#%d)\r\n", recipient.Alias, recipient.ID); err != nil {
+			return err
+		}
+	}
+	return nil
 }
