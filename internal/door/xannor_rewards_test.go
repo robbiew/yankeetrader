@@ -58,13 +58,7 @@ func TestHQRewardReceiptsMatchActualCreditAndPublicPrivacy(t *testing.T) {
 				s.Store = st.ForShip(1, 0, 1)
 				var err error
 				if missiles {
-					v, _ := func() (*game.Visibility, error) {
-						w, e := st.View()
-						if e != nil {
-							return nil, e
-						}
-						return w.NewVisibility(1)
-					}()
+					v, _ := s.Store.SessionVisibility()
 					err = s.launchMissiles(1, []string{"8", "3"}, &[]string{}, v)
 				} else {
 					err = s.defenseEncounter(1, []string{"8", "10000"}, &[]string{}, false)

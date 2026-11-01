@@ -155,7 +155,9 @@ both meaning and provenance. [Native byte verification](NATIVE.md) independently
 reconstructs all 870 relocations, the 20 complete observed ranges and the bounded
 four-match search.
 
-This milestone changes no Go source, saved-world fields or dependencies. The
+This research milestone changed no Go source, saved-world fields or dependencies.
+The subsequent [implementation](IMPLEMENTATION.md) adds the confirmed gameplay
+without changing schema 27. The
 current version-27 format and independent radio read flags remain unchanged.
 The follow-up [implementation contract](CONTRACT.md) separates recovered rules,
 current Go differences and deliberate safety policies. Exact DOS RNG/MBF parity,

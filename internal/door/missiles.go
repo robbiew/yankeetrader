@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/store"
 	"math/rand"
 	"strconv"
 	"strings"
-	"time"
 )
 
 func (s Session) launchMissiles(id int, args []string, pending *[]string, v *game.Visibility) error {
@@ -36,14 +36,11 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	if err != nil {
 		return errors.New("choose a whole number of missiles")
 	}
-	w, err := s.Store.View()
+	intent, w, err := s.Store.PrepareMissiles(to, count, v, s.Now, s.Deadline)
 	if err != nil {
 		return err
 	}
-	intent, err := w.PrepareMissile(id, to, count, v)
-	if err != nil {
-		return err
-	}
+	defer s.Store.CancelMissiles(intent)
 	name := missileTargetSummary(w, id, intent)
 	route := make([]string, len(intent.Route))
 	for i, sector := range intent.Route {
@@ -85,21 +82,19 @@ func (s Session) launchMissiles(id int, args []string, pending *[]string, v *gam
 	if !strings.EqualFold(strings.TrimSpace(answer), "y") {
 		return s.Terminal.Printf("Missile launch cancelled.\r\n")
 	}
-	var result game.MissileResult
-	err = s.Store.Update(func(w *game.World) error {
-		if !time.Now().Before(s.Deadline) {
-			return errors.New("session time expired; missile launch cancelled")
-		}
-		var err error
-		result, err = w.CommitMissile(intent, v, rand.Float64, s.Now())
-		if err == nil && !time.Now().Before(s.Deadline) {
-			return errors.New("session time expired; missile launch cancelled")
-		}
-		return err
-	})
-	if err != nil {
-		return err
+	result, err := s.Store.LaunchMissiles(intent, v, rand.Float64, s.Now, s.Deadline)
+	return s.missileReceipt(id, name, result, err)
+}
+
+func (s Session) missileReceipt(id int, name string, result game.MissileResult, saved error) error {
+	var warning *store.DurabilityError
+	if saved != nil && !errors.As(saved, &warning) {
+		return saved
 	}
+	return errors.Join(saved, s.showMissileResult(id, name, result))
+}
+func (s Session) showMissileResult(id int, name string, result game.MissileResult) error {
+	var err error
 	if err = s.showMissileImpact("Missile launch saved", name, "You", result.Primary); err != nil {
 		return err
 	}

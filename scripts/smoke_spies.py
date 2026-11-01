@@ -17,7 +17,7 @@ BINARY = str(ROOT / "bin/yt")
 
 
 @without_disruption
-def play(data, alias, commands, classic=False, body=None, action="s"):
+def play(data, alias, commands, classic=False, body=None, action="s", followups=()):
     master, slave = pty.openpty()
     options = ["-ascii"] if classic else ["-compact"]
     proc = subprocess.Popen([BINARY, *options, "-data", str(data), "-local", alias],
@@ -30,6 +30,7 @@ def play(data, alias, commands, classic=False, body=None, action="s"):
                   (b"[S] Send [A] Abort -=> ", action.encode() + b"\r"),
                   (b"saved." if action == "s" else b"Radio cancelled.",
                    b"6;1;q;y\r" if classic else b"messages;q\r")]
+    steps += list(followups)
     output = pending = b""
     step = 0
     deadline = time.monotonic() + 20
@@ -64,40 +65,45 @@ def play(data, alias, commands, classic=False, body=None, action="s"):
         os.close(master)
 
 
-with tempfile.TemporaryDirectory(prefix="yt-spies-smoke-") as temp:
-    data=Path(temp)/"world"
-    subprocess.run([BINARY,"-data",str(data),"-init","-sectors","8"],check=True,capture_output=True)
-    play(data,"Trader","q")
-    play(data,"Enemy","q")
-    path=data/"world.json"
-    world=json.loads(path.read_text())
-    player=world["Players"]["1"]
-    player["Credits"]=2000000
-    enemy=world["Players"]["2"]
-    enemy.update(Sector=8, Cloak=0, Fighters=42, Shields=10)
-    world["Sectors"]["1"]["Warps"]=[2]
-    world["Sectors"]["8"]["Warps"]=[]
-    world["Sectors"]["8"]["Minefield"]=[{"Count":7}]
-    world["Sectors"]["8"]["Defense"]={"Owner":-1,"Fighters":42}
-    path.write_text(json.dumps(world))
-    transcript=play(data,"Trader","p;hire 8;spies;s;spies;m 2;spies;intel;q")
-    assert transcript.count("RADIO MESSAGE FROM SPY #1")==2,transcript
-    assert "SECTOR HAS 7 MINES" in transcript and "Fighters in sector: 42 (Belong to The Xannor)" in transcript
-    saved=json.loads(path.read_text())
-    assert saved["Players"]["1"]["Credits"]==1667000 and saved["Players"]["1"]["Turns"]==498
-    assert "Enemy - Team: 0 - Fighters: 42 - Shields: 10" in transcript,transcript
-    assert saved["Players"]["2"].get("Cloak",0)==0
-    assert saved["Version"]==27 and not saved.get("Radio")
-    text=play(data,"Trader","spies;intel;q")
-    assert "You do not have any spies!" in text and "No intelligence reports this login." in text
-    transcript+=text
-    saved=json.loads(path.read_text());saved["Players"]["1"]["Sector"]=1
-    path.write_text(json.dumps(saved))
-    text=play(data,"Trader","p;9;1;8;0;c;15;1;m;2;c;15;1;intel;q;y",classic=True)
-    assert "Hire how many spies?" in text and "Start spy # 1 in what sector?" in text,text
-    assert text.count("RADIO MESSAGE FROM SPY #1")==2 and text.count("Spy # 1 will hunt in sector 8.")==3,text
-    transcript+=text
-    final=json.loads(path.read_text())
-    assert final["Players"]["1"]["Credits"]==1334000 and final["Players"]["1"]["Turns"]==496
-    (ROOT/"evidence/spies-smoke.txt").write_text("\n".join(line.rstrip() for line in transcript.splitlines())+"\n")
-    print("Spies PTY passed: Earth hiring, computer 15, compact commands, reports/history, resources, reconnect isolation and zero-warp safety.")
+def main():
+    with tempfile.TemporaryDirectory(prefix="yt-spies-smoke-") as temp:
+        data=Path(temp)/"world"
+        subprocess.run([BINARY,"-data",str(data),"-init","-sectors","8"],check=True,capture_output=True)
+        play(data,"Trader","q")
+        play(data,"Enemy","q")
+        path=data/"world.json"
+        world=json.loads(path.read_text())
+        player=world["Players"]["1"]
+        player["Credits"]=2000000
+        enemy=world["Players"]["2"]
+        enemy.update(Sector=8, Cloak=0, Fighters=42, Shields=10)
+        world["Sectors"]["1"]["Warps"]=[2]
+        world["Sectors"]["8"]["Warps"]=[]
+        world["Sectors"]["8"]["Minefield"]=[{"Count":7}]
+        world["Sectors"]["8"]["Defense"]={"Owner":-1,"Fighters":42}
+        path.write_text(json.dumps(world))
+        transcript=play(data,"Trader","p;hire 8;spies;s;spies;m 2;spies;intel;q")
+        assert transcript.count("RADIO MESSAGE FROM SPY #1")==2,transcript
+        assert "SECTOR HAS 7 MINES" in transcript and "Fighters in sector: 42 (Belong to The Xannor)" in transcript
+        saved=json.loads(path.read_text())
+        assert saved["Players"]["1"]["Credits"]==1667000 and saved["Players"]["1"]["Turns"]==498
+        assert "Enemy - Team: 0 - Fighters: 42 - Shields: 10" in transcript,transcript
+        assert saved["Players"]["2"].get("Cloak",0)==0
+        assert saved["Version"]==27 and not saved.get("Radio")
+        text=play(data,"Trader","spies;intel;q")
+        assert "You do not have any spies!" in text and "No intelligence reports this login." in text
+        transcript+=text
+        saved=json.loads(path.read_text());saved["Players"]["1"]["Sector"]=1
+        path.write_text(json.dumps(saved))
+        text=play(data,"Trader","p;9;1;8;0;c;15;1;m;2;c;15;1;intel;q;y",classic=True)
+        assert "Hire how many spies?" in text and "Start spy # 1 in what sector?" in text,text
+        assert text.count("RADIO MESSAGE FROM SPY #1")==2 and text.count("Spy # 1 will hunt in sector 8.")==3,text
+        transcript+=text
+        final=json.loads(path.read_text())
+        assert final["Players"]["1"]["Credits"]==1334000 and final["Players"]["1"]["Turns"]==496
+        (ROOT/"evidence/spies-smoke.txt").write_text("\n".join(line.rstrip() for line in transcript.splitlines())+"\n")
+        print("Spies PTY passed: Earth hiring, computer 15, compact commands, reports/history, resources, reconnect isolation and zero-warp safety.")
+
+
+if __name__ == "__main__":
+    main()

@@ -5,6 +5,7 @@ import (
 	"math/rand"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/robbiew/yankeetrader/internal/game"
 )
@@ -31,12 +32,24 @@ func (s Session) setSectorFighters(id int, args []string, pending *[]string, rei
 	if err != nil {
 		return errors.New("choose a whole fighter quantity")
 	}
-	err = s.Store.UpdateWithSpies(func(w *game.World) error {
-		if reinforce {
-			return w.ReinforceSector(id, count)
+	err = s.Store.Update(func(w *game.World) error {
+		if !time.Now().Before(s.Deadline) {
+			return errors.New("session time expired")
 		}
-		return w.SetSectorFighters(id, count)
-	}, s.Now(), s.Deadline)
+		var e error
+		if reinforce {
+			e = w.ReinforceSector(id, count)
+		} else {
+			e = w.SetSectorFighters(id, count)
+		}
+		if e != nil {
+			return e
+		}
+		if !time.Now().Before(s.Deadline) {
+			return errors.New("session time expired")
+		}
+		return nil
+	})
 	if err != nil {
 		return err
 	}

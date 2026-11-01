@@ -27,7 +27,9 @@ def exercise(guard):
             world['Xannor'] = dict(HQ=8, Reserve=0)
             for sector in range(8, 13):
                 world['Sectors'][str(sector)]['Warps'] = []
-            world['Sectors']['9']['Warps'] = [8] if mode == 'return' else [10]
+            # Keep mine-only accounting on the occupied HQ destination: a daily
+            # Wanderer arrival at empty sector 10 could add planetary losses.
+            world['Sectors']['9']['Warps'] = [10] if mode == 'planet' else [8]
             world['Sectors']['10']['Warps'] = [8]
             world['Sectors']['8']['Defense'] = dict(Owner=-1, Fighters=1)
             force = 100000 if mode == 'mines' else 100
@@ -37,7 +39,8 @@ def exercise(guard):
                     Production=[0, 0, 0], Cargo=[0, 0, 0], Fighters=stock, Missiles=0, Mines=0, Plasma=0, Ground=100, Bank=1)
                 world['Sectors'][str(sector)]['Planet'] = slot
             if mode != 'return':
-                world['Sectors']['10']['Minefield'] = [dict(Owner=1, Count=3)]
+                mine_sector = '10' if mode == 'planet' else '8'
+                world['Sectors'][mine_sector]['Minefield'] = [dict(Owner=1, Count=3)]
             if mode == 'planet':
                 world['Sectors']['10']['Defense'] = dict(Owner=1, Fighters=100)
             if mode == 'planet':
@@ -64,7 +67,7 @@ def exercise(guard):
                 if mode == 'return':
                     assert final['Fighters'] == 101
                 else:
-                    assert not saved['Sectors']['10'].get('Minefield')
+                    assert not saved['Sectors']['8'].get('Minefield')
                     assert 3 <= 100001 - final['Fighters'] <= 3000
             result = guard.run(subprocess.run, [BINARY, '-data', str(data), '-maint'], check=True, capture_output=True, text=True, timeout=10)
             assert 'no daily phases repeated' in result.stdout

@@ -1,5 +1,8 @@
 # Spies and intelligence reports
 
+This document records the original bounded slice. The [trigger and shared-visibility
+implementation](triggers/IMPLEMENTATION.md) supersedes its trigger/cache limits.
+
 Earth's normal shop option 9 hires spies; compact callers dock with `P` and use
 `HIRE <starting sector> [starting sector ...]`. Each costs 333,000 credits,
 with at most three active per login. All requested starts, the current Earth
@@ -14,7 +17,8 @@ hunt locations. These are ordinary player commands, with no research/debug path.
 ## Search and reports
 
 Successful manual movement (including confirmed mine entry), each completed
-autopilot hop, docking and sector-fighter transfers advance spies once. Search
+autopilot hop and docking advance spies once. The follow-up removes fighter
+transfers and adds validated weapon launches and charged unavailable planet queries. Search
 precedes **spy** movement, using the committed action's current world snapshot.
 A rejected/cancelled action never advances spies. Ordinary sensors, list/history,
 trade, free information screens and maintenance do not advance them. This is
@@ -28,8 +32,8 @@ The [ship/cloak/disruption follow-up](intelligence/IMPLEMENTATION.md) adds
 ship names, team numbers, fighters/shields, shimmering notices and login-local
 disruptions. No planet balances, production, warehouse stock, carried weapons,
 account identities or session credentials enter a report. Planet projection
-uses current lazy growth on a copy and does not mutate the planet. Intel grants
-no landing or combat access and does not change saved cloak energy or combat visibility.
+uses current lazy growth on a copy and does not mutate the planet. Intel grants no landing permission. Confirmed spy detections now share
+login-local sensor/attack eligibility; saved cloak energy stays unchanged.
 
 A finding records its sector as that spy's last reported sector. While hunting
 there again, the spy suppresses contents and continues moving. An empty sector

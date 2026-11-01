@@ -1,5 +1,8 @@
 # Spy trigger and shared-detection implementation contract
 
+The [implementation](IMPLEMENTATION.md) now satisfies the scoped rules below.
+References to “current Go” describe the pre-implementation research baseline.
+
 Research is distinct from gameplay implementation. Do not enable target warnings
 or change visibility merely by merging these evidence files.
 

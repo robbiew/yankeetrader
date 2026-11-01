@@ -84,10 +84,9 @@ broader DOS spy triggers remain open.
 
 ## Subsequent trigger and shared-visibility research
 
-[The new research](../triggers/RECOVERY.md) establishes further original-DOS
-trigger rules and shared observer visibility, with no persistent target warning
-on its tested detection/relogin route. The spy-only detection memory described
-above remains the current Go policy; it has not silently become sensor/combat
-visibility. The version-26 statement describes this historical implementation
-slice; the current build is version 27. See the separate
-[implementation contract](../triggers/CONTRACT.md) before aligning gameplay.
+[The research](../triggers/RECOVERY.md) establishes further original-DOS trigger
+rules and shared observer visibility, with no persistent target warning on its
+tested detection/relogin route. The [implementation](../triggers/IMPLEMENTATION.md)
+now shares spy, sensor and anti-cloak detections within the bound login and adds
+confirmed triggers. The spy-only limits above describe this historical slice;
+current world version remains 27, with no new persistent cache or notification.

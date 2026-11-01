@@ -4,12 +4,13 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-**Research complete; gameplay follow-up pending:** original-DOS spy controls now
-recover accepted/failed command triggers, per-spy report suppression and shared
-observer visibility. A spy reveal can expose a ship to sensors and attack choices
-without draining its saved cloak. No persistent target warning was observed on
-the tested exact-relogin paths. These findings do not change current Go behavior
-or save version 27. [Evidence and implementation boundary](research/yt-spies/triggers/RECOVERY.md).
+**Spy triggers and shared visibility are available in-game:** accepted movement,
+docking, validated missile/plasma launches and charged unavailable planet queries
+advance this login's spies. Fighter transfers and free information reads do not.
+Spy, sensor and anti-cloak detections share a private login cache used for attack
+eligibility; saved target cloak stays unchanged. Action saves publish reports and
+new grants together, with receipts preserving committed storage warnings.
+Save version remains **27**. [Rules and validation](research/yt-spies/triggers/IMPLEMENTATION.md).
 
 Broadcast newspaper publication is now available in-game to test. `RADIO ALL`
 (or classic computer option 5) previews the public text and sender alias, then
@@ -42,7 +43,7 @@ home planet is a capture target; plasma comes from planetary stocks. See
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Explicit season archive export/administrative reset tooling.
-- Spy trigger/shared-visibility alignment (research complete; implementation pending), remaining newspaper event types, and character-level DOS editor wrapping/backspace parity.
+- Remaining newspaper event types, additional unconfirmed spy command paths, and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -164,7 +165,7 @@ The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sec
 | `B` / `ACQUIRE` | Buy the current port after explicit `Y` confirmation |
 | `TREASURY` / computer `C`, `12` | Report personally owned port balances |
 | `PORTREPORT [sector]` / computer `C`, `2` | Remote ordinary-port commerce report; free |
-| `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; a query blocked by sector fighters costs one turn |
+| `PLANETREPORT [sector]` / computer `C`, `9` | Remote planet report; missing planet or hostile sector defenses costs one turn and advances spies |
 | `RANK` / computer `C`, `4` | Rank players and teams from current assets and save all player scores; free |
 | `RANK OLD` / computer `C`, `4`, `O` | Stored scores with current aliases, teams and port counts; free |
 | `BATTLES` | Your private Xannor battle history; last 32 reports retained |
@@ -569,10 +570,10 @@ and native BBS acceptance testing.
 
 Spies now report other living ships' names, team numbers, fighters and shields,
 plus this login's space-time disruptions. Partial-cloak detection may produce a
-shimmering notice; successful detections stay within the spy network and are
-bound to the target ship generation. Saved cloak energy, combat visibility and
-durable radio stay unchanged. Exact DOS RNG odds and target notification remain
-outside this bounded slice. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
+shimmering notice; successful detections share the login cache used by sensors,
+anti-cloak and attack eligibility, bound to target ship generation and season.
+Saved cloak energy and durable radio stay unchanged. No persistent target warning
+is added for the tested detection path. Exact DOS RNG odds remain unresolved. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
 This feature adds no further save fields (current world version 27). The DOS evidence verifier
 checks complete ordered ship records, including exact shield values; corruption
 controls reject altered values even when transcript hashes are refreshed.
@@ -580,7 +581,8 @@ controls reject altered values even when transcript hashes are refreshed.
 Spies are available at Earth for 333,000 credits each, up to three per login.
 Choose their starting sectors through Earth option 9 or compact `HIRE` while
 docked. Computer option 15 / `SPIES` lists their locations. Successful movement
-(including autopilot hops), docking and sector-fighter transfers search each
+(including autopilot hops), docking, validated positive missile/plasma launches and charged
+unavailable planet queries search each
 spy's current sector, then move it along a random outgoing warp. Reports cover
 mines, planet names/ground forces, other owners' sector defenses, ships and
 this login's disruptions. Repeated
@@ -590,7 +592,12 @@ hold position. Spy work has no extra turn charge beyond the triggering action.
 Reports appear between commands; `INTEL` retains the last 30 for this login.
 Spies and intelligence history end on disconnect or logout; hires are not
 refunded. Direct/team radio history remains persistent and separate. Exact
-cloak-detection odds, target notification and broader trigger parity remain open.
+cloak-detection odds and unconfirmed command paths remain open. Sector-fighter
+transfers, mines and free information reads do not advance spies. Missing-planet
+or hostile-defense-blocked `PLANETREPORT` / computer option 9 queries spend one
+turn; successful planet reports remain free. A spent unreachable plasma launch
+advances once, while rejected missile routes do not. Pre-impact spy grants never
+expand a sealed weapon confirmation.
 [Research](research/yt-spies/RECOVERY.md) and [implementation policies and validation](research/yt-spies/IMPLEMENTATION.md).
 
 The Galactic newspaper is available through computer option 8 and
@@ -1378,14 +1385,14 @@ Editor evidence rejects newspaper publication of aborted FIRST/SECOND input,
 including rehashed captures with an empty mailbox.
 
 
-## Spy triggers and target-notification research
+## Spy triggers and login-local shared visibility
 
 Thirty-six normally returned DOS controls, three exact target world/auxiliary
 reload chains and 20 complete native byte observations distinguish actual command
 triggers from free information reads. The native load image verifies all 870
 relocations; a bounded complete main-code search anchors four direct trigger
-encodings. Accepted fighter transfers differ from current Go policy; positive
-launch and unavailable-planet-query paths need deliberate integration.
+encodings. The implementation follows the confirmed fighter-transfer, positive-launch and
+unavailable-planet-query gates, with atomic private-state publication.
 
 The public/private boundary stays intact: no new radio packet or spy newspaper
 warning was observed in the tested detection path. Ordinary login news is
@@ -1405,5 +1412,9 @@ exact auxiliary chains. [Recovery](research/yt-spies/triggers/RECOVERY.md),
 [native evidence](research/yt-spies/triggers/NATIVE.md) and the
 [separate implementation contract](research/yt-spies/triggers/CONTRACT.md) retain
 remaining limits. All 74 portable evidence/control commands, all 42 new
-corruption controls and all 4,682 archive hashes pass. No Go source, schema,
-dependency or live BBS data was changed.
+corruption controls and all 4,682 archive hashes passed for the research slice.
+The [implementation](research/yt-spies/triggers/IMPLEMENTATION.md) adds gameplay
+and regression/terminal coverage without changing schema 27 or dependencies.
+The Xannor mine-only terminal fixture isolates its occupied HQ route from unrelated
+Wanderer planetary combat; production faction behavior is unchanged.
+Live BBS acceptance and native Windows durability remain unverified.

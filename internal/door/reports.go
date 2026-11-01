@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/robbiew/yankeetrader/internal/game"
+	"github.com/robbiew/yankeetrader/internal/store"
 )
 
 func (s Session) computerReport(id int, command string, args []string, pending *[]string) error {
@@ -60,38 +61,8 @@ func (s Session) computerReport(id int, command string, args []string, pending *
 		return errors.New("session time expired")
 	}
 	if command == "planetreport" {
-		var report game.PlanetReport
-		var caller game.Player
-		err = s.Store.Update(func(w *game.World) error {
-			if !time.Now().Before(s.Deadline) {
-				return errors.New("session time expired")
-			}
-			var err error
-			report, err = w.RemotePlanetReport(id, sector, s.Now())
-			if err == nil {
-				caller = *w.Players[id]
-			}
-			if err == nil && !time.Now().Before(s.Deadline) {
-				return errors.New("session time expired")
-			}
-			return err
-		})
-		if err != nil {
-			return err
-		}
-		if !report.Available {
-			if report.TurnSpent {
-				return s.Terminal.Printf("No information available. One turn spent: sector fighters blocked the report.\r\n")
-			}
-			return s.Terminal.Printf("No information available.\r\n")
-		}
-		if report.Details == nil {
-			return s.Terminal.Printf("\r\nPlanet: %s -*- Ground Forces: %d\r\n", report.Name, report.Ground)
-		}
-		if err = s.planetColor(3); err != nil {
-			return err
-		}
-		return s.planetDisplay(&caller, *report.Details)
+		report, caller, err := s.Store.PlanetReport(sector, s.Now, s.Deadline)
+		return s.planetReportReceipt(report, &caller, err)
 	}
 	w, err := s.Store.View()
 	if err != nil {
@@ -124,4 +95,27 @@ func (s Session) computerReport(id int, command string, args []string, pending *
 		}
 	}
 	return s.portColor(6)
+}
+
+func (s Session) planetReportReceipt(report game.PlanetReport, caller *game.Player, saved error) error {
+	var warning *store.DurabilityError
+	if saved != nil && !errors.As(saved, &warning) {
+		return saved
+	}
+	return errors.Join(saved, s.showPlanetReport(report, caller))
+}
+func (s Session) showPlanetReport(report game.PlanetReport, caller *game.Player) error {
+	if !report.Available {
+		if report.TurnSpent {
+			return s.Terminal.Printf("Planet report saved: No information available. One turn spent: %s. Turns remaining: %d.\r\n", report.Unavailable, caller.Turns)
+		}
+		return s.Terminal.Printf("No information available.\r\n")
+	}
+	if report.Details == nil {
+		return s.Terminal.Printf("\r\nPlanet: %s -*- Ground Forces: %d\r\n", report.Name, report.Ground)
+	}
+	if err := s.planetColor(3); err != nil {
+		return err
+	}
+	return s.planetDisplay(caller, *report.Details)
 }

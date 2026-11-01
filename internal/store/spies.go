@@ -17,22 +17,58 @@ func (s Store) UpdateWithSpies(fn func(*game.World) error, now, deadline time.Ti
 			return errors.New("session time expired")
 		}
 		return fn(w)
-	}, false, false, func(w *game.World, n *game.SpyNetwork) error {
-		if !time.Now().Before(deadline) {
-			return errors.New("session time expired")
+	}, false, false, func(w *game.World, n *game.SpyNetwork) error { return s.advanceSpies(w, n, now, deadline) })
+}
+func (s Store) advanceSpies(w *game.World, n *game.SpyNetwork, now, deadline time.Time) error {
+	if !time.Now().Before(deadline) {
+		return errors.New("session time expired")
+	}
+	// Fatal actions commit but cannot confer access on the obsolete login.
+	if w.CheckSession(s.ship.id, s.ship.generation, s.ship.season) != nil {
+		return nil
+	}
+	rng := s.ship.spyRNG
+	if rng == nil {
+		rng = rand.Float64
+	}
+	if err := n.Advance(w, now, rng); err != nil {
+		return err
+	}
+	if !time.Now().Before(deadline) {
+		return errors.New("session time expired")
+	}
+	return nil
+}
+
+// SessionVisibility creates one private cache per bound login. It cannot bind a
+// cache borrowed from another login, even for the same account/incarnation.
+func (s Store) SessionVisibility() (v *game.Visibility, err error) {
+	if s.ship == nil {
+		return nil, errors.New("visibility requires a bound login")
+	}
+	s.ship.arrivalMu.Lock()
+	defer s.ship.arrivalMu.Unlock()
+	s.ship.spyMu.Lock()
+	defer s.ship.spyMu.Unlock()
+	err = s.locked(func() error {
+		w, e := s.load()
+		if e != nil {
+			return e
 		}
-		// A fatal action must still commit. The obsolete login cannot read its spies.
-		if err := w.CheckSession(s.ship.id, s.ship.generation, s.ship.season); err != nil {
-			return nil
+		if e = s.checkShip(w); e != nil {
+			return e
 		}
-		if err := n.Advance(w, now, rand.Float64); err != nil {
-			return err
+		if s.ship.visibility == nil {
+			s.ship.visibility, e = w.NewVisibility(s.ship.id)
+			if e != nil {
+				return e
+			}
 		}
-		if !time.Now().Before(deadline) {
-			return errors.New("session time expired")
-		}
+		v = s.ship.visibility
+		s.ship.spies.PublishVisibility(v)
 		return nil
 	})
+	return
 }
 
 // HireSpies samples its clock after both session and world locks are held so

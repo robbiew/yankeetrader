@@ -32,8 +32,7 @@ func cloakSession(t *testing.T, term *scripted) (Session, int, string) {
 		t.Fatal(err)
 	}
 	s.Store = s.Store.ForShip(id, 0, 1)
-	w, _ := s.Store.View()
-	s.visibility, _ = w.NewVisibility(id)
+	s.visibility, _ = s.Store.SessionVisibility()
 	return s, id, token
 }
 func TestCloakDoorPurchaseReceiptsAndDefaults(t *testing.T) {

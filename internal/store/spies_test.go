@@ -60,7 +60,7 @@ func TestSpyTransactionsRollbackAndReconnectIsolation(t *testing.T) {
 			}
 		})
 	}
-	if err := bound.UpdateWithSpies(func(w *game.World) error { return w.SetSectorFighters(1, 0) }, time.Now(), deadline); err != nil {
+	if err := bound.UpdateWithSpies(func(w *game.World) error { return w.Dock(1, time.Now()) }, time.Now(), deadline); err != nil {
 		t.Fatal(err)
 	}
 	_, reports, err := bound.SpySnapshot(true)

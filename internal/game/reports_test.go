@@ -51,7 +51,7 @@ func TestRemotePlanetReportVisibility(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			if mode == "hostile" {
+			if mode == "hostile" || mode == "missing" {
 				if r.Available || !r.TurnSpent || r.Name != "" || r.Ground != 0 || r.Details != nil || p.Turns != 499 || p.Sector != 100 {
 					t.Fatalf("blocked query disclosed or moved: %+v, %+v", r, p)
 				}
@@ -61,12 +61,7 @@ func TestRemotePlanetReportVisibility(t *testing.T) {
 			if string(before) != string(after) {
 				t.Fatal("free report mutated world")
 			}
-			if mode == "missing" {
-				if r.Available || r.Name != "" || r.Details != nil {
-					t.Fatalf("missing planet: %+v", r)
-				}
-				return
-			}
+
 			if !r.Available || r.Name != "Test Planet" || r.Ground != planet.Ground || r.TurnSpent {
 				t.Fatalf("wrong public report: %+v", r)
 			}

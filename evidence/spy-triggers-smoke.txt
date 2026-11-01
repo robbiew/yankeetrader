@@ -1,0 +1,497 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 3000000 credits | 500 turns > p;hire 8;f 0;spies;planetreport 3;spies;missile 2 1
+Earth: holds 500, fighters 100, shields 50, forces 750 credits each. Danger scanner: 250000 (one). Cloak: 1000 per point; ANTICLOAK: 500000 per login activation.
+LOTTERY [six digits]: 5 credits, finite daily plays, fresh Y/N.
+Spies: 333000 each; HIRE <starting sector> [sector ...], max 3 this login.
+Spy # 1 will hunt in sector 8.
+Sector fighter transfer saved.
+Spy # 1 will hunt in sector 8.
+Planet report saved: No information available. One turn spent: no planet exists in that sector. Turns remaining: 498.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+Spy # 1 will hunt in sector 7.
+Missile course (1 warps): 1 -> 2
+Launch 1 missiles into sector 2 (sector defenses or mines; 0 route mines)? Your shields: 0. A surviving ship with a route back may retaliate. [y/N] y
+Missile launch saved: 1 missiles fired, 0 mines destroyed. No ship struck.
+Sector interception: 1 missiles, 10 fighters destroyed in sector 2.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 7:
+** WARNING! SECTOR HAS 7 MINES! **
+
+Sector 1 | 2667000 credits | 497 turns > spies;plasma 3 1
+Spy # 1 will hunt in sector 6.
+Launch 1 plasma bolts toward sector 3 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 496. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 0/0; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/0.
+No course reached the requested destination; the accepted launch was spent.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 6:
+** WARNING! SECTOR HAS 11 MINES! **
+
+Sector 1 | 2667000 credits | 496 turns > spies;s;q
+Spy # 1 will hunt in sector 6.
+[ Sensors Activated ]
+Sector: 2 | Warps: [1]
+Port: Port 2 | Selling: ore
+Sector: 8 | Warps: [7]
+Port: Port 8 | Selling: ore
+Ship: Enemy | Team: 0 | Fighters: 42 | Shields: 10000
+[ End Sensor Scan ]
+Saved. Safe travels, Caller.
+
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 2667000 credits | 496 turns > spies;intel;q
+You do not have any spies!
+No intelligence reports this login.
+Saved. Safe travels, Caller.
+
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Caller!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Caller
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 3000000     | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 5           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+
+Time: 179:59  Main Command (?=Help)? p;9;1;8;0;f;0;c;15;9;3;15;1;!;2;1
+<Port>
+
+Docking, One Turn Deducted, 499 left.
+
+Commerce report for Earth: 11-01-2026 15:21:23
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 3000
+[2] Cargo Holds       * 500    * 6000
+[3] Fighters          * 100    * 30000
+[4] Play Lottery      * 5      * 600000
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 6
+[7] Ground Forces     * 750    * 4000
+[8] Shield Power      * 50     * 60000
+[9] Hire Spies (Each) * 333000 * 9
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 3000000 -=*=- Buy Which Item? -=>Hire how many spies? [0]? Start spy # 1 in what sector? Spy # 1 will hunt in sector 8.
+
+Commerce report for Earth: 11-01-2026 15:21:23
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 2667
+[2] Cargo Holds       * 500    * 5334
+[3] Fighters          * 100    * 26670
+[4] Play Lottery      * 5      * 533400
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 5
+[7] Ground Forces     * 750    * 3556
+[8] Shield Power      * 50     * 53340
+[9] Hire Spies (Each) * 333000 * 8
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 2667000 -=*=- Buy Which Item? -=>
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+Defend this sector with how many fighters in total (0 recovers your group)? Sector fighter transfer saved.
+
+<Computer activated>
+Spy # 1 will hunt in sector 8.
+What sector number is the planet in? Planet report saved: No information available. One turn spent: no planet exists in that sector. Turns remaining: 498.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+Spy # 1 will hunt in sector 7.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+Fire missiles into which sector (blank cancels)? How many missiles will you launch? Missile course (1 warps): 1 -> 2
+Launch 1 missiles into sector 2 (sector defenses or mines; 0 route mines)? Your shields: 0. A surviving ship with a route back may retaliate. [y/N] y
+Missile launch saved: 1 missiles fired, 0 mines destroyed. No ship struck.
+Sector interception: 1 missiles, 10 fighters destroyed in sector 2.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 7:
+** Space-time disruption detected! **
+** WARNING! SECTOR HAS 7 MINES! **
+
+Time: 179:59  Main Command (?=Help)? c;15;1;+;3;1
+
+<Computer activated>
+Spy # 1 will hunt in sector 6.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+Send plasma into which sector (blank cancels)? How many plasma bolts (1-64)? Launch 1 plasma bolts toward sector 3 for one turn? Plasma can hit ANYTHING: friendly, cloaked and your own ships or planets. Black holes may redirect it; an unreachable course still spends the launch. Confirm? [y/N] y
+Plasma launch saved: 1 bolts, 1 turn. Bolts remaining: 2; turns remaining: 496. Sector fighters destroyed: 0; mines destroyed: 0. Ships struck/destroyed: 0/0; planets struck/destroyed: 0/0.
+Your losses: 0 fighters and 0 shields. Salvage credited before any later losses: 0 credits, 0 holds, 0 missiles, 0 plasma, 0 ground forces; cargo 0/0/0. Wreck mines dropped/disarmed: 0/0.
+No course reached the requested destination; the accepted launch was spent.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 6:
+** WARNING! SECTOR HAS 11 MINES! **
+
+Time: 179:59  Main Command (?=Help)? c;15;1;s;q;y
+
+<Computer activated>
+Spy # 1 will hunt in sector 6.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+[ Sensors Activated ]
+Sector: 2 | Warps: [1]
+Port: Port 2 | Selling: ore
+Sector: 8 | Warps: [7]
+Port: Port 8 | Selling: ore
+Ship: Enemy | Team: 0 | Fighters: 42 | Shields: 10000
+[ End Sensor Scan ]
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Caller.
+
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 2667000 credits | 496 turns > spies;intel;q
+You do not have any spies!
+No intelligence reports this login.
+Saved. Safe travels, Caller.
+
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 3000000 credits | 500 turns > p;anticloak
+Earth: holds 500, fighters 100, shields 50, forces 750 credits each. Danger scanner: 250000 (one). Cloak: 1000 per point; ANTICLOAK: 500000 per login activation.
+LOTTERY [six digits]: 5 credits, finite daily plays, fresh Y/N.
+Spies: 333000 each; HIRE <starting sector> [sector ...], max 3 this login.
+Anti-cloak costs 500000 credits and works for this login only. Repeat activation charges again, even if no new ships are revealed. Activate? [y/N] y
+Anti-cloak activation saved for this login. Credits spent: 500000. Balance: 2500000. Newly revealed: 1.
+2: Enemy is revealed to this login.
+
+Sector 1 | 2500000 credits | 499 turns > hire 8;planetreport 3;spies;intel;q
+Spy # 1 will hunt in sector 8.
+Planet report saved: No information available. One turn spent: no planet exists in that sector. Turns remaining: 498.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+Spy # 1 will hunt in sector 7.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+Saved. Safe travels, Caller.
+
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 2167000 credits | 498 turns > spies;s;intel;q
+You do not have any spies!
+[ Sensors Activated ]
+Sector: 2 | Warps: [1]
+Port: Port 2 | Selling: ore
+Sector fighters: 10 | Owner: Mercenaries
+Sector: 8 | Warps: [7]
+Port: Port 8 | Selling: ore
+[ End Sensor Scan ]
+No intelligence reports this login.
+Saved. Safe travels, Caller.
+
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Caller!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Caller
+Time  : 179:59
+Team  : None
+
+
+
++-------------------------+----------------------+
+| Credits.. : 3000000     | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 5           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 3    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+
+Time: 179:59  Main Command (?=Help)? p;6
+<Port>
+
+Docking, One Turn Deducted, 499 left.
+
+Commerce report for Earth: 11-01-2026 15:21:34
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 3000
+[2] Cargo Holds       * 500    * 6000
+[3] Fighters          * 100    * 30000
+[4] Play Lottery      * 5      * 600000
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 6
+[7] Ground Forces     * 750    * 4000
+[8] Shield Power      * 50     * 60000
+[9] Hire Spies (Each) * 333000 * 9
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 3000000 -=*=- Buy Which Item? -=>Anti-cloak costs 500000 credits and works for this login only. Repeat activation charges again, even if no new ships are revealed. Activate? [y/N] y
+Anti-cloak activation saved for this login. Credits spent: 500000. Balance: 2500000. Newly revealed: 1.
+2: Enemy is revealed to this login.
+
+Commerce report for Earth: 11-01-2026 15:21:34
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 2500
+[2] Cargo Holds       * 500    * 5000
+[3] Fighters          * 100    * 25000
+[4] Play Lottery      * 5      * 500000
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 5
+[7] Ground Forces     * 750    * 3333
+[8] Shield Power      * 50     * 50000
+[9] Hire Spies (Each) * 333000 * 7
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 2500000 -=*=- Buy Which Item? -=>9;1;8;0;c;9;3;15;1;intel;q;y
+Hire how many spies? [0]? Start spy # 1 in what sector? Spy # 1 will hunt in sector 8.
+
+Commerce report for Earth: 11-01-2026 15:21:34
+
+----------------------*--------*------------
+         ITEM         *  COST  * CAN AFFORD
+----------------------*--------*------------
+[1] Cloak Energy      * 1000   * 2167
+[2] Cargo Holds       * 500    * 4334
+[3] Fighters          * 100    * 21670
+[4] Play Lottery      * 5      * 433400
+[5] Danger Scanner    * 250000 * 1
+[6] Anti-Cloak Device * 500000 * 4
+[7] Ground Forces     * 750    * 2889
+[8] Shield Power      * 50     * 43340
+[9] Hire Spies (Each) * 333000 * 6
+----------------------*--------*------------
+
+[I] Ship Info -=*=- [0] Leave Port
+
+Credits: 2167000 -=*=- Buy Which Item? -=>
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+
+<Computer activated>
+What sector number is the planet in? Planet report saved: No information available. One turn spent: no planet exists in that sector. Turns remaining: 498.
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+Spy # 1 will hunt in sector 7.
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 2, 8
+
+*** RADIO MESSAGE FROM SPY #1! The following was found in sector 8:
+Other Ships:
+    Enemy - Team: 0 - Fighters: 42 - Shields: 10000
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Caller.
+
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Caller. Actions save automatically. Type ? for help.
+
+Sector 1 | 2167000 credits | 498 turns > spies;s;intel;q
+You do not have any spies!
+[ Sensors Activated ]
+Sector: 2 | Warps: [1]
+Port: Port 2 | Selling: ore
+** Space-time disruption detected! **
+Sector fighters: 10 | Owner: Mercenaries
+Sector: 8 | Warps: [7]
+Port: Port 8 | Selling: ore
+[ End Sensor Scan ]
+No intelligence reports this login.
+Saved. Safe travels, Caller.

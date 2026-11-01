@@ -42,16 +42,17 @@ func (w *World) RemotePortReport(id, sector int, now time.Time) (PortReport, err
 }
 
 // PlanetReport contains no private fields unless Details is present. A report
-// blocked by sector fighters reveals nothing and spends one turn.
+// unavailable because of sector fighters or a missing planet spends one turn.
 type PlanetReport struct {
-	Available bool
-	Name      string
-	Ground    int64
-	Details   *Planet
-	TurnSpent bool
+	Available   bool
+	Name        string
+	Ground      int64
+	Details     *Planet
+	TurnSpent   bool
+	Unavailable string
 }
 
-// RemotePlanetReport must execute in one store Update so a blocked query's
+// RemotePlanetReport must execute in one store Update so an unavailable query's
 // turn charge and the permission decision use the same authoritative world.
 func (w *World) RemotePlanetReport(id, sector int, now time.Time) (PlanetReport, error) {
 	p, err := w.player(id)
@@ -62,12 +63,18 @@ func (w *World) RemotePlanetReport(id, sector int, now time.Time) (PlanetReport,
 	if s == nil || now.IsZero() || now.Before(w.Created) {
 		return PlanetReport{}, errors.New("choose an existing sector and valid report time")
 	}
+	reason := ""
 	if w.HostileDefense(id, sector) {
+		reason = "sector fighters blocked the report"
+	} else if w.Planets[s.Planet] == nil {
+		reason = "no planet exists in that sector"
+	}
+	if reason != "" {
 		if p.Turns < 1 {
-			return PlanetReport{}, errors.New("no turns left for a report blocked by sector fighters")
+			return PlanetReport{}, errors.New("no turns left for an unavailable planet report")
 		}
 		p.spendTurn()
-		return PlanetReport{TurnSpent: true}, nil
+		return PlanetReport{TurnSpent: true, Unavailable: reason}, nil
 	}
 	planet := w.Planets[s.Planet]
 	if planet == nil {

@@ -165,7 +165,7 @@ func TestIntelligencePagingAcknowledgesOnlyDisplayedReports(t *testing.T) {
 		t.Fatal(err)
 	}
 	for i := 0; i < 5; i++ {
-		if err := s.Store.UpdateWithSpies(func(w *game.World) error { return w.SetSectorFighters(1, 0) }, s.Now(), s.Deadline); err != nil {
+		if err := s.Store.UpdateWithSpies(func(w *game.World) error { return w.Dock(1, s.Now()) }, s.Now(), s.Deadline); err != nil {
 			t.Fatal(err)
 		}
 	}
