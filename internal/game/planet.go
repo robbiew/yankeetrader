@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 27 {
+		for _, e := range w.News {
+			if e.Kind == NewsBroadcast || e.BroadcastText != "" {
+				return errors.New("legacy world contains broadcast news")
+			}
+		}
+	}
 	if w.Version < 26 {
 		for _, p := range w.Players {
 			if p != nil && p.Death != nil && p.Death.Cause == "plasma" {
@@ -307,6 +314,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 25 {
 		w.Version = 26
+	}
+	if w.Version == 26 {
+		w.Version = 27
 	}
 	return nil
 }

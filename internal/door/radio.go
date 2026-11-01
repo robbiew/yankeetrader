@@ -100,6 +100,11 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	if err = s.Terminal.Printf("To: %s\r\n", label); err != nil {
 		return err
 	}
+	if isBroadcast {
+		if err = s.Terminal.Printf("PUBLIC: This exact text and your alias will also appear in the Galactic Newspaper, visible beyond the current radio recipients.\r\nPublic sender: %s\r\n", w.Players[id].Alias); err != nil {
+			return err
+		}
+	}
 	if isTeam {
 		if err = s.teamRadioRecipients(team); err != nil {
 			return err
@@ -139,10 +144,13 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 		if (!isTeam && !isBroadcast) || !errors.As(err, &durability) {
 			return err
 		}
+		if isBroadcast {
+			return s.broadcastReceipt(len(messageIDs), err)
+		}
 		return s.Terminal.Printf("%d radio copies saved. %s\r\n", len(messageIDs), err)
 	}
 	if isBroadcast {
-		return s.Terminal.Printf("Transmission successful! %d broadcast copies saved.\r\n", len(messageIDs))
+		return s.broadcastReceipt(len(messageIDs), nil)
 	}
 	if isTeam {
 		return s.Terminal.Printf("Transmission successful! %d team copies saved.\r\n", len(messageIDs))
@@ -235,4 +243,12 @@ func (s Session) teamRadioRecipients(team game.TeamRadioAddress) error {
 		}
 	}
 	return nil
+}
+
+// Preserve a committed storage warning even if writing its receipt also fails.
+func (s Session) broadcastReceipt(copies int, committed error) error {
+	if committed != nil {
+		return errors.Join(committed, s.Terminal.Printf("%d broadcast copies and public newspaper entry saved with a committed storage warning. %s\r\n", copies, committed))
+	}
+	return s.Terminal.Printf("Transmission successful! %d broadcast copies saved. Public newspaper entry saved.\r\n", copies)
 }

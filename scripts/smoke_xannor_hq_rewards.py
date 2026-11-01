@@ -31,7 +31,7 @@ def exercise(guard):
                     replies.append((prompt,b'q;y\r'if classic else b'q\r'))
                     text=guard.run(play,data,'Captain',command,classic=classic,followups=replies,page_news=True)
                     saved=json.loads(path.read_text());p=saved['Players']['1']
-                    assert saved['Version']==26 and p['Credits']==balance+want,(mode,text)
+                    assert saved['Version']==27 and p['Credits']==balance+want,(mode,text)
                     news=[e for e in saved['News']if e['Kind']=='xannor-hq-victory']
                     if mode=='cancel':
                         assert saved['Sectors']['8']['Defense']['Fighters']==1 and not news and 'Credits added:'not in text,text

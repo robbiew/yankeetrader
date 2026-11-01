@@ -62,3 +62,12 @@ The complete DOS multiline editor, new/dead-account runtime eligibility,
 maintenance's 72-versus-74-byte text-width issue, a long natural counter chain,
 exact random/numeric behavior and native/live BBS acceptance remain separate.
 No new send API, migration, Go gameplay or save26 data is added by this research.
+
+
+## Selected implementation disposition
+
+The user selected public newspaper publication with atomic saves and accurate
+receipts. [The version-27 implementation](../IMPLEMENTATION.md) now provides that
+slice alongside the retained private-copy delivery policy. The original-style
+shared archive and its delivery-budget acknowledgements remain unimplemented.
+The no-gameplay/save26 statement above describes the research milestone only.

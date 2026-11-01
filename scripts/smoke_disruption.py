@@ -80,7 +80,7 @@ def exercise(guard):
                 w['Sectors']['1']['Warps']=list(range(2,8))
                 path.write_text(json.dumps(w));text,target=guard.run(encounter,data,classic,mode)
                 saved=json.loads(path.read_text());p=saved['Players']['1']
-                assert saved['Version']==26 and p['Credits']==w['Players']['1']['Credits']
+                assert saved['Version']==27 and p['Credits']==w['Players']['1']['Credits']
                 if mode=='decline':
                     assert 'Scanner entry cancelled.' in text and 'Forced warp saved:' not in text and p['Sector']==1 and p['Turns']==500
                 else:

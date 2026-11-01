@@ -1322,3 +1322,17 @@ are deliberate modern policies, not shared-counter parity. The existing
 version-26 mailbox format is reused. [Evidence and policies](yt-broadcast-radio/IMPLEMENTATION.md).
 Multiline editing, complete original counter lifetime and native BBS acceptance
 remain separate.
+
+
+## Broadcast newspaper publication — implemented
+
+ALL now requires an explicit public-text/alias preview before fresh Send. One
+bounded typed public event and all private copies save together; private/team
+mail is not published. Version 27 upgrades versions 1–26 without backfilling old
+broadcasts. Retried drafts, rollback, committed-warning receipts and public/private
+reading scopes have regression coverage. See
+[implementation](yt-broadcast-radio/IMPLEMENTATION.md) and
+[validation](../evidence/BROADCAST_NEWSPAPER_VALIDATION.md).
+The shared DOS delivery counter, multiline editor, live BBS and native Windows
+durability remain separate. Earlier save26/research-only boundaries above are
+historical and superseded only for this public-publication slice.
