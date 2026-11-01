@@ -1,0 +1,115 @@
+{
+  "recipe": "broadcast-radio-v1",
+  "scenarios": [
+    {
+      "name": "broadcast-send",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "broadcast-abort",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~A;Y\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "broadcast-lowercase",
+      "command": "C;5;all\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "broadcast-zero-turns",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [
+        [
+          2,
+          49,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "broadcast-team-member",
+      "command": "C;5;ALL\r~~YT BROADCAST PROBE\r\r~~S\r~~~~6;1",
+      "patches": [
+        [
+          2,
+          89,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "blank-recipient",
+      "command": "C;5\r~~\r~~~1",
+      "patches": []
+    },
+    {
+      "name": "blank-body-abort",
+      "command": "C;5;ALL\r~~\r~~A;Y\r~~~~1",
+      "patches": []
+    },
+    {
+      "name": "two-lines",
+      "command": "C;5;ALL\r~~YT BROADCAST FIRST\rYT BROADCAST SECOND\r\r~~S\r~~~~6;1",
+      "patches": []
+    },
+    {
+      "name": "recipient-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY"
+    },
+    {
+      "name": "sender-read",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send"
+    },
+    {
+      "name": "recipient-repeat",
+      "command": "\r~~~~C;6;6;1",
+      "patches": [],
+      "parent": "recipient-read",
+      "actor": "ENEMY"
+    },
+    {
+      "name": "sender-after-recipient",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "recipient-read"
+    },
+    {
+      "name": "budget-two",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 2
+    },
+    {
+      "name": "budget-one",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 1
+    },
+    {
+      "name": "budget-zero",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": 0
+    },
+    {
+      "name": "budget-negative-one",
+      "command": "\r~~~~C;6;1",
+      "patches": [],
+      "parent": "broadcast-send",
+      "actor": "ENEMY",
+      "mail_budget": -1
+    }
+  ]
+}
