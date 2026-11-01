@@ -15,11 +15,11 @@ class Controls(unittest.TestCase):
  def test_preserved(self):
   with contextlib.redirect_stdout(io.StringIO()):v.check()
  def test_corruptions(self):
-  for mode in ('missing','binary','incomplete','roster','world','resources','destination','shared-read','outsider','late-join','chain','keys','scanner','fraction-destination','fraction-sender','fraction-unread'):
+  for mode in ('missing','binary','incomplete','roster','world','resources','destination','shared-read','outsider','late-join','chain','keys','scanner','fraction-destination','fraction-sender','fraction-unread','root-mailbox','actor'):
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as temp:
     path=Path(temp)/'dos';shutil.copytree(ROOT/'research/yt-team-radio/dos',path)
     summary=json.loads((path/'results.json').read_text())
-    name={'shared-read':'recipient-read','outsider':'outsider-read','late-join':'late-join','chain':'recipient-left','scanner':'recipient-read','fraction-destination':'sender-read','fraction-sender':'sender-read','fraction-unread':'sender-read'}.get(mode,'team-send')
+    name={'shared-read':'recipient-read','outsider':'outsider-read','late-join':'late-join','chain':'recipient-left','actor':'recipient-read','scanner':'recipient-read','fraction-destination':'sender-read','fraction-sender':'sender-read','fraction-unread':'sender-read'}.get(mode,'team-send')
     r=next(r for r in summary['scenarios']if r['name']==name);d=path/name
     if mode=='missing':summary['scenarios'].pop()
     elif mode=='binary':r['binaries']['YT.EXE']='0'*64
@@ -41,6 +41,12 @@ class Controls(unittest.TestCase):
      f=d/'sidefiles.json.gz';side=json.loads(gzip.decompress(f.read_bytes()));side['YTRMSG.DAT']['before_sha256']=v.SHA(b'\0');f.write_bytes(gzip.compress(json.dumps(side).encode()))
     elif mode=='outsider':
      f=d/'transcript.txt';f.write_text(f.read_text()+'\nYT TEAM PROBE\n')
+    elif mode=='root-mailbox':
+     f=d/'side-before.json.gz';raw=json.loads(gzip.decompress(f.read_bytes()));g=d/'sidefiles.json.gz';side=json.loads(gzip.decompress(g.read_bytes()))
+     raw['YTRMSG.DAT']=side['YTRMSG.DAT']['hex'];side['YTRMSG.DAT']['before_sha256']=v.SHA(bytes.fromhex(raw['YTRMSG.DAT']))
+     f.write_bytes(gzip.compress(json.dumps(raw).encode()));g.write_bytes(gzip.compress(json.dumps(side).encode()))
+    elif mode=='actor':
+     f=d/'transcript.txt';f.write_text(f.read_text().replace('Welcome Enemy!','Welcome Tester!'))
     elif mode=='keys':(d/'KEYS.TXT').write_bytes(b'wrong')
     # Rehash altered witnesses so semantic checks, rather than only hashes, reject them.
     for f in r['files']:r['files'][f]=v.SHA((d/f).read_bytes())

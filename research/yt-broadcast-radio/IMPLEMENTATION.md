@@ -37,9 +37,10 @@ separate from these conserved resources.
 Reproduce with `python3 scripts/recover_broadcast_radio.py <new-directory>`.
 The runner refuses incomplete parents and resolves parent dependencies in waves.
 `python3 scripts/verify_broadcast_radio.py <new-directory>` independently rebuilds
-the starting worlds and checks keys, clocks, binary hashes, exact world/auxiliary
+the starting worlds and checks source-fixture auxiliary baselines, login identities/aliases,
+keys, clocks, binary hashes, exact world/auxiliary
 chains, complete message headers/body, decoded mailbox values and resources.
-Sixteen corruption controls include fractional fields, scanner loss, counter
+Nineteen corruption controls include fractional fields, scanner loss, counter
 transitions, replay-chain damage and rehashed clock/header/startup changes.
 No new decompilation or exact original RNG/numeric claim is made.
 

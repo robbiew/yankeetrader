@@ -37,9 +37,11 @@ Reproduce using `python3 scripts/recover_team_radio.py <new-directory>`.
 `python3 scripts/verify_team_radio.py <new-directory>` independently rebuilds the
 starting worlds and checks binary/input/snapshot hashes, auxiliary chains,
 packet destinations and text, separate unread flags, reports, normal returns and
-resource conservation. Sixteen corruption controls exercise this verifier, including fractional mailbox
+resource conservation. Eighteen corruption controls exercise this verifier, including fractional mailbox
 fields and scanner removal with refreshed witness hashes. Decoded MBF fields
-are compared directly without integer truncation.
+are compared directly without integer truncation. Root auxiliary files must
+match the copied source fixture, and transcript login identities/aliases must
+match the expected actor; rehashed mailbox and wrong-actor controls cover both.
 The capture refuses a child of an incomplete parent. No new decompilation or
 original RNG/numeric parity is claimed by these radio controls.
 

@@ -207,7 +207,8 @@ has its own unread flag and archive slot. Former members retain their addressed
 copies; new members cannot read old team mail. Team sending uses the existing
 version-26 mailbox format without a migration. [Team rules, DOS evidence and
 validation](research/yt-team-radio/IMPLEMENTATION.md). The DOS multiline editor remains open. Evidence checks compare exact decoded
-mailbox fields and preserve scanner equipment, with corruption controls for both.
+mailbox fields, preserve scanner equipment and anchor root auxiliary files and
+login identities to the source fixtures, with rehashed corruption controls.
 `RADIO ALL` (or `ALL` at computer option 5) confirms a broadcast to all current
 active accounts, including you, and saves every private copy together. Offline
 and dead accounts receive their own mail; retired and future accounts do not.

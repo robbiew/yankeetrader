@@ -15,16 +15,24 @@ class Controls(unittest.TestCase):
  def test_preserved(self):
   with contextlib.redirect_stdout(io.StringIO()):v.check()
  def test_corruptions(self):
-  modes=('missing','binary','incomplete','keys','date','time','scanner','fraction-counter','fraction-destination','fraction-sender','mail-text','transition','repeat-transition','chain','header','startup')
+  modes=('missing','binary','incomplete','keys','date','time','scanner','fraction-counter','fraction-destination','fraction-sender','mail-text','transition','repeat-transition','chain','header','startup','root-mailbox','sender-actor','repeat-actor')
   for mode in modes:
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as temp:
     path=Path(temp)/'dos';shutil.copytree(ROOT/'research/yt-broadcast-radio/dos',path)
     summary=json.loads((path/'results.json').read_text())
-    name='recipient-again'if mode=='repeat-transition'else 'recipient-read'if mode in ('scanner','transition','chain','header','startup')else 'broadcast-send'
+    name={'repeat-transition':'recipient-again','repeat-actor':'recipient-again','sender-actor':'sender-read',
+          'scanner':'recipient-read','transition':'recipient-read','chain':'recipient-read','header':'recipient-read','startup':'recipient-read'}.get(mode,'broadcast-send')
     r=next(r for r in summary['scenarios']if r['name']==name);d=path/name
     if mode=='missing':summary['scenarios'].pop()
     elif mode=='binary':r['binaries']['YT.EXE']='0'*64
     elif mode=='incomplete':r['complete']=False
+    elif mode=='root-mailbox':
+     f=d/'side-before.json.gz';raw=json.loads(gzip.decompress(f.read_bytes()));g=d/'sidefiles.json.gz';side=json.loads(gzip.decompress(g.read_bytes()))
+     raw['YTRMSG.DAT']=side['YTRMSG.DAT']['hex'];side['YTRMSG.DAT']['before_sha256']=v.SHA(bytes.fromhex(raw['YTRMSG.DAT']))
+     f.write_bytes(gzip.compress(json.dumps(raw).encode()));g.write_bytes(gzip.compress(json.dumps(side).encode()))
+    elif mode in ('sender-actor','repeat-actor'):
+     other=path/('recipient-read'if mode=='sender-actor'else 'sender-after-recipient')/'transcript.txt'
+     (d/'transcript.txt').write_bytes(other.read_bytes())
     elif mode=='keys':(d/'KEYS.TXT').write_bytes(b'wrong')
     elif mode in ('date','time'):
      f=d/('DOSDATE.LOG'if mode=='date'else 'DOSTIME.LOG');f.write_bytes(b'Current date: Sun 10/25/2026\r\n'if mode=='date'else b'Current time: 1:00:00.00am\r\n')
