@@ -1271,7 +1271,7 @@ universal absence, historical 3.3 purchase semantics or new purchase API is made
 No Go gameplay or save26 change. README and prior plasma backlog references are
 corrected together; portable acquisition evidence verification is included in CI.
 Remaining candidates are broader spy triggers/notifications,
-broadcast radio and multiline editing, remaining newspaper events, original
+multiline editing, remaining newspaper events, original
 universe/save parity, balance and native/live acceptance.
 
 ## Ship, cloak and disruption spy intelligence
@@ -1294,3 +1294,15 @@ history and delivery are reused; no migration is required. Tests cover stale
 drafts, concurrent retry, failures and compact/classic terminal flows.
 [Evidence, policies and limits](yt-team-radio/IMPLEMENTATION.md). Broadcast,
 multiline editing and native BBS acceptance remain open.
+
+
+## Bounded broadcast radio
+
+Six completed DOS controls establish the shared ALL record and 30/28/26 read
+transitions, including repeat-reader delivery. Go now offers explicit
+`RADIO ALL` / computer 5 with atomic private copies for current active accounts,
+including the sender. Independent unread flags and no future-account inheritance
+are deliberate modern policies, not shared-counter parity. The existing
+version-26 mailbox format is reused. [Evidence and policies](yt-broadcast-radio/IMPLEMENTATION.md).
+Multiline editing, complete original counter lifetime and native BBS acceptance
+remain separate.

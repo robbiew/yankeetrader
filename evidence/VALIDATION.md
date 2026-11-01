@@ -1052,7 +1052,8 @@ the dedicated compact/classic Wanderer smoke passed locally.
   sender, independent unread flags, abort/no-team rejection and recipient-at-send
   delivery after membership changes. The independent verifier checks exact
   world/auxiliary chains, binaries, keys, packet contents and conserved resources.
-  Sixteen corruption controls passed, including fractional routing/read flags and
+  Eighteen corruption controls passed, including root-baseline/login-identity checks,
+  fractional routing/read flags and
   scanner removal with refreshed hashes. Existing commerce/direct-radio and fourteen
   team-membership evidence controls also passed; all 4,682 archive hashes matched.
 - Full `go test -race ./...` and `go vet ./...` passed. Final recipient-preview and
@@ -1068,7 +1069,6 @@ World format remains 26; team radio reuses ordinary private mailbox records.
 Native BBS acceptance, broadcast and DOS multiline editing remain open.
 [Evidence and policies](../research/yt-team-radio/IMPLEMENTATION.md).
 
-
 The combined spy/team state after verified PR #57 integration passed the full
 race-enabled Go suite and vet, plus spy, team-radio and isolated Mercenary-route
 PTY checks. Spy evidence and all fourteen corruption controls passed again.
@@ -1082,3 +1082,28 @@ DOSTIME.LOG and the DOSBox command stream. Corrected the report's erroneous
 one minute of elapsed time. Capture bytes and gameplay are unchanged. README
 was updated in the same fix; current-main spy-intelligence changes and their
 validation history are preserved.
+
+## Bounded broadcast radio
+
+- Six completed original-DOS controls verify send/abort and exact chained
+  recipient/sender reads, including the shared mailbox leading field changing
+  30 → 28 → 26 and repeat-reader delivery. Nineteen corruption controls reject
+  rehashed root-mailbox, wrong-actor, field, scanner, counter, clock, chain, header and startup changes.
+  The Go private-copy policy is explicitly distinct from that DOS shared record.
+- Full `go test -race ./...` and `go vet ./...` passed. Tests cover 50-account
+  fanout, dead/retired eligibility, future-account isolation, stale confirmation,
+  independent reads, expiry, capacity/overflow, partial publication, concurrent
+  retry and committed directory-sync warnings. Team radio exercises the same
+  shared private-copy commit helper.
+- Compact/classic GoDoors PTY broadcast checks passed, with explicit ALL count
+  confirmation, literal text, abort, offline delivery, separate acknowledgements,
+  no repeated notification and late-account isolation. The new transcript is
+  `evidence/broadcast-radio-smoke.txt`. Existing team and direct PTY checks passed
+  separately; their incidental regenerated captures were restored.
+- Team-radio evidence and all eighteen team corruption controls passed, and all
+  4,682 archive hashes matched. Linux/amd64 and Windows/amd64 cross-builds passed;
+  these do not establish native BBS transport or crash durability.
+
+World version remains 26. DOS shared-counter lifetime, simultaneous original
+writers, multiline editing and native BBS acceptance remain separate work.
+[Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).

@@ -14,7 +14,7 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	query := strings.Join(args, " ")
 	if query == "" {
 		var err error
-		query, err = s.classicArgument("Send a message to who? (alias search, player number or TEAM) ", pending)
+		query, err = s.classicArgument("Send a message to who? (alias search, player number, TEAM or ALL) ", pending)
 		if err != nil {
 			return err
 		}
@@ -27,10 +27,15 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 		return err
 	}
 	isTeam := strings.EqualFold(strings.TrimSpace(query), "team")
+	isBroadcast := strings.EqualFold(strings.TrimSpace(query), "all")
 	var address game.RadioAddress
 	var team game.TeamRadioAddress
+	var broadcast game.BroadcastRadioAddress
 	var label string
-	if isTeam {
+	if isBroadcast {
+		broadcast, err = w.FindBroadcastRadioRecipients(id)
+		label = fmt.Sprintf("ALL %d current active accounts (including you)", len(broadcast.Recipients))
+	} else if isTeam {
 		team, err = w.FindTeamRadioRecipients(id)
 		if err == nil {
 			label = fmt.Sprintf("team %s (#%d)", team.Name, team.ID)
@@ -76,7 +81,10 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	}
 	var draft game.RadioDraft
 	var teamDraft game.TeamRadioDraft
-	if isTeam {
+	var broadcastDraft game.BroadcastRadioDraft
+	if isBroadcast {
+		broadcastDraft, err = w.PrepareBroadcastRadio(id, broadcast, text, s.Now())
+	} else if isTeam {
 		teamDraft, err = w.PrepareTeamRadio(id, team, text, s.Now())
 	} else {
 		draft, err = w.PrepareRadio(id, address, text, s.Now())
@@ -114,7 +122,9 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 			return errors.New("session time expired; radio cancelled")
 		}
 		var err error
-		if isTeam {
+		if isBroadcast {
+			messageIDs, err = w.CommitBroadcastRadio(broadcastDraft, s.Now())
+		} else if isTeam {
 			messageIDs, err = w.CommitTeamRadio(teamDraft, s.Now())
 		} else {
 			messageID, err = w.CommitRadio(draft, s.Now())
@@ -126,10 +136,13 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 	})
 	if err != nil {
 		var durability *store.DurabilityError
-		if !isTeam || !errors.As(err, &durability) {
+		if (!isTeam && !isBroadcast) || !errors.As(err, &durability) {
 			return err
 		}
-		return s.Terminal.Printf("%d team copies saved. %s\r\n", len(messageIDs), err)
+		return s.Terminal.Printf("%d radio copies saved. %s\r\n", len(messageIDs), err)
+	}
+	if isBroadcast {
+		return s.Terminal.Printf("Transmission successful! %d broadcast copies saved.\r\n", len(messageIDs))
 	}
 	if isTeam {
 		return s.Terminal.Printf("Transmission successful! %d team copies saved.\r\n", len(messageIDs))

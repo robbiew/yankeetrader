@@ -3,6 +3,7 @@ import gzip
 import hashlib
 import importlib.util
 import json
+import re
 from pathlib import Path
 import sys
 sys.dont_write_bytecode=True
@@ -26,7 +27,9 @@ GRAPH={1:[2,100],2:[1,3],3:[2],100:[101,102,103,104,105,106],101:[107],102:[108]
 
 def check(path=ROOT/'research/yt-team-radio/dos'):
  path=Path(path)
- base=(ROOT/'archive/analysis/yt-combat/experiments/fixture-team-captain/YTDATA.DAT').read_bytes()
+ source_dir=ROOT/'archive/analysis/yt-combat/experiments/fixture-team-captain'
+ base=(source_dir/'YTDATA.DAT').read_bytes()
+ initial_aux={p.name:p.read_bytes()for p in source_dir.iterdir()if p.is_file()and p.suffix.upper()in('.DAT','.ASC')and p.name!='YTDATA.DAT'}
  assert gzip.decompress((path/'baseline.dat.gz').read_bytes())==base
  summary=json.loads((path/'results.json').read_text());rows=summary['scenarios']
  assert summary['recipe']=='team-radio-v1' and len(rows)==len(EXPECTED) and {r['name']for r in rows}==set(EXPECTED)
@@ -54,6 +57,7 @@ def check(path=ROOT/'research/yt-team-radio/dos'):
    expected=bytearray(worlds[c['parent']][1]);assert rawbefore==aux[c['parent']][1],(n,'auxiliary chain')
    patches=[]
   else:
+   assert rawbefore==initial_aux,(n,'source auxiliary baseline')
    expected=bytearray(base)
    for sector,warps in GRAPH.items():
     start=(51+sector-1)*137;expected[start:start+137]=bytes(137)
@@ -71,6 +75,11 @@ def check(path=ROOT/'research/yt-team-radio/dos'):
   text=(d/'transcript.txt').read_text()
   assert 'Returning to Yankee Trader Local Logon Program...'in text and 'Entering a new player'not in text and 'Entering a new ship'not in text
   actor=3 if c.get('actor')=='ENEMY'else 2
+  identity='Enemy'if actor==3 else'Tester'
+  assert re.findall(r'^Welcome ([^\r\n]+)!$',text,re.MULTILINE)==[identity],(n,'login identity')
+  alias=before[(actor-1)*137:(actor-1)*137+41].decode('cp437').rstrip()
+  aliases=[a.rstrip()for a in re.findall(r'^Name[ \t]+:[ \t]+([^\r\n]+)$',text,re.MULTILINE)]
+  assert aliases and set(aliases)=={alias},(n,'login alias',aliases)
   for offset in (49,53,57,61,65,69,73,77,81,93,97,105,113,121,125,129):assert mbf.get(before,actor,offset)==mbf.get(after,actor,offset),(n,'resource',offset)
   mail=rawafter['YTRMSG.DAT'];assert len(mail)%86==0
   packets=[(mbf.get(mail[i:i+86],1,0),mbf.get(mail[i:i+86],1,4),mbf.get(mail[i:i+86],1,8),mail[i+12:i+86].rstrip())for i in range(0,len(mail),86)]
