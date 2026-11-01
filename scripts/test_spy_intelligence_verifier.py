@@ -17,11 +17,11 @@ class CorruptionControls(unittest.TestCase):
  def test_preserved(self):
   with contextlib.redirect_stdout(io.StringIO()):v.check()
  def test_corruptions(self):
-  for mode in ('missing-case','incomplete','binary','keys','source','clock','cloak','ship-fields','shimmer','disruption','caller-report','snapshot'):
+  for mode in ('missing-case','incomplete','binary','keys','source','clock','cloak','ship-fields','shield-enemy','shield-third','shimmer','disruption','caller-report','snapshot'):
    with self.subTest(mode=mode),tempfile.TemporaryDirectory()as temp:
     path=Path(temp)/'dos';shutil.copytree(ROOT/'research/yt-spies/intelligence/dos',path)
     summary=json.loads((path/'results.json').read_text());results=summary['scenarios']
-    name={'disruption':'disruption','caller-report':'caller-only','shimmer':'partial-cloak'}.get(mode,'visible')
+    name={'disruption':'disruption','caller-report':'caller-only','shimmer':'partial-cloak','shield-third':'two-ships'}.get(mode,'visible')
     r=next(r for r in results if r['name']==name);d=path/name
     if mode=='missing-case':results.pop()
     elif mode=='incomplete':r['complete']=False
@@ -36,6 +36,8 @@ class CorruptionControls(unittest.TestCase):
     else:
      p=d/'transcript.txt';s=p.read_text()
      if mode=='ship-fields':s=s.replace('Fighters: 1000 - Shields: 10','Fighters: 999 - Shields: 10')
+     elif mode=='shield-enemy':s=s.replace('Shields: 10','Shields: 10000')
+     elif mode=='shield-third':s=s.replace('Shields: 10000','Shields: 1000000')
      elif mode=='shimmer':s=s.replace('The spy detected the shimmering','Removed shimmering')
      elif mode=='disruption':s=s.replace('** Space-time disruption detected! **','Removed disruption')
      elif mode=='caller-report':s+='\n*** RADIO MESSAGE FROM SPY #1!\n'

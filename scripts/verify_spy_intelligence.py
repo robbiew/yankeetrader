@@ -58,8 +58,10 @@ def check(path=ROOT/'research/yt-spies/intelligence/dos'):
   locations=[int(x) for x in re.findall(r'Spy # 1 will hunt in sector (\d+)',text)]
   if name=='caller-only':assert len(locations)==3 and locations[:2]==[100,1] and locations[2]in[100,2,3,4,5,6]
   else:assert locations==([2,3,1]if name=='disruption'else[101,102,101]),(name,locations)
-  if ships:assert 'Enemy  - Team: 1 - Fighters: 1000 - Shields: 10'in text
-  if name=='two-ships':assert text.index('Enemy  - Team:')<text.index('Third  - Fighters: 1000 - Shields: 10000')
+  records=re.findall(r'^    .* - Fighters: .*$',text,re.MULTILINE)
+  expected_records=['    Enemy  - Team: 1 - Fighters: 1000 - Shields: 10']if ships else[]
+  if name=='two-ships':expected_records.append('    Third  - Fighters: 1000 - Shields: 10000')
+  assert records==expected_records,(name,'complete ordered ship records',records)
   assert mbf.get(after,2,81)==1667000 and mbf.get(after,2,49)==497 and r['actor_turns']==497,name
   for record in (2,3,4):assert mbf.get(after,record,125)==mbf.get(before,record,125),(name,'persistent cloak changed')
  print('Verified 6 DOS spy controls: positive ships, partial/full cloak, multiple ships, caller exclusion, disruption and unchanged saved cloak.')

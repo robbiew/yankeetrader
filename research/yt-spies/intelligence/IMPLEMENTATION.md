@@ -69,7 +69,8 @@ There is no schema migration; world format remains 26.
 
 The independent evidence verifier reconstructs each patched starting world and
 checks exact key feeds, binary and snapshot hashes, clean returns, report types,
-ship fields/order, locations, charges and unchanged saved cloak. Corruption
+complete line-anchored ship fields/order, locations, charges and unchanged saved cloak. Shield-only
+corruption controls reject numeric suffix extensions with refreshed hashes. Corruption
 controls check that semantic and provenance damage is rejected.
 
 Game/store/door regressions cover detection thresholds, generation changes,

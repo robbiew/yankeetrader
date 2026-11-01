@@ -507,7 +507,9 @@ shimmering notice; successful detections stay within the spy network and are
 bound to the target ship generation. Saved cloak energy, combat visibility and
 durable radio stay unchanged. Exact DOS RNG odds and target notification remain
 outside this bounded slice. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
-No save-format change is required (world version 26).
+No save-format change is required (world version 26). The DOS evidence verifier
+checks complete ordered ship records, including exact shield values; corruption
+controls reject altered values even when transcript hashes are refreshed.
 
 Spies are available at Earth for 333,000 credits each, up to three per login.
 Choose their starting sectors through Earth option 9 or compact `HIRE` while

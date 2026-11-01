@@ -979,8 +979,9 @@ privacy and unsupported follow-ups are in
   ship name/team/fighter/shield reports, full-cloak suppression, one positive
   partial-cloak shimmering branch, ordered multiple ships, caller exclusion and
   a login-local disruption notice. All retain 1,667,000 credits, 497 turns and
-  unchanged saved cloak. Twelve corruption controls reject altered provenance,
-  keys, snapshots, cloak state, ship details and report types.
+  unchanged saved cloak. Fourteen corruption controls reject altered provenance,
+  keys, snapshots, cloak state, ship details and report types, including shield-only
+  changes with refreshed transcript hashes.
 - Full `go test -race ./...` and `go vet ./...` passed. A targeted race run covers
   the final additional shared-detection, ship-order and private-disruption tests.
 - Real compact and classic GoDoors PTY spy smoke passed with actual ship details,
