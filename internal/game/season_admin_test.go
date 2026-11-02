@@ -63,3 +63,22 @@ func TestAdministrativeSeasonHistoryAndMigration(t *testing.T) {
 		t.Fatal("Genesis after admin", err)
 	}
 }
+
+func TestAdministrativeResetSmallWorld(t *testing.T) {
+	for _, n := range []int{8, 9, 10, 32} {
+		w, err := New(clock, 36, n)
+		if err != nil {
+			t.Fatal(err)
+		}
+		next, err := w.AdministrativeCandidate(1, clock.Add(time.Hour), 77)
+		if err != nil {
+			t.Fatalf("%d sectors: %v", n, err)
+		}
+		if err = next.Validate(); err != nil {
+			t.Fatal(err)
+		}
+		if next.Season != 2 || len(next.Sectors) != n || !next.SeasonResults[0].Administrative {
+			t.Fatal("invalid small reset")
+		}
+	}
+}

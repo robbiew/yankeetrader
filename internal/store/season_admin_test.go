@@ -9,6 +9,7 @@ import (
 	"github.com/robbiew/yankeetrader/internal/game"
 	"os"
 	"path/filepath"
+	"runtime"
 	"sync"
 	"testing"
 	"time"
@@ -48,7 +49,7 @@ func TestSeasonExportAndReset(t *testing.T) {
 		t.Fatal("incomplete snapshot", err)
 	}
 	info, _ := os.Stat(path)
-	if info.Mode().Perm() != 0600 {
+	if runtime.GOOS != "windows" && info.Mode().Perm() != 0600 {
 		t.Fatal("private archive permissions", info.Mode())
 	}
 	if _, err = s.ExportSeason(path, 1, at, 100); err == nil {

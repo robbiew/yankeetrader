@@ -105,7 +105,10 @@ and synchronized before the new world is committed under the existing world lock
 ./bin/yt -data data -admin-reset 1 -season-export /secure/backups/season-1-before-reset.json -seed 77
 ```
 
-The expected season number prevents an old command from resetting a later season.
+The expected season number must be positive (explicit zero is rejected) and prevents
+an old command from resetting a later season. Administrative resets also support
+eight-sector test worlds; faction homes are created only where capacity permits,
+while player-triggered Genesis retains its required-home checks.
 Existing files and symlinks are never overwritten. The destination directory must
 already exist. A reset cannot be combined with play, initialization or maintenance.
 The seed defaults to 36; choose a new seed to change the generated layout.

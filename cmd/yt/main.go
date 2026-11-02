@@ -48,7 +48,16 @@ func run() error {
 	if flag.NArg() != 0 {
 		return errors.New("unexpected arguments; use -help")
 	}
-	adminMode := *seasonExport != "" || *adminReset != 0
+	resetConfigured := false
+	flag.Visit(func(f *flag.Flag) {
+		if f.Name == "admin-reset" {
+			resetConfigured = true
+		}
+	})
+	if resetConfigured && *adminReset == 0 {
+		return errors.New("-admin-reset requires a positive current season number")
+	}
+	adminMode := *seasonExport != "" || resetConfigured
 	if adminMode && (*initWorld || *maint || *local != "" || *drop != "") {
 		return errors.New("season administration cannot be combined with initialization, maintenance or play")
 	}

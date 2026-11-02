@@ -31,6 +31,10 @@ def main():
         assert hashlib.sha256(world_bytes).hexdigest() == exported['WorldSHA256']
         assert exported['World']['Season'] == 1
         run('-admin-reset', '1', ok=False)
+        for extra in ([], ['-maint'], ['-init'], ['-local', 'Ignored']):
+            run('-admin-reset', '0', *extra, ok=False)
+            run('-admin-reset', '0', '-season-export', str(root / 'zero.json'), *extra, ok=False)
+        assert not (root / 'zero.json').exists()
         run('-season-export', str(archive), '-admin-reset', '1', ok=False)
         run('-maint', '-season-export', str(root / 'invalid.json'), ok=False)
         assert world.read_bytes() == before
@@ -43,6 +47,11 @@ def main():
         assert result['Administrative'] and not result['Winner'] and result['Player'] == 0
         run('-admin-reset', '1', '-season-export', str(root / 'replay.json'), ok=False)
         assert not (root / 'replay.json').exists()
+        small = root / 'small'
+        subprocess.run([str(binary), '-data', str(small), '-init', '-sectors', '8'], check=True, capture_output=True)
+        subprocess.run([str(binary), '-data', str(small), '-admin-reset', '1', '-season-export', str(root / 'small.json')], check=True, capture_output=True)
+        small_world = json.loads((small / 'world.json').read_bytes())
+        assert small_world['Season'] == 2 and len(small_world['Sectors']) == 8
         print('Season export/admin reset CLI passed.')
 
 if __name__ == '__main__':

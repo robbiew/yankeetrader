@@ -182,7 +182,7 @@ func (w *World) genesisCandidate(e GenesisIntent, now time.Time, seed int64, gen
 	}
 	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Winner: e.Alias, Player: e.Player, Ports: len(e.Ports), Threshold: e.Threshold, Score: e.Score}
 	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
-	if err = bootstrapSeason(candidate, now, seed); err != nil {
+	if err = bootstrapSeason(candidate, now, seed, true); err != nil {
 		return nil, out, err
 	}
 	return candidate, GenesisReceipt{Result: result, NewSeason: candidate.Season, Seed: seed}, nil
@@ -214,18 +214,18 @@ func (w *World) AdministrativeCandidate(expected uint64, now time.Time, seed int
 	}
 	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Administrative: true}
 	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
-	if err = bootstrapSeason(candidate, now, seed); err != nil {
+	if err = bootstrapSeason(candidate, now, seed, false); err != nil {
 		return nil, err
 	}
 	return candidate, nil
 }
-func bootstrapSeason(candidate *World, now time.Time, seed int64) error {
+func bootstrapSeason(candidate *World, now time.Time, seed int64, requireHomes bool) error {
 	// New already stocks the economy. Bootstrap supported homes explicitly because
 	// same-day Maintain deliberately does nothing; never rerun all daily events.
 	rng := rand.New(rand.NewSource(seed))
 	candidate.restoreMercenaryBase(now, rng.Float64)
 	candidate.restoreXannoron(now, rng.Float64)
-	if candidate.Xannor == nil || candidate.xannorHome() == nil {
+	if requireHomes && (candidate.Xannor == nil || candidate.xannorHome() == nil) {
 		return errors.New("new season has no room for required faction homes")
 	}
 	mercenary := false
@@ -234,13 +234,13 @@ func bootstrapSeason(candidate *World, now time.Time, seed int64) error {
 			mercenary = true
 		}
 	}
-	if !mercenary {
+	if requireHomes && !mercenary {
 		return errors.New("new season has no Mercenary base")
 	}
 	if _, err := candidate.BootstrapWanderer(now, rng.Float64); err != nil {
 		return err
 	}
-	if candidate.wanderer() == nil {
+	if requireHomes && candidate.wanderer() == nil {
 		return errors.New("new season has no room for The Wanderer")
 	}
 	if err := candidate.Validate(); err != nil {
