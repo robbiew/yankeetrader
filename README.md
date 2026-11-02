@@ -4,6 +4,16 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
+**Xannor direct-combat turn bonuses are available to test:** confirmed sector-fighter
+combat credits one turn per complete 200 Xannor casualties, within the current
+500-turn daily allowance. Partial battles qualify; entry is charged before the
+cap is measured. Forced fighter combat after a refused bribe also qualifies;
+missile/plasma kills and other factions do not. The saved receipt and newspaper
+show actual credited turns, including capped awards. This is separate from the
+existing Xannor HQ credit prize. [DOS controls, rules and validation](research/yt-xannor-turn-bonus/RECOVERY.md).
+Save **32** adds the bonus event; upgrades do not backfill rewards for old battles.
+
+
 **Extended newspaper reports are available in-game to test:** new registrations,
 successful team joins, general ship deaths, captured ports and actual salvage,
 sector-fighter surrender/casualties, mine encounters and fighter-wreck explosions,
@@ -92,7 +102,7 @@ finish, including runner cleanup; every validation command remains enabled.
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Newspaper reports tied to unimplemented DOS mechanics (including the original Xannor turn bonus), additional unconfirmed spy command paths, and character-level DOS editor wrapping/backspace parity.
+- Additional unconfirmed spy command paths and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -466,7 +476,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **31**, adding extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-30 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Older binaries cannot read version 31.
+**Save rollback compatibility:** This build uses world version **32**, adding the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-31 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Older binaries cannot read version 32.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -538,7 +548,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-30 worlds upgrade to version 31 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-31 worlds upgrade to version 32 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 

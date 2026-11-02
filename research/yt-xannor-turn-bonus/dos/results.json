@@ -1,0 +1,2338 @@
+{
+  "recipe": "xannor-turn-bonus-v1",
+  "scenarios": [
+    {
+      "name": "kills-199",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          199
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 199,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          199
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "061e8635a7410f1009ec6c654043bbb9627e66ea84998cadcbe5a53b60e4dc56",
+        "before.dat.gz": "b38cf3625b4effebb70cf070f6f9aa73d7f654a66f9fe875afad2fc52865c3cb",
+        "dosbox.log": "f5d406eebf2793b43bf965abcb7916f4a4f69cefdc66a7c536b6ba8328f01a51",
+        "game.log.gz": "21e9b350132f05d9e3e5b52dad86576857b20ab6c112cb8a3a61780b7d195d67",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "db79e252bc4376dd104f2decb8089a656bb26ebb0a872f1850df562f6389efd6",
+        "transcript.txt": "2d222e4804c46be47372b755c02126dd7727c93391ee3ce4b5606da81ca14cc4"
+      }
+    },
+    {
+      "name": "kills-200",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          200
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 200,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          200
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "eee3e5cbd991769bf695c8087d6a3b245f58dc3de21e6164ff4ae9495cd0b35a",
+        "before.dat.gz": "d8ea5262a833e7ca7bfdd18dd5c27859717d53ea22b17dd03ad0f36a2d725236",
+        "dosbox.log": "1096c1939e01dfccd7423d228b7437c6999a55387c405df4f35986385d8e2c67",
+        "game.log.gz": "b13f0221b5b4413a3d26d13336d6e7d2ad91cb1a2f94ac41f4c96fbceecc64e1",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "c3d335201bdf2da50e93a67409ab4450544b3778619e3258ad5500f318ce4dc0",
+        "transcript.txt": "63a51d0745d5944ff9a49b31b2d1d56d20b431e99c8c7a9522987f0333163bed"
+      }
+    },
+    {
+      "name": "kills-399",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          399
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 399,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          399
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "fc843734126a21fd6a4756bf785a5ff35ff57b3bd2e9fbb858818ff7b5611414",
+        "before.dat.gz": "6dcae66a874717bc3e86c9becefbd30742f7971479ae077a6f3607c92c5750b9",
+        "dosbox.log": "3b680343aa9acb24cef66a3f4d93dc8ef71ecda5e06981f88ea9213f0514bf34",
+        "game.log.gz": "0888fcc5eff65d921aaff50276456aa10a2f529a4f10925c9bb3fe47ebec5f54",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "caa2a9e6440f1c71b50f7aa44801273bda81a6f83c209c1577c4874d4deb2882",
+        "transcript.txt": "cca51b214eafe3640c389b39ccc9e2f9a9478e26f6d395e54517181b8ae1b5f1"
+      }
+    },
+    {
+      "name": "kills-400",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 400,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "364234b5e5c783704e0d9c92507c910c381eb9046397dbe933e6298e338ce802",
+        "before.dat.gz": "32d80ec9af37d430f60601c859032bf930654ef7e16363e5b3b35ace235de02f",
+        "dosbox.log": "8f6c205677f58ea0dafe5e5312fb8e7d496ba0d1df0769e01e506533facf6582",
+        "game.log.gz": "1722d8e1d847f82cda9f47b600c55132b1c2a648e3bf02aee50f48eb42e1bbab",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "935c097920c8b95790c942ef2153b350beaef1b97ab5c4c9c48fcc8353705cb5",
+        "transcript.txt": "01f08c0f4e3a633ee5ddddb55c15f52b15c4509ceb7748b905ebe7f1c465d785"
+      }
+    },
+    {
+      "name": "cap-one",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          499
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          1000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 1000,
+      "turns": 499,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          499
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          1000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "01d46d78552d887ecd8e30b79042b772180da64879899661420f2f3cd6edd5d8",
+        "before.dat.gz": "38f8a63d6f99547ecbf34a996289000e97fc1025887c78082a4b2b48111768eb",
+        "dosbox.log": "ec1b580830e7e4fdaa60dc77a03e564bcea9afc4e03c45b3a2f7c6f1d4fd8b22",
+        "game.log.gz": "d53b84f7946768d430dad7be08775da617bf7da8b12ae627cad067093d4df448",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "9c1696374944100bb32a6e74e5b461981d6ce6563d4a4f3001876865546c36e7",
+        "transcript.txt": "ad1daffc931c6487b1b038249a8241bf75795ff85b8bfeb5fb7fbd77e2714b61"
+      }
+    },
+    {
+      "name": "at-cap",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          1000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 1000,
+      "turns": 500,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          1000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "01d46d78552d887ecd8e30b79042b772180da64879899661420f2f3cd6edd5d8",
+        "before.dat.gz": "4156b8f79b565f52f85fd1fa7df1cefd357cad8304ffcdb9cf9a123d74ef628d",
+        "dosbox.log": "3f8be8eb4cc395161754d89284d0224b591d191891ea0eb54fc72d0ee930e886",
+        "game.log.gz": "dddcb7f0df6c77e5d4bcba89e079959541b3f1079cce9082973bb3d13579b611",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "97718650480664c8a0731c7cf0c6c187450367fa8b4ee5c001448cf83fcef752",
+        "transcript.txt": "8db0b29b601d3d0cd18849d1c8a1e61e8c27ce66f586d921e27afe661bb3f448"
+      }
+    },
+    {
+      "name": "mercenary",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -2
+        ]
+      ],
+      "count": 400,
+      "turns": 100,
+      "owner": -2,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -2
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "1cafff6e8bdfd0a77de945267ee24059124e1636e792d1346fd492b543199a4c",
+        "before.dat.gz": "ad8baa0c4c3590179aeee28a41a40acf49853d1cf2d7763380c63ef85949576f",
+        "dosbox.log": "debf2a851c72d6dec61aaa3585c043133cd6891d10414707d1a63d4c95f9afbe",
+        "game.log.gz": "9e47575f608624e10d80f4ad4eef22efbdff0239398087a89ed8b0e7779cc232",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "1e3e33efbc278733fa93694d8d7669553fa2294d50baf7c15d54586007846cce",
+        "transcript.txt": "a7bf2b1d1d0b034824e2b452a1f3ddd30b8130c1f4eb4bac99eda362a7c9ea88"
+      }
+    },
+    {
+      "name": "player-defense",
+      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          3
+        ]
+      ],
+      "count": 400,
+      "turns": 100,
+      "owner": 3,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          3
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "33ed773137b0d97a757e4347bddca962a207c8cc37117bf168d5cf3448dc229d",
+        "before.dat.gz": "c31a83421e32aa38c589cec0994a653abc301ff5ac013b8d3de4b77ca72a8d61",
+        "dosbox.log": "b722ee47867a2535a25aba39840bda05a152e2765ed7d8b4f569ed5ae2aa159d",
+        "game.log.gz": "551fc3b24a9770f97a339a98f9a3f1445180aec290c0576200ce05b70a12a699",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "c686b4a3b0998c9c7e0185c2bf26726b15f0740186191fa0e05e0550d70a71b3",
+        "transcript.txt": "9f7beb41bc3721d2b3bc808fb50b462fbed7b520b81498440cf89d546dfecb99"
+      }
+    },
+    {
+      "name": "partial-escape",
+      "command": "A;1000\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          1000
+        ],
+        [
+          2,
+          53,
+          100000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          100000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "count": 100000,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          1000
+        ],
+        [
+          2,
+          53,
+          100000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          100000
+        ],
+        [
+          151,
+          85,
+          -1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "d4aa8982d3450911e037e00da24b64fc94d2fd02b2eb88db252012d25c53375f",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "129ae9a7a3d938a6234f105b1fd116aa1683ab5198eac5fbce9d3f565db5034d",
+        "before.dat.gz": "aa33ab478b5fd2916c169eff038b4bf73a80345b281b79ccf3d32791b984741e",
+        "dosbox.log": "ccd326643fddc1dc7ec640ce369a9b3451042176037448dacca44397befd0470",
+        "game.log.gz": "4a1a3ad92c3bdcbd3155d8305daa44454677a46f498d5ce908916d72baf6cefb",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "8f6d38727c9bf98b0dc504726a837b8717f77ff03d630c9a921fc419540ff7c9",
+        "transcript.txt": "1735958fc3cfd73268ee14b188a72c87846fa80d4b49bf991b007a3d5b9c05e0"
+      }
+    },
+    {
+      "name": "missiles",
+      "command": "!;101;100\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          400
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ]
+      ],
+      "count": 400,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          400
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          97,
+          100
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "7f41898bc7e15a00763820d526ccb063801059c8c78d7bba2fb1451b3dd28ccc",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "e3b4a752ff63768d781f1390b0d07148ae6de3637d074190c9d99e0cf5667d6b",
+        "before.dat.gz": "9419ff79a5750e208dd0366d7a0df4d8e4dbab1cb9853061a857ec7d034f588d",
+        "dosbox.log": "234b4c9dd5feec2e55d606ce72543d1453c7eca5bc31c4a2f388a64995e93ab8",
+        "game.log.gz": "210e74010d58cf21f4e10c48a55de7579ed72a9c1e99d67e26b0a78f2ae70d6c",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "105a7390aafaaa40049992cecdbab90a81977a58e7ff8d545d001439b7c58947",
+        "transcript.txt": "5d42a4cc9e2732493ae7aa16535ded429a9086f43545ff6d2bedbe49fb37989c"
+      }
+    },
+    {
+      "name": "plasma",
+      "command": "+;101;1\r~~~~C;8;T\r~~1",
+      "patches": [
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          400
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          113,
+          1
+        ]
+      ],
+      "count": 400,
+      "turns": 100,
+      "owner": -1,
+      "program_returned": true,
+      "recipe": "xannor-turn-bonus-v1",
+      "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+      "applied_patches": [
+        [
+          2,
+          45,
+          0
+        ],
+        [
+          2,
+          49,
+          500
+        ],
+        [
+          2,
+          57,
+          1
+        ],
+        [
+          2,
+          89,
+          0
+        ],
+        [
+          2,
+          93,
+          0
+        ],
+        [
+          2,
+          105,
+          0
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          3,
+          45,
+          0
+        ],
+        [
+          3,
+          57,
+          2
+        ],
+        [
+          3,
+          61,
+          42
+        ],
+        [
+          3,
+          53,
+          7
+        ],
+        [
+          3,
+          89,
+          0
+        ],
+        [
+          3,
+          125,
+          1
+        ],
+        [
+          52,
+          65,
+          1
+        ],
+        [
+          152,
+          65,
+          2
+        ],
+        [
+          3053,
+          93,
+          101
+        ],
+        [
+          153,
+          93,
+          2
+        ],
+        [
+          4053,
+          73,
+          0
+        ],
+        [
+          4053,
+          77,
+          12
+        ],
+        [
+          2,
+          49,
+          100
+        ],
+        [
+          2,
+          57,
+          100
+        ],
+        [
+          2,
+          61,
+          10000
+        ],
+        [
+          2,
+          53,
+          10000
+        ],
+        [
+          2,
+          125,
+          0
+        ],
+        [
+          151,
+          81,
+          400
+        ],
+        [
+          151,
+          85,
+          -1
+        ],
+        [
+          151,
+          81,
+          0
+        ],
+        [
+          151,
+          85,
+          0
+        ],
+        [
+          152,
+          81,
+          400
+        ],
+        [
+          152,
+          85,
+          -1
+        ],
+        [
+          2,
+          113,
+          1
+        ]
+      ],
+      "date": "10/24/2026",
+      "time": "00:00:00",
+      "timeout_seconds": 150,
+      "timed_out": false,
+      "complete": true,
+      "binaries": {
+        "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+        "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+        "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+        "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+      },
+      "files": {
+        "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "KEYS.TXT": "789a53d1bc72bfc93ec556c1cfe2f0fb3289b0e3a633c6256a386dbd81b044b7",
+        "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+        "after.dat.gz": "a7ab4ae80e21047340e9ed61aaefd9a777cbdc6475b61e19dfc5bf9d7fd05c46",
+        "before.dat.gz": "6ad6d9b154e6462ddbb33eb4a5b3923976423742ba1bb999d8369755bfb679dd",
+        "dosbox.log": "c0f9f54b56842858f5ebb1f8f909855a14f5d217998a58ad6f8a4a70384500d0",
+        "game.log.gz": "99eaa2dca35e0fa78a8c8191443dfd1f7f79e8d5cb3634d78092bb539c43a3f8",
+        "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+        "sidefiles.json.gz": "2f89a77c66f7bc1d217e29d37d07a00ae0112443701ccd4ac8fd00237efa7e83",
+        "transcript.txt": "31af37fbc7762549eea3bbb88089a92e9a708a0822f7c80738d2c0ee36e8714d"
+      }
+    }
+  ]
+}

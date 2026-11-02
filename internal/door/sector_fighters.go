@@ -133,6 +133,11 @@ func (s Session) defenseEncounter(id int, args []string, pending *[]string, retr
 	if err = s.Terminal.Printf("Defense encounter saved: %d attackers lost, %d defenders destroyed, %d surrendered.\r\n", out.Battle.AttackerLosses, out.Battle.DefenderLosses, out.Battle.Joined); err != nil {
 		return err
 	}
+	if out.TurnBonus > 0 {
+		if err = s.Terminal.Printf("Xannor combat bonus saved: %d turns added.\r\n", out.TurnBonus); err != nil {
+			return err
+		}
+	}
 	if out.HQReward != nil {
 		if err = s.showHQReward(*out.HQReward); err != nil {
 			return err

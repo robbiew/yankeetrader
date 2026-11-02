@@ -99,6 +99,11 @@ func (s Session) bribe(id int, args []string, pending *[]string) error {
 		if err = s.Terminal.Printf("Forced defense combat: %d attackers lost, %d defenders destroyed.\r\n", out.Defense.Battle.AttackerLosses, out.Defense.Battle.DefenderLosses); err != nil {
 			return err
 		}
+		if out.Defense.TurnBonus > 0 {
+			if err = s.Terminal.Printf("Xannor combat bonus saved: %d turns added.\r\n", out.Defense.TurnBonus); err != nil {
+				return err
+			}
+		}
 		if out.Defense.HQReward != nil {
 			if err = s.showHQReward(*out.Defense.HQReward); err != nil {
 				return err

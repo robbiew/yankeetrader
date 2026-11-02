@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 32 {
+		for _, e := range w.News {
+			if e.Combat != nil && e.Combat.Operation == "xannor-turn-bonus" {
+				return errors.New("legacy world contains Xannor turn bonus")
+			}
+		}
+	}
 	if w.Version < 31 {
 		for _, e := range w.News {
 			if e.Kind == NewsCombat || e.Kind == NewsRegistration || e.Kind == NewsTeamJoined || e.Combat != nil {
@@ -357,6 +364,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 30 {
 		w.Version = 31
+	}
+	if w.Version == 31 {
+		w.Version = 32
 	}
 	return nil
 }

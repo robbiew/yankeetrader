@@ -37,6 +37,8 @@ func combatNewsText(e game.NewsEvent) string {
 		return fmt.Sprintf("%d fighters in sector %d surrendered to %s.", c.Amount, c.Sector, e.Alias)
 	case "sector-destroyed":
 		return fmt.Sprintf("%s destroyed %d fighters belonging to %s in sector %d.", e.Alias, c.Amount, c.Target, c.Sector)
+	case "xannor-turn-bonus":
+		return fmt.Sprintf("%s collected %d turns bonus for destroying %d Xannor!!", e.Alias, c.Amount, c.Secondary)
 	case "wreck-mines":
 		return fmt.Sprintf("%s had sector mines! They EXPLODED! %d mines in sector %d.", e.Alias, c.Amount, c.Sector)
 	case "mine-hit":

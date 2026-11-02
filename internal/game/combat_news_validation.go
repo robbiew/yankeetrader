@@ -54,6 +54,13 @@ func validateCombatNews(e NewsEvent) error {
 		if c.Target == "" || c.Sector < 1 || c.Amount < 1 || c.Amount > MaxQuantity {
 			return errors.New("invalid defense news")
 		}
+	case "xannor-turn-bonus":
+		allowed.Sector = c.Sector
+		allowed.Amount = c.Amount
+		allowed.Secondary = c.Secondary
+		if c.Sector < 1 || c.Amount < 1 || c.Amount > 500 || c.Secondary < 200 || c.Amount > c.Secondary/200 {
+			return errors.New("invalid Xannor turn bonus news")
+		}
 	case "wreck-mines":
 		allowed.Sector = c.Sector
 		allowed.Amount = c.Amount

@@ -1,3 +1,5 @@
+Follow-up: the [Xannor direct-combat turn bonus](../../yt-xannor-turn-bonus/RECOVERY.md) is now implemented separately; references to that outstanding mechanic below describe this earlier inventory.
+
 # Remaining newspaper events: inventory, evidence and implementation
 
 Target: original DOS 3.6 YT.EXE, SHA-256
