@@ -182,17 +182,11 @@ func (s Session) classicCreate(id int, pending *[]string, credits int64, sector 
 		if answer != "" && !strings.EqualFold(answer, "y") {
 			continue
 		}
-		if err = s.Store.Update(func(w *game.World) error {
-			if w.Players[id] == nil || w.Players[id].Sector != sector {
-				return errors.New("sector changed; start planet creation again")
-			}
-			return w.CreatePlanet(id, name, s.Now())
-		}); err != nil {
+		err = s.Store.CreatePlanet(id, name, sector, s.Now, s.Deadline)
+		if err = s.planetCreationReceipt(err, name, true); err != nil {
 			return err
 		}
-		if err = s.Terminal.Printf("\r\nPlanet \"%s\" created with Genesis Device!\r\n\r\nTo increase productivity on your new planet, spend credits [$] on it.\r\n", name); err != nil {
-			return err
-		}
+
 		w, err := s.Store.View()
 		if err != nil {
 			return err

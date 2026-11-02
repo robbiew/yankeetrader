@@ -12,19 +12,20 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
-	NewsBroadcast    NewsKind = "radio-broadcast"
-	NewsPlayerPlanet NewsKind = "player-planet-assault"
-	NewsLottery      NewsKind = "paid-lottery"
-	NewsXannorHQ     NewsKind = "xannor-hq-victory"
-	NewsPortPlague   NewsKind = "port-plague"
-	NewsPlanetPlague NewsKind = "planet-plague"
-	NewsCivilWar     NewsKind = "civil-war"
-	NewsSuperPlanet  NewsKind = "super-planet"
-	NewsRetirement   NewsKind = "retirement"
-	NewsXannorPlanet NewsKind = "xannor-planet-assault"
-	NewsLogin        NewsKind = "login"
-	NewsXannorDeath  NewsKind = "xannor-death"
-	NewsTeamCreated  NewsKind = "team-created"
+	NewsPlanetCreated NewsKind = "planet-created"
+	NewsBroadcast     NewsKind = "radio-broadcast"
+	NewsPlayerPlanet  NewsKind = "player-planet-assault"
+	NewsLottery       NewsKind = "paid-lottery"
+	NewsXannorHQ      NewsKind = "xannor-hq-victory"
+	NewsPortPlague    NewsKind = "port-plague"
+	NewsPlanetPlague  NewsKind = "planet-plague"
+	NewsCivilWar      NewsKind = "civil-war"
+	NewsSuperPlanet   NewsKind = "super-planet"
+	NewsRetirement    NewsKind = "retirement"
+	NewsXannorPlanet  NewsKind = "xannor-planet-assault"
+	NewsLogin         NewsKind = "login"
+	NewsXannorDeath   NewsKind = "xannor-death"
+	NewsTeamCreated   NewsKind = "team-created"
 )
 
 // NewsEvent stores whitelisted public snapshots. Only explicitly public radio
@@ -73,7 +74,7 @@ func (w *World) validateNews() error {
 		if e.ID <= lastID || e.ID >= w.NextNews || e.At.IsZero() || offset != 0 || e.At.Before(w.Created) || e.At.Before(lastAt) || e.At.Before(cutoff) || (!planetaryNews(e.Kind) && e.Kind != NewsPortPlague && !clean(e.Alias)) {
 			return errors.New("invalid newspaper event")
 		}
-		if !planetaryNews(e.Kind) && (e.PlanetName != "" || e.Outcome != "") {
+		if !planetaryNews(e.Kind) && e.Kind != NewsPlanetCreated && (e.PlanetName != "" || e.Outcome != "") {
 			return errors.New("unrelated news contains planetary details")
 		}
 		if e.Kind != NewsPortPlague && e.PortCount != 0 {
@@ -89,6 +90,10 @@ func (w *World) validateNews() error {
 			return errors.New("private or unrelated news contains radio text")
 		}
 		switch e.Kind {
+		case NewsPlanetCreated:
+			if !clean(e.PlanetName) || e.Outcome != "" || e.Team != 0 || e.TeamName != "" {
+				return errors.New("invalid planet creation news")
+			}
 		case NewsBroadcast:
 			if !validRadioText(e.BroadcastText) || e.Team != 0 || e.TeamName != "" {
 				return errors.New("invalid public broadcast news")

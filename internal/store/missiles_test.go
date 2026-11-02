@@ -167,11 +167,13 @@ func TestVersionEightUpgradeAcceptsZeroPlanetProduction(t *testing.T) {
 	w.Season = 0
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
-	w.NextNews = 0
+	w.NextNews = 1
 	w.Players[1].Credits = 100000
 	if err = w.CreatePlanet(1, "Zero", time.Now()); err != nil {
 		t.Fatal(err)
 	}
+	w.NextNews = 0
+	w.News = nil // Historical fixture predates creation news.
 	w.Planets[2].Production = [3]float64{0, 20, 0}
 	w.Planets[2].Cargo = [3]float64{0, 200, 0}
 	data, _ := marshalHistoricalWorld(w)

@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 28 {
+		for _, e := range w.News {
+			if e.Kind == NewsPlanetCreated {
+				return errors.New("legacy world contains planet creation news")
+			}
+		}
+	}
 	if w.Version < 27 {
 		for _, e := range w.News {
 			if e.Kind == NewsBroadcast || e.BroadcastText != "" {
@@ -318,6 +325,9 @@ func (w *World) Upgrade() error {
 	if w.Version == 26 {
 		w.Version = 27
 	}
+	if w.Version == 27 {
+		w.Version = 28
+	}
 	return nil
 }
 func (w *World) validatePlanets() error {
@@ -407,6 +417,9 @@ func (w *World) CreatePlanet(id int, name string, now time.Time) error {
 	if slot > 100 {
 		return errors.New("all planet slots are occupied")
 	}
+	if e = w.prepareNews(now); e != nil {
+		return e
+	}
 	generation, e := w.allocatePlanetGeneration()
 	if e != nil {
 		return e
@@ -414,6 +427,7 @@ func (w *World) CreatePlanet(id int, name string, now time.Time) error {
 	planet := &Planet{Generation: generation, ID: slot, Sector: p.Sector, Owner: id, Name: name, Updated: now.UTC(), Production: [3]float64{1, 1, 1}, Cargo: [3]float64{10, 10, 10}, Fighters: 30, Ground: 1}
 	w.Planets[slot] = planet
 	w.Sectors[p.Sector].Planet = slot
+	w.appendNews(NewsEvent{At: now.UTC(), Kind: NewsPlanetCreated, Alias: p.Alias, PlanetName: name})
 	p.Credits -= 25000
 	p.DockToken = ""
 	p.PlanetToken = ""

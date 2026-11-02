@@ -42,7 +42,7 @@ def exercise(guard):
     balance+=award-fee;assert saved==balance and remaining==4-i,row
     if matches>=4:public.append((matches,award))
    saved=json.loads(path.read_text());p=saved['Players']['1']
-   assert saved['Version']==27 and p['Credits']==balance and p['LotteryDay']==guard.day.isoformat()and p['LotteryPlays']==5 and p['LotterySequence']==5 and p['Turns']==499,(p,text)
+   assert saved['Version']==28 and p['Credits']==balance and p['LotteryDay']==guard.day.isoformat()and p['LotteryPlays']==5 and p['LotterySequence']==5 and p['Turns']==499,(p,text)
    events=[e for e in saved.get('News',[])if e['Kind']=='paid-lottery']
    assert [(e['LotteryMatches'],e['LotteryPrize'])for e in events]==public,events
    assert all(set(e)<=set(('ID','At','Kind','Alias','LotteryMatches','LotteryPrize'))for e in events)

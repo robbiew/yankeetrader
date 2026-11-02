@@ -1,8 +1,9 @@
 # Planet creation and port-sale notification implementation contract
 
-This research adds **no Go behavior, saved fields or dependency changes**. Current
-world format remains 27. The following is a scoped follow-up contract, not a
-claim that these events/notices have shipped.
+The research milestone added no gameplay or saved fields (then format 27).
+[Public planet creation is now implemented](IMPLEMENTATION.md) in format 28.
+The private seller-notice portion remains a follow-up contract. Earlier references
+to future creation behavior below describe the requirements now implemented.
 
 ## Public planet creation
 

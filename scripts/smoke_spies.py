@@ -89,7 +89,7 @@ def main():
         assert saved["Players"]["1"]["Credits"]==1667000 and saved["Players"]["1"]["Turns"]==498
         assert "Enemy - Team: 0 - Fighters: 42 - Shields: 10" in transcript,transcript
         assert saved["Players"]["2"].get("Cloak",0)==0
-        assert saved["Version"]==27 and not saved.get("Radio")
+        assert saved["Version"]==28 and not saved.get("Radio")
         text=play(data,"Trader","spies;intel;q")
         assert "You do not have any spies!" in text and "No intelligence reports this login." in text
         transcript+=text

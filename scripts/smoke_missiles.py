@@ -129,7 +129,7 @@ with tempfile.TemporaryDirectory(prefix='yt-missile-smoke-') as temp:
     code,text=play(data,'Launcher','missile 2 3',answer='y')
     assert code==0 and '3 mines destroyed. No ship struck.' in text,text
     transcript+=text
-    world=json.loads(path.read_text());assert world['Version']==27 and world['Sectors']['2']['Minefield'][0]['Count']==2
+    world=json.loads(path.read_text());assert world['Version']==28 and world['Sectors']['2']['Minefield'][0]['Count']==2
     assert world['Players']['1']['Missiles']==0 and world['Players']['1']['Turns']==499
     (ROOT/'evidence/missiles-smoke.txt').write_text(transcript)
     print('PTY missiles passed: fresh launch/cancel, remote kill and online-session invalidation, mine accounting, fatal cloak-overriding retaliation, true killer, Earth disposal and replacement without turn refill.')

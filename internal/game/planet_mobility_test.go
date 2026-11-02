@@ -23,6 +23,7 @@ func mobilityWorld(t *testing.T) (*World, *Player, *Planet) {
 	if err = w.CreatePlanet(p.ID, "Mobile", clock); err != nil {
 		t.Fatal(err)
 	}
+	w.News = nil // Isolate later mobility/assault events from fixture creation.
 	planet := w.Planets[w.Sectors[8].Planet]
 	planet.Ground = 100
 	planet.Production = [3]float64{}

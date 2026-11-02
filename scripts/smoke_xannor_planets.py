@@ -60,7 +60,7 @@ def exercise(guard):
             saved = json.loads(path.read_text())
             assert not any(p.get('Wanderer') for p in saved['Planets'].values())
             p = saved['Players']['1']
-            assert saved['Version'] == 27 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
+            assert saved['Version'] == 28 and not p.get('Death') and p.get('ShipGeneration', 0) == world['Players']['1'].get('ShipGeneration', 0)
             for asset in ('Credits', 'Fighters', 'Missiles', 'Mines', 'Plasma', 'Cargo'):
                 assert p[asset] == world['Players']['1'][asset], (asset, p)
             reports = p['BattleReports']
