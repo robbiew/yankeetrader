@@ -33,7 +33,7 @@ def exercise(guard):
             else:
                 transcript+=guard.run(play,data,'Creator','create Accepted World;create Duplicate;q')
             saved=json.loads(path.read_text());entries=[n for n in saved['News'] if n['Kind']=='planet-created']
-            assert saved['Version']==28 and len(entries)==1 and entries[0]['PlanetName']=='Accepted World' and entries[0]['Alias']=='Creator'
+            assert saved['Version']==29 and len(entries)==1 and entries[0]['PlanetName']=='Accepted World' and entries[0]['Alias']=='Creator'
             assert saved['Players']['1']['Credits']==25000 and saved['Players']['1']['Turns']==before['Turns']
             planet=saved['Planets'][str(saved['Sectors'][str(sector)]['Planet'])]
             assert planet['Name']=='Accepted World' and not saved.get('Radio')

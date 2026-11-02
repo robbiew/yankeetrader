@@ -1213,3 +1213,11 @@ creation/publication, negative and stale-session coverage, no-backfill migration
 compact/classic evidence and completed local checks. Private seller notices and
 live BBS acceptance remain separate. Earlier save27 milestone descriptions are
 historical compatibility records.
+
+## Private former-owner port-sale notices (save29)
+
+The [implementation validation](PORT_SALE_NOTICES_VALIDATION.md) records atomic
+buyout/settlement/notification, private snapshots and read/history behavior,
+strict payload/no-backfill migration, quote replay protection and completed local
+checks. Earlier private-seller deferrals and format28 statements above are
+historical milestones. Live BBS and native Windows durability remain separate.

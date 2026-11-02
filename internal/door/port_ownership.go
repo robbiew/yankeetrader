@@ -1,6 +1,8 @@
 package door
 
 import (
+	"errors"
+	"github.com/robbiew/yankeetrader/internal/store"
 	"strings"
 
 	"github.com/robbiew/yankeetrader/internal/game"
@@ -39,10 +41,8 @@ func (s Session) buyPort(id int, pending *[]string) error {
 	if !strings.EqualFold(answer, "y") {
 		return s.Terminal.Printf("Port purchase cancelled.\r\n")
 	}
-	if err = s.Store.Update(func(w *game.World) error { return w.PurchasePort(id, quote, s.Now()) }); err != nil {
-		return err
-	}
-	return s.Terminal.Printf("Sold! Port ownership saved.\r\n")
+	err = s.Store.PurchasePort(id, quote, s.Now, s.Deadline)
+	return s.portPurchaseReceipt(err, quote.Owner != 0)
 }
 
 func (s Session) portTreasuryReport(id int) error {
@@ -79,4 +79,18 @@ func (s Session) collectPortTreasury(id int) error {
 		return err
 	}
 	return s.Terminal.Printf("Collected %d credits from your port treasuries.\r\n", amount)
+}
+
+func (s Session) portPurchaseReceipt(saved error, notified bool) error {
+	var committed *store.DurabilityError
+	if saved != nil && !errors.As(saved, &committed) {
+		return saved
+	}
+	var output error
+	if notified {
+		output = s.Terminal.Printf("Sold! Port ownership saved; private sale notice saved for the former owner.\r\n")
+	} else {
+		output = s.Terminal.Printf("Sold! Port ownership saved.\r\n")
+	}
+	return errors.Join(saved, output)
 }

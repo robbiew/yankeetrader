@@ -2,8 +2,8 @@
 
 The research milestone added no gameplay or saved fields (then format 27).
 [Public planet creation is now implemented](IMPLEMENTATION.md) in format 28.
-The private seller-notice portion remains a follow-up contract. Earlier references
-to future creation behavior below describe the requirements now implemented.
+[Private seller notices are implemented](PORT_SALE_IMPLEMENTATION.md) in format29.
+Earlier future-tense requirements below describe the scopes now implemented.
 
 ## Public planet creation
 

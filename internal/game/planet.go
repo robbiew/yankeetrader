@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 29 {
+		for _, m := range w.Radio {
+			if m.System == "port-sale" || m.PortSale != nil {
+				return errors.New("legacy world contains port-sale notice")
+			}
+		}
+	}
 	if w.Version < 28 {
 		for _, e := range w.News {
 			if e.Kind == NewsPlanetCreated {
@@ -327,6 +334,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 27 {
 		w.Version = 28
+	}
+	if w.Version == 28 {
+		w.Version = 29
 	}
 	return nil
 }

@@ -29,10 +29,12 @@ the success receipt cannot be printed. News exhaustion blocks creation atomicall
 
 ## Save compatibility
 
-World format is 28. Supported versions 1–27 upgrade in memory and persist only on
+The creation milestone introduced format28. Current format29 also supports
+[private port-sale notices](PORT_SALE_IMPLEMENTATION.md). Supported versions 1–28
+upgrade in memory and persist only on
 successful updates. No public creation entries are inferred from historical
 planets. Pre-28 saves claiming the new event are rejected. Stop and back up the
-door before upgrading all nodes together; older binaries cannot read save28.
+door before upgrading all nodes together; older binaries cannot read save29.
 The prior broadcast and spy privacy rules are unchanged.
 
 ## Validation and limits
@@ -49,7 +51,7 @@ compact duplicate rejection, classic decline and accepted-name retry, exact debi
 no turn charge, reconnect newspaper reads and rename-proof snapshots.
 Run `python3 scripts/smoke_planet_creation_news.py` after building `bin/yt`.
 Native evidence remains separately checked by verify_newspaper_events.py and its
-54 corruption variants. Private former-owner port-sale notices are not implemented.
+54 corruption variants. Private seller notices are implemented separately in format29.
 No live BBS, native Windows crash durability, exact DOS wrapping/colors or
 simultaneous original-DOS writer behavior is claimed.
 
