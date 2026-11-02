@@ -148,7 +148,9 @@ expiry. Pending old callers were rejected even after player IDs and initial ship
 generations were recreated. The campaign found and fixed a deadline-input issue:
 expired reads now report session expiry and reject late input. Forced termination
 after carrier loss fails the campaign. A committed black-hole arrival that consumes
-all turns can restart the entire disposable world, bounded to three attempts with
+all turns during movement or login/reconnect can restart the entire disposable
+world only when its saved balance and final sector match the committed receipt.
+Startup output is retained with the action log. Retries are bounded to three attempts with
 all evidence retained; timeouts, invariant failures and abnormal exits still fail.
 Per-node stderr is captured separately. The exact Linux PTY hangup diagnostic
 `write /dev/stdout: input/output error` is accepted only after deliberate carrier

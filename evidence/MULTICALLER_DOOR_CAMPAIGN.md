@@ -174,3 +174,35 @@ The full job now allows 40 minutes. The workflow diff was checked to preserve
 every command, dependency pin, action and the separate 10-minute campaign budget.
 This changes no Go, Python, save, evidence capture or gameplay behavior. Current
 new-head CI must pass before merge; the prior cancellation is not a green check.
+
+## Login arrival audit follow-up — PR #73
+
+[Campaign job 125599445595](https://github.com/robbiew/yankeetrader/actions/runs/41539409849/job/125599445595)
+failed on head `1794a3e`: Broker reached the team-port planner with zero turns
+after reconnect. Production startup calls `StartDisruption` and prints committed
+arrival receipts before the first main prompt, but the driver previously only
+audited command output. A startup exhaustion receipt could therefore be discarded
+and surface later as an unclassified daily-turn assertion.
+
+`Caller.login` now collects startup dialogue through the first main prompt and
+records it through the same authoritative receipt/save checks as movement. Only
+a committed forced-warp exhaustion receipt matching both saved zero turns and
+final sector permits the existing bounded whole-world retry. A zero balance alone,
+inconsistent receipt, timeout, world invariant failure or abnormal exit still fails.
+No turns are granted, gameplay random draws disabled, or active saves rewound.
+
+Thirteen campaign-driver tests pass. New regressions first reproduced the missing
+startup check in both compact/classic prompts, including a receipt before a startup
+key pause, and then passed with the fix. Mismatched saves are rejected and an
+unexplained zero balance retains the planner assertion. Existing retry bounds,
+whole-attempt retention and cleanup/error-exit tests remain enforced.
+
+A fresh native macOS race-enabled run of the corrected driver passed on its
+first attempt: 181 recorded actions including all ten logins, 1,000 saved-world
+audits, ten sessions and seven peak processes. Atlas reached a 20-port victory
+and season 2; no findings, forced stops or race logs occurred. Attempt manifest
+hashes and the captured driver hash match the retained files/current driver.
+[Full capture](multicaller-campaign/login-arrival-fix.tar.gz) and
+[summary with archive SHA256](multicaller-campaign/login-arrival-fix-summary.json)
+retain startup output, inputs, exit audits and world snapshots. Linux CI on the
+new PR head remains required before merge.
