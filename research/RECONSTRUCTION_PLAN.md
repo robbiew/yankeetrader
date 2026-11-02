@@ -1376,3 +1376,26 @@ reject altered, cancelled and replayed quotes. Save version stays 27. See the
 [implementation and validation](yt-spies/triggers/IMPLEMENTATION.md) and
 [scoped contract](yt-spies/triggers/CONTRACT.md).
 See [recovery and limits](yt-spies/triggers/RECOVERY.md).
+
+
+## Planet-creation newspaper and private port-sale notices — researched
+
+The [34-control follow-up](yt-newspaper/events/RECOVERY.md) recovers one public
+planet-creation line after accepted creation, with no additional turn charge and
+no success entry for the tested negative paths. Four exact actor reload chains
+preserve world/auxiliary provenance. Native evidence anchors 21 complete reads,
+four bounded direct-call searches and 870 relocations.
+
+Correct the broad acquisition-public-event backlog: ordinary owned/unowned,
+renamed, teammate and repeated purchases do not append public purchase news in
+the tested paths. Owned buyouts instead send a private old-owner system packet
+with the old port name, sector and asking price; the legacy sender-2 label is
+The Mercenaries. Treasury payout and asking price are distinct. A name refusal
+after Sold repeats the dialog rather than undoing accepted acquisition.
+
+No Go or schema-27 changes are included. Next: implement bounded public planet
+creation and private seller notices with atomic action/notification saves,
+explicit schema/system-origin policy and accurate receipts. Preserve current
+unsupported Earth ownership and naming safety policies unless deliberately
+aligned separately. Do not invent a public port purchase announcement or backfill
+old actions. [Implementation contract](yt-newspaper/events/CONTRACT.md).

@@ -4,6 +4,13 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
+**Research complete; gameplay follow-up pending:** original DOS planet creation
+publishes the accepted creator/name in the newspaper. Ordinary port acquisition
+instead sends a private system notice to the former owner; the tested paths do
+not publish purchase news. Thirty-four returned controls and native writer
+boundaries distinguish those scopes. No Go or save-version change is included.
+[Findings and implementation contract](research/yt-newspaper/events/RECOVERY.md).
+
 **Spy triggers and shared visibility are available in-game:** accepted movement,
 docking, validated missile/plasma launches and charged unavailable planet queries
 advance this login's spies. Fighter transfers and free information reads do not.
@@ -43,7 +50,7 @@ home planet is a capture target; plasma comes from planetary stocks. See
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Explicit season archive export/administrative reset tooling.
-- Remaining newspaper event types, additional unconfirmed spy command paths, and character-level DOS editor wrapping/backspace parity.
+- Planet-creation newspaper entries and private former-owner port-sale notices (research complete; not yet implemented), remaining event types, additional unconfirmed spy command paths, and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
@@ -1422,3 +1429,37 @@ and regression/terminal coverage without changing schema 27 or dependencies.
 The Xannor mine-only terminal fixture isolates its occupied HQ route from unrelated
 Wanderer planetary combat; production faction behavior is unchanged.
 Live BBS acceptance and native Windows durability remain unverified.
+
+## Planet-creation news and private port-sale research
+
+The original newspaper adds `  -  <alias> made a planet: <accepted name>` once
+successful creation charges 25,000 credits. It spends no turn, including when
+starting at zero turns. Declined/default purchase consent, insufficient credits,
+blank/reserved names, occupied sectors and saturated slot flags do not publish a
+creation success. Name refusal repeats naming; only the final normalized,
+41-character-bounded name is recorded. Current Go naming safety policies remain
+unchanged by this research.
+
+The port-acquisition backlog is corrected: no public purchase entry was observed
+in the tested paths. Owned-port buyouts create a private notice for the former
+owner, naming the buyer, old port name, sector and asking price. DOS uses system
+sender -2, displayed as The Mercenaries. A 31-credit purchase with 777 in treasury
+pays the seller 808; the notice names the asking price, not that total payout.
+Unowned purchases have nobody to notify. Initial refusal cancels; declining a
+rename after Sold retries the name and is not purchase cancellation. Reloads
+preserve the public creation entry and private seller routing without replaying
+settlement; the buyer cannot read the seller-only notice.
+
+The retained 34 controls/four exact world-and-auxiliary reload chains are checked
+independently alongside 21 native observations, four bounded searches and all 870
+MZ relocations. Six tests reject 54 negative variants while allowing an unrelated
+elapsed-display change. All 76 portable evidence/control commands and 4,682
+archive hashes passed. [Recovery](research/yt-newspaper/events/RECOVERY.md),
+[native evidence](research/yt-newspaper/events/NATIVE.md) and
+[future implementation](research/yt-newspaper/events/CONTRACT.md) distinguish
+observed behavior from modern atomic-save/private-history policies. No gameplay,
+schema-27 or dependency changes are made. Live BBS acceptance, concurrent DOS
+writers and native Windows crash durability remain unverified.
+
+    python3 scripts/verify_newspaper_events.py
+    python3 scripts/test_newspaper_events_verifier.py

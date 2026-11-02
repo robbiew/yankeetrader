@@ -1,0 +1,37 @@
+{
+  "name": "planet-creator-reload",
+  "command": "\r~~~~C;6;1;C;8;T\r~~1",
+  "patches": [],
+  "family": "reload",
+  "outcome": "read",
+  "parent": "planet-create",
+  "actor": "TESTER",
+  "time": "00:10:00",
+  "program_returned": true,
+  "recipe": "newspaper-creation-acquisition-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "28012852978f2efbcd48fd1318f9af169247e5e5a71ebc23205fbb036facfa99",
+    "KEYS.TXT": "c09c4cefd2664c5641998a4a184b74a6ff4c314ccfccbc5fed29975b20468a9d",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "3d200b15063b5547e48a488a06053da2510ca9f67872784858491d8fb30719df",
+    "before.dat.gz": "eb08cc1c1435b3cc291a2f1bbbe8413a87726816e6d38a9b0c205c397d826657",
+    "dosbox.log": "e5450a68c3678edf1c686a83a651427f1e98f68a0c6a39b1958aa0e625bcb04b",
+    "game.log.gz": "12fd44460297dd8deadd20608dc97b5ed60ef21479284688effdd4eca2b5fb0c",
+    "side-before.json.gz": "e87be2e1768844a375d821f0484c9bbfab2b8d407c7c51625e55ced639ddd269",
+    "sidefiles.json.gz": "9130aefacd34f9ca59082d30254b210992d8eb1b3353d0c476270eef04ba951d",
+    "transcript.txt": "9016b7c3e78e6b22b2a7f57b48853986e26318151b6bd92d252fcf771e8be7f5"
+  }
+}

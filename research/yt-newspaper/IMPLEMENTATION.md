@@ -1,5 +1,10 @@
 # Galactic newspaper and public event journal
 
+Historical initial implementation: later typed producers and current save27 are
+listed in README. The [planet/acquisition follow-up research](events/RECOVERY.md)
+adds no gameplay, confirms public creation news and classifies the tested port
+sale notice as private to the former owner. It does not implement either follow-up.
+
 Computer option 8 prompts for Today/Yesterday and retries invalid input; lowercase
 T/Y works. Compact `NEWS` defaults to Today; `NEWS TODAY`, `NEWS T`, `NEWS YESTERDAY`
 and `NEWS Y` select explicitly. The classic interface also accepts explicit NEWS

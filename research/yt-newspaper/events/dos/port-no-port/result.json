@@ -1,0 +1,252 @@
+{
+  "name": "port-no-port",
+  "command": "B\r~~~~C;8;T\r~~1",
+  "patches": [
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      81,
+      100000
+    ],
+    [
+      2,
+      117,
+      0
+    ],
+    [
+      3,
+      81,
+      2000
+    ],
+    [
+      3,
+      117,
+      1
+    ],
+    [
+      2,
+      57,
+      101
+    ],
+    [
+      3053,
+      97,
+      3
+    ],
+    [
+      3053,
+      89,
+      777
+    ],
+    [
+      3053,
+      61,
+      100
+    ],
+    [
+      3053,
+      65,
+      100
+    ],
+    [
+      3053,
+      69,
+      100
+    ],
+    [
+      2,
+      57,
+      100
+    ]
+  ],
+  "family": "port",
+  "outcome": "none",
+  "program_returned": true,
+  "recipe": "newspaper-creation-acquisition-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      81,
+      100000
+    ],
+    [
+      2,
+      117,
+      0
+    ],
+    [
+      3,
+      81,
+      2000
+    ],
+    [
+      3,
+      117,
+      1
+    ],
+    [
+      2,
+      57,
+      101
+    ],
+    [
+      3053,
+      97,
+      3
+    ],
+    [
+      3053,
+      89,
+      777
+    ],
+    [
+      3053,
+      61,
+      100
+    ],
+    [
+      3053,
+      65,
+      100
+    ],
+    [
+      3053,
+      69,
+      100
+    ],
+    [
+      2,
+      57,
+      100
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "2e20e797fd60566bf790d90824ed6dda2eb3bed7f4c4daef69c1bed7e8c84292",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "3ba05a3ea13f81dae8e342b1d04086c68f4f3ce224eccc040a93cb674b99ae6b",
+    "before.dat.gz": "c3e81e6a55a38346b1940fdacf4ea4a8f84e353a25f6b40254009870a2911708",
+    "dosbox.log": "c64474b0067e034a61214afd81be91a648edebb99f56349283402ebaed59b6f6",
+    "game.log.gz": "a792cde4b8f6a498c132b99626c9d946876d3d52b3d2c38cbc4e7262338a841c",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "637a2a76d3e328fa8b6af3fef86a573350046988fa799615b36efcb142fb279b",
+    "transcript.txt": "bfa6e10b15c9f680aef6fb121e154b77035da5fec410d46c2bf4973338e0c897"
+  }
+}
