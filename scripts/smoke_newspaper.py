@@ -118,7 +118,7 @@ def run_fixture(guard):
         assert "Galactic Newspaper - Yesterday" in transcript and "No news retained for this date." in transcript
         assert "Captain  Logged on" in transcript
         path=data/"world.json";saved=json.loads(path.read_text())
-        assert saved["Version"]==27 and len(saved["News"])==1 and saved["NextNews"]==2
+        assert saved["Version"]==28 and len(saved["News"])==1 and saved["NextNews"]==2
         assert saved["Players"]["1"]["Credits"]==1005 and saved["Players"]["1"]["Turns"]==500
         text=guard.run(play,data,"Captain","team;2;News Team",followups=[
             (b"Team password (4 characters; entered separately): ",b"ABCD\r"),
@@ -151,7 +151,7 @@ def run_fixture(guard):
         path.write_text(json.dumps(current))
         text=guard.run(play,data,"Captain","news yesterday;q");transcript+=text
         assert "No news retained for this date." in text
-        migrated=json.loads(path.read_text());assert migrated["Version"]==27 and len(migrated["News"])==1 and migrated["NextNews"]==2
+        migrated=json.loads(path.read_text());assert migrated["Version"]==28 and len(migrated["News"])==1 and migrated["NextNews"]==2
         text=guard.run(play,data,"Captain","c;8;x;y;8;t;1;q;y",classic=True);transcript+=text
         assert text.count("Do you want to read [T]oday's or [Y]esterday's news?")==3 and "Choose T or Y." in text
         assert "Galactic Newspaper - Today" in text and "Captain  Logged on" in text

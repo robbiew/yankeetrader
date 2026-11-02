@@ -1205,3 +1205,11 @@ No Go, saved schema27, dependency, archive or live BBS change is included. Full
 Go/PTY/cross-build suites are not rerun for this research-only update; their
 previous results remain historical. Exact RNG/ties, broader indirect dispatch,
 simultaneous DOS processes and native/live acceptance remain explicit limits.
+
+## Public planet-creation news (save28)
+
+The [implementation validation](PLANET_CREATION_NEWS_VALIDATION.md) records atomic
+creation/publication, negative and stale-session coverage, no-backfill migration,
+compact/classic evidence and completed local checks. Private seller notices and
+live BBS acceptance remain separate. Earlier save27 milestone descriptions are
+historical compatibility records.

@@ -88,7 +88,7 @@ with tempfile.TemporaryDirectory(prefix="yt-broadcast-smoke-")as temp:
     message="ALL BROADCAST; literal/"
     transcript=play(data,"Sender","radio ALL;y;ignored;s",body=message)
     saved=json.loads(path.read_text())
-    assert saved["Version"]==27 and len(saved["Radio"])==3
+    assert saved["Version"]==28 and len(saved["Radio"])==3
     assert [m["To"]for m in saved["Radio"]]==[1,2,3]
     assert all(m["Text"]==message for m in saved["Radio"])
     assert "ALL 3 current active accounts (including you)"in transcript and "3 broadcast copies saved."in transcript

@@ -15,7 +15,7 @@ with tempfile.TemporaryDirectory(prefix='yt-editor-pty-')as temp:
  (b' 1: ',b'alpha alpha; literal/\rSECOND\r\r'),(MENU,b'E\r'),
  (b'Edit Which line?',b'1\ralpha\rBETA\ry\r'),(MENU,b'L\r'),(MENU,b'C\r'),
  (b' 2: SECOND',b' PLUS\r\r'),(MENU,b'S\r'),(FINAL,b's\r'),(b'2 lines saved',b'q\r')])
- saved=json.loads(path.read_text());assert saved['Version']==27 and [m['Text']for m in saved['Radio']]==['BETA alpha; literal/','SECOND PLUS']
+ saved=json.loads(path.read_text());assert saved['Version']==28 and [m['Text']for m in saved['Radio']]==['BETA alpha; literal/','SECOND PLUS']
  assert saved['Players']==before['Players'] and not any(n['Kind']=='radio-broadcast'for n in saved.get('News',[]))
  out=play(data,'Visitor','messages;q');transcript+=out;assert 'BETA alpha; literal/'not in out
  out=play(data,'Enemy','messages;q');transcript+=out;assert 'BETA alpha; literal/'in out and 'SECOND PLUS'in out

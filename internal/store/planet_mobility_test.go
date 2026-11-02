@@ -27,6 +27,8 @@ func mobilityStore(t *testing.T) (Store, Store, time.Time) {
 	p.Fighters = 1000
 	p.Shields = 100000
 	_ = w.CreatePlanet(p.ID, "Mobile", now)
+	w.News = nil // Isolate mobility effects from fixture creation news.
+	w.NextNews = 1
 	planet := w.Planets[w.Sectors[8].Planet]
 	planet.Production = [3]float64{}
 	planet.Ground = 100

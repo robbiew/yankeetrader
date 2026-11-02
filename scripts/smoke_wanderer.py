@@ -14,7 +14,7 @@ def exercise(guard):
         root=Path(temp);seed=root/"seed"
         guard.run(subprocess.run,[BINARY,"-data",str(seed),"-init","-sectors","32"],check=True,capture_output=True)
         fresh=json.loads((seed/"world.json").read_text());planet=fresh["Planets"]["1"]
-        assert fresh["Version"]==27 and planet["Wanderer"] and planet["Bank"]==250000 and planet["Owner"]==0
+        assert fresh["Version"]==28 and planet["Wanderer"] and planet["Bank"]==250000 and planet["Owner"]==0
         assert planet["Production"]==[5000]*3 and planet["Cargo"]==[0]*3 and planet["Generation"]>=101
         assert all(planet[key]==0 for key in ("Ground","Fighters","Missiles","Mines","Plasma"))
         assert fresh["Sectors"][str(planet["Sector"])]["Planet"]==1

@@ -1399,3 +1399,11 @@ explicit schema/system-origin policy and accurate receipts. Preserve current
 unsupported Earth ownership and naming safety policies unless deliberately
 aligned separately. Do not invent a public port purchase announcement or backfill
 old actions. [Implementation contract](yt-newspaper/events/CONTRACT.md).
+
+## Atomic public planet-creation news
+
+Public ordinary creation is implemented in save28: accepted name/alias snapshots
+save with the planet, sector reference and debit, with deadline/session guards and
+rollback/committed-warning coverage. Earlier creation deferrals above are historical.
+Private former-owner sale notices remain unimplemented; public acquisition news
+is not a recovered DOS feature. [Rules and validation](yt-newspaper/events/IMPLEMENTATION.md).
