@@ -1,0 +1,210 @@
+{
+  "name": "missile-one",
+  "command": "P;9;1;101\r~~~~\r~~0;C;15;1;!;100;1;C;15;1",
+  "patches": [
+    [
+      2,
+      81,
+      2000000
+    ],
+    [
+      2,
+      61,
+      1000
+    ],
+    [
+      2,
+      53,
+      10000
+    ],
+    [
+      3,
+      57,
+      200
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      152,
+      129,
+      7
+    ],
+    [
+      153,
+      93,
+      0
+    ],
+    [
+      152,
+      65,
+      0
+    ]
+  ],
+  "program_returned": true,
+  "recipe": "spy-triggers-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      81,
+      2000000
+    ],
+    [
+      2,
+      61,
+      1000
+    ],
+    [
+      2,
+      53,
+      10000
+    ],
+    [
+      3,
+      57,
+      200
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      152,
+      129,
+      7
+    ],
+    [
+      153,
+      93,
+      0
+    ],
+    [
+      152,
+      65,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "86f918389ad2a70c19889ccc802c8c23742ccb7a4064a46b621d565d0b61130a",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "08d1b57ee3a7e0a9343115a65743976ac14bcab91af17ba4f2517e54dffb5145",
+    "before.dat.gz": "23027fb1847f7a3a4331ed77fedf06112eb92490db191892457cd31cfb69905f",
+    "dosbox.log": "9c852811f15f4dfa9f7e468b6fbbc2b4a17d72f5fb2b52c235b30878c14da347",
+    "game.log.gz": "5651e5796cfff2a50ef3baf6060f7b5beac71aa13fdcf33c859422d03103dc13",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "f35f7c8371a140d0590899f39ff2a02a8192f4ebc320dae17d1046a6ec62f212",
+    "transcript.txt": "92fa1a33863fe89e3c3711bd818963882eac682b5a95475b5f4b53f0cb752b9f"
+  }
+}

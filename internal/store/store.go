@@ -30,6 +30,8 @@ type Store struct {
 }
 type shipSession struct {
 	plasmaActive     *game.PlasmaIntent
+	missileActive    string
+	missileDigest    [32]byte
 	arrivalMu        sync.Mutex
 	disruption       *game.Disruption
 	arrivalRNG       func() float64
@@ -51,6 +53,8 @@ type shipSession struct {
 	season           uint64
 	genesisActive    *game.GenesisIntent
 	spies            *game.SpyNetwork
+	visibility       *game.Visibility
+	spyRNG           func() float64
 }
 
 // ForShip binds this copy to the epoch and incarnation captured during login.
@@ -159,6 +163,12 @@ func (s Store) update(fn func(*game.World) error, allowMines, allowDefense bool)
 	return s.updateState(fn, allowMines, allowDefense, nil)
 }
 func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense bool, spyFn func(*game.World, *game.SpyNetwork) error) error {
+	return s.updateStatePhase(fn, allowMines, allowDefense, spyFn, nil)
+}
+
+// A preflight selects pre-action spy staging for confirmed launches. Its staged
+// grants remain private until save and cannot expand the sealed weapon snapshot.
+func (s Store) updateStatePhase(fn func(*game.World) error, allowMines, allowDefense bool, spyFn func(*game.World, *game.SpyNetwork) error, preflight func(*game.World) error) error {
 	if s.ship != nil {
 		s.ship.arrivalMu.Lock()
 		defer s.ship.arrivalMu.Unlock()
@@ -196,6 +206,30 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 		if s.ship != nil && !allowDefense && w.HostileDefense(s.ship.id, w.Players[s.ship.id].Sector) {
 			return game.ErrDefenseEncounter
 		}
+		var staged *game.SpyNetwork
+		stage := func() error {
+			if spyFn == nil {
+				return nil
+			}
+			if s.ship == nil {
+				return errors.New("spies require a bound ship session")
+			}
+			staged = s.ship.spies.Clone()
+			if s.ship.visibility != nil && w.CheckSession(s.ship.id, s.ship.generation, s.ship.season) == nil {
+				if e := staged.ObserveVisibility(w, s.ship.visibility); e != nil {
+					return e
+				}
+			}
+			return spyFn(w, staged)
+		}
+		if preflight != nil {
+			if e = preflight(w); e != nil {
+				return e
+			}
+			if e = stage(); e != nil {
+				return e
+			}
+		}
 		if e = fn(w); e != nil {
 			return e
 		}
@@ -216,16 +250,12 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 				return errors.New("session time expired")
 			}
 		}
-		var staged *game.SpyNetwork
-		if spyFn != nil {
-			if s.ship == nil {
-				return errors.New("spies require a bound ship session")
-			}
-			staged = s.ship.spies.Clone()
-			if e = spyFn(w, staged); e != nil {
+		if preflight == nil {
+			if e = stage(); e != nil {
 				return e
 			}
 		}
+
 		e = s.save(w)
 		var durability *DurabilityError
 		if e != nil && !errors.As(e, &durability) {
@@ -233,6 +263,7 @@ func (s Store) updateState(fn func(*game.World) error, allowMines, allowDefense 
 		}
 		if staged != nil {
 			*s.ship.spies = *staged
+			staged.PublishVisibility(s.ship.visibility)
 		}
 		if s.ship != nil && s.ship.disruption != nil {
 			out := w.ArrivalOutcome()

@@ -244,11 +244,8 @@ func (s Session) Run() (runErr error) {
 	if terminal, ok := s.Terminal.(*GoDoors); ok {
 		terminal.commandMode = true
 	}
-	w, err := s.Store.View()
-	if err != nil {
-		return err
-	}
-	visibility, err = w.NewVisibility(id)
+	var err error
+	visibility, err = s.Store.SessionVisibility()
 	if err != nil {
 		return err
 	}
@@ -588,7 +585,7 @@ func (s Session) Run() (runErr error) {
 			}
 		case "!", "missile", "missiles":
 			if visibility == nil {
-				visibility, e = w.NewVisibility(id)
+				visibility, e = s.Store.SessionVisibility()
 			}
 			if e == nil {
 				e = s.launchMissiles(id, args, &pending, visibility)
@@ -617,7 +614,7 @@ func (s Session) Run() (runErr error) {
 			}
 		case "attack":
 			if visibility == nil {
-				visibility, e = w.NewVisibility(id)
+				visibility, e = s.Store.SessionVisibility()
 			}
 			if e == nil {
 				e = s.attackShip(id, args, &pending, visibility)
@@ -631,7 +628,7 @@ func (s Session) Run() (runErr error) {
 			} else {
 				var reports []game.SensorReport
 				if visibility == nil {
-					visibility, e = w.NewVisibility(id)
+					visibility, e = s.Store.SessionVisibility()
 				}
 				if e == nil {
 					reports, e = w.ScanVisible(id, visibility, prng.Float64)

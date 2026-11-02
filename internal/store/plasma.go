@@ -65,11 +65,12 @@ func (s Store) LaunchPlasma(entry game.PlasmaIntent, rng func() float64, now fun
 		return out, errors.New("plasma confirmation expired, altered or already used")
 	}
 	s.ship.plasmaActive = nil
-	err = s.Update(func(w *game.World) error {
+	var at time.Time
+	err = s.updateStatePhase(func(w *game.World) error {
 		if !time.Now().Before(deadline) {
 			return errors.New("session time expired")
 		}
-		at := now()
+		at = now()
 		if !time.Now().Before(deadline) {
 			return errors.New("session time expired")
 		}
@@ -94,6 +95,24 @@ func (s Store) LaunchPlasma(entry game.PlasmaIntent, rng func() float64, now fun
 			return errors.New("session time expired")
 		}
 		return e
+	}, false, false, func(w *game.World, n *game.SpyNetwork) error { return s.advanceSpies(w, n, at, deadline) }, func(w *game.World) error {
+		if !time.Now().Before(deadline) {
+			return errors.New("session time expired")
+		}
+		at = now()
+		if rng == nil || at.IsZero() || at.Before(w.Created) {
+			return errors.New("invalid plasma launch inputs")
+		}
+		fresh, e := w.PreparePlasma(entry.Player, entry.To, entry.Count)
+		if e != nil {
+			return e
+		}
+		comparison := entry
+		comparison.Nonce = ""
+		if fresh != comparison {
+			return errors.New("plasma confirmation changed; reconsider the launch")
+		}
+		return nil
 	})
 	var committed *DurabilityError
 	if err != nil && !errors.As(err, &committed) {

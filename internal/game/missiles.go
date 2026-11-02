@@ -12,6 +12,7 @@ const maxMissileRounds = 1_000_000
 
 type MissileDamage struct{ Spent, Fighters, Shields int64 }
 type MissileIntent struct {
+	Nonce            string
 	Season           uint64
 	Player, From, To int
 	Generation       uint64
@@ -266,7 +267,9 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	if err != nil {
 		return MissileResult{}, err
 	}
-	if !reflect.DeepEqual(fresh, intent) {
+	comparison := intent
+	comparison.Nonce = ""
+	if !reflect.DeepEqual(fresh, comparison) {
 		return MissileResult{}, errors.New("missile target or mine warning changed; confirm again")
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {

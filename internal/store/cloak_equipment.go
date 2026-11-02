@@ -38,6 +38,13 @@ func (s Store) PrepareAntiCloak(token string, v *game.Visibility, now func() tim
 	if s.ship == nil || v == nil || now == nil {
 		return entry, errors.New("anti-cloak requires a bound login and clock")
 	}
+	own, e := s.SessionVisibility()
+	if e != nil {
+		return entry, e
+	}
+	if own != v {
+		return entry, errors.New("anti-cloak visibility belongs to another login")
+	}
 	s.ship.encounterMu.Lock()
 	defer s.ship.encounterMu.Unlock()
 	err = s.locked(func() error {

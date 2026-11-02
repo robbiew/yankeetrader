@@ -127,7 +127,8 @@ func (n *SpyNetwork) Hire(w *World, token string, sectors []int, now time.Time) 
 }
 
 // Advance searches before moving and stages findings and detection memory.
-// Ship detection never changes the saved cloak or grants combat access.
+// Ship detection never changes saved cloak. Stores publish its generation-bound
+// grants into the observer login visibility only after the associated save.
 // A zero-warp sector safely holds position. Selection among nonzero warps is
 // uniform, equivalent to rejecting empty slots in the original six-slot table.
 func (n *SpyNetwork) Advance(w *World, now time.Time, rng func() float64) error {
@@ -219,4 +220,38 @@ func (n *SpyNetwork) Advance(w *World, now time.Time, rng func() float64) error 
 	}
 	*n = *staged
 	return nil
+}
+
+// ObserveVisibility lets spies reuse detections already earned by this login.
+// It operates on a staged network; failed transactions cannot publish the copy.
+func (n *SpyNetwork) ObserveVisibility(w *World, v *Visibility) error {
+	if err := n.check(w); err != nil {
+		return err
+	}
+	if err := w.checkVisibility(n.owner, v); err != nil {
+		return err
+	}
+	v.mu.Lock()
+	defer v.mu.Unlock()
+	for id, generation := range v.revealed {
+		if p := w.Players[id]; p != nil && p.Death == nil && p.RetiredAt.IsZero() && p.ShipGeneration == generation && generation >= n.revealed[id] {
+			n.revealed[id] = generation
+		}
+	}
+	return nil
+}
+
+// PublishVisibility is called only after world replacement, including committed
+// durability warnings. Union rather than replacement preserves concurrent scans.
+func (n *SpyNetwork) PublishVisibility(v *Visibility) {
+	if v == nil || v.observer != n.owner || v.generation != n.generation || v.season != n.season {
+		return
+	}
+	v.mu.Lock()
+	defer v.mu.Unlock()
+	for id, generation := range n.revealed {
+		if old, ok := v.revealed[id]; !ok || old <= generation {
+			v.revealed[id] = generation
+		}
+	}
 }

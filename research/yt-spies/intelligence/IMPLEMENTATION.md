@@ -80,3 +80,13 @@ PTY spy smoke covers ship details in compact and classic flows, history and
 unchanged saved cloak. Full race tests and vet are recorded at delivery.
 Native BBS acceptance, target notification, exact odds/RNG/MBF arithmetic and
 broader DOS spy triggers remain open.
+
+
+## Subsequent trigger and shared-visibility research
+
+[The research](../triggers/RECOVERY.md) establishes further original-DOS trigger
+rules and shared observer visibility, with no persistent target warning on its
+tested detection/relogin route. The [implementation](../triggers/IMPLEMENTATION.md)
+now shares spy, sensor and anti-cloak detections within the bound login and adds
+confirmed triggers. The spy-only limits above describe this historical slice;
+current world version remains 27, with no new persistent cache or notification.

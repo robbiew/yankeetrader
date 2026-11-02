@@ -1,0 +1,35 @@
+{
+  "name": "full-hidden-target",
+  "command": "\r~~~~C;6;1;I",
+  "patches": [],
+  "parent": "full-hidden",
+  "actor": "ENEMY",
+  "program_returned": true,
+  "recipe": "spy-triggers-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "b3249c914ac3aa5c63b3842790c30c4656058359fe9071ff9a41a798a359fb99",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "538971494773eb8f3ecf63e1d92099325b29e8752db3994288b41ff6774d83cb",
+    "before.dat.gz": "538971494773eb8f3ecf63e1d92099325b29e8752db3994288b41ff6774d83cb",
+    "dosbox.log": "7b880baf2e697b928121005bd6d4dc74fa62d8f64375c9b806589a2c5aa2c42d",
+    "game.log.gz": "60ac2106513fb2cf9af8dd0d3028b44a455228440ca6d7a2ffa7c1f6e49b87df",
+    "side-before.json.gz": "a017d9b2b9504fe004db66d67b68ee0948a0d97c09002e1f6028758bf17eea6c",
+    "sidefiles.json.gz": "272545636a8b95cf665ba44f91eb3278bf5bba7430f1cf4f26e5a9347c394144",
+    "transcript.txt": "e5349f97d859c680ec971655c9ffb281bbf3decb89048a5a3d8874a5be42af00"
+  }
+}

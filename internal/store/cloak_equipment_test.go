@@ -37,9 +37,9 @@ func cloakStore(t *testing.T) (Store, Store, time.Time, string, *game.Visibility
 	}); err != nil {
 		t.Fatal(err)
 	}
-	w, _ = s.View()
-	v, _ := w.NewVisibility(1)
-	return s, s.ForShip(1, 0, 1), at, token, v
+	b := s.ForShip(1, 0, 1)
+	v, _ := b.SessionVisibility()
+	return s, b, at, token, v
 }
 func cloakSeen(t *testing.T, s Store, v *game.Visibility) bool {
 	t.Helper()
@@ -127,8 +127,7 @@ func TestCloakStoreAtomicFailureAndCommittedDurability(t *testing.T) {
 func TestCloakStoreConcurrentActivationAndBoundVisibility(t *testing.T) {
 	s, a, at, token, va := cloakStore(t)
 	b := s.ForShip(1, 0, 1)
-	w, _ := s.View()
-	vb, _ := w.NewVisibility(1)
+	vb, _ := b.SessionVisibility()
 	deadline := time.Now().Add(time.Minute)
 	clock := func() time.Time { return at }
 	ea, _ := a.PrepareAntiCloak(token, va, clock, deadline)
@@ -158,7 +157,7 @@ func TestCloakStoreConcurrentActivationAndBoundVisibility(t *testing.T) {
 			wins++
 		}
 	}
-	w, _ = s.View()
+	w, _ := s.View()
 	if wins != 1 || w.Players[1].Credits != 2*game.AntiCloakPrice || va.AntiCloakActivations()+vb.AntiCloakActivations() != 1 {
 		t.Fatal("concurrent debit/reveal", wins)
 	}

@@ -394,6 +394,11 @@ interactions remain bounded research. [Evidence and reproduction](yt-spies/RECOV
 
 ## Spies and intelligence reports — implementation
 
+Historical initial slice: the [confirmed-trigger follow-up](yt-spies/triggers/IMPLEMENTATION.md)
+now removes fighter transfers, adds weapon/unavailable-query triggers and shares
+login-local visibility. Ship/disruption findings are also implemented; current
+format is 27. The older trigger/version restrictions below record that milestone.
+
 Earth option 9 and compact HIRE now atomically purchase up to three spies for
 333,000 credits apiece. Computer 15 / SPIES displays current hunt locations.
 Successful moves/autopilot hops, docking and fighter transfers search and move
@@ -1276,6 +1281,10 @@ universe/save parity, balance and native/live acceptance.
 
 ## Ship, cloak and disruption spy intelligence
 
+Historical detection slice: the [trigger/cache follow-up](yt-spies/triggers/IMPLEMENTATION.md)
+now shares detections with sensors and attack eligibility, without saved cloak
+changes or persistent target warnings. Current format remains 27.
+
 Six new completed DOS controls establish ship details, full-cloak suppression,
 a positive partial-cloak shimmering report, ordered multiple ships, caller
 exclusion and login-local disruption reporting. The Go spy network now exposes
@@ -1344,3 +1353,26 @@ and confirmed Abort for up to 20 lines. Direct, team and ALL documents commit
 atomically using version-27 records. Earlier editor deferrals above are historical;
 character-level wrapping/backspace parity and live BBS acceptance remain open.
 See [native controls and implementation](yt-radio-editor/IMPLEMENTATION.md).
+
+
+## Spy triggers, observer visibility and target notifications — implemented
+
+The 36-control original-DOS matrix and three exact target-relogin auxiliary chains
+recover command gates and per-spy last-report suppression. Native evidence adds
+20 complete byte ranges, all 870 relocations and four direct main-code trigger
+encodings. The old2253 fighter-deployment interpretation is corrected to shared
+missile/plasma launching. Accepted fighter transfers do not advance spies in the
+tested DOS path; unavailable Computer-9 planet queries consume a turn and advance.
+
+Spy detection shares an observer-local cache with sensors and attack eligibility,
+while saved target cloak remains unchanged. No persistent target warning was
+observed on the tested detection route; do not invent one from the old backlog.
+The confirmed triggers and login-local shared cache are implemented with atomic
+action/report publication, current-session/generation/season checks and accurate
+private receipts. Fighter transfers are free of spy progression; missing/blocked
+planet queries spend one turn. Weapon scans run before impact, but new grants
+cannot expand confirmed missile targets. Single-use login-bound missile seals
+reject altered, cancelled and replayed quotes. Save version stays 27. See the
+[implementation and validation](yt-spies/triggers/IMPLEMENTATION.md) and
+[scoped contract](yt-spies/triggers/CONTRACT.md).
+See [recovery and limits](yt-spies/triggers/RECOVERY.md).

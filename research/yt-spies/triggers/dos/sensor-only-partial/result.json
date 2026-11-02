@@ -1,0 +1,240 @@
+{
+  "name": "sensor-only-partial",
+  "command": "M;100;S;C;15;1",
+  "patches": [
+    [
+      2,
+      81,
+      2000000
+    ],
+    [
+      2,
+      61,
+      1000
+    ],
+    [
+      2,
+      53,
+      10000
+    ],
+    [
+      3,
+      57,
+      200
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      152,
+      129,
+      7
+    ],
+    [
+      153,
+      93,
+      0
+    ],
+    [
+      152,
+      65,
+      0
+    ],
+    [
+      3,
+      57,
+      101
+    ],
+    [
+      3,
+      125,
+      0.5
+    ],
+    [
+      152,
+      129,
+      0
+    ]
+  ],
+  "program_returned": true,
+  "recipe": "spy-triggers-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      81,
+      2000000
+    ],
+    [
+      2,
+      61,
+      1000
+    ],
+    [
+      2,
+      53,
+      10000
+    ],
+    [
+      3,
+      57,
+      200
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      152,
+      129,
+      7
+    ],
+    [
+      153,
+      93,
+      0
+    ],
+    [
+      152,
+      65,
+      0
+    ],
+    [
+      3,
+      57,
+      101
+    ],
+    [
+      3,
+      125,
+      0.5
+    ],
+    [
+      152,
+      129,
+      0
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "e65658051d66e8618522ef6c0db9775c1776418f4d025ba0102f3dd232ba8a6a",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "a1c9cab4eef1f5c994ceac0fd4e99bebedcd25dd4b1d913f2f44b492e66099d7",
+    "before.dat.gz": "042c25eb2694d54f5a1530d39cbdda8f0927bb484cba9894d7607dc03a67d49c",
+    "dosbox.log": "d71579cb5a2be5a3b66bca83c04e4ac021e889ff47011e755fbb642e01ac68f4",
+    "game.log.gz": "e183a196fe0c44839162bf5273ee0613102c55e33f89f4973537db3c46d2cf5d",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "5d4405338071eae7ff70249df9166e0c97a358999807880b8d827acd8b1641bd",
+    "transcript.txt": "52e30805e0391f5af15a9ba30fd2713110c40a419ac73b0d441cf6422b0e805a"
+  }
+}
