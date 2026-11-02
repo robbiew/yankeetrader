@@ -14,7 +14,8 @@ const MaxRadioMessages = 4096
 const MaxRadioText = 74
 
 type RadioMessage struct {
-	System                   string `json:",omitempty"`
+	PortSale                 *PortSaleNotice `json:",omitempty"`
+	System                   string          `json:",omitempty"`
 	ID                       uint64
 	RequestID                string
 	From, To                 int
@@ -64,13 +65,28 @@ func (w *World) validateRadio() error {
 	last := uint64(0)
 	requests := map[string]bool{}
 	for _, m := range w.Radio {
-		system := m.System == "super-planet"
-		if (m.System != "" && !system) || (system && (m.From != 0 || m.FromAlias != "Super Lottery")) || (!system && m.From == 0) {
+		system := m.System != ""
+		validText := validRadioText(m.Text)
+		switch m.System {
+		case "":
+			if m.From == 0 || m.PortSale != nil {
+				return errors.New("invalid player radio")
+			}
+		case "super-planet":
+			if m.From != 0 || m.FromAlias != "Super Lottery" || m.PortSale != nil {
+				return errors.New("invalid lottery radio")
+			}
+		case "port-sale":
+			if m.From != 0 || m.FromAlias != "The Mercenaries" || m.Text != "" || !validPortSaleNotice(m.PortSale) {
+				return errors.New("invalid port-sale radio")
+			}
+			validText = true
+		default:
 			return errors.New("invalid system radio")
 		}
 		_, err := hex.DecodeString(m.RequestID)
 		key := strconv.Itoa(m.From) + ":" + m.RequestID
-		if m.ID <= last || m.ID >= w.NextRadio || err != nil || len(m.RequestID) != 32 || requests[key] || (!system && w.Players[m.From] == nil) || w.Players[m.To] == nil || !clean(m.FromAlias) || !clean(m.ToAlias) || !validRadioText(m.Text) || m.Sent.IsZero() || m.Sent.Before(w.Created) {
+		if m.ID <= last || m.ID >= w.NextRadio || err != nil || len(m.RequestID) != 32 || requests[key] || (!system && w.Players[m.From] == nil) || w.Players[m.To] == nil || !clean(m.FromAlias) || !clean(m.ToAlias) || !validText || m.Sent.IsZero() || m.Sent.Before(w.Created) {
 			return errors.New("invalid radio message")
 		}
 		requests[key] = true
@@ -184,7 +200,11 @@ func (w *World) RadioHistory(id int, after uint64, limit int, unreadOnly bool) (
 		if m.ID <= after || m.From != id && m.To != id || unreadOnly && (m.To != id || !m.Unread) {
 			continue
 		}
-		entries = append(entries, RadioEntry{ID: m.ID, FromAlias: m.FromAlias, ToAlias: m.ToAlias, Text: m.Text, Sent: m.Sent, Incoming: m.To == id, Unread: m.To == id && m.Unread})
+		text := m.Text
+		if m.System == "port-sale" && m.PortSale != nil {
+			text = m.PortSale.message()
+		}
+		entries = append(entries, RadioEntry{ID: m.ID, FromAlias: m.FromAlias, ToAlias: m.ToAlias, Text: text, Sent: m.Sent, Incoming: m.To == id, Unread: m.To == id && m.Unread})
 		if len(entries) == limit {
 			break
 		}

@@ -1407,3 +1407,11 @@ save with the planet, sector reference and debit, with deadline/session guards a
 rollback/committed-warning coverage. Earlier creation deferrals above are historical.
 Private former-owner sale notices remain unimplemented; public acquisition news
 is not a recovered DOS feature. [Rules and validation](yt-newspaper/events/IMPLEMENTATION.md).
+
+## Atomic private port-sale notices
+
+Ordinary owned-port buyouts now save one typed private former-owner notice with
+settlement and ownership. Asking price is distinct from the price-plus-treasury
+payout; no public purchase news is emitted. Current format29 upgrades without
+historical backfill. Earlier private-notice deferrals above are historical.
+See [scope, safeguards and validation](yt-newspaper/events/PORT_SALE_IMPLEMENTATION.md).

@@ -54,7 +54,7 @@ func TestConcurrentBuyoutAndCollection(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if success != 1 || w.Players[2].Credits != 2808 || w.Ports[2].Treasury != 0 {
+	if success != 1 || w.Players[2].Credits != 2808 || w.Ports[2].Treasury != 0 || len(w.Radio) != 1 || w.Radio[0].To != 2 {
 		t.Fatalf("duplicate/lost buyout: successes=%d world=%+v", success, w)
 	}
 	owner := w.Ports[2].Owner

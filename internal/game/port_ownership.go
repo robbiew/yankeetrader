@@ -1,6 +1,8 @@
 package game
 
 import (
+	"crypto/rand"
+	"encoding/hex"
 	"errors"
 	"math"
 	"sort"
@@ -12,7 +14,11 @@ type PortPurchaseQuote struct {
 	PortID, Sector, Owner int
 	Price                 int64
 	buyer                 int
-	expires               time.Time
+	expires, issued       time.Time
+	generation, season    uint64
+	name, request         string
+	port, sector, owner   int
+	price                 int64
 }
 
 func (w *World) QuotePortPurchase(id int, now time.Time) (PortPurchaseQuote, error) {
@@ -33,25 +39,46 @@ func (w *World) QuotePortPurchase(id int, now time.Time) (PortPurchaseQuote, err
 	if port.Owner != 0 && w.Players[port.Owner] == nil {
 		return PortPurchaseQuote{}, errors.New("port owner no longer exists")
 	}
+	if now.IsZero() || now.Before(w.Created) {
+		return PortPurchaseQuote{}, errors.New("invalid port purchase time")
+	}
 	// A preview or rejected action must not advance production in the live world.
 	updated := *port
 	update(&updated, now)
 	price := int64(math.Floor((updated.Production[0]+updated.Production[1]+updated.Production[2])/10)) + 1
+	var token [16]byte
+	if _, err := rand.Read(token[:]); err != nil {
+		return PortPurchaseQuote{}, err
+	}
 	return PortPurchaseQuote{PortID: port.ID, Sector: p.Sector, Owner: port.Owner,
-		Price: price, buyer: id, expires: now.Add(5 * time.Minute)}, nil
+		Price: price, buyer: id, expires: now.Add(5 * time.Minute), issued: now, generation: p.ShipGeneration, season: w.Season, name: port.Name, request: hex.EncodeToString(token[:]), port: port.ID, sector: p.Sector, owner: port.Owner, price: price}, nil
 }
 
 // PurchasePort must execute within the store's Update transaction. The seller
 // receives both the asking price and their current treasury; no team is paid.
 func (w *World) PurchasePort(id int, quote PortPurchaseQuote, now time.Time) error {
-	if quote.buyer != id || !now.Before(quote.expires) {
+	if quote.PortID != quote.port || quote.Sector != quote.sector || quote.Owner != quote.owner || quote.Price != quote.price {
+		return errors.New("purchase confirmation changed; request a new quote")
+	}
+	if quote.buyer != id || now.Before(quote.issued) || !now.Before(quote.expires) {
 		return errors.New("port purchase quote expired; request a new quote")
+	}
+	if err := w.CheckSession(id, quote.generation, quote.season); err != nil {
+		return err
+	}
+	if _, err := hex.DecodeString(quote.request); err != nil || len(quote.request) != 32 {
+		return errors.New("invalid purchase confirmation")
+	}
+	for _, message := range w.Radio {
+		if message.From == 0 && message.RequestID == quote.request {
+			return errors.New("port purchase already committed; request a new quote")
+		}
 	}
 	fresh, err := w.QuotePortPurchase(id, now)
 	if err != nil {
 		return err
 	}
-	if fresh.PortID != quote.PortID || fresh.Sector != quote.Sector || fresh.Owner != quote.Owner || fresh.Price != quote.Price {
+	if fresh.PortID != quote.PortID || fresh.Sector != quote.Sector || fresh.Owner != quote.Owner || fresh.Price != quote.Price || fresh.name != quote.name {
 		return errors.New("port or asking price changed; request a new quote")
 	}
 	buyer := w.Players[id]
@@ -68,12 +95,21 @@ func (w *World) PurchasePort(id int, quote PortPurchaseQuote, now time.Time) err
 		}
 		payout = fresh.Price + port.Treasury
 	}
+	var notice RadioMessage
+	if seller != nil {
+		notice, err = w.preparePortSaleNotice(buyer, seller, port, fresh.Price, quote.request, now)
+		if err != nil {
+			return err
+		}
+	}
 	// All validation precedes mutation, including both sides' money limits.
 	update(port, now)
 	buyer.Credits -= fresh.Price
 	if seller != nil {
 		seller.Credits += payout
 		port.Treasury = 0
+		w.Radio = append(w.Radio, notice)
+		w.NextRadio++
 	}
 	// A pre-existing unowned balance stays in the account; the ordinary
 	// generator and unowned trading never create such a balance.

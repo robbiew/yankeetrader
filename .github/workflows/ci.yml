@@ -149,6 +149,7 @@ jobs:
           python3 scripts/smoke_reports.py
           python3 scripts/smoke_trade_reports.py
           python3 scripts/smoke.py
+          python3 scripts/smoke_port_sale_notices.py
           python3 scripts/smoke_ownership.py
           python3 scripts/smoke_teams.py
           python3 scripts/smoke_lifecycle.py
