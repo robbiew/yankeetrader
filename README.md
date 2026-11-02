@@ -2,6 +2,45 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+## Start here
+
+This README combines player instructions, operator procedures, feature rules and
+reconstruction notes. Use the current status below for the playable scope, the
+feature sections for in-game behavior, and the linked evidence for validation
+details and limitations.
+
+| If you want to... | Start here |
+|---|---|
+| Try a local game | [Play locally](#play-locally) and [DOS-style startup](#dos-style-startup) |
+| Run a BBS door | [Run as a BBS door](#run-as-a-bbs-door) and [validation limits](evidence/VALIDATION.md) |
+| Check what is playable | [Status](#status) and [Fidelity and deliberate changes](#fidelity-and-deliberate-changes) |
+| Build and test | [Build and validate](#build-and-validate) |
+| Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
+| Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
+| Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
+
+## Screenshots
+
+Captured from the current Go game in an 80×25 local ANSI terminal session.
+The opening artwork capture includes the centered Resurrection version subtitle;
+the startup smoke check verifies its alignment.
+Click any screenshot to view it at full size.
+
+<table>
+  <tr>
+    <td align="center"><a href="evidence/startup/title.png"><img src="evidence/startup/title.png" alt="Yankee Trader: Resurrection title screen" width="400"></a><br>Title screen</td>
+    <td align="center"><a href="evidence/startup/opening.png"><img src="evidence/startup/opening.png" alt="Opening ANSI artwork" width="400"></a><br>Opening artwork</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="evidence/startup/sector.png"><img src="evidence/startup/sector.png" alt="Sector view and main command prompt" width="400"></a><br>Sector view</td>
+    <td align="center"><a href="evidence/startup/info.png"><img src="evidence/startup/info.png" alt="Ship information and player statistics" width="400"></a><br>Ship information</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="evidence/startup/help.png"><img src="evidence/startup/help.png" alt="Main command menu" width="400"></a><br>Command menu</td>
+    <td align="center"><a href="evidence/startup/computer-help.png"><img src="evidence/startup/computer-help.png" alt="Ship computer menu" width="400"></a><br>Ship computer</td>
+  </tr>
+</table>
+
 ## Status
 
 **Xannor direct-combat turn bonuses are available to test:** confirmed sector-fighter
@@ -72,18 +111,21 @@ feature: the mother ship was added in 3.3 and removed in 3.4. The 3.6 Mercenary
 home planet is a capture target; plasma comes from planetary stocks. See
 [acquisition research](research/yt-mercenary-plasma/RECOVERY.md).
 
-**Playable prototype (0.1.0).** The features below are available in the current Go game for testing. Availability does not mean complete DOS parity or live BBS acceptance; see [validation evidence](evidence/VALIDATION.md) for tested environments and limitations.
+### Playable feature overview
 
-### Available in-game to test
+The current Go game has the following features available to test. This is not a
+claim of complete DOS parity or live BBS acceptance; see
+[validation evidence](evidence/VALIDATION.md) for tested environments and limits.
 
-- **Seasons:** confirmed Genesis endgame, authoritative port ownership, atomic universe reset, public winner history and epoch guards that end old logins.
-- **Persistent play:** saved players and ships, reconnects, daily turns, port/planet production and banking interest, bounded daily super-planet awards, safe retirement of inactive dead accounts, port/planet plague and planetary civil war.
-- **Navigation and trading:** sector movement, adjacent sensors, cloak detection/recharging, login-local anti-cloak activation, danger-scanner warnings, confirmed emergency warp, bounded automatic black-hole arrivals, path finding, confirmed autopilot, avoid lists, cargo trading, Earth purchases, confirmed paid lottery tickets, port buyouts and treasury collection.
-- **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
-- **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing and indiscriminate damage, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
-- **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, planet creation, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events, HQ victories and explicitly confirmed public ALL broadcasts.
-- **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
+| Feature area | Available to test |
+|---|---|
+| **Seasons and persistence** | Saved players and ships, reconnects, daily turns, production and banking interest, bounded super-planet awards, inactive dead-account retirement, plague and civil war; confirmed Genesis endgame, atomic universe reset, public winner history and old-login guards. |
+| **Navigation and trading** | Sector movement, adjacent sensors, cloak detection and recharging, login-local anti-cloak, danger-scanner warnings, confirmed emergency warp and autopilot, bounded black-hole arrivals, path finding, avoid lists, cargo trading, Earth purchases, paid lottery, port buyouts and treasury collection. |
+| **Planets and teams** | Planet creation, naming, production, banking, investment, cargo and weapon transfers, garrisons, confirmed thruster transport and forced landing; The Wanderer's daily relocation/restoration and one-edge transport; team creation/joining, captain controls and shared planet access. |
+| **Combat** | Confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing, planetary bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape; death, loot, port settlement, replacement ships and minefields. |
+| **Mercenaries and Xannor** | Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles, bounded mobile groups, combat aftermath and ship-bound revenge. Direct Xannor fighter casualties can earn capped turn bonuses; HQ victories award up to 1,000,000 exact credits and publish a victory notice. |
+| **Computer and communication** | Rankings, commerce and planet reports, planet/port finders, trading forecasts, direct/team/broadcast radio and message history; spies report mines, planets, defenses, ships and login-local disruptions. Newspaper coverage includes logins, planet/team creation, combat outcomes, daily events, HQ victories and confirmed public broadcasts. |
+| **Presentation and door sessions** | DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals. |
 
 **Multi-caller simulation completed:** six concurrent simulated BBS callers played
 through Door32 processes to a configured 20-port Genesis victory, including
@@ -165,28 +207,6 @@ disposable world. Go tests cover concurrent resets, private snapshot fidelity,
 old login invalidation, history/settings retention, migration and committed
 storage warnings. Native Windows crash durability and live BBS acceptance remain
 separate checks.
-
-## Screenshots
-
-Captured from the current Go game in an 80×25 local ANSI terminal session.
-The opening artwork capture includes the centered Resurrection version subtitle;
-the startup smoke check verifies its alignment.
-Click any screenshot to view it at full size.
-
-<table>
-  <tr>
-    <td align="center"><a href="evidence/startup/title.png"><img src="evidence/startup/title.png" alt="Yankee Trader: Resurrection title screen" width="400"></a><br>Title screen</td>
-    <td align="center"><a href="evidence/startup/opening.png"><img src="evidence/startup/opening.png" alt="Opening ANSI artwork" width="400"></a><br>Opening artwork</td>
-  </tr>
-  <tr>
-    <td align="center"><a href="evidence/startup/sector.png"><img src="evidence/startup/sector.png" alt="Sector view and main command prompt" width="400"></a><br>Sector view</td>
-    <td align="center"><a href="evidence/startup/info.png"><img src="evidence/startup/info.png" alt="Ship information and player statistics" width="400"></a><br>Ship information</td>
-  </tr>
-  <tr>
-    <td align="center"><a href="evidence/startup/help.png"><img src="evidence/startup/help.png" alt="Main command menu" width="400"></a><br>Command menu</td>
-    <td align="center"><a href="evidence/startup/computer-help.png"><img src="evidence/startup/computer-help.png" alt="Ship computer menu" width="400"></a><br>Ship computer</td>
-  </tr>
-</table>
 
 ## A little history
 
