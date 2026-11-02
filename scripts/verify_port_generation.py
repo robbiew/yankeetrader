@@ -84,10 +84,10 @@ def verify(directory):
   assert locations[:4]==[1,3,5,7]
   # Original initialization marks1..4 rather than1,3,5,7. Preserve and expose
   # overwritten records instead of silently asserting a repaired modern layout.
-  refs=[int(get(before,51+s,65)) for s in range(1,3001)]
-  assert all(0<=p<=1000 for p in refs)
-  for sector,p in enumerate(refs,1):
-   if p:assert locations[p-1]==sector
+  expected_links={sector:port for port,sector in enumerate(locations,1)}
+  for stage,source in (("before",before),("after",after)):
+   for sector in range(1,3001):
+    assert get(source,51+sector,65)==expected_links.get(sector,0), (name,stage,sector,"sector port link")
   duplicates=len(locations)-len(set(locations))
   assert 0<=duplicates<=2
   summaries[m["name"]]={"ports":1000,"distinct_locations":len(set(locations)),"overwritten_ports":duplicates,"production_min":min(rates),"production_max":max(rates),"initial_stock":0,"maintenance_stock_days":10}

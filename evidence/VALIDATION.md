@@ -1248,7 +1248,7 @@ focused generation/name/economy/price/report/migration/reset tests; CLI creation
 archive, reset and admission checks; compact/classic terminal quotes; and existing
 Genesis compact/classic terminal acceptance. Independent verifiers check three
 fresh DOS pre/post-maintenance worlds, seven startup pricing controls, declared
-binary/fixture identity and exact native byte reads. Seventeen verifier tests
+binary/fixture identity and exact native byte reads. Nineteen verifier tests
 include rehashed semantic corruption, missing return evidence, changed inputs,
 broken reload chains and missing/empty/truncated native observations. The archive
 verifier confirms all 4682 archived files remain intact. CI includes the new checks.

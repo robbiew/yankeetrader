@@ -170,6 +170,11 @@ go vet ./...
 
 Generation verification independently decodes all port records and checks the
 maintenance transition, names, signs, ranges, placement, clocks and provenance.
+Every sector link in both snapshots must match the last-writer-wins inverse of
+the port locations. Missing, incorrect, fractional and entirely cleared links
+are rejected, while the original duplicate-location behavior remains accepted.
+Semantic corruption controls mutate the later-clock world to avoid rejection
+solely through the independent midnight/repeat equality assertion.
 Rehashed wrong stock/production/coefficient/location and missing-return controls
 must fail; missing, empty and truncated native reads must also fail. Pricing
 verification checks declared fixtures, observed prices and exact reload lineage.

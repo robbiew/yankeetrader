@@ -52,6 +52,9 @@ ports and fixed reference prices. The warp graph and seeded Go random sequence
 remain modern, and duplicate/orphaned DOS ports are deliberately prevented.
 Save **33** adds the generation profile; older saves upgrade without rerolling.
 [Recovered rules, DOS controls and limits](research/yt-port-generation/RECOVERY.md).
+The evidence verifier checks every sector-to-port link before and after maintenance,
+including missing/fractional links; corruption controls use the independent later-clock
+world so repeat-run equality cannot mask missing semantic checks.
 
 
 **Xannor direct-combat turn bonuses are available to test:** confirmed sector-fighter
