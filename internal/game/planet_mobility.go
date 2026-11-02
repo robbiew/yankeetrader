@@ -189,6 +189,9 @@ func (w *World) CommitPlanetAction(e PlanetIntent, rng func() float64, now time.
 	out = PlanetReceipt{Stop: "destination", Kind: e.Kind, Name: planet.Name, PlanetID: planet.ID, From: p.Sector, FinalSector: p.Sector, PlanetSector: planet.Sector, Destination: dest}
 	beforeTurns, beforeFighters := p.Turns, p.Fighters
 	if e.Kind == "thrusters" {
+		if err := w.prepareCombatNews(now, 128); err != nil {
+			return PlanetReceipt{}, err
+		}
 		for _, to := range e.Path[1:] {
 			r, err := draw()
 			if err != nil {
@@ -211,6 +214,7 @@ func (w *World) CommitPlanetAction(e PlanetIntent, rng func() float64, now time.
 					}
 					p.Fighters -= min(p.Fighters, loss)
 				}
+				w.combatNews(p.Alias, CombatNews{Operation: "mobility-explosion", Target: planet.Name, Amount: beforeFighters - p.Fighters}, now)
 				w.destroyPlanet(planet)
 				out.PlanetSector = 0
 				break

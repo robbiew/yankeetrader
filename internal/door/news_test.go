@@ -16,11 +16,11 @@ func TestNewspaperLoginClassicSelectionAndReconnect(t *testing.T) {
 		t.Fatal(err)
 	}
 	w, _ := st.View()
-	if len(w.News) != 1 || w.News[0].Kind != game.NewsLogin || w.News[0].Alias != "Navigator" || w.NextNews != 2 {
+	if len(w.News) != 1 || w.News[0].Kind != game.NewsRegistration || w.News[0].Alias != "Navigator" || w.NextNews != 2 {
 		t.Fatal("compact login not recorded", w.News)
 	}
 	text := term.output.String()
-	if !strings.Contains(text, "Galactic Newspaper - Yesterday") || !strings.Contains(text, "No news retained for this date.") || !strings.Contains(text, "Navigator  Logged on") {
+	if !strings.Contains(text, "Galactic Newspaper - Yesterday") || !strings.Contains(text, "No news retained for this date.") || !strings.Contains(text, "Navigator New Player Entered") {
 		t.Fatal(text)
 	}
 	if w.Players[1].Turns != 500 || w.Players[1].Credits != 1005 {
@@ -33,7 +33,7 @@ func TestNewspaperLoginClassicSelectionAndReconnect(t *testing.T) {
 	}
 	w, _ = st.View()
 	text = s.Terminal.(*scripted).output.String()
-	if len(w.News) != 2 || w.NextNews != 3 || strings.Count(text, "Navigator  Logged on") != 2 || strings.Count(text, "Do you want to read [T]oday's or [Y]esterday's news?") != 3 {
+	if len(w.News) != 2 || w.NextNews != 3 || strings.Count(text, "Navigator  Logged on") != 1 || strings.Count(text, "Do you want to read [T]oday's or [Y]esterday's news?") != 3 {
 		t.Fatal("classic selection/reconnect mismatch", text, w.News)
 	}
 }
@@ -235,6 +235,40 @@ func TestOvercrowdingNewsRendersActualEventsWithoutPrivateAssets(t *testing.T) {
 			if strings.Contains(text, secret) {
 				t.Fatal("private event data leaked", secret, text)
 			}
+		}
+	}
+}
+
+func TestMembershipNewsRendersPublicAliasAndTeamNumber(t *testing.T) {
+	term := &scripted{}
+	s, st := navigationSession(t, term)
+	if err := st.Update(func(w *game.World) error {
+		p, err := w.JoinWithNews("nav", "Navigator", s.Now())
+		if err != nil {
+			return err
+		}
+		captain, err := w.Join("captain-private", "Captain")
+		if err != nil {
+			return err
+		}
+		if err = w.CreateTeam(captain.ID, "Private Team Name", "ABCD"); err != nil {
+			return err
+		}
+		return w.JoinTeamWithNews(p.ID, captain.Team, "ABCD", s.Now())
+	}); err != nil {
+		t.Fatal(err)
+	}
+	s.Store = st.ForShip(1, 0, 1)
+	if err := s.newspaper(1, []string{"today"}, &[]string{}); err != nil {
+		t.Fatal(err)
+	}
+	text := term.output.String()
+	if !strings.Contains(text, "-=*=- Navigator New Player Entered -=*=-") || !strings.Contains(text, "Navigator Joined Team 1") {
+		t.Fatal(text)
+	}
+	for _, secret := range []string{"nav\"", "captain-private", "Private Team Name", "ABCD"} {
+		if strings.Contains(text, secret) {
+			t.Fatal("private membership fields leaked", text)
 		}
 	}
 }

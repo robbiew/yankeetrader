@@ -1,0 +1,130 @@
+{
+  "name": "registration",
+  "command": "Y\r~~\r~~~~C;8;T\r~~1",
+  "patches": [],
+  "actor": "NEWSNEW",
+  "program_returned": true,
+  "recipe": "remaining-newspaper-membership-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "5a21098135a86f71e73e9bd9f76109c3091dff6f56ea022e973f70aa121bcacd",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "d08c7e742bf7d101c0a493e3643a7ec9bf2f6a54039f554dd6cd110fa4cc906d",
+    "before.dat.gz": "b98ce9682559bf6eb9211d1b3fbf55c90f96456aa287ae99839e2ac2a198ef10",
+    "dosbox.log": "dcf67b7a25cd7162a39d9fce72af55fe9ef25236b9b21fa1276510e05e4683d9",
+    "game.log.gz": "5c38606335c941ddad4c3f7f0112444aee182ba672857e2830a586d438e84591",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "cbeb63433d2757296e32bc9c42cdcbd9daa1840cb48c5f55f1c4a18e9fe9d747",
+    "transcript.txt": "d37720ad82dd5c67ab0e3f75b3126d2f37ac6aa8f4d9b4a07e0bca91df5c0a1d"
+  }
+}

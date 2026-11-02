@@ -143,7 +143,18 @@ func (s Session) teamMenu(id int, pending *[]string) error {
 			if err != nil {
 				break
 			}
-			err = s.Store.Update(func(w *game.World) error { return w.JoinTeam(id, target, password) })
+			err = s.Store.Update(func(w *game.World) error {
+				if !time.Now().Before(s.Deadline) {
+					return errors.New("session time expired")
+				}
+				if err := w.JoinTeamWithNews(id, target, password, s.Now()); err != nil {
+					return err
+				}
+				if !time.Now().Before(s.Deadline) {
+					return errors.New("session time expired")
+				}
+				return nil
+			})
 		case "4":
 			var answer string
 			answer, err = s.classicArgument("Quit your team (Y/[N])? ", pending)

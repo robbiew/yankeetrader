@@ -112,6 +112,7 @@ func TestVersionFourUpgradeKeepsExistingDeadAccountsAndEstate(t *testing.T) {
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
+	w.News = nil // This pre-newspaper fixture must not retain modern death events.
 	for _, p := range w.Players {
 		p.Cloak = 0
 	}

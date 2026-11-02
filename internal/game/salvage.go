@@ -114,6 +114,10 @@ func (w *World) SettleShipSalvage(context DeathContext, rng func() float64, now 
 	if result.Credits > MaxMoney-killer.Credits || result.Missiles > MaxQuantity-killer.Missiles || result.Plasma > MaxQuantity-killer.Plasma || result.Ground > MaxQuantity-killer.Ground || result.Mines > MaxQuantity-killer.Mines {
 		return Salvage{}, errors.New("salvage exceeds recipient capacity")
 	}
+	news := w.salvageNews(killer.Alias, victim.Alias, result)
+	if err = w.prepareDeathNews(append(w.deathNews(context), news...), now); err != nil {
+		return Salvage{}, err
+	}
 	if err = w.RecordDeath(context, now); err != nil {
 		return Salvage{}, err
 	}
@@ -133,5 +137,6 @@ func (w *World) SettleShipSalvage(context DeathContext, rng func() float64, now 
 		killer.Cargo[good] += q
 		victim.Cargo[good] -= q
 	}
+	w.appendDeathNews(news, now)
 	return result, nil
 }

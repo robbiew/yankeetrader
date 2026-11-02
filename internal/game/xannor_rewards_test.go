@@ -54,6 +54,18 @@ func commitHQReward(t *testing.T, w *World, p *Player, missiles bool) (*XannorHQ
 	out, err := w.CommitDefense(entry, func() float64 { return .9 }, clock)
 	return out.HQReward, err
 }
+
+// HQ payment assertions ignore independent combat reports while still requiring
+// exactly one typed victory record for each successful HQ settlement.
+func hqRewardNews(w *World) []NewsEvent {
+	var events []NewsEvent
+	for _, e := range w.News {
+		if e.Kind == NewsXannorHQ {
+			events = append(events, e)
+		}
+	}
+	return events
+}
 func TestHQRewardExactCapacityRecipientAndPublicSnapshot(t *testing.T) {
 	for _, missiles := range []bool{false, true} {
 		for _, balance := range []int64{0, 1005, 1 << 30, 1 << 44, MaxMoney - XannorHQBonus, MaxMoney - XannorHQBonus + 1, MaxMoney - 1, MaxMoney} {
@@ -71,11 +83,11 @@ func TestHQRewardExactCapacityRecipientAndPublicSnapshot(t *testing.T) {
 			if q.Credits != 12345 || w.Ports[2].Treasury != 9876 || w.Planets[2].Bank != 765432 || p.StoredScore != 777 {
 				t.Fatal("award leaked to another financial store/cache")
 			}
-			if !w.HasXannorRevenge(p.ID) || w.Sectors[8].Defense != nil || len(w.News) != 1 || w.News[0].Kind != NewsXannorHQ || w.News[0].Alias != "Captain" {
+			if !w.HasXannorRevenge(p.ID) || w.Sectors[8].Defense != nil || len(hqRewardNews(w)) != 1 || hqRewardNews(w)[0].Kind != NewsXannorHQ || hqRewardNews(w)[0].Alias != "Captain" {
 				t.Fatal(w.News, w.Xannor)
 			}
 			p.Alias = "Renamed"
-			if w.News[0].Alias != "Captain" {
+			if hqRewardNews(w)[0].Alias != "Captain" {
 				t.Fatal("news is not a snapshot")
 			}
 			if err = w.Validate(); err != nil {
@@ -94,7 +106,7 @@ func TestHQRewardExactCapacityRecipientAndPublicSnapshot(t *testing.T) {
 	if _, err := commitHQReward(t, w, q, false); err != nil {
 		t.Fatal(err)
 	}
-	if q.Credits != 12345+XannorHQBonus || p.Credits != 1005 || w.News[0].Alias != "Other" || !w.HasXannorRevenge(q.ID) {
+	if q.Credits != 12345+XannorHQBonus || p.Credits != 1005 || hqRewardNews(w)[0].Alias != "Other" || !w.HasXannorRevenge(q.ID) {
 		t.Fatal("team split/actor mismatch")
 	}
 	if err := w.Validate(); err != nil {
@@ -155,7 +167,7 @@ func TestHQRewardRequiresActualXannorForceAndCurrentHQ(t *testing.T) {
 					t.Fatal(mode, err)
 				}
 			}
-			if p.Credits != 1005 || w.Xannor.Revenge != nil || len(w.News) != 0 {
+			if p.Credits != 1005 || w.Xannor.Revenge != nil || len(hqRewardNews(w)) != 0 {
 				t.Fatal("nonvictory paid", mode, missiles, p.Credits, w.News)
 			}
 		}
@@ -188,7 +200,7 @@ func TestHQRewardReplayStaleGenerationAndRestoredVictory(t *testing.T) {
 		if _, err = commitHQReward(t, w, p, missiles); err != nil {
 			t.Fatal(err)
 		}
-		if p.Credits != 1005+2*XannorHQBonus || len(w.News) != 2 {
+		if p.Credits != 1005+2*XannorHQBonus || len(hqRewardNews(w)) != 2 {
 			t.Fatal("restored HQ did not pay once")
 		}
 		// An old ship's confirmation cannot acquire a restored force's reward.
@@ -214,7 +226,7 @@ func TestHQRewardFatalAftermathAndCounterRecipient(t *testing.T) {
 	p.Shields = 0
 	w.Sectors[8].Minefield = []MineLayer{{Owner: q.ID, Count: 1}}
 	reward, err := commitHQReward(t, w, p, false)
-	if err != nil || reward == nil || reward.Credits != XannorHQBonus || p.Death == nil || p.Credits != 1005+XannorHQBonus || w.Xannor.Revenge != nil || w.News[0].Kind != NewsXannorHQ {
+	if err != nil || reward == nil || reward.Credits != XannorHQBonus || p.Death == nil || p.Credits != 1005+XannorHQBonus || w.Xannor.Revenge != nil || hqRewardNews(w)[0].Kind != NewsXannorHQ {
 		t.Fatal("mine death did not settle credited bonus", reward, p, err)
 	}
 	if err = w.Validate(); err != nil {
@@ -258,7 +270,7 @@ func TestHQRewardFatalAftermathAndCounterRecipient(t *testing.T) {
 	if err != nil || len(out.Primary.HQRewards) != 0 || len(out.Counter.HQRewards) != 1 || out.Counter.HQRewards[0].Player != q.ID || q.Credits != 12345+XannorHQBonus || p.Credits != 1005 {
 		t.Fatal("counter payout attributed to launcher", out, err)
 	}
-	if !w.HasXannorRevenge(q.ID) || w.News[0].Alias != "Other" {
+	if !w.HasXannorRevenge(q.ID) || hqRewardNews(w)[0].Alias != "Other" {
 		t.Fatal(w.News, w.Xannor)
 	}
 	if err = w.Validate(); err != nil {
@@ -296,7 +308,12 @@ func TestHQRewardNewsCapacityAndValidation(t *testing.T) {
 	for _, edit := range []func(*NewsEvent){func(e *NewsEvent) { e.Alias = "\x1b" }, func(e *NewsEvent) { e.Team = 1 }, func(e *NewsEvent) { e.TeamName = "private" }, func(e *NewsEvent) { e.PortCount = 1 }, func(e *NewsEvent) { e.PlanetName = "private" }, func(e *NewsEvent) { e.Outcome = "1000000" }} {
 		var clone World
 		_ = json.Unmarshal(raw, &clone)
-		edit(&clone.News[0])
+		for i := range clone.News {
+			if clone.News[i].Kind == NewsXannorHQ {
+				edit(&clone.News[i])
+				break
+			}
+		}
 		if clone.Validate() == nil {
 			t.Fatal("private or malformed HQ news accepted", clone.News)
 		}

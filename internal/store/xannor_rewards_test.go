@@ -47,6 +47,18 @@ func rewardCommit(w *game.World, at time.Time, missiles bool, fi game.DefenseInt
 	out, err := w.CommitDefense(fi, func() float64 { return .9 }, at)
 	return out.HQReward, err
 }
+
+// Public combat reports may accompany victory; payment still creates exactly
+// one dedicated HQ record, independent of combat and aftermath events.
+func hqRewardNews(w *game.World) []game.NewsEvent {
+	var events []game.NewsEvent
+	for _, e := range w.News {
+		if e.Kind == game.NewsXannorHQ {
+			events = append(events, e)
+		}
+	}
+	return events
+}
 func TestHQRewardAtomicRollbackValidationMetadataAndDurability(t *testing.T) {
 	for _, missiles := range []bool{false, true} {
 		st, at, fi, mi, v := rewardStore(t, missiles)
@@ -61,7 +73,7 @@ func TestHQRewardAtomicRollbackValidationMetadataAndDurability(t *testing.T) {
 				if err != nil {
 					return err
 				}
-				if reward == nil || reward.Credits != 1 || w.Players[1].Credits != game.MaxMoney || !w.HasXannorRevenge(1) || w.Sectors[8].Defense != nil || len(w.News) != 1 {
+				if reward == nil || reward.Credits != 1 || w.Players[1].Credits != game.MaxMoney || !w.HasXannorRevenge(1) || w.Sectors[8].Defense != nil || len(hqRewardNews(w)) != 1 {
 					t.Fatal("incomplete reward fixture", reward)
 				}
 				if validation {
@@ -104,7 +116,7 @@ func TestHQRewardAtomicRollbackValidationMetadataAndDurability(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if saved.Players[1].Credits != game.MaxMoney || !saved.HasXannorRevenge(1) || len(saved.News) != 1 || saved.News[0].Kind != game.NewsXannorHQ {
+		if saved.Players[1].Credits != game.MaxMoney || !saved.HasXannorRevenge(1) || len(hqRewardNews(saved)) != 1 || hqRewardNews(saved)[0].Kind != game.NewsXannorHQ {
 			t.Fatal("committed reward missing", saved.News)
 		}
 		raw, _ := os.ReadFile(path)
@@ -172,11 +184,11 @@ func TestHQRewardConcurrentContendersPayOnlyVictor(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if saved.Players[1].Credits+saved.Players[2].Credits != 2010+game.XannorHQBonus || len(saved.News) != 1 || saved.Sectors[8].Defense != nil {
+		if saved.Players[1].Credits+saved.Players[2].Credits != 2010+game.XannorHQBonus || len(hqRewardNews(saved)) != 1 || saved.Sectors[8].Defense != nil {
 			t.Fatal("duplicate/missing payout", saved.News)
 		}
 		victor := saved.Xannor.Revenge.Player
-		if saved.Players[victor].Credits != 1005+game.XannorHQBonus || saved.News[0].Alias != saved.Players[victor].Alias {
+		if saved.Players[victor].Credits != 1005+game.XannorHQBonus || hqRewardNews(saved)[0].Alias != saved.Players[victor].Alias {
 			t.Fatal("paid wrong contender")
 		}
 	}
@@ -268,7 +280,7 @@ func TestHQRewardAtomicFatalMineAftermathAndReplacement(t *testing.T) {
 	}
 	fresh := Store{Dir: st.Dir}
 	saved, err := fresh.View()
-	if err != nil || saved.Players[1].Death == nil || len(saved.News) != 1 || saved.Sectors[8].Defense != nil {
+	if err != nil || saved.Players[1].Death == nil || len(hqRewardNews(saved)) != 1 || saved.Sectors[8].Defense != nil {
 		t.Fatal("aftermath reload", err)
 	}
 	if _, err = fresh.ForShip(1, fi.Generation, 1).DefenseEncounter(fi, func() float64 { return .9 }, at, time.Now().Add(time.Minute)); err == nil {
@@ -278,7 +290,7 @@ func TestHQRewardAtomicFatalMineAftermathAndReplacement(t *testing.T) {
 		t.Fatal(err)
 	}
 	saved, _ = fresh.View()
-	if saved.Players[1].Credits != 1005 || len(saved.News) != 1 || saved.HasXannorRevenge(1) {
+	if saved.Players[1].Credits != 1005 || len(hqRewardNews(saved)) != 1 || saved.HasXannorRevenge(1) {
 		t.Fatal("replacement restored or repaid bonus")
 	}
 }

@@ -1,3 +1,5 @@
+Follow-up: [extended newspaper inventory and implementation](remaining/RECOVERY.md) supersedes the historical event limits below.
+
 # Galactic newspaper and public event journal
 
 Historical initial implementation: later typed producers and current save27 are

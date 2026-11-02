@@ -1,0 +1,35 @@
+{
+  "recipe": "remaining-newspaper-membership-v1",
+  "scenarios": [
+    {
+      "name": "team-join",
+      "command": "T;3;1;ABCD\r~~~~1;C;8;T\r~~1",
+      "patches": [],
+      "roster": [
+        3
+      ]
+    },
+    {
+      "name": "team-wrong-password",
+      "command": "T;3;1;WRNG\r~~~~1;C;8;T\r~~1",
+      "patches": [],
+      "roster": [
+        3
+      ]
+    },
+    {
+      "name": "team-cancel",
+      "command": "T;3;0\r~~~~1;C;8;T\r~~1",
+      "patches": [],
+      "roster": [
+        3
+      ]
+    },
+    {
+      "name": "registration",
+      "command": "Y\r~~\r~~~~C;8;T\r~~1",
+      "patches": [],
+      "actor": "NEWSNEW"
+    }
+  ]
+}

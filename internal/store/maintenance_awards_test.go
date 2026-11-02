@@ -173,6 +173,9 @@ func TestMaintenanceAwardRetirementCommittedDurabilityAndReplay(t *testing.T) {
 func TestVersion17RetirementAwardMigrationReadOnlyAndRejection(t *testing.T) {
 	s, _ := dailyAwardStore(t)
 	w, _ := s.View()
+	// Synthetic setup death is not a pre-schema-31 combat journal entry.
+	w.News = nil
+	w.NextNews = 1
 	w.Version = 17
 	w.Season = 0
 	w.GenerationSeed = nil
