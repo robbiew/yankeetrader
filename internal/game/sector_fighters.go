@@ -26,11 +26,12 @@ type DefenseIntent struct {
 	AcceptSurrender, Retreat bool
 }
 type DefenseOutcome struct {
-	HQReward *XannorHQReward
-	Battle   SectorBattle
-	Sector   int
-	Escaped  bool
-	Mines    MineOutcome
+	TurnBonus int64
+	HQReward  *XannorHQReward
+	Battle    SectorBattle
+	Sector    int
+	Escaped   bool
+	Mines     MineOutcome
 }
 
 type SectorFighterGroup struct {
@@ -276,6 +277,7 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 	} else {
 		s.Defense.Fighters = out.Battle.Defenders
 	}
+	out.TurnBonus = w.awardXannorTurns(p, entry.Defense.Owner, entry.To, out.Battle.DefenderLosses, now)
 	if out.Battle.Survivors == 0 {
 		if err = w.escapeMines(p, rng); err != nil {
 			return DefenseOutcome{}, err

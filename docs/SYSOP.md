@@ -181,7 +181,7 @@ check storage health, and validate the active world before reopening the door.
 
 ## Upgrade and rollback
 
-Current schema is 31. Supported schemas 1–30 upgrade in memory and are persisted
+Current schema is 32. Supported schemas 1–31 upgrade in memory and are persisted
 on the next successful write. Export loads/upgrades/validates without rewriting
 the source; its snapshot uses the current schema. Retain a stopped raw backup
 and matching old binary before upgrading, because an upgraded export cannot be
