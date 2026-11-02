@@ -162,3 +162,15 @@ passed a fresh race-enabled macOS campaign on its first attempt: 174 command
 transactions, 995 state audits, 10 sessions and seven peak processes.
 The final driver and all attempt-manifest hashes matched; no forced stops,
 race logs or findings occurred. New-head Linux CI remains required before merge.
+
+## CI duration follow-up
+
+On head `b9d248e`, Linux campaign check 125422667990 passed. The full validation
+job 125422667264 was cancelled by its 30-minute job limit. GitHub's annotation
+explicitly reports that limit; every individual step, including formatting,
+uncached race tests/vet, preserved evidence, all terminal sessions, cross-builds
+and cleanup, reports success, with completion just beyond the allowance.
+The full job now allows 40 minutes. The workflow diff was checked to preserve
+every command, dependency pin, action and the separate 10-minute campaign budget.
+This changes no Go, Python, save, evidence capture or gameplay behavior. Current
+new-head CI must pass before merge; the prior cancellation is not a green check.
