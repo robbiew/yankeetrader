@@ -114,8 +114,9 @@ python3 scripts/test_remaining_news_verifier.py
 
 The independent verifier reconstructs relocated native bytes, checks all 61 direct
 calls, verifies the eleven retained news artifacts, and verifies fresh normally
-returned membership controls and their exact new suffixes. Corruption controls
-reject false registration and team-state files even after hashes are recomputed,
+returned membership controls and their exact new suffixes. Ten corruption variants reject false registration, unchanged registration worlds,
+incorrect initial ships, wrong-team/duplicate join announcements and team-state
+files even after hashes are recomputed,
 as well as changed native bytes and source hashes. CI runs both commands.
 
 Go coverage exercises attribution, snapshots, positive/empty salvage, actual wreck

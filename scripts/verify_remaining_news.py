@@ -61,10 +61,27 @@ def check(root=DEFAULT):
         assert new.startswith(old)
         suffix=new[len(old):]
         if name=='registration':
+            before_world=gzip.decompress((case/'before.dat.gz').read_bytes())
+            world=gzip.decompress((case/'after.dat.gz').read_bytes())
+            assert len(world)==len(before_world)
+            allocated=[]
+            for record in range(2,52):
+                start=(record-1)*137
+                if primitive.get(before_world,record,85)==0 and primitive.get(world,record,85)>0:
+                    allocated.append(record)
+            assert allocated==[7], 'registration must allocate exactly the first empty account'
+            start=6*137
+            assert world[start:start+41].rstrip(b' ')==b'Newsnew'
+            initial={45:0,49:500,53:100,57:1,61:25,65:10,69:0,73:0,77:0,81:1005,85:8,89:0,93:0,97:1,101:0,105:0,113:0,117:0,121:0,125:1,129:0,133:0}
+            for offset,value in initial.items():
+                assert primitive.get(world,7,offset)==value, ('registration ship',offset)
+            names=next(bytes.fromhex(v['hex']) for k,v in after.items() if k.upper()=='YTNAME.DAT')
+            assert names.rstrip(b'\x1a').splitlines().count(b'Newsnew,,Newsnew,')==1
             assert b'Newsnew' in suffix and suffix.count(b'New Player Entered')==1 and b'Logged on' not in suffix
         else:
             assert suffix.count(b'Logged on')==1
-            assert (b'Joined Team 1' in suffix)==(team==1)
+            joins=[line for line in suffix.splitlines() if b'Joined Team' in line]
+            assert joins==([b'Q  Joined Team 1'] if team else []), 'join announcement must match saved membership exactly' 
             assert b'ABCD' not in suffix and b'WRNG' not in suffix
             world=gzip.decompress((case/'after.dat.gz').read_bytes())
             assert primitive.get(world,2,89)==team

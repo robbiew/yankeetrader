@@ -13,6 +13,9 @@ New-player registration replaces its initial login entry; failed joins and
 cancelled/rolled-back actions publish no success event. Names and actual outcome
 quantities survive later renaming/removal. Existing private mail and port-sale
 notices remain private. [Inventory, DOS evidence and validation](research/yt-newspaper/remaining/RECOVERY.md).
+Evidence verification also checks the newly allocated DOS account and initial ship,
+and exact team announcements against saved membership; rehashed false reports and
+unchanged-world substitutions are rejected.
 Save **31** adds these event payloads; back up the stopped door and upgrade all nodes.
 
 
