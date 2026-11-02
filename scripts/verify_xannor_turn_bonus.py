@@ -24,6 +24,10 @@ def check(root=DEFAULT):
  for name,(count,turns,award) in CASES.items():
   case=root/'dos'/name;r=json.loads((case/'result.json').read_text())
   assert r['complete'] and r['program_returned'] and not r['timed_out']
+  assert (case/'RETURN.LOG').read_bytes()==b'BROADCAST_PROGRAM_RETURNED\r\n', 'missing shell return marker'
+  raw=gzip.decompress((case/'game.log.gz').read_bytes()).decode('cp437').replace('\r\n','\n')
+  assert raw==(case/'transcript.txt').read_text()
+  assert 'Returning to Yankee Trader Local Logon Program...' in raw, 'missing normal program return' 
   assert r['binaries']['YT.EXE']==SHA(binary)
   for file,digest in r['files'].items():assert SHA((case/file).read_bytes())==digest
   before=gzip.decompress((case/'before.dat.gz').read_bytes());after=gzip.decompress((case/'after.dat.gz').read_bytes())
@@ -42,7 +46,11 @@ def check(root=DEFAULT):
    assert v.get(after,target,81)==0 and b'destroyed 400 fighters in sector 101!' in suffix
   else:
    casualties=1504 if name=='partial-escape' else count
-   if owner==-1:assert f'Q  destroyed {casualties} fighters belonging to The Xannor'.encode() in suffix
+   owner_name='The Xannor' if owner==-1 else 'Mercenaries' if owner==-2 else 'Enemy'
+   reports=[line.rstrip() for line in suffix.splitlines() if b' fighters belonging to ' in line]
+   assert reports==[f'Q  destroyed {casualties} fighters belonging to {owner_name}'.encode()]
+   assert b'surrendered to' not in suffix
+   if name!='partial-escape':assert v.get(after,target,81)==0 and v.get(after,2,61)<=v.get(before,2,61)
    assert v.get(after,2,49)==turns+award
    assert bonuses==([(str(award).encode(),str(casualties).encode())] if award else [])
    if name=='partial-escape':

@@ -11,6 +11,8 @@ cap is measured. Forced fighter combat after a refused bribe also qualifies;
 missile/plasma kills and other factions do not. The saved receipt and newspaper
 show actual credited turns, including capped awards. This is separate from the
 existing Xannor HQ credit prize. [DOS controls, rules and validation](research/yt-xannor-turn-bonus/RECOVERY.md).
+The DOS verifier checks saved casualties/turns and independent normal-return evidence;
+the human-defense control explicitly refuses surrender before destroying its fighters.
 Save **32** adds the bonus event; upgrades do not backfill rewards for old battles.
 
 

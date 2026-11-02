@@ -76,10 +76,16 @@ case establishes that reward is based on direct-fighter casualties even without 
 winning fighter exchange. It does not establish parity between that DOS shield
 response and the modern emergency-escape policy, which remains unchanged.
 
+The human-owner control explicitly declines surrender and proves all 400 defenders
+were destroyed; accepting a surrender is not treated as a casualty control. The
+verifier independently requires the exact shell-return marker, raw normal-return
+message and matching decoded transcript in addition to metadata flags.
+
 The independent verifier compares the saved turn balance and exact bonus lines,
-ownership/casualty controls, valid return markers and artifact hashes. Four
+ownership/casualty controls, valid return markers and artifact hashes. Seven
 corruption variants reject changed saved turns, a spurious capped announcement,
-changed casualty reports and native-byte corruption, including rehashed artifacts.
+changed casualty reports, a false human surrender control, missing return markers,
+missing normal-return output and native-byte corruption, including rehashed artifacts.
 
 ```sh
 python3 scripts/verify_xannor_turn_bonus.py

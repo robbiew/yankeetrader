@@ -1,6 +1,6 @@
 {
   "name": "player-defense",
-  "command": "A;10000\r~~~~C;8;T\r~~1",
+  "command": "A;10000\r~~~~N\r~~~~C;8;T\r~~1",
   "patches": [
     [
       2,
@@ -190,14 +190,14 @@
   "files": {
     "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
     "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
-    "KEYS.TXT": "d48dfba7db479d5c873f8666a6615f479542fb720473505f274823149e863bf3",
+    "KEYS.TXT": "8b21b1dd3bceeaff9f03823030e52bc49588a4f92e7767048151cb51e5e2f8a4",
     "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
-    "after.dat.gz": "33ed773137b0d97a757e4347bddca962a207c8cc37117bf168d5cf3448dc229d",
+    "after.dat.gz": "1cafff6e8bdfd0a77de945267ee24059124e1636e792d1346fd492b543199a4c",
     "before.dat.gz": "c31a83421e32aa38c589cec0994a653abc301ff5ac013b8d3de4b77ca72a8d61",
-    "dosbox.log": "b722ee47867a2535a25aba39840bda05a152e2765ed7d8b4f569ed5ae2aa159d",
-    "game.log.gz": "551fc3b24a9770f97a339a98f9a3f1445180aec290c0576200ce05b70a12a699",
+    "dosbox.log": "cc4fc5d58d3192c2673cc62c00d7c7d253e5ec48d82c1bd1a0d159b209dd0b0d",
+    "game.log.gz": "c9c47bcfbbf3b8412fc9767efc7fdce6aaab66f8b001ba758af468bb5fb8089b",
     "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
-    "sidefiles.json.gz": "c686b4a3b0998c9c7e0185c2bf26726b15f0740186191fa0e05e0550d70a71b3",
-    "transcript.txt": "9f7beb41bc3721d2b3bc808fb50b462fbed7b520b81498440cf89d546dfecb99"
+    "sidefiles.json.gz": "dbbd9ad088bc41c43eddc6ee966168c3a51f2f14ca37c8a3dbac13a5b2b3ac85",
+    "transcript.txt": "02869b8e67bd4ba6682220a4eeca1a7b4ece9a93b97c46bd97b4105b8747772c"
   }
 }

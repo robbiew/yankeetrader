@@ -89,35 +89,68 @@ This is the captain of the fighter group in sector 100
 
 WE WISH TO SURRENDER!!!
 
-Will you accept our surrender? [Y]/N -=> 179:41   179:40   179:39   179:38   179:37   179:36   179:35  C 179:34  ;8;T
-Will you accept our surrender? [Y]/N -=> 179:33   179:32   179:31   179:30  1
-Will you accept our surrender? [Y]/N -=> 179:29   179:28   179:27   179:26   179:25   179:24   179:23  
+Will you accept our surrender? [Y]/N -=> 179:41   179:40   179:39   179:38   179:37   179:36   179:35  N 179:34  
 
- We join your forces!
- 400 fighters surrendered!
+ You lost 255 fighter(s)
+ You destroyed 400 enemy fighters.
 
- You lost 0 fighter(s)
- You destroyed 0 enemy fighters.
-
-You defeated all the fighters and have 10400 left.
+You defeated all the fighters and have 9745 left.
 
 Sector: 100
 Warps lead to: 101, 102, 103, 104, 105, 106
 
-Time: 179:23  Main Command (?=Help)? Q;Y
+Time: 179:34  Main Command (?=Help)?  179:33   179:32   179:31   179:30   179:29   179:28   179:27  C;8;T
+
+<Computer activated>
+
+Time: 179:27  Computer command (?=help)? 8
+
+Do you want to read [T]oday's or [Y]esterday's news? [T/Y] -=> T
+
+Cntl-X to Stop
+
+13:39:46 10-24-2026: Maintenance Program Ran (Revision 03/14/94)
+  -  The Wanderer is missing or has been destroyed!
+  -  The Wanderer regenerated with P.H.O.E.N.I.X. device!
+  -  The Xannor have made a Planet!
+The Xannor home base now has a planet!
+  -  Xannor report:
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+  -  Mercenary Report:
+  -  The Mercenaries have built a home base using a captured Genesis Device!
+-=*=- 10-24-2026 Q  New Player Entered -=*=-
+-=*=- 00:00:05 Q  Logged on -=*=-
+Q  destroyed 400 fighters belonging to Enemy 
+
+
+Time: 179:27  Computer command (?=help)?  179:26   179:25   179:24   179:23  1
+
+<Computer deactivated>
+
+Sector: 100
+Warps lead to: 101, 102, 103, 104, 105, 106
+
+Time: 179:23  Main Command (?=Help)?  179:22   179:21   179:20   179:18   179:17   179:16   179:15   179:14  
+
+<Display>
+
+Sector: 100
+Warps lead to: 101, 102, 103, 104, 105, 106
+
+Time: 179:14  Main Command (?=Help)? Q;Y
 <Quit>
 Are you sure (Y/N)? Y
 
                     [ Info ]
 
 Name  : Q 
-Time  : 179:23  
+Time  : 179:14  
 Team  : None
 
 ╔═════════════════════════╦══════════════════════╗
 ║ Credits.. : 100000      ║ Sector....... : 100  ║
 ║ Turns.... : 100         ║ Holds........ : 100  ║
-║ Fighters. : 10400       ║ Ore.......... : 10   ║
+║ Fighters. : 9745        ║ Ore.......... : 10   ║
 ║ Mines.... : 8           ║ Organics..... : 20   ║
 ║ Missiles. : 7           ║ Equipment.... : 30   ║
 ║ Scanner.. : NONE        ║ Ports Owned.. : 0    ║
@@ -132,15 +165,15 @@ Cntl-X to Stop
 
 Y a n k e e   T r a d e r   S c o r e b o a r d
 
-Last updated at: 10-24-2026 00:00:35
+Last updated at: 10-24-2026 00:00:43
 
 Rank  Rank%        Score        Team   Ports   Player
 ==== ======= ================= ====== ======= ================================
-  1  100.00%       10,930,250   None      0    Q                             
-  2   91.40%        9,990,250   None      0    Third                         
-  3   91.40%        9,990,250   None      0    Fourth                        
-  4   91.40%        9,990,250   None      0    Fifth                         
-  5    3.36%          367,050   None      0    Enemy                         
+  1  100.00%       10,864,750   None      0    Q                             
+  2   91.95%        9,990,250   None      0    Third                         
+  3   91.95%        9,990,250   None      0    Fourth                        
+  4   91.95%        9,990,250   None      0    Fifth                         
+  5    3.38%          367,050   None      0    Enemy                         
 
 T e a m   R a n k i n g s
 
@@ -151,7 +184,7 @@ N o n  -  H u m a n   P l a y e r s
 
     The Xannor       Rank%     The Mercenaries   Rank%
 ================== =========  ================= =======
-        1,000,000     9.15%                  0    0.00%
+        1,000,000     9.20%                  0    0.00%
 
 
 PLEASE HELP YOUR SYSOP REGISTER THIS GAME.

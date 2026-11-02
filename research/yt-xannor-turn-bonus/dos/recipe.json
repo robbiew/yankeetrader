@@ -311,7 +311,7 @@
     },
     {
       "name": "player-defense",
-      "command": "A;10000\r~~~~C;8;T\r~~1",
+      "command": "A;10000\r~~~~N\r~~~~C;8;T\r~~1",
       "patches": [
         [
           2,
