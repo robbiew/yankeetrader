@@ -1,0 +1,16 @@
+{
+  "outcome": "failed",
+  "started": 1793633250.8500412,
+  "ended": 1793633315.252233,
+  "callers": 5,
+  "actions": 98,
+  "findings": [
+    {
+      "error": "AssertionError(\"ShortTimer EOF before b'session time expired': b'godoors: no reply from terminal\\\\n'\")"
+    }
+  ],
+  "head": "91e4c1c5ba1f22f7b2d02803eac89b4450b32dd2",
+  "binary_sha256": "fb4acc91c917a0c16733440c6e8d0cec73e72137aab949eb0b511e8ca36c0a71",
+  "initial_sha256": "841e318f69adfa85df1a6baafc5d382c17106ce83638f178f8485697c9f80e9b",
+  "final_sha256": "863d9513242b9b2acd788eb79943d9372836b7abe170e1c60307f7b88af1d98a"
+}

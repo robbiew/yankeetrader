@@ -56,6 +56,24 @@ home planet is a capture target; plasma comes from planetary stocks. See
 - **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, planet creation, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events, HQ victories and explicitly confirmed public ALL broadcasts.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
+**Multi-caller simulation completed:** six concurrent simulated BBS callers played
+through Door32 processes to a configured 20-port Genesis victory, including
+trade, contested buyouts, private/team/public radio, disconnects and real session
+expiry. Pending old callers were rejected even after player IDs and initial ship
+generations were recreated. The campaign found and fixed a deadline-input issue:
+expired reads now report session expiry and reject late input. Forced termination
+after carrier loss fails the campaign. A committed black-hole arrival that consumes
+all turns can restart the entire disposable world, bounded to three attempts with
+all evidence retained; timeouts, invariant failures and abnormal exits still fail.
+Per-node stderr is captured separately. The exact Linux PTY hangup diagnostic
+`write /dev/stdout: input/output error` is accepted only after deliberate carrier
+loss and natural exit; unexplained nonzero exits and forced stops still fail.
+Session-expiry and ended-season checks inspect the separately captured error and
+exact exit status, alongside unchanged-save assertions.
+The full validation job allows 40 minutes so evidence and terminal checks can
+finish, including runner cleanup; every validation command remains enabled.
+[Findings, captures and reproducible driver](evidence/MULTICALLER_DOOR_CAMPAIGN.md).
+
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
@@ -336,7 +354,11 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 
 GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
-Native macOS PTY and Door32 **local transport** were exercised. Linux/Windows builds compile, but this is not evidence of live acceptance under either BBS transport. Test an inherited Windows socket on the target BBS before deployment.
+Native macOS PTY and simulated BBS Door32 stdio sessions over localhost TCP were
+exercised, including multiple concurrent callers through victory. This is not
+acceptance under a production BBS or a native Windows inherited socket.
+[Campaign results and limits](evidence/MULTICALLER_DOOR_CAMPAIGN.md). Test the
+target BBS transport before deployment.
 
 ## Daily maintenance
 

@@ -1221,3 +1221,11 @@ buyout/settlement/notification, private snapshots and read/history behavior,
 strict payload/no-backfill migration, quote replay protection and completed local
 checks. Earlier private-seller deferrals and format28 statements above are
 historical milestones. Live BBS and native Windows durability remain separate.
+
+## Multi-caller simulated BBS victory campaign
+
+[Campaign findings and retained captures](MULTICALLER_DOOR_CAMPAIGN.md) cover six
+concurrent Door32 callers, legitimate configured Genesis victory, private scopes,
+contention, carrier loss, real expiry and old/new epoch overlap with reused IDs.
+A reproduced input-deadline defect is fixed and regression tested. This is a
+POSIX stdio/TCP simulation, not production BBS or native Windows acceptance.

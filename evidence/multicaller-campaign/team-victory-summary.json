@@ -1,0 +1,132 @@
+{
+  "outcome": {
+    "winner": "Atlas",
+    "owned_ports": 20,
+    "threshold": 20,
+    "season": 2
+  },
+  "started": 1793635448.4708412,
+  "ended": 1793635511.898026,
+  "callers": 8,
+  "simultaneous_callers": 6,
+  "snapshots_checked": 1014,
+  "actions": 182,
+  "findings": [],
+  "head": "91e4c1c5ba1f22f7b2d02803eac89b4450b32dd2",
+  "binary_sha256": "afd5ff2e7b6762cc275a8ce0432393c17ddc85c06581f05987935e1c0b1a0acf",
+  "initial_sha256": "549bddddffce5e198af31cbc6ed174fc10659a158fad2f19343fe95b861185f9",
+  "final_sha256": "c4b4d8ac821822a5f9a8698c4f70cb36493259a9110407a5332a46bf80596ab3",
+  "nodes": [
+    {
+      "node": 1,
+      "uid": 101,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56140
+      ],
+      "returncode": 0,
+      "expected_exit": 0,
+      "known_hazards": [
+        20
+      ],
+      "race_logs": []
+    },
+    {
+      "node": 2,
+      "uid": 102,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56142
+      ],
+      "returncode": 0,
+      "expected_exit": "carrier-loss",
+      "known_hazards": [],
+      "race_logs": []
+    },
+    {
+      "node": 3,
+      "uid": 103,
+      "classic": true,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56144
+      ],
+      "returncode": 1,
+      "expected_exit": 1,
+      "known_hazards": [
+        2,
+        3
+      ],
+      "race_logs": []
+    },
+    {
+      "node": 4,
+      "uid": 104,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56146
+      ],
+      "returncode": 1,
+      "expected_exit": 1,
+      "known_hazards": [],
+      "race_logs": []
+    },
+    {
+      "node": 5,
+      "uid": 105,
+      "classic": true,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56148
+      ],
+      "returncode": 1,
+      "expected_exit": 1,
+      "known_hazards": [],
+      "race_logs": []
+    },
+    {
+      "node": 6,
+      "uid": 106,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56150
+      ],
+      "returncode": 1,
+      "expected_exit": 1,
+      "known_hazards": [],
+      "race_logs": []
+    },
+    {
+      "node": 7,
+      "uid": 102,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56153
+      ],
+      "returncode": 1,
+      "expected_exit": 1,
+      "known_hazards": [],
+      "race_logs": []
+    },
+    {
+      "node": 8,
+      "uid": 101,
+      "classic": false,
+      "tcp_endpoint": [
+        "127.0.0.1",
+        56195
+      ],
+      "returncode": 0,
+      "expected_exit": 0,
+      "known_hazards": [],
+      "race_logs": []
+    }
+  ],
+  "script_sha256": "4ffcb19abc5eba1e1872df70df9af1e172951b2fbe35b82de56ac0cff584c4b0",
+  "source_patch_sha256": "a05944f79254b655024a8437bda0c3b9617ec315c60aaf639d07e9624e7adb8b"
+}

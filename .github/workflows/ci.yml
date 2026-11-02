@@ -13,7 +13,7 @@ jobs:
   validate:
     name: Go tests, evidence and terminal smoke
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: yankeetrader
@@ -185,3 +185,39 @@ jobs:
           mkdir -p ../artifacts
           GOOS=linux GOARCH=amd64 go build -o ../artifacts/yt-linux ./cmd/yt
           GOOS=windows GOARCH=amd64 go build -o ../artifacts/yt-windows.exe ./cmd/yt
+  multicaller:
+    name: Multi-caller Door32 victory campaign
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: yankeetrader
+    steps:
+      - name: Check out Yankee Trader
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: yankeetrader
+          persist-credentials: false
+      - name: Check out minimum supported GoDoors
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: robbiew/godoors
+          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          path: godoors
+          persist-credentials: false
+      - name: Set up minimum supported Go version
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.23.x'
+          cache-dependency-path: yankeetrader/go.sum
+      - name: Build race-enabled door and play to Genesis
+        run: |
+          python3 -m unittest discover -s scripts -p test_simulate_bbs_campaign.py
+          go build -race -buildvcs=false -o bin/yt ./cmd/yt
+          python3 scripts/simulate_bbs_campaign.py --out "$RUNNER_TEMP/yt-multicaller" --seed 146
+      - name: Show campaign outcome
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/yt-multicaller/summary.json" ]; then
+            cat "$RUNNER_TEMP/yt-multicaller/summary.json"
+          fi

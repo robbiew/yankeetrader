@@ -85,6 +85,11 @@ func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 			}
 			r, k, e = g.read(timeout)
 		}
+		// A key or timeout can arrive at the deadline after the pre-read check.
+		// Never accept late input or misreport session expiry as a terminal probe failure.
+		if !time.Now().Before(deadline) {
+			return "", errors.New("session time expired")
+		}
 		if errors.Is(e, gd.ErrInputTimeout) && g.onIdle != nil {
 			if err := g.onIdle(); err != nil {
 				return "", err
