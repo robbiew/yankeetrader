@@ -10,7 +10,7 @@ through `de9ebf6` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
 [#70](https://github.com/robbiew/yankeetrader/pull/70) and
 [#72](https://github.com/robbiew/yankeetrader/pull/72)). These are completed
 milestones, not open implementation tasks. The application is 0.1.0 and
-`internal/game/game.go` declares **save format 32**. See the
+`internal/game/game.go` declares **save format 33** on the current port-parity branch. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
@@ -34,6 +34,9 @@ milestones, not open implementation tasks. The application is 0.1.0 and
   reset tooling. The [sysop guide](../docs/SYSOP.md) covers backups, archive
   extraction, validation, stopped-node restoration/migration and rollback.
 
+- Opt-in recovered port generation and startup reference pricing for new worlds,
+  with saved generation profile preserved by both season reset paths (save33).
+
 ### Most recent completed milestones
 
 | Milestone | Implemented behavior and evidence |
@@ -45,14 +48,15 @@ milestones, not open implementation tasks. The application is 0.1.0 and
 
 ### Ordered genuine backlog
 
-1. **Recover DOS port generation and reference pricing.** Current `New` builds a
-   seeded reachable graph, places ports in the first up-to-1,000 sectors and
-   assigns provisional stocks, production and cargo coefficients. `Price` uses
-   fixed reference bases 20/30/40. Recover original initialization distributions,
-   price inputs and boundaries before changing modern generation/economics.
-   Existing [initializer](yt-init/RECOVERY.md) and
-   [trading](yt-trade/RECOVERY.md) evidence is a starting point, not proof of
-   complete original generator or reference-price parity.
+1. **Continue DOS universe generation parity after the implemented port slice.**
+   New worlds can opt into recovered port rules and startup pricing using
+   `-dos-ports` (save33); existing worlds retain their economy. Names, rates,
+   coefficients, ten-day stock and reference pricing are implemented and checked
+   against fresh DOS controls. The reachable warp graph, finite unique placement
+   and Go RNG are deliberate modern adaptations. Next: recover graph/long-warp
+   generation, isolation repair and Earth shortcuts before extending this profile.
+   Exact QB seed sequence and MBF boundary arithmetic remain separate gaps.
+   [Port slice rules, controls and limitations](yt-port-generation/RECOVERY.md).
 2. **Resolve remaining rule, random-event and numeric parity questions in bounded
    slices.** Exact QuickBASIC RNG/MBF rounding, uncovered command/encounter edges,
    additional unconfirmed spy triggers and character-level editor wrapping/

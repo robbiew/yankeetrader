@@ -1,0 +1,24 @@
+{
+  "name": "midnight",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "recipe": "dos-port-generation-v1",
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8"
+  },
+  "actual_maintenance_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "files": {
+    "before-maint.dat.gz": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+    "after-maint.dat.gz": "dc749cf1d9ebd8720e0007f5096e256ccaad2c9462e73587a847d6960478553a",
+    "INIT.LOG": "55c24d3f3500c28e8879b77c7feb58b1a3db406cc3aa372819c11742e259e8ee",
+    "MAINT.LOG": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "MAINTRET.LOG": "7b2d350a1104efe5dca7e0617034485f8f27e9e4e5ba0ff024790f47022621be",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-dosbox.log": "96773be34d1d16077f5d68b20e14be7427409bffcb8a2ceaf16838cbad1841cc",
+    "maint-dosbox.log": "4297a62e6ad301d04b9a17fe7b7402c4e0e5f9da058ad57a6e0d1a22d42de150"
+  }
+}

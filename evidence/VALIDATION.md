@@ -1,5 +1,9 @@
 # Trading and planet milestone validation
 
+This is a chronological validation ledger. Older feature restrictions describe
+their dated milestone; use the [current plan](../research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02)
+and [README](../README.md#status) for implemented features and current scope.
+
 Validated locally on macOS arm64, 2026-10-25, with Go 1.27.3. Source and executable hashes are in `build.json`.
 
 | Check | Result and scope |
@@ -1229,3 +1233,26 @@ concurrent Door32 callers, legitimate configured Genesis victory, private scopes
 contention, carrier loss, real expiry and old/new epoch overlap with reused IDs.
 A reproduced input-deadline defect is fixed and regression tested. This is a
 POSIX stdio/TCP simulation, not production BBS or native Windows acceptance.
+
+
+## Opt-in DOS port generation and pricing — 2026-11-02
+
+Save 33 adds an initialization-only `-dos-ports` profile. Existing saves retain
+all ports and fixed reference prices on upgrade. Genesis and administrative
+reset retain the profile; private archives include it. The implementation uses
+the recovered naming/economy rules with a modern Go random stream, reachable
+graph and unique finite placement, not exact seed-to-DOS-world parity.
+
+Validation includes race-enabled tests across all Go packages and `go vet`;
+focused generation/name/economy/price/report/migration/reset tests; CLI creation,
+archive, reset and admission checks; compact/classic terminal quotes; and existing
+Genesis compact/classic terminal acceptance. Independent verifiers check three
+fresh DOS pre/post-maintenance worlds, seven startup pricing controls, declared
+binary/fixture identity and exact native byte reads. Seventeen verifier tests
+include rehashed semantic corruption, missing return evidence, changed inputs,
+broken reload chains and missing/empty/truncated native observations. The archive
+verifier confirms all 4682 archived files remain intact. CI includes the new checks.
+
+See [rules, evidence and boundaries](../research/yt-port-generation/RECOVERY.md).
+Full QB RNG/MBF arithmetic, original graph generation, `.DAT` interchange and
+production BBS economy acceptance remain unverified work.

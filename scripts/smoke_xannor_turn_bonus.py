@@ -26,7 +26,7 @@ def exercise(guard):
     bonus=[e for e in saved['News'] if e.get('Combat',{}).get('Operation')=='xannor-turn-bonus']
     if mode=='cancel':assert not bonus and p['Turns']==initial and 'turns added.' not in text
     else:
-     assert saved['Version']==32 and p['Turns']==initial-1+want and len(bonus)==1,(mode,text)
+     assert saved['Version']==33 and p['Turns']==initial-1+want and len(bonus)==1,(mode,text)
      assert bonus[0]['Combat']['Amount']==want and bonus[0]['Combat']['Secondary']==400
      assert f'{want} turns added.' in text and f'collected {want} turns bonus for destroying 400 Xannor' in text,text
      guard.run(play,data,'Captain','news;q',page_news=True)

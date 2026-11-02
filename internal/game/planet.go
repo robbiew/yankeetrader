@@ -24,6 +24,9 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 33 && w.PortGeneration != "" {
+		return errors.New("legacy world contains port generation profile")
+	}
 	if w.Version < 32 {
 		for _, e := range w.News {
 			if e.Combat != nil && e.Combat.Operation == "xannor-turn-bonus" {
@@ -367,6 +370,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 31 {
 		w.Version = 32
+	}
+	if w.Version == 32 {
+		w.Version = 33
 	}
 	return nil
 }

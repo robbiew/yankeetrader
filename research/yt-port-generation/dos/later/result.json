@@ -1,0 +1,24 @@
+{
+  "name": "later",
+  "date": "11/02/2026",
+  "time": "12:34:00",
+  "recipe": "dos-port-generation-v1",
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8"
+  },
+  "actual_maintenance_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "files": {
+    "before-maint.dat.gz": "c06372022fe4c2a0d80f9763b51e9eeeb7a5e2961a70817f4707b6f408e071a4",
+    "after-maint.dat.gz": "1af33576d5e5219dafeb8f1572dca619cddf89e458a6b80d3fff5f28e2f72eed",
+    "INIT.LOG": "295119c5dd75a9cce05f0535567c85389e7fa163fba328dca53aed57aba68413",
+    "MAINT.LOG": "e6cae2561fe60357c638ef233418a539de6bac7a2a999c6d612325c8323f6c9a",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "MAINTRET.LOG": "7b2d350a1104efe5dca7e0617034485f8f27e9e4e5ba0ff024790f47022621be",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-dosbox.log": "03581095ade16af3e974ca54d66b06d3bfccb40bcd06b5fee6bb20ccd4f05e22",
+    "maint-dosbox.log": "000ad923b6b767af2bd175234467aeb27ee362813c904a65eb6273efdcc04c0a"
+  }
+}
