@@ -115,10 +115,12 @@ a bounded dated journal is a deliberate modern storage adaptation and needs an
 explicit retention, missing-day and migration policy. Do not silently backfill
 unrecorded historical events from current ownership or scores.
 
-The first proven event producers are login and team creation. The static caller
-inventory also contains registration/replacement, planet creation, acquisition
-and combat paths, but those event formats and trigger boundaries need targeted
-validation before they are advertised as recovered. Exact DOS colors, long-file
+The first proven event producers in this historical slice are login and team
+creation. The [later planet/acquisition research](events/RECOVERY.md) confirms
+public planet-creation entries but corrects ordinary port acquisition to a private
+former-owner system notice, not public purchase news. Registration/replacement
+and other combat paths still need their own targeted validation before being
+advertised as recovered producers. Exact DOS colors, long-file
 paging, Ctrl-X interruption, missing-today startup, corrupt/binary input,
 concurrent DOS writers, every event category, timezone behavior and crash-safe
 DOS rotation remain unverified. Research does not establish a generic promise

@@ -177,3 +177,13 @@
 /research/yt-spies/triggers/dos/**/RETURN.LOG -diff
 /research/yt-spies/triggers/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-spies/triggers/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact copied-world planet creation and private acquisition notice evidence.
+/research/yt-newspaper/events/dos/** -text
+/research/yt-newspaper/events/dos/**/KEYS.TXT -diff
+/research/yt-newspaper/events/dos/**/DOS*.LOG -diff
+/research/yt-newspaper/events/dos/**/RETURN.LOG -diff
+/research/yt-newspaper/events/dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-newspaper/events/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+# Commerce column separators in these exact transcripts resemble seven-character conflict markers.
+/research/yt-newspaper/events/dos/**/transcript.txt conflict-marker-size=32

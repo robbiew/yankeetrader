@@ -92,6 +92,8 @@ jobs:
           python3 scripts/verify_spy_intelligence.py
           python3 scripts/test_spy_intelligence_verifier.py
           python3 scripts/verify_newspaper.py
+          python3 scripts/verify_newspaper_events.py
+          python3 scripts/test_newspaper_events_verifier.py
           python3 scripts/verify_commerce_evidence.py
           python3 scripts/verify_team_radio.py
           python3 scripts/verify_broadcast_lifetime.py

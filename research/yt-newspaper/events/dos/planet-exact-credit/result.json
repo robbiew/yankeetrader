@@ -1,0 +1,192 @@
+{
+  "name": "planet-exact-credit",
+  "command": "L\r~~Y\r~~New Eden\r~~Y\r~~~~C;8;T\r~~1",
+  "patches": [
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      81,
+      100000
+    ],
+    [
+      2,
+      117,
+      0
+    ],
+    [
+      3,
+      81,
+      2000
+    ],
+    [
+      3,
+      117,
+      1
+    ],
+    [
+      2,
+      81,
+      25000
+    ]
+  ],
+  "family": "planet",
+  "outcome": "created",
+  "program_returned": true,
+  "recipe": "newspaper-creation-acquisition-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [
+    [
+      2,
+      45,
+      0
+    ],
+    [
+      2,
+      49,
+      500
+    ],
+    [
+      2,
+      57,
+      1
+    ],
+    [
+      2,
+      89,
+      0
+    ],
+    [
+      2,
+      93,
+      0
+    ],
+    [
+      2,
+      105,
+      0
+    ],
+    [
+      2,
+      125,
+      0
+    ],
+    [
+      3,
+      45,
+      0
+    ],
+    [
+      3,
+      57,
+      2
+    ],
+    [
+      3,
+      61,
+      42
+    ],
+    [
+      3,
+      53,
+      7
+    ],
+    [
+      3,
+      89,
+      0
+    ],
+    [
+      3,
+      125,
+      1
+    ],
+    [
+      52,
+      65,
+      1
+    ],
+    [
+      152,
+      65,
+      2
+    ],
+    [
+      3053,
+      93,
+      101
+    ],
+    [
+      153,
+      93,
+      2
+    ],
+    [
+      4053,
+      73,
+      0
+    ],
+    [
+      4053,
+      77,
+      12
+    ],
+    [
+      2,
+      57,
+      100
+    ],
+    [
+      2,
+      81,
+      100000
+    ],
+    [
+      2,
+      117,
+      0
+    ],
+    [
+      3,
+      81,
+      2000
+    ],
+    [
+      3,
+      117,
+      1
+    ],
+    [
+      2,
+      81,
+      25000
+    ]
+  ],
+  "date": "10/24/2026",
+  "time": "00:00:00",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "KEYS.TXT": "1973486aa99202d34c2ff74e5220254ce212874807b810ff246699ba34205609",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "dc32705f7031944fc64364861e213ba0b9f1c588f31d781eaa141436aeb60a65",
+    "before.dat.gz": "1b13af27f5ac67b632ac56d22671730630b87e2c0153f02e1299ef06a0210621",
+    "dosbox.log": "5f904fd8d26000e196d6ca25e333d1b341949121525a350262d1152a240ec195",
+    "game.log.gz": "0419ac53d445e5706f8c84aa9bca6827747de6f384e75ef63bce5d380e39bbe8",
+    "side-before.json.gz": "e18562432f753d80038901aa32ac4b87151b304883380522a1b8b45c4f2e8534",
+    "sidefiles.json.gz": "153c6430224afdbf9746ad3e30a90b8231012e482fafdf62414dc4160c8f8f79",
+    "transcript.txt": "cb65453ef2c306f3ff296939fa09c4d2a22923c9aff661efe01e91c0c827b372"
+  }
+}
