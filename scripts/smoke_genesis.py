@@ -50,7 +50,7 @@ def exercise(guard):
             assert text.count("Genesis saved: Winner won season 1 with 20 ports (required 20)") == 1, text
             assert "ENTIRE universe" in text and "This login has ended; reconnect to join." in text, text
             saved = json.loads(path.read_text())
-            assert saved["Version"] == 27 and saved["Season"] == 2 and saved["Players"] == {} and saved["NextPlayer"] == 1
+            assert saved["Version"] == 28 and saved["Season"] == 2 and saved["Players"] == {} and saved["NextPlayer"] == 1
             assert saved["Teams"] == {} and not saved.get("Radio") and not saved.get("News")
             assert len(saved["Planets"]) == 3 and saved["Planets"]["1"]["Wanderer"] and saved["Xannor"]["HQ"] > 7
             assert saved["LotteryDailyLimit"] == 0 and saved["GenesisPorts"] == 20 and "GenerationSeed" in saved

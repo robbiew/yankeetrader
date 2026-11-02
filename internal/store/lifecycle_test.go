@@ -104,6 +104,7 @@ func TestVersionThreeUpgradePreservesTeamAndAssets(t *testing.T) {
 	w.GenerationSeed = nil
 	w.NextBattleReport = 0 // This fixture represents a pre-report save.
 	w.NextNews = 0
+	w.News = nil // Historical fixture predates planet creation news.
 	for _, p := range w.Players {
 		p.Cloak = 0
 	}

@@ -46,7 +46,7 @@ def main():
             assert 'Spy # 1 will hunt in sector 7.'in out and 'Spy # 1 will hunt in sector 6.'in out,out
             w=json.loads(path.read_text());p=w['Players']['1']
             assert p['Turns']==496 and p['Credits']==2667000 and p['Missiles']==4 and p['Plasma']==2,p
-            assert w['Players']['2'].get('Cloak',0)==0 and not w.get('Radio') and w['Version']==27
+            assert w['Players']['2'].get('Cloak',0)==0 and not w.get('Radio') and w['Version']==28
             assert not any('spy' in e['Kind']for e in w.get('News',[]))
             transcripts.append(out)
             reconnect=play(data,'Caller','spies;intel;q')

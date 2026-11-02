@@ -69,7 +69,9 @@ func (s Session) newspaper(id int, args []string, pending *[]string) error {
 		}
 		end := min(offset+5, len(report.Entries))
 		for _, entry := range report.Entries[offset:end] {
-			if entry.Kind == game.NewsBroadcast {
+			if entry.Kind == game.NewsPlanetCreated {
+				err = s.Terminal.Printf("  -  %s made a planet: %s\r\n", entry.Alias, entry.PlanetName)
+			} else if entry.Kind == game.NewsBroadcast {
 				err = s.Terminal.Printf("%s Message from: %s [PUBLIC BROADCAST]\r\n%s\r\n", entry.At.Format("15:04:05"), entry.Alias, entry.BroadcastText)
 			} else if entry.Kind == game.NewsLogin {
 				err = s.Terminal.Printf("%s %s  Logged on\r\n", entry.At.Format("15:04:05"), entry.Alias)

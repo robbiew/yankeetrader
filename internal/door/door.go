@@ -841,12 +841,16 @@ func (s Session) Run() (runErr error) {
 			if len(args) == 0 {
 				e = errors.New("CREATE <name> costs 25000 credits")
 			} else {
-				e = s.Store.Update(func(w *game.World) error { return w.CreatePlanet(id, strings.Join(args, " "), s.Now()) })
-				if e == nil {
-					token = ""
-					planetToken = ""
-					e = s.Terminal.Printf("Planet created for 25000 credits. Use LAND to visit.\r\n")
+				current, viewErr := s.Store.View()
+				if viewErr != nil {
+					e = viewErr
+					break
 				}
+				e = s.Store.CreatePlanet(id, strings.Join(args, " "), current.Players[id].Sector, s.Now, s.Deadline)
+				if e == nil {
+					token, planetToken = "", ""
+				}
+				e = s.planetCreationReceipt(e, strings.Join(args, " "), false)
 			}
 		case "land":
 			if s.Classic {

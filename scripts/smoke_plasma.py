@@ -108,7 +108,7 @@ def fixture(guard):
                 transcript += text
                 saved = json.loads(path.read_text())
                 actor, target = saved['Players']['1'], saved['Players']['2']
-                assert saved['Version'] == 27
+                assert saved['Version'] == 28
                 if mode in ('cancel', 'stale'):
                     assert actor['Plasma'] == 3 and actor['Turns'] == 500 and 'Plasma launch saved:' not in text, text
                     continue
