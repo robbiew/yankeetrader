@@ -84,6 +84,10 @@ See [Play locally](#play-locally) for commands and the feature sections below fo
 
 ## Season administration
 
+See the [sysop save and data guide](docs/SYSOP.md) for live exports, stopped-door
+backups, archive extraction and validation, restoring or moving a game, identity
+mappings, upgrades and rollback. DOS save import/export remains unsupported.
+
 Export a consistent, private snapshot without changing play:
 
 ```sh
