@@ -1153,6 +1153,25 @@ DOS shared-counter lifetime, simultaneous original
 writers, multiline editing and native BBS acceptance remain separate work.
 [Evidence and policies](../research/yt-broadcast-radio/IMPLEMENTATION.md).
 
+## Multiline radio editor
+
+See [implementation and native controls](../research/yt-radio-editor/IMPLEMENTATION.md)
+and [compact/classic PTY transcript](radio-editor-smoke.txt). Six native controls
+and sixteen semantic corruption controls accompany atomic game/store and door
+confirmation tests. Character-level DOS wrapping and live BBS acceptance remain
+separate.
+
+Local validation passed: full Go race tests and vet, focused editor tests, six
+DOS controls, sixteen rehashed corruption controls, all 4,682 immutable archive
+files, and Linux/Windows amd64 cross-builds. These are local checks; hosted CI
+has not run for this branch.
+
+Existing direct, team and broadcast PTY regression checks also passed.
+
+Editor verifier review fix: a seventeenth rehashed corruption reproduces an
+Abort newspaper leak with no delivered mailbox records; the verifier now rejects
+both aborted input lines independently of the expected delivered lines.
+
 CI fixture correction: reproduced captured-home return with only one HQ fighter
 when the unrelated Wanderer occupied the emptied HQ. The fixture now removes
 the Wanderer and exhausts planet-generation capacity so its separate restoration

@@ -11,13 +11,24 @@ import (
 )
 
 func (s Session) sendRadio(id int, args []string, pending *[]string) error {
+	multiline := len(args) > 1 && strings.EqualFold(args[0], "EDIT")
+	if multiline {
+		args = args[1:]
+	}
 	query := strings.Join(args, " ")
 	if query == "" {
+		if err := s.Terminal.Printf("For multiple lines, enter EDIT <alias, player number, TEAM or ALL>.\r\n"); err != nil {
+			return err
+		}
 		var err error
 		query, err = s.classicArgument("Send a message to who? (alias search, player number, TEAM or ALL) ", pending)
 		if err != nil {
 			return err
 		}
+	}
+	if !multiline && len(query) > 5 && strings.EqualFold(query[:5], "EDIT ") {
+		multiline = true
+		query = strings.TrimSpace(query[5:])
 	}
 	if strings.TrimSpace(query) == "" {
 		return s.Terminal.Printf("Radio cancelled.\r\n")
@@ -65,24 +76,45 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 			return err
 		}
 	}
-	if err = s.Terminal.Printf("Message (one line, 1-74 ASCII characters; blank cancels): "); err != nil {
-		return err
+	var lines []string
+	if multiline {
+		lines, err = s.radioEditor()
+	} else {
+		if err = s.Terminal.Printf("Message (one line, 1-74 ASCII characters; blank cancels): "); err != nil {
+			return err
+		}
+		var line string
+		line, err = s.readLiteralLine()
+		if strings.TrimSpace(line) != "" {
+			lines = []string{line}
+		}
 	}
-	text, err := s.readLiteralLine()
 	if err != nil {
 		return err
 	}
-	if strings.TrimSpace(text) == "" {
+	if len(lines) == 0 {
 		return s.Terminal.Printf("Radio cancelled.\r\n")
 	}
+	text := strings.Join(lines, "\r\n")
 	w, err = s.Store.View()
 	if err != nil {
 		return err
 	}
+	var document game.RadioDocumentDraft
 	var draft game.RadioDraft
 	var teamDraft game.TeamRadioDraft
 	var broadcastDraft game.BroadcastRadioDraft
-	if isBroadcast {
+	if multiline {
+		target := game.RadioDocumentTarget{}
+		if isBroadcast {
+			target.Broadcast = &broadcast
+		} else if isTeam {
+			target.Team = &team
+		} else {
+			target.Direct = &address
+		}
+		document, err = w.PrepareRadioDocument(id, target, lines, s.Now())
+	} else if isBroadcast {
 		broadcastDraft, err = w.PrepareBroadcastRadio(id, broadcast, text, s.Now())
 	} else if isTeam {
 		teamDraft, err = w.PrepareTeamRadio(id, team, text, s.Now())
@@ -127,7 +159,9 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 			return errors.New("session time expired; radio cancelled")
 		}
 		var err error
-		if isBroadcast {
+		if multiline {
+			messageIDs, err = w.CommitRadioDocument(document, s.Now())
+		} else if isBroadcast {
 			messageIDs, err = w.CommitBroadcastRadio(broadcastDraft, s.Now())
 		} else if isTeam {
 			messageIDs, err = w.CommitTeamRadio(teamDraft, s.Now())
@@ -139,6 +173,20 @@ func (s Session) sendRadio(id int, args []string, pending *[]string) error {
 		}
 		return err
 	})
+	if multiline {
+		var durability *store.DurabilityError
+		if err != nil && !errors.As(err, &durability) {
+			return err
+		}
+		public := 0
+		if isBroadcast {
+			public = len(lines)
+		}
+		if err != nil {
+			return errors.Join(err, s.Terminal.Printf("%d lines saved (%d private copies, %d public entries). %s\r\n", len(lines), len(messageIDs), public, err))
+		}
+		return s.Terminal.Printf("Transmission successful! %d lines saved (%d private copies, %d public entries).\r\n", len(lines), len(messageIDs), public)
+	}
 	if err != nil {
 		var durability *store.DurabilityError
 		if (!isTeam && !isBroadcast) || !errors.As(err, &durability) {

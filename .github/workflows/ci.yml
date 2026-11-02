@@ -95,6 +95,8 @@ jobs:
           python3 scripts/verify_broadcast_lifetime.py
           python3 scripts/test_broadcast_lifetime_verifier.py
           python3 scripts/test_team_radio_verifier.py
+          python3 scripts/verify_radio_editor.py
+          python3 scripts/test_radio_editor_verifier.py
           python3 scripts/verify_broadcast_radio.py
           python3 scripts/test_broadcast_radio_verifier.py
           python3 scripts/verify_avoid_evidence.py
@@ -128,6 +130,7 @@ jobs:
           python3 scripts/smoke_navigation.py
           python3 scripts/smoke_automatic_scores.py
           python3 scripts/smoke_rankings.py
+          python3 scripts/smoke_radio_editor.py
           python3 scripts/smoke_radio.py
           python3 scripts/smoke_team_radio.py
           # Covers explicit public preview, atomic mail/news and both newspaper interfaces.

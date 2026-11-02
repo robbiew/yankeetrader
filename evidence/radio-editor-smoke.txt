@@ -1,0 +1,312 @@
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio EDIT Enemy;y
+Send to Enemy (#2)? [y/N] Messages are limited to 20 lines of 74 ASCII characters. Blank ends entry.
+ 1: alpha alpha; literal/
+ 2: SECOND
+ 3:
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> E
+Edit Which line? (1 - 2) -=> 1
+Line 1 reads: alpha alpha; literal/
+Replace what section? -=> alpha
+Replace it with what? -=> BETA
+Line 1 now reads: BETA alpha; literal/
+Is this OK? [Y/N]? -=> y
+Change Saved!
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> L
+ 1: BETA alpha; literal/
+ 2: SECOND
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> C
+ 2: SECOND PLUS
+ 3:
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> S
+To: Enemy (#2)
+BETA alpha; literal/
+SECOND PLUS
+[S] Send [A] Abort -=> s
+Transmission successful! 2 lines saved (2 private copies, 0 public entries).
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Visitor. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+No matching radio messages.
+Saved. Safe travels, Visitor.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Enemy. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #1 [NEW] | 2026-11-01 20:50 UTC
+Message to: Enemy * From: Sender
+BETA alpha; literal/
+
+Radio #2 [NEW] | 2026-11-01 20:50 UTC
+Message to: Enemy * From: Sender
+SECOND PLUS
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #1 | 2026-11-01 20:50 UTC
+Message to: Enemy * From: Sender
+BETA alpha; literal/
+
+Radio #2 | 2026-11-01 20:50 UTC
+Message to: Enemy * From: Sender
+SECOND PLUS
+Saved. Safe travels, Enemy.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio EDIT Enemy;y
+Send to Enemy (#2)? [y/N] Messages are limited to 20 lines of 74 ASCII characters. Blank ends entry.
+ 1: ABORTED
+ 2:
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> A
+Are you sure? [y/N] y
+Radio cancelled.
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > team;2;Orion
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team Command? Team name? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Sender (captain)
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Reinforce Current Sector Defense
+7) Banish a Team Member
+8) Change Team Password
+9) Change Team Name
+Team Command? 1;q
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Enemy. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > team;3;1
+
+Team menu
+1) Exit Team menu
+2) Create a Team
+3) Join a Team
+Team 1: Orion (1/4 members)
+Team Command? Team number? Team password (4 characters; entered separately): ****
+Team change saved.
+
+Team menu
+1) Exit Team menu
+Team 1: Orion
+1: Sender (captain)
+2: Enemy (member)
+4) Quit a Team
+5) Search for Team Members & Resources
+6) Reinforce Current Sector Defense
+Team Command? 1;q
+Saved. Safe travels, Enemy.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Sender. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > radio EDIT TEAM;y
+Recipients (including you):
+  Sender (#1)
+  Enemy (#2)
+Send to team Orion (#1)? [y/N] Messages are limited to 20 lines of 74 ASCII characters. Blank ends entry.
+ 1: TEAM FIRST
+ 2: TEAM SECOND
+ 3:
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> S
+To: team Orion (#1)
+Recipients (including you):
+  Sender (#1)
+  Enemy (#2)
+TEAM FIRST
+TEAM SECOND
+[S] Send [A] Abort -=> s
+Transmission successful! 2 lines saved (4 private copies, 0 public entries).
+
+New radio messages:
+
+Radio #3 [NEW] | 2026-11-01 20:50 UTC
+Message to: Sender * From: Sender
+TEAM FIRST
+
+Radio #5 [NEW] | 2026-11-01 20:50 UTC
+Message to: Sender * From: Sender
+TEAM SECOND
+
+Sector 1 | 1005 credits | 500 turns > q
+Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Visitor. Actions save automatically. Type ? for help.
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+No matching radio messages.
+Saved. Safe travels, Visitor.
+Local Console Mode
+
+
+
+
+                          Yankee Trader: Resurrection
+                        Original game by Alan Davenport
+          Copyright (c) 1989,1990,1991,1992,1993,1994 Alan Davenport
+
+                    https://github.com/robbiew/yankeetrader
+
+                                 Version 0.1.0
+
+                       Based on Yankee Trader Version 3.6
+
+                               [ Press any Key ]
+
+
+
+
+
+
+
+
+
+Cntl-X to Stop
+
+Welcome to .....
+
+Yankee Trader: Resurrection
+Version 0.1.0
+https://github.com/robbiew/yankeetrader
+
+Coming to you compliments of your Sysop!
+
+Stacked commands are available in YT!
+EXAMPLE: M;7   (Move to sector 7)
+EXAMPLE: L;A;L (Land at planet, take all, leave planet)
+Command strings can be as l-o-n-g as you want!
+
+If something is in [brackets], it is a default and
+you can just hit enter. (Or use an extra ";".)
+
+SAVE COMMANDS FOR RE-USE BY PUTTING A "/" AS LAST CHARACTER!
+RE-USE THEM WITH ONE [!] KEYSTROKE BY HITTING CTRL-R!!
+
+[ Press any Key ]
+Initializing...
+
+Welcome Sender!
+Searching my records for your name.
+
+
+
+
+                    [ Info ]
+
+Name  : Sender
+Time  : 179:59
+Team  : 1
+
+
+
++-------------------------+----------------------+
+| Credits.. : 1005        | Sector....... : 1    |
+| Turns.... : 500         | Holds........ : 10   |
+| Fighters. : 25          | Ore.......... : 0    |
+| Mines.... : 0           | Organics..... : 0    |
+| Missiles. : 0           | Equipment.... : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
+| Shields.. : 0           | Cloak Energy. : 100% |
+| Forces... : 0           | Plasma Bolts. : 0    |
++-------------------------+----------------------+
+
+[ Press any Key ]
+
+Checking for Radio Messages.
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
+
+Time: 179:59  Main Command (?=Help)? c;5;EDIT ALL;y
+
+<Computer activated>
+For multiple lines, enter EDIT <alias, player number, TEAM or ALL>.
+Send a message to who? (alias search, player number, TEAM or ALL) Send to ALL 3 current active accounts (including you)? [y/N] Messages are limited to 20 lines of 74 ASCII characters. Blank ends entry.
+ 1: PUBLIC FIRST
+ 2: PUBLIC SECOND
+ 3:
+[L] List [S] Send [A] Abort [C] Continue [E] Edit -=> S
+To: ALL 3 current active accounts (including you)
+PUBLIC: This exact text and your alias will also appear in the Galactic Newspaper, visible beyond the current radio recipients.
+Public sender: Sender
+PUBLIC FIRST
+PUBLIC SECOND
+[S] Send [A] Abort -=> s
+Transmission successful! 2 lines saved (6 private copies, 2 public entries).
+
+New radio messages:
+
+Radio #7 [NEW] | 2026-11-01 20:50 UTC
+Message to: Sender * From: Sender
+PUBLIC FIRST
+
+Radio #10 [NEW] | 2026-11-01 20:50 UTC
+Message to: Sender * From: Sender
+PUBLIC SECOND
+
+Time: 179:59  Computer command (?=help)? 1;q;y
+
+<Computer deactivated>
+
+Sector: 1
+Port: Earth, Selling: Ship equipment
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
+
+<Quit>
+Are you sure (Y/N)? Saved. Safe travels, Sender.
+[c
+Yankee Trader: Resurrection 0.1.0
+Welcome, Visitor. Actions save automatically. Type ? for help.
+
+New radio messages:
+
+Radio #9 [NEW] | 2026-11-01 20:50 UTC
+Message to: Visitor * From: Sender
+PUBLIC FIRST
+
+Radio #12 [NEW] | 2026-11-01 20:50 UTC
+Message to: Visitor * From: Sender
+PUBLIC SECOND
+
+Sector 1 | 1005 credits | 500 turns > messages;q
+
+Radio #9 | 2026-11-01 20:50 UTC
+Message to: Visitor * From: Sender
+PUBLIC FIRST
+
+Radio #12 | 2026-11-01 20:50 UTC
+Message to: Visitor * From: Sender
+PUBLIC SECOND
+Saved. Safe travels, Visitor.

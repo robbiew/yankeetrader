@@ -1336,3 +1336,11 @@ reading scopes have regression coverage. See
 The shared DOS delivery counter, multiline editor, live BBS and native Windows
 durability remain separate. Earlier save26/research-only boundaries above are
 historical and superseded only for this public-publication slice.
+
+## Bounded multiline radio editor
+
+The opt-in editor now supports List, Continue, confirmed first-match Edit, Send
+and confirmed Abort for up to 20 lines. Direct, team and ALL documents commit
+atomically using version-27 records. Earlier editor deferrals above are historical;
+character-level wrapping/backspace parity and live BBS acceptance remain open.
+See [native controls and implementation](yt-radio-editor/IMPLEMENTATION.md).
