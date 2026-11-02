@@ -1,0 +1,37 @@
+{
+  "name": "port-buyer-reload",
+  "command": "\r~~~~C;6;1;C;8;T\r~~1",
+  "patches": [],
+  "family": "reload",
+  "outcome": "read",
+  "parent": "port-buyout-keep",
+  "actor": "TESTER",
+  "time": "00:10:00",
+  "program_returned": true,
+  "recipe": "newspaper-creation-acquisition-v1",
+  "baseline_sha256": "04eaf42c54d4f35c3412737e27fa968b5abcd22eb295cb5d8b45ab8045fcd0ec",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "28012852978f2efbcd48fd1318f9af169247e5e5a71ebc23205fbb036facfa99",
+    "KEYS.TXT": "c09c4cefd2664c5641998a4a184b74a6ff4c314ccfccbc5fed29975b20468a9d",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "c7cf96c2891f92fffa2207aab225a6dc6e7d0a9c94a53e37f45187ed34d50c2a",
+    "before.dat.gz": "c7cf96c2891f92fffa2207aab225a6dc6e7d0a9c94a53e37f45187ed34d50c2a",
+    "dosbox.log": "576fc1c7c337f7d9f728d578f7947f9f11e129dba3f28f06a8a297abfa9787f3",
+    "game.log.gz": "d44e152629b6d8bcca273dee8595651244977d15a6bce563f3b07af992dd7c42",
+    "side-before.json.gz": "1d8358363a10dafb267b90c90039172048c4ba5f807b410f956a7d6d2e1845d3",
+    "sidefiles.json.gz": "295fb92bbd9e0bf45cdc46d5e10f0da6d388b0819331c9b463048bcccbdb6ce9",
+    "transcript.txt": "6198476b4eba2df50b63722db78dcefdedbb6fb034e06c3a81e45a1eaf22cd42"
+  }
+}

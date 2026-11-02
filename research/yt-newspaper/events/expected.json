@@ -1,0 +1,2106 @@
+{
+  "recipe": {
+    "recipe": "newspaper-creation-acquisition-v1",
+    "scenarios": [
+      {
+        "name": "planet-create",
+        "command": "L\r~~Y\r~~New Eden\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-exact-credit",
+        "command": "L\r~~Y\r~~New Eden\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            81,
+            25000
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-lowercase",
+        "command": "L\r~~y\r~~News Mixed Planet\r~~y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-decline",
+        "command": "L\r~~N\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-default",
+        "command": "L\r~~\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-poor",
+        "command": "L\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            81,
+            24999
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-existing",
+        "command": "L;L;C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            102
+          ],
+          [
+            4053,
+            73,
+            2
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-name-default",
+        "command": "L\r~~Y\r~~New Eden\r~~\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-name-retry",
+        "command": "L\r~~Y\r~~Rejected World\r~~N\r~~Final World\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-name-blank",
+        "command": "L\r~~Y\r~~\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-zero-turns",
+        "command": "L\r~~Y\r~~New Eden\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            49,
+            0
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-punctuation",
+        "command": "L\r~~Y\r~~Public: Atlas & Co\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-name-long",
+        "command": "L\r~~Y\r~~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "planet-reserved-the-wanderer",
+        "command": "L\r~~Y\r~~The Wanderer\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-reserved-xannoron",
+        "command": "L\r~~Y\r~~Xannoron\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-reserved-mercenary-base",
+        "command": "L\r~~Y\r~~Mercenary Base\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-slots-full",
+        "command": "L\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            4053,
+            85,
+            1
+          ],
+          [
+            4054,
+            85,
+            1
+          ],
+          [
+            4055,
+            85,
+            1
+          ],
+          [
+            4056,
+            85,
+            1
+          ],
+          [
+            4057,
+            85,
+            1
+          ],
+          [
+            4058,
+            85,
+            1
+          ],
+          [
+            4059,
+            85,
+            1
+          ],
+          [
+            4060,
+            85,
+            1
+          ],
+          [
+            4061,
+            85,
+            1
+          ],
+          [
+            4062,
+            85,
+            1
+          ],
+          [
+            4063,
+            85,
+            1
+          ],
+          [
+            4064,
+            85,
+            1
+          ],
+          [
+            4065,
+            85,
+            1
+          ],
+          [
+            4066,
+            85,
+            1
+          ],
+          [
+            4067,
+            85,
+            1
+          ],
+          [
+            4068,
+            85,
+            1
+          ],
+          [
+            4069,
+            85,
+            1
+          ],
+          [
+            4070,
+            85,
+            1
+          ],
+          [
+            4071,
+            85,
+            1
+          ],
+          [
+            4072,
+            85,
+            1
+          ],
+          [
+            4073,
+            85,
+            1
+          ],
+          [
+            4074,
+            85,
+            1
+          ],
+          [
+            4075,
+            85,
+            1
+          ],
+          [
+            4076,
+            85,
+            1
+          ],
+          [
+            4077,
+            85,
+            1
+          ],
+          [
+            4078,
+            85,
+            1
+          ],
+          [
+            4079,
+            85,
+            1
+          ],
+          [
+            4080,
+            85,
+            1
+          ],
+          [
+            4081,
+            85,
+            1
+          ],
+          [
+            4082,
+            85,
+            1
+          ],
+          [
+            4083,
+            85,
+            1
+          ],
+          [
+            4084,
+            85,
+            1
+          ],
+          [
+            4085,
+            85,
+            1
+          ],
+          [
+            4086,
+            85,
+            1
+          ],
+          [
+            4087,
+            85,
+            1
+          ],
+          [
+            4088,
+            85,
+            1
+          ],
+          [
+            4089,
+            85,
+            1
+          ],
+          [
+            4090,
+            85,
+            1
+          ],
+          [
+            4091,
+            85,
+            1
+          ],
+          [
+            4092,
+            85,
+            1
+          ],
+          [
+            4093,
+            85,
+            1
+          ],
+          [
+            4094,
+            85,
+            1
+          ],
+          [
+            4095,
+            85,
+            1
+          ],
+          [
+            4096,
+            85,
+            1
+          ],
+          [
+            4097,
+            85,
+            1
+          ],
+          [
+            4098,
+            85,
+            1
+          ],
+          [
+            4099,
+            85,
+            1
+          ],
+          [
+            4100,
+            85,
+            1
+          ],
+          [
+            4101,
+            85,
+            1
+          ],
+          [
+            4102,
+            85,
+            1
+          ],
+          [
+            4103,
+            85,
+            1
+          ],
+          [
+            4104,
+            85,
+            1
+          ],
+          [
+            4105,
+            85,
+            1
+          ],
+          [
+            4106,
+            85,
+            1
+          ],
+          [
+            4107,
+            85,
+            1
+          ],
+          [
+            4108,
+            85,
+            1
+          ],
+          [
+            4109,
+            85,
+            1
+          ],
+          [
+            4110,
+            85,
+            1
+          ],
+          [
+            4111,
+            85,
+            1
+          ],
+          [
+            4112,
+            85,
+            1
+          ],
+          [
+            4113,
+            85,
+            1
+          ],
+          [
+            4114,
+            85,
+            1
+          ],
+          [
+            4115,
+            85,
+            1
+          ],
+          [
+            4116,
+            85,
+            1
+          ],
+          [
+            4117,
+            85,
+            1
+          ],
+          [
+            4118,
+            85,
+            1
+          ],
+          [
+            4119,
+            85,
+            1
+          ],
+          [
+            4120,
+            85,
+            1
+          ],
+          [
+            4121,
+            85,
+            1
+          ],
+          [
+            4122,
+            85,
+            1
+          ],
+          [
+            4123,
+            85,
+            1
+          ],
+          [
+            4124,
+            85,
+            1
+          ],
+          [
+            4125,
+            85,
+            1
+          ],
+          [
+            4126,
+            85,
+            1
+          ],
+          [
+            4127,
+            85,
+            1
+          ],
+          [
+            4128,
+            85,
+            1
+          ],
+          [
+            4129,
+            85,
+            1
+          ],
+          [
+            4130,
+            85,
+            1
+          ],
+          [
+            4131,
+            85,
+            1
+          ],
+          [
+            4132,
+            85,
+            1
+          ],
+          [
+            4133,
+            85,
+            1
+          ],
+          [
+            4134,
+            85,
+            1
+          ],
+          [
+            4135,
+            85,
+            1
+          ],
+          [
+            4136,
+            85,
+            1
+          ],
+          [
+            4137,
+            85,
+            1
+          ],
+          [
+            4138,
+            85,
+            1
+          ],
+          [
+            4139,
+            85,
+            1
+          ],
+          [
+            4140,
+            85,
+            1
+          ],
+          [
+            4141,
+            85,
+            1
+          ],
+          [
+            4142,
+            85,
+            1
+          ],
+          [
+            4143,
+            85,
+            1
+          ],
+          [
+            4144,
+            85,
+            1
+          ],
+          [
+            4145,
+            85,
+            1
+          ],
+          [
+            4146,
+            85,
+            1
+          ],
+          [
+            4147,
+            85,
+            1
+          ],
+          [
+            4148,
+            85,
+            1
+          ],
+          [
+            4149,
+            85,
+            1
+          ],
+          [
+            4150,
+            85,
+            1
+          ],
+          [
+            4151,
+            85,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "none"
+      },
+      {
+        "name": "planet-repeat",
+        "command": "L\r~~Y\r~~New Eden\r~~Y\r~~~~L;L;C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ]
+        ],
+        "family": "planet",
+        "outcome": "created"
+      },
+      {
+        "name": "port-buyout-keep",
+        "command": "B\r~~Y\r~~~~\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-buyout-rename",
+        "command": "B\r~~Y\r~~News Harbor\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-rename-retry",
+        "command": "B\r~~Y\r~~Rejected Harbor\r~~N\r~~Final Harbor\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-decline",
+        "command": "B\r~~N\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "none"
+      },
+      {
+        "name": "port-default",
+        "command": "B\r~~\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "none"
+      },
+      {
+        "name": "port-poor",
+        "command": "B\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            2,
+            81,
+            30
+          ]
+        ],
+        "family": "port",
+        "outcome": "none"
+      },
+      {
+        "name": "port-unowned",
+        "command": "B\r~~Y\r~~~~\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            3053,
+            97,
+            0
+          ],
+          [
+            3053,
+            89,
+            0
+          ],
+          [
+            3,
+            117,
+            0
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-self",
+        "command": "B\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            3053,
+            97,
+            2
+          ],
+          [
+            2,
+            117,
+            1
+          ],
+          [
+            3,
+            117,
+            0
+          ]
+        ],
+        "family": "port",
+        "outcome": "none"
+      },
+      {
+        "name": "port-no-port",
+        "command": "B\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            2,
+            57,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "none"
+      },
+      {
+        "name": "port-teammate",
+        "command": "B\r~~Y\r~~~~\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            2,
+            89,
+            1
+          ],
+          [
+            3,
+            89,
+            1
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-zero-turns",
+        "command": "B\r~~Y\r~~~~\r~~Y\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ],
+          [
+            2,
+            49,
+            0
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "port-repeat",
+        "command": "B\r~~Y\r~~~~\r~~Y\r~~~~B\r~~~~C;8;T\r~~1",
+        "patches": [
+          [
+            2,
+            57,
+            100
+          ],
+          [
+            2,
+            81,
+            100000
+          ],
+          [
+            2,
+            117,
+            0
+          ],
+          [
+            3,
+            81,
+            2000
+          ],
+          [
+            3,
+            117,
+            1
+          ],
+          [
+            2,
+            57,
+            101
+          ],
+          [
+            3053,
+            97,
+            3
+          ],
+          [
+            3053,
+            89,
+            777
+          ],
+          [
+            3053,
+            61,
+            100
+          ],
+          [
+            3053,
+            65,
+            100
+          ],
+          [
+            3053,
+            69,
+            100
+          ]
+        ],
+        "family": "port",
+        "outcome": "bought"
+      },
+      {
+        "name": "planet-creator-reload",
+        "command": "\r~~~~C;6;1;C;8;T\r~~1",
+        "patches": [],
+        "family": "reload",
+        "outcome": "read",
+        "parent": "planet-create",
+        "actor": "TESTER",
+        "time": "00:10:00"
+      },
+      {
+        "name": "port-seller-reload",
+        "command": "\r~~~~C;6;1;C;8;T\r~~1",
+        "patches": [],
+        "family": "reload",
+        "outcome": "read",
+        "parent": "port-buyout-keep",
+        "actor": "ENEMY",
+        "time": "00:10:00"
+      },
+      {
+        "name": "port-renamed-seller-reload",
+        "command": "\r~~~~C;6;1;C;8;T\r~~1",
+        "patches": [],
+        "family": "reload",
+        "outcome": "read",
+        "parent": "port-buyout-rename",
+        "actor": "ENEMY",
+        "time": "00:10:00"
+      },
+      {
+        "name": "port-buyer-reload",
+        "command": "\r~~~~C;6;1;C;8;T\r~~1",
+        "patches": [],
+        "family": "reload",
+        "outcome": "read",
+        "parent": "port-buyout-keep",
+        "actor": "TESTER",
+        "time": "00:10:00"
+      }
+    ]
+  },
+  "semantics": {
+    "planet-create": {
+      "outcome": "created",
+      "planet_name": "New Eden"
+    },
+    "planet-exact-credit": {
+      "outcome": "created",
+      "planet_name": "New Eden"
+    },
+    "planet-lowercase": {
+      "outcome": "created",
+      "planet_name": "News Mixed Planet"
+    },
+    "planet-decline": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-default": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-poor": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-existing": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-name-default": {
+      "outcome": "created",
+      "planet_name": "New Eden"
+    },
+    "planet-name-retry": {
+      "outcome": "created",
+      "planet_name": "Final World"
+    },
+    "planet-name-blank": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-zero-turns": {
+      "outcome": "created",
+      "planet_name": "New Eden"
+    },
+    "planet-punctuation": {
+      "outcome": "created",
+      "planet_name": "Public: Atlas & Co"
+    },
+    "planet-name-long": {
+      "outcome": "created",
+      "planet_name": "Abcdefghijklmnopqrstuvwxyzabcdefghijklmno"
+    },
+    "planet-reserved-the-wanderer": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-reserved-xannoron": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-reserved-mercenary-base": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-slots-full": {
+      "outcome": "none",
+      "planet_name": null
+    },
+    "planet-repeat": {
+      "outcome": "created",
+      "planet_name": "New Eden"
+    },
+    "port-buyout-keep": {
+      "outcome": "bought",
+      "port_name": "Test Port"
+    },
+    "port-buyout-rename": {
+      "outcome": "bought",
+      "port_name": "News Harbor"
+    },
+    "port-rename-retry": {
+      "outcome": "bought",
+      "port_name": "Final Harbor"
+    },
+    "port-decline": {
+      "outcome": "none",
+      "port_name": "Test Port"
+    },
+    "port-default": {
+      "outcome": "none",
+      "port_name": "Test Port"
+    },
+    "port-poor": {
+      "outcome": "none",
+      "port_name": "Test Port"
+    },
+    "port-unowned": {
+      "outcome": "bought",
+      "port_name": "Test Port"
+    },
+    "port-self": {
+      "outcome": "none",
+      "port_name": "Test Port"
+    },
+    "port-no-port": {
+      "outcome": "none",
+      "port_name": "Test Port"
+    },
+    "port-teammate": {
+      "outcome": "bought",
+      "port_name": "Test Port"
+    },
+    "port-zero-turns": {
+      "outcome": "bought",
+      "port_name": "Test Port"
+    },
+    "port-repeat": {
+      "outcome": "bought",
+      "port_name": "Test Port"
+    },
+    "planet-creator-reload": {
+      "outcome": "read"
+    },
+    "port-seller-reload": {
+      "outcome": "read"
+    },
+    "port-renamed-seller-reload": {
+      "outcome": "read"
+    },
+    "port-buyer-reload": {
+      "outcome": "read"
+    }
+  }
+}
