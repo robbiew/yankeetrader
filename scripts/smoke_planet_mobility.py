@@ -45,7 +45,7 @@ def exercise(guard):
                     followups += [(b"Engage? [y/N] ",b"n\r" if mode=="cancel" else b"y\r"),(main,quit_keys)]
                 text=guard.run(play,data,"Mover",command,classic=classic,followups=followups)
                 saved=json.loads(path.read_text());ship=saved["Players"]["1"]
-                assert saved["Version"]==26 and saved["NextPlanetGeneration"]>=101,text
+                assert saved["Version"]==27 and saved["NextPlanetGeneration"]>=101,text
                 if mode=="cancel":assert ship["Sector"]==8 and ship["Turns"]==500 and saved["Planets"]["2"]["Sector"]==8 and "thrusters saved:" not in text,text
                 elif mode in ("move","collision"):
                     assert text.count("Planet thrusters saved:")==1,text

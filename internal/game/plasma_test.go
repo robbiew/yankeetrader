@@ -436,7 +436,7 @@ func TestPlasmaSeededConservationAndMigration(t *testing.T) {
 	w, _ := plasmaWorld(t, 8)
 	w.Version = 25
 	before, _ := json.Marshal(w.Players)
-	if err := w.Upgrade(); err != nil || w.Version != 26 {
+	if err := w.Upgrade(); err != nil || w.Version != WorldVersion {
 		t.Fatal(err, w.Version)
 	}
 	after, _ := json.Marshal(w.Players)

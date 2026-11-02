@@ -62,7 +62,7 @@ func TestBroadcastRadioCurrentAccountsAndIndependentCopies(t *testing.T) {
 }
 
 func TestBroadcastRadioStaleRecipientsAndAtomicFailures(t *testing.T) {
-	for _, mode := range []string{"join", "retire", "rename", "generation", "season", "expiry", "capacity", "sequence", "late-text", "partial"} {
+	for _, mode := range []string{"join", "retire", "rename", "generation", "season", "expiry", "capacity", "sequence", "late-text", "partial", "news-sequence", "news-clock"} {
 		t.Run(mode, func(t *testing.T) {
 			w, sender, recipient, _ := radioWorld(t)
 			address, _ := w.FindBroadcastRadioRecipients(sender.ID)
@@ -90,6 +90,10 @@ func TestBroadcastRadioStaleRecipientsAndAtomicFailures(t *testing.T) {
 				w.NextRadio = math.MaxUint64 - 2
 			case "late-text":
 				draft.drafts[2].text = "\x1b"
+			case "news-sequence":
+				w.NextNews = math.MaxUint64
+			case "news-clock":
+				w.appendNews(NewsEvent{At: clock.Add(time.Minute), Kind: NewsLogin, Alias: sender.Alias})
 			case "partial":
 				if _, err := w.CommitRadio(draft.drafts[0], clock); err != nil {
 					t.Fatal(err)
@@ -116,7 +120,8 @@ func TestBroadcastRadioFullActiveRosterAndRetirement(t *testing.T) {
 	if err != nil || len(address.Recipients) != 3 {
 		t.Fatal("dead account lost mail eligibility", address, err)
 	}
-	w.retireInactivePlayers(clock.AddDate(0, 0, InactiveRetirementDays+1))
+	now := clock.AddDate(0, 0, InactiveRetirementDays+1)
+	w.retireInactivePlayers(now)
 	address, err = w.FindBroadcastRadioRecipients(sender.ID)
 	if err != nil || len(address.Recipients) != 2 {
 		t.Fatal("retired account still selected", address, err)
@@ -134,11 +139,11 @@ func TestBroadcastRadioFullActiveRosterAndRetirement(t *testing.T) {
 	if err != nil || len(address.Recipients) != MaxActivePlayers {
 		t.Fatal(address, err)
 	}
-	draft, err := w.PrepareBroadcastRadio(sender.ID, address, "full roster", clock)
+	draft, err := w.PrepareBroadcastRadio(sender.ID, address, "full roster", now)
 	if err != nil {
 		t.Fatal(err)
 	}
-	ids, err := w.CommitBroadcastRadio(draft, clock)
+	ids, err := w.CommitBroadcastRadio(draft, now)
 	if err != nil || len(ids) != MaxActivePlayers {
 		t.Fatal(ids, err)
 	}

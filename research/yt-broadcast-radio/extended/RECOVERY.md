@@ -99,7 +99,10 @@ not just another team fanout.
 
 This slice establishes the newspaper aspect that a private-copy-only design
 does not provide. [CONTRACT.md](CONTRACT.md) separates an explicit public-news
-follow-up from an original-style global archive. Neither is enabled here.
+follow-up from an original-style global archive. Neither was enabled by this
+research milestone. The later [version-27 implementation](../IMPLEMENTATION.md)
+now provides public newspaper publication with explicit consent, retaining the
+private-copy delivery adaptation; it does not add a shared global radio archive.
 The DOS two-line control is a routing/newspaper witness, not recovery of every
 20-line editor operation or maximum-length character case.
 

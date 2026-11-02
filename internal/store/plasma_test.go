@@ -291,7 +291,7 @@ func TestPlasmaCommittedDurabilityWarningAndVersion25Migration(t *testing.T) {
 		t.Fatal(out, e)
 	}
 	w, e = s.View()
-	if e != nil || w.Version != 26 || w.Players[1].Turns != 36 || w.Players[1].Plasma != 63 {
+	if e != nil || w.Version != game.WorldVersion || w.Players[1].Turns != 36 || w.Players[1].Plasma != 63 {
 		t.Fatal(e)
 	}
 	if _, e = b.LaunchPlasma(entry, func() float64 { return .5 }, time.Now, time.Now().Add(time.Minute)); e == nil {

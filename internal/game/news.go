@@ -12,6 +12,7 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsBroadcast    NewsKind = "radio-broadcast"
 	NewsPlayerPlanet NewsKind = "player-planet-assault"
 	NewsLottery      NewsKind = "paid-lottery"
 	NewsXannorHQ     NewsKind = "xannor-hq-victory"
@@ -26,9 +27,10 @@ const (
 	NewsTeamCreated  NewsKind = "team-created"
 )
 
-// NewsEvent stores only whitelisted public snapshots, never arbitrary message
-// text, authentication identities, account balances or invitation secrets.
+// NewsEvent stores whitelisted public snapshots. Only explicitly public radio
+// broadcasts may contain message text; private mail and account secrets are excluded.
 type NewsEvent struct {
+	BroadcastText                    string `json:",omitempty"`
 	GroundCommitted, GroundRemaining int64  `json:",omitempty"`
 	LotteryMatches                   int    `json:",omitempty"`
 	LotteryPrize                     int64  `json:",omitempty"`
@@ -83,7 +85,15 @@ func (w *World) validateNews() error {
 		if e.Kind != NewsPlayerPlanet && (e.GroundCommitted != 0 || e.GroundRemaining != 0) {
 			return errors.New("unrelated news contains ground assault details")
 		}
+		if e.Kind != NewsBroadcast && e.BroadcastText != "" {
+			return errors.New("private or unrelated news contains radio text")
+		}
 		switch e.Kind {
+		case NewsBroadcast:
+			if !validRadioText(e.BroadcastText) || e.Team != 0 || e.TeamName != "" {
+				return errors.New("invalid public broadcast news")
+			}
+
 		case NewsPlayerPlanet:
 			if !clean(e.Alias) || !clean(e.PlanetName) || e.Team != 0 || e.TeamName != "" || e.GroundCommitted < 0 || e.GroundCommitted > MaxQuantity || e.GroundRemaining < 0 || e.GroundRemaining > MaxQuantity {
 				return errors.New("invalid player planetary news")

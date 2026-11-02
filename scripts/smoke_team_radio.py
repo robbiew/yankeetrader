@@ -77,7 +77,7 @@ with tempfile.TemporaryDirectory(prefix="yt-team-radio-smoke-") as temp:
     text="TEAM RADIO PROBE; literal/"
     out=play(data,"Sender","radio team;y;ignored;s",body=text);transcript+=out
     saved=json.loads(path.read_text())
-    assert saved["Version"]==26 and len(saved["Radio"])==2
+    assert saved["Version"]==27 and len(saved["Radio"])==2
     assert [m["To"]for m in saved["Radio"]]==[1,2]
     assert all(m["Text"]==text for m in saved["Radio"])
     assert not saved["Radio"][0]["Unread"] and saved["Radio"][1]["Unread"]

@@ -44,6 +44,9 @@ func (w *World) PrepareBroadcastRadio(id int, address BroadcastRadioAddress, tex
 	if !slices.Equal(current.Recipients, address.Recipients) {
 		return BroadcastRadioDraft{}, errors.New("broadcast recipients changed; choose and confirm again")
 	}
+	if err := w.prepareNews(now); err != nil {
+		return BroadcastRadioDraft{}, err
+	}
 	if len(w.Radio) > MaxRadioMessages-len(address.Recipients) {
 		return BroadcastRadioDraft{}, errors.New("radio archive has no room for the whole broadcast; no message was sent")
 	}
@@ -63,7 +66,23 @@ func (w *World) CommitBroadcastRadio(d BroadcastRadioDraft, now time.Time) ([]ui
 	if len(d.drafts) < 1 || len(d.drafts) > MaxActivePlayers || len(d.drafts) != len(d.address.Recipients) {
 		return nil, errors.New("invalid broadcast draft")
 	}
-	return w.commitRadioBatch(d.drafts, now, func() error {
+	// A fully committed retry must not append news again, even after pruning.
+	already := false
+	for _, m := range w.Radio {
+		if m.From == d.drafts[0].from && m.RequestID == d.drafts[0].request {
+			already = true
+			break
+		}
+	}
+	candidate := *w
+	candidate.Radio = slices.Clone(w.Radio)
+	candidate.News = slices.Clone(w.News)
+	if !already {
+		if err := candidate.prepareNews(now); err != nil {
+			return nil, err
+		}
+	}
+	ids, err := candidate.commitRadioBatch(d.drafts, now, func() error {
 		current, err := w.FindBroadcastRadioRecipients(d.drafts[0].from)
 		if err != nil {
 			return err
@@ -73,4 +92,14 @@ func (w *World) CommitBroadcastRadio(d BroadcastRadioDraft, now time.Time) ([]ui
 		}
 		return nil
 	})
+	if err != nil {
+		return nil, err
+	}
+	if !already {
+		first := d.drafts[0]
+		candidate.appendNews(NewsEvent{At: now.UTC(), Kind: NewsBroadcast, Alias: w.Players[first.from].Alias, BroadcastText: first.text})
+	}
+	w.Radio, w.NextRadio = candidate.Radio, candidate.NextRadio
+	w.News, w.NextNews = candidate.News, candidate.NextNews
+	return ids, nil
 }

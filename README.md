@@ -4,7 +4,14 @@ Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Tra
 
 ## Status
 
-Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> <quantity>` or classic `+` with 1–64 bolts and fresh confirmation. The shared energy pool follows directed routes, can be redirected by login-local black holes and can damage friendly, cloaked or your own ships and planets. Costs, damage, wreck mines and death/estate cleanup save atomically. Save version **26** adds explicit plasma death semantics; back up the stopped door and update all nodes together. [Rules and limits](research/yt-plasma/IMPLEMENTATION.md).
+Broadcast newspaper publication is now available in-game to test. `RADIO ALL`
+(or classic computer option 5) previews the public text and sender alias, then
+saves one newspaper entry with all private copies. Abort publishes neither.
+Direct/team mail stays private. Save version **27** upgrades older supported saves
+without publishing historical mail; back up the stopped door and update all nodes.
+[Publication rules and validation](research/yt-broadcast-radio/IMPLEMENTATION.md).
+
+Bounded plasma launching is now available in-game to test. Use `PLASMA <sector> <quantity>` or classic `+` with 1–64 bolts and fresh confirmation. The shared energy pool follows directed routes, can be redirected by login-local black holes and can damage friendly, cloaked or your own ships and planets. Costs, damage, wreck mines and death/estate cleanup save atomically. Save version **26** introduced explicit plasma death semantics; back up the stopped door and update all nodes together. [Rules and limits](research/yt-plasma/IMPLEMENTATION.md).
 
 Mercenary plasma sales are removed historical behavior, not an unfinished DOS 3.6
 feature: the mother ship was added in 3.3 and removed in 3.4. The 3.6 Mercenary
@@ -21,7 +28,7 @@ home planet is a capture target; plasma comes from planetary stocks. See
 - **Planets and teams:** planet creation, naming, production, banking, investment, cargo/weapon transfers and garrisons, confirmed thruster transport and forced landing, plus The Wanderer’s daily relocation/restoration and special one-edge transport; team creation/joining, captain controls and shared planet access.
 - **Combat:** confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing and indiscriminate damage, planetary ground/production bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape. Death, loot, port settlement, replacement ships, wreck minefields and deliberate mine placement are connected to play.
 - **Mercenaries and Xannor:** Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles and bounded mobile groups. Mobile groups encounter mines, sector defenses, living ships and foreign planets with bounded battles and atomic aftermath. HQ victories award up to 1,000,000 exact credits, queue ship-bound revenge and publish a victory notice; private receipts show the amount actually added.
-- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events and HQ victories.
+- **Computer and communication:** player/team rankings, commerce and planet reports, planet/port finders, trading forecasts, persistent direct/team/broadcast radio and message history. Spies report mines, planets, sector defenses, ships and login-local disruptions; cloak detection and intelligence history stay private to the current login. The newspaper records logins, team creation, Xannor ship deaths, planetary assaults, daily awards/retirement, plague/civil-war events, HQ victories and explicitly confirmed public ALL broadcasts.
 - **Presentation and door sessions:** DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals.
 
 ### Not shipped yet
@@ -214,13 +221,20 @@ version-26 mailbox format without a migration. [Team rules, DOS evidence and
 validation](research/yt-team-radio/IMPLEMENTATION.md). The DOS multiline editor remains open. Evidence checks compare exact decoded
 mailbox fields, preserve scanner equipment and anchor root auxiliary files and
 login identities to the source fixtures, with rehashed corruption controls.
-`RADIO ALL` (or `ALL` at computer option 5) confirms a broadcast to all current
-active accounts, including you, and saves every private copy together. Offline
-and dead accounts receive their own mail; retired and future accounts do not.
-Each copy has an independent unread flag and uses an archive slot. The whole
-broadcast must fit the 4,096-message archive. Roster changes require confirmation
-again. This version-26 implementation deliberately uses private copies rather
-than the original DOS shared broadcast counter; no migration is required.
+`RADIO ALL` (or `ALL` at computer option 5) confirms all current active accounts,
+including you. Its final preview explicitly warns that the literal text and your
+alias also become public in the Galactic Newspaper. Send atomically saves every
+private copy and one public entry; Abort saves neither. Offline and dead accounts
+receive their own copies; retired and future accounts do not inherit private mail,
+but any eligible newspaper reader can see the public entry. Direct/team text stays
+private. Each copy has its own unread flag and archive slot; the entire broadcast
+must fit the 4,096-message archive. Roster changes require confirmation again.
+Public entries share the existing rolling 1,024-event today/yesterday journal.
+Receipts report saved copies and publication; committed storage warnings end the
+session and remain warnings even if the terminal cannot print the receipt.
+Version 27 introduces typed public broadcast news without backfilling old private
+copies. Independent radio read flags remain a deliberate adaptation of the DOS
+shared delivery counter.
 [Broadcast evidence, policies and validation](research/yt-broadcast-radio/IMPLEMENTATION.md).
 The DOS multiline editor and native BBS acceptance remain open.
 
@@ -323,7 +337,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **26**, adding explicit plasma death semantics to the existing Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-25 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Older binaries cannot read version 26.
+**Save rollback compatibility:** This build uses world version **27**, adding explicitly public broadcast text to the newspaper while retaining explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-26 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Older binaries cannot read version 27.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -395,7 +409,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-25 worlds upgrade to version 26 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-26 worlds upgrade to version 27 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 
@@ -457,7 +471,7 @@ safe destination even with no remaining turns.
 
 Mine deaths retain their actual source even if that source already died. They
 release ports rather than award remote loot, and do not become voluntary suicides.
-Earth remains free of mines. This build now uses save version 26; follow the stopped-world
+Earth remains free of mines. This build now uses save version 27; follow the stopped-world
 backup and all-node upgrade guidance. `D`/`DROP [quantity]` places carried mines
 in the current sector outside the protected home seven, with a fresh confirmation
 and no turn cost. Ships already safely present can depart without triggering the
@@ -539,7 +553,7 @@ shimmering notice; successful detections stay within the spy network and are
 bound to the target ship generation. Saved cloak energy, combat visibility and
 durable radio stay unchanged. Exact DOS RNG odds and target notification remain
 outside this bounded slice. [Recovered controls and policies](research/yt-spies/intelligence/IMPLEMENTATION.md).
-No save-format change is required (world version 26). The DOS evidence verifier
+This feature adds no further save fields (current world version 27). The DOS evidence verifier
 checks complete ordered ship records, including exact shield values; corruption
 controls reject altered values even when transcript hashes are refreshed.
 
@@ -580,7 +594,7 @@ even a generous offer can be refused. Mercenaries remember your attacks until
 reconnect, and planet guards refuse to negotiate. Ordinary B still buys ports.
 
 Payment, recruitment, entry and mine aftermath save atomically. Unresolved groups
-continue blocking normal actions. The current save format is version 26. See the
+continue blocking normal actions. The current save format is version 27. See the
 [recovered rules](research/yt-mercenaries/HOSTILITY.md) and
 [implementation policies and validation](research/yt-mercenaries/IMPLEMENTATION.md).
 
@@ -599,7 +613,7 @@ remainders are discarded without carry or refund. Fresh hires first move on the
 following daily run.
 
 The same locked save commits taxes, groups and the daily date, including when
-maintenance runs at login. Saves now use version 26. Existing groups can travel one complete permitted route
+maintenance runs at login. Saves now use version 27. Existing groups can travel one complete permitted route
 per day, encountering
 mines and sector defenses. They can merge, reinforce human defenses, fight, or
 stop at a planet to take whole stored fighters; planet titles and ground forces
@@ -637,7 +651,7 @@ successfully reclaimed HQs can relocate, combining friendly force without loss.
 Full capacity safely defers creation or relocation. Captured and neutralized
 homes keep their title, resources and location; only an Xannor-owned home moves
 with its HQ. Defenders appear in the existing encounter and report interfaces.
-Introduced in version 14 and retained in version 26, saved HQ state preserves unfinished HQ battles across restarts and upgrades
+Introduced in version 14 and retained in version 27, saved HQ state preserves unfinished HQ battles across restarts and upgrades
 normal version-13 worlds without inferring homes from names or slots.
 [Rules, adaptations and validation](research/yt-xannor-lifecycle/IMPLEMENTATION.md)
 are grounded in [38 completed DOS runs](research/yt-xannor-lifecycle/RECOVERY.md).
@@ -655,7 +669,7 @@ sensors show the resulting deployed groups after reconnect.
 Groups now assault foreign planets before intercepting ships. Captured homes
 retain their title and resources outside actual combat; friendly planetary
 stocks are not picked up. Target searches, mine bursts and
-battles have finite work budgets. The current save version is 26.
+battles have finite work budgets. The current save version is 27.
 [Policies and validation](research/yt-xannor-mobile/IMPLEMENTATION.md) build on
 [47 completed DOS controls](research/yt-xannor-mobile/RECOVERY.md). Revenge and cloak candidate-search implementation is described below.
 
@@ -679,7 +693,7 @@ and these deaths create no wreck mines.
 
 Both interfaces deliver private casualty reports after login; `BATTLES` reads the
 last 32 retained reports. Public news announces deaths without disclosing force
-counts. Save version 26 preserves reports through replacement and upgrades old
+counts. Save version 27 preserves reports through replacement and upgrades old
 worlds without inventing past battles.
 [Policies, migration and validation](research/yt-xannor-ships/IMPLEMENTATION.md).
 
@@ -705,7 +719,7 @@ Destruction removes the planet and expires every landing/confirmation grant,
 without creating loot or collateral ship deaths. Both interfaces deliver private
 owner reports through `BATTLES`; public news reveals only planet name and outcome.
 The shared route work limit, atomic daily save and replay guard apply throughout.
-Save version 26 preserves existing ship history and upgrades older worlds without
+Save version 27 preserves existing ship history and upgrades older worlds without
 inventing events. [Rules, migration and validation](research/yt-xannor-planets/IMPLEMENTATION.md).
 Native/live BBS acceptance remains outstanding; revenge/candidate selection follows below.
 
@@ -741,7 +755,7 @@ ordering are preserved. Discovery uses strict `RND>cloak`; actual ship encounter
 now permit equality at `cloak-.33` for every group. Revenge never removes the
 combat cloak check, and cloak remains turn-based.
 
-Save version 26 retains the ship-generation-bound pending target introduced in
+Save version 27 retains the ship-generation-bound pending target introduced in
 version 17, along with existing assets and histories. Queue creation and daily
 consumption save atomically with combat/maintenance, and replay does not repeat them.
 [Rules, migration and validation](research/yt-xannor-revenge/IMPLEMENTATION.md).
@@ -776,7 +790,7 @@ award a fully initialized planet. Failed occupied, defended, mined, HQ or reserv
 placement gets no retry. The winner receives private system radio naming the
 sector; public newspaper news names only the winner. MESSAGES/INBOX and ordinary
 login delivery handle the award. Full private-message capacity prevents an award.
-Save version 26 records these changes atomically with maintenance; replay and
+Save version 27 records these changes atomically with maintenance; replay and
 clock rollback do not repeat them. [Policies, migration and validation](research/yt-maintenance-lottery/IMPLEMENTATION.md).
 
 
@@ -797,7 +811,7 @@ atomic saves prevent repeated damage. Existing daily docking/landing sessions
 expire. Newspaper entries report the port count or planet name without exposing
 private forces, balances or expenditure. No legacy stale expense text is copied.
 
-Plague/civil-war news was introduced in version 19 and is retained in version 26
+Plague/civil-war news was introduced in version 19 and is retained in version 27
 with existing assets and history.
 Read-only migration does not rewrite old saves. If news IDs are exhausted or its
 clock is ahead, unreportable damage is deferred. See the
@@ -832,7 +846,7 @@ addition before that aftermath. Public newspaper news names the victor without
 revealing private amounts or balances, and counter-volley awards belong to the
 retaliating actor. Existing score publication rules remain in effect.
 
-HQ victory news was introduced in version 20 and is retained in version 26. Older saves upgrade on the next
+HQ victory news was introduced in version 20 and is retained in version 27. Older saves upgrade on the next
 successful write without retroactive rewards or invented notices. Full race tests,
 19 real terminal smoke scripts, evidence checks and Linux/Windows cross-builds
 passed locally; live BBS acceptance and native Windows durability remain separate.
@@ -890,7 +904,7 @@ the receipt distinguishes that outcome. Cancellation, stale/expired warnings and
 failed saves never print a success receipt. A committed storage warning cannot
 replay a zero-cost/same-sector warp from an old confirmation.
 
-Save version 26 preserves scanner ownership and a monotonic warp sequence. Older
+Save version 27 preserves scanner ownership and a monotonic warp sequence. Older
 saves upgrade on their next successful write without granting equipment or moving
 ships; read-only loading leaves files unchanged. Full race tests, vet, 20 terminal
 smoke scripts, evidence verification, archive checks and Linux/Windows cross-builds
@@ -948,7 +962,7 @@ consumption continues, deliberately avoiding the original decay-suppression side
 effect. No new score bonus or public event is generated.
 
 The cloak milestone added no saved fields; its existing state is retained in
-version **26**. Recharge uses the existing cloak field and
+version **27**. Recharge uses the existing cloak field and
 anti-cloak state is never serialized. No migration grants energy, credits or
 reveals. Full race tests, vet, focused rollback/concurrency/expiry/durability
 coverage, both interfaces and affected real terminal scripts pass, along with
@@ -1287,7 +1301,7 @@ there is no current purchase API or shop to implement for DOS 3.6 parity.
 versioned documentation, bounded current-binary inspection and isolated DOS
 controls. Current planetary take/deposit paths remain the supported supply
 mechanism. Restoring a Mother Ship shop would be a new optional design rather
-than a recovered 3.6 rule. This research changes no Go gameplay or save26 fields.
+than a recovered 3.6 rule. **Historical research boundary:** this research changed no Go gameplay or save26 fields.
 
 Validation retained 17 completed DOS controls, two exact reload chains and 12
 native byte observations with all 870 relocations checked. Reloads reset the DOS
@@ -1308,10 +1322,11 @@ text to the newspaper, and spends a shared delivery budget on startup reads.
 Computer history does not spend that budget. This differs from PR #58's
 documented private-copy adaptation with independent recipient read flags.
 
-This research changes no Go gameplay or save26 fields. The
+**Historical research boundary:** this research changed no Go gameplay or save26 fields. The
 [follow-up contract](research/yt-broadcast-radio/extended/CONTRACT.md) separates
 public newspaper projection and an original-style shared archive from the
-existing adaptation; neither is silently enabled by these evidence files.
+existing adaptation. The public-newspaper implementation described above now
+implements the publication slice; an original-style global archive remains separate.
 
 Validation retains 16 completed DOS controls, four exact reload edges and four
 explicit mailbox-budget variations. Eleven native byte observations and both
@@ -1320,3 +1335,25 @@ corruption controls pass. Run the portable checks with Python 3:
 
     python3 scripts/verify_broadcast_lifetime.py
     python3 scripts/test_broadcast_lifetime_verifier.py
+
+
+## Atomic broadcast newspaper publication
+
+Version 27 saves one public sender-alias/text snapshot with all addressed ALL
+copies in the same transaction. Preparation and final commit recheck journal time,
+sequence, recipient roster, live ship, season and draft lifetime. Partial batches,
+capacity failures, stale state and aborted saves leave both archives unchanged.
+Retained-draft retries do not append another entry, even after the original public
+entry has expired. Public reading never acknowledges anyone's private copy.
+
+Local validation for this milestone is recorded in
+[broadcast publication validation](evidence/BROADCAST_NEWSPAPER_VALIDATION.md).
+Live BBS acceptance and native Windows crash durability remain unverified.
+
+Radio compatibility follow-ups explicitly distinguish historical version-26 private
+copies from current version-27 public ALL publication; older binaries cannot read
+version-27 saves.
+
+The Xannor planetary smoke fixture defers unrelated Wanderer restoration using
+exhausted planet-generation capacity, isolating captured-home return assertions
+from random HQ occupancy while retaining the exact return-force check.
