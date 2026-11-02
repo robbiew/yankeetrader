@@ -78,6 +78,12 @@ func (s Session) seasonHistory(args []string) error {
 				return err
 			}
 		}
+		if r.Administrative {
+			if err = s.Terminal.Printf("Season %d: administrative reset; no winner; %s to %s UTC.\r\n", r.Season, r.Started.UTC().Format("2006-01-02 15:04:05"), r.Ended.UTC().Format("2006-01-02 15:04:05")); err != nil {
+				return err
+			}
+			continue
+		}
 		if err = s.Terminal.Printf("Season %d: %s (#%d); %d ports / %d required; score %d; %s to %s UTC.\r\n", r.Season, r.Winner, r.Player, r.Ports, r.Threshold, r.Score, r.Started.UTC().Format("2006-01-02 15:04:05"), r.Ended.UTC().Format("2006-01-02 15:04:05")); err != nil {
 			return err
 		}
