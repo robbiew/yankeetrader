@@ -33,9 +33,11 @@ The current runner permits at most three fresh-world attempts only when an exact
 committed black-hole receipt reports zero remaining turns and agrees with the
 validated save. Each attempt retains its own complete evidence under `attempt-N`;
 the outer `summary.json` records every outcome and identifies the winning attempt.
-All three exhausted attempts fail. Timeouts, invariant failures, nonzero exits,
+All three exhausted attempts fail. Timeouts, invariant failures, unexplained nonzero exits,
 race logs and forced process cleanup are never retryable. A carrier-loss process
-must exit naturally within five seconds with status zero; termination is cleanup
+must exit naturally within five seconds. Status zero or status one with only the
+CI-observed Linux PTY hangup diagnostic `write /dev/stdout: input/output error`
+is accepted; arbitrary errors, signals and joined storage warnings fail. Termination is cleanup
 and makes the campaign fail, including during an otherwise exhausted attempt.
 The focused Python regressions run in the campaign CI job.
 
@@ -127,7 +129,7 @@ and all combat/season strategies remain outside this bounded simulation.
 
 The carrier-loss regression failed before the fix because a timed-out child could
 be terminated without failing acceptance. The zero-turn receipt regression also
-failed before the fix. Eight focused Python tests now pass, covering natural exit,
+failed before the fix. Ten focused Python tests now pass, covering natural exit,
 forced/abnormal exit in successful and exhausted attempts, exact receipt/save
 agreement, invariant failures, bounded retries and non-retryable cleanup failures.
 A fresh native macOS race-enabled campaign completed on its first attempt with
@@ -138,3 +140,25 @@ hash were verified. Focused race-enabled deadline/prompt-clock tests and door
 package vet also passed. The follow-up changes only the campaign driver, its tests,
 CI invocation and documentation; production gameplay/save format remain unchanged.
 New-head hosted CI and production/native Windows acceptance are separate checks.
+
+Linux CI exposed an overstrict status-zero assumption in the first follow-up.
+[Separate child stderr capture](https://github.com/robbiew/yankeetrader/actions/runs/41486776920/job/125419120774) confirmed status one was exactly a PTY output EIO
+after deliberate carrier loss. The runner now recognizes only that complete
+diagnostic, requires natural exit, and retains all other exit/race checks. Ten
+Python regressions include rejection of unexplained status one, signals, forced
+stops and a hangup diagnostic joined to a storage warning. Repository dependencies
+and production transport behavior are unchanged.
+
+With separate stderr capture, the one-minute expiry assertion checks the exact
+`session time expired` diagnostic and exit status one after waiting for natural
+termination; it no longer expects stderr text on the TCP stdout stream. The
+unchanged save assertion still rejects execution of the pending partial command.
+
+Ended-season errors are also asserted on captured stderr with exact status one
+and no extra warning text, preserving the byte-identical new-season save check.
+
+The final driver, including separate stderr and exact error-exit checks, also
+passed a fresh race-enabled macOS campaign on its first attempt: 174 command
+transactions, 995 state audits, 10 sessions and seven peak processes.
+The final driver and all attempt-manifest hashes matched; no forced stops,
+race logs or findings occurred. New-head Linux CI remains required before merge.

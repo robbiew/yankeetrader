@@ -28,6 +28,13 @@ class CampaignExhausted(Exception):
     """A committed black-hole receipt proves this disposable attempt cannot continue."""
 
 
+def carrier_exit_ok(code,diagnostic):
+    # Linux reports EIO when the relay closes the PTY during an editor write.
+    # Accept only that exact observed hangup diagnostic, never arbitrary status1
+    # (especially joined storage warnings), signals or forced termination.
+    return code==0 or (code==1 and diagnostic.strip()=='write /dev/stdout: input/output error')
+
+
 class Caller:
     """A TCP caller attached to a BBS node, then a real Door32 child process."""
     def __init__(self, campaign, uid, alias, classic=False, minutes=30, emulation=0):
@@ -141,9 +148,12 @@ class Caller:
                 try:self.proc.wait(timeout=2)
                 except subprocess.TimeoutExpired:self.proc.kill();self.proc.wait()
                 raise AssertionError('door failed to exit naturally after carrier loss') from error
-            assert code==0,('unexpected carrier loss exit',code,self.stderr_text())
+            assert carrier_exit_ok(code,self.stderr_text()),('unexpected carrier loss exit',code,self.stderr_text())
         finally:
             self.thread.join(timeout=2);self.save()
+    def expect_error_exit(self,message,timeout=3):
+        code=self.proc.wait(timeout=timeout);self.expected_exit=1
+        assert code==1 and self.stderr_text().strip()==message,(code,self.stderr_text())
     def stderr_text(self):
         return (self.node/'stderr.txt').read_text(errors='replace')
     def save(self):
@@ -216,7 +226,7 @@ class Campaign:
         for c in self.callers:c.save()
         (self.root/'actions.json').write_text(json.dumps(self.actions,indent=2)+'\n')
         summary={'outcome':outcome,'started':self.started,'ended':time.time(),'callers':len(self.callers),'pre_reset_callers':6,'peak_processes':self.peak_processes,'snapshots_checked':self.snapshots_checked,'actions':len(self.actions),'findings':self.findings,'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'binary_sha256':hashlib.sha256(self.binary.read_bytes()).hexdigest(),'initial_sha256':hashlib.sha256(self.initial).hexdigest(),'final_sha256':hashlib.sha256((self.data/'world.json').read_bytes()).hexdigest()}
-        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'forced_stop':node.forced_stop,'stderr_tail':node.stderr_text()[-2000:],'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
+        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'forced_stop':node.forced_stop,'stderr_tail':node.stderr_text()[-2000:],'carrier_exit_verified':node.expected_exit=='carrier-loss' and carrier_exit_ok(node.proc.poll(),node.stderr_text()),'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
         summary['script_sha256']=hashlib.sha256(self.driver_source).hexdigest()
         patch=self.runtime_patch
         (self.root/'source.patch').write_bytes(patch);summary['source_patch_sha256']=hashlib.sha256(patch).hexdigest()
@@ -224,7 +234,7 @@ class Campaign:
         for node in summary['nodes']:
             if node['race_logs']:post_failures.append({'race_logs':node['race_logs']})
             expected=0 if node['expected_exit']=='carrier-loss' else node['expected_exit']
-            if node['forced_stop'] or node['returncode']!=expected:post_failures.append({'unexpected_exit':node})
+            if node['forced_stop'] or (node['returncode']!=expected and not node['carrier_exit_verified']):post_failures.append({'unexpected_exit':node})
         if post_failures:
             summary['outcome']='failed';summary['findings'].extend(post_failures)
         (self.root/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
@@ -315,8 +325,7 @@ def run(c):
     before_reset=c.checkpoint('earned-victory');assert sum(port['Owner']==p['ID'] for i,port in before_reset['Ports'].items() if i!='1')==20
     # Let the real one-minute Door32 allowance expire with the caller idle.
     short.command('p');short_before=c.player(short).copy();short.send(b'equip fighters 1')
-    short.expect(rb'session time expired',timeout=75)
-    short.proc.wait(timeout=3);short.expected_exit=1
+    short.expect_error_exit('session time expired',timeout=75)
     assert c.player(short)==short_before,'idle expiry mutated the player'
     # Both remaining live callers hold stale input across the winning reset.
     observer.send('b');observer.expect(rb'Do you wish to buy it\? \[y/N\] ')
@@ -340,8 +349,7 @@ def run(c):
     b.send(b'\rS\r');observer.send('y')
     for caller in extra:caller.send('i')
     for caller in (b,observer,*extra):
-        result=caller.expect(rb'this season has ended; reconnect to join the new season');assert 'season has ended'in result
-        caller.expected_exit=1;caller.proc.wait(timeout=3)
+        caller.expect_error_exit('this season has ended; reconnect to join the new season')
     assert (c.data/'world.json').read_bytes()==(c.root/'new-identities-before-stale-input-world.json').read_bytes(),'old callers mutated new season'
     # Reused numeric IDs and generations still cannot authorize stale nodes.
     history=fresh.command('seasons');assert 'Season 1: Atlas'in history,history

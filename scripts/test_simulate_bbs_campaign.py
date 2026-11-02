@@ -3,7 +3,7 @@ import subprocess
 import unittest
 from unittest.mock import Mock
 
-from simulate_bbs_campaign import Caller
+from simulate_bbs_campaign import Caller, carrier_exit_ok
 
 
 class CarrierLossTests(unittest.TestCase):
@@ -19,6 +19,26 @@ class CarrierLossTests(unittest.TestCase):
             caller.disconnect()
         caller.proc.terminate.assert_called_once()
         caller.save.assert_called_once()
+
+    def test_only_known_linux_hangup_is_accepted_as_nonzero_exit(self):
+        diagnostic='write /dev/stdout: input/output error\n'
+        caller=self.caller();caller.proc.wait.return_value=1
+        caller.stderr_text.return_value=diagnostic
+        caller.disconnect();caller.proc.terminate.assert_not_called()
+        self.assertTrue(carrier_exit_ok(1,diagnostic))
+        for code,text in [(1,''),(1,'panic: product defect'),(-1,diagnostic),(2,diagnostic),
+                          (1,diagnostic+'committed durability warning')]:
+            with self.subTest(code=code,text=text):self.assertFalse(carrier_exit_ok(code,text))
+
+    def test_expected_error_exit_requires_exact_status_and_unjoined_diagnostic(self):
+        for code,text in [(1,'session time expired\n'),(0,'session time expired\n'),(1,'other failure'),
+                          (1,'session time expired\ncommitted storage warning')]:
+            caller=self.caller();caller.proc.wait.return_value=code;caller.stderr_text.return_value=text
+            if code==1 and text.strip()=='session time expired':
+                caller.expect_error_exit('session time expired',75)
+                self.assertEqual(caller.expected_exit,1)
+            else:
+                with self.assertRaises(AssertionError):caller.expect_error_exit('session time expired',75)
 
     def test_natural_exit_passes_without_termination(self):
         caller=self.caller();caller.proc.wait.return_value=0
@@ -103,7 +123,9 @@ class RetryTests(unittest.TestCase):
 class ExitAuditTests(unittest.TestCase):
     def test_carrier_loss_forced_or_abnormal_exit_fails_all_attempts(self):
         for outcome in ['exhausted',{'winner':'Atlas'}]:
-            for code,forced in [(0,False),(0,True),(-15,True),(1,False)]:
+            for code,forced,diagnostic in [(0,False,''),(0,True,''),(-15,True,''),(1,False,''),
+                                               (1,False,'write /dev/stdout: input/output error\n'),
+                                               (1,True,'write /dev/stdout: input/output error\n')]:
                 with self.subTest(outcome=outcome,code=code,forced=forced),tempfile.TemporaryDirectory() as tmp:
                     root=Path(tmp);data=root/'world';data.mkdir();(data/'world.json').write_text('{}')
                     binary=root/'yt';binary.write_bytes(b'fake binary')
@@ -111,8 +133,8 @@ class ExitAuditTests(unittest.TestCase):
                     c.root=root;c.data=data;c.binary=binary;c.actions=[];c.findings=[];c.started=0
                     c.snapshots_checked=1;c.peak_processes=1;c.driver_source=b'driver';c.runtime_patch=b'';c.initial=b'{}'
                     node=Mock(index=1,uid=1,classic=False,endpoint=('127.0.0.1',1),expected_exit='carrier-loss',forced_stop=forced,hazards=set(),node=root)
-                    node.proc.poll.return_value=code;node.stderr_text.return_value="";c.callers=[node]
-                    if code==0 and not forced:
+                    node.proc.poll.return_value=code;node.stderr_text.return_value=diagnostic;c.callers=[node]
+                    if carrier_exit_ok(code,diagnostic) and not forced:
                         self.assertEqual(c.report(outcome)['outcome'],outcome)
                     else:
                         with self.assertRaises(AssertionError):c.report(outcome)
