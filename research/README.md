@@ -1,6 +1,26 @@
 # Recovery evidence
 
-These notes record reverse engineering of Yankee Trader 3.6 before the Go port. They distinguish DOS behavior, static leads and validated outcomes. The Go implementation intentionally fixes documented defects; historical reports are not promises of complete modern parity.
+These notes record reverse engineering of Yankee Trader 3.6 and the subsequent
+Go implementation milestones. They distinguish observed DOS behavior, static
+leads, validated outcomes and deliberate modern policies. Historical reports are
+not promises of complete modern parity, and a research-era “next” or
+“unimplemented” statement is not the current project backlog.
+
+Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02),
+checked against merged main through PR #72 on 2026-11-02, using save format **32**.
+The [root README](../README.md#playable-feature-overview) describes playable
+features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
+backups and restoration. DOS save import/export remains unsupported.
+
+Recent completed work includes [season administration](../README.md#season-administration)
+(save 30), [extended newspaper events](yt-newspaper/remaining/RECOVERY.md)
+(save 31), and the [direct Xannor fighter-casualty turn bonus](yt-xannor-turn-bonus/RECOVERY.md)
+(save 32). Newspaper registration/team/combat coverage is implemented; general
+“remaining newspaper events” deferrals in older reports are historical. Private
+port-sale notices are implemented as private mail, not public acquisition news.
+The next recovery target is DOS port initialization and reference pricing;
+original generation, precise RNG/numeric parity and target-BBS acceptance remain
+separate boundaries.
 
 Included here:
 
@@ -8,7 +28,7 @@ Included here:
 - Runtime-aware annotated YT.EXE listings used to recover planet routines.
 - Compressed before/after saves, logs and keystrokes for all 24 counted DOS planet experiments. `planet-snapshots.json` contains hashes of their **uncompressed** bytes. No executable is embedded in these snapshots.
 - Original-DOS sector mine-placement transcripts, inputs, emulator logs and compressed before/after saves, with an independent verifier for stock, field and turn deltas.
-- Compact Go golden fixtures in `../internal/game/testdata`, with original snapshot hashes. Nineteen planet scenarios are relevant to this implementation; relocation and ground-force assault cases remain archived for future work.
+- Compact Go golden fixtures in `../internal/game/testdata`, with original snapshot hashes. Nineteen planet scenarios supplied the initial implementation fixtures. Relocation and ground-force assault are now implemented separately; their original experiments remain archived as historical evidence.
 
 Run `python3 scripts/verify_planet_evidence.py` from the repository root to check the packaged snapshots and golden provenance. Go tests run without Python or the original DOS distribution.
 Run `python3 scripts/verify_mine_placement.py` to validate the mine-placement sessions and expected outcomes.
