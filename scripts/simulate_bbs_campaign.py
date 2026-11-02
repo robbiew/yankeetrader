@@ -24,6 +24,10 @@ ANSI=re.compile(rb'\x1b(?:\[[0-?]*[ -/]*[@-~]|[@-_])')
 MAIN=rb'(?:Main Command \(\?=Help\)\? |Sector \d+ \| \d+ credits \| \d+ turns > )'
 PAGER=rb'More (?:news|messages)\? \[Enter=more, Q=stop\] '
 
+class CampaignExhausted(Exception):
+    """A committed black-hole receipt proves this disposable attempt cannot continue."""
+
+
 class Caller:
     """A TCP caller attached to a BBS node, then a real Door32 child process."""
     def __init__(self, campaign, uid, alias, classic=False, minutes=30, emulation=0):
@@ -44,7 +48,7 @@ class Caller:
         os.close(slave)
         with campaign.lock:campaign.peak_processes=max(campaign.peak_processes,sum(getattr(c,'proc',None)is not None and c.proc.poll()is None for c in campaign.callers))
         self.probes=0;self.raw=bytearray();self.clean=b'';self.cursor=0;self.inputs=[];self.closed=False
-        self.bridge_error=None;self.expected_exit=0
+        self.bridge_error=None;self.expected_exit=0;self.forced_stop=False
         self.thread=threading.Thread(target=self.bridge,daemon=True);self.thread.start()
         self.login()
     def bridge(self):
@@ -120,7 +124,7 @@ class Caller:
                 while time.monotonic()<end and self.read(.1):pass
                 self.proc.wait(timeout=3)
         except (OSError,AssertionError,subprocess.TimeoutExpired):
-            self.proc.terminate()
+            self.forced_stop=True;self.proc.terminate()
             try:self.proc.wait(timeout=2)
             except subprocess.TimeoutExpired:self.proc.kill();self.proc.wait()
         finally:
@@ -129,9 +133,16 @@ class Caller:
     def disconnect(self):
         self.expected_exit="carrier-loss"
         self.client.shutdown(socket.SHUT_RDWR);self.client.close();self.closed=True
-        try:self.proc.wait(timeout=5)
-        except subprocess.TimeoutExpired:self.proc.terminate();self.proc.wait(timeout=2)
-        self.thread.join(timeout=2);self.save()
+        try:
+            try:code=self.proc.wait(timeout=5)
+            except subprocess.TimeoutExpired as error:
+                self.forced_stop=True;self.proc.terminate()
+                try:self.proc.wait(timeout=2)
+                except subprocess.TimeoutExpired:self.proc.kill();self.proc.wait()
+                raise AssertionError('door failed to exit naturally after carrier loss') from error
+            assert code==0,('unexpected carrier loss exit',code)
+        finally:
+            self.thread.join(timeout=2);self.save()
     def save(self):
         (self.node/'terminal.bin').write_bytes(self.raw)
         (self.node/'terminal.txt').write_text(self.clean.decode('ascii',errors='replace'))
@@ -165,8 +176,15 @@ class Campaign:
         return w
     def player(self,caller):return next(p for p in self.world()['Players'].values() if p['Identity']==f'door32:campaign-bbs:{caller.uid}')
     def record(self,caller,command,out):
-        self.world()
+        w=self.world()
         with self.lock:self.actions.append({'at':time.time(),'node':caller.index,'uid':caller.uid,'command':command,'output':out})
+        # Only this exact committed receipt plus the authoritative zero balance
+        # permits a fresh-world retry. Timeouts/assertions never do.
+        depleted=re.search(r'Disruption arrival saved: final sector (\d+); total action turns spent \d+; remaining 0\. Queued travel stopped\.',out)
+        if depleted and 'Forced warp saved:' in out:
+            p=next(p for p in w['Players'].values() if p['Identity']==f'door32:campaign-bbs:{caller.uid}')
+            assert p['Turns']==0 and p['Sector']==int(depleted[1]),('inconsistent exhaustion receipt',p,out)
+            raise CampaignExhausted(f'{caller.alias}: committed black-hole arrival exhausted turns')
     def checkpoint(self,name):
         raw=(self.data/'world.json').read_bytes();(self.root/(name+'-world.json')).write_bytes(raw)
         return json.loads(raw)
@@ -195,15 +213,15 @@ class Campaign:
         for c in self.callers:c.save()
         (self.root/'actions.json').write_text(json.dumps(self.actions,indent=2)+'\n')
         summary={'outcome':outcome,'started':self.started,'ended':time.time(),'callers':len(self.callers),'pre_reset_callers':6,'peak_processes':self.peak_processes,'snapshots_checked':self.snapshots_checked,'actions':len(self.actions),'findings':self.findings,'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'binary_sha256':hashlib.sha256(self.binary.read_bytes()).hexdigest(),'initial_sha256':hashlib.sha256(self.initial).hexdigest(),'final_sha256':hashlib.sha256((self.data/'world.json').read_bytes()).hexdigest()}
-        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
+        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'forced_stop':node.forced_stop,'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
         summary['script_sha256']=hashlib.sha256(self.driver_source).hexdigest()
         patch=self.runtime_patch
         (self.root/'source.patch').write_bytes(patch);summary['source_patch_sha256']=hashlib.sha256(patch).hexdigest()
         post_failures=[]
-        if isinstance(outcome,dict):
-            for node in summary['nodes']:
-                if node['race_logs']:post_failures.append({'race_logs':node['race_logs']})
-                if node['expected_exit']!='carrier-loss' and node['returncode']!=node['expected_exit']:post_failures.append({'unexpected_exit':node})
+        for node in summary['nodes']:
+            if node['race_logs']:post_failures.append({'race_logs':node['race_logs']})
+            expected=0 if node['expected_exit']=='carrier-loss' else node['expected_exit']
+            if node['forced_stop'] or node['returncode']!=expected:post_failures.append({'unexpected_exit':node})
         if post_failures:
             summary['outcome']='failed';summary['findings'].extend(post_failures)
         (self.root/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
@@ -328,14 +346,44 @@ def run(c):
     c.checkpoint('new-season-reconnect')
     return {'winner':'Atlas','owned_ports':20,'threshold':20,'season':2}
 
-def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,required=True);parser.add_argument('--seed',type=int,default=36);args=parser.parse_args()
-    c=Campaign(args.out,ROOT/'bin/yt',args.seed)
+def run_attempt(c,play):
     result='failed'
-    try:result=run(c);print(json.dumps(result))
+    try:
+        result=play(c)
+        return result
+    except CampaignExhausted as error:
+        result='exhausted';c.findings.append({'gameplay_exhaustion':str(error)})
+        raise
     except BaseException as error:
         c.findings.append({'error':repr(error)});raise
     finally:
         for caller in c.callers:caller.finish()
+        # Cleanup/race/exit failures override exhaustion and must never retry.
         c.report(result)
+
+def run_campaigns(root,binary,seed,attempts=3,make_campaign=Campaign,play=run):
+    assert 1<=attempts<=3
+    root.mkdir(parents=True,exist_ok=False)
+    history=[]
+    for number in range(1,attempts+1):
+        path=root/f'attempt-{number}'
+        c=make_campaign(path,binary,seed)
+        try:
+            result=run_attempt(c,play)
+        except CampaignExhausted as error:
+            history.append({'path':path.name,'outcome':'exhausted','reason':str(error)})
+            (root/'summary.json').write_text(json.dumps({'outcome':'exhausted','attempts':history},indent=2)+'\n')
+            continue
+        except BaseException:
+            history.append({'path':path.name,'outcome':'failed'})
+            (root/'summary.json').write_text(json.dumps({'outcome':'failed','attempts':history},indent=2)+'\n')
+            raise
+        history.append({'path':path.name,'outcome':'passed'})
+        (root/'summary.json').write_text(json.dumps({'outcome':result,'attempts':history,'winning_attempt':path.name},indent=2)+'\n')
+        return result
+    raise AssertionError(f'black-hole turns exhausted in all {attempts} fresh campaign attempts; evidence retained')
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,required=True);parser.add_argument('--seed',type=int,default=36);args=parser.parse_args()
+    print(json.dumps(run_campaigns(args.out,ROOT/'bin/yt',args.seed)))
 if __name__=='__main__':main()

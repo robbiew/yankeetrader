@@ -29,6 +29,16 @@ are retained. Earlier pilots corrected two driver assumptions: blind hazard
 routing and assuming every caller reached sector 2 despite a forced warp. Those
 were harness errors, not demonstrated game defects.
 
+The current runner permits at most three fresh-world attempts only when an exact
+committed black-hole receipt reports zero remaining turns and agrees with the
+validated save. Each attempt retains its own complete evidence under `attempt-N`;
+the outer `summary.json` records every outcome and identifies the winning attempt.
+All three exhausted attempts fail. Timeouts, invariant failures, nonzero exits,
+race logs and forced process cleanup are never retryable. A carrier-loss process
+must exit naturally within five seconds with status zero; termination is cleanup
+and makes the campaign fail, including during an otherwise exhausted attempt.
+The focused Python regressions run in the campaign CI job.
+
 ## Confirmed product issue and fix
 
 The pre-fix one-minute Door32 session reached its allowance and closed with
@@ -112,3 +122,19 @@ out of the existing near-30-minute terminal job. That Linux CI run is not yet
 verified locally. Native Windows inherited sockets, production BBS behavior,
 Telnet negotiation, WAN conditions, multi-day NPC economy, default 300-port victory,
 and all combat/season strategies remain outside this bounded simulation.
+
+## Review follow-up validation
+
+The carrier-loss regression failed before the fix because a timed-out child could
+be terminated without failing acceptance. The zero-turn receipt regression also
+failed before the fix. Eight focused Python tests now pass, covering natural exit,
+forced/abnormal exit in successful and exhausted attempts, exact receipt/save
+agreement, invariant failures, bounded retries and non-retryable cleanup failures.
+A fresh native macOS race-enabled campaign completed on its first attempt with
+177 command transactions, 1,037 state audits, 10 sessions and seven peak live
+processes. Atlas earned 20 ports and reset to season 2. No forced stops, race logs
+or findings were reported; the executed-driver hash and every attempt-manifest
+hash were verified. Focused race-enabled deadline/prompt-clock tests and door
+package vet also passed. The follow-up changes only the campaign driver, its tests,
+CI invocation and documentation; production gameplay/save format remain unchanged.
+New-head hosted CI and production/native Windows acceptance are separate checks.

@@ -61,7 +61,10 @@ through Door32 processes to a configured 20-port Genesis victory, including
 trade, contested buyouts, private/team/public radio, disconnects and real session
 expiry. Pending old callers were rejected even after player IDs and initial ship
 generations were recreated. The campaign found and fixed a deadline-input issue:
-expired reads now report session expiry and reject late input.
+expired reads now report session expiry and reject late input. Forced termination
+after carrier loss fails the campaign. A committed black-hole arrival that consumes
+all turns can restart the entire disposable world, bounded to three attempts with
+all evidence retained; timeouts, invariant failures and abnormal exits still fail.
 [Findings, captures and reproducible driver](evidence/MULTICALLER_DOOR_CAMPAIGN.md).
 
 ### Not shipped yet

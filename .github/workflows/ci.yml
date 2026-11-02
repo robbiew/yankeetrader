@@ -212,6 +212,7 @@ jobs:
           cache-dependency-path: yankeetrader/go.sum
       - name: Build race-enabled door and play to Genesis
         run: |
+          python3 -m unittest discover -s scripts -p test_simulate_bbs_campaign.py
           go build -race -buildvcs=false -o bin/yt ./cmd/yt
           python3 scripts/simulate_bbs_campaign.py --out "$RUNNER_TEMP/yt-multicaller" --seed 146
       - name: Show campaign outcome
