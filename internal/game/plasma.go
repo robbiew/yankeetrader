@@ -182,6 +182,7 @@ func (w *World) plasmaDeath(source int, victim *Player, rng func() float64, now 
 	if _, err := w.deathTarget(context, now); err != nil {
 		return Salvage{}, err
 	}
+	news := w.deathNews(context)
 	var loot Salvage
 	killer := w.Players[source]
 	if source != victim.ID && killer != nil && killer.Death == nil {
@@ -196,6 +197,10 @@ func (w *World) plasmaDeath(source int, victim *Player, rng func() float64, now 
 		if loot.Credits > MaxMoney-killer.Credits || loot.Missiles > MaxQuantity-killer.Missiles || loot.Plasma > MaxQuantity-killer.Plasma || loot.Ground > MaxQuantity-killer.Ground {
 			return Salvage{}, errors.New("plasma salvage exceeds recipient capacity")
 		}
+		news = append(news, w.salvageNews(killer.Alias, victim.Alias, loot)...)
+		if err = w.prepareDeathNews(news, now); err != nil {
+			return Salvage{}, err
+		}
 		killer.Holds += loot.Holds
 		killer.Credits += loot.Credits
 		killer.Missiles += loot.Missiles
@@ -205,7 +210,13 @@ func (w *World) plasmaDeath(source int, victim *Player, rng func() float64, now 
 			killer.Cargo[i] += n
 		}
 	}
+	if source == victim.ID || killer == nil || killer.Death != nil {
+		if err := w.prepareDeathNews(news, now); err != nil {
+			return Salvage{}, err
+		}
+	}
 	w.recordDeath(victim, context, now)
+	w.appendDeathNews(news, now)
 	return loot, nil
 }
 
@@ -226,6 +237,9 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 	}
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
 		return PlasmaResult{}, errors.New("invalid plasma launch inputs")
+	}
+	if err := w.prepareCombatNews(now, uint64(MaxPlasmaVisits*(16*len(w.Players)+5)+64)); err != nil {
+		return PlasmaResult{}, err
 	}
 	drawCount, limited := 0, false
 	originalRandom := rng
@@ -310,6 +324,9 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 				prior := *d
 				d.Fighters -= killed
 				out.SectorFighters += killed
+				if killed > 9 {
+					w.combatNews(a.Alias, CombatNews{Operation: "plasma-defense", Sector: sectorID, Amount: killed}, now)
+				}
 				if d.Fighters == 0 {
 					s.Defense = nil
 					reward, e := w.awardXannorHQ(a.ID, sectorID, prior, now)
@@ -326,6 +343,9 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 				return PlasmaResult{}, e
 			}
 			out.MinesDestroyed += n
+			if n > 0 {
+				w.combatNews(a.Alias, CombatNews{Operation: "plasma-mines", Sector: sectorID, Amount: n}, now)
+			}
 			for _, id := range players {
 				p := w.Players[id]
 				if energy.energy <= 0 {
@@ -340,11 +360,13 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 					return PlasmaResult{}, e
 				}
 				p.Fighters -= n
+				fightersDestroyed := n
 				n, e = energy.absorb(p.Shields, 10000)
 				if e != nil {
 					return PlasmaResult{}, e
 				}
 				p.Shields -= n
+				w.combatNews(a.Alias, CombatNews{Operation: "plasma-ship", Target: p.Alias, Sector: sectorID, Amount: p.Shields, Secondary: fightersDestroyed}, now)
 				if p.Shields > 0 {
 					continue
 				}
@@ -367,6 +389,9 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 						return PlasmaResult{}, e
 					}
 					out.MinesDestroyed += n
+					if n > 0 {
+						w.combatNews(a.Alias, CombatNews{Operation: "plasma-mines", Sector: sectorID, Amount: n}, now)
+					}
 				}
 			}
 			if energy.energy > 0 && s.Planet != 0 {
@@ -375,10 +400,20 @@ func (w *World) CommitPlasma(intent PlasmaIntent, rng func() float64, now time.T
 					return PlasmaResult{}, errors.New("plasma planet record missing")
 				}
 				out.PlanetsHit++
+				if now.Before(p.Updated) {
+					return PlasmaResult{}, errors.New("planet update is ahead of plasma launch")
+				}
+				p.update(now, true)
+				if now.Before(p.Updated) {
+					return PlasmaResult{}, errors.New("planet update is ahead of plasma launch")
+				}
+				p.update(now, true)
+				beforeGround, beforeRates := p.Ground, p.Production
 				destroyed, e := w.plasmaPlanet(p, &energy, now)
 				if e != nil {
 					return PlasmaResult{}, e
 				}
+				w.combatNews(a.Alias, CombatNews{Operation: "plasma-planet", Target: p.Name, Sector: sectorID, GroundLoss: beforeGround - p.Ground, GroundRemaining: p.Ground, ProductionLoss: productionTotal(beforeRates) - productionTotal(p.Production), ProductionRemaining: productionTotal(p.Production), Destroyed: destroyed}, now)
 				if destroyed {
 					out.PlanetsDestroyed++
 				}

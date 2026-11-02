@@ -36,17 +36,18 @@ func TestSuperPlanetAwardFreshPrivateAtomicSnapshot(t *testing.T) {
 	if err := w.RecordDeath(DeathContext{Victim: dead.ID, Generation: dead.ShipGeneration, Sector: dead.Sector, Cause: "hazard"}, clock); err != nil {
 		t.Fatal(err)
 	}
+	previousNews := len(w.News) // The arranged dead account already has public death news.
 	next := clock.Add(24 * time.Hour)
 	w.superPlanetLottery(next, winDraws(t))
 	planet := w.Planets[2]
 	if planet == nil || planet.Owner != p.ID || planet.Sector != 8 || len(planet.Name) != 41 || planet.FactionHome != "" || planet.Updated != next || planet.Production != [3]float64{750, 750, 750} || planet.Ground != 1 || planet.Bank != 250000 || planet.Cargo != [3]float64{} || planet.Fighters != 0 || planet.Plasma != 0 || planet.Mines != 0 || planet.Missiles != 0 {
 		t.Fatal("fresh award", planet)
 	}
-	if w.Sectors[8].Planet != 2 || len(w.Radio) != 1 || len(w.News) != 1 {
+	if w.Sectors[8].Planet != 2 || len(w.Radio) != 1 || len(w.News) != previousNews+1 {
 		t.Fatal("partial award")
 	}
 	mail := w.Radio[0]
-	news := w.News[0]
+	news := w.News[previousNews]
 	if mail.To != p.ID || mail.From != 0 || mail.System != "super-planet" || !strings.Contains(mail.Text, "sector 8!") || !mail.Unread || news.Kind != NewsSuperPlanet || news.Alias != p.Alias || news.PlanetName != "" || news.Outcome != "" {
 		t.Fatal(mail, news)
 	}

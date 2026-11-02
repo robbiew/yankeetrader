@@ -102,6 +102,11 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 	if intent.Fighters < 1 || intent.Fighters > a.Fighters {
 		return ShipDuelResult{}, errors.New("committed fighters are no longer available")
 	}
+	// Bound publication for death, estate, salvage, wreck mines and their
+	// immediate mine aftermath before any duel damage becomes observable.
+	if err = w.prepareCombatNews(now, 96); err != nil {
+		return ShipDuelResult{}, err
+	}
 	result, err := ResolveShipDuel(intent.Fighters, d.Fighters, d.Shields, a.Cloak, rng)
 	if err != nil {
 		return ShipDuelResult{}, err
@@ -122,6 +127,9 @@ func (w *World) CommitVisibleAttack(intent AttackIntent, visibility *Visibility,
 			result.DroppedMines = d.Mines
 			if err = w.dropMines(intent.Sector, d.ID, d.Mines); err != nil {
 				return ShipDuelResult{}, err
+			}
+			if result.DroppedMines > 0 {
+				w.combatNews(d.Alias, CombatNews{Operation: "wreck-mines", Sector: intent.Sector, Amount: result.DroppedMines}, now)
 			}
 			d.Mines = 0
 			result.MineAftermath, err = w.ResolveMinefield(a.ID, rng, now)

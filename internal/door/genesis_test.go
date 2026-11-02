@@ -177,7 +177,7 @@ func TestClassicGenesisResetBetweenScreenLookupAndAuthentication(t *testing.T) {
 		}
 		stranger.Credits = 123456
 		// Execute the actual classic startup identity decision against the new world.
-		p, e := classicLoginPlayer(live, s.Identity, old.Players[oldID].Alias)
+		p, e := classicLoginPlayer(live, s.Identity, old.Players[oldID].Alias, s.Now())
 		if e != nil {
 			return e
 		}

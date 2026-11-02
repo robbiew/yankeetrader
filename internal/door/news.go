@@ -73,6 +73,12 @@ func (s Session) newspaper(id int, args []string, pending *[]string) error {
 				err = s.Terminal.Printf("  -  %s made a planet: %s\r\n", entry.Alias, entry.PlanetName)
 			} else if entry.Kind == game.NewsBroadcast {
 				err = s.Terminal.Printf("%s Message from: %s [PUBLIC BROADCAST]\r\n%s\r\n", entry.At.Format("15:04:05"), entry.Alias, entry.BroadcastText)
+			} else if entry.Kind == game.NewsCombat {
+				err = s.Terminal.Printf("%s %s\r\n", entry.At.Format("15:04:05"), combatNewsText(entry))
+			} else if entry.Kind == game.NewsRegistration {
+				err = s.Terminal.Printf("-=*=- %s New Player Entered -=*=-\r\n", entry.Alias)
+			} else if entry.Kind == game.NewsTeamJoined {
+				err = s.Terminal.Printf("%s %s Joined Team %d\r\n", entry.At.Format("15:04:05"), entry.Alias, entry.Team)
 			} else if entry.Kind == game.NewsLogin {
 				err = s.Terminal.Printf("%s %s  Logged on\r\n", entry.At.Format("15:04:05"), entry.Alias)
 			} else if entry.Kind == game.NewsXannorDeath {

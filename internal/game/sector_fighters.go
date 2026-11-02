@@ -251,8 +251,19 @@ func (w *World) CommitDefense(entry DefenseIntent, rng func() float64, now time.
 			return DefenseOutcome{}, err
 		}
 	}
+	if out.Battle.Joined > 0 || out.Battle.DefenderLosses > 0 {
+		if err := w.prepareCombatNews(now, 128); err != nil {
+			return DefenseOutcome{}, err
+		}
+	}
 	if entry.To != entry.From {
 		w.move(p, entry.To)
+	}
+	if out.Battle.Joined > 0 {
+		w.combatNews(p.Alias, CombatNews{Operation: "sector-surrender", Sector: entry.To, Target: w.defenseNewsOwner(entry.Defense.Owner), Amount: out.Battle.Joined}, now)
+	}
+	if out.Battle.DefenderLosses > 0 {
+		w.combatNews(p.Alias, CombatNews{Operation: "sector-destroyed", Sector: entry.To, Target: w.defenseNewsOwner(entry.Defense.Owner), Amount: out.Battle.DefenderLosses}, now)
 	}
 	p.Fighters = p.Fighters - out.Battle.AttackerLosses + out.Battle.Joined
 	s := w.Sectors[entry.To]

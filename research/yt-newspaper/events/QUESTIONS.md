@@ -14,7 +14,7 @@ BBS world is modified, and this milestone adds no Go gameplay or save fields.
 | Who receives a port-sale notice, and what is disclosed? | Exact recipient/system sender/message record, settlement, seller and buyer reload chains | Answered: old owner, system sender -2, old name/sector/price |
 | Is rename refusal purchase cancellation? | Initial refusal versus accepted purchase/name retry, final ownership, one payout and notice | Answered: initial refusal cancels; rename refusal retries |
 | Do events/notices survive a real reload? | Exact parent world and every auxiliary file, normal return, independent read histories | Answered: four exact world/auxiliary reload chains |
-| What remains to implement? | Compare confirmed scopes with current Go event producers without inventing public acquisition announcements | Answered: public creation plus private seller notice remain follow-ups |
+| What remains to implement? | Compare confirmed scopes with current Go event producers without inventing public acquisition announcements | Answered: public creation and private seller notices are implemented; see the current [extended event inventory](../remaining/RECOVERY.md) |
 
 [Recovery report](RECOVERY.md) records final dispositions after the normal-return
 controls and independent verification. [Native evidence](NATIVE.md) separates

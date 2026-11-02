@@ -116,9 +116,9 @@ def run_fixture(guard):
         guard.run(subprocess.run,[BINARY,"-data",str(data),"-init","-sectors","8"],check=True,capture_output=True)
         transcript=guard.run(play,data,"Captain","news yesterday;news;q")
         assert "Galactic Newspaper - Yesterday" in transcript and "No news retained for this date." in transcript
-        assert "Captain  Logged on" in transcript
+        assert "Captain New Player Entered" in transcript
         path=data/"world.json";saved=json.loads(path.read_text())
-        assert saved["Version"]==30 and len(saved["News"])==1 and saved["NextNews"]==2
+        assert saved["Version"]==31 and len(saved["News"])==1 and saved["NextNews"]==2
         assert saved["Players"]["1"]["Credits"]==1005 and saved["Players"]["1"]["Turns"]==500
         text=guard.run(play,data,"Captain","team;2;News Team",followups=[
             (b"Team password (4 characters; entered separately): ",b"ABCD\r"),
@@ -126,8 +126,8 @@ def run_fixture(guard):
         assert "Captain  Created Team 1 -=- News Team" in text and "ABCD" not in text,text
         transcript+=text
         saved=json.loads(path.read_text());assert len(saved["News"])==3 and saved["News"][-1]["Kind"]=="team-created"
-        text=guard.run(play,data,"Visitor","news;q")
-        assert "Captain  Created Team 1 -=- News Team" in text and "Visitor  Logged on" in text
+        text=guard.run(play,data,"Visitor","news;q",page_news=True)
+        assert "Captain  Created Team 1 -=- News Team" in text and "Visitor New Player Entered" in text
         transcript+=text
         saved=json.loads(path.read_text());captain=dict(saved["Players"]["1"])
         # Date fixtures validate UTC selection with old history and a fresh login.
@@ -136,7 +136,7 @@ def run_fixture(guard):
         yesterday=(now-datetime.timedelta(days=1)).replace(hour=12,minute=0,second=0,microsecond=0)
         for entry in saved["News"]:entry["At"]=(yesterday+datetime.timedelta(seconds=entry["ID"])).isoformat()
         path.write_text(json.dumps(saved))
-        text=guard.run(play,data,"Captain","news yesterday;q");transcript+=text
+        text=guard.run(play,data,"Captain","news yesterday;q",page_news=True);transcript+=text
         assert f"Yesterday ({yesterday.date().isoformat()} UTC)" in text and "Captain  Created Team 1 -=- News Team" in text
         current=json.loads(path.read_text());assert current["Players"]["1"]==captain
         # Real version-11 input has no journal fields. Migration must not invent old events.
@@ -149,9 +149,9 @@ def run_fixture(guard):
         current.pop("NextPlanetGeneration",None)
         for planet in current.get("Planets",{}).values(): planet.pop("Generation",None)
         path.write_text(json.dumps(current))
-        text=guard.run(play,data,"Captain","news yesterday;q");transcript+=text
+        text=guard.run(play,data,"Captain","news yesterday;q",page_news=True);transcript+=text
         assert "No news retained for this date." in text
-        migrated=json.loads(path.read_text());assert migrated["Version"]==30 and len(migrated["News"])==1 and migrated["NextNews"]==2
+        migrated=json.loads(path.read_text());assert migrated["Version"]==31 and len(migrated["News"])==1 and migrated["NextNews"]==2
         text=guard.run(play,data,"Captain","c;8;x;y;8;t;1;q;y",classic=True);transcript+=text
         assert text.count("Do you want to read [T]oday's or [Y]esterday's news?")==3 and "Choose T or Y." in text
         assert "Galactic Newspaper - Today" in text and "Captain  Logged on" in text

@@ -275,6 +275,9 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
 		return MissileResult{}, errors.New("invalid missile launch inputs")
 	}
+	if err := w.prepareCombatNews(now, uint64(2*len(w.Sectors)*(16*len(w.Players)+5)+64)); err != nil {
+		return MissileResult{}, err
+	}
 	a := w.Players[intent.Player]
 	a.Missiles -= intent.Count
 	a.spendTurn()
@@ -308,6 +311,9 @@ func (w *World) CommitMissile(intent MissileIntent, v *Visibility, rng func() fl
 	n, err := RetaliationVolley(a.StoredScore, d.Missiles, rng)
 	if err != nil {
 		return MissileResult{}, err
+	}
+	if n > 0 {
+		w.combatNews(d.Alias, CombatNews{Operation: "missile-retaliation", Target: a.Alias, Amount: n}, now)
 	}
 	d.Missiles -= n
 	result.Counter, err = w.missileImpact(d.ID, target.ReturnRoute, target.ReturnSectors, a.ID, n, "retaliation", rng, now, &budget)
@@ -363,6 +369,9 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			intercepted.FightersDestroyed = min(killed, sector.Defense.Fighters)
 			out.SectorMissiles += spent
 			out.SectorFightersDestroyed += intercepted.FightersDestroyed
+			if intercepted.FightersDestroyed > 9 {
+				w.combatNews(w.Players[shooter].Alias, CombatNews{Operation: "missile-defense", Sector: sectorID, Amount: intercepted.FightersDestroyed}, now)
+			}
 			prior := *sector.Defense
 			sector.Defense.Fighters -= intercepted.FightersDestroyed
 			if sector.Defense.Fighters == 0 {
@@ -379,6 +388,9 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 		}
 		if remaining > 0 {
 			intercepted.MinesDestroyed = w.interceptMines(sectorID, remaining)
+			if intercepted.MinesDestroyed > 0 {
+				w.combatNews(w.Players[shooter].Alias, CombatNews{Operation: "missile-mines", Sector: sectorID, Amount: intercepted.MinesDestroyed}, now)
+			}
 			out.MinesDestroyed += intercepted.MinesDestroyed
 			remaining -= intercepted.MinesDestroyed
 		}
@@ -419,6 +431,7 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			out.Damage.Shields += damage.Shields
 			d.Fighters -= damage.Fighters
 			d.Shields -= damage.Shields
+			w.combatNews(actor.Alias, CombatNews{Operation: "missile-ship", Target: d.Alias, Sector: sectorID, Amount: d.Shields, Secondary: damage.Fighters}, now)
 			shipImpact := MissileShipImpact{Sector: sectorID, Player: d.ID, Alias: d.Alias, Damage: damage}
 			if d.Shields != 0 {
 				if cause == "missile" {
@@ -452,6 +465,9 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 				d.Mines = 0
 				if remaining > 0 {
 					destroyedMines := w.interceptMines(sectorID, remaining)
+					if destroyedMines > 0 {
+						w.combatNews(w.Players[shooter].Alias, CombatNews{Operation: "missile-mines", Sector: sectorID, Amount: destroyedMines}, now)
+					}
 					out.MinesDestroyed += destroyedMines
 					remaining -= destroyedMines
 					if destroyedMines > 0 {
@@ -508,6 +524,7 @@ func (w *World) missileImpact(shooter int, route []int, routeSectors []MissileRo
 			out.ProductionBefore, out.ProductionAfter = planetImpact.ProductionBefore, planetImpact.ProductionAfter
 			out.CargoBefore, out.CargoAfter = planetImpact.CargoBefore, planetImpact.CargoAfter
 			out.PlanetDestroyed = out.PlanetDestroyed || planetImpact.Destroyed
+			w.combatNews(w.Players[shooter].Alias, CombatNews{Operation: "missile-planet", Target: planet.Name, Sector: sectorID, Amount: planetImpact.Missiles, GroundLoss: planetImpact.GroundBefore - planetImpact.GroundAfter, GroundRemaining: planetImpact.GroundAfter, ProductionLoss: productionTotal(planetImpact.ProductionBefore) - productionTotal(rates), ProductionRemaining: productionTotal(rates), Destroyed: destroyed}, now)
 			if destroyed {
 				w.destroyPlanet(planet)
 			}

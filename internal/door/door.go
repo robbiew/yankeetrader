@@ -199,7 +199,8 @@ func (s Session) Run() (runErr error) {
 					break
 				}
 			}
-			p, e := w.Join(s.Identity, alias)
+			nextPlayer := w.NextPlayer
+			p, e := w.JoinWithNews(s.Identity, alias, s.Now())
 			if e == nil {
 				id = p.ID
 				replaced = p.Death != nil
@@ -213,7 +214,7 @@ func (s Session) Run() (runErr error) {
 				p.PlanetToken = ""
 				p.LandedPlanet = 0
 			}
-			if e == nil {
+			if e == nil && p.ID != nextPlayer {
 				e = w.RecordLogin(id, s.Now())
 			}
 			if e == nil && !time.Now().Before(s.Deadline) {

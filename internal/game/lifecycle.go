@@ -116,7 +116,12 @@ func (w *World) RecordDeath(context DeathContext, now time.Time) error {
 	if err != nil {
 		return err
 	}
+	events := w.deathNews(context)
+	if err = w.prepareDeathNews(events, now); err != nil {
+		return err
+	}
 	w.recordDeath(p, context, now)
+	w.appendDeathNews(events, now)
 	return nil
 }
 

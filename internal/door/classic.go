@@ -314,7 +314,8 @@ func (s *Session) classicStartup() (int, error) {
 		}
 		// The screen lookup may describe an ended season. Resolve identity again
 		// under this lock; never retain its old numeric ID when no match exists.
-		p, joinErr := classicLoginPlayer(live, s.Identity, alias)
+		nextPlayer := live.NextPlayer
+		p, joinErr := classicLoginPlayer(live, s.Identity, alias, s.Now())
 		if joinErr != nil {
 			return joinErr
 		}
@@ -328,8 +329,10 @@ func (s *Session) classicStartup() (int, error) {
 		season = live.Season
 		p.LastLogin = s.Now().UTC().Format("2006-01-02")
 		p.DockToken, p.PlanetToken, p.LandedPlanet = "", "", 0
-		if err := live.RecordLogin(id, s.Now()); err != nil {
-			return err
+		if p.ID != nextPlayer {
+			if err := live.RecordLogin(id, s.Now()); err != nil {
+				return err
+			}
 		}
 		if !time.Now().Before(s.Deadline) {
 			return errors.New("session time expired")
@@ -610,7 +613,7 @@ func (s Session) retirementNotice() error {
 
 // classicLoginPlayer is called only inside the authenticated login transaction.
 // Its lookup starts fresh; an ID remembered by startup is never authentication.
-func classicLoginPlayer(live *game.World, identity, alias string) (*game.Player, error) {
+func classicLoginPlayer(live *game.World, identity, alias string, now time.Time) (*game.Player, error) {
 	for _, p := range live.Players {
 		if p.Identity == identity {
 			return p, nil
@@ -619,5 +622,5 @@ func classicLoginPlayer(live *game.World, identity, alias string) (*game.Player,
 	if err := game.ClassicAlias(live, alias); err != nil {
 		return nil, err
 	}
-	return live.Join(identity, alias)
+	return live.JoinWithNews(identity, alias, now)
 }

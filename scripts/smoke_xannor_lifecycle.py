@@ -22,6 +22,7 @@ def exercise(guard):
         mobile=world['Planets'].pop('1',None)
         if mobile:world['Sectors'][str(mobile['Sector'])]['Planet']=0
         world['Version'] = 13; world.pop("Season",None); world.pop("GenerationSeed",None)
+        world["News"]=[];world["NextNews"]=1  # Historical schemas cannot claim schema-31 registration.
         world.pop("NextPlanetGeneration",None)
         for planet in world.get("Planets",{}).values(): planet.pop("Generation",None)
         for p in world['Players'].values():p.pop('LastActivity',None)
@@ -38,7 +39,7 @@ def exercise(guard):
         saved = json.loads(path.read_text())
         home = saved['Planets']['100']
         hq = saved['Xannor']['HQ']
-        assert saved['Version'] == 30 and saved['Xannor']['Reserve'] == 0
+        assert saved['Version'] == 31 and saved['Xannor']['Reserve'] == 0
         assert hq > 7 and home['Sector'] == hq and saved['Sectors'][str(hq)]['Planet'] == 100
         assert home['FactionHome'] == 'xannor' and home['Owner'] == -1
         assert home['Production'] == [100000, 100000, 100000]

@@ -248,6 +248,19 @@ func (w *World) resolveMinefield(id int, rng func() float64, now time.Time) (Min
 	if rng == nil || now.IsZero() || now.Before(w.Created) {
 		return MineOutcome{}, errors.New("invalid mine encounter inputs")
 	}
+	if err := w.prepareCombatNews(now, 64); err != nil {
+		return MineOutcome{}, err
+	}
+	newsID := w.NextNews
+	w.combatNews(p.Alias, CombatNews{Operation: "mine-hit", Sector: p.Sector, Amount: p.Shields}, now)
+	defer func() {
+		for i := range w.News {
+			if w.News[i].ID == newsID {
+				w.News[i].Combat.Amount = p.Shields
+				break
+			}
+		}
+	}()
 	for len(s.Minefield) > 0 {
 		if out.Bursts >= 16000 {
 			return MineOutcome{}, errors.New("mine encounter calculation limit reached")

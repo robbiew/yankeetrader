@@ -148,7 +148,7 @@ func TestHQRewardReceiptAfterForcedBribeCombat(t *testing.T) {
 					}
 					return
 				}
-				if err != nil || w.Players[1].Credits != balance+want || w.Sectors[8].Defense != nil || len(w.News) != 1 || w.News[0].Kind != game.NewsXannorHQ {
+				if err != nil || w.Players[1].Credits != balance+want || w.Sectors[8].Defense != nil || len(w.News) != 2 || w.News[0].Kind != game.NewsCombat || w.News[0].Combat == nil || w.News[0].Combat.Operation != "sector-destroyed" || w.News[0].Combat.Amount != 1 || w.News[0].Combat.Sector != 8 || w.News[1].Kind != game.NewsXannorHQ {
 					t.Fatal("forced combat reward not saved", err, text)
 				}
 				receipt := fmt.Sprintf("Xannor HQ victory in sector 8. Credits added: %d.", want)

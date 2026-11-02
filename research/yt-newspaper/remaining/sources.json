@@ -1,0 +1,110 @@
+[
+  {
+    "family": "sector",
+    "path": "archive/analysis/yt-combat/experiments/surrender-confirm/YTNEWS.DAT",
+    "sha256": "d481eff17b6c8e52e431cd3cb8581df55027c66fab6e55399c98d2c4cd288aab",
+    "news_sha256": "d481eff17b6c8e52e431cd3cb8581df55027c66fab6e55399c98d2c4cd288aab",
+    "fragments": [
+      "surrendered to",
+      "fighters belonging to"
+    ]
+  },
+  {
+    "family": "death-loot-wreck",
+    "path": "archive/analysis/yt-combat/experiments/fixture-ship-dead/YTNEWS.DAT",
+    "sha256": "498a14559b0e8c49192c7261d796b558841c6e15f69aa2d01aacfb57b31668e5",
+    "news_sha256": "498a14559b0e8c49192c7261d796b558841c6e15f69aa2d01aacfb57b31668e5",
+    "fragments": [
+      "killed Enemy",
+      "salvaged the following",
+      "Sector Mines:",
+      "had sector mines! They EXPLODED!"
+    ]
+  },
+  {
+    "family": "missile-defense",
+    "path": "archive/analysis/yt-combat/experiments/missile-fighters/YTNEWS.DAT",
+    "sha256": "800ef8b09d7e30d3297cba1f3203ab319dcb3aefd0ccd432062ec21590f95cee",
+    "news_sha256": "800ef8b09d7e30d3297cba1f3203ab319dcb3aefd0ccd432062ec21590f95cee",
+    "fragments": [
+      "Missiles destroyed"
+    ]
+  },
+  {
+    "family": "missile-mines",
+    "path": "archive/analysis/yt-combat/experiments/missile-mines/YTNEWS.DAT",
+    "sha256": "84d168f337b5235ce044d707614e9efc48fedccfc2549541007dbc9210286e3c",
+    "news_sha256": "84d168f337b5235ce044d707614e9efc48fedccfc2549541007dbc9210286e3c",
+    "fragments": [
+      "Missiles hit sector mines"
+    ]
+  },
+  {
+    "family": "plasma-defense",
+    "path": "research/yt-plasma/dos/fighters-enemy/sidefiles.json.gz",
+    "sha256": "f1c3b9f3b9a29089dbe721715e40cae657455eb5379e2727b42386154a9878e6",
+    "news_sha256": "0c183d167c4aa501fcb20550ead14bc707ffc6ae8b49d2226ed6095523f0dffe",
+    "fragments": [
+      "plasma bolts destroyed"
+    ]
+  },
+  {
+    "family": "plasma-ship",
+    "path": "research/yt-plasma/dos/two-ships/sidefiles.json.gz",
+    "sha256": "9bd38ffd963bce983725482ccab57c8d0173cc14c075368226b073c9a649593b",
+    "news_sha256": "2fc0be258f59592f005ce768e681291aa6d85fb63fd9501df8e0432ddaaf46f9",
+    "fragments": [
+      "plasma bolts hit",
+      "shields to"
+    ]
+  },
+  {
+    "family": "plasma-self-death",
+    "path": "research/yt-plasma/dos/self-lethal/sidefiles.json.gz",
+    "sha256": "ef4823826e25625ea813a27a6cb4d74ff95f15630569ce51f51ff066b2635a6b",
+    "news_sha256": "bf341dc5d3d61ecf3202233d10a69f749c4a3566a5bf2e75daffe27d916ff42b",
+    "fragments": [
+      "was killed!"
+    ]
+  },
+  {
+    "family": "plasma-planet",
+    "path": "research/yt-plasma/dos/planet-productive/sidefiles.json.gz",
+    "sha256": "625ca5ad63e8c6db57d1cdf6e819a2ff3b01ddc745e193ce99c0b98d7e5dfc27",
+    "news_sha256": "040d8a9f5c47a56ad6e3ebd734f748064deaab7cae562cde57ac487549d58d1a",
+    "fragments": [
+      "plasma bolts hit planet",
+      "Productivity reduced",
+      "Ground forces reduced"
+    ]
+  },
+  {
+    "family": "plasma-destruction",
+    "path": "research/yt-plasma/dos/planet-organic-small/sidefiles.json.gz",
+    "sha256": "1e7ff61aade4fe6cd7da2cf21f9b7dd29e895fdcb9dfc4dae534cbc3a93dcf82",
+    "news_sha256": "c57583001f114ca3a0a0bb6c406db8a1e44405c0b14c7752c780ed2dfa480c41",
+    "fragments": [
+      "The planet was destroyed"
+    ]
+  },
+  {
+    "family": "transport",
+    "path": "research/yt-planet-mobility/dos/collision-first/sidefiles.json.gz",
+    "sha256": "6ae369d858ec371c42eec29b35b885dbe1d86ad5cf5577fe6ed8355e4fe3603d",
+    "news_sha256": "3eed4d2af846ab6ad1b287290d9c7a068512cc3c7d6e6ac2fb6e4a22eb59e14b",
+    "fragments": [
+      "exploded",
+      "fighters"
+    ]
+  },
+  {
+    "family": "mine-shields",
+    "path": "research/yt-planet-mobility/dos/move-mines/sidefiles.json.gz",
+    "sha256": "f6ec11e7be499b89eb98dc25796bfe221d9ad6d2c8472f30fb164299bcc8f12f",
+    "news_sha256": "ae075f0b5e213323d5e3849e428e629b284ae636c74b4438b564e3c3348b5811",
+    "fragments": [
+      "hit sector mines",
+      "Shields reduced"
+    ]
+  }
+]

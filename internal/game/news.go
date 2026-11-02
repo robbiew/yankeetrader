@@ -12,6 +12,9 @@ const MaxNewsEvents = 1024
 type NewsKind string
 
 const (
+	NewsRegistration  NewsKind = "registration"
+	NewsTeamJoined    NewsKind = "team-joined"
+	NewsCombat        NewsKind = "combat"
 	NewsPlanetCreated NewsKind = "planet-created"
 	NewsBroadcast     NewsKind = "radio-broadcast"
 	NewsPlayerPlanet  NewsKind = "player-planet-assault"
@@ -30,14 +33,23 @@ const (
 
 // NewsEvent stores whitelisted public snapshots. Only explicitly public radio
 // broadcasts may contain message text; private mail and account secrets are excluded.
+type CombatNews struct {
+	Operation, Target, Resource         string
+	Sector                              int
+	Amount, Secondary                   int64
+	ProductionLoss, ProductionRemaining float64
+	GroundLoss, GroundRemaining         int64
+	Destroyed                           bool
+}
 type NewsEvent struct {
-	BroadcastText                    string `json:",omitempty"`
-	GroundCommitted, GroundRemaining int64  `json:",omitempty"`
-	LotteryMatches                   int    `json:",omitempty"`
-	LotteryPrize                     int64  `json:",omitempty"`
-	PortCount                        int    `json:",omitempty"`
-	PlanetName                       string `json:",omitempty"`
-	Outcome                          string `json:",omitempty"`
+	Combat                           *CombatNews `json:",omitempty"`
+	BroadcastText                    string      `json:",omitempty"`
+	GroundCommitted, GroundRemaining int64       `json:",omitempty"`
+	LotteryMatches                   int         `json:",omitempty"`
+	LotteryPrize                     int64       `json:",omitempty"`
+	PortCount                        int         `json:",omitempty"`
+	PlanetName                       string      `json:",omitempty"`
+	Outcome                          string      `json:",omitempty"`
 	ID                               uint64
 	At                               time.Time
 	Kind                             NewsKind
@@ -89,7 +101,25 @@ func (w *World) validateNews() error {
 		if e.Kind != NewsBroadcast && e.BroadcastText != "" {
 			return errors.New("private or unrelated news contains radio text")
 		}
+		if e.Kind != NewsCombat && e.Combat != nil {
+			return errors.New("unrelated news contains combat data")
+		}
 		switch e.Kind {
+		case NewsCombat:
+			if e.Team != 0 || e.TeamName != "" {
+				return errors.New("combat news contains team data")
+			}
+			if err := validateCombatNews(e); err != nil {
+				return err
+			}
+		case NewsTeamJoined:
+			if e.Team < 1 || e.Team > 50 || e.TeamName != "" {
+				return errors.New("invalid team join news")
+			}
+		case NewsRegistration:
+			if e.Team != 0 || e.TeamName != "" {
+				return errors.New("registration contains team details")
+			}
 		case NewsPlanetCreated:
 			if !clean(e.PlanetName) || e.Outcome != "" || e.Team != 0 || e.TeamName != "" {
 				return errors.New("invalid planet creation news")
@@ -237,6 +267,10 @@ func (w *World) ReadNewspaper(id int, now time.Time, yesterday bool) (Newspaper,
 	report := Newspaper{Date: day(date)}
 	for _, e := range w.News {
 		if day(e.At) == report.Date {
+			if e.Combat != nil {
+				snapshot := *e.Combat
+				e.Combat = &snapshot
+			}
 			report.Entries = append(report.Entries, e)
 		}
 	}
