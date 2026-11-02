@@ -82,10 +82,12 @@ verifier independently requires the exact shell-return marker, raw normal-return
 message and matching decoded transcript in addition to metadata flags.
 
 The independent verifier compares the saved turn balance and exact bonus lines,
-ownership/casualty controls, valid return markers and artifact hashes. Seven
+ownership/casualty controls, valid return markers and artifact hashes. Eleven
 corruption variants reject changed saved turns, a spurious capped announcement,
 changed casualty reports, a false human surrender control, missing return markers,
-missing normal-return output and native-byte corruption, including rehashed artifacts.
+missing normal-return output, native-byte corruption, and zero/one-byte native
+code/constant observations, including self-consistent length metadata. Native
+read addresses, requested/returned lengths and parameter contracts are fixed.
 
 ```sh
 python3 scripts/verify_xannor_turn_bonus.py

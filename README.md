@@ -13,6 +13,8 @@ show actual credited turns, including capped awards. This is separate from the
 existing Xannor HQ credit prize. [DOS controls, rules and validation](research/yt-xannor-turn-bonus/RECOVERY.md).
 The DOS verifier checks saved casualties/turns and independent normal-return evidence;
 the human-defense control explicitly refuses surrender before destroying its fighters.
+Required native observations are pinned by address and full length; zero-length and
+truncated code/constant reads are rejected.
 Save **32** adds the bonus event; upgrades do not backfill rewards for old battles.
 
 

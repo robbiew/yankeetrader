@@ -5,10 +5,18 @@ import verify_xannor_turn_bonus as verify
 
 class CorruptionControls(unittest.TestCase):
  def test_rehashed_corruptions(self):
-  for mode in ['missing-turns','false-bonus','missing-casualties','native','missing-return','missing-normal-return','human-surrender']:
+  for mode in ['missing-turns','false-bonus','missing-casualties','native','missing-return','missing-normal-return','human-surrender','zero-code','short-code','zero-constant','short-constant']:
    with self.subTest(mode=mode),tempfile.TemporaryDirectory() as tmp:
     root=Path(tmp)/'evidence';shutil.copytree(verify.DEFAULT,root)
-    if mode=='native':
+    if mode in ['zero-code','short-code','zero-constant','short-constant']:
+     p=root/'rea.json';b=json.loads(p.read_text());address='0x11028' if mode.endswith('code') else '0x32ba8'
+     r=next(r for r in b['records'] if r['normalized_result']['address']==address)
+     length=0 if mode.startswith('zero-') else 1
+     r['parameters']['length']=length
+     r['normalized_result']['requested_bytes']=r['normalized_result']['returned_bytes']=length
+     r['normalized_result']['bytes_hex']=r['normalized_result']['bytes_hex'][:2*length]
+     p.write_text(json.dumps(b))
+    elif mode=='native':
      p=root/'rea.json';b=json.loads(p.read_text());r=next(r for r in b['records'] if r['normalized_result']['address']=='0x11028');r['normalized_result']['bytes_hex']='00'+r['normalized_result']['bytes_hex'][2:];p.write_text(json.dumps(b))
     else:
      case=root/'dos'/('kills-200' if mode in ['missing-turns','missing-return','missing-normal-return'] else 'at-cap' if mode=='false-bonus' else 'player-defense' if mode=='human-surrender' else 'partial-escape')

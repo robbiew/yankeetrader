@@ -13,13 +13,18 @@ def check(root=DEFAULT):
  root=Path(root);binary=(ROOT/'archive/dos-original/YT.EXE').read_bytes()
  assert SHA(binary)=='c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037'
  image=v.loaded(binary);bundle=json.loads((root/'rea.json').read_text());observed=set()
+ reads={'0x11028':390,'0x32ba8':8,'0x168f8':8}
+ assert len(bundle['records'])==len(reads), 'native observation count'
  for r in bundle['records']:
   assert r['operation']=='read_bytes' and r['subject']['digest']['sha256']==SHA(binary)
   n=r['normalized_result'];offset=int(n['address'],16)-0x10000
-  assert n['complete'] and n['returned_bytes']==n['requested_bytes']
+  assert n['address'] in reads and n['address'] not in observed, 'unexpected or duplicate native read'
+  length=reads[n['address']]
+  assert r['parameters']=={'address':n['address'],'length':length}, 'native read contract'
+  assert n['complete'] and n['returned_bytes']==n['requested_bytes']==length, 'truncated native read'
   assert bytes.fromhex(n['bytes_hex'])==image[offset:offset+n['returned_bytes']]
   observed.add(n['address'])
- assert {'0x11028','0x32ba8'}<=observed
+ assert set(reads)==observed
  assert image[0x22ba8:0x22bb0]==bytes.fromhex('0000000000004888') # MBF64 200
  for name,(count,turns,award) in CASES.items():
   case=root/'dos'/name;r=json.loads((case/'result.json').read_text())
@@ -27,7 +32,7 @@ def check(root=DEFAULT):
   assert (case/'RETURN.LOG').read_bytes()==b'BROADCAST_PROGRAM_RETURNED\r\n', 'missing shell return marker'
   raw=gzip.decompress((case/'game.log.gz').read_bytes()).decode('cp437').replace('\r\n','\n')
   assert raw==(case/'transcript.txt').read_text()
-  assert 'Returning to Yankee Trader Local Logon Program...' in raw, 'missing normal program return' 
+  assert 'Returning to Yankee Trader Local Logon Program...' in raw, 'missing normal program return'
   assert r['binaries']['YT.EXE']==SHA(binary)
   for file,digest in r['files'].items():assert SHA((case/file).read_bytes())==digest
   before=gzip.decompress((case/'before.dat.gz').read_bytes());after=gzip.decompress((case/'after.dat.gz').read_bytes())
