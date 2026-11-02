@@ -44,7 +44,8 @@ class Caller:
         self.master,slave=pty.openpty()
         options=[] if classic else ['-compact']
         if not emulation:options.append('-ascii')
-        self.proc=subprocess.Popen([str(campaign.binary),*options,'-data',str(campaign.data),'-drop',str(self.node),'-system','campaign-bbs'],stdin=slave,stdout=slave,stderr=slave,env={**os.environ,'GORACE':f'halt_on_error=1 log_path={self.node}/race'})
+        with (self.node/'stderr.txt').open('wb') as diagnostic:
+            self.proc=subprocess.Popen([str(campaign.binary),*options,'-data',str(campaign.data),'-drop',str(self.node),'-system','campaign-bbs'],stdin=slave,stdout=slave,stderr=diagnostic,env={**os.environ,'GORACE':f'halt_on_error=1 log_path={self.node}/race'})
         os.close(slave)
         with campaign.lock:campaign.peak_processes=max(campaign.peak_processes,sum(getattr(c,'proc',None)is not None and c.proc.poll()is None for c in campaign.callers))
         self.probes=0;self.raw=bytearray();self.clean=b'';self.cursor=0;self.inputs=[];self.closed=False
@@ -140,9 +141,11 @@ class Caller:
                 try:self.proc.wait(timeout=2)
                 except subprocess.TimeoutExpired:self.proc.kill();self.proc.wait()
                 raise AssertionError('door failed to exit naturally after carrier loss') from error
-            assert code==0,('unexpected carrier loss exit',code)
+            assert code==0,('unexpected carrier loss exit',code,self.stderr_text())
         finally:
             self.thread.join(timeout=2);self.save()
+    def stderr_text(self):
+        return (self.node/'stderr.txt').read_text(errors='replace')
     def save(self):
         (self.node/'terminal.bin').write_bytes(self.raw)
         (self.node/'terminal.txt').write_text(self.clean.decode('ascii',errors='replace'))
@@ -213,7 +216,7 @@ class Campaign:
         for c in self.callers:c.save()
         (self.root/'actions.json').write_text(json.dumps(self.actions,indent=2)+'\n')
         summary={'outcome':outcome,'started':self.started,'ended':time.time(),'callers':len(self.callers),'pre_reset_callers':6,'peak_processes':self.peak_processes,'snapshots_checked':self.snapshots_checked,'actions':len(self.actions),'findings':self.findings,'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'binary_sha256':hashlib.sha256(self.binary.read_bytes()).hexdigest(),'initial_sha256':hashlib.sha256(self.initial).hexdigest(),'final_sha256':hashlib.sha256((self.data/'world.json').read_bytes()).hexdigest()}
-        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'forced_stop':node.forced_stop,'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
+        summary['nodes']=[{'node':node.index,'uid':node.uid,'classic':node.classic,'tcp_endpoint':node.endpoint,'returncode':node.proc.poll(),'expected_exit':node.expected_exit,'forced_stop':node.forced_stop,'stderr_tail':node.stderr_text()[-2000:],'known_hazards':sorted(node.hazards),'race_logs':[str(p.relative_to(self.root))for p in node.node.glob('race.*')]}for node in self.callers]
         summary['script_sha256']=hashlib.sha256(self.driver_source).hexdigest()
         patch=self.runtime_patch
         (self.root/'source.patch').write_bytes(patch);summary['source_patch_sha256']=hashlib.sha256(patch).hexdigest()

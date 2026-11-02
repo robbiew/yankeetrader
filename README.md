@@ -65,6 +65,8 @@ expired reads now report session expiry and reject late input. Forced terminatio
 after carrier loss fails the campaign. A committed black-hole arrival that consumes
 all turns can restart the entire disposable world, bounded to three attempts with
 all evidence retained; timeouts, invariant failures and abnormal exits still fail.
+Per-node stderr is captured separately so Linux carrier-loss failures remain
+diagnosable after the simulated relay closes.
 [Findings, captures and reproducible driver](evidence/MULTICALLER_DOOR_CAMPAIGN.md).
 
 ### Not shipped yet

@@ -9,7 +9,7 @@ from simulate_bbs_campaign import Caller
 class CarrierLossTests(unittest.TestCase):
     def caller(self):
         caller=Caller.__new__(Caller)
-        caller.proc=Mock();caller.client=Mock();caller.thread=Mock();caller.save=Mock()
+        caller.proc=Mock();caller.client=Mock();caller.thread=Mock();caller.save=Mock();caller.stderr_text=Mock(return_value="")
         return caller
 
     def test_hung_carrier_loss_is_failure_after_cleanup(self):
@@ -111,7 +111,7 @@ class ExitAuditTests(unittest.TestCase):
                     c.root=root;c.data=data;c.binary=binary;c.actions=[];c.findings=[];c.started=0
                     c.snapshots_checked=1;c.peak_processes=1;c.driver_source=b'driver';c.runtime_patch=b'';c.initial=b'{}'
                     node=Mock(index=1,uid=1,classic=False,endpoint=('127.0.0.1',1),expected_exit='carrier-loss',forced_stop=forced,hazards=set(),node=root)
-                    node.proc.poll.return_value=code;c.callers=[node]
+                    node.proc.poll.return_value=code;node.stderr_text.return_value="";c.callers=[node]
                     if code==0 and not forced:
                         self.assertEqual(c.report(outcome)['outcome'],outcome)
                     else:
