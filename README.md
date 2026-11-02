@@ -77,11 +77,65 @@ finish, including runner cleanup; every validation command remains enabled.
 ### Not shipped yet
 
 - Remaining random-event and exact DOS RNG/numeric parity.
-- Explicit season archive export/administrative reset tooling.
 - Remaining newspaper event types, additional unconfirmed spy command paths, and character-level DOS editor wrapping/backspace parity.
 - Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
+
+## Season administration
+
+See the [sysop save and data guide](docs/SYSOP.md) for live exports, stopped-door
+backups, archive extraction and validation, restoring or moving a game, identity
+mappings, upgrades and rollback. DOS save import/export remains unsupported.
+
+Export a consistent, private snapshot without changing play:
+
+```sh
+./bin/yt -data data -season-export /secure/backups/season-1.json
+```
+
+To end a season administratively, name its exact current number and a new archive
+path. This command removes all current players, teams, assets and messages and
+creates a fresh universe. It records **administrative reset; no winner** in
+`SEASONS`, preserves earlier season results, sector count, Genesis threshold and
+lottery quota, and ends old logins through the season guard. The archive is saved
+and synchronized before the new world is committed under the existing world lock.
+
+```sh
+./bin/yt -data data -admin-reset 1 -season-export /secure/backups/season-1-before-reset.json -seed 77
+```
+
+The expected season number must be positive (explicit zero is rejected) and prevents
+an old command from resetting a later season. Administrative resets also support
+eight-sector test worlds; faction homes are created only where capacity permits,
+while player-triggered Genesis retains its required-home checks.
+Existing files and symlinks are never overwritten. The destination directory must
+already exist. A reset cannot be combined with play, initialization or maintenance.
+The seed defaults to 36; choose a new seed to change the generated layout.
+History remains bounded to 128 completed seasons; export does not clear that limit.
+
+Archives contain the complete validated world, including private identities, mail,
+team credentials and assets. Keep them in a private backup directory; do not publish
+them. Files are created with owner-only permissions on POSIX. Archive format 1
+contains `Exported`, `World`, and `WorldSHA256` (SHA-256 of the compact JSON World
+value). It is a consistent snapshot, not a continuous backup: ordinary export may
+be followed immediately by further play. This command also exports retained public
+season results, but cannot reconstruct full worlds already discarded by Genesis.
+
+An archive may remain if reset fails after export. Inspect the current season
+before retrying with a new filename. A durability warning explicitly says the reset
+committed: do not repeat it. Stop every node before restoring a backup. A full
+rollback requires extracting the archived World into world.json using the matching
+binary and restoring all nodes together; it discards subsequent progress and may
+reuse an earlier season number, so no old process may remain connected. There is no
+automatic archive import or public archive hosting command.
+
+Validation: `python3 scripts/smoke_season_admin.py` exercises export, checksums,
+reset, conflicting flags, archive collision and stale reset rejection using a
+disposable world. Go tests cover concurrent resets, private snapshot fidelity,
+old login invalidation, history/settings retention, migration and committed
+storage warnings. Native Windows crash durability and live BBS acceptance remain
+separate checks.
 
 ## Screenshots
 
@@ -397,7 +451,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **29**, introducing typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-28 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Older binaries cannot read version 29.
+**Save rollback compatibility:** This build uses world version **30**, adding administrative season results without winners; version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-29 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Older binaries cannot read version 30.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -469,7 +523,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-28 worlds upgrade to version 29 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-29 worlds upgrade to version 30 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 

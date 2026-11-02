@@ -24,6 +24,13 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 30 {
+		for _, r := range w.SeasonResults {
+			if r.Administrative {
+				return errors.New("legacy world contains administrative reset")
+			}
+		}
+	}
 	if w.Version < 29 {
 		for _, m := range w.Radio {
 			if m.System == "port-sale" || m.PortSale != nil {
@@ -337,6 +344,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 28 {
 		w.Version = 29
+	}
+	if w.Version == 29 {
+		w.Version = 30
 	}
 	return nil
 }

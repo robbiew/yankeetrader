@@ -29,6 +29,8 @@ func run() error {
 	data := flag.String("data", "data", "world directory")
 	showVersion := flag.Bool("version", false, "print application name and version")
 	initWorld := flag.Bool("init", false, "create a new world; never overwrites")
+	seasonExport := flag.String("season-export", "", "export a private full-season archive to a new file")
+	adminReset := flag.Uint64("admin-reset", 0, "end this exact season without a winner; requires -season-export")
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
@@ -46,6 +48,22 @@ func run() error {
 	if flag.NArg() != 0 {
 		return errors.New("unexpected arguments; use -help")
 	}
+	resetConfigured := false
+	flag.Visit(func(f *flag.Flag) {
+		if f.Name == "admin-reset" {
+			resetConfigured = true
+		}
+	})
+	if resetConfigured && *adminReset == 0 {
+		return errors.New("-admin-reset requires a positive current season number")
+	}
+	adminMode := *seasonExport != "" || resetConfigured
+	if adminMode && (*initWorld || *maint || *local != "" || *drop != "") {
+		return errors.New("season administration cannot be combined with initialization, maintenance or play")
+	}
+	if *adminReset != 0 && *seasonExport == "" {
+		return errors.New("-admin-reset requires -season-export to a new private archive file")
+	}
 	if *initWorld && *maint {
 		return errors.New("choose either -init or -maint")
 	}
@@ -59,6 +77,16 @@ func run() error {
 		return errors.New("-genesis-ports is only supported with -init")
 	}
 	st := store.Store{Dir: *data}
+	if adminMode {
+		out, err := st.ExportSeason(*seasonExport, *adminReset, time.Now(), *seed)
+		if out.Archive != "" {
+			fmt.Printf("Private season %d archive saved: %s (world SHA256 %s).\n", out.ArchivedSeason, out.Archive, out.SHA256)
+		}
+		if out.NewSeason != 0 {
+			fmt.Printf("Administrative reset committed. Season %d is ready; old logins must reconnect. No winner declared.\n", out.NewSeason)
+		}
+		return err
+	}
 	if *initWorld {
 		w, e := game.New(time.Now(), *seed, *sectors)
 		if e != nil {

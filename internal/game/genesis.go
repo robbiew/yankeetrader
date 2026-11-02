@@ -17,6 +17,7 @@ var ErrSeasonChanged = errors.New("this season has ended; reconnect to join the 
 
 // SeasonResult archives only public winner fields. IDs are scoped to Season.
 type SeasonResult struct {
+	Administrative           bool `json:",omitempty"`
 	Season                   uint64
 	Started, Ended           time.Time
 	Winner                   string
@@ -70,8 +71,15 @@ func (w *World) validateSeasons() error {
 	}
 	var previous SeasonResult
 	for i, r := range w.SeasonResults {
-		if r.Season != uint64(i+1) || r.Season >= w.Season || r.Started.IsZero() || r.Ended.Before(r.Started) || r.Ended.After(w.Created) || !clean(r.Winner) || r.Player < 1 || r.Player > MaxPlayerIdentities || r.Threshold < 20 || r.Threshold > 300 || r.Ports < r.Threshold || r.Ports > 2999 || r.Score < 0 || r.Score > MaxMoney {
+		if r.Season != uint64(i+1) || r.Season >= w.Season || r.Started.IsZero() || r.Ended.Before(r.Started) || r.Ended.After(w.Created) {
 			return errors.New("invalid season result")
+		}
+		if r.Administrative {
+			if r.Winner != "" || r.Player != 0 || r.Ports != 0 || r.Threshold != 0 || r.Score != 0 {
+				return errors.New("administrative reset cannot declare a winner")
+			}
+		} else if !clean(r.Winner) || r.Player < 1 || r.Player > MaxPlayerIdentities || r.Threshold < 20 || r.Threshold > 300 || r.Ports < r.Threshold || r.Ports > 2999 || r.Score < 0 || r.Score > MaxMoney {
+			return errors.New("invalid season winner")
 		}
 		if i > 0 && !r.Started.Equal(previous.Ended) {
 			return errors.New("discontinuous season archive")
@@ -174,13 +182,51 @@ func (w *World) genesisCandidate(e GenesisIntent, now time.Time, seed int64, gen
 	}
 	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Winner: e.Alias, Player: e.Player, Ports: len(e.Ports), Threshold: e.Threshold, Score: e.Score}
 	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
+	if err = bootstrapSeason(candidate, now, seed, true); err != nil {
+		return nil, out, err
+	}
+	return candidate, GenesisReceipt{Result: result, NewSeason: candidate.Season, Seed: seed}, nil
+}
+
+// AdministrativeCandidate ends a season without attributing a player victory.
+func (w *World) AdministrativeCandidate(expected uint64, now time.Time, seed int64) (*World, error) {
+	if expected == 0 || expected != w.Season || w.Season == math.MaxUint64 || len(w.SeasonResults) >= MaxSeasonResults {
+		return nil, errors.New("season changed, exhausted or history full; no reset")
+	}
+	if now.IsZero() || now.Before(w.Created) {
+		return nil, errors.New("invalid reset clock")
+	}
+	if err := w.Validate(); err != nil {
+		return nil, err
+	}
+	candidate, err := New(now, seed, len(w.Sectors))
+	if err != nil {
+		return nil, err
+	}
+	candidate.Season = w.Season + 1
+	if w.GenesisPorts != nil {
+		n := *w.GenesisPorts
+		candidate.GenesisPorts = &n
+	}
+	if w.LotteryDailyLimit != nil {
+		n := *w.LotteryDailyLimit
+		candidate.LotteryDailyLimit = &n
+	}
+	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Administrative: true}
+	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
+	if err = bootstrapSeason(candidate, now, seed, false); err != nil {
+		return nil, err
+	}
+	return candidate, nil
+}
+func bootstrapSeason(candidate *World, now time.Time, seed int64, requireHomes bool) error {
 	// New already stocks the economy. Bootstrap supported homes explicitly because
 	// same-day Maintain deliberately does nothing; never rerun all daily events.
 	rng := rand.New(rand.NewSource(seed))
 	candidate.restoreMercenaryBase(now, rng.Float64)
 	candidate.restoreXannoron(now, rng.Float64)
-	if candidate.Xannor == nil || candidate.xannorHome() == nil {
-		return nil, out, errors.New("new season has no room for required faction homes")
+	if requireHomes && (candidate.Xannor == nil || candidate.xannorHome() == nil) {
+		return errors.New("new season has no room for required faction homes")
 	}
 	mercenary := false
 	for _, p := range candidate.Planets {
@@ -188,17 +234,17 @@ func (w *World) genesisCandidate(e GenesisIntent, now time.Time, seed int64, gen
 			mercenary = true
 		}
 	}
-	if !mercenary {
-		return nil, out, errors.New("new season has no Mercenary base")
+	if requireHomes && !mercenary {
+		return errors.New("new season has no Mercenary base")
 	}
-	if _, err = candidate.BootstrapWanderer(now, rng.Float64); err != nil {
-		return nil, out, err
+	if _, err := candidate.BootstrapWanderer(now, rng.Float64); err != nil {
+		return err
 	}
-	if candidate.wanderer() == nil {
-		return nil, out, errors.New("new season has no room for The Wanderer")
+	if requireHomes && candidate.wanderer() == nil {
+		return errors.New("new season has no room for The Wanderer")
 	}
-	if err = candidate.Validate(); err != nil {
-		return nil, out, err
+	if err := candidate.Validate(); err != nil {
+		return err
 	}
-	return candidate, GenesisReceipt{Result: result, NewSeason: candidate.Season, Seed: seed}, nil
+	return nil
 }

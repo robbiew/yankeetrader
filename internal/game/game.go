@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 29
+const WorldVersion = 30
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
