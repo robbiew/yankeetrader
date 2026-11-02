@@ -34,6 +34,7 @@ func run() error {
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
+	dosPorts := flag.Bool("dos-ports", false, "use recovered DOS port generation and pricing for a new world")
 	genesisPorts := flag.Int("genesis-ports", 300, "initial Genesis threshold: 0 disables; 20..300; omitted defaults to 300")
 	local := flag.String("local", "", "local player name")
 	compact := flag.Bool("compact", false, "skip DOS startup and use the compact command interface")
@@ -68,13 +69,20 @@ func run() error {
 		return errors.New("choose either -init or -maint")
 	}
 	genesisConfigured := false
+	dosPortsConfigured := false
 	flag.Visit(func(f *flag.Flag) {
+		if f.Name == "dos-ports" {
+			dosPortsConfigured = true
+		}
 		if f.Name == "genesis-ports" {
 			genesisConfigured = true
 		}
 	})
 	if genesisConfigured && !*initWorld {
 		return errors.New("-genesis-ports is only supported with -init")
+	}
+	if dosPortsConfigured && !*initWorld {
+		return errors.New("-dos-ports is only supported with -init")
 	}
 	st := store.Store{Dir: *data}
 	if adminMode {
@@ -88,7 +96,11 @@ func run() error {
 		return err
 	}
 	if *initWorld {
-		w, e := game.New(time.Now(), *seed, *sectors)
+		profile := ""
+		if *dosPorts {
+			profile = "dos"
+		}
+		w, e := game.NewWithPortGeneration(time.Now(), *seed, *sectors, profile)
 		if e != nil {
 			return e
 		}

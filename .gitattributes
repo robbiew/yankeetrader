@@ -187,3 +187,15 @@
 /research/yt-newspaper/events/dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
 # Commerce column separators in these exact transcripts resemble seven-character conflict markers.
 /research/yt-newspaper/events/dos/**/transcript.txt conflict-marker-size=32
+
+# Exact initializer key streams, CRLF logs and commerce table recordings.
+/research/yt-port-generation/dos/** -text
+/research/yt-port-generation/dos/**/ANSWERS.TXT -diff
+/research/yt-port-generation/dos/**/*.LOG -diff
+/research/yt-port-generation/dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-port-generation/pricing-dos/** -text
+/research/yt-port-generation/pricing-dos/**/KEYS.TXT -diff
+/research/yt-port-generation/pricing-dos/**/DOS*.LOG -diff
+/research/yt-port-generation/pricing-dos/**/RETURN.LOG -diff
+/research/yt-port-generation/pricing-dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof conflict-marker-size=32
+/research/yt-port-generation/pricing-dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof

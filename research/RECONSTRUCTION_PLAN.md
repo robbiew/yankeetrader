@@ -2,13 +2,95 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
+## Current implementation and next work — checked 2026-11-02
+
+This section is the current planning baseline, checked against merged `main`
+through `de9ebf6` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
+[#69](https://github.com/robbiew/yankeetrader/pull/69),
+[#70](https://github.com/robbiew/yankeetrader/pull/70) and
+[#72](https://github.com/robbiew/yankeetrader/pull/72)). These are completed
+milestones, not open implementation tasks. The application is 0.1.0 and
+`internal/game/game.go` declares **save format 33** on the current port-parity branch. See the
+[playable feature overview](../README.md#playable-feature-overview),
+[save compatibility](../README.md#storage-and-recovery) and
+[validation evidence](../evidence/VALIDATION.md) for operating details and limits.
+
+### Implemented and available to test
+
+- Persistent players/ships, transactional saves, reconnects, generation/season
+  guards, daily economy/turn maintenance and bounded NPC/random-event phases.
+- Navigation, sensors, cloak/recharge and anti-cloak, danger scanners, manual and
+  automatic escape, disruption arrivals, avoids, path finding and autopilot.
+- Trading, Earth equipment and paid lottery, port acquisition/treasuries, planets,
+  banking/investment, teams/shared access, thrusters, forced landing and Wanderer
+  lifecycle/transport.
+- Ship/sector/planet combat, routed missiles, plasma, ground assault, death,
+  inventory/estate settlement and mines; bounded Mercenary and Xannor behavior,
+  HQ rewards/revenge and score/report publication.
+- Direct/team/public radio, the bounded multiline editor, recovered spy triggers
+  and shared login-local visibility, and the newspaper event families described
+  below. Remaining fine-grained parity questions are not missing whole features.
+- Genesis, public season history, private full-world export and administrative
+  reset tooling. The [sysop guide](../docs/SYSOP.md) covers backups, archive
+  extraction, validation, stopped-node restoration/migration and rollback.
+
+- Opt-in recovered port generation and startup reference pricing for new worlds,
+  with saved generation profile preserved by both season reset paths (save33).
+
+### Most recent completed milestones
+
+| Milestone | Implemented behavior and evidence |
+| --- | --- |
+| Season administration, save 30 / PR #68 | Private archive export with checksum; guarded administrative resets require a durable archive and exact positive season number. No player winner is invented. Existing history/settings and old-login invalidation are preserved; eight-sector worlds are supported. [Usage](../README.md#season-administration), [sysop procedures](../docs/SYSOP.md), [store implementation](../internal/store/season_admin.go). |
+| Extended newspaper events, save 31 / PR #69 | Registration replaces initial login news; successful team joins, general death/loot/port capture, sector combat, mines, missile/plasma results, bombardment and transport explosions publish typed public snapshots atomically. Private mail/seller notices stay private. [Inventory, retained DOS controls and intentional diagnostic exclusions](yt-newspaper/remaining/RECOVERY.md). |
+| Xannor turn bonus, save 32 / PR #70 | Direct Xannor fighter casualties award one turn per complete 200 casualties, bounded by room below 500 turns, including forced combat after refused bribery. Missile/plasma casualties and human/Mercenary defenses do not qualify. Receipts/news report actual credited turns; no rewards are backfilled. [DOS/native evidence and implemented policy](yt-xannor-turn-bonus/RECOVERY.md). |
+| README navigation / PR #72 | The root README now supplies a contents list, grouped usage and a playable feature overview; this plan is a research/implementation ledger rather than a replacement operator manual. |
+
+### Ordered genuine backlog
+
+1. **Continue DOS universe generation parity after the implemented port slice.**
+   New worlds can opt into recovered port rules and startup pricing using
+   `-dos-ports` (save33); existing worlds retain their economy. Names, rates,
+   coefficients, ten-day stock and reference pricing are implemented and checked
+   against fresh DOS controls. The reachable warp graph, finite unique placement
+   and Go RNG are deliberate modern adaptations. Next: recover graph/long-warp
+   generation, isolation repair and Earth shortcuts before extending this profile.
+   Exact QB seed sequence and MBF boundary arithmetic remain separate gaps.
+   [Port slice rules, controls and limitations](yt-port-generation/RECOVERY.md).
+2. **Resolve remaining rule, random-event and numeric parity questions in bounded
+   slices.** Exact QuickBASIC RNG/MBF rounding, uncovered command/encounter edges,
+   additional unconfirmed spy triggers and character-level editor wrapping/
+   backspace behavior remain evidence-driven work. Preserve intentional exploit
+   fixes; do not treat every historical deferral or removed DOS feature as a
+   required new mechanic. [Issues and intentional fixes](ISSUES_AND_EXPLOITS.md).
+3. **Original DOS save interoperability and remaining universe parity.** Modern
+   private JSON export/restoration is implemented; DOS `.DAT` import/export and
+   faithful original graph/universe generation are separate unsupported work.
+   Define identity, version and conversion policies before claiming compatibility.
+4. **Target-host and release acceptance.** Run real BBS gameplay/disconnect/time
+   expiry, restore/upgrade/reset drills and native Windows inherited-socket/crash
+   durability checks. Extend multi-day economy and default 300-port victory
+   acceptance and document balance departures. The concurrent Door32 campaign
+   validates simulated POSIX callers and a configured 20-port victory, not all
+   production environments. [Validation boundaries](../evidence/VALIDATION.md),
+   [campaign evidence](../evidence/MULTICALLER_DOOR_CAMPAIGN.md).
+
+The following dated/historical log records what was known and enabled at each
+milestone. Its phrases **“current,” “next,” “unimplemented,” “disabled,” and
+“remains open” refer to that milestone**, not the current backlog above. Save
+numbers record the schema introduced or used then; they are not current-version
+claims. Later implemented sections supersede earlier research-only deferrals.
+Keep the original evidence and limits intact when adding new milestones.
+
 ## Fidelity and intentional fixes
 
 Preserve the game's commands, setting, strategic systems, and recognizable mechanics. **Fix defects and known exploits in the modern version.** Original behavior is a research reference, not a requirement to retain exploits or broken lifecycle rules.
 
 Track reports, reproduction status, deliberate changes, and regression scenarios in [Issues and exploits](ISSUES_AND_EXPLOITS.md). Distinguish correctness fixes from balance changes requiring playtesting. Preserve archival binaries unchanged.
 
-## Research completed
+## Historical research and implementation log
+
+### Research completed at the initial planning baseline
 
 - Initializer and base data layout: [recovery](yt-init/RECOVERY.md), [DOS validation](dos-validation/RESULTS.md).
 - Core maintenance economics and NPC lifecycle: [recovery](yt-maint/RECOVERY.md). Remaining random/combat details are listed there.
@@ -21,7 +103,7 @@ Track reports, reproduction status, deliberate changes, and regression scenarios
 - Teams, captain roles/succession, membership, shared access, and asset retention: [recovery](yt-teams/RECOVERY.md). Twenty-one DOS sessions validate the four-member roster, permissions, rejoining after banishment, selective sharing, and post-departure ownership.
 - Player calculator formulas: [assessment](ytcalc/FINDINGS.md). Treat unverified spreadsheet formulas as hypotheses.
 
-## Original implementation stages (historical; current status below)
+### Original implementation stages (historical; current status above)
 
 1. Navigation/encounter research baseline established. Sensors/path/autopilot are implemented; [scanner/cloak/manual warp](yt-navigation/ENCOUNTERS.md), [disruption/mine damage/automatic escape](yt-navigation/HAZARDS.md), [reports/faction encounters](yt-navigation/UTILITIES.md), and [route-commerce/spies/radio](yt-navigation/COMMERCE_RADIO.md) now have controlled DOS evidence. Each report retains explicit untested boundaries. Full NPC daily behavior, exact MBF/RNG equivalence and combat/death/session implementation remain separate. Port acquisition is implemented below; targeted follow-up research should accompany the relevant feature rather than imply complete DOS parity.
 2. Completed: port acquisition, buyouts and personal treasury reporting/collection. [Nine targeted DOS sessions](yt-trade/OWNERSHIP.md) validate the buyout branch; Go tests cover atomic payouts, stale confirmations, overflow, replay and concurrent callers.
@@ -35,7 +117,7 @@ join/move/trade/equipment/save loop, planets and coordinated daily economic
 maintenance are implemented. Full maintenance, combat and release acceptance
 remain separate work.
 
-## Playable Go milestone — 2026-10-24
+### Playable Go milestone — 2026-10-24
 
 The standalone [modern Go door](../README.md) now implements persistent join/reconnect, adjacent movement, port docking, cargo trading, Earth equipment, automatic transactional saves and once-per-date port-economy/turn maintenance. Its macOS binary and a fresh 3,000-sector/1,000-port world are ready under `modern/`. GoDoors is used through the existing local checkout without changing that library.
 
@@ -43,7 +125,7 @@ Money is integer-based; Earth equipment cannot recycle owner revenue; maintenanc
 
 Validation covers race-enabled unit/session/storage tests, concurrent processes, killed lock-holder recovery, real PTY/GoDoors operation, Door32 local transport, reconnect and stable identity across alias changes. Windows/Linux cross-builds are distinct from native BBS/socket acceptance. See [validation evidence](../evidence/VALIDATION.md).
 
-## Navigation/scanning milestone — 2026-10-25
+### Navigation/scanning milestone — 2026-10-25
 
 `S`, free directed `PATH`, and confirmed per-hop `AUTO` are implemented. Thirteen
 original DOS sessions establish sensor contents, zero-turn scanning, directed
@@ -67,7 +149,7 @@ Ten more DOS sessions establish editor/routing rules and show DOS resetting the
 list on reconnect. Go deliberately persists it. Total navigation evidence is now
 23 DOS sessions and 46 compressed save snapshots.
 
-## DOS startup presentation — 2026-10-25
+### DOS startup presentation — 2026-10-25
 
 Live BBS follow-up, 2026-10-26: the user confirms that the Go door loads on the
 live BBS. This establishes successful loading; gameplay, disconnect, transport
@@ -79,7 +161,7 @@ Original captures supply cells/colors; dynamic fields use current game data.
 `-compact` retains the previous interface. See [startup recovery](yt-startup/RECOVERY.md)
 for exact comparisons, unsupported-system boundaries and save compatibility.
 
-## Port ownership milestone — 2026-10-26
+### Port ownership milestone — 2026-10-26
 
 `B`/`ACQUIRE`, computer `12`/`TREASURY`, and `$`/`COLLECT` now operate on
 persistent personal port ownership. DOS buyouts pay the old owner the purchase
@@ -88,7 +170,7 @@ revalidation and atomic capacity checks deliberately prevent ownership/money
 exploits. [Recovery and validation](yt-trade/OWNERSHIP.md). Next: team membership and shared
 assets (implemented in the following milestone).
 
-## Teams and shared planets milestone — 2026-10-26
+### Teams and shared planets milestone — 2026-10-26
 
 `T`/`TEAM` supports creation, joining, personal rosters, captain controls,
 resource locations, departure/removal and visiting-member succession. Shared
@@ -98,7 +180,7 @@ format advances to version 3 with explicit upgrade and rollback documentation.
 Sector fighter defenses, reinforcement and captain death remain in the combat
 stage. [Implementation and validation](yt-teams/IMPLEMENTATION.md).
 
-## Ship lifecycle foundation — 2026-10-26
+### Ship lifecycle foundation — 2026-10-26
 
 Saved generations now bind all live session reads/mutations, including pending
 prompts. Atomic death/replacement, authoritative target checks and explicit
@@ -108,7 +190,7 @@ worlds upgrade from earlier supported formats. Separate-process tests and actual
 PTY/GoDoors sessions verify the boundary. [Scope and deliberate policies](yt-ships/LIFECYCLE.md).
 Attacks, loot and combat ownership transfers remain disabled/unimplemented.
 
-## Ship-duel calculations and credit transfer — 2026-10-26
+### Ship-duel calculations and credit transfer — 2026-10-26
 
 The internal fighter/shield calculation now matches nine injected-RNG cases from
 the archived recovered model. A defeated ship's precomputed credit salvage is
@@ -117,7 +199,7 @@ stale and overflowing claims. Later settlement failure rolls back all damage,
 death and rewards. Full loot/estate formulas remain pending; attacks are still
 disabled. [Scope, evidence and remaining work](yt-ships/DUELS.md).
 
-## Loot and ownership-transfer research — 2026-10-27
+### Loot and ownership-transfer research — 2026-10-27
 
 Thirty-seven completed DOS sessions (74 snapshots) now establish salvage sampling,
 hold expansion and cargo selection, ordinary-port capture/treasuries, active
@@ -127,7 +209,7 @@ MBF, hazard and unsuccessful-probe boundaries are explicit. Eight REA observatio
 are checked against independently relocated original bytes. [Findings and replay](yt-ships/LOOT.md).
 Complete atomic inventory/estate settlement is implemented in the following milestone; player attacks remain disabled.
 
-## Atomic loot and estate settlement — 2026-10-27
+### Atomic loot and estate settlement — 2026-10-27
 
 The recovered sampler now awards and consumes holds, cash, weapons and cargo in
 one death transaction. Ordinary-port titles/treasuries, team/access revocation,
@@ -138,7 +220,7 @@ Model/conservation/concurrency/rollback tests and separate-process PTY validatio
 cover this backend milestone. [Scope and deliberate limits](yt-ships/SETTLEMENT.md).
 Next: attack eligibility/confirmation and aftermath integration before enabling combat.
 
-## Attack confirmation and transaction foundation — 2026-10-27
+### Attack confirmation and transaction foundation — 2026-10-27
 
 Internal attack candidates, generation-bound preparation and commit now connect
 zero-cloak duels with full inventory/estate settlement. Current location, life,
@@ -149,7 +231,7 @@ remain disabled. [Scope and validation](yt-ships/ATTACKS.md).
 Cloak persistence and session visibility are implemented below. Next: frontend confirmation
 and protected-spawn aftermath before enabling combat.
 
-## Cloak persistence and session visibility — 2026-10-27
+### Cloak persistence and session visibility — 2026-10-27
 
 Version 6 stores finite cloak energy in [0,1]. New/replacement ships start full;
 legacy ships preserve their formerly uncloaked behavior. Movement and docking
@@ -161,7 +243,7 @@ use the attacker's saved cloak advantage. [Scope and validation](yt-ships/CLOAK.
 Frontend attack confirmation and protected-Earth aftermath are implemented below; anti-cloak
 purchases, recharge and full combat acceptance remain separate.
 
-## Player-facing fighter attacks and protected Earth — 2026-10-27
+### Player-facing fighter attacks and protected Earth — 2026-10-27
 
 `ATTACK` (classic main `A`) lists visible local enemy ships, chooses committed
 fighters and requires a fresh separate Y. Queued/stacked approvals and command
@@ -174,7 +256,7 @@ direct fighter encounters are enabled. Schema remains version 6.
 [Scope, tests and real terminal evidence](yt-ships/PLAYER_ATTACKS.md).
 Non-Earth minefields/aftermath and chained-death attribution are implemented below. Missile attacks/retaliation, sector-defense combat and routed missile encounters are implemented below. Voluntary mine placement/recovery and native BBS combat acceptance remain open.
 
-## Non-Earth minefields, aftermath and chained deaths — 2026-10-27
+### Non-Earth minefields, aftermath and chained deaths — 2026-10-27
 
 Version 7 adds bounded, source-attributed mine layers. Non-Earth wrecks consume
 unsalvaged carried mines into the field; the attacker's damage, any chained death,
@@ -189,7 +271,7 @@ modern destination/death-ordering policies. [Scope and evidence](yt-ships/MINES.
 One-hop missile/retaliation integration is implemented below. Sector fighter deployment/combat is implemented below. Mine
 placement/withdrawal remains pending. Native BBS combat and long-running balance acceptance remain open.
 
-## Missile attacks and retaliation — 2026-10-27
+### Missile attacks and retaliation — 2026-10-27
 
 `MISSILE`/classic `!` now launches fresh-confirmed one-hop volleys at one visible
 enemy or a minefield. Mines intercept one missile each; cumulative ship damage,
@@ -205,7 +287,7 @@ Sector fighter deployment/interception/combat is implemented below. Next: wider/
 routes, planetary bombardment and mine placement. Scoreboard/complete maintenance
 and native BBS combat acceptance remain open.
 
-## Sector fighters — 2026-10-28
+### Sector fighters — 2026-10-28
 
 Personal final-balance deployment/recovery (`F`/`DEFEND`), friendly reinforcement
 (`REINFORCE`, team option 6), confirmed `BREACH` combat, human surrender and
@@ -218,7 +300,7 @@ Next: wider/multiple-ship missile routes and planetary bombardment, followed by
 mine placement/recovery. NPC behavior, communications, computer functions, Genesis,
 score generation/complete maintenance and native BBS combat acceptance remain open.
 
-## Planetary ground and production bombardment
+### Planetary ground and production bombardment
 
 `MISSILE` launches now reach hostile planetary ground and production after
 sector fighters/mines on routed courses. Own/team planets are skipped in transit
@@ -232,7 +314,7 @@ order. Recovered cached-ore eligibility is preserved.
 placement/recovery and native BBS combat acceptance remain open alongside the
 later systems listed above.
 
-## Production damage and destruction research
+### Production damage and destruction research
 
 Controlled DOS cases confirm zero-clamping of production categories, cargo caps
 at ten times resulting rates, and logical planet deletion when all rates reach
@@ -244,7 +326,7 @@ world version 9 to admit zero production categories and bind destruction plus
 landing-token revocation to the launch transaction. Cached-ore asymmetry is
 preserved for compatibility.
 
-## Wider missile routes and mixed encounters — research
+### Wider missile routes and mixed encounters — research
 
 Controlled DOS runs confirmed two- and three-hop attacks, directional outbound
 routing, return fire, intermediate fighter/mine interception, intermediate
@@ -254,7 +336,7 @@ Disconnected-route rejection and shortest-route selection are implemented as
 modern policies. The original game's tie behavior and black-hole handling remain
 unverified, as does native BBS acceptance.
 
-## Wider missile routes and mixed encounters — implementation
+### Wider missile routes and mixed encounters — implementation
 
 Missile launches follow a shortest directed warp route. Stored warp order
 breaks equal-length ties as a modern policy; the confirmation displays the
@@ -270,7 +352,7 @@ needed. [Rules, DOS evidence, and implementation policy](yt-missiles/WIDER_ROUTE
 Native BBS acceptance, DOS tie behavior, black-hole redirection and the later
 NPC/computer/communications/Genesis systems remain open.
 
-## Voluntary mine placement — research
+### Voluntary mine placement — research
 
 Eight controlled DOS sessions and four additional home-sector boundary sessions
 exercise the `D` placement command with saved before/after data. DOS requires
@@ -282,7 +364,7 @@ unverified. The manual documents dropping mines but no field pickup or
 withdrawal action; such a recovery feature is not established as original DOS
 behavior. [Rules, probes, snapshots and validation](yt-ships/MINE_PLACEMENT.md).
 
-## Voluntary mine placement — implementation
+### Voluntary mine placement — implementation
 
 `D`/`DROP [quantity]` places carried mines in the caller's current sector.
 Sectors 1–7 are protected, placement is free in turns, and a fresh exact `Y`
@@ -297,7 +379,7 @@ placement or reconnect. Leaving, dying, or receiving new wreck mines clears that
 grace; subsequent entry triggers the field normally. Field recovery remains
 unimplemented because no original DOS pickup behavior has been established.
 
-## Own sector fighter finder — implementation
+### Own sector fighter finder — implementation
 
 Computer option `11` lists only the caller's deployed sector fighter groups,
 ordered by sector, or reports that none were found. It is a read-only query and
@@ -305,7 +387,7 @@ does not expose other players' groups. This follows the DOS fixture showing two
 owned groups while omitting a nearby enemy group; broader report functions
 remain separate work.
 
-## Remote computer reports — implementation
+### Remote computer reports — implementation
 
 Computer `2`, `9`, and `13` now provide ordinary-port commerce reports, remote
 planet reports, and a personal planet finder. Target-sector defenses block
@@ -316,7 +398,7 @@ not change stored assets or issue docking/landing tokens. Remote Earth service
 reports, commerce-route forecasts, rankings and the other computer functions
 remain open. [Scope, recovered rules and validation](yt-navigation/REPORTS_IMPLEMENTATION.md).
 
-## Nearest-port and trade-route reports — implementation
+### Nearest-port and trade-route reports — implementation
 
 Computer `14`, `16`, and `17` now provide filtered nearest ordinary ports,
 reachable adjacent-port pairs, and current-port adjacent trade forecasts.
@@ -329,7 +411,7 @@ NPC behavior and Genesis remain separate milestones.
 [Recovered evidence, policies and validation](yt-navigation/TRADE_REPORTS_IMPLEMENTATION.md).
 
 
-## Direct radio and message history — implementation
+### Direct radio and message history — implementation
 
 Computer `5` sends one confirmed direct radio line; computer `6` displays the
 caller's sent and received history. Compact commands are `RADIO`, `MESSAGES`,
@@ -340,7 +422,7 @@ retained-history slice. Broadcast/team routing and the DOS multiline editor
 remain unimplemented, alongside rankings, spies, newspaper, NPCs and Genesis.
 [Evidence boundaries, storage policies and validation](yt-navigation/RADIO_IMPLEMENTATION.md).
 
-## Player/team rankings and score generation — research
+### Player/team rankings and score generation — research
 
 27 controlled DOS sessions establish scoreboard entry/OLD/updated behavior,
 asset weights, persisted score updates, deployed fighter attribution, summed
@@ -355,7 +437,7 @@ membership. Multiteam percentage semantics and nonzero NPC rankings remain
 unverified. [Findings, evidence and reproduction](yt-rankings/RECOVERY.md).
 
 
-## Player/team rankings — implementation
+### Player/team rankings — implementation
 
 Computer `4`, `RANK`, and `RANK OLD` now expose real supported asset totals,
 current team sums, authoritative port ownership and personal sector defenses.
@@ -368,7 +450,7 @@ version change is needed beyond the radio prerequisite's version 11.
 [Rules and validation](yt-rankings/IMPLEMENTATION.md).
 
 
-## Automatic score publication — implementation
+### Automatic score publication — implementation
 
 Successful daily maintenance and clean logout now publish all account score
 caches atomically using the same supported scoring rules as RANK. Maintenance
@@ -382,7 +464,7 @@ files, unsupported scanner/NPC scores and full NPC maintenance remain separate.
 [Timing, safeguards and validation](yt-rankings/IMPLEMENTATION.md).
 
 
-## Spies and intelligence reports — research
+### Spies and intelligence reports — research
 
 Original DOS hiring/reconnect evidence is extended with focused static search,
 report and movement recovery and controlled two-sector runtime probes. No Go
@@ -392,7 +474,7 @@ delivery, privacy and zero-warp policies. RNG parity and broader spy/NPC
 interactions remain bounded research. [Evidence and reproduction](yt-spies/RECOVERY.md).
 
 
-## Spies and intelligence reports — implementation
+### Spies and intelligence reports — implementation
 
 Historical initial slice: the [confirmed-trigger follow-up](yt-spies/triggers/IMPLEMENTATION.md)
 now removes fighter transfers, adds weapon/unavailable-query triggers and shares
@@ -411,7 +493,7 @@ and other DOS trigger branches remain outstanding.
 [Scope, adaptations and validation](yt-spies/IMPLEMENTATION.md).
 
 
-## Galactic newspaper and news history — research
+### Galactic newspaper and news history — research
 
 Thirteen original DOS processes establish computer 8's Today/Yesterday choice,
 invalid/lowercase input, empty/missing files, EOF handling, real login and
@@ -425,7 +507,7 @@ Other event producers and exact long-file/color behavior remain bounded research
 [Evidence, reproduction and implementation contract](yt-newspaper/RECOVERY.md).
 
 
-## Galactic newspaper and news history — implementation
+### Galactic newspaper and news history — implementation
 
 Computer 8 and NEWS [TODAY|YESTERDAY] now read a bounded public journal in five-entry
 pages. Successful authenticated logins and player-facing team creation publish
@@ -438,7 +520,7 @@ NPC behavior and Genesis remain separate milestones.
 [Implementation rules and validation](yt-newspaper/IMPLEMENTATION.md).
 
 
-## Mercenary offers and faction refusals — research
+### Mercenary offers and faction refusals — research
 
 Nineteen controlled DOS sessions and 38 saved snapshots establish offer parsing,
 blank cancellation versus insulting zero, accepted exact debit/recruitment,
@@ -451,7 +533,7 @@ confirmed transactional bribery using the existing defense/aftermath safeguards.
 [Evidence, boundaries and implementation contract](yt-mercenaries/RECOVERY.md).
 
 
-## Mercenary hostility and negotiation rules — follow-up research
+### Mercenary hostility and negotiation rules — follow-up research
 
 Twenty-four additional original DOS sessions establish same-login anger after
 Mercenary casualties, carryover between groups, exact reconnect reset and
@@ -463,7 +545,7 @@ probes are excluded. Exact MBF/RNG reproduction remains outside the modern
 integer-money contract. [Resolved rules and evidence](yt-mercenaries/HOSTILITY.md).
 
 
-## Mercenary bribery — implementation
+### Mercenary bribery — implementation
 
 BRIBE [credits] negotiates in the current sector; BRIBE <sector> <credits> permits
 confirmed adjacent entry. Classic encounter B preserves normal B port acquisition
@@ -476,7 +558,7 @@ below. Mercenary-base restoration is implemented below; full NPC ship combat rem
 a separate milestone.
 [Policies and validation](yt-mercenaries/IMPLEMENTATION.md).
 
-## Mercenary daily maintenance — hiring, routes, desertion and base restoration
+### Mercenary daily maintenance — hiring, routes, desertion and base restoration
 
 Recovered tax-funded hiring with both rounding stages, Earth exclusion, no saved
 budget carry, group placement and human-defense desertion. Forty-one completed
@@ -516,7 +598,7 @@ inferring home identity or creating assets during read-only loading.
 parity and additional faction lifecycle combinations remain research boundaries;
 live BBS acceptance is separate.
 
-## Xannor HQ and Xannoron lifecycle — implemented
+### Xannor HQ and Xannoron lifecycle — implemented
 
 Thirty-eight completed original-DOS runs, three bounded relocation stalls, two
 exact next-day world chains and eleven new REA byte observations establish
@@ -538,7 +620,7 @@ Mobile splitting/targeting and route-action research is now complete below.
 Full NPC ship combat, revenge/cloak searching and exact DOS RNG/MBF parity remain
 separate milestones.
 
-## Mobile Xannor groups — bounded implementation
+### Mobile Xannor groups — bounded implementation
 
 Forty-seven completed DOS controls, an exact next-day world chain and 22 REA byte
 observations establish nontruncated HQ split thresholds, four shrinking draws,
@@ -563,7 +645,7 @@ assault/destruction and remaining revenge/cloak search behavior follow it. Exact
 and live BBS acceptance remain separate validation boundaries.
 
 
-## Xannor NPC ship battles — research complete
+### Xannor NPC ship battles — research complete
 
 Forty-two completed original-DOS maintenance controls, an exact next-day world
 chain, changed private/public side files and eleven REA byte observations recover
@@ -582,7 +664,7 @@ remaining revenge/cloak searches, exact RNG/MBF parity and live BBS acceptance
 remain separate. [Evidence and implementation contract](yt-xannor-ships/RECOVERY.md).
 
 
-## Bounded Xannor ship battles — implemented
+### Bounded Xannor ship battles — implemented
 
 Mobile routes now use current living-player eligibility, separate cloak detection
 and recovered 5000/500/1 fighter-before-shield combat under the shared finite
@@ -603,7 +685,7 @@ revenge/cloak candidate-search behavior. Exact RNG/MBF parity and live BBS/nativ
 Windows acceptance remain separate.
 
 
-## Xannor planetary assault and destruction — research complete
+### Xannor planetary assault and destruction — research complete
 
 Seventy-one completed DOS maintenance controls, paired non-arrival/economic
 worlds, an exact next-day chain and twenty game/runtime REA observations recover
@@ -621,7 +703,7 @@ home ownership explicit; remaining revenge/cloak searching and native acceptance
 are separate. [Evidence, limits and implementation contract](yt-xannor-planets/RECOVERY.md).
 
 
-## Bounded Xannor planetary assaults — implemented
+### Bounded Xannor planetary assaults — implemented
 
 Mobile routes now resolve ground and production battles after mines/sector
 defenses and before ships, sharing the existing finite work budget. Surviving
@@ -643,7 +725,7 @@ Next: remaining Xannor revenge/cloak candidate-search research. Exact RNG/MBF
 parity and live BBS/native Windows acceptance remain separate.
 
 
-## Xannor revenge and cloak candidate-search — research complete
+### Xannor revenge and cloak candidate-search — research complete
 
 53 completed maintenance controls, three normally exited player-command controls,
 23 complete game/runtime REA observations and ten rehashed corruption controls
@@ -662,7 +744,7 @@ interference, exact ties/draw counts, concurrent cache divergence and malformed
 pointer coverage. [Evidence and implementation contract](yt-xannor-revenge/RECOVERY.md).
 
 
-## Bounded Xannor revenge and cloak candidate selection — implemented
+### Bounded Xannor revenge and cloak candidate selection — implemented
 
 Actual Xannor-owned HQ garrison defeats now queue one current player/generation
 from fighter or missile settlement. Last committed victory wins; death cancels;
@@ -683,7 +765,7 @@ deletion and their ordering). HQ victory rewards, other equipment and exact
 DOS RNG/rounding parity remain scoped work; native/live acceptance is separate.
 
 
-## Daily super-planet lottery and inactivity deletion — research complete
+### Daily super-planet lottery and inactivity deletion — research complete
 
 Forty-one normally completed DOS runs, exact world/auxiliary-file chains and
 18 complete native REA observations establish one-shot award gates, old-dead
@@ -706,7 +788,7 @@ choosing how retirement is represented. Remaining maintenance events, HQ credit
 rewards, equipment and exact DOS RNG/rounding remain separate scoped work.
 
 
-## Bounded super-planet awards and safe inactive-player retirement — implemented
+### Bounded super-planet awards and safe inactive-player retirement — implemented
 
 Save version 18 adds inactive identity records, successful-login activity dates
 and private typed system radio. Old dead accounts retire at the inclusive14-day
@@ -733,7 +815,7 @@ credit rewards, other equipment, exact RNG/rounding and native/live acceptance
 remain distinct work.
 
 
-## Port plague and planetary plague/civil war — research complete
+### Port plague and planetary plague/civil war — research complete
 
 Fifty-six normally completed original-DOS runs, exact same-day/next-day world
 and auxiliary chains and 18 complete REA byte observations establish post-growth
@@ -757,7 +839,7 @@ clock-induced overproduction. HQ credit rewards, other equipment, exact RNG/MBF
 parity and native/live acceptance remain separate work.
 
 
-## Bounded plague and civil-war events — implemented
+### Bounded plague and civil-war events — implemented
 
 Daily maintenance now runs one stable port/planet event pass after ordinary growth,
 with strict recovered gates, civil-war priority, conditional damage draws, capped
@@ -774,7 +856,7 @@ The subsequent HQ reward research and implementation below complete that
 follow-up. Remaining equipment/actions, complete random-event/RNG/MBF parity and
 native/live operational acceptance remain separate work.
 
-## Xannor HQ victory credit reward — research complete
+### Xannor HQ victory credit reward — research complete
 
 Thirty-eight completed original-DOS sessions, two exact world/auxiliary follow-ups
 and 12 REA byte observations establish fixed current-actor payment, caller gates,
@@ -794,7 +876,7 @@ change is included. Plague/civil-war implementation is tracked separately in
 The implementation contract above is historical; the implementation below now
 completes this follow-up.
 
-## Bounded Xannor HQ victory credit rewards — implemented
+### Bounded Xannor HQ victory credit rewards — implemented
 
 Supported fighter and missile victories now require a positive prior Xannor-owned
 force at the authoritative HQ, including an intercepted HQ along a missile route.
@@ -823,7 +905,7 @@ native/live operational acceptance. Plasma's recovered ownership defect and DOS
 floating-point credit rounding are intentionally not copied.
 
 
-## Danger scanner and manual emergency warp — research complete
+### Danger scanner and manual emergency warp — research complete
 
 Forty-one fresh completed DOS sessions and ten complete REA byte observations
 close purchase/persistence, warning queue, autopilot partial progress and hazardous
@@ -848,7 +930,7 @@ Next-day engine repair, lethal-arrival DOS controls, complete disruption behavio
 other equipment, RNG/MBF parity and native/live acceptance remain separate work.
 
 
-## Bounded danger scanner and manual emergency warp — implemented
+### Bounded danger scanner and manual emergency warp — implemented
 
 Earth item 5/compact EQUIP scanner 1 now installs one scanner for 250,000 exact
 credits, with duplicate/affordability/docking guards, saved receipts and actual
@@ -879,7 +961,7 @@ scanners, other equipment, full disruption/black-hole and original RNG/MBF parit
 next-day original-engine repair/lethal-arrival research and native/live acceptance.
 
 
-## Cloak-energy purchasing and anti-cloak activation — research complete
+### Cloak-energy purchasing and anti-cloak activation — research complete
 
 Thirty-seven completed original-DOS controls and four exact world/auxiliary
 reconnect chains establish recharge price, whole-point inputs, capacity and blank
@@ -907,7 +989,7 @@ Earth's paid lottery, Genesis, thrusters/forced landing and native/live acceptan
 remain separate work.
 
 
-## Bounded cloak-energy purchasing and login-local anti-cloak — implemented
+### Bounded cloak-energy purchasing and login-local anti-cloak — implemented
 
 Earth item 1/compact EQUIP cloak now buys whole points at 1,000 exact credits, with
 classic affordable/missing blank defaults, capacity/docking/deadline guards and
@@ -932,7 +1014,7 @@ lottery, Genesis, planetary thrusters/forced landing, broader communication/inte
 full random-event/RNG/MBF fidelity and native/live acceptance.
 
 
-## Earth's paid Pick-6 lottery — research complete
+### Earth's paid Pick-6 lottery — research complete
 
 Forty-nine completed original-DOS controls and twelve REA byte observations
 establish five-credit admission, exactly six digits, retry behavior, configured
@@ -960,7 +1042,7 @@ parity, interrupted/concurrent DOS entry, year rollover, Genesis, planetary
 thrusters/forced landing and native/live acceptance remain separate work.
 
 
-## Bounded paid Earth lottery — implemented
+### Bounded paid Earth lottery — implemented
 
 Earth item 4 and compact LOTTERY now use six-digit tickets, a five-credit fee,
 multiset matching and recovered prize tiers. Fresh literal confirmation clears
@@ -983,7 +1065,7 @@ and season-reset implementation, planetary thrusters/forced landing, broader
 communication/intel, full original RNG/MBF fidelity and native/live acceptance.
 
 
-## Genesis endgame and safe season-reset contract — research follow-up
+### Genesis endgame and safe season-reset contract — research follow-up
 
 Twenty-four fresh returned DOS controls (thirteen resets, eight refusals or
 cancellations, two deliberate faults and one maintenance run), 48 world snapshots,
@@ -1014,7 +1096,7 @@ implementation; native/live acceptance and full DOS RNG/numeric fidelity remain
 separate.
 
 
-## Bounded Genesis endgame and atomic season reset — implemented
+### Bounded Genesis endgame and atomic season reset — implemented
 
 [Implementation](yt-genesis/IMPLEMENTATION.md) completes the bounded contract:
 actual non-Earth title recount, explicit 0/20–300 configuration (default 300),
@@ -1030,10 +1112,11 @@ concurrency/process interruption, exact confirmations and terminal coverage.
 Remaining candidates: planetary thrusters/forced landing research, native/live
 acceptance, full universe generation and numeric/RNG parity, unsupported
 communication/intelligence and remaining random events. Explicit season archive
-export/admin reset tooling remains unimplemented; Wanderer lifecycle is implemented below.
+export/admin reset tooling was deferred at this milestone and is now implemented
+(save 30; see the current baseline above); Wanderer lifecycle is implemented below.
 
 
-## Planetary thrusters and player forced landing — bounded research complete
+### Planetary thrusters and player forced landing — bounded research complete
 
 [Follow-up research and contract](yt-planet-mobility/RECOVERY.md) retains 55
 normally returned DOS controls, 110 world snapshots, two exact parent/auxiliary
@@ -1064,7 +1147,7 @@ faults and both terminal interfaces. Historical unsupported Wanderer/disruption 
 full original RNG/MBF parity and native/live acceptance remain separate.
 
 
-## Planetary thrusters and forced landing — implementation complete
+### Planetary thrusters and forced landing — implementation complete
 
 [Implementation contract](yt-planet-mobility/IMPLEMENTATION.md): save24 adds a
 validated planet-generation allocator, deterministic older-save migration and
@@ -1082,7 +1165,7 @@ Historical boundary (targeted controls completed below): original
 RNG/MBF fidelity, broader long-running balance, live BBS and native Windows durability.
 
 
-## The Wanderer lifecycle and transport — bounded research complete
+### The Wanderer lifecycle and transport — bounded research complete
 
 [Recovery and implementation contract](yt-wanderer/RECOVERY.md) retains 57
 normally returned DOS controls, 114 world snapshots, 9 exact parent/auxiliary chains,
@@ -1114,7 +1197,7 @@ gameplay are unchanged. Historical scope: targeted disruption transport is recov
 native/live acceptance remain open.
 
 
-## The Wanderer lifecycle and special transport — implementation complete
+### The Wanderer lifecycle and special transport — implementation complete
 
 [Save25 implementation](yt-wanderer/IMPLEMENTATION.md) adds explicit unique mobile
 identity in reserved slot 1, 100-planet capacity and asset-preserving older-save
@@ -1138,7 +1221,7 @@ Targeted disruption controls are completed below. Remaining: disruption gameplay
 season archive export/admin reset tooling and native/live acceptance.
 
 
-## Disruption and black-hole arrival — bounded research complete
+### Disruption and black-hole arrival — bounded research complete
 
 [Recovery](yt-disruption/RECOVERY.md), [native observations](yt-disruption/NATIVE.md)
 and [candidate implementation contract](yt-disruption/CONTRACT.md) retain 61
@@ -1170,7 +1253,7 @@ save25 fields. Historical remaining work (arrival implementation completed below
 disruption combat/spy branches, balance and native/live acceptance.
 
 
-## Bounded disruption arrivals — implementation complete
+### Bounded disruption arrivals — implementation complete
 
 [Implementation](yt-disruption/IMPLEMENTATION.md) binds two independently sampled,
 possibly duplicate interior holes to each live ship/season login. Save25 remains
@@ -1196,7 +1279,7 @@ broader balance, season archive export/admin reset tooling and native/live BBS
 acceptance. Consult evidence/VALIDATION.md for checks actually executed.
 
 
-## Plasma launch, routing and disruption research (2026-10-31)
+### Plasma launch, routing and disruption research (2026-10-31)
 
 Completed the [research slice](yt-plasma/RECOVERY.md): 62 normally returned DOS
 controls, 124 full world snapshots, two exact world/auxiliary reload chains,
@@ -1227,7 +1310,7 @@ friendship/cloak/self filters or the DOS HQ owner-check exploit. Other spy/disru
 remain separate.
 
 
-## Bounded plasma launch and atomic aftermath (2026-10-31)
+### Bounded plasma launch and atomic aftermath (2026-10-31)
 
 Implemented the [researched plasma contract](yt-plasma/IMPLEMENTATION.md) on a
 separate feature branch. Both interfaces now expose `PLASMA`/`+` with fresh sealed
@@ -1263,7 +1346,7 @@ live BBS acceptance and native Windows crash durability. Those are separate from
 this completed bounded firing path.
 
 
-## Mercenary plasma acquisition — removed sales backlog correction (2026-10-31)
+### Mercenary plasma acquisition — removed sales backlog correction (2026-10-31)
 
 The [versioned acquisition research](yt-mercenary-plasma/RECOVERY.md) closes the
 previous Mercenary plasma-sales item as obsolete. DOS 3.3 added a Mother Ship at
@@ -1279,7 +1362,7 @@ Remaining candidates are broader spy triggers/notifications,
 multiline editing, remaining newspaper events, original
 universe/save parity, balance and native/live acceptance.
 
-## Ship, cloak and disruption spy intelligence
+### Ship, cloak and disruption spy intelligence
 
 Historical detection slice: the [trigger/cache follow-up](yt-spies/triggers/IMPLEMENTATION.md)
 now shares detections with sensors and attack eligibility, without saved cloak
@@ -1293,7 +1376,7 @@ isolation and unchanged saved cloak/combat visibility. World version 26 stays
 unchanged. Original RNG odds/ties, target notification and broader triggers
 remain open. [Evidence and bounded policies](yt-spies/intelligence/IMPLEMENTATION.md).
 
-## Team radio
+### Team radio
 
 Nine completed DOS controls establish roster fanout, self-copy, independent
 read flags and recipient-at-send membership semantics. `RADIO TEAM` and computer
@@ -1305,7 +1388,7 @@ drafts, concurrent retry, failures and compact/classic terminal flows.
 multiline editing and native BBS acceptance remain open.
 
 
-## Broadcast public records and shared lifetime — extended research
+### Broadcast public records and shared lifetime — extended research
 
 The [extended radio research](yt-broadcast-radio/extended/RECOVERY.md) supplements
 the separate PR #58 private-copy implementation. Original ALL uses a global
@@ -1321,7 +1404,7 @@ archive. Private/team mail must remain private, publication and acknowledgements
 must be atomic and bounded, and any new persisted scope needs deliberate
 migration. No Go gameplay or save26 change is included in this research.
 
-## Bounded broadcast radio
+### Bounded broadcast radio
 
 Six completed DOS controls establish the shared ALL record and 30/28/26 read
 transitions, including repeat-reader delivery. Go now offers explicit
@@ -1333,7 +1416,7 @@ Multiline editing, complete original counter lifetime and native BBS acceptance
 remain separate.
 
 
-## Broadcast newspaper publication — implemented
+### Broadcast newspaper publication — implemented
 
 ALL now requires an explicit public-text/alias preview before fresh Send. One
 bounded typed public event and all private copies save together; private/team
@@ -1346,7 +1429,7 @@ The shared DOS delivery counter, multiline editor, live BBS and native Windows
 durability remain separate. Earlier save26/research-only boundaries above are
 historical and superseded only for this public-publication slice.
 
-## Bounded multiline radio editor
+### Bounded multiline radio editor
 
 The opt-in editor now supports List, Continue, confirmed first-match Edit, Send
 and confirmed Abort for up to 20 lines. Direct, team and ALL documents commit
@@ -1355,7 +1438,7 @@ character-level wrapping/backspace parity and live BBS acceptance remain open.
 See [native controls and implementation](yt-radio-editor/IMPLEMENTATION.md).
 
 
-## Spy triggers, observer visibility and target notifications — implemented
+### Spy triggers, observer visibility and target notifications — implemented
 
 The 36-control original-DOS matrix and three exact target-relogin auxiliary chains
 recover command gates and per-spy last-report suppression. Native evidence adds
@@ -1378,7 +1461,7 @@ reject altered, cancelled and replayed quotes. Save version stays 27. See the
 See [recovery and limits](yt-spies/triggers/RECOVERY.md).
 
 
-## Planet-creation newspaper and private port-sale notices — researched
+### Planet-creation newspaper and private port-sale notices — researched
 
 The [34-control follow-up](yt-newspaper/events/RECOVERY.md) recovers one public
 planet-creation line after accepted creation, with no additional turn charge and
@@ -1400,15 +1483,16 @@ unsupported Earth ownership and naming safety policies unless deliberately
 aligned separately. Do not invent a public port purchase announcement or backfill
 old actions. [Implementation contract](yt-newspaper/events/CONTRACT.md).
 
-## Atomic public planet-creation news
+### Atomic public planet-creation news
 
 Public ordinary creation is implemented in save28: accepted name/alias snapshots
 save with the planet, sector reference and debit, with deadline/session guards and
 rollback/committed-warning coverage. Earlier creation deferrals above are historical.
-Private former-owner sale notices remain unimplemented; public acquisition news
+Private former-owner sale notices were deferred at this milestone and are now
+implemented in the following section; public acquisition news
 is not a recovered DOS feature. [Rules and validation](yt-newspaper/events/IMPLEMENTATION.md).
 
-## Atomic private port-sale notices
+### Atomic private port-sale notices
 
 Ordinary owned-port buyouts now save one typed private former-owner notice with
 settlement and ownership. Asking price is distinct from the price-plus-treasury

@@ -1,0 +1,35 @@
+{
+  "name": "amplified-reload",
+  "parent": "amplified-midnight",
+  "command": "\r~~~~P;0;0;0",
+  "patches": [],
+  "coefficient": -10000,
+  "time": "00:10:00",
+  "program_returned": true,
+  "recipe": "startup-reference-pricing-v1",
+  "baseline_sha256": "75b6cd8a0d6acab0ca0c82f524ca06974b290e691a36aeadc982092f828882ef",
+  "applied_patches": [],
+  "date": "10/24/2026",
+  "timeout_seconds": 150,
+  "timed_out": false,
+  "complete": true,
+  "binaries": {
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "KEYFEED.COM": "06dd2b9fcb91502185f6f4a2123ad7fdac144f47f5170df203760b86db127596"
+  },
+  "files": {
+    "DOSDATE.LOG": "848e0cc8dcc0bfcd8e15f2f81cbb56095116cd2ca15e74c08ce21027fb9ca2d1",
+    "DOSTIME.LOG": "28012852978f2efbcd48fd1318f9af169247e5e5a71ebc23205fbb036facfa99",
+    "KEYS.TXT": "de81fc8750ff07ea0c94ccd7aa2dd900f2051472c8fbd14ed60138c501491fe6",
+    "RETURN.LOG": "9d09760cff024e6e3280a95740892322c98ef870cbf70832a87a8633e7324c8c",
+    "after.dat.gz": "d0234865d3d5dd0be868a098aaee69d74f0b63a953965ce1ca5e4d8e68d94176",
+    "before.dat.gz": "188b635ced2792cc06118e799cf197720c45a49a4e64e6ff8632ed6c8bad6602",
+    "dosbox.log": "63a29744d5422573785c35a809ff2b67f4a5b01bd4fcac59d567f42a25dee4cf",
+    "game.log.gz": "a636294cb4822dd78527bd6b254d34549970aff41278fadfb25f601eda0f52fc",
+    "side-before.json.gz": "6bd3ba0c694137eddf9e2ba0606db047d02baecf6108c19706c6192d9ce45de4",
+    "sidefiles.json.gz": "57c54ec8cf70161e57bc9924f3bdea0ab610eae64edcec3f04bf4c6858a68bea",
+    "transcript.txt": "34eea6e821c2e66bd54310df2ab24d24644740aef79c31a8886774442fff4310"
+  }
+}

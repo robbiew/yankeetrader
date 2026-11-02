@@ -41,7 +41,7 @@ def main():
         reset_archive = root / 'reset.json'
         assert 'reset committed' in run('-admin-reset', '1', '-season-export', str(reset_archive), '-seed', '77')
         saved = json.loads(world.read_bytes())
-        assert saved['Version'] == 32 and saved['Season'] == 2
+        assert saved['Version'] == 33 and saved['Season'] == 2
         assert saved['Players'] == {} and saved['GenesisPorts'] == 20
         result = saved['SeasonResults'][0]
         assert result['Administrative'] and not result['Winner'] and result['Player'] == 0

@@ -179,9 +179,24 @@ before retrying. A storage durability warning that says the update committed mea
 the new world is already visible: do not repeat the reset. Preserve both files,
 check storage health, and validate the active world before reopening the door.
 
+## Choosing the port economy
+
+For a separate new world, `./bin/yt -data dos-economy -init -dos-ports -seed 36`
+enables recovered DOS port names, production, coefficients and price references.
+Omit the flag for the established uniform-port economy. The new profile is saved
+as `PortGeneration: "dos"`; Genesis and administrative resets retain it. Neither
+login nor maintenance accepts the flag, and upgrading an old save does not
+regenerate its economy. Use a separate data directory to compare profiles.
+
+Full-world exports, stopped raw backups and extracted archive restores retain the
+profile with all port records. Restore the whole validated world using the
+procedures above; do not copy individual port records or edit a profile to convert
+an active economy. DOS `.DAT` import/export remains unsupported. See the
+[recovered rules and deliberate differences](../research/yt-port-generation/RECOVERY.md).
+
 ## Upgrade and rollback
 
-Current schema is 32. Supported schemas 1–31 upgrade in memory and are persisted
+Current schema is 33. Supported schemas 1–32 upgrade in memory and are persisted
 on the next successful write. Export loads/upgrades/validates without rewriting
 the source; its snapshot uses the current schema. Retain a stopped raw backup
 and matching old binary before upgrading, because an upgraded export cannot be

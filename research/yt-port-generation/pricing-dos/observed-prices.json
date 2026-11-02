@@ -1,0 +1,65 @@
+[
+  {
+    "name": "zero-midnight",
+    "coefficient": 0,
+    "prices": [
+      20,
+      29,
+      41
+    ]
+  },
+  {
+    "name": "normal-midnight",
+    "coefficient": -50,
+    "prices": [
+      30,
+      44,
+      62
+    ]
+  },
+  {
+    "name": "amplified-midnight",
+    "coefficient": -10000,
+    "prices": [
+      2025,
+      2960,
+      4162
+    ]
+  },
+  {
+    "name": "amplified-noon",
+    "coefficient": -10000,
+    "prices": [
+      2025,
+      2960,
+      4162
+    ]
+  },
+  {
+    "name": "amplified-late",
+    "coefficient": -10000,
+    "prices": [
+      2025,
+      2960,
+      4162
+    ]
+  },
+  {
+    "name": "amplified-other-actor",
+    "coefficient": -10000,
+    "prices": [
+      2025,
+      2960,
+      4162
+    ]
+  },
+  {
+    "name": "amplified-reload",
+    "coefficient": -10000,
+    "prices": [
+      2025,
+      2960,
+      4162
+    ]
+  }
+]

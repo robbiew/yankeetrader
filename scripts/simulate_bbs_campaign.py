@@ -110,9 +110,15 @@ class Caller:
             if not self.read():raise AssertionError(f'{self.alias} EOF before {pattern.pattern!r}: {segment[-1800:]!r}')
     def login(self):
         pattern=MAIN+rb'|\[ Press any Key \]|-\+> |Is this OK \(Y/\[N\]\)\? |Do you want instructions \(Y/N\) \[N\]\? '
+        output=[]
         for _ in range(12):
-            out=self.expect(pattern)
-            if re.search(MAIN,out.encode()):return
+            out=self.expect(pattern);output.append(out)
+            if re.search(MAIN,out.encode()):
+                # Reconnect can commit a black-hole arrival before the first
+                # command. Retain its receipt and validate it against the save
+                # through the same guarded exhaustion path as movement.
+                self.campaign.record(self,'login',''.join(output))
+                return
             if out.endswith('[ Press any Key ]'):self.send(b' ')
             elif out.endswith('-+> '):self.send(self.alias)
             elif out.endswith('Is this OK (Y/[N])? '):self.send('Y')

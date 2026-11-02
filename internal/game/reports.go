@@ -35,7 +35,7 @@ func (w *World) RemotePortReport(id, sector int, now time.Time) (PortReport, err
 	update(&projected, now)
 	report := PortReport{Available: true, Name: projected.Name, Supply: projected.Supply, Cargo: p.Cargo}
 	for i := range Goods {
-		report.Prices[i] = Price(&projected, i)
+		report.Prices[i] = w.portPrice(&projected, i)
 		report.Selling[i] = projected.Coefficient[i] > 0
 	}
 	return report, nil

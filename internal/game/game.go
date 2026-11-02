@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 32
+const WorldVersion = 33
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -68,6 +68,7 @@ type World struct {
 	arrival              *arrivalContext // Bound-login runtime only; never serialized.
 	NextPlanetGeneration uint64
 	Season               uint64
+	PortGeneration       string         `json:",omitempty"`
 	GenerationSeed       *int64         `json:",omitempty"`
 	GenesisPorts         *int           `json:",omitempty"`
 	SeasonResults        []SeasonResult `json:",omitempty"`
@@ -90,7 +91,17 @@ type World struct {
 	Teams           map[int]*Team
 }
 
+// New retains the established uniform-port economy for existing callers.
 func New(now time.Time, seed int64, count int) (*World, error) {
+	return NewWithPortGeneration(now, seed, count, "")
+}
+
+// NewWithPortGeneration selects recovered DOS port rules without changing the
+// modern, fully reachable warp graph. Empty profile preserves the legacy economy.
+func NewWithPortGeneration(now time.Time, seed int64, count int, profile string) (*World, error) {
+	if profile != "" && profile != "dos" {
+		return nil, errors.New("unknown port generation profile")
+	}
 	if count < 8 || count > 3000 {
 		return nil, errors.New("sector count must be between 8 and 3000")
 	}
@@ -120,6 +131,12 @@ func New(now time.Time, seed int64, count int) (*World, error) {
 		}
 	}
 	w.Ports[1].Name = "Earth"
+	if profile == "dos" {
+		if err := generateDOSPorts(w, prng.New(prng.NewSource(seed))); err != nil {
+			return nil, err
+		}
+	}
+	w.PortGeneration = profile
 	return w, w.Validate()
 }
 func contains(xs []int, n int) bool {
@@ -143,6 +160,9 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
+	if w.PortGeneration != "" && w.PortGeneration != "dos" {
+		return errors.New("unknown port generation profile")
+	}
 	if w.Players == nil || w.Sectors == nil || w.Ports == nil || w.Planets == nil || w.Version != WorldVersion || len(w.Sectors) < 8 || len(w.Players) > MaxPlayerIdentities || w.activePlayers() > MaxActivePlayers || w.NextPlayer < 1 || w.NextPlayer > MaxPlayerIdentities+1 || len(w.Sectors) > 3000 || w.Sectors[1] == nil || w.Ports[1] == nil || w.Ports[1].Sector != 1 || w.Created.IsZero() {
 		return errors.New("invalid world header")
 	}
@@ -371,7 +391,17 @@ func update(p *Port, now time.Time) {
 }
 func Price(p *Port, i int) int64 {
 	base := [3]float64{20, 30, 40}
-	return int64(math.Max(1, math.Floor(base[i]*(1-p.Coefficient[i]*p.Supply[i]/(p.Production[i]*1000))+.5)))
+	return priceWithReference(p, i, base[i])
+}
+func priceWithReference(p *Port, i int, reference float64) int64 {
+	return int64(math.Max(1, math.Floor(reference*(1-p.Coefficient[i]*p.Supply[i]/(p.Production[i]*1000))+.5)))
+}
+
+func (w *World) portPrice(p *Port, i int) int64 {
+	if w.PortGeneration == "dos" {
+		return priceWithReference(p, i, dosReferencePrices[i])
+	}
+	return Price(p, i)
 }
 func (w *World) Dock(id int, now time.Time) error {
 	p, e := w.player(id)
@@ -396,7 +426,7 @@ func (w *World) Dock(id int, now time.Time) error {
 	p.DockToken = hex.EncodeToString(token)
 	p.DockUntil = now.Add(5 * time.Minute).UTC()
 	for i := 0; i < 3; i++ {
-		p.DockPrices[i] = Price(port, i)
+		p.DockPrices[i] = w.portPrice(port, i)
 	}
 	return nil
 }

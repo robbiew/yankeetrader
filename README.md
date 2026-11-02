@@ -17,6 +17,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -42,6 +43,19 @@ Click any screenshot to view it at full size.
 </table>
 
 ## Status
+
+**DOS port generation and pricing are available to test in new worlds:** initialize
+with `-dos-ports` to use recovered names, production, trade coefficients and startup
+price references. Initial stocks materialize ten production days. The setting is
+saved and survives Genesis and administrative resets; existing worlds keep their
+ports and fixed reference prices. The warp graph and seeded Go random sequence
+remain modern, and duplicate/orphaned DOS ports are deliberately prevented.
+Save **33** adds the generation profile; older saves upgrade without rerolling.
+[Recovered rules, DOS controls and limits](research/yt-port-generation/RECOVERY.md).
+The evidence verifier checks every sector-to-port link before and after maintenance,
+including missing/fractional links; corruption controls use the independent later-clock
+world so repeat-run equality cannot mask missing semantic checks.
+
 
 **Xannor direct-combat turn bonuses are available to test:** confirmed sector-fighter
 combat credits one turn per complete 200 Xannor casualties, within the current
@@ -95,12 +109,12 @@ advance this login's spies. Fighter transfers and free information reads do not.
 Spy, sensor and anti-cloak detections share a private login cache used for attack
 eligibility; saved target cloak stays unchanged. Action saves publish reports and
 new grants together, with receipts preserving committed storage warnings.
-This spy milestone introduced no schema change; the current build uses save **29**. [Rules and validation](research/yt-spies/triggers/IMPLEMENTATION.md).
+This spy milestone introduced no schema change; that milestone used save **29**. [Rules and validation](research/yt-spies/triggers/IMPLEMENTATION.md).
 
 Broadcast newspaper publication is now available in-game to test. `RADIO ALL`
 (or classic computer option 5) previews the public text and sender alias, then
 saves one newspaper entry with all private copies. Abort publishes neither.
-Direct/team mail stays private. Current save version **29** upgrades older supported saves
+Direct/team mail stays private. Save version **29** introduced this upgrade for older supported saves
 without publishing historical mail; back up the stopped door and update all nodes.
 [Publication rules and validation](research/yt-broadcast-radio/IMPLEMENTATION.md).
 
@@ -134,7 +148,9 @@ expiry. Pending old callers were rejected even after player IDs and initial ship
 generations were recreated. The campaign found and fixed a deadline-input issue:
 expired reads now report session expiry and reject late input. Forced termination
 after carrier loss fails the campaign. A committed black-hole arrival that consumes
-all turns can restart the entire disposable world, bounded to three attempts with
+all turns during movement or login/reconnect can restart the entire disposable
+world only when its saved balance and final sector match the committed receipt.
+Startup output is retained with the action log. Retries are bounded to three attempts with
 all evidence retained; timeouts, invariant failures and abnormal exits still fail.
 Per-node stderr is captured separately. The exact Linux PTY hangup diagnostic
 `write /dev/stdout: input/output error` is accepted only after deliberate carrier
@@ -278,13 +294,26 @@ run only the local-play command with the same name and data directory.
 
 For a separate new world, run `./bin/yt -data another-world -init`. Initialization refuses to overwrite an existing world; skip that step if you already have one. `-local` is for trusted local play; do not give remote callers control over that flag or the data directory. The data files live in `data`, separately from the DOS game. Every successful action saves before its result is displayed. Quitting or disconnecting never restores spent resources or turns.
 
+To try the recovered economy in a separate new world:
+
+```sh
+./bin/yt -data dos-economy -init -dos-ports -seed 36
+./bin/yt -data dos-economy -local Player
+```
+
+`-dos-ports` is initialization-only. Port locations, names, prices and acquisition
+costs differ from the default world; use the commerce report before trading.
+Existing worlds cannot be switched by passing this flag on login or maintenance.
+Both season reset paths retain the saved choice. This is port-rule parity work,
+not a claim of exact DOS universe or `.DAT` save compatibility.
+
 Try this route to buy a fighter, buy five ore at sector 2, and sell it at sector 3:
 
 ```text
 P; EQUIP fighters 1; M 2; P; BUY ore 5; M 3; P; SELL ore 5; I; Q
 ```
 
-The expected starting-player result is 1,005 credits, 26 fighters, no cargo, sector 3, and 495 turns. Terminal commands are case-insensitive and can be stacked with semicolons.
+For the default uniform-port world (without `-dos-ports`), the expected starting-player result is 1,005 credits, 26 fighters, no cargo, sector 3, and 495 turns. Terminal commands are case-insensitive and can be stacked with semicolons.
 
 | Command | Action |
 |---|---|
@@ -500,7 +529,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **32**, adding the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-31 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Older binaries cannot read version 32.
+**Save rollback compatibility:** This build uses world version **33**, adding the opt-in DOS port generation/pricing profile; version 32 added the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-32 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Pre-33 saves claiming a port generation profile are rejected. Older binaries cannot read version 33. Existing ports, prices and supplies are not rerolled by upgrade.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -572,7 +601,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-31 worlds upgrade to version 32 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-32 worlds upgrade to version 33 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 

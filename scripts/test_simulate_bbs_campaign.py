@@ -78,6 +78,32 @@ class ExhaustionTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'invalid money'):
             c.record(Mock(uid=101,index=1),'m 3',RECEIPT)
 
+    def test_login_checks_committed_arrival_before_returning_to_planner(self):
+        for prompt in ('Main Command (?=Help)? ', 'Sector 7 | 1005 credits | 0 turns > '):
+            for paged in (False, True):
+                with self.subTest(prompt=prompt,paged=paged):
+                    c=self.campaign()
+                    caller=Mock(uid=101,index=1,alias='Atlas',campaign=c)
+                    caller.expect.side_effect=([RECEIPT+'[ Press any Key ]',prompt] if paged else [RECEIPT+prompt])
+                    with self.assertRaises(CampaignExhausted):Caller.login(caller)
+                    self.assertEqual(c.actions[-1]['command'],'login')
+                    self.assertIn(RECEIPT,c.actions[-1]['output'])
+
+    def test_login_receipt_requires_matching_authoritative_world(self):
+        for turns,sector in ((1,7),(0,8)):
+            with self.subTest(turns=turns,sector=sector):
+                caller=Mock(uid=101,index=1,alias='Atlas',campaign=self.campaign(turns,sector))
+                caller.expect.return_value=RECEIPT+'Sector 7 | 1005 credits | 0 turns > '
+                with self.assertRaises(AssertionError):Caller.login(caller)
+
+    def test_normal_login_does_not_classify_unproven_zero_turns_as_exhaustion(self):
+        c=self.campaign()
+        caller=Mock(uid=101,index=1,alias='Atlas',campaign=c,hazards=set())
+        caller.expect.return_value='Sector 7 | 1005 credits | 0 turns > '
+        Caller.login(caller)
+        with self.assertRaisesRegex(AssertionError,'legitimate daily turn limit'):
+            Campaign.goto(c,caller,8)
+
 
 class RetryTests(unittest.TestCase):
     def setup_campaigns(self,root,results,report_failure=False):

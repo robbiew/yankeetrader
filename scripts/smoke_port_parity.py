@@ -55,7 +55,7 @@ def main():
             p.update(Credits=2000000 if earth else 1000000,Holds=10 if name=='holds-buy' else 1000,Turns=500,Fighters=25 if earth else 10000,Shields=10000,Sector=1 if earth else 2,Cargo=[100 if name=='sell' else 0,0,0])
             port=world['Ports']['2'];port['Name']='Test Port'
             # Match the captured quote amounts using supported Go coefficients;
-            # the DOS randomized reference-price RNG is a separate known gap.
+            # this fixture exercises the default economy, not the opt-in DOS profile.
             port.update(Coefficient=[-50 if name=='sell' else 50,-46.6666666667,-55],Supply=[1000,1000,1000],Production=[100,100,100],Updated=datetime.datetime.now(datetime.timezone.utc).isoformat())
             if name in ['owned','self']:
                 if name=='owned':
