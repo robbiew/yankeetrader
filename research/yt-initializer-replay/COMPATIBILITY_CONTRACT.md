@@ -35,7 +35,8 @@ yt -data NEW-DIRECTORY -init -generation-profile qb36-v1 \
   silently mask a caller's invalid state merely because `qbrng.New` can mask it.
   Zero is a valid raw state.
 - Require an explicit source date. Version 1 admits only the replay model's
-  bounded 2026–2028 range and validates a real Gregorian calendar date. The
+  bounded 2026–2028 range and validates a real Gregorian calendar date. Reject
+  January 10 until its source port-watermark zero residue is verified. The
   evidence directly covers selected dates, not every admitted date; any broader
   exactness claim needs additional tests/evidence. Consider tightening admission
   if implementation finds an unverified arithmetic boundary.
@@ -161,7 +162,8 @@ restore/import or new automatic archive importer is included.
    headless initialization and real terminal navigation/trading under the new
    profile. Keep default and existing DOS-rule CLI regressions green.
 
-The first implementation slice is the pure Go source generator and portable
-fixtures. This contract completes design work only. It does not authorize
+The first source-generator slice is now [implemented in Go with portable fixtures](GO_IMPLEMENTATION.md).
+The profile/projection, CLI and save/reset sections of this contract remain
+future implementation work. This document defines their design only. It does not authorize
 claiming any proposed command or save field as shipped, and it does not repeat
 already completed native initializer recovery as a new research task.

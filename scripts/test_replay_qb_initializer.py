@@ -83,6 +83,8 @@ class InitializerReplayTests(unittest.TestCase):
         for scoreboard in ('','x'*42):
             with self.assertRaises(ValueError):model.synthesize(0xc805,'2026-11-02',scoreboard)
         with self.assertRaises(ValueError):model.synthesize(0xc805,'1999-12-31')
+        for year in (2026,2027,2028):
+            with self.assertRaisesRegex(ValueError,'January 10'):model.synthesize(0xc805,f'{year}-01-10')
         with self.assertRaisesRegex(AssertionError,'complete world length'):model.compare(bytes(10),bytes(10))
 
 

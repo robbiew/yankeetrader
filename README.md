@@ -65,8 +65,13 @@ remains **34**. This supplies no DOS save importer or production compatibility
 profile. See [complete replay evidence and limits](research/yt-initializer-replay/RECOVERY.md),
 [graph/port replay](research/yt-port-replay/RECOVERY.md) and
 [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
-The [proposed production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-defines the next integration slice; its profile and flags are not implemented.
+The [pure Go source generator](research/yt-initializer-replay/GO_IMPLEMENTATION.md)
+now reproduces all ten complete native targets using portable golden fixtures;
+Go tests require no Python, emulator or original executables. It returns bounded
+in-memory source bytes, preserving the original defects for comparison. January
+10 source dates are rejected until their port-date cancellation residue is verified.
+The [production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+now leads to safe playable projection/admission; its profile and flags are not implemented.
 Its reset contract distinguishes failures before save replacement from committed
 updates with durability warnings; a warning must not trigger a repeated reset.
 

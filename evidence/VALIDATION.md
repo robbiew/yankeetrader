@@ -1349,6 +1349,30 @@ remain separate. Hosted CI is configured to run these checks; local results do
 not claim a hosted CI run for this milestone.
 
 
+## Pure Go initializer source generator — 2026-11-03
+
+`internal/qbinit` matches the complete-world and five record-block hashes of all
+ten native initializer controls (5,686,870 bytes), along with RNG stage/final
+states, draw counts and placement rejection counts. It preserves source defects
+and raw FIELD/FAC residues, with a bounded one-million-draw maximum. Tests cover
+empty-result budget failures in multiple phases, an exact successful budget,
+original sector-7 overwrite, January/raw-zero inheritance, invalid inputs and
+independent result ownership/concurrent generation.
+
+The compact fixture is verified against observed DOS outputs, raw seed/phase
+evidence, complete replay reports and original weighted DATA. Two Python fixture
+tests reject altered fingerprints, seed provenance, counters and coverage.
+Full race-enabled Go tests and vet pass; a separate minimal Go module containing
+only qbinit/qbrng and their fixtures also passes race-enabled tests without the
+research tree, Python, original executables, emulator or GoDoors dependency.
+
+[Implementation and limits](../research/yt-initializer-replay/GO_IMPLEMENTATION.md).
+No production profile/CLI, modern save projection or schema change. Save 34,
+existing maps and ports, reset/export/restore behavior and game streams remain
+unchanged. Hosted CI includes fixture provenance/corruption checks; local results
+do not claim a hosted run for this commit.
+
+
 ## Release packaging and sysop cheat sheet — 2026-11-03
 
 The release builder creates standalone Linux amd64/arm64 tarballs and Windows

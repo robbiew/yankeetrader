@@ -194,7 +194,10 @@ compares all original pre-maintenance records in bounded controls; it remains
 research tooling and supplies no archive import or production initialization mode.
 The [proposed compatibility contract](../research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
 documents future raw-seed/date inputs and repeat-layout resets; its flags and
-save fields are not supported by the current binary.
+save fields are not supported by the current binary. The
+[pure Go source generator](../research/yt-initializer-replay/GO_IMPLEMENTATION.md)
+is an internal in-memory component with no sysop initialization/import command.
+Existing backup, export, restoration and reset procedures remain unchanged.
 It deliberately reproduces a DOS duplicate-location defect only in the research
 model; existing generation safeguards remain active. See the
 [port replay boundaries](../research/yt-port-replay/RECOVERY.md) and the
