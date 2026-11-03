@@ -1256,3 +1256,27 @@ verifier confirms all 4682 archived files remain intact. CI includes the new che
 See [rules, evidence and boundaries](../research/yt-port-generation/RECOVERY.md).
 Full QB RNG/MBF arithmetic, original graph generation, `.DAT` interchange and
 production BBS economy acceptance remain unverified work.
+
+
+## Opt-in DOS warp generation — 2026-11-02
+
+Save 34 adds the independent `-dos-warps` initialization profile. Existing worlds
+retain their saved maps; save33 port settings/economies are preserved. Genesis
+and administrative resets retain both profile choices; archive exports include
+the full map and settings. README and sysop upgrade/rollback guidance are updated.
+
+Local validation passed: all Go packages under race detection; vet; focused warp
+rule, deterministic generation, connectivity, native-table replay, fractional
+shortcut, migration, profile/reset and stale-quote tests; new CLI/PTY checks in
+compact/classic interfaces; existing port-profile and season-administration CLI
+acceptance. Nine phase/native verifier tests and eleven rounding tests pass,
+including rehashed phase/graph/golden/patch/calendar/normal-return corruptions
+and missing, empty, truncated or false native observations. Four phase captures
+and five one-write rounding controls returned normally under DOSBox, using
+explicit disposable executable patches and an exit-only maintenance child.
+
+[Rules, provenance and reproduction](../research/yt-warp-generation/RECOVERY.md).
+The modern RNG, finite retries, small-world handling, duplicate rejection and
+Earth self-warp removal are explicit differences. Exact QB seed sequence and full
+MBF boundary arithmetic remain open. CI includes new verifiers and terminal checks;
+new-head hosted results, native Windows and production BBS acceptance are separate.

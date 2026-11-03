@@ -1,0 +1,29 @@
+{
+  "name": "no-repair",
+  "recipe": "dos-warp-generation-v1",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "initializer_original_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "initializer_copied_sha256": "859617c28da2c2c0cfb0ddb13cc8c14e2a0e6725bc306fef420197ba5e099c88",
+  "patches": [
+    {
+      "name": "skip-repair-shortcuts",
+      "offset": 5152,
+      "before": "bf50a6",
+      "after": "e91404"
+    }
+  ],
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "859617c28da2c2c0cfb0ddb13cc8c14e2a0e6725bc306fef420197ba5e099c88",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6"
+  },
+  "files": {
+    "before-maint.dat.gz": "e5180c5f824fa815c42e24af0ba761573b2c7186a092f4acfa51bad17df3edca",
+    "INIT.LOG": "8089d2cbf09af92332d9c49ebfdad326100434a2e305ea8dc270c6191e9321af",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-dosbox.log": "5fd11564b6eb542da347f1203285df969e83163043292577b05c54f555d3fc93"
+  }
+}

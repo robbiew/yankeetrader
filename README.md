@@ -44,12 +44,23 @@ Click any screenshot to view it at full size.
 
 ## Status
 
+**DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
+nearby reciprocal links, occasional sixth-slot wormholes, isolated-sector repair
+and directed return shortcuts toward Earth. Combine it with `-dos-ports` for both
+recovered rule sets; either flag can be used independently. Saved choices survive
+Genesis and administrative resets. Existing worlds keep their maps on upgrade.
+Save **34** adds the warp profile. The seeded Go random sequence, finite retry
+safeguards and omission of DOS's redundant Earth self-warp are deliberate modern
+choices; this is not exact DOS seed-to-map or MBF arithmetic parity.
+[Recovered rules, phase controls and tests](research/yt-warp-generation/RECOVERY.md).
+
+
 **DOS port generation and pricing are available to test in new worlds:** initialize
 with `-dos-ports` to use recovered names, production, trade coefficients and startup
 price references. Initial stocks materialize ten production days. The setting is
 saved and survives Genesis and administrative resets; existing worlds keep their
-ports and fixed reference prices. The warp graph and seeded Go random sequence
-remain modern, and duplicate/orphaned DOS ports are deliberately prevented.
+ports and fixed reference prices. Without `-dos-warps`, the warp graph remains the established modern graph.
+The seeded Go random sequence remains modern, and duplicate/orphaned DOS ports are deliberately prevented.
 Save **33** adds the generation profile; older saves upgrade without rerolling.
 [Recovered rules, DOS controls and limits](research/yt-port-generation/RECOVERY.md).
 The evidence verifier checks every sector-to-port link before and after maintenance,
@@ -165,7 +176,7 @@ finish, including runner cleanup; every validation command remains enabled.
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Additional unconfirmed spy command paths and character-level DOS editor wrapping/backspace parity.
-- Original DOS universe generation and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
+- Exact DOS seed-to-universe replay and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
 
@@ -304,7 +315,8 @@ To try the recovered economy in a separate new world:
 `-dos-ports` is initialization-only. Port locations, names, prices and acquisition
 costs differ from the default world; use the commerce report before trading.
 Existing worlds cannot be switched by passing this flag on login or maintenance.
-Both season reset paths retain the saved choice. This is port-rule parity work,
+Both season reset paths retain the saved choice. Add `-dos-warps` at initialization
+to use the recovered warp rules too. This is bounded generation-rule parity work,
 not a claim of exact DOS universe or `.DAT` save compatibility.
 
 Try this route to buy a fighter, buy five ore at sector 2, and sell it at sector 3:
@@ -512,7 +524,7 @@ Implemented rules have links to the recovered evidence:
 - Supply-sensitive cargo prices, quantity limits, demand depletion and owner commissions: [trading recovery](research/yt-trade/RECOVERY.md). Five saved DOS examples are exported in `internal/game/testdata/dos-trading.json` and checked by Go tests. These compare ore cash/cargo/treasury outcomes; they do not claim exact QuickBASIC RNG or floating-point equivalence.
 - Port taxes and the repeated-maintenance defect: [maintenance recovery](research/yt-maint/RECOVERY.md).
 
-Universe generation is a new seeded, reachable graph, not the recovered DOS generator. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Ports alternate cargo types and use fixed reference prices **20/30/40** until the DOS reference-price RNG is fully established. Shields start at zero in this prototype; shield initialization parity remains outside this milestone.
+Default generation retains the established seeded, reachable ring graph and uniform ports with fixed reference prices **20/30/40**. New worlds can independently select recovered map rules with `-dos-warps` and the recovered economy/startup price references with `-dos-ports`. These profiles use the modern seeded Go random stream and documented safety corrections; exact DOS seed-to-universe replay remains unsupported. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Shields start at zero; shield initialization parity remains an unresolved rule question.
 
 Known defects intentionally fixed here:
 
@@ -525,11 +537,11 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 active accounts with a 256-identity lifetime archive (IDs are never reused), 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full universe generation parity, DOS save import/export and remaining terminal menus are future milestones. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Exact RNG/MBF universe parity, DOS save import/export and remaining terminal parity questions are future work. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **33**, adding the opt-in DOS port generation/pricing profile; version 32 added the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-32 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Pre-33 saves claiming a port generation profile are rejected. Older binaries cannot read version 33. Existing ports, prices and supplies are not rerolled by upgrade.
+**Save rollback compatibility:** This build uses world version **34**, adding the opt-in DOS warp generation profile; version 33 added the opt-in DOS port generation/pricing profile; version 32 added the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-33 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Pre-33 saves claiming a port generation profile are rejected. Pre-34 saves claiming a warp generation profile are rejected. Older binaries cannot read version 34. Existing maps, ports, prices and supplies are not rerolled by upgrade.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -601,7 +613,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-32 worlds upgrade to version 33 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-33 worlds upgrade to version 34 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 

@@ -19,7 +19,8 @@ including an explicitly supplied `-dos-ports=false`. Initialization refuses to
 overwrite an existing world. Full JSON exports/restores preserve the profile;
 DOS `.DAT` import/export remains unsupported.
 
-The implementation uses the existing reachable modern warp graph. It places up
+This port milestone uses the existing reachable modern warp graph unless the
+subsequently implemented `-dos-warps` profile is also selected. It places up
 to 1000 ports, starting in sectors 1,3,5,7 and then sampling remaining distinct
 sectors with a finite shuffle. Production is an integer 1000..32766 per commodity;
 coefficient magnitudes are 1..100, exactly one positive seller and two negative
@@ -152,9 +153,9 @@ return evidence. Reproduction: `scripts/recover_port_pricing.py --help`.
 - Existing worlds retain their original fixed reference prices. The new profile
   changes new-world balance, port acquisition costs and trade routes; production
   BBS economy acceptance remains separate from local verification.
-- Original graph/long-warp generation, isolation repair, Earth shortcuts and exact
-  seed-to-universe replay are the next universe-parity slice. DOS save conversion
-  remains a separate project.
+- Graph/long-warp rules, isolation repair and Earth shortcuts were subsequently
+  implemented in the [warp slice](../yt-warp-generation/RECOVERY.md). Exact
+  seed-to-universe replay and DOS save conversion remain separate unsupported work.
 
 ## Verification
 

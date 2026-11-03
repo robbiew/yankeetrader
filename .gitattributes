@@ -199,3 +199,13 @@
 /research/yt-port-generation/pricing-dos/**/RETURN.LOG -diff
 /research/yt-port-generation/pricing-dos/**/transcript.txt whitespace=-blank-at-eol,-blank-at-eof conflict-marker-size=32
 /research/yt-port-generation/pricing-dos/**/dosbox.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact DOS warp-stage and one-write shortcut controls.
+/research/yt-warp-generation/dos/** -text
+/research/yt-warp-generation/dos/**/ANSWERS.TXT -diff
+/research/yt-warp-generation/dos/**/*.LOG -diff
+/research/yt-warp-generation/dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-warp-generation/rounding-dos/** -text
+/research/yt-warp-generation/rounding-dos/**/ANSWERS.TXT -diff
+/research/yt-warp-generation/rounding-dos/**/*.LOG -diff
+/research/yt-warp-generation/rounding-dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
