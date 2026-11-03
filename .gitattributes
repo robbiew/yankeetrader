@@ -219,3 +219,11 @@
 /research/yt-rng-seeding/trace-dos/**/*.LOG -diff
 /research/yt-rng-seeding/trace-dos/**/TRACE.BIN -diff
 /research/yt-rng-seeding/trace-dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact port replay clock/state controls retain binary streams and DOS spacing.
+/research/yt-port-replay/seed-dos/** -text
+/research/yt-port-replay/state-dos/** -text
+/research/yt-port-replay/**/*.LOG -diff
+/research/yt-port-replay/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-port-replay/**/TRACE.BIN -diff
+/research/yt-port-replay/**/ANSWERS.TXT -diff

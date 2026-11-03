@@ -105,14 +105,16 @@ def verify_fixture(destination, fixture):
     assert json.loads(Path(fixture).read_text()) == fixture_document(destination), 'portable native fixture differs'
 
 
-def verify(destination):
+def verify(destination, cases=None):
+    """Verify the fixed parent corpus, or an explicitly supplied independent corpus."""
+    cases = CASES if cases is None else cases
     destination = Path(destination)
-    assert {p.name for p in destination.iterdir() if p.is_dir()} == set(CASES), 'fixed case coverage'
+    assert {p.name for p in destination.iterdir() if p.is_dir()} == set(cases), 'fixed case coverage'
     original = (ROOT / 'archive/dos-original/YT-INIT.EXE').read_bytes()
     runtime = (ROOT / 'archive/dos-original/BRUN30.EXE').read_bytes()
     assert SHA(original) == INIT_SHA and SHA(runtime) == RUNTIME_SHA, 'original binaries'
     outcomes = {}
-    for name, (mode, state, raw, date, time) in CASES.items():
+    for name, (mode, state, raw, date, time) in cases.items():
         d = destination / name; meta = json.loads((d / 'result.json').read_text())
         assert meta['name'] == name and meta['mode'] == mode and meta.get('state', 5) == state
         assert meta.get('raw') == raw and meta.get('date', '11/02/2026') == date and meta.get('time', '00:00:00') == time

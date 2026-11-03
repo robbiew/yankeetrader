@@ -1,0 +1,27 @@
+{
+  "name": "second-one-placement-end",
+  "clock": "second-one",
+  "phase": "placement-end",
+  "recipe": "port-rng-state-hook-v1",
+  "date": "11/02/2026",
+  "time": "00:00:01",
+  "site_code_offset": 6733,
+  "cave_code_offset": 9734,
+  "payload_hex": "9c50535152ff365618ff365818c70656180052c70658185321bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd218f0658188f0656185a595b589dc3",
+  "initializer_original_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "initializer_copied_sha256": "fbe0a6431fbfedfc9000fafd06308f3ca4474ba57573c04bd699aa22a1064197",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "maintenance_sha256": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6",
+  "baseline_world_sha256": "6cccb3fe676d40016b553e3ee7ea6d1a0d44dff0f029550602f44e88ecfda5db",
+  "state": 4528677,
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "b324494136dba1077881aab1e116d85d361fa18c82635a220f9c680fba67f642",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "5fd36c3a2ceaf2ec971247407615d488ad38b8fc303d42d6416220002a23505b",
+    "INIT.LOG": "40c0f1ba91d34e9be08602d3869fa929da61f9b5ad4a16bf57058b2088270e02",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "before-maint.dat.gz": "823751eb5fd6c87297973b859775695039234297e66956d8ba363a09ceea4aae",
+    "dosbox.log": "c3f10985a2cac1556e7b9885af80d109b249f85208e9391915033b3d4aff6de8"
+  }
+}

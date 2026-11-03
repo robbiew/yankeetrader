@@ -1,0 +1,342 @@
+{
+  "recipe": "qb3-fixed-clock-port-replay-v1",
+  "cases": [
+    {
+      "world": "research/yt-rng-seeding/clock-dos/midnight/before-maint.dat.gz",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "seed": "0xc805",
+      "graph_final_state": "0xc3cfff",
+      "graph_draws": 27770,
+      "final_state": "0x1ca785",
+      "draws": 40320,
+      "economy_draws": 11333,
+      "placement_draws": 1217,
+      "placement_rejections": 221,
+      "placement_final_state": "0x54bf86",
+      "placement_total_draws": 28987,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+      "replayed_port_block_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [],
+      "distinct_locations": 1000,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "midnight",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-midnight/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      },
+      "native_state_checks": {
+        "graph-end": {
+          "state": "0xc3cfff",
+          "log": "research/yt-port-replay/state-dos/midnight-graph-end/INIT.LOG",
+          "log_sha256": "1f64bdd3bdaa34173e45bc8c3d536d7dfe67f0b5bdb1ec684d3e0eebd14adf7d"
+        },
+        "placement-end": {
+          "state": "0x54bf86",
+          "log": "research/yt-port-replay/state-dos/midnight-placement-end/INIT.LOG",
+          "log_sha256": "777adf37322b443e146e4f70e849886e573e6a1f6d53990ed7cfea96e978f960"
+        },
+        "ports-end": {
+          "state": "0x1ca785",
+          "log": "research/yt-port-replay/state-dos/midnight-ports-end/INIT.LOG",
+          "log_sha256": "3a4719be774755edb77ecf77733c0efece40562cbaf6586144ae70734dffdea0"
+        }
+      }
+    },
+    {
+      "world": "research/yt-rng-seeding/clock-dos/repeat/before-maint.dat.gz",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "seed": "0xc805",
+      "graph_final_state": "0xc3cfff",
+      "graph_draws": 27770,
+      "final_state": "0x1ca785",
+      "draws": 40320,
+      "economy_draws": 11333,
+      "placement_draws": 1217,
+      "placement_rejections": 221,
+      "placement_final_state": "0x54bf86",
+      "placement_total_draws": 28987,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+      "replayed_port_block_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [],
+      "distinct_locations": 1000,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "repeat",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-repeat/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      }
+    },
+    {
+      "world": "research/yt-rng-seeding/clock-dos/second-one/before-maint.dat.gz",
+      "world_sha256": "6cccb3fe676d40016b553e3ee7ea6d1a0d44dff0f029550602f44e88ecfda5db",
+      "seed": "0x61b205",
+      "graph_final_state": "0x6af4df",
+      "graph_draws": 27610,
+      "final_state": "0xbcd835",
+      "draws": 40176,
+      "economy_draws": 11344,
+      "placement_draws": 1222,
+      "placement_rejections": 226,
+      "placement_final_state": "0x451a25",
+      "placement_total_draws": 28832,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "d0b82058552ec594707f3ca843ac009ab2e46f2c988b25106765395989b1aee9",
+      "replayed_port_block_sha256": "d0b82058552ec594707f3ca843ac009ab2e46f2c988b25106765395989b1aee9",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [],
+      "distinct_locations": 1000,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "second-one",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-plus-one/TRACE.BIN",
+        "trace_sha256": "f6e468d1ce2b5bf0406bfb98baa9403641ef0d7d6f64a7ddc695c56a4ab97613",
+        "fac": "48e17a80",
+        "negative_fac": "48e1fa80",
+        "world_seed": 6402565
+      },
+      "native_state_checks": {
+        "graph-end": {
+          "state": "0x6af4df",
+          "log": "research/yt-port-replay/state-dos/second-one-graph-end/INIT.LOG",
+          "log_sha256": "bc5d2b82695c35d9e6dc7f5fc5cfc4ad49a87d1b4b45c66ec8f75c37726807e3"
+        },
+        "placement-end": {
+          "state": "0x451a25",
+          "log": "research/yt-port-replay/state-dos/second-one-placement-end/INIT.LOG",
+          "log_sha256": "40c0f1ba91d34e9be08602d3869fa929da61f9b5ad4a16bf57058b2088270e02"
+        },
+        "ports-end": {
+          "state": "0xbcd835",
+          "log": "research/yt-port-replay/state-dos/second-one-ports-end/INIT.LOG",
+          "log_sha256": "d2375ada5206d4bc6a6d537f3a55bcd89eaf2dced703f3c3a19547a0f874c874"
+        }
+      }
+    },
+    {
+      "world": "research/yt-rng-seeding/clock-dos/second-two/before-maint.dat.gz",
+      "world_sha256": "6fce61a33be6090dfa681c97f0873b1de926215f727dac1d87be4279c02e2fd7",
+      "seed": "0xa90a05",
+      "graph_final_state": "0x38cb82",
+      "graph_draws": 27799,
+      "final_state": "0x79697c",
+      "draws": 40329,
+      "economy_draws": 11332,
+      "placement_draws": 1198,
+      "placement_rejections": 202,
+      "placement_final_state": "0x1ae0f8",
+      "placement_total_draws": 28997,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "4b1878f517ce2d7a2258d89459f2fc5a0d9d18a44c429031f524c28e61041ecc",
+      "replayed_port_block_sha256": "4b1878f517ce2d7a2258d89459f2fc5a0d9d18a44c429031f524c28e61041ecc",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [
+        {
+          "sector": 7,
+          "overwritten": 4,
+          "winner": 274
+        }
+      ],
+      "distinct_locations": 999,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "second-two",
+      "seed_trace": {
+        "trace": "research/yt-port-replay/seed-dos/timer-plus-two/TRACE.BIN",
+        "trace_sha256": "3841e5cd07999bf4ec46173cba712d5d46881558543548b1fd62e96b71a068a2",
+        "fac": "f6287c81",
+        "negative_fac": "f628fc81",
+        "world_seed": 11078149
+      },
+      "native_state_checks": {
+        "graph-end": {
+          "state": "0x38cb82",
+          "log": "research/yt-port-replay/state-dos/second-two-graph-end/INIT.LOG",
+          "log_sha256": "2635f7263587986f3f5d685acea800ca6febecd1806db9f5138191fd6adddc48"
+        },
+        "placement-end": {
+          "state": "0x1ae0f8",
+          "log": "research/yt-port-replay/state-dos/second-two-placement-end/INIT.LOG",
+          "log_sha256": "c94a81517422256d7fd94b0ed9a97f729ad2f6d6ef4252ba656d31457e9fb331"
+        },
+        "ports-end": {
+          "state": "0x79697c",
+          "log": "research/yt-port-replay/state-dos/second-two-ports-end/INIT.LOG",
+          "log_sha256": "dec78b2c89661a2f9cab2f5058a6ea2956ac84bd344298e2cf7f34cb98a81d60"
+        }
+      }
+    },
+    {
+      "world": "research/yt-rng-seeding/clock-dos/later/before-maint.dat.gz",
+      "world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+      "seed": "0x275905",
+      "graph_final_state": "0xd1df02",
+      "graph_draws": 27927,
+      "final_state": "0x34b8fc",
+      "draws": 40457,
+      "economy_draws": 11333,
+      "placement_draws": 1197,
+      "placement_rejections": 201,
+      "placement_final_state": "0x6c4e19",
+      "placement_total_draws": 29124,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "16d1e0f0aa3e55c795d9f9e523c3fccc2fe0626aed3d0f831aa8af10b5cc1126",
+      "replayed_port_block_sha256": "16d1e0f0aa3e55c795d9f9e523c3fccc2fe0626aed3d0f831aa8af10b5cc1126",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [],
+      "distinct_locations": 1000,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "later",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-noon/TRACE.BIN",
+        "trace_sha256": "36390b4062b61379e9e638ad276a9dd39c75fc121dd8894d021361fe1af9ebbb",
+        "fac": "e9b73090",
+        "negative_fac": "e9b7b090",
+        "world_seed": 2578693
+      },
+      "native_state_checks": {
+        "graph-end": {
+          "state": "0xd1df02",
+          "log": "research/yt-port-replay/state-dos/later-graph-end/INIT.LOG",
+          "log_sha256": "d1fafb92663728833e992a502b1dd245ac80c2fe96412d59cacb3d48116ca175"
+        },
+        "placement-end": {
+          "state": "0x6c4e19",
+          "log": "research/yt-port-replay/state-dos/later-placement-end/INIT.LOG",
+          "log_sha256": "82af885560c01307af8d14d2ae7071611ccfef0195af17cf237a52ce9a6885b6"
+        },
+        "ports-end": {
+          "state": "0x34b8fc",
+          "log": "research/yt-port-replay/state-dos/later-ports-end/INIT.LOG",
+          "log_sha256": "2848a9468a719bdb8685137bf5452dab7884dfdf6febd510523dc747c2841bf7"
+        }
+      }
+    },
+    {
+      "world": "research/yt-rng-seeding/clock-dos/next-date/before-maint.dat.gz",
+      "world_sha256": "042fdce8f48d40c5292eebc676a11b7f9f9725537fc98066a178aa394bef1b0c",
+      "seed": "0xc805",
+      "graph_final_state": "0xc3cfff",
+      "graph_draws": 27770,
+      "final_state": "0x1ca785",
+      "draws": 40320,
+      "economy_draws": 11333,
+      "placement_draws": 1217,
+      "placement_rejections": 221,
+      "placement_final_state": "0x54bf86",
+      "placement_total_draws": 28987,
+      "compared_port_bytes": 137000,
+      "matching_port_bytes": 137000,
+      "observed_port_block_sha256": "404f16d5409ef13827c13b186070189cbc44f34aa75ccfa07fa72574e586c6f3",
+      "replayed_port_block_sha256": "404f16d5409ef13827c13b186070189cbc44f34aa75ccfa07fa72574e586c6f3",
+      "byte_mismatches": 0,
+      "first_byte_differences": [],
+      "graph_comparison": {
+        "compared_cells": 18000,
+        "matching_cells": 18000,
+        "mismatch_count": 0,
+        "first_difference": null,
+        "first_differences": []
+      },
+      "collisions": [],
+      "distinct_locations": 1000,
+      "compared_ports": 1000,
+      "matching_ports": 1000,
+      "mismatch_fields": 0,
+      "first_differences": [],
+      "sector_link_mismatches": 0,
+      "first_link_differences": [],
+      "clock_case": "next-date",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-next-date/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      }
+    }
+  ],
+  "limitations": [
+    "Research model only; no production profile or full MBF implementation.",
+    "Original occupancy initialization defect intentionally preserved.",
+    "Three phase-end states independently observed at four clock points; repeat/next-date have no separate state hooks."
+  ]
+}

@@ -1,0 +1,1129 @@
+
+            Yankee Trader Initialization Program
+                     By Alan Davenport
+
+This program will initialize Yankee Trader. You must run this program at
+least once when you start up the game. If this program is run on an
+existing game, the old game will be wiped out and be replaced by a new one.
+
+Continue (Y/N)? ? Y
+
+Creating main data file: YTDATA.DAT
+
+Starting year: 26
+Starting player info:
+  # of fighters at start: 25
+  # of credits at start: 1005
+  # of cargo holds at start: 10
+  # of days inactivity until an dead player is deleted: 14
+  Last day maintenance run: Yesterday
+  # of turns per day: 500
+  # of times per day a user may play the lottery: 5
+  Xannor Headquarters placed in sector: 1040 
+  Ports needed to initiate Genesis: 450
+  Maximum Cargo holds set to: 1000 
+  Local screen on with remote callers: On
+
+If at any time you wish to change these settings, run YTCONFIG.
+
+Please input filename for the Scoreboard Bulletin.
+Include FULL PATH and NAME of file! ([ENTER] for YTSCORE.ASC) : 
+-=> ? 
+
+
+Generating Player Records for 50 Players.
+
+Initializing sectors...
+
+Generating Randomized Universe... Please be patient...
+
+Wormholes (Long Warps)..
+
+ 13 - 1689     159 - 2333    174 - 51      215 - 2664    285 - 413
+ 388 - 2897    466 - 1304    482 - 1490    551 - 2637    619 - 1169
+ 663 - 2993    766 - 2660    816 - 410     857 - 2078    906 - 641
+ 1195 - 1456   1202 - 2023   1228 - 1480   1505 - 290    1627 - 67
+ 1652 - 2543   1742 - 2192   1772 - 2730   1943 - 1609   1950 - 683
+ 1977 - 597    2007 - 565    2017 - 2789   2030 - 1139   2195 - 2430
+ 2200 - 542    2210 - 196    2332 - 1731   2335 - 1477   2575 - 475
+ 2726 - 424    2795 - 2640   2866 - 890    2889 - 1547   2921 - 769
+ 2985 - 639   
+
+Verifying warps.. linking isolated sectors.
+
+Verifying warp to sector 2 Verifying warp to sector 3 Verifying warp to sector 4 Verifying warp to sector 5 Verifying warp to sector 6 Verifying warp to sector 7 Verifying warp to sector 8 Verifying warp to sector 9 Verifying warp to sector 10 Verifying warp to sector 11 Verifying warp to sector 12 Verifying warp to sector 13 Verifying warp to sector 14 Verifying warp to sector 15 Verifying warp to sector 16 Verifying warp to sector 17 Verifying warp to sector 18 Verifying warp to sector 19 Verifying warp to sector 20 Verifying warp to sector 21 Verifying warp to sector 22 Verifying warp to sector 23 Verifying warp to sector 24 Verifying warp to sector 25 Verifying warp to sector 26 Verifying warp to sector 27 Verifying warp to sector 28 Verifying warp to sector 29 Verifying warp to sector 30 Verifying warp to sector 31 Verifying warp to sector 32 Verifying warp to sector 33 Verifying warp to sector 34 Verifying warp to sector 35 Verifying warp to sector 36 Verifying warp to sector 37 Verifying warp to sector 38 Verifying warp to sector 39 Verifying warp to sector 40 Verifying warp to sector 41 Verifying warp to sector 42 Verifying warp to sector 43 Verifying warp to sector 44 Verifying warp to sector 45 Verifying warp to sector 46 Verifying warp to sector 47 Verifying warp to sector 48 Verifying warp to sector 49 Verifying warp to sector 50 Verifying warp to sector 51 Verifying warp to sector 52 Verifying warp to sector 53 Verifying warp to sector 54 Verifying warp to sector 55 Verifying warp to sector 56 Verifying warp to sector 57 Verifying warp to sector 58 Verifying warp to sector 59 Verifying warp to sector 60 Verifying warp to sector 61 Verifying warp to sector 62 Verifying warp to sector 63 Verifying warp to sector 64 *** Error - No Path to sector 64!!
+Sector 64 has been linked to sector 3 
+Verifying warp to sector 65 Verifying warp to sector 66 Verifying warp to sector 67 Verifying warp to sector 68 Verifying warp to sector 69 Verifying warp to sector 70 Verifying warp to sector 71 Verifying warp to sector 72 Verifying warp to sector 73 Verifying warp to sector 74 Verifying warp to sector 75 Verifying warp to sector 76 Verifying warp to sector 77 Verifying warp to sector 78 Verifying warp to sector 79 Verifying warp to sector 80 Verifying warp to sector 81 Verifying warp to sector 82 Verifying warp to sector 83 Verifying warp to sector 84 Verifying warp to sector 85 Verifying warp to sector 86 Verifying warp to sector 87 Verifying warp to sector 88 Verifying warp to sector 89 Verifying warp to sector 90 Verifying warp to sector 91 Verifying warp to sector 92 Verifying warp to sector 93 Verifying warp to sector 94 Verifying warp to sector 95 Verifying warp to sector 96 Verifying warp to sector 97 Verifying warp to sector 98 Verifying warp to sector 99 Verifying warp to sector 100 Verifying warp to sector 101 Verifying warp to sector 102 Verifying warp to sector 103 Verifying warp to sector 104 Verifying warp to sector 105 Verifying warp to sector 106 Verifying warp to sector 107 Verifying warp to sector 108 Verifying warp to sector 109 Verifying warp to sector 110 Verifying warp to sector 111 Verifying warp to sector 112 Verifying warp to sector 113 Verifying warp to sector 114 Verifying warp to sector 115 Verifying warp to sector 116 Verifying warp to sector 117 Verifying warp to sector 118 Verifying warp to sector 119 Verifying warp to sector 120 Verifying warp to sector 121 Verifying warp to sector 122 Verifying warp to sector 123 Verifying warp to sector 124 Verifying warp to sector 125 Verifying warp to sector 126 Verifying warp to sector 127 Verifying warp to sector 128 Verifying warp to sector 129 Verifying warp to sector 130 Verifying warp to sector 131 Verifying warp to sector 132 Verifying warp to sector 133 Verifying warp to sector 134 Verifying warp to sector 135 Verifying warp to sector 136 Verifying warp to sector 137 Verifying warp to sector 138 Verifying warp to sector 139 Verifying warp to sector 140 Verifying warp to sector 141 Verifying warp to sector 142 Verifying warp to sector 143 Verifying warp to sector 144 Verifying warp to sector 145 Verifying warp to sector 146 Verifying warp to sector 147 Verifying warp to sector 148 Verifying warp to sector 149 Verifying warp to sector 150 Verifying warp to sector 151 Verifying warp to sector 152 Verifying warp to sector 153 Verifying warp to sector 154 Verifying warp to sector 155 Verifying warp to sector 156 Verifying warp to sector 157 Verifying warp to sector 158 Verifying warp to sector 159 Verifying warp to sector 160 Verifying warp to sector 161 Verifying warp to sector 162 Verifying warp to sector 163 Verifying warp to sector 164 Verifying warp to sector 165 Verifying warp to sector 166 Verifying warp to sector 167 Verifying warp to sector 168 Verifying warp to sector 169 Verifying warp to sector 170 Verifying warp to sector 171 Verifying warp to sector 172 Verifying warp to sector 173 Verifying warp to sector 174 Verifying warp to sector 175 Verifying warp to sector 176 Verifying warp to sector 177 Verifying warp to sector 178 Verifying warp to sector 179 Verifying warp to sector 180 Verifying warp to sector 181 Verifying warp to sector 182 Verifying warp to sector 183 Verifying warp to sector 184 Verifying warp to sector 185 Verifying warp to sector 186 Verifying warp to sector 187 Verifying warp to sector 188 Verifying warp to sector 189 Verifying warp to sector 190 Verifying warp to sector 191 Verifying warp to sector 192 Verifying warp to sector 193 Verifying warp to sector 194 Verifying warp to sector 195 Verifying warp to sector 196 Verifying warp to sector 197 Verifying warp to sector 198 Verifying warp to sector 199 Verifying warp to sector 200 Verifying warp to sector 201 Verifying warp to sector 202 Verifying warp to sector 203 Verifying warp to sector 204 Verifying warp to sector 205 Verifying warp to sector 206 Verifying warp to sector 207 Verifying warp to sector 208 Verifying warp to sector 209 Verifying warp to sector 210 Verifying warp to sector 211 Verifying warp to sector 212 Verifying warp to sector 213 Verifying warp to sector 214 Verifying warp to sector 215 Verifying warp to sector 216 Verifying warp to sector 217 Verifying warp to sector 218 Verifying warp to sector 219 Verifying warp to sector 220 Verifying warp to sector 221 Verifying warp to sector 222 Verifying warp to sector 223 Verifying warp to sector 224 Verifying warp to sector 225 Verifying warp to sector 226 Verifying warp to sector 227 *** Error - No Path to sector 227!!
+Sector 227 has been linked to sector 164 
+Verifying warp to sector 228 Verifying warp to sector 229 Verifying warp to sector 230 Verifying warp to sector 231 Verifying warp to sector 232 *** Error - No Path to sector 232!!
+Sector 232 has been linked to sector 163 
+Verifying warp to sector 233 Verifying warp to sector 234 Verifying warp to sector 235 Verifying warp to sector 236 Verifying warp to sector 237 Verifying warp to sector 238 Verifying warp to sector 239 Verifying warp to sector 240 Verifying warp to sector 241 Verifying warp to sector 242 Verifying warp to sector 243 Verifying warp to sector 244 Verifying warp to sector 245 Verifying warp to sector 246 Verifying warp to sector 247 Verifying warp to sector 248 Verifying warp to sector 249 Verifying warp to sector 250 Verifying warp to sector 251 Verifying warp to sector 252 Verifying warp to sector 253 Verifying warp to sector 254 Verifying warp to sector 255 Verifying warp to sector 256 Verifying warp to sector 257 Verifying warp to sector 258 Verifying warp to sector 259 Verifying warp to sector 260 Verifying warp to sector 261 Verifying warp to sector 262 Verifying warp to sector 263 Verifying warp to sector 264 Verifying warp to sector 265 Verifying warp to sector 266 Verifying warp to sector 267 Verifying warp to sector 268 Verifying warp to sector 269 Verifying warp to sector 270 Verifying warp to sector 271 Verifying warp to sector 272 Verifying warp to sector 273 Verifying warp to sector 274 Verifying warp to sector 275 Verifying warp to sector 276 Verifying warp to sector 277 Verifying warp to sector 278 Verifying warp to sector 279 Verifying warp to sector 280 Verifying warp to sector 281 Verifying warp to sector 282 Verifying warp to sector 283 Verifying warp to sector 284 Verifying warp to sector 285 Verifying warp to sector 286 Verifying warp to sector 287 Verifying warp to sector 288 Verifying warp to sector 289 Verifying warp to sector 290 Verifying warp to sector 291 Verifying warp to sector 292 Verifying warp to sector 293 Verifying warp to sector 294 Verifying warp to sector 295 Verifying warp to sector 296 Verifying warp to sector 297 Verifying warp to sector 298 Verifying warp to sector 299 Verifying warp to sector 300 Verifying warp to sector 301 Verifying warp to sector 302 Verifying warp to sector 303 Verifying warp to sector 304 Verifying warp to sector 305 Verifying warp to sector 306 Verifying warp to sector 307 Verifying warp to sector 308 Verifying warp to sector 309 Verifying warp to sector 310 Verifying warp to sector 311 Verifying warp to sector 312 Verifying warp to sector 313 Verifying warp to sector 314 *** Error - No Path to sector 314!!
+Sector 314 has been linked to sector 154 
+Verifying warp to sector 315 Verifying warp to sector 316 Verifying warp to sector 317 Verifying warp to sector 318 Verifying warp to sector 319 Verifying warp to sector 320 Verifying warp to sector 321 Verifying warp to sector 322 Verifying warp to sector 323 Verifying warp to sector 324 Verifying warp to sector 325 Verifying warp to sector 326 Verifying warp to sector 327 Verifying warp to sector 328 Verifying warp to sector 329 Verifying warp to sector 330 Verifying warp to sector 331 Verifying warp to sector 332 Verifying warp to sector 333 Verifying warp to sector 334 Verifying warp to sector 335 Verifying warp to sector 336 Verifying warp to sector 337 Verifying warp to sector 338 Verifying warp to sector 339 Verifying warp to sector 340 Verifying warp to sector 341 Verifying warp to sector 342 Verifying warp to sector 343 Verifying warp to sector 344 Verifying warp to sector 345 Verifying warp to sector 346 Verifying warp to sector 347 Verifying warp to sector 348 Verifying warp to sector 349 Verifying warp to sector 350 Verifying warp to sector 351 Verifying warp to sector 352 Verifying warp to sector 353 Verifying warp to sector 354 Verifying warp to sector 355 Verifying warp to sector 356 Verifying warp to sector 357 Verifying warp to sector 358 Verifying warp to sector 359 Verifying warp to sector 360 Verifying warp to sector 361 Verifying warp to sector 362 Verifying warp to sector 363 Verifying warp to sector 364 Verifying warp to sector 365 Verifying warp to sector 366 Verifying warp to sector 367 Verifying warp to sector 368 Verifying warp to sector 369 Verifying warp to sector 370 Verifying warp to sector 371 Verifying warp to sector 372 Verifying warp to sector 373 Verifying warp to sector 374 Verifying warp to sector 375 Verifying warp to sector 376 Verifying warp to sector 377 Verifying warp to sector 378 Verifying warp to sector 379 Verifying warp to sector 380 Verifying warp to sector 381 Verifying warp to sector 382 Verifying warp to sector 383 Verifying warp to sector 384 Verifying warp to sector 385 Verifying warp to sector 386 Verifying warp to sector 387 Verifying warp to sector 388 Verifying warp to sector 389 Verifying warp to sector 390 Verifying warp to sector 391 Verifying warp to sector 392 Verifying warp to sector 393 Verifying warp to sector 394 Verifying warp to sector 395 Verifying warp to sector 396 Verifying warp to sector 397 Verifying warp to sector 398 Verifying warp to sector 399 Verifying warp to sector 400 Verifying warp to sector 401 Verifying warp to sector 402 Verifying warp to sector 403 Verifying warp to sector 404 Verifying warp to sector 405 Verifying warp to sector 406 Verifying warp to sector 407 Verifying warp to sector 408 Verifying warp to sector 409 Verifying warp to sector 410 Verifying warp to sector 411 Verifying warp to sector 412 Verifying warp to sector 413 Verifying warp to sector 414 Verifying warp to sector 415 Verifying warp to sector 416 Verifying warp to sector 417 Verifying warp to sector 418 Verifying warp to sector 419 Verifying warp to sector 420 Verifying warp to sector 421 Verifying warp to sector 422 Verifying warp to sector 423 Verifying warp to sector 424 Verifying warp to sector 425 Verifying warp to sector 426 Verifying warp to sector 427 Verifying warp to sector 428 Verifying warp to sector 429 Verifying warp to sector 430 Verifying warp to sector 431 Verifying warp to sector 432 Verifying warp to sector 433 Verifying warp to sector 434 Verifying warp to sector 435 Verifying warp to sector 436 Verifying warp to sector 437 Verifying warp to sector 438 Verifying warp to sector 439 Verifying warp to sector 440 Verifying warp to sector 441 Verifying warp to sector 442 Verifying warp to sector 443 Verifying warp to sector 444 Verifying warp to sector 445 Verifying warp to sector 446 Verifying warp to sector 447 Verifying warp to sector 448 Verifying warp to sector 449 Verifying warp to sector 450 Verifying warp to sector 451 Verifying warp to sector 452 Verifying warp to sector 453 Verifying warp to sector 454 Verifying warp to sector 455 Verifying warp to sector 456 Verifying warp to sector 457 *** Error - No Path to sector 457!!
+Sector 457 has been linked to sector 200 
+Verifying warp to sector 458 Verifying warp to sector 459 Verifying warp to sector 460 Verifying warp to sector 461 Verifying warp to sector 462 Verifying warp to sector 463 Verifying warp to sector 464 Verifying warp to sector 465 *** Error - No Path to sector 465!!
+Sector 465 has been linked to sector 298 
+Verifying warp to sector 466 Verifying warp to sector 467 Verifying warp to sector 468 Verifying warp to sector 469 Verifying warp to sector 470 *** Error - No Path to sector 470!!
+Sector 470 has been linked to sector 398 
+Verifying warp to sector 471 Verifying warp to sector 472 Verifying warp to sector 473 Verifying warp to sector 474 Verifying warp to sector 475 Verifying warp to sector 476 Verifying warp to sector 477 Verifying warp to sector 478 Verifying warp to sector 479 Verifying warp to sector 480 Verifying warp to sector 481 Verifying warp to sector 482 Verifying warp to sector 483 Verifying warp to sector 484 Verifying warp to sector 485 Verifying warp to sector 486 Verifying warp to sector 487 Verifying warp to sector 488 Verifying warp to sector 489 Verifying warp to sector 490 Verifying warp to sector 491 Verifying warp to sector 492 Verifying warp to sector 493 Verifying warp to sector 494 Verifying warp to sector 495 Verifying warp to sector 496 Verifying warp to sector 497 Verifying warp to sector 498 Verifying warp to sector 499 Verifying warp to sector 500 Verifying warp to sector 501 Verifying warp to sector 502 Verifying warp to sector 503 Verifying warp to sector 504 Verifying warp to sector 505 Verifying warp to sector 506 Verifying warp to sector 507 Verifying warp to sector 508 Verifying warp to sector 509 Verifying warp to sector 510 Verifying warp to sector 511 Verifying warp to sector 512 Verifying warp to sector 513 Verifying warp to sector 514 Verifying warp to sector 515 Verifying warp to sector 516 Verifying warp to sector 517 Verifying warp to sector 518 Verifying warp to sector 519 Verifying warp to sector 520 Verifying warp to sector 521 Verifying warp to sector 522 Verifying warp to sector 523 Verifying warp to sector 524 Verifying warp to sector 525 Verifying warp to sector 526 Verifying warp to sector 527 Verifying warp to sector 528 Verifying warp to sector 529 Verifying warp to sector 530 Verifying warp to sector 531 Verifying warp to sector 532 Verifying warp to sector 533 Verifying warp to sector 534 Verifying warp to sector 535 Verifying warp to sector 536 Verifying warp to sector 537 Verifying warp to sector 538 Verifying warp to sector 539 Verifying warp to sector 540 Verifying warp to sector 541 Verifying warp to sector 542 Verifying warp to sector 543 Verifying warp to sector 544 Verifying warp to sector 545 Verifying warp to sector 546 Verifying warp to sector 547 Verifying warp to sector 548 Verifying warp to sector 549 Verifying warp to sector 550 Verifying warp to sector 551 Verifying warp to sector 552 Verifying warp to sector 553 Verifying warp to sector 554 Verifying warp to sector 555 Verifying warp to sector 556 Verifying warp to sector 557 Verifying warp to sector 558 Verifying warp to sector 559 Verifying warp to sector 560 Verifying warp to sector 561 Verifying warp to sector 562 Verifying warp to sector 563 Verifying warp to sector 564 Verifying warp to sector 565 Verifying warp to sector 566 Verifying warp to sector 567 Verifying warp to sector 568 Verifying warp to sector 569 Verifying warp to sector 570 Verifying warp to sector 571 Verifying warp to sector 572 Verifying warp to sector 573 Verifying warp to sector 574 Verifying warp to sector 575 Verifying warp to sector 576 Verifying warp to sector 577 Verifying warp to sector 578 Verifying warp to sector 579 Verifying warp to sector 580 Verifying warp to sector 581 Verifying warp to sector 582 Verifying warp to sector 583 Verifying warp to sector 584 Verifying warp to sector 585 Verifying warp to sector 586 Verifying warp to sector 587 Verifying warp to sector 588 Verifying warp to sector 589 Verifying warp to sector 590 Verifying warp to sector 591 Verifying warp to sector 592 Verifying warp to sector 593 Verifying warp to sector 594 Verifying warp to sector 595 Verifying warp to sector 596 Verifying warp to sector 597 Verifying warp to sector 598 Verifying warp to sector 599 Verifying warp to sector 600 Verifying warp to sector 601 Verifying warp to sector 602 Verifying warp to sector 603 Verifying warp to sector 604 Verifying warp to sector 605 *** Error - No Path to sector 605!!
+Sector 605 has been linked to sector 576 
+Verifying warp to sector 606 Verifying warp to sector 607 Verifying warp to sector 608 Verifying warp to sector 609 Verifying warp to sector 610 Verifying warp to sector 611 Verifying warp to sector 612 Verifying warp to sector 613 Verifying warp to sector 614 Verifying warp to sector 615 Verifying warp to sector 616 Verifying warp to sector 617 Verifying warp to sector 618 Verifying warp to sector 619 Verifying warp to sector 620 Verifying warp to sector 621 Verifying warp to sector 622 Verifying warp to sector 623 Verifying warp to sector 624 Verifying warp to sector 625 Verifying warp to sector 626 Verifying warp to sector 627 Verifying warp to sector 628 Verifying warp to sector 629 Verifying warp to sector 630 Verifying warp to sector 631 Verifying warp to sector 632 Verifying warp to sector 633 Verifying warp to sector 634 Verifying warp to sector 635 Verifying warp to sector 636 Verifying warp to sector 637 Verifying warp to sector 638 Verifying warp to sector 639 Verifying warp to sector 640 Verifying warp to sector 641 Verifying warp to sector 642 Verifying warp to sector 643 Verifying warp to sector 644 Verifying warp to sector 645 Verifying warp to sector 646 Verifying warp to sector 647 Verifying warp to sector 648 Verifying warp to sector 649 Verifying warp to sector 650 Verifying warp to sector 651 Verifying warp to sector 652 Verifying warp to sector 653 Verifying warp to sector 654 Verifying warp to sector 655 Verifying warp to sector 656 Verifying warp to sector 657 Verifying warp to sector 658 Verifying warp to sector 659 Verifying warp to sector 660 Verifying warp to sector 661 Verifying warp to sector 662 Verifying warp to sector 663 Verifying warp to sector 664 Verifying warp to sector 665 Verifying warp to sector 666 Verifying warp to sector 667 Verifying warp to sector 668 Verifying warp to sector 669 Verifying warp to sector 670 Verifying warp to sector 671 Verifying warp to sector 672 Verifying warp to sector 673 Verifying warp to sector 674 Verifying warp to sector 675 Verifying warp to sector 676 Verifying warp to sector 677 Verifying warp to sector 678 Verifying warp to sector 679 Verifying warp to sector 680 Verifying warp to sector 681 Verifying warp to sector 682 Verifying warp to sector 683 Verifying warp to sector 684 Verifying warp to sector 685 Verifying warp to sector 686 Verifying warp to sector 687 Verifying warp to sector 688 Verifying warp to sector 689 Verifying warp to sector 690 Verifying warp to sector 691 Verifying warp to sector 692 Verifying warp to sector 693 Verifying warp to sector 694 Verifying warp to sector 695 Verifying warp to sector 696 Verifying warp to sector 697 Verifying warp to sector 698 Verifying warp to sector 699 Verifying warp to sector 700 Verifying warp to sector 701 Verifying warp to sector 702 Verifying warp to sector 703 Verifying warp to sector 704 Verifying warp to sector 705 Verifying warp to sector 706 Verifying warp to sector 707 Verifying warp to sector 708 Verifying warp to sector 709 Verifying warp to sector 710 Verifying warp to sector 711 Verifying warp to sector 712 Verifying warp to sector 713 Verifying warp to sector 714 Verifying warp to sector 715 Verifying warp to sector 716 Verifying warp to sector 717 Verifying warp to sector 718 Verifying warp to sector 719 Verifying warp to sector 720 Verifying warp to sector 721 Verifying warp to sector 722 Verifying warp to sector 723 Verifying warp to sector 724 Verifying warp to sector 725 Verifying warp to sector 726 Verifying warp to sector 727 Verifying warp to sector 728 Verifying warp to sector 729 Verifying warp to sector 730 Verifying warp to sector 731 Verifying warp to sector 732 Verifying warp to sector 733 Verifying warp to sector 734 Verifying warp to sector 735 Verifying warp to sector 736 Verifying warp to sector 737 Verifying warp to sector 738 Verifying warp to sector 739 Verifying warp to sector 740 Verifying warp to sector 741 Verifying warp to sector 742 Verifying warp to sector 743 Verifying warp to sector 744 Verifying warp to sector 745 Verifying warp to sector 746 Verifying warp to sector 747 Verifying warp to sector 748 Verifying warp to sector 749 Verifying warp to sector 750 Verifying warp to sector 751 Verifying warp to sector 752 Verifying warp to sector 753 Verifying warp to sector 754 Verifying warp to sector 755 Verifying warp to sector 756 Verifying warp to sector 757 Verifying warp to sector 758 Verifying warp to sector 759 Verifying warp to sector 760 Verifying warp to sector 761 Verifying warp to sector 762 Verifying warp to sector 763 Verifying warp to sector 764 Verifying warp to sector 765 Verifying warp to sector 766 Verifying warp to sector 767 Verifying warp to sector 768 Verifying warp to sector 769 Verifying warp to sector 770 Verifying warp to sector 771 Verifying warp to sector 772 Verifying warp to sector 773 Verifying warp to sector 774 Verifying warp to sector 775 Verifying warp to sector 776 Verifying warp to sector 777 Verifying warp to sector 778 Verifying warp to sector 779 Verifying warp to sector 780 Verifying warp to sector 781 Verifying warp to sector 782 Verifying warp to sector 783 Verifying warp to sector 784 Verifying warp to sector 785 Verifying warp to sector 786 Verifying warp to sector 787 Verifying warp to sector 788 Verifying warp to sector 789 Verifying warp to sector 790 Verifying warp to sector 791 Verifying warp to sector 792 Verifying warp to sector 793 Verifying warp to sector 794 Verifying warp to sector 795 Verifying warp to sector 796 Verifying warp to sector 797 Verifying warp to sector 798 Verifying warp to sector 799 Verifying warp to sector 800 Verifying warp to sector 801 Verifying warp to sector 802 Verifying warp to sector 803 Verifying warp to sector 804 Verifying warp to sector 805 Verifying warp to sector 806 Verifying warp to sector 807 Verifying warp to sector 808 Verifying warp to sector 809 Verifying warp to sector 810 Verifying warp to sector 811 Verifying warp to sector 812 Verifying warp to sector 813 Verifying warp to sector 814 Verifying warp to sector 815 Verifying warp to sector 816 Verifying warp to sector 817 Verifying warp to sector 818 Verifying warp to sector 819 Verifying warp to sector 820 Verifying warp to sector 821 Verifying warp to sector 822 Verifying warp to sector 823 Verifying warp to sector 824 Verifying warp to sector 825 Verifying warp to sector 826 Verifying warp to sector 827 Verifying warp to sector 828 Verifying warp to sector 829 Verifying warp to sector 830 Verifying warp to sector 831 Verifying warp to sector 832 Verifying warp to sector 833 Verifying warp to sector 834 Verifying warp to sector 835 Verifying warp to sector 836 Verifying warp to sector 837 Verifying warp to sector 838 Verifying warp to sector 839 Verifying warp to sector 840 Verifying warp to sector 841 Verifying warp to sector 842 Verifying warp to sector 843 Verifying warp to sector 844 Verifying warp to sector 845 Verifying warp to sector 846 Verifying warp to sector 847 Verifying warp to sector 848 Verifying warp to sector 849 Verifying warp to sector 850 Verifying warp to sector 851 Verifying warp to sector 852 Verifying warp to sector 853 Verifying warp to sector 854 Verifying warp to sector 855 Verifying warp to sector 856 Verifying warp to sector 857 Verifying warp to sector 858 Verifying warp to sector 859 Verifying warp to sector 860 Verifying warp to sector 861 Verifying warp to sector 862 Verifying warp to sector 863 Verifying warp to sector 864 Verifying warp to sector 865 Verifying warp to sector 866 Verifying warp to sector 867 Verifying warp to sector 868 Verifying warp to sector 869 Verifying warp to sector 870 Verifying warp to sector 871 Verifying warp to sector 872 Verifying warp to sector 873 Verifying warp to sector 874 Verifying warp to sector 875 Verifying warp to sector 876 Verifying warp to sector 877 Verifying warp to sector 878 Verifying warp to sector 879 Verifying warp to sector 880 Verifying warp to sector 881 Verifying warp to sector 882 Verifying warp to sector 883 Verifying warp to sector 884 Verifying warp to sector 885 Verifying warp to sector 886 Verifying warp to sector 887 Verifying warp to sector 888 Verifying warp to sector 889 Verifying warp to sector 890 Verifying warp to sector 891 Verifying warp to sector 892 Verifying warp to sector 893 Verifying warp to sector 894 Verifying warp to sector 895 Verifying warp to sector 896 Verifying warp to sector 897 Verifying warp to sector 898 Verifying warp to sector 899 Verifying warp to sector 900 Verifying warp to sector 901 Verifying warp to sector 902 Verifying warp to sector 903 Verifying warp to sector 904 Verifying warp to sector 905 Verifying warp to sector 906 Verifying warp to sector 907 Verifying warp to sector 908 Verifying warp to sector 909 Verifying warp to sector 910 Verifying warp to sector 911 Verifying warp to sector 912 Verifying warp to sector 913 Verifying warp to sector 914 Verifying warp to sector 915 Verifying warp to sector 916 Verifying warp to sector 917 Verifying warp to sector 918 Verifying warp to sector 919 Verifying warp to sector 920 Verifying warp to sector 921 Verifying warp to sector 922 Verifying warp to sector 923 Verifying warp to sector 924 Verifying warp to sector 925 Verifying warp to sector 926 Verifying warp to sector 927 Verifying warp to sector 928 Verifying warp to sector 929 Verifying warp to sector 930 Verifying warp to sector 931 Verifying warp to sector 932 Verifying warp to sector 933 Verifying warp to sector 934 Verifying warp to sector 935 Verifying warp to sector 936 Verifying warp to sector 937 Verifying warp to sector 938 Verifying warp to sector 939 Verifying warp to sector 940 Verifying warp to sector 941 Verifying warp to sector 942 Verifying warp to sector 943 Verifying warp to sector 944 Verifying warp to sector 945 Verifying warp to sector 946 Verifying warp to sector 947 Verifying warp to sector 948 Verifying warp to sector 949 Verifying warp to sector 950 Verifying warp to sector 951 Verifying warp to sector 952 Verifying warp to sector 953 Verifying warp to sector 954 Verifying warp to sector 955 Verifying warp to sector 956 Verifying warp to sector 957 Verifying warp to sector 958 Verifying warp to sector 959 Verifying warp to sector 960 Verifying warp to sector 961 Verifying warp to sector 962 Verifying warp to sector 963 Verifying warp to sector 964 Verifying warp to sector 965 Verifying warp to sector 966 Verifying warp to sector 967 Verifying warp to sector 968 Verifying warp to sector 969 Verifying warp to sector 970 Verifying warp to sector 971 Verifying warp to sector 972 Verifying warp to sector 973 Verifying warp to sector 974 Verifying warp to sector 975 Verifying warp to sector 976 Verifying warp to sector 977 Verifying warp to sector 978 Verifying warp to sector 979 Verifying warp to sector 980 Verifying warp to sector 981 Verifying warp to sector 982 Verifying warp to sector 983 Verifying warp to sector 984 *** Error - No Path to sector 984!!
+Sector 984 has been linked to sector 884 
+Verifying warp to sector 985 Verifying warp to sector 986 Verifying warp to sector 987 Verifying warp to sector 988 Verifying warp to sector 989 Verifying warp to sector 990 Verifying warp to sector 991 Verifying warp to sector 992 Verifying warp to sector 993 Verifying warp to sector 994 Verifying warp to sector 995 Verifying warp to sector 996 Verifying warp to sector 997 Verifying warp to sector 998 Verifying warp to sector 999 Verifying warp to sector 1000 Verifying warp to sector 1001 Verifying warp to sector 1002 Verifying warp to sector 1003 Verifying warp to sector 1004 Verifying warp to sector 1005 Verifying warp to sector 1006 Verifying warp to sector 1007 Verifying warp to sector 1008 Verifying warp to sector 1009 Verifying warp to sector 1010 Verifying warp to sector 1011 Verifying warp to sector 1012 Verifying warp to sector 1013 Verifying warp to sector 1014 Verifying warp to sector 1015 Verifying warp to sector 1016 Verifying warp to sector 1017 Verifying warp to sector 1018 Verifying warp to sector 1019 Verifying warp to sector 1020 Verifying warp to sector 1021 Verifying warp to sector 1022 Verifying warp to sector 1023 Verifying warp to sector 1024 Verifying warp to sector 1025 Verifying warp to sector 1026 Verifying warp to sector 1027 Verifying warp to sector 1028 Verifying warp to sector 1029 Verifying warp to sector 1030 Verifying warp to sector 1031 Verifying warp to sector 1032 Verifying warp to sector 1033 Verifying warp to sector 1034 Verifying warp to sector 1035 Verifying warp to sector 1036 Verifying warp to sector 1037 Verifying warp to sector 1038 Verifying warp to sector 1039 Verifying warp to sector 1040 Verifying warp to sector 1041 Verifying warp to sector 1042 Verifying warp to sector 1043 Verifying warp to sector 1044 Verifying warp to sector 1045 Verifying warp to sector 1046 Verifying warp to sector 1047 Verifying warp to sector 1048 Verifying warp to sector 1049 Verifying warp to sector 1050 Verifying warp to sector 1051 Verifying warp to sector 1052 Verifying warp to sector 1053 Verifying warp to sector 1054 Verifying warp to sector 1055 Verifying warp to sector 1056 Verifying warp to sector 1057 Verifying warp to sector 1058 Verifying warp to sector 1059 Verifying warp to sector 1060 Verifying warp to sector 1061 Verifying warp to sector 1062 Verifying warp to sector 1063 Verifying warp to sector 1064 Verifying warp to sector 1065 Verifying warp to sector 1066 Verifying warp to sector 1067 Verifying warp to sector 1068 Verifying warp to sector 1069 Verifying warp to sector 1070 Verifying warp to sector 1071 Verifying warp to sector 1072 Verifying warp to sector 1073 Verifying warp to sector 1074 Verifying warp to sector 1075 Verifying warp to sector 1076 Verifying warp to sector 1077 Verifying warp to sector 1078 Verifying warp to sector 1079 Verifying warp to sector 1080 Verifying warp to sector 1081 Verifying warp to sector 1082 Verifying warp to sector 1083 Verifying warp to sector 1084 Verifying warp to sector 1085 Verifying warp to sector 1086 Verifying warp to sector 1087 Verifying warp to sector 1088 Verifying warp to sector 1089 Verifying warp to sector 1090 Verifying warp to sector 1091 Verifying warp to sector 1092 Verifying warp to sector 1093 Verifying warp to sector 1094 Verifying warp to sector 1095 Verifying warp to sector 1096 Verifying warp to sector 1097 Verifying warp to sector 1098 Verifying warp to sector 1099 Verifying warp to sector 1100 Verifying warp to sector 1101 Verifying warp to sector 1102 Verifying warp to sector 1103 Verifying warp to sector 1104 Verifying warp to sector 1105 Verifying warp to sector 1106 Verifying warp to sector 1107 Verifying warp to sector 1108 Verifying warp to sector 1109 Verifying warp to sector 1110 Verifying warp to sector 1111 Verifying warp to sector 1112 Verifying warp to sector 1113 Verifying warp to sector 1114 Verifying warp to sector 1115 Verifying warp to sector 1116 Verifying warp to sector 1117 Verifying warp to sector 1118 Verifying warp to sector 1119 Verifying warp to sector 1120 Verifying warp to sector 1121 Verifying warp to sector 1122 Verifying warp to sector 1123 Verifying warp to sector 1124 Verifying warp to sector 1125 Verifying warp to sector 1126 Verifying warp to sector 1127 Verifying warp to sector 1128 Verifying warp to sector 1129 Verifying warp to sector 1130 Verifying warp to sector 1131 Verifying warp to sector 1132 Verifying warp to sector 1133 Verifying warp to sector 1134 Verifying warp to sector 1135 Verifying warp to sector 1136 Verifying warp to sector 1137 Verifying warp to sector 1138 Verifying warp to sector 1139 Verifying warp to sector 1140 Verifying warp to sector 1141 Verifying warp to sector 1142 Verifying warp to sector 1143 Verifying warp to sector 1144 Verifying warp to sector 1145 Verifying warp to sector 1146 Verifying warp to sector 1147 Verifying warp to sector 1148 Verifying warp to sector 1149 Verifying warp to sector 1150 Verifying warp to sector 1151 Verifying warp to sector 1152 Verifying warp to sector 1153 Verifying warp to sector 1154 Verifying warp to sector 1155 Verifying warp to sector 1156 Verifying warp to sector 1157 Verifying warp to sector 1158 Verifying warp to sector 1159 Verifying warp to sector 1160 Verifying warp to sector 1161 Verifying warp to sector 1162 Verifying warp to sector 1163 Verifying warp to sector 1164 Verifying warp to sector 1165 Verifying warp to sector 1166 Verifying warp to sector 1167 Verifying warp to sector 1168 Verifying warp to sector 1169 Verifying warp to sector 1170 Verifying warp to sector 1171 Verifying warp to sector 1172 Verifying warp to sector 1173 Verifying warp to sector 1174 Verifying warp to sector 1175 Verifying warp to sector 1176 Verifying warp to sector 1177 Verifying warp to sector 1178 Verifying warp to sector 1179 Verifying warp to sector 1180 Verifying warp to sector 1181 Verifying warp to sector 1182 Verifying warp to sector 1183 Verifying warp to sector 1184 Verifying warp to sector 1185 Verifying warp to sector 1186 Verifying warp to sector 1187 Verifying warp to sector 1188 Verifying warp to sector 1189 Verifying warp to sector 1190 Verifying warp to sector 1191 Verifying warp to sector 1192 Verifying warp to sector 1193 Verifying warp to sector 1194 Verifying warp to sector 1195 Verifying warp to sector 1196 Verifying warp to sector 1197 Verifying warp to sector 1198 Verifying warp to sector 1199 Verifying warp to sector 1200 Verifying warp to sector 1201 Verifying warp to sector 1202 Verifying warp to sector 1203 Verifying warp to sector 1204 Verifying warp to sector 1205 Verifying warp to sector 1206 Verifying warp to sector 1207 Verifying warp to sector 1208 Verifying warp to sector 1209 Verifying warp to sector 1210 Verifying warp to sector 1211 Verifying warp to sector 1212 Verifying warp to sector 1213 Verifying warp to sector 1214 Verifying warp to sector 1215 Verifying warp to sector 1216 Verifying warp to sector 1217 Verifying warp to sector 1218 Verifying warp to sector 1219 Verifying warp to sector 1220 Verifying warp to sector 1221 Verifying warp to sector 1222 Verifying warp to sector 1223 Verifying warp to sector 1224 Verifying warp to sector 1225 Verifying warp to sector 1226 Verifying warp to sector 1227 Verifying warp to sector 1228 Verifying warp to sector 1229 Verifying warp to sector 1230 Verifying warp to sector 1231 Verifying warp to sector 1232 Verifying warp to sector 1233 Verifying warp to sector 1234 Verifying warp to sector 1235 Verifying warp to sector 1236 Verifying warp to sector 1237 Verifying warp to sector 1238 Verifying warp to sector 1239 Verifying warp to sector 1240 Verifying warp to sector 1241 Verifying warp to sector 1242 Verifying warp to sector 1243 Verifying warp to sector 1244 Verifying warp to sector 1245 Verifying warp to sector 1246 Verifying warp to sector 1247 Verifying warp to sector 1248 Verifying warp to sector 1249 Verifying warp to sector 1250 Verifying warp to sector 1251 Verifying warp to sector 1252 Verifying warp to sector 1253 Verifying warp to sector 1254 Verifying warp to sector 1255 Verifying warp to sector 1256 Verifying warp to sector 1257 Verifying warp to sector 1258 Verifying warp to sector 1259 Verifying warp to sector 1260 Verifying warp to sector 1261 Verifying warp to sector 1262 Verifying warp to sector 1263 Verifying warp to sector 1264 Verifying warp to sector 1265 Verifying warp to sector 1266 Verifying warp to sector 1267 Verifying warp to sector 1268 Verifying warp to sector 1269 Verifying warp to sector 1270 Verifying warp to sector 1271 Verifying warp to sector 1272 Verifying warp to sector 1273 Verifying warp to sector 1274 Verifying warp to sector 1275 Verifying warp to sector 1276 Verifying warp to sector 1277 Verifying warp to sector 1278 *** Error - No Path to sector 1278!!
+Sector 1278 has been linked to sector 1238 
+Verifying warp to sector 1279 Verifying warp to sector 1280 Verifying warp to sector 1281 Verifying warp to sector 1282 Verifying warp to sector 1283 Verifying warp to sector 1284 Verifying warp to sector 1285 Verifying warp to sector 1286 Verifying warp to sector 1287 Verifying warp to sector 1288 Verifying warp to sector 1289 Verifying warp to sector 1290 Verifying warp to sector 1291 Verifying warp to sector 1292 Verifying warp to sector 1293 Verifying warp to sector 1294 Verifying warp to sector 1295 Verifying warp to sector 1296 Verifying warp to sector 1297 Verifying warp to sector 1298 Verifying warp to sector 1299 Verifying warp to sector 1300 Verifying warp to sector 1301 Verifying warp to sector 1302 Verifying warp to sector 1303 Verifying warp to sector 1304 Verifying warp to sector 1305 Verifying warp to sector 1306 Verifying warp to sector 1307 Verifying warp to sector 1308 Verifying warp to sector 1309 Verifying warp to sector 1310 Verifying warp to sector 1311 Verifying warp to sector 1312 Verifying warp to sector 1313 Verifying warp to sector 1314 Verifying warp to sector 1315 Verifying warp to sector 1316 Verifying warp to sector 1317 Verifying warp to sector 1318 Verifying warp to sector 1319 Verifying warp to sector 1320 Verifying warp to sector 1321 Verifying warp to sector 1322 Verifying warp to sector 1323 Verifying warp to sector 1324 Verifying warp to sector 1325 Verifying warp to sector 1326 Verifying warp to sector 1327 Verifying warp to sector 1328 Verifying warp to sector 1329 Verifying warp to sector 1330 Verifying warp to sector 1331 Verifying warp to sector 1332 Verifying warp to sector 1333 Verifying warp to sector 1334 Verifying warp to sector 1335 Verifying warp to sector 1336 Verifying warp to sector 1337 Verifying warp to sector 1338 Verifying warp to sector 1339 Verifying warp to sector 1340 Verifying warp to sector 1341 Verifying warp to sector 1342 Verifying warp to sector 1343 Verifying warp to sector 1344 Verifying warp to sector 1345 Verifying warp to sector 1346 Verifying warp to sector 1347 Verifying warp to sector 1348 Verifying warp to sector 1349 Verifying warp to sector 1350 Verifying warp to sector 1351 Verifying warp to sector 1352 Verifying warp to sector 1353 Verifying warp to sector 1354 Verifying warp to sector 1355 Verifying warp to sector 1356 Verifying warp to sector 1357 Verifying warp to sector 1358 Verifying warp to sector 1359 Verifying warp to sector 1360 Verifying warp to sector 1361 Verifying warp to sector 1362 Verifying warp to sector 1363 Verifying warp to sector 1364 Verifying warp to sector 1365 Verifying warp to sector 1366 Verifying warp to sector 1367 Verifying warp to sector 1368 Verifying warp to sector 1369 Verifying warp to sector 1370 Verifying warp to sector 1371 Verifying warp to sector 1372 Verifying warp to sector 1373 Verifying warp to sector 1374 Verifying warp to sector 1375 Verifying warp to sector 1376 Verifying warp to sector 1377 Verifying warp to sector 1378 Verifying warp to sector 1379 Verifying warp to sector 1380 Verifying warp to sector 1381 Verifying warp to sector 1382 Verifying warp to sector 1383 Verifying warp to sector 1384 Verifying warp to sector 1385 Verifying warp to sector 1386 Verifying warp to sector 1387 Verifying warp to sector 1388 Verifying warp to sector 1389 Verifying warp to sector 1390 Verifying warp to sector 1391 Verifying warp to sector 1392 Verifying warp to sector 1393 Verifying warp to sector 1394 Verifying warp to sector 1395 Verifying warp to sector 1396 Verifying warp to sector 1397 Verifying warp to sector 1398 Verifying warp to sector 1399 Verifying warp to sector 1400 Verifying warp to sector 1401 Verifying warp to sector 1402 Verifying warp to sector 1403 Verifying warp to sector 1404 Verifying warp to sector 1405 Verifying warp to sector 1406 Verifying warp to sector 1407 Verifying warp to sector 1408 Verifying warp to sector 1409 Verifying warp to sector 1410 Verifying warp to sector 1411 *** Error - No Path to sector 1411!!
+Sector 1411 has been linked to sector 1368 
+Verifying warp to sector 1412 Verifying warp to sector 1413 Verifying warp to sector 1414 Verifying warp to sector 1415 Verifying warp to sector 1416 Verifying warp to sector 1417 Verifying warp to sector 1418 Verifying warp to sector 1419 Verifying warp to sector 1420 Verifying warp to sector 1421 Verifying warp to sector 1422 Verifying warp to sector 1423 Verifying warp to sector 1424 Verifying warp to sector 1425 Verifying warp to sector 1426 Verifying warp to sector 1427 Verifying warp to sector 1428 Verifying warp to sector 1429 Verifying warp to sector 1430 Verifying warp to sector 1431 Verifying warp to sector 1432 Verifying warp to sector 1433 Verifying warp to sector 1434 Verifying warp to sector 1435 Verifying warp to sector 1436 Verifying warp to sector 1437 Verifying warp to sector 1438 Verifying warp to sector 1439 Verifying warp to sector 1440 Verifying warp to sector 1441 Verifying warp to sector 1442 Verifying warp to sector 1443 Verifying warp to sector 1444 Verifying warp to sector 1445 Verifying warp to sector 1446 Verifying warp to sector 1447 Verifying warp to sector 1448 Verifying warp to sector 1449 Verifying warp to sector 1450 Verifying warp to sector 1451 Verifying warp to sector 1452 Verifying warp to sector 1453 Verifying warp to sector 1454 Verifying warp to sector 1455 Verifying warp to sector 1456 Verifying warp to sector 1457 Verifying warp to sector 1458 Verifying warp to sector 1459 Verifying warp to sector 1460 Verifying warp to sector 1461 Verifying warp to sector 1462 Verifying warp to sector 1463 Verifying warp to sector 1464 Verifying warp to sector 1465 Verifying warp to sector 1466 Verifying warp to sector 1467 Verifying warp to sector 1468 Verifying warp to sector 1469 Verifying warp to sector 1470 Verifying warp to sector 1471 Verifying warp to sector 1472 Verifying warp to sector 1473 Verifying warp to sector 1474 Verifying warp to sector 1475 Verifying warp to sector 1476 Verifying warp to sector 1477 Verifying warp to sector 1478 Verifying warp to sector 1479 Verifying warp to sector 1480 Verifying warp to sector 1481 Verifying warp to sector 1482 Verifying warp to sector 1483 Verifying warp to sector 1484 Verifying warp to sector 1485 Verifying warp to sector 1486 Verifying warp to sector 1487 Verifying warp to sector 1488 Verifying warp to sector 1489 Verifying warp to sector 1490 Verifying warp to sector 1491 Verifying warp to sector 1492 Verifying warp to sector 1493 Verifying warp to sector 1494 Verifying warp to sector 1495 Verifying warp to sector 1496 Verifying warp to sector 1497 Verifying warp to sector 1498 Verifying warp to sector 1499 Verifying warp to sector 1500 Verifying warp to sector 1501 Verifying warp to sector 1502 Verifying warp to sector 1503 Verifying warp to sector 1504 Verifying warp to sector 1505 Verifying warp to sector 1506 Verifying warp to sector 1507 Verifying warp to sector 1508 Verifying warp to sector 1509 Verifying warp to sector 1510 Verifying warp to sector 1511 Verifying warp to sector 1512 Verifying warp to sector 1513 Verifying warp to sector 1514 Verifying warp to sector 1515 Verifying warp to sector 1516 Verifying warp to sector 1517 Verifying warp to sector 1518 Verifying warp to sector 1519 Verifying warp to sector 1520 Verifying warp to sector 1521 Verifying warp to sector 1522 Verifying warp to sector 1523 Verifying warp to sector 1524 Verifying warp to sector 1525 Verifying warp to sector 1526 Verifying warp to sector 1527 Verifying warp to sector 1528 Verifying warp to sector 1529 Verifying warp to sector 1530 Verifying warp to sector 1531 Verifying warp to sector 1532 Verifying warp to sector 1533 Verifying warp to sector 1534 Verifying warp to sector 1535 Verifying warp to sector 1536 Verifying warp to sector 1537 Verifying warp to sector 1538 Verifying warp to sector 1539 Verifying warp to sector 1540 Verifying warp to sector 1541 Verifying warp to sector 1542 Verifying warp to sector 1543 Verifying warp to sector 1544 Verifying warp to sector 1545 Verifying warp to sector 1546 Verifying warp to sector 1547 Verifying warp to sector 1548 Verifying warp to sector 1549 Verifying warp to sector 1550 Verifying warp to sector 1551 Verifying warp to sector 1552 Verifying warp to sector 1553 Verifying warp to sector 1554 Verifying warp to sector 1555 Verifying warp to sector 1556 Verifying warp to sector 1557 Verifying warp to sector 1558 Verifying warp to sector 1559 Verifying warp to sector 1560 Verifying warp to sector 1561 Verifying warp to sector 1562 Verifying warp to sector 1563 Verifying warp to sector 1564 Verifying warp to sector 1565 Verifying warp to sector 1566 Verifying warp to sector 1567 Verifying warp to sector 1568 Verifying warp to sector 1569 Verifying warp to sector 1570 Verifying warp to sector 1571 Verifying warp to sector 1572 Verifying warp to sector 1573 Verifying warp to sector 1574 Verifying warp to sector 1575 Verifying warp to sector 1576 Verifying warp to sector 1577 Verifying warp to sector 1578 Verifying warp to sector 1579 Verifying warp to sector 1580 Verifying warp to sector 1581 Verifying warp to sector 1582 Verifying warp to sector 1583 Verifying warp to sector 1584 Verifying warp to sector 1585 Verifying warp to sector 1586 Verifying warp to sector 1587 Verifying warp to sector 1588 Verifying warp to sector 1589 *** Error - No Path to sector 1589!!
+Sector 1589 has been linked to sector 833 
+Verifying warp to sector 1590 Verifying warp to sector 1591 Verifying warp to sector 1592 Verifying warp to sector 1593 Verifying warp to sector 1594 Verifying warp to sector 1595 Verifying warp to sector 1596 Verifying warp to sector 1597 Verifying warp to sector 1598 Verifying warp to sector 1599 Verifying warp to sector 1600 Verifying warp to sector 1601 Verifying warp to sector 1602 Verifying warp to sector 1603 Verifying warp to sector 1604 Verifying warp to sector 1605 Verifying warp to sector 1606 Verifying warp to sector 1607 Verifying warp to sector 1608 Verifying warp to sector 1609 Verifying warp to sector 1610 Verifying warp to sector 1611 Verifying warp to sector 1612 Verifying warp to sector 1613 Verifying warp to sector 1614 Verifying warp to sector 1615 Verifying warp to sector 1616 Verifying warp to sector 1617 Verifying warp to sector 1618 Verifying warp to sector 1619 Verifying warp to sector 1620 Verifying warp to sector 1621 Verifying warp to sector 1622 Verifying warp to sector 1623 Verifying warp to sector 1624 Verifying warp to sector 1625 Verifying warp to sector 1626 Verifying warp to sector 1627 Verifying warp to sector 1628 Verifying warp to sector 1629 Verifying warp to sector 1630 Verifying warp to sector 1631 Verifying warp to sector 1632 Verifying warp to sector 1633 Verifying warp to sector 1634 Verifying warp to sector 1635 Verifying warp to sector 1636 Verifying warp to sector 1637 Verifying warp to sector 1638 Verifying warp to sector 1639 Verifying warp to sector 1640 Verifying warp to sector 1641 Verifying warp to sector 1642 Verifying warp to sector 1643 Verifying warp to sector 1644 Verifying warp to sector 1645 Verifying warp to sector 1646 Verifying warp to sector 1647 Verifying warp to sector 1648 Verifying warp to sector 1649 Verifying warp to sector 1650 Verifying warp to sector 1651 Verifying warp to sector 1652 Verifying warp to sector 1653 Verifying warp to sector 1654 Verifying warp to sector 1655 Verifying warp to sector 1656 Verifying warp to sector 1657 Verifying warp to sector 1658 Verifying warp to sector 1659 Verifying warp to sector 1660 Verifying warp to sector 1661 Verifying warp to sector 1662 Verifying warp to sector 1663 Verifying warp to sector 1664 Verifying warp to sector 1665 Verifying warp to sector 1666 Verifying warp to sector 1667 Verifying warp to sector 1668 Verifying warp to sector 1669 Verifying warp to sector 1670 Verifying warp to sector 1671 Verifying warp to sector 1672 Verifying warp to sector 1673 Verifying warp to sector 1674 Verifying warp to sector 1675 Verifying warp to sector 1676 Verifying warp to sector 1677 Verifying warp to sector 1678 Verifying warp to sector 1679 Verifying warp to sector 1680 Verifying warp to sector 1681 Verifying warp to sector 1682 Verifying warp to sector 1683 Verifying warp to sector 1684 Verifying warp to sector 1685 Verifying warp to sector 1686 Verifying warp to sector 1687 Verifying warp to sector 1688 Verifying warp to sector 1689 Verifying warp to sector 1690 Verifying warp to sector 1691 Verifying warp to sector 1692 Verifying warp to sector 1693 Verifying warp to sector 1694 Verifying warp to sector 1695 Verifying warp to sector 1696 Verifying warp to sector 1697 Verifying warp to sector 1698 Verifying warp to sector 1699 Verifying warp to sector 1700 Verifying warp to sector 1701 Verifying warp to sector 1702 Verifying warp to sector 1703 Verifying warp to sector 1704 Verifying warp to sector 1705 Verifying warp to sector 1706 Verifying warp to sector 1707 Verifying warp to sector 1708 Verifying warp to sector 1709 Verifying warp to sector 1710 Verifying warp to sector 1711 Verifying warp to sector 1712 Verifying warp to sector 1713 Verifying warp to sector 1714 Verifying warp to sector 1715 Verifying warp to sector 1716 Verifying warp to sector 1717 Verifying warp to sector 1718 Verifying warp to sector 1719 Verifying warp to sector 1720 Verifying warp to sector 1721 Verifying warp to sector 1722 Verifying warp to sector 1723 Verifying warp to sector 1724 Verifying warp to sector 1725 Verifying warp to sector 1726 Verifying warp to sector 1727 Verifying warp to sector 1728 Verifying warp to sector 1729 Verifying warp to sector 1730 Verifying warp to sector 1731 Verifying warp to sector 1732 Verifying warp to sector 1733 Verifying warp to sector 1734 Verifying warp to sector 1735 Verifying warp to sector 1736 Verifying warp to sector 1737 Verifying warp to sector 1738 Verifying warp to sector 1739 Verifying warp to sector 1740 Verifying warp to sector 1741 Verifying warp to sector 1742 Verifying warp to sector 1743 Verifying warp to sector 1744 Verifying warp to sector 1745 Verifying warp to sector 1746 Verifying warp to sector 1747 Verifying warp to sector 1748 Verifying warp to sector 1749 Verifying warp to sector 1750 Verifying warp to sector 1751 Verifying warp to sector 1752 Verifying warp to sector 1753 Verifying warp to sector 1754 Verifying warp to sector 1755 Verifying warp to sector 1756 Verifying warp to sector 1757 Verifying warp to sector 1758 Verifying warp to sector 1759 Verifying warp to sector 1760 Verifying warp to sector 1761 Verifying warp to sector 1762 Verifying warp to sector 1763 Verifying warp to sector 1764 Verifying warp to sector 1765 Verifying warp to sector 1766 Verifying warp to sector 1767 Verifying warp to sector 1768 Verifying warp to sector 1769 Verifying warp to sector 1770 Verifying warp to sector 1771 Verifying warp to sector 1772 Verifying warp to sector 1773 Verifying warp to sector 1774 Verifying warp to sector 1775 Verifying warp to sector 1776 Verifying warp to sector 1777 Verifying warp to sector 1778 Verifying warp to sector 1779 Verifying warp to sector 1780 Verifying warp to sector 1781 Verifying warp to sector 1782 Verifying warp to sector 1783 Verifying warp to sector 1784 Verifying warp to sector 1785 Verifying warp to sector 1786 Verifying warp to sector 1787 Verifying warp to sector 1788 Verifying warp to sector 1789 Verifying warp to sector 1790 Verifying warp to sector 1791 Verifying warp to sector 1792 Verifying warp to sector 1793 Verifying warp to sector 1794 Verifying warp to sector 1795 Verifying warp to sector 1796 Verifying warp to sector 1797 Verifying warp to sector 1798 Verifying warp to sector 1799 Verifying warp to sector 1800 *** Error - No Path to sector 1800!!
+Sector 1800 has been linked to sector 1129 
+Verifying warp to sector 1801 Verifying warp to sector 1802 Verifying warp to sector 1803 Verifying warp to sector 1804 Verifying warp to sector 1805 Verifying warp to sector 1806 Verifying warp to sector 1807 Verifying warp to sector 1808 Verifying warp to sector 1809 Verifying warp to sector 1810 Verifying warp to sector 1811 Verifying warp to sector 1812 Verifying warp to sector 1813 Verifying warp to sector 1814 Verifying warp to sector 1815 Verifying warp to sector 1816 Verifying warp to sector 1817 Verifying warp to sector 1818 Verifying warp to sector 1819 Verifying warp to sector 1820 Verifying warp to sector 1821 Verifying warp to sector 1822 Verifying warp to sector 1823 Verifying warp to sector 1824 Verifying warp to sector 1825 Verifying warp to sector 1826 Verifying warp to sector 1827 Verifying warp to sector 1828 Verifying warp to sector 1829 Verifying warp to sector 1830 Verifying warp to sector 1831 Verifying warp to sector 1832 Verifying warp to sector 1833 Verifying warp to sector 1834 Verifying warp to sector 1835 Verifying warp to sector 1836 Verifying warp to sector 1837 Verifying warp to sector 1838 Verifying warp to sector 1839 Verifying warp to sector 1840 Verifying warp to sector 1841 Verifying warp to sector 1842 Verifying warp to sector 1843 Verifying warp to sector 1844 Verifying warp to sector 1845 Verifying warp to sector 1846 Verifying warp to sector 1847 Verifying warp to sector 1848 Verifying warp to sector 1849 Verifying warp to sector 1850 Verifying warp to sector 1851 Verifying warp to sector 1852 Verifying warp to sector 1853 Verifying warp to sector 1854 Verifying warp to sector 1855 Verifying warp to sector 1856 Verifying warp to sector 1857 Verifying warp to sector 1858 Verifying warp to sector 1859 Verifying warp to sector 1860 Verifying warp to sector 1861 Verifying warp to sector 1862 Verifying warp to sector 1863 Verifying warp to sector 1864 Verifying warp to sector 1865 Verifying warp to sector 1866 Verifying warp to sector 1867 Verifying warp to sector 1868 Verifying warp to sector 1869 Verifying warp to sector 1870 Verifying warp to sector 1871 Verifying warp to sector 1872 Verifying warp to sector 1873 Verifying warp to sector 1874 Verifying warp to sector 1875 Verifying warp to sector 1876 Verifying warp to sector 1877 Verifying warp to sector 1878 Verifying warp to sector 1879 Verifying warp to sector 1880 Verifying warp to sector 1881 Verifying warp to sector 1882 Verifying warp to sector 1883 Verifying warp to sector 1884 Verifying warp to sector 1885 Verifying warp to sector 1886 Verifying warp to sector 1887 Verifying warp to sector 1888 Verifying warp to sector 1889 Verifying warp to sector 1890 Verifying warp to sector 1891 Verifying warp to sector 1892 Verifying warp to sector 1893 Verifying warp to sector 1894 Verifying warp to sector 1895 Verifying warp to sector 1896 Verifying warp to sector 1897 Verifying warp to sector 1898 Verifying warp to sector 1899 Verifying warp to sector 1900 Verifying warp to sector 1901 Verifying warp to sector 1902 Verifying warp to sector 1903 Verifying warp to sector 1904 Verifying warp to sector 1905 Verifying warp to sector 1906 Verifying warp to sector 1907 Verifying warp to sector 1908 Verifying warp to sector 1909 Verifying warp to sector 1910 Verifying warp to sector 1911 Verifying warp to sector 1912 Verifying warp to sector 1913 Verifying warp to sector 1914 Verifying warp to sector 1915 Verifying warp to sector 1916 Verifying warp to sector 1917 Verifying warp to sector 1918 Verifying warp to sector 1919 Verifying warp to sector 1920 Verifying warp to sector 1921 Verifying warp to sector 1922 Verifying warp to sector 1923 Verifying warp to sector 1924 Verifying warp to sector 1925 Verifying warp to sector 1926 Verifying warp to sector 1927 Verifying warp to sector 1928 Verifying warp to sector 1929 Verifying warp to sector 1930 *** Error - No Path to sector 1930!!
+Sector 1930 has been linked to sector 1363 
+Verifying warp to sector 1931 Verifying warp to sector 1932 Verifying warp to sector 1933 Verifying warp to sector 1934 Verifying warp to sector 1935 Verifying warp to sector 1936 Verifying warp to sector 1937 Verifying warp to sector 1938 Verifying warp to sector 1939 Verifying warp to sector 1940 Verifying warp to sector 1941 Verifying warp to sector 1942 Verifying warp to sector 1943 Verifying warp to sector 1944 Verifying warp to sector 1945 Verifying warp to sector 1946 Verifying warp to sector 1947 Verifying warp to sector 1948 Verifying warp to sector 1949 Verifying warp to sector 1950 Verifying warp to sector 1951 Verifying warp to sector 1952 Verifying warp to sector 1953 Verifying warp to sector 1954 Verifying warp to sector 1955 Verifying warp to sector 1956 Verifying warp to sector 1957 Verifying warp to sector 1958 Verifying warp to sector 1959 Verifying warp to sector 1960 Verifying warp to sector 1961 Verifying warp to sector 1962 Verifying warp to sector 1963 Verifying warp to sector 1964 Verifying warp to sector 1965 Verifying warp to sector 1966 Verifying warp to sector 1967 Verifying warp to sector 1968 Verifying warp to sector 1969 Verifying warp to sector 1970 Verifying warp to sector 1971 Verifying warp to sector 1972 Verifying warp to sector 1973 Verifying warp to sector 1974 Verifying warp to sector 1975 Verifying warp to sector 1976 Verifying warp to sector 1977 Verifying warp to sector 1978 Verifying warp to sector 1979 Verifying warp to sector 1980 Verifying warp to sector 1981 Verifying warp to sector 1982 Verifying warp to sector 1983 Verifying warp to sector 1984 Verifying warp to sector 1985 Verifying warp to sector 1986 Verifying warp to sector 1987 Verifying warp to sector 1988 Verifying warp to sector 1989 Verifying warp to sector 1990 Verifying warp to sector 1991 Verifying warp to sector 1992 Verifying warp to sector 1993 Verifying warp to sector 1994 Verifying warp to sector 1995 Verifying warp to sector 1996 Verifying warp to sector 1997 Verifying warp to sector 1998 Verifying warp to sector 1999 Verifying warp to sector 2000 Verifying warp to sector 2001 Verifying warp to sector 2002 Verifying warp to sector 2003 Verifying warp to sector 2004 Verifying warp to sector 2005 Verifying warp to sector 2006 Verifying warp to sector 2007 Verifying warp to sector 2008 Verifying warp to sector 2009 Verifying warp to sector 2010 Verifying warp to sector 2011 Verifying warp to sector 2012 Verifying warp to sector 2013 Verifying warp to sector 2014 Verifying warp to sector 2015 Verifying warp to sector 2016 Verifying warp to sector 2017 Verifying warp to sector 2018 Verifying warp to sector 2019 Verifying warp to sector 2020 Verifying warp to sector 2021 Verifying warp to sector 2022 Verifying warp to sector 2023 Verifying warp to sector 2024 Verifying warp to sector 2025 Verifying warp to sector 2026 Verifying warp to sector 2027 Verifying warp to sector 2028 Verifying warp to sector 2029 Verifying warp to sector 2030 Verifying warp to sector 2031 Verifying warp to sector 2032 Verifying warp to sector 2033 Verifying warp to sector 2034 Verifying warp to sector 2035 Verifying warp to sector 2036 Verifying warp to sector 2037 Verifying warp to sector 2038 Verifying warp to sector 2039 Verifying warp to sector 2040 Verifying warp to sector 2041 Verifying warp to sector 2042 Verifying warp to sector 2043 Verifying warp to sector 2044 Verifying warp to sector 2045 Verifying warp to sector 2046 Verifying warp to sector 2047 Verifying warp to sector 2048 Verifying warp to sector 2049 Verifying warp to sector 2050 Verifying warp to sector 2051 Verifying warp to sector 2052 Verifying warp to sector 2053 Verifying warp to sector 2054 Verifying warp to sector 2055 Verifying warp to sector 2056 Verifying warp to sector 2057 Verifying warp to sector 2058 Verifying warp to sector 2059 Verifying warp to sector 2060 Verifying warp to sector 2061 Verifying warp to sector 2062 Verifying warp to sector 2063 Verifying warp to sector 2064 Verifying warp to sector 2065 Verifying warp to sector 2066 Verifying warp to sector 2067 Verifying warp to sector 2068 Verifying warp to sector 2069 Verifying warp to sector 2070 Verifying warp to sector 2071 Verifying warp to sector 2072 Verifying warp to sector 2073 Verifying warp to sector 2074 Verifying warp to sector 2075 Verifying warp to sector 2076 Verifying warp to sector 2077 Verifying warp to sector 2078 Verifying warp to sector 2079 Verifying warp to sector 2080 Verifying warp to sector 2081 Verifying warp to sector 2082 Verifying warp to sector 2083 Verifying warp to sector 2084 Verifying warp to sector 2085 Verifying warp to sector 2086 Verifying warp to sector 2087 Verifying warp to sector 2088 Verifying warp to sector 2089 Verifying warp to sector 2090 Verifying warp to sector 2091 Verifying warp to sector 2092 Verifying warp to sector 2093 Verifying warp to sector 2094 Verifying warp to sector 2095 Verifying warp to sector 2096 Verifying warp to sector 2097 Verifying warp to sector 2098 Verifying warp to sector 2099 Verifying warp to sector 2100 Verifying warp to sector 2101 Verifying warp to sector 2102 Verifying warp to sector 2103 Verifying warp to sector 2104 Verifying warp to sector 2105 Verifying warp to sector 2106 Verifying warp to sector 2107 Verifying warp to sector 2108 Verifying warp to sector 2109 Verifying warp to sector 2110 Verifying warp to sector 2111 Verifying warp to sector 2112 Verifying warp to sector 2113 Verifying warp to sector 2114 Verifying warp to sector 2115 Verifying warp to sector 2116 Verifying warp to sector 2117 Verifying warp to sector 2118 Verifying warp to sector 2119 Verifying warp to sector 2120 Verifying warp to sector 2121 Verifying warp to sector 2122 Verifying warp to sector 2123 Verifying warp to sector 2124 Verifying warp to sector 2125 Verifying warp to sector 2126 Verifying warp to sector 2127 Verifying warp to sector 2128 Verifying warp to sector 2129 Verifying warp to sector 2130 Verifying warp to sector 2131 Verifying warp to sector 2132 Verifying warp to sector 2133 Verifying warp to sector 2134 Verifying warp to sector 2135 Verifying warp to sector 2136 Verifying warp to sector 2137 Verifying warp to sector 2138 Verifying warp to sector 2139 Verifying warp to sector 2140 Verifying warp to sector 2141 Verifying warp to sector 2142 Verifying warp to sector 2143 Verifying warp to sector 2144 Verifying warp to sector 2145 Verifying warp to sector 2146 Verifying warp to sector 2147 Verifying warp to sector 2148 Verifying warp to sector 2149 Verifying warp to sector 2150 Verifying warp to sector 2151 Verifying warp to sector 2152 Verifying warp to sector 2153 Verifying warp to sector 2154 Verifying warp to sector 2155 Verifying warp to sector 2156 Verifying warp to sector 2157 Verifying warp to sector 2158 Verifying warp to sector 2159 Verifying warp to sector 2160 Verifying warp to sector 2161 Verifying warp to sector 2162 Verifying warp to sector 2163 Verifying warp to sector 2164 Verifying warp to sector 2165 Verifying warp to sector 2166 Verifying warp to sector 2167 Verifying warp to sector 2168 Verifying warp to sector 2169 Verifying warp to sector 2170 Verifying warp to sector 2171 Verifying warp to sector 2172 Verifying warp to sector 2173 Verifying warp to sector 2174 Verifying warp to sector 2175 Verifying warp to sector 2176 Verifying warp to sector 2177 Verifying warp to sector 2178 Verifying warp to sector 2179 Verifying warp to sector 2180 Verifying warp to sector 2181 Verifying warp to sector 2182 Verifying warp to sector 2183 Verifying warp to sector 2184 Verifying warp to sector 2185 Verifying warp to sector 2186 Verifying warp to sector 2187 Verifying warp to sector 2188 Verifying warp to sector 2189 Verifying warp to sector 2190 Verifying warp to sector 2191 Verifying warp to sector 2192 Verifying warp to sector 2193 Verifying warp to sector 2194 Verifying warp to sector 2195 Verifying warp to sector 2196 Verifying warp to sector 2197 Verifying warp to sector 2198 Verifying warp to sector 2199 Verifying warp to sector 2200 Verifying warp to sector 2201 Verifying warp to sector 2202 Verifying warp to sector 2203 Verifying warp to sector 2204 Verifying warp to sector 2205 Verifying warp to sector 2206 Verifying warp to sector 2207 Verifying warp to sector 2208 Verifying warp to sector 2209 Verifying warp to sector 2210 Verifying warp to sector 2211 Verifying warp to sector 2212 Verifying warp to sector 2213 Verifying warp to sector 2214 Verifying warp to sector 2215 Verifying warp to sector 2216 Verifying warp to sector 2217 Verifying warp to sector 2218 Verifying warp to sector 2219 Verifying warp to sector 2220 Verifying warp to sector 2221 Verifying warp to sector 2222 Verifying warp to sector 2223 Verifying warp to sector 2224 Verifying warp to sector 2225 Verifying warp to sector 2226 Verifying warp to sector 2227 Verifying warp to sector 2228 Verifying warp to sector 2229 Verifying warp to sector 2230 Verifying warp to sector 2231 Verifying warp to sector 2232 Verifying warp to sector 2233 Verifying warp to sector 2234 Verifying warp to sector 2235 Verifying warp to sector 2236 Verifying warp to sector 2237 Verifying warp to sector 2238 Verifying warp to sector 2239 Verifying warp to sector 2240 Verifying warp to sector 2241 Verifying warp to sector 2242 Verifying warp to sector 2243 Verifying warp to sector 2244 Verifying warp to sector 2245 Verifying warp to sector 2246 Verifying warp to sector 2247 Verifying warp to sector 2248 Verifying warp to sector 2249 Verifying warp to sector 2250 Verifying warp to sector 2251 Verifying warp to sector 2252 Verifying warp to sector 2253 Verifying warp to sector 2254 Verifying warp to sector 2255 Verifying warp to sector 2256 Verifying warp to sector 2257 Verifying warp to sector 2258 Verifying warp to sector 2259 Verifying warp to sector 2260 Verifying warp to sector 2261 Verifying warp to sector 2262 Verifying warp to sector 2263 Verifying warp to sector 2264 Verifying warp to sector 2265 Verifying warp to sector 2266 Verifying warp to sector 2267 Verifying warp to sector 2268 Verifying warp to sector 2269 Verifying warp to sector 2270 Verifying warp to sector 2271 Verifying warp to sector 2272 Verifying warp to sector 2273 Verifying warp to sector 2274 Verifying warp to sector 2275 Verifying warp to sector 2276 Verifying warp to sector 2277 Verifying warp to sector 2278 Verifying warp to sector 2279 Verifying warp to sector 2280 Verifying warp to sector 2281 Verifying warp to sector 2282 Verifying warp to sector 2283 Verifying warp to sector 2284 Verifying warp to sector 2285 Verifying warp to sector 2286 Verifying warp to sector 2287 Verifying warp to sector 2288 Verifying warp to sector 2289 Verifying warp to sector 2290 Verifying warp to sector 2291 Verifying warp to sector 2292 Verifying warp to sector 2293 Verifying warp to sector 2294 Verifying warp to sector 2295 Verifying warp to sector 2296 Verifying warp to sector 2297 Verifying warp to sector 2298 Verifying warp to sector 2299 Verifying warp to sector 2300 Verifying warp to sector 2301 *** Error - No Path to sector 2301!!
+Sector 2301 has been linked to sector 554 
+Verifying warp to sector 2302 Verifying warp to sector 2303 Verifying warp to sector 2304 Verifying warp to sector 2305 Verifying warp to sector 2306 Verifying warp to sector 2307 Verifying warp to sector 2308 Verifying warp to sector 2309 Verifying warp to sector 2310 Verifying warp to sector 2311 Verifying warp to sector 2312 Verifying warp to sector 2313 Verifying warp to sector 2314 Verifying warp to sector 2315 Verifying warp to sector 2316 Verifying warp to sector 2317 Verifying warp to sector 2318 Verifying warp to sector 2319 Verifying warp to sector 2320 Verifying warp to sector 2321 Verifying warp to sector 2322 Verifying warp to sector 2323 Verifying warp to sector 2324 Verifying warp to sector 2325 Verifying warp to sector 2326 Verifying warp to sector 2327 Verifying warp to sector 2328 Verifying warp to sector 2329 Verifying warp to sector 2330 Verifying warp to sector 2331 Verifying warp to sector 2332 Verifying warp to sector 2333 Verifying warp to sector 2334 Verifying warp to sector 2335 Verifying warp to sector 2336 Verifying warp to sector 2337 Verifying warp to sector 2338 Verifying warp to sector 2339 Verifying warp to sector 2340 Verifying warp to sector 2341 Verifying warp to sector 2342 Verifying warp to sector 2343 Verifying warp to sector 2344 Verifying warp to sector 2345 Verifying warp to sector 2346 Verifying warp to sector 2347 Verifying warp to sector 2348 Verifying warp to sector 2349 Verifying warp to sector 2350 Verifying warp to sector 2351 Verifying warp to sector 2352 Verifying warp to sector 2353 Verifying warp to sector 2354 Verifying warp to sector 2355 Verifying warp to sector 2356 Verifying warp to sector 2357 Verifying warp to sector 2358 Verifying warp to sector 2359 Verifying warp to sector 2360 Verifying warp to sector 2361 Verifying warp to sector 2362 Verifying warp to sector 2363 Verifying warp to sector 2364 Verifying warp to sector 2365 Verifying warp to sector 2366 Verifying warp to sector 2367 Verifying warp to sector 2368 Verifying warp to sector 2369 Verifying warp to sector 2370 Verifying warp to sector 2371 Verifying warp to sector 2372 Verifying warp to sector 2373 Verifying warp to sector 2374 Verifying warp to sector 2375 Verifying warp to sector 2376 Verifying warp to sector 2377 Verifying warp to sector 2378 Verifying warp to sector 2379 Verifying warp to sector 2380 Verifying warp to sector 2381 Verifying warp to sector 2382 Verifying warp to sector 2383 Verifying warp to sector 2384 Verifying warp to sector 2385 Verifying warp to sector 2386 Verifying warp to sector 2387 Verifying warp to sector 2388 Verifying warp to sector 2389 Verifying warp to sector 2390 Verifying warp to sector 2391 Verifying warp to sector 2392 Verifying warp to sector 2393 Verifying warp to sector 2394 Verifying warp to sector 2395 Verifying warp to sector 2396 Verifying warp to sector 2397 Verifying warp to sector 2398 Verifying warp to sector 2399 Verifying warp to sector 2400 Verifying warp to sector 2401 *** Error - No Path to sector 2401!!
+Sector 2401 has been linked to sector 1224 
+Verifying warp to sector 2402 Verifying warp to sector 2403 Verifying warp to sector 2404 Verifying warp to sector 2405 Verifying warp to sector 2406 Verifying warp to sector 2407 Verifying warp to sector 2408 Verifying warp to sector 2409 Verifying warp to sector 2410 Verifying warp to sector 2411 Verifying warp to sector 2412 Verifying warp to sector 2413 Verifying warp to sector 2414 Verifying warp to sector 2415 Verifying warp to sector 2416 Verifying warp to sector 2417 Verifying warp to sector 2418 Verifying warp to sector 2419 Verifying warp to sector 2420 Verifying warp to sector 2421 Verifying warp to sector 2422 Verifying warp to sector 2423 Verifying warp to sector 2424 Verifying warp to sector 2425 Verifying warp to sector 2426 Verifying warp to sector 2427 Verifying warp to sector 2428 Verifying warp to sector 2429 Verifying warp to sector 2430 Verifying warp to sector 2431 Verifying warp to sector 2432 Verifying warp to sector 2433 Verifying warp to sector 2434 Verifying warp to sector 2435 Verifying warp to sector 2436 Verifying warp to sector 2437 Verifying warp to sector 2438 Verifying warp to sector 2439 Verifying warp to sector 2440 Verifying warp to sector 2441 Verifying warp to sector 2442 Verifying warp to sector 2443 Verifying warp to sector 2444 Verifying warp to sector 2445 Verifying warp to sector 2446 Verifying warp to sector 2447 Verifying warp to sector 2448 Verifying warp to sector 2449 Verifying warp to sector 2450 Verifying warp to sector 2451 Verifying warp to sector 2452 Verifying warp to sector 2453 Verifying warp to sector 2454 Verifying warp to sector 2455 Verifying warp to sector 2456 Verifying warp to sector 2457 Verifying warp to sector 2458 Verifying warp to sector 2459 Verifying warp to sector 2460 Verifying warp to sector 2461 Verifying warp to sector 2462 Verifying warp to sector 2463 Verifying warp to sector 2464 Verifying warp to sector 2465 Verifying warp to sector 2466 Verifying warp to sector 2467 Verifying warp to sector 2468 Verifying warp to sector 2469 Verifying warp to sector 2470 Verifying warp to sector 2471 Verifying warp to sector 2472 Verifying warp to sector 2473 Verifying warp to sector 2474 Verifying warp to sector 2475 Verifying warp to sector 2476 Verifying warp to sector 2477 Verifying warp to sector 2478 Verifying warp to sector 2479 Verifying warp to sector 2480 Verifying warp to sector 2481 Verifying warp to sector 2482 Verifying warp to sector 2483 Verifying warp to sector 2484 Verifying warp to sector 2485 Verifying warp to sector 2486 Verifying warp to sector 2487 Verifying warp to sector 2488 Verifying warp to sector 2489 Verifying warp to sector 2490 Verifying warp to sector 2491 Verifying warp to sector 2492 Verifying warp to sector 2493 Verifying warp to sector 2494 Verifying warp to sector 2495 Verifying warp to sector 2496 Verifying warp to sector 2497 Verifying warp to sector 2498 Verifying warp to sector 2499 Verifying warp to sector 2500 Verifying warp to sector 2501 Verifying warp to sector 2502 Verifying warp to sector 2503 Verifying warp to sector 2504 Verifying warp to sector 2505 Verifying warp to sector 2506 Verifying warp to sector 2507 Verifying warp to sector 2508 Verifying warp to sector 2509 Verifying warp to sector 2510 Verifying warp to sector 2511 Verifying warp to sector 2512 Verifying warp to sector 2513 Verifying warp to sector 2514 Verifying warp to sector 2515 Verifying warp to sector 2516 Verifying warp to sector 2517 Verifying warp to sector 2518 Verifying warp to sector 2519 Verifying warp to sector 2520 Verifying warp to sector 2521 Verifying warp to sector 2522 Verifying warp to sector 2523 Verifying warp to sector 2524 Verifying warp to sector 2525 Verifying warp to sector 2526 Verifying warp to sector 2527 Verifying warp to sector 2528 Verifying warp to sector 2529 Verifying warp to sector 2530 Verifying warp to sector 2531 Verifying warp to sector 2532 Verifying warp to sector 2533 Verifying warp to sector 2534 Verifying warp to sector 2535 Verifying warp to sector 2536 Verifying warp to sector 2537 Verifying warp to sector 2538 Verifying warp to sector 2539 Verifying warp to sector 2540 Verifying warp to sector 2541 Verifying warp to sector 2542 Verifying warp to sector 2543 Verifying warp to sector 2544 Verifying warp to sector 2545 Verifying warp to sector 2546 Verifying warp to sector 2547 Verifying warp to sector 2548 Verifying warp to sector 2549 Verifying warp to sector 2550 Verifying warp to sector 2551 Verifying warp to sector 2552 Verifying warp to sector 2553 Verifying warp to sector 2554 Verifying warp to sector 2555 Verifying warp to sector 2556 Verifying warp to sector 2557 Verifying warp to sector 2558 Verifying warp to sector 2559 Verifying warp to sector 2560 Verifying warp to sector 2561 Verifying warp to sector 2562 Verifying warp to sector 2563 Verifying warp to sector 2564 Verifying warp to sector 2565 Verifying warp to sector 2566 Verifying warp to sector 2567 Verifying warp to sector 2568 Verifying warp to sector 2569 Verifying warp to sector 2570 Verifying warp to sector 2571 Verifying warp to sector 2572 Verifying warp to sector 2573 Verifying warp to sector 2574 Verifying warp to sector 2575 Verifying warp to sector 2576 Verifying warp to sector 2577 Verifying warp to sector 2578 Verifying warp to sector 2579 Verifying warp to sector 2580 Verifying warp to sector 2581 Verifying warp to sector 2582 Verifying warp to sector 2583 Verifying warp to sector 2584 Verifying warp to sector 2585 Verifying warp to sector 2586 Verifying warp to sector 2587 Verifying warp to sector 2588 Verifying warp to sector 2589 Verifying warp to sector 2590 Verifying warp to sector 2591 Verifying warp to sector 2592 Verifying warp to sector 2593 Verifying warp to sector 2594 Verifying warp to sector 2595 Verifying warp to sector 2596 Verifying warp to sector 2597 Verifying warp to sector 2598 Verifying warp to sector 2599 Verifying warp to sector 2600 Verifying warp to sector 2601 Verifying warp to sector 2602 Verifying warp to sector 2603 Verifying warp to sector 2604 Verifying warp to sector 2605 Verifying warp to sector 2606 Verifying warp to sector 2607 Verifying warp to sector 2608 Verifying warp to sector 2609 Verifying warp to sector 2610 Verifying warp to sector 2611 Verifying warp to sector 2612 Verifying warp to sector 2613 Verifying warp to sector 2614 Verifying warp to sector 2615 Verifying warp to sector 2616 Verifying warp to sector 2617 Verifying warp to sector 2618 Verifying warp to sector 2619 Verifying warp to sector 2620 Verifying warp to sector 2621 Verifying warp to sector 2622 Verifying warp to sector 2623 Verifying warp to sector 2624 Verifying warp to sector 2625 Verifying warp to sector 2626 Verifying warp to sector 2627 Verifying warp to sector 2628 Verifying warp to sector 2629 Verifying warp to sector 2630 Verifying warp to sector 2631 Verifying warp to sector 2632 Verifying warp to sector 2633 Verifying warp to sector 2634 Verifying warp to sector 2635 Verifying warp to sector 2636 Verifying warp to sector 2637 Verifying warp to sector 2638 Verifying warp to sector 2639 Verifying warp to sector 2640 Verifying warp to sector 2641 Verifying warp to sector 2642 Verifying warp to sector 2643 Verifying warp to sector 2644 Verifying warp to sector 2645 Verifying warp to sector 2646 Verifying warp to sector 2647 Verifying warp to sector 2648 Verifying warp to sector 2649 Verifying warp to sector 2650 Verifying warp to sector 2651 Verifying warp to sector 2652 Verifying warp to sector 2653 Verifying warp to sector 2654 Verifying warp to sector 2655 Verifying warp to sector 2656 Verifying warp to sector 2657 Verifying warp to sector 2658 Verifying warp to sector 2659 Verifying warp to sector 2660 Verifying warp to sector 2661 Verifying warp to sector 2662 Verifying warp to sector 2663 Verifying warp to sector 2664 Verifying warp to sector 2665 Verifying warp to sector 2666 Verifying warp to sector 2667 Verifying warp to sector 2668 Verifying warp to sector 2669 Verifying warp to sector 2670 Verifying warp to sector 2671 Verifying warp to sector 2672 Verifying warp to sector 2673 Verifying warp to sector 2674 Verifying warp to sector 2675 Verifying warp to sector 2676 Verifying warp to sector 2677 Verifying warp to sector 2678 Verifying warp to sector 2679 Verifying warp to sector 2680 Verifying warp to sector 2681 Verifying warp to sector 2682 Verifying warp to sector 2683 Verifying warp to sector 2684 Verifying warp to sector 2685 Verifying warp to sector 2686 Verifying warp to sector 2687 Verifying warp to sector 2688 Verifying warp to sector 2689 Verifying warp to sector 2690 Verifying warp to sector 2691 Verifying warp to sector 2692 Verifying warp to sector 2693 Verifying warp to sector 2694 Verifying warp to sector 2695 Verifying warp to sector 2696 Verifying warp to sector 2697 Verifying warp to sector 2698 Verifying warp to sector 2699 Verifying warp to sector 2700 Verifying warp to sector 2701 Verifying warp to sector 2702 Verifying warp to sector 2703 Verifying warp to sector 2704 Verifying warp to sector 2705 Verifying warp to sector 2706 Verifying warp to sector 2707 Verifying warp to sector 2708 Verifying warp to sector 2709 Verifying warp to sector 2710 Verifying warp to sector 2711 Verifying warp to sector 2712 Verifying warp to sector 2713 Verifying warp to sector 2714 Verifying warp to sector 2715 Verifying warp to sector 2716 Verifying warp to sector 2717 Verifying warp to sector 2718 Verifying warp to sector 2719 Verifying warp to sector 2720 Verifying warp to sector 2721 Verifying warp to sector 2722 Verifying warp to sector 2723 Verifying warp to sector 2724 Verifying warp to sector 2725 Verifying warp to sector 2726 Verifying warp to sector 2727 Verifying warp to sector 2728 Verifying warp to sector 2729 Verifying warp to sector 2730 Verifying warp to sector 2731 Verifying warp to sector 2732 Verifying warp to sector 2733 Verifying warp to sector 2734 Verifying warp to sector 2735 Verifying warp to sector 2736 Verifying warp to sector 2737 Verifying warp to sector 2738 Verifying warp to sector 2739 Verifying warp to sector 2740 Verifying warp to sector 2741 Verifying warp to sector 2742 Verifying warp to sector 2743 Verifying warp to sector 2744 Verifying warp to sector 2745 Verifying warp to sector 2746 Verifying warp to sector 2747 Verifying warp to sector 2748 Verifying warp to sector 2749 Verifying warp to sector 2750 Verifying warp to sector 2751 Verifying warp to sector 2752 Verifying warp to sector 2753 Verifying warp to sector 2754 Verifying warp to sector 2755 Verifying warp to sector 2756 Verifying warp to sector 2757 Verifying warp to sector 2758 Verifying warp to sector 2759 Verifying warp to sector 2760 Verifying warp to sector 2761 Verifying warp to sector 2762 Verifying warp to sector 2763 Verifying warp to sector 2764 Verifying warp to sector 2765 Verifying warp to sector 2766 Verifying warp to sector 2767 Verifying warp to sector 2768 Verifying warp to sector 2769 Verifying warp to sector 2770 Verifying warp to sector 2771 Verifying warp to sector 2772 Verifying warp to sector 2773 Verifying warp to sector 2774 Verifying warp to sector 2775 Verifying warp to sector 2776 Verifying warp to sector 2777 Verifying warp to sector 2778 Verifying warp to sector 2779 Verifying warp to sector 2780 Verifying warp to sector 2781 Verifying warp to sector 2782 Verifying warp to sector 2783 Verifying warp to sector 2784 Verifying warp to sector 2785 Verifying warp to sector 2786 Verifying warp to sector 2787 Verifying warp to sector 2788 Verifying warp to sector 2789 Verifying warp to sector 2790 Verifying warp to sector 2791 Verifying warp to sector 2792 Verifying warp to sector 2793 Verifying warp to sector 2794 Verifying warp to sector 2795 Verifying warp to sector 2796 Verifying warp to sector 2797 Verifying warp to sector 2798 Verifying warp to sector 2799 Verifying warp to sector 2800 Verifying warp to sector 2801 Verifying warp to sector 2802 Verifying warp to sector 2803 Verifying warp to sector 2804 Verifying warp to sector 2805 Verifying warp to sector 2806 Verifying warp to sector 2807 Verifying warp to sector 2808 Verifying warp to sector 2809 *** Error - No Path to sector 2809!!
+Sector 2809 has been linked to sector 1469 
+Verifying warp to sector 2810 Verifying warp to sector 2811 Verifying warp to sector 2812 Verifying warp to sector 2813 Verifying warp to sector 2814 Verifying warp to sector 2815 Verifying warp to sector 2816 Verifying warp to sector 2817 Verifying warp to sector 2818 Verifying warp to sector 2819 Verifying warp to sector 2820 Verifying warp to sector 2821 Verifying warp to sector 2822 Verifying warp to sector 2823 Verifying warp to sector 2824 Verifying warp to sector 2825 Verifying warp to sector 2826 Verifying warp to sector 2827 Verifying warp to sector 2828 Verifying warp to sector 2829 Verifying warp to sector 2830 Verifying warp to sector 2831 Verifying warp to sector 2832 Verifying warp to sector 2833 Verifying warp to sector 2834 Verifying warp to sector 2835 Verifying warp to sector 2836 Verifying warp to sector 2837 Verifying warp to sector 2838 Verifying warp to sector 2839 Verifying warp to sector 2840 Verifying warp to sector 2841 Verifying warp to sector 2842 Verifying warp to sector 2843 Verifying warp to sector 2844 Verifying warp to sector 2845 Verifying warp to sector 2846 Verifying warp to sector 2847 Verifying warp to sector 2848 Verifying warp to sector 2849 Verifying warp to sector 2850 Verifying warp to sector 2851 Verifying warp to sector 2852 Verifying warp to sector 2853 Verifying warp to sector 2854 Verifying warp to sector 2855 Verifying warp to sector 2856 Verifying warp to sector 2857 Verifying warp to sector 2858 Verifying warp to sector 2859 Verifying warp to sector 2860 Verifying warp to sector 2861 Verifying warp to sector 2862 Verifying warp to sector 2863 Verifying warp to sector 2864 Verifying warp to sector 2865 Verifying warp to sector 2866 Verifying warp to sector 2867 Verifying warp to sector 2868 Verifying warp to sector 2869 Verifying warp to sector 2870 Verifying warp to sector 2871 Verifying warp to sector 2872 Verifying warp to sector 2873 Verifying warp to sector 2874 Verifying warp to sector 2875 Verifying warp to sector 2876 Verifying warp to sector 2877 Verifying warp to sector 2878 Verifying warp to sector 2879 Verifying warp to sector 2880 Verifying warp to sector 2881 Verifying warp to sector 2882 Verifying warp to sector 2883 Verifying warp to sector 2884 Verifying warp to sector 2885 Verifying warp to sector 2886 Verifying warp to sector 2887 Verifying warp to sector 2888 Verifying warp to sector 2889 Verifying warp to sector 2890 Verifying warp to sector 2891 Verifying warp to sector 2892 Verifying warp to sector 2893 Verifying warp to sector 2894 Verifying warp to sector 2895 Verifying warp to sector 2896 Verifying warp to sector 2897 Verifying warp to sector 2898 Verifying warp to sector 2899 Verifying warp to sector 2900 Verifying warp to sector 2901 Verifying warp to sector 2902 Verifying warp to sector 2903 Verifying warp to sector 2904 Verifying warp to sector 2905 Verifying warp to sector 2906 Verifying warp to sector 2907 Verifying warp to sector 2908 Verifying warp to sector 2909 Verifying warp to sector 2910 Verifying warp to sector 2911 Verifying warp to sector 2912 Verifying warp to sector 2913 Verifying warp to sector 2914 Verifying warp to sector 2915 Verifying warp to sector 2916 Verifying warp to sector 2917 Verifying warp to sector 2918 Verifying warp to sector 2919 Verifying warp to sector 2920 Verifying warp to sector 2921 Verifying warp to sector 2922 Verifying warp to sector 2923 Verifying warp to sector 2924 Verifying warp to sector 2925 Verifying warp to sector 2926 Verifying warp to sector 2927 Verifying warp to sector 2928 Verifying warp to sector 2929 Verifying warp to sector 2930 Verifying warp to sector 2931 Verifying warp to sector 2932 Verifying warp to sector 2933 Verifying warp to sector 2934 Verifying warp to sector 2935 Verifying warp to sector 2936 Verifying warp to sector 2937 Verifying warp to sector 2938 Verifying warp to sector 2939 Verifying warp to sector 2940 *** Error - No Path to sector 2940!!
+Sector 2940 has been linked to sector 2088 
+Verifying warp to sector 2941 Verifying warp to sector 2942 Verifying warp to sector 2943 Verifying warp to sector 2944 Verifying warp to sector 2945 Verifying warp to sector 2946 Verifying warp to sector 2947 Verifying warp to sector 2948 Verifying warp to sector 2949 Verifying warp to sector 2950 Verifying warp to sector 2951 *** Error - No Path to sector 2951!!
+Sector 2951 has been linked to sector 1192 
+Verifying warp to sector 2952 Verifying warp to sector 2953 Verifying warp to sector 2954 Verifying warp to sector 2955 Verifying warp to sector 2956 Verifying warp to sector 2957 Verifying warp to sector 2958 Verifying warp to sector 2959 Verifying warp to sector 2960 Verifying warp to sector 2961 Verifying warp to sector 2962 Verifying warp to sector 2963 Verifying warp to sector 2964 Verifying warp to sector 2965 Verifying warp to sector 2966 Verifying warp to sector 2967 Verifying warp to sector 2968 Verifying warp to sector 2969 Verifying warp to sector 2970 Verifying warp to sector 2971 Verifying warp to sector 2972 Verifying warp to sector 2973 Verifying warp to sector 2974 Verifying warp to sector 2975 Verifying warp to sector 2976 Verifying warp to sector 2977 Verifying warp to sector 2978 Verifying warp to sector 2979 Verifying warp to sector 2980 Verifying warp to sector 2981 Verifying warp to sector 2982 Verifying warp to sector 2983 Verifying warp to sector 2984 Verifying warp to sector 2985 Verifying warp to sector 2986 Verifying warp to sector 2987 Verifying warp to sector 2988 Verifying warp to sector 2989 Verifying warp to sector 2990 Verifying warp to sector 2991 Verifying warp to sector 2992 Verifying warp to sector 2993 Verifying warp to sector 2994 Verifying warp to sector 2995 Verifying warp to sector 2996 Verifying warp to sector 2997 Verifying warp to sector 2998 Verifying warp to sector 2999 Verifying warp to sector 3000 
+
+ ** Warp verification complete!! **
+
+ ** Building shortcuts back to sector 1
+
+Random sector data generated and verified. Writing...
+
+Initializing ports...
+ RS!Nl 
+   They started producing 10 days ago...
+
+Port #        Prod Ore      Prod Org      Prod Equ      Port Name
+ 1             28714         13465         6263         Earth
+ 2             20224         29181         6250         Great Alphaasm
+ 3             26701         17063         12719        Interhot
+ 4             21467         13906         17223        Box Muddy
+ 5             7284          5837          12610        Eat Snatch Lizard
+ 6             12042         20655         31777        Snatchnut
+ 7             29596         2011          3523         Icebot
+ 8             26202         3592          18620        Bottoo
+ 9             6098          16940         26158        Clearwar
+ 10            24898         23524         17980        Tunelion
+ 11            24588         17739         9815         Forsaken Mother
+ 12            4159          25600         13485        Shoreal
+ 13            6151          2658          8132         Cadthra Squareness
+ 14            29620         10627         17130        Geniouscove Horse
+ 15            27093         14352         9576         Cutfare
+ 16            12724         32458         32251        Sumgog
+ 17            5354          5004          19095        Transglen
+ 18            12923         16408         27488        Talksaw
+ 19            26676         30549         3510         Miletopluck
+ 20            21878         6591          23662        Wowbull
+ 21            2563          9441          23543        Panbop
+ 22            2357          32407         24605        Cloak Orange Space
+ 23            8141          14365         9324         Slave Queen
+ 24            25229         20448         27506        Topdead
+ 25            16528         27528         25611        Illqui
+ 26            18530         17738         4779         Large Computer
+ 27            9877          4929          10605        Trojan Fries
+ 28            8303          2441          25803        Mine Pants
+ 29            26223         19841         8302         Wolfhour
+ 30            30351         9848          1328         Saurag
+ 31            12782         22885         27614        Squaregood
+ 32            27745         29823         28031        Diseasesome
+ 33            20949         3577          18341        Sucktor
+ 34            31608         20368         14247        Landpie
+ 35            30131         26423         1141         Centraldelled
+ 36            24570         12139         1888         Second Freezeshut
+ 37            12976         11113         9144         Chickenknee
+ 38            8470          15806         7640         Murdergame
+ 39            13967         30642         22031        Pi Bridge Share
+ 40            6087          20893         16431        Windou
+ 41            1166          7119          18287        Bong Pickle
+ 42            1946          1066          25746        Toruspay
+ 43            13661         6920          30125        Bareup
+ 44            23943         2375          22435        Breath Freeze
+ 45            32446         9100          2844         Warcemsad
+ 46            7324          7120          10515        Dill Smell
+ 47            19985         7551          30968        Shoestorhut
+ 48            8233          22510         7274         Minihot
+ 49            12198         6352          22872        Oastgame Oxygen
+ 50            32402         30517         5776         Stereohull
+ 51            5907          10849         6846         Some Belch
+ 52            18891         12197         10956        Horizon Torus
+ 53            24880         17041         1453         Snifffish Triple
+ 54            7952          2236          12325        Overher
+ 55            26286         1447          28755        Ly Brother
+ 56            31820         13691         26597        Chainden
+ 57            17944         4972          15182        Orgpesmini
+ 58            32565         26464         32595        Orgwineeat
+ 59            19616         14149         24490        Burnbat
+ 60            26457         1174          18930        Musex
+ 61            19894         22864         29255        Void Super
+ 62            13556         32038         25296        Sinkcha
+ 63            26876         2442          21445        Feetdo
+ 64            8795          25112         26307        Torbug
+ 65            11208         14884         20303        Pyramidfore
+ 66            18783         20880         5497         Money Nuclear
+ 67            10399         26830         15469        Dermas
+ 68            31034         7900          16791        Moose Drillink
+ 69            27242         11017         24277        Lighttree
+ 70            2959          23484         27061        Nuclearmur
+ 71            15168         14523         28522        Fullfor
+ 72            21640         2400          13235        Dangerall
+ 73            11448         17813         22403        Odeceti
+ 74            9814          6477          27695        Legbodyhutcud
+ 75            18179         12498         9606         Losterk
+ 76            21036         15421         15984        Drawpoor
+ 77            9555          23955         30388        Single Demon
+ 78            21853         12377         22926        Fartbase Snatch
+ 79            8866          9109          24408        Lead Shield
+ 80            17007         1911          4248         Ive Chain
+ 81            3547          29156         11558        Cheap Rotten
+ 82            22779         12993         24791        Openwormbong
+ 83            4131          14081         19315        Warpland
+ 84            9859          28824         8370         Leverish
+ 85            10710         7199          13311        Bear Button
+ 86            11057         2143          26628        Dataironsion
+ 87            23640         12440         2492         Ranchthra
+ 88            23523         22092         3209         Feetboom
+ 89            1124          4754          24908        Lebone Pyramidslow
+ 90            9543          26665         22172        Tracflatmaar
+ 91            14745         31278         3270         Whipca
+ 92            28323         12138         29663        Mas Grass
+ 93            25308         13997         23806        Wire Space
+ 94            13079         10774         12234        Sunaqua
+ 95            5896          3529          19098        Jockslot Prince
+ 96            19584         3779          13531        Legoad Wheat Alien
+ 97            8779          15181         32433        Strobolt
+ 98            3182          16860         3247         Muddygam
+ 99            10400         10966         7398         Modemall
+ 100           8099          13289         24100        Torpedonud
+ 101           3163          1216          31758        Barenon
+ 102           19293         20945         16391        Serialbutt
+ 103           26013         19742         28650        Emptyoll
+ 104           15573         30692         3311         Kangeroogiga
+ 105           5246          19374         23190        Luck Princess
+ 106           12104         21598         5708         Captain Slave
+ 107           29106         17065         8939         Flamrich
+ 108           3874          19370         9752         Aft Strap
+ 109           1555          4846          8566         Doublesnow
+ 110           13517         32304         16115        Fivepush
+ 111           8453          10797         2110         Ironbag
+ 112           16153         6722          30717        Destiny Snatch
+ 113           5326          3297          7746         Moosetear
+ 114           30154         15329         23817        Card Binary
+ 115           17016         6847          4337         Suckhim
+ 116           3517          10376         19283        Hotbatsome
+ 117           11529         28335         22076        Islandroll Pound
+ 118           7281          22644         22978        Jumpmus
+ 119           23118         7631          20159        Slavecry
+ 120           16910         10056         23761        Sciencepi Pickle
+ 121           4600          11118         24941        Free Armor Scotch
+ 122           24940         19578         5539         Safe Titaniumtire
+ 123           16506         27129         28203        Largeack
+ 124           32503         5260          17427        Fla Crimsom
+ 125           23095         17177         8760         Wave Kitten Belch
+ 126           23913         8819          11833        Board Fissioner Thorn
+ 127           14956         13733         5386         Quikilofrog
+ 128           19944         19702         12043        Centisick
+ 129           30347         6307          8703         Lamb Eleven
+ 130           18828         30678         15793        Caveoi
+ 131           32684         13610         19303        Tryerm
+ 132           22454         4005          12155        Dressang
+ 133           26408         24943         19704        Quaflat
+ 134           11989         5861          27696        Hy Apple
+ 135           31021         30194         22125        Shipa
+ 136           17938         27877         28700        Gas Space
+ 137           22829         7878          19302        Redbear
+ 138           25564         32604         23030        Acered
+ 139           2118          25379         17299        Pongburg
+ 140           24891         10019         1793         Meteormis
+ 141           20755         13223         29720        Earth Ounce
+ 142           21600         24229         5709         Hopette
+ 143           14332         30362         28369        Org Planetsick
+ 144           15097         5476          4028         Gamblera
+ 145           2951          12164         11660        Rich Stuck
+ 146           16936         23979         15428        Tubeheel
+ 147           23636         14632         29086        Bun Stern
+ 148           3073          14921         15859        Topshow
+ 149           19103         5301          26594        Silveroast
+ 150           2535          5130          27824        Plaring
+ 151           15863         29475         2044         Bridgebug
+ 152           31230         31018         7362         Trojanold
+ 153           18502         17552         14093        Wife Horizon Nuclear
+ 154           11119         19933         26551        Thatind
+ 155           5455          13295         31979        Hyper Dream
+ 156           22300         31242         12922        Vadercetia
+ 157           3401          12269         3010         Base Trojan
+ 158           14880         13594         12859        Aft Ville
+ 159           7716          19329         13146        Door Udder
+ 160           6467          19736         31872        Aroomyear
+ 161           15459         29297         12707        Sexaan
+ 162           2194          19845         16068        Mixfail Husband
+ 163           29415         17250         1074         Killdo Screw
+ 164           16520         21463         20383        Sawleg
+ 165           19361         20533         26197        Free Queen
+ 166           10452         17729         29890        Exbuy
+ 167           17106         20857         24695        Lord Table
+ 168           28409         3129          15439        Queen Cheap
+ 169           14791         9728          28917        Cube Castle Drink
+ 170           18565         21850         9574         Greedcal
+ 171           13453         3373          9592         Reef Whiskeystar
+ 172           3215          14940         24395        Babyte
+ 173           26756         12360         28539        Kinkyyes
+ 174           19931         19635         32410        Sextron
+ 175           6451          5999          7229         Beastishnose
+ 176           13367         16015         4006         Eleven Burbon
+ 177           22938         10727         15117        Smokeshow Purplebro
+ 178           18786         4086          10926        Mud Button
+ 179           7997          13655         20837        Chopbare
+ 180           6924          10090         30045        Brabro
+ 181           19734         29069         9353         Slavetan
+ 182           23767         30024         24902        Sandsick
+ 183           5927          17778         6785         Thrubag Beast Mutiny
+ 184           16634         32669         25574        Untkill
+ 185           4170          24584         29411        Turtlecroo
+ 186           22458         8383          3716         Boron Mouth
+ 187           16609         24678         8232         King Burger
+ 188           17123         28775         4829         Sadshe
+ 189           17612         19773         24664        Lonely Energy
+ 190           17584         25851         30132        Sinkard
+ 191           13040         1966          9848         Nessmon
+ 192           7979          32063         27688        Trywhip
+ 193           15403         16868         22266        Disease Baron Panties
+ 194           9915          6490          30684        Ifootium
+ 195           23993         25393         4989         Sonoast
+ 196           29559         2562          6505         Food Ville
+ 197           5018          9782          11319        Shipdell Power
+ 198           25337         29509         19821        Reactor Orange
+ 199           8350          3683          4031         Fingerhugeed
+ 200           29274         12873         6762         Sux Green
+ 201           17534         27466         26854        Blueorenon
+ 202           23831         3697          9552         Sleeppuss
+ 203           11812         8432          3942         Oldwall
+ 204           22194         7301          30457        Bare Empty Eleven
+ 205           12624         30824         31045        Meter Shirt Danger
+ 206           14913         14424         5597         Tar Machineballfire
+ 207           2601          25112         18522        Toad Father
+ 208           4745          4893          11343        Trojandog
+ 209           13708         16280         15232        Look Strapbug
+ 210           8237          19161         7480         Dockpay
+ 211           32262         32709         29620        Stormrob Puppy
+ 212           14359         13416         12667        Flower Black Scratchqui
+ 213           1757          2714          13586        Sticerhope
+ 214           14919         9754          3780         Baflat
+ 215           25284         11546         28800        Bi Wigglerag
+ 216           6138          2432          25484        Spit Rotten
+ 217           10505         10654         10314        Pantsoad
+ 218           6711          29375         13537        Nudwall
+ 219           26374         18991         19983        Free Antenna
+ 220           8137          26861         11815        Cryquahole
+ 221           23677         31080         29304        Littlequadbot
+ 222           22886         9465          31103        Thisthrozoo
+ 223           4854          18351         5057         Moo Couch Alligator
+ 224           16976         32702         24292        Whitefrog Daughter
+ 225           17452         9144          26334        Metal Under
+ 226           7730          31651         20488        Rag Murder Milli
+ 227           8009          30495         16969        Ou Pickle
+ 228           11032         30535         7396         Equovergive
+ 229           11064         14578         31371        Cudboxtown
+ 230           15988         23284         22186        Ex Leave
+ 231           17305         11941         8890         Lickbop
+ 232           3198          13346         2344         Non Armor
+ 233           27727         1224          23076        Buysum
+ 234           30063         11669         20788        Aftfiveten
+ 235           14128         27606         28873        Odefla
+ 236           7915          2063          9721         Broanti
+ 237           19316         28884         2311         Trunkcal
+ 238           10688         22358         1973         Bong Board
+ 239           28535         25171         1177         Chain Thingair Daughter
+ 240           9615          7693          20206        Ele Demon
+ 241           26552         5233          27471        Marineaqua
+ 242           24664         10425         7352         Burpbra
+ 243           3278          4723          13655        Tan Mouse
+ 244           3385          16448         15803        Riverwow
+ 245           7020          30039         14718        Ma Transtube
+ 246           7837          21653         17964        Bush Thrust
+ 247           25801         30763         18045        Rocktune
+ 248           6013          19957         8827         Nuclearlashport
+ 249           9754          17876         11462        Sauvoid
+ 250           27002         29087         21264        Sickequ
+ 251           17750         18205         28853        Belch Whiskey
+ 252           10251         18267         26481        Ex Binary
+ 253           15656         12975         11578        Energy Pirate
+ 254           10987         29971         25088        Sinkann Moose
+ 255           22515         32418         25774        Warp Truckcad
+ 256           30051         2296          3676         Hourwarmaxi
+ 257           29357         29746         27879        Oxygenluck
+ 258           5390          30374         3544         Uzzy Blouse
+ 259           18375         28175         20986        Upt Steel
+ 260           24695         30188         17548        Thafast
+ 261           25347         17943         31544        Boyann Earth
+ 262           11952         11275         25326        Tri Sword
+ 263           11962         6671          7194         Rut Crimsom
+ 264           10938         30555         25990        Transnine
+ 265           8386          11223         8101         Croosink
+ 266           16424         22918         2583         House Uraniumheal
+ 267           27548         21366         30899        Hotnud
+ 268           11797         5662          30619        Virushe
+ 269           32356         22313         25636        Micro Camel
+ 270           4322          17569         22490        Drivenet
+ 271           12140         6531          28273        Suxthru
+ 272           4944          22709         13843        Uzzyfla Milli
+ 273           23617         18830         19950        Topsexy
+ 274           17404         24404         4706         Safe Neutron
+ 275           4048          26936         16399        Muddy Trade
+ 276           1993          16172         14103        Circuittake
+ 277           5613          11999         24428        Heal Turtle
+ 278           5825          24946         2419         Elimb
+ 279           20685         12539         8643         Openblueer
+ 280           17477         25473         15498        Pet Board
+ 281           3775          14348         24895        Sheday
+ 282           5370          30334         27791        Lionnomdead
+ 283           31528         20382         2980         Mouseorg
+ 284           1179          8893          21425        Pinkcode
+ 285           25236         23650         4262         Potbone
+ 286           15918         21643         14782        Steel Under
+ 287           28148         21797         16967        Yardwood
+ 288           10104         17909         6127         Weekrape
+ 289           8392          14890         9874         She Lizard
+ 290           5548          26315         8608         Bar Gamblestic
+ 291           1616          5530          1928         Dwarf Alien
+ 292           16974         14354         19242        Fuelymix
+ 293           28621         32544         19695        Table Stormout
+ 294           26586         11995         26301        Spea Nuclear Ranch
+ 295           32123         21961         4026         Volcanoheel Sniffeyes
+ 296           18312         3861          12574        Ele Radiation
+ 297           10503         5837          25331        Don Green
+ 298           27963         16955         17901        Rom Friesgag
+ 299           23133         13816         8727         Illegalker
+ 300           5534          7827          14432        Empty Three
+ 301           32458         26245         20977        Beastcookuzzy
+ 302           18641         15260         12696        Foot Lonely
+ 303           30125         24782         28905        Bogoilword
+ 304           16734         18818         18435        Plas Dangersaur
+ 305           28934         15126         18151        Ann Quarter
+ 306           9011          31396         30346        Cavequoten
+ 307           30644         31882         15385        Thawtrac
+ 308           5507          4426          27141        Bushhutall
+ 309           17073         13370         20280        Matterten
+ 310           11943         2679          13453        Tor Stern
+ 311           1864          25612         16202        Liquidsionuzzy
+ 312           21891         31695         13891        Rut Third
+ 313           22872         30544         6008         Hip Blood
+ 314           6588          20859         22058        Rockmono
+ 315           17750         24270         6367         Grassaft Crimsomism
+ 316           27953         28533         21975        Mothersion
+ 317           8707          29045         11445        Hand Ounce
+ 318           15157         5496          17267        Saur Lizard
+ 319           28709         19278         29017        Microsnowker
+ 320           23148         8900          6319         He Event
+ 321           11132         30216         20324        Er Share
+ 322           24521         23591         13024        Thaburn
+ 323           22039         4192          10800        Extracakethaw
+ 324           15523         20163         29207        Bluehopdul
+ 325           18516         9222          28207        Uptore
+ 326           30057         20723         8208         Wreck Floorrun
+ 327           7977          3817          14527        Flamden
+ 328           13886         23102         6455         Captainmis
+ 329           18374         16005         18567        Hub Factory
+ 330           18789         10869         31751        Tor Light
+ 331           13957         17821         27571        Usum Blouse
+ 332           1313          13556         31951        Closebase
+ 333           19808         17603         2029         Poorbase
+ 334           21837         3429          15206        Subring
+ 335           32412         22598         13485        Alien Sleep
+ 336           31847         4776          24251        Cookex
+ 337           23896         22364         24034        Deerbull
+ 338           30005         16392         14806        Rape Burger
+ 339           11905         1437          31173        Dinobaock
+ 340           9113          20508         29233        Princeonra
+ 341           20911         23234         25826        Armorang
+ 342           13599         1360          26317        Scarlet Tractor
+ 343           1884          4088          22066        Wheatpull
+ 344           11943         14344         6999         Flower Panel
+ 345           32141         24871         2293         Robotwer
+ 346           22361         8755          22209        Worldshotbody
+ 347           5343          29278         12534        Doortalk
+ 348           32605         22970         29374        That Brain
+ 349           17292         13483         11677        Itchchipiron
+ 350           20719         25220         29536        Mistyalehood
+ 351           7451          28596         25450        Breed Motor
+ 352           7384          7717          10354        Pukeover
+ 353           14169         20956         22742        Bridge Wonderful
+ 354           28077         16150         23689        Drain Cloak
+ 355           5492          26275         17297        Gy Finger
+ 356           11689         1464          1186         Boom Event
+ 357           10892         16446         7818         Shoremud
+ 358           14749         32082         8337         Alligatorwar
+ 359           17668         12446         14509        Blackxigkinglook
+ 360           7676          22823         16367        Monkeysad Oxygen
+ 361           25869         2577          29696        Nicefare
+ 362           21197         5250          2102         Chopbolliveek
+ 363           16727         21117         16623        Death Laser
+ 364           3062          15213         26115        Hyperhopsixeat
+ 365           11868         5463          11328        Pifart
+ 366           21237         31902         32431        Footuzzy
+ 367           2559          7262          16799        Asscave
+ 368           2469          29058         7951         Fivedice Castle
+ 369           13247         32331         10442        Bull Giant
+ 370           17045         28755         31461        Water Snatch
+ 371           13526         26790         21321        Murderton
+ 372           18386         9156          5953         Dambun
+ 373           4075          16965         18406        Rapedul
+ 374           1542          3810          26810        Grabstar
+ 375           24257         2653          29848        Sauex
+ 376           4989          10220         16899        Cardtraked Walker
+ 377           9987          30557         6739         Feetpadcrew
+ 378           22455         29070         22579        Sock Walker
+ 379           24006         10566         10441        Crycap
+ 380           27650         5835          31848        Torus Torus
+ 381           1468          16100         17272        Tin Freak
+ 382           5956          22594         11379        Hytor
+ 383           14430         29452         7133         Mad Short
+ 384           26691         7152          24631        Plaar
+ 385           8913          1855          27797        Screwbro
+ 386           9070          6046          11161        Pissfish Eleven
+ 387           29497         27713         7050         Slotredpool
+ 388           13508         14806         29850        Sick Puppy
+ 389           5641          18974         29980        Salehot Whiskeyive
+ 390           13708         24863         15360        Datatown
+ 391           14488         13947         28171        Robnut
+ 392           24077         17747         8413         Batwood
+ 393           13108         18919         6783         Nutent
+ 394           21066         7124          15862        Feet Science
+ 395           1596          26649         28277        Ninecube
+ 396           28876         16434         28690        Flat Shield
+ 397           2186          5921          16296        Carrun
+ 398           14242         5252          17035        Down Event
+ 399           15825         15193         24541        Burpholo
+ 400           24094         12219         25537        Brobuck
+ 401           11612         27797         14630        Bun Plantcrim
+ 402           11713         15667         15027        Protonboat
+ 403           9421          20753         15063        Hefle
+ 404           15329         21877         4784         Tetra Neutron
+ 405           12587         9188          4339         Excut
+ 406           4241          20983         10672        Eleccard
+ 407           29031         19370         29534        Pongglen
+ 408           17037         2197          4254         Monsterchop
+ 409           15929         5793          18456        Guntar
+ 410           26736         2535          6259         Fagtin
+ 411           11603         15062         13693        Cudlionable
+ 412           7351          19681         16301        Talkode
+ 413           6204          28725         22002        Deadball
+ 414           4853          9164          18502        Pilliage Glass
+ 415           27968         8378          7762         Trans Grass
+ 416           14940         20981         27565        Sinkdeer
+ 417           13575         15756         25536        Lickeekmud
+ 418           5819          26387         23601        Eleasmcap
+ 419           30019         24171         1763         Shoresea
+ 420           21229         24475         9555         Dark Understat
+ 421           21199         11282         17514        Outoad
+ 422           20540         32309         26339        Grub Boron Radiation
+ 423           16729         15656         25537        Monkeytrak
+ 424           10320         13829         8807         Stro Seven Extra
+ 425           16434         28923         14116        Onefish
+ 426           32555         20937         30109        Earbogmus
+ 427           17923         27133         21381        Air Pickle
+ 428           4756          18451         27185        Millenium Nakedbomsale
+ 429           14818         21479         3828         Bottomsure
+ 430           8123          28807         14156        Ratnonable
+ 431           4748          5670          16583        Yes Orange
+ 432           1867          19992         22100        Reactor Servo
+ 433           10679         2097          28322        Auour
+ 434           19927         13085         24094        Femlast
+ 435           27124         6474          24805        Mistyou
+ 436           2888          23032         18493        Trycorn
+ 437           1530          12413         9062         Maar Radioack
+ 438           8467          16969         6648         
+Crocodile Mutinygag Bottom
+ 439           16515         5984          6079         Knee Trojan Small
+ 440           13648         21123         28408        Alcohol Birth
+ 441           2281          3177          25941        Fishmet
+ 442           22627         27375         1411         Arcrootire
+ 443           27063         16325         19849        Alerub
+ 444           30508         24257         30600        Tear Lever
+ 445           17172         24557         23738        Shoot Share
+ 446           28000         27822         11926        Eek Nakedban
+ 447           29148         9791          6543         Hip Table
+ 448           32232         5765          20801        Pinland
+ 449           6130          26832         28071        Misty Wonderful
+ 450           25356         28406         6404         Roll Castle
+ 451           20432         1930          28907        Codshow
+ 452           6723          23436         9351         Slowslow
+ 453           32470         18845         21591        Sleepkid
+ 454           5249          15042         5476         Piefullruin
+ 455           4432          22790         21934        Coldleaf
+ 456           1339          3166          18607        Bun Trans Impulse
+ 457           17361         26383         13072        Halfkick
+ 458           22499         4656          19753        Flippipe
+ 459           12869         13904         13217        Look Stare Energy
+ 460           22149         11121         1983         Sex Flowertri
+ 461           2666          19306         24977        Greed Friesdata
+ 462           15935         10762         12413        Blousecrookilo
+ 463           22742         5845          4479         Den Illegal
+ 464           29374         1772          2979         Disksonlamb
+ 465           6129          12649         11911        Erkaan Dream Gorilla
+ 466           12777         31375         12463        Miledon
+ 467           28050         31562         2930         Dinobite
+ 468           8261          15215         3144         Fireplas
+ 469           8270          13840         29181        Equ Swamp
+ 470           2774          3734          6250         Money Repair
+ 471           19066         8530          23439        Pukehe
+ 472           9641          31169         14125        Aan Awful
+ 473           24308         18550         7475         Wind Drill
+ 474           1577          1425          22942        Den Bridge
+ 475           19112         26532         2369         Nontirecodsax
+ 476           21466         31955         26080        Pisssilesax
+ 477           14420         4069          26497        Rich Clear
+ 478           19905         23541         21122        Four Walker
+ 479           12780         14090         24816        Tetra Serial
+ 480           2961          12509         13466        Servo Stare Lizard
+ 481           18564         6179          30153        Underhot
+ 482           31256         2625          26593        Torsand
+ 483           14767         30129         11954        Croodulspea
+ 484           20751         26037         6476         Platinumrim
+ 485           9734          32511         13178        Crewwarm
+ 486           14892         7250          9119         Speamusmega
+ 487           13717         31273         26447        Swamp Button
+ 488           18983         12801         20394        Slavesnagsea Central
+ 489           10848         16226         31368        Turtleride
+ 490           11121         13416         8050         Half Three
+ 491           6309          13924         18525        Sandbat
+ 492           22839         1912          15288        Gogdish
+ 493           30473         4095          14892        Right Plasticmat
+ 494           16495         4483          3359         Ass Wrench
+ 495           30326         13548         9126         Centralium
+ 496           25431         22932         30636        Bow Daughter
+ 497           19827         25142         14204        Flam Baggage
+ 498           30580         11203         18929        Killash
+ 499           32024         15086         8445         Messdow
+ 500           7939          29147         15770        Trac Matter
+ 501           24828         17081         9623         Y Milleniumpool
+ 502           29356         27129         27711        Sad Bridge
+ 503           16955         14340         11549        Lonely Pyramid Hatch
+ 504           28571         9918          20898        Black Widow
+ 505           22022         24407         18709        Speaann Revolt
+ 506           27404         5649          11348        Tar Lonely
+ 507           20761         1259          4163         Eartoe
+ 508           14422         5889          11587        Silverhop
+ 509           29757         11058         19262        Tonbeta
+ 510           31833         18474         13660        Baron Wonderfulpool
+ 511           3107          27835         17493        Sawluck Greed
+ 512           31683         22261         8178         Burg Matter
+ 513           9627          7181          13238        Bone Daughter
+ 514           18489         31018         22761        Room Gamble
+ 515           31088         18987         31189        Menbro
+ 516           7013          9585          12416        Ionbeer
+ 517           31047         1888          3112         Darthbirdwarp
+ 518           9099          6146          8324         Max Darth
+ 519           27417         22895         7034         Ard Window
+ 520           6515          27170         28528        Truckdog
+ 521           14600         8586          29544        Kilobeam
+ 522           22356         9705          18547        Sackcubehairing
+ 523           18207         8299          14691        Talk Darth
+ 524           11753         30640         4247         Inkleg
+ 525           27209         11084         24171        Lick Quick
+ 526           1617          27353         15919        Warmton
+ 527           2566          19784         15065        Resthullbro
+ 528           21818         30147         25818        Death Plane
+ 529           16936         19668         7552         Ringflo
+ 530           20518         22271         1389         Robmaic
+ 531           32321         23150         9013         Ettehole
+ 532           12144         21591         27225        Rumhole
+ 533           11815         9947          30564        Xanbashotshe
+ 534           29573         7445          2888         Dicemer
+ 535           7663          22511         8430         Puppyworm
+ 536           11866         6738          3686         Vacumedraw
+ 537           6030          20348         16246        Shipdeer
+ 538           9355          18674         14237        Hercard
+ 539           5858          19047         5753         Platinumkey
+ 540           22771         9040          10856        Dillwirerom
+ 541           2900          27789         5728         Hole Castleall
+ 542           13952         11968         25013        Aanmono
+ 543           32014         15710         8763         Kickslot
+ 544           26461         32137         9811         Wakemany
+ 545           3830          15490         21518        Walkerfood
+ 546           19565         18108         25013        Ba Drainfore
+ 547           23654         29379         7944         Antenna Darth
+ 548           21614         25365         28552        Greedport
+ 549           29341         11073         30861        Halfoatout
+ 550           8230          23180         13205        Flaoil
+ 551           27379         23679         22524        Volcano Worthsand
+ 552           6233          13771         10202        Dishoot
+ 553           17870         18882         3860         Weekmile Eleven
+ 554           10835         5451          12750        Widowson
+ 555           1135          29008         32172        Forcattawind
+ 556           10428         20864         3351         Coversexy
+ 557           14271         28794         26406        Whitesnowlamb
+ 558           4117          28909         13864        Sackhut
+ 559           11768         25551         14794        Cannonkick
+ 560           14260         32647         7359         Betadill
+ 561           14715         4885          12990        Pulloot
+ 562           28416         2538          8990         Hopehate
+ 563           3169          13957         26736        Fernsock
+ 564           19678         4164          26258        Frozen Naked
+ 565           29720         9903          30504        Wondown
+ 566           11257         2388          29318        Piniron
+ 567           28260         14091         14539        Belch Kinkypond
+ 568           9252          31429         10105        Skyold
+ 569           25681         5932          9275         Shoot Sister
+ 570           1195          3758          22306        Asteroid Volcano Three
+ 571           23812         22484         16129        Arwarmgun
+ 572           24080         1664          3630         Penny Flowercut
+ 573           2081          26422         13357        Ickbyte Empty
+ 574           22086         21092         16185        Menmine
+ 575           20460         11523         2859         Tor Double
+ 576           25233         16303         12634        Oundgod
+ 577           26242         25368         6736         Squareholo
+ 578           20270         4475          28988        Crimsom Burger
+ 579           6805          21582         25690        Freak Lonelypoor
+ 580           24053         16179         22008        Mess Knife
+ 581           10219         11445         2188         Airspit
+ 582           8657          19227         27130        Window Hatch Right
+ 583           32743         17569         2966         Air Plane
+ 584           13050         5234          2055         Fernonered
+ 585           1785          9456          6630         Death Alcohol Floor
+ 586           18878         28499         16502        Menfood Screw
+ 587           31403         24142         17281        Tetracold
+ 588           29925         26942         23713        Bolt Fusionbow
+ 589           30715         3158          24294        Cud Titanium
+ 590           6394          25974         28850        Cod Moosedata
+ 591           13544         14228         27041        Ockmonkingbush
+ 592           27535         10751         15297        Live Officer
+ 593           3881          7897          9038         Morebuck
+ 594           17064         24152         9277         Elbowfere
+ 595           17549         11841         17227        Gram Penny
+ 596           18434         30354         3418         Derpull Fissioninch
+ 597           23927         25513         20746        Pukenudewar
+ 598           27886         11115         31790        Rimfew
+ 599           5887          12935         6417         Lakeute Thing
+ 600           25706         7513          11477        Intop Extra
+ 601           25413         31774         19438        Iumlord
+ 602           26125         14454         7749         Love Buttonhalf
+ 603           8881          19924         26883        Newal Knife
+ 604           28864         26512         21940        Singleburp
+ 605           12429         29370         19682        Science Alcohol
+ 606           13733         11623         21107        Islandang
+ 607           32612         24797         4452         Godmus
+ 608           6139          4558          32575        Burningiron
+ 609           8021          20809         7477         Deermire
+ 610           29492         30138         14386        Pot Smart
+ 611           14508         10977         19999        Sad Crocodilewarp
+ 612           7076          6648          9619         Sharebase Oxygen
+ 613           26644         5824          21113        Walker Drunk
+ 614           28276         23776         11875        Repair Radiationmine
+ 615           20220         19302         7978         Monleaf
+ 616           20291         14805         28375        Thingthaw
+ 617           22530         14448         12346        Predkick
+ 618           19344         4191          17184        Tire Close
+ 619           2978          13785         29486        Squareaft
+ 620           22199         24646         7748         Vodkasonthro
+ 621           28427         30771         2301         Floor Danger
+ 622           25024         18243         14783        Kiss Breath Scotch
+ 623           24188         26296         29580        Robba
+ 624           23586         27925         3383         Doorxan
+ 625           3946          18460         32439        Wind Fever
+ 626           21127         18098         1092         Gypet
+ 627           24787         4917          17454        Snagasmtion
+ 628           17155         19707         21223        Warpmore Minuteware
+ 629           6676          13279         9166         Frozen Triple
+ 630           20149         16233         31009        Feversockoast
+ 631           28428         16920         7970         Ferefore
+ 632           20912         5012          29923        Lashfarebuck
+ 633           23719         12154         17393        Bullbow
+ 634           8179          24204         7529         Red Gorilla
+ 635           28362         25071         5315         Bossreef
+ 636           23086         26351         15337        Kinkyromorp Trade
+ 637           20009         24677         3443         Trade Puppy
+ 638           14732         19447         20772        Rexstro
+ 639           11934         29743         25872        Dick Superra Disease
+ 640           1020          15211         26640        Beastseabutt
+ 641           18644         24966         23923        Burgerbog
+ 642           12185         4087          26657        Three Throu
+ 643           28526         3940          25402        Popmaar
+ 644           11936         24109         15973        Gramgame
+ 645           17239         15057         24541        Sexy Princess Super
+ 646           31806         4451          12672        Greedbro
+ 647           20570         10247         25408        Hairhub
+ 648           5710          6605          8270         Wirelast
+ 649           18874         23816         2940         Goodcad
+ 650           21684         9029          4824         Shoesmore
+ 651           14524         10632         6036         Illegal Ounce
+ 652           7698          23062         10760        Tubemire
+ 653           31064         19937         3865         Beam Stupid
+ 654           30343         3551          15358        Dick Sword Drive
+ 655           21039         24721         27657        Maxkill
+ 656           9968          29561         12892        Rainlift
+ 657           10011         10648         16778        Showmoo
+ 658           9279          26148         19715        Beam Earth
+ 659           8809          26567         23414        Dream Central
+ 660           30357         32415         26691        Trydanfree
+ 661           24808         6678          32511        Hy Thunder
+ 662           1104          18492         2227         Couch Pirate
+ 663           25703         9559          19086        Roomdinostat
+ 664           14013         31466         16675        Ton Poker
+ 665           3924          27640         5343         Barhuge
+ 666           21989         5501          17287        Redware
+ 667           18064         14750         14989        Dearupt
+ 668           11635         1550          19023        Lizard Stuck
+ 669           21646         27484         29444        Chahole
+ 670           4519          21175         9004         Restute
+ 671           3877          16573         28497        Biteold
+ 672           20626         9131          11753        Mat Knife
+ 673           21506         25943         32012        Moneythru Hatch
+ 674           6848          25827         29621        Planter
+ 675           7119          5479          32128        Miniette
+ 676           18647         28088         1197         Panties Sharebig
+ 677           8413          18357         16669        Brothertire
+ 678           16802         18160         31703        Freezeang
+ 679           28677         8098          18949        Burgerbit
+ 680           9208          15639         31788        Proof Worth
+ 681           2071          1112          10447        Oil Sleep
+ 682           12404         24706         24063        Ardor
+ 683           16198         28186         2791         Goldopen
+ 684           26121         21104         29438        Burger Great
+ 685           6677          30066         9696         Rain White
+ 686           16836         18785         11759        Cardcrew
+ 687           8904          7528          25607        Ton Elbow
+ 688           1208          26098         25149        Forsaken Omega Worth
+ 689           24652         31762         26360        Flerichan
+ 690           21965         19651         19968        Workfeetoot
+ 691           29425         21894         26726        Plaskneecut
+ 692           21050         3271          15299        Restdell
+ 693           4168          15310         17566        Le Platinum
+ 694           23232         31141         30958        Hullfuelunit
+ 695           23472         20857         19022        Muddythis Dwarf
+ 696           5945          2452          25119        Lick First
+ 697           21997         24998         1496         Bit Serialbeam
+ 698           5538          21844         1768         Raidbone
+ 699           17635         29678         14659        Lizard Serial
+ 700           29472         20213         14553        Whiskeyor
+ 701           12196         23577         16824        Thorn Stoned
+ 702           27970         15872         18375        Footfarecube
+ 703           21484         16802         31460        Radiokey
+ 704           24059         2016          11635        Flopra Ville
+ 705           28485         4425          12932        Iftun
+ 706           3670          22924         16075        Box Breast
+ 707           22959         14906         11701        Acid Burbon
+ 708           18234         20210         24384        Cloakorp Penny
+ 709           27525         14385         31305        Nounit
+ 710           7776          18206         5449         Truckgy Whiskey
+ 711           28451         9965          19709        Stupidfear
+ 712           11547         10592         27115        Walleat
+ 713           7297          7206          16194        King Third
+ 714           14115         29160         15690        Freezema
+ 715           5905          23617         5704         Au Smell
+ 716           15414         30845         21692        Elecoalheel
+ 717           27271         26196         30231        Power Teeth
+ 718           9380          28924         10090        Eyes Thirteen Breedmile
+ 719           3815          6396          26579        Pingten
+ 720           7785          27612         16430        Cheapnetdeer
+ 721           20442         31452         30373        Sum Breast
+ 722           29848         30350         17853        Vaderackhood
+ 723           1163          22305         30438        Blouse Thrust
+ 724           30706         6559          27794        Thro Antenna
+ 725           15422         31642         32717        Dell Credit
+ 726           21443         16955         28928        Yellowdick Birth
+ 727           13363         2968          18794        Brain Smell
+ 728           3123          4870          6228         Saxder
+ 729           30236         13721         4927         Centicrooupt
+ 730           30877         28109         31961        Mer Planet
+ 731           20856         14478         31199        Sisterscro
+ 732           7959          5451          4878         Chabuck
+ 733           10386         9744          22799        Shoreymaxi
+ 734           32166         10256         6363         God Happy
+ 735           29943         16565         30218        Stic Sleepquad
+ 736           19953         23508         6993         Livdown
+ 737           31117         3310          13804        Statrat Freezera
+ 738           10398         5499          26322        Husband Radiationsaugog
+ 739           15800         6796          7645         Giveall
+ 740           23634         10945         17475        Pooluck Knife
+ 741           18485         22847         16228        Lanton
+ 742           29875         29366         19542        Tamaxi Centerhour
+ 743           27502         5955          20541        Cutliv
+ 744           32181         9711          5527         Torslot Death Moose
+ 745           1880          18032         3962         Y Xannor Reactor
+ 746           6844          17092         20518        Lashpiss
+ 747           22189         23749         19169        Robot Throujoy
+ 748           24149         11814         1669         Wagsixkilo
+ 749           11705         20875         19587        Crooktoe
+ 750           11825         31523         12197        Itchkingstro
+ 751           15256         5090          4905         Hoodwag Center
+ 752           31393         16110         7978         Tha Trade
+ 753           3543          6224          2266         Turtlefrog
+ 754           28411         16382         13332        Pited Revolt
+ 755           23630         20604         23088        Boltunbar
+ 756           15221         14988         29225        Pantstortun
+ 757           1056          19814         24511        Slavewon
+ 758           8635          22967         18785        Omegabody
+ 759           27711         11800         3443         Tionaway
+ 760           5174          19852         1121         Jockmud
+ 761           9699          6284          19956        Flamock
+ 762           22770         26684         20159        Mother Muddy Pilliage
+ 763           6017          4000          13192        Untugly
+ 764           27933         4107          31719        Jocksun House
+ 765           4126          10747         7604         Kilotoe
+ 766           9584          12894         11114        Fern Freeze
+ 767           8098          26575         15861        Bang Triple
+ 768           23559         22338         15306        Toeunit
+ 769           32658         27082         26064        Doublegam
+ 770           30963         29563         28417        Madbody
+ 771           16853         7252          13298        Oil Place Drillsink
+ 772           1820          14292         17010        Cem Forsaken
+ 773           18837         27842         14862        Odebase Appleute
+ 774           16747         20187         22020        Maxsuck
+ 775           1924          14285         10161        Thatear
+ 776           5112          3032          3322         Mire Misty
+ 777           2544          14204         16977        Heelhop
+ 778           32171         2231          14763        Husband Queencat
+ 779           24107         8639          9183         Fail Horizon
+ 780           10090         10681         5943         Frozen Blouse
+ 781           29841         1545          27931        Run Sleep
+ 782           13920         25912         19065        Rut Board
+ 783           4204          29407         23993        Aansell Water
+ 784           3165          16973         4701         Crimsomsucksaw
+ 785           22106         10742         22518        Legsox
+ 786           2735          29124         1188         Deathbuck
+ 787           6328          6324          28213        Xig Blushdick
+ 788           25594         13698         25009        Farejoy
+ 789           2053          26801         25241        Chatube
+ 790           23478         20385         31731        Leverwatt
+ 791           8260          17806         3484         Floor Central
+ 792           27286         1511          11430        Space Mothertrak
+ 793           6273          10842         9550         Less Illegal Asteroid
+ 794           4858          2700          31423        Iron Radio
+ 795           31196         2200          13800        Grub Klick
+ 796           7363          17549         11117        Crimsomstat
+ 797           8021          32647         19834        Fever Centi
+ 798           14781         30222         23181        Gasmoo
+ 799           10344         17656         5490         Ruinshe Ocean
+ 800           24111         6998          1128         Opention
+ 801           29546         27547         21499        Pants Storm
+ 802           25777         12681         27476        Placequi
+ 803           18965         25350         30645        Baic
+ 804           21239         23359         16160        Breathmelt
+ 805           31648         12330         22408        Kangerooele
+ 806           23273         23289         10195        Grubba
+ 807           4907          3577          25721        Anttor
+ 808           6809          16946         17742        Shirtpoorleaf
+ 809           16015         2471          13786        Sky Walkerorg
+ 810           25434         7341          18931        Heel Fissioncalwow
+ 811           28675         16003         23158        Zoolost
+ 812           3606          32231         18387        Uglyopen
+ 813           25519         17059         9484         Brofish
+ 814           21618         7614          15888        Leave Lever
+ 815           14519         14505         24542        Hope Thrustice
+ 816           9803          22473         11240        Mouth Right
+ 817           20831         15721         10078        Boatfere
+ 818           2476          7874          1970         Protonplas
+ 819           27668         10857         21408        Torsuckspea
+ 820           22434         13459         13192        Legrag
+ 821           8033          27765         11295        Milleniumbyte
+ 822           27280         28063         20934        Crocodilereef
+ 823           15890         30777         13840        Cry Nurse
+ 824           32352         26631         27553        Bottomhip
+ 825           13154         20553         32302        Vissumspea
+ 826           7841          30807         10651        Beastnon
+ 827           8853          32141         19357        Table Broken
+ 828           27030         27247         14179        Efeet
+ 829           32617         16453         6821         Transred
+ 830           23194         7046          7100         Broore
+ 831           19617         31919         11173        Onpoor
+ 832           4984          15481         21113        Bird Women
+ 833           19561         31414         26613        Footsex
+ 834           30836         6047          31681        Appleard
+ 835           9444          29110         16334        Gramelec Chicken
+ 836           12373         29994         8494         Flamgas
+ 837           7018          18174         2533         Burpma
+ 838           30383         11157         3112         Endsix
+ 839           24667         22057         7029         Ear World
+ 840           26654         28529         7886         Tririch
+ 841           6773          19304         21782        Drinkcrimiron
+ 842           27307         20204         14234        Trojan Vodkaknee
+ 843           14390         18836         3688         Ouron
+ 844           3632          30584         8187         Jeephatent
+ 845           9171          28911         23961        Worm Alligator
+ 846           17567         4547          17150        Stereo Meter
+ 847           9458          13140         32617        Zoowork
+ 848           12309         17246         16073        Manyode
+ 849           29119         10256         11949        Pin Thunderwon
+ 850           4477          11025         30575        Padable
+ 851           2318          17520         28907        Predupt
+ 852           6083          18223         16610        Pin Pound
+ 853           10358         29660         6800         Whipitch
+ 854           30441         7330          1725         Wonover
+ 855           5272          14325         13542        Shortsmine
+ 856           21865         15107         12391        Secondflat
+ 857           30775         14843         31078        Stichot
+ 858           30661         32347         32297        Meteoring Little
+ 859           31344         29981         32409        Sure Motor
+ 860           4608          16053         25031        U Panties
+ 861           24408         6160          27303        Pred Vodka
+ 862           9271          9228          20050        Burbon Storm Quarter
+ 863           9268          25703         8589         Sun Screw
+ 864           4452          17389         16439        Wattpong
+ 865           26779         23235         20658        Princessann
+ 866           28948         11572         1623         Short Ville
+ 867           8675          10877         31406        Awayrape
+ 868           13788         17542         18856        Indnova
+ 869           7892          14213         14459        Steelhut
+ 870           19655         12827         6258         Flippet
+ 871           6710          26598         10354        Knife Milli
+ 872           4102          16314         10156        Breedbang
+ 873           23696         21859         9009         Lifenet
+ 874           6862          24705         10418        Bridgepark
+ 875           23729         17754         29372        Oadthe
+ 876           17614         12127         1024         Iumkong
+ 877           19239         10496         14055        Planesad
+ 878           5691          15739         3276         Windowsub
+ 879           28127         21584         22402        Lever Destiny Demon
+ 880           20437         14585         30362        Diceweek
+ 881           29601         6243          7866         Cutca
+ 882           30810         30866         25956        Robotbi
+ 883           12324         17107         14792        Nudick
+ 884           27569         2520          30626        Bot Clear Right
+ 885           17965         31291         31788        Oad Crimsom
+ 886           4990          31232         31782        Ounce Minute
+ 887           5318          21951         7082         Eleccube
+ 888           23257         2097          22330        Crewwork
+ 889           11785         11760         6054         Lift Storm
+ 890           28330         9102          10092        Freeze Central
+ 891           12030         3018          20567        Cetislit
+ 892           15138         16583         32317        Mur Torpedodead
+ 893           26378         22937         12162        Puppyhat
+ 894           15505         24534         7117         Eggcry Display
+ 895           28824         20772         28940        Potwavepool
+ 896           5504          32247         3194         Radio Uraniumcapcold
+ 897           18069         18795         16489        Skytan
+ 898           12986         13817         30549        Snakeflapin
+ 899           25187         19863         3592         Twofore
+ 900           17149         14174         24696        Flaish Trojan
+ 901           9997          5779          4426         War Proton Table
+ 902           27600         27478         25532        Wonderful Event
+ 903           27815         20708         18551        Acktwo
+ 904           32407         19988         7359         Godleaf
+ 905           17359         31133         14370        Flam Pickle
+ 906           14165         9703          22792        
+Widow Platinum Burning Factory
+ 907           3193          11632         20616        Modemcem
+ 908           17572         7158          23276        Slitlick
+ 909           23946         18551         10730        Murdertoo
+ 910           22040         29908         17316        Wolfsux
+ 911           10430         25435         23563        Gymix
+ 912           13443         22392         24626        Glenhop
+ 913           24099         16438         14082        Biall
+ 914           31510         9122          17094        Droid Secondsadnud
+ 915           1062          14493         26602        Bottom Volcano
+ 916           27538         15188         32320        Dillpot
+ 917           2168          11448         30939        Angish
+ 918           15738         28140         9188         Do Steel
+ 919           31217         10604         24737        Liv Breast
+ 920           13538         29447         1294         Killfourmess
+ 921           28902         21443         30168        Silverraace
+ 922           22775         16487         11804        Stupidhip
+ 923           16805         13769         20292        Nude Forsaken
+ 924           27048         18883         2658         Gun Horseoat
+ 925           18838         3236          3647         Antenna Repair
+ 926           25560         13087         28983        Largedown
+ 927           6535          9785          23456        Gasfrogall
+ 928           24342         9841          13757        Virus Horse
+ 929           6257          19797         23469        Gladpes
+ 930           9471          22945         17344        Pot Circle
+ 931           25165         4080          7159         Nonsaw
+ 932           14397         30548         2846         Gog Tooth
+ 933           30566         12412         31655        Mis Control
+ 934           24687         3224          22553        Pokerpoor
+ 935           14337         23247         13430        Jumpold
+ 936           2214          16397         30617        Byteacklan Science
+ 937           25526         30305         13336        Rottenhot
+ 938           29399         10893         25460        Plaleg Science
+ 939           17923         8087          10572        Stereoaan
+ 940           9668          15697         9420         Milli Armor
+ 941           13452         25794         20022        Outsionwer
+ 942           7974          3936          1918         Sumly Breast
+ 943           30734         9668          8882         Oastpop
+ 944           9920          32358         14408        Sleepa
+ 945           29236         9924          32743        Mutiny Lonelyium
+ 946           20459         22351         29236        Asteroidcardsome Gamble
+ 947           22018         8045          27572        Steelstropes
+ 948           23357         27135         20118        Asteroidfuel
+ 949           31954         18368         21153        Stupiddoor
+ 950           28993         13106         17823        Wow Marine
+ 951           14759         28767         30126        Rob Leverhour
+ 952           7190          21994         3874         Dinohot
+ 953           11419         22230         14030        Xigasm
+ 954           29254         13484         27102        Cetioldkiss
+ 955           23340         7146          15118        Flehopecuthat
+ 956           10589         1214          28476        Close Burbon
+ 957           13362         23044         25421        Barecrap
+ 958           3427          9014          10391        Eblue
+ 959           1541          29791         7936         Heelquiderroll
+ 960           17653         25698         20507        Mix Slave
+ 961           25298         1190          13377        Ouxangirl
+ 962           20181         9770          31773        Illkerism
+ 963           1053          17821         20609        Less Prince
+ 964           12003         2858          29709        Great Modemgame
+ 965           19369         19623         13717        Tetra Drive
+ 966           26457         16905         23813        In Thorn
+ 967           10179         27428         13860        Jumpeartoo
+ 968           17965         19294         16415        Door
+ 969           17630         12738         5155         Tripleend
+ 970           4661          9875          29853        Wall Planedown
+ 971           26022         26226         17463        Wrenchsnow
+ 972           12865         15777         2013         Moresion
+ 973           25592         9925          19875        Mini Meter Wheat
+ 974           29953         20876         2275         This Close
+ 975           3285          5248          28315        Femker
+ 976           6253          22480         11373        Woboy
+ 977           11708         21652         24826        Kilopla
+ 978           31751         3468          19065        Boss Micro
+ 979           8445          9117          14250        Failteen
+ 980           12899         19876         22777        Shoesflyrim
+ 981           25955         13989         27958        Shemess
+ 982           16310         6775          25017        Stickmon
+ 983           29975         3445          19304        Acethawpiss
+ 984           31370         11879         11740        Truck Crash
+ 985           20607         24849         8943         Handqui
+ 986           16986         30456         25758        Bodyfreelivejo
+ 987           17646         28256         31031        Friestour
+ 988           32366         20473         26656        Bigsexy Blank
+ 989           29948         14473         12944        Dragoncrew
+ 990           9551          9951          27083        Rot Drive
+ 991           21385         23126         2350         Ock Princess
+ 992           22243         21710         13055        Landhandcow
+ 993           3780          15730         16562        Jeepknee
+ 994           26675         5166          18822        Lift Cover
+ 995           12948         31202         11959        Mastun
+ 996           10108         23562         21813        Y Seven Controllove
+ 997           13984         7604          1273         Computer Women
+ 998           14946         1895          28847        Thishub Drive
+ 999           26925         2030          7589         Uckmini
+ 1000          14906         5463          9794         Word Display Ocean
+                                                                               
+
+Initializing planets...
+   Maximum number of planets: 100
+
+Initializing the Xannor...
+
+Setting up newspaper file.
+
+Initializing the alias file (Matches real name to alias.)
+
+Clearing YTRMSG.DAT  (Radio message file)
+
+Initialization completed sucessfully!
+
+<YT-INIT Normal Termination>
+
+Be SURE to run YTMAINT.EXE at LEAST ONCE per day EVERY DAY!
+
+Run YTCONFIG and change the default OPTIONS if you wish!
+
+Running initial maintenance...
+

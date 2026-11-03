@@ -5,13 +5,14 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
-through `e5a43dd` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
+through `919632e` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
 [#69](https://github.com/robbiew/yankeetrader/pull/69),
 [#70](https://github.com/robbiew/yankeetrader/pull/70),
 [#72](https://github.com/robbiew/yankeetrader/pull/72) and
-[#73](https://github.com/robbiew/yankeetrader/pull/73)). These are completed
+[#73](https://github.com/robbiew/yankeetrader/pull/73) and
+[#74](https://github.com/robbiew/yankeetrader/pull/74)). These are completed
 milestones, not open implementation tasks. The application is 0.1.0 and
-`internal/game/game.go` declares **save format 34** on the current RNG-recovery branch (built on warp PR #74). See the
+`internal/game/game.go` declares **save format 34** on the current port-replay branch (built on RNG PR #75). See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
@@ -41,7 +42,8 @@ milestones, not open implementation tasks. The application is 0.1.0 and
   and Earth shortcuts; independent saved map profile (save 34).
 
 - Recovered raw BRUN30 RND/RANDOMIZE semantics and initializer `-TIMER` seeding,
-  including noncanonical zero; selected full graph replay is verified research.
+  including noncanonical zero; complete graph/port replay across six clock controls
+  is verified research, including all raw record bytes and native phase states.
   The shared primitive preserves startup prices and introduces no schema change.
 
 ### Most recent completed milestones
@@ -59,12 +61,13 @@ milestones, not open implementation tasks. The application is 0.1.0 and
    Raw `RANDOMIZE -TIMER`, the 24-bit RND recurrence, preserved low seed byte and
    midnight zero residue are now recovered, implemented as a shared primitive
    and checked against 4096 native state/value pairs. A research model exactly
-   replays selected DOS graph phases at two clock points; this does not select a
-   new production RNG. Next: recover the full port placement/name/economy random
-   consumption and its MBF boundaries, then define any production compatibility
-   profile separately from modern safety policies. Do not repeat the established
-   warp phases or seed transformation as missing work.
-   [RNG controls and bounded replay](yt-rng-seeding/RECOVERY.md),
+   replays six complete graph/port targets, including all 137-byte records,
+   rejection counts, names, coefficients and twelve native phase states.
+   Next: bound remaining initializer records and MBF arithmetic, then define any
+   production compatibility profile separately from modern safety policies.
+   Do not repeat the established port stream as missing work.
+   [Exact port replay](yt-port-replay/RECOVERY.md),
+   [RNG controls](yt-rng-seeding/RECOVERY.md),
    [warp rules](yt-warp-generation/RECOVERY.md), [port rules](yt-port-generation/RECOVERY.md).
 2. **Resolve remaining rule, random-event and numeric parity questions in bounded
    slices.** Remaining MBF arithmetic and other RND argument variants, uncovered command/encounter edges,
