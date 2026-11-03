@@ -184,3 +184,12 @@ remote reports, no-reroll migration, profile persistence, season resets and stal
 Genesis quote rejection. CLI tests exercise new-world admission, saved settings,
 private archive contents and reset preservation. CI runs these without DOSBox;
 original runtime execution is retained evidence, not a CI emulator dependency.
+
+## RNG seeding follow-up
+
+The [raw RNG recovery](../yt-rng-seeding/RECOVERY.md) verifies the recurrence and
+byte-based RANDOMIZE operation against 4096 native state/value pairs, including
+zero/max output and residual-zero seed arguments. Startup references now use the
+shared tested primitive with identical prices. Initializer seeding and selected
+exact warp-table research replay are established; full port random consumption
+and remaining MBF arithmetic are still separate work.

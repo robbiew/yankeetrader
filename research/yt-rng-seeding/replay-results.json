@@ -1,0 +1,390 @@
+{
+  "recipe": "qb3-fixed-clock-graph-comparison-v1",
+  "cases": [
+    {
+      "recipe": "qb3-initializer-graph-replay-v1",
+      "world": "research/yt-warp-generation/dos/no-repair/before-maint.dat.gz",
+      "world_sha256": "c19362ee2f6dd8e0c2dc6d869daf9cbdafb27ca5247ba7a145e6ad2dfd44ab35",
+      "starting_state": "0xc805",
+      "prefix_draws": 1,
+      "phase": "base",
+      "draws": 27734,
+      "final_state": "0xf5b72b",
+      "repair_pairs": [],
+      "shortcut_writes": [],
+      "compared_cells": 18000,
+      "matching_cells": 18000,
+      "mismatch_count": 0,
+      "first_difference": null,
+      "first_differences": [],
+      "limitations": [
+        "Research only; no Go production profile or general exact seed-to-universe promise.",
+        "RNG state is supplied explicitly from separate retained startup probes.",
+        "Only selected fixed-clock initializer graphs are compared; port names/economy and later gameplay are outside this replay.",
+        "These graphs alone cannot distinguish zero versus one pregraph draw: an unused occupied-Earth-slot offset can resynchronize the stream; the HQ draw needs its separate native evidence."
+      ],
+      "native_init_log_sha256": "8089d2cbf09af92332d9c49ebfdad326100434a2e305ea8dc270c6191e9321af",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace": "research/yt-rng-seeding/trace-dos/timer-midnight/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800"
+      }
+    },
+    {
+      "recipe": "qb3-initializer-graph-replay-v1",
+      "world": "research/yt-warp-generation/dos/repair-only/before-maint.dat.gz",
+      "world_sha256": "d59906b9538555eea408a16330a53bf33d72b9e3edeb42237f70ea92867627af",
+      "starting_state": "0xc805",
+      "prefix_draws": 1,
+      "phase": "repair",
+      "draws": 27754,
+      "final_state": "0xdaa8af",
+      "repair_pairs": [
+        [
+          35,
+          14
+        ],
+        [
+          338,
+          212
+        ],
+        [
+          339,
+          269
+        ],
+        [
+          374,
+          103
+        ],
+        [
+          614,
+          502
+        ],
+        [
+          636,
+          270
+        ],
+        [
+          874,
+          296
+        ],
+        [
+          1100,
+          86
+        ],
+        [
+          1405,
+          503
+        ],
+        [
+          1469,
+          307
+        ],
+        [
+          1570,
+          39
+        ],
+        [
+          1578,
+          255
+        ],
+        [
+          2489,
+          602
+        ],
+        [
+          2762,
+          2407
+        ],
+        [
+          2913,
+          87
+        ],
+        [
+          2927,
+          1022
+        ],
+        [
+          2944,
+          578
+        ],
+        [
+          2963,
+          2008
+        ],
+        [
+          2968,
+          2535
+        ]
+      ],
+      "shortcut_writes": [],
+      "compared_cells": 18000,
+      "matching_cells": 18000,
+      "mismatch_count": 0,
+      "first_difference": null,
+      "first_differences": [],
+      "limitations": [
+        "Research only; no Go production profile or general exact seed-to-universe promise.",
+        "RNG state is supplied explicitly from separate retained startup probes.",
+        "Only selected fixed-clock initializer graphs are compared; port names/economy and later gameplay are outside this replay.",
+        "These graphs alone cannot distinguish zero versus one pregraph draw: an unused occupied-Earth-slot offset can resynchronize the stream; the HQ draw needs its separate native evidence."
+      ],
+      "native_init_log_sha256": "02969b3115ba2b34b18329f70261c7d46e2076a5a8fbe8c725d0f9e2263d0930",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace": "research/yt-rng-seeding/trace-dos/timer-midnight/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800"
+      }
+    },
+    {
+      "recipe": "qb3-initializer-graph-replay-v1",
+      "world": "research/yt-warp-generation/dos/original/before-maint.dat.gz",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "starting_state": "0xc805",
+      "prefix_draws": 1,
+      "phase": "full",
+      "draws": 27770,
+      "final_state": "0xc3cfff",
+      "repair_pairs": [
+        [
+          35,
+          14
+        ],
+        [
+          338,
+          212
+        ],
+        [
+          339,
+          269
+        ],
+        [
+          374,
+          103
+        ],
+        [
+          614,
+          502
+        ],
+        [
+          636,
+          270
+        ],
+        [
+          874,
+          296
+        ],
+        [
+          1100,
+          86
+        ],
+        [
+          1405,
+          503
+        ],
+        [
+          1469,
+          307
+        ],
+        [
+          1570,
+          39
+        ],
+        [
+          1578,
+          255
+        ],
+        [
+          2489,
+          602
+        ],
+        [
+          2762,
+          2407
+        ],
+        [
+          2913,
+          87
+        ],
+        [
+          2927,
+          1022
+        ],
+        [
+          2944,
+          578
+        ],
+        [
+          2963,
+          2008
+        ],
+        [
+          2968,
+          2535
+        ]
+      ],
+      "shortcut_writes": [
+        168,
+        459,
+        573,
+        842,
+        955,
+        1079,
+        1115,
+        1453,
+        1547,
+        1668,
+        1998,
+        2300,
+        2465,
+        2581,
+        2802
+      ],
+      "compared_cells": 18000,
+      "matching_cells": 18000,
+      "mismatch_count": 0,
+      "first_difference": null,
+      "first_differences": [],
+      "limitations": [
+        "Research only; no Go production profile or general exact seed-to-universe promise.",
+        "RNG state is supplied explicitly from separate retained startup probes.",
+        "Only selected fixed-clock initializer graphs are compared; port names/economy and later gameplay are outside this replay.",
+        "These graphs alone cannot distinguish zero versus one pregraph draw: an unused occupied-Earth-slot offset can resynchronize the stream; the HQ draw needs its separate native evidence."
+      ],
+      "native_init_log_sha256": "55c24d3f3500c28e8879b77c7feb58b1a3db406cc3aa372819c11742e259e8ee",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace": "research/yt-rng-seeding/trace-dos/timer-midnight/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800"
+      }
+    },
+    {
+      "recipe": "qb3-initializer-graph-replay-v1",
+      "world": "research/yt-port-generation/dos/later/before-maint.dat.gz",
+      "world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+      "starting_state": "0x275905",
+      "prefix_draws": 1,
+      "phase": "full",
+      "draws": 27927,
+      "final_state": "0xd1df02",
+      "repair_pairs": [
+        [
+          64,
+          3
+        ],
+        [
+          227,
+          164
+        ],
+        [
+          232,
+          163
+        ],
+        [
+          314,
+          154
+        ],
+        [
+          457,
+          200
+        ],
+        [
+          465,
+          298
+        ],
+        [
+          470,
+          398
+        ],
+        [
+          605,
+          576
+        ],
+        [
+          984,
+          884
+        ],
+        [
+          1278,
+          1238
+        ],
+        [
+          1411,
+          1368
+        ],
+        [
+          1589,
+          833
+        ],
+        [
+          1800,
+          1129
+        ],
+        [
+          1930,
+          1363
+        ],
+        [
+          2301,
+          554
+        ],
+        [
+          2401,
+          1224
+        ],
+        [
+          2809,
+          1469
+        ],
+        [
+          2940,
+          2088
+        ],
+        [
+          2951,
+          1192
+        ]
+      ],
+      "shortcut_writes": [
+        306,
+        914,
+        1246,
+        1317,
+        1600,
+        1639,
+        2005,
+        2281,
+        2416,
+        2699,
+        2772,
+        2879,
+        2956
+      ],
+      "compared_cells": 18000,
+      "matching_cells": 18000,
+      "mismatch_count": 0,
+      "first_difference": null,
+      "first_differences": [],
+      "limitations": [
+        "Research only; no Go production profile or general exact seed-to-universe promise.",
+        "RNG state is supplied explicitly from separate retained startup probes.",
+        "Only selected fixed-clock initializer graphs are compared; port names/economy and later gameplay are outside this replay.",
+        "These graphs alone cannot distinguish zero versus one pregraph draw: an unused occupied-Earth-slot offset can resynchronize the stream; the HQ draw needs its separate native evidence."
+      ],
+      "native_init_log_sha256": "295119c5dd75a9cce05f0535567c85389e7fa163fba328dca53aed57aba68413",
+      "seed_trace": {
+        "world_seed": 2578693,
+        "trace": "research/yt-rng-seeding/trace-dos/timer-noon/TRACE.BIN",
+        "trace_sha256": "36390b4062b61379e9e638ad276a9dd39c75fc121dd8894d021361fe1af9ebbb",
+        "fac": "e9b73090",
+        "negative_fac": "e9b7b090"
+      }
+    }
+  ]
+}

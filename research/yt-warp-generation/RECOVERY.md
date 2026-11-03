@@ -179,9 +179,11 @@ pins the baseline, patches, executable hashes, calendar, clock and normal return
   their original maps, including the established ring; selecting the new profile
   requires a new world. Native BBS/balance acceptance is separate from local tests.
 
-Exact DOS seed initialization, complete random sequence matching, MBF boundary
-arithmetic and DOS save conversion remain unimplemented. Recovered local/long
-links, repair and shortcut phases should no longer be listed as missing work.
+Initializer raw seeding and selected exact graph replay were subsequently
+verified in the [RNG follow-up](../yt-rng-seeding/RECOVERY.md). Full port-stream
+replay, remaining MBF boundary arithmetic and DOS save conversion remain open.
+The active profile still uses its documented Go stream and safeguards. Recovered
+local/long links, repair and shortcut phases are implemented.
 
 ## Verification
 

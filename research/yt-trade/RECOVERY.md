@@ -48,3 +48,10 @@ The default interface now follows the recorded `trade-earth-gear`, `trade-high`,
 The port body text, spacing and visible colors now have dedicated DOS captures and automated comparisons; see [port screen evidence](../yt-port-screens/RECOVERY.md). Timing, invalid-input behavior and unsupported Earth features remain outside these comparisons. Cargo defaults in Go are explicitly bounded by affordability and capacity; invalid quantities safely skip the commodity. Pricing retains the documented fixed reference prices. The existing Earth ownership exploit remains disabled.
 
 `python3 scripts/smoke_ports.py` drives the native game through a real terminal, buys Earth equipment, declines and confirms cargo trades, and checks saved balances and turns. `--render` optionally writes screenshots using the same renderer as the startup smoke. Unit tests cover sales, defaults, invalid input, replaced sessions, expiry, and loss of credits while a prompt is waiting.
+
+## Subsequent RNG verification
+
+The startup-sequence uncertainty in the early report is superseded by
+[raw RNG recovery](../yt-rng-seeding/RECOVERY.md): the default 24-bit recurrence
+and initializer raw seeding are verified, and the shared primitive preserves
+existing startup reference prices. Full MBF price arithmetic remains separate.

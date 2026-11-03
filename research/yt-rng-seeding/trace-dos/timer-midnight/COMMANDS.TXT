@@ -1,0 +1,9 @@
+mount c research/yt-rng-seeding/trace-dos/timer-midnight
+c:
+date 11/02/2026
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init > TRACE.BIN
+echo PROBE_RETURNED > RETURN.LOG
+exit

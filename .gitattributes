@@ -209,3 +209,13 @@
 /research/yt-warp-generation/rounding-dos/**/ANSWERS.TXT -diff
 /research/yt-warp-generation/rounding-dos/**/*.LOG -diff
 /research/yt-warp-generation/rounding-dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Exact DOS clock logs and raw seed/FAC byte traces.
+/research/yt-rng-seeding/clock-dos/** -text
+/research/yt-rng-seeding/clock-dos/**/*.LOG -diff
+/research/yt-rng-seeding/clock-dos/**/ANSWERS.TXT -diff
+/research/yt-rng-seeding/clock-dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-rng-seeding/trace-dos/** -text
+/research/yt-rng-seeding/trace-dos/**/*.LOG -diff
+/research/yt-rng-seeding/trace-dos/**/TRACE.BIN -diff
+/research/yt-rng-seeding/trace-dos/**/*.log whitespace=-blank-at-eol,-blank-at-eof

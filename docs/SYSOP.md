@@ -179,6 +179,15 @@ before retrying. A storage durability warning that says the update committed mea
 the new world is already visible: do not repeat the reset. Preserve both files,
 check storage health, and validate the active world before reopening the door.
 
+## RNG research and existing worlds
+
+The QuickBASIC RNG research update keeps save format 34, current `-seed` semantics,
+existing world contents and the selected generation profiles unchanged. Its raw
+DOS seed inputs are research controls, not new game initialization/import flags.
+The shared startup-price primitive produces the same prices. See the
+[verified subset and remaining boundaries](../research/yt-rng-seeding/RECOVERY.md)
+before treating a research clock or raw state as a production compatibility mode.
+
 ## Choosing the warp map
 
 For a separate new world, `./bin/yt -data dos-map -init -dos-warps -seed 36`

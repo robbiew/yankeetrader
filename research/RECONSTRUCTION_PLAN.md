@@ -2,7 +2,7 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-02
+## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
 through `e5a43dd` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
@@ -11,7 +11,7 @@ through `e5a43dd` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
 [#72](https://github.com/robbiew/yankeetrader/pull/72) and
 [#73](https://github.com/robbiew/yankeetrader/pull/73)). These are completed
 milestones, not open implementation tasks. The application is 0.1.0 and
-`internal/game/game.go` declares **save format 34** on the current warp-parity branch. See the
+`internal/game/game.go` declares **save format 34** on the current RNG-recovery branch (built on warp PR #74). See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
@@ -40,6 +40,10 @@ milestones, not open implementation tasks. The application is 0.1.0 and
 - Opt-in recovered warp generation with local/long links, isolated-sector repair
   and Earth shortcuts; independent saved map profile (save 34).
 
+- Recovered raw BRUN30 RND/RANDOMIZE semantics and initializer `-TIMER` seeding,
+  including noncanonical zero; selected full graph replay is verified research.
+  The shared primitive preserves startup prices and introduces no schema change.
+
 ### Most recent completed milestones
 
 | Milestone | Implemented behavior and evidence |
@@ -51,25 +55,26 @@ milestones, not open implementation tasks. The application is 0.1.0 and
 
 ### Ordered genuine backlog
 
-1. **Exact universe RNG and numeric parity remains separate work.**
-   `-dos-ports` and `-dos-warps` now implement the recovered economy and map rules
-   for new worlds; existing maps/economies are preserved. Local/long warp rules,
-   BFS isolation repair, directed Earth shortcuts and positive-half-up shortcut
-   indices are recovered and tested against native phase captures. Go randomness,
-   bounded generation, duplicate rejection and removal of Earth's self-warp are
-   explicit modern choices. Do not re-list these implemented phases as missing.
-   Exact QB seed initialization, draw-for-draw replay and full MBF boundary
-   arithmetic remain unimplemented. [Warp rules and evidence](yt-warp-generation/RECOVERY.md),
-   [port rules and evidence](yt-port-generation/RECOVERY.md).
+1. **Complete generator stream and numeric parity beyond the verified core.**
+   Raw `RANDOMIZE -TIMER`, the 24-bit RND recurrence, preserved low seed byte and
+   midnight zero residue are now recovered, implemented as a shared primitive
+   and checked against 4096 native state/value pairs. A research model exactly
+   replays selected DOS graph phases at two clock points; this does not select a
+   new production RNG. Next: recover the full port placement/name/economy random
+   consumption and its MBF boundaries, then define any production compatibility
+   profile separately from modern safety policies. Do not repeat the established
+   warp phases or seed transformation as missing work.
+   [RNG controls and bounded replay](yt-rng-seeding/RECOVERY.md),
+   [warp rules](yt-warp-generation/RECOVERY.md), [port rules](yt-port-generation/RECOVERY.md).
 2. **Resolve remaining rule, random-event and numeric parity questions in bounded
-   slices.** Exact QuickBASIC RNG/MBF rounding, uncovered command/encounter edges,
+   slices.** Remaining MBF arithmetic and other RND argument variants, uncovered command/encounter edges,
    additional unconfirmed spy triggers and character-level editor wrapping/
    backspace behavior remain evidence-driven work. Preserve intentional exploit
    fixes; do not treat every historical deferral or removed DOS feature as a
    required new mechanic. [Issues and intentional fixes](ISSUES_AND_EXPLOITS.md).
 3. **Original DOS save interoperability and remaining universe parity.** Modern
    private JSON export/restoration is implemented; DOS `.DAT` import/export and
-   exact DOS seed-to-universe replay are separate unsupported work.
+   a complete DOS seed-to-universe production mode are separate unsupported work.
    Define identity, version and conversion policies before claiming compatibility.
 4. **Target-host and release acceptance.** Run real BBS gameplay/disconnect/time
    expiry, restore/upgrade/reset drills and native Windows inherited-socket/crash

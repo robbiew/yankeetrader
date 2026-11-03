@@ -1,0 +1,30 @@
+{
+  "name": "second-two",
+  "recipe": "dos-rng-clock-v1",
+  "date": "11/02/2026",
+  "time": "00:00:02",
+  "cpu_cycles": 200000,
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6"
+  },
+  "fingerprints": {
+    "world_sha256": "6fce61a33be6090dfa681c97f0873b1de926215f727dac1d87be4279c02e2fd7",
+    "warp_slots_sha256": "08f6cfae966084388bcbea247ca9a5c261f272f01846d68736796a358c138d00",
+    "generated_ports_sha256": "a75c27e669bcd1ed727036b949dd8d456eca861533b2d2ad0df15ab5f2f23090"
+  },
+  "files": {
+    "before-maint.dat.gz": "4e11ece64c821e2aa3aa1d445c47bd25be9322ef15ea04394d667a8d02bb01e2",
+    "INIT.LOG": "16bf68e2833e14c444e9499e2ae23f1b2f9ed0394cf346b407b0b5592e53a568",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "29f7c1b995d0a92e347df2ae8732b38c55d9acf23b842463ac45e4008c169e39",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "b464b251e0e789944343a4b90db47117692ba325592a086564e1e99fa3f3f36f",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "05c241c17653962993d19aaca3bfdab85ccbbeaea025120f2349b3f6b4b67f82",
+    "dosbox.log": "6974140285cd90b5f6ce76ecb4e6e56560f92a3b0bb489ae789b8f2186dbed16"
+  }
+}

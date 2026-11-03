@@ -6,9 +6,9 @@ leads, validated outcomes and deliberate modern policies. Historical reports are
 not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
-Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02),
+Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03),
 checked against merged main through PR #73 on 2026-11-02, then extended by the
-current warp-parity branch using save format **34**.
+current RNG-recovery branch built on warp PR #74, using save format **34**.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
@@ -22,9 +22,13 @@ port-sale notices are implemented as private mail, not public acquisition news.
 The [port generation and startup pricing slice](yt-port-generation/RECOVERY.md)
 is implemented as an opt-in new-world profile (save 33). The [warp-generation slice](yt-warp-generation/RECOVERY.md) adds independently
 opt-in DOS map rules (save 34), including repaired connectivity and Earth shortcuts.
-Exact seed/RNG/numeric parity and target-BBS acceptance remain separate boundaries.
+The [RNG seeding follow-up](yt-rng-seeding/RECOVERY.md) verifies raw seeding and
+selected exact graph replay. Full port-stream/MBF integration and target-BBS
+acceptance remain separate boundaries.
 
 Included here:
+
+- [QuickBASIC RNG seeding](yt-rng-seeding/RECOVERY.md): raw timer/seed/RND traces, preserved zero residue, shared primitive and bounded exact graph replay.
 
 - [DOS warp generation](yt-warp-generation/RECOVERY.md): native ordinary/long-edge, repair and shortcut controls, positive-half-up rounding and independent save 34 map profile.
 

@@ -1,7 +1,7 @@
 # Trading and planet milestone validation
 
 This is a chronological validation ledger. Older feature restrictions describe
-their dated milestone; use the [current plan](../research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02)
+their dated milestone; use the [current plan](../research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03)
 and [README](../README.md#status) for implemented features and current scope.
 
 Validated locally on macOS arm64, 2026-10-25, with Go 1.27.3. Source and executable hashes are in `build.json`.
@@ -1280,3 +1280,33 @@ The modern RNG, finite retries, small-world handling, duplicate rejection and
 Earth self-warp removal are explicit differences. Exact QB seed sequence and full
 MBF boundary arithmetic remain open. CI includes new verifiers and terminal checks;
 new-head hosted results, native Windows and production BBS acceptance are separate.
+
+## Raw QuickBASIC RNG seeding and selected graph replay — 2026-11-03
+
+The shared `internal/qbrng` primitive implements the verified 24-bit argumentless
+RND recurrence and RANDOMIZE transformation from actual four-byte MBF inputs.
+The initializer path is `RANDOMIZE -TIMER`; midnight's noncanonical zero residue
+is retained as seed input rather than reconstructed from a numeric zero.
+Startup-price construction now uses the shared primitive with identical results.
+There is no schema change beyond 34 and no switch of active generation streams.
+
+Validation passed locally: all Go packages under race detection, vet, existing
+price/port regression tests and compact/classic port-profile CLI/PTY acceptance.
+Portable Go fixtures check all 4096 native state/FAC pairs from 16 copied-executable
+controls, including low-byte preservation, canonical/residual zero, and exact
+RND 0/max output boundaries. Six original-initializer clock controls retain raw
+start/end time/date and prove only bounded correlations, not exact clock strings.
+Thirteen native byte contracts are checked against original relocated MZ images.
+
+A research model obtains its seed from verified traces and exactly reproduces
+all 18000 warp cells in four retained graph-phase/clock controls. Ordered native
+repair logs and final states/draw counts are also checked. The negative controls
+explicitly preserve the zero/one-prefix resynchronization limit, reject wrong
+seeds/prefix 2 and rehashed changed traces/worlds, and do not pretend graph equality
+alone proves the HQ draw count. There are 24 Python test methods across clock,
+trace, native and replay verification. All 4682 archive files remain unchanged.
+
+[Recovery, executable patch contracts, provenance and remaining boundaries](../research/yt-rng-seeding/RECOVERY.md).
+Full port random consumption, other RND argument variants, complete MBF arithmetic,
+a general production compatibility profile and native BBS acceptance remain open.
+Hosted CI includes these checks; local results do not claim hosted green status.

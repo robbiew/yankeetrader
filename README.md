@@ -17,7 +17,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -43,6 +43,15 @@ Click any screenshot to view it at full size.
 </table>
 
 ## Status
+
+**QuickBASIC seeding research is verified:** raw DOS traces establish the BRUN30
+RND recurrence and byte-based `RANDOMIZE -TIMER` path, including midnight's
+noncanonical zero. A research replay matches every warp cell in four retained
+DOS phase/clock controls. The shared tested RNG primitive now supplies the
+existing startup-price sequence with identical results. Generation profiles keep
+their current Go streams and safeguards; save format remains **34**.
+[Raw controls, exact selected replay and remaining limits](research/yt-rng-seeding/RECOVERY.md).
+
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
 nearby reciprocal links, occasional sixth-slot wormholes, isolated-sector repair
@@ -176,7 +185,7 @@ finish, including runner cleanup; every validation command remains enabled.
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Additional unconfirmed spy command paths and character-level DOS editor wrapping/backspace parity.
-- Exact DOS seed-to-universe replay and save import/export, plus complete original RNG, rounding and other unresolved rule parity.
+- A full DOS seed-to-universe production mode and save import/export, plus complete MBF arithmetic, other RND variants and unresolved rule parity.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
 
@@ -537,7 +546,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 active accounts with a 256-identity lifetime archive (IDs are never reused), 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Exact RNG/MBF universe parity, DOS save import/export and remaining terminal parity questions are future work. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full RNG/MBF universe integration, DOS save import/export and remaining terminal parity questions are future work. Initializer seeding and selected graph replay are now verified research; see the RNG recovery report. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
 
 ## Storage and recovery
 
