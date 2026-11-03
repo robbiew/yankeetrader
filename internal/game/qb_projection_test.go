@@ -23,9 +23,19 @@ func TestQBProjectionNativeAdmissionAndBootstrap(t *testing.T) {
 				t.Fatal(err)
 			}
 			original := append([]byte(nil), source.Bytes...)
+			projected, err := projectQBSource(now, 36, source)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if !bytes.Equal(original, source.Bytes) {
+				t.Fatal("successful projection mutated source bytes")
+			}
 			c, err := prepareQBWorld(now, 36, input)
 			if err != nil {
 				t.Fatal(err)
+			}
+			if !reflect.DeepEqual(projected.world, c.world) {
+				t.Fatal("direct projection differs from generated candidate")
 			}
 			w := c.world
 			if err = w.Validate(); err != nil {
