@@ -56,6 +56,8 @@ profile. See [complete replay evidence and limits](research/yt-initializer-repla
 [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
 The [proposed production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
 defines the next integration slice; its profile and flags are not implemented.
+Its reset contract distinguishes failures before save replacement from committed
+updates with durability warnings; a warning must not trigger a repeated reset.
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables

@@ -124,8 +124,12 @@ confirmation cannot reset after provenance/settings change. Preserve exact
 season guards, winner/admin distinction, history, old-login invalidation,
 lottery settings and the archive-first administrative reset protocol. All new
 candidates remain unpublished until generation, projection, required bootstrap
-and validation succeed. Failed resets preserve active state and history;
-existing archive-on-failure behavior follows the established store contract.
+and validation succeed. Failures before replacing `world.json` preserve active
+state and history; existing archive-on-failure behavior follows the established
+store contract. A directory-sync `DurabilityError` after replacement means the
+reset committed: preserve the committed receipt, new season and history, report
+the durability warning, and inspect the active world before any retry. Never
+report that committed reset as rolled back or repeat it automatically.
 
 Private full-world export, archive extraction and stopped-node restoration must
 round-trip the recipe. Use the existing archive integrity mechanism as well as
@@ -149,7 +153,10 @@ restore/import or new automatic archive importer is included.
 4. Extend both reset paths, intent binding and archive/restore coverage before
    calling the profile playable. Confirm identical source recipe/layout across
    reset, actual current UTC maintenance watermarks, separate modern bootstrap
-   state, stale confirmation rejection and failed-reset world immutability.
+   state, stale confirmation rejection and pre-replacement failure immutability.
+   Separately inject post-replacement directory-sync failures in both reset paths:
+   require committed receipts/new-season history, visible durability warnings,
+   and no repeat reset when retried with the old expected season or intent.
 5. Update README/sysop examples, save/rollback notes and CI together. Exercise
    headless initialization and real terminal navigation/trading under the new
    profile. Keep default and existing DOS-rule CLI regressions green.
