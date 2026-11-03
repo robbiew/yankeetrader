@@ -44,14 +44,16 @@ Click any screenshot to view it at full size.
 
 ## Status
 
-**Exact DOS port replay is verified research:** the recovered `RANDOMIZE -TIMER`
-stream reproduces all 18,000 warp cells, all 1,000 complete 137-byte port records
-and all 3,000 sector links in each of six retained clock controls. Twelve fresh
-native state captures independently confirm graph, placement and port endpoints
-at four clocks. The model preserves the original placement defect and raw zero
-residue for comparison. Production generation keeps its current Go streams and
-safeguards; save format remains **34**. See [replay evidence and limits](research/yt-port-replay/RECOVERY.md)
-and [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
+**Complete pre-maintenance DOS initializer replay is verified research:** a
+model synthesizes all **4,151 records / 568,687 bytes** in each of ten retained
+controls. This extends merged RNG/graph/port recovery with configuration, inactive
+players, complete sectors/HQ and inherited inactive planet records. Fresh
+scoreboard-path, January 1 and leap-day controls check raw buffer/zero residues.
+Production generation keeps its current Go streams and safeguards; save format
+remains **34**. This supplies no DOS save importer or production compatibility
+profile. See [complete replay evidence and limits](research/yt-initializer-replay/RECOVERY.md),
+[graph/port replay](research/yt-port-replay/RECOVERY.md) and
+[raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
@@ -547,7 +549,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 active accounts with a 256-identity lifetime archive (IDs are never reused), 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full RNG/MBF universe integration, DOS save import/export and remaining terminal parity questions are future work. Initializer seeding and selected complete graph/port replay are now verified research; see the replay recovery report. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full RNG/MBF universe integration, DOS save import/export and remaining terminal parity questions are future work. Initializer seeding and selected complete pre-maintenance record replay are now verified research; see the complete replay recovery report. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
 
 ## Storage and recovery
 

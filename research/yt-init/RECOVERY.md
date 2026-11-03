@@ -152,3 +152,13 @@ Run YT-INIT and its initial maintenance in an isolated DOS working directory, ca
 ## DOS validation follow-up
 
 The initializer and its automatic initial maintenance completed under DOSBox Staging. The generated file has 4,151 records of 137 bytes, matching the prediction. All recovered configuration defaults matched; YTCONFIG independently displays Genesis = 300, confirming the initializer's printed 450 is stale. All record tails were zero in this run. Full evidence and remaining limits: [DOS validation results](../dos-validation/RESULTS.md).
+
+
+## Complete pre-maintenance replay follow-up — 2026-11-03
+
+The [complete initializer model](../yt-initializer-replay/RECOVERY.md) reproduces
+all 4,151 records byte for byte across ten bounded controls. It resolves the raw
+FIELD-buffer inheritance and selected sector/calendar zero residues without
+assigning gameplay meanings to every unused field. The original first-pass
+static qualifications and dated next-investigation paragraph above are historical.
+No production DOS compatibility mode or save import/export is introduced.

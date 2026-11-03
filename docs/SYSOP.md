@@ -186,6 +186,9 @@ existing world contents and the selected generation profiles unchanged. Its raw
 DOS seed inputs are research controls, not new game initialization/import flags.
 The shared startup-price primitive produces the same prices. The exact port
 replay adds no production flag, save converter or DOS import/export support.
+The follow-up [complete initializer replay](../research/yt-initializer-replay/RECOVERY.md)
+compares all original pre-maintenance records in bounded controls; it remains
+research tooling and supplies no archive import or production initialization mode.
 It deliberately reproduces a DOS duplicate-location defect only in the research
 model; existing generation safeguards remain active. See the
 [port replay boundaries](../research/yt-port-replay/RECOVERY.md) and the

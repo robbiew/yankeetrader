@@ -7,8 +7,8 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03),
-checked against merged main through PR #74, then extended by RNG PR #75 and the
-current exact port-replay milestone, using save format **34**.
+checked against merged main through PR #76, then extended by the current complete
+initializer replay milestone, using save format **34**.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
@@ -50,3 +50,5 @@ From the repository root, regenerate the compact planet fixtures with `python3 s
 Older experiment scripts expect DOS files beside `analysis/` and write results into that tree. Prepare a disposable workspace with `python3 scripts/prepare_recovery_workspace.py /tmp/yankeetrader-recovery`, then run them there. The destination must not already exist. See the archive README for details.
 
 - [Exact graph/port stream replay](yt-port-replay/RECOVERY.md): six complete clock targets, raw 137-byte port records, twelve native phase states and independent corruption checks; research only.
+
+- [Complete pre-maintenance initializer replay](yt-initializer-replay/RECOVERY.md): all 4,151 records synthesized across ten bounded targets, including configuration/planet FIELD inheritance, sector FAC residues and fresh date/path/auxiliary controls. Research only.

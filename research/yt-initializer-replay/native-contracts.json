@@ -1,0 +1,168 @@
+{
+  "format": "initializer-native-byte-contracts-v1",
+  "authority": "Archived original bytes and annotated listing; local disassembly, not fresh REA observations or execution evidence.",
+  "listing_sha256": "e8704fa97b140faab0951494155f6da5db1f19837bdcde030282d273ce48623b",
+  "contracts": [
+    {
+      "name": "calendar",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 693,
+      "length": 788,
+      "bytes_hex": "cd3d239090ba1aa5cd3f6190908bdaba02008bcbcd3d0c9090cd3d139090cd3f7a9090bf1ea5cd3f7d90908bd9cd3d0b9090cd3d139090cd3f7a90908bdfbf22a5cd3f7d909087d987ca8bc2ba0400cd3d0a9090cd3d139090cd3f7a90908bdfbf26a5cd3f7d90908bf08bd7bf72a6cd3f8f90908bcbbb1a00cd3f71909080cd3d039090cd3fa5909080bb000075014b8bf1bf76a6cd3f9f9090b8000076014823c323c07503e911008bf2bf50a6cd3f7f90908bfacd3f7d9090bf76a6be22a5cd3f9f90907403e91500bf7aa6be26a5cd3f7f90908bfecd3f7d9090e96f01bf7ea6be22a5cd3f9f90907403e91500bf82a6be26a5cd3f7f90908bfecd3f7d9090e94a01bf86a6be22a5cd3f9f90907403e91500bf8aa6be26a5cd3f7f90908bfecd3f7d9090e92501bf8ea6be22a5cd3f9f90907403e91500bf92a6be26a5cd3f7f90908bfecd3f7d9090e90001bf96a6be22a5cd3f9f90907403e91500bf9aa6be26a5cd3f7f90908bfecd3f7d9090e9db00bf9ea6be22a5cd3f9f90907403e91500bfa2a6be26a5cd3f7f90908bfecd3f7d9090e9b600bfa6a6be22a5cd3f9f90907403e91500bfaaa6be26a5cd3f7f90908bfecd3f7d9090e99100bfaea6be22a5cd3f9f90907403e91500bfb2a6be26a5cd3f7f90908bfecd3f7d9090e96c00bfb6a6be22a5cd3f9f90907403e91500bfbaa6be26a5cd3f7f90908bfecd3f7d9090e94700bfbea6be22a5cd3f9f90907403e91500bfc2a6be26a5cd3f7f90908bfecd3f7d9090e92200bfc6a6be22a5cd3f9f90907403e91200bfcaa6be26a5cd3f7f90908bfecd3f7d9090bf2aa5be1ea5cd3f9f90907203e90f00bf6aa6cd3f7f90908bfecd3f7d9090bf2aa5be1ea5cd3f9f90907503e996008bdfbfcea6cd3f7f9090bf2ea5cd3f7d90908bf3cd3f6f9090e96600bfd2a6be26a5cd3f7f90908bfecd3f7d90908bdfbf72a6be32a5cd3f8f90908bd3bb1a00cd3f71909080cd3d039090cd3fa59090807403e911008bf2bf50a6cd3f7f90908bfacd3f7d9090bf2aa5be1ea5cd3f9f90907403e91f00bf50a6be32a5cd3f7f9090bf32a5cd3f7d90908bf7bf2ea5cd3f9f90907686c3"
+    },
+    {
+      "name": "field-map-and-config-read",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 1481,
+      "length": 569,
+      "bytes_hex": "bbd6a6cd3e1f9090bb0100ba06a5b98900cd3e1e9090cd3fb390908bcbbb36a5ba2900cd3fb490908bc3bb3aa5ba0400cd3fb49090bb3ea5cd3fb49090bb42a5cd3fb49090bb46a5cd3fb49090bb4aa5cd3fb49090bb4ea5cd3fb49090bb52a5cd3fb49090bb56a5cd3fb49090bb5aa5cd3fb49090bb5ea5cd3fb49090bb62a5cd3fb49090bb66a5cd3fb49090bb6aa5cd3fb49090bb6ea5cd3fb49090bb72a5cd3fb49090bb76a5cd3fb49090bb7aa5cd3fb49090bb7ea5cd3fb49090bb82a5cd3fb49090bb86a5cd3fb49090bb8aa5cd3fb49090bb8ea5cd3fb49090bb92a5cd3fb490908bd9ba0100cd3e269090bb3aa5cd3d199090cd3f779090938bd0cd3d0b9090ba96a5cd3f619090bb3ea5cd3d199090bf2aa5cd3f7d9090bb42a5cd3d199090bf9aa5cd3f7d9090bb46a5cd3d199090bf9ea5cd3f7d9090bb4aa5cd3d199090bfa2a5cd3f7d9090bb4ea5cd3d199090bfa6a5cd3f7d9090bb66a5cd3d199090bfaaa5cd3f7d9090bb6ea5cd3d199090bfaea5cd3f7d9090bb76a5cd3d199090bfb2a5cd3f7d9090bb86a5cd3d199090bfb6a5cd3f7d9090bb8aa5cd3d199090bfbaa5cd3f7d90908bc2bb6ea6cd3f6290907403e90800bbdca6cd3f619090bfcea6beaaa5cd3f9f9090bb000073014bcd3fa79090ba000076014a0bd323d27503e9070087f7cd3f7b9090bf50a6beb2a5cd3f9f90907203e90a008bfebe7ea6cd3f7b9090bf96a6bebaa5cd3f9f9090bb000073014bbfe4a6cd3f9f9090ba000076014a0bd323d27503e9070087f7cd3f7b9090c3"
+    },
+    {
+      "name": "config-default-writes",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 2322,
+      "length": 1008,
+      "bytes_hex": "e8b4fcbb0100ba0100cd3e269090bb86a8cd3d1c9090ba8ea5cd3f5b9090cd3d239090ba0900b90200cd3d0a9090cd3d139090cd3f7a9090bf2aa5cd3f7d90908bdfcd3d1c9090ba3ea5cd3f5b9090cd3fbc9090bb6ea6cd3f6e9090cd3e799090cd3fbc9090bb8aa8cd3f6a90908bdfcd3d119090cd3f6e9090cd3e799090cd3fbc9090bb9ca8cd3f6e9090cd3e799090bf32a5beb6a8cd3f7b9090cd3fbc9090bbbaa8cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba52a5cd3f5b9090bed8a8cd3f7b9090cd3fbc9090bbdca8cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba56a5cd3f5b9090beb6a6cd3f7b9090cd3fbc9090bbf8a8cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba5aa5cd3f5b9090be18a9cd3f7b9090cd3fbc9090bb1ca9cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba5ea5cd3f5b9090e838f8bfcea6be26a5cd3f7f90908bdfbf32a5cd3f7d9090cd3fbc90908bd3bb58a9cd3f6e9090cd3e7990908bdfcd3d1c90908bcaba62a5cd3f5b9090be82a9cd3f7b9090cd3fbc9090bb86a9cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba42a5cd3f5b9090be8ea6cd3f7b9090cd3fbc9090bba0a9cd3f6a90908bdfcd3d119090cd3f6e9090cd3e7990908bdfcd3d1c9090ba76a5cd3f5b9090cd3d3490908bdfbfd6a9be0ea5cd3f71909080cd3f7f9090cd3f95909080bf50a6cd3f8190908bd3bb1a00cd3d0390908bfacd3f7d9090cd3fbc9090bbdaa9cd3f6a90908bdacd3f6b9090cd3e799090cd3d1c9090ba86a5cd3f5b90908bf7bfb6a5cd3f7b9090cd3fbc9090bb06aacd3f6e9090cd3e799090bb32aacd3d1c9090ba7aa5cd3f5b9090bfbaa5be62a6cd3f7b90908bdfcd3d1c9090ba8aa5cd3f5b9090cd3fbc9090bb36aacd3f6a90908bdfcd3f6b9090cd3e799090cd3fbc9090bb58aacd3f6e9090cd3e799090cd3fbc9090bb6ea6cd3f6e9090cd3e79909087d9cd3d1c9090ba66a5cd3f5b9090cd3fbc9090bb86aacd3f6e9090cd3e799090cd3fbc90908bd9cd3f6e9090cd3e799090cd3fbc9090bbcaaacd3f6e9090cd3e799090cd3fbc9090bb00abcd3f6e9090cd3e799090cd3fbc9090bb44abcd3f6a9090cd3e799090e830f6bb16a5ba96a5cd3f6190908bc2bb6ea6cd3f6290907403e90800bb4cabcd3f619090bb96a5ba36a5cd3f5b9090cd3fba9090cd3f579090bb1a00cd3d1c9090ba3aa5cd3f5b9090cd3fbc9090bb6ea6cd3f6e9090cd3e799090bf32a5be5cabcd3f7b90908bf7bf50a6cd3f7f9090bf9ea58bd6cd3f7d909087df8bcbcd3d1c90908bc2ba46a5cd3f5b9090bb0100ba0100cd3e289090"
+    },
+    {
+      "name": "player-writes",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 3402,
+      "length": 419,
+      "bytes_hex": "bb2900cd3d0d9090ba36a5cd3f5b9090bb8eab8bd3cd3d1c90908bcaba3aa5cd3f5b90908bd9cd3d1c9090ba3ea5cd3f5b90908bd9cd3d1c9090ba42a5cd3f5b90908bd9cd3d1c9090ba46a5cd3f5b90908bd9cd3d1c9090ba4aa5cd3f5b90908bd9cd3d1c9090ba4ea5cd3f5b90908bd9cd3d1c9090ba52a5cd3f5b90908bd9cd3d1c9090ba56a5cd3f5b90908bd9cd3d1c9090ba5aa5cd3f5b90908bd9cd3d1c9090ba5ea5cd3f5b90908bd9cd3d1c9090ba62a5cd3f5b90908bd9cd3d1c9090ba66a5cd3f5b90908bd9cd3d1c9090ba6aa5cd3f5b90908bd9cd3d1c9090ba6ea5cd3f5b90908bd9cd3d1c9090ba72a5cd3f5b90908bd9cd3d1c9090ba76a5cd3f5b90908bd9cd3d1c9090ba7aa5cd3f5b90908bd9cd3d1c9090ba7ea5cd3f5b90908bd9cd3d1c9090ba82a5cd3f5b90908bd9cd3d1c9090ba86a5cd3f5b90908bd9cd3d1c9090ba8aa5cd3f5b90908bd9cd3d1c9090ba8ea5cd3f5b90908bd9cd3d1c9090ba92a5cd3f5b9090bbc2a5cd3e7b90908bcbbb010033d2cd3e2890908bf1bf50a6cd3f7f9090bfc2a5cd3f7d90908bf7bfbea5cd3f9f90907703e95dfe"
+    },
+    {
+      "name": "sector-writes",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 6258,
+      "length": 636,
+      "bytes_hex": "bfc2a5be9ea5cd3f7f9090bb1a00cd3e7b9090bb010033d2cd3f71909080cd3e2690908bcbbb2900cd3d0d90908bc2ba36a5cd3f5b90908bf7cd3f7590908bf3d1e68bd38b9c5a18cd3f579090bb1a00cd3d1c90908956faba3aa5cd3f5b90908b76fa8bde81c6b90bd1e68bd38b9c5a18cd3f579090bb1a00cd3d1c9090ba3ea5cd3f5b90908b76fa8bde81c67217d1e68bd38b9c5a18cd3f579090bb1a00cd3d1c9090ba42a5cd3f5b90908b76fa8bde81c62b23d1e68bd38b9c5a18cd3f579090bb1a00cd3d1c9090ba46a5cd3f5b90908b76fa8bde81c6e42ed1e68bd38b9c5a18cd3f579090bb1a00cd3d1c9090ba4aa5cd3f5b90908b76fa81c69d3ad1e68b9c5a18cd3f579090bb1a00cd3d1c9090ba4ea5cd3f5b9090bb8eab8bd3cd3d1c9090ba52a5cd3f5b9090bb8eab8bd3cd3d1c9090ba56a5cd3f5b9090bb8eab8bd3cd3d1c9090ba5aa5cd3f5b9090bb8eab8bd3cd3d1c9090ba5ea5cd3f5b9090bb8eab8bd3cd3d1c9090ba62a5cd3f5b9090bb8eab8bd3cd3d1c9090ba66a5cd3f5b9090bb8eab8bd3cd3d1c9090ba6aa5cd3f5b9090bb8eab8bd3cd3d1c9090ba6ea5cd3f5b9090bb8eab8bd3cd3d1c9090ba72a5cd3f5b9090bb8eab8bd3cd3d1c9090ba76a5cd3f5b9090bb8eab8bd3cd3d1c9090ba7aa5cd3f5b9090bb8eab8bd3cd3d1c9090ba7ea5cd3f5b9090bb8eab8bd3cd3d1c9090ba82a5cd3f5b9090bb8eab8bd3cd3d1c9090ba86a5cd3f5b9090bb8eab8bd3cd3d1c9090ba8aa5cd3f5b9090bb8eab8bd3cd3d1c9090ba8ea5cd3f5b9090bb8eabcd3d1c9090ba92a5cd3f5b9090bb3ea6cd3e7b90908bd98bd0cd3e2890908bf7bf50a6cd3f7f9090bfc2a5cd3f7d90908bf7bf00a6cd3f9f90907703e984fd"
+    },
+    {
+      "name": "planet-writes",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 8501,
+      "length": 148,
+      "bytes_hex": "bea6a5cd3f7f90908bdfbfaea5cd3f7d90908bcbbb0100cd3e26909087dfcd3d1c90908bc2ba6ea5cd3f5b90908bdf8bd0cd3e2890908bf1bf1ca6cd3f7b9090be50a6cd3f6f9090e93500bb8eabcd3d1c9090ba66a5cd3f5b9090bfa6a5bec2a5cd3f7f9090bb1a00cd3e7b9090bb010033d2cd3e289090bf50a6cd3f7f9090bfc2a5cd3f7d90908bf7bf1ca6cd3f9f909076b7"
+    },
+    {
+      "name": "hq-final-patches",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 8687,
+      "length": 150,
+      "bytes_hex": "bfb6a5be9ea5cd3f7f9090bb1a00cd3e7b9090bb01008bca33d2cd3f71909080cd3e2690908bc3bb34aecd3d1c9090ba62a5cd3f5b9090bbcea6cd3d1c9090ba66a5cd3f5b9090bb3ea6cd3e7b90908bd833d2cd3e289090bf50a6cd3f7f9090bb1a00cd3e7b90908bd8cd3f71909081cd3e269090bbb6a5cd3d1c9090ba7aa5cd3f5b9090bb46a6cd3e7b90908bd833d2cd3e289090"
+    },
+    {
+      "name": "calendar-constants",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 10640,
+      "length": 136,
+      "bytes_hex": "000000810a0058a65954444154412e44415400007a8a00803b8c00004887000072a60000007f00000082000078850000408200006c8600000083000034870000208300007087000040830000178800006083000035880000008400005488000010840000738800002084008008890000308400001889000040840000278900008081008036890100"
+    },
+    {
+      "name": "config-id",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11206,
+      "length": 4,
+      "bytes_hex": "00a0458d"
+    },
+    {
+      "name": "config-fighters",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11254,
+      "length": 4,
+      "bytes_hex": "00004885"
+    },
+    {
+      "name": "config-credits",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11288,
+      "length": 4,
+      "bytes_hex": "00407b8a"
+    },
+    {
+      "name": "config-inactivity",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11352,
+      "length": 4,
+      "bytes_hex": "00006084"
+    },
+    {
+      "name": "config-turns",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11458,
+      "length": 4,
+      "bytes_hex": "00007a89"
+    },
+    {
+      "name": "config-genesis",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11634,
+      "length": 4,
+      "bytes_hex": "00001689"
+    },
+    {
+      "name": "player-zero",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 11982,
+      "length": 4,
+      "bytes_hex": "00000000"
+    },
+    {
+      "name": "hq-fighters",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 12660,
+      "length": 4,
+      "bytes_hex": "00401c8e"
+    },
+    {
+      "name": "newspaper-alias-radio",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 8837,
+      "length": 659,
+      "bytes_hex": "cd3fbc909087d9cd3f6e9090cd3e799090cd3fbc9090bb38aecd3f6e9090cd3e7990908bd8cd3e219090bb72a8cd3e1f90908bd887caba56aecd3e1e9090cd3fbe9090cd3d249090938bd3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb6aaecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb6aaecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb86aecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bba2aecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb86aecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb6aaecd3f559090cd3f6e9090cd3e7990908bdacd3fbe9090cd3d2490908bc3bb64aecd3f5590908bc3cd3d239090cd3f5590908bc3bb6aaecd3f559090cd3f6e9090cd3e7990908bdacd3e219090cd3fbc9090bb6ea6cd3f6e9090cd3e799090cd3fbc90908bc3bbbeaecd3f6e9090cd3e7990908bdacd3e219090bb0100cd3e20909087dabafcaecd3e1e9090bb0aafba16a5cd3f619090bb0100cd3fbe909087dacd3f6a9090bb14afcd3f6a9090bb16a5cd3f6a9090bb14afcd3f6a9090bb16a5cd3f6a9090bb14afcd3f6a9090bb16a5cd3f6e9090cd3e7990908bdacd3e219090cd3fbc909093cd3f6e9090cd3e799090cd3fbc9090bb1aafcd3f6e9090cd3e799090bb0100cd3e2090908bd8ba48afcd3e1e9090cd3e2290908bdacd3e249090"
+    },
+    {
+      "name": "int16-single-dispatch",
+      "binary": "BRUN30.EXE",
+      "file_offset": 1595,
+      "length": 2,
+      "bytes_hex": "80a8"
+    },
+    {
+      "name": "int16-single-and-tail",
+      "binary": "BRUN30.EXE",
+      "file_offset": 43635,
+      "length": 35,
+      "bytes_hex": "c70616000000c70618000000cb535250b800900ac77902f7db33d2e8ac0b585a5bebdd"
+    },
+    {
+      "name": "single-int16-conversion",
+      "binary": "BRUN30.EXE",
+      "file_offset": 43720,
+      "length": 147,
+      "bytes_hex": "8926080a50518b44028b0ceb498926080a5051e8de00eb3e8926080a505156be1600e8cf005eeb2e0ae4790b2c0183db00d3ebf7d3eb56d3ebeb520ac0794e803e1f000475474beb448926080a5051a11c008b0e1a0033db0ae4743180ec8072da8af88add91b1102acd8ae7723b742480cf80803e1f000474aed3eb83d300702b0ae47902f7dbf6d422e7781c5958891e1a00"
+    },
+    {
+      "name": "single-add-dispatch",
+      "binary": "BRUN30.EXE",
+      "file_offset": 1675,
+      "length": 2,
+      "bytes_hex": "74b3"
+    },
+    {
+      "name": "single-add-cancellation",
+      "binary": "BRUN30.EXE",
+      "file_offset": 46452,
+      "length": 201,
+      "bytes_hex": "e8f46b8b45028b5d018a35b20080cf808a2c8aca8bf98b4c028b740181ce00800aed74630ae474593aec730587f387fa912ae5f6dc80fc187747d0e0d0d9918acdb500e35380f90e7c120bd2740380cb018bd333db80e910721d743c80f9057e290ad2740380ce018ad68af38adf8afd80e90877157421d1e2d1d3fec175f8eb178bde8bd78bc1e98500f6c23f740380ca20d1ebd1dae2faf6c23f740380ca20d0e0701103d713de734dd1dbd1dafec47545e977552bfa1bf38bd78bde730af7d3f7daf583d300f6d0"
+    },
+    {
+      "name": "normalizer-and-zero-exit",
+      "binary": "BRUN30.EXE",
+      "file_offset": 46653,
+      "length": 99,
+      "bytes_hex": "0bdb750b80ec10765487da0bdb744e0aff750f80ec0876458afb8ade8af2b2000aff780afecc7435d1e2d1d371f680fa8077077211f6c601740c80c60183d3007304fec47414248080e77f0ac7a31c008ae38ac6a31a00c37903e90655c6061d0000c3"
+    }
+  ]
+}

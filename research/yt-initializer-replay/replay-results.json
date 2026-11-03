@@ -1,0 +1,728 @@
+{
+  "recipe": "qb3-complete-initializer-replay-v1",
+  "cases": [
+    {
+      "clock_case": "midnight",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/midnight/before-maint.dat.gz",
+      "observed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "replayed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-midnight/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+          "replayed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+          "replayed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643",
+          "replayed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "repeat",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/repeat/before-maint.dat.gz",
+      "observed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "replayed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-repeat/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+          "replayed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+          "replayed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643",
+          "replayed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "second-one",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/second-one/before-maint.dat.gz",
+      "observed_world_sha256": "6cccb3fe676d40016b553e3ee7ea6d1a0d44dff0f029550602f44e88ecfda5db",
+      "replayed_world_sha256": "6cccb3fe676d40016b553e3ee7ea6d1a0d44dff0f029550602f44e88ecfda5db",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-plus-one/TRACE.BIN",
+        "trace_sha256": "f6e468d1ce2b5bf0406bfb98baa9403641ef0d7d6f64a7ddc695c56a4ab97613",
+        "fac": "48e17a80",
+        "negative_fac": "48e1fa80",
+        "world_seed": 6402565
+      },
+      "statistics": {
+        "hq_sector": 911,
+        "repair_pairs": 22,
+        "shortcut_writes": 14,
+        "final_state": "0xbcd835",
+        "draws": 40176,
+        "placement_draws": 1222,
+        "placement_rejections": 226,
+        "placement_final_state": "0x451a25",
+        "placement_total_draws": 28832
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "f37981408ce653b4bfcc66ad9101e89258ddeba7f7c6803cdf3c3e8f385a736c",
+          "replayed_sha256": "f37981408ce653b4bfcc66ad9101e89258ddeba7f7c6803cdf3c3e8f385a736c"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b9f6e60ea8ea1df994d8ddabd64733c4d41a6f969059cd00d394e6675496e174",
+          "replayed_sha256": "b9f6e60ea8ea1df994d8ddabd64733c4d41a6f969059cd00d394e6675496e174"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "d0b82058552ec594707f3ca843ac009ab2e46f2c988b25106765395989b1aee9",
+          "replayed_sha256": "d0b82058552ec594707f3ca843ac009ab2e46f2c988b25106765395989b1aee9"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "3f5ac46aefbc12979662663c4d2553246b2ed1adc4c35b4de4957aefdd797fb1",
+          "replayed_sha256": "3f5ac46aefbc12979662663c4d2553246b2ed1adc4c35b4de4957aefdd797fb1"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "second-two",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/second-two/before-maint.dat.gz",
+      "observed_world_sha256": "6fce61a33be6090dfa681c97f0873b1de926215f727dac1d87be4279c02e2fd7",
+      "replayed_world_sha256": "6fce61a33be6090dfa681c97f0873b1de926215f727dac1d87be4279c02e2fd7",
+      "seed_trace": {
+        "trace": "research/yt-port-replay/seed-dos/timer-plus-two/TRACE.BIN",
+        "trace_sha256": "3841e5cd07999bf4ec46173cba712d5d46881558543548b1fd62e96b71a068a2",
+        "fac": "f6287c81",
+        "negative_fac": "f628fc81",
+        "world_seed": 11078149
+      },
+      "statistics": {
+        "hq_sector": 2524,
+        "repair_pairs": 18,
+        "shortcut_writes": 18,
+        "final_state": "0x79697c",
+        "draws": 40329,
+        "placement_draws": 1198,
+        "placement_rejections": 202,
+        "placement_final_state": "0x1ae0f8",
+        "placement_total_draws": 28997
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "4eacfd30f9c57a34f3a004b8d55813aa61db10a5605a5eaf0d7374bcc80341ab",
+          "replayed_sha256": "4eacfd30f9c57a34f3a004b8d55813aa61db10a5605a5eaf0d7374bcc80341ab"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "6808ff78493a5a5ab6b7f57899faf9315b836222518aaad04f1af7a53df318b1",
+          "replayed_sha256": "6808ff78493a5a5ab6b7f57899faf9315b836222518aaad04f1af7a53df318b1"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "4b1878f517ce2d7a2258d89459f2fc5a0d9d18a44c429031f524c28e61041ecc",
+          "replayed_sha256": "4b1878f517ce2d7a2258d89459f2fc5a0d9d18a44c429031f524c28e61041ecc"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "df8e7fb7e44a575280c0247d99c2f4c2ef512eddb338bc7f8a237893fdb15b66",
+          "replayed_sha256": "df8e7fb7e44a575280c0247d99c2f4c2ef512eddb338bc7f8a237893fdb15b66"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "later",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/later/before-maint.dat.gz",
+      "observed_world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+      "replayed_world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-noon/TRACE.BIN",
+        "trace_sha256": "36390b4062b61379e9e638ad276a9dd39c75fc121dd8894d021361fe1af9ebbb",
+        "fac": "e9b73090",
+        "negative_fac": "e9b7b090",
+        "world_seed": 2578693
+      },
+      "statistics": {
+        "hq_sector": 1040,
+        "repair_pairs": 19,
+        "shortcut_writes": 13,
+        "final_state": "0x34b8fc",
+        "draws": 40457,
+        "placement_draws": 1197,
+        "placement_rejections": 201,
+        "placement_final_state": "0x6c4e19",
+        "placement_total_draws": 29124
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "aff49c1195012b6e344c6233a82b389977b58cdbf7120b3d82d4d9ae3b811d2d",
+          "replayed_sha256": "aff49c1195012b6e344c6233a82b389977b58cdbf7120b3d82d4d9ae3b811d2d"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "65a2e8d821e8810a75134d944665b1ca3cc2de1eb36b82d089dea3b5a1254044",
+          "replayed_sha256": "65a2e8d821e8810a75134d944665b1ca3cc2de1eb36b82d089dea3b5a1254044"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "16d1e0f0aa3e55c795d9f9e523c3fccc2fe0626aed3d0f831aa8af10b5cc1126",
+          "replayed_sha256": "16d1e0f0aa3e55c795d9f9e523c3fccc2fe0626aed3d0f831aa8af10b5cc1126"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "5dbe0f4d0d416bbcef6b80dabf9008818e8fe7689c4694394eb675834588f6ac",
+          "replayed_sha256": "5dbe0f4d0d416bbcef6b80dabf9008818e8fe7689c4694394eb675834588f6ac"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "next-date",
+      "date": "2026-11-03",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-rng-seeding/clock-dos/next-date/before-maint.dat.gz",
+      "observed_world_sha256": "042fdce8f48d40c5292eebc676a11b7f9f9725537fc98066a178aa394bef1b0c",
+      "replayed_world_sha256": "042fdce8f48d40c5292eebc676a11b7f9f9725537fc98066a178aa394bef1b0c",
+      "seed_trace": {
+        "trace": "research/yt-rng-seeding/trace-dos/timer-next-date/TRACE.BIN",
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+        "fac": "00004800",
+        "negative_fac": "0000c800",
+        "world_seed": 51205
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "404f16d5409ef13827c13b186070189cbc44f34aa75ccfa07fa72574e586c6f3",
+          "replayed_sha256": "404f16d5409ef13827c13b186070189cbc44f34aa75ccfa07fa72574e586c6f3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8273c3200a8b350612fffd4d73c9eef6275988bb11f3259938c92beb24a5dd9",
+          "replayed_sha256": "e8273c3200a8b350612fffd4d73c9eef6275988bb11f3259938c92beb24a5dd9"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "fresh-baseline",
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-initializer-replay/controls/world-dos/baseline/before-maint.dat.gz",
+      "observed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "replayed_world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+          "replayed_sha256": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+          "replayed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643",
+          "replayed_sha256": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "fresh-score-path",
+      "date": "2026-11-02",
+      "scoreboard": "SCORES.TXT",
+      "world": "research/yt-initializer-replay/controls/world-dos/score-path/before-maint.dat.gz",
+      "observed_world_sha256": "d4efcd1d3f4c2401e4e3c53345d67af72665b1027de56d289810c88e66fc1f5e",
+      "replayed_world_sha256": "d4efcd1d3f4c2401e4e3c53345d67af72665b1027de56d289810c88e66fc1f5e",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "045014f31a68266e986dbb1fbd79c0fd01f2b570697fa2b80d0a65c9372623b2",
+          "replayed_sha256": "045014f31a68266e986dbb1fbd79c0fd01f2b570697fa2b80d0a65c9372623b2"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+          "replayed_sha256": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "0fb8fabead3eefb461be802ea7bfb87c90dd073dc80179d2c972e85c156496d3",
+          "replayed_sha256": "0fb8fabead3eefb461be802ea7bfb87c90dd073dc80179d2c972e85c156496d3"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "fresh-new-year",
+      "date": "2027-01-01",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-initializer-replay/controls/world-dos/new-year/before-maint.dat.gz",
+      "observed_world_sha256": "e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328",
+      "replayed_world_sha256": "e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "5d469a6a87fd2b608ce9cb412f040a591f00495f937563145ab6870022159ede",
+          "replayed_sha256": "5d469a6a87fd2b608ce9cb412f040a591f00495f937563145ab6870022159ede"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "928ae9d0ea4f4edb29717c78c1b982740a3e4950851ef55843a1ce295c23c1b3",
+          "replayed_sha256": "928ae9d0ea4f4edb29717c78c1b982740a3e4950851ef55843a1ce295c23c1b3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "69d9f4b52c88db24c49a87f71aa5caae66b767c2c180ad77b0b63650e0d5be1e",
+          "replayed_sha256": "69d9f4b52c88db24c49a87f71aa5caae66b767c2c180ad77b0b63650e0d5be1e"
+        }
+      },
+      "first_differences": []
+    },
+    {
+      "clock_case": "fresh-leap-day",
+      "date": "2028-02-29",
+      "scoreboard": "YTSCORE.ASC",
+      "world": "research/yt-initializer-replay/controls/world-dos/leap-day/before-maint.dat.gz",
+      "observed_world_sha256": "523bfb954a8588285d6606cbdbfaa11dbccede964b512ad23bea13b496ed3d18",
+      "replayed_world_sha256": "523bfb954a8588285d6606cbdbfaa11dbccede964b512ad23bea13b496ed3d18",
+      "seed_trace": {
+        "world_seed": 51205,
+        "trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+      },
+      "statistics": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": "0x1ca785",
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": "0x54bf86",
+        "placement_total_draws": 28987
+      },
+      "compared_records": 4151,
+      "compared_bytes": 568687,
+      "matching_bytes": 568687,
+      "byte_mismatches": 0,
+      "blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "66bf7a55f36252ca43fa543b1cf3146e00de4648b6fe0ab6d098b61281b7cdca",
+          "replayed_sha256": "66bf7a55f36252ca43fa543b1cf3146e00de4648b6fe0ab6d098b61281b7cdca"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+          "replayed_sha256": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+          "replayed_sha256": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "362095059fa64a873861eb2010575bf2fd4feaa31d7161e54c92565d9091312f",
+          "replayed_sha256": "362095059fa64a873861eb2010575bf2fd4feaa31d7161e54c92565d9091312f"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "df01eb19f25f92d06d10903872ae29ba3c849c941dad1a5a255d41a7d4df49b8",
+          "replayed_sha256": "df01eb19f25f92d06d10903872ae29ba3c849c941dad1a5a255d41a7d4df49b8"
+        }
+      },
+      "first_differences": []
+    }
+  ],
+  "limitations": [
+    "Research only; no production profile, DOS save interoperability or general MBF implementation.",
+    "Complete pre-maintenance YTDATA.DAT only; auxiliary files and maintenance are separate.",
+    "Bounded default counts, ASCII scoreboard <=41 bytes and selected 2026..2028 dates."
+  ]
+}

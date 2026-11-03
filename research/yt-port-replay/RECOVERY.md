@@ -86,3 +86,12 @@ records or general MBF emulation. Remaining records, arbitrary clocks/platforms,
 other RND arguments and any production compatibility profile require separate
 work. Save format remains 34; existing worlds, startup prices, exports/restores
 and production `-seed`, `-dos-ports`, `-dos-warps` behavior are unchanged.
+
+
+## Complete-record follow-up
+
+The [complete initializer replay](../yt-initializer-replay/RECOVERY.md) now adds
+configuration, inactive players, complete sector/HQ records and inherited planet
+slots across ten bounded controls. This supersedes the remaining-record deferral
+above for those targets; general MBF, arbitrary inputs, production integration
+and initial maintenance remain separate.

@@ -100,6 +100,14 @@ jobs:
           python3 scripts/test_verify_rng_clock.py
           python3 scripts/verify_rng_trace.py
           python3 scripts/test_verify_rng_trace.py
+          python3 scripts/verify_initializer_native.py
+          python3 scripts/test_verify_initializer_native.py
+          python3 scripts/verify_initializer_controls.py
+          python3 scripts/test_verify_initializer_controls.py
+          python3 scripts/verify_initializer_targets.py
+          python3 scripts/test_verify_initializer_targets.py
+          python3 scripts/replay_qb_initializer.py --check
+          python3 scripts/test_replay_qb_initializer.py
           python3 scripts/verify_port_replay_seed.py
           python3 scripts/test_verify_port_replay_seed.py
           python3 scripts/verify_port_rng_states.py
