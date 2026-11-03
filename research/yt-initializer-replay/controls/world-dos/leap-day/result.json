@@ -1,0 +1,27 @@
+{
+  "name": "leap-day",
+  "date": "02/29/2028",
+  "scoreboard": "",
+  "recipe": "original-initializer-boundaries-v1",
+  "initializer_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "world_sha256": "523bfb954a8588285d6606cbdbfaa11dbccede964b512ad23bea13b496ed3d18",
+  "prior_radio_hex": "7072696f722d726164696f2d636f6e74726f6c0d0a",
+  "absent_outputs": [
+    "YTRMSG.DAT"
+  ],
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "b3cec16fd5cad9ae65860c233c18b3c314add3bf43cc09bd63f33ce3913fdee8",
+    "DOSDATE.LOG": "eaeb50a30ceacb7735f503b4c645a2b5177f78042feefd04265d2d8555381557",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "eaeb50a30ceacb7735f503b4c645a2b5177f78042feefd04265d2d8555381557",
+    "ENDTIME.LOG": "4355a67a3b8f4630535a62f8cbda388836a940a87ca14028a03b14ac3587b8e0",
+    "INIT.LOG": "5a2f731107a04e7f27bcede753185e486ebc38175bb5763cae9f3482f4dfbd08",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+    "YTNEWS.DAT": "1db9e6a4ed58cb1dca016be01227031ae06f41cdc29ec40253c074d9ad1ae67f",
+    "before-maint.dat.gz": "f92abc8b69cfd74516fa1ab55e3b9538b609c6b6e07a4996411a8923a1de9c10",
+    "dosbox.log": "808313a0e4720cdf773547b43914f79e3b509ae5bab2a8dd68deb2802597a1fb"
+  }
+}

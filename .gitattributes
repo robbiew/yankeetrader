@@ -227,3 +227,11 @@
 /research/yt-port-replay/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-port-replay/**/TRACE.BIN -diff
 /research/yt-port-replay/**/ANSWERS.TXT -diff
+
+# Complete initializer boundaries preserve raw DOS output and seed traces.
+/research/yt-initializer-replay/controls/** -text
+/research/yt-initializer-replay/controls/**/*.LOG -diff
+/research/yt-initializer-replay/controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-initializer-replay/controls/**/*.DAT -diff
+/research/yt-initializer-replay/controls/**/TRACE.BIN -diff
+/research/yt-initializer-replay/controls/**/ANSWERS.TXT -diff

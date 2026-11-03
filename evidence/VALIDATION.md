@@ -1326,3 +1326,24 @@ The original sector-7 overwrite remains an explicit research control.
 behavior or schema changes; full initializer records, general MBF arithmetic,
 DOS import/export and a production compatibility profile remain separate.
 Hosted CI runs these checks; local verification does not imply hosted success.
+
+
+## Complete pre-maintenance initializer replay — 2026-11-03
+
+All ten retained worlds reproduce all 4,151 records and 568,687 bytes each
+(5,686,870 total), including configuration, inactive players, complete sectors,
+ports and inherited inactive planet records. Four fresh controls cover default
+repeat, alternate scoreboard path, January 1 and leap day, each bound to its own
+raw seed trace and complete output hash. Native checks pin 23 original-byte
+contracts; they are archived/static evidence, not new REA provider observations.
+
+The four new suites pass 25 test methods. Corruption controls reject rehashed
+world, native-range, seed, clock, recipe, auxiliary and raw-zero changes; replay
+tests forbid target-template reads and implicit report rewriting. Existing port
+and graph regressions and all 4,682 archive hashes also pass.
+
+[Recovery and exact boundaries](../research/yt-initializer-replay/RECOVERY.md).
+No production Go, dependency, initialization profile or save-format-34 change.
+Initial maintenance, general MBF, DOS interoperability and target-host acceptance
+remain separate. Hosted CI is configured to run these checks; local results do
+not claim a hosted CI run for this milestone.

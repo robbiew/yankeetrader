@@ -5,14 +5,13 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
-through `919632e` (PRs [#68](https://github.com/robbiew/yankeetrader/pull/68),
-[#69](https://github.com/robbiew/yankeetrader/pull/69),
-[#70](https://github.com/robbiew/yankeetrader/pull/70),
-[#72](https://github.com/robbiew/yankeetrader/pull/72) and
-[#73](https://github.com/robbiew/yankeetrader/pull/73) and
-[#74](https://github.com/robbiew/yankeetrader/pull/74)). These are completed
-milestones, not open implementation tasks. The application is 0.1.0 and
-`internal/game/game.go` declares **save format 34** on the current port-replay branch (built on RNG PR #75). See the
+through `14ce93f`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+(port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
+(warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
+(raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
+(exact graph/port replay). These are completed milestones. The current full
+initializer replay extends that research; it does not introduce a production
+compatibility profile. Application version is 0.1.0 and save format is **34**. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
@@ -45,6 +44,9 @@ milestones, not open implementation tasks. The application is 0.1.0 and
   including noncanonical zero; complete graph/port replay across six clock controls
   is verified research, including all raw record bytes and native phase states.
   The shared primitive preserves startup prices and introduces no schema change.
+- Complete pre-maintenance initializer research replay: all 4,151 raw records
+  match ten bounded targets, including fresh calendar/path controls; production
+  compatibility and initial maintenance remain separate.
 
 ### Most recent completed milestones
 
@@ -54,6 +56,11 @@ milestones, not open implementation tasks. The application is 0.1.0 and
 | Extended newspaper events, save 31 / PR #69 | Registration replaces initial login news; successful team joins, general death/loot/port capture, sector combat, mines, missile/plasma results, bombardment and transport explosions publish typed public snapshots atomically. Private mail/seller notices stay private. [Inventory, retained DOS controls and intentional diagnostic exclusions](yt-newspaper/remaining/RECOVERY.md). |
 | Xannor turn bonus, save 32 / PR #70 | Direct Xannor fighter casualties award one turn per complete 200 casualties, bounded by room below 500 turns, including forced combat after refused bribery. Missile/plasma casualties and human/Mercenary defenses do not qualify. Receipts/news report actual credited turns; no rewards are backfilled. [DOS/native evidence and implemented policy](yt-xannor-turn-bonus/RECOVERY.md). |
 | README navigation / PR #72 | The root README now supplies a contents list, grouped usage and a playable feature overview; this plan is a research/implementation ledger rather than a replacement operator manual. |
+| DOS port rules / PR #73 | Saved opt-in generation profile, weighted names, economy and startup reference pricing, with modern placement safeguards. |
+| DOS warp rules / PR #74 | Saved independent map profile with local/long links, isolation repair and Earth shortcuts; bounded modern safeguards. |
+| Raw RNG recovery / PR #75 | Verified BRUN30 RND/RANDOMIZE subset, measured TIMER seeding and selected graph replay; startup-price results preserved. |
+| Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
+| Complete initializer replay / current milestone | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
 
@@ -63,9 +70,15 @@ milestones, not open implementation tasks. The application is 0.1.0 and
    and checked against 4096 native state/value pairs. A research model exactly
    replays six complete graph/port targets, including all 137-byte records,
    rejection counts, names, coefficients and twelve native phase states.
-   Next: bound remaining initializer records and MBF arithmetic, then define any
-   production compatibility profile separately from modern safety policies.
-   Do not repeat the established port stream as missing work.
+   The follow-up [complete initializer replay](yt-initializer-replay/RECOVERY.md)
+   synthesizes all 4,151 pre-maintenance records across ten retained controls,
+   including FIELD-buffer inheritance and raw zero residues. This closes the
+   selected default-count initializer record replay milestone.
+   Next: define a separate production compatibility contract (seed/date inputs,
+   original defects, modern safeguards and existing-save behavior) before any
+   integration. General MBF arithmetic, arbitrary initializer inputs and exact
+   initial maintenance remain separate research. Do not repeat the established
+   graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),
    [RNG controls](yt-rng-seeding/RECOVERY.md),
    [warp rules](yt-warp-generation/RECOVERY.md), [port rules](yt-port-generation/RECOVERY.md).
