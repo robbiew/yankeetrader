@@ -9,7 +9,9 @@ Save format stays **34**; existing generation flags and runtime streams are unch
 ## Inputs and exact output
 
 `Generate(Options)` requires an explicit raw post-RANDOMIZE state in the 24-bit
-range and a canonical `YYYY-MM-DD` date in 2026–2028. An empty scoreboard field
+range and a canonical `YYYY-MM-DD` date in 2026–2028. January 10 is explicitly
+rejected: its day-minus-ten zero cancellation residue lacks retained native
+coverage, so canonical-zero serialization must not be claimed as exact. An empty scoreboard field
 selects `YTSCORE.ASC`; explicit text must be printable ASCII and at most 41 bytes.
 The scoreboard field is never used as a path to write a file. Counts remain the
 original 3,000 sectors, 1,000 ports, 50 inactive players and 100 inactive planets.

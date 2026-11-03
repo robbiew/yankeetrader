@@ -145,7 +145,8 @@ func TestWorkLimitsReturnNoPartialCandidate(t *testing.T) {
 
 func TestInputsAndOwnership(t *testing.T) {
 	for _, o := range []Options{
-		{State: 0x1000000, Date: "2026-11-02"}, {Date: "2025-12-31"}, {Date: "2029-01-01"},
+		{State: 0x1000000, Date: "2026-11-02"},
+		{State: 0xc805, Date: "2026-01-10"}, {State: 0xc805, Date: "2027-01-10"}, {State: 0xc805, Date: "2028-01-10"}, {Date: "2025-12-31"}, {Date: "2029-01-01"},
 		{Date: "2026-02-29"}, {Date: "2026-1-01"}, {Date: "2026-11-02T00:00:00Z"},
 		{Date: "2026-11-02", Scoreboard: strings.Repeat("x", 42)}, {Date: "2026-11-02", Scoreboard: "a\nb"},
 		{Date: "2026-11-02", Scoreboard: "é"}, {Date: "2026-11-02", DrawLimit: DefaultDrawLimit + 1},

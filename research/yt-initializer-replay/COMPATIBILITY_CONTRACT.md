@@ -35,7 +35,8 @@ yt -data NEW-DIRECTORY -init -generation-profile qb36-v1 \
   silently mask a caller's invalid state merely because `qbrng.New` can mask it.
   Zero is a valid raw state.
 - Require an explicit source date. Version 1 admits only the replay model's
-  bounded 2026–2028 range and validates a real Gregorian calendar date. The
+  bounded 2026–2028 range and validates a real Gregorian calendar date. Reject
+  January 10 until its source port-watermark zero residue is verified. The
   evidence directly covers selected dates, not every admitted date; any broader
   exactness claim needs additional tests/evidence. Consider tightening admission
   if implementation finds an unverified arithmetic boundary.

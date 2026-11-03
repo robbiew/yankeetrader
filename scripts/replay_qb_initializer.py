@@ -20,6 +20,7 @@ def put(record,offset,value):record[offset:offset+4]=graph.mbf.enc(value)
 
 
 def config_record(seed,date,scoreboard):
+    if date.timetuple().tm_yday==10:raise ValueError('January 10 port-date residue is not verified')
     encoded=scoreboard.encode('ascii')
     if not 1<=len(encoded)<=41:raise ValueError('research scoreboard length must be 1..41 ASCII bytes')
     if not 2026<=date.year<=2028:raise ValueError('research date range is 2026..2028')

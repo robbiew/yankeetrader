@@ -25,7 +25,8 @@ const (
 )
 
 // Options supplies the post-RANDOMIZE, pre-first-RND state and a source date.
-// Date is YYYY-MM-DD in the bounded 2026..2028 range. Empty Scoreboard selects
+// Date is YYYY-MM-DD in the bounded 2026..2028 range; January 10 is unverified
+// and rejected. Empty Scoreboard selects
 // YTSCORE.ASC; it is a record field, never a filesystem destination.
 // DrawLimit zero selects DefaultDrawLimit; callers may lower, but not raise it.
 type Options struct {
@@ -90,6 +91,12 @@ func Generate(o Options) (Result, error) {
 	date, err := time.Parse("2006-01-02", o.Date)
 	if err != nil || date.Format("2006-01-02") != o.Date || date.Year() < 2026 || date.Year() > 2028 {
 		return Result{}, errors.New("QB source date must be YYYY-MM-DD in 2026..2028")
+	}
+	// January 10 makes the port watermark day-10 exactly zero. The native
+	// cancellation residue is not yet covered by retained controls; refusing
+	// this boundary is safer than claiming canonical-zero source parity.
+	if date.YearDay() == 10 {
+		return Result{}, errors.New("QB January 10 port-date residue is not verified")
 	}
 	if o.Scoreboard == "" {
 		o.Scoreboard = "YTSCORE.ASC"

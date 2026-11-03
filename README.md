@@ -68,7 +68,8 @@ profile. See [complete replay evidence and limits](research/yt-initializer-repla
 The [pure Go source generator](research/yt-initializer-replay/GO_IMPLEMENTATION.md)
 now reproduces all ten complete native targets using portable golden fixtures;
 Go tests require no Python, emulator or original executables. It returns bounded
-in-memory source bytes, preserving the original defects for comparison.
+in-memory source bytes, preserving the original defects for comparison. January
+10 source dates are rejected until their port-date cancellation residue is verified.
 The [production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
 now has an [internal safe projection candidate](research/yt-initializer-replay/PROJECTION.md):
 source collisions/protected HQs and disconnected maps are rejected, while current
