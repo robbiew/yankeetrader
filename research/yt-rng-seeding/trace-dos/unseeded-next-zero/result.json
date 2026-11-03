@@ -1,0 +1,22 @@
+{
+  "name": "unseeded-next-zero",
+  "mode": "unseeded",
+  "state": 7140929,
+  "recipe": "qb-rng-raw-v1",
+  "samples": 256,
+  "original_initializer_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "original_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "copied_initializer_sha256": "6753a437238cde87c776ed6c151ee6c0bd3d0122b790b54671a46bf80b1126fa",
+  "copied_runtime_sha256": "20f75ff52157b0c32f4900abca5e6767809c12dd5d5374ddd96d6ffd3b6a00e8",
+  "payload_hex": "c7065618524ec70658184731bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21c7061a000000c7061c000000bb0100b90400ba1a00b440cd21bb0100b90400ba1a00b440cd21bb0100b90400ba3402b440cd21b9000151cd3d349090bb0100b90400ba3402b440cd21bb0100b90400ba1a00b440cd2159e2ddc7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "payload_file_offset": 621,
+  "payload_code_offset": 109,
+  "files": {
+    "COMMANDS.TXT": "7a9c1979b90780c58e4b2c0246a9e4cb9f21e3e71b3b35f065db15b85cd9ea96",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "df38dfadcac21bdbb300867d0f17ae95a4efb1c2f8335da039374f3921b0cf60",
+    "dosbox.log": "9b16e498bf7b924e099de18f5d218d92204979eaa6a9838daa21e06cd3db0b71"
+  }
+}

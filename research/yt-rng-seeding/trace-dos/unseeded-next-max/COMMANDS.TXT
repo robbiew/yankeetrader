@@ -1,0 +1,9 @@
+mount c /tmp/yt-rng-boundary-traces/unseeded-next-max
+c:
+date 11/02/2026
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init > TRACE.BIN
+echo PROBE_RETURNED > RETURN.LOG
+exit

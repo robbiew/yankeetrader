@@ -1,0 +1,30 @@
+{
+  "name": "repeat",
+  "recipe": "dos-rng-clock-v1",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "cpu_cycles": 200000,
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6"
+  },
+  "fingerprints": {
+    "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+    "warp_slots_sha256": "c76b0b2781af9cbffeebdd458ea79fa76450d58f94df31a92388395eeea49ac9",
+    "generated_ports_sha256": "aeb951dbbf1de8b4a9bcc264d371399b00d03b113a5a760c38172c51da6e24f9"
+  },
+  "files": {
+    "before-maint.dat.gz": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+    "INIT.LOG": "55c24d3f3500c28e8879b77c7feb58b1a3db406cc3aa372819c11742e259e8ee",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "0eb005fd8adf54913af9e98ed93f16102f33e0990bc626bc49f26261cb8e4aad",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "4355a67a3b8f4630535a62f8cbda388836a940a87ca14028a03b14ac3587b8e0",
+    "dosbox.log": "48e9811defeeeab1f4d413f03989b5db8d0b0d6ef27032b6a1d53b8c9008fae7"
+  }
+}
