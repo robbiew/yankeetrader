@@ -1,0 +1,309 @@
+{
+  "format": "qb-initializer-native-hashes-v1",
+  "record_size": 137,
+  "record_count": 4151,
+  "syllables_sha256": "8a59a909d232084d89a82db77339f680475c3187aef96ef0ce6444bd0b4002b7",
+  "authority": "Byte hashes are observed DOS outputs; draw counts are verified replay bookkeeping. Native phase states are independently checked by the parent port replay.",
+  "cases": [
+    {
+      "name": "midnight",
+      "state": 51205,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "blocks": {
+        "configuration": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+        "planets": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/midnight/before-maint.dat.gz",
+      "source_compressed_sha256": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "repeat",
+      "state": 51205,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "blocks": {
+        "configuration": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+        "planets": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/repeat/before-maint.dat.gz",
+      "source_compressed_sha256": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "second-one",
+      "state": 6402565,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "6cccb3fe676d40016b553e3ee7ea6d1a0d44dff0f029550602f44e88ecfda5db",
+      "blocks": {
+        "configuration": "f37981408ce653b4bfcc66ad9101e89258ddeba7f7c6803cdf3c3e8f385a736c",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "b9f6e60ea8ea1df994d8ddabd64733c4d41a6f969059cd00d394e6675496e174",
+        "ports": "d0b82058552ec594707f3ca843ac009ab2e46f2c988b25106765395989b1aee9",
+        "planets": "3f5ac46aefbc12979662663c4d2553246b2ed1adc4c35b4de4957aefdd797fb1"
+      },
+      "stats": {
+        "hq_sector": 911,
+        "repair_pairs": 22,
+        "shortcut_writes": 14,
+        "final_state": 12376117,
+        "draws": 40176,
+        "placement_draws": 1222,
+        "placement_rejections": 226,
+        "placement_final_state": 4528677,
+        "placement_total_draws": 28832,
+        "graph_draws": 27610,
+        "graph_state": 7009503
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/second-one/before-maint.dat.gz",
+      "source_compressed_sha256": "823751eb5fd6c87297973b859775695039234297e66956d8ba363a09ceea4aae",
+      "source_seed_trace_sha256": "f6e468d1ce2b5bf0406bfb98baa9403641ef0d7d6f64a7ddc695c56a4ab97613"
+    },
+    {
+      "name": "second-two",
+      "state": 11078149,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "6fce61a33be6090dfa681c97f0873b1de926215f727dac1d87be4279c02e2fd7",
+      "blocks": {
+        "configuration": "4eacfd30f9c57a34f3a004b8d55813aa61db10a5605a5eaf0d7374bcc80341ab",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "6808ff78493a5a5ab6b7f57899faf9315b836222518aaad04f1af7a53df318b1",
+        "ports": "4b1878f517ce2d7a2258d89459f2fc5a0d9d18a44c429031f524c28e61041ecc",
+        "planets": "df8e7fb7e44a575280c0247d99c2f4c2ef512eddb338bc7f8a237893fdb15b66"
+      },
+      "stats": {
+        "hq_sector": 2524,
+        "repair_pairs": 18,
+        "shortcut_writes": 18,
+        "final_state": 7956860,
+        "draws": 40329,
+        "placement_draws": 1198,
+        "placement_rejections": 202,
+        "placement_final_state": 1761528,
+        "placement_total_draws": 28997,
+        "graph_draws": 27799,
+        "graph_state": 3722114
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/second-two/before-maint.dat.gz",
+      "source_compressed_sha256": "4e11ece64c821e2aa3aa1d445c47bd25be9322ef15ea04394d667a8d02bb01e2",
+      "source_seed_trace_sha256": "3841e5cd07999bf4ec46173cba712d5d46881558543548b1fd62e96b71a068a2"
+    },
+    {
+      "name": "later",
+      "state": 2578693,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+      "blocks": {
+        "configuration": "aff49c1195012b6e344c6233a82b389977b58cdbf7120b3d82d4d9ae3b811d2d",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "65a2e8d821e8810a75134d944665b1ca3cc2de1eb36b82d089dea3b5a1254044",
+        "ports": "16d1e0f0aa3e55c795d9f9e523c3fccc2fe0626aed3d0f831aa8af10b5cc1126",
+        "planets": "5dbe0f4d0d416bbcef6b80dabf9008818e8fe7689c4694394eb675834588f6ac"
+      },
+      "stats": {
+        "hq_sector": 1040,
+        "repair_pairs": 19,
+        "shortcut_writes": 13,
+        "final_state": 3455228,
+        "draws": 40457,
+        "placement_draws": 1197,
+        "placement_rejections": 201,
+        "placement_final_state": 7097881,
+        "placement_total_draws": 29124,
+        "graph_draws": 27927,
+        "graph_state": 13754114
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/later/before-maint.dat.gz",
+      "source_compressed_sha256": "c06372022fe4c2a0d80f9763b51e9eeeb7a5e2961a70817f4707b6f408e071a4",
+      "source_seed_trace_sha256": "36390b4062b61379e9e638ad276a9dd39c75fc121dd8894d021361fe1af9ebbb"
+    },
+    {
+      "name": "next-date",
+      "state": 51205,
+      "date": "2026-11-03",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "042fdce8f48d40c5292eebc676a11b7f9f9725537fc98066a178aa394bef1b0c",
+      "blocks": {
+        "configuration": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "404f16d5409ef13827c13b186070189cbc44f34aa75ccfa07fa72574e586c6f3",
+        "planets": "e8273c3200a8b350612fffd4d73c9eef6275988bb11f3259938c92beb24a5dd9"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-rng-seeding/clock-dos/next-date/before-maint.dat.gz",
+      "source_compressed_sha256": "f37d8ff15a05106102f217cc203a77280f3f8a18906dc44f577a0bcf7c2f114b",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "fresh-baseline",
+      "state": 51205,
+      "date": "2026-11-02",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+      "blocks": {
+        "configuration": "b6a3b79c6d5c1f8839fcc74cabd2cc7d031f4161249a1b7aca62539f7ca5364e",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+        "planets": "2f675922923cc7a260fc35b648c6a0f91f107e110c2db68b349a081a8cb87643"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-initializer-replay/controls/world-dos/baseline/before-maint.dat.gz",
+      "source_compressed_sha256": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "fresh-score-path",
+      "state": 51205,
+      "date": "2026-11-02",
+      "scoreboard": "SCORES.TXT",
+      "world_sha256": "d4efcd1d3f4c2401e4e3c53345d67af72665b1027de56d289810c88e66fc1f5e",
+      "blocks": {
+        "configuration": "045014f31a68266e986dbb1fbd79c0fd01f2b570697fa2b80d0a65c9372623b2",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "49fa44b806509781807067f4659e6ad0d4d6672a684046b93dc555b256376f3d",
+        "planets": "0fb8fabead3eefb461be802ea7bfb87c90dd073dc80179d2c972e85c156496d3"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-initializer-replay/controls/world-dos/score-path/before-maint.dat.gz",
+      "source_compressed_sha256": "d4fc60b4aa3bbe09083eca77067e27ca58d952e025e08aa98deda8f77a8656ac",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "fresh-new-year",
+      "state": 51205,
+      "date": "2027-01-01",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328",
+      "blocks": {
+        "configuration": "5d469a6a87fd2b608ce9cb412f040a591f00495f937563145ab6870022159ede",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "928ae9d0ea4f4edb29717c78c1b982740a3e4950851ef55843a1ce295c23c1b3",
+        "planets": "69d9f4b52c88db24c49a87f71aa5caae66b767c2c180ad77b0b63650e0d5be1e"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-initializer-replay/controls/world-dos/new-year/before-maint.dat.gz",
+      "source_compressed_sha256": "85bf69d41562f742396bded4c5c881771f2204cbe7d59423f28c71ab79593866",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    },
+    {
+      "name": "fresh-leap-day",
+      "state": 51205,
+      "date": "2028-02-29",
+      "scoreboard": "YTSCORE.ASC",
+      "world_sha256": "523bfb954a8588285d6606cbdbfaa11dbccede964b512ad23bea13b496ed3d18",
+      "blocks": {
+        "configuration": "66bf7a55f36252ca43fa543b1cf3146e00de4648b6fe0ab6d098b61281b7cdca",
+        "players": "75ae452780628b00ded408a04255fc2ee404056ccfc217c03ab4d58e527c005d",
+        "sectors": "5a1b11ce0567b48535b46c6fd987a1dcc4964d6fcb91efcb3b97f8761d34d7ff",
+        "ports": "362095059fa64a873861eb2010575bf2fd4feaa31d7161e54c92565d9091312f",
+        "planets": "df01eb19f25f92d06d10903872ae29ba3c849c941dad1a5a255d41a7d4df49b8"
+      },
+      "stats": {
+        "hq_sector": 849,
+        "repair_pairs": 19,
+        "shortcut_writes": 15,
+        "final_state": 1877893,
+        "draws": 40320,
+        "placement_draws": 1217,
+        "placement_rejections": 221,
+        "placement_final_state": 5554054,
+        "placement_total_draws": 28987,
+        "graph_draws": 27770,
+        "graph_state": 12832767
+      },
+      "source_world": "research/yt-initializer-replay/controls/world-dos/leap-day/before-maint.dat.gz",
+      "source_compressed_sha256": "f92abc8b69cfd74516fa1ab55e3b9538b609c6b6e07a4996411a8923a1de9c10",
+      "source_seed_trace_sha256": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356"
+    }
+  ]
+}

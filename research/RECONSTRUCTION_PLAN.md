@@ -5,12 +5,13 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
-through `14ce93f`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `41780b9`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
-(exact graph/port replay). These are completed milestones. The current full
-initializer replay extends that research; it does not introduce a production
+(exact graph/port replay), plus [#77](https://github.com/robbiew/yankeetrader/pull/77)
+(complete initializer replay). These are completed milestones. The current Go
+source-generator slice extends that research; it does not introduce a production
 compatibility profile. Application version is 0.1.0 and save format is **34**. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
@@ -60,7 +61,7 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
 | DOS warp rules / PR #74 | Saved independent map profile with local/long links, isolation repair and Earth shortcuts; bounded modern safeguards. |
 | Raw RNG recovery / PR #75 | Verified BRUN30 RND/RANDOMIZE subset, measured TIMER seeding and selected graph replay; startup-price results preserved. |
 | Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
-| Complete initializer replay / current milestone | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
+| Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
 
@@ -77,8 +78,11 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
    The [production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
    now specifies explicit raw state/date, safe projection, saved provenance and
    repeat-layout reset semantics. These are proposed behavior, not shipped flags.
-   Next implementation: a pure Go bounded source generator with portable golden
-   fixtures, followed by projection/admission and complete CLI/save/reset support.
+   The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
+   matches all ten whole-world/block hashes and RNG endpoints with portable
+   goldens, retaining explicit work limits and original source defects.
+   Next implementation: safe playable projection/admission, followed by complete
+   CLI/save/reset support. Do not port the source generator a second time.
    General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
    separate research. Do not repeat the established
    graph, port or selected complete-record replay as missing work.

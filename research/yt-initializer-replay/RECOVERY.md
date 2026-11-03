@@ -113,7 +113,7 @@ Original duplicate-location and self-warp behavior remains research evidence.
 The [proposed compatibility contract](COMPATIBILITY_CONTRACT.md) now defines
 seed/date inputs, source/projection boundaries, original defect handling, work
 bounds, saved provenance and repeat-layout reset semantics. The next implementation
-slice is the pure Go source generator and portable fixtures; the proposed
-production profile is not shipped. General MBF/RND variants, exact initial maintenance and DOS save
+slice has now delivered the [pure Go source generator and portable fixtures](GO_IMPLEMENTATION.md).
+Safe playable projection/admission is next; the proposed production profile is not shipped. General MBF/RND variants, exact initial maintenance and DOS save
 interoperability remain separate. Current playable `-seed`, `-dos-ports`,
 `-dos-warps`, prices, save **34**, exports/restores and safeguards are unchanged.
