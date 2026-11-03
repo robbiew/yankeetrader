@@ -48,7 +48,8 @@ Release packages provide Linux x86-64/ARM64 tarballs and a Windows x86-64 ZIP,
 including a standalone executable, [sysop cheat sheet](docs/SYSOP_CHEAT_SHEET.md),
 full save/restore guidance, credits, third-party notices and build provenance.
 Tagged `vX.Y.Z` builds create a **draft** [GitHub Release](https://github.com/robbiew/yankeetrader/releases)
-with SHA-256 checksums; a maintainer reviews and publishes it. Existing data is
+with SHA-256 checksums; a maintainer reviews and publishes it. Archive verification
+rejects Windows separators/drive syntax and noncanonical member paths on every host. Existing data is
 kept outside the versioned package directory. No Go compiler or DOS distribution
 is required to play. See [release building and publishing](docs/RELEASING.md).
 

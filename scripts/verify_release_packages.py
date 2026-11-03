@@ -38,7 +38,13 @@ def verify(directory):
                 files = {e.name: archive.extractfile(e).read() for e in entries}
                 modes = {e.name: e.mode for e in entries}
         roots = {name.split('/')[0] for name in files}
-        assert len(roots) == 1 and all('..' not in Path(n).parts and not n.startswith('/') for n in files), 'safe single-root archive'
+        # Archive names use POSIX separators even on Windows. Check the raw
+        # spelling before path normalization, rejecting Windows drives/streams
+        # and separators as well as empty, dot and parent components.
+        assert len(roots) == 1 and all(
+            '\\' not in n and ':' not in n and '\x00' not in n and
+            len(n.split('/')) > 1 and all(part not in ('', '.', '..') for part in n.split('/'))
+            for n in files), 'safe single-root archive'
         root = roots.pop()
         files = {name[len(root)+1:]: data for name, data in files.items()}
         info = json.loads(files['RELEASE_INFO.json'])

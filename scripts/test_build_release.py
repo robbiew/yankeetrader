@@ -1,5 +1,8 @@
 """Release archives must be self-contained, safe and reproducible."""
 import io
+import hashlib
+import struct
+from unittest.mock import patch
 import json
 import tarfile
 import unittest
@@ -47,6 +50,41 @@ class ReleasePackageTests(unittest.TestCase):
             with self.subTest(version=version), self.assertRaises(ValueError):package('linux-amd64',version,b'',self.info,{})
         with self.assertRaises(ValueError):package('../bad','0.1.0',b'',self.info,{})
         self.assertIsNotNone(SEMVER.fullmatch('0.1.0-rc.1'))
+
+
+class ArchivePathSafetyTests(unittest.TestCase):
+    def test_rehashed_zip_rejects_windows_paths(self):
+        from verify_release_packages import verify
+        root='yankeetrader-0.1.0-windows-amd64'
+        attacks=(root+'/licenses/..\\..\\..\\escaped.txt',
+                 root+'/licenses/C:escaped.txt', root+'/licenses/notice.txt:stream',
+                 root+'/licenses/../../escaped.txt', root+'/licenses/./notice.txt',
+                 root+'//licenses/notice.txt', 'C:'+root+'/licenses/notice.txt')
+        for member in attacks:
+            with self.subTest(member=member), tempfile.TemporaryDirectory() as tmp:
+                directory=Path(tmp);sums=[]
+                for target in ('windows-amd64','linux-amd64','linux-arm64'):
+                    binary=bytearray(128)
+                    if target.startswith('windows'):
+                        binary[:2]=b'MZ';struct.pack_into('<I',binary,0x3c,64)
+                        binary[64:68]=b'PE\0\0';struct.pack_into('<H',binary,68,0x8664)
+                    else:
+                        binary[:6]=b'\x7fELF\x02\x01'
+                        struct.pack_into('<H',binary,18,62 if target.endswith('amd64') else 183)
+                    info=dict(source_commit='a'*40,source_dirty=False,save_schema=34,dependencies=[])
+                    filename,raw=package(target,'0.1.0',bytes(binary),info,{})
+                    if target.startswith('windows'):
+                        archive=io.BytesIO(raw)
+                        with zipfile.ZipFile(archive,'a') as z:z.writestr(member,b'escape-control')
+                        raw=archive.getvalue()
+                    (directory/filename).write_bytes(raw)
+                    sums.append(hashlib.sha256(raw).hexdigest()+'  '+filename)
+                # Rehash a complete otherwise valid matrix, so no checksum or
+                # missing-manifest failure can hide the unsafe member.
+                (directory/'SHA256SUMS.txt').write_text('\n'.join(sums)+'\n')
+                with patch('verify_release_packages.smoke'), self.assertRaisesRegex(AssertionError,'safe single-root archive'):
+                    verify(directory)
+
 
 
 if __name__=='__main__':unittest.main()
