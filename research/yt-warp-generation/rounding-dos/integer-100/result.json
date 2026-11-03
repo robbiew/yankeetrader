@@ -1,0 +1,44 @@
+{
+  "name": "integer-100",
+  "value": 100.0,
+  "recipe": "shortcut-index-rounding-v1",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "initializer_original_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "initializer_copied_sha256": "2aaae0d6a3cc03b1ba0d7cbda3a4a51a159969159c7091897e8c9e30c658ebba",
+  "patches": [
+    {
+      "offset": 5555,
+      "before": "cd3d34",
+      "after": "e98102",
+      "purpose": "stop after first shortcut write"
+    },
+    {
+      "offset": 12278,
+      "before": "00004889",
+      "after": "00000000",
+      "purpose": "zero shortcut random scale"
+    },
+    {
+      "offset": 10726,
+      "before": "00000084",
+      "after": "00004887",
+      "purpose": "synthetic shortcut offset; month11 control"
+    }
+  ],
+  "maintenance_child": "declared-exit-stub",
+  "binaries": {
+    "YT-INIT.EXE": "2aaae0d6a3cc03b1ba0d7cbda3a4a51a159969159c7091897e8c9e30c658ebba",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6"
+  },
+  "files": {
+    "before-maint.dat.gz": "d734a180defad3d76ef62eb43dcdf39b57338cd48dd3768665c04192f33b97b3",
+    "INIT.LOG": "7c89ee93ad7f11ba4fb347939d4487effbbc7953e45d059af8c0f3098b8645f9",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-dosbox.log": "d76c34fa05ede139f2511d5083d6873e421b2ebbee57d37e5e04dfdd4535df93",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1"
+  }
+}

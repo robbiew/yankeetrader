@@ -34,6 +34,7 @@ func run() error {
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
+	dosWarps := flag.Bool("dos-warps", false, "use recovered DOS warp-generation rules for a new world")
 	dosPorts := flag.Bool("dos-ports", false, "use recovered DOS port generation and pricing for a new world")
 	genesisPorts := flag.Int("genesis-ports", 300, "initial Genesis threshold: 0 disables; 20..300; omitted defaults to 300")
 	local := flag.String("local", "", "local player name")
@@ -70,7 +71,11 @@ func run() error {
 	}
 	genesisConfigured := false
 	dosPortsConfigured := false
+	dosWarpsConfigured := false
 	flag.Visit(func(f *flag.Flag) {
+		if f.Name == "dos-warps" {
+			dosWarpsConfigured = true
+		}
 		if f.Name == "dos-ports" {
 			dosPortsConfigured = true
 		}
@@ -80,6 +85,9 @@ func run() error {
 	})
 	if genesisConfigured && !*initWorld {
 		return errors.New("-genesis-ports is only supported with -init")
+	}
+	if dosWarpsConfigured && !*initWorld {
+		return errors.New("-dos-warps is only supported with -init")
 	}
 	if dosPortsConfigured && !*initWorld {
 		return errors.New("-dos-ports is only supported with -init")
@@ -100,7 +108,11 @@ func run() error {
 		if *dosPorts {
 			profile = "dos"
 		}
-		w, e := game.NewWithPortGeneration(time.Now(), *seed, *sectors, profile)
+		warpProfile := ""
+		if *dosWarps {
+			warpProfile = "dos"
+		}
+		w, e := game.NewWithGeneration(time.Now(), *seed, *sectors, profile, warpProfile)
 		if e != nil {
 			return e
 		}

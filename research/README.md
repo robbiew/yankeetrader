@@ -7,8 +7,8 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-02),
-checked against merged main through PR #72 on 2026-11-02, then extended by the
-opt-in port-parity slice using save format **33**.
+checked against merged main through PR #73 on 2026-11-02, then extended by the
+current warp-parity branch using save format **34**.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
@@ -20,11 +20,13 @@ Recent completed work includes [season administration](../README.md#season-admin
 “remaining newspaper events” deferrals in older reports are historical. Private
 port-sale notices are implemented as private mail, not public acquisition news.
 The [port generation and startup pricing slice](yt-port-generation/RECOVERY.md)
-is implemented as an opt-in new-world profile (save 33). Original warp generation
-is next; precise RNG/numeric parity and target-BBS acceptance remain separate
-boundaries.
+is implemented as an opt-in new-world profile (save 33). The [warp-generation slice](yt-warp-generation/RECOVERY.md) adds independently
+opt-in DOS map rules (save 34), including repaired connectivity and Earth shortcuts.
+Exact seed/RNG/numeric parity and target-BBS acceptance remain separate boundaries.
 
 Included here:
+
+- [DOS warp generation](yt-warp-generation/RECOVERY.md): native ordinary/long-edge, repair and shortcut controls, positive-half-up rounding and independent save 34 map profile.
 
 - [Port generation and startup pricing](yt-port-generation/RECOVERY.md): fresh pre/post-maintenance DOS worlds, recovered naming/economy rules and the opt-in save 33 implementation; exact DOS graph/RNG remains separate.
 

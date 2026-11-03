@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 33
+const WorldVersion = 34
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -68,6 +68,7 @@ type World struct {
 	arrival              *arrivalContext // Bound-login runtime only; never serialized.
 	NextPlanetGeneration uint64
 	Season               uint64
+	WarpGeneration       string         `json:",omitempty"`
 	PortGeneration       string         `json:",omitempty"`
 	GenerationSeed       *int64         `json:",omitempty"`
 	GenesisPorts         *int           `json:",omitempty"`
@@ -160,6 +161,9 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
+	if w.WarpGeneration != "" && w.WarpGeneration != "dos" {
+		return errors.New("unknown warp generation profile")
+	}
 	if w.PortGeneration != "" && w.PortGeneration != "dos" {
 		return errors.New("unknown port generation profile")
 	}

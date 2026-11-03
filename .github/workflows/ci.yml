@@ -45,6 +45,7 @@ jobs:
         run: |
           python3 scripts/smoke_season_admin.py
           python3 scripts/smoke_port_generation.py
+          python3 scripts/smoke_warp_generation.py
       - name: Verify preserved research evidence
         run: |
           python3 scripts/verify_startup_evidence.py
@@ -95,6 +96,10 @@ jobs:
           python3 scripts/test_spy_triggers_verifier.py
           python3 scripts/verify_spy_intelligence.py
           python3 scripts/test_spy_intelligence_verifier.py
+          python3 scripts/verify_warp_generation.py
+          python3 scripts/test_verify_warp_generation.py
+          python3 scripts/verify_warp_rounding.py
+          python3 scripts/test_verify_warp_rounding.py
           python3 scripts/verify_port_generation.py
           python3 scripts/test_verify_port_generation.py
           python3 scripts/verify_port_pricing.py

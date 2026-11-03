@@ -230,7 +230,7 @@ func TestDOSPortProfileMigrationAndSeasonReset(t *testing.T) {
 		t.Fatal(err)
 	}
 	after, _ := json.Marshal(legacy.Ports)
-	if legacy.Version != 33 || legacy.PortGeneration != "" || string(original) != string(after) {
+	if legacy.Version != WorldVersion || legacy.PortGeneration != "" || string(original) != string(after) {
 		t.Fatal("legacy economy changed")
 	}
 	legacy.Version = 32

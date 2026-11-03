@@ -179,6 +179,22 @@ before retrying. A storage durability warning that says the update committed mea
 the new world is already visible: do not repeat the reset. Preserve both files,
 check storage health, and validate the active world before reopening the door.
 
+## Choosing the warp map
+
+For a separate new world, `./bin/yt -data dos-map -init -dos-warps -seed 36`
+selects recovered DOS local warps, wormholes, isolation repair and Earth shortcuts.
+Add `-dos-ports` to select the recovered economy too; flags are independent and
+initialization-only. Save 34 stores `WarpGeneration: "dos"`, preserved by Genesis,
+administrative resets and full-world archive export/restoration. Existing saves
+upgrade with their complete maps intact and no warp profile selected.
+
+Maps use the modern seeded Go random stream. Generation keeps 8–3000 sectors,
+removes the redundant Earth self-warp, rejects duplicate exits and bounds random
+retries. Pathological generation that exhausts its safety limits fails before
+publishing a world; it never replaces an existing save. This does not import or
+export DOS `.DAT` saves or promise an exact original seed-to-map match. See
+[warp rules, validation and limits](../research/yt-warp-generation/RECOVERY.md).
+
 ## Choosing the port economy
 
 For a separate new world, `./bin/yt -data dos-economy -init -dos-ports -seed 36`
@@ -196,7 +212,7 @@ an active economy. DOS `.DAT` import/export remains unsupported. See the
 
 ## Upgrade and rollback
 
-Current schema is 33. Supported schemas 1–32 upgrade in memory and are persisted
+Current schema is 34. Supported schemas 1–33 upgrade in memory and are persisted
 on the next successful write. Export loads/upgrades/validates without rewriting
 the source; its snapshot uses the current schema. Retain a stopped raw backup
 and matching old binary before upgrading, because an upgraded export cannot be

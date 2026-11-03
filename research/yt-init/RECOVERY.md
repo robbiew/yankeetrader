@@ -2,6 +2,11 @@
 
 Analyzed 2026-10-24 with Homebrew Ghidra 12.2 and OpenJDK 25. The DOS programs were not executed. Original executables were not modified.
 
+Subsequent [warp-generation recovery](../yt-warp-generation/RECOVERY.md) now
+establishes ordinary/long edges, isolation repair, directed Earth shortcuts and
+positive-half-up shortcut indices, with native phase controls and an opt-in Go
+implementation. The static qualifications below remain historical.
+
 ## Evidence and limits
 
 Target: `YT-INIT.EXE`, 20,385 bytes, SHA-256 `601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2`.

@@ -28,6 +28,7 @@ type SeasonResult struct {
 type GenesisIntent struct {
 	Ship                               TravelShip
 	Sectors                            int
+	WarpGeneration                     string
 	PortGeneration                     string
 	Maintenance                        string
 	Season, Generation                 uint64
@@ -137,14 +138,14 @@ func (w *World) PrepareGenesis(id int, now time.Time) (GenesisIntent, error) {
 			break
 		}
 	}
-	return GenesisIntent{PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
+	return GenesisIntent{WarpGeneration: w.WarpGeneration, PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
 }
 
 // GenesisCandidate builds an unpublished, fully validated replacement. The caller
 // saves this one world under the existing world lock; the old world is untouched.
 func (w *World) GenesisCandidate(e GenesisIntent, now time.Time, seed int64) (*World, GenesisReceipt, error) {
 	return w.genesisCandidate(e, now, seed, func(t time.Time, s int64, n int) (*World, error) {
-		return NewWithPortGeneration(t, s, n, w.PortGeneration)
+		return NewWithGeneration(t, s, n, w.PortGeneration, w.WarpGeneration)
 	})
 }
 
@@ -202,7 +203,7 @@ func (w *World) AdministrativeCandidate(expected uint64, now time.Time, seed int
 	if err := w.Validate(); err != nil {
 		return nil, err
 	}
-	candidate, err := NewWithPortGeneration(now, seed, len(w.Sectors), w.PortGeneration)
+	candidate, err := NewWithGeneration(now, seed, len(w.Sectors), w.PortGeneration, w.WarpGeneration)
 	if err != nil {
 		return nil, err
 	}

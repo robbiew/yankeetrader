@@ -24,6 +24,9 @@ type Planet struct {
 }
 
 func (w *World) Upgrade() error {
+	if w.Version < 34 && w.WarpGeneration != "" {
+		return errors.New("legacy world contains warp generation profile")
+	}
 	if w.Version < 33 && w.PortGeneration != "" {
 		return errors.New("legacy world contains port generation profile")
 	}
@@ -373,6 +376,9 @@ func (w *World) Upgrade() error {
 	}
 	if w.Version == 32 {
 		w.Version = 33
+	}
+	if w.Version == 33 {
+		w.Version = 34
 	}
 	return nil
 }

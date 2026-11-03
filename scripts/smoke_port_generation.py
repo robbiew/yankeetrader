@@ -22,7 +22,7 @@ def main():
         path = data / 'world.json'
         first = path.read_bytes()
         world = json.loads(first)
-        assert world['Version'] == 33 and world['PortGeneration'] == 'dos'
+        assert world['Version'] == 34 and world['PortGeneration'] == 'dos'
         assert [world['Ports'][str(i)]['Sector'] for i in range(1, 5)] == [1, 3, 5, 7]
         assert len({p['Sector'] for p in world['Ports'].values()}) == 32
         for p in world['Ports'].values():
@@ -48,7 +48,7 @@ def main():
         p.write_text(json.dumps(legacy))
         subprocess.run([str(binary), '-data', str(old), '-maint'], capture_output=True, check=True)
         upgraded = json.loads(p.read_bytes())
-        assert upgraded['Version'] == 33 and not upgraded.get('PortGeneration')
+        assert upgraded['Version'] == 34 and not upgraded.get('PortGeneration')
         assert upgraded['Ports'] == legacy['Ports']
         terminal.BINARY = str(binary)
         for classic in (False, True):
