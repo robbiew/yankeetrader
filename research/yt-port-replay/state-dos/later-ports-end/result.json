@@ -1,0 +1,27 @@
+{
+  "name": "later-ports-end",
+  "clock": "later",
+  "phase": "ports-end",
+  "recipe": "port-rng-state-hook-v1",
+  "date": "11/02/2026",
+  "time": "12:34:00",
+  "site_code_offset": 7887,
+  "cave_code_offset": 9734,
+  "payload_hex": "9c50535152ff365618ff365818c70656180052c70658185321bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd218f0658188f0656185a595b589dc3",
+  "initializer_original_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "initializer_copied_sha256": "e8909a6154ff7f5a966c3846009b033437138df79d4253f3183b0e4d7c5b4093",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "maintenance_sha256": "f4ee8102c22efb02332d679649d248c5a6e88d5e31dbd774fb045af1dc28a2d6",
+  "baseline_world_sha256": "b2db0e8bc4f0c1ababaaf46d4db7144e7c8fee7afa28c3b76e2c7328cc2ceb7f",
+  "state": 3455228,
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "24000d9424c941652c97bb0ac0ad5f1a7b332753bd7f459c45a13ced3403f94a",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "309201a2657f8a6f7303528c0464c7f0f6b3818a618b1270a2109389227fc903",
+    "INIT.LOG": "2848a9468a719bdb8685137bf5452dab7884dfdf6febd510523dc747c2841bf7",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "before-maint.dat.gz": "c06372022fe4c2a0d80f9763b51e9eeeb7a5e2961a70817f4707b6f408e071a4",
+    "dosbox.log": "79b86f482ab5f55ab1edc65ea65ffb7932d4033bc7756587e1db7d32b1e05712"
+  }
+}

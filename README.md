@@ -44,13 +44,14 @@ Click any screenshot to view it at full size.
 
 ## Status
 
-**QuickBASIC seeding research is verified:** raw DOS traces establish the BRUN30
-RND recurrence and byte-based `RANDOMIZE -TIMER` path, including midnight's
-noncanonical zero. A research replay matches every warp cell in four retained
-DOS phase/clock controls. The shared tested RNG primitive now supplies the
-existing startup-price sequence with identical results. Generation profiles keep
-their current Go streams and safeguards; save format remains **34**.
-[Raw controls, exact selected replay and remaining limits](research/yt-rng-seeding/RECOVERY.md).
+**Exact DOS port replay is verified research:** the recovered `RANDOMIZE -TIMER`
+stream reproduces all 18,000 warp cells, all 1,000 complete 137-byte port records
+and all 3,000 sector links in each of six retained clock controls. Twelve fresh
+native state captures independently confirm graph, placement and port endpoints
+at four clocks. The model preserves the original placement defect and raw zero
+residue for comparison. Production generation keeps its current Go streams and
+safeguards; save format remains **34**. See [replay evidence and limits](research/yt-port-replay/RECOVERY.md)
+and [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
@@ -546,7 +547,7 @@ Known defects intentionally fixed here:
 
 Technical limits are 50 active accounts with a 256-identity lifetime archive (IDs are never reused), 1,000 cargo holds, 1 billion units per noncargo equipment category, and 9 quadrillion credits per account. These bounds are explicit prototype constraints, not claims about DOS overflow behavior.
 
-Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full RNG/MBF universe integration, DOS save import/export and remaining terminal parity questions are future work. Initializer seeding and selected graph replay are now verified research; see the RNG recovery report. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
+Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily behavior, are playable. Xannor HQ/home lifecycle and bounded mobile groups are also implemented below. Full RNG/MBF universe integration, DOS save import/export and remaining terminal parity questions are future work. Initializer seeding and selected complete graph/port replay are now verified research; see the replay recovery report. Bounded Genesis resets are implemented below. Their recovered rules are in `research`.
 
 ## Storage and recovery
 

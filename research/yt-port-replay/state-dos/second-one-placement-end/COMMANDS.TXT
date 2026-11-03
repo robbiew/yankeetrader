@@ -1,0 +1,6 @@
+date 11/02/2026
+time 00:00:01
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init < answers.txt > init.log
+echo INITIALIZER_RETURNED > INITRET.LOG

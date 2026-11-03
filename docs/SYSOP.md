@@ -184,7 +184,11 @@ check storage health, and validate the active world before reopening the door.
 The QuickBASIC RNG research update keeps save format 34, current `-seed` semantics,
 existing world contents and the selected generation profiles unchanged. Its raw
 DOS seed inputs are research controls, not new game initialization/import flags.
-The shared startup-price primitive produces the same prices. See the
+The shared startup-price primitive produces the same prices. The exact port
+replay adds no production flag, save converter or DOS import/export support.
+It deliberately reproduces a DOS duplicate-location defect only in the research
+model; existing generation safeguards remain active. See the
+[port replay boundaries](../research/yt-port-replay/RECOVERY.md) and the
 [verified subset and remaining boundaries](../research/yt-rng-seeding/RECOVERY.md)
 before treating a research clock or raw state as a production compatibility mode.
 

@@ -195,8 +195,10 @@ claim that any perturbed input must always change the graph.
 - Selected fixed-clock graph phases replay exactly in a research model. Modern
   `-dos-warps` and `-dos-ports` continue using their existing Go streams and
   deliberate bounds/duplicate/self-link policies. Save format remains 34.
-- Full port placement/naming/economy RNG consumption, other clock points, other
-  RND argument variants and complete MBF boundary arithmetic remain open.
+- Follow-up [port replay](../yt-port-replay/RECOVERY.md) verifies full placement,
+  naming and economy consumption across six retained clock worlds and twelve
+  native phase endpoints. Other clock points, other RND argument variants and
+  complete MBF boundary arithmetic remain open.
 - General DOS seed-to-universe production mode, exact DOS saves and original bugs
   are not introduced by this research. Any later integration needs a separately
   named compatibility policy while preserving existing saves and safeguards.

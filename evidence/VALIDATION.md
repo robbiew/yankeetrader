@@ -1310,3 +1310,19 @@ trace, native and replay verification. All 4682 archive files remain unchanged.
 Full port random consumption, other RND argument variants, complete MBF arithmetic,
 a general production compatibility profile and native BBS acceptance remain open.
 Hosted CI includes these checks; local results do not claim hosted green status.
+
+
+## Exact port stream replay — 2026-11-03
+
+The research model matches six retained DOS clock worlds: 108,000 graph cells,
+822,000 raw port-record bytes and 18,000 sector links. Twelve fresh native state
+hooks at four clocks match graph/placement/port endpoints and preserve every
+complete unhooked world byte. The +2-second raw seed is checked independently.
+The target, seed, state and replay suites pass 22 test methods, including
+rehashed corruptions and numeric-zero residue that selected-field checks miss.
+The original sector-7 overwrite remains an explicit research control.
+
+[Report and limits](../research/yt-port-replay/RECOVERY.md). No production Go
+behavior or schema changes; full initializer records, general MBF arithmetic,
+DOS import/export and a production compatibility profile remain separate.
+Hosted CI runs these checks; local verification does not imply hosted success.
