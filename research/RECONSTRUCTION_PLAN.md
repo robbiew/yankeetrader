@@ -5,12 +5,14 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
-through `41780b9`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `ae65b0a`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
 (exact graph/port replay), plus [#77](https://github.com/robbiew/yankeetrader/pull/77)
-(complete initializer replay). These are completed milestones. The current Go
+(complete initializer replay), [#78](https://github.com/robbiew/yankeetrader/pull/78)
+(compatibility design) and [#79](https://github.com/robbiew/yankeetrader/pull/79)
+(release packaging/sysop cheat sheet). Release **v0.1.0 is published**. These are completed milestones. The current Go
 source-generator slice extends that research; it does not introduce a production
 compatibility profile. Application version is 0.1.0 and save format is **34**. See the
 [playable feature overview](../README.md#playable-feature-overview),

@@ -1,0 +1,56 @@
+name: Release packages
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  packages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Check out tagged Yankee Trader
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: yankeetrader
+          persist-credentials: false
+      - name: Check out tested GoDoors revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: robbiew/godoors
+          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          path: godoors
+          persist-credentials: false
+      - name: Set up Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.23.x'
+          cache-dependency-path: yankeetrader/go.sum
+      - name: Validate and build packages
+        working-directory: yankeetrader
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python3 -m unittest discover -s scripts -p test_build_release.py
+          go test -race -count=1 ./...
+          go vet ./...
+          python3 scripts/build_release.py --version "${RELEASE_TAG#v}" --out dist
+          python3 scripts/verify_release_packages.py dist
+      - name: Attach packages to a draft GitHub Release
+        working-directory: yankeetrader
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$RELEASE_TAG" --json isDraft > "$RUNNER_TEMP/yt-release-state.json"; then
+            python3 -c 'import json,sys; assert json.load(open(sys.argv[1]))["isDraft"], "Refusing to overwrite a published release"' "$RUNNER_TEMP/yt-release-state.json"
+          else
+            gh release create "$RELEASE_TAG" --verify-tag --draft --title "Yankee Trader: Resurrection $RELEASE_TAG" --notes-file packaging/RELEASE_NOTES.md
+          fi
+          gh release upload "$RELEASE_TAG" dist/*.tar.gz dist/*.zip dist/SHA256SUMS.txt --clobber

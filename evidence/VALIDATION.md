@@ -1371,3 +1371,25 @@ No production profile/CLI, modern save projection or schema change. Save 34,
 existing maps and ports, reset/export/restore behavior and game streams remain
 unchanged. Hosted CI includes fixture provenance/corruption checks; local results
 do not claim a hosted run for this commit.
+
+
+## Release packaging and sysop cheat sheet — 2026-11-03
+
+The release builder creates standalone Linux amd64/arm64 tarballs and Windows
+amd64 ZIPs, with a binary hash manifest, archive SHA-256 list, bundled operations
+guides, credits and available third-party license texts. All three targets were
+cross-built against the same pinned GoDoors revision as CI. Archive checks verify
+complete matrix coverage, checksums, executable format/architecture, Linux file
+mode, safe single-root paths, required guides and absence of saves/source extras.
+Three packaging tests cover deterministic packaging, contents/modes, unsafe names
+and official/Homebrew Go license layouts. CLI setup/overwrite-refusal/maintenance/
+export/guarded-reset checks pass on the native development host; packaged Linux amd64 execution
+is included in Linux CI. Windows and Linux ARM64 builds are format-checked, not
+claimed as native transport/host acceptance.
+
+PR CI builds/verifies packages without creating a Release. Version-tag builds run
+Go race tests/vet and packaging validation, then attach all assets/checksums to a
+draft GitHub Release. Draft reruns may replace assets; published releases are not
+overwritten. No tag, published release, save schema or gameplay change is made
+by implementing this tooling. See [release procedures](../docs/RELEASING.md) and
+the [sysop cheat sheet](../docs/SYSOP_CHEAT_SHEET.md).

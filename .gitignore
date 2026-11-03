@@ -17,3 +17,6 @@ go.work.sum
 !/archive/**/*.COM
 __pycache__/
 *.pyc
+
+# Generated GitHub release packages.
+/dist/

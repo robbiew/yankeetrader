@@ -1,5 +1,8 @@
 # Sysop guide: saves, backups, exports and restores
 
+For release installation, world creation, door commands and daily scheduling,
+start with the [sysop cheat sheet](SYSOP_CHEAT_SHEET.md).
+
 These procedures are for the Go reconstruction. Original DOS `.DAT` files cannot
 be imported, and Go saves cannot be exported into the DOS format. There is no
 in-game upload/import operation, account merge, or automatic archive importer.
