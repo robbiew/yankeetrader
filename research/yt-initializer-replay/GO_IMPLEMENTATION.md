@@ -79,8 +79,8 @@ The package's ten native cases, full race-enabled Go suite and vet are checked
 with the existing repository validations. CI also verifies fixture provenance
 and its corruption controls. No dependencies or runtime CLI options are added.
 
-Next: implement the contract's safe playable projection and admission rules,
-including collision/protected-HQ rejection and final modern connectivity checks.
-CLI selection, typed saved provenance and complete Genesis/admin-reset integration
-follow that slice. General MBF arithmetic, arbitrary initializer inputs, exact
+The [safe projection/admission follow-up](PROJECTION.md) now rejects collisions,
+protected HQs and disconnected graphs, validates modern homes and returns only an
+unpublished candidate. CLI selection, typed saved provenance and complete
+Genesis/admin-reset integration remain next. General MBF arithmetic, arbitrary initializer inputs, exact
 initial maintenance and DOS save interoperability remain separate work.

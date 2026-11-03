@@ -196,7 +196,8 @@ The [proposed compatibility contract](../research/yt-initializer-replay/COMPATIB
 documents future raw-seed/date inputs and repeat-layout resets; its flags and
 save fields are not supported by the current binary. The
 [pure Go source generator](../research/yt-initializer-replay/GO_IMPLEMENTATION.md)
-is an internal in-memory component with no sysop initialization/import command.
+and [safe projection candidate](../research/yt-initializer-replay/PROJECTION.md)
+are internal in-memory components with no sysop initialization/import command.
 Existing backup, export, restoration and reset procedures remain unchanged.
 It deliberately reproduces a DOS duplicate-location defect only in the research
 model; existing generation safeguards remain active. See the

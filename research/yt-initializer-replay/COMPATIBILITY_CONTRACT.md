@@ -162,7 +162,8 @@ restore/import or new automatic archive importer is included.
    profile. Keep default and existing DOS-rule CLI regressions green.
 
 The first source-generator slice is now [implemented in Go with portable fixtures](GO_IMPLEMENTATION.md).
-The profile/projection, CLI and save/reset sections of this contract remain
-future implementation work. This document defines their design only. It does not authorize
+The [internal projection/admission candidate](PROJECTION.md) is now implemented.
+The playable profile, CLI and saved provenance/reset sections remain future
+implementation work. This document defines their design only. It does not authorize
 claiming any proposed command or save field as shipped, and it does not repeat
 already completed native initializer recovery as a new research task.

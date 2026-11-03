@@ -1393,3 +1393,22 @@ draft GitHub Release. Draft reruns may replace assets; published releases are no
 overwritten. No tag, published release, save schema or gameplay change is made
 by implementing this tooling. See [release procedures](../docs/RELEASING.md) and
 the [sysop cheat sheet](../docs/SYSOP_CHEAT_SHEET.md).
+
+
+## Internal safe QB projection/admission — 2026-11-03
+
+The internal candidate pipeline admits three distinct native source states and
+validates current UTC clocks/stocks, ordered Earth exits, exact baseline Earth
+economy, source HQ force and all required modern faction homes. Source bytes,
+fingerprint and RNG statistics remain independent of modern bootstrap randomness.
+The retained port-overwrite control, generated protected HQ and source-work
+exhaustion return no partial candidate. Fourteen malformed-source variants plus
+zero-clock and one-way-connectivity controls are rejected without input mutation.
+Repeatable candidates and independent mutable storage are checked.
+
+Five focused Go test groups pass under the race detector; full race-enabled Go
+tests and vet pass alongside retained native fixture provenance checks.
+[Projection behavior and boundaries](../research/yt-initializer-replay/PROJECTION.md).
+The pipeline remains unexported and unused by active CLI/store constructors.
+Typed saved recipe, schema/CLI selection and complete guarded reset integration
+are prerequisites to enabling the playable profile; save format stays 34.

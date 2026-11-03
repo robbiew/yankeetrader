@@ -56,3 +56,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Proposed QB production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md): explicit raw state/date, exact source versus modern projection, admission failures, saved provenance and repeat-layout reset policy. Design only; next implementation is the bounded Go source generator and portable fixtures.
 
 - [Pure Go initializer source generator](yt-initializer-replay/GO_IMPLEMENTATION.md): ten complete native golden cases and RNG endpoints, portable hash fixtures, original DATA verification and bounded no-partial-output failures. Safe playable projection remains next.
+
+- [Safe QB source projection/admission](yt-initializer-replay/PROJECTION.md): unpublished modern candidates, collision/protected-HQ/connectivity rejection, current UTC stocks/watermarks and independently seeded required-home bootstrap. CLI/save/reset integration remains next.
