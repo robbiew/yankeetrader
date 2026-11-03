@@ -83,8 +83,11 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
    The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
    matches all ten whole-world/block hashes and RNG endpoints with portable
    goldens, retaining explicit work limits and original source defects.
-   Next implementation: safe playable projection/admission, followed by complete
-   CLI/save/reset support. Do not port the source generator a second time.
+   The [internal projection/admission pipeline](yt-initializer-replay/PROJECTION.md)
+   now rejects unsafe source candidates and validates modern bootstrap without
+   publishing a world. Next implementation: typed saved QB provenance, CLI
+   selection and complete Genesis/admin-reset integration. Neither source
+   generation nor safe candidate projection needs to be implemented again.
    General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
    separate research. Do not repeat the established
    graph, port or selected complete-record replay as missing work.

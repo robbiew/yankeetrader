@@ -71,7 +71,11 @@ Go tests require no Python, emulator or original executables. It returns bounded
 in-memory source bytes, preserving the original defects for comparison. January
 10 source dates are rejected until their port-date cancellation residue is verified.
 The [production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-now leads to safe playable projection/admission; its profile and flags are not implemented.
+now has an [internal safe projection candidate](research/yt-initializer-replay/PROJECTION.md):
+source collisions/protected HQs and disconnected maps are rejected, while current
+UTC watermarks and bounded faction bootstrap apply. Success-path tests project the
+retained source buffer directly and verify it remains unchanged. CLI selection and persisted
+QB recipe/reset support are still required; its profile and flags are not implemented.
 Its reset contract distinguishes failures before save replacement from committed
 updates with durability warnings; a warning must not trigger a repeated reset.
 
