@@ -110,9 +110,10 @@ to 41 bytes. Ten controls establish selected complete-record replay, not every
 possible date, input, platform, MBF operation or initial-maintenance outcome.
 Original duplicate-location and self-warp behavior remains research evidence.
 
-The next integration step is a separately reviewed compatibility contract:
-define seed/date inputs, whether original defects are represented or corrected,
-safety bounds and immutable existing-save behavior before adding a production
-profile. General MBF/RND variants, exact initial maintenance and DOS save
+The [proposed compatibility contract](COMPATIBILITY_CONTRACT.md) now defines
+seed/date inputs, source/projection boundaries, original defect handling, work
+bounds, saved provenance and repeat-layout reset semantics. The next implementation
+slice is the pure Go source generator and portable fixtures; the proposed
+production profile is not shipped. General MBF/RND variants, exact initial maintenance and DOS save
 interoperability remain separate. Current playable `-seed`, `-dos-ports`,
 `-dos-warps`, prices, save **34**, exports/restores and safeguards are unchanged.

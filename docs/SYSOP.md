@@ -189,6 +189,9 @@ replay adds no production flag, save converter or DOS import/export support.
 The follow-up [complete initializer replay](../research/yt-initializer-replay/RECOVERY.md)
 compares all original pre-maintenance records in bounded controls; it remains
 research tooling and supplies no archive import or production initialization mode.
+The [proposed compatibility contract](../research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+documents future raw-seed/date inputs and repeat-layout resets; its flags and
+save fields are not supported by the current binary.
 It deliberately reproduces a DOS duplicate-location defect only in the research
 model; existing generation safeguards remain active. See the
 [port replay boundaries](../research/yt-port-replay/RECOVERY.md) and the

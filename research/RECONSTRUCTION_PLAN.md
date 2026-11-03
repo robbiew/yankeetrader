@@ -74,10 +74,13 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
    synthesizes all 4,151 pre-maintenance records across ten retained controls,
    including FIELD-buffer inheritance and raw zero residues. This closes the
    selected default-count initializer record replay milestone.
-   Next: define a separate production compatibility contract (seed/date inputs,
-   original defects, modern safeguards and existing-save behavior) before any
-   integration. General MBF arithmetic, arbitrary initializer inputs and exact
-   initial maintenance remain separate research. Do not repeat the established
+   The [production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+   now specifies explicit raw state/date, safe projection, saved provenance and
+   repeat-layout reset semantics. These are proposed behavior, not shipped flags.
+   Next implementation: a pure Go bounded source generator with portable golden
+   fixtures, followed by projection/admission and complete CLI/save/reset support.
+   General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
+   separate research. Do not repeat the established
    graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),
    [RNG controls](yt-rng-seeding/RECOVERY.md),

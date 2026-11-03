@@ -52,3 +52,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Exact graph/port stream replay](yt-port-replay/RECOVERY.md): six complete clock targets, raw 137-byte port records, twelve native phase states and independent corruption checks; research only.
 
 - [Complete pre-maintenance initializer replay](yt-initializer-replay/RECOVERY.md): all 4,151 records synthesized across ten bounded targets, including configuration/planet FIELD inheritance, sector FAC residues and fresh date/path/auxiliary controls. Research only.
+
+- [Proposed QB production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md): explicit raw state/date, exact source versus modern projection, admission failures, saved provenance and repeat-layout reset policy. Design only; next implementation is the bounded Go source generator and portable fixtures.
