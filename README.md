@@ -54,6 +54,8 @@ remains **34**. This supplies no DOS save importer or production compatibility
 profile. See [complete replay evidence and limits](research/yt-initializer-replay/RECOVERY.md),
 [graph/port replay](research/yt-port-replay/RECOVERY.md) and
 [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
+The [proposed production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+defines the next integration slice; its profile and flags are not implemented.
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
