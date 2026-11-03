@@ -42,6 +42,16 @@ Click any screenshot to view it at full size.
   </tr>
 </table>
 
+## Release downloads and sysop quick start
+
+Release packages provide Linux x86-64/ARM64 tarballs and a Windows x86-64 ZIP,
+including a standalone executable, [sysop cheat sheet](docs/SYSOP_CHEAT_SHEET.md),
+full save/restore guidance, credits, third-party notices and build provenance.
+Tagged `vX.Y.Z` builds create a **draft** [GitHub Release](https://github.com/robbiew/yankeetrader/releases)
+with SHA-256 checksums; a maintainer reviews and publishes it. Existing data is
+kept outside the versioned package directory. No Go compiler or DOS distribution
+is required to play. See [release building and publishing](docs/RELEASING.md).
+
 ## Status
 
 **Complete pre-maintenance DOS initializer replay is verified research:** a
