@@ -182,28 +182,63 @@ before retrying. A storage durability warning that says the update committed mea
 the new world is already visible: do not repeat the reset. Preserve both files,
 check storage health, and validate the active world before reopening the door.
 
-## RNG research and existing worlds
+## Playable qb36-v1 worlds
 
-The QuickBASIC RNG research update keeps save format 34, current `-seed` semantics,
-existing world contents and the selected generation profiles unchanged. Its raw
-DOS seed inputs are research controls, not new game initialization/import flags.
-The shared startup-price primitive produces the same prices. The exact port
-replay adds no production flag, save converter or DOS import/export support.
-The follow-up [complete initializer replay](../research/yt-initializer-replay/RECOVERY.md)
-compares all original pre-maintenance records in bounded controls; it remains
-research tooling and supplies no archive import or production initialization mode.
-The [proposed compatibility contract](../research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-documents future raw-seed/date inputs and repeat-layout resets; its flags and
-save fields are not supported by the current binary. The
-[pure Go source generator](../research/yt-initializer-replay/GO_IMPLEMENTATION.md)
-and [safe projection candidate](../research/yt-initializer-replay/PROJECTION.md)
-are internal in-memory components with no sysop initialization/import command.
-Existing backup, export, restoration and reset procedures remain unchanged.
-It deliberately reproduces a DOS duplicate-location defect only in the research
-model; existing generation safeguards remain active. See the
-[port replay boundaries](../research/yt-port-replay/RECOVERY.md) and the
-[verified subset and remaining boundaries](../research/yt-rng-seeding/RECOVERY.md)
-before treating a research clock or raw state as a production compatibility mode.
+This source-build feature is newer than the published v0.1.0 packages. Build a
+current binary before using these flags; no new release is implied.
+
+Create a separate directory using an explicit raw initializer state and source date:
+
+```sh
+./bin/yt -data qb-world -init -generation-profile qb36-v1 -qb-state 0xc805 -qb-date 2027-01-01
+./bin/yt -data qb-world -local Sysop
+./bin/yt -data qb-world -maint
+```
+
+On Windows use `yt.exe` with the same arguments. Use generation flags only with
+`-init`. The profile fixes 3,000 sectors/1,000 ports; `-sectors 3000` is allowed,
+other sizes are rejected. Do not combine it with explicit `-seed`, `-dos-warps`
+or `-dos-ports` (even false values). `-genesis-ports` retains its usual meaning.
+The raw **post-RANDOMIZE, pre-first-RND** state accepts unsigned decimal or `0x`
+hexadecimal in 0..0xffffff, including zero. It is not a Unix timestamp, DOS clock
+or modern seed. An explicit real Gregorian date in 2026–2028 is required;
+January 10 is rejected pending verification of native floating-point residue.
+Retained controls cover selected dates, not every admitted date.
+
+Source generation is native Go and needs no DOS software, Python or emulator.
+The complete source fingerprint is preserved in `QBRecipe` with `Profile`,
+`State`, `Date` and `SourceSHA256`. It describes original initializer bytes,
+not the evolving JSON world. Do not compare it to the current world file hash.
+Original duplicate-port collisions, protected HQs, unsafe connectivity and work
+budget exhaustion reject creation without publishing a world or choosing another
+state. Choose another explicit recipe in a separate directory if admission fails.
+
+This is **QB generation with modern adaptations**: Earth’s redundant self-warp is
+omitted, initial stocks represent ten production days with current UTC watermarks,
+and required NPC homes use the modern bounded bootstrap. It is not exact DOS
+maintenance, a DOS save importer/exporter or full MBF arithmetic emulation.
+
+Both player Genesis and archive-first administrative resets keep the source recipe
+and repeat its map, port names/economy and initial HQ. Seasons, players, ownership,
+modern bootstrap and current UTC dates are reset normally. An administrative
+`-seed` affects only modern bootstrap, never the stored raw QB state. Genesis
+confirmations bind the entire recipe; a changed recipe invalidates confirmation.
+A source fingerprint mismatch rejects a reset before replacing the active save.
+Changing the recipe requires creating a separate new world; there is no in-place
+reprofile command. Existing worlds never acquire a recipe during upgrade.
+
+Use the existing private export, archive checksum, extraction and stopped-node
+restore procedures below: the full recipe travels with `world.json` and private
+season archives. A current binary validates the recipe on load without rerolling
+the evolved world. Never strip recipe fields to force an old binary to load it.
+Save 35 needs a save-35-capable binary; rollback requires a compatible older raw
+backup. A pre-replacement failure leaves the old world active; a post-replacement
+`Update committed` durability warning means the new season is visible. Preserve
+the receipt/archive and inspect the active season before any retry. An old expected
+season or consumed Genesis confirmation cannot reset the committed season again.
+
+See the [compatibility contract](../research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+and [source evidence](../research/yt-initializer-replay/GO_IMPLEMENTATION.md).
 
 ## Choosing the warp map
 
@@ -238,7 +273,7 @@ an active economy. DOS `.DAT` import/export remains unsupported. See the
 
 ## Upgrade and rollback
 
-Current schema is 34. Supported schemas 1–33 upgrade in memory and are persisted
+Current schema is 35. Supported schemas 1–34 upgrade in memory and are persisted
 on the next successful write. Export loads/upgrades/validates without rewriting
 the source; its snapshot uses the current schema. Retain a stopped raw backup
 and matching old binary before upgrading, because an upgraded export cannot be

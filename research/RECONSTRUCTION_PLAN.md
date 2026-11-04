@@ -5,16 +5,19 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-03
 
 This section is the current planning baseline, checked against merged `main`
-through `ae65b0a`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `ed6d000`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
 (exact graph/port replay), plus [#77](https://github.com/robbiew/yankeetrader/pull/77)
 (complete initializer replay), [#78](https://github.com/robbiew/yankeetrader/pull/78)
 (compatibility design) and [#79](https://github.com/robbiew/yankeetrader/pull/79)
-(release packaging/sysop cheat sheet). Release **v0.1.0 is published**. These are completed milestones. The current Go
-source-generator slice extends that research; it does not introduce a production
-compatibility profile. Application version is 0.1.0 and save format is **34**. See the
+(release packaging/sysop cheat sheet), [#80](https://github.com/robbiew/yankeetrader/pull/80)
+(pure Go generator/goldens) and [#81](https://github.com/robbiew/yankeetrader/pull/81)
+(safe world projection). The subsequent playable `qb36-v1` integration adds typed
+recipes, CLI admission and both reset paths in the current source build; published
+v0.1.0 packages predate that integration. Release **v0.1.0 is published**. The playable QB profile uses documented modern adaptations rather than exact
+DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
@@ -63,6 +66,8 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
 | DOS warp rules / PR #74 | Saved independent map profile with local/long links, isolation repair and Earth shortcuts; bounded modern safeguards. |
 | Raw RNG recovery / PR #75 | Verified BRUN30 RND/RANDOMIZE subset, measured TIMER seeding and selected graph replay; startup-price results preserved. |
 | Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
+| Playable QB profile / save 35 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
+| Pure Go generator and safe projection / PRs #80–81 | Portable ten-control goldens, bounded source generation and unpublished safe projection/admission. |
 | Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
@@ -85,9 +90,10 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
    goldens, retaining explicit work limits and original source defects.
    The [internal projection/admission pipeline](yt-initializer-replay/PROJECTION.md)
    now rejects unsafe source candidates and validates modern bootstrap without
-   publishing a world. Next implementation: typed saved QB provenance, CLI
-   selection and complete Genesis/admin-reset integration. Neither source
-   generation nor safe candidate projection needs to be implemented again.
+   publishing a world. The playable integration now adds typed saved QB provenance,
+   CLI selection and complete Genesis/admin-reset integration in save 35. Both
+   resets preserve the source recipe and repeat its layout. Do not repeat source
+   generation, safe projection or playable integration as missing work.
    General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
    separate research. Do not repeat the established
    graph, port or selected complete-record replay as missing work.
@@ -102,7 +108,8 @@ compatibility profile. Application version is 0.1.0 and save format is **34**. S
    required new mechanic. [Issues and intentional fixes](ISSUES_AND_EXPLOITS.md).
 3. **Original DOS save interoperability and remaining universe parity.** Modern
    private JSON export/restoration is implemented; DOS `.DAT` import/export and
-   a complete DOS seed-to-universe production mode are separate unsupported work.
+   exact DOS maintenance are separate unsupported work; the bounded playable QB
+   initializer profile is implemented with documented modern adaptations.
    Define identity, version and conversion policies before claiming compatibility.
 4. **Target-host and release acceptance.** Run real BBS gameplay/disconnect/time
    expiry, restore/upgrade/reset drills and native Windows inherited-socket/crash

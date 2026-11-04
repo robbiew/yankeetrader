@@ -3,8 +3,9 @@
 This slice adds the internal `prepareQBWorld` / `projectQBSource` candidate
 pipeline in `internal/game/qb_projection.go`, building on the
 [pure Go source generator](GO_IMPLEMENTATION.md). It creates no active save and
-adds no CLI flag, persisted QB recipe or schema. Save format remains **34**.
-Existing constructors do not select this pipeline. The
+originally added no CLI flag or schema (save 34). The subsequent playable
+`qb36-v1` integration now selects this pipeline through `NewQB36`, stores a typed
+recipe in save **35**, and supports CLI creation and both reset paths. The
 [compatibility contract](COMPATIBILITY_CONTRACT.md) still governs later integration.
 
 ## Admitted candidate
@@ -69,15 +70,14 @@ Tests require only portable Go source fixtures and compiled code; this slice add
 no new native recovery or external executable dependency. Existing source goldens
 continue to test bit-exact source behavior independently of modern adaptations.
 
-## Next integration slice
+## Playable integration
 
-Persist a versioned typed recipe and implement CLI admission, old-save/unknown-
-profile handling, source provenance round trips, Genesis intent binding and both
-reset paths before enabling a playable QB profile. Preserve source recipes and
-repeat-layout reset semantics, archive-first guarded admin resets, committed
-versus pre-replacement failure handling and current-world immutability on failure.
-
-The internal schema-34 candidate is deliberately not exposed to CLI/store creation:
-using existing `dos` rule-family fields alone would lose the source recipe and
-would reset using the modern generator. Completing the future schema/recipe and
-reset contract is therefore a prerequisite to publishing this profile.
+The `NewQB36` constructor now attaches a validated versioned recipe after safe
+projection. CLI admission requires explicit state/date and rejects conflicting
+modern flags. Save 35 validates provenance syntax, geometry and rule families;
+loading never rerolls evolved worlds. Genesis binds a copied complete recipe,
+and both reset paths regenerate it, verify the source fingerprint and repeat its
+layout. Current UTC watermarks and independent modern bootstrap remain intact.
+The established archive-first admin guard and committed durability warnings are
+preserved. See [operator procedures](../../docs/SYSOP.md#playable-qb36-v1-worlds)
+and [the implemented contract](COMPATIBILITY_CONTRACT.md).

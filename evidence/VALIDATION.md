@@ -1412,3 +1412,38 @@ tests and vet pass alongside retained native fixture provenance checks.
 The pipeline remains unexported and unused by active CLI/store constructors.
 Typed saved recipe, schema/CLI selection and complete guarded reset integration
 are prerequisites to enabling the playable profile; save format stays 34.
+
+## Playable QB profile integration — 2026-11-03
+
+Save 35 adds the opt-in `qb36-v1` profile using the previously verified pure Go
+source generator and safe projection. Typed recipes retain versioned profile,
+explicit raw 24-bit state/source date and complete source SHA-256. Loader validation
+checks syntax/geometry/rule consistency without regenerating an evolved world.
+Old worlds upgrade with no recipe or reroll; pre-35 recipe fields are rejected.
+
+Validation performed:
+
+- Full `go test -race -count=1 ./...` and `go vet ./...` passed.
+- Focused QB tests cover recipe round trips, invalid/missing/unknown inputs,
+  unchanged old-world geometry/economy, both repeat-layout resets, copied recipes,
+  stale Genesis confirmations and source-fingerprint mismatch rejection.
+- Store tests exercise both resets with success, pre-replacement failure,
+  provenance change and injected post-replacement directory-sync failure.
+  Committed warnings retain receipts/history/recipe, invalidate old sessions and
+  reject reset replay. Private archive checksums and stopped-node restoration
+  preserve recipes and evolved world data.
+- `scripts/smoke_qb_profile.py` passed headless admission/conflict/collision controls,
+  actual compact PTY navigation and a commodity purchase, classic port display,
+  CLI admin reset, repeated source layout, archive extraction/restore and stale
+  season rejection. CI now invokes this smoke check.
+- Linux amd64 and Windows amd64 cross-builds passed. These are build checks,
+  not native Windows runtime acceptance.
+- Existing season-admin, DOS port and DOS warp CLI/PTY smoke checks passed.
+  Active smoke assertions expect schema 35; historical migration inputs stay intact.
+- Portable native fixture provenance and release-package unit checks remain part
+  of validation; source goldens are unchanged by playable integration.
+
+These local checks use the existing local GoDoors review modfile. They do not
+establish native Windows socket/durability behavior, live BBS acceptance, exact
+DOS maintenance, arbitrary MBF arithmetic or DOS save interoperability. Published
+v0.1.0 packages predate this source-build feature; no new release was published.

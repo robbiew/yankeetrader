@@ -58,8 +58,24 @@ configured range is 20–300. A sysop administrative reset remains separate.
 `-dos-warps` and `-dos-ports` select recovered map/economy rules with modern
 safeguards; omit both for the established default generator. They are independent,
 initialization-only choices. They do not enable exact DOS RNG replay. Do not add
-these switches to ordinary play or maintenance commands. Research QB flags are
-not available. `-seed` makes generation repeatable, not subsequent gameplay.
+these switches to ordinary play or maintenance commands. `-seed` makes generation
+repeatable, not subsequent gameplay.
+
+For the recovered QB stream, create a separate world instead:
+
+```sh
+./yt -data qb-world -init -generation-profile qb36-v1 -qb-state 0xc805 -qb-date 2027-01-01
+```
+
+Windows uses `yt.exe` with the same flags. Omit explicit `-seed`, `-dos-warps`
+and `-dos-ports`. Geometry is fixed at 3,000 sectors/1,000 ports. State is raw
+24-bit post-RANDOMIZE input (decimal or `0x` hexadecimal); date is required in
+2026–2028, excluding January 10. Admission can reject unsafe original layouts
+without writing a world or reseeding. Both Genesis and admin resets preserve the
+saved recipe and repeat its source layout; current UTC dates and modern bootstrap
+remain separate. Play and maintenance use only `-data` and their ordinary flags.
+Backups/exports include the recipe. Save 35 requires a compatible binary; rollback
+requires an older compatible backup. See [full QB procedures](SYSOP.md#playable-qb36-v1-worlds).
 
 ## 3. Test locally
 

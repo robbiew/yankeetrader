@@ -31,7 +31,7 @@ def main():
             data=root/('both' if ports else 'warps')
             run(data,'-init','-dos-warps','-sectors','32',*(['-dos-ports'] if ports else []))
             path=data/'world.json';original=path.read_bytes();w=json.loads(original)
-            assert w['Version']==34 and w['WarpGeneration']=='dos'
+            assert w['Version']==35 and w['WarpGeneration']=='dos'
             assert w.get('PortGeneration','')==('dos' if ports else '')
             assert w['Sectors']['1']['Warps']==[2,3,4,5,6]
             assert any(len(s['Warps'])<6 for s in w['Sectors'].values())
@@ -56,7 +56,7 @@ def main():
         legacy=root/'legacy';run(legacy,'-init','-sectors','8','-dos-ports')
         path=legacy/'world.json';old=json.loads(path.read_bytes());old['Version']=33;path.write_text(json.dumps(old))
         run(legacy,'-maint');saved=json.loads(path.read_bytes())
-        assert saved['Version']==34 and not saved.get('WarpGeneration')
+        assert saved['Version']==35 and not saved.get('WarpGeneration')
         assert saved['Sectors']==old['Sectors'] and saved['PortGeneration']=='dos'
         print('DOS warp CLI/PTY passed: independent profiles, connectivity, persistence, archive/reset, legacy map preservation and both navigation interfaces.')
 

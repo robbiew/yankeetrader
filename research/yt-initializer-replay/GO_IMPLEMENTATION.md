@@ -4,7 +4,8 @@ The `internal/qbinit` package now implements the bounded source-generation slice
 of the [compatibility contract](COMPATIBILITY_CONTRACT.md). It produces an owned
 568,687-byte result and generation statistics in memory. It does not publish a
 playable world, write files, import saves or select a production profile.
-Save format stays **34**; existing generation flags and runtime streams are unchanged.
+That source-only milestone retained save 34. The subsequent playable `qb36-v1`
+integration uses this package through safe projection and introduces save 35.
 
 ## Inputs and exact output
 
@@ -20,7 +21,7 @@ The generator uses `internal/qbrng`, explicit float32 boundaries, the original
 weighted 908-entry DATA pool and exact bounded record serialization. It retains
 FIELD/FAC zero residues, inherited inactive planet records, sparse warp columns,
 Earth's self-link and original last-writer port collisions. These bytes remain
-an exact source candidate; a future playable projection must enforce the
+an exact source candidate; the playable projection enforces the
 separate modern invariants described in the contract.
 
 Ten native golden cases match every complete-world hash and every configuration,
@@ -73,16 +74,17 @@ different universe, fallback graph or partial candidate publication occurs.
 
 Tests exhaust budgets during graph generation, placement and port construction,
 and verify that the exact required draw budget still succeeds. The source API
-preserves original collisions; it does not yet reject or repair them for play.
+preserves original collisions; the playable projection rejects them rather than repairing source bytes.
 
 ## Validation and next slice
 
 The package's ten native cases, full race-enabled Go suite and vet are checked
 with the existing repository validations. CI also verifies fixture provenance
-and its corruption controls. No dependencies or runtime CLI options are added.
+and its corruption controls. The source package adds no external dependencies;
+the playable integration supplies the CLI described in the sysop guide.
 
 The [safe projection/admission follow-up](PROJECTION.md) now rejects collisions,
 protected HQs and disconnected graphs, validates modern homes and returns only an
 unpublished candidate. CLI selection, typed saved provenance and complete
-Genesis/admin-reset integration remain next. General MBF arithmetic, arbitrary initializer inputs, exact
+Genesis/admin-reset integration now ship as `qb36-v1` in save 35. General MBF arithmetic, arbitrary initializer inputs, exact
 initial maintenance and DOS save interoperability remain separate work.

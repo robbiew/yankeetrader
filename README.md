@@ -61,8 +61,7 @@ controls. This extends merged RNG/graph/port recovery with configuration, inacti
 players, complete sectors/HQ and inherited inactive planet records. Fresh
 scoreboard-path, January 1 and leap-day controls check raw buffer/zero residues.
 Production generation keeps its current Go streams and safeguards; save format
-remains **34**. This supplies no DOS save importer or production compatibility
-profile. See [complete replay evidence and limits](research/yt-initializer-replay/RECOVERY.md),
+is **35** for the playable profile described below. No DOS save importer is supplied. See [complete replay evidence and limits](research/yt-initializer-replay/RECOVERY.md),
 [graph/port replay](research/yt-port-replay/RECOVERY.md) and
 [raw RNG recovery](research/yt-rng-seeding/RECOVERY.md).
 The [pure Go source generator](research/yt-initializer-replay/GO_IMPLEMENTATION.md)
@@ -70,14 +69,31 @@ now reproduces all ten complete native targets using portable golden fixtures;
 Go tests require no Python, emulator or original executables. It returns bounded
 in-memory source bytes, preserving the original defects for comparison. January
 10 source dates are rejected until their port-date cancellation residue is verified.
-The [production compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-now has an [internal safe projection candidate](research/yt-initializer-replay/PROJECTION.md):
-source collisions/protected HQs and disconnected maps are rejected, while current
-UTC watermarks and bounded faction bootstrap apply. Success-path tests project the
-retained source buffer directly and verify it remains unchanged. CLI selection and persisted
-QB recipe/reset support are still required; its profile and flags are not implemented.
-Its reset contract distinguishes failures before save replacement from committed
-updates with durability warnings; a warning must not trigger a repeated reset.
+**Playable QB generation is available in this source build** (the published
+v0.1.0 packages predate it). To initialize a separate
+world, use `-init -generation-profile qb36-v1 -qb-state 0xc805 -qb-date 2027-01-01`.
+The saved typed recipe records the profile, raw 24-bit post-RANDOMIZE state,
+explicit source date and SHA-256 of the complete original source candidate.
+Both Genesis and administrative resets preserve the recipe and repeat the map,
+port names/economy and initial HQ, using current UTC maintenance watermarks and
+separate modern bootstrap randomness. Existing worlds upgrade without rerolling
+or acquiring a recipe. Stored Genesis confirmations own independent copies of
+the complete recipe and raw state, preventing caller mutation of a pending quote.
+Unknown/incomplete recipes and pre-35 saves claiming one
+are rejected. This is QB generation with documented modern adaptations, not DOS
+save interoperability or exact original maintenance.
+
+The profile fixes geometry at 3,000 sectors/1,000 ports, requires a 2026–2028 date
+(except January 10), and rejects explicit `-seed`, `-dos-warps` or `-dos-ports`.
+It rejects original duplicate ports, protected HQs and disconnected maps without
+publishing a save or silently reseeding. The raw state accepts unsigned decimal
+or `0x` hexadecimal, including zero; it is not derived from a clock or modern seed.
+Use these flags only with `-init`; ordinary play/maintenance reads the saved recipe.
+See [sysop setup and reset instructions](docs/SYSOP.md#playable-qb36-v1-worlds),
+[compatibility contract](research/yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
+and [projection adaptations](research/yt-initializer-replay/PROJECTION.md).
+A reset durability warning means the reset committed; inspect the active season
+before retrying, and never treat that warning as a rollback.
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables
@@ -577,7 +593,7 @@ Sector-defense deployment/combat and reinforcement, plus bounded Mercenary daily
 
 ## Storage and recovery
 
-**Save rollback compatibility:** This build uses world version **34**, adding the opt-in DOS warp generation profile; version 33 added the opt-in DOS port generation/pricing profile; version 32 added the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-33 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Pre-33 saves claiming a port generation profile are rejected. Pre-34 saves claiming a warp generation profile are rejected. Older binaries cannot read version 34. Existing maps, ports, prices and supplies are not rerolled by upgrade.
+**Save rollback compatibility:** This build uses world version **35**, adding typed QB recipes and repeat-layout resets; version 34 added the opt-in DOS warp generation profile; version 33 added the opt-in DOS port generation/pricing profile; version 32 added the Xannor turn-bonus journal operation; version 31 added extended typed public newspaper events; version 30 added administrative season results without winners and version 29 introduced typed private port-sale notices. It retains public planet-creation and ALL-broadcast newspaper entries, along with explicit plasma death semantics, Wanderer identity, nonreusable planet generations, season epochs, public winner history, lottery replay protection, scanners, NPC history and attributed hazards. Supported version-1 through version-34 worlds upgrade in memory and persist on the next successful update; read-only loading does not rewrite saves or grant assets. Experimental legacy memberships without team metadata and pre-26 saves claiming a plasma death are rejected. Pre-27 saves claiming public broadcast news are also rejected. Pre-28 saves claiming planet-creation news are rejected. Pre-29 saves claiming port-sale system notices or typed sale payloads are rejected. Pre-30 saves claiming administrative reset records are rejected. Pre-31 saves claiming extended news kinds or combat payloads are rejected. Pre-32 saves claiming Xannor turn-bonus events are rejected. Pre-33 saves claiming a port generation profile are rejected. Pre-34 saves claiming a warp generation profile are rejected. Pre-35 saves claiming QB recipes are rejected. Older binaries cannot read version 35. Existing maps, ports, prices and supplies are not rerolled by upgrade.
 
 Version 25 introduced The Wanderer's explicit identity in reserved planet slot 1; migration creates no free planet, and eligible restoration allocates a fresh incarnation. Version 24 introduced nonreusable planet generations. Season migration does not reset the world or invent past winner history, and names never infer a faction home or special planet identity. Back up the data directory with the door stopped and upgrade every node together. To revert binaries, restore their matching backup; that discards later progress. Migration preserves existing account assets and history; ordinary later maintenance may retire qualifying inactive dead accounts.
 
@@ -649,7 +665,7 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
-Version-1 through version-33 worlds upgrade to version 34 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+Version-1 through version-34 worlds upgrade to version 35 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
 
 ## Complete recovery archive
 

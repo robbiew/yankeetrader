@@ -42,6 +42,7 @@ func (s Store) PrepareGenesis(now func() time.Time, deadline time.Time) (entry g
 			return errors.New("session time expired")
 		}
 		saved := entry
+		saved.QBRecipe = entry.QBRecipe.Clone()
 		saved.Ports = append([]int(nil), entry.Ports...)
 		s.ship.genesisActive = &saved
 		return nil
