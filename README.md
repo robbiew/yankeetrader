@@ -571,6 +571,15 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Maintenance RNG tracing](research/yt-maint/RNG_TRACE.md) now verifies five complete
+instrumented streams (127,618 events), including repeated TIMER reseeding during
+NPC processing. The verifier separates measured probe-induced sector differences
+from untouched DOS behavior; one paired control matches the whole native world.
+Portable recurrence, provenance and corruption checks run in CI. Exact
+application draw ordering and post-maintenance replay remain research; gameplay,
+source fingerprints and save 35 are unchanged.
+
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

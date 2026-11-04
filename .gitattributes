@@ -249,3 +249,8 @@
 /research/yt-maint/initial-controls/**/*.LOG -diff
 /research/yt-maint/initial-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-maint/initial-controls/**/ANSWERS.TXT -diff
+
+# Runtime RNG controls retain exact DOS/probe bytes and raw launch witnesses.
+/research/yt-maint/rng-controls/** -text
+/research/yt-maint/rng-controls/**/*.LOG -diff
+/research/yt-maint/rng-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

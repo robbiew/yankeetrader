@@ -312,3 +312,12 @@ integrated launches, split before/after worlds and side files, independent repea
 and maintenance-clock variations. They establish bounded bootstrap and clock
 sensitivity without claiming exact maintenance RNG/MBF replay. Modern gameplay,
 source fingerprints and save schema are unchanged.
+
+
+## Runtime RNG tracing (2026-11-04)
+
+[Five complete instrumented streams](RNG_TRACE.md) now establish startup seed
+and repeated reseeding, with every draw/seed recurrence checked. Probe-induced
+sector differences are measured against untouched controls, not claimed as
+native equality. Application call attribution and exact maintenance replay remain
+separate work; no gameplay or save changes.

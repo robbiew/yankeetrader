@@ -1541,3 +1541,26 @@ rehashed-log controls cover empty logs, contradictory requested/applied cycles
 and a missing configuration-isolation flag in both phases. All eight native
 controls and four test methods/20 rejection controls pass. Original native
 observations and hashes are unchanged; README and research instructions updated.
+
+
+## Maintenance runtime RNG streams — 2026-11-04
+
+Research-only `codex/maintenance-rng-trace`: five complete copied-runtime traces,
+127,618 events (127,309 draws / 309 reseeds), independent repeat and New Year
+stream equality. A declared 60-byte padding hook plus two three-byte call patches
+preserve executable header/size and replay displaced instructions. The original
+maintenance and all archive files remain unchanged. Raw before/after worlds,
+auxiliary files, transcripts and launch/clock/return provenance are retained.
+
+- `verify_maintenance_rng.py`: five streams, every recurrence, patch provenance,
+  exact observation pins and measured native/instrumented boundaries passed.
+- `test_verify_maintenance_rng.py`: four methods / 17 rejection controls passed.
+- Parent initial-maintenance verifier and four-method / 20-rejection suite passed.
+- Archive verification: all 4,682 original hashes passed.
+
+Instrumenting TIMER-sensitive code changes some NPC outcomes: 51 sector bytes
+in midnight/repeat/New Year and 16 in the one-second control; the two-second
+world is exactly native-equal. These differences are enforced and documented,
+not masked or redefined as native behavior. No Go gameplay, source fingerprint,
+save-schema, release or live/native BBS acceptance claim changes.
+[Complete findings and reproduction](../research/yt-maint/RNG_TRACE.md).

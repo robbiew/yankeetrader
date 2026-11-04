@@ -59,6 +59,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+Maintenance RNG research now verifies five complete instrumented streams and
+127,618 events with repeated reseeding, exact repeats and explicitly measured
+probe timing effects. [Method, counts and limits](yt-maint/RNG_TRACE.md).
+Startup seed and full instrumented-event capture are established. Application
+call-site order and lower-perturbation/timer-controlled probes remain next;
+exact native post-maintenance replay is not implemented.
+
+
 Original initial-maintenance research now retains eight native controls with
 untouched integrated launches, split before/after files, exact repeats and
 clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
