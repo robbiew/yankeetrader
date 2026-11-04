@@ -206,3 +206,10 @@ hashes and the captured driver hash match the retained files/current driver.
 [summary with archive SHA256](multicaller-campaign/login-arrival-fix-summary.json)
 retain startup output, inputs, exit audits and world snapshots. Linux CI on the
 new PR head remains required before merge.
+
+## Complementary full QB acceptance
+
+The separate [full QB session/store campaign](QB_FULL_WORLD_CAMPAIGN.md) adds
+controlled-clock multi-day maintenance, reconnects and an earned default 300-port
+Genesis on 3,000 sectors/1,000 ports. This earlier TCP/PTY scenario remains a
+20-port transport/concurrency control; its original receipts and scope are intact.

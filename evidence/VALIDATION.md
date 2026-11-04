@@ -1448,6 +1448,34 @@ establish native Windows socket/durability behavior, live BBS acceptance, exact
 DOS maintenance, arbitrary MBF arithmetic or DOS save interoperability. Published
 v0.1.0 packages predate this source-build feature; no new release was published.
 
+
+## Full QB world acceptance — 2026-11-03
+
+The [full campaign report](QB_FULL_WORLD_CAMPAIGN.md) and retained
+[summary](qb-full-world/summary.json) establish a bounded production session/store
+acceptance run on `qb36-v1`: 3,000 sectors, 1,000 ports, normal starting assets,
+111 trade cycles and 300 separately confirmed purchases. The default Genesis
+threshold was not overridden. Three simulated UTC maintenance transitions
+advanced every port economy, NPC defenses and Wanderer state; same-date retries
+were exact no-ops. The captain parked at Earth between dates, replanned changed
+trade classes and used one confirmed non-HQ battle to reopen an NPC-blocked
+frontier, purchasing fighters with earned credits.
+
+The run passed the 299-port denial, fresh 300-port confirmation, recipe/source-map/
+source-economy/HQ reset, current injected-date watermarks, reconnect preservation
+and stale-login write rejection after player-ID reuse. Its 1,147 sessions and
+3,510 input lines use the real Session handlers with scripted line input and a
+controlled game clock; this is distinct from real TCP/PTY transport and native
+Windows/BBS acceptance. Known disruption locations are avoided deliberately.
+No production gameplay, save schema or CLI behavior changed in this milestone.
+
+Validation passed: the complete sequential campaign (269.77 seconds), current
+race-enabled door suite, vet, three planner regressions, independent artifact
+verification and six Python verification tests with 22 corruption controls.
+Local tests used Go 1.27.3 and the existing GoDoors review modfile. CI adds a
+separate full-world job with the pinned minimum GoDoors checkout, normal long
+campaign plus race-enabled planner checks and retained diagnostic artifacts.
+
 ## January 10 source-date admission — 2026-11-04
 
 [Ten fresh original controls](../research/yt-initializer-replay/JANUARY10.md)

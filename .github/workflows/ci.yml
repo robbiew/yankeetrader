@@ -269,3 +269,45 @@ jobs:
           if [ -f "$RUNNER_TEMP/yt-multicaller/summary.json" ]; then
             cat "$RUNNER_TEMP/yt-multicaller/summary.json"
           fi
+
+  qbacceptance:
+    name: Full QB world multi-day 300-port campaign
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: yankeetrader
+    steps:
+      - name: Check out Yankee Trader
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: yankeetrader
+          persist-credentials: false
+      - name: Check out minimum supported GoDoors
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: robbiew/godoors
+          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          path: godoors
+          persist-credentials: false
+      - name: Set up minimum supported Go version
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.23.x'
+          cache-dependency-path: yankeetrader/go.sum
+      - name: Validate retained evidence and run full QB session campaign
+        env:
+          YT_QB_CAMPAIGN_OUT: ${{ runner.temp }}/yt-qb-full-world
+        run: |
+          python3 scripts/test_verify_qb_campaign.py
+          go test -race -count=1 ./internal/door -run '^TestQBCampaign'
+          go test -count=1 -timeout 15m -v ./internal/door -run '^TestQBFullWorldAcceptanceCampaign$'
+          python3 scripts/verify_qb_campaign.py "$RUNNER_TEMP/yt-qb-full-world"
+      - name: Retain full QB campaign evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: qb-full-world-campaign
+          path: ${{ runner.temp }}/yt-qb-full-world
+          retention-days: 14
+          if-no-files-found: error

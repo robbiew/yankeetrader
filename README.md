@@ -17,7 +17,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-04) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -96,6 +96,17 @@ See [sysop setup and reset instructions](docs/SYSOP.md#playable-qb36-v1-worlds),
 and [projection adaptations](research/yt-initializer-replay/PROJECTION.md).
 A reset durability warning means the reset committed; inspect the active season
 before retrying, and never treat that warning as a rollback.
+
+The [full QB world acceptance campaign](evidence/QB_FULL_WORLD_CAMPAIGN.md) exercises
+3,000 sectors/1,000 ports, multiple controlled UTC maintenance dates, session
+reconnects and a legitimately earned default 300-port Genesis. Daily same-date
+retries must be idempotent; reset checks preserve source provenance/layout and
+reject stale logins after player-ID reuse. Evidence verification binds reset
+watermarks to the counted UTC days and reconciles every session input with the
+action trail, trade/equipment receipts and summary counts. This is production session/store
+acceptance with simulated terminal input and an injected game clock. The separate
+Door32 TCP/PTY campaign covers transport/concurrent callers; live BBS and native
+Windows acceptance remain outstanding.
 
 
 **DOS warp-generation rules are available for new worlds:** `-dos-warps` enables

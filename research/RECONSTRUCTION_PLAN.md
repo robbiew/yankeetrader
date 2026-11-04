@@ -2,10 +2,10 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-03
+## Current implementation and next work — checked 2026-11-04
 
 This section is the current planning baseline, checked against merged `main`
-through `ed6d000`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `f269490`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -14,7 +14,9 @@ through `ed6d000`, including PRs [#73](https://github.com/robbiew/yankeetrader/p
 (compatibility design) and [#79](https://github.com/robbiew/yankeetrader/pull/79)
 (release packaging/sysop cheat sheet), [#80](https://github.com/robbiew/yankeetrader/pull/80)
 (pure Go generator/goldens) and [#81](https://github.com/robbiew/yankeetrader/pull/81)
-(safe world projection). The subsequent playable `qb36-v1` integration adds typed
+(safe world projection) and [#82](https://github.com/robbiew/yankeetrader/pull/82)
+(playable `qb36-v1`) and [#83](https://github.com/robbiew/yankeetrader/pull/83)
+(full QB acceptance). The playable integration adds typed
 recipes, CLI admission and both reset paths in the current source build; published
 v0.1.0 packages predate that integration. Release **v0.1.0 is published**. The playable QB profile uses documented modern adaptations rather than exact
 DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
@@ -66,7 +68,8 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 | DOS warp rules / PR #74 | Saved independent map profile with local/long links, isolation repair and Earth shortcuts; bounded modern safeguards. |
 | Raw RNG recovery / PR #75 | Verified BRUN30 RND/RANDOMIZE subset, measured TIMER seeding and selected graph replay; startup-price results preserved. |
 | Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
-| Playable QB profile / save 35 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
+| Full QB world acceptance | Controlled UTC multi-day production session/store campaign, earned 300-port Genesis, reconnect/old-login guards and source-layout reset; independent retained-evidence/corruption checks. [Boundaries and reproduction](../evidence/QB_FULL_WORLD_CAMPAIGN.md). |
+| Playable QB profile / save 35 / PR #82 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
 | Pure Go generator and safe projection / PRs #80–81 | Portable ten-control goldens, bounded source generation and unpublished safe projection/admission. |
 | January 10 admission parity | Ten additional original date controls verify port-date FAC residues across 2026–2028; twenty portable whole-world goldens pass. The source generator and playable recipe accept January 10 without changing earlier hashes or schema 35. [Evidence](yt-initializer-replay/JANUARY10.md). |
 | Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
@@ -114,10 +117,13 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
    Define identity, version and conversion policies before claiming compatibility.
 4. **Target-host and release acceptance.** Run real BBS gameplay/disconnect/time
    expiry, restore/upgrade/reset drills and native Windows inherited-socket/crash
-   durability checks. Extend multi-day economy and default 300-port victory
-   acceptance and document balance departures. The concurrent Door32 campaign
-   validates simulated POSIX callers and a configured 20-port victory, not all
-   production environments. [Validation boundaries](../evidence/VALIDATION.md),
+   durability checks. The full QB session/store campaign now covers multi-day economy and the default
+   300-port victory using an injected UTC game clock and fixed known disruption
+   locations; do not repeat that bounded acceptance as missing work. Broader
+   balance/stress validation, real-time long-running campaigns and target-host
+   acceptance remain. The concurrent Door32 campaign validates simulated POSIX
+   callers and a configured 20-port victory; neither lane establishes all
+   production environments. [Full QB acceptance](../evidence/QB_FULL_WORLD_CAMPAIGN.md). [Validation boundaries](../evidence/VALIDATION.md),
    [campaign evidence](../evidence/MULTICALLER_DOOR_CAMPAIGN.md).
 
 The following dated/historical log records what was known and enabled at each
