@@ -39,7 +39,7 @@ claimed as already completed for this unpublished branch.
 | Endgame | Visible 299-port refusal, 300/300 winner receipt, season 2 and source-layout reset |
 | Reconnect protection | Same-date asset preservation; old-session write rejected after numeric ID reuse |
 
-The independent verifier passed its positive retained-evidence check and **17
+The independent verifier passed its positive retained-evidence check and **22
 corruption controls**, including rehashed false summaries, altered ownership,
 source recipe/history/economy/watermarks, changed daily state, forged driver/
 action/receipt evidence and missing manifest entries.
@@ -78,7 +78,10 @@ all raw QB seeds, every admitted source date or general DOS numeric parity.
 The retained [summary](qb-full-world/summary.json) contains actual day/session/
 trade/purchase counts and daily receipts. The [manifest](qb-full-world/manifest.json)
 pins compressed snapshots, the complete action/receipt transcript and the exact
-Go driver embedded into the compiled test. The independent verifier checks hashes,
+Go driver embedded into the compiled test. Reset timestamps must match the
+initial clock plus the verified daily transitions. Every session header is parsed
+and reconciled with the complete action list and command/trade/equipment counts
+and receipts, including acquired holds and fighter-loss accounting. The independent verifier checks hashes,
 source provenance, all daily deltas/idempotence and the full before/after reset.
 Rehashed corruption tests must reject false ownership, altered recipes/history,
 changed reset economy, missing artifacts and repeated maintenance changes.

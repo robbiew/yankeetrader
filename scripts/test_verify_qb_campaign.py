@@ -20,6 +20,9 @@ class QBVerificationTests(unittest.TestCase):
             ('summary.json',lambda w:w.update(outcome='failed')),
             ('summary.json',lambda w:w.update(threshold=20)),
             ('summary.json',lambda w:w.update(days=0)),
+            ('summary.json',lambda w:w.update(sessions=w['sessions']-1)),
+            ('summary.json',lambda w:w.update(commands=w['commands']-1)),
+            ('summary.json',lambda w:w.update(trade_cycles=w['trade_cycles']-1)),
             ('before-genesis.json.gz',lambda w:next(p for key,p in w['Ports'].items() if key!='1' and p['Owner']==1).update(Owner=0)),
             ('after-genesis.json.gz',lambda w:w['QBRecipe'].update(State=1)),
             ('after-genesis.json.gz',lambda w:w['SeasonResults'][0].update(Ports=20)),
@@ -58,6 +61,30 @@ class QBVerificationTests(unittest.TestCase):
                 manifest[name]=hashlib.sha256(path.read_bytes()).hexdigest()
                 (target/'manifest.json').write_text(json.dumps(manifest))
                 with self.assertRaises(AssertionError):verify(target)
+
+    def test_rehashed_missing_earned_inputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target=Path(tmp)/'evidence';shutil.copytree(ROOT,target)
+            path=target/'actions.json';actions=json.loads(path.read_text())
+            actions=[a for a in actions if not a.startswith(('buy ','sell ','equip '))]
+            path.write_text(json.dumps(actions))
+            manifest=json.loads((target/'manifest.json').read_text())
+            manifest[path.name]=hashlib.sha256(path.read_bytes()).hexdigest()
+            (target/'manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaises(AssertionError):verify(target)
+
+    def test_rehashed_jointly_stale_reset_watermarks(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            target=Path(tmp)/'evidence';shutil.copytree(ROOT,target)
+            initial=json.loads(gzip.decompress((target/'initial.json.gz').read_bytes()))
+            path=target/'after-genesis.json.gz';world=json.loads(gzip.decompress(path.read_bytes()))
+            world['Created']=initial['Created'];world['LastMaintenance']=initial['LastMaintenance']
+            for port in world['Ports'].values():port['Updated']=initial['Created']
+            path.write_bytes(gzip.compress(json.dumps(world).encode(),mtime=0))
+            manifest=json.loads((target/'manifest.json').read_text())
+            manifest[path.name]=hashlib.sha256(path.read_bytes()).hexdigest()
+            (target/'manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaises(AssertionError):verify(target)
 
     def test_missing_or_unhashed_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:

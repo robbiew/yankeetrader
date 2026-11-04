@@ -1471,7 +1471,7 @@ No production gameplay, save schema or CLI behavior changed in this milestone.
 
 Validation passed: the complete sequential campaign (269.77 seconds), current
 race-enabled door suite, vet, three planner regressions, independent artifact
-verification and four Python verification tests with 17 corruption controls.
+verification and six Python verification tests with 22 corruption controls.
 Local tests used Go 1.27.3 and the existing GoDoors review modfile. CI adds a
 separate full-world job with the pinned minimum GoDoors checkout, normal long
 campaign plus race-enabled planner checks and retained diagnostic artifacts.

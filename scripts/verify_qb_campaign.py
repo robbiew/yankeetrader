@@ -4,6 +4,7 @@ import datetime
 import gzip
 import hashlib
 import json
+import re
 from pathlib import Path
 
 
@@ -23,6 +24,11 @@ def verify(root):
     def world(name):
         return json.loads(gzip.decompress((root/f'{name}.json.gz').read_bytes()))
     initial, earned, before, after, reconnected = [world(n) for n in ('initial','earned-budget','before-genesis','after-genesis','reconnected')]
+    initial_at=datetime.datetime.fromisoformat(initial['Created'].replace('Z','+00:00'))
+    reset_at=initial_at+datetime.timedelta(days=days)
+    assert datetime.datetime.fromisoformat(after['Created'].replace('Z','+00:00'))==reset_at, 'reset clock does not match campaign days'
+    assert before['LastMaintenance']==after['LastMaintenance']==reset_at.date().isoformat(), 'reset campaign date'
+    assert reconnected['Created']==after['Created'] and before['Created']==initial['Created'], 'season clock continuity'
     recipe = initial['QBRecipe']
     assert recipe['Profile']=='qb36-v1' and recipe['State']==0xc805 and recipe['Date']=='2027-01-01', 'source recipe'
     assert recipe['SourceSHA256']=='e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328', 'retained native source fingerprint'
@@ -38,6 +44,7 @@ def verify(root):
     assert owned(before)==300 and before['Season']==1, 'actual 300 owned ports'
     assert after['Season']==2 and after['Players']=={} and owned(after)==0, 'reset world'
     result = after['SeasonResults']
+    assert len(result)==1 and result[0]['Started']==initial['Created'] and result[0]['Ended']==after['Created'], 'winner clock continuity'
     assert len(result)==1 and result[0]['Winner']=='Atlas' and result[0]['Ports']==300 and result[0]['Threshold']==300 and not result[0].get('Administrative'), 'winner history'
     assert reconnected['Players']['1']['Identity']=='acceptance:atlas' and reconnected['Players']['1']['Credits']==1005 and owned(reconnected)==0, 'new season reconnect'
     for w in (initial,earned,before,after,reconnected):
@@ -79,10 +86,35 @@ def verify(root):
         for key, port in pre['Ports'].items():
             assert all(post['Ports'][key][f]==port[f] for f in ('ID','Sector','Name')), 'maintenance moved port'
         previous=receipt['date']
+    assert previous==reset_at.date().isoformat(), 'final maintenance date'
     assert defense_changes>0 and wanderer_moves>0, 'NPC maintenance effects missing'
     transcript=gzip.decompress((root/'transcript.txt.gz').read_bytes()).decode()
     assert '1 short' in transcript and '300 ports (required 300)' in transcript, 'threshold terminal receipts'
     actions=json.loads((root/'actions.json').read_text())
+    headers=list(re.finditer(r'^SESSION ([1-9][0-9]*) UTC (\S+) INPUT (\[.*\])$',transcript,re.MULTILINE))
+    assert [int(h[1]) for h in headers]==list(range(1,report['sessions']+1)), 'session input count/order'
+    recorded=[]
+    previous_at=initial_at
+    for header in headers:
+        at=datetime.datetime.fromisoformat(header[2].replace('Z','+00:00'))
+        assert previous_at<=at<=reset_at, 'session UTC order/range'
+        previous_at=at
+        # Go's %q slice contains whitespace-separated quoted input strings.
+        payload=header[3][1:-1]
+        literals=re.findall(r'"(?:[^"\\]|\\.)*"',payload)
+        assert literals and not re.sub(r'"(?:[^"\\]|\\.)*"','',payload).strip(), 'session input encoding'
+        recorded.extend(json.loads(literal) for literal in literals)
+    assert previous_at==reset_at and recorded==actions and len(actions)==report['commands'], 'actions disagree with session transcript/command count'
+    trades=[a.split() for a in actions if a.startswith(('buy ','sell '))]
+    assert len(trades)==2*report['trade_cycles'] and transcript.count('Trade saved.')==len(trades), 'trade cycle receipts/count'
+    for buy,sell in zip(trades[::2],trades[1::2]):
+        assert len(buy)==len(sell)==3 and buy[0]=='buy' and sell[0]=='sell' and buy[1:]==sell[1:] and buy[1] in ('ore','organics','equipment') and int(buy[2])>0, 'trade cycle inputs'
+    equipment=[a.split() for a in actions if a.startswith('equip ')]
+    assert all(len(a)==3 and a[1] in ('holds','fighters') and int(a[2])>0 for a in equipment), 'equipment inputs'
+    assert transcript.count('Equipment purchased and saved.')==len(equipment), 'equipment receipts/count'
+    assert 10+sum(int(a[2]) for a in equipment if a[1]=='holds')==earned['Players']['1']['Holds']==before['Players']['1']['Holds'], 'earned holds input trail'
+    battles=re.findall(r'Defense encounter saved: (\d+) attackers lost, (\d+) defenders destroyed, (\d+) surrendered\.',transcript)
+    assert 25+sum(int(a[2]) for a in equipment if a[1]=='fighters')-sum(int(b[0]) for b in battles)+sum(int(b[2]) for b in battles)==before['Players']['1']['Fighters'], 'earned fighters input trail'
     assert actions.count('b')==300 and actions.count('y')==300+2*report['boundary_battles'] and 'GENESIS' in actions, 'confirmed action trail'
     assert sum(a.startswith('breach ') for a in actions)==report['boundary_battles'] and transcript.count('Defense encounter saved:')==report['boundary_battles'], 'NPC boundary receipts'
     return report
