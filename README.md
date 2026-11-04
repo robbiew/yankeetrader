@@ -571,6 +571,13 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+**Maintenance seed boundaries are now measured:** 151 terminating DOS probes
+and six untouched paired runs recover entry `RANDOMIZE -TIMER`, two positive-TIMER
+helper reseeds and a selected first-hit Wanderer draw chain. Raw states preserve
+zero residues and the old low byte. Complete dynamic maintenance draw order and
+post-maintenance replay remain open; this research changes no gameplay or save 35.
+[Evidence, timing limits and portable checks](research/yt-maint/RNG_FIRST_HITS.md).
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

@@ -1541,3 +1541,41 @@ rehashed-log controls cover empty logs, contradictory requested/applied cycles
 and a missing configuration-isolation flag in both phases. All eight native
 controls and four test methods/20 rejection controls pass. Original native
 observations and hashes are unchanged; README and research instructions updated.
+
+## Initial-maintenance RNG first-hit boundaries — 2026-11-04
+
+Research on `feat/maintenance-rng-research`, based on published initial-handoff
+research PR #85. No Go source, `qb36-v1`, schema-35, dependency or original archive
+changes. The capture writer changes only same-size disposable executable copies;
+its terminating probes are not normal-maintenance completion claims.
+
+- `python3 scripts/verify_maintenance_rng.py`: 151 probes passed (108 selected
+  hits, nine baseline inventory hits, 34 guarded misses), two exact native reads
+  and six freshly paired untouched completed runs.
+- `python3 scripts/test_verify_maintenance_rng.py`: 35 corruption tests passed.
+  Rehashed altered states/FACs/worlds, missing/forged hit/return witnesses,
+  phase/site/source/executable substitution, contradictory launch clocks/options,
+  rewritten pins, native truncation/address/bytes and independent seed/draw
+  semantics are rejected. Untouched-oracle completion/input forgery is rejected.
+- `python3 scripts/verify_initial_maintenance.py` and
+  `python3 scripts/test_verify_initial_maintenance.py`: all eight earlier native
+  controls and four test methods/20 rejection controls passed unchanged.
+- `python3 scripts/verify_rng_native.py`: 13 existing native RNG contracts passed.
+  `python3 scripts/verify_rng_trace.py`: all 16 raw traces/4,096 state-FAC pairs
+  passed unchanged.
+- `python3 scripts/verify_archive.py`: all 4,682 archived hashes passed.
+- Script compilation and a fresh NASM assembly of the retained probe source
+  matched the exact capture patch bytes. Scoped whitespace checks passed.
+- CI now runs the new portable verifier and corruption suite. DOSBox, NASM,
+  Ghidra and Java are capture/research tools, not CI or gameplay dependencies.
+
+The measured main/helper reseeds and selected first Wanderer draw chain close
+only that precision slice. All 34 guarded-miss worlds match the new untouched
+baseline exactly; the new untouched repeat matches too. Their 97-byte difference
+from the older launch recipe is retained and documented, with no automatic
+expected-hash refresh. Exact full dynamic draw counts/rejection chronology,
+post-maintenance/auxiliary replay, general MBF arithmetic and native target-host
+acceptance remain open. The Go suite and terminal gameplay tests were not rerun
+for this research-only addition; no new gameplay validation is claimed.
+
+[Findings, native evidence, scope and reproduction](../research/yt-maint/RNG_FIRST_HITS.md).

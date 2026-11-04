@@ -1,0 +1,87 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+  -  The Wanderer is missing or has been destroyed!
+  -  The Wanderer regenerated with P.H.O.E.N.I.X. device!
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+  -  The Xannor have made a Planet!
+The Xannor home base now has a planet!
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 838 
+  -  Group: 3               Size: 897 
+  -  Group: 4               Size: 522 
+  -  Group: 5               Size: 112 
+  -  Group: 6               Size: 39 
+  -  Group: 7               Size: 8 
+  -  Group: 8               Size: 245 
+  -  Group: 9               Size: 1116 
+  -  Group: 10              Size: 1189 
+  -  Group: 11              Size: 43 
+  -  Group: 12              Size: 142 
+  -  Group: 13              Size: 1518 
+  -  Group: 14              Size: 485 
+  -  Group: 15              Size: 182 
+  -  Group: 16              Size: 871 
+  -  Group: 17              Size: 33 
+  -  Group: 18              Size: 10 
+  -  Group: 19              Size: 211 
+  -  Group: 20              Size: 64 
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+
+  -  The Mercenaries have built a home base using a captured Genesis Device!
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 11-02-2026 00:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+        1,000,000   100.00%                  0    0.00%
+
