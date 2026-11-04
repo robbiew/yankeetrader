@@ -3,6 +3,7 @@ import datetime
 import gzip
 import hashlib
 import json
+import shlex
 from pathlib import Path
 import sys
 from verify_rng_clock import get, read_date, read_time
@@ -81,6 +82,31 @@ PINS = {'baseline-integrated': {'after-YTDATA.DAT.gz': '855da6bbcbe399c018a45997
                       'before-YTNEWS.DAT.gz': '1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a'}}
 
 
+
+def verify_launch(d, phase, commands):
+    messages = [line.split(' | ', 1)[1] for line in
+                (d / (phase + '-dosbox.log')).read_text().splitlines() if ' | ' in line]
+    invocations = [m.removeprefix('arguments: ') for m in messages if m.startswith('arguments: ')]
+    assert len(invocations) == 1, 'one recorded DOSBox invocation'
+    argv = shlex.split(invocations[0])
+    assert argv, 'nonempty invocation'
+    assert Path(argv[0]).name == 'dosbox-staging', 'DOSBox executable'
+    assert len(argv) > 10 and argv[7] == '-c', 'launch options'
+    mount = argv[8]
+    assert mount.startswith('mount c '), 'isolated mount command'
+    directory = Path(mount.removeprefix('mount c '))
+    assert directory.is_absolute() and directory.name == d.name, 'control mount identity'
+    expected = ['--noprimaryconf', '--nolocalconf', '--set', 'cpu_cycles=200000',
+                '--set', 'nosound=true'] + [v for c in [mount, 'c:'] + commands + ['exit']
+                                          for v in ('-c', c)]
+    assert argv[1:] == expected, 'recorded invocation matches recipe'
+    applied = [m for m in messages if m.startswith('CPU:')]
+    assert len(applied) == 1 and applied[0].startswith('CPU: Setting fixed 200000 cycles.'), 'applied CPU setting'
+    assert 'dosbox-staging version 0.83.0 ()' in messages, 'capture emulator version'
+    assert 'SDL: dummy video initialised' in messages, 'headless capture video'
+    assert "MIXER: Sound output disabled ('nosound' mode)" in messages, 'capture sound setting'
+
+
 def verify(root=DEFAULT):
     assert {p.name for p in root.iterdir()} == set(PINS), 'complete control matrix'
     worlds = {}
@@ -108,12 +134,14 @@ def verify(root=DEFAULT):
                     'echo INITIALIZER_RETURNED > INITRET.LOG',
                     'date > ENDDATE.LOG', 'time > ENDTIME.LOG']
         assert (d / 'init-commands.txt').read_text() == '\n'.join(commands) + '\n'
+        verify_launch(d, 'init', commands)
         if mode == 'split':
             commands = ['date ' + meta['date'], f'time 00:00:{second:02d}',
                         'date > MDATE.LOG', 'time > MTIME.LOG', 'ytmaint > MAINT.LOG',
                         'echo MAINTENANCE_RETURNED > MRET.LOG',
                         'date > MEDATE.LOG', 'time > METIME.LOG']
             assert (d / 'maint-commands.txt').read_text() == '\n'.join(commands) + '\n'
+            verify_launch(d, 'maint', commands)
 
         for n, digest in meta['files'].items():
             assert SHA((d / n).read_bytes()) == digest, 'retained file hash: ' + n

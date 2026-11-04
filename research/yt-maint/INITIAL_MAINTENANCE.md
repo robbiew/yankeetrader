@@ -108,8 +108,11 @@ python3 scripts/test_verify_initial_maintenance.py
 The verifier independently pins every decompressed world/side file, validates
 exact control/file inventories, binary identities, commands, clocks, completion
 and shell-return witnesses, NPC slots, graph/name preservation and repeat/clock
-relationships. Four test methods exercise 12 rejection controls (nine rehashed
-content alterations, two missing controls/witnesses and a forged binary hash).
+relationships. Launch provenance is parsed independently: each phase must record the exact
+recipe invocation, isolated control mount, fixed 200,000 applied CPU cycles and
+expected emulator/video/sound settings. Four test methods exercise 20 rejection
+controls (17 rehashed content alterations, two missing controls/witnesses and a
+forged binary hash), including empty and contradictory launch logs for both phases.
 Rehashing altered observations in their manifest does not make them pass.
 
 For new native observations, use an absent destination with DOSBox Staging:

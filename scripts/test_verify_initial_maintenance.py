@@ -30,6 +30,13 @@ class InitialMaintenanceEvidenceTests(unittest.TestCase):
             ('INIT.LOG', lambda b: b.replace(b'<YT-INIT Normal Termination>', b'FAILED')),
             ('maint-commands.txt', lambda b: b.replace(b'time 00:00:00', b'time 00:00:01')),
         ]
+        for phase in ('init', 'maint'):
+            cases.extend([
+                (phase + '-dosbox.log', lambda b: b''),
+                (phase + '-dosbox.log', lambda b: b.replace(b'cpu_cycles=200000', b'cpu_cycles=100000')),
+                (phase + '-dosbox.log', lambda b: b.replace(b'fixed 200000 cycles.', b'fixed 100000 cycles.')),
+                (phase + '-dosbox.log', lambda b: b.replace(b'--nolocalconf ', b'')),
+            ])
         for filename, mutate in cases:
             with self.subTest(filename=filename), tempfile.TemporaryDirectory() as temp:
                 root = Path(temp) / 'controls'; shutil.copytree(DEFAULT, root)

@@ -1529,3 +1529,15 @@ No game code, save format or source fingerprints changed.
 [Native findings, exact scope and reproduction](../research/yt-maint/INITIAL_MAINTENANCE.md).
 Maintenance RNG state/draw tracing and bit-exact Go post-maintenance replay are
 not established by these captures. No live BBS/native Windows acceptance claimed.
+
+
+### PR #85 launch provenance review fix
+
+The verifier now independently parses both phase launch logs and requires the
+recorded command sequence/options, isolated control mount, DOSBox 0.83.0,
+headless video/sound settings and exactly one applied fixed-200,000 CPU setting.
+Mutable manifest hashes alone cannot authenticate these claims. Eight added
+rehashed-log controls cover empty logs, contradictory requested/applied cycles
+and a missing configuration-isolation flag in both phases. All eight native
+controls and four test methods/20 rejection controls pass. Original native
+observations and hashes are unchanged; README and research instructions updated.
