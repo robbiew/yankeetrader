@@ -68,6 +68,7 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 | Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
 | Playable QB profile / save 35 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
 | Pure Go generator and safe projection / PRs #80–81 | Portable ten-control goldens, bounded source generation and unpublished safe projection/admission. |
+| January 10 admission parity | Ten additional original date controls verify port-date FAC residues across 2026–2028; twenty portable whole-world goldens pass. The source generator and playable recipe accept January 10 without changing earlier hashes or schema 35. [Evidence](yt-initializer-replay/JANUARY10.md). |
 | Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
@@ -86,7 +87,7 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
    now specifies explicit raw state/date, safe projection, saved provenance and
    repeat-layout reset semantics. These are proposed behavior, not shipped flags.
    The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
-   matches all ten whole-world/block hashes and RNG endpoints with portable
+   matches all twenty whole-world/block hashes and RNG endpoints with portable
    goldens, retaining explicit work limits and original source defects.
    The [internal projection/admission pipeline](yt-initializer-replay/PROJECTION.md)
    now rejects unsafe source candidates and validates modern bootstrap without

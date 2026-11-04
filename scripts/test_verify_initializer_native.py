@@ -13,7 +13,7 @@ class InitializerNativeTests(unittest.TestCase):
             p=Path(tmp)/'contracts.json';p.write_text(json.dumps(meta))
             with self.assertRaises(AssertionError):verify(p)
 
-    def test_original_contracts(self):self.assertEqual(verify(),23)
+    def test_original_contracts(self):self.assertEqual(verify(),26)
 
     def test_missing_duplicate_and_extra_reads(self):
         original=json.loads(SOURCE.read_text())

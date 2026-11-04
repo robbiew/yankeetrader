@@ -6,8 +6,8 @@ initialization mode, DOS save import/export, schema change or gameplay behavior.
 
 ## Verified result
 
-All ten retained controls match **4,151 records × 137 bytes = 568,687 bytes**
-each, or **5,686,870 bytes** total. [Replay results](replay-results.json) preserve
+All twenty retained controls match **4,151 records × 137 bytes = 568,687 bytes**
+each, or **11,373,740 bytes** total. [Replay results](replay-results.json) preserve
 whole-world and per-block observed/replayed hashes, measured seed provenance,
 RNG draw counts and first-difference diagnostics. Synthesis takes a measured raw
 seed, date and scoreboard path; it reads original DATA and recovered writer
@@ -33,6 +33,11 @@ five-byte exit stub (`b8004ccd21`) to expose state before maintenance. No actual
 maintenance result is attributed to this milestone. The runner preloads a
 known radio sentinel and observes its removal. Earlier six controls discarded
 auxiliary files; their absence is not retroactively presented as evidence.
+
+The [January 10 follow-up](JANUARY10.md) adds ten original controls: January
+9/10/11 in each admitted year (2026–2028) and an independent January 10 repeat.
+It verifies class-dependent port-date zero residues and closes the explicit
+January 10 admission restriction. All ten earlier targets remain unchanged.
 
 ## Raw record findings
 
@@ -63,7 +68,7 @@ there are no additional modeled random draws after the port phase.
 
 ## Native and runtime evidence
 
-[Native contracts](native-contracts.json) retain 23 bounded original-byte ranges
+[Native contracts](native-contracts.json) retain 26 bounded original-byte ranges
 for the calendar, configuration/FIELD map, player/sector/planet writes, HQ
 patches, auxiliary routines, constants and relevant BRUN30 conversions/addition.
 The independent verifier pins binary/listing identities, range coordinates,

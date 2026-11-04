@@ -202,8 +202,11 @@ or `-dos-ports` (even false values). `-genesis-ports` retains its usual meaning.
 The raw **post-RANDOMIZE, pre-first-RND** state accepts unsigned decimal or `0x`
 hexadecimal in 0..0xffffff, including zero. It is not a Unix timestamp, DOS clock
 or modern seed. An explicit real Gregorian date in 2026–2028 is required;
-January 10 is rejected pending verification of native floating-point residue.
-Retained controls cover selected dates, not every admitted date.
+January 10 is supported by this updated build after fresh original-byte
+verification; earlier save-35 binaries reject that formerly unsupported date.
+Retained controls cover selected dates, not every admitted date. Existing
+recipes/maps/fingerprints are unchanged; upgrade every node before using newly
+admitted January 10 recipes. Save schema remains 35.
 
 Source generation is native Go and needs no DOS software, Python or emulator.
 The complete source fingerprint is preserved in `QBRecipe` with `Profile`,

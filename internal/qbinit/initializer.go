@@ -25,8 +25,7 @@ const (
 )
 
 // Options supplies the post-RANDOMIZE, pre-first-RND state and a source date.
-// Date is YYYY-MM-DD in the bounded 2026..2028 range; January 10 is unverified
-// and rejected. Empty Scoreboard selects
+// Date is YYYY-MM-DD in the bounded 2026..2028 range. Empty Scoreboard selects
 // YTSCORE.ASC; it is a record field, never a filesystem destination.
 // DrawLimit zero selects DefaultDrawLimit; callers may lower, but not raise it.
 type Options struct {
@@ -91,12 +90,6 @@ func Generate(o Options) (Result, error) {
 	date, err := time.Parse("2006-01-02", o.Date)
 	if err != nil || date.Format("2006-01-02") != o.Date || date.Year() < 2026 || date.Year() > 2028 {
 		return Result{}, errors.New("QB source date must be YYYY-MM-DD in 2026..2028")
-	}
-	// January 10 makes the port watermark day-10 exactly zero. The native
-	// cancellation residue is not yet covered by retained controls; refusing
-	// this boundary is safer than claiming canonical-zero source parity.
-	if date.YearDay() == 10 {
-		return Result{}, errors.New("QB January 10 port-date residue is not verified")
 	}
 	if o.Scoreboard == "" {
 		o.Scoreboard = "YTSCORE.ASC"
@@ -318,6 +311,15 @@ func (e *engine) ports(data []byte, day, hq int, stats *Stats) error {
 		}
 		put(r, 41, klass)
 		put(r, 45, day-10)
+		if day == 10 {
+			// The preceding 7-class array index conversion replaces FAC's low
+			// word; exact day-10 cancellation clears only its exponent.
+			index := 7 - klass
+			residue := mbf(index)
+			binary.LittleEndian.PutUint16(residue[:2], uint16(index))
+			residue[3] = 0
+			copy(r[45:49], residue[:])
+		}
 		put(r, 85, len(name))
 		put(r, 93, s)
 		if id == 1 {

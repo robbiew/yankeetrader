@@ -55,4 +55,4 @@ if __name__ == '__main__':
     if args.output: args.output.write_text(json.dumps(result, indent=2) + '\n')
     if args.check: assert json.loads(args.check.read_text()) == result, 'portable Go fixture differs from verified native evidence'
     if not args.output and not args.check: parser.error('choose --output or --check')
-    print('Verified ten complete native initializer golden cases and original weighted DATA.')
+    print('Verified twenty complete native initializer golden cases and original weighted DATA.')

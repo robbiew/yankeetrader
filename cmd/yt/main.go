@@ -36,7 +36,7 @@ func run() error {
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
 	generationProfile := flag.String("generation-profile", "", "new-world generation profile: qb36-v1")
 	qbState := flag.String("qb-state", "", "raw post-RANDOMIZE state: unsigned decimal or 0x hexadecimal")
-	qbDate := flag.String("qb-date", "", "explicit QB source date, YYYY-MM-DD (2026..2028, except January 10)")
+	qbDate := flag.String("qb-date", "", "explicit QB source date, YYYY-MM-DD (2026..2028)")
 	dosWarps := flag.Bool("dos-warps", false, "use recovered DOS warp-generation rules for a new world")
 	dosPorts := flag.Bool("dos-ports", false, "use recovered DOS port generation and pricing for a new world")
 	genesisPorts := flag.Int("genesis-ports", 300, "initial Genesis threshold: 0 disables; 20..300; omitted defaults to 300")

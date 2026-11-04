@@ -19,14 +19,14 @@ FILES = {'before-maint.dat.gz', 'YTNEWS.DAT', 'YTNAME.DAT', 'ANSWERS.TXT', 'COMM
          'DOSDATE.LOG', 'DOSTIME.LOG', 'ENDDATE.LOG', 'ENDTIME.LOG', 'INIT.LOG', 'INITRET.LOG', 'dosbox.log'}
 
 
-def verify(destination=ROOT / 'research/yt-initializer-replay/controls'):
+def verify(destination=ROOT / 'research/yt-initializer-replay/controls', cases=CASES):
     destination = Path(destination)
     seeds = verify_seeds(destination / 'seed-dos', cases={name: ('timer', 5, None, date, '00:00:00')
-                                                       for name, (date, _, _) in CASES.items()})
+                                                       for name, (date, _, _) in cases.items()})
     directory = destination / 'world-dos'
-    assert {p.name for p in directory.iterdir()} == set(CASES), 'fixed boundary controls'
+    assert {p.name for p in directory.iterdir()} == set(cases), 'fixed boundary controls'
     outcomes = {}
-    for name, (date_text, scoreboard, pinned) in CASES.items():
+    for name, (date_text, scoreboard, pinned) in cases.items():
         d = directory / name
         assert {p.name for p in d.iterdir()} == FILES | {'result.json'}, 'exact artifact/absence coverage'
         meta = json.loads((d / 'result.json').read_text())
