@@ -86,7 +86,7 @@ func TestQBPlayableRecipeRoundtripValidationAndUpgrade(t *testing.T) {
 func TestQBPlayableResetsRepeatSourceAndBindRecipe(t *testing.T) {
 	w := qbPlayable(t)
 	layout := qbLayout(w)
-	recipe := cloneQBRecipe(w.QBRecipe)
+	recipe := w.QBRecipe.Clone()
 	p, _ := w.Join("winner", "Winner")
 	n := 20
 	w.GenesisPorts = &n
@@ -105,7 +105,7 @@ func TestQBPlayableResetsRepeatSourceAndBindRecipe(t *testing.T) {
 	if c, _, err := w.GenesisCandidate(e, at, 77); err == nil || c != nil {
 		t.Fatal("stale recipe confirmation admitted")
 	}
-	w.QBRecipe = cloneQBRecipe(recipe)
+	w.QBRecipe = recipe.Clone()
 	if c, err := w.AdministrativeCandidate(1, at, 77); err != nil || c == nil {
 		t.Fatal(err)
 	} else {

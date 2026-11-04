@@ -139,7 +139,7 @@ func (w *World) PrepareGenesis(id int, now time.Time) (GenesisIntent, error) {
 			break
 		}
 	}
-	return GenesisIntent{QBRecipe: cloneQBRecipe(w.QBRecipe), WarpGeneration: w.WarpGeneration, PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
+	return GenesisIntent{QBRecipe: w.QBRecipe.Clone(), WarpGeneration: w.WarpGeneration, PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
 }
 
 // GenesisCandidate builds an unpublished, fully validated replacement. The caller

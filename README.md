@@ -77,7 +77,9 @@ explicit source date and SHA-256 of the complete original source candidate.
 Both Genesis and administrative resets preserve the recipe and repeat the map,
 port names/economy and initial HQ, using current UTC maintenance watermarks and
 separate modern bootstrap randomness. Existing worlds upgrade without rerolling
-or acquiring a recipe. Unknown/incomplete recipes and pre-35 saves claiming one
+or acquiring a recipe. Stored Genesis confirmations own independent copies of
+the complete recipe and raw state, preventing caller mutation of a pending quote.
+Unknown/incomplete recipes and pre-35 saves claiming one
 are rejected. This is QB generation with documented modern adaptations, not DOS
 save interoperability or exact original maintenance.
 

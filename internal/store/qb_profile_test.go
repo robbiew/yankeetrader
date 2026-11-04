@@ -156,3 +156,47 @@ func TestQBStoreResetTransactionsAndArchiveRestore(t *testing.T) {
 		}
 	}
 }
+
+func TestQBGenesisConfirmationOwnsRecipeSnapshot(t *testing.T) {
+	for _, mode := range []string{"recipe", "state"} {
+		t.Run(mode, func(t *testing.T) {
+			s, b, at := qbStore(t)
+			deadline := time.Now().Add(time.Minute)
+			entry, err := b.PrepareGenesis(func() time.Time { return at }, deadline)
+			if err != nil {
+				t.Fatal(err)
+			}
+			original, _ := json.Marshal(b.ship.genesisActive.QBRecipe)
+			state := uint32(0xc805)
+			date := "2026-11-02"
+			if mode == "state" {
+				state = 0x61b205
+				date = "2027-01-01"
+			}
+			replacement, err := game.NewQB36(at, 36, state, date)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if mode == "recipe" {
+				*entry.QBRecipe = *replacement.QBRecipe
+			} else {
+				*entry.QBRecipe.State = state
+				entry.QBRecipe.SourceSHA256 = replacement.QBRecipe.SourceSHA256
+			}
+			retained, _ := json.Marshal(b.ship.genesisActive.QBRecipe)
+			if !bytes.Equal(original, retained) {
+				t.Fatal("caller mutation changed stored confirmation recipe/state")
+			}
+			// Even changing the active world's provenance to match the altered caller
+			// intent must not make that stale confirmation usable.
+			if err = s.Update(func(w *game.World) error { w.QBRecipe = replacement.QBRecipe; return nil }); err != nil {
+				t.Fatal(err)
+			}
+			before := travelBytes(t, s)
+			receipt, err := b.ResetSeason(entry, func() time.Time { return at }, deadline)
+			if err == nil || receipt.NewSeason != 0 || !bytes.Equal(before, travelBytes(t, s)) {
+				t.Fatal("altered recipe bypassed sealed confirmation", err)
+			}
+		})
+	}
+}

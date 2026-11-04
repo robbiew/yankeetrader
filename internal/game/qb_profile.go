@@ -20,7 +20,8 @@ type QBRecipe struct {
 	SourceSHA256 string
 }
 
-func cloneQBRecipe(r *QBRecipe) *QBRecipe {
+// Clone returns an independent recipe, including the optional raw state.
+func (r *QBRecipe) Clone() *QBRecipe {
 	if r == nil {
 		return nil
 	}
