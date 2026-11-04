@@ -249,3 +249,15 @@
 /research/yt-maint/initial-controls/**/*.LOG -diff
 /research/yt-maint/initial-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-maint/initial-controls/**/ANSWERS.TXT -diff
+
+# First-hit maintenance diagnostics preserve exact DOS binary/CRLF streams.
+/research/yt-maint/rng-controls/** -text
+/research/yt-maint/rng-controls/**/*.LOG -diff
+/research/yt-maint/rng-controls/**/TRACE.BIN -diff
+/research/yt-maint/rng-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/rng-oracles/** -text
+/research/yt-maint/rng-oracles/**/*.LOG -diff
+/research/yt-maint/rng-oracles/**/TRACE.BIN -diff
+/research/yt-maint/rng-oracles/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/rng-controls/**/ANSWERS.TXT -diff
+/research/yt-maint/rng-oracles/**/ANSWERS.TXT -diff

@@ -62,9 +62,12 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 Original initial-maintenance research now retains eight native controls with
 untouched integrated launches, split before/after files, exact repeats and
 clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
-This closes the baseline transition-capture slice; exact maintenance RNG seed,
-draw ordering and post-maintenance Go replay remain separate. Do not repeat the
-capture as missing work or describe it as a gameplay change.
+This closes the baseline transition-capture slice. The follow-up
+[first-hit seed/draw research](yt-maint/RNG_FIRST_HITS.md) now measures entry and
+helper seeding plus selected Wanderer draw boundaries with 151 terminating probes
+and six untouched paired oracles. Complete repeated-helper/candidate draw counts,
+post-maintenance replay and general MBF arithmetic remain separate. Do not repeat
+the measured seed sites as missing work or describe this as a gameplay change.
 
 
 | Milestone | Implemented behavior and evidence |

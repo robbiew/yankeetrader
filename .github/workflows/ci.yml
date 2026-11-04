@@ -89,6 +89,8 @@ jobs:
           python3 scripts/test_cloak_equipment_verifier.py
           python3 scripts/verify_initial_maintenance.py
           python3 scripts/test_verify_initial_maintenance.py
+          python3 scripts/verify_maintenance_rng.py
+          python3 scripts/test_verify_maintenance_rng.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py

@@ -125,3 +125,11 @@ python3 scripts/verify_initial_maintenance.py /tmp/yt-initial-maintenance-new
 Exact pins describe this emulator/clock recipe. A different environment that
 fails them needs investigation and separately reviewed observations, not an
 automatic refresh of the expected hashes.
+
+## Follow-up: seed and first-hit boundaries
+
+The [subsequent precision slice](RNG_FIRST_HITS.md) measures entry/helper seeds
+and selected first-hit RND pairs with terminating copies and fresh untouched
+oracles. It supersedes the seed-site deferral only for those bounded observations;
+complete dynamic draw ordering and exact post-maintenance replay remain open.
+The earlier raw worlds and auxiliary bytes above remain unchanged.
