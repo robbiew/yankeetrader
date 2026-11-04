@@ -1,0 +1,43 @@
+{
+  "recipe": "original-initial-maintenance-v1",
+  "name": "baseline",
+  "mode": "split",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "maintenance_time": "00:00:00",
+  "cpu_cycles": 200000,
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "initializer_child": "exit-stub-b8004ccd21",
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "4355a67a3b8f4630535a62f8cbda388836a940a87ca14028a03b14ac3587b8e0",
+    "INIT.LOG": "55c24d3f3500c28e8879b77c7feb58b1a3db406cc3aa372819c11742e259e8ee",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "MAINT.LOG": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+    "MDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "MEDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "METIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+    "MRET.LOG": "7b2d350a1104efe5dca7e0617034485f8f27e9e4e5ba0ff024790f47022621be",
+    "MTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "after-YTDATA.DAT.gz": "dc749cf1d9ebd8720e0007f5096e256ccaad2c9462e73587a847d6960478553a",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "5655e74c16b4908a5fb2cfe6f8c35234eacc799b47c70c7ae4643ae756b28436",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTSCORE.ASC.gz": "61803b4fc64df96e60c1bdc3e6ee7f998ff0f8204a6dd0a280d7222c522865fa",
+    "after-YTYNEWS.DAT.gz": "ef3436ebb6f97310ce69c0d9aa65dfecc2bead0ff4b37e976f79801e9c24e5fe",
+    "before-YTDATA.DAT.gz": "48416202a8a4b25a9b906c3e45717d3a9af05b2260642584462fa66a6c2f2222",
+    "before-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "before-YTNEWS.DAT.gz": "ef3436ebb6f97310ce69c0d9aa65dfecc2bead0ff4b37e976f79801e9c24e5fe",
+    "init-commands.txt": "27f65a841fc45804c308e2cb1c2653a1d6723608392702b81aff508ce436aed2",
+    "init-dosbox.log": "eff5be4558ea66130937f0828c5ca8dab3673cc9b3457506453da2e6373eb61e",
+    "maint-commands.txt": "77dfa974dc17ecab5adef210e9a1b8d4b765842c5bc7cd2853d3c079b820f0ac",
+    "maint-dosbox.log": "deb3e0d828a47081313b5ee671eb242bb5e5119952ebc529b60c125fa008b862"
+  }
+}

@@ -243,3 +243,9 @@
 /research/yt-initializer-replay/january10-controls/**/*.DAT -diff
 /research/yt-initializer-replay/january10-controls/**/TRACE.BIN -diff
 /research/yt-initializer-replay/january10-controls/**/ANSWERS.TXT -diff
+
+# Preserve original DOS initial-maintenance records and CRLF/EOF witnesses.
+/research/yt-maint/initial-controls/** -text
+/research/yt-maint/initial-controls/**/*.LOG -diff
+/research/yt-maint/initial-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/initial-controls/**/ANSWERS.TXT -diff

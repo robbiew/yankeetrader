@@ -571,6 +571,15 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
+now retain eight copied-original DOS runs, including direct initializer launches,
+before/after split boundaries, exact repeats and bounded clock changes. They
+verify NPC bootstrap, record/side-file changes and clock-sensitive outcomes;
+exact maintenance RNG/MBF replay remains research. This changes no gameplay,
+`qb36-v1` source fingerprints or save 35. Portable evidence and 20 corruption checks
+run in CI, including independent launch-command and applied CPU validation; the playable profile retains its documented modern bootstrap.
+
+
 ```sh
 ./bin/yt -data data -maint
 ```

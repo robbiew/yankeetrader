@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-04
 
 This section is the current planning baseline, checked against merged `main`
-through `f269490`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `41abf76`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -16,7 +16,8 @@ through `f269490`, including PRs [#73](https://github.com/robbiew/yankeetrader/p
 (pure Go generator/goldens) and [#81](https://github.com/robbiew/yankeetrader/pull/81)
 (safe world projection) and [#82](https://github.com/robbiew/yankeetrader/pull/82)
 (playable `qb36-v1`) and [#83](https://github.com/robbiew/yankeetrader/pull/83)
-(full QB acceptance). The playable integration adds typed
+(full QB acceptance) and [#84](https://github.com/robbiew/yankeetrader/pull/84)
+(January 10 source-date admission). The playable integration adds typed
 recipes, CLI admission and both reset paths in the current source build; published
 v0.1.0 packages predate that integration. Release **v0.1.0 is published**. The playable QB profile uses documented modern adaptations rather than exact
 DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
@@ -57,6 +58,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
   compatibility and initial maintenance remain separate.
 
 ### Most recent completed milestones
+
+Original initial-maintenance research now retains eight native controls with
+untouched integrated launches, split before/after files, exact repeats and
+clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
+This closes the baseline transition-capture slice; exact maintenance RNG seed,
+draw ordering and post-maintenance Go replay remain separate. Do not repeat the
+capture as missing work or describe it as a gameplay change.
+
 
 | Milestone | Implemented behavior and evidence |
 | --- | --- |
