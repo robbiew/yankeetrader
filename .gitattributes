@@ -261,3 +261,9 @@
 /research/yt-maint/rng-oracles/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-maint/rng-controls/**/ANSWERS.TXT -diff
 /research/yt-maint/rng-oracles/**/ANSWERS.TXT -diff
+
+# Nth-hit/counter maintenance controls retain exact DOS bytes and CRLF witnesses.
+/research/yt-maint/sequence-controls/** -text
+/research/yt-maint/sequence-controls/**/*.LOG -diff
+/research/yt-maint/sequence-controls/**/TRACE.BIN -diff
+/research/yt-maint/sequence-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

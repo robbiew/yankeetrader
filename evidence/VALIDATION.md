@@ -1579,3 +1579,50 @@ acceptance remain open. The Go suite and terminal gameplay tests were not rerun
 for this research-only addition; no new gameplay validation is claimed.
 
 [Findings, native evidence, scope and reproduction](../research/yt-maint/RNG_FIRST_HITS.md).
+
+## Maintenance repeated reseeds and occupied-candidate sequencing — 2026-11-04
+
+Local research on `feat/maintenance-rng-sequencing`, based on merged PR #86
+(`52ee648`). No Go source, dependency, save-35, release package or original archive
+changes. README and the reconstruction plan distinguish measured research from
+playable production behavior.
+
+- Captured 463 returned DOS controls: four untouched completed comparisons,
+  78 main-body-end counters and 381 terminating nth-hit reads. The diagnostic is
+  a declared same-size 46-byte copied-executable patch, with flags/displaced
+  instructions preserved until the selected boundary. It bypasses the original
+  cleanup footer; instrumented return is not called untouched completion.
+- `python3 scripts/verify_maintenance_sequence.py`: all 463 controls, all raw
+  decoded artifact pins and four fresh relocated native byte observations pass.
+  All 78 counter runs match every decoded DAT/ASC output from their own untouched
+  control. Baseline and repeat untouched outputs match exactly.
+- `python3 scripts/test_verify_maintenance_sequence.py`: 49 corruption tests
+  pass. These include rehashed states/FACs/worlds, source/site/threshold/copied
+  executable substitutions, missing/forged clock/return/completion witnesses,
+  contradictory launch options, changed pins/native observations and direct
+  semantic seed/LCG/caller/count mutations.
+- All 43 literal RND sites are counted in the baseline: nine execute, 34 do not,
+  totaling 25,891 draws. Forty-one single-draw helper reseeds and nineteen
+  four-draw helper reseeds match measured TIMER/low-byte transforms; all 117
+  helper draw states match LCG steps and eight raw FACs match exact fractions.
+  Sixty caller snapshots distinguish observed paths from unused literal callers.
+- A declared synthetic positive planet-link at sector 1095 forces a retry.
+  Wanderer candidates 1095 then 1792, two seed/draw pairs and the accepted raw
+  sector distinguish rejection from the original optimistic success text.
+- Both retained NASM diagnostic variants assemble to exactly the independently
+  reconstructed/captured 46-byte patch. Script compilation passes.
+- Earlier first-hit controls (151 probes, two native reads, six untouched runs),
+  their 35 corruption tests, initial-maintenance controls (eight runs and four
+  test methods/20 rejected variants), 13 native RNG contracts, 16 raw RNG traces
+  with 4,096 state/FAC pairs, and all 4,682 archive hashes pass unchanged.
+- CI adds the new portable verifier and corruption suite while retaining all
+  earlier commands. Python standard library suffices for these checks; DOSBox,
+  NASM and Ghidra/Java remain acquisition/research tools.
+
+The new baseline world equals the earlier initial-handoff world and differs by
+97 bytes from PR #86's separately captured oracle. Both historical recipes/pins
+remain unchanged; no single timing/filename cause is claimed. Full global
+phase/interception chronology, exact post-maintenance record/auxiliary replay,
+arbitrary worlds/clocks and general MBF parity remain open. Full Go tests,
+terminal gameplay and native-host durability acceptance were not rerun or claimed
+for this research-only update.

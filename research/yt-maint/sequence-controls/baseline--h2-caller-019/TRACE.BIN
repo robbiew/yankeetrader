@@ -1,0 +1,55 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+  -  The Wanderer is missing or has been destroyed!
+  -  The Wanderer regenerated with P.H.O.E.N.I.X. device!
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+  -  The Xannor have made a Planet!
+The Xannor home base now has a planet!
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 15 
+  -  Group: 3               Size: 978 
+  -  Group: 4               Size: 569 
+  -  Group: 5               Size: 123 
+  -  Group: 6               Size: 42 
+  -  Group: 7               Size: 9 
+  -  Group: 8               Size: 267 
+  -  Group: 9               Size: 1215 
+  -  Group: 10              Size: 1296 
+  -  Group: 11              Size: 46 
+  -  Group: 12              Size: 155 
+  -  Group: 13              Size: 1655 
+  -  Group: 14              Size: 528 
+  -  Group: 15              Size: 199 
+  -  Group: 16              Size: 949 
+  -  Group: 17              Size: 36 
+  -  Group: 18              Size: 11 
+  -  Group: 19              Size: 230 
+£1£

@@ -574,9 +574,19 @@ target BBS transport before deployment.
 **Maintenance seed boundaries are now measured:** 151 terminating DOS probes
 and six untouched paired runs recover entry `RANDOMIZE -TIMER`, two positive-TIMER
 helper reseeds and a selected first-hit Wanderer draw chain. Raw states preserve
-zero residues and the old low byte. Complete dynamic maintenance draw order and
-post-maintenance replay remain open; this research changes no gameplay or save 35.
-[Evidence, timing limits and portable checks](research/yt-maint/RNG_FIRST_HITS.md).
+zero residues and the old low byte.
+[First-hit evidence and timing limits](research/yt-maint/RNG_FIRST_HITS.md).
+
+**Repeated maintenance draws are now measured for the initial-world fixture:**
+independent counters cover all 43 literal RND sites. Nine execute, totaling
+25,891 draws; the two helper paths reseed 41 and 19 times. Nth-hit state and caller
+observations distinguish the four-draw shrinking-bound helper from occupied-sector
+candidate retries. An explicitly synthetic occupied-destination control adds one
+Wanderer selection attempt. Untouched comparisons, retained raw records and
+independent corruption checks bound these findings. This remains research: exact
+post-maintenance replay, arbitrary-world draw chronology and general MBF parity
+are not implemented, and gameplay/save format 35 are unchanged.
+[Sequencing evidence, diagnostic limits and portable checks](research/yt-maint/RNG_SEQUENCING.md).
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
