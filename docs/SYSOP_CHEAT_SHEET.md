@@ -70,7 +70,8 @@ For the recovered QB stream, create a separate world instead:
 Windows uses `yt.exe` with the same flags. Omit explicit `-seed`, `-dos-warps`
 and `-dos-ports`. Geometry is fixed at 3,000 sectors/1,000 ports. State is raw
 24-bit post-RANDOMIZE input (decimal or `0x` hexadecimal); date is required in
-2026–2028, excluding January 10. Admission can reject unsafe original layouts
+2026–2028, including the newly verified January 10 boundary. Older save-35
+binaries reject January 10 recipes; use this updated build on every node. Admission can reject unsafe original layouts
 without writing a world or reseeding. Both Genesis and admin resets preserve the
 saved recipe and repeat its source layout; current UTC dates and modern bootstrap
 remain separate. Play and maintenance use only `-data` and their ordinary flags.

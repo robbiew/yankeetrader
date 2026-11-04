@@ -2,6 +2,7 @@ package game
 
 import (
 	"encoding/json"
+	"fmt"
 	"reflect"
 	"strings"
 	"testing"
@@ -61,7 +62,7 @@ func TestQBPlayableRecipeRoundtripValidationAndUpgrade(t *testing.T) {
 	}
 	for _, mutate := range []func(*World){
 		func(w *World) { w.QBRecipe.Profile = "qb36-v2" }, func(w *World) { w.QBRecipe.State = nil }, func(w *World) { *w.QBRecipe.State = 0x1000000 },
-		func(w *World) { w.QBRecipe.Date = "2027-01-10" }, func(w *World) { w.QBRecipe.Date = "2026-02-29" }, func(w *World) { w.QBRecipe.SourceSHA256 = "bad" },
+		func(w *World) { w.QBRecipe.Date = "2029-01-10" }, func(w *World) { w.QBRecipe.Date = "2026-02-29" }, func(w *World) { w.QBRecipe.SourceSHA256 = "bad" },
 		func(w *World) { w.PortGeneration = "" }, func(w *World) { w.WarpGeneration = "" },
 	} {
 		c := qbPlayable(t)
@@ -142,11 +143,60 @@ func TestQBPlayableCreationRejectsWithoutPartialWorld(t *testing.T) {
 		at    time.Time
 	}{
 		{0xa90a05, "2027-01-01", clock}, {619, "2027-01-01", clock},
-		{0x1000000, "2027-01-01", clock}, {0xc805, "2027-01-10", clock},
+		{0x1000000, "2027-01-01", clock}, {0xc805, "2029-01-10", clock},
 		{0xc805, "2026-02-29", clock}, {0xc805, "2027-01-01", time.Time{}},
 	} {
 		if w, err := NewQB36(tc.at, 36, tc.state, tc.date); err == nil || w != nil {
 			t.Fatal("partial/unsafe world admitted", tc, err)
+		}
+	}
+}
+
+func TestQBJanuary10RecipeCreationAndReset(t *testing.T) {
+	for _, year := range []int{2026, 2027, 2028} {
+		date := fmt.Sprintf("%d-01-10", year)
+		w, err := NewQB36(clock, 36, 0xc805, date)
+		if err != nil {
+			t.Fatal(err)
+		}
+		recipe := w.QBRecipe.Clone()
+		raw, _ := json.Marshal(w)
+		var loaded World
+		if err = json.Unmarshal(raw, &loaded); err != nil {
+			t.Fatal(err)
+		}
+		if err = loaded.Upgrade(); err != nil {
+			t.Fatal(err)
+		}
+		if err = loaded.Validate(); err != nil {
+			t.Fatal(err)
+		}
+		next, err := loaded.AdministrativeCandidate(1, clock.Add(time.Hour), 77)
+		if err != nil || !reflect.DeepEqual(next.QBRecipe, recipe) || qbLayout(next) != qbLayout(w) || next.LastMaintenance != day(clock.Add(time.Hour)) {
+			t.Fatal("January 10 recipe/reset", err)
+		}
+		p, err := loaded.Join("jan-captain", "Captain")
+		if err != nil {
+			t.Fatal(err)
+		}
+		threshold := 20
+		loaded.GenesisPorts = &threshold
+		for id := 2; id <= 21; id++ {
+			loaded.Ports[id].Owner = p.ID
+		}
+		at := clock.Add(time.Hour)
+		intent, err := loaded.PrepareGenesis(p.ID, at)
+		if err != nil {
+			t.Fatal(err)
+		}
+		genesis, receipt, err := loaded.GenesisCandidate(intent, at, 99)
+		if err != nil || receipt.NewSeason != 2 || !reflect.DeepEqual(genesis.QBRecipe, recipe) || qbLayout(genesis) != qbLayout(w) {
+			t.Fatal("January 10 Genesis recipe/layout", err)
+		}
+		for _, port := range w.Ports {
+			if port.Updated != clock.UTC() {
+				t.Fatal("source zero date became a modern watermark")
+			}
 		}
 	}
 }

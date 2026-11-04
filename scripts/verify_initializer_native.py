@@ -13,6 +13,9 @@ LISTING_SHA='e8704fa97b140faab0951494155f6da5db1f19837bdcde030282d273ce48623b'
 # Fixed coverage; an editable manifest cannot authorize removing or moving a read.
 CONTRACTS={
  'calendar':('YT-INIT.EXE',0x2b5,0x314),
+ 'port-class-date':('YT-INIT.EXE',0x1e28,0x92),
+ 'port-class-seven':('YT-INIT.EXE',0x29de,4),
+ 'port-date-minus-ten':('YT-INIT.EXE',0x2f48,4),
  'field-map-and-config-read':('YT-INIT.EXE',0x5c9,0x239),
  'config-default-writes':('YT-INIT.EXE',0x912,0x3f0),
  'player-writes':('YT-INIT.EXE',0xd4a,0x1a3),

@@ -1,0 +1,27 @@
+{
+  "name": "jan09-2027",
+  "date": "01/09/2027",
+  "scoreboard": "",
+  "recipe": "original-initializer-boundaries-v1",
+  "initializer_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "world_sha256": "fc26017e925ed87ca772b0c672e603f7b89af8ff35e7577b8cb8ecd5367dc3de",
+  "prior_radio_hex": "7072696f722d726164696f2d636f6e74726f6c0d0a",
+  "absent_outputs": [
+    "YTRMSG.DAT"
+  ],
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "6131f4a7970c8b5a0fc0dfefa1d1b32f85bcca4802b5917bad96566af0805866",
+    "DOSDATE.LOG": "1d9864140e31fbe96c98904f7567d660941cc14f6b270b3d9ca3c969d7a4e455",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "1d9864140e31fbe96c98904f7567d660941cc14f6b270b3d9ca3c969d7a4e455",
+    "ENDTIME.LOG": "4355a67a3b8f4630535a62f8cbda388836a940a87ca14028a03b14ac3587b8e0",
+    "INIT.LOG": "d7a9dfe4b760518074171087ec274ecf862d8f83a9f44bd7876f77e5fc80f555",
+    "INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+    "YTNEWS.DAT": "53baddbd8789e10e2ae1b18629a80c2167d5426a4d7ace069e7d394252dba293",
+    "before-maint.dat.gz": "5e165c8d7a5cd62d8745df9411f1c63b66b8836c6acc4903bcdda9fb3e36eb8d",
+    "dosbox.log": "03663a88683b9e6ff1e4eadd397d4cfa516812400e48d6f2e9ee58e2c0d79e4e"
+  }
+}

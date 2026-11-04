@@ -18,8 +18,13 @@ CASES = (
     ('leap-day', '02/29/2028', ''),
 )
 
+JANUARY10_CASES = tuple((f'jan{day:02d}-{year}', f'01/{day:02d}/{year}', '')
+                       for year in (2026, 2027, 2028) for day in (9, 10, 11)) + (
+    ('jan10-2027-repeat', '01/10/2027', ''),
+)
 
-def run(destination):
+
+def run(destination, cases=CASES):
     original = (ROOT / 'archive/dos-original/YT-INIT.EXE').read_bytes()
     runtime = (ROOT / 'archive/dos-original/BRUN30.EXE').read_bytes()
     assert SHA(original) == '601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2'
@@ -28,7 +33,7 @@ def run(destination):
     assert executable, 'DOSBox Staging required'
     destination.mkdir(parents=True, exist_ok=False)
     worlds = destination / 'world-dos'; worlds.mkdir()
-    for name, date, scoreboard in CASES:
+    for name, date, scoreboard in cases:
         directory = worlds / name; directory.mkdir()
         (directory / 'YT-INIT.EXE').write_bytes(original)
         (directory / 'BRUN30.EXE').write_bytes(runtime)
@@ -63,10 +68,12 @@ def run(destination):
             if p.name not in keep | {'result.json'}: p.unlink()
         print(name, meta['world_sha256'], flush=True)
     capture_seeds(destination / 'seed-dos', [dict(name=name, mode='timer', date=date, time='00:00:00')
-                                            for name, date, _ in CASES])
+                                            for name, date, _ in cases])
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('destination', type=Path)
-    run(parser.parse_args().destination.resolve())
+    parser.add_argument('--january10', action='store_true', help='capture January 9/10/11 across all admitted years plus repeat')
+    args=parser.parse_args()
+    run(args.destination.resolve(), JANUARY10_CASES if args.january10 else CASES)

@@ -235,3 +235,11 @@
 /research/yt-initializer-replay/controls/**/*.DAT -diff
 /research/yt-initializer-replay/controls/**/TRACE.BIN -diff
 /research/yt-initializer-replay/controls/**/ANSWERS.TXT -diff
+
+# January date-boundary controls preserve original CRLF, EOF and FAC trace bytes.
+/research/yt-initializer-replay/january10-controls/** -text
+/research/yt-initializer-replay/january10-controls/**/*.LOG -diff
+/research/yt-initializer-replay/january10-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-initializer-replay/january10-controls/**/*.DAT -diff
+/research/yt-initializer-replay/january10-controls/**/TRACE.BIN -diff
+/research/yt-initializer-replay/january10-controls/**/ANSWERS.TXT -diff

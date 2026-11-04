@@ -1475,3 +1475,34 @@ verification and six Python verification tests with 22 corruption controls.
 Local tests used Go 1.27.3 and the existing GoDoors review modfile. CI adds a
 separate full-world job with the pinned minimum GoDoors checkout, normal long
 campaign plus race-enabled planner checks and retained diagnostic artifacts.
+
+## January 10 source-date admission — 2026-11-04
+
+[Ten fresh original controls](../research/yt-initializer-replay/JANUARY10.md)
+cover January 9/10/11 across 2026–2028 and an independent January 10 repeat.
+Copied original initializer/runtime binaries ran in disposable DOSBox directories
+with the declared maintenance exit stub. Independent raw-seed probes retained
+TIMER residue `00004800` and post-RANDOMIZE state `c805`. All auxiliary, clock,
+normal-return and complete-world identities pass independent verification.
+
+January 10 port dates are numeric zero with class-specific bytes: class 1
+`06004000`, class 2 `05002000`, class 3 `04000000`. Preserving the preceding
+`7-class` index/FAC residue reproduces all observed records. January 9 and 11
+remain canonical -1/+1 controls. Go and Python match all twenty retained complete
+worlds (11,373,740 bytes), and all ten previous golden cases remain unchanged.
+Three added original-byte contracts extend native coverage from 23 to 26 ranges.
+
+Validation passed: full race-enabled Go suite and vet; focused January 10
+creation/save/load/Genesis/admin-reset regressions for each admitted year; QB
+CLI/PTY smoke including January 10 creation with the pinned native fingerprint;
+complete replay checks; portable golden provenance/corruption tests; native byte
+contract tests; historical target/control tests; and new January evidence
+corruption tests. CI verifies the new controls without needing an emulator.
+Local Go checks used the existing GoDoors review modfile.
+
+This extends `qb36-v1` date admission without changing schema 35, old worlds or
+previously admitted hashes. Older save-35 builds reject January 10 recipes;
+upgrade every node before using them. The evidence remains bounded to selected
+dates/classes/seed controls. No general MBF engine, DOS maintenance parity or
+DOS save conversion is claimed. The REA Ghidra provider still lacked its configured
+JDK; no new successful REA decompilation is attributed to these observations.

@@ -1,0 +1,23 @@
+{
+  "name": "jan10-2027-repeat",
+  "mode": "timer",
+  "date": "01/10/2027",
+  "time": "00:00:00",
+  "recipe": "qb-rng-raw-v1",
+  "samples": 256,
+  "original_initializer_sha256": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "original_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "copied_initializer_sha256": "9b7a774f0c8846786cb0afa9cd3e9ca6091bd046c31a00b2d9db026876674ed2",
+  "copied_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "payload_hex": "c7065618524ec70658184731bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21cd3d439090bb0100b90400ba1a00b440cd21cd3fb19090bb0100b90400ba1a00b440cd21bb1a00cd3e099090bb0100b90400ba3402b440cd21b9000151cd3d349090bb0100b90400ba3402b440cd21bb0100b90400ba1a00b440cd2159e2ddc7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "payload_file_offset": 621,
+  "payload_code_offset": 109,
+  "files": {
+    "COMMANDS.TXT": "7be2ad603ce6b9d1b5848dd88bfa7af6f6b65f49ea9c65d94f297e4ab7cc1da3",
+    "DOSDATE.LOG": "9a906a7d7404b9173ec19f561699dff6b28aee0f497dcc68b480d06f274d7e98",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "f5e6c348594cd424f94c480912df1de28cdad99e257d6a8a6e5e3dba94dff356",
+    "dosbox.log": "d2b2957db434f2f2b4a102ea4e04cf812119c0bed39a0e6befc3e160c7de9e5c"
+  }
+}

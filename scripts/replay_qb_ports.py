@@ -79,6 +79,10 @@ def port_bytes(port,production_day,hq_sector):
     def put(offset,value):record[offset:offset+4]=graph.mbf.enc(value)
     for offset in (49,53,57,89,97,101,105,109,129):record[offset:offset+4]=bytes.fromhex('0000a000')
     put(41,port['trade_class']);put(45,production_day);put(85,len(encoded));put(93,port['sector'])
+    if production_day==0:
+        index=7-port['trade_class']
+        residue=bytearray(graph.mbf.enc(index));residue[:2]=index.to_bytes(2,'little');residue[3]=0
+        record[45:49]=residue
     for start,field in ((61,'production'),(73,'coefficients')):
         for i,value in enumerate(port[field]):put(start+4*i,value)
     if port['id']==1:
