@@ -65,9 +65,13 @@ clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/
 This closes the baseline transition-capture slice. The follow-up
 [first-hit seed/draw research](yt-maint/RNG_FIRST_HITS.md) now measures entry and
 helper seeding plus selected Wanderer draw boundaries with 151 terminating probes
-and six untouched paired oracles. Complete repeated-helper/candidate draw counts,
-post-maintenance replay and general MBF arithmetic remain separate. Do not repeat
-the measured seed sites as missing work or describe this as a gameplay change.
+and six untouched paired oracles. The follow-up [sequencing research](yt-maint/RNG_SEQUENCING.md)
+now counts every literal RND site in the initial fixture, measures repeated helper
+reseeds/callers and demonstrates one occupied-candidate retry. These bounded
+observations do not establish arbitrary-world chronology or exact post-maintenance
+replay. General MBF arithmetic and production compatibility remain separate; do not
+repeat the measured seed/count boundaries as missing work or describe research as
+a gameplay change.
 
 
 | Milestone | Implemented behavior and evidence |
@@ -110,8 +114,12 @@ the measured seed sites as missing work or describe this as a gameplay change.
    CLI selection and complete Genesis/admin-reset integration in save 35. Both
    resets preserve the source recipe and repeat its layout. Do not repeat source
    generation, safe projection or playable integration as missing work.
-   General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
-   separate research. Do not repeat the established
+   The [maintenance sequencing controls](yt-maint/RNG_SEQUENCING.md) now measure
+   repeated helper reseeds/callers, all literal-site counts in the selected initial
+   fixture and one occupied-candidate retry. Next recover global phase/interception
+   chronology and exact post-maintenance record/auxiliary replay against untouched
+   controls. General MBF arithmetic and arbitrary inputs remain separate research.
+   Do not repeat the established
    graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),
    [RNG controls](yt-rng-seeding/RECOVERY.md),
