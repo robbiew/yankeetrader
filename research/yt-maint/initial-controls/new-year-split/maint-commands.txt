@@ -1,0 +1,8 @@
+date 01/01/2027
+time 00:00:00
+date > MDATE.LOG
+time > MTIME.LOG
+ytmaint > MAINT.LOG
+echo MAINTENANCE_RETURNED > MRET.LOG
+date > MEDATE.LOG
+time > METIME.LOG

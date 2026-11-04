@@ -303,3 +303,12 @@ full ship/planet combat, revenge and exact RNG parity remain separate boundaries
 Bounded Xannor splitting/selection, routes, mines and sector-defense combat are
 now [implemented](../yt-xannor-mobile/IMPLEMENTATION.md). Unsupported ship/planet
 encounters hold safely; full battles and revenge remain separate work.
+
+
+## Initializer handoff controls (2026-11-04)
+
+[Eight original initial-maintenance controls](INITIAL_MAINTENANCE.md) now retain
+integrated launches, split before/after worlds and side files, independent repeats
+and maintenance-clock variations. They establish bounded bootstrap and clock
+sensitivity without claiming exact maintenance RNG/MBF replay. Modern gameplay,
+source fingerprints and save schema are unchanged.

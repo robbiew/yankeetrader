@@ -1475,3 +1475,26 @@ verification and six Python verification tests with 22 corruption controls.
 Local tests used Go 1.27.3 and the existing GoDoors review modfile. CI adds a
 separate full-world job with the pinned minimum GoDoors checkout, normal long
 campaign plus race-enabled planner checks and retained diagnostic artifacts.
+
+## Original initial-maintenance transition — 2026-11-04
+
+Research-only `codex/dos-initial-maintenance`: eight copied-original DOS controls
+retain integrated initializer/real-child launches, split before/after snapshots,
+repeat/date/clock variations and complete auxiliary outputs. The baseline,
+repeat and New Year controls use original binary hashes; split initialization
+explicitly uses the declared exit stub before launching original maintenance.
+No game code, save format or source fingerprints changed.
+
+- `python3 scripts/verify_initial_maintenance.py`: eight controls passed,
+  including fixed raw world/auxiliary hashes, phase boundaries, clocks, complete
+  returns, unchanged map/names and bounded placement/economy relationships.
+- `python3 scripts/test_verify_initial_maintenance.py`: four methods and 12
+  corruption/missing/identity rejection controls passed.
+- `python3 scripts/verify_archive.py`: all 4,682 original archive hashes passed.
+- Scoped whitespace check passed. Nine unrelated pre-existing smoke captures
+  remain untouched; the global whitespace check reports existing trailing space
+  in `evidence/missiles-smoke.txt`, outside this milestone.
+
+[Native findings, exact scope and reproduction](../research/yt-maint/INITIAL_MAINTENANCE.md).
+Maintenance RNG state/draw tracing and bit-exact Go post-maintenance replay are
+not established by these captures. No live BBS/native Windows acceptance claimed.

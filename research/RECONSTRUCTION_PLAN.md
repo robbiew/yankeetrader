@@ -57,6 +57,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+Original initial-maintenance research now retains eight native controls with
+untouched integrated launches, split before/after files, exact repeats and
+clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
+This closes the baseline transition-capture slice; exact maintenance RNG seed,
+draw ordering and post-maintenance Go replay remain separate. Do not repeat the
+capture as missing work or describe it as a gameplay change.
+
+
 | Milestone | Implemented behavior and evidence |
 | --- | --- |
 | Season administration, save 30 / PR #68 | Private archive export with checksum; guarded administrative resets require a durable archive and exact positive season number. No player winner is invented. Existing history/settings and old-login invalidation are preserved; eight-sector worlds are supported. [Usage](../README.md#season-administration), [sysop procedures](../docs/SYSOP.md), [store implementation](../internal/store/season_admin.go). |
