@@ -267,3 +267,9 @@
 /research/yt-maint/sequence-controls/**/*.LOG -diff
 /research/yt-maint/sequence-controls/**/TRACE.BIN -diff
 /research/yt-maint/sequence-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Maintenance phase controls preserve exact DOS trace/clock/exit bytes.
+/research/yt-maint/chronology-controls/** -text
+/research/yt-maint/chronology-controls/**/*.LOG -diff
+/research/yt-maint/chronology-controls/**/TRACE.BIN -diff
+/research/yt-maint/chronology-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

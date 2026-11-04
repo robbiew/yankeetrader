@@ -69,9 +69,11 @@ and six untouched paired oracles. The follow-up [sequencing research](yt-maint/R
 now counts every literal RND site in the initial fixture, measures repeated helper
 reseeds/callers and demonstrates one occupied-candidate retry. These bounded
 observations do not establish arbitrary-world chronology or exact post-maintenance
-replay. General MBF arithmetic and production compatibility remain separate; do not
-repeat the measured seed/count boundaries as missing work or describe research as
-a gameplay change.
+replay. [The phase ledger](yt-maint/PHASE_CHRONOLOGY.md) additionally links nineteen
+mobile groups' eager scans and the tail RNG families in the selected baseline.
+General MBF arithmetic and production compatibility remain separate; do not repeat
+these measured seed/count boundaries as missing work or describe research as a
+gameplay change.
 
 
 | Milestone | Implemented behavior and evidence |
@@ -116,9 +118,11 @@ a gameplay change.
    generation, safe projection or playable integration as missing work.
    The [maintenance sequencing controls](yt-maint/RNG_SEQUENCING.md) now measure
    repeated helper reseeds/callers, all literal-site counts in the selected initial
-   fixture and one occupied-candidate retry. Next recover global phase/interception
-   chronology and exact post-maintenance record/auxiliary replay against untouched
-   controls. General MBF arithmetic and arbitrary inputs remain separate research.
+   fixture and one occupied-candidate retry. The [phase chronology](yt-maint/PHASE_CHRONOLOGY.md)
+   now joins the selected baseline's helper states to group/player scan boundaries
+   and the desertion/lottery tail. Next recover exact post-maintenance record and
+   auxiliary replay against untouched controls. General MBF arithmetic, arbitrary
+   inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
    graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),
