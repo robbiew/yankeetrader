@@ -26,6 +26,7 @@ type SeasonResult struct {
 }
 
 type GenesisIntent struct {
+	QBRecipe                           *QBRecipe
 	Ship                               TravelShip
 	Sectors                            int
 	WarpGeneration                     string
@@ -138,14 +139,14 @@ func (w *World) PrepareGenesis(id int, now time.Time) (GenesisIntent, error) {
 			break
 		}
 	}
-	return GenesisIntent{WarpGeneration: w.WarpGeneration, PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
+	return GenesisIntent{QBRecipe: cloneQBRecipe(w.QBRecipe), WarpGeneration: w.WarpGeneration, PortGeneration: w.PortGeneration, Ship: w.travelShip(p), Sectors: len(w.Sectors), Maintenance: w.LastMaintenance, Season: w.Season, Generation: p.ShipGeneration, Player: id, Alias: p.Alias, Ports: ports, Threshold: threshold, ExplicitThreshold: w.GenesisPorts != nil, ExplicitLottery: w.LotteryDailyLimit != nil, LotteryLimit: w.LotteryLimit(), Score: score, Started: w.Created, QuotedAt: now.UTC(), Expires: now.UTC().Add(GenesisQuoteLifetime)}, nil
 }
 
 // GenesisCandidate builds an unpublished, fully validated replacement. The caller
 // saves this one world under the existing world lock; the old world is untouched.
 func (w *World) GenesisCandidate(e GenesisIntent, now time.Time, seed int64) (*World, GenesisReceipt, error) {
 	return w.genesisCandidate(e, now, seed, func(t time.Time, s int64, n int) (*World, error) {
-		return NewWithGeneration(t, s, n, w.PortGeneration, w.WarpGeneration)
+		return w.newSeasonWorld(t, s)
 	})
 }
 
@@ -186,7 +187,12 @@ func (w *World) genesisCandidate(e GenesisIntent, now time.Time, seed int64, gen
 	}
 	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Winner: e.Alias, Player: e.Player, Ports: len(e.Ports), Threshold: e.Threshold, Score: e.Score}
 	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
-	if err = bootstrapSeason(candidate, now, seed, true); err != nil {
+	if candidate.QBRecipe == nil {
+		err = bootstrapSeason(candidate, now, seed, true)
+	} else {
+		err = candidate.Validate()
+	}
+	if err != nil {
 		return nil, out, err
 	}
 	return candidate, GenesisReceipt{Result: result, NewSeason: candidate.Season, Seed: seed}, nil
@@ -203,7 +209,7 @@ func (w *World) AdministrativeCandidate(expected uint64, now time.Time, seed int
 	if err := w.Validate(); err != nil {
 		return nil, err
 	}
-	candidate, err := NewWithGeneration(now, seed, len(w.Sectors), w.PortGeneration, w.WarpGeneration)
+	candidate, err := w.newSeasonWorld(now, seed)
 	if err != nil {
 		return nil, err
 	}
@@ -218,7 +224,12 @@ func (w *World) AdministrativeCandidate(expected uint64, now time.Time, seed int
 	}
 	result := SeasonResult{Season: w.Season, Started: w.Created, Ended: now.UTC(), Administrative: true}
 	candidate.SeasonResults = append(append([]SeasonResult(nil), w.SeasonResults...), result)
-	if err = bootstrapSeason(candidate, now, seed, false); err != nil {
+	if candidate.QBRecipe == nil {
+		err = bootstrapSeason(candidate, now, seed, false)
+	} else {
+		err = candidate.Validate()
+	}
+	if err != nil {
 		return nil, err
 	}
 	return candidate, nil

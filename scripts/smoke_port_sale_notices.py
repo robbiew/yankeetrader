@@ -21,7 +21,7 @@ def exercise(guard):
             transcript+=guard.run(play,data,'Buyer','b;n;'+quit_keys,classic=classic)
             declined=json.loads(path.read_text());assert declined['Ports']['2']['Owner']==2 and not declined.get('Radio')
             transcript+=guard.run(play,data,'Buyer','b;y;'+quit_keys,classic=classic)
-            saved=json.loads(path.read_text());assert saved['Version']==34
+            saved=json.loads(path.read_text());assert saved['Version']==35
             assert (saved['Players']['1']['Credits'],saved['Players']['2']['Credits'],saved['Ports']['2']['Owner'],saved['Ports']['2']['Treasury'])==(99969,2808,1,0)
             assert saved['Players']['1']['Turns']==500 and len(saved['Radio'])==1
             mail=saved['Radio'][0];assert mail['System']=='port-sale' and mail['From']==0 and mail['To']==2 and mail['Unread'] and mail['Text']==''

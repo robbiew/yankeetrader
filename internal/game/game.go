@@ -15,7 +15,7 @@ const MaxMoney int64 = 9_000_000_000_000_000
 const MaxQuantity int64 = 1_000_000_000
 
 // WorldVersion is the current persisted schema, independent of the app release.
-const WorldVersion = 34
+const WorldVersion = 35
 
 var Goods = [3]string{"ore", "organics", "equipment"}
 
@@ -65,6 +65,7 @@ type Port struct {
 	Updated            time.Time
 }
 type World struct {
+	QBRecipe             *QBRecipe       `json:",omitempty"`
 	arrival              *arrivalContext // Bound-login runtime only; never serialized.
 	NextPlanetGeneration uint64
 	Season               uint64
@@ -161,6 +162,9 @@ func clean(s string) bool {
 	return true
 }
 func (w *World) Validate() error {
+	if err := w.validateQBRecipe(); err != nil {
+		return err
+	}
 	if w.WarpGeneration != "" && w.WarpGeneration != "dos" {
 		return errors.New("unknown warp generation profile")
 	}

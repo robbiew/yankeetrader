@@ -34,6 +34,9 @@ func run() error {
 	maint := flag.Bool("maint", false, "run daily economy maintenance once")
 	seed := flag.Int64("seed", 36, "universe seed")
 	sectors := flag.Int("sectors", 3000, "sector count at initialization")
+	generationProfile := flag.String("generation-profile", "", "new-world generation profile: qb36-v1")
+	qbState := flag.String("qb-state", "", "raw post-RANDOMIZE state: unsigned decimal or 0x hexadecimal")
+	qbDate := flag.String("qb-date", "", "explicit QB source date, YYYY-MM-DD (2026..2028, except January 10)")
 	dosWarps := flag.Bool("dos-warps", false, "use recovered DOS warp-generation rules for a new world")
 	dosPorts := flag.Bool("dos-ports", false, "use recovered DOS port generation and pricing for a new world")
 	genesisPorts := flag.Int("genesis-ports", 300, "initial Genesis threshold: 0 disables; 20..300; omitted defaults to 300")
@@ -92,6 +95,12 @@ func run() error {
 	if dosPortsConfigured && !*initWorld {
 		return errors.New("-dos-ports is only supported with -init")
 	}
+	visited := map[string]bool{}
+	flag.Visit(func(f *flag.Flag) { visited[f.Name] = true })
+	state, err := validateQBFlags(*initWorld, *generationProfile, *qbState, *qbDate, *sectors, visited)
+	if err != nil {
+		return err
+	}
 	st := store.Store{Dir: *data}
 	if adminMode {
 		out, err := st.ExportSeason(*seasonExport, *adminReset, time.Now(), *seed)
@@ -112,7 +121,13 @@ func run() error {
 		if *dosWarps {
 			warpProfile = "dos"
 		}
-		w, e := game.NewWithGeneration(time.Now(), *seed, *sectors, profile, warpProfile)
+		var w *game.World
+		var e error
+		if *generationProfile == game.QB36Profile {
+			w, e = game.NewQB36(time.Now(), 36, state, *qbDate)
+		} else {
+			w, e = game.NewWithGeneration(time.Now(), *seed, *sectors, profile, warpProfile)
+		}
 		if e != nil {
 			return e
 		}

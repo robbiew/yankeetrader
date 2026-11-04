@@ -1,7 +1,7 @@
-# Proposed production QB generation contract
+# Production QB generation contract
 
-Status: **design for a subsequent implementation; no flags or save fields below
-are available yet**. Current playable generation remains unchanged at save 34.
+Status: **implemented playable `qb36-v1` profile, save 35**. CLI admission,
+typed saved recipes and both reset paths now implement this contract.
 The [complete initializer replay](RECOVERY.md) establishes bounded original
 output; it does not itself define a safe playable JSON world.
 
@@ -9,7 +9,7 @@ output; it does not itself define a safe playable JSON world.
 
 Add one explicitly selected, versioned generation recipe that consumes the
 recovered QB stream in its original order, then projects representable results
-into the existing modern world. Name the proposed profile `qb36-v1`. Describe
+into the existing modern world. Name the profile `qb36-v1`. Describe
 it as **QB generation with documented modern adaptations**, not exact DOS saves,
 original maintenance, clock emulation or a bit-exact running DOS game.
 
@@ -22,7 +22,7 @@ Python, DOSBox, original EXEs and REA must not become game dependencies.
 
 ## Explicit inputs
 
-Proposed initialization syntax, **not a working command in the current build**:
+Initialization syntax:
 
 ```text
 yt -data NEW-DIRECTORY -init -generation-profile qb36-v1 \
@@ -49,7 +49,7 @@ yt -data NEW-DIRECTORY -init -generation-profile qb36-v1 \
 - Fix version-1 geometry at 3,000 sectors and 1,000 ports. Reject conflicting
   explicit `-sectors` values. Both map and economy come from one QB stream;
   independent modern streams cannot be presented as a QB sequence.
-- Reject explicit `-dos-warps`, `-dos-ports` or `-seed` together with the proposed
+- Reject explicit `-dos-warps`, `-dos-ports` or `-seed` together with the QB
   profile. Those switches retain their existing meaning outside this profile.
   The existing default `-seed 36` must not count as an explicit conflicting flag.
 - The source candidate uses the default `YTSCORE.ASC` field. The game does not
@@ -72,7 +72,7 @@ The source candidate is not a supported DOS export or import format.
 
 ## Playable projection and deliberate adaptations
 
-| Source behavior | Proposed playable behavior |
+| Source behavior | Playable behavior |
 | --- | --- |
 | Six ordered warp slots, including holes and Earth's self-warp | Keep nonzero destination order, omit only Earth's redundant self-warp; preserve the existing no-self-link invariant. |
 | Duplicate port placement can orphan an earlier port | Reject the unpublished candidate with a clear collision error. Do not move a port, shuffle again or quietly choose another state. |
@@ -98,8 +98,8 @@ before publishing it. Existing old-profile bootstrap behavior stays unchanged.
 
 ## Saves, reset policy and reproducibility
 
-Introduce a new schema only when the profile is implemented (next available
-version; 35 if no intervening change). Save 34 remains current for this design.
+Save 35 introduces the playable profile; supported earlier saves upgrade without
+changing generation or inferring a recipe.
 Represent the recipe with a typed optional field. Reject unknown algorithm
 versions, invalid state/date/hash, incomplete recipes and inconsistent map/port
 profile selections. Earlier schema saves claiming the new field must fail
@@ -164,7 +164,9 @@ restore/import or new automatic archive importer is included.
 
 The first source-generator slice is now [implemented in Go with portable fixtures](GO_IMPLEMENTATION.md).
 The [internal projection/admission candidate](PROJECTION.md) is now implemented.
-The playable profile, CLI and saved provenance/reset sections remain future
-implementation work. This document defines their design only. It does not authorize
-claiming any proposed command or save field as shipped, and it does not repeat
-already completed native initializer recovery as a new research task.
+The playable profile, CLI and saved provenance/reset integration are implemented
+in `qb_profile.go`, CLI admission and the existing transactional reset paths.
+Focused game/store tests and `scripts/smoke_qb_profile.py` exercise recipe validation,
+repeat-layout resets, stale intents, archive restoration and durability boundaries.
+General MBF arithmetic, exact DOS maintenance and DOS save interoperability remain
+separate work.

@@ -10,8 +10,7 @@ import (
 	"github.com/robbiew/yankeetrader/internal/qbinit"
 )
 
-// qbWorldCandidate is deliberately internal and unpublished. The CLI and saved
-// QB recipe/profile are a later milestone; existing constructors do not call it.
+// qbWorldCandidate is the internal unpublished stage used by NewQB36.
 // Source fingerprint and stream statistics describe pre-projection bytes, not
 // the evolving modern world or its independent bootstrap stream.
 type qbWorldCandidate struct {
