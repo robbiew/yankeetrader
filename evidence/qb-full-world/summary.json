@@ -1,0 +1,55 @@
+{
+  "boundary_battles": 1,
+  "clock": "injected UTC; wall deadlines remain real",
+  "commands": 3510,
+  "days": 3,
+  "disruptions": "fixed known sector 2999 avoided by planner",
+  "go_version": "go1.27.3",
+  "maintenance": [
+    {
+      "date": "2032-06-14",
+      "hq": 849,
+      "ports_changed": 1000,
+      "ran": true,
+      "same_day_noop": true,
+      "turns_after": 500,
+      "turns_before": 20,
+      "wanderer": "relocated"
+    },
+    {
+      "date": "2032-06-15",
+      "hq": 849,
+      "ports_changed": 1000,
+      "ran": true,
+      "same_day_noop": true,
+      "turns_after": 500,
+      "turns_before": 11,
+      "wanderer": "relocated"
+    },
+    {
+      "date": "2032-06-16",
+      "hq": 849,
+      "ports_changed": 1000,
+      "ran": true,
+      "same_day_noop": true,
+      "turns_after": 500,
+      "turns_before": 9,
+      "wanderer": "relocated"
+    }
+  ],
+  "old_login_rejected": true,
+  "outcome": "passed",
+  "ports": 1000,
+  "profile": "qb36-v1",
+  "purchases": 300,
+  "sectors": 3000,
+  "sessions": 1147,
+  "source_recipe": {
+    "Profile": "qb36-v1",
+    "State": 51205,
+    "Date": "2027-01-01",
+    "SourceSHA256": "e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328"
+  },
+  "threshold": 300,
+  "trade_cycles": 111
+}

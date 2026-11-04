@@ -1,0 +1,20 @@
+{
+  "actions.json": "698efbae29ee2569ff8776e9b163d756680fa83d997f550e59e1f75e9dde4c18",
+  "after-genesis.json.gz": "e19849e6e736c3d366ce617b78f1d2a4fe06e0c2b12e0d61c7e92a64b54734fb",
+  "before-genesis.json.gz": "b42e2688a6048cf7982df85a7a7f7b93ecbf1468777a0ba222f0c21e1bc266d2",
+  "day-01-after.json.gz": "319cd8ce06586bc153ad5e04f5857e5f0a60b3dc726b8a0571aa47a8dc1d3cce",
+  "day-01-before.json.gz": "5b66d79b29b0c34445fcba9ee9fdc98c4c3abfeb784f2c144ef62e4e7502d47e",
+  "day-01-repeat.json.gz": "319cd8ce06586bc153ad5e04f5857e5f0a60b3dc726b8a0571aa47a8dc1d3cce",
+  "day-02-after.json.gz": "70f43ffb522c14843b5a478808975a13f6510502cd971585ff5a2523bd3f18e1",
+  "day-02-before.json.gz": "6a0ce0f0989b73fafb5e288507beb4464db172359c3c75e9ae395d44116b338b",
+  "day-02-repeat.json.gz": "70f43ffb522c14843b5a478808975a13f6510502cd971585ff5a2523bd3f18e1",
+  "day-03-after.json.gz": "f7f9b45ccf2fee19256b376320840f27d71d6e0047b402430cd3298bfb3615bf",
+  "day-03-before.json.gz": "cf1ecbc5088c52cced9019ddce10a2db27eefd7b9f4bebc904651bbe597f575b",
+  "day-03-repeat.json.gz": "f7f9b45ccf2fee19256b376320840f27d71d6e0047b402430cd3298bfb3615bf",
+  "driver.go.txt": "00eb9cadd786119aa3e4d1778dc48b5bab3f4345fcfa56403522eacbc71637a9",
+  "earned-budget.json.gz": "f00f413829f029e05b47cac35c4f2d0b3a1ea059c88295bf4a167055cda9e4ea",
+  "initial.json.gz": "d9939ac9413aa8daaed9a3b68a9e7c6d1deb6298c1e6ffa2c5e337e5e927eb28",
+  "reconnected.json.gz": "5685310cd1b0736dc7aa01d31afffba7c39dfeaf2c957c2af3a3b48eee77e51b",
+  "summary.json": "1de0947a72cb107c6359e4da70a2c9dab44fe90f289faf95246c1601f6e41394",
+  "transcript.txt.gz": "2e54736f66c8ef8ba16335d4fbbbb3bcb723d3e21c8b6e67360919cf2f4d2d01"
+}
