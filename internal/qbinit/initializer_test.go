@@ -47,7 +47,7 @@ func goldens(t *testing.T) []golden {
 	if err := json.Unmarshal(nativeFixture, &fixture); err != nil {
 		t.Fatal(err)
 	}
-	if fixture.Format != "qb-initializer-native-hashes-v1" || len(fixture.Cases) != 10 {
+	if fixture.Format != "qb-initializer-native-hashes-v1" || len(fixture.Cases) != 20 {
 		t.Fatal("native fixture coverage")
 	}
 	if len(strings.Split(syllableData, ",")) != 908 || hash([]byte(syllableData)) != fixture.PoolSHA {
@@ -146,7 +146,7 @@ func TestWorkLimitsReturnNoPartialCandidate(t *testing.T) {
 func TestInputsAndOwnership(t *testing.T) {
 	for _, o := range []Options{
 		{State: 0x1000000, Date: "2026-11-02"},
-		{State: 0xc805, Date: "2026-01-10"}, {State: 0xc805, Date: "2027-01-10"}, {State: 0xc805, Date: "2028-01-10"}, {Date: "2025-12-31"}, {Date: "2029-01-01"},
+		{State: 0xc805, Date: "2026-01-00"}, {Date: "2025-12-31"}, {Date: "2029-01-01"},
 		{Date: "2026-02-29"}, {Date: "2026-1-01"}, {Date: "2026-11-02T00:00:00Z"},
 		{Date: "2026-11-02", Scoreboard: strings.Repeat("x", 42)}, {Date: "2026-11-02", Scoreboard: "a\nb"},
 		{Date: "2026-11-02", Scoreboard: "é"}, {Date: "2026-11-02", DrawLimit: DefaultDrawLimit + 1},
@@ -171,5 +171,33 @@ func TestInputsAndOwnership(t *testing.T) {
 	a.Bytes[0] ^= 1
 	if a.Bytes[0] == b.Bytes[0] {
 		t.Fatal("results alias shared state")
+	}
+}
+
+func TestJanuary10PortZeroResidues(t *testing.T) {
+	// Literal observed class fields and date residues, independent of mbf().
+	expected := map[[4]byte][4]byte{
+		{0, 0, 0, 129}:    {6, 0, 0x40, 0},
+		{0, 0, 0, 130}:    {5, 0, 0x20, 0},
+		{0, 0, 0x40, 130}: {4, 0, 0, 0},
+	}
+	for _, year := range []int{2026, 2027, 2028} {
+		result, err := Generate(Options{State: 0xc805, Date: fmt.Sprintf("%d-01-10", year)})
+		if err != nil {
+			t.Fatal(err)
+		}
+		counts := map[[4]byte]int{}
+		for i := 1; i <= PortCount; i++ {
+			r := record(result.Bytes, 3051+i)
+			klass := [4]byte(r[41:45])
+			want, ok := expected[klass]
+			if !ok || [4]byte(r[45:49]) != want {
+				t.Fatalf("year %d port %d: class %x date %x", year, i, klass, r[45:49])
+			}
+			counts[klass]++
+		}
+		if counts[[4]byte{0, 0, 0, 129}] != 345 || counts[[4]byte{0, 0, 0, 130}] != 345 || counts[[4]byte{0, 0, 0x40, 130}] != 310 {
+			t.Fatal("source class stream changed", counts)
+		}
 	}
 }

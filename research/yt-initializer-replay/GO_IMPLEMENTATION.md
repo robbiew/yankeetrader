@@ -10,9 +10,9 @@ integration uses this package through safe projection and introduces save 35.
 ## Inputs and exact output
 
 `Generate(Options)` requires an explicit raw post-RANDOMIZE state in the 24-bit
-range and a canonical `YYYY-MM-DD` date in 2026–2028. January 10 is explicitly
-rejected: its day-minus-ten zero cancellation residue lacks retained native
-coverage, so canonical-zero serialization must not be claimed as exact. An empty scoreboard field
+range and a canonical `YYYY-MM-DD` date in 2026–2028. January 10 now uses the
+[verified class-dependent zero residue](JANUARY10.md); ten added original controls
+cover January 9/10/11 across all admitted years and an independent repeat. An empty scoreboard field
 selects `YTSCORE.ASC`; explicit text must be printable ASCII and at most 41 bytes.
 The scoreboard field is never used as a path to write a file. Counts remain the
 original 3,000 sectors, 1,000 ports, 50 inactive players and 100 inactive planets.
@@ -78,7 +78,7 @@ preserves original collisions; the playable projection rejects them rather than 
 
 ## Validation and next slice
 
-The package's ten native cases, full race-enabled Go suite and vet are checked
+The package's twenty native cases, full race-enabled Go suite and vet are checked
 with the existing repository validations. CI also verifies fixture provenance
 and its corruption controls. The source package adds no external dependencies;
 the playable integration supplies the CLI described in the sysop guide.

@@ -42,8 +42,8 @@ func (w *World) validateQBRecipe() error {
 		return errors.New("invalid QB recipe profile or state")
 	}
 	d, err := time.Parse("2006-01-02", r.Date)
-	if err != nil || d.Format("2006-01-02") != r.Date || d.Year() < 2026 || d.Year() > 2028 || d.YearDay() == 10 {
-		return errors.New("invalid or unverified QB recipe date")
+	if err != nil || d.Format("2006-01-02") != r.Date || d.Year() < 2026 || d.Year() > 2028 {
+		return errors.New("invalid QB recipe date")
 	}
 	hash, err := hex.DecodeString(r.SourceSHA256)
 	if err != nil || len(hash) != 32 || hex.EncodeToString(hash) != r.SourceSHA256 {

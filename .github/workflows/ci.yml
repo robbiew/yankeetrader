@@ -108,6 +108,8 @@ jobs:
           python3 scripts/verify_initializer_native.py
           python3 scripts/test_verify_initializer_native.py
           python3 scripts/verify_initializer_controls.py
+          python3 scripts/verify_january10_controls.py
+          python3 scripts/test_verify_january10_controls.py
           python3 scripts/test_verify_initializer_controls.py
           python3 scripts/verify_initializer_targets.py
           python3 scripts/test_verify_initializer_targets.py

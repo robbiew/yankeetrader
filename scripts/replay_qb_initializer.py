@@ -20,7 +20,6 @@ def put(record,offset,value):record[offset:offset+4]=graph.mbf.enc(value)
 
 
 def config_record(seed,date,scoreboard):
-    if date.timetuple().tm_yday==10:raise ValueError('January 10 port-date residue is not verified')
     encoded=scoreboard.encode('ascii')
     if not 1<=len(encoded)<=41:raise ValueError('research scoreboard length must be 1..41 ASCII bytes')
     if not 2026<=date.year<=2028:raise ValueError('research date range is 2026..2028')
@@ -114,6 +113,15 @@ def controlled_cases():
         observed=control['world']
         cases.append(dict(clock_case='fresh-'+name,date=control['date'].isoformat(),scoreboard=scoreboard,
                           world='research/yt-initializer-replay/controls/world-dos/'+name+'/before-maint.dat.gz',
+                          observed_world_sha256=SHA(observed),replayed_world_sha256=SHA(replayed),
+                          seed_trace=dict(world_seed=control['seed'],trace_sha256=control['seed_trace_sha256']),
+                          statistics=statistics,**compare(observed,replayed)))
+    from verify_january10_controls import verify as verify_january
+    for name,control in verify_january().items():
+        replayed,statistics=synthesize(control['seed'],control['date'])
+        observed=control['world']
+        cases.append(dict(clock_case='january-'+name,date=control['date'].isoformat(),scoreboard='YTSCORE.ASC',
+                          world='research/yt-initializer-replay/january10-controls/world-dos/'+name+'/before-maint.dat.gz',
                           observed_world_sha256=SHA(observed),replayed_world_sha256=SHA(replayed),
                           seed_trace=dict(world_seed=control['seed'],trace_sha256=control['seed_trace_sha256']),
                           statistics=statistics,**compare(observed,replayed)))

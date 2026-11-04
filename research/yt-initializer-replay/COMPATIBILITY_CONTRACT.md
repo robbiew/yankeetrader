@@ -35,8 +35,8 @@ yt -data NEW-DIRECTORY -init -generation-profile qb36-v1 \
   silently mask a caller's invalid state merely because `qbrng.New` can mask it.
   Zero is a valid raw state.
 - Require an explicit source date. Version 1 admits only the replay model's
-  bounded 2026–2028 range and validates a real Gregorian calendar date. Reject
-  January 10 until its source port-watermark zero residue is verified. The
+  bounded 2026–2028 range and validates a real Gregorian calendar date. January
+  10 is now admitted with [verified port-watermark zero residues](JANUARY10.md). The
   evidence directly covers selected dates, not every admitted date; any broader
   exactness claim needs additional tests/evidence. Consider tightening admission
   if implementation finds an unverified arithmetic boundary.
@@ -140,7 +140,7 @@ restore/import or new automatic archive importer is included.
 
 ## Implementation sequence and acceptance
 
-1. Port the bounded source generator into a pure Go component. Compare all ten
+1. Port the bounded source generator into a pure Go component. Compare all twenty
    complete source fingerprints and RNG endpoints against retained evidence.
    Include sparse zero-residue, January cancellation and inherited FIELD tests.
    Export compact golden fixtures for Go tests so production tests require no

@@ -1,0 +1,8 @@
+date 01/10/2027
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init < answers.txt > INIT.LOG
+echo INITIALIZER_RETURNED > INITRET.LOG
+date > ENDDATE.LOG
+time > ENDTIME.LOG

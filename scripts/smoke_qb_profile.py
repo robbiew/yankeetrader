@@ -19,13 +19,17 @@ def main():
             assert (result.returncode == 0) == ok, (args, result.stdout, result.stderr)
             return result.stdout
         flags = ['-generation-profile', 'qb36-v1', '-qb-state', '0xc805', '-qb-date', '2027-01-01']
-        for i, extra in enumerate((['-seed','36'], ['-dos-warps=false'], ['-dos-ports'], ['-sectors','32'], ['-qb-state','-1'], ['-qb-state','0x1000000'], ['-qb-date','2027-01-10'], ['-qb-date','2026-02-29'], ['-qb-state','0xa90a05'], ['-qb-state','619'])):
+        for i, extra in enumerate((['-seed','36'], ['-dos-warps=false'], ['-dos-ports'], ['-sectors','32'], ['-qb-state','-1'], ['-qb-state','0x1000000'], ['-qb-date','2029-01-10'], ['-qb-date','2026-02-29'], ['-qb-state','0xa90a05'], ['-qb-state','619'])):
             target = root / f'reject-{i}'
             run('-init', *flags, *extra, ok=False, target=target)
             assert not (target / 'world.json').exists()
         run(*flags, '-maint', ok=False)
         run('-init', '-generation-profile', 'unknown', ok=False)
         run('-init', '-generation-profile', 'qb36-v1', '-qb-date', '2027-01-01', ok=False)
+        jan10 = root / 'january10'
+        run('-init', *flags, '-qb-date', '2027-01-10', target=jan10)
+        january = json.loads((jan10/'world.json').read_bytes())
+        assert january['QBRecipe']['Date']=='2027-01-10' and january['QBRecipe']['SourceSHA256']=='413a49739c26622eecc1256378de3f09b4a3be311b73c9ade3399c4323e957ca'
         run('-init', *flags, '-genesis-ports', '20')
         path = data / 'world.json'
         initial = json.loads(path.read_bytes())

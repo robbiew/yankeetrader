@@ -1,0 +1,9 @@
+mount c /private/tmp/yt-january10-native/seed-dos/jan11-2028
+c:
+date 01/11/2028
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init > TRACE.BIN
+echo PROBE_RETURNED > RETURN.LOG
+exit

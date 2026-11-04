@@ -2,10 +2,10 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-03
+## Current implementation and next work — checked 2026-11-04
 
 This section is the current planning baseline, checked against merged `main`
-through `e6093d1`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `41abf76`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -15,7 +15,9 @@ through `e6093d1`, including PRs [#73](https://github.com/robbiew/yankeetrader/p
 (release packaging/sysop cheat sheet), [#80](https://github.com/robbiew/yankeetrader/pull/80)
 (pure Go generator/goldens) and [#81](https://github.com/robbiew/yankeetrader/pull/81)
 (safe world projection) and [#82](https://github.com/robbiew/yankeetrader/pull/82)
-(playable `qb36-v1`). The playable integration adds typed
+(playable `qb36-v1`) and [#83](https://github.com/robbiew/yankeetrader/pull/83)
+(full QB acceptance) and [#84](https://github.com/robbiew/yankeetrader/pull/84)
+(January 10 source-date admission). The playable integration adds typed
 recipes, CLI admission and both reset paths in the current source build; published
 v0.1.0 packages predate that integration. Release **v0.1.0 is published**. The playable QB profile uses documented modern adaptations rather than exact
 DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
@@ -78,6 +80,7 @@ capture as missing work or describe it as a gameplay change.
 | Full QB world acceptance | Controlled UTC multi-day production session/store campaign, earned 300-port Genesis, reconnect/old-login guards and source-layout reset; independent retained-evidence/corruption checks. [Boundaries and reproduction](../evidence/QB_FULL_WORLD_CAMPAIGN.md). |
 | Playable QB profile / save 35 / PR #82 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
 | Pure Go generator and safe projection / PRs #80–81 | Portable ten-control goldens, bounded source generation and unpublished safe projection/admission. |
+| January 10 admission parity | Ten additional original date controls verify port-date FAC residues across 2026–2028; twenty portable whole-world goldens pass. The source generator and playable recipe accept January 10 without changing earlier hashes or schema 35. [Evidence](yt-initializer-replay/JANUARY10.md). |
 | Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
@@ -96,7 +99,7 @@ capture as missing work or describe it as a gameplay change.
    now specifies explicit raw state/date, safe projection, saved provenance and
    repeat-layout reset semantics. These are proposed behavior, not shipped flags.
    The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
-   matches all ten whole-world/block hashes and RNG endpoints with portable
+   matches all twenty whole-world/block hashes and RNG endpoints with portable
    goldens, retaining explicit work limits and original source defects.
    The [internal projection/admission pipeline](yt-initializer-replay/PROJECTION.md)
    now rejects unsafe source candidates and validates modern bootstrap without

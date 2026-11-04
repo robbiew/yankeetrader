@@ -12,17 +12,19 @@ ROOT=model.ROOT
 
 
 class InitializerReplayTests(unittest.TestCase):
-    def test_all_ten_complete_worlds(self):
+    def test_all_twenty_complete_worlds(self):
         result=model.controlled_cases()
         retained=json.loads((ROOT/'research/yt-initializer-replay/replay-results.json').read_text())
         self.assertEqual(result,retained)
-        self.assertEqual(len(result['cases']),10)
+        self.assertEqual(len(result['cases']),20)
         expected=dict(model.ports.WORLD_HASHES,**{
             'fresh-baseline':'0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d',
             'fresh-score-path':'d4efcd1d3f4c2401e4e3c53345d67af72665b1027de56d289810c88e66fc1f5e',
             'fresh-new-year':'e6d5ab5b3fab7563b279e976cdde3c4e6e494c2dffd5c35a74a60fac38fdf328',
             'fresh-leap-day':'523bfb954a8588285d6606cbdbfaa11dbccede964b512ad23bea13b496ed3d18',
         })
+        from verify_january10_controls import CASES
+        expected.update({'january-'+name:case[2] for name,case in CASES.items()})
         for case in result['cases']:
             with self.subTest(case=case['clock_case']):
                 self.assertEqual(case['compared_records'],4151)
@@ -83,8 +85,6 @@ class InitializerReplayTests(unittest.TestCase):
         for scoreboard in ('','x'*42):
             with self.assertRaises(ValueError):model.synthesize(0xc805,'2026-11-02',scoreboard)
         with self.assertRaises(ValueError):model.synthesize(0xc805,'1999-12-31')
-        for year in (2026,2027,2028):
-            with self.assertRaisesRegex(ValueError,'January 10'):model.synthesize(0xc805,f'{year}-01-10')
         with self.assertRaisesRegex(AssertionError,'complete world length'):model.compare(bytes(10),bytes(10))
 
 

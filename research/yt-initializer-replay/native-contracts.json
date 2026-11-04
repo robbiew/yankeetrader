@@ -163,6 +163,27 @@
       "file_offset": 46653,
       "length": 99,
       "bytes_hex": "0bdb750b80ec10765487da0bdb744e0aff750f80ec0876458afb8ade8af2b2000aff780afecc7435d1e2d1d371f680fa8077077211f6c601740c80c60183d3007304fec47414248080e77f0ac7a31c008ae38ac6a31a00c37903e90655c6061d0000c3"
+    },
+    {
+      "name": "port-class-date",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 7720,
+      "length": 146,
+      "bytes_hex": "cd3d349090bf7ea6cd3f919090bb1a00cd3d039090bf50a6cd3f8190908bdfbf18a6cd3f7d9090cd3fbc90908bd3bb16a5cd3f6e9090cd3e799090be9ea6cd3f9790908bcbcd3f7790908bf381c62b23d1e68b9c5a18f7db899c5a188bd98bc2ba36a5cd3f5b909087dfcd3d1c9090ba3aa5cd3f5b9090bf08acbe0ca6cd3f7f9090bb1a00cd3d1c9090ba3ea5cd3f5b9090"
+    },
+    {
+      "name": "port-class-seven",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 10718,
+      "length": 4,
+      "bytes_hex": "00006083"
+    },
+    {
+      "name": "port-date-minus-ten",
+      "binary": "YT-INIT.EXE",
+      "file_offset": 12104,
+      "length": 4,
+      "bytes_hex": "0000a084"
     }
   ]
 }
