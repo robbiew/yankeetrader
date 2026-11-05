@@ -1,0 +1,2015 @@
+__ZL13DOS_21Handlerv:
+1000db990:	fc 6f ba a9	stp	x28, x27, [sp, #-0x60]!
+1000db994:	fa 67 01 a9	stp	x26, x25, [sp, #0x10]
+1000db998:	f8 5f 02 a9	stp	x24, x23, [sp, #0x20]
+1000db99c:	f6 57 03 a9	stp	x22, x21, [sp, #0x30]
+1000db9a0:	f4 4f 04 a9	stp	x20, x19, [sp, #0x40]
+1000db9a4:	fd 7b 05 a9	stp	x29, x30, [sp, #0x50]
+1000db9a8:	fd 43 01 91	add	x29, sp, #0x50
+1000db9ac:	ff c3 14 d1	sub	sp, sp, #0x530
+1000db9b0:	e8 1b 00 f0	adrp	x8, 895 ; 0x10045a000
+1000db9b4:	08 a5 47 f9	ldr	x8, [x8, #0xf48] ; literal pool symbol address: ___stack_chk_guard
+1000db9b8:	08 01 40 f9	ldr	x8, [x8]
+1000db9bc:	a8 83 1a f8	stur	x8, [x29, #-0x58]
+1000db9c0:	d3 95 00 f0	adrp	x19, 4795 ; 0x101396000
+1000db9c4:	73 82 35 91	add	x19, x19, #0xd60
+1000db9c8:	68 06 40 39	ldrb	w8, [x19, #0x1]
+1000db9cc:	09 1d 00 12	and	w9, w8, #0xff
+1000db9d0:	3f ad 01 71	cmp	w9, #0x6b
+1000db9d4:	48 01 00 54	b.hi	0x1000db9fc
+1000db9d8:	29 41 01 51	sub	w9, w9, #0x50
+1000db9dc:	3f 51 00 71	cmp	w9, #0x14
+1000db9e0:	2a 00 80 52	mov	w10, #0x1
+1000db9e4:	49 21 c9 1a	lsl	w9, w10, w9
+1000db9e8:	6a 00 80 52	mov	w10, #0x3
+1000db9ec:	8a 02 a0 72	movk	w10, #0x14, lsl #16
+1000db9f0:	29 01 0a 0a	and	w9, w9, w10
+1000db9f4:	24 99 40 7a	ccmp	w9, #0x0, #0x4, ls
+1000db9f8:	80 02 00 54	b.eq	0x1000dba48
+1000db9fc:	09 1d 00 12	and	w9, w8, #0xff
+1000dba00:	3f c5 01 71	cmp	w9, #0x71
+1000dba04:	68 de 00 54	b.hi	0x1000dd5d0
+1000dba08:	f5 63 10 91	add	x21, sp, #0x418
+1000dba0c:	09 1d 40 92	and	x9, x8, #0xff
+1000dba10:	ca 19 00 d0	adrp	x10, 826 ; 0x100415000
+1000dba14:	4a e1 36 91	add	x10, x10, #0xdb8
+1000dba18:	8b 00 00 10	adr	x11, #16
+1000dba1c:	4c 79 69 78	ldrh	w12, [x10, x9, lsl #1]
+1000dba20:	6b 09 0c 8b	add	x11, x11, x12, lsl #2
+1000dba24:	60 01 1f d6	br	x11
+1000dba28:	28 00 80 52	mov	w8, #0x1
+1000dba2c:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dba30:	e1 63 10 91	add	x1, sp, #0x418
+1000dba34:	e2 63 00 91	add	x2, sp, #0x18
+1000dba38:	00 00 80 52	mov	w0, #0x0
+1000dba3c:	03 00 80 52	mov	w3, #0x0
+1000dba40:	c0 c4 fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dba44:	2e 03 00 14	b	0x1000dc6fc
+1000dba48:	00 66 81 52	mov	w0, #0xb30
+1000dba4c:	22 ad 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dba50:	08 6c 1c 53	lsl	w8, w0, #4
+1000dba54:	d4 95 00 f0	adrp	x20, 4795 ; 0x101396000
+1000dba58:	94 e2 39 91	add	x20, x20, #0xe78
+1000dba5c:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dba60:	21 49 00 51	sub	w1, w9, #0x12
+1000dba64:	89 0a 40 79	ldrh	w9, [x20, #0x4]
+1000dba68:	21 3d 10 33	bfi	w1, w9, #16, #16
+1000dba6c:	00 b9 00 11	add	w0, w8, #0x2e
+1000dba70:	96 45 06 94	bl	__Z10mem_writedjj
+1000dba74:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dba78:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dba7c:	29 49 00 51	sub	w9, w9, #0x12
+1000dba80:	61 02 40 79	ldrh	w1, [x19]
+1000dba84:	08 6d 1c 53	lsl	w8, w8, #4
+1000dba88:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dba8c:	77 45 06 94	bl	__Z10mem_writewjt
+1000dba90:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dba94:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dba98:	29 41 00 51	sub	w9, w9, #0x10
+1000dba9c:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dbaa0:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbaa4:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbaa8:	70 45 06 94	bl	__Z10mem_writewjt
+1000dbaac:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbab0:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbab4:	29 39 00 51	sub	w9, w9, #0xe
+1000dbab8:	61 0a 40 79	ldrh	w1, [x19, #0x4]
+1000dbabc:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbac0:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbac4:	69 45 06 94	bl	__Z10mem_writewjt
+1000dbac8:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbacc:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbad0:	29 31 00 51	sub	w9, w9, #0xc
+1000dbad4:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dbad8:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbadc:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbae0:	62 45 06 94	bl	__Z10mem_writewjt
+1000dbae4:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbae8:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbaec:	29 29 00 51	sub	w9, w9, #0xa
+1000dbaf0:	61 32 40 79	ldrh	w1, [x19, #0x18]
+1000dbaf4:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbaf8:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbafc:	5b 45 06 94	bl	__Z10mem_writewjt
+1000dbb00:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbb04:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbb08:	29 21 00 51	sub	w9, w9, #0x8
+1000dbb0c:	61 3a 40 79	ldrh	w1, [x19, #0x1c]
+1000dbb10:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbb14:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbb18:	54 45 06 94	bl	__Z10mem_writewjt
+1000dbb1c:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbb20:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbb24:	29 19 00 51	sub	w9, w9, #0x6
+1000dbb28:	61 2a 40 79	ldrh	w1, [x19, #0x14]
+1000dbb2c:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbb30:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbb34:	4d 45 06 94	bl	__Z10mem_writewjt
+1000dbb38:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbb3c:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbb40:	29 11 00 51	sub	w9, w9, #0x4
+1000dbb44:	81 0e 40 79	ldrh	w1, [x20, #0x6]
+1000dbb48:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbb4c:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbb50:	46 45 06 94	bl	__Z10mem_writewjt
+1000dbb54:	88 0a 40 79	ldrh	w8, [x20, #0x4]
+1000dbb58:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dbb5c:	29 09 00 51	sub	w9, w9, #0x2
+1000dbb60:	81 02 40 79	ldrh	w1, [x20]
+1000dbb64:	08 6d 1c 53	lsl	w8, w8, #4
+1000dbb68:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dbb6c:	3f 45 06 94	bl	__Z10mem_writewjt
+1000dbb70:	68 06 40 39	ldrb	w8, [x19, #0x1]
+1000dbb74:	a2 ff ff 17	b	0x1000db9fc
+1000dbb78:	60 32 40 39	ldrb	w0, [x19, #0xc]
+1000dbb7c:	a7 c5 fc 97	bl	__Z13DOS_FlushFilet
+1000dbb80:	60 c4 00 34	cbz	w0, 0x1000dd40c
+1000dbb84:	08 0d 80 52	mov	w8, #0x68
+1000dbb88:	68 06 00 39	strb	w8, [x19, #0x1]
+1000dbb8c:	33 07 00 14	b	0x1000dd858
+1000dbb90:	69 22 40 39	ldrb	w9, [x19, #0x8]
+1000dbb94:	08 1d 00 12	and	w8, w8, #0xff
+1000dbb98:	1f 7d 00 71	cmp	w8, #0x1f
+1000dbb9c:	24 19 40 7a	ccmp	w9, #0x0, #0x4, ne
+1000dbba0:	a1 32 00 54	b.ne	0x1000dc1f4
+1000dbba4:	64 c0 fc 97	bl	__Z19DOS_GetDefaultDrivev
+1000dbba8:	94 01 00 14	b	0x1000dc1f8
+1000dbbac:	00 66 81 52	mov	w0, #0xb30
+1000dbbb0:	c9 ac 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dbbb4:	8e 01 00 14	b	0x1000dc1ec
+1000dbbb8:	08 20 8e 52	mov	w8, #0x7100
+1000dbbbc:	16 06 00 14	b	0x1000dd414
+1000dbbc0:	e8 15 01 90	adrp	x8, 8892 ; 0x102397000
+1000dbbc4:	08 e9 40 79	ldrh	w8, [x8, #0x74]
+1000dbbc8:	86 03 00 14	b	0x1000dc9e0
+1000dbbcc:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dbbd0:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dbbd4:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbbd8:	21 41 08 2a	orr	w1, w9, w8, lsl #16
+1000dbbdc:	68 32 40 79	ldrh	w8, [x19, #0x18]
+1000dbbe0:	69 3a 40 79	ldrh	w9, [x19, #0x1c]
+1000dbbe4:	22 41 08 2a	orr	w2, w9, w8, lsl #16
+1000dbbe8:	68 02 40 39	ldrb	w8, [x19]
+1000dbbec:	1f 05 00 71	cmp	w8, #0x1
+1000dbbf0:	80 bd 00 54	b.eq	0x1000dd3a0
+1000dbbf4:	e8 bd 00 35	cbnz	w8, 0x1000dd3b0
+1000dbbf8:	83 d1 fc 97	bl	__Z12DOS_LockFiletjj
+1000dbbfc:	60 bd 00 37	tbnz	w0, #0x0, 0x1000dd3a8
+1000dbc00:	03 06 00 14	b	0x1000dd40c
+1000dbc04:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbc08:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbc0c:	00 01 40 79	ldrh	w0, [x8]
+1000dbc10:	64 46 01 94	bl	__Z14DOS_FreeMemoryt
+1000dbc14:	c0 bf 00 34	cbz	w0, 0x1000dd40c
+1000dbc18:	10 07 00 14	b	0x1000dd858
+1000dbc1c:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbc20:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbc24:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dbc28:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbc2c:	00 01 09 0b	add	w0, w8, w9
+1000dbc30:	e1 63 00 91	add	x1, sp, #0x18
+1000dbc34:	02 20 80 52	mov	w2, #0x100
+1000dbc38:	d1 3f 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dbc3c:	68 12 40 39	ldrb	w8, [x19, #0x4]
+1000dbc40:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dbc44:	e0 63 00 91	add	x0, sp, #0x18
+1000dbc48:	e1 63 10 91	add	x1, sp, #0x418
+1000dbc4c:	02 00 80 52	mov	w2, #0x0
+1000dbc50:	9d c3 fc 97	bl	__Z13DOS_FindFirstPKc17FatAttributeFlagsb
+1000dbc54:	00 aa 00 34	cbz	w0, 0x1000dd194
+1000dbc58:	00 00 80 52	mov	w0, #0x0
+1000dbc5c:	e2 13 fe 97	bl	__Z12CALLBACK_SCFb
+1000dbc60:	8a 04 00 14	b	0x1000dce88
+1000dbc64:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbc68:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbc6c:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dbc70:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbc74:	00 01 09 0b	add	w0, w8, w9
+1000dbc78:	e1 63 00 91	add	x1, sp, #0x18
+1000dbc7c:	02 20 80 52	mov	w2, #0x100
+1000dbc80:	bf 3f 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dbc84:	e0 63 00 91	add	x0, sp, #0x18
+1000dbc88:	c5 c1 fc 97	bl	__Z13DOS_ChangeDirPKc
+1000dbc8c:	00 a9 00 34	cbz	w0, 0x1000dd1ac
+1000dbc90:	7f 02 00 79	strh	wzr, [x19]
+1000dbc94:	00 00 80 52	mov	w0, #0x0
+1000dbc98:	d3 13 fe 97	bl	__Z12CALLBACK_SCFb
+1000dbc9c:	f1 06 00 14	b	0x1000dd860
+1000dbca0:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dbca4:	01 00 80 52	mov	w1, #0x0
+1000dbca8:	e2 03 13 aa	mov	x2, x19
+1000dbcac:	10 c5 fc 97	bl	__Z13DOS_CloseFiletbPh
+1000dbcb0:	e0 ba 00 34	cbz	w0, 0x1000dd40c
+1000dbcb4:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dbcb8:	00 40 80 52	mov	w0, #0x200
+1000dbcbc:	cf 07 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dbcc0:	e6 06 00 14	b	0x1000dd858
+1000dbcc4:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dbcc8:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbccc:	28 41 08 2a	orr	w8, w9, w8, lsl #16
+1000dbcd0:	e8 1b 00 b9	str	w8, [sp, #0x18]
+1000dbcd4:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dbcd8:	62 02 40 39	ldrb	w2, [x19]
+1000dbcdc:	e1 63 00 91	add	x1, sp, #0x18
+1000dbce0:	03 00 80 52	mov	w3, #0x0
+1000dbce4:	d4 c4 fc 97	bl	__Z12DOS_SeekFiletPjjb
+1000dbce8:	f4 03 00 aa	mov	x20, x0
+1000dbcec:	40 9c 00 34	cbz	w0, 0x1000dd074
+1000dbcf0:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dbcf4:	00 40 80 52	mov	w0, #0x200
+1000dbcf8:	c0 07 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dbcfc:	e8 1b 40 b9	ldr	w8, [sp, #0x18]
+1000dbd00:	09 7d 10 53	lsr	w9, w8, #16
+1000dbd04:	69 12 00 79	strh	w9, [x19, #0x8]
+1000dbd08:	dd 04 00 14	b	0x1000dd07c
+1000dbd0c:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbd10:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbd14:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dbd18:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbd1c:	00 01 09 0b	add	w0, w8, w9
+1000dbd20:	e1 63 00 91	add	x1, sp, #0x18
+1000dbd24:	02 20 80 52	mov	w2, #0x100
+1000dbd28:	95 3f 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dbd2c:	68 02 40 39	ldrb	w8, [x19]
+1000dbd30:	1f 05 00 71	cmp	w8, #0x1
+1000dbd34:	60 b7 00 54	b.eq	0x1000dd420
+1000dbd38:	a8 b8 00 35	cbnz	w8, 0x1000dd44c
+1000dbd3c:	68 12 40 39	ldrb	w8, [x19, #0x4]
+1000dbd40:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dbd44:	e0 63 00 91	add	x0, sp, #0x18
+1000dbd48:	e1 63 10 91	add	x1, sp, #0x418
+1000dbd4c:	fa c6 fc 97	bl	__Z15DOS_GetFileAttrPKcP17FatAttributeFlags
+1000dbd50:	40 c8 00 34	cbz	w0, 0x1000dd658
+1000dbd54:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dbd58:	68 0a 00 79	strh	w8, [x19, #0x4]
+1000dbd5c:	68 02 00 79	strh	w8, [x19]
+1000dbd60:	00 00 80 52	mov	w0, #0x0
+1000dbd64:	a0 13 fe 97	bl	__Z12CALLBACK_SCFb
+1000dbd68:	be 06 00 14	b	0x1000dd860
+1000dbd6c:	e8 15 01 90	adrp	x8, 8892 ; 0x102397000
+1000dbd70:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dbd74:	68 02 00 79	strh	w8, [x19]
+1000dbd78:	08 39 1f 12	and	w8, w8, #0xfffe
+1000dbd7c:	09 01 80 52	mov	w9, #0x8
+1000dbd80:	1f 09 00 71	cmp	w8, #0x2
+1000dbd84:	28 01 9f 1a	csel	w8, w9, wzr, eq
+1000dbd88:	68 36 00 39	strb	w8, [x19, #0xd]
+1000dbd8c:	28 00 80 52	mov	w8, #0x1
+1000dbd90:	68 32 00 39	strb	w8, [x19, #0xc]
+1000dbd94:	7f 16 00 39	strb	wzr, [x19, #0x5]
+1000dbd98:	b0 06 00 14	b	0x1000dd858
+1000dbd9c:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbda0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbda4:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dbda8:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbdac:	00 01 09 0b	add	w0, w8, w9
+1000dbdb0:	e1 63 00 91	add	x1, sp, #0x18
+1000dbdb4:	02 20 80 52	mov	w2, #0x100
+1000dbdb8:	71 3f 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dbdbc:	61 02 40 39	ldrb	w1, [x19]
+1000dbdc0:	e0 63 00 91	add	x0, sp, #0x18
+1000dbdc4:	e2 03 13 aa	mov	x2, x19
+1000dbdc8:	03 00 80 52	mov	w3, #0x0
+1000dbdcc:	d3 c5 fc 97	bl	__Z12DOS_OpenFilePKchPtb
+1000dbdd0:	a0 9f 00 34	cbz	w0, 0x1000dd1c4
+1000dbdd4:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dbdd8:	00 80 80 52	mov	w0, #0x400
+1000dbddc:	87 07 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dbde0:	00 00 80 52	mov	w0, #0x0
+1000dbde4:	80 13 fe 97	bl	__Z12CALLBACK_SCFb
+1000dbde8:	9e 06 00 14	b	0x1000dd860
+1000dbdec:	68 02 40 39	ldrb	w8, [x19]
+1000dbdf0:	1f 09 00 71	cmp	w8, #0x2
+1000dbdf4:	ad a6 00 54	b.le	0x1000dd2c8
+1000dbdf8:	09 0d 00 51	sub	w9, w8, #0x3
+1000dbdfc:	3f 09 00 71	cmp	w9, #0x2
+1000dbe00:	03 d3 00 54	b.lo	0x1000dd860
+1000dbe04:	1f 15 00 71	cmp	w8, #0x5
+1000dbe08:	40 c7 00 54	b.eq	0x1000dd6f0
+1000dbe0c:	1f 19 00 71	cmp	w8, #0x6
+1000dbe10:	e1 82 00 54	b.ne	0x1000dce6c
+1000dbe14:	00 66 81 52	mov	w0, #0xb30
+1000dbe18:	2f ac 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dbe1c:	e8 15 01 90	adrp	x8, 8892 ; 0x102397000
+1000dbe20:	08 91 01 91	add	x8, x8, #0x64
+1000dbe24:	09 01 40 79	ldrh	w9, [x8]
+1000dbe28:	69 1a 00 79	strh	w9, [x19, #0xc]
+1000dbe2c:	08 09 40 39	ldrb	w8, [x8, #0x2]
+1000dbe30:	68 22 00 39	strb	w8, [x19, #0x8]
+1000dbe34:	08 02 80 52	mov	w8, #0x10
+1000dbe38:	68 26 00 39	strb	w8, [x19, #0x9]
+1000dbe3c:	89 06 00 14	b	0x1000dd860
+1000dbe40:	68 12 40 79	ldrh	w8, [x19, #0x8]
+1000dbe44:	e9 ff 9f 52	mov	w9, #0xffff
+1000dbe48:	1f 01 09 6b	cmp	w8, w9
+1000dbe4c:	e0 a5 00 54	b.eq	0x1000dd308
+1000dbe50:	c9 95 00 f0	adrp	x9, 4795 ; 0x101396000
+1000dbe54:	29 e1 39 91	add	x9, x9, #0xe78
+1000dbe58:	29 1d 40 b9	ldr	w9, [x9, #0x1c]
+1000dbe5c:	ea 15 01 90	adrp	x10, 8892 ; 0x102397000
+1000dbe60:	41 51 40 f9	ldr	x1, [x10, #0xa0]
+1000dbe64:	20 01 08 0b	add	w0, w9, w8
+1000dbe68:	02 03 80 52	mov	w2, #0x18
+1000dbe6c:	1f 3f 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dbe70:	13 46 00 94	bl	__Z14DOS_GetCountryv
+1000dbe74:	60 1a 00 79	strh	w0, [x19, #0xc]
+1000dbe78:	7f 06 00 39	strb	wzr, [x19, #0x1]
+1000dbe7c:	60 02 00 39	strb	w0, [x19]
+1000dbe80:	76 06 00 14	b	0x1000dd858
+1000dbe84:	e8 15 01 90	adrp	x8, 8892 ; 0x102397000
+1000dbe88:	1f e5 00 b9	str	wzr, [x8, #0xe4]
+1000dbe8c:	d4 95 00 f0	adrp	x20, 4795 ; 0x101396000
+1000dbe90:	94 e2 39 91	add	x20, x20, #0xe78
+1000dbe94:	88 1e 40 b9	ldr	w8, [x20, #0x1c]
+1000dbe98:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbe9c:	00 01 09 0b	add	w0, w8, w9
+1000dbea0:	e1 63 00 91	add	x1, sp, #0x18
+1000dbea4:	02 20 80 52	mov	w2, #0x100
+1000dbea8:	35 3f 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dbeac:	62 02 40 39	ldrb	w2, [x19]
+1000dbeb0:	88 12 40 b9	ldr	w8, [x20, #0x10]
+1000dbeb4:	69 1a 40 79	ldrh	w9, [x19, #0xc]
+1000dbeb8:	e0 63 00 91	add	x0, sp, #0x18
+1000dbebc:	01 01 09 0b	add	w1, w8, w9
+1000dbec0:	f7 35 00 94	bl	__Z11DOS_ExecutePcjh
+1000dbec4:	e0 cc 00 37	tbnz	w0, #0x0, 0x1000dd860
+1000dbec8:	e8 15 01 90	adrp	x8, 8892 ; 0x102397000
+1000dbecc:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dbed0:	68 02 00 79	strh	w8, [x19]
+1000dbed4:	20 00 80 52	mov	w0, #0x1
+1000dbed8:	43 13 fe 97	bl	__Z12CALLBACK_SCFb
+1000dbedc:	61 06 00 14	b	0x1000dd860
+1000dbee0:	68 02 40 39	ldrb	w8, [x19]
+1000dbee4:	1f 05 00 71	cmp	w8, #0x1
+1000dbee8:	e8 17 9f 1a	cset	w8, eq
+1000dbeec:	e9 15 01 90	adrp	x9, 8892 ; 0x102397000
+1000dbef0:	28 dd 01 39	strb	w8, [x9, #0x77]
+1000dbef4:	5b 06 00 14	b	0x1000dd860
+1000dbef8:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dbefc:	e1 03 13 aa	mov	x1, x19
+1000dbf00:	1a c8 fc 97	bl	__Z18DOS_DuplicateEntrytPt
+1000dbf04:	40 a8 00 34	cbz	w0, 0x1000dd40c
+1000dbf08:	54 06 00 14	b	0x1000dd858
+1000dbf0c:	69 0a 40 79	ldrh	w9, [x19, #0x4]
+1000dbf10:	68 12 40 79	ldrh	w8, [x19, #0x8]
+1000dbf14:	4a fe 9f 52	mov	w10, #0xfff2
+1000dbf18:	3f 01 0a 6b	cmp	w9, w10
+1000dbf1c:	2a 0d 00 12	and	w10, w9, #0xf
+1000dbf20:	0b 0d 00 12	and	w11, w8, #0xf
+1000dbf24:	6a 01 0a 0b	add	w10, w11, w10
+1000dbf28:	40 29 51 7a	ccmp	w10, #0x11, #0x0, hs
+1000dbf2c:	63 00 00 54	b.lo	0x1000dbf38
+1000dbf30:	4a 0d 00 12	and	w10, w10, #0xf
+1000dbf34:	29 01 0a 4b	sub	w9, w9, w10
+1000dbf38:	e9 33 00 79	strh	w9, [sp, #0x18]
+1000dbf3c:	ca 95 00 f0	adrp	x10, 4795 ; 0x101396000
+1000dbf40:	4a e1 39 91	add	x10, x10, #0xe78
+1000dbf44:	4a 1d 40 b9	ldr	w10, [x10, #0x1c]
+1000dbf48:	e2 03 09 2a	mov	w2, w9
+1000dbf4c:	f4 15 01 90	adrp	x20, 8892 ; 0x102397000
+1000dbf50:	94 a2 03 91	add	x20, x20, #0xe8
+1000dbf54:	40 01 08 0b	add	w0, w10, w8
+1000dbf58:	e1 03 14 aa	mov	x1, x20
+1000dbf5c:	c1 3e 06 94	bl	__Z13MEM_BlockReadjPvm
+1000dbf60:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dbf64:	e2 63 00 91	add	x2, sp, #0x18
+1000dbf68:	e1 03 14 aa	mov	x1, x20
+1000dbf6c:	03 00 80 52	mov	w3, #0x0
+1000dbf70:	ee c3 fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dbf74:	f4 03 00 aa	mov	x20, x0
+1000dbf78:	a0 88 00 34	cbz	w0, 0x1000dd08c
+1000dbf7c:	e0 33 40 79	ldrh	w0, [sp, #0x18]
+1000dbf80:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dbf84:	1d 07 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dbf88:	e8 63 00 91	add	x8, sp, #0x18
+1000dbf8c:	42 04 00 14	b	0x1000dd094
+1000dbf90:	68 02 40 39	ldrb	w8, [x19]
+1000dbf94:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dbf98:	ca 95 00 f0	adrp	x10, 4795 ; 0x101396000
+1000dbf9c:	4a e1 39 91	add	x10, x10, #0xe78
+1000dbfa0:	4a 0d 40 79	ldrh	w10, [x10, #0x6]
+1000dbfa4:	21 41 0a 2a	orr	w1, w9, w10, lsl #16
+1000dbfa8:	00 75 1e 53	lsl	w0, w8, #2
+1000dbfac:	01 02 00 14	b	0x1000dc7b0
+1000dbfb0:	68 02 40 39	ldrb	w8, [x19]
+1000dbfb4:	1f 05 00 71	cmp	w8, #0x1
+1000dbfb8:	8c 82 00 54	b.gt	0x1000dd008
+1000dbfbc:	08 9a 00 34	cbz	w8, 0x1000dd2fc
+1000dbfc0:	1f 05 00 71	cmp	w8, #0x1
+1000dbfc4:	60 b0 00 54	b.eq	0x1000dd5d0
+1000dbfc8:	26 06 00 14	b	0x1000dd860
+1000dbfcc:	60 22 40 39	ldrb	w0, [x19, #0x8]
+1000dbfd0:	e1 63 00 91	add	x1, sp, #0x18
+1000dbfd4:	d2 c0 fc 97	bl	__Z17DOS_GetCurrentDirhPc
+1000dbfd8:	00 88 00 34	cbz	w0, 0x1000dd0d8
+1000dbfdc:	c8 95 00 f0	adrp	x8, 4795 ; 0x101396000
+1000dbfe0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dbfe4:	14 1d 40 b9	ldr	w20, [x8, #0x1c]
+1000dbfe8:	75 32 40 79	ldrh	w21, [x19, #0x18]
+1000dbfec:	e0 63 00 91	add	x0, sp, #0x18
+1000dbff0:	c1 21 80 52	mov	w1, #0x10e
+1000dbff4:	3c b2 0a 94	bl	0x1003888e4 ; symbol stub for: _strnlen
+1000dbff8:	e8 03 00 aa	mov	x8, x0
+1000dbffc:	80 02 15 0b	add	w0, w20, w21
+1000dc000:	e1 63 00 91	add	x1, sp, #0x18
+1000dc004:	02 05 00 91	add	x2, x8, #0x1
+1000dc008:	b8 3e 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dc00c:	08 20 80 52	mov	w8, #0x100
+1000dc010:	68 02 00 79	strh	w8, [x19]
+1000dc014:	00 00 80 52	mov	w0, #0x0
+1000dc018:	f3 12 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc01c:	11 06 00 14	b	0x1000dd860
+1000dc020:	00 66 81 52	mov	w0, #0xb30
+1000dc024:	ac ab 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc028:	88 1b 00 d0	adrp	x8, 882 ; 0x10044e000
+1000dc02c:	08 01 19 91	add	x8, x8, #0x640
+1000dc030:	08 41 00 91	add	x8, x8, #0x10
+1000dc034:	e8 0f 00 f9	str	x8, [sp, #0x18]
+1000dc038:	e0 4b 00 79	strh	w0, [sp, #0x24]
+1000dc03c:	08 6c 1c 53	lsl	w8, w0, #4
+1000dc040:	e8 23 00 b9	str	w8, [sp, #0x20]
+1000dc044:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dc048:	e0 63 00 91	add	x0, sp, #0x18
+1000dc04c:	8e 0a 00 94	bl	__ZN7DOS_PSP11SetNumFilesEt
+1000dc050:	00 00 80 52	mov	w0, #0x0
+1000dc054:	e4 12 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc058:	02 06 00 14	b	0x1000dd860
+1000dc05c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc060:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc064:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc068:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc06c:	c1 ce fc 97	bl	__Z17DOS_FCBRenameFilett
+1000dc070:	e0 6f 00 34	cbz	w0, 0x1000dce6c
+1000dc074:	57 05 00 14	b	0x1000dd5d0
+1000dc078:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc07c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc080:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc084:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc088:	62 12 00 91	add	x2, x19, #0x4
+1000dc08c:	03 00 80 52	mov	w3, #0x0
+1000dc090:	ec cd fc 97	bl	__Z18DOS_FCBRandomWritettPtb
+1000dc094:	a0 02 00 14	b	0x1000dcb14
+1000dc098:	68 1a 40 79	ldrh	w8, [x19, #0xc]
+1000dc09c:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc0a0:	e0 63 10 91	add	x0, sp, #0x418
+1000dc0a4:	e1 63 00 91	add	x1, sp, #0x18
+1000dc0a8:	a0 43 01 94	bl	__Z18DOS_AllocateMemoryPtS_
+1000dc0ac:	20 82 00 34	cbz	w0, 0x1000dd0f0
+1000dc0b0:	a8 02 40 79	ldrh	w8, [x21]
+1000dc0b4:	68 02 00 79	strh	w8, [x19]
+1000dc0b8:	13 04 00 14	b	0x1000dd104
+1000dc0bc:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc0c0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc0c4:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc0c8:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc0cc:	00 01 09 0b	add	w0, w8, w9
+1000dc0d0:	e1 63 00 91	add	x1, sp, #0x18
+1000dc0d4:	02 20 80 52	mov	w2, #0x100
+1000dc0d8:	a9 3e 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dc0dc:	e0 63 00 91	add	x0, sp, #0x18
+1000dc0e0:	85 c6 fc 97	bl	__Z14DOS_UnlinkFilePKc
+1000dc0e4:	c0 87 00 34	cbz	w0, 0x1000dd1dc
+1000dc0e8:	00 00 80 52	mov	w0, #0x0
+1000dc0ec:	be 12 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc0f0:	dc 05 00 14	b	0x1000dd860
+1000dc0f4:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc0f8:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc0fc:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc100:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc104:	19 ce fc 97	bl	__Z18DOS_FCBGetFileSizett
+1000dc108:	20 6b 00 34	cbz	w0, 0x1000dce6c
+1000dc10c:	31 05 00 14	b	0x1000dd5d0
+1000dc110:	60 0a 40 79	ldrh	w0, [x19, #0x4]
+1000dc114:	61 26 40 39	ldrb	w1, [x19, #0x9]
+1000dc118:	62 22 40 39	ldrb	w2, [x19, #0x8]
+1000dc11c:	0a 1d 08 94	bl	__Z13is_date_validjjj
+1000dc120:	60 6a 00 36	tbz	w0, #0x0, 0x1000dce6c
+1000dc124:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dc128:	c9 15 01 f0	adrp	x9, 8891 ; 0x102397000
+1000dc12c:	29 81 01 91	add	x9, x9, #0x60
+1000dc130:	28 01 00 79	strh	w8, [x9]
+1000dc134:	68 26 40 39	ldrb	w8, [x19, #0x9]
+1000dc138:	28 09 00 39	strb	w8, [x9, #0x2]
+1000dc13c:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dc140:	28 0d 00 39	strb	w8, [x9, #0x3]
+1000dc144:	23 05 00 14	b	0x1000dd5d0
+1000dc148:	ff 33 00 79	strh	wzr, [sp, #0x18]
+1000dc14c:	bf 02 00 79	strh	wzr, [x21]
+1000dc150:	ff 2f 00 79	strh	wzr, [sp, #0x16]
+1000dc154:	ff 57 00 39	strb	wzr, [sp, #0x15]
+1000dc158:	60 22 40 39	ldrb	w0, [x19, #0x8]
+1000dc15c:	e1 63 00 91	add	x1, sp, #0x18
+1000dc160:	e2 57 00 91	add	x2, sp, #0x15
+1000dc164:	e3 63 10 91	add	x3, sp, #0x418
+1000dc168:	e4 5b 00 91	add	x4, sp, #0x16
+1000dc16c:	55 c7 fc 97	bl	__Z20DOS_GetFreeDiskSpacehPtPhS_S_
+1000dc170:	00 7d 00 34	cbz	w0, 0x1000dd110
+1000dc174:	e8 57 40 39	ldrb	w8, [sp, #0x15]
+1000dc178:	68 02 00 79	strh	w8, [x19]
+1000dc17c:	e8 2f 40 79	ldrh	w8, [sp, #0x16]
+1000dc180:	68 1a 00 79	strh	w8, [x19, #0xc]
+1000dc184:	e8 33 40 79	ldrh	w8, [sp, #0x18]
+1000dc188:	68 0a 00 79	strh	w8, [x19, #0x4]
+1000dc18c:	a8 02 40 79	ldrh	w8, [x21]
+1000dc190:	68 12 00 79	strh	w8, [x19, #0x8]
+1000dc194:	b3 05 00 14	b	0x1000dd860
+1000dc198:	68 1a 40 79	ldrh	w8, [x19, #0xc]
+1000dc19c:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc1a0:	d4 95 00 d0	adrp	x20, 4794 ; 0x101396000
+1000dc1a4:	94 e2 39 91	add	x20, x20, #0xe78
+1000dc1a8:	80 02 40 79	ldrh	w0, [x20]
+1000dc1ac:	e1 63 00 91	add	x1, sp, #0x18
+1000dc1b0:	5f 44 01 94	bl	__Z16DOS_ResizeMemorytPt
+1000dc1b4:	80 7b 00 34	cbz	w0, 0x1000dd124
+1000dc1b8:	88 02 40 79	ldrh	w8, [x20]
+1000dc1bc:	68 02 00 79	strh	w8, [x19]
+1000dc1c0:	de 03 00 14	b	0x1000dd138
+1000dc1c4:	80 65 81 52	mov	w0, #0xb2c
+1000dc1c8:	3d ab 0a 94	bl	0x100386ebc ; symbol stub for: __Z9mem_readdIL9MemOpMode0EEjj
+1000dc1cc:	08 7c 10 53	lsr	w8, w0, #16
+1000dc1d0:	c9 95 00 d0	adrp	x9, 4794 ; 0x101396000
+1000dc1d4:	29 e1 39 91	add	x9, x9, #0xe78
+1000dc1d8:	28 01 00 79	strh	w8, [x9]
+1000dc1dc:	08 6d 1c 53	lsl	w8, w8, #4
+1000dc1e0:	28 11 00 b9	str	w8, [x9, #0x10]
+1000dc1e4:	80 65 81 52	mov	w0, #0xb2c
+1000dc1e8:	35 ab 0a 94	bl	0x100386ebc ; symbol stub for: __Z9mem_readdIL9MemOpMode0EEjj
+1000dc1ec:	60 1a 00 79	strh	w0, [x19, #0xc]
+1000dc1f0:	9c 05 00 14	b	0x1000dd860
+1000dc1f4:	20 05 00 51	sub	w0, w9, #0x1
+1000dc1f8:	14 1c 00 12	and	w20, w0, #0xff
+1000dc1fc:	9f 66 00 71	cmp	w20, #0x19
+1000dc200:	68 63 00 54	b.hi	0x1000dce6c
+1000dc204:	88 7e 7c d3	ubfiz	x8, x20, #4, #32
+1000dc208:	c9 95 00 b0	adrp	x9, 4793 ; 0x101395000
+1000dc20c:	29 81 22 91	add	x9, x9, #0x8a0
+1000dc210:	20 69 68 f8	ldr	x0, [x9, x8]
+1000dc214:	c0 62 00 b4	cbz	x0, 0x1000dce6c
+1000dc218:	08 00 40 f9	ldr	x8, [x0]
+1000dc21c:	08 51 40 f9	ldr	x8, [x8, #0xa0]
+1000dc220:	00 01 3f d6	blr	x8
+1000dc224:	40 62 00 37	tbnz	w0, #0x0, 0x1000dce6c
+1000dc228:	7f 02 00 39	strb	wzr, [x19]
+1000dc22c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc230:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc234:	c9 15 01 f0	adrp	x9, 8891 ; 0x102397000
+1000dc238:	29 51 41 79	ldrh	w9, [x9, #0xa8]
+1000dc23c:	09 0d 00 79	strh	w9, [x8, #0x6]
+1000dc240:	29 6d 1c 53	lsl	w9, w9, #4
+1000dc244:	09 1d 00 b9	str	w9, [x8, #0x1c]
+1000dc248:	88 0e 14 0b	add	w8, w20, w20, lsl #3
+1000dc24c:	82 02 00 14	b	0x1000dcc54
+1000dc250:	68 02 40 39	ldrb	w8, [x19]
+1000dc254:	00 75 1e 53	lsl	w0, w8, #2
+1000dc258:	1f ab 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc25c:	60 1a 00 79	strh	w0, [x19, #0xc]
+1000dc260:	68 02 40 39	ldrb	w8, [x19]
+1000dc264:	49 00 80 52	mov	w9, #0x2
+1000dc268:	20 09 08 2a	orr	w0, w9, w8, lsl #2
+1000dc26c:	1a ab 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc270:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc274:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc278:	00 01 00 79	strh	w0, [x8]
+1000dc27c:	09 6c 1c 53	lsl	w9, w0, #4
+1000dc280:	09 11 00 b9	str	w9, [x8, #0x10]
+1000dc284:	77 05 00 14	b	0x1000dd860
+1000dc288:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dc28c:	49 fe 9f 52	mov	w9, #0xfff2
+1000dc290:	1f 01 09 6b	cmp	w8, w9
+1000dc294:	23 01 00 54	b.lo	0x1000dc2b8
+1000dc298:	09 0d 00 12	and	w9, w8, #0xf
+1000dc29c:	6a 12 40 79	ldrh	w10, [x19, #0x8]
+1000dc2a0:	4a 0d 00 12	and	w10, w10, #0xf
+1000dc2a4:	49 01 09 0b	add	w9, w10, w9
+1000dc2a8:	2a 0d 00 12	and	w10, w9, #0xf
+1000dc2ac:	0a 01 0a 4b	sub	w10, w8, w10
+1000dc2b0:	3f 45 00 71	cmp	w9, #0x11
+1000dc2b4:	08 31 8a 1a	csel	w8, w8, w10, lo
+1000dc2b8:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc2bc:	28 00 80 52	mov	w8, #0x1
+1000dc2c0:	d5 15 01 f0	adrp	x21, 8891 ; 0x102397000
+1000dc2c4:	a8 e6 01 39	strb	w8, [x21, #0x79]
+1000dc2c8:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dc2cc:	c1 15 01 f0	adrp	x1, 8891 ; 0x102397000
+1000dc2d0:	21 a0 03 91	add	x1, x1, #0xe8
+1000dc2d4:	e2 63 00 91	add	x2, sp, #0x18
+1000dc2d8:	03 00 80 52	mov	w3, #0x0
+1000dc2dc:	99 c2 fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dc2e0:	f4 03 00 aa	mov	x20, x0
+1000dc2e4:	00 73 00 34	cbz	w0, 0x1000dd144
+1000dc2e8:	e0 33 40 79	ldrh	w0, [sp, #0x18]
+1000dc2ec:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dc2f0:	42 06 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dc2f4:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc2f8:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc2fc:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc300:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc304:	e2 33 40 79	ldrh	w2, [sp, #0x18]
+1000dc308:	c1 15 01 f0	adrp	x1, 8891 ; 0x102397000
+1000dc30c:	21 a0 03 91	add	x1, x1, #0xe8
+1000dc310:	00 01 09 0b	add	w0, w8, w9
+1000dc314:	f5 3d 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dc318:	e8 63 00 91	add	x8, sp, #0x18
+1000dc31c:	8c 03 00 14	b	0x1000dd14c
+1000dc320:	68 02 40 39	ldrb	w8, [x19]
+1000dc324:	a8 00 00 35	cbnz	w8, 0x1000dc338
+1000dc328:	e0 63 00 91	add	x0, sp, #0x18
+1000dc32c:	01 20 80 52	mov	w1, #0x100
+1000dc330:	6f af 0a 94	bl	0x1003880ec ; symbol stub for: _gethostname
+1000dc334:	e0 9a 00 34	cbz	w0, 0x1000dd690
+1000dc338:	28 00 80 52	mov	w8, #0x1
+1000dc33c:	68 02 00 39	strb	w8, [x19]
+1000dc340:	20 00 80 52	mov	w0, #0x1
+1000dc344:	28 12 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc348:	46 05 00 14	b	0x1000dd860
+1000dc34c:	28 00 80 52	mov	w8, #0x1
+1000dc350:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc354:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc358:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc35c:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc360:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc364:	14 01 09 0b	add	w20, w8, w9
+1000dc368:	e0 03 14 aa	mov	x0, x20
+1000dc36c:	d1 aa 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dc370:	e0 63 10 39	strb	w0, [sp, #0x418]
+1000dc374:	1f 90 00 71	cmp	w0, #0x24
+1000dc378:	a0 01 00 54	b.eq	0x1000dc3ac
+1000dc37c:	94 06 00 11	add	w20, w20, #0x1
+1000dc380:	e1 63 10 91	add	x1, sp, #0x418
+1000dc384:	e2 63 00 91	add	x2, sp, #0x18
+1000dc388:	20 00 80 52	mov	w0, #0x1
+1000dc38c:	03 00 80 52	mov	w3, #0x0
+1000dc390:	e6 c2 fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dc394:	e0 03 14 aa	mov	x0, x20
+1000dc398:	c6 aa 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dc39c:	e0 63 10 39	strb	w0, [sp, #0x418]
+1000dc3a0:	94 06 00 11	add	w20, w20, #0x1
+1000dc3a4:	1f 90 00 71	cmp	w0, #0x24
+1000dc3a8:	c1 fe ff 54	b.ne	0x1000dc380
+1000dc3ac:	88 04 80 52	mov	w8, #0x24
+1000dc3b0:	b0 02 00 14	b	0x1000dce70
+1000dc3b4:	28 00 80 52	mov	w8, #0x1
+1000dc3b8:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc3bc:	d4 15 01 f0	adrp	x20, 8891 ; 0x102397000
+1000dc3c0:	88 e6 01 39	strb	w8, [x20, #0x79]
+1000dc3c4:	e1 63 10 91	add	x1, sp, #0x418
+1000dc3c8:	e2 63 00 91	add	x2, sp, #0x18
+1000dc3cc:	00 00 80 52	mov	w0, #0x0
+1000dc3d0:	03 00 80 52	mov	w3, #0x0
+1000dc3d4:	5b c2 fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dc3d8:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dc3dc:	68 02 00 39	strb	w8, [x19]
+1000dc3e0:	9f e6 01 39	strb	wzr, [x20, #0x79]
+1000dc3e4:	1f 05 00 14	b	0x1000dd860
+1000dc3e8:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc3ec:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc3f0:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc3f4:	69 32 40 79	ldrh	w9, [x19, #0x18]
+1000dc3f8:	00 01 09 0b	add	w0, w8, w9
+1000dc3fc:	e1 63 00 91	add	x1, sp, #0x18
+1000dc400:	02 20 80 52	mov	w2, #0x100
+1000dc404:	de 3d 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dc408:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dc40c:	e5 03 13 aa	mov	x5, x19
+1000dc410:	a8 4c 40 38	ldrb	w8, [x5, #0x4]!
+1000dc414:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dc418:	63 12 40 79	ldrh	w3, [x19, #0x8]
+1000dc41c:	e0 63 00 91	add	x0, sp, #0x18
+1000dc420:	e2 63 10 91	add	x2, sp, #0x418
+1000dc424:	e4 03 13 aa	mov	x4, x19
+1000dc428:	71 c5 fc 97	bl	__Z20DOS_OpenFileExtendedPKct17FatAttributeFlagstPtS2_
+1000dc42c:	40 6e 00 34	cbz	w0, 0x1000dd1f4
+1000dc430:	00 00 80 52	mov	w0, #0x0
+1000dc434:	ec 11 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc438:	0a 05 00 14	b	0x1000dd860
+1000dc43c:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dc440:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dc444:	28 00 80 52	mov	w8, #0x1
+1000dc448:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc44c:	e1 63 10 91	add	x1, sp, #0x418
+1000dc450:	e2 63 00 91	add	x2, sp, #0x18
+1000dc454:	20 00 80 52	mov	w0, #0x1
+1000dc458:	03 00 80 52	mov	w3, #0x0
+1000dc45c:	b3 c2 fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dc460:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dc464:	09 04 80 52	mov	w9, #0x20
+1000dc468:	1f 25 00 71	cmp	w8, #0x9
+1000dc46c:	28 01 88 1a	csel	w8, w9, w8, eq
+1000dc470:	80 02 00 14	b	0x1000dce70
+1000dc474:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc478:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc47c:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc480:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc484:	02 00 80 52	mov	w2, #0x0
+1000dc488:	b2 cb fc 97	bl	__Z12DOS_FCBWritettt
+1000dc48c:	a2 01 00 14	b	0x1000dcb14
+1000dc490:	00 80 80 52	mov	w0, #0x400
+1000dc494:	90 aa 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc498:	40 9e 00 34	cbz	w0, 0x1000dd860
+1000dc49c:	74 16 01 b0	adrp	x20, 8909 ; 0x1023a9000
+1000dc4a0:	94 22 1c 91	add	x20, x20, #0x708
+1000dc4a4:	88 02 40 f9	ldr	x8, [x20]
+1000dc4a8:	c8 9d 00 b4	cbz	x8, 0x1000dd860
+1000dc4ac:	15 10 00 11	add	w21, w0, #0x4
+1000dc4b0:	a0 3e 00 12	and	w0, w21, #0xffff
+1000dc4b4:	61 00 80 52	mov	w1, #0x3
+1000dc4b8:	57 4e 06 94	bl	__Z9IO_WriteBth
+1000dc4bc:	80 02 40 f9	ldr	x0, [x20]
+1000dc4c0:	61 22 40 39	ldrb	w1, [x19, #0x8]
+1000dc4c4:	22 00 80 52	mov	w2, #0x1
+1000dc4c8:	23 00 80 52	mov	w3, #0x1
+1000dc4cc:	04 00 80 12	mov	w4, #-0x1
+1000dc4d0:	37 52 05 94	bl	__ZN7CSerial7PutcharEhbbj
+1000dc4d4:	a0 3e 00 12	and	w0, w21, #0xffff
+1000dc4d8:	21 00 80 52	mov	w1, #0x1
+1000dc4dc:	4e 4e 06 94	bl	__Z9IO_WriteBth
+1000dc4e0:	e0 04 00 14	b	0x1000dd860
+1000dc4e4:	7f 02 00 79	strh	wzr, [x19]
+1000dc4e8:	40 03 80 52	mov	w0, #0x1a
+1000dc4ec:	86 11 fe 97	bl	__Z19CALLBACK_RunRealInth
+1000dc4f0:	60 02 40 39	ldrb	w0, [x19]
+1000dc4f4:	40 00 00 b4	cbz	x0, 0x1000dc4fc
+1000dc4f8:	99 05 00 94	bl	__ZL11DOS_AddDaysm
+1000dc4fc:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dc500:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc504:	28 41 08 aa	orr	x8, x9, x8, lsl #16
+1000dc508:	e9 43 01 f0	adrp	x9, 10367 ; 0x10295b000
+1000dc50c:	29 81 41 f9	ldr	x9, [x9, #0x300]
+1000dc510:	3f 01 08 eb	cmp	x9, x8
+1000dc514:	e9 83 89 9a	csel	x9, xzr, x9, hi
+1000dc518:	08 01 09 cb	sub	x8, x8, x9
+1000dc51c:	00 01 63 9e	ucvtf	d0, x8
+1000dc520:	88 05 80 52	mov	w8, #0x2c
+1000dc524:	c9 19 00 b0	adrp	x9, 825 ; 0x100415000
+1000dc528:	21 d9 46 fd	ldr	d1, [x9, #0xdb0]
+1000dc52c:	00 08 61 1e	fmul	d0, d0, d1
+1000dc530:	09 00 79 9e	fcvtzu	x9, d0
+1000dc534:	68 06 00 39	strb	w8, [x19, #0x1]
+1000dc538:	28 fd 42 d3	lsr	x8, x9, #2
+1000dc53c:	6a b8 9e d2	mov	x10, #0xf5c3
+1000dc540:	0a 85 ab f2	movk	x10, #0x5c28, lsl #16
+1000dc544:	ea 51 d8 f2	movk	x10, #0xc28f, lsl #32
+1000dc548:	aa 1e e5 f2	movk	x10, #0x28f5, lsl #48
+1000dc54c:	08 7d ca 9b	umulh	x8, x8, x10
+1000dc550:	08 fd 42 d3	lsr	x8, x8, #2
+1000dc554:	8a 0c 80 52	mov	w10, #0x64
+1000dc558:	0a a5 0a 1b	msub	w10, w8, w10, w9
+1000dc55c:	6a 22 00 39	strb	w10, [x19, #0x8]
+1000dc560:	ea e3 02 b2	mov	x10, #0x4444444444444444
+1000dc564:	aa 88 88 f2	movk	x10, #0x4445
+1000dc568:	8a 88 e0 f2	movk	x10, #0x444, lsl #48
+1000dc56c:	0b 7d ca 9b	umulh	x11, x8, x10
+1000dc570:	8c 07 80 52	mov	w12, #0x3c
+1000dc574:	68 a1 0c 1b	msub	w8, w11, w12, w8
+1000dc578:	68 26 00 39	strb	w8, [x19, #0x9]
+1000dc57c:	a8 34 85 d2	mov	x8, #0x29a5
+1000dc580:	a8 e2 ac f2	movk	x8, #0x6715, lsl #16
+1000dc584:	e8 c3 c7 f2	movk	x8, #0x3e1f, lsl #32
+1000dc588:	68 d8 f5 f2	movk	x8, #0xaec3, lsl #48
+1000dc58c:	28 7d c8 9b	umulh	x8, x9, x8
+1000dc590:	08 fd 4c d3	lsr	x8, x8, #12
+1000dc594:	0a 7d ca 9b	umulh	x10, x8, x10
+1000dc598:	48 a1 0c 1b	msub	w8, w10, w12, w8
+1000dc59c:	68 12 00 39	strb	w8, [x19, #0x4]
+1000dc5a0:	a8 af 87 d2	mov	x8, #0x3d7d
+1000dc5a4:	28 58 a7 f2	movk	x8, #0x3ac1, lsl #16
+1000dc5a8:	a8 7b db f2	movk	x8, #0xdbdd, lsl #32
+1000dc5ac:	28 4d f7 f2	movk	x8, #0xba69, lsl #48
+1000dc5b0:	28 7d c8 9b	umulh	x8, x9, x8
+1000dc5b4:	08 fd 52 d3	lsr	x8, x8, #18
+1000dc5b8:	e9 f3 01 b2	mov	x9, #-0x5555555555555556
+1000dc5bc:	69 55 95 f2	movk	x9, #0xaaab
+1000dc5c0:	49 55 e1 f2	movk	x9, #0xaaa, lsl #48
+1000dc5c4:	09 7d c9 9b	umulh	x9, x8, x9
+1000dc5c8:	0a 03 80 52	mov	w10, #0x18
+1000dc5cc:	28 a1 0a 1b	msub	w8, w9, w10, w8
+1000dc5d0:	68 16 00 39	strb	w8, [x19, #0x5]
+1000dc5d4:	5d 00 00 14	b	0x1000dc748
+1000dc5d8:	61 12 00 91	add	x1, x19, #0x4
+1000dc5dc:	63 22 00 91	add	x3, x19, #0x8
+1000dc5e0:	00 00 80 52	mov	w0, #0x0
+1000dc5e4:	7a 00 00 14	b	0x1000dc7cc
+1000dc5e8:	c8 15 01 f0	adrp	x8, 8891 ; 0x102397000
+1000dc5ec:	08 dd 41 39	ldrb	w8, [x8, #0x77]
+1000dc5f0:	20 02 00 14	b	0x1000dce70
+1000dc5f4:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc5f8:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc5fc:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc600:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc604:	40 ca fc 97	bl	__Z12DOS_FCBClosett
+1000dc608:	5d 01 00 14	b	0x1000dcb7c
+1000dc60c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc610:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc614:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc618:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc61c:	da c8 fc 97	bl	__Z11DOS_FCBOpentt
+1000dc620:	57 01 00 14	b	0x1000dcb7c
+1000dc624:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc628:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc62c:	08 09 40 79	ldrh	w8, [x8, #0x4]
+1000dc630:	69 22 40 79	ldrh	w9, [x19, #0x10]
+1000dc634:	29 09 00 11	add	w9, w9, #0x2
+1000dc638:	08 6d 1c 53	lsl	w8, w8, #4
+1000dc63c:	00 21 29 0b	add	w0, w8, w9, uxth
+1000dc640:	25 aa 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc644:	01 00 80 52	mov	w1, #0x0
+1000dc648:	02 00 80 52	mov	w2, #0x0
+1000dc64c:	56 01 00 14	b	0x1000dcba4
+1000dc650:	74 12 40 79	ldrh	w20, [x19, #0x8]
+1000dc654:	00 66 81 52	mov	w0, #0xb30
+1000dc658:	1f aa 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc65c:	48 00 80 52	mov	w8, #0x2
+1000dc660:	00 11 00 2a	orr	w0, w8, w0, lsl #4
+1000dc664:	1c aa 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc668:	e1 03 00 aa	mov	x1, x0
+1000dc66c:	e0 03 14 aa	mov	x0, x20
+1000dc670:	aa 33 00 94	bl	__Z10DOS_NewPSPtt
+1000dc674:	ae 01 00 14	b	0x1000dcd2c
+1000dc678:	00 80 80 52	mov	w0, #0x400
+1000dc67c:	16 aa 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dc680:	00 8f 00 34	cbz	w0, 0x1000dd860
+1000dc684:	73 16 01 b0	adrp	x19, 8909 ; 0x1023a9000
+1000dc688:	73 22 1c 91	add	x19, x19, #0x708
+1000dc68c:	68 02 40 f9	ldr	x8, [x19]
+1000dc690:	88 8e 00 b4	cbz	x8, 0x1000dd860
+1000dc694:	08 10 00 11	add	w8, w0, #0x4
+1000dc698:	00 3d 00 12	and	w0, w8, #0xffff
+1000dc69c:	61 00 80 52	mov	w1, #0x3
+1000dc6a0:	dd 4d 06 94	bl	__Z9IO_WriteBth
+1000dc6a4:	60 02 40 f9	ldr	x0, [x19]
+1000dc6a8:	c1 95 00 d0	adrp	x1, 4794 ; 0x101396000
+1000dc6ac:	21 80 35 91	add	x1, x1, #0xd60
+1000dc6b0:	e2 63 00 91	add	x2, sp, #0x18
+1000dc6b4:	23 00 80 52	mov	w3, #0x1
+1000dc6b8:	04 00 80 12	mov	w4, #-0x1
+1000dc6bc:	4e 51 05 94	bl	__ZN7CSerial7GetcharEPhS0_bj
+1000dc6c0:	68 04 00 14	b	0x1000dd860
+1000dc6c4:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dc6c8:	1f fd 03 71	cmp	w8, #0xff
+1000dc6cc:	40 63 00 54	b.eq	0x1000dd334
+1000dc6d0:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dc6d4:	28 00 80 52	mov	w8, #0x1
+1000dc6d8:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc6dc:	d4 15 01 f0	adrp	x20, 8891 ; 0x102397000
+1000dc6e0:	88 ea 01 39	strb	w8, [x20, #0x7a]
+1000dc6e4:	e1 63 10 91	add	x1, sp, #0x418
+1000dc6e8:	e2 63 00 91	add	x2, sp, #0x18
+1000dc6ec:	20 00 80 52	mov	w0, #0x1
+1000dc6f0:	03 00 80 52	mov	w3, #0x0
+1000dc6f4:	0d c2 fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dc6f8:	9f ea 01 39	strb	wzr, [x20, #0x7a]
+1000dc6fc:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dc700:	dc 01 00 14	b	0x1000dce70
+1000dc704:	60 22 40 39	ldrb	w0, [x19, #0x8]
+1000dc708:	94 bd fc 97	bl	__Z19DOS_SetDefaultDriveh
+1000dc70c:	48 03 80 52	mov	w8, #0x1a
+1000dc710:	d8 01 00 14	b	0x1000dce70
+1000dc714:	68 02 40 39	ldrb	w8, [x19]
+1000dc718:	1f 05 00 71	cmp	w8, #0x1
+1000dc71c:	0c 48 00 54	b.gt	0x1000dd01c
+1000dc720:	08 78 00 34	cbz	w8, 0x1000dd620
+1000dc724:	1f 05 00 71	cmp	w8, #0x1
+1000dc728:	81 48 00 54	b.ne	0x1000dd038
+1000dc72c:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dc730:	f6 41 01 94	bl	__Z23DOS_SetMemAllocStrategyt
+1000dc734:	20 48 00 34	cbz	w0, 0x1000dd038
+1000dc738:	48 04 00 14	b	0x1000dd858
+1000dc73c:	bc 39 00 94	bl	__Z18DOS_GetSTDINStatusv
+1000dc740:	08 00 00 13	sbfx	w8, w0, #0, #1
+1000dc744:	68 02 00 39	strb	w8, [x19]
+1000dc748:	68 42 40 79	ldrh	w8, [x19, #0x20]
+1000dc74c:	08 09 00 11	add	w8, w8, #0x2
+1000dc750:	68 42 00 79	strh	w8, [x19, #0x20]
+1000dc754:	43 04 00 14	b	0x1000dd860
+1000dc758:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc75c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc760:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc764:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc768:	00 01 09 0b	add	w0, w8, w9
+1000dc76c:	e1 63 00 91	add	x1, sp, #0x18
+1000dc770:	02 20 80 52	mov	w2, #0x100
+1000dc774:	02 3d 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dc778:	e0 63 00 91	add	x0, sp, #0x18
+1000dc77c:	3d bf fc 97	bl	__Z11DOS_MakeDirPKc
+1000dc780:	60 54 00 34	cbz	w0, 0x1000dd20c
+1000dc784:	a8 00 80 52	mov	w8, #0x5
+1000dc788:	68 02 00 79	strh	w8, [x19]
+1000dc78c:	00 00 80 52	mov	w0, #0x0
+1000dc790:	15 11 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc794:	33 04 00 14	b	0x1000dd860
+1000dc798:	68 12 40 79	ldrh	w8, [x19, #0x8]
+1000dc79c:	c9 95 00 d0	adrp	x9, 4794 ; 0x101396000
+1000dc7a0:	29 e1 39 91	add	x9, x9, #0xe78
+1000dc7a4:	29 0d 40 79	ldrh	w9, [x9, #0x6]
+1000dc7a8:	01 41 09 2a	orr	w1, w8, w9, lsl #16
+1000dc7ac:	80 65 81 52	mov	w0, #0xb2c
+1000dc7b0:	46 42 06 94	bl	__Z10mem_writedjj
+1000dc7b4:	2b 04 00 14	b	0x1000dd860
+1000dc7b8:	5f bd fc 97	bl	__Z19DOS_GetDefaultDrivev
+1000dc7bc:	d6 00 00 14	b	0x1000dcb14
+1000dc7c0:	e3 03 13 aa	mov	x3, x19
+1000dc7c4:	60 8c 40 38	ldrb	w0, [x3, #0x8]!
+1000dc7c8:	61 12 00 91	add	x1, x19, #0x4
+1000dc7cc:	e2 03 13 aa	mov	x2, x19
+1000dc7d0:	62 cd fc 97	bl	__Z21DOS_GetAllocationInfohPtPhS_
+1000dc7d4:	c0 34 00 36	tbz	w0, #0x0, 0x1000dce6c
+1000dc7d8:	22 04 00 14	b	0x1000dd860
+1000dc7dc:	28 00 80 52	mov	w8, #0x1
+1000dc7e0:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc7e4:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc7e8:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc7ec:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc7f0:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc7f4:	e2 63 00 91	add	x2, sp, #0x18
+1000dc7f8:	23 00 80 52	mov	w3, #0x1
+1000dc7fc:	c8 cb fc 97	bl	__Z17DOS_FCBRandomReadttPtb
+1000dc800:	c5 00 00 14	b	0x1000dcb14
+1000dc804:	28 00 80 52	mov	w8, #0x1
+1000dc808:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc80c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc810:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc814:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc818:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc81c:	e2 63 00 91	add	x2, sp, #0x18
+1000dc820:	23 00 80 52	mov	w3, #0x1
+1000dc824:	07 cc fc 97	bl	__Z18DOS_FCBRandomWritettPtb
+1000dc828:	bb 00 00 14	b	0x1000dcb14
+1000dc82c:	00 00 80 52	mov	w0, #0x0
+1000dc830:	b6 04 00 94	bl	__ZL10RealHandlet
+1000dc834:	1f fc 03 71	cmp	w0, #0xff
+1000dc838:	80 02 00 54	b.eq	0x1000dc888
+1000dc83c:	c8 95 00 b0	adrp	x8, 4793 ; 0x101395000
+1000dc840:	08 a1 02 91	add	x8, x8, #0xa8
+1000dc844:	00 59 60 f8	ldr	x0, [x8, w0, uxtw #3]
+1000dc848:	00 02 00 b4	cbz	x0, 0x1000dc888
+1000dc84c:	61 17 00 d0	adrp	x1, 750 ; 0x1003ca000
+1000dc850:	21 b8 15 91	add	x1, x1, #0x56e ; literal pool for: "CON"
+1000dc854:	1a cd fc 97	bl	__ZNK8DOS_File6IsNameEPKc
+1000dc858:	80 01 00 34	cbz	w0, 0x1000dc888
+1000dc85c:	34 00 80 52	mov	w20, #0x1
+1000dc860:	73 39 00 94	bl	__Z18DOS_GetSTDINStatusv
+1000dc864:	20 01 00 34	cbz	w0, 0x1000dc888
+1000dc868:	f4 33 00 79	strh	w20, [sp, #0x18]
+1000dc86c:	e1 63 10 91	add	x1, sp, #0x418
+1000dc870:	e2 63 00 91	add	x2, sp, #0x18
+1000dc874:	00 00 80 52	mov	w0, #0x0
+1000dc878:	03 00 80 52	mov	w3, #0x0
+1000dc87c:	31 c1 fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dc880:	c8 b0 fc 97	bl	__Z26DOSBOX_IsShutdownRequestedv
+1000dc884:	e0 fe ff 34	cbz	w0, 0x1000dc860
+1000dc888:	68 02 40 39	ldrb	w8, [x19]
+1000dc88c:	1f 29 00 71	cmp	w8, #0xa
+1000dc890:	29 00 80 52	mov	w9, #0x1
+1000dc894:	29 21 c8 1a	lsl	w9, w9, w8
+1000dc898:	4a b8 80 52	mov	w10, #0x5c2
+1000dc89c:	29 01 0a 0a	and	w9, w9, w10
+1000dc8a0:	24 99 40 7a	ccmp	w9, #0x0, #0x4, ls
+1000dc8a4:	60 69 00 54	b.eq	0x1000dd5d0
+1000dc8a8:	74 06 40 39	ldrb	w20, [x19, #0x1]
+1000dc8ac:	68 06 00 39	strb	w8, [x19, #0x1]
+1000dc8b0:	38 fc ff 97	bl	__ZL13DOS_21Handlerv
+1000dc8b4:	74 06 00 39	strb	w20, [x19, #0x1]
+1000dc8b8:	ea 03 00 14	b	0x1000dd860
+1000dc8bc:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc8c0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc8c4:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc8c8:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc8cc:	13 01 09 0b	add	w19, w8, w9
+1000dc8d0:	e0 03 13 aa	mov	x0, x19
+1000dc8d4:	77 a9 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dc8d8:	28 00 80 52	mov	w8, #0x1
+1000dc8dc:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dc8e0:	00 7c 00 34	cbz	w0, 0x1000dd860
+1000dc8e4:	f4 03 00 aa	mov	x20, x0
+1000dc8e8:	e1 63 10 91	add	x1, sp, #0x418
+1000dc8ec:	e2 63 00 91	add	x2, sp, #0x18
+1000dc8f0:	00 00 80 52	mov	w0, #0x0
+1000dc8f4:	03 00 80 52	mov	w3, #0x0
+1000dc8f8:	12 c1 fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dc8fc:	a9 b0 fc 97	bl	__Z26DOSBOX_IsShutdownRequestedv
+1000dc900:	15 00 80 52	mov	w21, #0x0
+1000dc904:	e0 5a 00 36	tbz	w0, #0x0, 0x1000dd460
+1000dc908:	60 06 00 11	add	w0, w19, #0x1
+1000dc90c:	a1 1e 00 12	and	w1, w21, #0xff
+1000dc910:	c4 41 06 94	bl	__Z10mem_writebjh
+1000dc914:	d3 03 00 14	b	0x1000dd860
+1000dc918:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc91c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc920:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc924:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc928:	02 00 80 52	mov	w2, #0x0
+1000dc92c:	1c ca fc 97	bl	__Z11DOS_FCBReadttt
+1000dc930:	79 00 00 14	b	0x1000dcb14
+1000dc934:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dc938:	00 66 81 52	mov	w0, #0xb30
+1000dc93c:	cb 41 06 94	bl	__Z10mem_writewjt
+1000dc940:	c8 03 00 14	b	0x1000dd860
+1000dc944:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc948:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc94c:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dc950:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dc954:	00 01 09 0b	add	w0, w8, w9
+1000dc958:	e1 63 00 91	add	x1, sp, #0x18
+1000dc95c:	02 20 80 52	mov	w2, #0x100
+1000dc960:	87 3c 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dc964:	68 12 40 39	ldrb	w8, [x19, #0x4]
+1000dc968:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dc96c:	e0 63 00 91	add	x0, sp, #0x18
+1000dc970:	e1 63 10 91	add	x1, sp, #0x418
+1000dc974:	e2 03 13 aa	mov	x2, x19
+1000dc978:	03 00 80 52	mov	w3, #0x0
+1000dc97c:	47 c2 fc 97	bl	__Z14DOS_CreateFilePKc17FatAttributeFlagsPtb
+1000dc980:	20 45 00 34	cbz	w0, 0x1000dd224
+1000dc984:	61 1a 40 79	ldrh	w1, [x19, #0xc]
+1000dc988:	00 00 81 52	mov	w0, #0x800
+1000dc98c:	9b 04 00 94	bl	__ZL30DOS_PerformDiskIoDelayByHandlett
+1000dc990:	00 00 80 52	mov	w0, #0x0
+1000dc994:	94 10 fe 97	bl	__Z12CALLBACK_SCFb
+1000dc998:	b2 03 00 14	b	0x1000dd860
+1000dc99c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dc9a0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dc9a4:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dc9a8:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dc9ac:	30 cc fc 97	bl	__Z17DOS_FCBDeleteFilett
+1000dc9b0:	73 00 00 14	b	0x1000dcb7c
+1000dc9b4:	68 02 40 39	ldrb	w8, [x19]
+1000dc9b8:	48 50 00 34	cbz	w8, 0x1000dd3c0
+1000dc9bc:	1f 05 00 71	cmp	w8, #0x1
+1000dc9c0:	41 50 00 54	b.ne	0x1000dd3c8
+1000dc9c4:	08 02 80 52	mov	w8, #0x10
+1000dc9c8:	7f 02 00 14	b	0x1000dd3c4
+1000dc9cc:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dc9d0:	61 0a 40 79	ldrh	w1, [x19, #0x4]
+1000dc9d4:	a1 c5 fc 97	bl	__Z23DOS_ForceDuplicateEntrytt
+1000dc9d8:	a0 51 00 34	cbz	w0, 0x1000dd40c
+1000dc9dc:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dc9e0:	68 02 00 79	strh	w8, [x19]
+1000dc9e4:	9d 03 00 14	b	0x1000dd858
+1000dc9e8:	60 16 40 39	ldrb	w0, [x19, #0x5]
+1000dc9ec:	61 12 40 39	ldrb	w1, [x19, #0x4]
+1000dc9f0:	62 26 40 39	ldrb	w2, [x19, #0x9]
+1000dc9f4:	fb 1a 08 94	bl	__Z13is_time_validjjj
+1000dc9f8:	a0 23 00 34	cbz	w0, 0x1000dce6c
+1000dc9fc:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dca00:	1f 91 01 71	cmp	w8, #0x64
+1000dca04:	42 23 00 54	b.hs	0x1000dce6c
+1000dca08:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dca0c:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dca10:	29 3d 00 12	and	w9, w9, #0xffff
+1000dca14:	08 01 09 2a	orr	w8, w8, w9
+1000dca18:	68 5b 00 35	cbnz	w8, 0x1000dd584
+1000dca1c:	80 8d 80 52	mov	w0, #0x46c
+1000dca20:	27 a9 0a 94	bl	0x100386ebc ; symbol stub for: __Z9mem_readdIL9MemOpMode0EEjj
+1000dca24:	e8 03 00 2a	mov	w8, w0
+1000dca28:	e9 43 01 f0	adrp	x9, 10367 ; 0x10295b000
+1000dca2c:	28 81 01 f9	str	x8, [x9, #0x300]
+1000dca30:	70 f7 09 94	bl	__ZN6loguru24current_verbosity_cutoffEv
+1000dca34:	c0 5a f8 37	tbnz	w0, #0x1f, 0x1000dd58c
+1000dca38:	61 17 00 b0	adrp	x1, 749 ; 0x1003c9000
+1000dca3c:	21 64 1c 91	add	x1, x1, #0x719 ; literal pool for: "src/dos/dos.cpp"
+1000dca40:	63 17 00 d0	adrp	x3, 750 ; 0x1003ca000
+1000dca44:	63 c8 15 91	add	x3, x3, #0x572 ; literal pool for: "Warning: game messes with DOS time!"
+1000dca48:	00 00 80 52	mov	w0, #0x0
+1000dca4c:	22 66 80 52	mov	w2, #0x331
+1000dca50:	6f f7 09 94	bl	__ZN6loguru3logEiPKcjS1_z
+1000dca54:	ce 02 00 14	b	0x1000dd58c
+1000dca58:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dca5c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dca60:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dca64:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dca68:	a7 cc fc 97	bl	__Z22DOS_FCBSetRandomRecordtt
+1000dca6c:	7d 03 00 14	b	0x1000dd860
+1000dca70:	68 02 40 39	ldrb	w8, [x19]
+1000dca74:	1f 05 00 71	cmp	w8, #0x1
+1000dca78:	00 4c 00 54	b.eq	0x1000dd3f8
+1000dca7c:	28 6f 00 35	cbnz	w8, 0x1000dd860
+1000dca80:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dca84:	61 12 00 91	add	x1, x19, #0x4
+1000dca88:	62 22 00 91	add	x2, x19, #0x8
+1000dca8c:	fd cc fc 97	bl	__Z15DOS_GetFileDatetPtS_
+1000dca90:	e0 4b 00 34	cbz	w0, 0x1000dd40c
+1000dca94:	71 03 00 14	b	0x1000dd858
+1000dca98:	d4 95 00 d0	adrp	x20, 4794 ; 0x101396000
+1000dca9c:	94 e2 39 91	add	x20, x20, #0xe78
+1000dcaa0:	88 1e 40 b9	ldr	w8, [x20, #0x1c]
+1000dcaa4:	69 32 40 79	ldrh	w9, [x19, #0x18]
+1000dcaa8:	00 01 09 0b	add	w0, w8, w9
+1000dcaac:	e1 63 00 91	add	x1, sp, #0x18
+1000dcab0:	02 20 80 52	mov	w2, #0x100
+1000dcab4:	32 3c 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcab8:	e0 63 00 91	add	x0, sp, #0x18
+1000dcabc:	e1 63 10 91	add	x1, sp, #0x418
+1000dcac0:	b6 c4 fc 97	bl	__Z16DOS_CanonicalizePKcPc
+1000dcac4:	c0 3b 00 34	cbz	w0, 0x1000dd23c
+1000dcac8:	94 12 40 b9	ldr	w20, [x20, #0x10]
+1000dcacc:	73 3a 40 79	ldrh	w19, [x19, #0x1c]
+1000dcad0:	e0 63 10 91	add	x0, sp, #0x418
+1000dcad4:	75 af 0a 94	bl	0x1003888a8 ; symbol stub for: _strlen
+1000dcad8:	e8 03 00 aa	mov	x8, x0
+1000dcadc:	80 02 13 0b	add	w0, w20, w19
+1000dcae0:	e1 63 10 91	add	x1, sp, #0x418
+1000dcae4:	02 05 00 91	add	x2, x8, #0x1
+1000dcae8:	00 3c 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dcaec:	00 00 80 52	mov	w0, #0x0
+1000dcaf0:	3d 10 fe 97	bl	__Z12CALLBACK_SCFb
+1000dcaf4:	5b 03 00 14	b	0x1000dd860
+1000dcaf8:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcafc:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcb00:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dcb04:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dcb08:	62 12 00 91	add	x2, x19, #0x4
+1000dcb0c:	03 00 80 52	mov	w3, #0x0
+1000dcb10:	03 cb fc 97	bl	__Z17DOS_FCBRandomReadttPtb
+1000dcb14:	60 02 00 39	strb	w0, [x19]
+1000dcb18:	52 03 00 14	b	0x1000dd860
+1000dcb1c:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcb20:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcb24:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dcb28:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dcb2c:	7a c9 fc 97	bl	__Z15DOS_FCBFindNexttt
+1000dcb30:	13 00 00 14	b	0x1000dcb7c
+1000dcb34:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcb38:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcb3c:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dcb40:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dcb44:	0c c8 fc 97	bl	__Z16DOS_FCBFindFirsttt
+1000dcb48:	0d 00 00 14	b	0x1000dcb7c
+1000dcb4c:	74 0a 40 79	ldrh	w20, [x19, #0x4]
+1000dcb50:	68 02 40 39	ldrb	w8, [x19]
+1000dcb54:	e8 27 00 34	cbz	w8, 0x1000dd050
+1000dcb58:	1f 05 00 71	cmp	w8, #0x1
+1000dcb5c:	e1 6b 00 54	b.ne	0x1000dd8d8
+1000dcb60:	c8 08 80 52	mov	w8, #0x46
+1000dcb64:	3c 01 00 14	b	0x1000dd054
+1000dcb68:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcb6c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcb70:	00 0d 40 79	ldrh	w0, [x8, #0x6]
+1000dcb74:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dcb78:	53 c7 fc 97	bl	__Z13DOS_FCBCreatett
+1000dcb7c:	08 04 00 51	sub	w8, w0, #0x1
+1000dcb80:	bc 00 00 14	b	0x1000dce70
+1000dcb84:	00 66 81 52	mov	w0, #0xb30
+1000dcb88:	d3 a8 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dcb8c:	61 22 00 91	add	x1, x19, #0x8
+1000dcb90:	e7 41 01 94	bl	__Z16DOS_ResizeMemorytPt
+1000dcb94:	00 66 81 52	mov	w0, #0xb30
+1000dcb98:	cf a8 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dcb9c:	62 02 40 39	ldrb	w2, [x19]
+1000dcba0:	21 00 80 52	mov	w1, #0x1
+1000dcba4:	b7 31 00 94	bl	__Z13DOS_Terminatetbh
+1000dcba8:	2e 03 00 14	b	0x1000dd860
+1000dcbac:	68 02 40 39	ldrb	w8, [x19]
+1000dcbb0:	1f 05 00 71	cmp	w8, #0x1
+1000dcbb4:	61 65 00 54	b.ne	0x1000dd860
+1000dcbb8:	c8 15 01 f0	adrp	x8, 8891 ; 0x102397000
+1000dcbbc:	08 65 41 79	ldrh	w8, [x8, #0xb2]
+1000dcbc0:	68 12 00 79	strh	w8, [x19, #0x8]
+1000dcbc4:	68 1a 00 79	strh	w8, [x19, #0xc]
+1000dcbc8:	24 03 00 14	b	0x1000dd858
+1000dcbcc:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcbd0:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcbd4:	49 16 80 52	mov	w9, #0xb2
+1000dcbd8:	09 01 00 79	strh	w9, [x8]
+1000dcbdc:	09 64 81 52	mov	w9, #0xb20
+1000dcbe0:	09 11 00 b9	str	w9, [x8, #0x10]
+1000dcbe4:	28 00 80 52	mov	w8, #0x1
+1000dcbe8:	1b 00 00 14	b	0x1000dcc54
+1000dcbec:	c8 95 00 b0	adrp	x8, 4793 ; 0x101395000
+1000dcbf0:	08 81 22 91	add	x8, x8, #0x8a0
+1000dcbf4:	15 81 00 91	add	x21, x8, #0x20
+1000dcbf8:	54 00 80 52	mov	w20, #0x2
+1000dcbfc:	a0 06 41 f8	ldr	x0, [x21], #0x10
+1000dcc00:	00 01 00 b4	cbz	x0, 0x1000dcc20
+1000dcc04:	08 00 40 f9	ldr	x8, [x0]
+1000dcc08:	08 51 40 f9	ldr	x8, [x8, #0xa0]
+1000dcc0c:	00 01 3f d6	blr	x8
+1000dcc10:	80 00 00 37	tbnz	w0, #0x0, 0x1000dcc20
+1000dcc14:	94 06 00 91	add	x20, x20, #0x1
+1000dcc18:	9f 6a 00 f1	cmp	x20, #0x1a
+1000dcc1c:	01 ff ff 54	b.ne	0x1000dcbfc
+1000dcc20:	d5 15 01 f0	adrp	x21, 8891 ; 0x102397000
+1000dcc24:	b5 62 03 91	add	x21, x21, #0xd8
+1000dcc28:	a8 02 40 b9	ldr	w8, [x21]
+1000dcc2c:	00 19 01 11	add	w0, w8, #0x46
+1000dcc30:	81 1e 00 12	and	w1, w20, #0xff
+1000dcc34:	fb 40 06 94	bl	__Z10mem_writebjh
+1000dcc38:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcc3c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcc40:	a9 0a 40 79	ldrh	w9, [x21, #0x4]
+1000dcc44:	09 01 00 79	strh	w9, [x8]
+1000dcc48:	29 6d 1c 53	lsl	w9, w9, #4
+1000dcc4c:	09 11 00 b9	str	w9, [x8, #0x10]
+1000dcc50:	c8 04 80 52	mov	w8, #0x26
+1000dcc54:	68 1a 00 79	strh	w8, [x19, #0xc]
+1000dcc58:	02 03 00 14	b	0x1000dd860
+1000dcc5c:	68 02 40 39	ldrb	w8, [x19]
+1000dcc60:	1f 19 00 71	cmp	w8, #0x6
+1000dcc64:	e1 5f 00 54	b.ne	0x1000dd860
+1000dcc68:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcc6c:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcc70:	49 16 80 52	mov	w9, #0xb2
+1000dcc74:	09 0d 00 79	strh	w9, [x8, #0x6]
+1000dcc78:	09 64 81 52	mov	w9, #0xb20
+1000dcc7c:	09 1d 00 b9	str	w9, [x8, #0x1c]
+1000dcc80:	7f 32 00 79	strh	wzr, [x19, #0x18]
+1000dcc84:	08 10 80 52	mov	w8, #0x80
+1000dcc88:	68 0a 00 79	strh	w8, [x19, #0x4]
+1000dcc8c:	48 03 80 52	mov	w8, #0x1a
+1000dcc90:	68 12 00 79	strh	w8, [x19, #0x8]
+1000dcc94:	f1 02 00 14	b	0x1000dd858
+1000dcc98:	00 66 81 52	mov	w0, #0xb30
+1000dcc9c:	8e a8 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dcca0:	62 02 40 39	ldrb	w2, [x19]
+1000dcca4:	01 00 80 52	mov	w1, #0x0
+1000dcca8:	76 31 00 94	bl	__Z13DOS_Terminatetbh
+1000dccac:	c8 15 01 f0	adrp	x8, 8891 ; 0x102397000
+1000dccb0:	08 e5 40 b9	ldr	w8, [x8, #0xe4]
+1000dccb4:	68 5d 00 34	cbz	w8, 0x1000dd860
+1000dccb8:	c9 15 01 f0	adrp	x9, 8891 ; 0x102397000
+1000dccbc:	28 d1 01 39	strb	w8, [x9, #0x74]
+1000dccc0:	e8 02 00 14	b	0x1000dd860
+1000dccc4:	d4 95 00 d0	adrp	x20, 4794 ; 0x101396000
+1000dccc8:	94 e2 39 91	add	x20, x20, #0xe78
+1000dcccc:	88 1e 40 b9	ldr	w8, [x20, #0x1c]
+1000dccd0:	69 32 40 79	ldrh	w9, [x19, #0x18]
+1000dccd4:	00 01 09 0b	add	w0, w8, w9
+1000dccd8:	e1 63 00 91	add	x1, sp, #0x18
+1000dccdc:	e2 7f 80 52	mov	w2, #0x3ff
+1000dcce0:	a7 3b 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcce4:	80 02 40 79	ldrh	w0, [x20]
+1000dcce8:	61 3a 40 79	ldrh	w1, [x19, #0x1c]
+1000dccec:	62 02 40 39	ldrb	w2, [x19]
+1000dccf0:	e3 63 00 91	add	x3, sp, #0x18
+1000dccf4:	e4 63 10 91	add	x4, sp, #0x418
+1000dccf8:	be c5 fc 97	bl	__Z13FCB_ParsenametthPKcPh
+1000dccfc:	60 02 00 39	strb	w0, [x19]
+1000dcd00:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dcd04:	69 32 40 79	ldrh	w9, [x19, #0x18]
+1000dcd08:	28 01 08 0b	add	w8, w9, w8
+1000dcd0c:	68 32 00 79	strh	w8, [x19, #0x18]
+1000dcd10:	d4 02 00 14	b	0x1000dd860
+1000dcd14:	60 12 40 79	ldrh	w0, [x19, #0x8]
+1000dcd18:	61 32 40 79	ldrh	w1, [x19, #0x18]
+1000dcd1c:	21 32 00 94	bl	__Z12DOS_ChildPSPtt
+1000dcd20:	61 12 40 79	ldrh	w1, [x19, #0x8]
+1000dcd24:	00 66 81 52	mov	w0, #0xb30
+1000dcd28:	d0 40 06 94	bl	__Z10mem_writewjt
+1000dcd2c:	08 1e 80 52	mov	w8, #0xf0
+1000dcd30:	50 00 00 14	b	0x1000dce70
+1000dcd34:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcd38:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcd3c:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dcd40:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dcd44:	00 01 09 0b	add	w0, w8, w9
+1000dcd48:	e1 63 00 91	add	x1, sp, #0x18
+1000dcd4c:	02 20 80 52	mov	w2, #0x100
+1000dcd50:	8b 3b 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcd54:	e0 63 00 91	add	x0, sp, #0x18
+1000dcd58:	70 c5 fc 97	bl	__Z14DOS_FileExistsPKc
+1000dcd5c:	c0 27 00 34	cbz	w0, 0x1000dd254
+1000dcd60:	08 0a 80 52	mov	w8, #0x50
+1000dcd64:	c9 15 01 f0	adrp	x9, 8891 ; 0x102397000
+1000dcd68:	28 d5 00 79	strh	w8, [x9, #0x6a]
+1000dcd6c:	29 02 00 14	b	0x1000dd610
+1000dcd70:	7f 02 00 79	strh	wzr, [x19]
+1000dcd74:	40 03 80 52	mov	w0, #0x1a
+1000dcd78:	63 0f fe 97	bl	__Z19CALLBACK_RunRealInth
+1000dcd7c:	60 02 40 39	ldrb	w0, [x19]
+1000dcd80:	40 00 00 b4	cbz	x0, 0x1000dcd88
+1000dcd84:	76 03 00 94	bl	__ZL11DOS_AddDaysm
+1000dcd88:	c8 15 01 f0	adrp	x8, 8891 ; 0x102397000
+1000dcd8c:	08 81 01 91	add	x8, x8, #0x60
+1000dcd90:	09 09 40 39	ldrb	w9, [x8, #0x2]
+1000dcd94:	ca 01 80 52	mov	w10, #0xe
+1000dcd98:	4a 01 09 4b	sub	w10, w10, w9
+1000dcd9c:	6b 55 85 52	mov	w11, #0x2aab
+1000dcda0:	4a 7d 0b 1b	mul	w10, w10, w11
+1000dcda4:	4c 7d 11 13	asr	w12, w10, #17
+1000dcda8:	8a 7d 4a 0b	add	w10, w12, w10, lsr #31
+1000dcdac:	0c 01 40 79	ldrh	w12, [x8]
+1000dcdb0:	8d 01 80 52	mov	w13, #0xc
+1000dcdb4:	4d 25 0d 1b	madd	w13, w10, w13, w9
+1000dcdb8:	4e 05 80 52	mov	w14, #0x2a
+1000dcdbc:	6e 06 00 39	strb	w14, [x19, #0x1]
+1000dcdc0:	08 0d 40 39	ldrb	w8, [x8, #0x3]
+1000dcdc4:	8a 01 0a 6b	subs	w10, w12, w10
+1000dcdc8:	4e 01 08 0b	add	w14, w10, w8
+1000dcdcc:	4f 0d 00 11	add	w15, w10, #0x3
+1000dcdd0:	ef b1 8a 1a	csel	w15, w15, w10, lt
+1000dcdd4:	ce 09 8f 0b	add	w14, w14, w15, asr #2
+1000dcdd8:	2f 5c 8f 52	mov	w15, #0x7ae1
+1000dcddc:	8f c2 b5 72	movk	w15, #0xae14, lsl #16
+1000dcde0:	4f 7d 2f 9b	smull	x15, w10, w15
+1000dcde4:	f0 fd 60 d3	lsr	x16, x15, #32
+1000dcde8:	ef fd 7f d3	lsr	x15, x15, #63
+1000dcdec:	ef 15 90 0b	add	w15, w15, w16, asr #5
+1000dcdf0:	f0 a3 90 52	mov	w16, #0x851f
+1000dcdf4:	70 3d aa 72	movk	w16, #0x51eb, lsl #16
+1000dcdf8:	4a 7d 30 9b	smull	x10, w10, w16
+1000dcdfc:	50 fd 60 d3	lsr	x16, x10, #32
+1000dce00:	4a fd 7f d3	lsr	x10, x10, #63
+1000dce04:	4a 1d 90 0b	add	w10, w10, w16, asr #7
+1000dce08:	ce 01 0f 0b	add	w14, w14, w15
+1000dce0c:	ca 01 0a 0b	add	w10, w14, w10
+1000dce10:	ae 69 1b 53	lsl	w14, w13, #5
+1000dce14:	cd 01 0d 4b	sub	w13, w14, w13
+1000dce18:	ad f9 00 51	sub	w13, w13, #0x3e
+1000dce1c:	ad 3d 00 13	sxth	w13, w13
+1000dce20:	ab 7d 0b 1b	mul	w11, w13, w11
+1000dce24:	6d 7d 11 13	asr	w13, w11, #17
+1000dce28:	ab 7d 4b 0b	add	w11, w13, w11, lsr #31
+1000dce2c:	4a 01 0b 0b	add	w10, w10, w11
+1000dce30:	6b 92 84 52	mov	w11, #0x2493
+1000dce34:	2b 49 b2 72	movk	w11, #0x9249, lsl #16
+1000dce38:	4b 7d 2b 9b	smull	x11, w10, w11
+1000dce3c:	6b fd 60 d3	lsr	x11, x11, #32
+1000dce40:	6b 01 0a 0b	add	w11, w11, w10
+1000dce44:	6d 7d 02 53	lsr	w13, w11, #2
+1000dce48:	ab 7d 4b 0b	add	w11, w13, w11, lsr #31
+1000dce4c:	6b 0d 0b 4b	sub	w11, w11, w11, lsl #3
+1000dce50:	4a 01 0b 0b	add	w10, w10, w11
+1000dce54:	6a 02 00 39	strb	w10, [x19]
+1000dce58:	6c 0a 00 79	strh	w12, [x19, #0x4]
+1000dce5c:	69 26 00 39	strb	w9, [x19, #0x9]
+1000dce60:	25 02 00 14	b	0x1000dd6f4
+1000dce64:	68 02 40 39	ldrb	w8, [x19]
+1000dce68:	88 28 00 34	cbz	w8, 0x1000dd378
+1000dce6c:	e8 1f 80 52	mov	w8, #0xff
+1000dce70:	68 02 00 39	strb	w8, [x19]
+1000dce74:	7b 02 00 14	b	0x1000dd860
+1000dce78:	96 bf fc 97	bl	__Z12DOS_FindNextv
+1000dce7c:	80 2c 00 34	cbz	w0, 0x1000dd40c
+1000dce80:	00 00 80 52	mov	w0, #0x0
+1000dce84:	58 0f fe 97	bl	__Z12CALLBACK_SCFb
+1000dce88:	7f 02 00 79	strh	wzr, [x19]
+1000dce8c:	75 02 00 14	b	0x1000dd860
+1000dce90:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dce94:	08 e1 39 91	add	x8, x8, #0xe78
+1000dce98:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dce9c:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dcea0:	00 01 09 0b	add	w0, w8, w9
+1000dcea4:	e1 63 00 91	add	x1, sp, #0x18
+1000dcea8:	02 20 80 52	mov	w2, #0x100
+1000dceac:	34 3b 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dceb0:	e0 63 00 91	add	x0, sp, #0x18
+1000dceb4:	d1 bd fc 97	bl	__Z13DOS_RemoveDirPKc
+1000dceb8:	40 1e 00 34	cbz	w0, 0x1000dd280
+1000dcebc:	a8 00 80 52	mov	w8, #0x5
+1000dcec0:	68 02 00 79	strh	w8, [x19]
+1000dcec4:	00 00 80 52	mov	w0, #0x0
+1000dcec8:	47 0f fe 97	bl	__Z12CALLBACK_SCFb
+1000dcecc:	65 02 00 14	b	0x1000dd860
+1000dced0:	fd 35 00 94	bl	__Z9DOS_IOCTLv
+1000dced4:	c0 29 00 34	cbz	w0, 0x1000dd40c
+1000dced8:	60 02 00 14	b	0x1000dd858
+1000dcedc:	61 02 40 39	ldrb	w1, [x19]
+1000dcee0:	75 0a 40 79	ldrh	w21, [x19, #0x4]
+1000dcee4:	3f 1c 00 71	cmp	w1, #0x7
+1000dcee8:	a2 9a 44 7a	ccmp	w21, #0x4, #0x2, ls
+1000dceec:	a9 0a 00 54	b.ls	0x1000dd040
+1000dcef0:	c8 95 00 d0	adrp	x8, 4794 ; 0x101396000
+1000dcef4:	08 e1 39 91	add	x8, x8, #0xe78
+1000dcef8:	09 11 40 b9	ldr	w9, [x8, #0x10]
+1000dcefc:	6a 3a 40 79	ldrh	w10, [x19, #0x1c]
+1000dcf00:	34 01 0a 0b	add	w20, w9, w10
+1000dcf04:	3f 14 00 71	cmp	w1, #0x5
+1000dcf08:	8c 36 00 54	b.gt	0x1000dd5d8
+1000dcf0c:	3f 08 00 71	cmp	w1, #0x2
+1000dcf10:	2d 40 00 54	b.le	0x1000dd714
+1000dcf14:	28 0c 00 51	sub	w8, w1, #0x3
+1000dcf18:	1f 09 00 71	cmp	w8, #0x2
+1000dcf1c:	03 3b 00 54	b.lo	0x1000dd67c
+1000dcf20:	3f 14 00 71	cmp	w1, #0x5
+1000dcf24:	81 4e 00 54	b.ne	0x1000dd8f4
+1000dcf28:	b5 00 80 52	mov	w21, #0x5
+1000dcf2c:	e0 03 14 aa	mov	x0, x20
+1000dcf30:	3c 40 06 94	bl	__Z10mem_writebjh
+1000dcf34:	c8 15 01 f0	adrp	x8, 8891 ; 0x102397000
+1000dcf38:	01 91 40 b9	ldr	w1, [x8, #0x90]
+1000dcf3c:	80 06 00 11	add	w0, w20, #0x1
+1000dcf40:	62 40 06 94	bl	__Z10mem_writedjj
+1000dcf44:	75 0a 00 79	strh	w21, [x19, #0x4]
+1000dcf48:	44 02 00 14	b	0x1000dd858
+1000dcf4c:	d4 95 00 d0	adrp	x20, 4794 ; 0x101396000
+1000dcf50:	94 e2 39 91	add	x20, x20, #0xe78
+1000dcf54:	88 1e 40 b9	ldr	w8, [x20, #0x1c]
+1000dcf58:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dcf5c:	00 01 09 0b	add	w0, w8, w9
+1000dcf60:	e1 63 00 91	add	x1, sp, #0x18
+1000dcf64:	02 20 80 52	mov	w2, #0x100
+1000dcf68:	05 3b 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcf6c:	88 12 40 b9	ldr	w8, [x20, #0x10]
+1000dcf70:	69 3a 40 79	ldrh	w9, [x19, #0x1c]
+1000dcf74:	00 01 09 0b	add	w0, w8, w9
+1000dcf78:	e1 63 10 91	add	x1, sp, #0x418
+1000dcf7c:	02 20 80 52	mov	w2, #0x100
+1000dcf80:	ff 3a 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcf84:	e0 63 00 91	add	x0, sp, #0x18
+1000dcf88:	e1 63 10 91	add	x1, sp, #0x418
+1000dcf8c:	03 be fc 97	bl	__Z10DOS_RenamePKcS0_
+1000dcf90:	00 19 00 34	cbz	w0, 0x1000dd2b0
+1000dcf94:	00 00 80 52	mov	w0, #0x0
+1000dcf98:	13 0f fe 97	bl	__Z12CALLBACK_SCFb
+1000dcf9c:	31 02 00 14	b	0x1000dd860
+1000dcfa0:	d6 95 00 d0	adrp	x22, 4794 ; 0x101396000
+1000dcfa4:	d6 e2 39 91	add	x22, x22, #0xe78
+1000dcfa8:	c8 1e 40 b9	ldr	w8, [x22, #0x1c]
+1000dcfac:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dcfb0:	00 01 09 0b	add	w0, w8, w9
+1000dcfb4:	e1 63 00 91	add	x1, sp, #0x18
+1000dcfb8:	02 20 80 52	mov	w2, #0x100
+1000dcfbc:	f0 3a 06 94	bl	__Z11MEM_StrCopyjPcm
+1000dcfc0:	e0 63 00 91	add	x0, sp, #0x18
+1000dcfc4:	e1 63 10 91	add	x1, sp, #0x418
+1000dcfc8:	6a c4 fc 97	bl	__Z18DOS_CreateTempFilePcPt
+1000dcfcc:	f4 03 00 aa	mov	x20, x0
+1000dcfd0:	40 16 00 34	cbz	w0, 0x1000dd298
+1000dcfd4:	a8 02 40 79	ldrh	w8, [x21]
+1000dcfd8:	68 02 00 79	strh	w8, [x19]
+1000dcfdc:	d5 1e 40 b9	ldr	w21, [x22, #0x1c]
+1000dcfe0:	73 12 40 79	ldrh	w19, [x19, #0x8]
+1000dcfe4:	e0 63 00 91	add	x0, sp, #0x18
+1000dcfe8:	c1 21 80 52	mov	w1, #0x10e
+1000dcfec:	3e ae 0a 94	bl	0x1003888e4 ; symbol stub for: _strnlen
+1000dcff0:	e8 03 00 aa	mov	x8, x0
+1000dcff4:	a0 02 13 0b	add	w0, w21, w19
+1000dcff8:	e1 63 00 91	add	x1, sp, #0x18
+1000dcffc:	02 05 00 91	add	x2, x8, #0x1
+1000dd000:	ba 3a 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dd004:	a8 00 00 14	b	0x1000dd2a4
+1000dd008:	1f 09 00 71	cmp	w8, #0x2
+1000dd00c:	80 17 00 54	b.eq	0x1000dd2fc
+1000dd010:	1f 0d 00 71	cmp	w8, #0x3
+1000dd014:	e0 2d 00 54	b.eq	0x1000dd5d0
+1000dd018:	12 02 00 14	b	0x1000dd860
+1000dd01c:	1f 09 00 71	cmp	w8, #0x2
+1000dd020:	60 30 00 54	b.eq	0x1000dd62c
+1000dd024:	1f 0d 00 71	cmp	w8, #0x3
+1000dd028:	81 00 00 54	b.ne	0x1000dd038
+1000dd02c:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dd030:	cd 41 01 94	bl	__Z22DOS_LinkUMBsToMemChaint
+1000dd034:	20 41 00 35	cbnz	w0, 0x1000dd858
+1000dd038:	28 00 80 52	mov	w8, #0x1
+1000dd03c:	f6 00 00 14	b	0x1000dd414
+1000dd040:	28 00 80 52	mov	w8, #0x1
+1000dd044:	c9 15 01 d0	adrp	x9, 8890 ; 0x102397000
+1000dd048:	28 d5 00 79	strh	w8, [x9, #0x6a]
+1000dd04c:	f3 00 00 14	b	0x1000dd418
+1000dd050:	c8 0c 80 52	mov	w8, #0x66
+1000dd054:	68 12 00 39	strb	w8, [x19, #0x4]
+1000dd058:	08 01 80 52	mov	w8, #0x8
+1000dd05c:	68 16 00 39	strb	w8, [x19, #0x5]
+1000dd060:	a8 81 88 52	mov	w8, #0x440d
+1000dd064:	68 02 00 79	strh	w8, [x19]
+1000dd068:	4a fa ff 97	bl	__ZL13DOS_21Handlerv
+1000dd06c:	74 0a 00 79	strh	w20, [x19, #0x4]
+1000dd070:	fc 01 00 14	b	0x1000dd860
+1000dd074:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd078:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd07c:	68 02 00 79	strh	w8, [x19]
+1000dd080:	80 02 00 52	eor	w0, w20, #0x1
+1000dd084:	d8 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd088:	f6 01 00 14	b	0x1000dd860
+1000dd08c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd090:	08 a9 01 91	add	x8, x8, #0x6a
+1000dd094:	08 01 40 79	ldrh	w8, [x8]
+1000dd098:	68 02 00 79	strh	w8, [x19]
+1000dd09c:	80 02 00 52	eor	w0, w20, #0x1
+1000dd0a0:	d1 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd0a4:	68 02 40 79	ldrh	w8, [x19]
+1000dd0a8:	09 f5 7e d3	lsl	x9, x8, #2
+1000dd0ac:	ca 95 00 b0	adrp	x10, 4793 ; 0x101396000
+1000dd0b0:	4a a1 3a 91	add	x10, x10, #0xea8
+1000dd0b4:	4b 01 40 b9	ldr	w11, [x10]
+1000dd0b8:	69 01 09 4b	sub	w9, w11, w9
+1000dd0bc:	49 01 00 b9	str	w9, [x10]
+1000dd0c0:	c9 95 00 b0	adrp	x9, 4793 ; 0x101396000
+1000dd0c4:	29 c1 3a 91	add	x9, x9, #0xeb0
+1000dd0c8:	2a 01 40 f9	ldr	x10, [x9]
+1000dd0cc:	48 09 08 8b	add	x8, x10, x8, lsl #2
+1000dd0d0:	28 01 00 f9	str	x8, [x9]
+1000dd0d4:	e3 01 00 14	b	0x1000dd860
+1000dd0d8:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd0dc:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd0e0:	68 02 00 79	strh	w8, [x19]
+1000dd0e4:	20 00 80 52	mov	w0, #0x1
+1000dd0e8:	bf 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd0ec:	dd 01 00 14	b	0x1000dd860
+1000dd0f0:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd0f4:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd0f8:	68 02 00 79	strh	w8, [x19]
+1000dd0fc:	e8 33 40 79	ldrh	w8, [sp, #0x18]
+1000dd100:	68 1a 00 79	strh	w8, [x19, #0xc]
+1000dd104:	00 00 00 52	eor	w0, w0, #0x1
+1000dd108:	b7 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd10c:	d5 01 00 14	b	0x1000dd860
+1000dd110:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dd114:	48 00 00 35	cbnz	w8, 0x1000dd11c
+1000dd118:	07 bb fc 97	bl	__Z19DOS_GetDefaultDrivev
+1000dd11c:	e8 ff 9f 52	mov	w8, #0xffff
+1000dd120:	55 01 00 14	b	0x1000dd674
+1000dd124:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd128:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd12c:	68 02 00 79	strh	w8, [x19]
+1000dd130:	e8 33 40 79	ldrh	w8, [sp, #0x18]
+1000dd134:	68 1a 00 79	strh	w8, [x19, #0xc]
+1000dd138:	00 00 00 52	eor	w0, w0, #0x1
+1000dd13c:	aa 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd140:	c8 01 00 14	b	0x1000dd860
+1000dd144:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd148:	08 a9 01 91	add	x8, x8, #0x6a
+1000dd14c:	08 01 40 79	ldrh	w8, [x8]
+1000dd150:	68 02 00 79	strh	w8, [x19]
+1000dd154:	80 02 00 52	eor	w0, w20, #0x1
+1000dd158:	a3 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd15c:	68 02 40 79	ldrh	w8, [x19]
+1000dd160:	09 f5 7e d3	lsl	x9, x8, #2
+1000dd164:	ca 95 00 b0	adrp	x10, 4793 ; 0x101396000
+1000dd168:	4a a1 3a 91	add	x10, x10, #0xea8
+1000dd16c:	4b 01 40 b9	ldr	w11, [x10]
+1000dd170:	69 01 09 4b	sub	w9, w11, w9
+1000dd174:	49 01 00 b9	str	w9, [x10]
+1000dd178:	c9 95 00 b0	adrp	x9, 4793 ; 0x101396000
+1000dd17c:	29 c1 3a 91	add	x9, x9, #0xeb0
+1000dd180:	2a 01 40 f9	ldr	x10, [x9]
+1000dd184:	48 09 08 8b	add	x8, x10, x8, lsl #2
+1000dd188:	28 01 00 f9	str	x8, [x9]
+1000dd18c:	bf e6 01 39	strb	wzr, [x21, #0x79]
+1000dd190:	b4 01 00 14	b	0x1000dd860
+1000dd194:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd198:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd19c:	68 02 00 79	strh	w8, [x19]
+1000dd1a0:	20 00 80 52	mov	w0, #0x1
+1000dd1a4:	90 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd1a8:	ae 01 00 14	b	0x1000dd860
+1000dd1ac:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd1b0:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd1b4:	68 02 00 79	strh	w8, [x19]
+1000dd1b8:	20 00 80 52	mov	w0, #0x1
+1000dd1bc:	8a 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd1c0:	a8 01 00 14	b	0x1000dd860
+1000dd1c4:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd1c8:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd1cc:	68 02 00 79	strh	w8, [x19]
+1000dd1d0:	20 00 80 52	mov	w0, #0x1
+1000dd1d4:	84 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd1d8:	a2 01 00 14	b	0x1000dd860
+1000dd1dc:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd1e0:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd1e4:	68 02 00 79	strh	w8, [x19]
+1000dd1e8:	20 00 80 52	mov	w0, #0x1
+1000dd1ec:	7e 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd1f0:	9c 01 00 14	b	0x1000dd860
+1000dd1f4:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd1f8:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd1fc:	68 02 00 79	strh	w8, [x19]
+1000dd200:	20 00 80 52	mov	w0, #0x1
+1000dd204:	78 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd208:	96 01 00 14	b	0x1000dd860
+1000dd20c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd210:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd214:	68 02 00 79	strh	w8, [x19]
+1000dd218:	20 00 80 52	mov	w0, #0x1
+1000dd21c:	72 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd220:	90 01 00 14	b	0x1000dd860
+1000dd224:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd228:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd22c:	68 02 00 79	strh	w8, [x19]
+1000dd230:	20 00 80 52	mov	w0, #0x1
+1000dd234:	6c 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd238:	8a 01 00 14	b	0x1000dd860
+1000dd23c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd240:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd244:	68 02 00 79	strh	w8, [x19]
+1000dd248:	20 00 80 52	mov	w0, #0x1
+1000dd24c:	66 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd250:	84 01 00 14	b	0x1000dd860
+1000dd254:	68 12 40 39	ldrb	w8, [x19, #0x4]
+1000dd258:	e8 5b 00 39	strb	w8, [sp, #0x16]
+1000dd25c:	e0 63 00 91	add	x0, sp, #0x18
+1000dd260:	e1 5b 00 91	add	x1, sp, #0x16
+1000dd264:	e2 63 10 91	add	x2, sp, #0x418
+1000dd268:	03 00 80 52	mov	w3, #0x0
+1000dd26c:	0b c0 fc 97	bl	__Z14DOS_CreateFilePKc17FatAttributeFlagsPtb
+1000dd270:	c0 1c 00 34	cbz	w0, 0x1000dd608
+1000dd274:	00 00 80 52	mov	w0, #0x0
+1000dd278:	a8 02 40 79	ldrh	w8, [x21]
+1000dd27c:	e6 00 00 14	b	0x1000dd614
+1000dd280:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd284:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd288:	68 02 00 79	strh	w8, [x19]
+1000dd28c:	20 00 80 52	mov	w0, #0x1
+1000dd290:	55 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd294:	73 01 00 14	b	0x1000dd860
+1000dd298:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd29c:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd2a0:	68 02 00 79	strh	w8, [x19]
+1000dd2a4:	80 02 00 52	eor	w0, w20, #0x1
+1000dd2a8:	4f 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd2ac:	6d 01 00 14	b	0x1000dd860
+1000dd2b0:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd2b4:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd2b8:	68 02 00 79	strh	w8, [x19]
+1000dd2bc:	20 00 80 52	mov	w0, #0x1
+1000dd2c0:	49 0e fe 97	bl	__Z12CALLBACK_SCFb
+1000dd2c4:	67 01 00 14	b	0x1000dd860
+1000dd2c8:	e8 20 00 34	cbz	w8, 0x1000dd6e4
+1000dd2cc:	1f 05 00 71	cmp	w8, #0x1
+1000dd2d0:	60 21 00 54	b.eq	0x1000dd6fc
+1000dd2d4:	1f 09 00 71	cmp	w8, #0x2
+1000dd2d8:	a1 dc ff 54	b.ne	0x1000dce6c
+1000dd2dc:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd2e0:	09 e1 41 39	ldrb	w9, [x8, #0x78]
+1000dd2e4:	6a 22 40 39	ldrb	w10, [x19, #0x8]
+1000dd2e8:	5f 01 00 71	cmp	w10, #0x0
+1000dd2ec:	ea 07 9f 1a	cset	w10, ne
+1000dd2f0:	0a e1 01 39	strb	w10, [x8, #0x78]
+1000dd2f4:	69 22 00 39	strb	w9, [x19, #0x8]
+1000dd2f8:	5a 01 00 14	b	0x1000dd860
+1000dd2fc:	7f 02 00 39	strb	wzr, [x19]
+1000dd300:	e8 05 80 52	mov	w8, #0x2f
+1000dd304:	fc 00 00 14	b	0x1000dd6f4
+1000dd308:	68 02 40 39	ldrb	w8, [x19]
+1000dd30c:	69 1a 40 79	ldrh	w9, [x19, #0xc]
+1000dd310:	1f fd 03 71	cmp	w8, #0xff
+1000dd314:	28 01 88 1a	csel	w8, w9, w8, eq
+1000dd318:	c9 15 01 d0	adrp	x9, 8890 ; 0x102397000
+1000dd31c:	28 c1 01 79	strh	w8, [x9, #0xe0]
+1000dd320:	00 3d 00 12	and	w0, w8, #0xffff
+1000dd324:	68 40 00 94	bl	__Z14DOS_SetCountryt
+1000dd328:	00 04 00 35	cbnz	w0, 0x1000dd3a8
+1000dd32c:	48 00 80 52	mov	w8, #0x2
+1000dd330:	39 00 00 14	b	0x1000dd414
+1000dd334:	68 42 40 79	ldrh	w8, [x19, #0x20]
+1000dd338:	08 09 00 11	add	w8, w8, #0x2
+1000dd33c:	68 42 00 79	strh	w8, [x19, #0x20]
+1000dd340:	bb 36 00 94	bl	__Z18DOS_GetSTDINStatusv
+1000dd344:	20 18 00 36	tbz	w0, #0x0, 0x1000dd648
+1000dd348:	28 00 80 52	mov	w8, #0x1
+1000dd34c:	e8 33 00 79	strh	w8, [sp, #0x18]
+1000dd350:	e1 63 10 91	add	x1, sp, #0x418
+1000dd354:	e2 63 00 91	add	x2, sp, #0x18
+1000dd358:	00 00 80 52	mov	w0, #0x0
+1000dd35c:	03 00 80 52	mov	w3, #0x0
+1000dd360:	78 be fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dd364:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dd368:	68 02 00 39	strb	w8, [x19]
+1000dd36c:	00 00 80 52	mov	w0, #0x0
+1000dd370:	00 0e fe 97	bl	__Z12CALLBACK_SZFb
+1000dd374:	3b 01 00 14	b	0x1000dd860
+1000dd378:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd37c:	08 8d 40 b9	ldr	w8, [x8, #0x8c]
+1000dd380:	09 7d 10 53	lsr	w9, w8, #16
+1000dd384:	ca 95 00 b0	adrp	x10, 4793 ; 0x101396000
+1000dd388:	4a e1 39 91	add	x10, x10, #0xe78
+1000dd38c:	49 0d 00 79	strh	w9, [x10, #0x6]
+1000dd390:	29 6d 1c 53	lsl	w9, w9, #4
+1000dd394:	49 1d 00 b9	str	w9, [x10, #0x1c]
+1000dd398:	68 32 00 79	strh	w8, [x19, #0x18]
+1000dd39c:	2f 01 00 14	b	0x1000dd858
+1000dd3a0:	0e cc fc 97	bl	__Z14DOS_UnlockFiletjj
+1000dd3a4:	40 03 00 34	cbz	w0, 0x1000dd40c
+1000dd3a8:	7f 02 00 79	strh	wzr, [x19]
+1000dd3ac:	2b 01 00 14	b	0x1000dd858
+1000dd3b0:	28 00 80 52	mov	w8, #0x1
+1000dd3b4:	c9 15 01 d0	adrp	x9, 8890 ; 0x102397000
+1000dd3b8:	28 d5 00 79	strh	w8, [x9, #0x6a]
+1000dd3bc:	14 00 00 14	b	0x1000dd40c
+1000dd3c0:	e8 1f 80 52	mov	w8, #0xff
+1000dd3c4:	68 36 00 39	strb	w8, [x19, #0xd]
+1000dd3c8:	00 66 81 52	mov	w0, #0xb30
+1000dd3cc:	c2 a6 0a 94	bl	0x100386ed4 ; symbol stub for: __Z9mem_readwIL9MemOpMode0EEtj
+1000dd3d0:	14 6c 1c 53	lsl	w20, w0, #4
+1000dd3d4:	80 02 01 11	add	w0, w20, #0x40
+1000dd3d8:	b6 a6 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dd3dc:	60 02 00 39	strb	w0, [x19]
+1000dd3e0:	80 06 01 11	add	w0, w20, #0x41
+1000dd3e4:	b3 a6 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dd3e8:	60 06 00 39	strb	w0, [x19, #0x1]
+1000dd3ec:	7f 32 00 39	strb	wzr, [x19, #0xc]
+1000dd3f0:	7f 0a 00 79	strh	wzr, [x19, #0x4]
+1000dd3f4:	1b 01 00 14	b	0x1000dd860
+1000dd3f8:	60 1a 40 79	ldrh	w0, [x19, #0xc]
+1000dd3fc:	61 0a 40 79	ldrh	w1, [x19, #0x4]
+1000dd400:	62 12 40 79	ldrh	w2, [x19, #0x8]
+1000dd404:	c7 ca fc 97	bl	__Z15DOS_SetFileDatettt
+1000dd408:	80 22 00 35	cbnz	w0, 0x1000dd858
+1000dd40c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd410:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd414:	68 02 00 79	strh	w8, [x19]
+1000dd418:	20 00 80 52	mov	w0, #0x1
+1000dd41c:	10 01 00 14	b	0x1000dd85c
+1000dd420:	68 12 40 39	ldrb	w8, [x19, #0x4]
+1000dd424:	e8 63 10 39	strb	w8, [sp, #0x418]
+1000dd428:	e0 63 00 91	add	x0, sp, #0x18
+1000dd42c:	e1 63 10 91	add	x1, sp, #0x418
+1000dd430:	e6 c1 fc 97	bl	__Z15DOS_SetFileAttrPKc17FatAttributeFlags
+1000dd434:	80 11 00 34	cbz	w0, 0x1000dd664
+1000dd438:	48 40 80 52	mov	w8, #0x202
+1000dd43c:	68 02 00 79	strh	w8, [x19]
+1000dd440:	00 00 80 52	mov	w0, #0x0
+1000dd444:	e8 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd448:	06 01 00 14	b	0x1000dd860
+1000dd44c:	28 00 80 52	mov	w8, #0x1
+1000dd450:	68 02 00 79	strh	w8, [x19]
+1000dd454:	20 00 80 52	mov	w0, #0x1
+1000dd458:	e3 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd45c:	01 01 00 14	b	0x1000dd860
+1000dd460:	94 06 00 51	sub	w20, w20, #0x1
+1000dd464:	76 0a 00 11	add	w22, w19, #0x2
+1000dd468:	17 04 80 52	mov	w23, #0x20
+1000dd46c:	18 01 80 52	mov	w24, #0x8
+1000dd470:	f9 00 80 52	mov	w25, #0x7
+1000dd474:	e8 33 40 79	ldrh	w8, [sp, #0x18]
+1000dd478:	48 21 00 34	cbz	w8, 0x1000dd8a0
+1000dd47c:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dd480:	1f 29 00 71	cmp	w8, #0xa
+1000dd484:	c0 01 00 54	b.eq	0x1000dd4bc
+1000dd488:	1f 21 00 71	cmp	w8, #0x8
+1000dd48c:	80 02 00 54	b.eq	0x1000dd4dc
+1000dd490:	ba 1e 00 12	and	w26, w21, #0xff
+1000dd494:	5f 03 34 6b	cmp	w26, w20, uxtb
+1000dd498:	c1 04 00 54	b.ne	0x1000dd530
+1000dd49c:	1f 35 00 71	cmp	w8, #0xd
+1000dd4a0:	80 04 00 54	b.eq	0x1000dd530
+1000dd4a4:	f9 5b 00 39	strb	w25, [sp, #0x16]
+1000dd4a8:	e1 5b 00 91	add	x1, sp, #0x16
+1000dd4ac:	e2 63 00 91	add	x2, sp, #0x18
+1000dd4b0:	20 00 80 52	mov	w0, #0x1
+1000dd4b4:	03 00 80 52	mov	w3, #0x0
+1000dd4b8:	9c be fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dd4bc:	e1 63 10 91	add	x1, sp, #0x418
+1000dd4c0:	e2 63 00 91	add	x2, sp, #0x18
+1000dd4c4:	00 00 80 52	mov	w0, #0x0
+1000dd4c8:	03 00 80 52	mov	w3, #0x0
+1000dd4cc:	1d be fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dd4d0:	b4 ad fc 97	bl	__Z26DOSBOX_IsShutdownRequestedv
+1000dd4d4:	00 fd 07 36	tbz	w0, #0x0, 0x1000dd474
+1000dd4d8:	0c fd ff 17	b	0x1000dc908
+1000dd4dc:	bf 1e 00 72	tst	w21, #0xff
+1000dd4e0:	20 04 00 54	b.eq	0x1000dd564
+1000dd4e4:	e1 63 10 91	add	x1, sp, #0x418
+1000dd4e8:	e2 63 00 91	add	x2, sp, #0x18
+1000dd4ec:	20 00 80 52	mov	w0, #0x1
+1000dd4f0:	03 00 80 52	mov	w3, #0x0
+1000dd4f4:	8d be fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dd4f8:	f7 63 10 39	strb	w23, [sp, #0x418]
+1000dd4fc:	e1 63 10 91	add	x1, sp, #0x418
+1000dd500:	e2 63 00 91	add	x2, sp, #0x18
+1000dd504:	20 00 80 52	mov	w0, #0x1
+1000dd508:	03 00 80 52	mov	w3, #0x0
+1000dd50c:	87 be fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dd510:	f8 63 10 39	strb	w24, [sp, #0x418]
+1000dd514:	e1 63 10 91	add	x1, sp, #0x418
+1000dd518:	e2 63 00 91	add	x2, sp, #0x18
+1000dd51c:	20 00 80 52	mov	w0, #0x1
+1000dd520:	03 00 80 52	mov	w3, #0x0
+1000dd524:	81 be fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dd528:	b5 06 00 51	sub	w21, w21, #0x1
+1000dd52c:	0f 00 00 14	b	0x1000dd568
+1000dd530:	e1 63 10 91	add	x1, sp, #0x418
+1000dd534:	e2 63 00 91	add	x2, sp, #0x18
+1000dd538:	20 00 80 52	mov	w0, #0x1
+1000dd53c:	03 00 80 52	mov	w3, #0x0
+1000dd540:	7a be fc 97	bl	__Z13DOS_WriteFiletPhPtb
+1000dd544:	e1 63 50 39	ldrb	w1, [sp, #0x418]
+1000dd548:	c0 02 1a 0b	add	w0, w22, w26
+1000dd54c:	b5 3e 06 94	bl	__Z10mem_writebjh
+1000dd550:	e8 63 50 39	ldrb	w8, [sp, #0x418]
+1000dd554:	1f 35 00 71	cmp	w8, #0xd
+1000dd558:	80 9d ff 54	b.eq	0x1000dc908
+1000dd55c:	b5 06 00 11	add	w21, w21, #0x1
+1000dd560:	02 00 00 14	b	0x1000dd568
+1000dd564:	15 00 80 52	mov	w21, #0x0
+1000dd568:	e1 63 10 91	add	x1, sp, #0x418
+1000dd56c:	e2 63 00 91	add	x2, sp, #0x18
+1000dd570:	00 00 80 52	mov	w0, #0x0
+1000dd574:	03 00 80 52	mov	w3, #0x0
+1000dd578:	f2 bd fc 97	bl	__Z12DOS_ReadFiletPhPtb
+1000dd57c:	89 ad fc 97	bl	__Z26DOSBOX_IsShutdownRequestedv
+1000dd580:	d5 ff ff 17	b	0x1000dd4d4
+1000dd584:	e8 43 01 d0	adrp	x8, 10366 ; 0x10295b000
+1000dd588:	1f 81 01 f9	str	xzr, [x8, #0x300]
+1000dd58c:	68 16 40 39	ldrb	w8, [x19, #0x5]
+1000dd590:	09 c2 81 52	mov	w9, #0xe10
+1000dd594:	08 7d a9 9b	umull	x8, w8, w9
+1000dd598:	69 12 40 39	ldrb	w9, [x19, #0x4]
+1000dd59c:	8a 07 80 52	mov	w10, #0x3c
+1000dd5a0:	28 21 aa 9b	umaddl	x8, w9, w10, x8
+1000dd5a4:	69 26 40 39	ldrb	w9, [x19, #0x9]
+1000dd5a8:	08 01 09 8b	add	x8, x8, x9
+1000dd5ac:	09 16 80 52	mov	w9, #0xb0
+1000dd5b0:	09 03 a0 72	movk	w9, #0x18, lsl #16
+1000dd5b4:	08 7d a9 9b	umull	x8, w8, w9
+1000dd5b8:	49 51 8e d2	mov	x9, #0x728a
+1000dd5bc:	c9 a0 a8 f2	movk	x9, #0x4506, lsl #16
+1000dd5c0:	c9 45 d8 f2	movk	x9, #0xc22e, lsl #32
+1000dd5c4:	01 7d c9 9b	umulh	x1, x8, x9
+1000dd5c8:	80 8d 80 52	mov	w0, #0x46c
+1000dd5cc:	bf 3e 06 94	bl	__Z10mem_writedjj
+1000dd5d0:	7f 02 00 39	strb	wzr, [x19]
+1000dd5d4:	a3 00 00 14	b	0x1000dd860
+1000dd5d8:	3f 80 00 71	cmp	w1, #0x20
+1000dd5dc:	ec 0a 00 54	b.gt	0x1000dd738
+1000dd5e0:	3f 18 00 71	cmp	w1, #0x6
+1000dd5e4:	a0 12 00 54	b.eq	0x1000dd838
+1000dd5e8:	3f 1c 00 71	cmp	w1, #0x7
+1000dd5ec:	80 04 00 54	b.eq	0x1000dd67c
+1000dd5f0:	3f 80 00 71	cmp	w1, #0x20
+1000dd5f4:	01 18 00 54	b.ne	0x1000dd8f4
+1000dd5f8:	60 22 40 39	ldrb	w0, [x19, #0x8]
+1000dd5fc:	ae a9 0a 94	bl	0x100387cb4 ; symbol stub for: ___toupper
+1000dd600:	60 22 00 39	strb	w0, [x19, #0x8]
+1000dd604:	95 00 00 14	b	0x1000dd858
+1000dd608:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd60c:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd610:	20 00 80 52	mov	w0, #0x1
+1000dd614:	68 02 00 79	strh	w8, [x19]
+1000dd618:	73 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd61c:	91 00 00 14	b	0x1000dd860
+1000dd620:	37 3e 01 94	bl	__Z23DOS_GetMemAllocStrategyv
+1000dd624:	60 02 00 79	strh	w0, [x19]
+1000dd628:	8c 00 00 14	b	0x1000dd858
+1000dd62c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd630:	08 d9 40 b9	ldr	w8, [x8, #0xd8]
+1000dd634:	00 25 02 11	add	w0, w8, #0x89
+1000dd638:	1e a6 0a 94	bl	0x100386eb0 ; symbol stub for: __Z9mem_readbIL9MemOpMode0EEhj
+1000dd63c:	08 00 00 12	and	w8, w0, #0x1
+1000dd640:	68 02 00 39	strb	w8, [x19]
+1000dd644:	85 00 00 14	b	0x1000dd858
+1000dd648:	7f 02 00 39	strb	wzr, [x19]
+1000dd64c:	20 00 80 52	mov	w0, #0x1
+1000dd650:	48 0d fe 97	bl	__Z12CALLBACK_SZFb
+1000dd654:	83 00 00 14	b	0x1000dd860
+1000dd658:	20 00 80 52	mov	w0, #0x1
+1000dd65c:	62 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd660:	03 00 00 14	b	0x1000dd66c
+1000dd664:	20 00 80 52	mov	w0, #0x1
+1000dd668:	5f 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd66c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd670:	08 d5 40 79	ldrh	w8, [x8, #0x6a]
+1000dd674:	68 02 00 79	strh	w8, [x19]
+1000dd678:	7a 00 00 14	b	0x1000dd860
+1000dd67c:	e0 03 14 aa	mov	x0, x20
+1000dd680:	68 3e 06 94	bl	__Z10mem_writebjh
+1000dd684:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd688:	01 8d 40 b9	ldr	w1, [x8, #0x8c]
+1000dd68c:	6f 00 00 14	b	0x1000dd848
+1000dd690:	f4 63 00 91	add	x20, sp, #0x18
+1000dd694:	e0 63 00 91	add	x0, sp, #0x18
+1000dd698:	84 ac 0a 94	bl	0x1003888a8 ; symbol stub for: _strlen
+1000dd69c:	68 17 00 b0	adrp	x8, 749 ; 0x1003ca000
+1000dd6a0:	08 c5 16 91	add	x8, x8, #0x5b1 ; literal pool for: "               "
+1000dd6a4:	00 01 c0 3d	ldr	q0, [x8]
+1000dd6a8:	80 6a a0 3c	str	q0, [x20, x0]
+1000dd6ac:	ff 9f 00 39	strb	wzr, [sp, #0x27]
+1000dd6b0:	c8 95 00 b0	adrp	x8, 4793 ; 0x101396000
+1000dd6b4:	08 e1 39 91	add	x8, x8, #0xe78
+1000dd6b8:	08 1d 40 b9	ldr	w8, [x8, #0x1c]
+1000dd6bc:	69 12 40 79	ldrh	w9, [x19, #0x8]
+1000dd6c0:	00 01 09 0b	add	w0, w8, w9
+1000dd6c4:	e1 63 00 91	add	x1, sp, #0x18
+1000dd6c8:	02 02 80 52	mov	w2, #0x10
+1000dd6cc:	07 39 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dd6d0:	e8 3f 80 52	mov	w8, #0x1ff
+1000dd6d4:	68 0a 00 79	strh	w8, [x19, #0x4]
+1000dd6d8:	00 00 80 52	mov	w0, #0x0
+1000dd6dc:	42 0d fe 97	bl	__Z12CALLBACK_SCFb
+1000dd6e0:	60 00 00 14	b	0x1000dd860
+1000dd6e4:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd6e8:	08 e1 41 39	ldrb	w8, [x8, #0x78]
+1000dd6ec:	02 00 00 14	b	0x1000dd6f4
+1000dd6f0:	68 00 80 52	mov	w8, #0x3
+1000dd6f4:	68 22 00 39	strb	w8, [x19, #0x8]
+1000dd6f8:	5a 00 00 14	b	0x1000dd860
+1000dd6fc:	68 22 40 39	ldrb	w8, [x19, #0x8]
+1000dd700:	1f 01 00 71	cmp	w8, #0x0
+1000dd704:	e8 07 9f 1a	cset	w8, ne
+1000dd708:	c9 15 01 d0	adrp	x9, 8890 ; 0x102397000
+1000dd70c:	28 e1 01 39	strb	w8, [x9, #0x78]
+1000dd710:	54 00 00 14	b	0x1000dd860
+1000dd714:	3f 04 00 71	cmp	w1, #0x1
+1000dd718:	20 05 00 54	b.eq	0x1000dd7bc
+1000dd71c:	3f 08 00 71	cmp	w1, #0x2
+1000dd720:	a1 0e 00 54	b.ne	0x1000dd8f4
+1000dd724:	e0 03 14 aa	mov	x0, x20
+1000dd728:	3e 3e 06 94	bl	__Z10mem_writebjh
+1000dd72c:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd730:	01 99 40 b9	ldr	w1, [x8, #0x98]
+1000dd734:	45 00 00 14	b	0x1000dd848
+1000dd738:	29 84 00 51	sub	w9, w1, #0x21
+1000dd73c:	3f 09 00 71	cmp	w9, #0x2
+1000dd740:	a2 0d 00 54	b.hs	0x1000dd8f4
+1000dd744:	14 1d 40 b9	ldr	w20, [x8, #0x1c]
+1000dd748:	76 12 40 79	ldrh	w22, [x19, #0x8]
+1000dd74c:	3f 84 00 71	cmp	w1, #0x21
+1000dd750:	c0 00 00 54	b.eq	0x1000dd768
+1000dd754:	80 02 16 0b	add	w0, w20, w22
+1000dd758:	1a 38 06 94	bl	__Z10mem_strlenj
+1000dd75c:	f5 03 00 aa	mov	x21, x0
+1000dd760:	1f 40 40 f1	cmp	x0, #0x10, lsl #12
+1000dd764:	22 0c 00 54	b.hs	0x1000dd8e8
+1000dd768:	95 07 00 b4	cbz	x21, 0x1000dd858
+1000dd76c:	d3 15 01 d0	adrp	x19, 8890 ; 0x102397000
+1000dd770:	73 a2 03 91	add	x19, x19, #0xe8
+1000dd774:	80 02 16 0b	add	w0, w20, w22
+1000dd778:	e1 03 13 aa	mov	x1, x19
+1000dd77c:	e2 03 15 aa	mov	x2, x21
+1000dd780:	b8 38 06 94	bl	__Z13MEM_BlockReadjPvm
+1000dd784:	17 00 80 d2	mov	x23, #0x0
+1000dd788:	7f 6a 35 38	strb	wzr, [x19, x21]
+1000dd78c:	60 6a 77 38	ldrb	w0, [x19, x23]
+1000dd790:	49 a9 0a 94	bl	0x100387cb4 ; symbol stub for: ___toupper
+1000dd794:	60 6a 37 38	strb	w0, [x19, x23]
+1000dd798:	f7 06 00 91	add	x23, x23, #0x1
+1000dd79c:	bf 02 17 eb	cmp	x21, x23
+1000dd7a0:	61 ff ff 54	b.ne	0x1000dd78c
+1000dd7a4:	c1 15 01 d0	adrp	x1, 8890 ; 0x102397000
+1000dd7a8:	21 a0 03 91	add	x1, x1, #0xe8
+1000dd7ac:	80 02 16 0b	add	w0, w20, w22
+1000dd7b0:	e2 03 15 aa	mov	x2, x21
+1000dd7b4:	cd 38 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dd7b8:	28 00 00 14	b	0x1000dd858
+1000dd7bc:	e0 03 14 aa	mov	x0, x20
+1000dd7c0:	18 3e 06 94	bl	__Z10mem_writebjh
+1000dd7c4:	80 06 00 11	add	w0, w20, #0x1
+1000dd7c8:	c1 04 80 52	mov	w1, #0x26
+1000dd7cc:	27 3e 06 94	bl	__Z10mem_writewjt
+1000dd7d0:	80 0e 00 11	add	w0, w20, #0x3
+1000dd7d4:	21 00 80 52	mov	w1, #0x1
+1000dd7d8:	24 3e 06 94	bl	__Z10mem_writewjt
+1000dd7dc:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dd7e0:	1f 1d 00 71	cmp	w8, #0x7
+1000dd7e4:	a3 03 00 54	b.lo	0x1000dd858
+1000dd7e8:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd7ec:	01 65 41 79	ldrh	w1, [x8, #0xb2]
+1000dd7f0:	80 16 00 11	add	w0, w20, #0x5
+1000dd7f4:	1d 3e 06 94	bl	__Z10mem_writewjt
+1000dd7f8:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dd7fc:	1f 25 00 71	cmp	w8, #0x9
+1000dd800:	c3 02 00 54	b.lo	0x1000dd858
+1000dd804:	09 1d 00 51	sub	w9, w8, #0x7
+1000dd808:	1f a1 00 71	cmp	w8, #0x28
+1000dd80c:	48 04 80 52	mov	w8, #0x22
+1000dd810:	02 81 89 9a	csel	x2, x8, x9, hi
+1000dd814:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd818:	01 51 40 f9	ldr	x1, [x8, #0xa0]
+1000dd81c:	80 1e 00 11	add	w0, w20, #0x7
+1000dd820:	b2 38 06 94	bl	__Z14MEM_BlockWritejPKvm
+1000dd824:	68 0a 40 79	ldrh	w8, [x19, #0x4]
+1000dd828:	29 05 80 52	mov	w9, #0x29
+1000dd82c:	1f a5 00 71	cmp	w8, #0x29
+1000dd830:	08 31 89 1a	csel	w8, w8, w9, lo
+1000dd834:	08 00 00 14	b	0x1000dd854
+1000dd838:	e0 03 14 aa	mov	x0, x20
+1000dd83c:	f9 3d 06 94	bl	__Z10mem_writebjh
+1000dd840:	c8 15 01 d0	adrp	x8, 8890 ; 0x102397000
+1000dd844:	01 95 40 b9	ldr	w1, [x8, #0x94]
+1000dd848:	80 06 00 11	add	w0, w20, #0x1
+1000dd84c:	1f 3e 06 94	bl	__Z10mem_writedjj
+1000dd850:	a8 00 80 52	mov	w8, #0x5
+1000dd854:	68 0a 00 79	strh	w8, [x19, #0x4]
+1000dd858:	00 00 80 52	mov	w0, #0x0
+1000dd85c:	e2 0c fe 97	bl	__Z12CALLBACK_SCFb
+1000dd860:	a8 83 5a f8	ldur	x8, [x29, #-0x58]
+1000dd864:	e9 1b 00 b0	adrp	x9, 893 ; 0x10045a000
+1000dd868:	29 a5 47 f9	ldr	x9, [x9, #0xf48] ; literal pool symbol address: ___stack_chk_guard
+1000dd86c:	29 01 40 f9	ldr	x9, [x9]
+1000dd870:	3f 01 08 eb	cmp	x9, x8
+1000dd874:	41 01 00 54	b.ne	0x1000dd89c
+1000dd878:	00 00 80 d2	mov	x0, #0x0
+1000dd87c:	ff c3 14 91	add	sp, sp, #0x530
+1000dd880:	fd 7b 45 a9	ldp	x29, x30, [sp, #0x50]
+1000dd884:	f4 4f 44 a9	ldp	x20, x19, [sp, #0x40]
+1000dd888:	f6 57 43 a9	ldp	x22, x21, [sp, #0x30]
+1000dd88c:	f8 5f 42 a9	ldp	x24, x23, [sp, #0x20]
+1000dd890:	fa 67 41 a9	ldp	x26, x25, [sp, #0x10]
+1000dd894:	fc 6f c6 a8	ldp	x28, x27, [sp], #0x60
+1000dd898:	c0 03 5f d6	ret
+1000dd89c:	00 a9 0a 94	bl	0x100387c9c ; symbol stub for: ___stack_chk_fail
+1000dd8a0:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8a4:	00 20 15 91	add	x0, x0, #0x548 ; literal pool for: "DOS:0x0a:Redirected input reached EOF"
+1000dd8a8:	94 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd8ac:	20 00 20 d4	brk	#0x1
+1000dd8b0:	a8 00 80 52	mov	w8, #0x5
+1000dd8b4:	e8 03 00 f9	str	x8, [sp]
+1000dd8b8:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8bc:	00 c0 14 91	add	x0, x0, #0x530 ; literal pool for: "DOS:Unhandled call %02X"
+1000dd8c0:	8e 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd8c4:	68 0a 80 52	mov	w8, #0x53
+1000dd8c8:	e8 03 00 f9	str	x8, [sp]
+1000dd8cc:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8d0:	00 58 16 91	add	x0, x0, #0x596 ; literal pool for: "Unhandled Dos 21 call %02X"
+1000dd8d4:	89 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd8d8:	e8 03 00 f9	str	x8, [sp]
+1000dd8dc:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8e0:	00 28 18 91	add	x0, x0, #0x60a ; literal pool for: "DOS:Illegal Get Serial Number call %2X"
+1000dd8e4:	85 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd8e8:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8ec:	00 04 17 91	add	x0, x0, #0x5c1 ; literal pool for: "DOS:0x65 Buffer overflow"
+1000dd8f0:	82 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd8f4:	e1 03 00 f9	str	x1, [sp]
+1000dd8f8:	60 17 00 b0	adrp	x0, 749 ; 0x1003ca000
+1000dd8fc:	00 68 17 91	add	x0, x0, #0x5da ; literal pool for: "DOS:0x65:Unhandled country information call %2X"
+1000dd900:	7e 0f 08 94	bl	__Z6E_ExitPKcz
+1000dd904:	4d a5 0a 94	bl	0x100386e38 ; symbol stub for: __Unwind_Resume

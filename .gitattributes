@@ -280,6 +280,19 @@
 /research/yt-maint/record-input-controls/**/TRACE.BIN -diff
 /research/yt-maint/record-input-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 
+# Host-clock research retains exact compressed observations and DOS CRLF output.
+/research/yt-maint/clock-neutral-controls/** -text
+/research/yt-maint/clock-neutral-controls/**/*.LOG -diff
+/research/yt-maint/clock-neutral-controls/**/TRACE.BIN -diff
+/research/yt-maint/clock-neutral-controls/**/dosbox.stdout whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-neutral-controls/**/dosbox.stderr whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-neutral-host/*.bin -text -diff
+/research/yt-maint/clock-neutral-host/** -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-neutral-pins.json -text
+/scripts/observe_maintenance_clock.js text eol=lf
+/scripts/capture_maintenance_clock_neutral.mjs text eol=lf
+/scripts/recover_maintenance_clock_neutral.py text eol=lf
+
 # Supplemental historical runtime streams preserve original DOS/probe bytes.
 /research/yt-maint/runtime-stream-controls/** -text
 /research/yt-maint/runtime-stream-controls/**/*.LOG -diff

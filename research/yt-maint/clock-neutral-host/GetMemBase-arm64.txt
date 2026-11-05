@@ -1,0 +1,12 @@
+
+/opt/homebrew/bin/dosbox-staging:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+000000010026d1e0 <__Z10GetMemBasev>:
+10026d1e0: d00109e8    	adrp	x8, 0x1023ab000 <_CGA_Composite_Table+0xf38>
+10026d1e4: f945c900    	ldr	x0, [x8, #0xb90]
+10026d1e8: d65f03c0    	ret
+
+000000010026d1ec <__ZNSt3__110unique_ptrI6MEMORYNS_14default_deleteIS1_EEED1B9nqe210106Ev>:
+10026d1ec: a9be4ff4    	stp	x20, x19, [sp, #-0x20]!
