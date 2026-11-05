@@ -70,9 +70,21 @@ exact native post-maintenance replay is not implemented.
 Original initial-maintenance research now retains eight native controls with
 untouched integrated launches, split before/after files, exact repeats and
 clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
-This closes the baseline transition-capture slice; exact maintenance RNG seed,
-draw ordering and post-maintenance Go replay remain separate. Do not repeat the
-capture as missing work or describe it as a gameplay change.
+This closes the baseline transition-capture slice. The follow-up
+[first-hit seed/draw research](yt-maint/RNG_FIRST_HITS.md) now measures entry and
+helper seeding plus selected Wanderer draw boundaries with 151 terminating probes
+and six untouched paired oracles. The follow-up [sequencing research](yt-maint/RNG_SEQUENCING.md)
+now counts every literal RND site in the initial fixture, measures repeated helper
+reseeds/callers and demonstrates one occupied-candidate retry. These bounded
+observations do not establish arbitrary-world chronology or exact post-maintenance
+replay. [The phase ledger](yt-maint/PHASE_CHRONOLOGY.md) additionally links nineteen
+mobile groups' eager scans and the tail RNG families in the selected baseline.
+General MBF arithmetic and production compatibility remain separate; do not repeat
+these measured seed/count boundaries as missing work or describe research as a
+gameplay change. The [record replay model](yt-maint/RECORD_REPLAY.md) now closes
+all measured non-timestamp bytes and auxiliary files in the bounded baseline,
+with four untouched port timestamp bytes explicitly unresolved. This is not an
+exact untouched-replay or production compatibility completion claim.
 
 
 | Milestone | Implemented behavior and evidence |
@@ -115,8 +127,17 @@ capture as missing work or describe it as a gameplay change.
    CLI selection and complete Genesis/admin-reset integration in save 35. Both
    resets preserve the source recipe and repeat its layout. Do not repeat source
    generation, safe projection or playable integration as missing work.
-   General MBF arithmetic, arbitrary inputs and exact initial maintenance remain
-   separate research. Do not repeat the established
+   The [maintenance sequencing controls](yt-maint/RNG_SEQUENCING.md) now measure
+   repeated helper reseeds/callers, all literal-site counts in the selected initial
+   fixture and one occupied-candidate retry. The [phase chronology](yt-maint/PHASE_CHRONOLOGY.md)
+   now joins the selected baseline's helper states to group/player scan boundaries
+   and the desertion/lottery tail. The [bounded record model](yt-maint/RECORD_REPLAY.md)
+   now reconstructs all six files without reading after-targets: paired instrumented
+   outputs match exactly, while untouched runs retain four port timestamp-byte
+   mismatches. Next recover a clock-neutral TIMER boundary observation, require
+   complete untouched equality, then add independent dates/clocks. General MBF,
+   arbitrary inputs and unmeasured dynamic paths remain separate research.
+   Do not repeat the established
    graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),
    [RNG controls](yt-rng-seeding/RECOVERY.md),

@@ -561,7 +561,7 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 
 `-system` is a stable namespace for the BBS. Identity uses this value plus the positive user-record number on Door32 line five; alias is display information. Changing an alias does not create a fresh ship. Keep the system value stable. Local identities are separate from Door32 identities.
 
-GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
+GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. Linux/macOS sessions accept unused Door32 communication handles such as `-1`, using the BBS-provided standard I/O streams. Rebuild older binaries with the GoDoors revision below to pick up this startup fix. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
 Native macOS PTY and simulated BBS Door32 stdio sessions over localhost TCP were
 exercised, including multiple concurrent callers through victory. This is not
@@ -571,14 +571,42 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
-[Maintenance RNG tracing](research/yt-maint/RNG_TRACE.md) now verifies five complete
-instrumented streams (127,618 events), including repeated TIMER reseeding during
-NPC processing. The verifier separates measured probe-induced sector differences
-from untouched DOS behavior; one paired control matches the whole native world.
-Portable recurrence, provenance and corruption checks run in CI. Exact
-application draw ordering and post-maintenance replay remain research; gameplay,
-source fingerprints and save 35 are unchanged.
+**Maintenance seed boundaries are now measured:** 151 terminating DOS probes
+and six untouched paired runs recover entry `RANDOMIZE -TIMER`, two positive-TIMER
+helper reseeds and a selected first-hit Wanderer draw chain. Raw states preserve
+zero residues and the old low byte.
+[First-hit evidence and timing limits](research/yt-maint/RNG_FIRST_HITS.md).
 
+**Repeated maintenance draws are now measured for the initial-world fixture:**
+independent counters cover all 43 literal RND sites. Nine execute, totaling
+25,891 draws; the two helper paths reseed 41 and 19 times. Nth-hit state and caller
+observations distinguish the four-draw shrinking-bound helper from occupied-sector
+candidate retries. An explicitly synthetic occupied-destination control adds one
+Wanderer selection attempt. Untouched comparisons, retained raw records and
+independent corruption checks bound these findings. This remains research: exact
+post-maintenance replay, arbitrary-world draw chronology and general MBF parity
+are not implemented, and gameplay/save format 35 are unchanged.
+[Sequencing evidence, diagnostic limits and portable checks](research/yt-maint/RNG_SEQUENCING.md).
+
+**The initial-fixture scan ledger is now joined:** 332 additional controls identify
+mobile groups 2–20 and cached player slots 2–51. The ordinary interception phase
+consumes 496 fifty-player scan blocks, including eager draws for excluded group
+20. Measured state bridges join helper reseeds, candidate/interception scans,
+twenty desertion draws and the lottery gate. Sampled old/next-sector arguments
+match directed original warp edges. These bounded observations do not claim
+496 successful encounters or full post-maintenance record replay.
+[Phase chronology, native evidence and limits](research/yt-maint/PHASE_CHRONOLOGY.md).
+
+**A bounded maintenance record model is now available for research:** it derives
+all sector, planet, configuration and inactive-player bytes, plus all five
+auxiliary files, from before-inputs, original constants and measured clock values.
+All six files match the paired instrumented outputs exactly. Untouched runs still
+differ in **four port timestamp bytes** because the diagnostic moves one clock
+boundary. No timestamp mask or target-derived correction hides that gap; this is
+not yet exact untouched maintenance replay or a gameplay/save-35 change.
+[Record model, complete comparison and remaining clock work](research/yt-maint/RECORD_REPLAY.md). The documented entry
+capture command emits all four required controls, including the raw startup TIMER
+witness used to derive the replay seed; a contract regression checks that inventory.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
@@ -640,7 +668,7 @@ CI allows 30 minutes for the complete race, evidence, terminal and cross-build
 sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
 random encounters while retaining their resource, replay and durability checks.
 
-Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
+Requires Go 1.23+ and a local GoDoors checkout at commit [`2bb91d527ae926b436a5a65eb380441eb937e6a9`](https://github.com/robbiew/godoors/commit/2bb91d527ae926b436a5a65eb380441eb937e6a9) or a descendant. That revision fixes `OpenSession` rejecting unused Unix Door32 handles such as `-1`; it also includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. CI and release builds pin this GoDoors revision. The Unix handle regression and GoDoors suite pass locally, along with Yankee Trader startup and door tests; live Scorpio BBS acceptance remains pending.
 
 ```sh
 go build -o bin/yt ./cmd/yt

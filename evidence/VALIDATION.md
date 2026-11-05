@@ -1542,25 +1542,206 @@ and a missing configuration-isolation flag in both phases. All eight native
 controls and four test methods/20 rejection controls pass. Original native
 observations and hashes are unchanged; README and research instructions updated.
 
+## Initial-maintenance RNG first-hit boundaries — 2026-11-04
 
-## Maintenance runtime RNG streams — 2026-11-04
+Research on `feat/maintenance-rng-research`, based on published initial-handoff
+research PR #85. No Go source, `qb36-v1`, schema-35, dependency or original archive
+changes. The capture writer changes only same-size disposable executable copies;
+its terminating probes are not normal-maintenance completion claims.
 
-Research-only `codex/maintenance-rng-trace`: five complete copied-runtime traces,
-127,618 events (127,309 draws / 309 reseeds), independent repeat and New Year
-stream equality. A declared 60-byte padding hook plus two three-byte call patches
-preserve executable header/size and replay displaced instructions. The original
-maintenance and all archive files remain unchanged. Raw before/after worlds,
-auxiliary files, transcripts and launch/clock/return provenance are retained.
+- `python3 scripts/verify_maintenance_rng.py`: 151 probes passed (108 selected
+  hits, nine baseline inventory hits, 34 guarded misses), two exact native reads
+  and six freshly paired untouched completed runs.
+- `python3 scripts/test_verify_maintenance_rng.py`: 35 corruption tests passed.
+  Rehashed altered states/FACs/worlds, missing/forged hit/return witnesses,
+  phase/site/source/executable substitution, contradictory launch clocks/options,
+  rewritten pins, native truncation/address/bytes and independent seed/draw
+  semantics are rejected. Untouched-oracle completion/input forgery is rejected.
+- `python3 scripts/verify_initial_maintenance.py` and
+  `python3 scripts/test_verify_initial_maintenance.py`: all eight earlier native
+  controls and four test methods/20 rejection controls passed unchanged.
+- `python3 scripts/verify_rng_native.py`: 13 existing native RNG contracts passed.
+  `python3 scripts/verify_rng_trace.py`: all 16 raw traces/4,096 state-FAC pairs
+  passed unchanged.
+- `python3 scripts/verify_archive.py`: all 4,682 archived hashes passed.
+- Script compilation and a fresh NASM assembly of the retained probe source
+  matched the exact capture patch bytes. Scoped whitespace checks passed.
+- CI now runs the new portable verifier and corruption suite. DOSBox, NASM,
+  Ghidra and Java are capture/research tools, not CI or gameplay dependencies.
 
-- `verify_maintenance_rng.py`: five streams, every recurrence, patch provenance,
-  exact observation pins and measured native/instrumented boundaries passed.
-- `test_verify_maintenance_rng.py`: four methods / 17 rejection controls passed.
-- Parent initial-maintenance verifier and four-method / 20-rejection suite passed.
-- Archive verification: all 4,682 original hashes passed.
+The measured main/helper reseeds and selected first Wanderer draw chain close
+only that precision slice. All 34 guarded-miss worlds match the new untouched
+baseline exactly; the new untouched repeat matches too. Their 97-byte difference
+from the older launch recipe is retained and documented, with no automatic
+expected-hash refresh. Exact full dynamic draw counts/rejection chronology,
+post-maintenance/auxiliary replay, general MBF arithmetic and native target-host
+acceptance remain open. The Go suite and terminal gameplay tests were not rerun
+for this research-only addition; no new gameplay validation is claimed.
 
-Instrumenting TIMER-sensitive code changes some NPC outcomes: 51 sector bytes
-in midnight/repeat/New Year and 16 in the one-second control; the two-second
-world is exactly native-equal. These differences are enforced and documented,
-not masked or redefined as native behavior. No Go gameplay, source fingerprint,
-save-schema, release or live/native BBS acceptance claim changes.
-[Complete findings and reproduction](../research/yt-maint/RNG_TRACE.md).
+[Findings, native evidence, scope and reproduction](../research/yt-maint/RNG_FIRST_HITS.md).
+
+## Maintenance repeated reseeds and occupied-candidate sequencing — 2026-11-04
+
+Local research on `feat/maintenance-rng-sequencing`, based on merged PR #86
+(`52ee648`). No Go source, dependency, save-35, release package or original archive
+changes. README and the reconstruction plan distinguish measured research from
+playable production behavior.
+
+- Captured 463 returned DOS controls: four untouched completed comparisons,
+  78 main-body-end counters and 381 terminating nth-hit reads. The diagnostic is
+  a declared same-size 46-byte copied-executable patch, with flags/displaced
+  instructions preserved until the selected boundary. It bypasses the original
+  cleanup footer; instrumented return is not called untouched completion.
+- `python3 scripts/verify_maintenance_sequence.py`: all 463 controls, all raw
+  decoded artifact pins and four fresh relocated native byte observations pass.
+  All 78 counter runs match every decoded DAT/ASC output from their own untouched
+  control. Baseline and repeat untouched outputs match exactly.
+- `python3 scripts/test_verify_maintenance_sequence.py`: 49 corruption tests
+  pass. These include rehashed states/FACs/worlds, source/site/threshold/copied
+  executable substitutions, missing/forged clock/return/completion witnesses,
+  contradictory launch options, changed pins/native observations and direct
+  semantic seed/LCG/caller/count mutations.
+- All 43 literal RND sites are counted in the baseline: nine execute, 34 do not,
+  totaling 25,891 draws. Forty-one single-draw helper reseeds and nineteen
+  four-draw helper reseeds match measured TIMER/low-byte transforms; all 117
+  helper draw states match LCG steps and eight raw FACs match exact fractions.
+  Sixty caller snapshots distinguish observed paths from unused literal callers.
+- A declared synthetic positive planet-link at sector 1095 forces a retry.
+  Wanderer candidates 1095 then 1792, two seed/draw pairs and the accepted raw
+  sector distinguish rejection from the original optimistic success text.
+- Both retained NASM diagnostic variants assemble to exactly the independently
+  reconstructed/captured 46-byte patch. Script compilation passes.
+- Earlier first-hit controls (151 probes, two native reads, six untouched runs),
+  their 35 corruption tests, initial-maintenance controls (eight runs and four
+  test methods/20 rejected variants), 13 native RNG contracts, 16 raw RNG traces
+  with 4,096 state/FAC pairs, and all 4,682 archive hashes pass unchanged.
+- CI adds the new portable verifier and corruption suite while retaining all
+  earlier commands. Python standard library suffices for these checks; DOSBox,
+  NASM and Ghidra/Java remain acquisition/research tools.
+
+The new baseline world equals the earlier initial-handoff world and differs by
+97 bytes from PR #86's separately captured oracle. Both historical recipes/pins
+remain unchanged; no single timing/filename cause is claimed. Full global
+phase/interception chronology, exact post-maintenance record/auxiliary replay,
+arbitrary worlds/clocks and general MBF parity remain open. Full Go tests,
+terminal gameplay and native-host durability acceptance were not rerun or claimed
+for this research-only update.
+
+## Initial-maintenance group/player phase ledger — 2026-11-04
+
+Local follow-up on `feat/maintenance-phase-chronology`, based on research commit
+`3489442` published in PR #87. No production Go, dependency, source archive or
+save-35 changes; the later research remains separate from that published branch.
+README, the current plan and CI are updated in this milestone.
+
+- Captured 332 returned controls: one untouched completed run, four complete
+  main-body-end counters and 327 terminating nth-hit observations. These reuse
+  the reviewed same-size 46-byte diagnostic and independent patch/witness checks;
+  an instrumented main-body end is not untouched cleanup completion.
+- `python3 scripts/verify_maintenance_chronology.py`: all 332 controls, three new
+  exact relocated REA byte reads and all source/site/clock/exit/raw pins pass.
+  The prior 463-control sequence corpus is independently verified before its
+  seed/caller states can serve as anchors.
+- `python3 scripts/test_verify_maintenance_chronology.py`: all 51 negative tests
+  pass, including rehashed world/trace/provenance substitutions, missing witnesses,
+  contradictory options, rewritten pins/native records and direct phase-state,
+  group/player, graph-edge, force ownership and desertion/lottery mutations.
+- Four fresh counters match the entire decoded DAT/ASC output inventory and bytes
+  of their untouched control. The new untouched run matches the prior pinned
+  baseline outputs, so the state bridges compare the same measured recipe.
+- Nineteen group phases decode to original groups 2–20; each candidate scan spans
+  cached player slots 2–51. The candidate/interception states close exact LCG
+  distances totaling 950 candidate and 24,800 interception draws. These partition
+  into 496 fifty-player scan blocks, including group 20's eager excluded scan.
+- All 38 sampled old/next-sector argument pairs form directed edges in the
+  immutable source graph. The nineteen sampled last destinations retain positive
+  Xannor forces in the untouched final records. The sample does not claim all 496
+  intermediate edges or successful attacks under arbitrary worlds.
+- Every group joins the prior four-draw allocator, fallback and candidate helper
+  states. All twenty eager desertion before-states and the last after-state join
+  the single lottery before/after pair without filler LCG steps. This accounts
+  for the selected baseline's 25,891 literal RND executions across the measured families,
+  not a simultaneous trace of every instruction or general MBF replay.
+- The previous 49 sequence corruption tests and all 4,682 archive hashes pass unchanged.
+  New Python scripts compile, relative research links and scoped diff checks pass.
+- CI adds the new portable checker and test suite, retaining every existing lane
+  and command. DOSBox/REA are acquisition tools; Python standard library suffices
+  for verification. Full Go/terminal gameplay/native-host acceptance was not rerun
+  or claimed for this research-only update.
+
+Next recover exact post-maintenance record/auxiliary synthesis from these measured
+phase/seed anchors. Arbitrary-world dynamic behavior, unobserved indirect paths,
+general MBF arithmetic and production BBS/Windows durability remain separate.
+
+## Bounded maintenance record model and retained clock gap — 2026-11-04
+
+Local research on `feat/maintenance-record-replay`, based on the published phase
+chronology commit `7b8bef0`/PR #88. Core synthesis takes the three pre-maintenance
+files, original executable constants and explicit measured clock inputs. It
+accepts no target world or per-record output patch table. No Go, dependency,
+source archive, playable profile or save-format 35 changes.
+
+- Independently modeled all 4,151 records and five auxiliary files. Against both
+  paired instrumented main-body-end outputs, all 570,059 bytes match exactly.
+  Against four untouched runs, all configuration/player/sector/planet bytes and
+  all 1,372 auxiliary bytes match; port bytes match 136,996 of 137,000.
+- The only untouched differences remain port 606/record 3657, offsets 101–104:
+  raw `00004800` versus the diagnostic profile's `0e745a76`. A counter and a
+  separate flags-preserving read-only 386 comparison both move this clock edge.
+  No timestamp masking, target-derived correction, CPU tuning or expected-hash
+  refresh hides it. This is not exact untouched replay completion.
+- `python3 scripts/verify_maintenance_record_inputs.py`: all 28 retained controls,
+  three named diagnostic profiles, four untouched runs and 14 fresh relocated
+  native reads pass. Prior helper TIMER samples are verified by the independent
+  463-control sequence checker before use.
+- `python3 scripts/test_verify_maintenance_record_inputs.py`: 48 corruption and
+  provenance tests pass, including rehashed launch/witness/native changes,
+  raw startup/Xannoron input mutations, the 605/606 transition, complete output
+  inventories and attempted hiding/relocation of the four-byte gap.
+- `python3 scripts/test_replay_maintenance_ports.py`: 10 property tests pass for
+  ten-day stock/class/sign logic, first-maximum ties, raw zero mantissas,
+  inherited bytes, finite inputs and prohibition of target-file reads.
+- `python3 scripts/test_replay_maintenance_records.py`: 21 whole-file/model-guard
+  tests pass. These cover all six file extents/hashes, exact remaining mismatch
+  locations/values, original-only file access during synthesis, derived RNG/
+  routes, inherited-field propagation and unsupported fixture/clock inputs.
+- `replay_maintenance_records.py --output ...` regenerates the complete report
+  without masking any bytes. Its `--require-untouched-exact` mode correctly
+  returns failure while the known gap remains. Passing research tests explicitly
+  do not equate to meeting that stronger parity condition.
+- Fresh source evidence corrects the old Wanderer restoration offset-81-clear
+  statement: the writer preserves that inherited offset, numerically 305 in this
+  fixture. It also establishes the inactive score-cache initializer as eight-byte
+  MBF double −1, not a four-byte single zero inferred from its prefix.
+- Retained readonly diagnostic NASM source matches the capture/reconstruction
+  byte-for-byte for the never-hit and port 606 targets. All 11 new Python scripts
+  compile; research links, byte-preserving attributes and scoped diff checks pass.
+- Earlier chronology verification (332 controls/three native reads), 51 chronology
+  negative tests, 49 sequence negative tests, 57 Wanderer controls/two diagnostics/
+  14 native reads and all 4,682 archive hashes pass unchanged.
+- README and the current plan now make the four-byte clock limit the next genuine
+  research task. CI adds the independent input verifier and all 79 new tests while
+  preserving every existing validation lane/command. Python standard library
+  suffices for portable checks; DOSBox/REA/NASM/Java remain research tools.
+
+No new Go-suite/terminal gameplay, native Windows durability or live BBS acceptance
+is claimed. Next obtain a clock-neutral TIMER boundary observation or independent
+timing model, require full untouched equality, and extend to independently measured
+dates/clocks before any production compatibility change.
+
+
+### PR #90 entry-capture reproducibility fix
+
+Both reviews identified the same valid omission: the documented entry capture
+command did not emit `startup-timer`, although the fixed input contract and seed
+loader require it. Added site `007d`, hit 1, source `001a` to that command.
+The new contract regression failed before the fix and passes afterward, checking
+the complete dispatch inventory against the independent verifier matrix.
+
+A real pre-fix DOS capture reproduced the three-control directory; a fresh
+post-fix capture produced all four controls and passed the independent launch,
+input, output and cross-profile semantic checks. The 28 retained controls and
+all 14 native reads remain unchanged; no raw captures or expected pins were
+refreshed. The input suite now has 49 tests, with 21 composed-model and 10 port tests
+also passing (80 new tests total). README and the current reproduction notes are
+updated. The four-byte untouched port-clock limitation is unchanged.

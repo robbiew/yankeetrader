@@ -1,0 +1,38 @@
+{
+  "recipe": "maintenance-nth-site-v1",
+  "name": "port-0604",
+  "site": 2356,
+  "nth": 604,
+  "source": 26,
+  "clock": "00:00:00",
+  "occupied": [],
+  "patches": [],
+  "binaries": {
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8"
+  },
+  "copied_sha256": "a1b1733a87227d19297e693abf1b56d96b52740a3beeece91b29a2ae3a512e6f",
+  "inputs": {
+    "YTDATA.DAT": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+    "YTNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+  },
+  "complete": false,
+  "files": {
+    "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+    "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+    "after-YTDATA.DAT.gz": "51fa1d7e872d16c7573bfd65d6fc561ab67f44c160f050c9879ba342526a761f",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "c1494f18dfcf1f53e5b134756e785d3656acf41f83063076a5d3c3db712d6f3d",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTYNEWS.DAT.gz": "ef3436ebb6f97310ce69c0d9aa65dfecc2bead0ff4b37e976f79801e9c24e5fe",
+    "dosbox.log": "95b257c04a4a0c25745b69a7375e113cd239857477a81f6ac2715a4a47653c60"
+  }
+}

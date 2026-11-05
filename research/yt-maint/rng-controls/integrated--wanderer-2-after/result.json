@@ -1,0 +1,34 @@
+{
+  "recipe": "maintenance-rng-first-hit-v1",
+  "case": "integrated",
+  "phase": "wanderer-2-after",
+  "oracle": "baseline-integrated",
+  "date": "11/02/2026",
+  "time": "00:00:00",
+  "integrated": true,
+  "site": 8817,
+  "source": 26,
+  "hit": true,
+  "original_bytes": "bf8e83cd3f",
+  "binaries": {
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2"
+  },
+  "copied_maintenance_sha256": "54f96056bf2b1ae0e46104cc33e6e068c9183c9959b3043d9852253a7b61fada",
+  "inputs": {},
+  "files": {
+    "ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "COMMANDS.TXT": "c6aef2d28c4970f3b680d07833e0de11e527a382479e99a698f21423061c36d4",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "97d80e140eb6ef97161b4472ea66eed4769ef54d7f45cac2355bd39a5c8e21a0",
+    "HIT.LOG": "eb381b61d3703e6f1e22ea038ec771c5847106e79a4f68086f903eb809b859d0",
+    "MISS.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "5c9fdeffe77958640861add13fc0e6c23357e0d721511cec9675e238d4ff757a",
+    "dosbox.log": "97829ea4cea987aac734d3d1194c4b7e1609ffe9e778693f78d7c4cb8e9b12ef",
+    "partial-world.dat.gz": "9b799853c09cb0c5e1ea27ba9601439b29c691fee16caf9dc8cd9393fd068da1"
+  }
+}

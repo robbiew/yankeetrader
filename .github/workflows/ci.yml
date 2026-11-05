@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: robbiew/godoors
-          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          ref: 2bb91d527ae926b436a5a65eb380441eb937e6a9
           path: godoors
           persist-credentials: false
       - name: Set up minimum supported Go version
@@ -91,6 +91,16 @@ jobs:
           python3 scripts/test_verify_maintenance_rng.py
           python3 scripts/verify_initial_maintenance.py
           python3 scripts/test_verify_initial_maintenance.py
+          python3 scripts/verify_maintenance_rng.py
+          python3 scripts/test_verify_maintenance_rng.py
+          python3 scripts/verify_maintenance_sequence.py
+          python3 scripts/test_verify_maintenance_sequence.py
+          python3 scripts/verify_maintenance_chronology.py
+          python3 scripts/test_verify_maintenance_chronology.py
+          python3 scripts/verify_maintenance_record_inputs.py
+          python3 scripts/test_verify_maintenance_record_inputs.py
+          python3 scripts/test_replay_maintenance_ports.py
+          python3 scripts/test_replay_maintenance_records.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py
@@ -254,7 +264,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: robbiew/godoors
-          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          ref: 2bb91d527ae926b436a5a65eb380441eb937e6a9
           path: godoors
           persist-credentials: false
       - name: Set up minimum supported Go version
@@ -291,7 +301,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: robbiew/godoors
-          ref: 9364a49ddd7c396ccbfcdd3c240c104ea9178551
+          ref: 2bb91d527ae926b436a5a65eb380441eb937e6a9
           path: godoors
           persist-credentials: false
       - name: Set up minimum supported Go version

@@ -1,0 +1,23 @@
+bits 16
+org 0x44
+mov ax,0x4c63
+int 0x21
+probe:
+push ds
+push cs
+pop ds
+mov bx,1
+mov cx,4
+mov dx,marker
+mov ah,0x40
+int 0x21
+pop ds
+mov dx,0x234
+mov ah,0x40
+int 0x21
+mov dx,0x1a
+mov ah,0x40
+int 0x21
+mov ax,0x4c00
+int 0x21
+marker: db 'MSP1'

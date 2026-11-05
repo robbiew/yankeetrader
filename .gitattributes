@@ -250,7 +250,32 @@
 /research/yt-maint/initial-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
 /research/yt-maint/initial-controls/**/ANSWERS.TXT -diff
 
-# Runtime RNG controls retain exact DOS/probe bytes and raw launch witnesses.
+# First-hit maintenance diagnostics preserve exact DOS binary/CRLF streams.
 /research/yt-maint/rng-controls/** -text
 /research/yt-maint/rng-controls/**/*.LOG -diff
+/research/yt-maint/rng-controls/**/TRACE.BIN -diff
 /research/yt-maint/rng-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/rng-oracles/** -text
+/research/yt-maint/rng-oracles/**/*.LOG -diff
+/research/yt-maint/rng-oracles/**/TRACE.BIN -diff
+/research/yt-maint/rng-oracles/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/rng-controls/**/ANSWERS.TXT -diff
+/research/yt-maint/rng-oracles/**/ANSWERS.TXT -diff
+
+# Nth-hit/counter maintenance controls retain exact DOS bytes and CRLF witnesses.
+/research/yt-maint/sequence-controls/** -text
+/research/yt-maint/sequence-controls/**/*.LOG -diff
+/research/yt-maint/sequence-controls/**/TRACE.BIN -diff
+/research/yt-maint/sequence-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Maintenance phase controls preserve exact DOS trace/clock/exit bytes.
+/research/yt-maint/chronology-controls/** -text
+/research/yt-maint/chronology-controls/**/*.LOG -diff
+/research/yt-maint/chronology-controls/**/TRACE.BIN -diff
+/research/yt-maint/chronology-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Record-replay clock controls preserve exact DOS bytes and witness CRLF.
+/research/yt-maint/record-input-controls/** -text
+/research/yt-maint/record-input-controls/**/*.LOG -diff
+/research/yt-maint/record-input-controls/**/TRACE.BIN -diff
+/research/yt-maint/record-input-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
