@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import struct
 import sys
-from verify_initial_maintenance import BINARIES, verify_launch
+from verify_initial_maintenance import BINARIES, PINS as NATIVE_PINS, verify_launch
 from verify_rng_clock import read_date, read_time
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,6 +165,7 @@ def verify(root=DEFAULT):
         assert len(events) == count and sum(k == 0xb352 for k, _, _ in events) == seeds
         after = gzip.decompress((d / 'after-YTDATA.DAT.gz').read_bytes())
         native = gzip.decompress((ROOT / 'research/yt-maint/initial-controls' / source / 'after-YTDATA.DAT.gz').read_bytes())
+        assert SHA(native) == NATIVE_PINS[source]['after-YTDATA.DAT.gz'], 'paired native world pin'
         assert len(after) == len(native) == 568687
         changed = [i for i, (a, b) in enumerate(zip(after, native)) if a != b]
         assert all(51 <= i // 137 < 3051 and i % 137 in

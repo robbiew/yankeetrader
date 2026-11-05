@@ -121,10 +121,11 @@ python3 scripts/verify_archive.py
 ```
 
 The verifier independently reconstructs patched runtime bytes from the original,
-checks original call contracts, pins every decompressed observation, verifies
+checks original call contracts, pins every decompressed observation and its paired
+native reference world, verifies
 launch provenance and complete clock/return witnesses, replays all seed/draw
-events and enforces measured native/instrumented boundaries. Four test methods
-exercise 17 rejection controls, including direct recurrence/seed/FAC/kind/phase/
+events and enforces measured native/instrumented boundaries. Five test methods
+exercise 18 rejection controls, including direct recurrence/seed/FAC/kind/phase/
 completion corruption and rehashed evidence/provenance changes. CI uses only
 Python standard library; no emulator is required.
 

@@ -573,7 +573,7 @@ target BBS transport before deployment.
 
 [Supplemental runtime streams](research/yt-maint/RNG_TRACE.md) preserve five
 historical instrumented captures with 127,618 checked seed/draw events and
-explicit probe-induced differences. These complement the newer first-hit,
+explicit probe-induced differences against independently hash-pinned native worlds. These complement the newer first-hit,
 sequencing, chronology and record-replay research below; they do not replace its
 native controls or establish additional gameplay/save compatibility.
 

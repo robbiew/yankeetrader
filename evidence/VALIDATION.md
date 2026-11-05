@@ -1760,3 +1760,13 @@ record-model claims. No gameplay/save/release changes.
 pass after integration with current main. Existing first-hit and sequencing
 verifiers also pass. README and plan distinguish supplemental history from
 newer implemented research. Unrelated smoke captures remain unstaged.
+
+
+### PR #92 paired native reference integrity
+
+The standalone full-stream verifier now validates each decompressed paired native
+world against the existing independent initial-maintenance pin before computing
+the perturbation boundary. A new regression alters an already differing byte
+while preserving the exact differing-byte positions/count; it is rejected by the
+native pin. No retained reference bytes or hashes changed. Five test methods /
+18 rejection controls and all five full streams pass; README updated.

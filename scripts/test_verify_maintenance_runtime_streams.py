@@ -8,6 +8,8 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest import mock
+import verify_maintenance_runtime_streams as verifier
 from verify_maintenance_runtime_streams import DEFAULT, parse_trace, verify
 
 
@@ -46,6 +48,25 @@ class MaintenanceRNGTests(unittest.TestCase):
                 meta['files'][filename] = hashlib.sha256(new).hexdigest()
                 (d / 'result.json').write_text(json.dumps(meta))
                 with self.assertRaises(AssertionError), contextlib.redirect_stdout(io.StringIO()): verify(root)
+
+    def test_changed_native_reference_preserving_difference_count(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            refs = root / 'research/yt-maint/initial-controls'
+            shutil.copytree(verifier.ROOT / 'research/yt-maint/initial-controls', refs)
+            archive = root / 'archive/dos-original'; archive.mkdir(parents=True)
+            for filename in ('BRUN30.EXE', 'YTMAINT.EXE'):
+                shutil.copy2(verifier.ROOT / 'archive/dos-original' / filename, archive / filename)
+            p = refs / 'baseline-split/after-YTDATA.DAT.gz'
+            native = bytearray(gzip.decompress(p.read_bytes()))
+            observed = gzip.decompress((DEFAULT / 'midnight/after-YTDATA.DAT.gz').read_bytes())
+            differences = [i for i, (a, b) in enumerate(zip(native, observed)) if a != b]
+            offset = differences[0]
+            native[offset] = next(b for b in range(256) if b not in (native[offset], observed[offset]))
+            self.assertEqual(differences, [i for i, (a, b) in enumerate(zip(native, observed)) if a != b])
+            p.write_bytes(gzip.compress(native, mtime=0))
+            with mock.patch.object(verifier, 'ROOT', root), self.assertRaisesRegex(AssertionError, 'paired native world pin'):
+                verify(DEFAULT)
 
     def test_missing_repeat_and_forged_runtime(self):
         for missing in (True, False):
