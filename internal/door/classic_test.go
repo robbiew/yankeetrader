@@ -223,21 +223,21 @@ func TestSavedCommandReplayDoesNotRequireEnter(t *testing.T) {
 }
 
 func TestClassicPromptClockTimeoutPreservesInput(t *testing.T) {
-	reads, ticks := 0, 0
-	g := &GoDoors{onIdle: func() error { ticks++; return nil }, readKey: func(time.Duration) (rune, gd.Key, error) {
+	reads, ticks, typed := 0, 0, -1
+	g := &GoDoors{onIdle: func(n int) error { ticks++; typed = n; return nil }, readKey: func(time.Duration) (rune, gd.Key, error) {
 		reads++
 		switch reads {
 		case 1:
-			return 0, gd.KeyNone, gd.ErrInputTimeout
-		case 2:
 			return 'I', gd.KeyNone, nil
+		case 2:
+			return 0, gd.KeyNone, gd.ErrInputTimeout
 		default:
 			return 13, gd.KeyEnter, nil
 		}
 	}}
 	line, err := g.ReadLine(time.Now().Add(time.Minute))
-	if err != nil || line != "I" || ticks != 1 {
-		t.Fatal("clock refresh lost input", line, ticks, err)
+	if err != nil || line != "I" || ticks != 1 || typed != 1 {
+		t.Fatal("clock refresh lost input or its column", line, ticks, typed, err)
 	}
 }
 

@@ -94,14 +94,28 @@ func (s Session) timeLeft() string {
 	return fmt.Sprintf("%d:%02d", seconds/60, seconds%60)
 }
 
-// VT100 DECSC/DECRC also work in terminals that ignore CSI s/u. Preserve
-// the input cursor and attributes while updating both clock fields together.
-func (s Session) refreshClassicClock(width int) error {
+// refreshClassicClock redraws the prompt's clock without cursor save/restore.
+// Neither DECSC/DECRC (ESC 7/8) nor CSI s/u survives every terminal and BBS
+// stdio bridge; when restore is dropped, typed keys land after the clock.
+// Instead return to column 1 of the prompt row, step over "Time: ", rewrite
+// the padded clock and step forward to where the next typed key belongs.
+// Only relative motion is used, so the prompt row need not be known.
+func (s Session) refreshClassicClock(width, labelLen, typed int) error {
 	left := s.timeLeft()
-	if s.Local {
-		return s.Terminal.Printf("\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b[24;7H\x1b[0;32m%-*s\x1b8", left, width, left)
+	// "Time: " + clock + "  " + label + " " + typed input.
+	tail := 2 + labelLen + 1 + typed
+	if 6+width+tail >= 80 {
+		// The input has reached or wrapped past the right margin; carriage
+		// return would no longer reach the prompt start, so leave it alone.
+		return nil
 	}
-	return s.Terminal.Printf("\x1b7\x1b[24;7H\x1b[0;32m%-*s\x1b8", width, left)
+	var b strings.Builder
+	if s.Local {
+		// The local console is a known terminal with a fixed status row.
+		fmt.Fprintf(&b, "\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b8", left)
+	}
+	fmt.Fprintf(&b, "\r\x1b[6C\x1b[0;32m%-*s\x1b[%dC", width, left, tail)
+	return s.Terminal.Printf("%s", b.String())
 }
 
 func template(name string) []byte {
@@ -226,9 +240,11 @@ func (s *Session) classicStartup() (int, error) {
 	opening, _ := classicAssets.ReadFile(asset)
 	art := string(opening)
 	if s.ANSI {
-		// Preserve the asset while using the same portable save/restore as
-		// the clock; some terminals ignore the original CSI s/u sequences.
-		art = strings.NewReplacer("\x1b[s", "\x1b7", "\x1b[u", "\x1b8").Replace(art)
+		// The art wraps each line break in save/restore (ESC[s CR LF ESC[u),
+		// a no-op wherever restore works. Terminals or stdio bridges that drop
+		// restore turn every one into a real line break and scramble the page,
+		// so remove the pairs instead of relying on any save/restore form.
+		art = strings.ReplaceAll(art, "\x1b[s\r\n\x1b[u", "")
 		// Brand the live page without changing the preserved DOS source art.
 		subtitle := "Resurrection - " + version.Version
 		art += "\x1b[7;1H\x1b[2K\x1b[0;96m" + strings.Repeat(" ", (80-len(subtitle))/2) + subtitle +

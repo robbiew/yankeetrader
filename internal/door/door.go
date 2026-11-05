@@ -26,7 +26,7 @@ type GoDoors struct {
 	escaped     bool
 	commandMode bool
 	savedLine   string
-	onIdle      func() error
+	onIdle      func(typed int) error
 	pending     []inputKey
 	readKey     func(time.Duration) (rune, gd.Key, error)
 }
@@ -91,7 +91,7 @@ func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 			return "", errors.New("session time expired")
 		}
 		if errors.Is(e, gd.ErrInputTimeout) && g.onIdle != nil {
-			if err := g.onIdle(); err != nil {
+			if err := g.onIdle(len(b)); err != nil {
 				return "", err
 			}
 			continue
@@ -312,7 +312,7 @@ func (s Session) Run() (runErr error) {
 			}
 		}
 		if len(pending) == 0 {
-			clockWidth := 0
+			clockWidth, labelLen := 0, 0
 			if s.Classic {
 				label := "Main Command (?=Help)?"
 				if computer {
@@ -324,7 +324,7 @@ func (s Session) Run() (runErr error) {
 					}
 				}
 				left := s.timeLeft()
-				clockWidth = len(left)
+				clockWidth, labelLen = len(left), len(label)
 				e = s.Terminal.Printf("\r\nTime: %s  %s ", left, label)
 			} else {
 				e = s.Terminal.Printf("\r\nSector %d | %d credits | %d turns > ", p.Sector, p.Credits, p.Turns)
@@ -333,8 +333,8 @@ func (s Session) Run() (runErr error) {
 				return e
 			}
 			if terminal, ok := s.Terminal.(*GoDoors); ok && s.Classic && s.ANSI {
-				terminal.onIdle = func() error {
-					return s.refreshClassicClock(clockWidth)
+				terminal.onIdle = func(typed int) error {
+					return s.refreshClassicClock(clockWidth, labelLen, typed)
 				}
 			}
 			line, e := s.Terminal.ReadLine(s.Deadline)

@@ -22,8 +22,8 @@ OUT=ROOT/'evidence/startup'
 
 
 class Screen:
-    def __init__(self,csi_save_restore=True):
-        self.csi_save_restore=csi_save_restore;self.dec_saved=(0,0,7,0)
+    def __init__(self,csi_save_restore=True,dec_save_restore=True):
+        self.csi_save_restore=csi_save_restore;self.dec_save_restore=dec_save_restore;self.dec_saved=(0,0,7,0)
         self.cells=[[[' ',7,0] for _ in range(80)] for _ in range(25)]
         self.x=self.y=0;self.fg=7;self.bg=0;self.top=0;self.bottom=24
         self.saved=(0,0);self.wrap=True;self.deferred=False;self.pending=''
@@ -39,9 +39,11 @@ class Screen:
             if c=='\x1b':
                 if len(self.pending)==1:break
                 if self.pending.startswith('\x1b7'):
-                    self.dec_saved=(self.x,self.y,self.fg,self.bg);self.pending=self.pending[2:];continue
+                    if self.dec_save_restore:self.dec_saved=(self.x,self.y,self.fg,self.bg)
+                    self.pending=self.pending[2:];continue
                 if self.pending.startswith('\x1b8'):
-                    self.x,self.y,self.fg,self.bg=self.dec_saved;self.deferred=False;self.pending=self.pending[2:];continue
+                    if self.dec_save_restore:self.x,self.y,self.fg,self.bg=self.dec_saved;self.deferred=False
+                    self.pending=self.pending[2:];continue
                 match=re.match(r'\x1b\[([0-9;?]*)([@-~])',self.pending)
                 if not match:
                     if len(self.pending)==1 or (self.pending.startswith('\x1b[') and not re.search(r'[@-~]',self.pending[2:])):break
