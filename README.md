@@ -625,7 +625,7 @@ within eight explicit recipes, including actual midnight rollover and the native
 the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
 remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
-normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source.
+normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

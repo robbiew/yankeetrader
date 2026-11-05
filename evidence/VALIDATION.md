@@ -1895,3 +1895,15 @@ Validation after the review fixes and prerequisite merge: all 44 matrix verifier
 six stalled-process cases in the deadline regression pass, as do all five
 supplemental runtime-stream tests and all 4,682 archive hashes. The four static
 rounding examples pass with readable output; raw captured controls are unchanged.
+
+
+### Preserved acquisition source checkout integrity
+
+A disposable `git -c core.autocrlf=true checkout-index` export reproduced a real
+provenance failure: the unprotected historical controller acquired 57 CRLF line
+endings, changing its SHA from `01cb319f697c40888d66fe313763b5e879a85e640ee99a488a5b6adb0ecda5eb`
+to `caa17b2cffd95a3aa3438bf38d2fc97faa9684c4cfdbe162598a7711e2b46b5a`.
+The recorded source is now explicitly `-text`, like the other immutable evidence.
+The same export then preserves the exact original bytes and SHA. Both midnight
+and clock/date corpus verifiers pass; no captured observations, original source,
+manifest expectations, model behavior or production code changed. README updated.
