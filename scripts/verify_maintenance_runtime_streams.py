@@ -10,7 +10,7 @@ from verify_initial_maintenance import BINARIES, verify_launch
 from verify_rng_clock import read_date, read_time
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT = ROOT / 'research/yt-maint/rng-controls'
+DEFAULT = ROOT / 'research/yt-maint/runtime-stream-controls'
 SHA = lambda b: hashlib.sha256(b).hexdigest()
 CASES = {'midnight': ('baseline-split', '11/02/2026', '00:00:00', 24404, 62),
          'repeat': ('baseline-split', '11/02/2026', '00:00:00', 24404, 62),

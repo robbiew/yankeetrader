@@ -8,7 +8,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
-from verify_maintenance_rng import DEFAULT, parse_trace, verify
+from verify_maintenance_runtime_streams import DEFAULT, parse_trace, verify
 
 
 class MaintenanceRNGTests(unittest.TestCase):

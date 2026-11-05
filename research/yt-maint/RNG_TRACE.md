@@ -76,7 +76,7 @@ No recurrence break is ignored or repaired. Unknown event kinds, partial frames,
 missing successful completion, altered seeds/draws and inconsistent phase counts
 fail validation. Complete raw traces, before/after worlds, every DAT/ASC auxiliary
 output, executable identities, patch bytes, commands, emulator settings, clock
-witnesses and normal shell returns are retained under [rng-controls](rng-controls).
+witnesses and normal shell returns are retained under [rng-controls](runtime-stream-controls).
 
 ## Instrumentation changes timing: preserve this distinction
 
@@ -106,8 +106,8 @@ slice's evidence; REA remains an optional research tool, not an app dependency.
 ## Verification and next precision slice
 
 ```sh
-python3 scripts/verify_maintenance_rng.py
-python3 scripts/test_verify_maintenance_rng.py
+python3 scripts/verify_maintenance_runtime_streams.py
+python3 scripts/test_verify_maintenance_runtime_streams.py
 python3 scripts/verify_initial_maintenance.py
 python3 scripts/test_verify_initial_maintenance.py
 python3 scripts/verify_archive.py
@@ -124,8 +124,8 @@ Python standard library; no emulator is required.
 To collect a fresh instrumented run, use a new disposable destination:
 
 ```sh
-python3 scripts/recover_maintenance_rng.py /tmp/yt-maintenance-rng-new
-python3 scripts/verify_maintenance_rng.py /tmp/yt-maintenance-rng-new
+python3 scripts/recover_maintenance_runtime_streams.py /tmp/yt-maintenance-rng-new
+python3 scripts/verify_maintenance_runtime_streams.py /tmp/yt-maintenance-rng-new
 ```
 
 Existing observation pins must not be refreshed automatically for a divergent
