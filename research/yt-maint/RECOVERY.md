@@ -312,3 +312,11 @@ integrated launches, split before/after worlds and side files, independent repea
 and maintenance-clock variations. They establish bounded bootstrap and clock
 sensitivity without claiming exact maintenance RNG/MBF replay. Modern gameplay,
 source fingerprints and save schema are unchanged.
+
+
+## Supplemental historical runtime streams
+
+[Five full instrumented streams](RNG_TRACE.md) preserve the earlier 2026-11-04
+experiment independently of later first-hit, sequencing, chronology and record
+replay research. Measured probe-induced differences remain explicit. This adds
+no gameplay or save changes and supersedes none of the later evidence.
