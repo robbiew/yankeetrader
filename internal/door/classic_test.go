@@ -224,7 +224,7 @@ func TestSavedCommandReplayDoesNotRequireEnter(t *testing.T) {
 
 func TestClassicPromptClockTimeoutPreservesInput(t *testing.T) {
 	reads, ticks, typed := 0, 0, -1
-	g := &GoDoors{onIdle: func(n int) error { ticks++; typed = n; return nil }, readKey: func(time.Duration) (rune, gd.Key, error) {
+	g := &GoDoors{onIdle: func(n, _ int) error { ticks++; typed = n; return nil }, readKey: func(time.Duration) (rune, gd.Key, error) {
 		reads++
 		switch reads {
 		case 1:

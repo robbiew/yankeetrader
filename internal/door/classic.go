@@ -100,21 +100,26 @@ func (s Session) timeLeft() string {
 // Instead return to column 1 of the prompt row, step over "Time: ", rewrite
 // the padded clock and step forward to where the next typed key belongs.
 // Only relative motion is used, so the prompt row need not be known.
-func (s Session) refreshClassicClock(width, labelLen, typed int) error {
+//
+// peak is the longest the input has been during this read. Once it reached
+// the right margin the cursor may sit on a continuation row, and backspace
+// (BS SP BS) never climbs back, so the inline clock stays put until Enter.
+func (s Session) refreshClassicClock(width, labelLen, typed, peak int) error {
 	left := s.timeLeft()
-	// "Time: " + clock + "  " + label + " " + typed input.
-	tail := 2 + labelLen + 1 + typed
-	if 6+width+tail >= 80 {
-		// The input has reached or wrapped past the right margin; carriage
-		// return would no longer reach the prompt start, so leave it alone.
-		return nil
-	}
 	var b strings.Builder
 	if s.Local {
-		// The local console is a known terminal with a fixed status row.
+		// The local console is a known terminal with a fixed status row,
+		// independent of where the prompt input has reached.
 		fmt.Fprintf(&b, "\x1b7\x1b[25;70H\x1b[0;96;44m%-10s\x1b8", left)
 	}
-	fmt.Fprintf(&b, "\r\x1b[6C\x1b[0;32m%-*s\x1b[%dC", width, left, tail)
+	// "Time: " + clock + "  " + label + " " + typed input.
+	prompt := 6 + width + 2 + labelLen + 1
+	if prompt+peak < 80 {
+		fmt.Fprintf(&b, "\r\x1b[6C\x1b[0;32m%-*s\x1b[%dC", width, left, prompt-6-width+typed)
+	}
+	if b.Len() == 0 {
+		return nil
+	}
 	return s.Terminal.Printf("%s", b.String())
 }
 
