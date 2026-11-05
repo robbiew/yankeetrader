@@ -1,0 +1,35 @@
+{
+  "recipe": "independent-maintenance-calendar-v1",
+  "name": "new-year",
+  "mode": "observed-a",
+  "date": "01/01/2027",
+  "clock": "00:00:00",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "elapsed_seconds": 1.9030714160762727,
+  "files": {
+    "COMMANDS.TXT": "8b4afd195f885ebb7fcc7f972f5be7515e5ea2c9fabb140a96bad1c17e317787",
+    "DOSDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+    "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+    "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+    "TRACE.BIN": "9e7161f12a5d26010878c130d0f56d228d352a3f1a137928cf517080e8b4a49b",
+    "after-YTDATA.DAT.gz": "7d7b589c68850dd80709d499c52e8f3dbb2223366d8344e98a3d3121f3865d39",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "38fe1902412775ec431acaedcf0d7c103cb94f5954cd824083fadd8621ffa60b",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTSCORE.ASC.gz": "6427e37e75fd0fc7ec72370a06efc1f4fa98f175712a1d5d438ec51676437024",
+    "after-YTYNEWS.DAT.gz": "141fad7df05d81388c613adc9508e15e56870d95785ae8e41686a545d09e0c5c",
+    "controller.json": "6ebb3c3591ef1aa687a5909a8525645d5617cd4e390245115bae025e006374be",
+    "dosbox.stderr": "6af6998b647ac0fd7001a108ff4d0d4ee10fa7682eabd1f9307074111263ec58",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "host-time.json.gz": "6227a7cae424978615e7d22447e71c5b441c93e4fbc06c5d3b5760a0dbcda8e0",
+    "launch.json": "22bd072f4d58f8cc44b5c788912d9a5ce3a0dd8d074adadb6bb65fee63198f41",
+    "loaded-observer.js": "bd0cd361c93c350afa71d875eea4b628da245cd9e467c12900712a0f97b1d238"
+  }
+}

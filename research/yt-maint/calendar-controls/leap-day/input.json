@@ -1,0 +1,22 @@
+{
+  "name": "leap-day",
+  "date": "02/29/2028",
+  "clock": "00:00:00",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "files": {
+    "before-YTDATA.DAT.gz": "f92abc8b69cfd74516fa1ab55e3b9538b609c6b6e07a4996411a8923a1de9c10",
+    "before-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "before-YTNEWS.DAT.gz": "4184262594e6480bc57f4254f8012537acce961d0811608c5fae7ece9f47c937",
+    "init-ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-DOSDATE.LOG": "eaeb50a30ceacb7735f503b4c645a2b5177f78042feefd04265d2d8555381557",
+    "init-DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "init-INIT.LOG": "5a2f731107a04e7f27bcede753185e486ebc38175bb5763cae9f3482f4dfbd08",
+    "init-INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "init-init-commands.txt": "c56777e0aadb2bde1a753affafcdad1cb4abd03c4a41e92f22a2101242b7c65d",
+    "init-init-dosbox.log": "f3b0c91c2bb4dd0c68b3f9962b3344fa4c163e0212d0948b776f42b80731dfd9"
+  }
+}

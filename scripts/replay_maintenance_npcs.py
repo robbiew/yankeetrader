@@ -34,7 +34,7 @@ def constants():
 class Stream:
     def __init__(self, h1_timers, h2_timers, state, expected_old_states=None):
         self.timers = {'h1': list(h1_timers), 'h2': list(h2_timers)}
-        assert len(self.timers['h1']) == 41 and len(self.timers['h2']) == 19, 'bounded helper-input inventory'
+        assert len(self.timers['h1']) in (41,42) and len(self.timers['h2']) == 19, 'bounded helper-input inventory'
         assert all(isinstance(t, bytes) and len(t) == 4 for ts in self.timers.values() for t in ts), 'raw TIMER inputs'
         self.rng = qb.QB3(state)
         self.calls = {'h1': 0, 'h2': 0}
@@ -160,9 +160,11 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     title(xannoron, 'Xannoron')
     put(xannoron, 41, day)
     minutes = F32(qb.mbf.dec(xannoron_timer) / 60)
-    assert 0 <= minutes < 1, 'selected sub-minute initial-creation TIMER'
-    truncated = bytearray(qb.mbf.enc(minutes))
-    truncated[3] = 0  # INT's numeric-zero result preserves the preceding FAC mantissa.
+    assert 0 <= minutes < 1440, 'bounded initial-creation TIMER'
+    truncated = bytearray(qb.mbf.enc(math.floor(minutes)))
+    if minutes < 1:
+        truncated = bytearray(qb.mbf.enc(minutes))
+        truncated[3] = 0  # Preserve the observed INT-zero FAC residue.
     putraw(xannoron, 89, bytes(truncated))
     for off in (45, 49, 53):
         putraw(xannoron, off, const[0x8134])
@@ -243,8 +245,11 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
         assert get(51 + sector, 85) == -1, 'no human desertion target'
         stream.rng.rnd()
     lottery = stream.rng.rnd()
-    assert lottery < .5, 'selected lottery gate ends without a winner'
-    assert stream.calls == {'h1': 41, 'h2': 19}, 'all measured helper inputs consumed exactly once'
+    selected = None
+    if lottery >= .5:
+        selected = stream.one(50) + 1
+        assert get(selected,85)==0, 'only the unnamed lottery candidate branch is recovered'
+    assert stream.calls == {'h1': len(h1_timers), 'h2': len(h2_timers)}, 'all measured helper inputs consumed exactly once'
     return bytes(world), dict(wanderer_sector=wanderer_sector, hq_sector=hq,
                              xannoron_ground=ground, xannoron_bank=bank,
                              xannoron_timer_hex=xannoron_timer.hex(),
@@ -253,7 +258,7 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
                              helper_calls=stream.calls, helper_seeds=stream.seeds,
                              candidate_draws=sum(r['candidate_draws'] for r in routes),
                              interception_draws=sum(r['interception_draws'] for r in routes),
-                             desertion_draws=len(positive_defenses), lottery_draw=lottery,
+                             desertion_draws=len(positive_defenses), lottery_draw=lottery, lottery_candidate=selected,
                              total_draws=stream.rng.draws, final_rng_state=stream.rng.state)
 
 

@@ -133,7 +133,8 @@ now corrects that claim. A mutation test changes an unassigned input byte and
 requires exactly that one output byte to change, detecting target-template use.
 
 Explicit source zero constants are retained as raw four-byte values rather than
-canonicalized. Xannoron's TIMER/60 followed by INT clears the exponent but keeps
+canonicalized. In this historical sub-minute profile, Xannoron's TIMER/60
+followed by INT clears the exponent but keeps
 the fraction's mantissa, yielding `0e745a00` at offset 89. The port's raw numeric
 zero likewise remains `00004800`. Integer equality alone would miss these facts.
 
@@ -211,3 +212,9 @@ playtest, native Windows durability or live BBS acceptance is newly claimed.
 Next close the clock-observation gap, then require complete equality against
 untouched runs and add independently measured dates/clocks before considering a
 production compatibility contract.
+
+
+[Independent calendar controls](CALENDAR_CONTROLS.md) subsequently verify positive
+integer-minute storage and the unnamed lottery-candidate branch in a noon case.
+The historical baseline counts/report above remain unchanged; production Go and
+save 35 are unaffected.

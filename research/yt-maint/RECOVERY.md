@@ -320,3 +320,11 @@ source fingerprints and save schema are unchanged.
 experiment independently of later first-hit, sequencing, chronology and record
 replay research. Measured probe-induced differences remain explicit. This adds
 no gameplay or save changes and supersedes none of the later evidence.
+
+
+## Independent initial-maintenance calendar coverage (2026-11-05)
+
+[Twelve original-DOS runs](CALENDAR_CONTROLS.md) now extend exact six-file replay
+to next-day, New Year, leap-day and noon profiles. Bounded noon INT/lottery and
+exact zero-cycle host-refill observations are explicit. This is not evolved-world
+or general clock prediction and changes no gameplay/saves.

@@ -153,3 +153,9 @@ The original controller used for retained observations is preserved byte-for-byt
 under `research/yt-maint/clock-neutral-acquisition/`; the unchanged manifest still
 authenticates those original acquisition bytes. No retained observations or
 native hashes were regenerated or redefined by this error-path fix.
+
+
+[Independent calendar controls](CALENDAR_CONTROLS.md) now extend this baseline to
+three additional dates and a non-midnight profile, with complete paired untouched
+equality. Exact zero-budget host refill witnesses are admitted only by the new
+explicit profiles; the original midnight verifier remains strict by default.
