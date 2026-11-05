@@ -140,7 +140,9 @@ The modern production economy is not replaced by these research-only rules.
 
 The new immutable [input controls](record-input-controls/) contain 28 returned runs:
 
-- Four entry controls: two untouched runs, startup TIMER and Xannoron TIMER.
+- Four entry controls: two untouched runs, startup TIMER and Xannoron TIMER. The
+  entry capture command now emits all four directly, including site `007d`,
+  hit 1, source `001a`; no separate manual startup capture is needed.
 - Seventeen default port controls: untouched oracle, 1,000-visit body-end counter
   and fifteen terminating clock samples selected by a bounded search.
 - Seven separately labeled read-only 386diagnostic controls: untouched oracle,
@@ -178,7 +180,7 @@ python3 scripts/test_replay_maintenance_records.py
 python3 scripts/replay_maintenance_records.py --output /tmp/maintenance-replay.json
 ```
 
-The input suite has 48 corruption/provenance tests; the port suite has 10 property
+The input suite has 49 corruption/provenance tests; the port suite has 10 property
 tests and the composed model has 21 whole-file/guard tests. CI retains these checks
 and every earlier validation command. They verify a bounded research result with
 an explicit known gap; they do not declare exact untouched replay achieved.

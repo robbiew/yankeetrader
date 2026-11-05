@@ -2,10 +2,12 @@
 import copy
 import gzip
 import json
+import runpy
 from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest import mock
 
 import verify_maintenance_record_inputs as v
 
@@ -45,6 +47,18 @@ class RecordInputTests(unittest.TestCase):
     def test_complete_retained_inputs(self):
         self.assertEqual(v.verify(), dict(controls=28, profiles=3, untouched=4, native_reads=14,
                                          port_counter=1000, differing_timestamp_bytes=4))
+
+    def test_documented_capture_command_supplies_independent_entry_contract(self):
+        calls = {}
+        def capture(destination, name, site=None, nth=65535, source=0x234, **kwargs):
+            self.assertNotIn(name, calls)
+            calls[name] = (site, nth, source)
+        destination = Path(self.temp.name) / 'fresh-entry'
+        script = v.ROOT / 'scripts/recover_maintenance_record_inputs.py'
+        with mock.patch('recover_maintenance_sequence.run', capture), mock.patch('sys.argv', [str(script), str(destination)]):
+            runpy.run_path(str(script), run_name='__main__')
+        required = {key.split('/')[1]: value for key, value in v.expected_matrix().items() if key.startswith('entry/')}
+        self.assertEqual(calls, required)
 
     def test_raw_clock_rehashed(self):
         b = bytearray((self.folder / 'TRACE.BIN').read_bytes())

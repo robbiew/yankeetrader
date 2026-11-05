@@ -9,3 +9,4 @@ if __name__=='__main__':
     run(a.destination,'untouched')
     run(a.destination,'untouched-repeat')
     run(a.destination,'xannoron-timer',site=0x218e,nth=1,source=0x1a)
+    run(a.destination,'startup-timer',site=0x7d,nth=1,source=0x1a)

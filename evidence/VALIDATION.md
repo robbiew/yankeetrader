@@ -1728,3 +1728,20 @@ No new Go-suite/terminal gameplay, native Windows durability or live BBS accepta
 is claimed. Next obtain a clock-neutral TIMER boundary observation or independent
 timing model, require full untouched equality, and extend to independently measured
 dates/clocks before any production compatibility change.
+
+
+### PR #90 entry-capture reproducibility fix
+
+Both reviews identified the same valid omission: the documented entry capture
+command did not emit `startup-timer`, although the fixed input contract and seed
+loader require it. Added site `007d`, hit 1, source `001a` to that command.
+The new contract regression failed before the fix and passes afterward, checking
+the complete dispatch inventory against the independent verifier matrix.
+
+A real pre-fix DOS capture reproduced the three-control directory; a fresh
+post-fix capture produced all four controls and passed the independent launch,
+input, output and cross-profile semantic checks. The 28 retained controls and
+all 14 native reads remain unchanged; no raw captures or expected pins were
+refreshed. The input suite now has 49 tests, with 21 composed-model and 10 port tests
+also passing (80 new tests total). README and the current reproduction notes are
+updated. The four-byte untouched port-clock limitation is unchanged.

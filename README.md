@@ -604,7 +604,9 @@ All six files match the paired instrumented outputs exactly. Untouched runs stil
 differ in **four port timestamp bytes** because the diagnostic moves one clock
 boundary. No timestamp mask or target-derived correction hides that gap; this is
 not yet exact untouched maintenance replay or a gameplay/save-35 change.
-[Record model, complete comparison and remaining clock work](research/yt-maint/RECORD_REPLAY.md).
+[Record model, complete comparison and remaining clock work](research/yt-maint/RECORD_REPLAY.md). The documented entry
+capture command emits all four required controls, including the raw startup TIMER
+witness used to derive the replay seed; a contract regression checks that inventory.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
