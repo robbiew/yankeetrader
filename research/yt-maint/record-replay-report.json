@@ -1,0 +1,1977 @@
+{
+  "recipe": "bounded-initial-maintenance-record-replay-v1",
+  "statistics": {
+    "ports": {
+      "ports": 1000,
+      "bytes": 137000,
+      "day": 306,
+      "elapsed_days": 10,
+      "class_counts": [
+        346,
+        336,
+        318
+      ]
+    },
+    "npcs": {
+      "wanderer_sector": 1095,
+      "hq_sector": 849,
+      "xannoron_ground": 212,
+      "xannoron_bank": 1100336.5,
+      "xannoron_timer_hex": "cdcc4c7c",
+      "top_fallback": 1314,
+      "mercenary_base_sector": 2598,
+      "hq_strength": 1608,
+      "groups": {
+        "1": {
+          "sector": 849,
+          "strength": 1608
+        },
+        "2": {
+          "sector": 1548,
+          "strength": 15
+        },
+        "3": {
+          "sector": 2935,
+          "strength": 978
+        },
+        "4": {
+          "sector": 2706,
+          "strength": 569
+        },
+        "5": {
+          "sector": 1476,
+          "strength": 123
+        },
+        "6": {
+          "sector": 1155,
+          "strength": 42
+        },
+        "7": {
+          "sector": 2061,
+          "strength": 9
+        },
+        "8": {
+          "sector": 1051,
+          "strength": 267
+        },
+        "9": {
+          "sector": 133,
+          "strength": 1215
+        },
+        "10": {
+          "sector": 1357,
+          "strength": 1296
+        },
+        "11": {
+          "sector": 1966,
+          "strength": 46
+        },
+        "12": {
+          "sector": 2716,
+          "strength": 155
+        },
+        "13": {
+          "sector": 129,
+          "strength": 1655
+        },
+        "14": {
+          "sector": 2057,
+          "strength": 528
+        },
+        "15": {
+          "sector": 1114,
+          "strength": 199
+        },
+        "16": {
+          "sector": 2736,
+          "strength": 949
+        },
+        "17": {
+          "sector": 793,
+          "strength": 36
+        },
+        "18": {
+          "sector": 1603,
+          "strength": 11
+        },
+        "19": {
+          "sector": 1115,
+          "strength": 230
+        },
+        "20": {
+          "sector": 1314,
+          "strength": 69
+        }
+      },
+      "routes": [
+        {
+          "group": 2,
+          "strength": 15,
+          "fallback": 1548,
+          "candidate": 2826,
+          "sector": 1548,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1331,
+            1330,
+            1338,
+            1346,
+            1295,
+            1297,
+            2110,
+            2109,
+            2099,
+            2089,
+            2092,
+            1598,
+            1588,
+            1586,
+            1576,
+            1567,
+            1559,
+            1549,
+            1548
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1450
+        },
+        {
+          "group": 3,
+          "strength": 978,
+          "fallback": 2935,
+          "candidate": 2132,
+          "sector": 2935,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1335,
+            1326,
+            1322,
+            1312,
+            1306,
+            2957,
+            2954,
+            2947,
+            2937,
+            2942,
+            2935
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1050
+        },
+        {
+          "group": 4,
+          "strength": 569,
+          "fallback": 2706,
+          "candidate": 2821,
+          "sector": 2706,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1364,
+            2200,
+            2201,
+            107,
+            98,
+            88,
+            90,
+            84,
+            2717,
+            2715,
+            2711,
+            2718,
+            2712,
+            2706
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1100
+        },
+        {
+          "group": 5,
+          "strength": 123,
+          "fallback": 1476,
+          "candidate": 979,
+          "sector": 1476,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            842,
+            1,
+            4,
+            14,
+            24,
+            27,
+            30,
+            39,
+            48,
+            40,
+            2561,
+            2564,
+            2572,
+            2573,
+            2580,
+            2383,
+            2374,
+            1560,
+            1561,
+            1551,
+            1546,
+            1536,
+            1527,
+            1522,
+            1514,
+            1508,
+            1498,
+            1492,
+            1484,
+            1483,
+            1476
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1750
+        },
+        {
+          "group": 6,
+          "strength": 42,
+          "fallback": 1155,
+          "candidate": 2739,
+          "sector": 1155,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1335,
+            1326,
+            1318,
+            1308,
+            1302,
+            1299,
+            1293,
+            1287,
+            1280,
+            1274,
+            1283,
+            1273,
+            1263,
+            1254,
+            1246,
+            1242,
+            1233,
+            1224,
+            1231,
+            1108,
+            1118,
+            1127,
+            1137,
+            1144,
+            1141,
+            1148,
+            1154,
+            1155
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1900
+        },
+        {
+          "group": 7,
+          "strength": 9,
+          "fallback": 2061,
+          "candidate": 33,
+          "sector": 2061,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            826,
+            831,
+            822,
+            815,
+            808,
+            798,
+            795,
+            802,
+            793,
+            784,
+            778,
+            775,
+            765,
+            756,
+            753,
+            746,
+            742,
+            743,
+            734,
+            735,
+            2057,
+            2055,
+            2051,
+            2050,
+            2059,
+            2061
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1500
+        },
+        {
+          "group": 8,
+          "strength": 267,
+          "fallback": 1051,
+          "candidate": 860,
+          "sector": 1051,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1369,
+            1367,
+            986,
+            980,
+            989,
+            992,
+            998,
+            995,
+            1005,
+            1013,
+            1019,
+            1024,
+            1029,
+            1039,
+            1045,
+            1051
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1200
+        },
+        {
+          "group": 9,
+          "strength": 1215,
+          "fallback": 133,
+          "candidate": 615,
+          "sector": 133,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1364,
+            2200,
+            2201,
+            2193,
+            154,
+            159,
+            151,
+            144,
+            145,
+            136,
+            143,
+            133
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1000
+        },
+        {
+          "group": 10,
+          "strength": 1296,
+          "fallback": 1357,
+          "candidate": 2941,
+          "sector": 1357,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            842,
+            1,
+            4,
+            14,
+            24,
+            27,
+            30,
+            39,
+            48,
+            40,
+            2561,
+            2564,
+            2572,
+            2573,
+            2580,
+            2383,
+            2373,
+            2363,
+            2357,
+            2350,
+            2340,
+            2330,
+            2321,
+            2315,
+            1412,
+            1417,
+            1413,
+            1407,
+            1401,
+            1392,
+            1394,
+            1384,
+            1374,
+            1370,
+            1360,
+            1357
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 2000
+        },
+        {
+          "group": 11,
+          "strength": 46,
+          "fallback": 1966,
+          "candidate": 2325,
+          "sector": 1966,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            826,
+            831,
+            822,
+            815,
+            808,
+            798,
+            795,
+            792,
+            1952,
+            1947,
+            1955,
+            1964,
+            1969,
+            1979,
+            1989,
+            1997,
+            1990,
+            1985,
+            1982,
+            1975,
+            1966
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1250
+        },
+        {
+          "group": 12,
+          "strength": 155,
+          "fallback": 2716,
+          "candidate": 871,
+          "sector": 2716,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1364,
+            2200,
+            2201,
+            107,
+            98,
+            88,
+            90,
+            84,
+            2717,
+            2727,
+            2737,
+            2729,
+            2724,
+            2714,
+            2716
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1150
+        },
+        {
+          "group": 13,
+          "strength": 1655,
+          "fallback": 129,
+          "candidate": 1836,
+          "sector": 129,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1364,
+            2200,
+            2201,
+            107,
+            98,
+            88,
+            95,
+            93,
+            100,
+            109,
+            119,
+            123,
+            127,
+            129
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1100
+        },
+        {
+          "group": 14,
+          "strength": 528,
+          "fallback": 2057,
+          "candidate": 1254,
+          "sector": 2057,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            826,
+            831,
+            822,
+            815,
+            808,
+            798,
+            795,
+            802,
+            793,
+            784,
+            778,
+            775,
+            765,
+            756,
+            753,
+            746,
+            742,
+            743,
+            734,
+            735,
+            2057
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1250
+        },
+        {
+          "group": 15,
+          "strength": 199,
+          "fallback": 1114,
+          "candidate": 4,
+          "sector": 1114,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1335,
+            1326,
+            1318,
+            1308,
+            1302,
+            1299,
+            1293,
+            1287,
+            1280,
+            1274,
+            1283,
+            1273,
+            1263,
+            1254,
+            1246,
+            1242,
+            1233,
+            1224,
+            1231,
+            1108,
+            1110,
+            1111,
+            1116,
+            1114
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1700
+        },
+        {
+          "group": 16,
+          "strength": 949,
+          "fallback": 2736,
+          "candidate": 340,
+          "sector": 2736,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1359,
+            1364,
+            2200,
+            2201,
+            107,
+            98,
+            88,
+            90,
+            84,
+            2717,
+            2727,
+            2737,
+            2728,
+            2736
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1050
+        },
+        {
+          "group": 17,
+          "strength": 36,
+          "fallback": 793,
+          "candidate": 1764,
+          "sector": 793,
+          "route": [
+            849,
+            848,
+            841,
+            832,
+            834,
+            826,
+            831,
+            822,
+            815,
+            808,
+            798,
+            795,
+            802,
+            793
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 650
+        },
+        {
+          "group": 18,
+          "strength": 11,
+          "fallback": 1603,
+          "candidate": 2943,
+          "sector": 1603,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1331,
+            1330,
+            1338,
+            1346,
+            1295,
+            1297,
+            2110,
+            2109,
+            2099,
+            2089,
+            2092,
+            1598,
+            1588,
+            1589,
+            1597,
+            1603
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1300
+        },
+        {
+          "group": 19,
+          "strength": 230,
+          "fallback": 1115,
+          "candidate": 617,
+          "sector": 1115,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1335,
+            1326,
+            1318,
+            1308,
+            1302,
+            1299,
+            1293,
+            1287,
+            1280,
+            1274,
+            1283,
+            1273,
+            1263,
+            1254,
+            1246,
+            1242,
+            1233,
+            1224,
+            1231,
+            1108,
+            1110,
+            1111,
+            1116,
+            1107,
+            1115
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 1750
+        },
+        {
+          "group": 20,
+          "strength": 69,
+          "fallback": 2997,
+          "candidate": 1581,
+          "sector": 1314,
+          "route": [
+            849,
+            854,
+            860,
+            857,
+            866,
+            869,
+            868,
+            1350,
+            1355,
+            1345,
+            1336,
+            1331,
+            1324,
+            1314
+          ],
+          "candidate_draws": 50,
+          "interception_draws": 650
+        }
+      ],
+      "helper_calls": {
+        "h1": 41,
+        "h2": 19
+      },
+      "helper_seeds": [
+        {
+          "helper": "h1",
+          "ordinal": 1,
+          "old_state": 51205,
+          "timer_hex": "cdcc4c7c",
+          "seeded_state": 11567365
+        },
+        {
+          "helper": "h1",
+          "ordinal": 2,
+          "old_state": 10126169,
+          "timer_hex": "cdcc4c7c",
+          "seeded_state": 11567449
+        },
+        {
+          "helper": "h2",
+          "ordinal": 1,
+          "old_state": 7323320,
+          "timer_hex": "cdcc4c7c",
+          "seeded_state": 11567544
+        },
+        {
+          "helper": "h1",
+          "ordinal": 3,
+          "old_state": 2075644,
+          "timer_hex": "cdcc4c7c",
+          "seeded_state": 11567612
+        },
+        {
+          "helper": "h1",
+          "ordinal": 4,
+          "old_state": 8653007,
+          "timer_hex": "cdcc4c7c",
+          "seeded_state": 11567567
+        },
+        {
+          "helper": "h2",
+          "ordinal": 2,
+          "old_state": 12734674,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11633106
+        },
+        {
+          "helper": "h1",
+          "ordinal": 5,
+          "old_state": 6214710,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11632950
+        },
+        {
+          "helper": "h1",
+          "ordinal": 6,
+          "old_state": 16413473,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11632929
+        },
+        {
+          "helper": "h2",
+          "ordinal": 3,
+          "old_state": 7375276,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11633068
+        },
+        {
+          "helper": "h1",
+          "ordinal": 7,
+          "old_state": 7923760,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11632944
+        },
+        {
+          "helper": "h1",
+          "ordinal": 8,
+          "old_state": 15129395,
+          "timer_hex": "cdcc4c7d",
+          "seeded_state": 11632947
+        },
+        {
+          "helper": "h2",
+          "ordinal": 4,
+          "old_state": 7399344,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086256
+        },
+        {
+          "helper": "h1",
+          "ordinal": 9,
+          "old_state": 5394804,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086196
+        },
+        {
+          "helper": "h1",
+          "ordinal": 10,
+          "old_state": 8254055,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086183
+        },
+        {
+          "helper": "h2",
+          "ordinal": 5,
+          "old_state": 1997590,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086102
+        },
+        {
+          "helper": "h1",
+          "ordinal": 11,
+          "old_state": 12320954,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086266
+        },
+        {
+          "helper": "h1",
+          "ordinal": 12,
+          "old_state": 6457749,
+          "timer_hex": "0ad7237e",
+          "seeded_state": 11086229
+        },
+        {
+          "helper": "h2",
+          "ordinal": 6,
+          "old_state": 9612122,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629402
+        },
+        {
+          "helper": "h1",
+          "ordinal": 13,
+          "old_state": 2942782,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629374
+        },
+        {
+          "helper": "h1",
+          "ordinal": 14,
+          "old_state": 11524105,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629321
+        },
+        {
+          "helper": "h2",
+          "ordinal": 7,
+          "old_state": 10882638,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629390
+        },
+        {
+          "helper": "h1",
+          "ordinal": 15,
+          "old_state": 3482482,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629426
+        },
+        {
+          "helper": "h1",
+          "ordinal": 16,
+          "old_state": 5875565,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629421
+        },
+        {
+          "helper": "h2",
+          "ordinal": 8,
+          "old_state": 4643510,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629494
+        },
+        {
+          "helper": "h1",
+          "ordinal": 17,
+          "old_state": 15582298,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629402
+        },
+        {
+          "helper": "h1",
+          "ordinal": 18,
+          "old_state": 739253,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629493
+        },
+        {
+          "helper": "h2",
+          "ordinal": 9,
+          "old_state": 8596438,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629526
+        },
+        {
+          "helper": "h1",
+          "ordinal": 19,
+          "old_state": 14143098,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629434
+        },
+        {
+          "helper": "h1",
+          "ordinal": 20,
+          "old_state": 7587669,
+          "timer_hex": "3d0a577e",
+          "seeded_state": 7629397
+        },
+        {
+          "helper": "h2",
+          "ordinal": 10,
+          "old_state": 13813854,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356958
+        },
+        {
+          "helper": "h1",
+          "ordinal": 21,
+          "old_state": 11372930,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356994
+        },
+        {
+          "helper": "h1",
+          "ordinal": 22,
+          "old_state": 10990653,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356925
+        },
+        {
+          "helper": "h2",
+          "ordinal": 11,
+          "old_state": 15751456,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356896
+        },
+        {
+          "helper": "h1",
+          "ordinal": 23,
+          "old_state": 14161380,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4357092
+        },
+        {
+          "helper": "h1",
+          "ordinal": 24,
+          "old_state": 15186711,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356887
+        },
+        {
+          "helper": "h2",
+          "ordinal": 12,
+          "old_state": 13710894,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356910
+        },
+        {
+          "helper": "h1",
+          "ordinal": 25,
+          "old_state": 13531730,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356946
+        },
+        {
+          "helper": "h1",
+          "ordinal": 26,
+          "old_state": 718029,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4357069
+        },
+        {
+          "helper": "h2",
+          "ordinal": 13,
+          "old_state": 2190034,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4357074
+        },
+        {
+          "helper": "h1",
+          "ordinal": 27,
+          "old_state": 6155830,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356918
+        },
+        {
+          "helper": "h1",
+          "ordinal": 28,
+          "old_state": 11502881,
+          "timer_hex": "713d0a7f",
+          "seeded_state": 4356897
+        },
+        {
+          "helper": "h2",
+          "ordinal": 14,
+          "old_state": 14386356,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020724
+        },
+        {
+          "helper": "h1",
+          "ordinal": 29,
+          "old_state": 16683704,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020728
+        },
+        {
+          "helper": "h1",
+          "ordinal": 30,
+          "old_state": 6226331,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020699
+        },
+        {
+          "helper": "h2",
+          "ordinal": 15,
+          "old_state": 12405456,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020752
+        },
+        {
+          "helper": "h1",
+          "ordinal": 31,
+          "old_state": 15424404,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020692
+        },
+        {
+          "helper": "h1",
+          "ordinal": 32,
+          "old_state": 15299079,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020551
+        },
+        {
+          "helper": "h2",
+          "ordinal": 16,
+          "old_state": 3597082,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020570
+        },
+        {
+          "helper": "h1",
+          "ordinal": 33,
+          "old_state": 6832638,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020798
+        },
+        {
+          "helper": "h1",
+          "ordinal": 34,
+          "old_state": 4430025,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020745
+        },
+        {
+          "helper": "h2",
+          "ordinal": 17,
+          "old_state": 3467812,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020580
+        },
+        {
+          "helper": "h1",
+          "ordinal": 35,
+          "old_state": 6382888,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020584
+        },
+        {
+          "helper": "h1",
+          "ordinal": 36,
+          "old_state": 8962891,
+          "timer_hex": "0ad7237f",
+          "seeded_state": 11020619
+        },
+        {
+          "helper": "h2",
+          "ordinal": 18,
+          "old_state": 1001008,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736368
+        },
+        {
+          "helper": "h1",
+          "ordinal": 37,
+          "old_state": 11382260,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736564
+        },
+        {
+          "helper": "h1",
+          "ordinal": 38,
+          "old_state": 6230503,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736551
+        },
+        {
+          "helper": "h2",
+          "ordinal": 19,
+          "old_state": 14731926,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736470
+        },
+        {
+          "helper": "h1",
+          "ordinal": 39,
+          "old_state": 6794810,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736378
+        },
+        {
+          "helper": "h1",
+          "ordinal": 40,
+          "old_state": 16755733,
+          "timer_hex": "5c8f427f",
+          "seeded_state": 15736341
+        },
+        {
+          "helper": "h1",
+          "ordinal": 41,
+          "old_state": 11183232,
+          "timer_hex": "f6285c7f",
+          "seeded_state": 5745280
+        }
+      ],
+      "candidate_draws": 950,
+      "interception_draws": 24800,
+      "desertion_draws": 20,
+      "lottery_draw": 0.26183974742889404,
+      "total_draws": 25891,
+      "final_rng_state": 4392942
+    },
+    "world_records": 4151,
+    "world_bytes": 568687,
+    "file_bytes": {
+      "YTDATA.DAT": 568687,
+      "YTNAME.DAT": 26,
+      "YTYNEWS.DAT": 309,
+      "YTRMSG.DAT": 0,
+      "YTNEWS.DAT": 434,
+      "YTSCORE.ASC": 603
+    }
+  },
+  "cases": [
+    {
+      "control": "entry/untouched",
+      "kind": "untouched",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 4,
+          "observed_sha256": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 4,
+      "compared_bytes": 570059,
+      "first_differences": [
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500973,
+          "observed": 0,
+          "replayed": 14,
+          "record": 3657,
+          "field_offset": 101
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500974,
+          "observed": 0,
+          "replayed": 116,
+          "record": 3657,
+          "field_offset": 102
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500975,
+          "observed": 72,
+          "replayed": 90,
+          "record": 3657,
+          "field_offset": 103
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500976,
+          "observed": 0,
+          "replayed": 118,
+          "record": 3657,
+          "field_offset": 104
+        }
+      ],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 136996,
+          "byte_mismatches": 4,
+          "observed_sha256": "c8b358c712eb166cec869c6ce7b157daa735db3928a2cb1599227e4ec8ab00ae",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    },
+    {
+      "control": "entry/untouched-repeat",
+      "kind": "untouched",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 4,
+          "observed_sha256": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 4,
+      "compared_bytes": 570059,
+      "first_differences": [
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500973,
+          "observed": 0,
+          "replayed": 14,
+          "record": 3657,
+          "field_offset": 101
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500974,
+          "observed": 0,
+          "replayed": 116,
+          "record": 3657,
+          "field_offset": 102
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500975,
+          "observed": 72,
+          "replayed": 90,
+          "record": 3657,
+          "field_offset": 103
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500976,
+          "observed": 0,
+          "replayed": 118,
+          "record": 3657,
+          "field_offset": 104
+        }
+      ],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 136996,
+          "byte_mismatches": 4,
+          "observed_sha256": "c8b358c712eb166cec869c6ce7b157daa735db3928a2cb1599227e4ec8ab00ae",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    },
+    {
+      "control": "port-default/untouched",
+      "kind": "untouched",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 4,
+          "observed_sha256": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 4,
+      "compared_bytes": 570059,
+      "first_differences": [
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500973,
+          "observed": 0,
+          "replayed": 14,
+          "record": 3657,
+          "field_offset": 101
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500974,
+          "observed": 0,
+          "replayed": 116,
+          "record": 3657,
+          "field_offset": 102
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500975,
+          "observed": 72,
+          "replayed": 90,
+          "record": 3657,
+          "field_offset": 103
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500976,
+          "observed": 0,
+          "replayed": 118,
+          "record": 3657,
+          "field_offset": 104
+        }
+      ],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 136996,
+          "byte_mismatches": 4,
+          "observed_sha256": "c8b358c712eb166cec869c6ce7b157daa735db3928a2cb1599227e4ec8ab00ae",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    },
+    {
+      "control": "port-readonly/untouched",
+      "kind": "untouched",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 4,
+          "observed_sha256": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 4,
+      "compared_bytes": 570059,
+      "first_differences": [
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500973,
+          "observed": 0,
+          "replayed": 14,
+          "record": 3657,
+          "field_offset": 101
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500974,
+          "observed": 0,
+          "replayed": 116,
+          "record": 3657,
+          "field_offset": 102
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500975,
+          "observed": 72,
+          "replayed": 90,
+          "record": 3657,
+          "field_offset": 103
+        },
+        {
+          "file": "YTDATA.DAT",
+          "offset": 500976,
+          "observed": 0,
+          "replayed": 118,
+          "record": 3657,
+          "field_offset": 104
+        }
+      ],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 136996,
+          "byte_mismatches": 4,
+          "observed_sha256": "c8b358c712eb166cec869c6ce7b157daa735db3928a2cb1599227e4ec8ab00ae",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    },
+    {
+      "control": "port-default/count-clock",
+      "kind": "instrumented-body-end",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 0,
+          "observed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 0,
+      "compared_bytes": 570059,
+      "first_differences": [],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    },
+    {
+      "control": "port-readonly/miss",
+      "kind": "instrumented-body-end",
+      "files": {
+        "YTDATA.DAT": {
+          "observed_bytes": 568687,
+          "replayed_bytes": 568687,
+          "byte_mismatches": 0,
+          "observed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3",
+          "replayed_sha256": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3"
+        },
+        "YTNAME.DAT": {
+          "observed_bytes": 26,
+          "replayed_bytes": 26,
+          "byte_mismatches": 0,
+          "observed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+          "replayed_sha256": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+        },
+        "YTNEWS.DAT": {
+          "observed_bytes": 434,
+          "replayed_bytes": 434,
+          "byte_mismatches": 0,
+          "observed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+          "replayed_sha256": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c"
+        },
+        "YTRMSG.DAT": {
+          "observed_bytes": 0,
+          "replayed_bytes": 0,
+          "byte_mismatches": 0,
+          "observed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "YTSCORE.ASC": {
+          "observed_bytes": 603,
+          "replayed_bytes": 603,
+          "byte_mismatches": 0,
+          "observed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+          "replayed_sha256": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+        },
+        "YTYNEWS.DAT": {
+          "observed_bytes": 309,
+          "replayed_bytes": 309,
+          "byte_mismatches": 0,
+          "observed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+          "replayed_sha256": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+        }
+      },
+      "byte_mismatches": 0,
+      "compared_bytes": 570059,
+      "first_differences": [],
+      "world_blocks": {
+        "configuration": {
+          "records": 1,
+          "bytes": 137,
+          "matching_bytes": 137,
+          "byte_mismatches": 0,
+          "observed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237",
+          "replayed_sha256": "bde13cff82e779e442e948ab0e39023111cc5316d97902ec39bcd34926fb4237"
+        },
+        "players": {
+          "records": 50,
+          "bytes": 6850,
+          "matching_bytes": 6850,
+          "byte_mismatches": 0,
+          "observed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10",
+          "replayed_sha256": "057b7dd350f13e9d8321175422d823987eb9ecad1c866a569adf82643ab24f10"
+        },
+        "sectors": {
+          "records": 3000,
+          "bytes": 411000,
+          "matching_bytes": 411000,
+          "byte_mismatches": 0,
+          "observed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e",
+          "replayed_sha256": "b53e6d6ad9642cfcaeb60a66799dff0af2c75f254f8fda28d18e4dbf6220a18e"
+        },
+        "ports": {
+          "records": 1000,
+          "bytes": 137000,
+          "matching_bytes": 137000,
+          "byte_mismatches": 0,
+          "observed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3",
+          "replayed_sha256": "f321f6f54b5071770f59e5b3f6ac139472288f95273ab8feeb61de04c4c9add3"
+        },
+        "planets": {
+          "records": 100,
+          "bytes": 13700,
+          "matching_bytes": 13700,
+          "byte_mismatches": 0,
+          "observed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae",
+          "replayed_sha256": "6d48986c82e70b53cfec10f8ea46a4bc367251ccc9dd6f11cd538652761196ae"
+        }
+      }
+    }
+  ],
+  "clock_profile": "instrumented raw TIMER/60 epochs; untouched one-port timing uncertainty retained",
+  "limitations": [
+    "Research only: no production gameplay, save-format or dependency change.",
+    "Default geometry, all players/planets inactive, no owned ports or hazards.",
+    "Explicit measured helper TIMER inputs; not a predictor from a clock string.",
+    "Four port timestamp bytes remain unmatched in untouched outputs; no masking or target correction.",
+    "Instrumented main-body-end output matching is not untouched normal-completion parity.",
+    "Arbitrary worlds, clocks, general MBF and native-host durability are not established."
+  ]
+}

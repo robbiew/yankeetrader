@@ -1,0 +1,573 @@
+{
+  "controls": {
+    "entry/startup-timer": {
+      "metadata_sha256": "1bd6288003a39773de5ed92fc2dd4d0c9d9d81f67d48f70cbb85e43e4a24f65c",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "3ed5abcfa56c7fe126c199fba2333360aefd05205d3959f738472b61803b568c",
+        "after-YTDATA.DAT.gz": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "6327064fa69146bfa87cc47ef7d98210805b7388a21395d57d5c49061419ff6e"
+      }
+    },
+    "entry/untouched": {
+      "metadata_sha256": "b96e3e8a739c0b62a49480d54612cf3bc6f43459b45c9f1c32ccd08777d97dd8",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+        "after-YTDATA.DAT.gz": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "62f0d68e4b66e7d035c698b8e2662a2da38a4e94a083250e4668a12d6995b135"
+      }
+    },
+    "entry/untouched-repeat": {
+      "metadata_sha256": "135ea163352f3d43d98062ca133dded762ff05d8eb019bba996c158992e85389",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+        "after-YTDATA.DAT.gz": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "1dad36e8eac12b53922bee8ccdd737462673738a6f1f87688ee2889822931438"
+      }
+    },
+    "entry/xannoron-timer": {
+      "metadata_sha256": "982cfcc50129c2c4affac378011157186aa721390ceca701ce1bfb9735836c64",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "29f25844f3e6c91a97df482d7da5e3491f289468324a6389796368ba9127dc9f",
+        "after-YTDATA.DAT.gz": "b2e1f21c5b089d4342f93b0addfd64af97c62967d483c59f5525ed73349832ed",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "dd9848f6bcedcd83cd4b4606253c27437f2ab73919ee7381c6086596d0d3915d",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "d57777ce1315dda32bcbb2804b1982cb5e92a81a8d29dba4527e95879f3cca53"
+      }
+    },
+    "port-default/count-clock": {
+      "metadata_sha256": "09fc6df6c4612b255bfff94f1c0a1e456e0da250526a7b617e087eb0aa5df82c",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "a368706ccbefe95b69726bacad59ad1bf451b5ae2b75874ac66bddbcc2cbfb1c",
+        "after-YTDATA.DAT.gz": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "2f54b576badc14a3566ecf2b04833c18ca868b8c349f8614bf94c067ffb51bab"
+      }
+    },
+    "port-default/port-0001": {
+      "metadata_sha256": "580994d2a3caae7455a7f679298821462bebbe1609dd5b5dfdfff4d081c742e8",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "3c0f87d685d151944acbee5afe8e56c5f51b0fcbd02d5c7260ae8468d6f7a694"
+      }
+    },
+    "port-default/port-0002": {
+      "metadata_sha256": "2bfb7b0328987f185a02f4a19ea183077298fd502e260c063fc5e9d2bce17df7",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "3b1ba1a94346a37a99a2012d6aff7371159311f5fcbe9f3fef080bf2e9fc9b7c",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "a33360211726a9ffca1356c0ce1887d2b9ef3f95e8e3527daef909e9daa54a77"
+      }
+    },
+    "port-default/port-0500": {
+      "metadata_sha256": "7338107e06ee316ae5bb74c27cd466e24baf1ec7bf1d23f7b9426328de61cc99",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "ad633ebcd03ac1ba93203f636ad682ff2e309fa436c09d8d93905d53d2f6ba71",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "1074570cc07ae74d924dd7b34c4d9c92522b34e609a9a576c633c7386dab356f"
+      }
+    },
+    "port-default/port-0562": {
+      "metadata_sha256": "952fcab2e45ed5d331b10d1fc22ed1795ca6c66f63804631430448a5f64923bd",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "b76ca535645ae099d11bd09ae9921065b72c2df28eb76b83d96df46e86a4c80f",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "0bdf51c4ce9b70bbe24b6e315cf19c4df1e3206432469dbde877bb5eb11389c8"
+      }
+    },
+    "port-default/port-0593": {
+      "metadata_sha256": "f00e4a90d64d639aabcd4f7282b4f660305c65b806d1429f28168dae86534a9f",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "780a1d32546aea441d560b3d04d24275a38fe798757588bd74cbed173fd95809",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "dc5e07a4b24ca55de69c3b754e0c21c34e788c1a536339ea62a29f4c9135f301"
+      }
+    },
+    "port-default/port-0601": {
+      "metadata_sha256": "818deb543235bff2d416268715202c43f916c234e9e7d4988f744f16f8d23955",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "bf5668a4d78c396bfa385045d5c6dec3df13d00a4a8d423132e2279a6220a5cb",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "cc47616b0902f1951471ea39313d984b54a9025a47a5212a959614dbef98206c"
+      }
+    },
+    "port-default/port-0604": {
+      "metadata_sha256": "1dce99a3c5717a2648495d1852387542f32fec1b9180739b202921a49eae4028",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "35cc4c1f182776821bd3654cf6c19b50050fa46329277808eedc2c27ca512d20",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "95b257c04a4a0c25745b69a7375e113cd239857477a81f6ac2715a4a47653c60"
+      }
+    },
+    "port-default/port-0605": {
+      "metadata_sha256": "1e16b62101b90b42f1c06004e7dba9bb1e87639a8880907b33bb3a05f9407e2f",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "c6c329c680f04f190e09dfe0b3f0b1f77e6131002e5e4a4658d2e931c1f39771",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "9af824695136923c7d282a069d41382c659d154a55630b09b41fcbda5ec9743c"
+      }
+    },
+    "port-default/port-0606": {
+      "metadata_sha256": "b0c4196e68e6945d8553548cd7ea009fe424a90dc8e73ba6911f8d56174ab5c7",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "474965e5d027523ffbd5e335f8699018cba34f2d7aa899df7d8ab316ae622309",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "f1113939328d4812d1d30df6b12ab0cb4724ae90f2719f923fd7f0dc8d1a7e0a"
+      }
+    },
+    "port-default/port-0607": {
+      "metadata_sha256": "b6b7cf5d14185afdc565060922c042f4a9bdc50f8c4d558acf5db58e214758c4",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "f9f99efdf350c9e00d25027bd8057c770ea527acad943813776ba9a56f495e92",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "a3bc6f22a058eb3cf5a7cd5191ddd962a2435288c890768baa9f40dbab43f1a9"
+      }
+    },
+    "port-default/port-0609": {
+      "metadata_sha256": "df21649d96546140863e5b76d46c08dd0625ccadece2aec3b6548c4c9fd7285f",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "4a66b89161df0a6db01dfbab364dc4fb57a058a03a59775a0f43c90cee5109e4",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "6332f12fd2baff2560b31a634e162da32d027e1968f70a3368bc615a9ad93005"
+      }
+    },
+    "port-default/port-0625": {
+      "metadata_sha256": "784bbb6edc25e8cbc26000008614a71ef9abe718669a84bd2852b8a58daae07c",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "569b7e2364cad345c28bfbfffa9f6e674eed09c26147f8e6deb3d705085fc494",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "29e96064022dcfa482845fe9672ca38bbad0c3e4c94dd8640a6f747d3954933a"
+      }
+    },
+    "port-default/port-0750": {
+      "metadata_sha256": "93b9932c8695a945741577616edf6549cf379f1b1fafd2b889cb7a2b4c62aae6",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "a36c90e6b457d22ee67d22fa85f7c49127919d78a1794e98ad196b79c2cecd09",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "6084aa7a9bec386798c75fdbdc8c075cbbf4ebc29d14ae3ffb18b3eaa4957707"
+      }
+    },
+    "port-default/port-0999": {
+      "metadata_sha256": "188a8049f2b0c450e26c9ff30250e02fab0bcc443883f1e92b8e4a0bc10442bd",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "d0961daad7e4a8084a5732bc83107408699c35690d5e5bcbbcb674cd9eec7ef9",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "30dc4db0d61d3047c6f5e6480c09ca55fed54172ff6c1904774d10cb59984161"
+      }
+    },
+    "port-default/port-1000": {
+      "metadata_sha256": "6296039f06efd266ec30b1159067bd030b0ef652bb97aac48917e91baf2eca51",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "ac29299807f62bfd30d4bffb97763282b38e64a248239bb6fda023e1fc66ebe4",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "987999079411560ce47c3ad4b57e507051433be881b9150bc16d3d61c21fe2c1"
+      }
+    },
+    "port-default/untouched": {
+      "metadata_sha256": "342943c11bf065487dfe1133ed9ab6ec33e950a1372c56bfefe9b16147755070",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+        "after-YTDATA.DAT.gz": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "02adae869221ccc57db06023818d6d4a04def38b242b91b3d5d00a45a4643c49"
+      }
+    },
+    "port-readonly/miss": {
+      "metadata_sha256": "8d2a699899b54b0c03ccf81118b644d176edf69e697f0aa789d83e036495a4a9",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "e40ace8c8290fe4f888d07c9a3a1a3659b5268114e3cc5c5f1ea8ede6ba2a02e",
+        "after-YTDATA.DAT.gz": "7481c4c0ba2232310b57e2dfa01ebfc15d5ec647ac3901f2b04a6e2109cb1dd3",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "08195ecd7892bc9cdad5c9118f23b3680c21288c1790510a9e3810aa79098b5c"
+      }
+    },
+    "port-readonly/port-0001": {
+      "metadata_sha256": "30b93a3382ecea08de04af13587fc8b90962a970d9d3cc12afd21fb2cba799d3",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "61f3c6c8ec1a3b3f5038fa5489fd7634d27b086fe2266b4968dfdb0a66b1e4ac"
+      }
+    },
+    "port-readonly/port-0605": {
+      "metadata_sha256": "23699fdf0bda59a7bbb214b1700ff50475e85ef69dbc60082c3fd62f2cc1cac1",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "2e569f2542f724081192817b128180c0b2a3154a819425567658a69dcfa4f83e",
+        "after-YTDATA.DAT.gz": "c6c329c680f04f190e09dfe0b3f0b1f77e6131002e5e4a4658d2e931c1f39771",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "f93e6defe201ba7b6cbb18203210b1b215b5a8baff473f8c8a704ebddea8115d"
+      }
+    },
+    "port-readonly/port-0606": {
+      "metadata_sha256": "3399bfd8bcc3049fa87201e1921c43ac863e249d6c9945c8a8b3f5f1f50967e8",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "474965e5d027523ffbd5e335f8699018cba34f2d7aa899df7d8ab316ae622309",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "de69cf745f3c2ae78787d88498a8479e2d2176567fda9aa9210b3df07207d5cb"
+      }
+    },
+    "port-readonly/port-0607": {
+      "metadata_sha256": "cdbb3c2709d42f4d8a4f53c1f5f2e71b7b741352009eb4206668dece6919b5c6",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "f9f99efdf350c9e00d25027bd8057c770ea527acad943813776ba9a56f495e92",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "7db6b0764620845ec7898d22588fd36601ecc7854d08c42be753aa406e52bbd3"
+      }
+    },
+    "port-readonly/port-1000": {
+      "metadata_sha256": "366ecfd920935a0568f992185ea578a179f5240e5498ec7ce6c2b06e358aba98",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "17f909be86ae96196fa372f4aec5851f0c86c3581c8ec4778e29b6f5a11ae565",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "fcedfe0198c8867eaa3531769938534100c76ee10a14c1e1417b9749bb122f47",
+        "after-YTDATA.DAT.gz": "ac29299807f62bfd30d4bffb97763282b38e64a248239bb6fda023e1fc66ebe4",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "be9c7c21283500d9497ada8dcdfd09e468f2de187c07e4bc8b203c1f22eccba6",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "14cdb687f95b2c0c623ec69b3493fdc61b1a9641b41094856e8ad0ce8cd767d4"
+      }
+    },
+    "port-readonly/untouched": {
+      "metadata_sha256": "76918e83b9145f728435d60ddbe8128fca0077c1c8ab66a58781190f1756d761",
+      "raw": {
+        "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+        "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+        "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+        "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+        "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+        "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+        "TRACE.BIN": "c1b549a9e6b598a21db4bb06d26d85ecf9d4d76bf20139656002f6178e7ce716",
+        "after-YTDATA.DAT.gz": "ada65f0695c768cdf59c853ac4800da33c15047ce06eb9332a563da767f1e983",
+        "after-YTNAME.DAT.gz": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "after-YTNEWS.DAT.gz": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "after-YTRMSG.DAT.gz": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after-YTSCORE.ASC.gz": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba",
+        "after-YTYNEWS.DAT.gz": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "dosbox.log": "e78ddcfb8f7610b9b098c7e7132e1e935a04fe72349a9938a692508d72730742"
+      }
+    }
+  },
+  "native": {
+    "npc": "4b5b99ed208cf3b7c86e9d8c16fa26c06132ddd93ad4b8f5093f5d3575543c22",
+    "ports": "b5f20ff01dd3b922181b91b4605f40afe50ec0ae5ecfe5bf9aac165ed480fa27",
+    "aux": "5f9f56922b5634f23453646e6f4e16a9b75b34d0e3275afeb84e041354870bc2"
+  }
+}

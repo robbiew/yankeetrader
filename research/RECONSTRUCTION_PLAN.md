@@ -73,7 +73,10 @@ replay. [The phase ledger](yt-maint/PHASE_CHRONOLOGY.md) additionally links nine
 mobile groups' eager scans and the tail RNG families in the selected baseline.
 General MBF arithmetic and production compatibility remain separate; do not repeat
 these measured seed/count boundaries as missing work or describe research as a
-gameplay change.
+gameplay change. The [record replay model](yt-maint/RECORD_REPLAY.md) now closes
+all measured non-timestamp bytes and auxiliary files in the bounded baseline,
+with four untouched port timestamp bytes explicitly unresolved. This is not an
+exact untouched-replay or production compatibility completion claim.
 
 
 | Milestone | Implemented behavior and evidence |
@@ -120,9 +123,12 @@ gameplay change.
    repeated helper reseeds/callers, all literal-site counts in the selected initial
    fixture and one occupied-candidate retry. The [phase chronology](yt-maint/PHASE_CHRONOLOGY.md)
    now joins the selected baseline's helper states to group/player scan boundaries
-   and the desertion/lottery tail. Next recover exact post-maintenance record and
-   auxiliary replay against untouched controls. General MBF arithmetic, arbitrary
-   inputs and unmeasured dynamic paths remain separate research.
+   and the desertion/lottery tail. The [bounded record model](yt-maint/RECORD_REPLAY.md)
+   now reconstructs all six files without reading after-targets: paired instrumented
+   outputs match exactly, while untouched runs retain four port timestamp-byte
+   mismatches. Next recover a clock-neutral TIMER boundary observation, require
+   complete untouched equality, then add independent dates/clocks. General MBF,
+   arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
    graph, port or selected complete-record replay as missing work.
    [Exact port replay](yt-port-replay/RECOVERY.md),

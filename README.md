@@ -597,6 +597,17 @@ match directed original warp edges. These bounded observations do not claim
 496 successful encounters or full post-maintenance record replay.
 [Phase chronology, native evidence and limits](research/yt-maint/PHASE_CHRONOLOGY.md).
 
+**A bounded maintenance record model is now available for research:** it derives
+all sector, planet, configuration and inactive-player bytes, plus all five
+auxiliary files, from before-inputs, original constants and measured clock values.
+All six files match the paired instrumented outputs exactly. Untouched runs still
+differ in **four port timestamp bytes** because the diagnostic moves one clock
+boundary. No timestamp mask or target-derived correction hides that gap; this is
+not yet exact untouched maintenance replay or a gameplay/save-35 change.
+[Record model, complete comparison and remaining clock work](research/yt-maint/RECORD_REPLAY.md). The documented entry
+capture command emits all four required controls, including the raw startup TIMER
+witness used to derive the replay seed; a contract regression checks that inventory.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They
