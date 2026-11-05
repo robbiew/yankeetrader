@@ -1626,3 +1626,49 @@ phase/interception chronology, exact post-maintenance record/auxiliary replay,
 arbitrary worlds/clocks and general MBF parity remain open. Full Go tests,
 terminal gameplay and native-host durability acceptance were not rerun or claimed
 for this research-only update.
+
+## Initial-maintenance group/player phase ledger — 2026-11-04
+
+Local follow-up on `feat/maintenance-phase-chronology`, based on research commit
+`3489442` published in PR #87. No production Go, dependency, source archive or
+save-35 changes; the later research remains separate from that published branch.
+README, the current plan and CI are updated in this milestone.
+
+- Captured 332 returned controls: one untouched completed run, four complete
+  main-body-end counters and 327 terminating nth-hit observations. These reuse
+  the reviewed same-size 46-byte diagnostic and independent patch/witness checks;
+  an instrumented main-body end is not untouched cleanup completion.
+- `python3 scripts/verify_maintenance_chronology.py`: all 332 controls, three new
+  exact relocated REA byte reads and all source/site/clock/exit/raw pins pass.
+  The prior 463-control sequence corpus is independently verified before its
+  seed/caller states can serve as anchors.
+- `python3 scripts/test_verify_maintenance_chronology.py`: all 51 negative tests
+  pass, including rehashed world/trace/provenance substitutions, missing witnesses,
+  contradictory options, rewritten pins/native records and direct phase-state,
+  group/player, graph-edge, force ownership and desertion/lottery mutations.
+- Four fresh counters match the entire decoded DAT/ASC output inventory and bytes
+  of their untouched control. The new untouched run matches the prior pinned
+  baseline outputs, so the state bridges compare the same measured recipe.
+- Nineteen group phases decode to original groups 2–20; each candidate scan spans
+  cached player slots 2–51. The candidate/interception states close exact LCG
+  distances totaling 950 candidate and 24,800 interception draws. These partition
+  into 496 fifty-player scan blocks, including group 20's eager excluded scan.
+- All 38 sampled old/next-sector argument pairs form directed edges in the
+  immutable source graph. The nineteen sampled last destinations retain positive
+  Xannor forces in the untouched final records. The sample does not claim all 496
+  intermediate edges or successful attacks under arbitrary worlds.
+- Every group joins the prior four-draw allocator, fallback and candidate helper
+  states. All twenty eager desertion before-states and the last after-state join
+  the single lottery before/after pair without filler LCG steps. This accounts
+  for the selected baseline's 25,891 literal RND executions across the measured families,
+  not a simultaneous trace of every instruction or general MBF replay.
+- The previous 49 sequence corruption tests and all 4,682 archive hashes pass unchanged.
+  New Python scripts compile, relative research links and scoped diff checks pass.
+- CI adds the new portable checker and test suite, retaining every existing lane
+  and command. DOSBox/REA are acquisition tools; Python standard library suffices
+  for verification. Full Go/terminal gameplay/native-host acceptance was not rerun
+  or claimed for this research-only update.
+
+Next recover exact post-maintenance record/auxiliary synthesis from these measured
+phase/seed anchors. Arbitrary-world dynamic behavior, unobserved indirect paths,
+general MBF arithmetic and production BBS/Windows durability remain separate.

@@ -588,6 +588,15 @@ post-maintenance replay, arbitrary-world draw chronology and general MBF parity
 are not implemented, and gameplay/save format 35 are unchanged.
 [Sequencing evidence, diagnostic limits and portable checks](research/yt-maint/RNG_SEQUENCING.md).
 
+**The initial-fixture scan ledger is now joined:** 332 additional controls identify
+mobile groups 2–20 and cached player slots 2–51. The ordinary interception phase
+consumes 496 fifty-player scan blocks, including eager draws for excluded group
+20. Measured state bridges join helper reseeds, candidate/interception scans,
+twenty desertion draws and the lottery gate. Sampled old/next-sector arguments
+match directed original warp edges. These bounded observations do not claim
+496 successful encounters or full post-maintenance record replay.
+[Phase chronology, native evidence and limits](research/yt-maint/PHASE_CHRONOLOGY.md).
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They
