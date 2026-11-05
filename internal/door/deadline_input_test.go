@@ -27,7 +27,7 @@ func TestDoorInputDeadlineReportsExpiryAndRejectsLateInput(t *testing.T) {
 				return 0, gd.KeyNone, gd.ErrInputTimeout
 			}}
 			if mode == "idle-clock" {
-				g.onIdle = func() error { ticks++; return nil }
+				g.onIdle = func(int, int) error { ticks++; return nil }
 			}
 			var line string
 			var err error
