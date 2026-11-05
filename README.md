@@ -17,7 +17,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-04) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-05) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -241,7 +241,7 @@ finish, including runner cleanup; every validation command remains enabled.
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Additional unconfirmed spy command paths and character-level DOS editor wrapping/backspace parity.
-- A full DOS seed-to-universe production mode and save import/export, plus complete MBF arithmetic, other RND variants and unresolved rule parity.
+- Exact general DOS maintenance and DOS save import/export, plus complete MBF arithmetic, other RND variants and unresolved rule parity. The bounded playable `qb36-v1` generator is implemented.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
 
@@ -598,9 +598,10 @@ independent counters cover all 43 literal RND sites. Nine execute, totaling
 observations distinguish the four-draw shrinking-bound helper from occupied-sector
 candidate retries. An explicitly synthetic occupied-destination control adds one
 Wanderer selection attempt. Untouched comparisons, retained raw records and
-independent corruption checks bound these findings. This remains research: exact
-post-maintenance replay, arbitrary-world draw chronology and general MBF parity
-are not implemented, and gameplay/save format 35 are unchanged.
+independent corruption checks bound these findings. This is the historical
+sequencing scope; later bounded replay closes selected post-maintenance outputs.
+Arbitrary-world draw chronology and general MBF parity
+remain open, and gameplay/save format 35 are unchanged.
 [Sequencing evidence, diagnostic limits and portable checks](research/yt-maint/RNG_SEQUENCING.md).
 
 **The initial-fixture scan ledger is now joined:** 332 additional controls identify
@@ -630,8 +631,14 @@ including the raw startup TIMER seed witness.
 **The clock/date matrix now extends that research:** all 48 DOS controls agree
 within eight explicit recipes, including actual midnight rollover and the native
 `24:00:00` scoreboard string. Before-only replay is exact for seven recipes;
-the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
-remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
+the eighth seed exposed a mobile-Xannor/Wanderer interaction. The explicit
+[Wanderer encounter replay](research/yt-maint/WANDERER_ENCOUNTER.md) now closes
+that selected gap: all eight recipes / 864 individual file comparisons match,
+plus 108 comparisons against six fresh untouched/observed controls. Fourteen
+separate diagnostics confirm shared pursuit, draw ordering and 6923 casualties;
+public news and the 307700 score match the 3077 saved survivors. Earlier strict
+replay reports remain reproducible. This is research, not a new gameplay feature
+or save-format change. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
 normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings. Independent fresh-world calendar controls and the same-saved-world clock matrix are both retained.
 
@@ -662,7 +669,7 @@ Implemented rules have links to the recovered evidence:
 - Supply-sensitive cargo prices, quantity limits, demand depletion and owner commissions: [trading recovery](research/yt-trade/RECOVERY.md). Five saved DOS examples are exported in `internal/game/testdata/dos-trading.json` and checked by Go tests. These compare ore cash/cargo/treasury outcomes; they do not claim exact QuickBASIC RNG or floating-point equivalence.
 - Port taxes and the repeated-maintenance defect: [maintenance recovery](research/yt-maint/RECOVERY.md).
 
-Default generation retains the established seeded, reachable ring graph and uniform ports with fixed reference prices **20/30/40**. New worlds can independently select recovered map rules with `-dos-warps` and the recovered economy/startup price references with `-dos-ports`. These profiles use the modern seeded Go random stream and documented safety corrections; exact DOS seed-to-universe replay remains unsupported. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Shields start at zero; shield initialization parity remains an unresolved rule question.
+Default generation retains the established seeded, reachable ring graph and uniform ports with fixed reference prices **20/30/40**. New worlds can independently select recovered map rules with `-dos-warps` and the recovered economy/startup price references with `-dos-ports`. These profiles use the modern seeded Go random stream and documented safety corrections. The separate bounded `qb36-v1` profile selects the recovered source recipe. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Shields start at zero; shield initialization parity remains an unresolved rule question.
 
 Known defects intentionally fixed here:
 

@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-05
 
 This section is the current planning baseline, checked against merged `main`
-through `70b8832`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `7b99f901` (including merged maintenance PRs #88, #90–94), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -54,10 +54,19 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
   is verified research, including all raw record bytes and native phase states.
   The shared primitive preserves startup prices and introduces no schema change.
 - Complete pre-maintenance initializer research replay: all 4,151 raw records
-  match ten bounded targets, including fresh calendar/path controls; production
+  match twenty retained targets, including fresh calendar/path controls; production
   compatibility and initial maintenance remain separate.
 
 ### Most recent completed milestones
+
+The local [Wanderer encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now closes
+all eight clock/date recipes: 144 complete comparisons / 864 files, with no
+mismatches, plus 18 complete comparisons / 108 files against six fresh runs.
+Shared preferred-target pursuit, fatal-edge scan bypass, raw zero residues and
+actual public news/surviving-force scores are integrated before-only. Fourteen
+independent diagnostics and two complete native byte reads corroborate the
+selected branch. Go gameplay and save 35 are unchanged; historical strict models
+and retained reports remain reproducible.
 
 Independent initial-maintenance calendar controls now retain twelve native runs
 for next-day, New Year, leap-day and noon profiles, with 24 complete six-file
@@ -124,8 +133,9 @@ remain separate.
    including FIELD-buffer inheritance and raw zero residues. This closes the
    selected default-count initializer record replay milestone.
    The [production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-   now specifies explicit raw state/date, safe projection, saved provenance and
-   repeat-layout reset semantics. These are proposed behavior, not shipped flags.
+   specifies explicit raw state/date, safe projection, saved provenance and
+   repeat-layout reset semantics. These are implemented in the bounded playable
+   profile; the original design-stage proposals are historical.
    The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
    matches all twenty whole-world/block hashes and RNG endpoints with portable
    goldens, retaining explicit work limits and original source defects.
@@ -150,8 +160,10 @@ remain separate.
    recipes against the same saved-base-year world: all 48 native controls are
    neutral within recipe, and seven profiles replay all six files exactly.
    Its late-night seed reaches a mobile Xannor interaction with the Wanderer.
-   Next recover that encounter's RNG, record and side-file aftermath, then
-   expand bounded occupied-placement, faction-collision and evolved-world cases.
+   The [explicit encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now recovers
+   that selected branch, including RNG, raw records, public news and scores; all
+   eight profiles are native-equal. Next expand bounded occupied-placement,
+   faction-collision and populated-player/evolved-world cases.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

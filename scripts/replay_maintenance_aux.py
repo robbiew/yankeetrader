@@ -39,6 +39,14 @@ def literal(original,needle):
     return value
 
 
+def original_string(original,ds):
+    """Read a source-addressed descriptor, including its checked near pointer."""
+    at=ds+0xfd0
+    length,pointer=struct.unpack_from('<HH',original,at)
+    if pointer!=ds+4 or not 1<=length<=512:raise ValueError('original string descriptor differs')
+    return original[at+4:at+4+length]
+
+
 def field(world,record,offset):
     start=(record-1)*RECORD_SIZE+offset
     return mbf(world[start:start+4])
@@ -69,20 +77,22 @@ def using(mask,values):
     result.extend(mask[last:]);return bytes(result)
 
 
-def npc_scores(world):
+def npc_scores(world,*,encounters=None):
     scores={-1:0,-2:0}
     for sector in range(1,3001):
         record=51+sector;force=field(world,record,81);owner=field(world,record,85)
         if force<0 or force!=int(force):raise ValueError('noninteger/negative sector force is outside this model')
         if owner in scores:scores[owner]+=100*int(force)
-    # The all-inactive bootstrap reference has exactly10000 Xannor fighters and
-    # no Mercenary deployment. Do not claim general NPC normalization/MBF parity.
-    if scores!={-1:1000000,-2:0}:raise ValueError('only the recovered bootstrap NPC scoreboard is supported')
+    # The strict bootstrap has10000 Xannor fighters and no Mercenaries. The
+    # explicit encounter extension subtracts only independently modeled deaths.
+    # This is not general NPC normalization/MBF parity.
+    expected=1000000 if encounters is None else 100*(10000-sum(e['initial_force']for e in encounters))
+    if scores!={-1:expected,-2:0}or expected<=0:raise ValueError('only the recovered bootstrap NPC scoreboard is supported')
     return scores[-1],scores[-2]
 
 
-def scoreboard(original,world,date,clock):
-    xannor,mercenary=npc_scores(world)
+def scoreboard(original,world,date,clock,*,encounters=None):
+    xannor,mercenary=npc_scores(world,encounters=encounters)
     # Native855d..8596 selects an NPC denominator when the human leader is zero;
     # here Xannor is the sole positive NPC score, so the fractions are exact.
     leader=max(xannor,mercenary)
@@ -101,7 +111,7 @@ def scoreboard(original,world,date,clock):
     return CRLF.join(lines)+CRLF+EOF
 
 
-def news(original,before,after,date,clock):
+def news(original,before,after,date,clock,*,encounters=None):
     lines=[clock.encode()+b' '+date.strftime('%m-%d-%Y').encode()+literal(original,b': Maintenance Program Ran ')+literal(original,b'(Revision 03/14/94)')]
     for slot,expected in [(1,b'The Wanderer'),(99,b'Mercenary Base'),(100,b'Xannoron')]:
         record=4051+slot
@@ -115,6 +125,13 @@ def news(original,before,after,date,clock):
                   literal(original,b'Calculated Dynamic Xannor Regeneration is')+b' 0'+literal(original,b' fighters.'),
                   literal(original,b'  -  Mercenary Report:'),
                   literal(original,b'  -  The Mercenaries have built a home base using a captured Genesis Device!')])
+    if encounters:
+        extra=[]
+        for event in encounters:
+            if event['force']!=0 or event['planet_name']!='The Wanderer':raise ValueError('unsupported public encounter outcome')
+            extra.extend([original_string(original,0x809e)+b' '+str(event['initial_force']).encode()+original_string(original,0x8b70)+b'\"The Wanderer\"',
+                          original_string(original,0x8bac)+original_string(original,0x8bc4)])
+        lines[-2:-2]=extra
     return CRLF.join(lines)+CRLF+EOF
 
 
@@ -181,7 +198,7 @@ def _matrix_clock(value):
     return value
 
 
-def synthesize_clock_matrix(before_files,after_world,news_date,news_clock,score_date,score_clock):
+def synthesize_clock_matrix(before_files,after_world,news_date,news_clock,score_date,score_clock,*,encounters=None):
     """New source-qualified DATE$/TIME$ matrix; historical strict API unchanged."""
     if any(type(value)is not datetime.date for value in (news_date,score_date)):
         raise ValueError('separate observed news and scoreboard calendar dates required')
@@ -189,5 +206,5 @@ def synthesize_clock_matrix(before_files,after_world,news_date,news_clock,score_
     before,path=_admit_world(before_files,after_world)
     original=original_literals()
     return {'YTNAME.DAT':before_files['YTNAME.DAT'],'YTYNEWS.DAT':before_files['YTNEWS.DAT'],
-            'YTRMSG.DAT':b'','YTNEWS.DAT':news(original,before,after_world,news_date,news_clock),
-            path:scoreboard(original,after_world,score_date,score_clock)}
+            'YTRMSG.DAT':b'','YTNEWS.DAT':news(original,before,after_world,news_date,news_clock,encounters=encounters),
+            path:scoreboard(original,after_world,score_date,score_clock,encounters=encounters)}

@@ -1,4 +1,8 @@
-# Maintenance clock/date matrix: seven exact profiles and one encounter gap
+# Maintenance clock/date matrix: historical seven-profile replay
+
+The subsequent [explicit Wanderer extension](WANDERER_ENCOUNTER.md) closes the
+selected late-night encounter and replays all eight recipes exactly. The original
+strict model/report below retain their historical scope and unsupported rows.
 
 This research extends [the pinned midnight experiment](CLOCK_NEUTRAL.md) without
 changing that corpus or silently generalizing its clock schedule. Eight declared
@@ -98,9 +102,10 @@ simulated prefix, not copied from an after-file to repair the result.
 
 The model stops before that interaction. It does not assume the encounter is
 harmless, assert an unmeasured battle outcome, copy target bytes, or skip the
-sector. The next concrete research slice is the original maintenance behavior
-when a mobile Xannor group reaches the Wanderer, including RNG consumption and
-record/side-file aftermath. General encounters remain separate work.
+sector. The subsequent [Wanderer extension](WANDERER_ENCOUNTER.md) now recovers that
+selected encounter, including RNG consumption and record/side-file aftermath.
+This strict entrypoint still stops here for historical reproducibility. General
+encounters remain separate work.
 
 ## Attribution, scheduling and retained native evidence
 

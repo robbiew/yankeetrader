@@ -322,3 +322,11 @@
 /research/yt-maint/calendar-controls/**/dosbox.stdout -diff
 /research/yt-maint/calendar-controls/**/dosbox.stderr -diff
 /research/yt-maint/calendar-controls/**/init-ANSWERS.TXT -diff
+
+# Preserve raw Wanderer encounter evidence and exact acquisition source bytes.
+/research/yt-maint/wanderer-encounter/** -text
+/research/yt-maint/wanderer-encounter/**/*.LOG -diff
+/research/yt-maint/wanderer-encounter/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/wanderer-encounter/**/*.BIN -diff
+/research/yt-maint/wanderer-encounter/**/dosbox.stdout -diff
+/research/yt-maint/wanderer-encounter/**/dosbox.stderr -diff
