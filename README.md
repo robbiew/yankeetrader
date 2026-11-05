@@ -612,6 +612,14 @@ The [historical record-model report](research/yt-maint/RECORD_REPLAY.md) remains
 reproducible; its entry capture command emits all four required controls,
 including the raw startup TIMER seed witness.
 
+**The clock/date matrix now extends that research:** all48 DOS controls agree
+within eight explicit recipes, including actual midnight rollover and the native
+`24:00:00` scoreboard string. Before-only replay is exact for seven recipes;
+the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
+remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
+on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
+normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md).
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

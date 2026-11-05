@@ -130,9 +130,13 @@ remain separate.
    now reconstructs all six files without reading after-targets. The
    [clock-neutral TIMER profile](yt-maint/CLOCK_NEUTRAL.md) establishes complete
    untouched equality for the selected recipe, with two unobserved controls,
-   one attach-only control and three host traces. Next add independently measured
-   dates/clocks and additional bounded worlds without silently generalizing the
-   recovered midnight schedule. General MBF,
+   one attach-only control and three host traces. The
+   [clock/date matrix](yt-maint/CLOCK_MATRIX.md) now covers eight declared recipes:
+   all48 native controls are neutral within recipe, and seven profiles replay
+   all six files exactly. The remaining late-night seed reaches a mobile Xannor
+   interaction with the Wanderer. Next recover that encounter's original RNG,
+   record and side-file aftermath, then add further bounded worlds and dates.
+   General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
    graph, port or selected complete-record replay as missing work.
