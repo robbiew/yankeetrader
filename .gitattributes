@@ -279,3 +279,8 @@
 /research/yt-maint/record-input-controls/**/*.LOG -diff
 /research/yt-maint/record-input-controls/**/TRACE.BIN -diff
 /research/yt-maint/record-input-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Supplemental historical runtime streams preserve original DOS/probe bytes.
+/research/yt-maint/runtime-stream-controls/** -text
+/research/yt-maint/runtime-stream-controls/**/*.LOG -diff
+/research/yt-maint/runtime-stream-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

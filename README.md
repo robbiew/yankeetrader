@@ -571,6 +571,13 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Supplemental runtime streams](research/yt-maint/RNG_TRACE.md) preserve five
+historical instrumented captures with 127,618 checked seed/draw events and
+explicit probe-induced differences. These complement the newer first-hit,
+sequencing, chronology and record-replay research below; they do not replace its
+native controls or establish additional gameplay/save compatibility.
+
+
 **Maintenance seed boundaries are now measured:** 151 terminating DOS probes
 and six untouched paired runs recover entry `RANDOMIZE -TIMER`, two positive-TIMER
 helper reseeds and a selected first-hit Wanderer draw chain. Raw states preserve

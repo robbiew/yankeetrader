@@ -86,15 +86,13 @@ The complete port rate/coefficient slices match across these four runs, as do
 class counts (346/336/318). Planet placement and mobile effects differ. These
 observations establish clock sensitivity of the transition, **not** the exact
 maintenance RANDOMIZE input, runtime RNG state, draw counts or operation order.
-These untouched controls contain no maintenance RNG instrumentation, and no
-new decompilation is claimed for them. The
+No maintenance RNG instrumentation or new decompilation is claimed. The
 integrated run has no internal before snapshot; its comparison uses the
 separately reproduced initializer boundary.
 
-[Subsequent runtime tracing](RNG_TRACE.md) now captures startup seed and complete
-instrumented event streams with transcript phase boundaries and explicit timing
-perturbation measurements. Application call-site ordering and timer-controlled
-comparisons remain next against these untouched native oracles. Exact post-maintenance Go replay, arbitrary clocks and
+Next precision slice: instrument copied maintenance/runtime entry and selected
+phase boundaries, then recover the initial seed and draw ordering against these
+untouched native oracles. Exact post-maintenance Go replay, arbitrary clocks and
 general MBF arithmetic remain unimplemented. Preserve the modern fixes for
 same-day reruns and clock rollback rather than importing DOS defects.
 

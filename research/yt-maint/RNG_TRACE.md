@@ -1,6 +1,13 @@
 # Maintenance runtime RNG trace — bounded instrumented controls
 
-Captured 2026-11-04. This research extends the [untouched initial-maintenance
+Captured 2026-11-04; published as supplemental historical evidence on 2026-11-05.
+Later merged PRs #86–90 already establish first-hit seeds, draw sequencing,
+phase chronology and bounded record replay. See [first hits](RNG_FIRST_HITS.md),
+[sequencing](RNG_SEQUENCING.md), [chronology](PHASE_CHRONOLOGY.md) and
+[record replay](RECORD_REPLAY.md) for that newer work. These earlier, differently
+instrumented streams are retained under distinct names and do not replace it.
+
+This research extends the [untouched initial-maintenance
 controls](INITIAL_MAINTENANCE.md). It changes no gameplay, `qb36-v1` source
 fingerprints, schema 35, or published release.
 
@@ -103,7 +110,7 @@ packets; they are not retained as accepted evidence. No new Ghidra decompilation
 is claimed. The supported DOS runtime and existing byte listings supply this
 slice's evidence; REA remains an optional research tool, not an app dependency.
 
-## Verification and next precision slice
+## Verification and historical limits
 
 ```sh
 python3 scripts/verify_maintenance_runtime_streams.py
@@ -131,9 +138,8 @@ python3 scripts/verify_maintenance_runtime_streams.py /tmp/yt-maintenance-rng-ne
 Existing observation pins must not be refreshed automatically for a divergent
 capture. Investigate emulator/clock/probe differences first.
 
-Next: recover application call-site order and reseeding helper behavior, using
-lower-perturbation or timer-controlled probes paired with untouched controls.
-General TIMER/MBF arithmetic, arbitrary RND argument variants and complete exact
-post-maintenance replay remain separate. Do not repeat the startup seed or this
-complete instrumented-stream capture as missing research. Modern same-day and
-clock-rollback safeguards remain intentional.
+At capture time, application call-site attribution and lower-perturbation probes
+remained unresolved. Subsequent merged research above advances those questions;
+this historical experiment does not redefine that backlog or claim the newer
+results. Its instrumented/raw-native distinction remains binding. Modern same-day
+and clock-rollback safeguards remain intentional.
