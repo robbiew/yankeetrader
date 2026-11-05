@@ -99,6 +99,7 @@ jobs:
           python3 scripts/test_verify_maintenance_record_inputs.py
           python3 scripts/test_replay_maintenance_ports.py
           python3 scripts/test_replay_maintenance_records.py
+          python3 scripts/test_capture_maintenance_clock_deadline.py
           python3 scripts/verify_maintenance_clock_neutral.py
           python3 scripts/test_verify_maintenance_clock_neutral.py
           python3 scripts/test_replay_maintenance_clock_neutral.py

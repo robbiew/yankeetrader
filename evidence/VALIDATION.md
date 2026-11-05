@@ -1789,3 +1789,16 @@ this milestone. Portable checks require Python standard library only. No new
 Go-suite, gameplay terminal, native Windows durability or live BBS acceptance is
 claimed. Next independently recover additional dates/clocks and bounded worlds;
 arbitrary-world maintenance prediction and production compatibility remain open.
+
+
+### PR #91 initialization deadline review fix
+
+A single 30-second deadline now covers dynamic import, device discovery, spawn,
+attach, script creation/load/readiness, resume and execution. Error cleanup kills
+the owned PID directly and waits for exit (bounded to two seconds), before the
+Python 40-second outer timeout. Six real spawned-process regressions use a fake
+Frida adapter stalled at attach/create/load/ready/resume/execution; all confirm
+failure metadata and target termination. The original acquisition controller is
+retained under `clock-neutral-acquisition/` and verified through the unchanged
+original manifest digest. Original observations and source hash claims are not
+retroactively assigned to the fixed controller. README updated.

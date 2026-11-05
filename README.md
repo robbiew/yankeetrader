@@ -1756,3 +1756,13 @@ writers and native Windows crash durability remain unverified.
 
     python3 scripts/verify_newspaper_events.py
     python3 scripts/test_newspaper_events_verifier.py
+
+
+The acquisition controller now applies its 30-second deadline to initialization
+as well as execution, and kills/reaps its owned target on timeout without relying
+on a responsive Frida connection. Six stalled attach/create/load/readiness/
+resume/execution regressions verify cleanup before the outer Python timeout.
+The original controller used for retained observations is preserved byte-for-byte
+under `research/yt-maint/clock-neutral-acquisition/`; the unchanged manifest still
+authenticates those original acquisition bytes. No retained observations or
+native hashes were regenerated or redefined by this error-path fix.
