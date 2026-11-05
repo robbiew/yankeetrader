@@ -71,7 +71,7 @@ final watermark, news and scoreboard dates are explicit inputs to their writers.
 2026world, Jan1,2027 writes legacy day366, not day-of-year1. A newly initialized
 2027world would be a different input and would not test that branch. The new
 model admits only observed2026/2027 source dates and preserves the base year.
-Multi-year, leap-year and century behavior is not inferred from Python's calendar.
+Multi-year, leap-year and century behavior is not inferred from Python's calendar. The separate [fresh-world calendar controls](CALENDAR_CONTROLS.md) include an independently initialized leap day; they do not establish the same saved-base-year world's multi-year transition.
 
 **The old helper-call count was clock-specific.** The shift-two, noon and actual
 rollover seeds take the lottery gate and make a42nd single-range helper call.

@@ -313,3 +313,12 @@
 
 # The preserved acquisition controller is immutable evidence, not live source.
 /research/yt-maint/clock-neutral-acquisition/** -text
+
+# Independent calendar controls preserve original DOS and host-observer bytes.
+/research/yt-maint/calendar-controls/** -text
+/research/yt-maint/calendar-controls/**/*.LOG -diff
+/research/yt-maint/calendar-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/calendar-controls/**/*.BIN -diff
+/research/yt-maint/calendar-controls/**/dosbox.stdout -diff
+/research/yt-maint/calendar-controls/**/dosbox.stderr -diff
+/research/yt-maint/calendar-controls/**/init-ANSWERS.TXT -diff

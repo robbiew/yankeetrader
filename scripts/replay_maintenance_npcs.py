@@ -41,7 +41,8 @@ class UnsupportedClockMatrixEncounter(AssertionError):
 class Stream:
     def __init__(self, h1_timers, h2_timers, state, expected_old_states=None, *, inventory=None):
         self.timers = {'h1': list(h1_timers), 'h2': list(h2_timers)}
-        inventory={'h1':41,'h2':19}if inventory is None else inventory
+        inventory={'h1':len(h1_timers),'h2':19}if inventory is None else inventory
+        assert inventory['h1']in(41,42), 'bounded helper-input inventory'
         assert {k:len(v)for k,v in self.timers.items()}==inventory, 'bounded helper-input inventory'
         assert all(isinstance(t, bytes) and len(t) == 4 for ts in self.timers.values() for t in ts), 'raw TIMER inputs'
         self.rng = qb.QB3(state)
@@ -148,7 +149,7 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     matrix=matrix_days is not None
     dates={'wanderer':day,'xannoron':day,'base':day}if not matrix else matrix_days
     assert set(dates)=={'wanderer','xannoron','base'}and all(type(v)is int and 1<=v<=732 for v in dates.values()), 'bounded phase calendar days'
-    inventory={'h1':len(h1_timers),'h2':19}if matrix else {'h1':41,'h2':19}
+    inventory={'h1':len(h1_timers),'h2':19}
     assert inventory['h1']in(41,42), 'matrix supports only one optional inactive-player lottery selection'
     stream = Stream(h1_timers, h2_timers, initial_state, expected_old_states,inventory=inventory)
 
@@ -173,20 +174,15 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     title(xannoron, 'Xannoron')
     put(xannoron, 41, dates['xannoron'])
     seconds=qb.mbf.dec(xannoron_timer)
-    minutes = F32(seconds / 60)
-    if matrix:
-        assert 0<=seconds<86400 and 0<=minutes<1440, 'bounded daily initial-creation TIMER'
-        if minutes>=1:
-            truncated=bytearray(qb.mbf.enc(math.floor(minutes)))
-        else:
-            # Division of a zero FAC preserves its residue; INT zero only
-            # clears its exponent. Positive sub-minute values retain theirs.
-            truncated=bytearray(xannoron_timer if seconds==0 else qb.mbf.enc(minutes))
-            truncated[3]=0
+    minutes=F32(seconds/60)
+    assert 0<=seconds<86400 and 0<=minutes<1440, 'bounded initial-creation TIMER'
+    if minutes>=1:
+        truncated=bytearray(qb.mbf.enc(math.floor(minutes)))
     else:
-        assert 0 <= minutes < 1, 'selected sub-minute initial-creation TIMER'
-        truncated = bytearray(qb.mbf.enc(minutes))
-        truncated[3] = 0  # Historical admitted profile, unchanged.
+        # Preserve each admitted profile's original INT-zero FAC behavior.
+        value=xannoron_timer if matrix and seconds==0 else qb.mbf.enc(minutes)
+        truncated=bytearray(value)
+        truncated[3]=0
     putraw(xannoron, 89, bytes(truncated))
     for off in (45, 49, 53):
         putraw(xannoron, off, const[0x8134])
@@ -280,11 +276,9 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
         stream.rng.rnd()
     lottery = stream.rng.rnd()
     lottery_player=None
-    if matrix and lottery>=.5:
+    if lottery>=.5:
         lottery_player=stream.one(50)+1
-        assert get(lottery_player,85)==0, 'matrix lottery selects an inactive player and aborts'
-    else:
-        assert lottery < .5, 'selected lottery gate ends without a winner'
+        assert get(lottery_player,85)==0, 'only the unnamed lottery candidate branch is recovered'
     assert stream.calls == inventory, 'all measured helper inputs consumed exactly once'
     statistics=dict(wanderer_sector=wanderer_sector, hq_sector=hq,
                              xannoron_ground=ground, xannoron_bank=bank,
@@ -297,11 +291,12 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
                              desertion_draws=len(positive_defenses), lottery_draw=lottery,
                              total_draws=stream.rng.draws, final_rng_state=stream.rng.state)
     if matrix:statistics.update(calendar_days=dates,lottery_player=lottery_player)
+    else:statistics['lottery_candidate']=lottery_player
     return bytes(world),statistics
 
 
 def synthesize(before,h1_timers,h2_timers,day=306,*,xannoron_timer,initial_state=0xc805,expected_old_states=None):
-    """Historical strict sub-minute,41/19-helper baseline profile, unchanged."""
+    """Single-date initial profile, including the independent calendar controls."""
     return _synthesize(before,h1_timers,h2_timers,day,xannoron_timer=xannoron_timer,initial_state=initial_state,expected_old_states=expected_old_states)
 
 

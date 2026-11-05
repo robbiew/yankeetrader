@@ -1,0 +1,8 @@
+date 11/03/2026
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+ytmaint > TRACE.BIN
+echo PROGRAM_RETURNED > RETURN.LOG
+date > ENDDATE.LOG
+time > ENDTIME.LOG

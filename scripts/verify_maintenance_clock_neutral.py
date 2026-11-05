@@ -73,7 +73,7 @@ def clock_to_raw(cx,dx):
     return seconds,minutes
 
 
-def event_pair(event,ordinal):
+def event_pair(event,ordinal,*,cycle_refills=None):
     """Authenticate one complete native entry/leave pair before reading clocks."""
     assert event['ordinal']==ordinal and type(event['ordinal'])is int, 'contiguous paired event ordinal'
     assert set(event)=={'ordinal','before','after'}, 'exact paired event schema'
@@ -92,7 +92,10 @@ def event_pair(event,ordinal):
     for field in ('ds','ss','cs','sp','stack','port_raw','pic','ds_phys','ss_phys','runtime_signature','application_call'):
         assert before[field]==after[field], 'paired unchanged guest context: '+field
     assert before['cs']==0xf000 and before['ip']==0x13e5 and after['ip']==0x13e7, 'selected DOS callback return boundary'
-    assert after['cycles']==before['cycles']-5, 'original DOS time overhead is preserved'
+    if cycle_refills is not None and ordinal in cycle_refills:
+        assert before['cycles']==0 and after['cycles']==cycle_refills[ordinal], 'pinned zero-budget recursive CPU refill'
+    else:
+        assert after['cycles']==before['cycles']-5, 'original DOS time overhead is preserved'
     seconds,minutes=clock_to_raw(after['cx'],after['dx'])
     words=struct.unpack('<20H',bytes.fromhex(before['stack']))
     if words[0]==0xc137:
@@ -103,13 +106,13 @@ def event_pair(event,ordinal):
     return dict(seconds=seconds,minutes=minutes,words=words,before=before,after=after)
 
 
-def port_events(observation):
+def port_events(observation,*,helper_counts=(41,19),cycle_refills=None):
     """Recover only direct original maintenance-port TIMER returns, in order."""
     assert observation['errors']==[] and type(observation['dropped'])is int and observation['dropped']==0, 'complete error-free host observation'
-    assert len(observation['events'])==1066, 'complete bounded DOS time-call inventory'
+    assert len(observation['events'])==1006+sum(helper_counts), 'complete bounded DOS time-call inventory'
     ports=[];runtime_segments=set();main_segments=set();data_segments=set()
     for ordinal,event in enumerate(observation['events'],1):
-        pair=event_pair(event,ordinal);words=pair['words']
+        pair=event_pair(event,ordinal,cycle_refills=cycle_refills);words=pair['words']
         if words[0]!=0xc137 or words[7]!=0x0927:continue
         assert words[1]>0 and words[8]>0 and words[1]!=words[8], 'distinct observed runtime/main code segments'
         runtime_segments.add(words[1]);main_segments.add(words[8]);data_segments.add(pair['before']['ds'])
@@ -123,18 +126,24 @@ def port_events(observation):
     return ports
 
 
-def model_inputs(observation):
+def model_inputs(observation,*,helper_counts=(41,19),cycle_refills=None):
     """Derive every qualified model clock input from one paired DOS return log.
 
     No world, expected timestamp table, after-file digest or prior terminating
     guest probe is read by this function. Unknown BRUN TIMER callers fail closed.
     """
-    ports=port_events(observation)
+    assert helper_counts in ((41,19),(42,19)), 'measured helper inventory profiles only'
+    refills=cycle_refills or {}
+    assert isinstance(refills,dict) and all(type(k)is int and type(v)is int and 0<v<200000 for k,v in refills.items()), 'explicit bounded refill witnesses'
+    actual_refills={e['ordinal'] for e in observation['events']
+                    if e['after']['cycles']!=e['before']['cycles']-5}
+    assert actual_refills==set(refills), 'original DOS time overhead is preserved: exact declared refill inventory'
+    ports=port_events(observation,helper_counts=helper_counts,cycle_refills=cycle_refills)
     entries={'startup':[],'helper1':[],'helper2':[],'xannoron':[],'port':[]}
     caller={0x007d:'startup',0x78fd:'helper1',0x7943:'helper2',0x218b:'xannoron',0x0927:'port'}
     runtime=set();main=set();data=set();unclassified=[]
     for ordinal,event in enumerate(observation['events'],1):
-        pair=event_pair(event,ordinal);words=pair['words']
+        pair=event_pair(event,ordinal,cycle_refills=cycle_refills);words=pair['words']
         if words[0]!=0xc137:
             unclassified.append(ordinal);continue
         assert words[7]in caller, 'all BRUN TIMER callers have explicit source attribution'
@@ -144,14 +153,14 @@ def model_inputs(observation):
         entries[label].append(dict(ordinal=ordinal,seconds=pair['seconds'],minutes=pair['minutes'],
                                    cx=pair['after']['cx'],dx=pair['after']['dx'],return_ip=words[7],
                                    runtime_cs=words[1],main_cs=words[8],ds=pair['before']['ds']))
-    assert {k:len(v)for k,v in entries.items()}=={'startup':1,'helper1':41,'helper2':19,'xannoron':1,'port':1000}, 'complete source-qualified clock input inventory'
+    assert {k:len(v)for k,v in entries.items()}=={'startup':1,'helper1':helper_counts[0],'helper2':helper_counts[1],'xannoron':1,'port':1000}, 'complete source-qualified clock input inventory'
     assert len(unclassified)==4 and len(runtime)==len(main)==len(data)==1, '1062 stable qualified clocks and four excluded DOS calls'
     # The port extractor additionally authenticates each raw DS index1..1000.
     assert [r['ordinal']for r in ports]==[r['ordinal']for r in entries['port']], 'port identities agree with caller-qualified clocks'
     return dict(port_seconds=[r['seconds']for r in entries['port']],port_minutes=[r['minutes']for r in entries['port']],
                 helper1=[r['seconds']for r in entries['helper1']],helper2=[r['seconds']for r in entries['helper2']],
                 startup=entries['startup'][0]['seconds'],xannoron=entries['xannoron'][0]['seconds'],
-                qualified=1062,unclassified=unclassified,entries=entries,
+                qualified=sum(len(v)for v in entries.values()),unclassified=unclassified,entries=entries,
                 runtime_cs=next(iter(runtime)),main_cs=next(iter(main)),ds=next(iter(data)))
 
 
@@ -176,7 +185,7 @@ def verify_module(module):
     assert 1<<32<=address<1<<48 and address%4096==0, 'observed native image base bounds'
 
 
-def verify_observation(observation,observe=True):
+def verify_observation(observation,observe=True,*,helper_counts=(41,19),cycle_refills=None):
     assert set(observation)=={'recipe','observe','module','exit_code','events','errors','dropped'}, 'exact host observation schema'
     assert observation['recipe']=='host-dos-time-observer-v1' and observation['observe'] is observe, 'declared DOS hook mode'
     assert type(observation['exit_code'])is int and observation['exit_code']==0, 'natural observed process exit code'
@@ -185,7 +194,7 @@ def verify_observation(observation,observe=True):
     if not observe:
         assert observation['events']==[], 'attach-only control has no DOS hook events'
         return None
-    return model_inputs(observation)
+    return model_inputs(observation,helper_counts=helper_counts,cycle_refills=cycle_refills)
 
 
 def verify_host_packet(directory,pins):

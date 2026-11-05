@@ -571,6 +571,14 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Independent maintenance calendar controls](research/yt-maint/CALENDAR_CONTROLS.md)
+now cover next-day, New Year, leap-day and non-midnight initial worlds. Twelve
+original-DOS runs support 24 complete six-file comparisons with zero byte
+mismatches. Bounded noon integer-minute and unnamed-lottery-candidate branches
+are modeled; exact host refill witnesses are validated. This remains research,
+with no gameplay/save-35/source-fingerprint changes or arbitrary-world claim.
+
+
 [Supplemental runtime streams](research/yt-maint/RNG_TRACE.md) preserve five
 historical instrumented captures with 127,618 checked seed/draw events and
 explicit probe-induced differences against independently hash-pinned native worlds. These complement the newer first-hit,
@@ -625,7 +633,7 @@ within eight explicit recipes, including actual midnight rollover and the native
 the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
 remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
-normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings.
+normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings. Independent fresh-world calendar controls and the same-saved-world clock matrix are both retained.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

@@ -59,6 +59,13 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+Independent initial-maintenance calendar controls now retain twelve native runs
+for next-day, New Year, leap-day and noon profiles, with 24 complete six-file
+comparisons / zero mismatches. This extends the clock-neutral baseline without
+repeating seed/count/chronology work. Bounded integer-minute, unnamed-candidate
+and exact zero-budget host-refill cases are explicit. [Evidence and scope](yt-maint/CALENDAR_CONTROLS.md).
+
+
 Supplemental historical runtime streams retain five complete instrumented
 captures / 127,618 events and measured timing perturbations. Their independent
 verifier complements the later merged seed, sequencing, chronology and record
@@ -136,12 +143,15 @@ remain separate.
    now reconstructs all six files without reading after-targets. The
    [clock-neutral TIMER profile](yt-maint/CLOCK_NEUTRAL.md) establishes complete
    untouched equality for the selected recipe, with two unobserved controls,
-   one attach-only control and three host traces. The
-   [clock/date matrix](yt-maint/CLOCK_MATRIX.md) now covers eight declared recipes:
-   all 48 native controls are neutral within recipe, and seven profiles replay
-   all six files exactly. The remaining late-night seed reaches a mobile Xannor
-   interaction with the Wanderer. Next recover that encounter's original RNG,
-   record and side-file aftermath, then add further bounded worlds and dates.
+   one attach-only control and three host traces. Independent
+   [calendar controls](yt-maint/CALENDAR_CONTROLS.md) add freshly initialized
+   next-day, New Year, leap-day and noon profiles, all fully native-equal.
+   The [clock/date matrix](yt-maint/CLOCK_MATRIX.md) separately covers eight
+   recipes against the same saved-base-year world: all 48 native controls are
+   neutral within recipe, and seven profiles replay all six files exactly.
+   Its late-night seed reaches a mobile Xannor interaction with the Wanderer.
+   Next recover that encounter's RNG, record and side-file aftermath, then
+   expand bounded occupied-placement, faction-collision and evolved-world cases.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

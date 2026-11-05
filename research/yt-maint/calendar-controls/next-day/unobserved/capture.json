@@ -1,0 +1,33 @@
+{
+  "recipe": "independent-maintenance-calendar-v1",
+  "name": "next-day",
+  "mode": "unobserved",
+  "date": "11/03/2026",
+  "clock": "00:00:00",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "elapsed_seconds": 0.7479974590241909,
+  "files": {
+    "COMMANDS.TXT": "5a7b650525ca4f6370dfd509c2c077783baed79bd8f3741b0e6751474c406812",
+    "DOSDATE.LOG": "e39fd04712807b1fb8b33e86174d707efb5bb2364c79b59c00a5867da0798ac5",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "e39fd04712807b1fb8b33e86174d707efb5bb2364c79b59c00a5867da0798ac5",
+    "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+    "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+    "TRACE.BIN": "108379224fa075c81f7f2f3e0a667a8c0aaa164d657bf99ae997bded41fd6de1",
+    "after-YTDATA.DAT.gz": "5ca567db07f488ce987b62f47b27f8ff410996514b875bd8d722319271e56805",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "5402bccd5f868a7ca7306ef9e3cd555f190ab90696e599056b5fb47f72621f7a",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTSCORE.ASC.gz": "83169f711d2811b9ac7b8045295e8999fc0c89f95469fa3b6af555536b528d7b",
+    "after-YTYNEWS.DAT.gz": "1db0f3d0497559d79308f3c241c4d438e92a81b03a5dc52ed0b6b1e3d4db9342",
+    "controller.json": "01e879dde98185620d6d409310d8318c1610e4c6cbb42dc883c54866207ce5cf",
+    "dosbox.stderr": "32af3d4f1fc483a02aac9cf5f8f8a9bb6822b062d9045c61e9b5a89bc0a0b956",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "115fe7b0913fa4d8915894c105dc8db354672213bb2fc17e5d386b0ed2e2213c"
+  }
+}

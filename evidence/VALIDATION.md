@@ -1907,3 +1907,42 @@ The recorded source is now explicitly `-text`, like the other immutable evidence
 The same export then preserves the exact original bytes and SHA. Both midnight
 and clock/date corpus verifiers pass; no captured observations, original source,
 manifest expectations, model behavior or production code changed. README updated.
+
+## Independent maintenance dates/clocks — 2026-11-05
+
+Twelve original-DOS runs cover next-day, New Year, leap-day and noon initial
+worlds. One untouched and two host-observed runs per profile agree completely.
+Eight independent traces drive 24 six-file comparisons / 13,681,416 bytes with
+zero mismatches, including all timestamps/auxiliary files. No after-target bytes
+enter synthesis. Original guest binaries and all 4,682 archive hashes remain
+unchanged. Actual acquisition sources and complete native artifacts are pinned.
+
+Five new test methods cover all four before-only profiles, eight direct
+refill/caller/port corruptions, four invalid-input/inventory cases and four pinned
+artifact mutations. Existing 63 clock-observation, 21 composed-model and eight
+clock-neutral replay tests pass. Noon adds positive INT-minute and unnamed
+lottery-candidate paths; New Year/noon require exact zero-budget CPU refill
+witnesses, not a relaxed arbitrary-cycle rule. Default baseline checks remain
+strict. No Go, save35, source fingerprints, release or live BBS claims changed.
+
+[Capture method, results and remaining bounded state work](../research/yt-maint/CALENDAR_CONTROLS.md).
+
+
+### PR #93 integration with merged calendar controls (#94)
+
+Current main added four independently initialized calendar profiles while this
+PR was validating. Integration preserves that separate corpus and verifier,
+the eight same-saved-world matrix profiles, all recorded hashes and both
+validation histories. The shared NPC writer now retains the calendar profile's
+41/42-helper admission, nonzero integer timestamp and inactive lottery-candidate
+statistics, while keeping explicit matrix creation dates, zero residue and the
+structured unsupported Wanderer encounter. No source/capture data is regenerated.
+
+
+Calendar integration validation passes: five fresh-world calendar tests and its
+12-control/24-comparison verifier; all 16 matrix model and 44 matrix verifier
+tests; historical 21 record-model, eight midnight-model and 63 midnight verifier
+tests; six deadline-stall cases, five runtime-stream tests and 4,682 archive
+hashes. The retained matrix report regenerates identically (126 exact complete
+comparisons plus three explicit late encounter gaps). Both raw corpora are
+unchanged; no production Go or dependency changes were introduced.
