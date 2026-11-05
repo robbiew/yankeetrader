@@ -1,0 +1,101 @@
+{
+  "recipe": "maintenance-placement-cache-v1",
+  "case": "wanderer-reject-two",
+  "mode": "cache-probe",
+  "date": "11/02/2026",
+  "clock": "00:00:00",
+  "cycles": 200000,
+  "patches": [
+    [
+      1146,
+      93,
+      2
+    ],
+    [
+      1843,
+      93,
+      2
+    ]
+  ],
+  "argv": [
+    "/opt/homebrew/bin/dosbox-staging",
+    "--noprimaryconf",
+    "--nolocalconf",
+    "--set",
+    "cpu_cycles=200000",
+    "--set",
+    "nosound=true",
+    "-c",
+    "mount c /private/tmp/yt-placement-cache-final-scratch/wanderer-reject-two/cache-probe",
+    "-c",
+    "c:",
+    "-c",
+    "date 11/02/2026",
+    "-c",
+    "time 00:00:00",
+    "-c",
+    "date > DOSDATE.LOG",
+    "-c",
+    "time > DOSTIME.LOG",
+    "-c",
+    "ytmaint > TRACE.BIN",
+    "-c",
+    "if errorlevel 1 echo PROGRAM_ERROR > ERROR.LOG",
+    "-c",
+    "if not errorlevel 1 echo PROGRAM_OK > OK.LOG",
+    "-c",
+    "echo PROGRAM_RETURNED > RETURN.LOG",
+    "-c",
+    "date > ENDDATE.LOG",
+    "-c",
+    "time > ENDTIME.LOG",
+    "-c",
+    "exit"
+  ],
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "guests": {
+    "YTMAINT.EXE": "1a77a6f028dcd05b7ffcf6378757d319b9228ca7bebfa66646125d6b46b86a70",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8"
+  },
+  "inputs": {
+    "YTDATA.DAT": "08a5f821fc48f26123ce6397a5f53e0855c834d7b4cee0ae68a517cfa3d2276d",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+    "YTNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+  },
+  "outputs": {
+    "YTNEWS.DAT": "7967dae610e44d659469284887a87e8ed59bda31caf6bd252c13b1c78e2a8eeb",
+    "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+    "YTDATA.DAT": "2fc4acca438b5485d7ffc5a8d45e5bc9b364f5582e537a49c50febbab053ee0e",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f"
+  },
+  "controller": {
+    "mode": "unobserved",
+    "success": true,
+    "exit_code": 0,
+    "forced": false,
+    "process_exited": true,
+    "pid": 71704
+  },
+  "elapsed_seconds": 0.3645808328874409,
+  "files": {
+    "COMMANDS.TXT": "7ae2afecd500c73f8625e6e15a332c79b7378f669ded7491c91c184055ce4c0a",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "89dd3a6fd831a39d6f448f249727918598e5b7bb869fd93ec9b158c16c6e08e7",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+    "TRACE.BIN": "51e611123c793e1fdb9c5db320ae279daa83a7c617dcf48d6ad117ed4e29821c",
+    "after-YTDATA.DAT.gz": "ac7b8e4ea16ed9d995208e4f2ba7ec61ac44a31b18bd35ceb8b1da6e7ab5aef0",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "7706784c95ab4467232e6acf116774bd6d1f5490c60f42b4d55503082cfc16d1",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTYNEWS.DAT.gz": "ef3436ebb6f97310ce69c0d9aa65dfecc2bead0ff4b37e976f79801e9c24e5fe",
+    "controller.json": "70a5cab93be4d6870a1e6ce877e12368b5eeb2fa7ceb34b912eb8c8b22fd2120",
+    "dosbox.stderr": "71674aa400fe599d14b482dfddbd8794d7d8143764141a5fbe61e4d7ac2d69ab",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "3949c04d3c1a3b08e6eec5a5e28e432bcfe8cfe2ee2559b763ebfba405abf02d"
+  }
+}

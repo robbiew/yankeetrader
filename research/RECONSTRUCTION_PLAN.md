@@ -59,6 +59,13 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [occupied-placement/faction-cache research](yt-maint/PLACEMENT_COLLISIONS.md)
+adds twelve explicit recipes: 72 full native runs with six-output observer
+neutrality, twelve early cache probes and four fresh native byte reads. Bounded
+source-qualified placement and before-only cache primitives match 432 targets
+and 480 raw fields respectively. Whole final-record synthesis for these new
+fixtures remains the next integration task; no Go/save change is implied.
+
 The local [Wanderer encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now closes
 all eight clock/date recipes: 144 complete comparisons / 864 files, with no
 mismatches, plus 18 complete comparisons / 108 files against six fresh runs.
@@ -162,8 +169,11 @@ remain separate.
    Its late-night seed reaches a mobile Xannor interaction with the Wanderer.
    The [explicit encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now recovers
    that selected branch, including RNG, raw records, public news and scores; all
-   eight profiles are native-equal. Next expand bounded occupied-placement,
-   faction-collision and populated-player/evolved-world cases.
+   eight profiles are native-equal. The [placement/cache controls](yt-maint/PLACEMENT_COLLISIONS.md)
+   now capture selected multiple-rejection, duplicate-pointer and faction-owner
+   boundaries. Next integrate those primitives into complete before-only
+   maintenance-stream/final-record replay for the new fixtures, then expand
+   valid occupied planets, foreign-force routes and evolved-world chains.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

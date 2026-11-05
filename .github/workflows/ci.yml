@@ -113,6 +113,9 @@ jobs:
           python3 scripts/verify_maintenance_wanderer.py
           python3 scripts/test_verify_maintenance_wanderer.py
           python3 scripts/test_replay_maintenance_wanderer.py
+          python3 scripts/verify_maintenance_placement.py
+          python3 scripts/test_verify_maintenance_placement.py
+          python3 scripts/test_replay_maintenance_placement.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py

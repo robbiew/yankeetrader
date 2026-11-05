@@ -642,6 +642,16 @@ or save-format change. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
 normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings. Independent fresh-world calendar controls and the same-saved-world clock matrix are both retained.
 
+**Occupied placement and faction-cache boundaries now have additional research:**
+[the twelve-recipe matrix](research/yt-maint/PLACEMENT_COLLISIONS.md) retains
+72 unchanged-executable full runs and 12 separate early cache probes. All six
+outputs agree across each recipe's observed/unobserved runs. Source-qualified
+placement replay matches 432 accepted-target checks, and a before-only cache
+primitive matches all 480 captured location/force fields. Multiple rejections,
+fractional/negative/raw-zero gates and duplicate/foreign-owner pointers are
+explicitly bounded. These are primitive/phase results; complete final-record
+synthesis for the new worlds remains separate. Gameplay and save 35 are unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

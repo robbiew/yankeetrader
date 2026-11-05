@@ -141,3 +141,9 @@ or evolved maintenance. Retain explicit rejection for unrecovered paths and pair
 new host profiles with untouched runs. General MBF and broader TIME$ formatting,
 clock rollovers during execution, exact DOS save interoperability and production
 compatibility remain separate. Modern exploit safeguards remain intentional.
+
+
+The later [occupied-placement/cache investigation](PLACEMENT_COLLISIONS.md) now
+retains twelve selected initial-world recipes and bounded primitives. Their
+complete final-record replay and general evolved-world coverage remain separate;
+do not repeat those selected source-stage captures as missing research.

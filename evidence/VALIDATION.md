@@ -1987,3 +1987,43 @@ also completed all twenty controls in a separate fresh directory; their outputs
 and diagnostics independently match the retained accepted corpus.
 All 368 pinned corpus files also passed independent verification after an index
 export with `core.autocrlf=true`; checkout cannot normalize the raw evidence.
+
+
+## Bounded occupied placement and faction-cache research — 2026-11-05
+
+Twelve a-priori initial-world recipes retain 72 unchanged-executable full DOS
+runs and twelve separately patched early cache exits. Each recipe pairs two
+unobserved, one attach-only and three host-observed full runs; every one of the
+six outputs is byte-identical within that recipe. All children exit naturally
+with status zero, intact original binary identities and checked DOS witnesses.
+The early cache probe is independently reconstructed at source `29b7`, outputs 168
+DS bytes and terminates before full maintenance; it is not a full-run golden.
+
+The before-only cache primitive matches 480 raw location/force fields. The
+source-qualified placement primitive matches 432 target checks from declared
+TIMER/old-RNG-state witnesses and before links. Multiple rejection/reseeding,
+fractional/negative/raw-zero occupancy, duplicate pointers, foreign-owner
+non-consumption and unpointed friendly-force addition are separately checked.
+All 40 modeled cache cells, raw consumed-sector zeros and cleared stored pointers
+are verified; the two unused packet cells stay retained without invented model
+values. Four fresh complete REA reads independently match relocated original
+bytes. Input recipes, actual sources, host frames/logs, output identities and
+all 1773 retained corpus files are pinned rather than automatically approved.
+
+This research does not synthesize all final bytes for the twelve new worlds.
+Measured Base old RNG states are explicit midstream inputs, not reconstruction
+of all prior faction movement. The original complete clock/Wanderer replay
+remains available. No Go gameplay/dependency change, save 35 migration, original
+archive modification, live BBS acceptance or native Windows acceptance is
+claimed. See [scopes and reproduction](../research/yt-maint/PLACEMENT_COLLISIONS.md).
+
+Final local validation passed: 37 primitive/model tests and 69 independent
+verifier tests; 18 prior Wanderer model tests, 63 Wanderer verifier tests, 16
+historical matrix model tests, complete matrix/Wanderer evidence verification,
+and all 4682 original archive hashes. The six-mode output equality and all 480
+cache fields / 432 placement checks pass for every accepted recipe. Production Go,
+terminal gameplay and platform builds were not rerun for this research-only
+change; those checks remain enabled in CI.
+All 1773 pinned corpus files additionally pass independent verification after
+an index export with `core.autocrlf=true`; no raw observation or acquisition
+source is normalized by checkout.

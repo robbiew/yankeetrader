@@ -330,3 +330,10 @@
 /research/yt-maint/wanderer-encounter/**/*.BIN -diff
 /research/yt-maint/wanderer-encounter/**/dosbox.stdout -diff
 /research/yt-maint/wanderer-encounter/**/dosbox.stderr -diff
+
+# Preserve raw occupied-placement/cache evidence and acquisition sources.
+/research/yt-maint/placement-cache-controls/** -text
+/research/yt-maint/placement-cache-controls/**/*.LOG -diff
+/research/yt-maint/placement-cache-controls/**/*.BIN -diff
+/research/yt-maint/placement-cache-controls/**/dosbox.stdout -diff
+/research/yt-maint/placement-cache-controls/**/dosbox.stderr -diff

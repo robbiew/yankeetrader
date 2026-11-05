@@ -147,9 +147,11 @@ Frida, Go, original-DOS execution or network access.
 
 ## Next genuinely unfinished slice
 
-Broaden bounded occupied-placement/rejection, faction-collision/merging and
-populated-player/evolved-world maintenance controls. Unconfirmed encounter and
-numeric paths still fail closed. Do not repeat this selected Wanderer integration,
+The subsequent [placement/cache research](PLACEMENT_COLLISIONS.md) now retains
+selected multi-rejection and duplicate/foreign-owner controls with bounded
+primitives. Integrate those new fixtures into complete before-only maintenance
+replay, then broaden valid occupied planets, route collisions and evolved worlds.
+Unconfirmed encounter and numeric paths still fail closed. Do not repeat this selected Wanderer integration,
 clock-neutral timestamp closure, complete initializer generation, calendar
 controls or already implemented gameplay as missing work. Real BBS and native
 Windows acceptance remain separate from this research.
