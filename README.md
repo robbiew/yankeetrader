@@ -561,7 +561,7 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 
 `-system` is a stable namespace for the BBS. Identity uses this value plus the positive user-record number on Door32 line five; alias is display information. Changing an alias does not create a fresh ship. Keep the system value stable. Local identities are separate from Door32 identities.
 
-GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
+GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. Linux/macOS sessions accept unused Door32 communication handles such as `-1`, using the BBS-provided standard I/O streams. Rebuild older binaries with the GoDoors revision below to pick up this startup fix. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
 Native macOS PTY and simulated BBS Door32 stdio sessions over localhost TCP were
 exercised, including multiple concurrent callers through victory. This is not
@@ -668,7 +668,7 @@ CI allows 30 minutes for the complete race, evidence, terminal and cross-build
 sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
 random encounters while retaining their resource, replay and durability checks.
 
-Requires Go 1.23+ and a local GoDoors checkout at commit [`9364a49ddd7c396ccbfcdd3c240c104ea9178551`](https://github.com/robbiew/godoors/commit/9364a49ddd7c396ccbfcdd3c240c104ea9178551) or a descendant. That revision includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. No changes were made to the GoDoors repository.
+Requires Go 1.23+ and a local GoDoors checkout at commit [`2bb91d527ae926b436a5a65eb380441eb937e6a9`](https://github.com/robbiew/godoors/commit/2bb91d527ae926b436a5a65eb380441eb937e6a9) or a descendant. That revision fixes `OpenSession` rejecting unused Unix Door32 handles such as `-1`; it also includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. CI and release builds pin this GoDoors revision. The Unix handle regression and GoDoors suite pass locally, along with Yankee Trader startup and door tests; live Scorpio BBS acceptance remains pending.
 
 ```sh
 go build -o bin/yt ./cmd/yt
