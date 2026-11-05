@@ -113,10 +113,14 @@ planet slot1 and replaces only these fields:
 
 - Name `The Wanderer`, active/name length85=12, date41=current day−10.
 - Base cargo rates45/49/53=5000 each; cargo stocks57/61/65=0.
-- Missiles69, owner73, ground77, field81 and mines125=0.
+- Missiles69, owner73, ground77 and mines125=0.
 - Bank117=250000.
 
-This branch does not explicitly replace fields89,93,97,101,105,109,113,121 or129.
+This branch does not explicitly replace field81 or fields89,93,97,101,105,109,113,121 or129.
+The byte-level [maintenance replay research](../../yt-maint/RECORD_REPLAY.md)
+corrects the earlier field81-clear claim: the inherited slot's day value 305
+survives unchanged. A fresh complete writer read anchors the bounded absence of
+that assignment; named fields are not a clean-record constructor.
 Stale time, bolts, ground production or fighters can therefore survive a partial
 restore unless earlier maintenance phases independently changed them. The
 following relocation phase still runs after this restoration.

@@ -273,3 +273,9 @@
 /research/yt-maint/chronology-controls/**/*.LOG -diff
 /research/yt-maint/chronology-controls/**/TRACE.BIN -diff
 /research/yt-maint/chronology-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# Record-replay clock controls preserve exact DOS bytes and witness CRLF.
+/research/yt-maint/record-input-controls/** -text
+/research/yt-maint/record-input-controls/**/*.LOG -diff
+/research/yt-maint/record-input-controls/**/TRACE.BIN -diff
+/research/yt-maint/record-input-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

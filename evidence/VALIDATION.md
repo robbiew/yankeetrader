@@ -1672,3 +1672,59 @@ README, the current plan and CI are updated in this milestone.
 Next recover exact post-maintenance record/auxiliary synthesis from these measured
 phase/seed anchors. Arbitrary-world dynamic behavior, unobserved indirect paths,
 general MBF arithmetic and production BBS/Windows durability remain separate.
+
+## Bounded maintenance record model and retained clock gap — 2026-11-04
+
+Local research on `feat/maintenance-record-replay`, based on the published phase
+chronology commit `7b8bef0`/PR #88. Core synthesis takes the three pre-maintenance
+files, original executable constants and explicit measured clock inputs. It
+accepts no target world or per-record output patch table. No Go, dependency,
+source archive, playable profile or save-format 35 changes.
+
+- Independently modeled all 4,151 records and five auxiliary files. Against both
+  paired instrumented main-body-end outputs, all 570,059 bytes match exactly.
+  Against four untouched runs, all configuration/player/sector/planet bytes and
+  all 1,372 auxiliary bytes match; port bytes match 136,996 of 137,000.
+- The only untouched differences remain port 606/record 3657, offsets 101–104:
+  raw `00004800` versus the diagnostic profile's `0e745a76`. A counter and a
+  separate flags-preserving read-only 386 comparison both move this clock edge.
+  No timestamp masking, target-derived correction, CPU tuning or expected-hash
+  refresh hides it. This is not exact untouched replay completion.
+- `python3 scripts/verify_maintenance_record_inputs.py`: all 28 retained controls,
+  three named diagnostic profiles, four untouched runs and 14 fresh relocated
+  native reads pass. Prior helper TIMER samples are verified by the independent
+  463-control sequence checker before use.
+- `python3 scripts/test_verify_maintenance_record_inputs.py`: 48 corruption and
+  provenance tests pass, including rehashed launch/witness/native changes,
+  raw startup/Xannoron input mutations, the 605/606 transition, complete output
+  inventories and attempted hiding/relocation of the four-byte gap.
+- `python3 scripts/test_replay_maintenance_ports.py`: 10 property tests pass for
+  ten-day stock/class/sign logic, first-maximum ties, raw zero mantissas,
+  inherited bytes, finite inputs and prohibition of target-file reads.
+- `python3 scripts/test_replay_maintenance_records.py`: 21 whole-file/model-guard
+  tests pass. These cover all six file extents/hashes, exact remaining mismatch
+  locations/values, original-only file access during synthesis, derived RNG/
+  routes, inherited-field propagation and unsupported fixture/clock inputs.
+- `replay_maintenance_records.py --output ...` regenerates the complete report
+  without masking any bytes. Its `--require-untouched-exact` mode correctly
+  returns failure while the known gap remains. Passing research tests explicitly
+  do not equate to meeting that stronger parity condition.
+- Fresh source evidence corrects the old Wanderer restoration offset-81-clear
+  statement: the writer preserves that inherited offset, numerically 305 in this
+  fixture. It also establishes the inactive score-cache initializer as eight-byte
+  MBF double −1, not a four-byte single zero inferred from its prefix.
+- Retained readonly diagnostic NASM source matches the capture/reconstruction
+  byte-for-byte for the never-hit and port 606 targets. All 11 new Python scripts
+  compile; research links, byte-preserving attributes and scoped diff checks pass.
+- Earlier chronology verification (332 controls/three native reads), 51 chronology
+  negative tests, 49 sequence negative tests, 57 Wanderer controls/two diagnostics/
+  14 native reads and all 4,682 archive hashes pass unchanged.
+- README and the current plan now make the four-byte clock limit the next genuine
+  research task. CI adds the independent input verifier and all 79 new tests while
+  preserving every existing validation lane/command. Python standard library
+  suffices for portable checks; DOSBox/REA/NASM/Java remain research tools.
+
+No new Go-suite/terminal gameplay, native Windows durability or live BBS acceptance
+is claimed. Next obtain a clock-neutral TIMER boundary observation or independent
+timing model, require full untouched equality, and extend to independently measured
+dates/clocks before any production compatibility change.

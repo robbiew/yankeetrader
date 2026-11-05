@@ -95,6 +95,10 @@ jobs:
           python3 scripts/test_verify_maintenance_sequence.py
           python3 scripts/verify_maintenance_chronology.py
           python3 scripts/test_verify_maintenance_chronology.py
+          python3 scripts/verify_maintenance_record_inputs.py
+          python3 scripts/test_verify_maintenance_record_inputs.py
+          python3 scripts/test_replay_maintenance_ports.py
+          python3 scripts/test_replay_maintenance_records.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py
