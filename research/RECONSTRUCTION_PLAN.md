@@ -2,10 +2,10 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-04
+## Current implementation and next work — checked 2026-11-05
 
 This section is the current planning baseline, checked against merged `main`
-through `41abf76`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `70b8832`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -74,9 +74,12 @@ mobile groups' eager scans and the tail RNG families in the selected baseline.
 General MBF arithmetic and production compatibility remain separate; do not repeat
 these measured seed/count boundaries as missing work or describe research as a
 gameplay change. The [record replay model](yt-maint/RECORD_REPLAY.md) now closes
-all measured non-timestamp bytes and auxiliary files in the bounded baseline,
-with four untouched port timestamp bytes explicitly unresolved. This is not an
-exact untouched-replay or production compatibility completion claim.
+all measured record and auxiliary-file bytes in the bounded baseline. The new
+[clock-neutral host profile](yt-maint/CLOCK_NEUTRAL.md) closes the remaining
+four-byte port timestamp gap: all six files match untouched fresh and historical
+controls exactly for one world/date/emulator recipe. The historical diagnostic
+profile retains its mismatch. Arbitrary maintenance and production compatibility
+remain separate.
 
 
 | Milestone | Implemented behavior and evidence |
@@ -124,10 +127,12 @@ exact untouched-replay or production compatibility completion claim.
    fixture and one occupied-candidate retry. The [phase chronology](yt-maint/PHASE_CHRONOLOGY.md)
    now joins the selected baseline's helper states to group/player scan boundaries
    and the desertion/lottery tail. The [bounded record model](yt-maint/RECORD_REPLAY.md)
-   now reconstructs all six files without reading after-targets: paired instrumented
-   outputs match exactly, while untouched runs retain four port timestamp-byte
-   mismatches. Next recover a clock-neutral TIMER boundary observation, require
-   complete untouched equality, then add independent dates/clocks. General MBF,
+   now reconstructs all six files without reading after-targets. The
+   [clock-neutral TIMER profile](yt-maint/CLOCK_NEUTRAL.md) establishes complete
+   untouched equality for the selected recipe, with two unobserved controls,
+   one attach-only control and three host traces. Next add independently measured
+   dates/clocks and additional bounded worlds without silently generalizing the
+   recovered midnight schedule. General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
    graph, port or selected complete-record replay as missing work.

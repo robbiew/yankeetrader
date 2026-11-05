@@ -600,13 +600,17 @@ match directed original warp edges. These bounded observations do not claim
 **A bounded maintenance record model is now available for research:** it derives
 all sector, planet, configuration and inactive-player bytes, plus all five
 auxiliary files, from before-inputs, original constants and measured clock values.
-All six files match the paired instrumented outputs exactly. Untouched runs still
-differ in **four port timestamp bytes** because the diagnostic moves one clock
-boundary. No timestamp mask or target-derived correction hides that gap; this is
-not yet exact untouched maintenance replay or a gameplay/save-35 change.
-[Record model, complete comparison and remaining clock work](research/yt-maint/RECORD_REPLAY.md). The documented entry
-capture command emits all four required controls, including the raw startup TIMER
-witness used to derive the replay seed; a contract regression checks that inventory.
+The new host-clock profile now matches **all six untouched output files exactly**
+(570,059 bytes) across six fresh controls and four historical targets. It derives
+all TIMER inputs from paired host observations without adding guest instructions;
+the original transition is at port 607. The earlier guest-instrumented profile
+and its four-byte timestamp discrepancy remain retained without masks or
+target-derived correction. This closes the bounded clock gap for one initial
+world/date/emulator recipe, not arbitrary maintenance prediction or a
+playable/save-35 change. [Clock-neutral evidence, complete comparison and limits](research/yt-maint/CLOCK_NEUTRAL.md).
+The [historical record-model report](research/yt-maint/RECORD_REPLAY.md) remains
+reproducible; its entry capture command emits all four required controls,
+including the raw startup TIMER seed witness.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

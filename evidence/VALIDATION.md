@@ -1745,3 +1745,47 @@ all 14 native reads remain unchanged; no raw captures or expected pins were
 refreshed. The input suite now has 49 tests, with 21 composed-model and 10 port tests
 also passing (80 new tests total). README and the current reproduction notes are
 updated. The four-byte untouched port-clock limitation is unchanged.
+
+
+### Clock-neutral maintenance TIMER research — 2026-11-05
+
+The bounded four-byte untouched port timestamp gap is closed by a separate
+host-observed profile; the historical diagnostic profile/report/pins are retained
+unchanged. This research changes no Go gameplay, dependency, original archive,
+`qb36-v1` fingerprint or save35 format.
+
+- Six final runs use unmodified original guest binaries and identical three-file
+  inputs at DOS11/02/2026 midnight, fixed200000cycles: two unobserved controls,
+  one Frida attach-only control and three paired host DOS-time observations.
+  Every run exits naturally with status0; no forced stop or observer error/drop.
+- All six resulting files (570,059bytes) are byte-identical across all six final
+  controls and four independently authenticated historical untouched controls.
+  Each host trace independently supplies every TIMER input; all30 complete
+  before-to-after replay comparisons have zero differing bytes.
+- All1,000 port calls are source/frame/index qualified. The original boundary is
+  port607, not606; all41/19helper calls, startup seed and Xannoron TIMER come
+  from the same observation. Exact rational conversion preserves two distinct
+  single-rounding stages and original zero residue, not a target-derived patch.
+- Independent verification pins the installed macOSARM64 DOSBox0.83.0 binary,
+  loaded UUID/prologue, original guest code/frame signatures, complete raw paired
+  registers, exact launch/actual CPU logs, capture sources, Frida17.23.2 identity,
+  natural PID cleanup and every retained raw artifact. Fourteen primary host
+  source files and native static evidence explain the observer layout.
+- All63 independent regressions pass, covering arithmetic, paired events,
+  source attribution and24 capture-provenance checks (23 corruption cases). A valid606 clock
+  substitution reproduces exactly four real byte differences and is rejected
+  against the saved timestamp before immutable pin checking: no field is masked.
+- Eight new profile tests pass, including no file reads during input derivation,
+  no target/prior-probe reads in core synthesis, unchanged-byte propagation and
+  all30 full comparisons. Historical49 input,21 composed-model,10 port,
+  51 chronology and49 sequence regressions pass; original verifiers and all4,682
+  archive hashes pass unchanged. Python/JavaScript syntax and relative links pass.
+- The superseded REA pilot and client/logger diagnostics are explicitly separated
+  from the accepted six-case matrix. Host instrumentation is not passive: the
+  neutrality claim is limited to this exact recipe and complete output evidence.
+
+README, reconstruction plan, retained comparison report and CI are updated in
+this milestone. Portable checks require Python standard library only. No new
+Go-suite, gameplay terminal, native Windows durability or live BBS acceptance is
+claimed. Next independently recover additional dates/clocks and bounded worlds;
+arbitrary-world maintenance prediction and production compatibility remain open.

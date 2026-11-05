@@ -1,0 +1,91 @@
+{
+  "ref_url": "https://api.github.com/repos/dosbox-staging/dosbox-staging/git/ref/tags/v0.83.0",
+  "files": [
+    {
+      "path": "src/cpu/registers.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/cpu/registers.h",
+      "sha256": "898d607c981b2b1288163efa2b010890425eabd3ef6afa13371ed1a359b465f6",
+      "bytes": 8472
+    },
+    {
+      "path": "src/hardware/memory.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/hardware/memory.h",
+      "sha256": "5d4958c0e77f6459bc8c2f10cb9d29f2df234853024c4836106aab0f2f23ab73",
+      "bytes": 7377
+    },
+    {
+      "path": "src/dos/dos.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/dos/dos.cpp",
+      "sha256": "46e79fcbadbb4ac845500f1a5459ce9a3061875cd0f192d0e168231773679144",
+      "bytes": 61161
+    },
+    {
+      "path": "src/cpu/cpu.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/cpu/cpu.h",
+      "sha256": "08f0249c3bbc12a6f859f3a8a656601a0923075b07d01947cf56885836cb468a",
+      "bytes": 14046
+    },
+    {
+      "path": "src/hardware/memory.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/hardware/memory.cpp",
+      "sha256": "aca92cadaf05898e4c01934ab5b7725c53c557f1b8947a5e990749876abe7164",
+      "bytes": 19086
+    },
+    {
+      "path": "src/cpu/core_normal.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/cpu/core_normal.cpp",
+      "sha256": "0852dd43d2a8d9e240432d5a433a49ecdce36d11ee14e139726d4b76606ae218",
+      "bytes": 4608
+    },
+    {
+      "path": "src/hardware/pic.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/hardware/pic.h",
+      "sha256": "bb08c74e223ab8d7642a168ee6bfad71dd3d9a60e0ed3ba27065f32bb8b43b3e",
+      "bytes": 2209
+    },
+    {
+      "path": "src/hardware/pic.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/hardware/pic.cpp",
+      "sha256": "2d22073226014d01b7202c58e23cbf62d077041b4cd6a7cab237c95dfaca7465",
+      "bytes": 19499
+    },
+    {
+      "path": "src/utils/checks.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/utils/checks.h",
+      "sha256": "887ebd6873c8cacbc8d1409b523162961c5cbc39a4238c1eb98cc24c8642b562",
+      "bytes": 1801
+    },
+    {
+      "path": "src/cpu/callback.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/cpu/callback.cpp",
+      "sha256": "78da9ee05cc9e04fb0f99422144361a921a8a5c3a9ac8679610bb0bfaa786de5",
+      "bytes": 24906
+    },
+    {
+      "path": "src/cpu/callback.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/cpu/callback.h",
+      "sha256": "38164b60c94b84fa0906ec19a8ab60a78b1aab0eb1900c23a29dede30a575922",
+      "bytes": 3219
+    },
+    {
+      "path": "src/dosbox.cpp",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/dosbox.cpp",
+      "sha256": "32546688746beef6c38b4d68eacc60f4b013b2671a4eade588031fe14ce2977d",
+      "bytes": 37454
+    },
+    {
+      "path": "src/misc/types.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/misc/types.h",
+      "sha256": "935e41ec48234e19be81048f4e3712ced874fad2a71617fb70982f014e3f1a81",
+      "bytes": 795
+    },
+    {
+      "path": "src/config/config.h",
+      "url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/v0.83.0/src/config/config.h",
+      "sha256": "183f1d65d1a9a3a8260ffc643f273f458261b8684c63c5b52f6212ffc7af7c4b",
+      "bytes": 4137
+    }
+  ],
+  "commit": "7b40053b7ac580843d0461eba8c36a47a990e66c",
+  "pinned_commit_base_url": "https://raw.githubusercontent.com/dosbox-staging/dosbox-staging/7b40053b7ac580843d0461eba8c36a47a990e66c/"
+}

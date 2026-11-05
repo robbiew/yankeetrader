@@ -1,4 +1,10 @@
-# Bounded maintenance record replay — four untouched timestamp bytes remain
+# Bounded maintenance record replay — historical guest-clock profile
+
+**2026-11-05 update:** the separate [clock-neutral host profile](CLOCK_NEUTRAL.md)
+closes the four-byte gap for this bounded recipe and exactly replays all six
+untouched files. This report, its old profile and comparison pins remain unchanged
+as historical evidence; statements below about the remaining gap describe that
+guest-instrumented profile.
 
 This is a research-only before-to-after model of the all-inactive-player initial
 fixture. It follows [the measured RNG phase ledger](PHASE_CHRONOLOGY.md) from

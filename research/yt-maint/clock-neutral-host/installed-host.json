@@ -1,0 +1,35 @@
+{
+  "target_path": "/opt/homebrew/Cellar/dosbox-staging/0.83.0/bin/dosbox",
+  "sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "size": 22872608,
+  "architecture": "arm64",
+  "preferred_image_base": "0x100000000",
+  "symbols": {
+    "DOS_21Handler": "0x1000db990",
+    "cpu_regs": "0x101396d60",
+    "Segs": "0x101396e78",
+    "MemBase": "0x1023abb90",
+    "CPU_CycleMax": "0x100464ac4",
+    "CPU_CycleAutoAdjust": "0x101396ec0"
+  },
+  "selected_native_bytes": {
+    "entry": {
+      "address": "0x1000db990",
+      "length": 64,
+      "bytes_hex": "fc6fbaa9fa6701a9f85f02a9f65703a9f44f04a9fd7b05a9fd430191ffc314d1e81b00f008a547f9080140f9a8831af8d39500f07382359168064039091d0012",
+      "sha256": "4b9660cdc5425d4bd1c4097469f845e8aa166b3392e790e27e675200a5ef70ef"
+    },
+    "gettime": {
+      "address": "0x1000dc4e4",
+      "length": 244,
+      "bytes_hex": "7f020079400380528611fe9760024039400000b499050094680a407969124079284108aae94301f0298141f93f0108ebe983899a080109cb0001639e88058052c91900b021d946fd0008611e0900799e6806003928fd42d36ab89ed20a85abf2ea51d8f2aa1ee5f2087dca9b08fd42d38a0c80520aa50a1b6a220039eae302b2aa8888f28a88e0f20b7dca9b8c07805268a10c1b68260039a83485d2a8e2acf2e8c3c7f268d8f5f2287dc89b08fd4cd30a7dca9b48a10c1b68120039a8af87d22858a7f2a87bdbf2284df7f2287dc89b08fd52d3e9f301b2695595f24955e1f2097dc99b0a03805228a10a1b681600395d000014",
+      "sha256": "ae7e68303b3afe6c633698f60bf8b3c9f13757a0f90390ea043f7739201d5f76"
+    },
+    "dosoverhead": {
+      "address": "0x1000dc748",
+      "length": 16,
+      "bytes_hex": "68424079080900116842007943040014",
+      "sha256": "8575f3cf1d7f054d3d9c7815932ec7bfad959c6a00ee515b269752abb2402ecd"
+    }
+  }
+}
