@@ -1802,3 +1802,27 @@ failure metadata and target termination. The original acquisition controller is
 retained under `clock-neutral-acquisition/` and verified through the unchanged
 original manifest digest. Original observations and source hash claims are not
 retroactively assigned to the fixed controller. README updated.
+
+## Supplemental historical runtime streams — published 2026-11-05
+
+Five full-stream experiments captured 2026-11-04 are retained separately under
+`runtime-stream-controls`, with uniquely named capture/verifier/test scripts.
+They check 127,618 seed/draw events and exact measured probe-induced boundaries;
+no native observations or hashes were changed. This preserves the earlier
+experiment without overwriting merged PRs #86–90, their newer controls or their
+record-model claims. No gameplay/save/release changes.
+
+`verify_maintenance_runtime_streams.py` and its four-method / 17-rejection suite
+pass after integration with current main. Existing first-hit and sequencing
+verifiers also pass. README and plan distinguish supplemental history from
+newer implemented research. Unrelated smoke captures remain unstaged.
+
+
+### PR #92 paired native reference integrity
+
+The standalone full-stream verifier now validates each decompressed paired native
+world against the existing independent initial-maintenance pin before computing
+the perturbation boundary. A new regression alters an already differing byte
+while preserving the exact differing-byte positions/count; it is rejected by the
+native pin. No retained reference bytes or hashes changed. Five test methods /
+18 rejection controls and all five full streams pass; README updated.

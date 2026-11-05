@@ -292,3 +292,8 @@
 /scripts/observe_maintenance_clock.js text eol=lf
 /scripts/capture_maintenance_clock_neutral.mjs text eol=lf
 /scripts/recover_maintenance_clock_neutral.py text eol=lf
+
+# Supplemental historical runtime streams preserve original DOS/probe bytes.
+/research/yt-maint/runtime-stream-controls/** -text
+/research/yt-maint/runtime-stream-controls/**/*.LOG -diff
+/research/yt-maint/runtime-stream-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

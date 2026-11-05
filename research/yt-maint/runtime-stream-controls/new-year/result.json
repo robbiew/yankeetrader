@@ -1,0 +1,35 @@
+{
+  "recipe": "maintenance-runtime-rng-v1",
+  "name": "new-year",
+  "source_control": "new-year-split",
+  "date": "01/01/2027",
+  "time": "00:00:00",
+  "cpu_cycles": 200000,
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "copied_runtime_sha256": "fc057b5b24c48f7d4571bec15bf896316d77e18f846c3b7dcf8ef2fbbf8a2595",
+  "payload_file_offset": 65458,
+  "payload_hex": "a33502eb03b800889c601e8becff361c00ff361a00ff363602ff36340236ff7614684721680052161f8bd4bb0100b90e00b440cd2183c40e1f619dc3",
+  "files": {
+    "DOSDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ENDDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+    "ENDTIME.LOG": "223237d363978fdbe40387eb6610c105d955545b5f76bbdcfbb59ce31aaff57a",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "after-YTDATA.DAT.gz": "413ed881d46325280a9a818b8c0e991a822e2c327dc7444eecb59e94481c644e",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "38fe1902412775ec431acaedcf0d7c103cb94f5954cd824083fadd8621ffa60b",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTSCORE.ASC.gz": "6427e37e75fd0fc7ec72370a06efc1f4fa98f175712a1d5d438ec51676437024",
+    "after-YTYNEWS.DAT.gz": "141fad7df05d81388c613adc9508e15e56870d95785ae8e41686a545d09e0c5c",
+    "before-YTDATA.DAT.gz": "85bf69d41562f742396bded4c5c881771f2204cbe7d59423f28c71ab79593866",
+    "before-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "before-YTNEWS.DAT.gz": "141fad7df05d81388c613adc9508e15e56870d95785ae8e41686a545d09e0c5c",
+    "trace-commands.txt": "7a41bfc55582fbc57802eb1221ad687c0c798519fa3f2a155601bc57c810e401",
+    "trace-dosbox.log": "dcc33edaad1aeb1b43267ebbf2de42ad00313af639cc21a2572ca6dac3dab6bd",
+    "trace.bin.gz": "43db02681337fc45a5ee46512044bfd2b6ded01e25c7da3734b91422067d670b"
+  }
+}
