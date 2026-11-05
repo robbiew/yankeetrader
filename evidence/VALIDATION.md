@@ -1826,3 +1826,23 @@ the perturbation boundary. A new regression alters an already differing byte
 while preserving the exact differing-byte positions/count; it is rejected by the
 native pin. No retained reference bytes or hashes changed. Five test methods /
 18 rejection controls and all five full streams pass; README updated.
+
+
+## Independent maintenance dates/clocks — 2026-11-05
+
+Twelve original-DOS runs cover next-day, New Year, leap-day and noon initial
+worlds. One untouched and two host-observed runs per profile agree completely.
+Eight independent traces drive 24 six-file comparisons / 13,681,416 bytes with
+zero mismatches, including all timestamps/auxiliary files. No after-target bytes
+enter synthesis. Original guest binaries and all 4,682 archive hashes remain
+unchanged. Actual acquisition sources and complete native artifacts are pinned.
+
+Five new test methods cover all four before-only profiles, eight direct
+refill/caller/port corruptions, four invalid-input/inventory cases and four pinned
+artifact mutations. Existing 63 clock-observation, 21 composed-model and eight
+clock-neutral replay tests pass. Noon adds positive INT-minute and unnamed
+lottery-candidate paths; New Year/noon require exact zero-budget CPU refill
+witnesses, not a relaxed arbitrary-cycle rule. Default baseline checks remain
+strict. No Go, save35, source fingerprints, release or live BBS claims changed.
+
+[Capture method, results and remaining bounded state work](../research/yt-maint/CALENDAR_CONTROLS.md).

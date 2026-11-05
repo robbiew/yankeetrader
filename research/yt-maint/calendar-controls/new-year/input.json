@@ -1,0 +1,22 @@
+{
+  "name": "new-year",
+  "date": "01/01/2027",
+  "clock": "00:00:00",
+  "binaries": {
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "files": {
+    "before-YTDATA.DAT.gz": "85bf69d41562f742396bded4c5c881771f2204cbe7d59423f28c71ab79593866",
+    "before-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "before-YTNEWS.DAT.gz": "141fad7df05d81388c613adc9508e15e56870d95785ae8e41686a545d09e0c5c",
+    "init-ANSWERS.TXT": "e7d259db82cec2d1e4d5408aac17d8552f046cf37f21a8f08b585efc5d2e8d33",
+    "init-DOSDATE.LOG": "6aea78a232be007cb2f463f9b6901575b44c287486d4c5c91bbae3cadc1c4154",
+    "init-DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "init-INIT.LOG": "d7a9dfe4b760518074171087ec274ecf862d8f83a9f44bd7876f77e5fc80f555",
+    "init-INITRET.LOG": "c051951713e6b0ec1748734028784b1ce49c7b4bdeb42d5d46d5040ff54c2461",
+    "init-init-commands.txt": "8af0654c1da16a222d465f22fd90b568603fa04954955d386404b9343e307169",
+    "init-init-dosbox.log": "1a9b421b1459a34568dca55478fd87665ed356ae995073978b3cccb3fbb77f42"
+  }
+}

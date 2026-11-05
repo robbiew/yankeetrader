@@ -571,6 +571,14 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Independent maintenance calendar controls](research/yt-maint/CALENDAR_CONTROLS.md)
+now cover next-day, New Year, leap-day and non-midnight initial worlds. Twelve
+original-DOS runs support 24 complete six-file comparisons with zero byte
+mismatches. Bounded noon integer-minute and unnamed-lottery-candidate branches
+are modeled; exact host refill witnesses are validated. This remains research,
+with no gameplay/save-35/source-fingerprint changes or arbitrary-world claim.
+
+
 [Supplemental runtime streams](research/yt-maint/RNG_TRACE.md) preserve five
 historical instrumented captures with 127,618 checked seed/draw events and
 explicit probe-induced differences against independently hash-pinned native worlds. These complement the newer first-hit,
