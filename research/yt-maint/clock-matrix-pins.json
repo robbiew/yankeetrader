@@ -1226,7 +1226,7 @@
     "date-time.bin": "9e0740a46b35ccb6dcb744245566715fca08a22f072812ded404444524193aea",
     "rea.json": "cda964db868992eeab17ad37e9434142c1ab173e09cde1e1d9af12190e8a37c7",
     "src--ints--bios.cpp": "e85868def4b5c0367a2a27f4a131f64c989479c3a3e3a645944135a1cb3e9cd4",
-    "text_clock_contract.py": "f331305cdca39a0aa69eaaf775f4780a98ff94bb95b7ff2aef1446de8666bbae"
+    "text_clock_contract.py": "4c6510d430f041cda9c44cba94884819ab6bf163cd848df507216817821b5a89"
   },
   "scripts": {
     "scripts/capture_maintenance_clock_neutral.mjs": "01cb319f697c40888d66fe313763b5e879a85e640ee99a488a5b6adb0ecda5eb",

@@ -59,6 +59,12 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+Supplemental historical runtime streams retain five complete instrumented
+captures / 127,618 events and measured timing perturbations. Their independent
+verifier complements the later merged seed, sequencing, chronology and record
+replay milestones; it does not reopen their completed work.
+[Historical stream evidence](yt-maint/RNG_TRACE.md).
+
 Original initial-maintenance research now retains eight native controls with
 untouched integrated launches, split before/after files, exact repeats and
 clock-sensitive NPC placement. [Findings and remaining precision work](yt-maint/INITIAL_MAINTENANCE.md).
@@ -132,7 +138,7 @@ remain separate.
    untouched equality for the selected recipe, with two unobserved controls,
    one attach-only control and three host traces. The
    [clock/date matrix](yt-maint/CLOCK_MATRIX.md) now covers eight declared recipes:
-   all48 native controls are neutral within recipe, and seven profiles replay
+   all 48 native controls are neutral within recipe, and seven profiles replay
    all six files exactly. The remaining late-night seed reaches a mobile Xannor
    interaction with the Wanderer. Next recover that encounter's original RNG,
    record and side-file aftermath, then add further bounded worlds and dates.

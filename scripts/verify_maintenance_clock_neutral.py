@@ -392,7 +392,11 @@ def verify(directory=DEFAULT,pins_path=PINS_FILE,host_directory=HOST_DIR):
     assert set(pins)=={'cases','host','scripts','zero_trace_sha256'}, 'independent full evidence pin schema'
     assert {p.name for p in directory.iterdir()}==set(pins['cases'])==set(CASES), 'complete six-case corpus'
     assert set(pins['scripts'])==set(CAPTURE_SCRIPTS), 'complete declared acquisition source inventory'
-    for path,digest in pins['scripts'].items():assert SHA((ROOT/path).read_bytes())==digest, 'immutable audited acquisition source: '+path
+    for path,digest in pins['scripts'].items():
+        # Preserve the exact controller that acquired the immutable corpus.
+        actual = ('research/yt-maint/clock-neutral-acquisition/capture_maintenance_clock_neutral.mjs'
+                  if path == 'scripts/capture_maintenance_clock_neutral.mjs' else path)
+        assert SHA((ROOT/actual).read_bytes())==digest, 'immutable audited acquisition source: '+path
     verify_host_packet(host_directory,pins['host'])
     verify_guest_contracts(pins['zero_trace_sha256'],host_directory)
     observer=OBSERVER.read_text()

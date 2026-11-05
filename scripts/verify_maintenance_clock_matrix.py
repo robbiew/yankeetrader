@@ -20,7 +20,7 @@ import verify_maintenance_clock_neutral as neutral
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT=ROOT/'research/yt-maint/clock-matrix-controls'
 PINS_FILE=ROOT/'research/yt-maint/clock-matrix-pins.json'
-PINS_SHA='3373e51fa7d49ca8dc14bb402de0a93cd943616f0fd9f5b363518a3593e0ef7f'
+PINS_SHA='6156ee078a8a00edbfe6ad89e44fa8fe592295f025b9285582fdc65b3b7310f7'
 SHA=lambda b:hashlib.sha256(b).hexdigest()
 clock_to_raw=neutral.clock_to_raw
 mbf_fraction=neutral.mbf_fraction
@@ -301,7 +301,13 @@ def verify(directory=DEFAULT,pins_path=PINS_FILE):
     raw=Path(pins_path).read_bytes();assert SHA(raw)==PINS_SHA, 'immutable clock-matrix manifest'
     pins=json.loads(raw);assert set(pins)=={'cases','native','scripts'}, 'complete independent matrix manifest schema'
     assert set(pins['scripts'])==set(SCRIPTS), 'exact acquisition source inventory'
-    for n,digest in pins['scripts'].items():assert SHA((ROOT/n).read_bytes())==digest, 'immutable acquisition script '+n
+    for n,digest in pins['scripts'].items():
+        # Both retained corpora were acquired with the original controller.
+        # The live controller was later hardened; preserve the measured source
+        # identity rather than assigning its new bytes to old observations.
+        actual=('research/yt-maint/clock-neutral-acquisition/capture_maintenance_clock_neutral.mjs'
+                if n=='scripts/capture_maintenance_clock_neutral.mjs' else n)
+        assert SHA((ROOT/actual).read_bytes())==digest, 'immutable acquisition script '+n
     old=json.loads(neutral.PINS_FILE.read_text());assert SHA(neutral.PINS_FILE.read_bytes())==neutral.PINS_SHA, 'unchanged prior native/host identity manifest'
     neutral.verify_host_packet(neutral.HOST_DIR,old['host']);neutral.verify_guest_contracts(old['zero_trace_sha256'])
     verify_native(pins['native']);directory=Path(directory)

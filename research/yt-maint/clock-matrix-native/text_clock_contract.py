@@ -11,7 +11,7 @@ def text_time(cx, dx):
             minute += 1
             if minute == 60:
                 minute = 0
-                hour += 1  # Original routine has no24-hour wrap here.
+                hour += 1  # Original routine has no 24-hour wrap here.
     return f'{hour:02}:{minute:02}:{second:02}'
 
 if __name__ == '__main__':
@@ -19,4 +19,4 @@ if __name__ == '__main__':
     assert text_time(0, (59 << 8) | 50) == '00:01:00'
     assert text_time((23 << 8) | 59, (59 << 8) | 49) == '23:59:59'
     assert text_time((23 << 8) | 59, (59 << 8) | 50) == '24:00:00'
-    print('4staticrounding/carry examples passed; no target launched')
+    print('4 static rounding/carry examples passed; no target launched')

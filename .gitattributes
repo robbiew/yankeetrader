@@ -305,3 +305,8 @@
 /scripts/recover_maintenance_clock_matrix.py text eol=lf
 # Keep the pinned upstream BIOS source byte-for-byte, including its original indentation.
 /research/yt-maint/clock-matrix-native/src--ints--bios.cpp whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
+# Supplemental historical runtime streams preserve original DOS/probe bytes.
+/research/yt-maint/runtime-stream-controls/** -text
+/research/yt-maint/runtime-stream-controls/**/*.LOG -diff
+/research/yt-maint/runtime-stream-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof

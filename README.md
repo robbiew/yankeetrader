@@ -571,6 +571,13 @@ target BBS transport before deployment.
 
 ## Daily maintenance
 
+[Supplemental runtime streams](research/yt-maint/RNG_TRACE.md) preserve five
+historical instrumented captures with 127,618 checked seed/draw events and
+explicit probe-induced differences against independently hash-pinned native worlds. These complement the newer first-hit,
+sequencing, chronology and record-replay research below; they do not replace its
+native controls or establish additional gameplay/save compatibility.
+
+
 **Maintenance seed boundaries are now measured:** 151 terminating DOS probes
 and six untouched paired runs recover entry `RANDOMIZE -TIMER`, two positive-TIMER
 helper reseeds and a selected first-hit Wanderer draw chain. Raw states preserve
@@ -612,13 +619,13 @@ The [historical record-model report](research/yt-maint/RECORD_REPLAY.md) remains
 reproducible; its entry capture command emits all four required controls,
 including the raw startup TIMER seed witness.
 
-**The clock/date matrix now extends that research:** all48 DOS controls agree
+**The clock/date matrix now extends that research:** all 48 DOS controls agree
 within eight explicit recipes, including actual midnight rollover and the native
 `24:00:00` scoreboard string. Before-only replay is exact for seven recipes;
 the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
 remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
-normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md).
+normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
@@ -1764,3 +1771,13 @@ writers and native Windows crash durability remain unverified.
 
     python3 scripts/verify_newspaper_events.py
     python3 scripts/test_newspaper_events_verifier.py
+
+
+The acquisition controller now applies its 30-second deadline to initialization
+as well as execution, and kills/reaps its owned target on timeout without relying
+on a responsive Frida connection. Six stalled attach/create/load/readiness/
+resume/execution regressions verify cleanup before the outer Python timeout.
+The original controller used for retained observations is preserved byte-for-byte
+under `research/yt-maint/clock-neutral-acquisition/`; the unchanged manifest still
+authenticates those original acquisition bytes. No retained observations or
+native hashes were regenerated or redefined by this error-path fix.
