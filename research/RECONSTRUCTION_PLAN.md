@@ -143,11 +143,16 @@ remain separate.
    now reconstructs all six files without reading after-targets. The
    [clock-neutral TIMER profile](yt-maint/CLOCK_NEUTRAL.md) establishes complete
    untouched equality for the selected recipe, with two unobserved controls,
-   one attach-only control and three host traces. Independent [calendar controls](yt-maint/CALENDAR_CONTROLS.md)
-   now add next-day, New Year, leap-day and noon initial-world profiles, all fully
-   native-equal. Next expand bounded state coverage (occupied placement, faction
-   collisions/merging and populated/evolved maintenance), preserving explicit
-   rejection for unrecovered paths rather than generalizing these clock schedules. General MBF,
+   one attach-only control and three host traces. Independent
+   [calendar controls](yt-maint/CALENDAR_CONTROLS.md) add freshly initialized
+   next-day, New Year, leap-day and noon profiles, all fully native-equal.
+   The [clock/date matrix](yt-maint/CLOCK_MATRIX.md) separately covers eight
+   recipes against the same saved-base-year world: all 48 native controls are
+   neutral within recipe, and seven profiles replay all six files exactly.
+   Its late-night seed reaches a mobile Xannor interaction with the Wanderer.
+   Next recover that encounter's RNG, record and side-file aftermath, then
+   expand bounded occupied-placement, faction-collision and evolved-world cases.
+   General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
    graph, port or selected complete-record replay as missing work.

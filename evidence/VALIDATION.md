@@ -1791,6 +1791,51 @@ claimed. Next independently recover additional dates/clocks and bounded worlds;
 arbitrary-world maintenance prediction and production compatibility remain open.
 
 
+### Maintenance clock/date matrix research — 2026-11-05
+
+Eight declared recipes extend the midnight-only research with nonzero and noon
+clocks, literal24:00:00 text rounding, actual midnight rollover, additional dates
+and Jan1,2027 against the same saved-base-year26 before-world. Original executables,
+three before inputs, source fingerprints and save35 remain unchanged.
+
+- All48 native controls passed: eight recipes × two unobserved runs, one
+  attach-only control and three host traces. Every process exited naturally with
+  status0; original guest hashes, completion/error markers and cleanup verified.
+  All288 complete output-file comparisons agree within recipe (six files,
+  570,059bytes per run), without timestamp masks or target correction.
+- All24 observed traces authenticate49,809DOS events:49,713source-qualified
+  DATE$/TIME$/TIMER returns and96external shell calls. Frame/code/BP bindings,
+  physical segment caches, fixed CPU budgets and source-backed interpreter
+  refill accounting are independently verified. Two focused original native
+  reads and pinned official BIOS source corroborate the new contracts.
+- Seven recipes replay all six files exactly:21observations × six controls =126
+  complete before-only comparisons with zero differing bytes. Every `late`
+  observation remains one of three explicit unsupported rows in the report:
+  the modeled prefix reaches neutral Wanderer slot1 in sector658 with group2.
+  No battle result is inferred, target bytes copied or route sector skipped.
+- Native TIME$ rounds at50hundredths without wrapping carried hour24. The100k
+  profile's scoreboard preserves24:00:00 on Nov2. The10000-cycle recipe really
+  crosses midnight:668portDATE samples are Nov2 and332are Nov3; news and score
+  dates/clocks differ. Jan1,2027 uses legacyday366 from savedbase26, notDOY1.
+- Nonzero seeds can take a42nd single-range lottery helper call, select an
+  inactive player and abort without an award. Per-port dates, NPC creation days,
+  final watermark and independent news/score date/clock inputs are modeled.
+  The old strict entrypoints and all PR91 acquisition artifacts/pins are retained.
+- All60new tests pass:44independent verifier checks (34corruption/rejection
+  controls) and16model/property tests. The251selected historical regressions
+  also pass:63midnight verifier,49record inputs,21record model,10ports,
+  eight midnight model,51chronology and49sequence. All4,682archive hashes pass.
+  Syntax, links and exact-byte diff checks pass; optional strict-all replay fails
+  as expected for the documented encounter gap rather than hiding it.
+
+README, reconstruction plan, reproducible acquisition, immutable provenance,
+complete comparison report and portable CI checks are included. New pure-writer
+entrypoints are opt-in research extensions; no Go-suite, live BBS gameplay,
+release validation or native Windows durability acceptance is claimed.
+Next recover the original maintenance Xannor/Wanderer interaction and its RNG,
+record and side-file aftermath. Uncapped production, other encounters/worlds,
+multi-year/leap/century behavior and general MBF remain separate research.
+
 ### PR #91 initialization deadline review fix
 
 A single 30-second deadline now covers dynamic import, device discovery, spawn,
@@ -1828,6 +1873,41 @@ native pin. No retained reference bytes or hashes changed. Five test methods /
 18 rejection controls and all five full streams pass; README updated.
 
 
+### PR #93 review wording and prerequisite integration
+
+Corrected the four reviewed spacing issues in README, the reconstruction plan,
+and the hand-authored text-clock contract's comment and success message. The
+clock function's parsed AST is unchanged; only the derived helper's native-packet
+digest and enclosing manifest digest are refreshed. Original binary/source,
+all 48 raw control captures and replay target hashes remain untouched.
+
+Integrated PR #91's already-validated initialization-deadline fix and current-main
+supplemental runtime streams. Resolving the two append-only conflicts preserves
+both validation histories and byte-preserving artifact rules. The matrix verifier
+initially reproduced an acquisition-source mismatch against the now-hardened live
+controller; it now authenticates the preserved original controller used by the
+immutable observations, matching the prerequisite's source-binding policy.
+Historical capture/source identities are not reassigned to new code.
+
+
+Validation after the review fixes and prerequisite merge: all 44 matrix verifier,
+16 matrix model, 63 midnight verifier and eight midnight model tests pass. The
+six stalled-process cases in the deadline regression pass, as do all five
+supplemental runtime-stream tests and all 4,682 archive hashes. The four static
+rounding examples pass with readable output; raw captured controls are unchanged.
+
+
+### Preserved acquisition source checkout integrity
+
+A disposable `git -c core.autocrlf=true checkout-index` export reproduced a real
+provenance failure: the unprotected historical controller acquired 57 CRLF line
+endings, changing its SHA from `01cb319f697c40888d66fe313763b5e879a85e640ee99a488a5b6adb0ecda5eb`
+to `caa17b2cffd95a3aa3438bf38d2fc97faa9684c4cfdbe162598a7711e2b46b5a`.
+The recorded source is now explicitly `-text`, like the other immutable evidence.
+The same export then preserves the exact original bytes and SHA. Both midnight
+and clock/date corpus verifiers pass; no captured observations, original source,
+manifest expectations, model behavior or production code changed. README updated.
+
 ## Independent maintenance dates/clocks — 2026-11-05
 
 Twelve original-DOS runs cover next-day, New Year, leap-day and noon initial
@@ -1846,3 +1926,23 @@ witnesses, not a relaxed arbitrary-cycle rule. Default baseline checks remain
 strict. No Go, save35, source fingerprints, release or live BBS claims changed.
 
 [Capture method, results and remaining bounded state work](../research/yt-maint/CALENDAR_CONTROLS.md).
+
+
+### PR #93 integration with merged calendar controls (#94)
+
+Current main added four independently initialized calendar profiles while this
+PR was validating. Integration preserves that separate corpus and verifier,
+the eight same-saved-world matrix profiles, all recorded hashes and both
+validation histories. The shared NPC writer now retains the calendar profile's
+41/42-helper admission, nonzero integer timestamp and inactive lottery-candidate
+statistics, while keeping explicit matrix creation dates, zero residue and the
+structured unsupported Wanderer encounter. No source/capture data is regenerated.
+
+
+Calendar integration validation passes: five fresh-world calendar tests and its
+12-control/24-comparison verifier; all 16 matrix model and 44 matrix verifier
+tests; historical 21 record-model, eight midnight-model and 63 midnight verifier
+tests; six deadline-stall cases, five runtime-stream tests and 4,682 archive
+hashes. The retained matrix report regenerates identically (126 exact complete
+comparisons plus three explicit late encounter gaps). Both raw corpora are
+unchanged; no production Go or dependency changes were introduced.

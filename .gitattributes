@@ -293,10 +293,26 @@
 /scripts/capture_maintenance_clock_neutral.mjs text eol=lf
 /scripts/recover_maintenance_clock_neutral.py text eol=lf
 
+# Date/clock matrix preserves exact raw DOS and host observations.
+/research/yt-maint/clock-matrix-controls/** -text
+/research/yt-maint/clock-matrix-controls/**/*.LOG -diff
+/research/yt-maint/clock-matrix-controls/**/TRACE.BIN -diff
+/research/yt-maint/clock-matrix-controls/**/dosbox.stdout whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-matrix-controls/**/dosbox.stderr whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-matrix-native/** -text whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/clock-matrix-pins.json -text
+/scripts/observe_maintenance_clock_matrix.js text eol=lf
+/scripts/recover_maintenance_clock_matrix.py text eol=lf
+# Keep the pinned upstream BIOS source byte-for-byte, including its original indentation.
+/research/yt-maint/clock-matrix-native/src--ints--bios.cpp whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
 # Supplemental historical runtime streams preserve original DOS/probe bytes.
 /research/yt-maint/runtime-stream-controls/** -text
 /research/yt-maint/runtime-stream-controls/**/*.LOG -diff
 /research/yt-maint/runtime-stream-controls/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+
+# The preserved acquisition controller is immutable evidence, not live source.
+/research/yt-maint/clock-neutral-acquisition/** -text
 
 # Independent calendar controls preserve original DOS and host-observer bytes.
 /research/yt-maint/calendar-controls/** -text

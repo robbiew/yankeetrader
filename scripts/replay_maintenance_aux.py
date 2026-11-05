@@ -118,20 +118,7 @@ def news(original,before,after,date,clock):
     return CRLF.join(lines)+CRLF+EOF
 
 
-def synthesize(before_files,after_world,date,clock='00:00:00',*,score_clock=None):
-    """Return five synthesized auxiliary files; never consult after-target bytes.
-
-    `after_world` must be the caller's independently modeled world, not an oracle
-    loaded here. The caller retains responsibility for proving that world model.
-    News and scoreboard clocks are explicit because the original samples them at
-    different phases. Only the zero-player first-maintenance branch is supported.
-    """
-    if isinstance(date,str):date=datetime.date.fromisoformat(date)
-    if not isinstance(date,datetime.date):raise ValueError('a calendar date is required')
-    score_clock=clock if score_clock is None else score_clock
-    for value in (clock,score_clock):
-        if not re.fullmatch(r'\d{2}:\d{2}:\d{2}',value):raise ValueError('an exact HH:MM:SS clock is required')
-        datetime.time.fromisoformat(value)
+def _admit_world(before_files,after_world):
     if not {'YTDATA.DAT','YTNAME.DAT','YTNEWS.DAT'}<=set(before_files):raise ValueError('three original before-inputs are required')
     if before_files.get('YTRMSG.DAT',b''):raise ValueError('nonempty message compression is outside this model')
     before=before_files['YTDATA.DAT']
@@ -160,7 +147,47 @@ def synthesize(before_files,after_world,date,clock='00:00:00',*,score_clock=None
     path=before[:int(length)].decode('ascii')
     if path.upper() in {'YTNEWS.DAT','YTYNEWS.DAT','YTNAME.DAT','YTRMSG.DAT','YTDATA.DAT'}:
         raise ValueError('aliased scoreboard path is outside this model')
+    return before,path
+
+
+def synthesize(before_files,after_world,date,clock='00:00:00',*,score_clock=None):
+    """Return five synthesized auxiliary files; never consult after-target bytes.
+
+    `after_world` must be the caller's independently modeled world, not an oracle
+    loaded here. The caller retains responsibility for proving that world model.
+    News and scoreboard clocks are explicit because the original samples them at
+    different phases. Only the zero-player first-maintenance branch is supported.
+    """
+    if isinstance(date,str):date=datetime.date.fromisoformat(date)
+    if not isinstance(date,datetime.date):raise ValueError('a calendar date is required')
+    score_clock=clock if score_clock is None else score_clock
+    for value in (clock,score_clock):
+        if not re.fullmatch(r'\d{2}:\d{2}:\d{2}',value):raise ValueError('an exact HH:MM:SS clock is required')
+        datetime.time.fromisoformat(value)
+    before,path=_admit_world(before_files,after_world)
     original=original_literals()
     return {'YTNAME.DAT':before_files['YTNAME.DAT'],'YTYNEWS.DAT':before_files['YTNEWS.DAT'],
             'YTRMSG.DAT':b'','YTNEWS.DAT':news(original,before,after_world,date,clock),
             path:scoreboard(original,after_world,date,score_clock)}
+
+
+def _matrix_clock(value):
+    if not isinstance(value,str)or not re.fullmatch(r'\d{2}:\d{2}:\d{2}',value):
+        raise ValueError('an exact native TIME$ string is required')
+    # BRUN rounds at50hundredths and carries seconds/minutes but not the day.
+    hour,minute,second=map(int,value.split(':'))
+    if hour>24 or minute>=60 or second>=60 or(hour==24 and(minute or second)):
+        raise ValueError('native TIME$ is00..23hours or exact24:00:00')
+    return value
+
+
+def synthesize_clock_matrix(before_files,after_world,news_date,news_clock,score_date,score_clock):
+    """New source-qualified DATE$/TIME$ matrix; historical strict API unchanged."""
+    if any(type(value)is not datetime.date for value in (news_date,score_date)):
+        raise ValueError('separate observed news and scoreboard calendar dates required')
+    _matrix_clock(news_clock);_matrix_clock(score_clock)
+    before,path=_admit_world(before_files,after_world)
+    original=original_literals()
+    return {'YTNAME.DAT':before_files['YTNAME.DAT'],'YTYNEWS.DAT':before_files['YTNEWS.DAT'],
+            'YTRMSG.DAT':b'','YTNEWS.DAT':news(original,before,after_world,news_date,news_clock),
+            path:scoreboard(original,after_world,score_date,score_clock)}

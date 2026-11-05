@@ -31,10 +31,19 @@ def constants():
              0x7ea0, 0x800e, 0x8742, 0x8746, 0x874a, 0x874e)}
 
 
+class UnsupportedClockMatrixEncounter(AssertionError):
+    """An unmodeled source branch with context from the modeled prefix only."""
+    def __init__(self,message,context):
+        super().__init__(message)
+        self.context=context
+
+
 class Stream:
-    def __init__(self, h1_timers, h2_timers, state, expected_old_states=None):
+    def __init__(self, h1_timers, h2_timers, state, expected_old_states=None, *, inventory=None):
         self.timers = {'h1': list(h1_timers), 'h2': list(h2_timers)}
-        assert len(self.timers['h1']) in (41,42) and len(self.timers['h2']) == 19, 'bounded helper-input inventory'
+        inventory={'h1':len(h1_timers),'h2':19}if inventory is None else inventory
+        assert inventory['h1']in(41,42), 'bounded helper-input inventory'
+        assert {k:len(v)for k,v in self.timers.items()}==inventory, 'bounded helper-input inventory'
         assert all(isinstance(t, bytes) and len(t) == 4 for ts in self.timers.values() for t in ts), 'raw TIMER inputs'
         self.rng = qb.QB3(state)
         self.calls = {'h1': 0, 'h2': 0}
@@ -91,8 +100,8 @@ def directed_path(warps, source, target):
     return route[::-1]
 
 
-def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
-               initial_state=0xc805, expected_old_states=None):
+def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
+                initial_state=0xc805, expected_old_states=None, matrix_days=None):
     """Return world bytes and audit statistics; only NPC-owned fields change.
 
     ``before`` may already contain the independently synthesized port updates.
@@ -137,12 +146,17 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     warps = {s: [get(51 + s, o) for o in range(41, 65, 4)] for s in range(1, 3001)}
     assert all(n == int(n) and 0 <= n <= 3000 for row in warps.values() for n in row), 'bounded original integer warps'
     warps = {s: [int(n) for n in row] for s, row in warps.items()}
-    stream = Stream(h1_timers, h2_timers, initial_state, expected_old_states)
+    matrix=matrix_days is not None
+    dates={'wanderer':day,'xannoron':day,'base':day}if not matrix else matrix_days
+    assert set(dates)=={'wanderer','xannoron','base'}and all(type(v)is int and 1<=v<=732 for v in dates.values()), 'bounded phase calendar days'
+    inventory={'h1':len(h1_timers),'h2':19}
+    assert inventory['h1']in(41,42), 'matrix supports only one optional inactive-player lottery selection'
+    stream = Stream(h1_timers, h2_timers, initial_state, expected_old_states,inventory=inventory)
 
     # Main1d9d..1f50 restores only explicit fields in the inherited slot1 record.
     wanderer = 4052
     title(wanderer, 'The Wanderer')
-    put(wanderer, 41, day - 10)
+    put(wanderer, 41, dates['wanderer'] - 10)
     for off in (45, 49, 53):
         putraw(wanderer, off, const[0x82ac])
     for off in (57, 61, 65, 69, 77, 125):
@@ -158,13 +172,17 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     # record constructor, so unassigned bytes remain from the inherited slot.
     xannoron = 4151
     title(xannoron, 'Xannoron')
-    put(xannoron, 41, day)
-    minutes = F32(qb.mbf.dec(xannoron_timer) / 60)
-    assert 0 <= minutes < 1440, 'bounded initial-creation TIMER'
-    truncated = bytearray(qb.mbf.enc(math.floor(minutes)))
-    if minutes < 1:
-        truncated = bytearray(qb.mbf.enc(minutes))
-        truncated[3] = 0  # Preserve the observed INT-zero FAC residue.
+    put(xannoron, 41, dates['xannoron'])
+    seconds=qb.mbf.dec(xannoron_timer)
+    minutes=F32(seconds/60)
+    assert 0<=seconds<86400 and 0<=minutes<1440, 'bounded initial-creation TIMER'
+    if minutes>=1:
+        truncated=bytearray(qb.mbf.enc(math.floor(minutes)))
+    else:
+        # Preserve each admitted profile's original INT-zero FAC behavior.
+        value=xannoron_timer if matrix and seconds==0 else qb.mbf.enc(minutes)
+        truncated=bytearray(value)
+        truncated[3]=0
     putraw(xannoron, 89, bytes(truncated))
     for off in (45, 49, 53):
         putraw(xannoron, off, const[0x8134])
@@ -201,7 +219,19 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
         target = top_fallback if group == 20 else fallback
         route = directed_path(warps, hq, target)
         for sector in route[1:]:
-            assert get(51 + sector, 93) == 0 and get(51 + sector, 89) == 0, 'no entered planet/mine action in selected fixture'
+            plain=get(51 + sector,93)==0 and get(51 + sector,89)==0
+            if matrix and not plain:
+                slot=int(get(51+sector,93))
+                context=dict(evidence_type='before-only-model-prefix',group=group,sector=sector,
+                             planet_slot=slot,sector_owner=get(51+sector,85),
+                             sector_aux89=get(51+sector,89),sector_mines=get(51+sector,129),
+                             group_strength=strength,rng_state=stream.rng.state,helper_calls=dict(stream.calls))
+                if 1<=slot<=100:
+                    at=(4050+slot)*137
+                    context.update(planet_name=bytes(world[at:at+41]).rstrip(b' ').decode('ascii'),
+                                   planet_owner=get(4051+slot,73))
+                raise UnsupportedClockMatrixEncounter('no entered planet/mine action in selected fixture',context)
+            assert plain, 'no entered planet/mine action in selected fixture'
             # The ordinary group20 interception is excluded, but its per-edge
             # player scans remain eager in this selected fixture. The separate
             # pre-step endpoint bypass is never reached here; the traversal
@@ -224,7 +254,7 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     # Main41c1..4473 restores reserved slot99, then chooses one empty planet link.
     base = 4150
     title(base, 'Mercenary Base')
-    put(base, 41, day - 10)
+    put(base, 41, dates['base'] - 10)
     for off in (45, 49, 53):
         putraw(base, off, const[0x8134])
     for off in (57, 61, 65, 69):
@@ -245,12 +275,12 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
         assert get(51 + sector, 85) == -1, 'no human desertion target'
         stream.rng.rnd()
     lottery = stream.rng.rnd()
-    selected = None
-    if lottery >= .5:
-        selected = stream.one(50) + 1
-        assert get(selected,85)==0, 'only the unnamed lottery candidate branch is recovered'
-    assert stream.calls == {'h1': len(h1_timers), 'h2': len(h2_timers)}, 'all measured helper inputs consumed exactly once'
-    return bytes(world), dict(wanderer_sector=wanderer_sector, hq_sector=hq,
+    lottery_player=None
+    if lottery>=.5:
+        lottery_player=stream.one(50)+1
+        assert get(lottery_player,85)==0, 'only the unnamed lottery candidate branch is recovered'
+    assert stream.calls == inventory, 'all measured helper inputs consumed exactly once'
+    statistics=dict(wanderer_sector=wanderer_sector, hq_sector=hq,
                              xannoron_ground=ground, xannoron_bank=bank,
                              xannoron_timer_hex=xannoron_timer.hex(),
                              top_fallback=top_fallback, mercenary_base_sector=base_sector,
@@ -258,8 +288,25 @@ def synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
                              helper_calls=stream.calls, helper_seeds=stream.seeds,
                              candidate_draws=sum(r['candidate_draws'] for r in routes),
                              interception_draws=sum(r['interception_draws'] for r in routes),
-                             desertion_draws=len(positive_defenses), lottery_draw=lottery, lottery_candidate=selected,
+                             desertion_draws=len(positive_defenses), lottery_draw=lottery,
                              total_draws=stream.rng.draws, final_rng_state=stream.rng.state)
+    if matrix:statistics.update(calendar_days=dates,lottery_player=lottery_player)
+    else:statistics['lottery_candidate']=lottery_player
+    return bytes(world),statistics
+
+
+def synthesize(before,h1_timers,h2_timers,day=306,*,xannoron_timer,initial_state=0xc805,expected_old_states=None):
+    """Single-date initial profile, including the independent calendar controls."""
+    return _synthesize(before,h1_timers,h2_timers,day,xannoron_timer=xannoron_timer,initial_state=initial_state,expected_old_states=expected_old_states)
+
+
+def synthesize_clock_matrix(before,h1_timers,h2_timers,calendar_days,*,xannoron_timer,initial_state):
+    """Explicit clock/date matrix, with one optional inactive lottery draw.
+
+    Calendar days are independently sampled per creation phase, relative to the
+    saved base year. Other unmodeled encounter/rejection branches still fail.
+    """
+    return _synthesize(before,h1_timers,h2_timers,xannoron_timer=xannoron_timer,initial_state=initial_state,matrix_days=dict(calendar_days))
 
 
 def measured_inputs():
