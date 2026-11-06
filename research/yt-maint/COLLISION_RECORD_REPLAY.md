@@ -135,9 +135,10 @@ Research guards bound retries/activations; they are not claims that DOS had thos
 work limits. Before fingerprints and explicit source-clock inventories prevent
 accidental admission of unmeasured input worlds.
 
-Next collect valid occupied-planet controls, actual foreign-force route encounters
-and final-pointer convergence followed by an exact evolved-world chain. Extend
-record synthesis only after those source branches are verified. Do not repeat
+[Valid active-planet and foreign-route controls](OCCUPIED_ROUTE_CONTROLS.md) now
+cover the first two acquisition gaps. Next integrate those measured branches into
+a separate before-only profile, then collect final-pointer convergence and an
+exact evolved-world chain. Do not repeat
 these twelve initial fixture integrations as missing work. General MBF, arbitrary
 maintenance, DOS save conversion, live BBS acceptance and native Windows durability
 remain separate.

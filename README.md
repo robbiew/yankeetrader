@@ -657,6 +657,12 @@ byte-exact, and 2265 independent raw RNG witnesses agree with calculated states.
 Captured old RNG states and cache probes are not synthesis inputs. Gameplay and
 save 35 are unchanged; arbitrary evolved-world maintenance remains separate.
 
+[Active-planet and foreign-route controls](research/yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
+now retain ten fixtures / 60 full DOS runs with six-mode output equality. Named
+occupied planets, prior economy RNG advancement, ground defense and actual
+foreign-force losses/score receipts are independently verified across 360 files.
+Their complete before-only stream integration is next; gameplay/save 35 are unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

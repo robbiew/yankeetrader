@@ -340,3 +340,10 @@
 
 # Keep the collision-replay native observation byte-exact.
 /research/yt-maint/collision-replay-native/** -text
+
+# Preserve accepted active-planet/foreign-route outputs and source witnesses.
+/research/yt-maint/occupied-route-controls/** -text
+/research/yt-maint/occupied-route-controls/**/*.LOG -diff
+/research/yt-maint/occupied-route-controls/**/*.BIN -diff
+/research/yt-maint/occupied-route-controls/**/dosbox.stdout -diff
+/research/yt-maint/occupied-route-controls/**/dosbox.stderr -diff

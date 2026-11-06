@@ -1,0 +1,126 @@
+{
+  "recipe": "maintenance-occupied-route-v1",
+  "cases": {
+    "wanderer-occupied": {
+      "planets": [
+        [
+          1095,
+          2,
+          "Occupied Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "wanderer-two-occupied": {
+      "planets": [
+        [
+          1095,
+          2,
+          "Occupied Haven",
+          -1,
+          500000
+        ],
+        [
+          1792,
+          3,
+          "Second Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "base-occupied": {
+      "planets": [
+        [
+          2598,
+          2,
+          "Occupied Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "route-planet-friendly": {
+      "planets": [
+        [
+          854,
+          2,
+          "Route Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "route-planet-neutral": {
+      "planets": [
+        [
+          854,
+          2,
+          "Route Haven",
+          0,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "route-mercenary-37": {
+      "planets": [],
+      "forces": [
+        [
+          854,
+          37,
+          -2
+        ]
+      ]
+    },
+    "route-mercenary-100000": {
+      "planets": [],
+      "forces": [
+        [
+          854,
+          100000,
+          -2
+        ]
+      ]
+    },
+    "route-neutral-37": {
+      "planets": [],
+      "forces": [
+        [
+          854,
+          37,
+          0
+        ]
+      ]
+    },
+    "wanderer-active-rejection": {
+      "planets": [
+        [
+          2787,
+          2,
+          "Occupied Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    },
+    "base-active-rejection": {
+      "planets": [
+        [
+          20,
+          2,
+          "Occupied Haven",
+          -1,
+          500000
+        ]
+      ],
+      "forces": []
+    }
+  }
+}

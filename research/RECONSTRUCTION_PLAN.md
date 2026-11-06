@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-05
 
 This section is the current planning baseline, checked against merged `main`
-through `8bcd05a2` (including merged maintenance PRs #88, #90–94 and cursor fix #95), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `054f4e38` (including merged maintenance PRs #88, #90–94, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -58,6 +58,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
   compatibility and initial maintenance remain separate.
 
 ### Most recent completed milestones
+
+The local [active-planet/foreign-route controls](yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
+retain ten fixtures / 60 complete original runs, with 360 six-mode-equal output
+files. Valid named occupied planets, three pre-placement draws per active planet,
+selected ground defenses and actual foreign-force casualties/scores are verified.
+These are witness-assisted controls; complete before-only active-world synthesis
+is next, followed by final-pointer convergence and evolved-world chaining.
+Go gameplay, dependencies and save 35 remain unchanged.
 
 The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
 now synthesizes all six output files for the twelve placement/cache fixtures:
@@ -181,7 +189,8 @@ remain separate.
    now capture selected multiple-rejection, duplicate-pointer and faction-owner
    boundaries. The [complete record profile](yt-maint/COLLISION_RECORD_REPLAY.md)
    now integrates all twelve selected fixtures without observed old-state seeds.
-   Next expand valid occupied planets, foreign-force routes and evolved-world
+   Next integrate the measured active-planet/foreign-force controls before-only,
+   then expand final-pointer convergence and evolved-world
    chains, then extend their before-only record synthesis.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.

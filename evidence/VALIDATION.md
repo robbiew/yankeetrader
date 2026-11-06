@@ -2073,3 +2073,51 @@ packet also verifies after an index export with `core.autocrlf=true`; its raw
 bytes are preserved across checkout. All 76 new tests passed again at the final
 staged source state. Production Go, terminal smokes and platform builds were
 not rerun for this research-only update; their existing CI checks remain enabled.
+
+## Active-planet and foreign-route controls — 2026-11-05
+
+The next maintenance research slice retains ten declared contexts / 60 complete
+original-DOS runs / 360 output files. Each case has two unobserved controls, one
+attach-only and three observed controls; all six complete outputs agree in every
+mode. Active ordinary-slot planets have real names, prior-day timestamps and
+sector links. Three bounded pre-placement RNG advances per active planet agree
+with authentic first-helper state witnesses. Follow-up controls actually reject
+occupied Wanderer/Base candidates; old-candidate reference controls are retained
+and distinguished from successful rejections.
+
+Friendly and neutral planetary contexts separate earlier one-day economic growth
+(1000 rates to 1010; 500000 ground to 505000) from subsequent combat. The neutral
+planet spends 25 ground and destroys 5978 Xannor in 19 public attack/death pairs.
+Actual Mercenary defenses at sector 854 exercise small and large foreign-force
+encounters, later Mercenary movement and faction scores; saved physical losses
+reconcile with original public literals, including their misleading lost/dstrd
+columns and Plyr label. Owner-zero 37-force control remains unchanged. Private
+message files remain empty. These are witness-assisted original controls, not
+complete before-only synthesis of the new worlds or new Go features.
+
+Independent verification covers all 1290 immutable corpus files, actual launch
+and controller provenance, all source clock frames, full fixture reconstruction,
+untouched original guests, active name/link/owner/ground aftermath, public losses,
+faction force/scores and six-mode equality. All 56 provenance/semantic tests pass. One
+complete REA/Ghidra read authenticates 720 original bytes and the three event RND
+sites. The manifest SHA is 7c01a0ef401f3df96f413e4aefd046c7f8a57499a1dfa537c83ea950d0dc7a3a.
+
+The forward-dated pilot contexts remain external diagnostics. A prior-day
+observed capture that lacked the required Frida flush notification was rejected
+despite natural process exit; its partial artifacts remain external. A fresh
+complete six-mode set passed every unchanged controller requirement. No failed
+capture is included in accepted counts and no automatic retry was added.
+
+All ten new before-worlds are explicitly rejected by the historical bounded
+collision-replay profile; its admission boundary was not broadened. Current
+main's merged smoke-evidence PR #96 was integrated without changing its captures.
+All 309 local Markdown targets in the changed README/plan/reports exist. README,
+plan and portable CI evidence checks are updated in this research milestone.
+Production Go, dependencies, archive originals, save 35 and generation fingerprints
+are unchanged; no new Go/terminal/platform/live acceptance is claimed.
+
+Final checks also passed the historical 84-control placement/cache verifier,
+25 complete collision-record replay tests and all 4682 archive hashes. All 1290
+new corpus files independently verify after index export with `core.autocrlf=true`;
+checkout does not normalize raw captures or acquisition sources. No old corpus
+pin, archive or historical report was rewritten to fit these results.
