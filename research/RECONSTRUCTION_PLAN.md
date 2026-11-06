@@ -59,9 +59,19 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The [before-only five-day survivor replay](yt-maint/SURVIVOR_CHAIN_REPLAY.md)
+now computes both added November 5/6 children from complete modeled November 4
+parents. All 144 comparisons / 864 files and 1182 new-stage RNG-state audits
+match. It composes fatal-defense pursuit, repeated Mercenary activation,
+reallocation after stale pointers, surviving ground, persistent mines, raw aliases
+and the separate score clock. All 63 new tests pass. Next acquire controls that
+actually select mixed hazards or resource pickup before broader admission;
+existing bounded gameplay and save 35 are unchanged.
+
 Open PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) contain the completed replay
-milestones below, with #98 stacked on #97. Neither is treated as merged work in
+milestones below, with #98 stacked on #97. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
+contains the later survivor controls. These are open work, not merged changes in
 this main-branch baseline.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
@@ -69,7 +79,7 @@ four exact November 4 states through November 5/6. All 48 original-DOS runs,
 288 inherited-file links and eight six-mode output groups verify. Later Xannor
 foreign-defense combat, continuing neutral-planet/Wanderer losses, persistent
 mines, raw pointer aliases and independent news/score clocks are now captured.
-All 47 provenance tests pass. Next compose these added children before-only;
+All 47 provenance tests pass. Their added children now replay before-only above;
 selected mine damage, resource pickup and general MBF remain separate.
 
 The [before-only evolved combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md) now
@@ -78,7 +88,7 @@ All 144 comparisons / 864 files and 1242 child RNG-state audits match. It compos
 three/four-home economy, ordinary neutral-planet defense, surviving Mercenary
 combat, descending reactivation, same-day victims, authentic stale pointers and
 all six writers. All 56 new tests pass. Longer surviving-force handoffs are now captured above;
-their before-only composition is next. Mixed hazards and resource pickup remain
+their before-only composition is complete above. Mixed hazards and resource pickup remain
 separate admission work; existing gameplay, dependencies and save 35 are unchanged.
 
 The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)

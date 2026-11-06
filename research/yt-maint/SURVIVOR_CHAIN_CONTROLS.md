@@ -6,8 +6,8 @@ November 5 and 6, 2026. The new corpus retains **48 complete original-DOS runs**
 the eight stages agrees across all six modes. No record, pointer, timestamp or
 side file is masked or repaired.
 
-These are new later-day controls, not repeated November 3/4 captures and not a
-new before-only replay. The existing [combat replay](EVOLVED_COMBAT_REPLAY.md)
+These are new later-day controls, not repeated November 3/4 captures. Their
+[separate before-only replay](SURVIVOR_CHAIN_REPLAY.md) now computes both children. The existing [combat replay](EVOLVED_COMBAT_REPLAY.md)
 and [clock/date replay](EVOLVED_CLOCK_REPLAY.md) remain unchanged. Production Go,
 dependencies, save **35** and generation fingerprints are unchanged.
 
@@ -146,10 +146,9 @@ python3 scripts/recover_maintenance_survivor_chains.py /tmp/new-survivor-control
   --frida-module /absolute/path/to/frida.js
 ```
 
-Next compose the two additional children before-only from the already modeled
-November 4 parents: measured days 309/310, evolved foreign-defense receipts,
-reallocation after stale/duplicate pointers, surviving ground and the separate
-score clock. Current replay APIs reject these later dates/lengths; that is a
-scope boundary, not a measured numerical mismatch. General MBF, arbitrary worlds,
+The separate five-day replay now composes the two added children from modeled
+November 4 parents: days 309/310, foreign-defense receipts, pointer reallocation,
+surviving ground and the separate score clock. Historical three-day APIs retain
+their original date/length boundaries; they were not silently widened. General MBF, arbitrary worlds,
 active-player maintenance, live BBS acceptance and native Windows durability
 remain separate. Existing bounded gameplay mechanisms are not missing features.
