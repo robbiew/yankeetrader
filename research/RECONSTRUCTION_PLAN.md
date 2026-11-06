@@ -88,7 +88,13 @@ friendly merging and a larger Wanderer-stock pickup. Fourteen of sixteen stage
 groups are six-mode equal; two retain disclosed port-clock/supply differences,
 with matching NPC outcomes and other five files. A strict persisted exit receipt
 fixes the observed acknowledgement race without changing DOS event acquisition.
-Before-only integration of these new paths remains next; gameplay and save 35 are unchanged.
+Their [before-only departure/merge replay](yt-maint/DEPARTURE_MERGE_REPLAY.md)
+now predicts both children from a modeled parent and the declared fixture edits.
+All 48 direct observed-source comparisons / 288 files and 2505 new-stage RNG witnesses
+match. Across all target modes, 270 of 288 complete comparisons are exact; 18 retain
+the disclosed port-clock differences with no masked bytes. Departure, silent
+merging, larger Wanderer pickup and its bounded fractional discard are derived.
+Gameplay, dependencies and save 35 remain unchanged.
 
 PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
@@ -98,7 +104,7 @@ contains the gateway acquisition controls, and [PR #102](https://github.com/robb
 contains their replay. All six are now verified merged into `main`, in order,
 with valid review findings fixed and current checks passed. The separate
 [departure/merge acquisition PR #103](https://github.com/robbiew/yankeetrader/pull/103)
-now targets `main`; its before-only integration remains next.
+is verified merged into `main`; its separate before-only integration is complete above.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
 four exact November 4 states through November 5/6. All 48 original-DOS runs,
@@ -306,8 +312,10 @@ remain separate.
    defense and resource pickup across 72 full runs. Their [before-only replay](yt-maint/GATEWAY_HAZARD_REPLAY.md)
    is complete: 216 comparisons / 1296 files and 1962 RNG-state witnesses agree.
    The new [departure/merge controls](yt-maint/DEPARTURE_MERGE_CONTROLS.md) now
-   select those distinct paths. Next integrate their modeled-parent continuation,
-   home-stock integer transfer and disclosed nonneutral clock contexts before-only.
+   select those distinct paths. Their [before-only replay](yt-maint/DEPARTURE_MERGE_REPLAY.md) now derives
+   the modeled-parent continuation, integer home-stock transfer and the disclosed
+   nonneutral comparison inventory. Next isolate half-or-larger runtime stock
+   conversion or the separate friendly-plus-planet-stock encounter.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

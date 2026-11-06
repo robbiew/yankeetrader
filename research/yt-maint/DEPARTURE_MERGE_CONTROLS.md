@@ -7,7 +7,9 @@ fixtures and two consecutive days. **14 of 16 stage groups are six-mode equal**.
 The other two retain real port timestamp/supply differences; their Mercenary
 outcomes and other five files are equal. No differing byte is normalized.
 
-This is acquisition research, not before-only integration. Production Go,
+This acquisition now has a separate [before-only replay](DEPARTURE_MERGE_REPLAY.md):
+all48 direct observed-source comparisons / 288 files and 2505 new-stage RNG
+witnesses agree; its full comparison report retains 18 known clock-cohort mismatches. Production Go,
 dependencies, save 35 and generation fingerprints are unchanged. The already
 completed [gateway replay](GATEWAY_HAZARD_REPLAY.md) remains intact.
 
@@ -176,9 +178,9 @@ python3 scripts/verify_mercenary_maintenance.py
 python3 scripts/verify_archive.py
 ```
 
-Next integrate the selected departure/merge, larger home-stock transfer and
-fractional discard before-only from a modeled parent, with explicit clock
-admission for the nonneutral comparison groups. General MBF, arbitrary worlds
+The separate [before-only replay](DEPARTURE_MERGE_REPLAY.md) now integrates the
+selected departure/merge, larger home-stock transfer and bounded fractional
+discard from a modeled parent, with explicit nonneutral comparison disclosure. General MBF, arbitrary worlds
 and other unmeasured branches remain separate. README, plan and CI track this
 boundary. Full Go/terminal/build, live BBS and native Windows acceptance are not
 newly claimed for this research milestone.
