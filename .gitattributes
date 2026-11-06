@@ -389,3 +389,17 @@
 /research/yt-maint/gateway-hazard-controls/**/*.BIN -diff
 /research/yt-maint/gateway-hazard-controls/**/dosbox.stdout -diff
 /research/yt-maint/gateway-hazard-controls/**/dosbox.stderr -diff
+
+# Preserve departure/merge captures, diagnostics and executed source snapshots.
+/research/yt-maint/departure-merge-controls/** -text
+/research/yt-maint/departure-merge-controls/**/*.LOG -diff
+/research/yt-maint/departure-merge-controls/**/*.BIN -diff
+/research/yt-maint/departure-merge-controls/**/dosbox.stdout -diff
+/research/yt-maint/departure-merge-controls/**/dosbox.stderr -diff
+
+# Preserve departure/merge captures, diagnostics and executed source snapshots.
+/research/yt-maint/departure-merge-diagnostics/** -text
+/research/yt-maint/departure-merge-diagnostics/**/*.LOG -diff
+/research/yt-maint/departure-merge-diagnostics/**/*.BIN -diff
+/research/yt-maint/departure-merge-diagnostics/**/dosbox.stdout -diff
+/research/yt-maint/departure-merge-diagnostics/**/dosbox.stderr -diff

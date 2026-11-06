@@ -1,0 +1,101 @@
+vacant-origin child-1 unobserved-a complete6files
+vacant-origin child-1 observed-a complete6files
+vacant-origin child-1 attach-only complete6files
+vacant-origin child-1 observed-b complete6files
+vacant-origin child-1 unobserved-b complete6files
+vacant-origin child-1 observed-c complete6files
+vacant-origin child-2 unobserved-a complete6files
+vacant-origin child-2 observed-a complete6files
+vacant-origin child-2 attach-only complete6files
+vacant-origin child-2 observed-b complete6files
+vacant-origin child-2 unobserved-b complete6files
+vacant-origin child-2 observed-c complete6files
+friendly-merge child-1 unobserved-a complete6files
+friendly-merge child-1 observed-a complete6files
+friendly-merge child-1 attach-only complete6files
+friendly-merge child-1 observed-b complete6files
+friendly-merge child-1 unobserved-b complete6files
+friendly-merge child-1 observed-c complete6files
+friendly-merge child-2 unobserved-a complete6files
+friendly-merge child-2 observed-a complete6files
+friendly-merge child-2 attach-only complete6files
+friendly-merge child-2 observed-b complete6files
+friendly-merge child-2 unobserved-b complete6files
+friendly-merge child-2 observed-c complete6files
+occupied-midnight child-1 unobserved-a complete6files
+occupied-midnight child-1 observed-a complete6files
+occupied-midnight child-1 attach-only complete6files
+occupied-midnight child-1 observed-b complete6files
+occupied-midnight child-1 unobserved-b complete6files
+occupied-midnight child-1 observed-c complete6files
+occupied-midnight child-2 unobserved-a complete6files
+occupied-midnight child-2 observed-a complete6files
+occupied-midnight child-2 attach-only complete6files
+occupied-midnight child-2 observed-b complete6files
+occupied-midnight child-2 unobserved-b complete6files
+occupied-midnight child-2 observed-c complete6files
+occupied-second-two child-1 unobserved-a complete6files
+occupied-second-two child-1 observed-a complete6files
+occupied-second-two child-1 attach-only complete6files
+occupied-second-two child-1 observed-b complete6files
+occupied-second-two child-1 unobserved-b complete6files
+occupied-second-two child-1 observed-c complete6files
+occupied-second-two child-2 unobserved-a complete6files
+occupied-second-two child-2 observed-a complete6files
+occupied-second-two child-2 attach-only complete6files
+occupied-second-two child-2 observed-b complete6files
+occupied-second-two child-2 unobserved-b complete6files
+occupied-second-two child-2 observed-c complete6files
+occupied-second-four child-1 unobserved-a complete6files
+occupied-second-four child-1 observed-a complete6files
+occupied-second-four child-1 attach-only complete6files
+occupied-second-four child-1 observed-b complete6files
+occupied-second-four child-1 unobserved-b complete6files
+occupied-second-four child-1 observed-c complete6files
+occupied-second-four child-2 unobserved-a complete6files
+occupied-second-four child-2 observed-a complete6files
+occupied-second-four child-2 attach-only complete6files
+occupied-second-four child-2 observed-b complete6files
+occupied-second-four child-2 unobserved-b complete6files
+occupied-second-four child-2 observed-c complete6files
+occupied-friendly-midnight child-1 unobserved-a complete6files
+occupied-friendly-midnight child-1 observed-a complete6files
+occupied-friendly-midnight child-1 attach-only complete6files
+occupied-friendly-midnight child-1 observed-b complete6files
+occupied-friendly-midnight child-1 unobserved-b complete6files
+occupied-friendly-midnight child-1 observed-c complete6files
+occupied-friendly-midnight child-2 unobserved-a complete6files
+occupied-friendly-midnight child-2 observed-a complete6files
+occupied-friendly-midnight child-2 attach-only complete6files
+occupied-friendly-midnight child-2 observed-b complete6files
+occupied-friendly-midnight child-2 unobserved-b complete6files
+occupied-friendly-midnight child-2 observed-c complete6files
+occupied-friendly-second-two child-1 unobserved-a complete6files
+occupied-friendly-second-two child-1 observed-a complete6files
+occupied-friendly-second-two child-1 attach-only complete6files
+occupied-friendly-second-two child-1 observed-b complete6files
+occupied-friendly-second-two child-1 unobserved-b complete6files
+occupied-friendly-second-two child-1 observed-c complete6files
+occupied-friendly-second-two child-2 unobserved-a complete6files
+occupied-friendly-second-two child-2 observed-a complete6files
+occupied-friendly-second-two child-2 attach-only complete6files
+occupied-friendly-second-two child-2 observed-b complete6files
+occupied-friendly-second-two child-2 unobserved-b complete6files
+occupied-friendly-second-two child-2 observed-c complete6files
+occupied-friendly-second-four child-1 unobserved-a complete6files
+occupied-friendly-second-four child-1 observed-a complete6files
+occupied-friendly-second-four child-1 attach-only complete6files
+Traceback (most recent call last):
+  File "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/scripts/recover_maintenance_departure_merge.py", line 166, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/scripts/recover_maintenance_departure_merge.py", line 164, in main
+    for mode in MODES:capture(out,scratch,profile,stage,mode,host,a.frida_module)
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/scripts/recover_maintenance_departure_merge.py", line 136, in capture
+    subprocess.run(['node',str(ROOT/'scripts/capture_maintenance_clock_neutral.mjs'),str(frida),str(tmp),str(ROOT/'scripts/observe_maintenance_placement.js'),actual],check=True,timeout=40,stdout=subprocess.DEVNULL)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/subprocess.py", line 692, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command ['node', '/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/scripts/capture_maintenance_clock_neutral.mjs', '/Users/robbie/.npm/_npx/da7caeae9db9c589/node_modules/frida/build/src/frida.js', '/private/tmp/yt-maint-departure-first-mounts/occupied-friendly-second-four/child-1/observed-b', '/Users/robbie/.codex/worktrees/mercenary-maintenance/yankeetrader/scripts/observe_maintenance_placement.js', 'observed'] returned non-zero exit status 1.

@@ -81,13 +81,24 @@ November 4 parent; both children then use complete modeled handoffs. Mine damage
 guard combat, pickup, minimum-rate clamps and exact public receipts are derived
 without captured-state seeds. Gameplay and save 35 remain unchanged.
 
-Open PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
-[#98](https://github.com/robbiew/yankeetrader/pull/98) contain the completed replay
-milestones below, with #98 stacked on #97. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
+[Occupied-origin departure and friendly-force controls](yt-maint/DEPARTURE_MERGE_CONTROLS.md)
+now retain 96 primary two-day DOS runs plus six supplementary controls and two
+explicit failed-observer diagnostics. They select holds, departures, silent
+friendly merging and a larger Wanderer-stock pickup. Fourteen of sixteen stage
+groups are six-mode equal; two retain disclosed port-clock/supply differences,
+with matching NPC outcomes and other five files. A strict persisted exit receipt
+fixes the observed acknowledgement race without changing DOS event acquisition.
+Before-only integration of these new paths remains next; gameplay and save 35 are unchanged.
+
+PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
+[#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
 contains the later survivor controls. [PR #100](https://github.com/robbiew/yankeetrader/pull/100)
 contains their before-only five-day replay. [PR #101](https://github.com/robbiew/yankeetrader/pull/101)
-contains the gateway acquisition controls. These are open work, not merged changes in
-this main-branch baseline.
+contains the gateway acquisition controls, and [PR #102](https://github.com/robbiew/yankeetrader/pull/102)
+contains their replay. All six are now verified merged into `main`, in order,
+with valid review findings fixed and current checks passed. The separate
+[departure/merge acquisition PR #103](https://github.com/robbiew/yankeetrader/pull/103)
+now targets `main`; its before-only integration remains next.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
 four exact November 4 states through November 5/6. All 48 original-DOS runs,
@@ -294,8 +305,9 @@ remain separate.
    is complete. The [gateway controls](yt-maint/GATEWAY_HAZARD_CONTROLS.md) now select mine damage,
    defense and resource pickup across 72 full runs. Their [before-only replay](yt-maint/GATEWAY_HAZARD_REPLAY.md)
    is complete: 216 comparisons / 1296 files and 1962 RNG-state witnesses agree.
-   Next acquire a distinct rejected path, such as occupied-origin departure or
-   friendly-force merging, before expanding admission.
+   The new [departure/merge controls](yt-maint/DEPARTURE_MERGE_CONTROLS.md) now
+   select those distinct paths. Next integrate their modeled-parent continuation,
+   home-stock integer transfer and disclosed nonneutral clock contexts before-only.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

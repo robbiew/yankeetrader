@@ -109,7 +109,7 @@ python3 scripts/verify_archive.py
 Admission is intentionally bounded to these declared fixtures. General MBF,
 arbitrary worlds, active-player maintenance, other mine contexts and unmeasured
 dynamic branches remain separate. Do not repeat these selected pickup/hazard
-controls or their before-only integration as unfinished work. A useful next slice
-is an independently captured occupied-origin departure or friendly-force merge,
-which this profile still rejects. These checks do not establish live BBS gameplay
+controls or their before-only integration as unfinished work. The subsequent [departure/merge controls](DEPARTURE_MERGE_CONTROLS.md) now select
+occupied-origin departure and friendly-force merging, which this historical API
+still rejects. Their separate before-only integration is next. These checks do not establish live BBS gameplay
 or native Windows crash durability.
