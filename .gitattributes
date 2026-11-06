@@ -357,3 +357,6 @@
 /research/yt-maint/convergence-chain-controls/**/*.BIN -diff
 /research/yt-maint/convergence-chain-controls/**/dosbox.stdout -diff
 /research/yt-maint/convergence-chain-controls/**/dosbox.stderr -diff
+
+# Preserve the original existing-Base lookup evidence byte-for-byte.
+/research/yt-maint/evolved-replay-native/** -text

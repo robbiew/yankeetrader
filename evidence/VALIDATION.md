@@ -2215,3 +2215,63 @@ existing native reads), the 60-control active-planet corpus and all 4682 origina
 archive hashes. All 794 new corpus files also independently verify after an index
 export with `core.autocrlf=true`; no raw capture or frozen acquisition source is
 normalized by checkout.
+
+## Before-only evolved three-day maintenance chain — 2026-11-05
+
+The new separate profile takes only the original three before files and three
+frozen source-clock inputs, then feeds each day's own modeled six files to the
+next day. No native child before/after world, cache probe or captured RNG state
+enters synthesis. All three days are calculated before expected output files are
+opened. Across three source-observation chains and six paired targets per day,
+all 54 complete comparisons / 324 files are byte-exact, without masks, output
+fingerprint selection or target-derived record repairs.
+
+Every source helper state and final-score RNG witness agrees: 501 independent
+checks. Poisoning raw witnesses leaves extracted inputs and outputs unchanged,
+then fails the separate audit. Actual planet loop indices bind their DATE/TIMER
+pairs; source clocks cannot silently migrate to another physical record.
+Modeled parents additionally predict all 480 captured cache fields, repeated
+across the three observation chains for 1440 comparisons. The probes remain
+comparison-only and never seed the modeled normalization.
+
+One-day nonempty port stock arithmetic/rate promotion, four heterogeneous planet
+banks/inventories, source floors, fractional weapons, surplus growth and eager
+event draws now integrate with the existing-home paths. Wanderer unlinks its old
+reference; existing Xannoron/Base skip creation clocks. Xannoron's common later
+ground draw still adds 4/3 after ordinary economy on days two/three. Cache-derived
+allocation counts are 19/17/0, computed physical force remains 10000, old mines
+persist and actual inherited ranks/side files publish correctly. Day one's
+scoreboard 00:00:01 stays distinct from its news clock 00:00:00.
+
+All 100 new tests pass: 18 port, 22 planet, 24 auxiliary, 30 full-chain and six
+native integrity methods. Full-chain read guards allow only original YTMAINT;
+actual handoff spies and modeled marker checks reject a hidden native-child path.
+Unknown initial bytes, malformed/fabricated/reordered clocks, wrong source record
+indices, optional creation-clock mismatches, unsupported economics/combat and
+incorrect conservation/publication fail closed. Historical replay APIs and
+admission boundaries remain unchanged.
+
+One complete additional REA/Ghidra read covers existing-Base search/skip bytes at
+0x14128, length 153, through 0x141c1 exclusive. Every relocated byte matches the
+immutable original. Packet SHA-256:
+d63718fd9f35e8a04fa7e12b51cb40eb179319e513db2f6c0525d556072c337b.
+Existing port/economy, Wanderer, Xannoron and cache evidence is reused. The static
+read is not a new runtime trace; no new DOS capture was acquired or rewritten.
+The existing JDK was selected per-process without installation/config changes.
+
+Final regressions passed the 18-full/12-probe chain verifier, all 28 historical
+active-world record tests, 57 returned Wanderer controls/14 native reads, 41
+Mercenary maintenance controls/11 native reads and all 4682 archive hashes. The
+Mercenary verifier's separately classified bounded hiring-capacity timeout is
+historical evidence, not a newly passing full run. All raw 794 chain-corpus files
+and prior pins remain unchanged.
+
+README, plan, linked scope reports and portable CI checks are updated. All 325
+local Markdown targets in changed docs exist. Go, dependencies, save 35 and source
+generation fingerprints are unchanged; Go/terminal/build/live/native acceptance
+was not rerun or newly claimed. Next collect evolved-chain clock/date controls
+before broader admission; general MBF and arbitrary-world compatibility remain
+separate.
+
+The new 153-byte packet also passed independent verification after index export
+with `core.autocrlf=true`; its raw source bytes remain unchanged on checkout.

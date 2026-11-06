@@ -8,8 +8,8 @@ inherits its corresponding parent mode's six output files byte-for-byte:
 **144 input-file links**, with no reset, reconstruction or intervening patch.
 
 This answers the acquisition task left by the
-[complete active-world replay](OCCUPIED_RECORD_REPLAY.md). It is not before-only
-record synthesis for the evolved children. No Go gameplay, dependency,
+[complete active-world replay](OCCUPIED_RECORD_REPLAY.md). Their [separate before-only replay](EVOLVED_CHAIN_REPLAY.md) is now complete;
+this report retains the original acquisition scope. No Go gameplay, dependency,
 `qb36-v1` fingerprint or save **35** changes. Older exact next-day research
 chains remain valid; this chain specifically adds actual final-pointer
 convergence, early-cache observation and complete six-file inheritance.
@@ -141,11 +141,10 @@ portable verification launches no emulator, Frida, Go program or network access.
 All earlier corpus pins, strict replay APIs and source admission boundaries stay
 unchanged. README, current plan and portable CI checks accompany this milestone.
 
-**Next integrate this measured three-day chain into a separate before-only
-profile.** The new pieces are one-day nonempty port updates; four heterogeneous
-active planets; existing Wanderer/home paths with optional creation clocks;
+[The separate before-only profile](EVOLVED_CHAIN_REPLAY.md) now integrates this
+measured three-day chain. Its recovered pieces are one-day nonempty port updates;
+four heterogeneous active planets; existing Wanderer/home paths with optional creation clocks;
 seventeen then zero new group allocations; inherited inactive ranks and exact
 old side files; and persistent mines. Reuse the already recovered cache,
-economy/combat formulas and source ordering. Before-only evolved-world synthesis,
-general MBF, arbitrary worlds, live BBS and native Windows durability are not
-established by these controls alone.
+economy/combat formulas and source ordering. Exact before-only synthesis of these
+three days is verified separately. General MBF, arbitrary worlds, live BBS and native Windows durability remain unverified.

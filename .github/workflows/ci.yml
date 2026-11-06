@@ -120,6 +120,12 @@ jobs:
           python3 scripts/test_verify_maintenance_occupied.py
           python3 scripts/verify_maintenance_convergence.py
           python3 scripts/test_verify_maintenance_convergence.py
+          python3 scripts/verify_maintenance_evolved_replay.py
+          python3 scripts/test_verify_maintenance_evolved_replay.py
+          python3 scripts/test_replay_maintenance_evolved_ports.py
+          python3 scripts/test_replay_maintenance_evolved_planets.py
+          python3 scripts/test_replay_maintenance_evolved_aux.py
+          python3 scripts/test_replay_maintenance_evolved_records.py
           python3 scripts/verify_maintenance_occupied_replay.py
           python3 scripts/test_verify_maintenance_occupied_replay.py
           python3 scripts/test_replay_maintenance_active_planets.py

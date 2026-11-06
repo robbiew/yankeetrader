@@ -59,13 +59,22 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [before-only evolved-chain replay](yt-maint/EVOLVED_CHAIN_REPLAY.md)
+now calculates all three days from the one original before-world and source
+clocks. Modeled six-file handoffs produce 54 complete comparisons / 324 exact
+files; all 501 RNG witnesses and 1440 repeated cache-field comparisons agree.
+One-day nonempty ports, heterogeneous bank/stock economy, existing-home paths and
+dynamic allocations are integrated. The 100 new tests and raw source checks pass;
+Go gameplay, dependencies and save 35 remain unchanged. Evolved clock/date
+admission controls are next, before any wider compatibility claim.
+
 The local [final convergence and three-day chain](yt-maint/CONVERGENCE_CHAIN.md)
 retains 18 full runs and 12 separately patched early-cache probes. All six outputs
 agree per day; all 144 parent/child input links and 480 cache cells match. Groups
 2–19 physically converge once, normalize to a single loaded force next day, and
 then disperse; dynamic allocation counts are 19/17/0. The exact evolved world and
-all side files are carried forward. Separate before-only chain synthesis is next;
-Go gameplay, dependencies and save 35 remain unchanged.
+all side files are carried forward. Their separate before-only synthesis is now
+complete above; Go gameplay, dependencies and save 35 remain unchanged.
 
 The local [active-planet/foreign-route controls](yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
 retain ten fixtures / 60 complete original runs, with 360 six-mode-equal output
@@ -75,9 +84,8 @@ The [complete before-only profile](yt-maint/OCCUPIED_RECORD_REPLAY.md) now match
 180 full comparisons / 1080 files and 1872 independently audited RNG states.
 Active economy, ground deaths, foreign-force counters, shared-target clears and
 the surviving Mercenary tail are integrated. Final-pointer convergence and
-full evolved-world chaining are now captured separately; their before-only integration
-is next.
-Go gameplay, dependencies and save 35 remain unchanged.
+full evolved-world chaining are now captured separately and integrated by the
+new profile above. Go gameplay, dependencies and save 35 remain unchanged.
 
 The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
 now synthesizes all six output files for the twelve placement/cache fixtures:
@@ -203,8 +211,9 @@ remain separate.
    now integrates all twelve selected fixtures without observed old-state seeds.
    The measured active-planet/foreign-force controls are now integrated before-only.
    Final-pointer convergence and a complete three-day/six-file chain are now
-   captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md). Next extend their
-   separate before-only record synthesis.
+   captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md) and their separate
+   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. Next collect
+   evolved-chain clock/date controls before expanding admission.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

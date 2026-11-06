@@ -669,8 +669,11 @@ and save 35 are unchanged.
 [Final convergence and an exact three-day chain](research/yt-maint/CONVERGENCE_CHAIN.md)
 now retain 18 full runs, 12 early-cache probes and 144 exact six-file inheritance
 links. Eighteen final pointers share one physical force, loaded once on the next
-day; all 480 source-owned cache cells are independently checked. Complete
-before-only synthesis of the evolved chain is next; gameplay/save 35 are unchanged.
+day; all 480 source-owned cache cells are independently checked. The
+[before-only replay of the evolved chain](research/yt-maint/EVOLVED_CHAIN_REPLAY.md)
+now matches 54 full comparisons / 324 files, with modeled-only six-file handoffs,
+501 RNG-state audits and all captured cache fields predicted. Evolved clock/date
+controls remain separate; gameplay and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
