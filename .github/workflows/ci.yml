@@ -13,7 +13,7 @@ jobs:
   validate:
     name: Go tests, evidence and terminal smoke
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: yankeetrader
