@@ -2167,3 +2167,51 @@ Final regressions passed: all 25 historical collision-record tests; the untouche
 hashes. The additional 928-byte packet also verifies after an index export with
 `core.autocrlf=true`. Its raw bytes survive checkout unchanged. No historical
 capture/pin or production source was modified by these checks.
+
+## Final-pointer convergence and exact evolved-world chain — 2026-11-05
+
+Eighteen full original-DOS maintenance runs carry one declared world through
+November 2/3/4, with two unobserved, one attach-only and three observed modes per
+day. All six complete outputs agree per day (108 full-run files). Every child
+and separately patched early-cache probe inherits all six output files from its
+own parent mode without resetting or patching them: all 144 input-file links
+match byte-for-byte. Twelve early probes are phase observations, not full runs.
+
+The initial named friendly planet makes groups 2–19 finish at sector 2802, whose
+single physical force is 6552; HQ retains 3095 and group 20 retains 353. Next-day
+cache normalization consumes only those three physical sectors and loads that
+shared force once. Groups 3–19 normalize to zero and require seventeen new
+allocations. Day three starts with twenty distinct groups and makes zero new
+shrinking-bound allocations. All 480 source-owned cache cells agree, stored
+pointers clear canonically, and consumed force/title zeros retain raw `00008000`.
+Physical force remains 10000 through all full runs; names, rotated news, private
+files and actual scores are checked separately. No old scoreboard inherited by
+an early probe is mistaken for a completed new writer.
+
+All 39 new provenance/semantic tests pass. Independent checks bind actual guest
+and host identity, complete launch/CPU/date/controller provenance, every source
+clock frame, text receipts to source clocks, dynamic helper inventories, exact
+input inheritance, unchanged full guests, exact early-probe patch, unique force
+and raw cache fields. Rebound metadata and hashes cannot disguise a guest patch,
+wrong parent, fabricated clock, duplicate force or premature scoreboard.
+
+The frozen 794-file corpus has manifest SHA-256
+164cc9d62bef6b213226ca8e125e39d282e6b851a9b6ffaf048e933a290d1f8c.
+All thirty captures completed naturally without a retry. Existing complete cache
+and final-writeback REA observations are reused; no new native query, installation
+or configuration change was needed. All three new before-worlds remain explicitly
+rejected by the historical active-world replay; their separate before-only
+integration remains next. This milestone establishes observations and exact
+chaining rather than evolved-world synthesis.
+
+README, current plan, linked reports and portable CI checks are updated; 317 local
+Markdown targets in changed documentation exist. Production Go, dependencies,
+save 35, generation fingerprints, archive originals and earlier corpora remain
+unchanged. Go/terminal/platform/live BBS and native Windows acceptance were not
+rerun or newly claimed for this research-only update.
+
+Final checks passed the earlier 84-control placement/cache corpus (including its
+existing native reads), the 60-control active-planet corpus and all 4682 original
+archive hashes. All 794 new corpus files also independently verify after an index
+export with `core.autocrlf=true`; no raw capture or frozen acquisition source is
+normalized by checkout.

@@ -156,8 +156,9 @@ launches no emulator, Frida, Go application or network operation. The original
 60-run corpus and earlier corpus pins remain unchanged; no capture was rewritten
 to fit the model. README, plan and portable CI checks accompany the research.
 
-**Next acquire final-pointer convergence and an exact evolved-world chain.** No
-such chain is implied by these ten initial before-inputs. Arbitrary populated
+[Final-pointer convergence and an exact evolved-world chain](CONVERGENCE_CHAIN.md)
+are now captured separately. Next integrate that chain before-only; it is not
+implied by these ten initial before-inputs. Arbitrary populated
 worlds, active players, general MBF, event damage, new mines/stock pickup, DOS save
 conversion, live BBS acceptance and native Windows durability remain separate.
 Research work guards are not claims that DOS implemented finite combat/retry

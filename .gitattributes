@@ -350,3 +350,10 @@
 
 # Preserve the additional occupied-record source observations byte-for-byte.
 /research/yt-maint/occupied-replay-native/** -text
+
+# Preserve actual convergence and full-file chain evidence byte-for-byte.
+/research/yt-maint/convergence-chain-controls/** -text
+/research/yt-maint/convergence-chain-controls/**/*.LOG -diff
+/research/yt-maint/convergence-chain-controls/**/*.BIN -diff
+/research/yt-maint/convergence-chain-controls/**/dosbox.stdout -diff
+/research/yt-maint/convergence-chain-controls/**/dosbox.stderr -diff

@@ -59,6 +59,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [final convergence and three-day chain](yt-maint/CONVERGENCE_CHAIN.md)
+retains 18 full runs and 12 separately patched early-cache probes. All six outputs
+agree per day; all 144 parent/child input links and 480 cache cells match. Groups
+2–19 physically converge once, normalize to a single loaded force next day, and
+then disperse; dynamic allocation counts are 19/17/0. The exact evolved world and
+all side files are carried forward. Separate before-only chain synthesis is next;
+Go gameplay, dependencies and save 35 remain unchanged.
+
 The local [active-planet/foreign-route controls](yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
 retain ten fixtures / 60 complete original runs, with 360 six-mode-equal output
 files. Valid named occupied planets, three pre-placement draws per active planet,
@@ -67,7 +75,8 @@ The [complete before-only profile](yt-maint/OCCUPIED_RECORD_REPLAY.md) now match
 180 full comparisons / 1080 files and 1872 independently audited RNG states.
 Active economy, ground deaths, foreign-force counters, shared-target clears and
 the surviving Mercenary tail are integrated. Final-pointer convergence and
-evolved-world chaining are next.
+full evolved-world chaining are now captured separately; their before-only integration
+is next.
 Go gameplay, dependencies and save 35 remain unchanged.
 
 The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
@@ -193,8 +202,9 @@ remain separate.
    boundaries. The [complete record profile](yt-maint/COLLISION_RECORD_REPLAY.md)
    now integrates all twelve selected fixtures without observed old-state seeds.
    The measured active-planet/foreign-force controls are now integrated before-only.
-   Next expand final-pointer convergence and evolved-world
-   chains, then extend their before-only record synthesis.
+   Final-pointer convergence and a complete three-day/six-file chain are now
+   captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md). Next extend their
+   separate before-only record synthesis.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
