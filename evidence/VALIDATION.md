@@ -2614,3 +2614,68 @@ and validating the final force before any world write. An exact 100000-fighter
 result still transfers stock successfully with the original raw zero. The
 complete gateway Mercenary/auxiliary suites and 216-comparison/1296-file replay
 pass; README is updated. No captured evidence or production Go/save changes.
+
+## Occupied-origin departure and friendly Mercenary routes (2026-11-06)
+
+The primary acquisition contains 96 completed original-DOS runs / 576 outputs,
+eight explicit two-day fixtures with six modes per stage. Independent verification
+reconstructs all 48 sixteen-edit YTDATA interventions and distinguishes them from
+528 unchanged input links (240 first-stage side files, 288 exact same-mode child
+handoffs). Original guests and all historical corpora remain unchanged. The graph
+preserves all-sector reachability, the source's forced first successor and sole
+predecessor. No second-stage repair or hidden data mutation is admitted.
+
+Actual occupied-origin holds and departures, silent friendly merging and a larger
+Wanderer-stock transfer are selected. The successful friendly case moves97337,
+absorbs37 without a public merge receipt and saves97374; source8472 clears the
+consumed successor while distinct859e clears departure. Next-day actual combat
+loses one. Other friendly37 cases lose that group to the earlier Xannor phase;
+those are interference controls, not successful merges. The four-second single
+force takes189528 whole Wanderer fighters from source-grown189528.296875, clears
+the entire stock and saves286865. The fractional0.296875 discard is disclosed as
+a bounded observed conversion. The two-second second day reconciles2837 earlier
+Mercenary losses, then5973 mine losses and9 offensive losses, saving88518.
+Source-clock, public/console, stock/physical and scoreboard ledgers all verify.
+
+Fourteen of sixteen stage groups have exact six-mode outputs. The occupied-friendly
+second-two profile retains89 world-byte differences on day one and94 on day two,
+only in source-clock/derived supply fields of the disclosed port records. Both
+cohorts agree internally; other five files and all NPC outcomes match. All480
+nonreference file comparisons are retained,474 equal and6 unequal; normalized
+bytes=0. Direct source clocks and saved-clock corroboration are labeled separately.
+This is not a claim of full observer neutrality or zero overall mismatches.
+
+Two incomplete observed attempts are retained separately: attempt-a lacks its
+asynchronous flush acknowledgement; attempt-b has a matching acknowledgement but
+fails the immediate post-detach liveness check, then records exited=true without
+forced termination. Neither is counted as a completed observed control. Six valid
+partial-case runs remain supplementary, with all36 outputs matching the final
+first-child controls. A new exit-only synchronous receipt checks actual trace
+UTF8 byte count, canonical schemas, event/error/drop counts, natural exit and
+fresh paths. Optional delivered acknowledgements must agree. DOS acquisition
+prefix and exit-hook suffix remain byte-identical, and original deadlines/owned
+cleanup remain enabled. This addresses acknowledgement persistence; no general
+liveness-race repair is claimed. The entire final two-day case completed twelve
+fresh runs under that protocol. Total retained acquisition:102 completed runs and
+two invalid observer diagnostics.
+
+All 30 independent evidence regressions and17 portable receipt-protocol tests pass.
+They cover fixture/graph reconstruction, unchanged inheritance, clocks/callers,
+physical/public accounting, raw departure/merge/pickup zeros, actual casualty
+splits and stock conversion, explicit nonneutral-byte disclosure, missing/partial
+receipts, conflicting messages, failed controllers and explicit diagnostic paths.
+Both frozen corpora also pass the complete audit after indexed Git export with
+automatic line-ending conversion. The reused3462-byte original native packet,
+41 completed primitive Mercenary controls (plus their separately classified
+capacity timeout),11 REA observations and all4682 archive hashes verify.
+
+Primary manifest7a54595bfed7291f09e0f249a87023bce449fd1d16bcd30f77b3fca1cea1c129
+pins2641files/23051965bytes. Diagnostic manifest
+0bc0e2d64b84741e0821fab41fbe553dc29861677ab22b24082828ed7db0306e pins214files/
+1798197bytes. The authored failure classification was corrected before publication
+to distinguish the two actual controller errors; raw captures were unchanged.
+Executed old/new source snapshots are retained. README, current plan, report,
+byte-preserving attributes and CI are updated. This is research acquisition;
+before-only integration with actual nonneutral clock admission remains next.
+No production Go, dependency, save35 or generation-fingerprint change is included.
+Full Go/terminal/build, live BBS and native Windows acceptance are not newly claimed.

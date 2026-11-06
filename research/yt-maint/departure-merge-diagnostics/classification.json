@@ -1,0 +1,23 @@
+{
+  "recipe": "departure-observer-flush-diagnostics-v1",
+  "profile": "occupied-friendly-second-four",
+  "stage": "child-1",
+  "valid_partial_modes": [
+    "unobserved-a",
+    "observed-a",
+    "attach-only"
+  ],
+  "attempts": [
+    "attempt-a",
+    "attempt-b"
+  ],
+  "completed_supplementary_runs": 6,
+  "invalid_observer_runs": 2,
+  "failed_mode": "observed-b",
+  "full_control": false,
+  "reason": "Attempt-a lacks its required asynchronous flush acknowledgement. Attempt-b has a valid flush acknowledgement but fails the immediate post-detach liveness check; its final metadata records exited=true without forced termination. Both are retained diagnostics, not completed observed controls. The entire affected case is recaptured separately with a persisted exit receipt; that protocol fixes acknowledgement persistence, not a claimed general liveness-race repair.",
+  "failed_controller_errors": {
+    "attempt-a": "Error: incomplete trace flush",
+    "attempt-b": "Error: capture did not exit naturally and cleanly"
+  }
+}

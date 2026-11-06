@@ -715,6 +715,15 @@ without captured-state seeds. Gameplay and save 35 remain unchanged.
 Unsupported gateway pickup totals are rejected before any stock or force bytes
 change; supported transfers preserve the exact source-specific stock zero.
 
+[Occupied-origin departure and friendly-force controls](research/yt-maint/DEPARTURE_MERGE_CONTROLS.md)
+now retain 96 primary two-day DOS runs plus six supplementary controls and two
+explicit failed-observer diagnostics. They select holds, departures, silent
+friendly merging and a larger Wanderer-stock pickup. Fourteen of sixteen stage
+groups are six-mode equal; two retain disclosed port-clock/supply differences,
+with matching NPC outcomes and other five files. A strict persisted exit receipt
+fixes the observed acknowledgement race without changing DOS event acquisition.
+Before-only integration of these new paths remains next; gameplay and save 35 are unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They
