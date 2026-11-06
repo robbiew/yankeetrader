@@ -2337,3 +2337,43 @@ query or emulator acquisition was needed for replay integration. README, plan,
 linked reports and CI are updated; Go, dependencies, save 35 and generation
 fingerprints are unchanged. Go/terminal/build/live/native acceptance was not
 rerun or newly claimed. Both follow-up milestones stay local, separate from PR #97.
+
+
+## Evolved foreign-force and surviving-combat controls (2026-11-06)
+
+Captured 48 full original-DOS runs across four two-child recipes, using the
+corresponding occupied-route parent's complete six-file output without edits.
+All 288 inherited-file links match; all six output files agree across all six
+modes at each of eight stages. Each run exited naturally on the first acquisition.
+No failed, timed-out or forced-stop run is counted. Frozen corpus: 1318 files,
+11,229,698 bytes; manifest SHA-256
+fd794dccfda332ab79c2d5a693d2649ebbc32c607863fbf2f10801ec4e0ecef5.
+
+The surviving Mercenary control retains 97525 fighters after the first child.
+On the second, its public attack destroys 182 Xannor; actual saved Mercenary
+force decreases by 188 to 97337. That unprinted loss is explicitly classified as
+an observed physical delta, not a published count or a before-only RNG prediction.
+Both children demonstrate descending-scan reactivation. The later Mercenary
+victim's group-8 pointer remains 109 despite zero physical force at that sector;
+verification preserves this authentic stale state. Route Haven survives eighteen
+fatal Xannor assaults each child, accounting for losses 2614 and 792 and actual
+ground 504975→510002→515083. Extinct-Mercenary and neutral-owner controls retain
+their expected physical totals; neutral assimilation is not demonstrated.
+
+All 43 provenance, outcome and source-width tests pass. They cover actual launch,
+CPU/date/clock identity, exact parent/mode/file inheritance, observer/lifecycle
+integrity, raw saved port/active-planet timestamps, public/console agreement,
+physical score accounting, winner/phase/force corruption, stale pointers and
+complete immutable inventory. Separate eight-byte MBF decoding verifies the
+source fight threshold 200 despite its zero four-byte prefix; batch size is 150.
+The reused original Mercenary source packet's complete 3462 relocated bytes
+match the immutable binary. All 4682 archive hashes pass. No new native byte
+query, provider installation or historical capture rewrite was needed.
+
+README, plan, scope reports, byte-preserving Git attributes and portable CI
+checks are updated. All new acquisition sources are frozen exactly as executed.
+Go, dependencies, save 35 and generation fingerprints are unchanged. Full Go,
+terminal, build, live BBS and native Windows acceptance were not rerun or claimed
+for this research-only change. PR #97 and the earlier local follow-up branches
+remain unchanged. Next compose these exact occupied-input chains before-only;
+current convergence-only admission rejects their different initial contexts.

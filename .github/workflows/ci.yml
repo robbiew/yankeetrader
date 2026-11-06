@@ -122,6 +122,8 @@ jobs:
           python3 scripts/test_verify_maintenance_convergence.py
           python3 scripts/verify_maintenance_evolved_clocks.py
           python3 scripts/test_verify_maintenance_evolved_clocks.py
+          python3 scripts/verify_maintenance_evolved_combat.py
+          python3 scripts/test_verify_maintenance_evolved_combat.py
           python3 scripts/verify_maintenance_evolved_replay.py
           python3 scripts/test_verify_maintenance_evolved_replay.py
           python3 scripts/test_replay_maintenance_evolved_ports.py

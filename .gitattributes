@@ -368,3 +368,10 @@
 /research/yt-maint/evolved-clock-controls/**/dosbox.stdout -diff
 /research/yt-maint/evolved-clock-controls/**/dosbox.stderr -diff
 /research/yt-maint/evolved-clock-controls/acquisition/*.py whitespace=-blank-at-eol
+
+# Preserve exact evolved foreign-force/ground-combat acquisition artifacts.
+/research/yt-maint/evolved-combat-controls/** -text
+/research/yt-maint/evolved-combat-controls/**/*.LOG -diff
+/research/yt-maint/evolved-combat-controls/**/*.BIN -diff
+/research/yt-maint/evolved-combat-controls/**/dosbox.stdout -diff
+/research/yt-maint/evolved-combat-controls/**/dosbox.stderr -diff

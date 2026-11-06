@@ -129,5 +129,6 @@ README, plan, validation ledger and CI are updated in this milestone. Production
 Go, dependencies, save 35 and `qb36-v1` generation fingerprints do not change.
 These are bounded research comparisons; they do not establish arbitrary-world
 maintenance, a general MBF emulator, live BBS acceptance or native Windows
-crash durability. The next expansion should first acquire evolved foreign-force
-and surviving-combat handoffs, rather than repeat the completed clock matrix.
+crash durability. The [evolved foreign-force and surviving-combat handoffs](EVOLVED_COMBAT_CONTROLS.md)
+are now captured separately. Their before-only composition is next; the completed
+clock matrix need not be repeated.

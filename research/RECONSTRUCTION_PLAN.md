@@ -2,7 +2,7 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-05
+## Current implementation and next work — checked 2026-11-06
 
 This section is the current planning baseline, checked against merged `main`
 through `054f4e38` (including merged maintenance PRs #88, #90–94, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
@@ -59,6 +59,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)
+now retain four two-child schedules / 48 complete DOS runs / 288 exact six-file
+inheritance links. All eight stages have six-mode output equality. Actual
+surviving Mercenary offense and repeated descending-scan activation, a stale
+Xannor group pointer, continuing Route Haven ground defense and extinct/neutral
+controls are verified without rewriting output. Next integrate these exact
+chains before-only; Go gameplay, dependencies and save 35 are unchanged.
+
 The local [before-only evolved clock/date replay](yt-maint/EVOLVED_CLOCK_REPLAY.md)
 now computes the original parent and both children for all four captured profiles.
 All 144 complete comparisons / 864 files and 1278 independent child RNG-state
@@ -66,8 +74,9 @@ checks match. Fractional/capped/year intervals, positive-ground home battles,
 fatal mine accounting and source-derived zero residues compose with modeled-only
 six-file handoffs. The repeated group-20 endpoint correctly skips the original
 movement/deposition block. All 69 new tests pass; Go gameplay and save 35 are
-unchanged. Next acquire evolved foreign-force and surviving-combat handoffs;
-arbitrary-world and general MBF compatibility remain separate.
+unchanged. Evolved foreign-force and surviving-combat handoffs are now captured
+above; their separate before-only integration is next. Arbitrary-world and
+general MBF compatibility remain separate.
 
 The local [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md)
 retain four two-child schedules / 48 full DOS runs / 288 exact six-file links.
@@ -233,9 +242,8 @@ remain separate.
    [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. The
    [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md) are now
    captured; their [before-only replay](yt-maint/EVOLVED_CLOCK_REPLAY.md) now
-   matches all 144 comparisons / 864 files with 1278 RNG-state audits. Next
-   acquire evolved foreign-force and surviving-combat handoffs before broadening
-   those branches.
+   matches all 144 comparisons / 864 files with 1278 RNG-state audits. The
+   [evolved combat handoffs](yt-maint/EVOLVED_COMBAT_CONTROLS.md) are now captured; compose those exact chains before-only before broadening admission.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
