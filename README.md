@@ -233,7 +233,7 @@ Per-node stderr is captured separately. The exact Linux PTY hangup diagnostic
 loss and natural exit; unexplained nonzero exits and forced stops still fail.
 Session-expiry and ended-season checks inspect the separately captured error and
 exact exit status, alongside unchanged-save assertions.
-The full validation job allows 40 minutes so evidence and terminal checks can
+The full validation job allows 60 minutes so expanded evidence and terminal checks can
 finish, including runner cleanup; every validation command remains enabled.
 [Findings, captures and reproducible driver](evidence/MULTICALLER_DOOR_CAMPAIGN.md).
 
@@ -755,7 +755,7 @@ If a save error occurs, stop and inspect the filesystem before retrying a purcha
 
 ## Build and validate
 
-CI allows 30 minutes for the complete race, evidence, terminal and cross-build
+CI allows 60 minutes for the complete race, evidence, terminal and cross-build
 sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
 random encounters while retaining their resource, replay and durability checks.
 
