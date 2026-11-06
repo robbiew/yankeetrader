@@ -740,7 +740,7 @@ python3 scripts/verify_navigation_evidence.py
 python3 scripts/verify_avoid_evidence.py
 ```
 
-The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt).
+The smoke script also exercises planet creation, banking, investment, cargo transfers and reconnect. The smoke script uses a disposable world and real PTYs. It exercises GoDoors input/output, trading, equipment, movement, reconnect, repeated maintenance and Door32 local sessions with an alias change. Transcript: [local smoke evidence](evidence/local-smoke.txt). Both smoke scripts rewrite their transcripts under `evidence/` on every run; commit the refreshed files when door output changes.
 
 The Mercenary-route smoke fixture starts with The Wanderer missing so normal
 restoration runs after route actions. This keeps mine/pickup assertions isolated
