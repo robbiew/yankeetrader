@@ -1,0 +1,104 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 6 
+ *** Mercenaries: lost 6, dstrd 9 (Xannor ftrs dstrd)
+  -  Group: 3               Size: 122 
+ *** Mercenaries: lost 122, dstrd 129 (Xannor ftrs dstrd)
+  -  Group: 4               Size: 494 
+ *** Mercenaries: lost 494, dstrd 498 (Xannor ftrs dstrd)
+  -  Group: 5               Size: 98 
+ *** Mercenaries: lost 98, dstrd 68 (Xannor ftrs dstrd)
+  -  Group: 6               Size: 315 
+ *** Mercenaries: lost 315, dstrd 278 (Xannor ftrs dstrd)
+  -  Group: 7               Size: 7 
+ *** Mercenaries: lost 7, dstrd 9 (Xannor ftrs dstrd)
+  -  Group: 8               Size: 2 
+ *** Mercenaries: lost 2, dstrd 3 (Xannor ftrs dstrd)
+  -  Group: 9               Size: 85 
+ *** Mercenaries: lost 85, dstrd 63 (Xannor ftrs dstrd)
+  -  Group: 10              Size: 132 
+ *** Mercenaries: lost 132, dstrd 132 (Xannor ftrs dstrd)
+  -  Group: 11              Size: 3 
+ *** Mercenaries: lost 3, dstrd 5 (Xannor ftrs dstrd)
+  -  Group: 12              Size: 609 
+ *** Mercenaries: lost 609, dstrd 1620 (Xannor ftrs dstrd)
+  -  Group: 13              Size: 1 
+ *** Mercenaries: lost 1, dstrd 2 (Xannor ftrs dstrd)
+  -  Group: 14              Size: 186 
+ *** Mercenaries: lost 186, dstrd 198 (Xannor ftrs dstrd)
+  -  Group: 15              Size: 1 
+ *** Mercenaries: lost 1, dstrd 0 (Xannor ftrs dstrd)
+  -  Group: 16              Size: 64 
+ *** Mercenaries: lost 64, dstrd 59 (Xannor ftrs dstrd)
+  -  Group: 17              Size: 231 
+ *** Mercenaries: lost 231, dstrd 218 (Xannor ftrs dstrd)
+  -  Group: 18              Size: 8 
+ *** Mercenaries: lost 8, dstrd 8 (Xannor ftrs dstrd)
+  -  Group: 19              Size: 169 
+ *** Mercenaries: lost 169, dstrd 192 (Xannor ftrs dstrd)
+  -  Group: 20              Size: 16 
+
+
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+  -  93846 Mercenaries moving from sector 2812 
+  -  93846 Mercenaries moving from sector 2499 
+  -  93846 Mercenaries moving from sector 1351 
+  -  93846 Mercenaries moving from sector 815 
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 11-06-2026 00:00:00
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+          243,300     2.59%          9,384,600  100.00%
+
+
+Daily Maintenance Completed OK

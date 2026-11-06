@@ -233,7 +233,7 @@ Per-node stderr is captured separately. The exact Linux PTY hangup diagnostic
 loss and natural exit; unexplained nonzero exits and forced stops still fail.
 Session-expiry and ended-season checks inspect the separately captured error and
 exact exit status, alongside unchanged-save assertions.
-The full validation job allows 40 minutes so evidence and terminal checks can
+The full validation job allows 60 minutes so expanded evidence and terminal checks can
 finish, including runner cleanup; every validation command remains enabled.
 [Findings, captures and reproducible driver](evidence/MULTICALLER_DOOR_CAMPAIGN.md).
 
@@ -689,6 +689,12 @@ and extinct/neutral controls. All eight stages agree across six modes. The
 It derives actual Mercenary casualties, repeated activation and stale pointers;
 gameplay and save 35 are unchanged.
 
+[Longer survivor handoffs](research/yt-maint/SURVIVOR_CHAIN_CONTROLS.md) now extend
+four actual November 4 states through November 5/6: 48 full DOS runs, 288 exact
+six-file links and eight equal six-mode output groups. They select later foreign
+defense and Wanderer attacks, preserve mines/raw pointers and retain a distinct
+news/score clock. Separate before-only integration is next; gameplay is unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They
@@ -745,7 +751,7 @@ If a save error occurs, stop and inspect the filesystem before retrying a purcha
 
 ## Build and validate
 
-CI allows 30 minutes for the complete race, evidence, terminal and cross-build
+CI allows 60 minutes for the complete race, evidence, terminal and cross-build
 sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
 random encounters while retaining their resource, replay and durability checks.
 

@@ -13,7 +13,7 @@ jobs:
   validate:
     name: Go tests, evidence and terminal smoke
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: yankeetrader
@@ -124,6 +124,8 @@ jobs:
           python3 scripts/test_verify_maintenance_evolved_clocks.py
           python3 scripts/verify_maintenance_evolved_combat.py
           python3 scripts/test_verify_maintenance_evolved_combat.py
+          python3 scripts/verify_maintenance_survivor_chains.py
+          python3 scripts/test_verify_maintenance_survivor_chains.py
           python3 scripts/verify_maintenance_evolved_replay.py
           python3 scripts/test_verify_maintenance_evolved_replay.py
           python3 scripts/test_replay_maintenance_evolved_ports.py
