@@ -17,7 +17,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-04) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-05) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -241,7 +241,7 @@ finish, including runner cleanup; every validation command remains enabled.
 
 - Remaining random-event and exact DOS RNG/numeric parity.
 - Additional unconfirmed spy command paths and character-level DOS editor wrapping/backspace parity.
-- A full DOS seed-to-universe production mode and save import/export, plus complete MBF arithmetic, other RND variants and unresolved rule parity.
+- Exact general DOS maintenance and DOS save import/export, plus complete MBF arithmetic, other RND variants and unresolved rule parity. The bounded playable `qb36-v1` generator is implemented.
 
 See [Play locally](#play-locally) for commands and the feature sections below for detailed rules and current limits.
 
@@ -600,9 +600,10 @@ independent counters cover all 43 literal RND sites. Nine execute, totaling
 observations distinguish the four-draw shrinking-bound helper from occupied-sector
 candidate retries. An explicitly synthetic occupied-destination control adds one
 Wanderer selection attempt. Untouched comparisons, retained raw records and
-independent corruption checks bound these findings. This remains research: exact
-post-maintenance replay, arbitrary-world draw chronology and general MBF parity
-are not implemented, and gameplay/save format 35 are unchanged.
+independent corruption checks bound these findings. This is the historical
+sequencing scope; later bounded replay closes selected post-maintenance outputs.
+Arbitrary-world draw chronology and general MBF parity
+remain open, and gameplay/save format 35 are unchanged.
 [Sequencing evidence, diagnostic limits and portable checks](research/yt-maint/RNG_SEQUENCING.md).
 
 **The initial-fixture scan ledger is now joined:** 332 additional controls identify
@@ -632,10 +633,47 @@ including the raw startup TIMER seed witness.
 **The clock/date matrix now extends that research:** all 48 DOS controls agree
 within eight explicit recipes, including actual midnight rollover and the native
 `24:00:00` scoreboard string. Before-only replay is exact for seven recipes;
-the eighth seed reaches a newly exposed mobile-Xannor/Wanderer interaction and
-remains an explicit model gap. Per-writer dates/clocks, saved-base-year day366
+the eighth seed exposed a mobile-Xannor/Wanderer interaction. The explicit
+[Wanderer encounter replay](research/yt-maint/WANDERER_ENCOUNTER.md) now closes
+that selected gap: all eight recipes / 864 individual file comparisons match,
+plus 108 comparisons against six fresh untouched/observed controls. Fourteen
+separate diagnostics confirm shared pursuit, draw ordering and 6923 casualties;
+public news and the 307700 score match the 3077 saved survivors. Earlier strict
+replay reports remain reproducible. This is research, not a new gameplay feature
+or save-format change. Per-writer dates/clocks, saved-base-year day366
 on Jan1,2027, and an extra inactive-player lottery draw are retained rather than
 normalized away. [Clock/date evidence and remaining encounter work](research/yt-maint/CLOCK_MATRIX.md). Fresh clock/date captures use the bounded controller; retained observations continue to authenticate the original acquisition source. The preserved acquisition source remains byte-exact across Git newline-conversion settings. Independent fresh-world calendar controls and the same-saved-world clock matrix are both retained.
+
+**Occupied placement and faction-cache boundaries now have additional research:**
+[the twelve-recipe matrix](research/yt-maint/PLACEMENT_COLLISIONS.md) retains
+72 unchanged-executable full runs and 12 separate early cache probes. All six
+outputs agree across each recipe's observed/unobserved runs. Source-qualified
+placement replay matches 432 accepted-target checks, and a before-only cache
+primitive matches all 480 captured location/force fields. Multiple rejections,
+fractional/negative/raw-zero gates and duplicate/foreign-owner pointers are
+explicitly bounded. The [complete collision-record replay](research/yt-maint/COLLISION_RECORD_REPLAY.md)
+now integrates those twelve fixtures: 216 complete comparisons / 1296 files are
+byte-exact, and 2265 independent raw RNG witnesses agree with calculated states.
+Captured old RNG states and cache probes are not synthesis inputs. Gameplay and
+save 35 are unchanged; arbitrary evolved-world maintenance remains separate.
+
+[Active-planet and foreign-route controls](research/yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
+now retain ten fixtures / 60 full DOS runs with six-mode output equality. Named
+occupied planets, prior economy RNG advancement, ground defense and actual
+foreign-force losses/score receipts are independently verified across 360 files.
+The [complete before-only profile](research/yt-maint/OCCUPIED_RECORD_REPLAY.md)
+now matches 180 complete comparisons / 1080 files with 1872 independent RNG-state
+checks. The separately captured convergence/evolved chain is linked below; gameplay
+and save 35 are unchanged.
+
+[Final convergence and an exact three-day chain](research/yt-maint/CONVERGENCE_CHAIN.md)
+now retain 18 full runs, 12 early-cache probes and 144 exact six-file inheritance
+links. Eighteen final pointers share one physical force, loaded once on the next
+day; all 480 source-owned cache cells are independently checked. The
+[before-only replay of the evolved chain](research/yt-maint/EVOLVED_CHAIN_REPLAY.md)
+now matches 54 full comparisons / 324 files, with modeled-only six-file handoffs,
+501 RNG-state audits and all captured cache fields predicted. Evolved clock/date
+controls remain separate; gameplay and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
@@ -664,7 +702,7 @@ Implemented rules have links to the recovered evidence:
 - Supply-sensitive cargo prices, quantity limits, demand depletion and owner commissions: [trading recovery](research/yt-trade/RECOVERY.md). Five saved DOS examples are exported in `internal/game/testdata/dos-trading.json` and checked by Go tests. These compare ore cash/cargo/treasury outcomes; they do not claim exact QuickBASIC RNG or floating-point equivalence.
 - Port taxes and the repeated-maintenance defect: [maintenance recovery](research/yt-maint/RECOVERY.md).
 
-Default generation retains the established seeded, reachable ring graph and uniform ports with fixed reference prices **20/30/40**. New worlds can independently select recovered map rules with `-dos-warps` and the recovered economy/startup price references with `-dos-ports`. These profiles use the modern seeded Go random stream and documented safety corrections; exact DOS seed-to-universe replay remains unsupported. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Shields start at zero; shield initialization parity remains an unresolved rule question.
+Default generation retains the established seeded, reachable ring graph and uniform ports with fixed reference prices **20/30/40**. New worlds can independently select recovered map rules with `-dos-warps` and the recovered economy/startup price references with `-dos-ports`. These profiles use the modern seeded Go random stream and documented safety corrections. The separate bounded `qb36-v1` profile selects the recovered source recipe. Default size is 3,000 sectors and 1,000 ports; `-sectors` allows 8–3,000 for small test games. Shields start at zero; shield initialization parity remains an unresolved rule question.
 
 Known defects intentionally fixed here:
 

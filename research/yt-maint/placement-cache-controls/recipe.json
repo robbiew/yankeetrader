@@ -1,0 +1,154 @@
+{
+  "recipe": "maintenance-placement-cache-v1",
+  "cases": {
+    "wanderer-reject-two": [
+      [
+        1146,
+        93,
+        2
+      ],
+      [
+        1843,
+        93,
+        2
+      ]
+    ],
+    "wanderer-reject-three": [
+      [
+        1146,
+        93,
+        2
+      ],
+      [
+        1843,
+        93,
+        2
+      ],
+      [
+        1346,
+        93,
+        2
+      ]
+    ],
+    "wanderer-positive-fraction": [
+      [
+        1146,
+        93,
+        0.25
+      ]
+    ],
+    "wanderer-negative-link": [
+      [
+        1146,
+        93,
+        -1
+      ]
+    ],
+    "wanderer-zero-residue": [
+      [
+        1146,
+        93,
+        "00004800"
+      ]
+    ],
+    "base-positive-fraction": [
+      [
+        2649,
+        93,
+        0.25
+      ]
+    ],
+    "duplicate-hq": [
+      [
+        53,
+        105,
+        849
+      ]
+    ],
+    "duplicate-hq-chain": [
+      [
+        53,
+        105,
+        849
+      ],
+      [
+        54,
+        105,
+        849
+      ],
+      [
+        71,
+        105,
+        849
+      ]
+    ],
+    "duplicate-mobile": [
+      [
+        53,
+        105,
+        1000
+      ],
+      [
+        54,
+        105,
+        1000
+      ],
+      [
+        1051,
+        81,
+        37
+      ],
+      [
+        1051,
+        85,
+        -1
+      ]
+    ],
+    "pointer-neutral-sector": [
+      [
+        53,
+        105,
+        3000
+      ],
+      [
+        3051,
+        81,
+        37
+      ],
+      [
+        3051,
+        85,
+        0
+      ]
+    ],
+    "pointer-mercenary-sector": [
+      [
+        53,
+        105,
+        3000
+      ],
+      [
+        3051,
+        81,
+        37
+      ],
+      [
+        3051,
+        85,
+        -2
+      ]
+    ],
+    "unpointed-friendly-merge": [
+      [
+        1599,
+        81,
+        37
+      ],
+      [
+        1599,
+        85,
+        -1
+      ]
+    ]
+  }
+}

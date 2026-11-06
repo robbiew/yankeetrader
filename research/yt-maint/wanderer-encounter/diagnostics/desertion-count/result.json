@@ -1,0 +1,39 @@
+{
+  "recipe": "maintenance-nth-site-v1",
+  "name": "desertion-count",
+  "site": 18095,
+  "nth": 65535,
+  "source": 564,
+  "clock": "23:59:59",
+  "occupied": [],
+  "patches": [],
+  "binaries": {
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "BRUN30.EXE": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8"
+  },
+  "copied_sha256": "d58cdd0c9464d8f14c1fb42f2daef5f62a6b4e3dcc8ed7140463d22def54a04e",
+  "inputs": {
+    "YTDATA.DAT": "0ee47eae7975827f11636c18887cc9475af3085e62c0f9f5ff98f50eaab3af0d",
+    "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+    "YTNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a"
+  },
+  "complete": true,
+  "files": {
+    "COMMANDS.TXT": "33f65b75e2df490fb3a5d5b7b7a2dc4c81d95860c30f14bfcccaefb4f4856699",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "fe417fa9980d46342352b42dc4783277ef4283dabbcbccde873e32d4f5805dc0",
+    "ENDDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "ENDTIME.LOG": "295a0e360ed7e3a1fc70e383c028b308db9a65dc43f4d4d3f4b16d4d699a1dac",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "0fbde7a9e0bb717adb1d40532db21ce3c9d613f7d0b463a59474f20e20c23da7",
+    "TRACE.BIN": "670b1f53fd69d85623efb6f57dc1c10257b873186630eb29b6f34f5f78350f29",
+    "after-YTDATA.DAT.gz": "08b073147922639ec57274a60c75a0260ab24b373a84a05a1e61f5410d3c4bf1",
+    "after-YTNAME.DAT.gz": "febf0b348ed9de8d265ea66d392dadd2117ca0bb03529e6c53148fa8a466ec70",
+    "after-YTNEWS.DAT.gz": "03393c76d58f6ca103684d94403c4f644c224b1c533867a12e7af11dba399a76",
+    "after-YTRMSG.DAT.gz": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+    "after-YTSCORE.ASC.gz": "b9f9e380274a71a56791b6bc1883e744eb6e59def5145a265f6d45a93ce95ccd",
+    "after-YTYNEWS.DAT.gz": "ef3436ebb6f97310ce69c0d9aa65dfecc2bead0ff4b37e976f79801e9c24e5fe",
+    "dosbox.log": "5411bb06c9322fc7fc6713ebb0ea67291db0a137c8e19b736ea587cf5fe1be4f"
+  }
+}

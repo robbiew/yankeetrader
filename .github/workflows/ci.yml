@@ -110,6 +110,33 @@ jobs:
           python3 scripts/verify_maintenance_clock_matrix.py
           python3 scripts/test_verify_maintenance_clock_matrix.py
           python3 scripts/test_replay_maintenance_clock_matrix.py
+          python3 scripts/verify_maintenance_wanderer.py
+          python3 scripts/test_verify_maintenance_wanderer.py
+          python3 scripts/test_replay_maintenance_wanderer.py
+          python3 scripts/verify_maintenance_placement.py
+          python3 scripts/test_verify_maintenance_placement.py
+          python3 scripts/test_replay_maintenance_placement.py
+          python3 scripts/verify_maintenance_occupied.py
+          python3 scripts/test_verify_maintenance_occupied.py
+          python3 scripts/verify_maintenance_convergence.py
+          python3 scripts/test_verify_maintenance_convergence.py
+          python3 scripts/verify_maintenance_evolved_replay.py
+          python3 scripts/test_verify_maintenance_evolved_replay.py
+          python3 scripts/test_replay_maintenance_evolved_ports.py
+          python3 scripts/test_replay_maintenance_evolved_planets.py
+          python3 scripts/test_replay_maintenance_evolved_aux.py
+          python3 scripts/test_replay_maintenance_evolved_records.py
+          python3 scripts/verify_maintenance_occupied_replay.py
+          python3 scripts/test_verify_maintenance_occupied_replay.py
+          python3 scripts/test_replay_maintenance_active_planets.py
+          python3 scripts/test_replay_maintenance_occupied_combat.py
+          python3 scripts/test_replay_maintenance_occupied_aux.py
+          python3 scripts/test_replay_maintenance_occupied_records.py
+          python3 scripts/verify_maintenance_collision_replay.py
+          python3 scripts/test_verify_maintenance_collision_replay.py
+          python3 scripts/test_replay_maintenance_collision_records.py
+          python3 scripts/test_replay_maintenance_collision_aux.py
+          python3 scripts/test_replay_maintenance_collision_mercenary.py
           python3 scripts/verify_maintenance_lottery.py
           python3 scripts/test_maintenance_lottery_verifier.py
           python3 scripts/verify_plague_civil_war.py

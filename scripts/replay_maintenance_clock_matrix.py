@@ -98,7 +98,7 @@ _UNMODELED_NPC={
 }
 
 
-def synthesize(before_files,inputs):
+def synthesize(before_files,inputs,*,wanderer_encounters=False):
     """Generate six complete files from before-bytes and declared clock inputs."""
     if type(inputs)is not Inputs:raise ValueError('explicit matrix Inputs required')
     if set(before_files)!=set(FILES[:3])or any(type(v)is not bytes for v in before_files.values()):
@@ -123,14 +123,15 @@ def synthesize(before_files,inputs):
     work=before[:3051*137]+block+before[4051*137:]
     try:
         work,npc_stats=npc_matrix(work,inputs.h1_timers,inputs.h2_timers,phase_days,
-                                  xannoron_timer=inputs.xannoron_timer,initial_state=inputs.initial_state)
+                                  xannoron_timer=inputs.xannoron_timer,initial_state=inputs.initial_state,wanderer_encounters=wanderer_encounters)
     except UnsupportedClockMatrixEncounter as error:
         raise UnsupportedProfile('NPC branch: '+str(error),error.context)from error
     except AssertionError as error:
         if str(error)in _UNMODELED_NPC:raise UnsupportedProfile('NPC branch: '+str(error))from error
         raise
     work=_watermark_and_inactive_ranks(work,final_day)
-    auxiliary=auxiliary_matrix(before_files,work,inputs.news_date,inputs.news_clock,inputs.score_date,inputs.score_clock)
+    auxiliary=auxiliary_matrix(before_files,work,inputs.news_date,inputs.news_clock,inputs.score_date,inputs.score_clock,
+                               encounters=npc_stats.get('encounters')if wanderer_encounters else None)
     result={'YTDATA.DAT':work,**auxiliary}
     assert set(result)==set(FILES),'complete six-file model output inventory'
     return result,dict(ports=port_stats,npcs=npc_stats,final_day=final_day,

@@ -1,0 +1,32 @@
+{
+  "recipe": "maintenance-convergence-chain-v1",
+  "days": {
+    "day-1": [
+      "11/02/2026",
+      null
+    ],
+    "day-2": [
+      "11/03/2026",
+      "day-1"
+    ],
+    "day-3": [
+      "11/04/2026",
+      "day-2"
+    ]
+  },
+  "initial": {
+    "planet": [
+      2802,
+      2,
+      "Convergence Haven",
+      -1,
+      500000
+    ],
+    "timestamp": 305,
+    "rates": [
+      1000,
+      1000,
+      1000
+    ]
+  }
+}

@@ -322,3 +322,41 @@
 /research/yt-maint/calendar-controls/**/dosbox.stdout -diff
 /research/yt-maint/calendar-controls/**/dosbox.stderr -diff
 /research/yt-maint/calendar-controls/**/init-ANSWERS.TXT -diff
+
+# Preserve raw Wanderer encounter evidence and exact acquisition source bytes.
+/research/yt-maint/wanderer-encounter/** -text
+/research/yt-maint/wanderer-encounter/**/*.LOG -diff
+/research/yt-maint/wanderer-encounter/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+/research/yt-maint/wanderer-encounter/**/*.BIN -diff
+/research/yt-maint/wanderer-encounter/**/dosbox.stdout -diff
+/research/yt-maint/wanderer-encounter/**/dosbox.stderr -diff
+
+# Preserve raw occupied-placement/cache evidence and acquisition sources.
+/research/yt-maint/placement-cache-controls/** -text
+/research/yt-maint/placement-cache-controls/**/*.LOG -diff
+/research/yt-maint/placement-cache-controls/**/*.BIN -diff
+/research/yt-maint/placement-cache-controls/**/dosbox.stdout -diff
+/research/yt-maint/placement-cache-controls/**/dosbox.stderr -diff
+
+# Keep the collision-replay native observation byte-exact.
+/research/yt-maint/collision-replay-native/** -text
+
+# Preserve accepted active-planet/foreign-route outputs and source witnesses.
+/research/yt-maint/occupied-route-controls/** -text
+/research/yt-maint/occupied-route-controls/**/*.LOG -diff
+/research/yt-maint/occupied-route-controls/**/*.BIN -diff
+/research/yt-maint/occupied-route-controls/**/dosbox.stdout -diff
+/research/yt-maint/occupied-route-controls/**/dosbox.stderr -diff
+
+# Preserve the additional occupied-record source observations byte-for-byte.
+/research/yt-maint/occupied-replay-native/** -text
+
+# Preserve actual convergence and full-file chain evidence byte-for-byte.
+/research/yt-maint/convergence-chain-controls/** -text
+/research/yt-maint/convergence-chain-controls/**/*.LOG -diff
+/research/yt-maint/convergence-chain-controls/**/*.BIN -diff
+/research/yt-maint/convergence-chain-controls/**/dosbox.stdout -diff
+/research/yt-maint/convergence-chain-controls/**/dosbox.stderr -diff
+
+# Preserve the original existing-Base lookup evidence byte-for-byte.
+/research/yt-maint/evolved-replay-native/** -text

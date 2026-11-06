@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-05
 
 This section is the current planning baseline, checked against merged `main`
-through `70b8832`, including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `054f4e38` (including merged maintenance PRs #88, #90–94, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -54,10 +54,62 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
   is verified research, including all raw record bytes and native phase states.
   The shared primitive preserves startup prices and introduces no schema change.
 - Complete pre-maintenance initializer research replay: all 4,151 raw records
-  match ten bounded targets, including fresh calendar/path controls; production
+  match twenty retained targets, including fresh calendar/path controls; production
   compatibility and initial maintenance remain separate.
 
 ### Most recent completed milestones
+
+The local [before-only evolved-chain replay](yt-maint/EVOLVED_CHAIN_REPLAY.md)
+now calculates all three days from the one original before-world and source
+clocks. Modeled six-file handoffs produce 54 complete comparisons / 324 exact
+files; all 501 RNG witnesses and 1440 repeated cache-field comparisons agree.
+One-day nonempty ports, heterogeneous bank/stock economy, existing-home paths and
+dynamic allocations are integrated. The 100 new tests and raw source checks pass;
+Go gameplay, dependencies and save 35 remain unchanged. Evolved clock/date
+admission controls are next, before any wider compatibility claim.
+
+The local [final convergence and three-day chain](yt-maint/CONVERGENCE_CHAIN.md)
+retains 18 full runs and 12 separately patched early-cache probes. All six outputs
+agree per day; all 144 parent/child input links and 480 cache cells match. Groups
+2–19 physically converge once, normalize to a single loaded force next day, and
+then disperse; dynamic allocation counts are 19/17/0. The exact evolved world and
+all side files are carried forward. Their separate before-only synthesis is now
+complete above; Go gameplay, dependencies and save 35 remain unchanged.
+
+The local [active-planet/foreign-route controls](yt-maint/OCCUPIED_ROUTE_CONTROLS.md)
+retain ten fixtures / 60 complete original runs, with 360 six-mode-equal output
+files. Valid named occupied planets, three pre-placement draws per active planet,
+selected ground defenses and actual foreign-force casualties/scores are verified.
+The [complete before-only profile](yt-maint/OCCUPIED_RECORD_REPLAY.md) now matches
+180 full comparisons / 1080 files and 1872 independently audited RNG states.
+Active economy, ground deaths, foreign-force counters, shared-target clears and
+the surviving Mercenary tail are integrated. Final-pointer convergence and
+full evolved-world chaining are now captured separately and integrated by the
+new profile above. Go gameplay, dependencies and save 35 remain unchanged.
+
+The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
+now synthesizes all six output files for the twelve placement/cache fixtures:
+216 complete comparisons / 1296 individual files match, with 2265 independently
+checked helper/final RNG states derived from startup. Captured RNG states and
+cache probes are comparison witnesses only. Dynamic reseeds, cache normalization,
+existing mobile groups, empty-route Mercenary reactivation and auxiliary receipts
+are integrated; save 35 and Go gameplay are unchanged.
+
+The local [occupied-placement/faction-cache research](yt-maint/PLACEMENT_COLLISIONS.md)
+adds twelve explicit recipes: 72 full native runs with six-output observer
+neutrality, twelve early cache probes and four fresh native byte reads. Bounded
+source-qualified placement and before-only cache primitives match 432 targets
+and 480 raw fields respectively. Their selected final-record synthesis is now
+integrated by the complete replay above; no Go/save change is implied.
+
+The local [Wanderer encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now closes
+all eight clock/date recipes: 144 complete comparisons / 864 files, with no
+mismatches, plus 18 complete comparisons / 108 files against six fresh runs.
+Shared preferred-target pursuit, fatal-edge scan bypass, raw zero residues and
+actual public news/surviving-force scores are integrated before-only. Fourteen
+independent diagnostics and two complete native byte reads corroborate the
+selected branch. Go gameplay and save 35 are unchanged; historical strict models
+and retained reports remain reproducible.
 
 Independent initial-maintenance calendar controls now retain twelve native runs
 for next-day, New Year, leap-day and noon profiles, with 24 complete six-file
@@ -124,8 +176,9 @@ remain separate.
    including FIELD-buffer inheritance and raw zero residues. This closes the
    selected default-count initializer record replay milestone.
    The [production compatibility contract](yt-initializer-replay/COMPATIBILITY_CONTRACT.md)
-   now specifies explicit raw state/date, safe projection, saved provenance and
-   repeat-layout reset semantics. These are proposed behavior, not shipped flags.
+   specifies explicit raw state/date, safe projection, saved provenance and
+   repeat-layout reset semantics. These are implemented in the bounded playable
+   profile; the original design-stage proposals are historical.
    The [pure Go source generator](yt-initializer-replay/GO_IMPLEMENTATION.md) now
    matches all twenty whole-world/block hashes and RNG endpoints with portable
    goldens, retaining explicit work limits and original source defects.
@@ -150,8 +203,17 @@ remain separate.
    recipes against the same saved-base-year world: all 48 native controls are
    neutral within recipe, and seven profiles replay all six files exactly.
    Its late-night seed reaches a mobile Xannor interaction with the Wanderer.
-   Next recover that encounter's RNG, record and side-file aftermath, then
-   expand bounded occupied-placement, faction-collision and evolved-world cases.
+   The [explicit encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now recovers
+   that selected branch, including RNG, raw records, public news and scores; all
+   eight profiles are native-equal. The [placement/cache controls](yt-maint/PLACEMENT_COLLISIONS.md)
+   now capture selected multiple-rejection, duplicate-pointer and faction-owner
+   boundaries. The [complete record profile](yt-maint/COLLISION_RECORD_REPLAY.md)
+   now integrates all twelve selected fixtures without observed old-state seeds.
+   The measured active-planet/foreign-force controls are now integrated before-only.
+   Final-pointer convergence and a complete three-day/six-file chain are now
+   captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md) and their separate
+   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. Next collect
+   evolved-chain clock/date controls before expanding admission.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

@@ -3,7 +3,9 @@
 The synthesizer reads a pre-transition world, original executable constants and
 measured TIMER inputs. It never reads a post-maintenance target or a target patch
 list. Only the inactive-player, empty-planet baseline is admitted; production
-maintenance, combat, arbitrary input worlds and general MBF are not implemented.
+maintenance, general combat, arbitrary input worlds and general MBF are not
+implemented. The explicit matrix extension admits a bounded zero-ground
+Wanderer encounter without broadening the historical strict API.
 """
 from collections import deque
 import argparse
@@ -28,7 +30,7 @@ def constants():
     # Audited embedded mapping: DS7e60 -> source8e30; no target record is used.
     return {a: raw[a + 0xfd0:a + 0xfd4] for a in
             (0x82ac, 0x82b0, 0x82b4, 0x8386, 0x8134, 0x7f58,
-             0x7ea0, 0x800e, 0x8742, 0x8746, 0x874a, 0x874e)}
+             0x7ea0, 0x800e, 0x8742, 0x8746, 0x874a, 0x874e, 0x8b98)}
 
 
 class UnsupportedClockMatrixEncounter(AssertionError):
@@ -101,7 +103,7 @@ def directed_path(warps, source, target):
 
 
 def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
-                initial_state=0xc805, expected_old_states=None, matrix_days=None):
+                initial_state=0xc805, expected_old_states=None, matrix_days=None, wanderer_encounters=False):
     """Return world bytes and audit statistics; only NPC-owned fields change.
 
     ``before`` may already contain the independently synthesized port updates.
@@ -205,6 +207,8 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     putraw(51 + hq, 85, const[0x7f58])
     groups = {1: dict(sector=hq, strength=remaining)}
     routes = []
+    encounters = []
+    preferred = 0
     for group in range(2, 21):
         strength = stream.shrinking(remaining)
         remaining -= strength
@@ -213,14 +217,28 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
         candidate = stream.one(3000)
         assert get(51 + candidate, 81) <= 1 or get(51 + candidate, 85) == -1, 'no candidate foreign force'
         assert get(51 + candidate, 93) <= 1, 'no accepted candidate planet'
-        # All50 cached inactive player positions are0. Every failed comparison
-        # still consumes its eager cloak draw at3348.
-        stream.draws(50)
-        target = top_fallback if group == 20 else fallback
+        # All50 cached inactive player positions are0. Without an existing
+        # preferred target, failed comparisons consume eager draws at3348.
+        candidate_scans=0 if preferred else 50
+        stream.draws(candidate_scans)
+        target = top_fallback if group == 20 else (preferred or fallback)
         route = directed_path(warps, hq, target)
+        entered=[];scans=0
         for sector in route[1:]:
+            entered.append(sector)
             plain=get(51 + sector,93)==0 and get(51 + sector,89)==0
-            if matrix and not plain:
+            if matrix and not plain and wanderer_encounters:
+                from replay_maintenance_wanderer import assault
+                event=assault(world,stream,group,sector,strength,wanderer_sector)
+                encounters.append(event);strength=event['force']
+                #66cf..66d7 writes the dying location through the shared
+                #preferred-target argument. Later groups pursue it;3302
+                #also bypasses their candidate-player draws.
+                preferred=sector
+                #66b7 clears both moving-force and location;3b7b jumps over
+                # this entered sector's player scans and all remaining edges.
+                if strength==0:break
+            elif matrix and not plain:
                 slot=int(get(51+sector,93))
                 context=dict(evidence_type='before-only-model-prefix',group=group,sector=sector,
                              planet_slot=slot,sector_owner=get(51+sector,85),
@@ -231,22 +249,22 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
                     context.update(planet_name=bytes(world[at:at+41]).rstrip(b' ').decode('ascii'),
                                    planet_owner=get(4051+slot,73))
                 raise UnsupportedClockMatrixEncounter('no entered planet/mine action in selected fixture',context)
-            assert plain, 'no entered planet/mine action in selected fixture'
-            # The ordinary group20 interception is excluded, but its per-edge
-            # player scans remain eager in this selected fixture. The separate
-            # pre-step endpoint bypass is never reached here; the traversal
-            # exits after the last entered sector has been scanned.
-            stream.draws(50)
-        groups[group] = dict(sector=target, strength=strength)
+            assert plain or wanderer_encounters, 'no entered planet/mine action in selected fixture'
+            stream.draws(50);scans+=50
+        groups[group] = dict(sector=target if strength else 0, strength=strength)
         routes.append(dict(group=group, strength=strength, fallback=fallback,
-                           candidate=candidate, sector=target, route=route,
-                           candidate_draws=50, interception_draws=50 * (len(route) - 1)))
+                           candidate=candidate, sector=target if strength else 0, route=route,
+                           candidate_draws=candidate_scans, interception_draws=scans))
+        if wanderer_encounters:routes[-1]['entered_route']=entered
     groups[1]['strength'] = remaining
 
-    # Group20 increments the ordinary endpoint's field129 at3d6d..3dbb.
-    put(51 + groups[20]['sector'], 129, F32(get(51 + groups[20]['sector'], 129) + 1))
+    # Group20 increments its ordinary endpoint only if it survives.
+    if groups[20]['strength']:
+        endpoint=51 + groups[20]['sector']
+        put(endpoint, 129, F32(get(endpoint,129)+1))
     for group, item in groups.items():
         put(51 + group, 105, item['sector'])
+        if not item['strength']:continue
         rec = 51 + item['sector']
         put(rec, 81, F32(get(rec, 81) + item['strength']))
         putraw(rec, 85, const[0x7ea0])
@@ -267,10 +285,10 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
     assert get(51 + base_sector, 93) <= 0, 'selected fixture has no base placement rejection'
     put(51 + base_sector, 93, 99)
 
-    # Treasury0 creates no hired groups. All20 positive Xannor defense sectors
-    # consume desertion draws even though their ownership prevents conversion.
+    # Treasury0 creates no hired groups. Every surviving positive defense
+    # consumes a desertion draw even though Xannor ownership prevents conversion.
     positive_defenses = [s for s in range(1, 3001) if get(51 + s, 81) > 0]
-    assert len(positive_defenses) == 20, 'selected fixture has20 nonmerged Xannor groups'
+    assert len(positive_defenses) == sum(g['strength']>0 for g in groups.values()), 'selected fixture has20 nonmerged Xannor groups'
     for sector in positive_defenses:
         assert get(51 + sector, 85) == -1, 'no human desertion target'
         stream.rng.rnd()
@@ -292,6 +310,7 @@ def _synthesize(before, h1_timers, h2_timers, day=306, *, xannoron_timer,
                              total_draws=stream.rng.draws, final_rng_state=stream.rng.state)
     if matrix:statistics.update(calendar_days=dates,lottery_player=lottery_player)
     else:statistics['lottery_candidate']=lottery_player
+    if wanderer_encounters:statistics['encounters']=encounters
     return bytes(world),statistics
 
 
@@ -300,13 +319,13 @@ def synthesize(before,h1_timers,h2_timers,day=306,*,xannoron_timer,initial_state
     return _synthesize(before,h1_timers,h2_timers,day,xannoron_timer=xannoron_timer,initial_state=initial_state,expected_old_states=expected_old_states)
 
 
-def synthesize_clock_matrix(before,h1_timers,h2_timers,calendar_days,*,xannoron_timer,initial_state):
+def synthesize_clock_matrix(before,h1_timers,h2_timers,calendar_days,*,xannoron_timer,initial_state,wanderer_encounters=False):
     """Explicit clock/date matrix, with one optional inactive lottery draw.
 
     Calendar days are independently sampled per creation phase, relative to the
     saved base year. Other unmodeled encounter/rejection branches still fail.
     """
-    return _synthesize(before,h1_timers,h2_timers,xannoron_timer=xannoron_timer,initial_state=initial_state,matrix_days=dict(calendar_days))
+    return _synthesize(before,h1_timers,h2_timers,xannoron_timer=xannoron_timer,initial_state=initial_state,matrix_days=dict(calendar_days),wanderer_encounters=wanderer_encounters)
 
 
 def measured_inputs():
