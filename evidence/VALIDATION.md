@@ -2497,3 +2497,14 @@ dependencies, save 35 and generation fingerprints are unchanged. Full Go,
 terminal/build/live BBS/native Windows acceptance is not newly claimed for this
 research-only update. The follow-up is prepared separately from PR #99. Selected
 mixed hazards/resource pickup and general MBF remain separate admission work.
+
+
+## Surviving defender receipt review fix (2026-11-06)
+
+PR #100 review finding 4493758440 was reproduced: increasing each of eighteen
+surviving Mercenary defender counters by one or by 5000 passed the old receipt
+validation (36 erroneous admissions). The new regression fails before the fix
+and passes after requiring the printed surviving-defender counter to equal
+initial minus remaining force. Only the defeated attackers retain capped raw
+losses. The complete survivor auxiliary suite and five-day native replay pass;
+README is updated. No captured evidence, production Go or save format changes.

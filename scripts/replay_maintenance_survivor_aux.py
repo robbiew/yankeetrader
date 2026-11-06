@@ -77,7 +77,7 @@ def _admit(before_files,world,events,mercenary):
             initial=_whole(e.get('initial_defenders'),100000,'initial defenders');remaining=_whole(e.get('defenders'),initial,'remaining defenders')
             if not initial or not remaining:raise ValueError('measured surviving Mercenary defense required')
             xd=_whole(e.get('x_damage'),n+5000,'raw Xannor damage');md=_whole(e.get('defender_damage'),initial+5000,'raw Mercenary damage')
-            if not n<=xd<=n+5000 or not initial-remaining<=md<=initial-remaining+5000:raise ValueError('raw damage must cover actual capped casualties')
+            if not n<=xd<=n+5000 or md!=initial-remaining:raise ValueError('surviving defender damage must equal actual losses; only defeated attackers may be capped')
             losses[-2]+=initial-remaining
         previous=g;dead.add(g);losses[-1]+=n
     mevents=mercenary.get('events',());activations=mercenary.get('activations',())

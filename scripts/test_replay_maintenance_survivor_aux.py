@@ -52,6 +52,14 @@ class SurvivorAux(unittest.TestCase):
   def checked(p):seen.append(p);self.assertEqual(p.name,'YTMAINT.EXE');return read(p)
   with patch.object(Path,'read_bytes',checked):self.publish(self.samples['mercenary-survivor','child-2'])
   self.assertTrue(seen)
+ def test_positive_surviving_defender_counter_inflation_rejected(self):
+  sample=self.samples['mercenary-survivor','child-2']
+  for index,event in enumerate(sample[3]['events']):
+   if event['kind']!='defense':continue
+   self.assertGreater(event['defenders'],0)
+   for inflated in(event['defender_damage']+1,event['defender_damage']+5000):
+    b,w,c,n=copy.deepcopy(sample);n['events'][index]['defender_damage']=inflated
+    with self.subTest(group=event['group'],counter=inflated),self.assertRaises(ValueError):self.publish((b,w,c,n))
  def test_false_damage_counts_physical_results_or_public_context_rejected(self):
   sample=self.samples['mercenary-survivor','child-2']
   for key,value in(('owner',0),('defender_damage',-1),('x_damage',0),('force',1)):
