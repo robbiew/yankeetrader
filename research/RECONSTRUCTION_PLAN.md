@@ -95,8 +95,10 @@ PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 contains the later survivor controls. [PR #100](https://github.com/robbiew/yankeetrader/pull/100)
 contains their before-only five-day replay. [PR #101](https://github.com/robbiew/yankeetrader/pull/101)
 contains the gateway acquisition controls, and [PR #102](https://github.com/robbiew/yankeetrader/pull/102)
-contains their replay. PRs #99–102 remain open at this check, not merged changes in
-this main-branch baseline.
+contains their replay. All six are now verified merged into `main`, in order,
+with valid review findings fixed and current checks passed. The separate
+[departure/merge acquisition PR #103](https://github.com/robbiew/yankeetrader/pull/103)
+now targets `main`; its before-only integration remains next.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
 four exact November 4 states through November 5/6. All 48 original-DOS runs,

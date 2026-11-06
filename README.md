@@ -722,7 +722,8 @@ friendly merging and a larger Wanderer-stock pickup. Fourteen of sixteen stage
 groups are six-mode equal; two retain disclosed port-clock/supply differences,
 with matching NPC outcomes and other five files. A strict persisted exit receipt
 fixes the observed acknowledgement race without changing DOS event acquisition.
-Before-only integration of these new paths remains next; gameplay and save 35 are unchanged.
+The prerequisite gateway replay is merged into `main`; before-only integration
+of these new departure/merge paths remains next. Gameplay and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

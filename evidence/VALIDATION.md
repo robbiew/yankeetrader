@@ -2679,3 +2679,22 @@ byte-preserving attributes and CI are updated. This is research acquisition;
 before-only integration with actual nonneutral clock admission remains next.
 No production Go, dependency, save35 or generation-fingerprint change is included.
 Full Go/terminal/build, live BBS and native Windows acceptance are not newly claimed.
+
+
+## Verified maintenance prerequisite merges (2026-11-06)
+
+PRs #97–102 were merged in order after current-head checks and review feedback
+were clear. Actual GitHub merged states and all six merge commits are verified
+ancestors of fetched `origin/main`:
+
+- #97: `0b21842b60d5d8b248dd05562b24795f7666ca27`
+- #98: `6d15f9d79b2fd690a19c38dd43521f01521eafda`
+- #99: `1977e1d25cec946b3becdc3a4f6b77c2ba99e2e0`
+- #100: `003d325a9d10a1a53363eabba4e34060d726dbd3`
+- #101: `c8fba0c4f2c46c334abb7c3a1f588de355e8a76c`
+- #102: `72777884f1e87cba739c162323645c16df272570`
+
+The final main tree is byte-identical to validated prerequisite head3ba39f65.
+The departure/merge research branch integrates that ancestry and updates only
+README/plan/validation status; its capture, verifier and protocol code is unchanged.
+PR103 now targets main and remains a separate open research change.
