@@ -2275,3 +2275,26 @@ separate.
 
 The new 153-byte packet also passed independent verification after index export
 with `core.autocrlf=true`; its raw source bytes remain unchanged on checkout.
+
+
+## Evolved maintenance clock/date controls (2026-11-05)
+
+Captured 48 full original-DOS runs: second-two, noon, eleven-day catchup and
+New Year, each with two inherited children and six observation modes. All eight
+stages agree across modes for all six files; 288 before-file inheritance links
+and 288 complete after files are authenticated. The independent verifier and
+47 regression/negative controls pass, as do all 4682 immutable archive hashes.
+
+The clocks select a fatal six-fighter mine encounter, fourteen fatal Wanderer
+attacks totaling 1700 fighters and four fatal Base attacks totaling 362 fighters.
+Ground losses are nineteen and five respectively. Source clocks expose actual
+BIOS quantization and New Year serial days 366/367; ten-day economic capping
+does not collapse distinct helper TIMER values. These are native observations,
+not yet a complete before-only replay of the new profiles. Existing replay
+guards reject their selected combat or unadmitted dates/clocks.
+
+README, plan, CI and the linked scope report are updated. Capture sources are
+frozen exactly as executed; no historical capture is rewritten. Go, dependencies
+and save compatibility are unchanged. Full Go/terminal/build/live acceptance was
+not rerun for this research-only milestone. The published PR97 tip remains
+3d1b9969cbbfcd2e25e1450629ac30d3ccbc6a4e; follow-up work remains local.

@@ -59,6 +59,14 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md)
+retain four two-child schedules / 48 full DOS runs / 288 exact six-file links.
+All eight stages have six-mode output equality. Actual two-second, noon,
+eleven-day and New Year clocks select mine and positive-ground planetary deaths,
+with independent public/physical/score accounting and 47 provenance tests.
+The published midnight profile remains unchanged; separate before-only integration
+of these measured clock/date/combat contexts is next.
+
 The local [before-only evolved-chain replay](yt-maint/EVOLVED_CHAIN_REPLAY.md)
 now calculates all three days from the one original before-world and source
 clocks. Modeled six-file handoffs produce 54 complete comparisons / 324 exact
@@ -66,7 +74,7 @@ files; all 501 RNG witnesses and 1440 repeated cache-field comparisons agree.
 One-day nonempty ports, heterogeneous bank/stock economy, existing-home paths and
 dynamic allocations are integrated. The 100 new tests and raw source checks pass;
 Go gameplay, dependencies and save 35 remain unchanged. Evolved clock/date
-admission controls are next, before any wider compatibility claim.
+controls are now captured above; their bounded before-only integration is next.
 
 The local [final convergence and three-day chain](yt-maint/CONVERGENCE_CHAIN.md)
 retains 18 full runs and 12 separately patched early-cache probes. All six outputs
@@ -212,8 +220,10 @@ remain separate.
    The measured active-planet/foreign-force controls are now integrated before-only.
    Final-pointer convergence and a complete three-day/six-file chain are now
    captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md) and their separate
-   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. Next collect
-   evolved-chain clock/date controls before expanding admission.
+   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. The
+   [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md) are now
+   captured. Next integrate their
+   measured admission and combat branches before-only.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
