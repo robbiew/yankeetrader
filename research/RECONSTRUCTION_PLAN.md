@@ -64,14 +64,23 @@ now computes both added November 5/6 children from complete modeled November 4
 parents. All 144 comparisons / 864 files and 1182 new-stage RNG-state audits
 match. It composes fatal-defense pursuit, repeated Mercenary activation,
 reallocation after stale pointers, surviving ground, persistent mines, raw aliases
-and the separate score clock. All 63 new tests pass. Next acquire controls that
-actually select mixed hazards or resource pickup before broader admission;
-existing bounded gameplay and save 35 are unchanged.
+and the separate score clock. All 63 new tests pass. The gateway acquisition below now selects mixed hazards
+and resource pickup; before-only integration of those declared fixtures is next.
+Existing bounded gameplay and save 35 are unchanged.
+
+[Gateway hazard and fighter-pickup controls](yt-maint/GATEWAY_HAZARD_CONTROLS.md)
+now retain 72 complete DOS runs / 432 output files across six explicit two-day
+fixtures. Independent audits verify 396 unchanged input links and 36 declared
+YTDATA transformations, exact six-mode outputs, mine-before-pickup and
+defense-before-pickup outcomes, fatal mine residue and day-two production after
+the minimum-rate clamp. Before-only integration is next; gameplay and save 35
+remain unchanged.
 
 Open PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) contain the completed replay
 milestones below, with #98 stacked on #97. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
-contains the later survivor controls. These are open work, not merged changes in
+contains the later survivor controls. [PR #100](https://github.com/robbiew/yankeetrader/pull/100)
+contains their before-only five-day replay. These are open work, not merged changes in
 this main-branch baseline.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
@@ -80,7 +89,8 @@ four exact November 4 states through November 5/6. All 48 original-DOS runs,
 foreign-defense combat, continuing neutral-planet/Wanderer losses, persistent
 mines, raw pointer aliases and independent news/score clocks are now captured.
 All 47 provenance tests pass. Their added children now replay before-only above;
-selected mine damage, resource pickup and general MBF remain separate.
+the new gateway fixtures select mine damage and resource pickup; their
+before-only integration and general MBF remain separate.
 
 The [before-only evolved combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md) now
 computes all four original occupied parents and both complete modeled children.
@@ -276,7 +286,9 @@ remain separate.
    captured; their [before-only replay](yt-maint/EVOLVED_CLOCK_REPLAY.md) now
    matches all 144 comparisons / 864 files with 1278 RNG-state audits. The
    [evolved combat handoffs](yt-maint/EVOLVED_COMBAT_CONTROLS.md) are now captured and their [before-only combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md)
-   is complete. Acquire mixed-hazard or resource-pickup handoffs before broadening admission.
+   is complete. The [gateway controls](yt-maint/GATEWAY_HAZARD_CONTROLS.md) now select mine damage,
+   defense and resource pickup across 72 full runs. Next integrate both days before-only
+   from a modeled parent, preserving declared fixture edits and source rate clamps.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

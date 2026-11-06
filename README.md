@@ -699,6 +699,14 @@ audits, using only modeled parents. Surviving-defender NEWS damage must equal
 actual physical loss; inflated positive counters are rejected. Gameplay and save
 35 remain unchanged.
 
+[Gateway hazard and fighter-pickup controls](research/yt-maint/GATEWAY_HAZARD_CONTROLS.md)
+now retain 72 complete DOS runs / 432 output files across six explicit two-day
+fixtures. Independent audits verify 396 unchanged input links and 36 declared
+YTDATA transformations, exact six-mode outputs, mine-before-pickup and
+defense-before-pickup outcomes, fatal mine residue and day-two production after
+the minimum-rate clamp. Before-only integration is next; gameplay and save 35
+remain unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

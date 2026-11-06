@@ -129,6 +129,6 @@ README, plan, validation notes and portable CI are updated. Production Go,
 dependencies, save 35 and generation fingerprints do not change. General MBF,
 arbitrary worlds, active-player maintenance and selected mixed hazards/resource
 pickup remain separate. These research checks do not establish live BBS
-acceptance or native Windows crash durability. Next acquire
-controls that actually select the remaining hazard or pickup branches before
-broader research admission; bounded gameplay versions already exist.
+acceptance or native Windows crash durability. The subsequent [gateway controls](GATEWAY_HAZARD_CONTROLS.md) now select these
+branches in six explicit two-day fixtures. Next integrate them before-only from
+a modeled parent; bounded gameplay versions already exist.
