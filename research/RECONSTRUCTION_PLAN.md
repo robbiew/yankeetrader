@@ -2,7 +2,7 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-05
+## Current implementation and next work — checked 2026-11-06
 
 This section is the current planning baseline, checked against merged `main`
 through `054f4e38` (including merged maintenance PRs #88, #90–94, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
@@ -59,6 +59,42 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The [before-only evolved combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md) now
+computes all four original occupied parents and both complete modeled children.
+All 144 comparisons / 864 files and 1242 child RNG-state audits match. It composes
+three/four-home economy, ordinary neutral-planet defense, surviving Mercenary
+combat, descending reactivation, same-day victims, authentic stale pointers and
+all six writers. All 56 new tests pass. Next acquire mixed-hazard, resource-pickup
+or longer surviving-force handoffs before broadening admission; existing bounded
+gameplay is unchanged, as are dependencies and save 35.
+
+The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)
+now retain four two-child schedules / 48 complete DOS runs / 288 exact six-file
+inheritance links. All eight stages have six-mode output equality. Actual
+surviving Mercenary offense and repeated descending-scan activation, a stale
+Xannor group pointer, continuing Route Haven ground defense and extinct/neutral
+controls are verified without rewriting output. Their separate before-only
+integration is complete above; Go gameplay, dependencies and save 35 are unchanged.
+
+The local [before-only evolved clock/date replay](yt-maint/EVOLVED_CLOCK_REPLAY.md)
+now computes the original parent and both children for all four captured profiles.
+All 144 complete comparisons / 864 files and 1278 independent child RNG-state
+checks match. Fractional/capped/year intervals, positive-ground home battles,
+fatal mine accounting and source-derived zero residues compose with modeled-only
+six-file handoffs. The repeated group-20 endpoint correctly skips the original
+movement/deposition block. All 69 new tests pass; Go gameplay and save 35 are
+unchanged. Evolved foreign-force and surviving-combat handoffs are now captured
+above; their separate before-only integration is next. Arbitrary-world and
+general MBF compatibility remain separate.
+
+The local [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md)
+retain four two-child schedules / 48 full DOS runs / 288 exact six-file links.
+All eight stages have six-mode output equality. Actual two-second, noon,
+eleven-day and New Year clocks select mine and positive-ground planetary deaths,
+with independent public/physical/score accounting and 47 provenance tests.
+The published midnight profile remains unchanged; the separate before-only
+integration of these measured clock/date/combat contexts is now complete above.
+
 The local [before-only evolved-chain replay](yt-maint/EVOLVED_CHAIN_REPLAY.md)
 now calculates all three days from the one original before-world and source
 clocks. Modeled six-file handoffs produce 54 complete comparisons / 324 exact
@@ -66,7 +102,7 @@ files; all 501 RNG witnesses and 1440 repeated cache-field comparisons agree.
 One-day nonempty ports, heterogeneous bank/stock economy, existing-home paths and
 dynamic allocations are integrated. The 100 new tests and raw source checks pass;
 Go gameplay, dependencies and save 35 remain unchanged. Evolved clock/date
-admission controls are next, before any wider compatibility claim.
+controls and their bounded before-only integration are now complete above.
 
 The local [final convergence and three-day chain](yt-maint/CONVERGENCE_CHAIN.md)
 retains 18 full runs and 12 separately patched early-cache probes. All six outputs
@@ -212,8 +248,12 @@ remain separate.
    The measured active-planet/foreign-force controls are now integrated before-only.
    Final-pointer convergence and a complete three-day/six-file chain are now
    captured in [the new controls](yt-maint/CONVERGENCE_CHAIN.md) and their separate
-   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. Next collect
-   evolved-chain clock/date controls before expanding admission.
+   [before-only replay](yt-maint/EVOLVED_CHAIN_REPLAY.md) is complete. The
+   [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md) are now
+   captured; their [before-only replay](yt-maint/EVOLVED_CLOCK_REPLAY.md) now
+   matches all 144 comparisons / 864 files with 1278 RNG-state audits. The
+   [evolved combat handoffs](yt-maint/EVOLVED_COMBAT_CONTROLS.md) are now captured and their [before-only combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md)
+   is complete. Acquire mixed-hazard or resource-pickup handoffs before broadening admission.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

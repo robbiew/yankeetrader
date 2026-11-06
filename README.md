@@ -672,8 +672,22 @@ links. Eighteen final pointers share one physical force, loaded once on the next
 day; all 480 source-owned cache cells are independently checked. The
 [before-only replay of the evolved chain](research/yt-maint/EVOLVED_CHAIN_REPLAY.md)
 now matches 54 full comparisons / 324 files, with modeled-only six-file handoffs,
-501 RNG-state audits and all captured cache fields predicted. Evolved clock/date
-controls remain separate; gameplay and save 35 are unchanged.
+501 RNG-state audits and all captured cache fields predicted.
+[Evolved clock/date controls](research/yt-maint/EVOLVED_CLOCK_CONTROLS.md) now add
+48 full runs and 288 exact inherited-file links, selecting mine and positive-ground
+NPC defenses. Their [separate before-only replay](research/yt-maint/EVOLVED_CLOCK_REPLAY.md)
+now matches 144 complete comparisons / 864 files and 1278 independent RNG-state
+audits, including modeled-only handoffs, exact mine residues and casualty-backed
+news/scores. Gameplay and save 35 are unchanged.
+
+[Evolved foreign-force and surviving-combat controls](research/yt-maint/EVOLVED_COMBAT_CONTROLS.md)
+now retain 48 full DOS runs / 288 exact six-file handoffs. They preserve a surviving
+Mercenary offense, its later stale Xannor pointer, continuing neutral-planet defense
+and extinct/neutral controls. All eight stages agree across six modes. The
+[before-only combat replay](research/yt-maint/EVOLVED_COMBAT_REPLAY.md) now matches
+144 complete comparisons / 864 files and 1242 independent RNG-state audits.
+It derives actual Mercenary casualties, repeated activation and stale pointers;
+gameplay and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
