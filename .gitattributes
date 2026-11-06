@@ -375,3 +375,10 @@
 /research/yt-maint/evolved-combat-controls/**/*.BIN -diff
 /research/yt-maint/evolved-combat-controls/**/dosbox.stdout -diff
 /research/yt-maint/evolved-combat-controls/**/dosbox.stderr -diff
+
+# Preserve longer survivor-chain captures and executed source snapshots.
+/research/yt-maint/survivor-chain-controls/** -text
+/research/yt-maint/survivor-chain-controls/**/*.LOG -diff
+/research/yt-maint/survivor-chain-controls/**/*.BIN -diff
+/research/yt-maint/survivor-chain-controls/**/dosbox.stdout -diff
+/research/yt-maint/survivor-chain-controls/**/dosbox.stderr -diff

@@ -689,6 +689,12 @@ and extinct/neutral controls. All eight stages agree across six modes. The
 It derives actual Mercenary casualties, repeated activation and stale pointers;
 gameplay and save 35 are unchanged.
 
+[Longer survivor handoffs](research/yt-maint/SURVIVOR_CHAIN_CONTROLS.md) now extend
+four actual November 4 states through November 5/6: 48 full DOS runs, 288 exact
+six-file links and eight equal six-mode output groups. They select later foreign
+defense and Wanderer attacks, preserve mines/raw pointers and retain a distinct
+news/score clock. Separate before-only integration is next; gameplay is unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

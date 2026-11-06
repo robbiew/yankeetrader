@@ -128,6 +128,7 @@ python3 scripts/test_replay_maintenance_evolved_combat_records.py
 README, plan, validation and CI are updated. Production Go, dependencies, save 35
 and `qb36-v1` fingerprints are unchanged. Local research tests do not establish
 live BBS acceptance or native Windows durability. Historical profile APIs and
-admission guards remain unchanged. Next acquire mixed-hazard, resource-pickup or
-longer surviving-force handoffs before broadening the measured replay boundary;
-the bounded gameplay versions of those mechanisms already exist.
+admission guards remain unchanged. [Longer surviving-force handoffs](SURVIVOR_CHAIN_CONTROLS.md)
+are now captured separately; compose those added children before-only next.
+Mixed hazards/resource pickup still need selected controls before broader
+admission. Their bounded gameplay versions already exist.

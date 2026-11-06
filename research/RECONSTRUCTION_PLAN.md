@@ -59,14 +59,27 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+Open PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
+[#98](https://github.com/robbiew/yankeetrader/pull/98) contain the completed replay
+milestones below, with #98 stacked on #97. Neither is treated as merged work in
+this main-branch baseline.
+
+The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
+four exact November 4 states through November 5/6. All 48 original-DOS runs,
+288 inherited-file links and eight six-mode output groups verify. Later Xannor
+foreign-defense combat, continuing neutral-planet/Wanderer losses, persistent
+mines, raw pointer aliases and independent news/score clocks are now captured.
+All 47 provenance tests pass. Next compose these added children before-only;
+selected mine damage, resource pickup and general MBF remain separate.
+
 The [before-only evolved combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md) now
 computes all four original occupied parents and both complete modeled children.
 All 144 comparisons / 864 files and 1242 child RNG-state audits match. It composes
 three/four-home economy, ordinary neutral-planet defense, surviving Mercenary
 combat, descending reactivation, same-day victims, authentic stale pointers and
-all six writers. All 56 new tests pass. Next acquire mixed-hazard, resource-pickup
-or longer surviving-force handoffs before broadening admission; existing bounded
-gameplay is unchanged, as are dependencies and save 35.
+all six writers. All 56 new tests pass. Longer surviving-force handoffs are now captured above;
+their before-only composition is next. Mixed hazards and resource pickup remain
+separate admission work; existing gameplay, dependencies and save 35 are unchanged.
 
 The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)
 now retain four two-child schedules / 48 complete DOS runs / 288 exact six-file
@@ -84,8 +97,8 @@ fatal mine accounting and source-derived zero residues compose with modeled-only
 six-file handoffs. The repeated group-20 endpoint correctly skips the original
 movement/deposition block. All 69 new tests pass; Go gameplay and save 35 are
 unchanged. Evolved foreign-force and surviving-combat handoffs are now captured
-above; their separate before-only integration is next. Arbitrary-world and
-general MBF compatibility remain separate.
+above, and their separate before-only integration is complete. Arbitrary-world
+and general MBF compatibility remain separate.
 
 The local [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md)
 retain four two-child schedules / 48 full DOS runs / 288 exact six-file links.

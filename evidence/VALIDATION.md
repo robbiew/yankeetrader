@@ -2416,3 +2416,46 @@ BBS and native Windows acceptance are not newly claimed by these research-only
 checks. The completed follow-up is prepared separately from prerequisite PR #97,
 including the two control/replay pairs. Next acquire mixed-hazard/resource-pickup
 or longer surviving-force handoffs before broader research admission.
+
+
+## Longer survivor and foreign-defense handoffs (2026-11-06)
+
+Acquired 48 complete original-DOS runs: four actual November 4 output states, each
+followed by two unchanged six-file children on November 5/6. All 288 input-file
+inheritance links match. All six output files agree across six modes at all
+eight stages. Every process exited naturally on the first acquisition; no
+failed/forced/timeout run is counted. Corpus: 1318 files / 11,442,647 bytes; manifest
+2ce91ff7798d4da83f9ca5966fc999958b7a038808c4da4ed4c26889b3b2cc5e.
+
+Mercenary-survivor November 6 selects 18 earlier Xannor-phase defensive battles.
+Public counter columns sum 2533 Xannor / 3491 Mercenary losses and reconcile actual
+physical 4966→2433 / 97337→93846. A legitimate 1/0 casualty summary is retained;
+0/0 fiction is rejected. The later first Mercenary movement already has 93846,
+and four descending activations retain that force. Planet-survivor loses 146
+then 70 Xannor in 18 fatal Route Haven attacks each day. Neutral-survivor loses 1425
+in 5 fatal Wanderer attacks on November 6 while neutral 37 remains at 854. Mine-survivor
+loses 818 in 4 fatal Wanderer attacks on November 5 and none on November 6. Mines persist
+and new deposits remain visible; no selected mine damage or stock pickup is claimed.
+
+The actual stale/duplicate pointer fields are retained without canonicalization.
+The known before-cache rule derives an empty group 8 from inherited pointer 109;
+the new final pointer 328 / physical 2 are observations after reallocation, not a new
+captured cache array or input patch. Neutral-survivor November 5 has NEWS 00:00:00
+and SCORE 00:00:01, each bound to its own actual source call. Replacing the score
+clock with the news clock fails verification.
+
+All 47 independent provenance/semantic tests pass. They cover both pinned parent
+corpora and lineage rebinding, exact mode/stage/input/output identity, actual
+launch/CPU/date/time/controller/observer evidence, raw port/planet timestamps,
+zero-column/public phase/console disagreement, physical/score conservation,
+persistent mines and raw pointers. All 4682 archive hashes and 47 completed mobile
+controls / 22 REA observations verify. No new helper caller, native byte query or
+provider installation was required. Both historical parent corpora are unchanged.
+
+README, plan, evidence report, byte-preserving attributes and portable CI are
+updated. This is acquisition research, not a new before-only model. Production
+Go, dependencies, save 35 and generation fingerprints are unchanged. Full Go,
+terminal/build/live BBS/native Windows acceptance is not newly claimed. The
+follow-up is prepared separately from PR #98; the branches for PRs #97/#98 remain
+unchanged. Next compose the two added children before-only with measured days 309/310
+and their selected foreign-defense/publication contexts.
