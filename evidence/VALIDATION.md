@@ -2459,3 +2459,41 @@ terminal/build/live BBS/native Windows acceptance is not newly claimed. The
 follow-up is prepared separately from PR #98; the branches for PRs #97/#98 remain
 unchanged. Next compose the two added children before-only with measured days 309/310
 and their selected foreign-defense/publication contexts.
+
+
+## Before-only replay of both added survivor days (2026-11-06)
+
+The five-day API now accepts one exact original three-file world and five typed
+source-clock inputs, computes the November 2–4 prefix with its established
+combat/clock profile, then passes that modeled six-file object into November 5
+and its modeled result into November 6. All 144 new-child comparisons / 864 files
+match byte-for-byte; all 1182 independent new-stage helper/final RNG witnesses agree.
+Prefix witnesses also agree, without counting their targets again. Core synthesis
+opens only immutable original YTMAINT; target files are first read after all five
+days exist. Captured child files, raw RNG states and cache arrays are not inputs.
+
+The new selected fatal sector-defense path composes the original shared-pursuit
+write at 788c–788f already recovered by the occupied caller. It derives eighteen
+November 6 battles and 2533 Xannor / 3491 Mercenary casualties, followed by four Mercenary
+activations preserving 93846 without invented second loss. Raw printed 1/0 casualty
+columns remain separate from capped physical losses. Earlier stale pointer 109
+normalizes from modeled physical ownership, reallocates to 328 / 2, and later raw
+aliases 1436 (groups 2/19) and 2369 (groups 13/15) remain authentic. Persistent mines are
+not erased or deposited again on no-hop paths. Neutral November 5 NEWS 00:00:00 and
+SCORE 00:00:01 are separate explicit admitted calls. All five auxiliary files,
+physical score columns, inactive ranks and journal rotations match completely.
+
+All 63 new tests pass: four port, four planet, seven auxiliary, nineteen NPC and
+29 five-day properties. Tests enforce complete-chain-before-target ordering,
+actual object/marker handoffs, all helper/final witness corruption checks,
+poisoned captured-RNG independence, unknown world/array/date/caller admission,
+exact mixed-prefix selection, distinct clocks, fatal pursuit and phase accounting.
+The historical combat 27 and clock 28 chain tests pass; reused chronology evidence
+verifies 332 controls / three native reads. No runtime capture, provider installation,
+native byte query or historical corpus rewrite was needed for this model step.
+
+README, plan, linked reports and portable CI are updated. Production Go,
+dependencies, save 35 and generation fingerprints are unchanged. Full Go,
+terminal/build/live BBS/native Windows acceptance is not newly claimed for this
+research-only update. The follow-up is prepared separately from PR #99. Selected
+mixed hazards/resource pickup and general MBF remain separate admission work.

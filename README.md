@@ -693,7 +693,9 @@ gameplay and save 35 are unchanged.
 four actual November 4 states through November 5/6: 48 full DOS runs, 288 exact
 six-file links and eight equal six-mode output groups. They select later foreign
 defense and Wanderer attacks, preserve mines/raw pointers and retain a distinct
-news/score clock. Separate before-only integration is next; gameplay is unchanged.
+news/score clock. Their [before-only five-day replay](research/yt-maint/SURVIVOR_CHAIN_REPLAY.md)
+now matches 144 complete comparisons / 864 files and 1182 new-stage RNG-state
+audits, using only modeled parents. Gameplay and save 35 remain unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
