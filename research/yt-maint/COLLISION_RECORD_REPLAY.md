@@ -136,9 +136,9 @@ work limits. Before fingerprints and explicit source-clock inventories prevent
 accidental admission of unmeasured input worlds.
 
 [Valid active-planet and foreign-route controls](OCCUPIED_ROUTE_CONTROLS.md) now
-cover the first two acquisition gaps. Next integrate those measured branches into
-a separate before-only profile, then collect final-pointer convergence and an
-exact evolved-world chain. Do not repeat
+cover the first two acquisition gaps. [A separate complete profile](OCCUPIED_RECORD_REPLAY.md)
+now integrates those measured branches. Next collect final-pointer convergence
+and an exact evolved-world chain. Do not repeat
 these twelve initial fixture integrations as missing work. General MBF, arbitrary
 maintenance, DOS save conversion, live BBS acceptance and native Windows durability
 remain separate.

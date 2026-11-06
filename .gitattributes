@@ -347,3 +347,6 @@
 /research/yt-maint/occupied-route-controls/**/*.BIN -diff
 /research/yt-maint/occupied-route-controls/**/dosbox.stdout -diff
 /research/yt-maint/occupied-route-controls/**/dosbox.stderr -diff
+
+# Preserve the additional occupied-record source observations byte-for-byte.
+/research/yt-maint/occupied-replay-native/** -text

@@ -3,8 +3,9 @@
 Ten declared fixtures now retain **60 complete original-DOS maintenance runs**:
 two unobserved, one attach-only and three host-clock-observed runs per fixture.
 All six output files agree across the six modes for each fixture: **360 retained
-output files**, with no masks or repaired timestamps. These are new controlled
-observations, not complete before-only record synthesis for populated worlds.
+output files**, with no masks or repaired timestamps. Their selected full-stream
+integration is now complete in [a separate before-only profile](OCCUPIED_RECORD_REPLAY.md);
+this acquisition report preserves the original control scope.
 
 This extends [the completed twelve-fixture replay](COLLISION_RECORD_REPLAY.md).
 It changes no Go gameplay, dependencies, `qb36-v1` fingerprint or save **35**.
@@ -142,9 +143,9 @@ Both destinations must be fresh; the runners preserve failures and stop. Portabl
 verification launches no emulator, Frida, Go application or network operation.
 All prior corpus pins and historical strict replay APIs remain unchanged.
 
-**Next integrate these measured active-economy, ground-defense and foreign-force
-branches into a separate before-only full-stream/six-file profile.** The new
-fixtures remain deliberately rejected by the earlier collision-record profile.
+[The separate before-only full-stream/six-file profile](OCCUPIED_RECORD_REPLAY.md)
+now integrates these measured branches. The fixtures remain deliberately rejected
+by the earlier collision-record profile.
 Final-pointer convergence and an exact evolved-world chain are still separate;
 none of these ten final worlds has duplicate positive mobile pointers. General
 MBF, arbitrary maintenance compatibility, DOS save import, live BBS acceptance

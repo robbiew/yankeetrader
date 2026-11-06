@@ -63,8 +63,11 @@ The local [active-planet/foreign-route controls](yt-maint/OCCUPIED_ROUTE_CONTROL
 retain ten fixtures / 60 complete original runs, with 360 six-mode-equal output
 files. Valid named occupied planets, three pre-placement draws per active planet,
 selected ground defenses and actual foreign-force casualties/scores are verified.
-These are witness-assisted controls; complete before-only active-world synthesis
-is next, followed by final-pointer convergence and evolved-world chaining.
+The [complete before-only profile](yt-maint/OCCUPIED_RECORD_REPLAY.md) now matches
+180 full comparisons / 1080 files and 1872 independently audited RNG states.
+Active economy, ground deaths, foreign-force counters, shared-target clears and
+the surviving Mercenary tail are integrated. Final-pointer convergence and
+evolved-world chaining are next.
 Go gameplay, dependencies and save 35 remain unchanged.
 
 The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
@@ -189,8 +192,8 @@ remain separate.
    now capture selected multiple-rejection, duplicate-pointer and faction-owner
    boundaries. The [complete record profile](yt-maint/COLLISION_RECORD_REPLAY.md)
    now integrates all twelve selected fixtures without observed old-state seeds.
-   Next integrate the measured active-planet/foreign-force controls before-only,
-   then expand final-pointer convergence and evolved-world
+   The measured active-planet/foreign-force controls are now integrated before-only.
+   Next expand final-pointer convergence and evolved-world
    chains, then extend their before-only record synthesis.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.

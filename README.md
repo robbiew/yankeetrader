@@ -661,7 +661,10 @@ save 35 are unchanged; arbitrary evolved-world maintenance remains separate.
 now retain ten fixtures / 60 full DOS runs with six-mode output equality. Named
 occupied planets, prior economy RNG advancement, ground defense and actual
 foreign-force losses/score receipts are independently verified across 360 files.
-Their complete before-only stream integration is next; gameplay/save 35 are unchanged.
+The [complete before-only profile](research/yt-maint/OCCUPIED_RECORD_REPLAY.md)
+now matches 180 complete comparisons / 1080 files with 1872 independent RNG-state
+checks. Final-pointer convergence and evolved worlds remain separate; gameplay
+and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

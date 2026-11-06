@@ -2121,3 +2121,49 @@ Final checks also passed the historical 84-control placement/cache verifier,
 new corpus files independently verify after index export with `core.autocrlf=true`;
 checkout does not normalize raw captures or acquisition sources. No old corpus
 pin, archive or historical report was rewritten to fit these results.
+
+## Complete active-planet/foreign-route record replay — 2026-11-05
+
+The separate bounded occupied-record profile now synthesizes all six files for
+the ten retained active-planet/foreign-route before-worlds. Thirty authentic
+source observations compare against six paired targets each: 180 complete
+comparisons / 1080 individual files, zero byte mismatches. All 1872 independent
+helper-entry/final-score RNG witnesses agree with states calculated from startup.
+Captured raw states are discarded during input extraction; poisoning them leaves
+synthesis unchanged and fails the separate comparison audit. Read guards exclude
+all targets, captured states, recipes and manifests from core synthesis.
+
+Ordinary one-day active-planet economy reproduces every raw field, including
+fractional cargo/fighter/missile inventories, source TIMER-minute bytes and three
+eager event draws per planet. Strong neutral ground consumes 25 units across 19
+calculated fatal attacks; actual public Xannor losses total 5978. Foreign defense
+uses source batch/tie order, derives actual raw loss counters and original labels,
+clears shared pursuit when defenders die, and reproduces all later destinations.
+The surviving 97525 Mercenaries move from 854 to 2689 in their own tail; per-owner
+physical force, scores and public/private separation remain exact.
+
+All 116 new tests pass: 42 active-economy, 28 full-record, 25 auxiliary, 15 direct
+synthetic combat/tail and six native integrity methods. Unknown before-worlds,
+clock types/order/inventories and unsupported economy/combat branches fail closed.
+The historic collision replay still rejects these new worlds and retains its
+own validated results. No old model or captured output was broadened/rewritten.
+
+Two complete additional REA/Ghidra reads fill source gaps: 0x11111/699 bytes and
+0x17691/229 bytes. All 928 relocated bytes independently match immutable original
+YTMAINT; the packet has SHA-256 107dd59cca0e57ade5f590df37b178621abc999f086574de97ad6d83332d0fd7.
+Existing event, battle and aftermath observations are reused. Static source
+reads are not new DOS execution traces; no new runtime captures were needed.
+
+README, reconstruction plan, linked control reports and portable CI checks are
+updated. All 319 local Markdown targets in changed documentation exist. Go,
+dependencies, save 35, generation fingerprints and raw retained control corpora
+are unchanged. Go tests, terminal smokes, platform builds and live/native BBS
+acceptance were not rerun or newly claimed for this research-only update.
+Final-pointer convergence and exact evolved-world chaining remain next.
+
+Final regressions passed: all 25 historical collision-record tests; the untouched
+60-run occupied-control verifier; 47 mobile Xannor controls and 22 native reads;
+56 plague/civil-war controls and 18 native reads; and all 4682 original archive
+hashes. The additional 928-byte packet also verifies after an index export with
+`core.autocrlf=true`. Its raw bytes survive checkout unchanged. No historical
+capture/pin or production source was modified by these checks.
