@@ -2497,3 +2497,38 @@ dependencies, save 35 and generation fingerprints are unchanged. Full Go,
 terminal/build/live BBS/native Windows acceptance is not newly claimed for this
 research-only update. The follow-up is prepared separately from PR #99. Selected
 mixed hazards/resource pickup and general MBF remain separate admission work.
+
+## Gateway mine, defense and pickup acquisition (2026-11-06)
+
+Six explicitly edited copied-world fixtures now select Mercenary mine damage,
+planetary fighter pickup, guarded offense and fatal mine aftermath. All 72 original
+DOS runs naturally completed on the first acquisition. Twelve stage groups agree
+across six modes: 360 nonreference file comparisons, zero differences, with 432
+complete output files. An indexed Git export with automatic line-ending conversion
+also passes the complete pinned audit. The exact lineage audit distinguishes 396 unchanged input
+links (180 first-stage side files and 216 complete second-stage files) from 36
+explicit fifteen-edit YTDATA transformations. No second-day fixture edits occur.
+
+Independent verification reconstructs each transformation, proves the gateway's
+strong connectivity and sole predecessor, authenticates launch/controller/CPU and
+source clocks, qualifies all 36 observed streams and checks public/console order,
+physical/score conservation, mine residue, stock and zero-bank ground economy.
+The fatal three-mine case still calls source helper2/4aa4 three times after its
+first mine kills M1. Zero starting production rates become one after day one;
+day-two production adds three fighters. Offensive losses inferred from stamps are
+labeled observed rather than independently predicted RNG results. Exact raw zeros
+and original receipt typos remain unchanged.
+
+All 34 independent regressions pass, including forged fixture/graph/handoff,
+source callback counts, public/physical disagreement, hidden ground changes and
+zero-survivor offensive winners. The winner regression failed with the prior
+non-strict admission and passes with the positive-survivor guard. The reused
+complete 3462-byte original Mercenary source packet and all 4682 archive hashes
+verify. The frozen corpus has 1974 files / 17257301 bytes, manifest
+fff8758c16f18302ceda4115c1960f4bc859a3bd5333a29df1b5da3b70aa8e90.
+
+README, plan, report, portable CI and byte-preserving attributes are updated.
+This is research acquisition, not before-only integration: next compose these
+declared fixtures from a modeled November 4 parent. No production Go, dependency,
+save-35 or generation-fingerprint change is included. Full Go/terminal/build,
+live BBS and native Windows durability acceptance are not newly claimed.

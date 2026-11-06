@@ -382,3 +382,10 @@
 /research/yt-maint/survivor-chain-controls/**/*.BIN -diff
 /research/yt-maint/survivor-chain-controls/**/dosbox.stdout -diff
 /research/yt-maint/survivor-chain-controls/**/dosbox.stderr -diff
+
+# Preserve gateway hazard captures and executed source snapshots.
+/research/yt-maint/gateway-hazard-controls/** -text
+/research/yt-maint/gateway-hazard-controls/**/*.LOG -diff
+/research/yt-maint/gateway-hazard-controls/**/*.BIN -diff
+/research/yt-maint/gateway-hazard-controls/**/dosbox.stdout -diff
+/research/yt-maint/gateway-hazard-controls/**/dosbox.stderr -diff
