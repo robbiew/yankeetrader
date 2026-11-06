@@ -702,8 +702,13 @@ now retain 72 complete DOS runs / 432 output files across six explicit two-day
 fixtures. Independent audits verify 396 unchanged input links and 36 declared
 YTDATA transformations, exact six-mode outputs, mine-before-pickup and
 defense-before-pickup outcomes, fatal mine residue and day-two production after
-the minimum-rate clamp. Before-only integration is next; gameplay and save 35
-remain unchanged.
+the minimum-rate clamp.
+Their [before-only gateway replay](research/yt-maint/GATEWAY_HAZARD_REPLAY.md) now
+matches 216 complete comparisons / 1296 files and 1962 independent new-stage
+RNG-state witnesses. A pure declared transformation is applied once to the modeled
+November 4 parent; both children then use complete modeled handoffs. Mine damage,
+guard combat, pickup, minimum-rate clamps and exact public receipts are derived
+without captured-state seeds. Gameplay and save 35 remain unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
