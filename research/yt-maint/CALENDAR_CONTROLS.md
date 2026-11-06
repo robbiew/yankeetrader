@@ -145,5 +145,6 @@ compatibility remain separate. Modern exploit safeguards remain intentional.
 
 The later [occupied-placement/cache investigation](PLACEMENT_COLLISIONS.md) now
 retains twelve selected initial-world recipes and bounded primitives. Their
-complete final-record replay and general evolved-world coverage remain separate;
+[selected final-record replay](COLLISION_RECORD_REPLAY.md) is now integrated,
+while general evolved-world coverage remains separate;
 do not repeat those selected source-stage captures as missing research.

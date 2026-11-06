@@ -2027,3 +2027,49 @@ change; those checks remain enabled in CI.
 All 1773 pinned corpus files additionally pass independent verification after
 an index export with `core.autocrlf=true`; no raw observation or acquisition
 source is normalized by checkout.
+
+
+## Complete initial collision-fixture record replay — 2026-11-05
+
+The selected twelve placement/cache fixtures now have complete before-only
+six-file synthesis, rather than only primitive/phase predictions. All 36 source
+observations compare against six paired untouched/attach-only/observed targets:
+216 complete comparisons / 1296 individual files, zero byte mismatches. The raw
+84-control corpus, original archive and historical strict replay reports remain
+unchanged. Per-port timestamps and all raw zero residues are compared without
+masks or target-derived corrections.
+
+Every RNG state is derived from startup and explicit source-labelled TIMERs.
+Captured old RNG states and cache probes are excluded from synthesis; 2265 helper
+and final-score raw-state checks independently agree afterward. Poisoned raw
+witnesses leave modeled outputs unchanged and fail the separate audit. Dynamic
+helper inventories, repeated placement, normalized/existing groups, shared
+preference, source-order route actions and the selected zero-tax Mercenary tail
+now continue through the lottery and auxiliary writers. The 37-force Mercenary
+case derives two descending-scan activations and preserves departure raw zero
+`00002800`; public/private receipts and actual faction scores remain exact.
+
+An additional complete REA original-byte read at `0x14600`, length 3462, is
+independently verified against relocated original bytes and immutable packet
+identity. Eleven native provenance/byte corruption tests pass. The new model
+suite has 25 tests, auxiliary suite 22 and Mercenary suite 18: 76 new methods
+pass in total. Original-only file-read guards, immutable typed clocks, unknown
+before-world rejection, source chronology/consumption, independent state audits,
+casualty conservation and explicit unsupported branches are covered. A separate
+regression matches all six outputs for each of the earlier eight clock/date
+recipes, and the historical strict late profile keeps its original rejection.
+
+Current main's merged cursor fix was integrated cleanly; this research changes
+no Go gameplay, dependency, save 35 or `qb36-v1` fingerprint. New mines, foreign
+combat, stock pickup, evolved worlds, arbitrary MBF and general DOS maintenance
+remain unsupported unless separately recovered. No new terminal/live BBS/native
+Windows acceptance is claimed. Reproduction and source boundaries are in
+[the complete replay report](../research/yt-maint/COLLISION_RECORD_REPLAY.md).
+
+Final affected historical regressions passed: 37 placement replay tests, 69
+placement verifier tests, 18 Wanderer replay tests, 63 Wanderer verifier tests
+and 16 clock-matrix tests. All 4682 archive hashes remain valid. The new native
+packet also verifies after an index export with `core.autocrlf=true`; its raw
+bytes are preserved across checkout. All 76 new tests passed again at the final
+staged source state. Production Go, terminal smokes and platform builds were
+not rerun for this research-only update; their existing CI checks remain enabled.

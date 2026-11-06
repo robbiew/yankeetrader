@@ -337,3 +337,6 @@
 /research/yt-maint/placement-cache-controls/**/*.BIN -diff
 /research/yt-maint/placement-cache-controls/**/dosbox.stdout -diff
 /research/yt-maint/placement-cache-controls/**/dosbox.stderr -diff
+
+# Keep the collision-replay native observation byte-exact.
+/research/yt-maint/collision-replay-native/** -text

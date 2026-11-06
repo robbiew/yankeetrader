@@ -651,8 +651,11 @@ outputs agree across each recipe's observed/unobserved runs. Source-qualified
 placement replay matches 432 accepted-target checks, and a before-only cache
 primitive matches all 480 captured location/force fields. Multiple rejections,
 fractional/negative/raw-zero gates and duplicate/foreign-owner pointers are
-explicitly bounded. These are primitive/phase results; complete final-record
-synthesis for the new worlds remains separate. Gameplay and save 35 are unchanged.
+explicitly bounded. The [complete collision-record replay](research/yt-maint/COLLISION_RECORD_REPLAY.md)
+now integrates those twelve fixtures: 216 complete comparisons / 1296 files are
+byte-exact, and 2265 independent raw RNG witnesses agree with calculated states.
+Captured old RNG states and cache probes are not synthesis inputs. Gameplay and
+save 35 are unchanged; arbitrary evolved-world maintenance remains separate.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-05
 
 This section is the current planning baseline, checked against merged `main`
-through `7b99f901` (including merged maintenance PRs #88, #90–94), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `8bcd05a2` (including merged maintenance PRs #88, #90–94 and cursor fix #95), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -59,12 +59,20 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The local [complete collision record replay](yt-maint/COLLISION_RECORD_REPLAY.md)
+now synthesizes all six output files for the twelve placement/cache fixtures:
+216 complete comparisons / 1296 individual files match, with 2265 independently
+checked helper/final RNG states derived from startup. Captured RNG states and
+cache probes are comparison witnesses only. Dynamic reseeds, cache normalization,
+existing mobile groups, empty-route Mercenary reactivation and auxiliary receipts
+are integrated; save 35 and Go gameplay are unchanged.
+
 The local [occupied-placement/faction-cache research](yt-maint/PLACEMENT_COLLISIONS.md)
 adds twelve explicit recipes: 72 full native runs with six-output observer
 neutrality, twelve early cache probes and four fresh native byte reads. Bounded
 source-qualified placement and before-only cache primitives match 432 targets
-and 480 raw fields respectively. Whole final-record synthesis for these new
-fixtures remains the next integration task; no Go/save change is implied.
+and 480 raw fields respectively. Their selected final-record synthesis is now
+integrated by the complete replay above; no Go/save change is implied.
 
 The local [Wanderer encounter extension](yt-maint/WANDERER_ENCOUNTER.md) now closes
 all eight clock/date recipes: 144 complete comparisons / 864 files, with no
@@ -171,9 +179,10 @@ remain separate.
    that selected branch, including RNG, raw records, public news and scores; all
    eight profiles are native-equal. The [placement/cache controls](yt-maint/PLACEMENT_COLLISIONS.md)
    now capture selected multiple-rejection, duplicate-pointer and faction-owner
-   boundaries. Next integrate those primitives into complete before-only
-   maintenance-stream/final-record replay for the new fixtures, then expand
-   valid occupied planets, foreign-force routes and evolved-world chains.
+   boundaries. The [complete record profile](yt-maint/COLLISION_RECORD_REPLAY.md)
+   now integrates all twelve selected fixtures without observed old-state seeds.
+   Next expand valid occupied planets, foreign-force routes and evolved-world
+   chains, then extend their before-only record synthesis.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

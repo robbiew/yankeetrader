@@ -1,5 +1,9 @@
 # Bounded occupied placement and faction-cache collisions
 
+The subsequent [complete record replay](COLLISION_RECORD_REPLAY.md) now integrates
+all twelve selected fixtures, with 216 complete native comparisons / 1296 exact
+files. The primitive milestone below retains its original scope and observations.
+
 This research retains **84 original-DOS controls**: 72 complete runs across twelve
 a-priori recipes, plus twelve separately labelled early cache probes. Every
 recipe has two ordinary unobserved runs, one attach-only run and three host-clock
@@ -15,7 +19,7 @@ Two small research primitives add executable evidence:
   and old-RNG-state witnesses, the before-world links and the source gates.
   Its accepted destinations pass **432 checks** against the paired full runs.
 
-This does **not** synthesize every final byte of the twelve new worlds from
+These two primitives alone do **not** synthesize every final byte of the twelve worlds from
 before-inputs. In particular, a measured old RNG state at Mercenary placement is
 an explicit midstream input, not a claim that all intervening movement, combat
 and reseeding has been reconstructed. Full-file equality here establishes the
@@ -188,10 +192,10 @@ independent review; acquisition does not approve its own output manifest.
 
 ## Next unfinished integration
 
-Extend complete before-only maintenance-stream/record replay to these new
-fixtures, including dynamic helper-call inventories, inactive positive-link
-candidate preference, existing mobile groups and later Mercenary actions.
-Then expand valid occupied planets, actual foreign-force route combat and
+The [complete before-only profile](COLLISION_RECORD_REPLAY.md) now integrates
+these selected fixtures, including dynamic helper inventories, inactive-link
+preference, existing groups and the selected Mercenary tail. Next expand valid
+occupied planets, actual foreign-force route combat and
 final-pointer convergence followed by an exact evolved-world chain. Do not
 repeat these twelve initial placement/cache controls as uncaptured work, or
 claim that their bounded primitives already establish arbitrary maintenance,
