@@ -2377,3 +2377,42 @@ terminal, build, live BBS and native Windows acceptance were not rerun or claime
 for this research-only change. PR #97 and the earlier local follow-up branches
 remain unchanged. Next compose these exact occupied-input chains before-only;
 current convergence-only admission rejects their different initial contexts.
+
+
+## Before-only evolved foreign-force combat replay (2026-11-06)
+
+The new bounded profile computes each original occupied parent, then both
+children through exact modeled six-file handoffs. All 144 new-child comparisons /
+864 files match byte-for-byte across four cases, three observed clock streams
+and six native target modes. All 1242 independent child helper/final RNG-state
+witnesses agree; the original prefix witnesses agree as well. No captured child
+file, transcript, probe or old RNG state is read during synthesis. Source
+extraction explicitly admits actual parent zero/one and evolved three/four
+active-planet clock inventories, with strict measured dates/publication clocks.
+
+The surviving Mercenary offense derives the eager gate and 370 combat draws,
+182 Xannor / 188 Mercenary casualties, continued movement, repeated descending
+activation and authentic stale group-8 pointer 109. Source threshold DOUBLE 200
+and batch 150 are bound to original executable bytes; captured offense 182 tests
+unit damage, while source-derived batch/tie boundaries have synthetic tests.
+Neutral Route Haven economy 510024/515102 followed by 22/19 ground losses gives
+exact saved 510002/515083. Physical owners separately conserve all casualties;
+original public literals print initial forces/winner without inventing a public
+188-loss counter. Final score columns derive from physical survivors, not stale
+pointers. Names/private/yesterday news and all five auxiliary files are exact.
+
+All 56 new tests pass: five planet, six auxiliary, eighteen NPC/Mercenary and
+27 full-chain tests. Direct tests ban target reads, check actual object and marker
+handoffs, poison observed RNG witnesses, corrupt helper/final states, reject
+unknown initial worlds and unmeasured clock/caller inputs, and retain stale
+pointers. The 28 historical occupied-record and 28 clock-chain tests pass. The
+complete reused Mercenary source read's 3462 relocated bytes match the immutable
+original. No new emulator run, native byte query, provider installation or capture
+rewrite was needed for model integration; raw control corpora remain unchanged.
+
+README, plan, linked reports and portable CI are updated. Go, dependencies,
+save 35 and generation fingerprints are unchanged. Full Go/terminal/build, live
+BBS and native Windows acceptance are not newly claimed by these research-only
+checks. The completed follow-up is prepared separately from prerequisite PR #97,
+including the two control/replay pairs. Next acquire mixed-hazard/resource-pickup
+or longer surviving-force handoffs before broader research admission.

@@ -683,8 +683,11 @@ news/scores. Gameplay and save 35 are unchanged.
 [Evolved foreign-force and surviving-combat controls](research/yt-maint/EVOLVED_COMBAT_CONTROLS.md)
 now retain 48 full DOS runs / 288 exact six-file handoffs. They preserve a surviving
 Mercenary offense, its later stale Xannor pointer, continuing neutral-planet defense
-and extinct/neutral controls. All eight stages agree across six modes. Separate
-before-only integration is next; gameplay and save 35 are unchanged.
+and extinct/neutral controls. All eight stages agree across six modes. The
+[before-only combat replay](research/yt-maint/EVOLVED_COMBAT_REPLAY.md) now matches
+144 complete comparisons / 864 files and 1242 independent RNG-state audits.
+It derives actual Mercenary casualties, repeated activation and stale pointers;
+gameplay and save 35 are unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

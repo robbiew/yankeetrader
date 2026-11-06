@@ -59,13 +59,22 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 
 ### Most recent completed milestones
 
+The [before-only evolved combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md) now
+computes all four original occupied parents and both complete modeled children.
+All 144 comparisons / 864 files and 1242 child RNG-state audits match. It composes
+three/four-home economy, ordinary neutral-planet defense, surviving Mercenary
+combat, descending reactivation, same-day victims, authentic stale pointers and
+all six writers. All 56 new tests pass. Next acquire mixed-hazard, resource-pickup
+or longer surviving-force handoffs before broadening admission; existing bounded
+gameplay is unchanged, as are dependencies and save 35.
+
 The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)
 now retain four two-child schedules / 48 complete DOS runs / 288 exact six-file
 inheritance links. All eight stages have six-mode output equality. Actual
 surviving Mercenary offense and repeated descending-scan activation, a stale
 Xannor group pointer, continuing Route Haven ground defense and extinct/neutral
-controls are verified without rewriting output. Next integrate these exact
-chains before-only; Go gameplay, dependencies and save 35 are unchanged.
+controls are verified without rewriting output. Their separate before-only
+integration is complete above; Go gameplay, dependencies and save 35 are unchanged.
 
 The local [before-only evolved clock/date replay](yt-maint/EVOLVED_CLOCK_REPLAY.md)
 now computes the original parent and both children for all four captured profiles.
@@ -243,7 +252,8 @@ remain separate.
    [evolved clock/date controls](yt-maint/EVOLVED_CLOCK_CONTROLS.md) are now
    captured; their [before-only replay](yt-maint/EVOLVED_CLOCK_REPLAY.md) now
    matches all 144 comparisons / 864 files with 1278 RNG-state audits. The
-   [evolved combat handoffs](yt-maint/EVOLVED_COMBAT_CONTROLS.md) are now captured; compose those exact chains before-only before broadening admission.
+   [evolved combat handoffs](yt-maint/EVOLVED_COMBAT_CONTROLS.md) are now captured and their [before-only combat replay](yt-maint/EVOLVED_COMBAT_REPLAY.md)
+   is complete. Acquire mixed-hazard or resource-pickup handoffs before broadening admission.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

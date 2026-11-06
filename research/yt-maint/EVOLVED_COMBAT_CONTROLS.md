@@ -7,8 +7,8 @@ its own first child's six files unchanged. All **288 inherited-file links**
 match. All six output files agree across the six modes at all eight stages
 (**288 complete after files**), without masks or output repairs.
 
-This is acquisition and independent evidence verification, not a new before-only
-combat model. The [clock/date replay](EVOLVED_CLOCK_REPLAY.md) and published
+This report covers acquisition and independent evidence verification. A
+[separate before-only model](EVOLVED_COMBAT_REPLAY.md) now composes these chains. The [clock/date replay](EVOLVED_CLOCK_REPLAY.md) and published
 PR #97 remain separate scopes. Production Go, dependencies, generation
 fingerprints and save **35** are unchanged.
 
@@ -76,8 +76,8 @@ children contain **18 fatal Xannor attack/death pairs** against that planet.
 The printed incoming forces total **2614** and **792**, exactly accounting for
 Xannor force changes 4022 → 1408 → 616. Saved ground evolves
 **504975 → 510002 → 515083** after ordinary production and combat. These are
-retained before/after observations; full before-only economy/combat composition
-for these inputs remains the next step.
+retained before/after observations; their separate before-only economy/combat
+composition is now complete in the linked replay.
 
 All private-message files remain empty. Names retain their exact input bytes;
 yesterday news is the prior stage's complete public journal. NPC score columns
@@ -107,7 +107,7 @@ Future combat implementation must read source constants at their actual width:
 the eight-byte MBF **double 200** at `8916` has four leading zero bytes; the older
 four-byte annotation displaying zero is not the threshold. The original fight
 uses the later batch-150 constant and ordinary RNG draws. This evidence milestone
-does not claim that those new children are already synthesized before-only.
+does not itself synthesize those children; the separate replay now does.
 
 ## Independent checks and next work
 
@@ -130,11 +130,11 @@ python3 scripts/recover_maintenance_evolved_combat.py /tmp/new-evolved-combat \
   --frida-module /absolute/path/to/frida.js
 ```
 
-Next compose these four chains before-only from their original occupied inputs,
-including the three-home economy, ordinary Route Haven defense, descending
-Mercenary reactivation, same-day victims, stale pointers, exact combat RNG and
-all six writers. Current convergence-only admission rejects these different
-initial contexts; that is a scope rejection, not proof of a numerical mismatch.
+The separate replay now composes these four chains from their original occupied
+inputs, including three-home economy, Route Haven defense, Mercenary reactivation,
+same-day victims, stale pointers, exact combat RNG and all six writers. The
+historical convergence-only API still rejects these different initial contexts;
+that is its unchanged scope boundary, not a numerical mismatch.
 Do not repeat the completed clock/date capture or replay as missing work.
 General MBF, arbitrary worlds, active-player maintenance, live BBS acceptance and
 native Windows durability remain separate.

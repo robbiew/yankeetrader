@@ -136,6 +136,11 @@ jobs:
           python3 scripts/test_replay_maintenance_evolved_clock_aux.py
           python3 scripts/test_replay_maintenance_evolved_clock_npcs.py
           python3 scripts/test_replay_maintenance_evolved_clock_records.py
+          python3 scripts/replay_maintenance_evolved_combat_records.py
+          python3 scripts/test_replay_maintenance_evolved_combat_planets.py
+          python3 scripts/test_replay_maintenance_evolved_combat_aux.py
+          python3 scripts/test_replay_maintenance_evolved_combat_npcs.py
+          python3 scripts/test_replay_maintenance_evolved_combat_records.py
           python3 scripts/verify_maintenance_occupied_replay.py
           python3 scripts/test_verify_maintenance_occupied_replay.py
           python3 scripts/test_replay_maintenance_active_planets.py
