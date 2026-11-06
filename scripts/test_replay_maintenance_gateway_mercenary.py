@@ -105,6 +105,15 @@ class GatewayPickupSource(unittest.TestCase):
             world=gateway();mbf.put(world,record,off,value)
             with self.subTest(record=record,off=off),self.assertRaises(ValueError):merc.pickup(world,3000,1000)
 
+    def test_unsupported_final_force_rejects_before_any_world_mutation(self):
+        for force,stock in((100000,37),(99999,37),(100000,40)):
+            world=gateway(stock=stock);before=bytes(world)
+            with self.subTest(force=force,stock=stock):
+                with self.assertRaisesRegex(ValueError,'post-pickup'):merc.pickup(world,3000,force)
+                self.assertEqual(bytes(world),before)
+        world=gateway(stock=37);event=merc.pickup(world,3000,99963)
+        self.assertEqual((event['force'],mbf.get(world,3051,81),mbf.get(world,4054,129)),(100000,100000,0))
+
     def test_pickup_opens_only_original_executable(self):
         read=Path.read_bytes
         def guarded(path):

@@ -209,13 +209,13 @@ def pickup(world,sector,force):
         raise ValueError('actual neutral Gateway Cache identity required')
     stock=get(planet,129)
     if stock!=int(stock)or not 0<=stock<=40:raise ValueError('bounded whole gateway stock required')
+    final=force+int(stock)
+    if final>100000:raise ValueError('bounded post-pickup whole force required')
     original=(ROOT/'archive/dos-original/YTMAINT.EXE').read_bytes()
     if hashlib.sha256(original).hexdigest()!=MAINT_SHA:raise ValueError('original maintenance identity differs')
     zero=original[0x8472+0xfd0:0x8476+0xfd0]
     if zero!=bytes.fromhex('00008000'):raise ValueError('source pickup zero differs')
     world[at+129:at+133]=zero
-    final=force+int(stock)
-    if final>100000:raise ValueError('bounded post-pickup whole force required')
     mbf.put(world,rec,81,final);mbf.put(world,rec,85,-2)
     return dict(kind='mercenary-pickup',sector=sector,planet_slot=3,planet_name='Gateway Cache',
                 captured=True,initial_force=force,force=final,pickup=int(stock))

@@ -712,6 +712,9 @@ November 4 parent; both children then use complete modeled handoffs. Mine damage
 guard combat, pickup, minimum-rate clamps and exact public receipts are derived
 without captured-state seeds. Gameplay and save 35 remain unchanged.
 
+Unsupported gateway pickup totals are rejected before any stock or force bytes
+change; supported transfers preserve the exact source-specific stock zero.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

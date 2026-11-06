@@ -2603,3 +2603,14 @@ was skipped, so neither run is counted as passing. The complete validation job
 now permits 60 minutes. Only that budget changes: all commands, actions, pinned
 dependencies and the independent 10/20-minute campaign budgets remain unchanged.
 README's current CI limits are aligned. New-head CI must pass before merging.
+
+
+## Gateway pickup rejection review fix (2026-11-06)
+
+PR #102 finding 4494354410 was reproduced for three unsupported force/stock
+combinations: the old direct pickup helper raised after clearing caller-owned
+stock. The new regression fails before the fix and passes after calculating
+and validating the final force before any world write. An exact 100000-fighter
+result still transfers stock successfully with the original raw zero. The
+complete gateway Mercenary/auxiliary suites and 216-comparison/1296-file replay
+pass; README is updated. No captured evidence or production Go/save changes.
