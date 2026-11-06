@@ -2459,3 +2459,14 @@ terminal/build/live BBS/native Windows acceptance is not newly claimed. The
 follow-up is prepared separately from PR #98; the branches for PRs #97/#98 remain
 unchanged. Next compose the two added children before-only with measured days 309/310
 and their selected foreign-defense/publication contexts.
+
+
+## Expanded maintenance CI budget (2026-11-06)
+
+PR #99 job 127946431806 and PR #100 job 127958832764 explicitly exceeded the
+40-minute whole-job limit. Both completed race/vet, season CLI and all preserved
+research evidence checks; the terminal step was cancelled and release packaging
+was skipped, so neither run is counted as passing. The complete validation job
+now permits 60 minutes. Only that budget changes: all commands, actions, pinned
+dependencies and the independent 10/20-minute campaign budgets remain unchanged.
+README's current CI limits are aligned. New-head CI must pass before merging.
