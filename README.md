@@ -563,6 +563,8 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 
 GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. Linux/macOS sessions accept unused Door32 communication handles such as `-1`, using the BBS-provided standard I/O streams. Rebuild older binaries with the GoDoors revision below to pick up this startup fix. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
+Door sessions never depend on cursor save/restore (neither `ESC 7`/`ESC 8` nor `CSI s`/`CSI u`). Some terminals and BBS stdio bridges drop restore, which used to scramble the opening art and leave typing stranded after the prompt's live clock (reported from SyncTERM through a stdio-mode door). The opening art no longer contains save/restore. Remote callers' prompt clock is redrawn using only carriage return and relative cursor-forward moves, and it pauses once a typed command reaches the right margin. The local console also keeps its status-row clock. `scripts/smoke_prompt_clock.py` drives a Door32 stdio session against a terminal model that honors no save/restore at all.
+
 Native macOS PTY and simulated BBS Door32 stdio sessions over localhost TCP were
 exercised, including multiple concurrent callers through victory. This is not
 acceptance under a production BBS or a native Windows inherited socket.

@@ -26,7 +26,7 @@ type GoDoors struct {
 	escaped     bool
 	commandMode bool
 	savedLine   string
-	onIdle      func() error
+	onIdle      func(typed, peak int) error // peak: longest input during this read
 	pending     []inputKey
 	readKey     func(time.Duration) (rune, gd.Key, error)
 }
@@ -67,6 +67,7 @@ func (g *GoDoors) ReadSecret(deadline time.Time) (string, error) { return g.read
 func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 	g.escaped = false
 	var b []rune
+	peak := 0
 	for {
 		left := time.Until(deadline)
 		if left <= 0 {
@@ -91,7 +92,7 @@ func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 			return "", errors.New("session time expired")
 		}
 		if errors.Is(e, gd.ErrInputTimeout) && g.onIdle != nil {
-			if err := g.onIdle(); err != nil {
+			if err := g.onIdle(len(b), peak); err != nil {
 				return "", err
 			}
 			continue
@@ -125,6 +126,7 @@ func (g *GoDoors) readLine(deadline time.Time, secret bool) (string, error) {
 		}
 		if k == gd.KeyNone && r >= 32 && r <= 126 && len(b) < 160 {
 			b = append(b, r)
+			peak = max(peak, len(b))
 			echo := r
 			if secret {
 				echo = '*'
@@ -312,7 +314,7 @@ func (s Session) Run() (runErr error) {
 			}
 		}
 		if len(pending) == 0 {
-			clockWidth := 0
+			clockWidth, labelLen := 0, 0
 			if s.Classic {
 				label := "Main Command (?=Help)?"
 				if computer {
@@ -324,7 +326,7 @@ func (s Session) Run() (runErr error) {
 					}
 				}
 				left := s.timeLeft()
-				clockWidth = len(left)
+				clockWidth, labelLen = len(left), len(label)
 				e = s.Terminal.Printf("\r\nTime: %s  %s ", left, label)
 			} else {
 				e = s.Terminal.Printf("\r\nSector %d | %d credits | %d turns > ", p.Sector, p.Credits, p.Turns)
@@ -333,8 +335,8 @@ func (s Session) Run() (runErr error) {
 				return e
 			}
 			if terminal, ok := s.Terminal.(*GoDoors); ok && s.Classic && s.ANSI {
-				terminal.onIdle = func() error {
-					return s.refreshClassicClock(clockWidth)
+				terminal.onIdle = func(typed, peak int) error {
+					return s.refreshClassicClock(clockWidth, labelLen, typed, peak)
 				}
 			}
 			line, e := s.Terminal.ReadLine(s.Deadline)

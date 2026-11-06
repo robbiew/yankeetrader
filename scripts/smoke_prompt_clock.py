@@ -18,14 +18,31 @@ ROOT=terminal.ROOT
 
 
 def main():
+    run(remote=False)
+    run(remote=True)
+    print('Clock PTY passed: local VT100 status restore; Door32 stdio with no cursor save/restore at all (SyncTERM report); intact opening art; idle main/computer prompts, partial LOOK/exit input and synchronized clock fields.')
+
+
+def run(remote):
     with tempfile.TemporaryDirectory(prefix='yt-clock-smoke-') as temp:
         data=Path(temp)/'world'
         subprocess.run([str(ROOT/'bin/yt'),'-data',str(data),'-init','-sectors','8'],capture_output=True,check=True)
-        terminal.capture(data,'Caller',new=True)
+        if remote:
+            drop=Path(temp)/'node1';drop.mkdir()
+            # Comm type 0: the BBS hands the door its stdio, as with stdio=TRUE.
+            (drop/'DOOR32.SYS').write_text('0\n0\n38400\nSmoke BBS\n42\nReal Name\nCaller\n10\n60\n1\n1\n')
+            command=['-drop',str(drop),'-system','smoke']
+        else:
+            terminal.capture(data,'Caller',new=True)
+            command=['-local','Caller']
         master,slave=pty.openpty();fcntl.ioctl(slave,termios.TIOCSWINSZ,struct.pack('HHHH',25,80,0,0))
-        proc=subprocess.Popen([str(ROOT/'bin/yt'),'-data',str(data),'-local','Caller'],stdin=slave,stdout=slave,stderr=slave);os.close(slave)
-        # Model terminals that implement VT100 DECSC/DECRC but ignore CSI s/u.
-        screen=terminal.Screen(csi_save_restore=False);decoder=codecs.getincrementaldecoder('utf-8')();text=''
+        proc=subprocess.Popen([str(ROOT/'bin/yt'),'-data',str(data)]+command,stdin=slave,stdout=slave,stderr=slave);os.close(slave)
+        # Local: model terminals that implement VT100 DECSC/DECRC but ignore CSI s/u.
+        # Remote: model a caller whose terminal or BBS bridge honors neither form.
+        screen=terminal.Screen(csi_save_restore=False,dec_save_restore=not remote)
+        # Reference terminal with full save/restore support, for the opening art.
+        reference=terminal.Screen()
+        decoder=codecs.getincrementaldecoder('cp437' if remote else 'utf-8')();text=''
         def until(predicate):
             nonlocal text
             end=time.monotonic()+12
@@ -37,22 +54,31 @@ def main():
                         if e.errno==errno.EIO:raise AssertionError(('early terminal exit',text[-1500:])) from e
                         raise
                     assert raw,'early EOF'
-                    chunk=decoder.decode(raw);text+=chunk;screen.feed(chunk)
+                    chunk=decoder.decode(raw);text+=chunk;screen.feed(chunk);reference.feed(chunk)
         def wait_marker(marker,start):until(lambda:marker in text[start:])
         def send(keys):os.write(master,keys)
         def tick():
             start=len(text)
-            until(lambda:re.search(r'\x1b\[25;70H.*?(?:\x1b8|\x1b\[u)',text[start:],re.S) is not None)
+            marker=r'\r\x1b\[6C\x1b\[0;32m[^\x1b]*\x1b\[\d+C' if remote else r'\x1b\[25;70H.*?(?:\x1b8|\x1b\[u)'
+            until(lambda:re.search(marker,text[start:],re.S) is not None)
         def check(label,typed=''):
             row=''.join(c[0] for c in screen.cells[23]);at=row.index(label)+len(label)+1
             assert (screen.x,screen.y)==(at+len(typed),23),('cursor left at clock',label,typed,(screen.x+1,screen.y+1),'expected',(at+len(typed)+1,24))
             assert row[at:at+len(typed)]==typed,('partial command overwritten',row)
+            if remote:return
             inline=row[6:row.index('  '+label)].strip();status=''.join(c[0] for c in screen.cells[24][69:79]).strip()
             assert inline==status,('clock fields disagree',inline,status)
         try:
             ready='\x1b[?25h\x1b[1;24r\x1b[24;1H'
             wait_marker(ready,0);start=len(text);send(b'\r');wait_marker('[ Press any Key ]',start)
-            start=len(text);send(b' ');wait_marker(ready,start)
+            art=lambda scr:[''.join(c[0] for c in row) for row in scr.cells]
+            assert art(screen)==art(reference),('opening art depends on cursor save/restore',art(screen))
+            if remote:
+                for marker,keys in [('-+> ',b'Pilot\r'),('Is this OK (Y/[N])? ',b'Y\r'),('Do you want instructions (Y/N) [N]? ',b'N\r')]:
+                    start=len(text);send(b' ' if marker=='-+> ' else last);wait_marker(marker,start);last=keys
+                start=len(text);send(last);wait_marker(ready,start)
+            else:
+                start=len(text);send(b' ');wait_marker(ready,start)
             start=len(text);send(b' ');wait_marker('Main Command (?=Help)? ',start)
             tick();check('Main Command (?=Help)?')
             start=len(text);send(b'LO');wait_marker('LO',start);tick();check('Main Command (?=Help)?','LO')
@@ -67,7 +93,6 @@ def main():
         finally:
             if proc.poll() is None:proc.kill();proc.wait()
             os.close(master)
-    print('Clock PTY passed: VT100 cursor restore, idle main/computer prompts, partial LOOK/exit input and synchronized clock fields.')
 
 
 if __name__=='__main__':main()

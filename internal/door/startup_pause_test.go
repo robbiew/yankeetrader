@@ -25,7 +25,7 @@ func (p *startupPauseTerminal) ReadKey(time.Time) (rune, gd.Key, error) {
 	case 2:
 		artPresent := strings.Contains(text, "RE-USE THEM WITH ONE")
 		if p.ansi {
-			artPresent = strings.Contains(text, "\x1b7") && strings.Contains(text, "\x1b8") && !strings.Contains(text, "\x1b[s") && !strings.Contains(text, "\x1b[u")
+			artPresent = strings.Contains(text, "TOUGH") && !strings.Contains(text, "\x1b[s") && !strings.Contains(text, "\x1b[u") && !strings.Contains(text, "\x1b8")
 		}
 		if !artPresent || strings.Contains(text, "[ Info ]") || strings.Contains(text, "Initializing...") {
 			p.t.Fatal("opening page was replaced before receiving its own keypress")
