@@ -2298,3 +2298,42 @@ frozen exactly as executed; no historical capture is rewritten. Go, dependencies
 and save compatibility are unchanged. Full Go/terminal/build/live acceptance was
 not rerun for this research-only milestone. The published PR97 tip remains
 3d1b9969cbbfcd2e25e1450629ac30d3ccbc6a4e; follow-up work remains local.
+
+
+## Before-only evolved clock/date replay (2026-11-05)
+
+A separate bounded profile now computes the original convergence parent and both
+children from one original three-file before-world plus source-qualified clocks.
+All 144 full comparisons / 864 files match byte-for-byte across four recipes,
+three observed streams and six native target modes; all 1278 child helper/final
+RNG-state witnesses agree. No child-before/after payload, transcript or captured
+RNG state participates in synthesis. All targets are first opened after the
+complete modeled chain exists. Exact object handoff and marker/read-ban tests
+verify this boundary.
+
+All 69 new tests pass: six port, seven planet, nine auxiliary, nineteen NPC and
+28 full-chain tests. Port fractional/capped growth, source floors, New Year
+serial dates 366/367 and actual raw timestamps compose with fatal mine/planet
+combat. Noon loses 1700 Xannor / 19 Wanderer ground; New Year loses 362 Xannor / 5 Base
+ground; second-two child 2 derives roll 223 but caps damage/loss at 6. Physical
+casualties back actual public receipts and survivor-based scores. Subsequent
+losses are not repaid. Names, previous news, private emptiness and separate
+score/news clocks remain byte-exact.
+
+A new no-hop branch exposed the old copied tail's unconditional mine increment.
+The original 39d4..3a00 BFS-successor guard skips its movement/deposition block,
+so an unchanged group 20 endpoint 439 retains one mine. The new profile models that
+source guard; genuine travel still increments mines. The consumed mine 980 zero
+is derived from the source FAC record-I/O calculation and exponent-only exact
+cancellation, not an after-file literal. Both details have direct regressions.
+Historical profile APIs, guards and raw captures remain unchanged.
+
+The 30 historical full-chain tests and 40 historical port/planet tests pass.
+Reused source evidence passes 26 initializer byte contracts, 332 chronology controls
+and 47 returned mobile controls / 22 REA observations. The independent new-corpus
+verifier and 47 provenance tests previously passed in the controls commit, including
+export with core.autocrlf=true; all 4682 archive hashes remain valid. No new REA
+query or emulator acquisition was needed for replay integration. README, plan,
+linked reports and CI are updated; Go, dependencies, save 35 and generation
+fingerprints are unchanged. Go/terminal/build/live/native acceptance was not
+rerun or newly claimed. Both follow-up milestones stay local, separate from PR #97.

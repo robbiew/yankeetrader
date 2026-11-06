@@ -154,9 +154,10 @@ python3 scripts/replay_maintenance_evolved_records.py \
 ```
 
 Portable replay launches no emulator, Frida, Go application or network operation.
-No runtime capture was rewritten or newly acquired to make the model fit. Next
-integrate the separately captured [evolved clock/date controls](EVOLVED_CLOCK_CONTROLS.md),
-then admit only their verified new branches. This three-day midnight recipe does not establish arbitrary
+No runtime capture was rewritten or newly acquired to make this model fit. The
+separately captured [evolved clock/date controls](EVOLVED_CLOCK_CONTROLS.md) now
+have their own [before-only extension](EVOLVED_CLOCK_REPLAY.md). This three-day
+midnight recipe does not establish arbitrary
 calendar/economy combinations, active-player maintenance, general MBF, DOS save
 conversion, live BBS acceptance or native Windows durability. Research work guards
 are not claims that the original program had finite combat or retry budgets.

@@ -8,8 +8,9 @@ across the six capture modes at each of the eight stages (**288 output files**).
 No output is masked or repaired to obtain this equality.
 
 This extends the [three-day midnight replay](EVOLVED_CHAIN_REPLAY.md) with new
-controlled observations. It does not broaden that published profile or establish
-before-only synthesis for these new cases. Go gameplay, dependencies, generation
+controlled observations. It does not broaden that published profile; a
+[separate replay](EVOLVED_CLOCK_REPLAY.md) now synthesizes these new cases.
+Go gameplay, dependencies, generation
 fingerprints and save **35** are unchanged. PR #97 remains a separate review scope;
 this follow-up research is kept on its own local branch.
 
@@ -99,10 +100,10 @@ these source clocks produces bounded rejection, not a numerical mismatch:
 | Eleven-day catch-up | Consecutive November 2/3/4 recipe admission |
 | New Year | Consecutive November 2/3/4 recipe admission |
 
-No guard was relaxed to make the new observations appear supported. The next
-step is separate before-only integration: admit measured fractional/long/year
-intervals and bounded larger rates, then compose the already recovered mine death
-and positive-ground Wanderer/Base paths with exact RNG, casualties and receipts.
+The published profile remains unchanged. A [separate before-only extension](EVOLVED_CLOCK_REPLAY.md)
+now admits these measured fractional/long/year intervals and bounded larger rates,
+and composes the recovered mine death and positive-ground Wanderer/Base paths
+with exact RNG, casualties and receipts.
 A guard rejection is distinct from a model that calculated incorrect output.
 
 ## Provenance and reproduction
