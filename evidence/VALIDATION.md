@@ -2533,6 +2533,54 @@ declared fixtures from a modeled November 4 parent. No production Go, dependency
 save-35 or generation-fingerprint change is included. Full Go/terminal/build,
 live BBS and native Windows durability acceptance are not newly claimed.
 
+## Before-only gateway hazards and fighter pickup (2026-11-06)
+
+All six explicit gateway fixtures now synthesize from the original Mercenary100000
+three-file before-world, five immutable source-clock inputs and a declared case.
+The established three-day combat model returns the actual November 4 parent;
+a pure function applies exactly fifteen declared data edits once. The first new
+child consumes that object, and the second consumes its complete returned six
+files without further fixture intervention. All five days are modeled before
+comparison reads targets. Only immutable original YTMAINT may be opened by core
+synthesis; observation, parent/child capture and target reads are forbidden there.
+
+All 216 complete new-child comparisons / 1296 files match, with 1962 independent
+helper/final RNG-state witnesses checked across three observed streams per case.
+Prefix witnesses also agree and are not counted as new targets. Poisoned captured
+RNG fields cannot change typed inputs or outputs. Raw zeros, mine residue,
+pre-pickup force stamps, public text and separate publication clocks are unmasked.
+Original helper2/4aa4 count-two shrinking draws derive mine losses 712/518 and the
+fatal first hit; all three initial mines still call the helper after M1 dies,
+leaving two unspent mines. Guard victories derive losses 34/40 and continue the
+route without pickup. Neutral pickup grants exactly 37 or zero, preserves ground
+and title, and stops at the physical gateway. No second-day pickup is invented.
+
+The source minimum-rate clamp runs after production/growth and before eager
+planet event draws. Initial rates zero preserve day-one stock, then clamp to one;
+next-day production adds three. The auxiliary audit independently derives stock
+production from modeled before rates/date/minute values. Both guarded November 5
+scores use their measured 00:00:01 call while NEWS uses 00:00:00. Other new
+publication clocks remain midnight. All physical scores and journal rotations
+match and private mail remains empty.
+
+All 51 new tests pass: four port, eight planet, thirteen Mercenary, thirteen
+auxiliary and thirteen complete-chain properties. They cover exact records,
+source arithmetic/order and mine callback count, malformed/unmeasured inputs,
+positive combat winners, stock/physical ledgers, object-identity/marker handoffs,
+fixture purity, source caller/clock validation, core read bans and every helper
+and final RNG witness. The prior combat 27 and survivor 29 tests pass unchanged.
+The reused complete 3462-byte native source packet and all 4682 archive hashes
+verify. No new native query, emulator capture, provider installation or historical
+corpus modification was needed.
+
+README, current plan, linked report and portable CI are updated in this milestone.
+Production Go, dependencies, save 35 and generation fingerprints are unchanged.
+General MBF, arbitrary inputs, occupied-origin departure and friendly-force
+merging remain separate bounded research. Full Go/terminal/build, live BBS and
+native Windows acceptance are not newly claimed. This replay follow-up is
+separate from open PR101's acquisition milestone.
+
+
 
 
 ## Surviving defender receipt review fix (2026-11-06)
@@ -2555,3 +2603,14 @@ was skipped, so neither run is counted as passing. The complete validation job
 now permits 60 minutes. Only that budget changes: all commands, actions, pinned
 dependencies and the independent 10/20-minute campaign budgets remain unchanged.
 README's current CI limits are aligned. New-head CI must pass before merging.
+
+
+## Gateway pickup rejection review fix (2026-11-06)
+
+PR #102 finding 4494354410 was reproduced for three unsupported force/stock
+combinations: the old direct pickup helper raised after clearing caller-owned
+stock. The new regression fails before the fix and passes after calculating
+and validating the final force before any world write. An exact 100000-fighter
+result still transfers stock successfully with the original raw zero. The
+complete gateway Mercenary/auxiliary suites and 216-comparison/1296-file replay
+pass; README is updated. No captured evidence or production Go/save changes.

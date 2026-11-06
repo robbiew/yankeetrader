@@ -4,7 +4,8 @@ Six explicit fixtures in copied evolved worlds now select Mercenary mine damage,
 planetary fighter pickup and defense-before-pickup ordering. **72 complete original
 DOS runs** retain **432 complete output files**. All twelve case/day groups agree
 across six observation modes (360 nonreference file comparisons, zero differences).
-This is acquisition research; before-only model integration remains the next step.
+This acquisition milestone now has a separate [before-only replay](GATEWAY_HAZARD_REPLAY.md)
+matching all 216 comparisons / 1296 files and 1962 new-stage RNG-state witnesses.
 Production Go, dependencies, save 35 and generation fingerprints are unchanged.
 
 ## Declared fixture and exact inheritance
@@ -112,10 +113,10 @@ python3 scripts/verify_maintenance_collision_replay.py
 python3 scripts/verify_archive.py
 ```
 
-Next integrate the declared fixture transformation into a **modeled** November 4
-parent and synthesize both days before opening targets. This requires the
-zero-rate clamp, mine helper's initial-count loop, defense-versus-pickup ordering
-and exact raw writers. Existing model admission guards deliberately reject these
-new fixtures; this is a scope boundary, not a masked numerical mismatch. General
+The separate [gateway replay](GATEWAY_HAZARD_REPLAY.md) now integrates the declared
+transformation into a modeled November 4 parent and synthesizes both days before
+opening targets. It includes the rate clamp, initial-count mine loop, ordering
+and exact raw writers. Historical model admission guards remain unchanged; the
+new bounded API admits these fixtures explicitly. General
 MBF, arbitrary worlds and other unmeasured paths remain separate. This research
 does not establish live BBS acceptance or native Windows crash durability.
