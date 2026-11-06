@@ -69,7 +69,7 @@ Team  : None
 | Fighters. : 25          | Ore.......... : 0    |
 | Mines.... : 0           | Organics..... : 0    |
 | Missiles. : 0           | Equipment.... : 0    |
-| Scanner.. : N/A         | Ports Owned.. : 0    |
+| Scanner.. : NONE        | Ports Owned.. : 0    |
 | Shields.. : 0           | Cloak Energy. : 100% |
 | Forces... : 0           | Plasma Bolts. : 0    |
 +-------------------------+----------------------+
@@ -80,7 +80,8 @@ Checking for Radio Messages.
 
 Sector: 1
 Port: Earth, Selling: Ship equipment
-Warps lead to: 8, 2, 5, 3, 4, 6
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
 
 Time: 179:59  Main Command (?=Help)? ?
 
@@ -132,7 +133,8 @@ Time: 179:59  Computer command (?=help)? 1;Q;Y
 
 Sector: 1
 Port: Earth, Selling: Ship equipment
-Warps lead to: 8, 2, 5, 3, 4, 6
+Planet: The Wanderer * Forces: 0
+Warps lead to: 8, 2, 6, 4, 3, 5
 
 <Quit>
 Are you sure (Y/N)? Saved. Safe travels, Pilot.
