@@ -1,7 +1,8 @@
 # Next bounded slice: physical owner, mine damage and stock pickup
 
-Planning audit, 2026-11-07. This is a proposed acquisition matrix, not native
-observations or widened replay admission. Departed-garrison research PR #109
+Planning audit, 2026-11-07. The proposed acquisition matrix is now executed in
+[separate native controls](NEUTRAL_OWNER_STOCK_CONTROLS.md). This document preserves
+the pre-acquisition questions; outcomes do not widen replay admission. Departed-garrison research PR #109
 and replay PR #110 already cover local Mercenary hold/departure without mines;
 PR #108 owns the included held-garrison replay dependency. Keep their heads fixed.
 

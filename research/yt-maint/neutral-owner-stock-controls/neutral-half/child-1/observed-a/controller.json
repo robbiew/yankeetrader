@@ -1,0 +1,64 @@
+{
+  "mode": "observed",
+  "frida": {
+    "version": "17.23.2",
+    "module": "/Users/robbie/.npm/_npx/da7caeae9db9c589/node_modules/frida/build/src/frida.js",
+    "module_sha256": "408959cd8daa899370884ea4c7d763916b1ea2960ef4ce8118956870a600bda9",
+    "package_sha256": "7efb59d2050b7b6304e1617f463c4eb7b2f7cb7e3e80e677976825a76ee31e8d"
+  },
+  "node_version": "v26.13.0",
+  "started": "2026-11-07T17:42:33.415Z",
+  "detached_reason": "process-terminated",
+  "pid": 90683,
+  "forced": false,
+  "natural_exit_wait": {
+    "checks": 1,
+    "elapsed_ms": 1.2105000000001382
+  },
+  "process_exited": true,
+  "exit_code": 0,
+  "flush_receipt": {
+    "recipe": "departure-exit-flush-receipt-v1",
+    "exit_code": 0,
+    "bytes": 3048510,
+    "expected_bytes": 3048510,
+    "events": 2064,
+    "errors": 0,
+    "dropped": 0
+  },
+  "flush_acknowledged": true,
+  "success": true,
+  "ready": true,
+  "finished": "2026-11-07T17:42:37.886Z",
+  "messages": [
+    {
+      "type": "send",
+      "payload": {
+        "kind": "ready",
+        "module": {
+          "name": "dosbox",
+          "path": "/opt/homebrew/Cellar/dosbox-staging/0.83.0/bin/dosbox",
+          "base": "0x102d38000",
+          "size": 4505600,
+          "arch": "arm64",
+          "platform": "darwin",
+          "uuid": "31CDF62F-E9EE-39ED-A05A-10E4072BD15E",
+          "prologue": "fc6fbaa9fa6701a9f85f02a9f65703a9f44f04a9fd7b05a9fd430191ffc314d1"
+        },
+        "observe": true
+      }
+    },
+    {
+      "type": "send",
+      "payload": {
+        "kind": "flushed",
+        "exit_code": 0,
+        "bytes": 3048510,
+        "expected_bytes": 3048510,
+        "events": 2064,
+        "errors": 0,
+        "dropped": 0
+      }
+    }
+  ]
+}

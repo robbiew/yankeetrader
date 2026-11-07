@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/robbie/.codex/worktrees/season-admin/yankeetrader/scripts/recover_maintenance_neutral_owner_stock.py", line 179, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/robbie/.codex/worktrees/season-admin/yankeetrader/scripts/recover_maintenance_neutral_owner_stock.py", line 177, in main
+    for mode in MODES:capture(out,scratch,profile,stage,mode,host,a.frida_module)
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/robbie/.codex/worktrees/season-admin/yankeetrader/scripts/recover_maintenance_neutral_owner_stock.py", line 119, in capture
+    if stage=='child-1':inputs,edits=fixture_inputs(profile,mode)
+                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/robbie/.codex/worktrees/season-admin/yankeetrader/scripts/recover_maintenance_neutral_owner_stock.py", line 107, in fixture_inputs
+    assert tuple(field(world,3051,o)for o in(81,85,93,129))==(c['friendly'],-2,3,0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -37,10 +37,13 @@ activations and separate physical inventories. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses agree; 33 new tests pass. PR #107 is merged as
 `c2af1782`; PR #108 owns the included held-garrison dependency and remains under
 review/CI monitoring (checked 2026-11-07). Do not repeat either slice.
-Next: the [audited owner/stock matrix](yt-maint/NEXT_OWNER_STOCK_CONTROLS.md)
-proposes positive neutral physical force and mine-plus-friendly-stock controls,
-without reacquiring completed baselines. Qualify native outcomes before widening
-replay admission. General maintenance parity and production
+The [neutral-owner and mine-stock acquisition](yt-maint/NEUTRAL_OWNER_STOCK_CONTROLS.md)
+now implements the six-case planned matrix: 36 native runs / 216 files, all
+six-mode equal, with 20 new tests. Neutral physical fighters transfer once;
+incoming mine losses precede local force and stock addition. Earlier Xannor
+changes in the four-second case remain explicit. Next: derive this newly
+qualified matrix before-only, including faction transfer and mine-helper clocks;
+do not reacquire the completed controls. General maintenance parity and production
 integration remain unclaimed.
 
 ### Implemented and available to test
