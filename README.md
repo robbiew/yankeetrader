@@ -789,6 +789,15 @@ residue corruption. No Go, dependency, source-fingerprint or save 35 changes.
 
 
 
+[Defender-survival stock controls](research/yt-maint/DEFENDER_STOCK_CONTROLS.md)
+now retain 48 original-DOS runs / 288 output files, six-mode equal across four
+fixtures and their unchanged next-day handoffs. Mercenary attacks lose while
+Xannor defenders survive, including a one-fighter balanced-case survivor. Stock
+is not picked up and grows through ordinary next-day production. Seventeen new
+tests verify the exact losing receipt, preserved raw bytes and complete handoffs.
+This is new acquisition evidence, separate from PR #112's owner/mine replay;
+before-only defender-survival integration remains next. Gameplay/save 35 unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They

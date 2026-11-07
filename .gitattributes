@@ -438,3 +438,10 @@
 /research/yt-maint/neutral-owner-stock-controls/**/*.BIN -diff
 /research/yt-maint/neutral-owner-stock-controls/**/dosbox.stdout -diff
 /research/yt-maint/neutral-owner-stock-controls/**/dosbox.stderr -diff
+
+# Immutable defender-survival and untouched next-day stock observations.
+/research/yt-maint/defender-stock-controls/** -text
+/research/yt-maint/defender-stock-controls/**/*.LOG -diff
+/research/yt-maint/defender-stock-controls/**/*.BIN -diff
+/research/yt-maint/defender-stock-controls/**/dosbox.stdout -diff
+/research/yt-maint/defender-stock-controls/**/dosbox.stderr -diff
