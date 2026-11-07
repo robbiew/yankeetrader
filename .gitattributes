@@ -403,3 +403,10 @@
 /research/yt-maint/departure-merge-diagnostics/**/*.BIN -diff
 /research/yt-maint/departure-merge-diagnostics/**/dosbox.stdout -diff
 /research/yt-maint/departure-merge-diagnostics/**/dosbox.stderr -diff
+
+# Preserve exact stock-conversion controls and executed acquisition sources.
+/research/yt-maint/stock-conversion-controls/** -text
+/research/yt-maint/stock-conversion-controls/**/*.LOG -diff
+/research/yt-maint/stock-conversion-controls/**/*.BIN -diff
+/research/yt-maint/stock-conversion-controls/**/dosbox.stdout -diff
+/research/yt-maint/stock-conversion-controls/**/dosbox.stderr -diff

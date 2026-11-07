@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-06
 
 This section is the current planning baseline, checked against merged `main`
-through `054f4e38` (including merged maintenance PRs #88, #90–94, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `e4cac848` (including merged maintenance PRs #88, #90–94 and #97–104, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -96,6 +96,15 @@ the disclosed port-clock differences with no masked bytes. Departure, silent
 merging, larger Wanderer pickup and its bounded fractional discard are derived.
 Gameplay, dependencies and save 35 remain unchanged.
 
+The [fighter-stock conversion controls](yt-maint/STOCK_CONVERSION.md) now
+retain 72 original-DOS runs / 432 output files, six-mode equal in all twelve cases.
+Positive SINGLE stock floors before transfer, the entire stock is cleared with
+its source zero, and converted zero emits no taking receipt. Half ties, adjacent
+single values and larger stocks are qualified by both native source and runtime
+controls. This research leaves the before-only replay guard unchanged; integrating
+these measured fractions is the next bounded implementation step. The separate
+friendly-force-plus-planet-stock composition remains unmeasured.
+
 PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
 contains the later survivor controls. [PR #100](https://github.com/robbiew/yankeetrader/pull/100)
@@ -104,7 +113,8 @@ contains the gateway acquisition controls, and [PR #102](https://github.com/robb
 contains their replay. All six are now verified merged into `main`, in order,
 with valid review findings fixed and current checks passed. The separate
 [departure/merge acquisition PR #103](https://github.com/robbiew/yankeetrader/pull/103)
-is verified merged into `main`; its separate before-only integration is complete above.
+and its [before-only integration PR #104](https://github.com/robbiew/yankeetrader/pull/104)
+are verified merged into `main`; the integration is complete above.
 
 The new [longer survivor controls](yt-maint/SURVIVOR_CHAIN_CONTROLS.md) extend
 four exact November 4 states through November 5/6. All 48 original-DOS runs,
@@ -120,8 +130,8 @@ All 144 comparisons / 864 files and 1242 child RNG-state audits match. It compos
 three/four-home economy, ordinary neutral-planet defense, surviving Mercenary
 combat, descending reactivation, same-day victims, authentic stale pointers and
 all six writers. All 56 new tests pass. Longer surviving-force handoffs are now captured above;
-their before-only composition is complete above. Mixed hazards and resource pickup remain
-separate admission work; existing gameplay, dependencies and save 35 are unchanged.
+their before-only composition and the gateway mixed-hazard/resource-pickup
+admission are complete above; existing gameplay, dependencies and save 35 are unchanged.
 
 The local [evolved foreign-force and surviving-combat controls](yt-maint/EVOLVED_COMBAT_CONTROLS.md)
 now retain four two-child schedules / 48 complete DOS runs / 288 exact six-file
@@ -314,8 +324,10 @@ remain separate.
    The new [departure/merge controls](yt-maint/DEPARTURE_MERGE_CONTROLS.md) now
    select those distinct paths. Their [before-only replay](yt-maint/DEPARTURE_MERGE_REPLAY.md) now derives
    the modeled-parent continuation, integer home-stock transfer and the disclosed
-   nonneutral comparison inventory. Next isolate half-or-larger runtime stock
-   conversion or the separate friendly-plus-planet-stock encounter.
+   nonneutral comparison inventory. The [stock conversion controls](yt-maint/STOCK_CONVERSION.md)
+   now qualify positive half-or-larger fractions and subunit zero transfers. Next
+   integrate that measured floor/clear/receipt behavior into the new before-only
+   profile, then isolate the separate friendly-plus-planet-stock encounter.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

@@ -730,6 +730,16 @@ the disclosed port-clock differences with no masked bytes. Departure, silent
 merging, larger Wanderer pickup and its bounded fractional discard are derived.
 Gameplay, dependencies and save 35 remain unchanged.
 
+[Fighter-stock conversion controls](research/yt-maint/STOCK_CONVERSION.md) now
+retain 72 complete original-DOS runs across twelve exact binary stocks. All six
+output files match across each fixture's six observation modes. The selected
+pickup call floors positive SINGLE stock, including half ties and adjacent values,
+clears the whole stock with its original raw zero, and suppresses taking-zero
+receipts. Audits distinguish 360 unchanged input links from 72 declared data-only
+transformations. This closes the measured conversion question; before-only replay
+admission is deliberately unchanged pending separate integration. Production Go,
+dependencies, generation fingerprints and save 35 remain unchanged.
+
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
 before/after split boundaries, exact repeats and bounded clock changes. They
