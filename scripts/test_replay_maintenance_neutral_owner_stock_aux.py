@@ -138,4 +138,20 @@ class FriendlyStockAux(unittest.TestCase):
         self.rejects((b,w,c,n))
 
 
+    def test_governor_numeric_zero_cannot_hide_changed_raw_bytes(self):
+        for case in records.CASES:
+            b,w,c,n=copy.deepcopy(self.samples[case]);world=bytearray(w['YTDATA.DAT'])
+            world[4053*137+73:4053*137+77]=bytes.fromhex('aabbcc00');w['YTDATA.DAT']=bytes(world)
+            self.assertEqual(model.field(w['YTDATA.DAT'],4054,73),0)
+            self.rejects((b,w,c,n))
+
+    def test_spent_mine_numeric_zero_cannot_hide_wrong_subtraction_bytes(self):
+        for case in ('neutral-mine-whole','friendly-mine-second-two','friendly-mine-second-four'):
+            for raw in ('aabbcc00','00008000','00002800'):
+                b,w,c,n=copy.deepcopy(self.samples[case]);world=bytearray(w['YTDATA.DAT'])
+                world[3050*137+129:3050*137+133]=bytes.fromhex(raw);w['YTDATA.DAT']=bytes(world)
+                self.assertEqual(model.field(w['YTDATA.DAT'],3051,129),0)
+                self.rejects((b,w,c,n))
+
+
 if __name__=='__main__':unittest.main()

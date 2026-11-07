@@ -43,7 +43,7 @@ six-mode equal, with 20 new tests. Neutral physical fighters transfer once;
 incoming mine losses precede local force and stock addition. Earlier Xannor
 changes in the four-second case remain explicit. The [before-only integration](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
 now derives all six cases from a modeled parent, with 108 exact comparisons /
-648 files, 855 new-stage RNG witnesses and 38 new tests. PRs #109–111 are merged;
+648 files, 855 new-stage RNG witnesses and 40 new tests. PRs #109–111 are merged;
 no open PR duplicated this work when checked. Next: qualify a distinct surviving
 combat/stock continuation with native evidence before widening replay admission;
 do not reacquire the completed owner/mine controls. General maintenance parity and production

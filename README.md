@@ -782,8 +782,10 @@ The four-second friendly-mine case retains changed Xannor activity and a separat
 Their [before-only replay](research/yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md) now
 derives all six cases from the modeled parent before targets open: neutral
 transfer, incoming-only mine losses, stock, Xannor changes and repeated moves.
-All 108 comparisons / 648 files and 855 new-stage RNG witnesses match; 38 new
-replay tests pass. No Go, dependency, source-fingerprint or save 35 changes.
+All 108 comparisons / 648 files and 855 new-stage RNG witnesses match; 40 new
+replay tests pass. The independent publisher also enforces original governor
+bytes and the exact spent-mine subtraction zero, rejecting numerically equal
+residue corruption. No Go, dependency, source-fingerprint or save 35 changes.
 
 
 

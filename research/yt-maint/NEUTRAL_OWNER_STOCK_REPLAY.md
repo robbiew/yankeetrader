@@ -45,7 +45,7 @@ of the scan even when the modified world and summary preserve total force.
 All 108 new-stage comparisons (six cases × three observed source-clock streams ×
 six target modes), or 648 files, agree byte-for-byte without normalization. All
 855 new-stage RNG-state witnesses agree; the three-day prefix witnesses are also
-checked separately. Thirty-eight new tests cover exact reconstruction, target-read
+checked separately. Forty new tests cover exact reconstruction, target-read
 separation, pure object/marker handoffs, source-only file access, clock admission,
 RNG poisoning, neutral transfer versus friendly merge, incoming mine helper calls,
 receipt order, coherent reabsorption/double-count/early-end rejection and atomic
@@ -62,3 +62,7 @@ These four commands run in CI using portable retained evidence. No new general
 MBF, arbitrary-world maintenance, active-player maintenance, TCP/PTY or native
 BBS acceptance is claimed. Next qualify a distinct surviving combat/stock
 continuation with native evidence before extending this profile.
+
+The publisher compares all four governor bytes with the before world and requires
+canonical `00000000` for a spent mine subtraction. Numeric-zero aliases such as
+`aabbcc00`, pickup-zero `00008000` and departure-zero `00002800` are rejected.

@@ -98,7 +98,7 @@ def _admit(before_files,world,events,mercenary):
     owner=int(field(before,3051,85));transfer=friendly if owner==0 else 0
     initial_expected={2368:97337,**({3000:friendly}if owner==-2 else {})}
     if initial_map!=initial_expected:raise ValueError('two measured source forces required')
-    if field(world,4054,73)!=governor:raise ValueError('pickup must preserve original planet governor')
+    if field(world,4054,73)!=governor or world[4053*SIZE+73:4053*SIZE+77]!=before[4053*SIZE+73:4053*SIZE+77]:raise ValueError('pickup must preserve original planet governor')
     losses={-1:0,-2:0,0:0};grounds={record:_ground(before,world,record)for record in(4052,4054,4150)};previous=1;dead=set()
     for event in events:
         if type(event)is not dict or event.get('kind')!='planet':raise ValueError('only measured fatal Xannor home assaults admitted')
@@ -121,7 +121,7 @@ def _admit(before_files,world,events,mercenary):
         hit=mevents[0];mine_loss=_whole(hit.get('losses'),97337,'incoming mine loss')
         rolls=hit.get('rolls')
         if hit.get('sector')!=3000 or hit.get('initial_force')!=97337 or hit.get('force')!=97337-mine_loss or not 0<mine_loss<97337:raise ValueError('mine damages incoming force alone')
-        if (hit.get('initial_mines'),hit.get('mines'),hit.get('mines_spent'))!=(1,0,1) or field(world,3051,129)!=0:raise ValueError('actual single spent mine required')
+        if (hit.get('initial_mines'),hit.get('mines'),hit.get('mines_spent'))!=(1,0,1) or world[3050*SIZE+129:3050*SIZE+133]!=bytes(4):raise ValueError('actual single spent mine required')
         if type(rolls)is not list or len(rolls)!=1 or type(rolls[0])is not int or rolls[0]!=mine_loss or not 0<rolls[0]<10000 or hit.get('rng_draws')!=2:raise ValueError('one count-two shrinking helper roll binds the positive damage')
         incoming-=mine_loss
     losses[-2]=mine_loss

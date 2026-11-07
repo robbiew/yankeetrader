@@ -2994,3 +2994,10 @@ complete six-case replay, independent pinned native-corpus verification and all
 4,682 original archive hashes pass. Scoped whitespace, Python compilation and
 local documentation-link checks pass. No native capture or manifest changed,
 and unrelated regenerated smoke captures remain excluded.
+
+PR #112 raw-byte review fixes: the independent publisher preserves all four
+original governor bytes and requires canonical `00000000` after spent-mine
+subtraction. Two new regressions reject numeric-zero aliases across all governor
+contexts and the three mine cases. All 20 auxiliary tests pass; complete replay
+still matches 108 comparisons / 648 files and 855 RNG witnesses. No native
+observation or manifest changed.
