@@ -410,3 +410,10 @@
 /research/yt-maint/stock-conversion-controls/**/*.BIN -diff
 /research/yt-maint/stock-conversion-controls/**/dosbox.stdout -diff
 /research/yt-maint/stock-conversion-controls/**/dosbox.stderr -diff
+
+# Preserve friendly-force/planet-stock controls and executed source snapshots.
+/research/yt-maint/friendly-stock-controls/** -text
+/research/yt-maint/friendly-stock-controls/**/*.LOG -diff
+/research/yt-maint/friendly-stock-controls/**/*.BIN -diff
+/research/yt-maint/friendly-stock-controls/**/dosbox.stdout -diff
+/research/yt-maint/friendly-stock-controls/**/dosbox.stderr -diff
