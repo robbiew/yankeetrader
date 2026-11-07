@@ -749,8 +749,9 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
-now derives the four-day modeled chain, fifteen declared edits, held garrison,
+PR #107 is merged into main as `c2af1782`; the separate open replay PR #108
+now targets main. Its [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
+derives the four-day modeled chain, fifteen declared edits, held garrison,
 combined receipt actor, stock floor/clear and governor preservation. All 144
 complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
 28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain

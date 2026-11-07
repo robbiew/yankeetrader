@@ -34,12 +34,12 @@ retain held counter-controls. Empty/subunit stock clears without taking text.
 The [before-only departure replay](yt-maint/DEPARTED_STOCK_REPLAY.md) now derives
 all eight fixtures from a modeled three-day prefix, including repeated local
 activations and separate physical inventories. All 144 comparisons / 864 files
-and 1152 new-stage RNG witnesses agree; 33 new tests pass. PR #107 is merged as
-`c2af1782`; PR #108 owns the included held-garrison dependency and remains under
-review/CI monitoring (checked 2026-11-07). Do not repeat either slice.
-Next: qualify a distinct owner/hazard interaction with original-DOS controls
-before widening replay admission. General maintenance parity and production
-integration remain unclaimed.
+and 1152 new-stage RNG witnesses agree; 33 new tests pass. PR #107 is merged into
+main as `c2af1782` and owns held-garrison acquisition. The separate open PR #108
+targets main and owns the included held-garrison replay dependency (status checked
+2026-11-07). Do not repeat either slice. Next: qualify a distinct owner/hazard
+interaction with original-DOS controls before widening replay admission. General
+maintenance parity and production integration remain unclaimed.
 
 ### Implemented and available to test
 
