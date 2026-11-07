@@ -798,9 +798,10 @@ tests verify the exact losing receipt, preserved raw bytes and complete handoffs
 Their [before-only replay](research/yt-maint/DEFENDER_STOCK_REPLAY.md) now derives
 the five-day chain before target reads: fatal offense, actual surviving defenders,
 the exact losing receipt and uncollected next-day stock. All 144 comparisons /
-864 files and 1074 new-stage RNG witnesses agree; 34 new tests pass. The publisher
-independently replays the battle RNG and rejects coherent casualty/resurrection
-forgeries. PR #112's owner/mine replay remains separate. Gameplay/save 35 unchanged.
+864 files and 1074 new-stage RNG witnesses agree; 39 new tests pass. The publisher binds
+battle entry/exit to source clocks, helper progression and final RNG witnesses,
+rejects coherent casualty/resurrection forgeries, and preserves the inherited
+raw departure pair on the extinct next day. PR #112's owner/mine replay remains separate. Gameplay/save 35 unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

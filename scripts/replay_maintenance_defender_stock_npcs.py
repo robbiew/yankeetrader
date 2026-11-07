@@ -5,7 +5,7 @@ from replay_maintenance_placement import cache
 import replay_qb_graph as qb
 
 
-from replay_maintenance_collision_npcs import Stream
+from replay_maintenance_defender_stock_rng import SourceStream as Stream
 
 
 def synthesize(before,inputs):
@@ -208,7 +208,9 @@ def synthesize(before,inputs):
         if len(base_links)!=1 or dates['base']is not None:raise ValueError('existing Base must not consume creation clock')
         base_sector=base_links[0]
     from replay_maintenance_defender_stock_mercenary import maintain
+    stream.mark('mercenary-start')
     mercenary=maintain(world,stream)
+    stream.mark('mercenary-end')
     lottery=stream.rng.rnd();lottery_player=None
     if lottery>=.5:
         lottery_player=stream.one(50,caller=0x53b4)+1
@@ -217,7 +219,7 @@ def synthesize(before,inputs):
     return bytes(world),dict(groups=groups,routes=routes,encounters=encounters,normalized_total=normalized['total'],
          wanderer_sector=wanderer_sector,wanderer_attempts=wanderer_attempts,base_sector=base_sector,base_attempts=base_attempts,
          initial_physical_force=initial_physical,final_physical_force=sum(get(51+s,81)for s in range(1,3001)),created=tuple(created),cache_locations=normalized['locations'],cache_forces=normalized['forces'],active_planets=planet_stats,events=events,mercenary=mercenary,lottery=lottery,lottery_player=lottery_player,helper_seeds=stream.seeds,
-         helper_calls=stream.calls,total_draws=stream.rng.draws,final_rng_state=stream.rng.state)
+         rng_audit=stream.audit(),rng_source=(initial_state,inputs.schedule,tuple((s['family'],s['caller'],s['old_state'],s['timer'],s['seeded_state'])for s in stream.seeds),stream.rng.state,stream.rng.draws),helper_calls=stream.calls,total_draws=stream.rng.draws,final_rng_state=stream.rng.state)
 
 
 def mine_hit(world,stream,group,sector,force):

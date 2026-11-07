@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `5a17a770` (including merged maintenance PRs #88, #90–94 and #97–112, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `94e890ea` (including merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -43,13 +43,13 @@ six-mode equal, with 20 new tests. Neutral physical fighters transfer once;
 incoming mine losses precede local force and stock addition. Earlier Xannor
 changes in the four-second case remain explicit. The [before-only integration](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
 now derives all six cases from a modeled parent, with 108 exact comparisons /
-648 files, 855 new-stage RNG witnesses and 40 new tests. PRs #109–112 are merged;
+648 files, 855 new-stage RNG witnesses and 40 new tests. PRs #109–113 are merged;
 PR #112 owns that separate replay; do not duplicate it. The [defender-survival controls](yt-maint/DEFENDER_STOCK_CONTROLS.md) now qualify
 that distinct continuation: 48 native runs / 288 files over four fixtures and
 two days, six-mode equal, with 17 new tests. Their [before-only replay](yt-maint/DEFENDER_STOCK_REPLAY.md)
 now derives all five modeled days before targets open: 144 comparisons / 864
-files and 1074 new-stage RNG witnesses match; 34 new tests pass. PR #112 owns the
-separate owner/mine replay, while PR #113 owns the captured defender evidence.
+files and 1074 new-stage RNG witnesses match; 39 new tests pass. PR #112 owns the
+separate owner/mine replay, while PR #113 owns the now-merged captured defender evidence.
 Next audit remaining maintenance branches before choosing another distinct
 bounded control; do not repeat either completed integration.
 Do not reacquire the completed owner/mine controls. General maintenance parity and production

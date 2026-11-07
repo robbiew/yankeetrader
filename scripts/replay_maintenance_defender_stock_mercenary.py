@@ -1,6 +1,12 @@
 """Derive the linked negative-owner combat, preserving extinct-force continuation."""
 from replay_qb_graph import mbf
-from replay_maintenance_gateway_mercenary import maintain as scan
+from replay_maintenance_stock_mercenary import _maintain
+from replay_maintenance_gateway_mercenary import attack
+
+def marked_attack(world,stream,sector,force):
+    stream.mark('battle-entry');result=attack(world,stream,sector,force);stream.mark('battle-exit');return result
+
+def scan(world,stream):return _maintain(world,stream,attack_action=marked_attack)
 
 def maintain(world,stream):
     if type(world)is not bytearray or len(world)!=4151*137:raise ValueError('complete mutable modeled world required')

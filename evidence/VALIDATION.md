@@ -3041,3 +3041,17 @@ complete five-day defender model and independent retained-corpus verification
 pass, and all 4,682 original archive hashes match. Python compilation, scoped
 whitespace and local documentation paths pass. Existing native captures,
 manifests and unrelated regenerated smoke captures remain untouched.
+
+PR #114 review fixes bind battle entry/exit to a source-operation audit and a
+separate immutable source-clock/helper/final-state context. The publisher derives
+physical-field draws, movement gate and target-helper reseeding before selecting
+the battle seed; helper/final witness validation independently binds that context
+to the source clocks and surrounding runtime progression. A coherently changed
+entry state, gate, casualties, rounds and exit state plus matching forged defender
+inventory is rejected. The extinct output also preserves the admitted eight-byte
+departure pair exactly; all four second-day canonical-zero substitutions fail.
+All 195 stock replay tests pass (39 defender tests), including altered audit,
+phase-marker, clock-context and coherent casualty regressions. Complete replay
+remains 144 exact comparisons / 864 files with 1074 new-stage RNG witnesses; all
+4,682 archive hashes, compilation, documentation paths and scoped whitespace
+checks pass. Native observations, frozen sources and manifests are unchanged.

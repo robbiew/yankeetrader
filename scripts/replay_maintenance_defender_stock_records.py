@@ -19,7 +19,7 @@ from replay_maintenance_evolved_records import ClockInputs,Inputs,FILES,MODES,le
 from replay_maintenance_defender_stock_ports import replay_ports
 from replay_maintenance_defender_stock_npcs import synthesize as npc_synthesize
 from replay_maintenance_defender_stock_aux import synthesize as aux_synthesize
-from replay_maintenance_collision_records import validate_rng_witnesses
+from replay_maintenance_collision_records import validate_rng_witnesses as _validate_rng_witnesses
 from replay_maintenance_records import compare
 from replay_qb_graph import mbf
 
@@ -126,7 +126,7 @@ def _synthesize_day(before_files,inputs):
     work=before[:3051*137]+block+before[4051*137:]
     work,npcs=npc_synthesize(work,SimpleNamespace(clock=clock,schedule=inputs.schedule,phase_days=phases,final_day=day,planet_clocks=inputs.planet_clocks))
     work=_watermark_and_inactive_ranks(work,day)
-    aux,aux_stats=aux_synthesize(before_files,work,clock.news_date,clock.news_clock,clock.score_date,clock.score_clock,created=npcs['created'],events=npcs['events'],mercenary=npcs['mercenary'])
+    aux,aux_stats=aux_synthesize(before_files,work,clock.news_date,clock.news_clock,clock.score_date,clock.score_clock,created=npcs['created'],events=npcs['events'],mercenary=npcs['mercenary'],rng_audit=npcs['rng_audit'],rng_source=npcs['rng_source'])
     return {'YTDATA.DAT':work,**aux},dict(ports=port_stats,npcs=npcs,auxiliary=aux_stats,final_day=day)
 
 
@@ -212,11 +212,30 @@ def compare_cases(directory=DEFAULT):
     return dict(recipe='bounded-defender-stock-five-day-replay-v1',cases=cases,statistics=statistics)
 
 
+def validate_rng_witnesses(observation,stats):
+    count=_validate_rng_witnesses(observation,stats)
+    npc=stats['npcs']
+    if 'rng_audit' in npc:
+        from replay_maintenance_defender_stock_rng import verify
+        clocks=inputs_from_observation(observation)
+        expected=(clocks.clock.initial_state,clocks.schedule,tuple((s['family'],s['caller'],s['old_state'],s['timer'],s['seeded_state'])for s in npc['helper_seeds']),npc['final_rng_state'],npc['total_draws'])
+        if npc['rng_source']!=expected:raise ValueError('RNG audit checkpoints must bind source clocks and witnessed helper/final progression')
+        verify(npc['rng_audit'],expected)
+    return count
+
+def _json(value):
+    from dataclasses import asdict
+    from replay_maintenance_defender_stock_rng import Audit
+    if type(value)is Audit:return asdict(value)
+    if type(value)is bytes:return value.hex()
+    raise TypeError(type(value).__name__)
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=DEFAULT);p.add_argument('--output',type=Path);a=p.parse_args()
     from verify_maintenance_defender_stock import verify
     report=compare_cases(a.root);verify(a.root)
-    if a.output:a.output.write_text(json.dumps(report,indent=2)+'\n')
+    if a.output:a.output.write_text(json.dumps(report,indent=2,default=_json)+'\n')
     failures=[c for c in report['cases']if c['byte_mismatches']]
     print(json.dumps(dict(comparisons=len(report['cases']),files=6*len(report['cases']),mismatches=len(failures),rng_witness_checks=sum(s['rng_witness_checks']for s in report['statistics']))))
     if failures:raise SystemExit('at least one complete native comparison differs')

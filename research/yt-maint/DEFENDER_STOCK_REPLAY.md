@@ -37,7 +37,7 @@ receipt; the next day publishes no invented combat receipt.
 All 144 new-stage comparisons (four cases × two children × three observed clock
 streams × six target modes), or 864 complete files, agree without normalization.
 All 1074 new-stage RNG witnesses agree; the three-day prefix witnesses are also
-checked independently. Thirty-four new tests cover before-only file access,
+checked independently. Thirty-nine new tests cover before-only file access,
 parent/child object and marker handoffs, exact fixture reconstruction, immutable
 clocks, RNG poisoning, battle-ledger corruption, exact receipt/stock/survivors,
 raw zero aliases, contextual admission, historical guards and atomic failure.
@@ -53,3 +53,28 @@ CI runs these portable commands against the existing evidence. This does not
 admit arbitrary combat, general MBF, active players, production DOS maintenance,
 TCP/PTY or native BBS durability. Audit remaining source branches before choosing
 another distinct native control; do not repeat these measured continuations.
+
+
+## Source-stream audit and unchanged extinct handoff
+
+The publisher never chooses a battle seed from the event being audited. A local
+traced source stream records compact draw/seed operations and phase markers using
+startup and chronological helper TIMER inputs. A separate immutable source context
+carries those inputs, actual helper entry/exit checkpoints and the final draw/state
+checkpoint. Replaying the operations must reproduce every checkpoint. Comparison
+validation independently binds that context back to source-clock extraction and
+all native helper/final witnesses.
+
+From the resulting Mercenary-start boundary, the publisher derives physical-field
+draws, the eager movement gate and each same-origin target rejection using the
+actual source-clock schedule (target reseeding is helper1/48cf). The resulting
+state must equal the source battle-entry marker and event entry state. Independently
+walked battle exit and draw counts must match the battle-exit and scan-end markers,
+then the whole stream must reach the separately witnessed final checkpoint. A
+coherently changed event seed, gate, casualties, rounds and final battle state plus
+matching forged defenders is rejected against the unchanged source progression.
+
+On the next day, the output origin force/owner bytes must equal the admitted
+before-world pair. Canonical zeros cannot silently replace source859e residue.
+The regression exercises all four extinct next-day handoffs. Existing captures,
+source snapshots and manifests remain unchanged.

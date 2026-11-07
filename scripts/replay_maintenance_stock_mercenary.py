@@ -54,7 +54,7 @@ def maintain(world,stream):
     return result
 
 
-def _maintain(world, stream, *, pickup_action=None, mine_action=None):
+def _maintain(world, stream, *, pickup_action=None, mine_action=None, attack_action=None):
     """Mutate source-owned sector fields and return derived audit statistics.
 
     ``world`` is an independently synthesized bytearray, never an after-target.
@@ -144,7 +144,7 @@ def _maintain(world, stream, *, pickup_action=None, mine_action=None):
                 events.append(event);force=event['force']
                 continue
             if get(rec,81)!=0:
-                event=attack(world,stream,sector,force)
+                event=(attack if attack_action is None else attack_action)(world,stream,sector,force)
                 events.append(event);force=event['force']
                 if not force:break
         # Pickup saves immediately at its actual encounter; ordinary empty

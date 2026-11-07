@@ -154,4 +154,12 @@ class GatewayRecords(unittest.TestCase):
             self.assertIn(b'The Mercenaries Lost!',self.outputs[case][3]['YTNEWS.DAT'])
             self.assertNotIn(b'The Mercenaries Lost!',self.outputs[case][4]['YTNEWS.DAT'])
 
+    def test_source_rng_audit_is_bound_to_observed_clocks_and_witnessed_progression(self):
+        case='balanced-37-whole';row=self.stats[case][3]
+        replay.validate_rng_witnesses(self.obs[case][3],row)
+        for source_index in (0,3,4):
+            bad=copy.deepcopy(row);source=list(bad['npcs']['rng_source']);source[source_index]^=1;bad['npcs']['rng_source']=tuple(source)
+            with self.assertRaises(ValueError):replay.validate_rng_witnesses(self.obs[case][3],bad)
+
+
 if __name__=='__main__':unittest.main()
