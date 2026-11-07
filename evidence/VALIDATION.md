@@ -2910,6 +2910,7 @@ stock clear, altered public output and manifests. This is acquisition acceptance
 not before-only replay, production DOS maintenance, or live BBS acceptance.
 
 
+
 ## Before-only friendly-force and planet-stock composition — 2026-11-07
 
 Checked acquisition-only PR #107 at d9bfdbfc before implementation. Its native
@@ -2929,3 +2930,26 @@ plan are updated. Production Go, dependencies, QB fingerprints and save35 are
 unchanged; no new live BBS or native Windows acceptance is claimed.
 
 [Model, reproduction and remaining boundaries](../research/yt-maint/FRIENDLY_STOCK_REPLAY.md).
+
+## Before-only departed-garrison stock replay (2026-11-07)
+
+The [replay](../research/yt-maint/DEPARTED_STOCK_REPLAY.md) synthesizes a modeled
+three-day prefix, applies the fifteen declared edits to its actual six-file
+handoff and derives the new day before target reads. All 144 comparisons / 864
+files match without normalization; 1152 new-stage RNG witnesses agree. Thirty-three
+new tests cover before-only input boundaries, held/departed composition, repeated
+activations, derived routes, capture/receipt actors, physical distribution,
+coherent duplication/loss rejection, original zeros and atomic failure. Retained
+native observations, manifests and frozen acquisition sources are unchanged.
+Production Go, dependencies, source fingerprints and save 35 remain unchanged.
+
+Verification: all 115 stock replay tests pass (33 new, 28 held-garrison and
+54 historical stock tests), and all 4,682 archived files retain their hashes.
+README/plan links and scoped whitespace checks pass. Native acquisition bytes
+and nine unrelated local smoke captures are excluded from this replay commit.
+
+PR #110 ledger review fix: require the next occupied sector below the scan cursor
+and reject lower groups left unvisited at completion. The coherent omitted final
+activation regression passes (15 auxiliary tests total); the final replay still
+matches all 144 comparisons / 864 files and 1152 RNG witnesses. Native observations
+and hashes are unchanged.
