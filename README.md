@@ -766,7 +766,8 @@ unchanged.
 add 48 original-DOS runs / 288 output files with six-mode equality. Four/eight-second
 controls select departure before pickup, followed by later same-scan activations;
 two/six-second controls hold. The incoming force picks up stock without absorbing
-the departed 37 fighters. Empty/subunit stock clears silently. Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
+the departed 37 fighters. Empty/subunit stock clears silently.
+Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
 derives departure, repeated activation, exact actor/capture text and all six
 files from a modeled parent before targets open. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
