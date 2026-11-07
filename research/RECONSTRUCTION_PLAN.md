@@ -25,17 +25,21 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
-### Latest bounded departure acquisition
+### Latest bounded departure replay
 
 The [departed-garrison stock matrix](yt-maint/DEPARTED_STOCK_CONTROLS.md) retains
 48 complete DOS runs / 288 files, six-mode equal. Four/eight-second fixtures
 select local departure and later same-scan activation; two/six-second fixtures
 retain held counter-controls. Empty/subunit stock clears without taking text.
-This extends acquisition only. Open PR #107 owns held-garrison acquisition and
-PR #108 owns its before-only replay (heads checked 2026-11-07); do not repeat them.
-Next: independently derive departed-group routing, repeated activations and
-stock receipts before opening this new corpus's targets. General DOS maintenance
-parity and production integration remain unclaimed.
+The [before-only departure replay](yt-maint/DEPARTED_STOCK_REPLAY.md) now derives
+all eight fixtures from a modeled three-day prefix, including repeated local
+activations and separate physical inventories. All 144 comparisons / 864 files
+and 1152 new-stage RNG witnesses agree; 33 new tests pass. PR #107 is merged as
+`c2af1782`; PR #108 owns the included held-garrison dependency and remains under
+review/CI monitoring (checked 2026-11-07). Do not repeat either slice.
+Next: qualify a distinct owner/hazard interaction with original-DOS controls
+before widening replay admission. General maintenance parity and production
+integration remain unclaimed.
 
 ### Implemented and available to test
 
@@ -355,9 +359,11 @@ remain separate.
    now complete, and their [separate before-only replay](yt-maint/FRIENDLY_STOCK_REPLAY.md)
    now derives held-garrison activation, once-only absorption, pre-stock receipt
    stamps, governor preservation and full-stock clears. All 144 comparisons and
-   1104 new-stage RNG witnesses agree. Next capture and integrate an actually
-   departing garrison before incoming pickup or another bounded owner/hazard
-   composition; do not repeat the measured held-garrison slice.
+   1104 new-stage RNG witnesses agree. The [departed-garrison controls](yt-maint/DEPARTED_STOCK_CONTROLS.md)
+   and their [before-only replay](yt-maint/DEPARTED_STOCK_REPLAY.md) now add
+   departure before incoming pickup and repeated same-scan activation: 144
+   complete comparisons / 864 files and 1152 RNG witnesses agree. Next qualify
+   a distinct owner/hazard composition; do not repeat either garrison slice.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

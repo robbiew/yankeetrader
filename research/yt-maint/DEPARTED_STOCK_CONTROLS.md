@@ -1,8 +1,8 @@
 # Departed garrison and planet stock: bounded original-DOS controls
 
 This acquisition milestone extends the held-garrison controls in PR #107;
-PR #108 independently covers held-garrison replay. It does not implement a
-before-only departure replay or change production gameplay/save format 35.
+PR #108 independently covers held-garrison replay. Its [before-only departure replay](DEPARTED_STOCK_REPLAY.md) is now implemented
+separately. Neither slice changes production gameplay/save format 35.
 
 The primary predeclared matrix has six fixtures and six observation modes each.
 A separate, subsequently declared supplement has two fixtures and the same six
@@ -52,6 +52,6 @@ python3 scripts/verify_maintenance_departed_stock.py
 python3 scripts/test_verify_maintenance_departed_stock.py
 ```
 
-Next is before-only derivation of these routes and repeated activations, with
-independent corruption controls. No target-derived decisions or generalized
-maintenance compatibility are admitted by this acquisition milestone.
+The separate replay derives these routes and repeated activations with independent
+corruption controls. Acquisition hashes and executed sources remain unchanged.
+No generalized maintenance compatibility is admitted by this milestone.

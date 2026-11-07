@@ -760,10 +760,12 @@ unchanged.
 add 48 original-DOS runs / 288 output files with six-mode equality. Four/eight-second
 controls select departure before pickup, followed by later same-scan activations;
 two/six-second controls hold. The incoming force picks up stock without absorbing
-the departed 37 fighters. Empty/subunit stock clears silently. These are bounded
-acquisition observations, separate from held-garrison replay in open PR #108;
-before-only replay of departure and repeated activation remains next. No gameplay,
-save 35, dependency or source-fingerprint changes.
+the departed 37 fighters. Empty/subunit stock clears silently. Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
+derives departure, repeated activation, exact actor/capture text and all six
+files from a modeled parent before targets open. All 144 comparisons / 864 files
+and 1152 new-stage RNG witnesses match; 33 new tests pass. Held-garrison replay
+remains the separate PR #108 dependency. No gameplay, save 35, dependency or
+source-fingerprint changes.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
