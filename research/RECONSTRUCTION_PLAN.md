@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `c4ef395e` (including merged maintenance PRs #88, #90–94 and #97–106, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `dcc04c23` (including merged maintenance PRs #88, #90–94 and #97–108, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -32,10 +32,10 @@ The [departed-garrison stock matrix](yt-maint/DEPARTED_STOCK_CONTROLS.md) retain
 select local departure and later same-scan activation; two/six-second fixtures
 retain held counter-controls. Empty/subunit stock clears without taking text.
 This extends acquisition only. PR #107 is merged into main as `c2af1782` and owns
-held-garrison acquisition. Open PR #108 targets main for its separate before-only
-replay (status checked 2026-11-07); do not repeat either slice.
-Next: independently derive departed-group routing, repeated activations and
-stock receipts before opening this new corpus's targets. General DOS maintenance
+held-garrison acquisition. Its separate before-only replay PR #108 is merged into
+main as `dcc04c23`. Departure/repeated-activation replay is implemented in open
+PR #110; do not repeat either slice. Next: finish review and validation of those
+PRs before qualifying a distinct owner/hazard interaction. General DOS maintenance
 parity and production integration remain unclaimed.
 
 ### Implemented and available to test
@@ -123,8 +123,11 @@ verified merged into `main`.
 The [friendly-force/planet-stock controls](yt-maint/FRIENDLY_STOCK_CONTROLS.md)
 now qualify held garrisons, combined pre-stock receipt stamps and silent subunit
 pickup across 48 complete runs / 288 files, six-mode equal in all eight cases.
-Before-only integration of these composed actions is next; the historical stock
-profile intentionally rejects an occupied gateway.
+Their [before-only integration](yt-maint/FRIENDLY_STOCK_REPLAY.md) now derives all
+eight cases from modeled parents: 144 complete comparisons / 864 files and 1104
+new-stage RNG witnesses match. All 28 new tests pass; the historical stock profile
+still rejects an occupied gateway. Further unmeasured departure-before-pickup and
+owner/hazard compositions remain separate.
 
 PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
@@ -350,8 +353,12 @@ remain separate.
    qualified floor/clear/receipt behavior is integrated in the new
    [before-only profile](yt-maint/STOCK_CONVERSION_REPLAY.md). The
    [friendly-plus-planet-stock controls](yt-maint/FRIENDLY_STOCK_CONTROLS.md) are
-   now complete. Next derive their held-garrison activation, once-only absorption,
-   pre-stock receipt stamp and full-stock clear in a separate before-only profile.
+   now complete, and their [separate before-only replay](yt-maint/FRIENDLY_STOCK_REPLAY.md)
+   now derives held-garrison activation, once-only absorption, pre-stock receipt
+   stamps, governor preservation and full-stock clears. All 144 comparisons and
+   1104 new-stage RNG witnesses agree. Next capture and integrate an actually
+   departing garrison before incoming pickup or another bounded owner/hazard
+   composition; do not repeat the measured held-garrison slice.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
