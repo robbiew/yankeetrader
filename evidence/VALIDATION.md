@@ -2845,3 +2845,54 @@ this dependent work. No new capture, native query, provider, production Go,
 dependency, generation fingerprint or save 35 change is introduced. General MBF,
 arbitrary worlds, friendly-force-plus-planet-stock composition, full Go/terminal/
 build and live/native durability acceptance remain separate.
+
+
+## Friendly-force and planet-stock composition controls (2026-11-07)
+
+Eight explicit fixtures isolate a same-faction physical garrison at the forced
+Gateway Cache pickup. All 48 original-DOS runs completed naturally on their first
+attempt; all 288 output files are six-mode equal within each fixture. Independent
+lineage binds 240 unchanged side-file links and 48 declared data transformations,
+all fifteen ordered edits, mode-specific November 4 parents, connected gateway,
+unchanged guests, pinned host, actual launch/CPU and complete source clocks.
+Thirty-two observed/attach-only captures pass full persisted flush receipts.
+No byte is normalized; no failure, retry or forced completion is suppressed.
+
+The local garrison at 3000 is scanned first and holds in every retained case.
+No earlier Mercenary casualty or local movement appears. The moving 97337 force
+then combines the held 1/37/97337 friendly fighters with INT(stock). It saves
+97338, 97374, 97411, 97375, 286902 or 194711 as declared by each exact input. Empty and
+half stock clear silently; positive amounts print the combined pre-stock actor
+97374 or 194674, not the moving-only count or final post-stock count. No capture
+line prints because entering local force is positive. Stock always clears with
+source8472 raw `00008000`; the departure force/owner retain source859e raw `00002800`.
+Governors 0 and -2 are preserved. Title, link, ordinary economy and public/private
+files reconcile with physical force and scoreboard totals.
+
+One retained 3462-byte native observation authenticates 16 code spans and four
+original literals against immutable YTMAINT bytes. It binds descending scan,
+eager .66 hold gate, entering force cache `7b90`, sector owner/link pickup priority,
+full stock clear/save, actor-plus-local-plus-whole save, combined taking stamp,
+zero-local capture condition (with its source `7b68` comparison), positive-only
+taking and bypass of the ordinary friendly merge. No new native query/provider
+was needed. Source behavior is conditional on the garrison still being present;
+this recipe selects that condition rather than claiming every clock would hold.
+
+All 33 new tests pass: 24 independent corpus/clock/ledger controls and nine native
+contract controls. They reject coherent overwrite/double-count amounts, wrong
+pre-stock actors, invented capture/loss events, altered governors/raw zeros,
+wrong clocks/callers, incomplete or forced exits and changed source gates. Both
+verifiers and all 4682 archive hashes pass. An indexed autocrlf=true checkout
+preserves all 1350 artifacts and passes the full corpus audit. Relative links,
+compilation and diff checks pass. Historical corpora/controllers/observers remain
+unchanged; frozen executed sources are retained separately from validators.
+
+README, plan, linked reports and CI are updated. Prerequisite PR #106 is verified
+merged as `c4ef395ea41b86f3097798897e0c49ea4f4d921d` and integrated into fetched
+main; its tree exactly matches validated head `7c9c6d5`. Production Go, dependencies,
+generation fingerprints and save 35 are unchanged. The current stock replay's
+occupied-sector guard still rejects the composition before changing any world
+bytes; separate before-only integration of the held activation and combined
+receipt is next. Hostile/neutral garrisons, mines, other clocks, negative/nonfinite/
+overflow stock and arbitrary-world MBF remain separate. Full Go/terminal/build,
+live BBS and native Windows durability acceptance are not newly claimed.

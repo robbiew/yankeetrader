@@ -742,6 +742,15 @@ files and 1656 new-stage RNG-state witnesses match. Whole transfer, fractional
 discard, original raw clears and public receipts are derived before targets open.
 All 54 new tests pass. Historical replay guards, production Go, dependencies,
 generation fingerprints and save 35 remain unchanged.
+[PR #106](https://github.com/robbiew/yankeetrader/pull/106) is verified merged into main.
+
+[Friendly-force and planet-stock controls](research/yt-maint/FRIENDLY_STOCK_CONTROLS.md)
+now retain 48 complete original-DOS runs / 288 output files, six-mode equal in all
+eight cases. A held friendly garrison is included once with incoming force and
+whole stock; taking text uses the combined pre-stock count, while capture text is
+suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
+This is acquisition evidence; separate before-only composition is the next step.
+Gameplay, dependencies and save 35 remain unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

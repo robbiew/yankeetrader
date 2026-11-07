@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `a2f28be8` (including merged maintenance PRs #88, #90–94 and #97–105, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `c4ef395e` (including merged maintenance PRs #88, #90–94 and #97–106, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -105,8 +105,13 @@ controls. Their [before-only replay](yt-maint/STOCK_CONVERSION_REPLAY.md) now
 integrates measured floor conversion, full raw clear and zero-receipt suppression
 from a modeled parent. All 216 comparisons / 1296 files and 1656 new-stage RNG
 witnesses agree; 54 new tests pass. Historical profiles retain their original
-narrower guards.
-The next unmeasured bounded path is friendly-force-plus-planet-stock composition.
+narrower guards. [PR #106](https://github.com/robbiew/yankeetrader/pull/106) is
+verified merged into `main`.
+The [friendly-force/planet-stock controls](yt-maint/FRIENDLY_STOCK_CONTROLS.md)
+now qualify held garrisons, combined pre-stock receipt stamps and silent subunit
+pickup across 48 complete runs / 288 files, six-mode equal in all eight cases.
+Before-only integration of these composed actions is next; the historical stock
+profile intentionally rejects an occupied gateway.
 
 PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
@@ -330,8 +335,10 @@ remain separate.
    nonneutral comparison inventory. The [stock conversion controls](yt-maint/STOCK_CONVERSION.md)
    now qualify positive half-or-larger fractions and subunit zero transfers. The
    qualified floor/clear/receipt behavior is integrated in the new
-   [before-only profile](yt-maint/STOCK_CONVERSION_REPLAY.md). Next isolate the
-   separate friendly-plus-planet-stock encounter.
+   [before-only profile](yt-maint/STOCK_CONVERSION_REPLAY.md). The
+   [friendly-plus-planet-stock controls](yt-maint/FRIENDLY_STOCK_CONTROLS.md) are
+   now complete. Next derive their held-garrison activation, once-only absorption,
+   pre-stock receipt stamp and full-stock clear in a separate before-only profile.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
