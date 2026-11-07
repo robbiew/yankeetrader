@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `c4ef395e` (including merged maintenance PRs #88, #90–94 and #97–106, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `dcc04c23` (including merged maintenance PRs #88, #90–94 and #97–108, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -35,11 +35,11 @@ The [before-only departure replay](yt-maint/DEPARTED_STOCK_REPLAY.md) now derive
 all eight fixtures from a modeled three-day prefix, including repeated local
 activations and separate physical inventories. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses agree; 34 new tests pass. PR #107 is merged into
-main as `c2af1782` and owns held-garrison acquisition. The separate open PR #108
-targets main and owns the included held-garrison replay dependency (status checked
-2026-11-07). Do not repeat either slice. Next: qualify a distinct owner/hazard
+main as `c2af1782`; its separate held-garrison replay PR #108 is merged into main
+as `dcc04c23` (status checked 2026-11-07). Do not repeat either slice. Next: qualify a distinct owner/hazard
 interaction with original-DOS controls before widening replay admission. General
 maintenance parity and production integration remain unclaimed.
+
 
 ### Implemented and available to test
 

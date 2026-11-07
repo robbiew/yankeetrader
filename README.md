@@ -753,9 +753,10 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-PR #107 is merged into main as `c2af1782`; the separate open replay PR #108
-now targets main. Its [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
-derives the four-day modeled chain, fifteen declared edits, held garrison,
+PR #107 and its separate replay PR #108 are merged into main.
+Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
+now derives the four-day modeled chain, fifteen declared edits, held garrison,
+
 combined receipt actor, stock floor/clear and governor preservation. All 144
 complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
 28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
@@ -771,8 +772,9 @@ files from a modeled parent before targets open. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
 requires every next occupied descending sector and rejects a coherently
 truncated scan even when force totals and scores still agree. Held-garrison replay
-remains the separate PR #108 dependency. No gameplay, save 35, dependency or
+PR #108 is merged into main as `dcc04c23`. No gameplay, save 35, dependency or
 source-fingerprint changes.
+
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
