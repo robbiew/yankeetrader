@@ -75,9 +75,9 @@ python3 scripts/verify_maintenance_neutral_owner_stock.py
 python3 scripts/test_verify_maintenance_neutral_owner_stock.py
 ```
 
-Next: a separate before-only integration must derive the modeled parent, edits,
-owner transfer, mine helper inputs, earlier Xannor actions, repeated local moves
-and all six writers before opening any target. Existing replay admission remains
-strict. General MBF, arbitrary owners/hazards, active-player maintenance,
-production DOS maintenance and live BBS acceptance are not established. Production
-Go, dependencies, generation fingerprints and save format 35 are unchanged.
+The [separate before-only integration](NEUTRAL_OWNER_STOCK_REPLAY.md) is now
+complete for these six cases. It derives the modeled parent, pure edits, owner
+transfer, helper clocks, Xannor actions, repeated moves and all six writers before
+any target is opened. Acquisition bytes, frozen sources and manifests are unchanged.
+General MBF, arbitrary owners/hazards, production integration and live BBS
+acceptance remain outside this bounded profile. Save format remains 35.

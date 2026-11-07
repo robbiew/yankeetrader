@@ -54,7 +54,7 @@ def maintain(world,stream):
     return result
 
 
-def _maintain(world, stream, *, pickup_action=None):
+def _maintain(world, stream, *, pickup_action=None, mine_action=None):
     """Mutate source-owned sector fields and return derived audit statistics.
 
     ``world`` is an independently synthesized bytearray, never an after-target.
@@ -131,7 +131,7 @@ def _maintain(world, stream, *, pickup_action=None):
         for sector in route[1:]:
             entered.append(sector);rec=51+sector
             if get(rec,129)!=0:
-                event=mine_hit(world,stream,sector,force)
+                event=(mine_hit if mine_action is None else mine_action)(world,stream,sector,force)
                 events.append(event);force=event['force']
                 if not force:break
             # Source4c7f tests the cached entering owner/link BEFORE foreign
@@ -158,7 +158,10 @@ def _maintain(world, stream, *, pickup_action=None):
     final_force=sum(int(get(51+s,81))for s in final)
     pickup_total=sum(e.get('pickup',0)for e in events)
     actual_losses=sum(e.get('losses',0)for e in events)
-    if final_force+actual_losses!=mercenary_total+pickup_total:
+    # Only an explicit measured pickup action reports a neutral-owner transfer.
+    # Historical public entry points retain their original stricter admission.
+    neutral_transfer=sum(e.get('neutral_transferred',0)for e in events)
+    if final_force+actual_losses!=mercenary_total+pickup_total+neutral_transfer:
         raise ValueError('bounded Mercenary conservation failed')
     return dict(desertion_draws=len(physical),desertion_sectors=physical,
                 movement_gate_draws=movement_draws,target_draws=target_draws,

@@ -2975,3 +2975,29 @@ and reject lower groups left unvisited at completion. The coherent omitted final
 activation regression passes (15 auxiliary tests total); the final replay still
 matches all 144 comparisons / 864 files and 1152 RNG witnesses. Native observations
 and hashes are unchanged.
+
+## Before-only neutral-owner and mine-stock replay (2026-11-07)
+
+The [new replay](../research/yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md) reuses all six
+captured cases without new acquisition or changed hashes. It derives a three-day
+modeled parent, fifteen pure edits and the child before reading any after-target.
+All 108 comparisons / 648 files and 855 new-stage RNG witnesses agree without
+normalization. Neutral transfer, incoming-only mines, stock, earlier Xannor changes
+and repeated local activation are source-derived. Thirty-eight new tests cover
+before-only boundaries, independent recipe reconstruction, clock/RNG witnesses,
+helper calls, owner-transfer accounting, coherent physical-ledger corruption and
+atomic failure. README/plan and CI are updated. Production Go, dependencies,
+source fingerprints and save 35 are unchanged; this remains bounded research.
+
+Verification: all 154 stock replay tests pass (38 new and 116 historical); the
+complete six-case replay, independent pinned native-corpus verification and all
+4,682 original archive hashes pass. Scoped whitespace, Python compilation and
+local documentation-link checks pass. No native capture or manifest changed,
+and unrelated regenerated smoke captures remain excluded.
+
+PR #112 raw-byte review fixes: the independent publisher preserves all four
+original governor bytes and requires canonical `00000000` after spent-mine
+subtraction. Two new regressions reject numeric-zero aliases across all governor
+contexts and the three mine cases. All 20 auxiliary tests pass; complete replay
+still matches 108 comparisons / 648 files and 855 RNG witnesses. No native
+observation or manifest changed.

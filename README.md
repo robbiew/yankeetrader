@@ -756,7 +756,6 @@ suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
 PR #107 and its separate replay PR #108 are merged into main.
 Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
 now derives the four-day modeled chain, fifteen declared edits, held garrison,
-
 combined receipt actor, stock floor/clear and governor preservation. All 144
 complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
 28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
@@ -780,8 +779,13 @@ Positive neutral physical fighters transfer once to the arriving Mercenaries;
 mine damage reduces the incoming force before entering fighters and stock add.
 The four-second friendly-mine case retains changed Xannor activity and a separate
 37-fighter survivor at sector 356. Twenty new provenance/composition tests pass.
-This is acquisition evidence; before-only replay remains the next step. No Go,
-dependency, source-fingerprint or save 35 changes.
+Their [before-only replay](research/yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md) now
+derives all six cases from the modeled parent before targets open: neutral
+transfer, incoming-only mine losses, stock, Xannor changes and repeated moves.
+All 108 comparisons / 648 files and 855 new-stage RNG witnesses match; 40 new
+replay tests pass. The independent publisher also enforces original governor
+bytes and the exact spent-mine subtraction zero, rejecting numerically equal
+residue corruption. No Go, dependency, source-fingerprint or save 35 changes.
 
 
 

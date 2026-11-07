@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `dcc04c23` (including merged maintenance PRs #88, #90–94 and #97–108, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `0c61ea6f` (including merged maintenance PRs #88, #90–94 and #97–111, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -41,12 +41,13 @@ The [neutral-owner and mine-stock acquisition](yt-maint/NEUTRAL_OWNER_STOCK_CONT
 now implements the six-case planned matrix: 36 native runs / 216 files, all
 six-mode equal, with 20 new tests. Neutral physical fighters transfer once;
 incoming mine losses precede local force and stock addition. Earlier Xannor
-changes in the four-second case remain explicit. Next: derive this newly
-qualified matrix before-only, including faction transfer and mine-helper clocks;
-do not reacquire the completed controls. General maintenance parity and production
+changes in the four-second case remain explicit. The [before-only integration](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
+now derives all six cases from a modeled parent, with 108 exact comparisons /
+648 files, 855 new-stage RNG witnesses and 40 new tests. PRs #109–111 are merged;
+no open PR duplicated this work when checked. Next: qualify a distinct surviving
+combat/stock continuation with native evidence before widening replay admission;
+do not reacquire the completed owner/mine controls. General maintenance parity and production
 integration remain unclaimed.
-
-
 
 ### Implemented and available to test
 
@@ -369,8 +370,10 @@ remain separate.
    1104 new-stage RNG witnesses agree. The [departed-garrison controls](yt-maint/DEPARTED_STOCK_CONTROLS.md)
    and their [before-only replay](yt-maint/DEPARTED_STOCK_REPLAY.md) now add
    departure before incoming pickup and repeated same-scan activation: 144
-   complete comparisons / 864 files and 1152 RNG witnesses agree. Next qualify
-   a distinct owner/hazard composition; do not repeat either garrison slice.
+   complete comparisons / 864 files and 1152 RNG witnesses agree. The neutral-owner/
+   mine-stock controls and their [before-only replay](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
+   now add 108 exact comparisons / 648 files and 855 RNG witnesses. Next qualify
+   a distinct surviving combat/stock continuation; do not repeat completed controls.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
