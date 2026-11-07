@@ -70,7 +70,8 @@ and native/live acceptance remain separate.
 
 Production Go, dependencies, generation fingerprints and save 35 are unchanged.
 This is a bounded research replay rather than arbitrary-world MBF compatibility.
-The friendly-force-plus-planet-stock composition, negative/nonfinite/overflow
-stock behavior and other unmeasured branches remain separate. Existing older
+The separately captured [friendly-force-plus-planet-stock composition](FRIENDLY_STOCK_REPLAY.md)
+is now integrated in its own strict profile. Negative/nonfinite/overflow stock
+behavior and other unmeasured branches remain separate. Existing older
 profiles retain their original narrower guards. Full Go/terminal/build, live BBS
 and native Windows durability acceptance are not newly claimed here.

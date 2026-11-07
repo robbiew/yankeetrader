@@ -2,6 +2,10 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+The full CI validation job has a bounded 90-minute budget: retained research
+verification and terminal smoke run sequentially. All tests, evidence checks and
+release-package checks remain required.
+
 ## Start here
 
 This README combines player instructions, operator procedures, feature rules and
@@ -17,7 +21,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-05) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-07) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -749,8 +753,12 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-This is acquisition evidence; separate before-only composition is the next step.
-Gameplay, dependencies and save 35 remain unchanged.
+Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
+now derives the four-day modeled chain, fifteen declared edits, held garrison,
+combined receipt actor, stock floor/clear and governor preservation. All 144
+complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
+28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
+unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

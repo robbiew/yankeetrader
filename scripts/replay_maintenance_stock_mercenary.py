@@ -54,7 +54,7 @@ def maintain(world,stream):
     return result
 
 
-def _maintain(world, stream):
+def _maintain(world, stream, *, pickup_action=None):
     """Mutate source-owned sector fields and return derived audit statistics.
 
     ``world`` is an independently synthesized bytearray, never an after-target.
@@ -137,7 +137,7 @@ def _maintain(world, stream):
             # Source4c7f tests the cached entering owner/link BEFORE foreign
             # defense. A victory does not fall through into pickup on this pass.
             if get(rec,93)>0 and get(rec,85)in(0,-2):
-                event=pickup(world,sector,force)
+                event=(pickup if pickup_action is None else pickup_action)(world,sector,force)
                 events.append(event);force=event['force'];stopped=True;break
             if get(rec,81)>0 and get(rec,85)==-2:
                 event=merge(world,sector,force)
