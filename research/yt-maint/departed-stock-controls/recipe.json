@@ -1,0 +1,149 @@
+{
+  "recipe": "maintenance-departed-stock-controls-v1",
+  "cases": {
+    "second-two-whole": {
+      "friendly": 37,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "clock": "00:00:02"
+    },
+    "second-four-whole": {
+      "friendly": 37,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "clock": "00:00:04"
+    },
+    "second-six-whole": {
+      "friendly": 37,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "clock": "00:00:06"
+    },
+    "second-eight-whole": {
+      "friendly": 37,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "clock": "00:00:08"
+    },
+    "second-two-half": {
+      "friendly": 37,
+      "governor": 0,
+      "stock": [
+        1,
+        2
+      ],
+      "clock": "00:00:02"
+    },
+    "second-four-owned": {
+      "friendly": 37,
+      "governor": -2,
+      "stock": [
+        37,
+        1
+      ],
+      "clock": "00:00:04"
+    }
+  },
+  "profiles": {
+    "second-two-whole": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ]
+    ],
+    "second-four-whole": [
+      [
+        "11/05/2026",
+        "00:00:04"
+      ]
+    ],
+    "second-six-whole": [
+      [
+        "11/05/2026",
+        "00:00:06"
+      ]
+    ],
+    "second-eight-whole": [
+      [
+        "11/05/2026",
+        "00:00:08"
+      ]
+    ],
+    "second-two-half": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ]
+    ],
+    "second-four-owned": [
+      [
+        "11/05/2026",
+        "00:00:04"
+      ]
+    ]
+  },
+  "stages": [
+    "child-1"
+  ],
+  "parent_source": {
+    "corpus": "evolved-combat-controls",
+    "profile": "route-mercenary-100000",
+    "stage": "child-2",
+    "pins": "fd794dccfda332ab79c2d5a693d2649ebbc32c607863fbf2f10801ec4e0ecef5"
+  },
+  "gateway": {
+    "origin": 2368,
+    "sector": 3000,
+    "slot": 3,
+    "name": "Gateway Cache",
+    "redirects": [
+      [
+        2996,
+        45
+      ],
+      [
+        2998,
+        49
+      ],
+      [
+        2999,
+        53
+      ]
+    ],
+    "day": 308,
+    "minute": 0,
+    "ground": 500000,
+    "rates": [
+      0,
+      0,
+      0
+    ],
+    "bank": 0
+  },
+  "modes": {
+    "unobserved-a": "unobserved",
+    "observed-a": "observed",
+    "attach-only": "attach-only",
+    "observed-b": "observed",
+    "unobserved-b": "unobserved",
+    "observed-c": "observed"
+  },
+  "sources": {
+    "capture_maintenance_stock_conversion.mjs": "a9a66df50fc201897f3f4ed8e9822e866358c1511d65c5f4e5cb0de95821da10",
+    "observe_maintenance_departure.js": "9bb0aa586c603a3a14693fd621ea4f81996d4f41c8735be5b20e99f14b283d03",
+    "recover_maintenance_departed_stock.py": "786517bc2e93a94dc4b3515108e98090969342b7a0ed50ba3d3f5e45a7a9c4ab",
+    "verify_maintenance_clock_neutral.py": "9efae1ecd4dce4a8619b43bfba8bde59a6aa00c52fc48fa464622e81cd6d1143"
+  }
+}

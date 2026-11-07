@@ -753,12 +753,22 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
+PR #107 and its separate replay PR #108 are merged into main.
 Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
 now derives the four-day modeled chain, fifteen declared edits, held garrison,
 combined receipt actor, stock floor/clear and governor preservation. All 144
 complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
 28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
 unchanged.
+
+[Departed-garrison stock controls](research/yt-maint/DEPARTED_STOCK_CONTROLS.md)
+add 48 original-DOS runs / 288 output files with six-mode equality. Four/eight-second
+controls select departure before pickup, followed by later same-scan activations;
+two/six-second controls hold. The incoming force picks up stock without absorbing
+the departed 37 fighters. Empty/subunit stock clears silently. These are bounded
+acquisition observations, separate from merged held-garrison replay PR #108.
+Departure/repeated-activation replay is tracked separately by open PR #110. No gameplay,
+save 35, dependency or source-fingerprint changes.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

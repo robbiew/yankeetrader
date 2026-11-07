@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `c4ef395e` (including merged maintenance PRs #88, #90–94 and #97–106, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `dcc04c23` (including merged maintenance PRs #88, #90–94 and #97–108, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -24,6 +24,19 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
+
+### Latest bounded departure acquisition
+
+The [departed-garrison stock matrix](yt-maint/DEPARTED_STOCK_CONTROLS.md) retains
+48 complete DOS runs / 288 files, six-mode equal. Four/eight-second fixtures
+select local departure and later same-scan activation; two/six-second fixtures
+retain held counter-controls. Empty/subunit stock clears without taking text.
+This extends acquisition only. PR #107 is merged into main as `c2af1782` and owns
+held-garrison acquisition. Its separate before-only replay PR #108 is merged into
+main as `dcc04c23`. Departure/repeated-activation replay is implemented in open
+PR #110; do not repeat either slice. Next: finish review and validation of those
+PRs before qualifying a distinct owner/hazard interaction. General DOS maintenance
+parity and production integration remain unclaimed.
 
 ### Implemented and available to test
 
