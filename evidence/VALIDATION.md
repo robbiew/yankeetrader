@@ -2896,3 +2896,15 @@ bytes; separate before-only integration of the held activation and combined
 receipt is next. Hostile/neutral garrisons, mines, other clocks, negative/nonfinite/
 overflow stock and arbitrary-world MBF remain separate. Full Go/terminal/build,
 live BBS and native Windows durability acceptance are not newly claimed.
+
+## Departed-garrison stock controls (2026-11-07)
+
+See [bounded native outcomes](../research/yt-maint/DEPARTED_STOCK_CONTROLS.md).
+48 original-DOS runs retain 288 six-mode-equal output files across eight fixtures,
+including held counter-controls and a separately frozen empty/subunit supplement.
+The independent verifier checks pinned originals, fifteen fixture edits, clocks,
+observer/flush provenance, receipts, total and per-sector force inventory, stock
+clears and later repeated activations. Twelve new corruption/acceptance tests
+cover missing activations, wrong actors/capture, double counting, lost groups,
+stock clear, altered public output and manifests. This is acquisition acceptance,
+not before-only replay, production DOS maintenance, or live BBS acceptance.

@@ -25,6 +25,19 @@ DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
+### Latest bounded departure acquisition
+
+The [departed-garrison stock matrix](yt-maint/DEPARTED_STOCK_CONTROLS.md) retains
+48 complete DOS runs / 288 files, six-mode equal. Four/eight-second fixtures
+select local departure and later same-scan activation; two/six-second fixtures
+retain held counter-controls. Empty/subunit stock clears without taking text.
+This extends acquisition only. PR #107 is merged into main as `c2af1782` and owns
+held-garrison acquisition. Open PR #108 targets main for its separate before-only
+replay (status checked 2026-11-07); do not repeat either slice.
+Next: independently derive departed-group routing, repeated activations and
+stock receipts before opening this new corpus's targets. General DOS maintenance
+parity and production integration remain unclaimed.
+
 ### Implemented and available to test
 
 - Persistent players/ships, transactional saves, reconnects, generation/season

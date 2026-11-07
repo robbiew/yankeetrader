@@ -2,6 +2,10 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+The full CI validation job has a bounded 90-minute budget: retained research
+verification and terminal smoke run sequentially. All tests, evidence checks and
+release-package checks remain required.
+
 ## Start here
 
 This README combines player instructions, operator procedures, feature rules and
@@ -749,8 +753,18 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-This is acquisition evidence; separate before-only composition is the next step.
+PR #107 is merged into main as `c2af1782`; separate before-only composition
+is tracked by open PR #108, which now targets main.
 Gameplay, dependencies and save 35 remain unchanged.
+
+[Departed-garrison stock controls](research/yt-maint/DEPARTED_STOCK_CONTROLS.md)
+add 48 original-DOS runs / 288 output files with six-mode equality. Four/eight-second
+controls select departure before pickup, followed by later same-scan activations;
+two/six-second controls hold. The incoming force picks up stock without absorbing
+the departed 37 fighters. Empty/subunit stock clears silently. These are bounded
+acquisition observations, separate from held-garrison replay in open PR #108;
+before-only replay of departure and repeated activation remains next. No gameplay,
+save 35, dependency or source-fingerprint changes.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

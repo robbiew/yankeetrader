@@ -417,3 +417,17 @@
 /research/yt-maint/friendly-stock-controls/**/*.BIN -diff
 /research/yt-maint/friendly-stock-controls/**/dosbox.stdout -diff
 /research/yt-maint/friendly-stock-controls/**/dosbox.stderr -diff
+
+# Immutable original departed-garrison acquisition bytes.
+/research/yt-maint/departed-stock-controls/** -text
+/research/yt-maint/departed-stock-controls/**/*.LOG -diff
+/research/yt-maint/departed-stock-controls/**/*.BIN -diff
+/research/yt-maint/departed-stock-controls/**/dosbox.stdout -diff
+/research/yt-maint/departed-stock-controls/**/dosbox.stderr -diff
+
+# Immutable original departed-garrison acquisition bytes.
+/research/yt-maint/departed-stock-zero-controls/** -text
+/research/yt-maint/departed-stock-zero-controls/**/*.LOG -diff
+/research/yt-maint/departed-stock-zero-controls/**/*.BIN -diff
+/research/yt-maint/departed-stock-zero-controls/**/dosbox.stdout -diff
+/research/yt-maint/departed-stock-zero-controls/**/dosbox.stderr -diff
