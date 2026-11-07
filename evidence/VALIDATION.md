@@ -2967,3 +2967,9 @@ Verification: all 98 stock acquisition/verifier tests pass, including the 20 new
 controls; the reused original-byte pickup audit and 4,682 archive hashes pass.
 Scoped whitespace and local documentation links pass. Unrelated regenerated
 smoke captures and ignored local release candidates remain excluded.
+
+PR #110 ledger review fix: require the next occupied sector below the scan cursor
+and reject lower groups left unvisited at completion. The coherent omitted final
+activation regression passes (15 auxiliary tests total); the final replay still
+matches all 144 comparisons / 864 files and 1152 RNG witnesses. Native observations
+and hashes are unchanged.

@@ -128,6 +128,8 @@ def _admit(before_files,world,events,mercenary):
         if type(action)is not dict:raise ValueError('typed source activation required')
         origin=action.get('origin');force=action.get('force');gate=action.get('gate')
         if type(origin)is not int or not 1<=origin<previous or physical.get(origin)!=force or type(gate)not in(int,float) or not 0<=gate<1:raise ValueError('descending activation of current physical group required')
+        pending=[sector for sector in physical if sector<previous]
+        if not pending or origin!=max(pending):raise ValueError('every activation must visit the next occupied descending sector')
         previous=origin
         held=field(world,51+origin,93)>0 and gate<F32(.66)
         if action.get('held')is not held:raise ValueError('source hold gate must match current link and eager draw')
@@ -147,6 +149,7 @@ def _admit(before_files,world,events,mercenary):
             destination=target;final=force
         if action.get('stopped_for_pickup')is not is_pickup or action.get('final_sector')!=destination or action.get('final_force')!=final:raise ValueError('activation endpoint follows route/pickup')
         physical[destination]=final
+    if any(sector<previous for sector in physical):raise ValueError('ledger ends before the descending scan visits every lower group')
     if not seen_pickup or _mercenary_map(world)!=physical:raise ValueError('saved sector inventory follows every activation')
     if mercenary.get('initial_force')!=97374 or mercenary.get('force')!=sum(physical.values()) or mercenary.get('pickup')!=amount or mercenary.get('merged')!=entering or mercenary.get('losses')!=0 or mercenary.get('final_sectors')!=sorted(physical):raise ValueError('summary agrees with complete physical ledger')
     at=(4054-1)*SIZE

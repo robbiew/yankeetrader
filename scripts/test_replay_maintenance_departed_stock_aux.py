@@ -109,5 +109,15 @@ class FriendlyStockAux(unittest.TestCase):
         n['mercenary'].update(final_sectors=[3000],merged=37)
         self.rejects((b,w,c,n))
 
+    def test_coherent_omitted_final_activation_cannot_end_scan_early(self):
+        b,w,c,n=copy.deepcopy(self.samples['second-eight-whole']);m=n['mercenary']
+        omitted=m['activations'].pop();self.assertEqual((omitted['origin'],omitted['final_sector']),(1622,2862))
+        world=bytearray(w['YTDATA.DAT'])
+        mbf.put(world,51+2862,81,0);mbf.put(world,51+2862,85,0)
+        mbf.put(world,51+1622,81,37);mbf.put(world,51+1622,85,-2)
+        w['YTDATA.DAT']=bytes(world);m['final_sectors']=[1622,3000]
+        self.assertEqual(m['force'],sum(model._mercenary_map(w['YTDATA.DAT']).values()))
+        self.rejects((b,w,c,n))
+
 
 if __name__=='__main__':unittest.main()

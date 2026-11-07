@@ -2,6 +2,10 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+The full CI validation job has a bounded 90-minute budget: retained research
+verification and terminal smoke run sequentially. All tests, evidence checks and
+release-package checks remain required.
+
 ## Start here
 
 This README combines player instructions, operator procedures, feature rules and
@@ -749,8 +753,9 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-Their [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
-now derives the four-day modeled chain, fifteen declared edits, held garrison,
+PR #107 is merged into main as `c2af1782`; the separate open replay PR #108
+now targets main. Its [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
+derives the four-day modeled chain, fifteen declared edits, held garrison,
 combined receipt actor, stock floor/clear and governor preservation. All 144
 complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
 28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
@@ -763,7 +768,9 @@ two/six-second controls hold. The incoming force picks up stock without absorbin
 the departed 37 fighters. Empty/subunit stock clears silently. Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
 derives departure, repeated activation, exact actor/capture text and all six
 files from a modeled parent before targets open. All 144 comparisons / 864 files
-and 1152 new-stage RNG witnesses match; 33 new tests pass. Held-garrison replay
+and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
+requires every next occupied descending sector and rejects a coherently
+truncated scan even when force totals and scores still agree. Held-garrison replay
 remains the separate PR #108 dependency. No gameplay, save 35, dependency or
 source-fingerprint changes. The [neutral-owner and mine-stock controls](research/yt-maint/NEUTRAL_OWNER_STOCK_CONTROLS.md)
 now retain 36 complete native runs / 216 output files, six-mode equal in six cases.
