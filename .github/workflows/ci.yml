@@ -149,12 +149,20 @@ jobs:
           python3 scripts/test_replay_maintenance_stock_mercenary.py
           python3 scripts/test_replay_maintenance_stock_aux.py
           python3 scripts/test_replay_maintenance_stock_records.py
+          python3 scripts/replay_maintenance_friendly_stock_records.py
+          python3 scripts/test_replay_maintenance_friendly_stock_records.py
+          python3 scripts/test_replay_maintenance_friendly_stock_mercenary.py
+          python3 scripts/test_replay_maintenance_friendly_stock_aux.py
           python3 scripts/verify_maintenance_friendly_stock.py
           python3 scripts/test_verify_maintenance_friendly_stock.py
           python3 scripts/verify_maintenance_friendly_stock_native.py
           python3 scripts/test_verify_maintenance_friendly_stock_native.py
           python3 scripts/verify_maintenance_departed_stock.py
           python3 scripts/test_verify_maintenance_departed_stock.py
+          python3 scripts/replay_maintenance_departed_stock_records.py
+          python3 scripts/test_replay_maintenance_departed_stock_records.py
+          python3 scripts/test_replay_maintenance_departed_stock_mercenary.py
+          python3 scripts/test_replay_maintenance_departed_stock_aux.py
           python3 scripts/verify_maintenance_gateway_hazards.py
           python3 scripts/test_verify_maintenance_gateway_hazards.py
           python3 scripts/verify_maintenance_survivor_chains.py

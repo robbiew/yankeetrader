@@ -21,7 +21,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-05) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-07) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -753,18 +753,26 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-PR #107 is merged into main as `c2af1782`; separate before-only composition
-is tracked by open PR #108, which now targets main.
-Gameplay, dependencies and save 35 remain unchanged.
+PR #107 is merged into main as `c2af1782`; the separate open replay PR #108
+now targets main. Its [before-only composition replay](research/yt-maint/FRIENDLY_STOCK_REPLAY.md)
+derives the four-day modeled chain, fifteen declared edits, held garrison,
+combined receipt actor, stock floor/clear and governor preservation. All 144
+complete comparisons / 864 files and 1104 new-stage RNG-state witnesses match;
+28 new tests pass. Historical guards, gameplay, dependencies and save 35 remain
+unchanged.
 
 [Departed-garrison stock controls](research/yt-maint/DEPARTED_STOCK_CONTROLS.md)
 add 48 original-DOS runs / 288 output files with six-mode equality. Four/eight-second
 controls select departure before pickup, followed by later same-scan activations;
 two/six-second controls hold. The incoming force picks up stock without absorbing
-the departed 37 fighters. Empty/subunit stock clears silently. These are bounded
-acquisition observations, separate from held-garrison replay in open PR #108;
-before-only replay of departure and repeated activation remains next. No gameplay,
-save 35, dependency or source-fingerprint changes.
+the departed 37 fighters. Empty/subunit stock clears silently. Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
+derives departure, repeated activation, exact actor/capture text and all six
+files from a modeled parent before targets open. All 144 comparisons / 864 files
+and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
+requires every next occupied descending sector and rejects a coherently
+truncated scan even when force totals and scores still agree. Held-garrison replay
+remains the separate PR #108 dependency. No gameplay, save 35, dependency or
+source-fingerprint changes.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
