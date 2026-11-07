@@ -1,8 +1,8 @@
 # Maintenance fighter-stock conversion controls
 
-This research isolates the stock-to-whole-fighter conversion at the Mercenary
-planet-pickup call site. It does not change production Go, the before-only replay
-admission, save 35, dependencies or generation fingerprints. The prior
+This acquisition isolates the stock-to-whole-fighter conversion at the Mercenary
+planet-pickup call site. The acquisition introduced no production Go, replay
+admission, save 35, dependency or generation-fingerprint change. The prior
 [departure replay](DEPARTURE_MERGE_REPLAY.md) already recovers its measured
 189528.296875 transfer; this matrix addresses the previously unqualified half-unit
 and adjacent-value boundaries instead of repeating that full feature.
@@ -114,8 +114,9 @@ The same commands run in CI; remote CI results remain a separate validation laye
 The original-DOS outcomes and independent audit below qualify only these positive
 binary stocks, this reachable gateway path and these controlled clocks. Negative
 stock, nonfinite/overflow conversion, arbitrary-world MBF parity and the separate
-friendly-force-plus-planet-stock composition remain unmeasured. Before-only replay
-admission remains unchanged in this research change: half-or-larger fractions are
-still rejected there until a separately validated implementation integrates the
-new evidence. Live BBS, native Windows durability and new full Go/terminal/build
+friendly-force-plus-planet-stock composition remain unmeasured. The separate
+[before-only integration](STOCK_CONVERSION_REPLAY.md) now derives
+these measured values from a modeled parent. Historical gateway/departure APIs
+retain their earlier narrower admissions; the new profile isolates this expansion.
+Live BBS, native Windows durability and new full Go/terminal/build
 acceptance are not claimed by this research milestone.

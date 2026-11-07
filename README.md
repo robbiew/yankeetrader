@@ -736,9 +736,12 @@ output files match across each fixture's six observation modes. The selected
 pickup call floors positive SINGLE stock, including half ties and adjacent values,
 clears the whole stock with its original raw zero, and suppresses taking-zero
 receipts. Audits distinguish 360 unchanged input links from 72 declared data-only
-transformations. This closes the measured conversion question; before-only replay
-admission is deliberately unchanged pending separate integration. Production Go,
-dependencies, generation fingerprints and save 35 remain unchanged.
+transformations. Their [before-only replay](research/yt-maint/STOCK_CONVERSION_REPLAY.md)
+now computes all twelve fixtures from a modeled parent. All 216 comparisons / 1296
+files and 1656 new-stage RNG-state witnesses match. Whole transfer, fractional
+discard, original raw clears and public receipts are derived before targets open.
+All 54 new tests pass. Historical replay guards, production Go, dependencies,
+generation fingerprints and save 35 remain unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,

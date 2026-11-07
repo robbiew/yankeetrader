@@ -2800,3 +2800,48 @@ half-or-larger guard unchanged pending separate integration. The separate
 friendly-force-plus-planet-stock path remains unmeasured. Production Go,
 dependencies, generation fingerprints and save 35 are unchanged. New full Go,
 terminal/build, live BBS and native Windows durability acceptance are not claimed.
+
+
+## Before-only positive-stock conversion replay (2026-11-07)
+
+The twelve qualified stock fixtures now replay from the original three-file
+before-world, four typed source-clock inputs and one declared case. The original
+November 2–4 prefix creates the complete modeled November 4 parent. A pure fifteen-
+edit fixture applies once, retaining the five side-file objects; the complete
+November 5 result exists before the comparison loader opens any native target.
+Read-ban and marker tests prove that captured handoffs, recipe metadata, cache
+arrays, transcripts and observed RNG states cannot supply synthesis data.
+
+All 216 complete comparisons / 1296 files match without normalized bytes. The 36
+direct observed-source comparisons account for 216 files; all cross-mode targets
+also agree. All 1656 new-stage helper/final RNG-state witnesses agree; prefix
+witnesses agree separately. Negative tests poison observed rng_raw values without
+changing parsed inputs or results, while the independent witness audit rejects
+the poison. The complete comparison inventory and every file's length/hash must
+agree; an omitted, duplicated or altered comparison cannot claim success.
+
+Derived behavior includes positive SINGLE INT/floor, full stock clear `00008000`,
+entering actor 97337 in public receipts, no taking-zero line, exact fractional
+discard and physical force/score conservation. Before-pickup economy preserves
+all twelve raw stocks with zero initial rates, then clamps to 1 and grows ground
+to 505000. All 36 ordered port clock sets reproduce all 1000 complete records.
+New bounded profiles isolate admission expansion; historical gateway/departure
+modules and all captured corpora remain unchanged. The old gateway rejects the
+same 0.5 input before writes; the new pickup transfers 0 and clears the full stock.
+The old Wanderer half-fraction guard still rejects its old unsupported context.
+
+All 54 new tests pass: 11 economy, 17 Mercenary, 15 auxiliary and 11 complete-chain
+properties. They exercise unknown stock/force/title/capacity/original-identity
+rejection without partial writes, one eager source activation, exact RNG calls,
+source-grown ledger derivation, coherent nearest-round forgery rejection, raw
+zeros, private/public separation, journal rotation, independent publication
+clocks, source-only reads and actual modeled object handoffs. The complete
+corpus audit, retained native-byte audit and all 4682 archive hashes pass.
+All 28 historical gateway/departure complete-record tests pass as well.
+
+README, plan, linked acquisition/replay reports and CI are updated in the same
+change. PR #105 is verified merged as a2f28be8eb6d8b264128964c31623abc959e0828 before
+this dependent work. No new capture, native query, provider, production Go,
+dependency, generation fingerprint or save 35 change is introduced. General MBF,
+arbitrary worlds, friendly-force-plus-planet-stock composition, full Go/terminal/
+build and live/native durability acceptance remain separate.

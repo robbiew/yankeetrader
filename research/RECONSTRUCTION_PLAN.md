@@ -2,10 +2,10 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-06
+## Current implementation and next work — checked 2026-11-07
 
 This section is the current planning baseline, checked against merged `main`
-through `e4cac848` (including merged maintenance PRs #88, #90–94 and #97–104, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `a2f28be8` (including merged maintenance PRs #88, #90–94 and #97–105, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -101,9 +101,12 @@ retain 72 original-DOS runs / 432 output files, six-mode equal in all twelve cas
 Positive SINGLE stock floors before transfer, the entire stock is cleared with
 its source zero, and converted zero emits no taking receipt. Half ties, adjacent
 single values and larger stocks are qualified by both native source and runtime
-controls. This research leaves the before-only replay guard unchanged; integrating
-these measured fractions is the next bounded implementation step. The separate
-friendly-force-plus-planet-stock composition remains unmeasured.
+controls. Their [before-only replay](yt-maint/STOCK_CONVERSION_REPLAY.md) now
+integrates measured floor conversion, full raw clear and zero-receipt suppression
+from a modeled parent. All 216 comparisons / 1296 files and 1656 new-stage RNG
+witnesses agree; 54 new tests pass. Historical profiles retain their original
+narrower guards.
+The next unmeasured bounded path is friendly-force-plus-planet-stock composition.
 
 PRs [#97](https://github.com/robbiew/yankeetrader/pull/97) and
 [#98](https://github.com/robbiew/yankeetrader/pull/98) are verified merged. [PR #99](https://github.com/robbiew/yankeetrader/pull/99)
@@ -325,9 +328,10 @@ remain separate.
    select those distinct paths. Their [before-only replay](yt-maint/DEPARTURE_MERGE_REPLAY.md) now derives
    the modeled-parent continuation, integer home-stock transfer and the disclosed
    nonneutral comparison inventory. The [stock conversion controls](yt-maint/STOCK_CONVERSION.md)
-   now qualify positive half-or-larger fractions and subunit zero transfers. Next
-   integrate that measured floor/clear/receipt behavior into the new before-only
-   profile, then isolate the separate friendly-plus-planet-stock encounter.
+   now qualify positive half-or-larger fractions and subunit zero transfers. The
+   qualified floor/clear/receipt behavior is integrated in the new
+   [before-only profile](yt-maint/STOCK_CONVERSION_REPLAY.md). Next isolate the
+   separate friendly-plus-planet-stock encounter.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
