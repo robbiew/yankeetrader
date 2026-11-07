@@ -130,6 +130,12 @@ jobs:
           python3 scripts/test_replay_maintenance_gateway_mercenary.py
           python3 scripts/test_replay_maintenance_gateway_aux.py
           python3 scripts/test_replay_maintenance_gateway_records.py
+          python3 scripts/replay_maintenance_departure_records.py
+          python3 scripts/test_replay_maintenance_departure_ports.py
+          python3 scripts/test_replay_maintenance_departure_planets.py
+          python3 scripts/test_replay_maintenance_departure_mercenary.py
+          python3 scripts/test_replay_maintenance_departure_aux.py
+          python3 scripts/test_replay_maintenance_departure_records.py
           python3 scripts/verify_maintenance_departure_merge.py
           python3 scripts/test_verify_maintenance_departure_merge.py
           python3 scripts/test_capture_maintenance_departure.py

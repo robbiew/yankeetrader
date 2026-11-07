@@ -2698,3 +2698,57 @@ The final main tree is byte-identical to validated prerequisite head3ba39f65.
 The departure/merge research branch integrates that ancestry and updates only
 README/plan/validation status; its capture, verifier and protocol code is unchanged.
 PR103 now targets main and remains a separate open research change.
+
+## Before-only occupied-origin departure and friendly merging (2026-11-06)
+
+Eight measured departure fixtures now synthesize from the original occupied
+Mercenary100000 three-file before-world, five typed source-clock structures and
+one declared case. The established November2–4 prefix returns the actual modeled
+six-file parent. A pure sixteen-edit transformation applies once, preserving the
+other five files; both new children then use complete modeled handoffs. All five
+days exist before expected targets are first opened. Core file-read bans permit
+only original YTMAINT constants/literals; no captured handoff, transcript, recipe,
+cache array or observed RNG state enters synthesis. Poisoning rng_raw witnesses
+cannot change source inputs or results.
+
+All48 direct observed-source comparisons /288 files match exactly and all2505
+independent new-stage helper/final RNG-state witnesses agree. Prefix witnesses
+also agree without being counted as new targets. The complete all-mode report
+retains288 comparisons /1728 files:270 complete comparisons are exact;18 cross-
+cohort comparisons preserve the existing89/94-byte port-clock/supply differences.
+There are1710 equal files,18 unequal YTDATA files and1647 differing byte
+comparisons across those targets. The full raw inventory is retained, normalized
+bytes=0. Complete matrix, unique difference positions, observed-cohort equality,
+all other files and every byte outside disclosed port writer fields are required.
+No target-saved unobserved time is substituted into the model.
+
+Derived source behavior includes occupied-origin holds/departures, silent
+friendly37 absorption, mutable descending reactivation, actual empty Union1/4
+route transit, earlier Xannor/Mercenary defense and later mine/offense ordering.
+The successful merge saves97374, then next-day offense costs1. The two-second
+second day starts97337, loses2837 earlier,5973 to mines and9 in offense, saving88518.
+The Wanderer economy produces189528.296875 stock; bounded whole conversion grants
+189528 and full stock clear discards0.296875, saving286865. Half-or-larger fractions
+remain explicitly rejected pending runtime qualification; general floor-versus-
+nearest behavior is not claimed. New physical/score bounds400000 are isolated
+from historical APIs. Empty Union transit and the larger score denominator were
+independently reproduced as integration admission failures before their narrow
+new-profile corrections. Depart/merge/stock zeros, literal casualty branches,
+strict surviving-defender counters, physical score totals, separate NEWS/SCORE
+clocks and complete journal rotation all match.
+
+All67 new tests pass:6 port,9 planet,19 Mercenary,18 auxiliary and15 complete-chain
+properties. They cover actual object/marker handoffs, exact independent fixture
+reconstruction, read bans, raw clocks/callers, poisoned captured RNG independence,
+every helper/final witness, source arithmetic and unknown-context rejection,
+no writes on rejected transfers, bounded fractional discard, silent merge/public
+ledger conservation and explicit nonneutral comparison integrity. Historical
+13 gateway and29 survivor record tests pass. The complete3462-byte original
+native source packet and all4682 archive hashes verify. No new emulator capture,
+native byte query, provider installation or historical corpus rewrite was needed.
+
+README, plan, linked reports and portable CI are updated. Production Go,
+dependencies, save35 and generation fingerprints are unchanged. Remaining work
+includes ambiguous whole-number runtime conversion, friendly-plus-planet-stock
+composition, general MBF and other unmeasured branches. Full Go/terminal/build,
+live BBS and native Windows durability acceptance are not newly claimed.

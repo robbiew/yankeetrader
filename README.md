@@ -722,8 +722,13 @@ friendly merging and a larger Wanderer-stock pickup. Fourteen of sixteen stage
 groups are six-mode equal; two retain disclosed port-clock/supply differences,
 with matching NPC outcomes and other five files. A strict persisted exit receipt
 fixes the observed acknowledgement race without changing DOS event acquisition.
-The prerequisite gateway replay is merged into `main`; before-only integration
-of these new departure/merge paths remains next. Gameplay and save 35 are unchanged.
+Their [before-only departure/merge replay](research/yt-maint/DEPARTURE_MERGE_REPLAY.md)
+now predicts both children from a modeled parent and the declared fixture edits.
+All 48 direct observed-source comparisons / 288 files and 2505 new-stage RNG witnesses
+match. Across all target modes, 270 of 288 complete comparisons are exact; 18 retain
+the disclosed port-clock differences with no masked bytes. Departure, silent
+merging, larger Wanderer pickup and its bounded fractional discard are derived.
+Gameplay, dependencies and save 35 remain unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
