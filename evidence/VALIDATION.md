@@ -2752,3 +2752,51 @@ dependencies, save35 and generation fingerprints are unchanged. Remaining work
 includes ambiguous whole-number runtime conversion, friendly-plus-planet-stock
 composition, general MBF and other unmeasured branches. Full Go/terminal/build,
 live BBS and native Windows durability acceptance are not newly claimed.
+
+## Positive fighter-stock whole conversion (2026-11-06)
+
+Twelve exact binary stock fixtures now isolate the Mercenary planet-pickup
+conversion from the verified November 4 evolved parent. All 72 original-DOS runs
+completed naturally on their first attempt, yielding 432 complete six-file outputs;
+all 12 fixture groups are six-mode byte-equal. Independent reconstruction binds
+360 unchanged first-input links and 72 explicit YTDATA transformations, all fifteen
+ordered edits (including no-op assignments), the reachable forced gateway graph,
+per-mode parents, launch/CPU/date/time, guest/host identities and complete source
+clocks. No byte is normalized and no failed attempt or retry is omitted.
+
+Native pickup converts positive SINGLE stock using INT/floor. Subunit values
+clear without taking-zero text; 1.5 gives 1 and 2.5 gives 2. The single values on both
+sides of 189528.5 all give 189528; 189529.5 gives 189529. The single below 1 gives 0,
+the single above 1 gives 1, and 32767.5 gives 32767. All transfers agree with physical
+force, public/console receipts, exact full-stock clear `00008000`, minimum-rate clamp,
+ground production, journals and scores. Fractions are discarded. Source force
+97337 remains the receipt's actor stamp, while the actual saved force includes the
+whole transfer. Whole-stock clear/save precedes amount addition and positive-only
+receipt construction.
+
+The independent static audit reuses four existing native reads in three pinned
+packets, totaling 3932 retained overlapping bytes. It binds the actual `3D/03` pickup
+call, dispatch to SINGLE INT, backward positive branch and exponent-scaled mask,
+plus clear/save/add/receipt order, against complete original MZ LOAD images. No
+new REA query or provider installation was needed. The new capture controller
+waits at most two seconds for natural PID disappearance inside the existing
+30-second deadline, then requires complete persisted zero-exit receipt evidence;
+forced or still-live processes fail. All 48 observed/attach-only runs completed on
+the first liveness probe; the historical observer and controllers are unchanged.
+
+All 60 new portable tests pass: 25 independent fixture/clock/ledger corruptions,
+27 receipt/natural-reap controls and eight native-byte corruption tests. A
+coherent nearest-rounded force/receipt/score forgery passes conservation checks
+but fails the independently qualified floor classification. The full corpus and
+native-byte verifiers pass, as do all 4682 original archive hashes. An indexed
+checkout with `core.autocrlf=true` preserves all 2022 corpus artifacts and passes
+the complete corpus audit again. Edited relative links and diff checks pass.
+
+README, plan, report, pinned raw corpus, frozen acquisition sources and portable
+CI are updated together. The plan's current-main baseline and obsolete mixed-
+hazard/resource-pickup deferral were corrected against merged PRs #97–104; historical
+validation entries remain dated evidence. This research leaves the replay's
+half-or-larger guard unchanged pending separate integration. The separate
+friendly-force-plus-planet-stock path remains unmeasured. Production Go,
+dependencies, generation fingerprints and save 35 are unchanged. New full Go,
+terminal/build, live BBS and native Windows durability acceptance are not claimed.
