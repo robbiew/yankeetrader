@@ -749,7 +749,8 @@ now retain 48 complete original-DOS runs / 288 output files, six-mode equal in a
 eight cases. A held friendly garrison is included once with incoming force and
 whole stock; taking text uses the combined pre-stock count, while capture text is
 suppressed. Empty/subunit stock clears silently. Planet governors remain intact.
-This is acquisition evidence; separate before-only composition is the next step.
+PR #107 is merged into main as `c2af1782`; separate before-only composition
+is tracked by open PR #108, which now targets main.
 Gameplay, dependencies and save 35 remain unchanged.
 
 [Departed-garrison stock controls](research/yt-maint/DEPARTED_STOCK_CONTROLS.md)
