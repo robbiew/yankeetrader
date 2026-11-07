@@ -2945,3 +2945,9 @@ Verification: all 115 stock replay tests pass (33 new, 28 held-garrison and
 54 historical stock tests), and all 4,682 archived files retain their hashes.
 README/plan links and scoped whitespace checks pass. Native acquisition bytes
 and nine unrelated local smoke captures are excluded from this replay commit.
+
+PR #110 ledger review fix: require the next occupied sector below the scan cursor
+and reject lower groups left unvisited at completion. The coherent omitted final
+activation regression passes (15 auxiliary tests total); the final replay still
+matches all 144 comparisons / 864 files and 1152 RNG witnesses. Native observations
+and hashes are unchanged.

@@ -764,7 +764,9 @@ two/six-second controls hold. The incoming force picks up stock without absorbin
 the departed 37 fighters. Empty/subunit stock clears silently. Their [before-only replay](research/yt-maint/DEPARTED_STOCK_REPLAY.md) now
 derives departure, repeated activation, exact actor/capture text and all six
 files from a modeled parent before targets open. All 144 comparisons / 864 files
-and 1152 new-stage RNG witnesses match; 33 new tests pass. Held-garrison replay
+and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
+requires every next occupied descending sector and rejects a coherently
+truncated scan even when force totals and scores still agree. Held-garrison replay
 remains the separate PR #108 dependency. No gameplay, save 35, dependency or
 source-fingerprint changes.
 

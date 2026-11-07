@@ -28,7 +28,7 @@ All 144 comparisons (eight fixtures × three source-clock observations × six
 target modes), or 864 files, match exactly without normalization. All 1152
 new-stage RNG-state witnesses agree. Observed states are comparison witnesses;
 poisoning them cannot change synthesized output. Twelve acquisition tests remain
-separate from the 33 new replay tests. Tests cover target-read separation, exact
+separate from the 34 new replay tests. Tests cover target-read separation, exact
 modeled-parent object/marker handoff, independent fixture reconstruction, clock
 admission, source-only file access, wrong actors, coherent double counting and
 force loss, missing later activations, forged routes/gates, capture/governor
@@ -47,3 +47,8 @@ dependency, save 35 or generation fingerprint changes. This does not establish
 general DOS maintenance, arbitrary MBF arithmetic, owner/hazard combinations,
 TCP/PTY or native BBS acceptance. Qualify a distinct interaction with native
 controls before extending admission further.
+
+The public ledger requires the next occupied record below its mutable scan cursor
+at each action and rejects any unvisited lower-sector group at completion. A
+coherent omitted 1622-to-2862 activation, with saved world and final-sector summary
+changed together while preserving totals/scores, is explicitly rejected.
