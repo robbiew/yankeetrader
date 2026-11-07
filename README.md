@@ -2,6 +2,10 @@
 
 Version **0.1.0**, with the original game by Alan Davenport, based on Yankee Trader Version 3.6. A reconstruction for local play and BBS doors, built with Go/GoDoors. The first playable milestone supports persistent players, sector navigation, cloak-aware adjacent-sector sensors, directed path finding and confirmed autopilot, cargo trading, Earth equipment purchases, automatic saves, and planet creation, production, transfers and banking, plus port buyouts, personal treasury collection, teams/shared planets, and daily port/planet production and turn maintenance. The original DOS distribution and research evidence are untouched. The app name, semantic version, original creator and version, and repository link come from [`internal/version`](internal/version/version.go); run `./bin/yt -version` to display the release identity.
 
+The full CI validation job has a bounded 90-minute budget: retained research
+verification and terminal smoke run sequentially. All tests, evidence checks and
+release-package checks remain required.
+
 ## Start here
 
 This README combines player instructions, operator procedures, feature rules and
