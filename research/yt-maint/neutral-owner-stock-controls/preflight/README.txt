@@ -1,0 +1,1 @@
+Pre-launch fixture assertion failed before a DOS process started. No native run was retried. Sources/recipe and original traceback are retained; the corrected writer was frozen separately before the 36 native runs.

@@ -37,9 +37,15 @@ activations and separate physical inventories. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses agree; 34 new tests pass. PR #107 is merged into
 main as `c2af1782` and owns held-garrison acquisition. The separate open PR #108
 targets main and owns the included held-garrison replay dependency (status checked
-2026-11-07). Do not repeat either slice. Next: qualify a distinct owner/hazard
-interaction with original-DOS controls before widening replay admission. General
-maintenance parity and production integration remain unclaimed.
+2026-11-07). Do not repeat either slice.
+The [neutral-owner and mine-stock acquisition](yt-maint/NEUTRAL_OWNER_STOCK_CONTROLS.md)
+now implements the six-case planned matrix: 36 native runs / 216 files, all
+six-mode equal, with 20 new tests. Neutral physical fighters transfer once;
+incoming mine losses precede local force and stock addition. Earlier Xannor
+changes in the four-second case remain explicit. Next: derive this newly
+qualified matrix before-only, including faction transfer and mine-helper clocks;
+do not reacquire the completed controls. General maintenance parity and production
+integration remain unclaimed.
 
 ### Implemented and available to test
 
