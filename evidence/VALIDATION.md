@@ -2896,3 +2896,24 @@ bytes; separate before-only integration of the held activation and combined
 receipt is next. Hostile/neutral garrisons, mines, other clocks, negative/nonfinite/
 overflow stock and arbitrary-world MBF remain separate. Full Go/terminal/build,
 live BBS and native Windows durability acceptance are not newly claimed.
+
+
+## Before-only friendly-force and planet-stock composition — 2026-11-07
+
+Checked acquisition-only PR #107 at d9bfdbfc before implementation. Its native
+corpus, source manifests and original observations are unchanged. The separate
+explicit profile models November2–4, applies fifteen declared fixture edits to
+the actual modeled six-file parent, then derives November5 and every writer.
+All 144 complete comparisons / 864 files and 1104 new-stage RNG witnesses agree,
+with no target-derived seed, captured-state handoff, normalized byte or omitted
+output. The original three prefix days are independently RNG-audited as well.
+
+28 new tests cover core read boundaries, object/marker handoffs, exact fixture
+reconstruction, witness-only RNG, joint profile guards, combined actors, coherent
+overwrite/double-count rejection, governors, zero/subunit receipts, raw source
+clears and atomic failure. All 54 historical stock tests and the 33 acquisition/
+native-audit tests pass. All 4682 archive hashes remain unchanged. CI and README/
+plan are updated. Production Go, dependencies, QB fingerprints and save35 are
+unchanged; no new live BBS or native Windows acceptance is claimed.
+
+[Model, reproduction and remaining boundaries](../research/yt-maint/FRIENDLY_STOCK_REPLAY.md).

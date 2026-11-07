@@ -137,3 +137,12 @@ reading native after-state. Negative/nonfinite/overflow stock, hostile or neutra
 physical garrisons, mines and unrelated mixed encounters remain separate. Native
 Windows durability, live BBS and new full Go/terminal/build acceptance are not
 claimed by this research acquisition.
+
+
+## Subsequent before-only integration — 2026-11-07
+
+The separate [friendly-stock replay](FRIENDLY_STOCK_REPLAY.md) now derives all
+eight jointly measured cases from a modeled three-day parent and pure fixture
+transformation. All 144 complete comparisons / 864 files and 1104 new-stage RNG
+witnesses match. This acquisition corpus, source snapshots and every hash remain
+unchanged; historical stock replay admission remains strict.
