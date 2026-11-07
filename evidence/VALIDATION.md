@@ -2909,6 +2909,8 @@ cover missing activations, wrong actors/capture, double counting, lost groups,
 stock clear, altered public output and manifests. This is acquisition acceptance,
 not before-only replay, production DOS maintenance, or live BBS acceptance.
 
+
+
 ## Before-only friendly-force and planet-stock composition — 2026-11-07
 
 Checked acquisition-only PR #107 at d9bfdbfc before implementation. Its native
