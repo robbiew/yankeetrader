@@ -3001,3 +3001,23 @@ subtraction. Two new regressions reject numeric-zero aliases across all governor
 contexts and the three mine cases. All 20 auxiliary tests pass; complete replay
 still matches 108 comparisons / 648 files and 855 RNG witnesses. No native
 observation or manifest changed.
+
+## Native defender-survival and uncollected stock controls (2026-11-07)
+
+The [new controls](../research/yt-maint/DEFENDER_STOCK_CONTROLS.md) retain 48 native
+runs / 288 full output files across four declared fixtures and two days, all
+six-mode equal. Fifteen first-stage edits account for 24 transformed and 120
+unchanged links; all 144 next-stage six-file links are exactly inherited. The
+balanced control retains its observed one-fighter Xannor survivor. Losing
+Mercenaries do not pick up stock; stock produces normally on the untouched next
+day and no Mercenary resurrection is invented. The independent audit binds the
+exact loss receipt, pinned original literals, physical inventories, governor and
+stock bytes, source clocks, flush/lifecycle provenance, scores and full handoffs.
+Seventeen new corruption/acceptance tests pass. README/plan and CI are updated.
+This is acquisition evidence, not new before-only combat integration or live BBS
+acceptance. Original observations/hashes, Go, dependencies and save 35 unchanged.
+
+Verification: all 115 stock evidence-verifier tests pass (17 new and 98 existing),
+and all 4,682 archived originals retain their hashes. Complete native controls,
+Python compilation, local documentation paths and scoped whitespace checks pass.
+Unrelated smoke captures and ignored release candidates remain excluded.

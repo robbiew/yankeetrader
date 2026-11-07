@@ -44,9 +44,12 @@ incoming mine losses precede local force and stock addition. Earlier Xannor
 changes in the four-second case remain explicit. The [before-only integration](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
 now derives all six cases from a modeled parent, with 108 exact comparisons /
 648 files, 855 new-stage RNG witnesses and 40 new tests. PRs #109–111 are merged;
-no open PR duplicated this work when checked. Next: qualify a distinct surviving
-combat/stock continuation with native evidence before widening replay admission;
-do not reacquire the completed owner/mine controls. General maintenance parity and production
+PR #112 owns that separate replay; do not duplicate it. The [defender-survival controls](yt-maint/DEFENDER_STOCK_CONTROLS.md) now qualify
+that distinct continuation: 48 native runs / 288 files over four fixtures and
+two days, six-mode equal, with 17 new tests. Next: independently derive the
+losing Mercenary offense, surviving defenders and untouched stock continuation
+before-only; PR #112 already owns the separate owner/mine replay.
+Do not reacquire the completed owner/mine controls. General maintenance parity and production
 integration remain unclaimed.
 
 ### Implemented and available to test
@@ -372,8 +375,9 @@ remain separate.
    departure before incoming pickup and repeated same-scan activation: 144
    complete comparisons / 864 files and 1152 RNG witnesses agree. The neutral-owner/
    mine-stock controls and their [before-only replay](yt-maint/NEUTRAL_OWNER_STOCK_REPLAY.md)
-   now add 108 exact comparisons / 648 files and 855 RNG witnesses. Next qualify
-   a distinct surviving combat/stock continuation; do not repeat completed controls.
+   now add 108 exact comparisons / 648 files and 855 RNG witnesses. The new [defender-survival controls](yt-maint/DEFENDER_STOCK_CONTROLS.md) now
+   retain that distinct fatal-offense continuation over unchanged two-day handoffs.
+   Next derive their before-only replay; do not repeat completed controls.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established

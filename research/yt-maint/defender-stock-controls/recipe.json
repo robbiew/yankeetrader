@@ -1,0 +1,148 @@
+{
+  "recipe": "maintenance-defender-stock-controls-v1",
+  "cases": {
+    "one-versus-37-whole": {
+      "friendly": 37,
+      "owner": -1,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "mines": 0,
+      "clock": "00:00:02",
+      "mercenaries": 1
+    },
+    "one-versus-37-empty": {
+      "friendly": 37,
+      "owner": -1,
+      "governor": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "mines": 0,
+      "clock": "00:00:02",
+      "mercenaries": 1
+    },
+    "37-versus-1000-whole": {
+      "friendly": 1000,
+      "owner": -1,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "mines": 0,
+      "clock": "00:00:02",
+      "mercenaries": 37
+    },
+    "balanced-37-whole": {
+      "friendly": 37,
+      "owner": -1,
+      "governor": 0,
+      "stock": [
+        37,
+        1
+      ],
+      "mines": 0,
+      "clock": "00:00:02",
+      "mercenaries": 37
+    }
+  },
+  "profiles": {
+    "one-versus-37-whole": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ],
+      [
+        "11/06/2026",
+        "00:00:02"
+      ]
+    ],
+    "one-versus-37-empty": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ],
+      [
+        "11/06/2026",
+        "00:00:02"
+      ]
+    ],
+    "37-versus-1000-whole": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ],
+      [
+        "11/06/2026",
+        "00:00:02"
+      ]
+    ],
+    "balanced-37-whole": [
+      [
+        "11/05/2026",
+        "00:00:02"
+      ],
+      [
+        "11/06/2026",
+        "00:00:02"
+      ]
+    ]
+  },
+  "stages": [
+    "child-1",
+    "child-2"
+  ],
+  "parent_source": {
+    "corpus": "evolved-combat-controls",
+    "profile": "route-mercenary-100000",
+    "stage": "child-2",
+    "pins": "fd794dccfda332ab79c2d5a693d2649ebbc32c607863fbf2f10801ec4e0ecef5"
+  },
+  "gateway": {
+    "origin": 2368,
+    "sector": 3000,
+    "slot": 3,
+    "name": "Gateway Cache",
+    "redirects": [
+      [
+        2996,
+        45
+      ],
+      [
+        2998,
+        49
+      ],
+      [
+        2999,
+        53
+      ]
+    ],
+    "day": 308,
+    "minute": 0,
+    "ground": 500000,
+    "rates": [
+      0,
+      0,
+      0
+    ],
+    "bank": 0
+  },
+  "modes": {
+    "unobserved-a": "unobserved",
+    "observed-a": "observed",
+    "attach-only": "attach-only",
+    "observed-b": "observed",
+    "unobserved-b": "unobserved",
+    "observed-c": "observed"
+  },
+  "sources": {
+    "capture_maintenance_stock_conversion.mjs": "a9a66df50fc201897f3f4ed8e9822e866358c1511d65c5f4e5cb0de95821da10",
+    "observe_maintenance_departure.js": "9bb0aa586c603a3a14693fd621ea4f81996d4f41c8735be5b20e99f14b283d03",
+    "recover_maintenance_defender_stock.py": "abc6895b877fb0077c93e56e940a769e6758c5ebf1fb0694670c8a59c12d8518",
+    "verify_maintenance_clock_neutral.py": "9efae1ecd4dce4a8619b43bfba8bde59a6aa00c52fc48fa464622e81cd6d1143"
+  }
+}
