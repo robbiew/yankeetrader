@@ -37,8 +37,10 @@ activations and separate physical inventories. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses agree; 33 new tests pass. PR #107 is merged as
 `c2af1782`; PR #108 owns the included held-garrison dependency and remains under
 review/CI monitoring (checked 2026-11-07). Do not repeat either slice.
-Next: qualify a distinct owner/hazard interaction with original-DOS controls
-before widening replay admission. General maintenance parity and production
+Next: the [audited owner/stock matrix](yt-maint/NEXT_OWNER_STOCK_CONTROLS.md)
+proposes positive neutral physical force and mine-plus-friendly-stock controls,
+without reacquiring completed baselines. Qualify native outcomes before widening
+replay admission. General maintenance parity and production
 integration remain unclaimed.
 
 ### Implemented and available to test

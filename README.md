@@ -765,7 +765,9 @@ derives departure, repeated activation, exact actor/capture text and all six
 files from a modeled parent before targets open. All 144 comparisons / 864 files
 and 1152 new-stage RNG witnesses match; 33 new tests pass. Held-garrison replay
 remains the separate PR #108 dependency. No gameplay, save 35, dependency or
-source-fingerprint changes.
+source-fingerprint changes. The [next owner/stock matrix](research/yt-maint/NEXT_OWNER_STOCK_CONTROLS.md)
+identifies positive neutral physical force and mine-plus-friendly-stock contexts
+not covered by those PRs; it is a proposed experiment, with no new parity claim.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
