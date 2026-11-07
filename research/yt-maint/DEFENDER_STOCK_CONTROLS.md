@@ -60,8 +60,9 @@ and source manifests are pinned. Verification imports no acquisition writer or
 replay model. CI runs both portable commands. No native observation or original
 source packet was altered or rehashed to redefine an outcome.
 
-Next is separate before-only integration of the losing combat, surviving
-physical defenders, exact publication and complete next-day stock continuation.
-General MBF, arbitrary combat, live BBS/native Windows durability and production
-DOS maintenance remain unclaimed. Gameplay, dependencies, generation fingerprints
-and save format 35 are unchanged.
+The [separate before-only integration](DEFENDER_STOCK_REPLAY.md) now derives the
+losing combat, surviving defenders, exact publication and complete next-day stock
+continuation from a modeled parent before targets are read. The original captures,
+executed sources and immutable manifests are unchanged. General MBF, arbitrary
+combat, live BBS/native Windows durability and production DOS maintenance remain
+unclaimed. Gameplay, dependencies, generation fingerprints and save 35 unchanged.

@@ -3021,3 +3021,23 @@ Verification: all 115 stock evidence-verifier tests pass (17 new and 98 existing
 and all 4,682 archived originals retain their hashes. Complete native controls,
 Python compilation, local documentation paths and scoped whitespace checks pass.
 Unrelated smoke captures and ignored release candidates remain excluded.
+
+## Before-only surviving-defender stock replay (2026-11-07)
+
+The [new replay](../research/yt-maint/DEFENDER_STOCK_REPLAY.md) reuses all four
+existing two-day controls without new native acquisition or changed hashes.
+It derives a three-day modeled prefix, fifteen pure edits and both subsequent
+six-file days before any target is opened. All 144 comparisons / 864 files and
+1074 new-stage RNG witnesses agree without normalization. Thirty-four new tests
+check target-read separation, exact object handoffs, independent fixtures,
+source clocks/RNG poisoning, casualty/route/winner corruption, resurrection,
+raw governor/stock/departure bytes and atomic failure. The public ledger also
+independently replays the unit-damage battle RNG, rejecting coherent forged
+survivor totals. README/plan and CI are updated; original evidence, production
+Go, dependencies, source fingerprints and save 35 are unchanged.
+
+Verification: all 190 stock replay tests pass (34 new and 156 historical), the
+complete five-day defender model and independent retained-corpus verification
+pass, and all 4,682 original archive hashes match. Python compilation, scoped
+whitespace and local documentation paths pass. Existing native captures,
+manifests and unrelated regenerated smoke captures remain untouched.
