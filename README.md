@@ -774,7 +774,15 @@ and 1152 new-stage RNG witnesses match; 34 new tests pass. The public ledger
 requires every next occupied descending sector and rejects a coherently
 truncated scan even when force totals and scores still agree. Held-garrison replay
 PR #108 is merged into main as `dcc04c23`. No gameplay, save 35, dependency or
-source-fingerprint changes.
+source-fingerprint changes. The [neutral-owner and mine-stock controls](research/yt-maint/NEUTRAL_OWNER_STOCK_CONTROLS.md)
+now retain 36 complete native runs / 216 output files, six-mode equal in six cases.
+Positive neutral physical fighters transfer once to the arriving Mercenaries;
+mine damage reduces the incoming force before entering fighters and stock add.
+The four-second friendly-mine case retains changed Xannor activity and a separate
+37-fighter survivor at sector 356. Twenty new provenance/composition tests pass.
+This is acquisition evidence; before-only replay remains the next step. No Go,
+dependency, source-fingerprint or save 35 changes.
+
 
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)

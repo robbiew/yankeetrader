@@ -431,3 +431,10 @@
 /research/yt-maint/departed-stock-zero-controls/**/*.BIN -diff
 /research/yt-maint/departed-stock-zero-controls/**/dosbox.stdout -diff
 /research/yt-maint/departed-stock-zero-controls/**/dosbox.stderr -diff
+
+# Preserve native neutral-owner/mine-stock controls and pre-launch diagnostics.
+/research/yt-maint/neutral-owner-stock-controls/** -text
+/research/yt-maint/neutral-owner-stock-controls/**/*.LOG -diff
+/research/yt-maint/neutral-owner-stock-controls/**/*.BIN -diff
+/research/yt-maint/neutral-owner-stock-controls/**/dosbox.stdout -diff
+/research/yt-maint/neutral-owner-stock-controls/**/dosbox.stderr -diff

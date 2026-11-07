@@ -2948,6 +2948,28 @@ Verification: all 115 stock replay tests pass (33 new, 28 held-garrison and
 README/plan links and scoped whitespace checks pass. Native acquisition bytes
 and nine unrelated local smoke captures are excluded from this replay commit.
 
+## Native neutral-owner and mine-stock controls (2026-11-07)
+
+The [new controls](../research/yt-maint/NEUTRAL_OWNER_STOCK_CONTROLS.md) retain
+36 full original-DOS runs / 216 complete six-mode-equal output files. Fifteen
+independently reconstructed edits per world account for 36 transformed data
+links and 180 unchanged side-file links. Positive neutral fighters transfer once;
+mine losses precede entering-force absorption and stock. The four-second fixture
+retains earlier Xannor losses and its separate local group at sector 356.
+
+Twenty new tests check provenance and composition, including rehashed metadata/
+artifact substitutions and ignored or duplicated faction transfer. The initial
+fixture assertion failure occurred before native launch and is retained with its
+actual frozen source separately from the completed native matrix. No native
+observations were retried or changed. This is acquisition acceptance, not new
+before-only replay or production/native BBS acceptance. README/plan and CI are
+updated; production Go, dependencies, source fingerprints and save 35 unchanged.
+
+Verification: all 98 stock acquisition/verifier tests pass, including the 20 new
+controls; the reused original-byte pickup audit and 4,682 archive hashes pass.
+Scoped whitespace and local documentation links pass. Unrelated regenerated
+smoke captures and ignored local release candidates remain excluded.
+
 PR #110 ledger review fix: require the next occupied sector below the scan cursor
 and reject lower groups left unvisited at completion. The coherent omitted final
 activation regression passes (15 auxiliary tests total); the final replay still
