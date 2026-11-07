@@ -2953,4 +2953,3 @@ and reject lower groups left unvisited at completion. The coherent omitted final
 activation regression passes (15 auxiliary tests total); the final replay still
 matches all 144 comparisons / 864 files and 1152 RNG witnesses. Native observations
 and hashes are unchanged.
-
