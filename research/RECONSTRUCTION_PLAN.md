@@ -402,7 +402,10 @@ remain separate.
    [SINGLE to signed16](yt-mbf-int16/RECOVERY.md) now qualifies default-mode
    memory/FAC conversion: 96 independent controls / 48 raw encodings, 70 results
    and 26 native Overflow outcomes, with an isolated primitive and nine audit tests.
-   DOUBLE-to-integer, signed32 and mode-4 casts remain separate.
+   [DOUBLE to signed16](yt-mbf-int16-double/RECOVERY.md) independently adds both
+   default-mode DOUBLE entries: 104 controls / 52 raw encodings, 74 results and
+   30 native errors, 56-bit tie boundaries and ten verifier tests.
+   Signed32 and mode-4 casts remain separate.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1938,3 +1941,20 @@ No gameplay, save, source fingerprint or sysop changes. Remaining numeric slices
 include DOUBLE-to-integer, signed32 and mode-4 conversion, and other MBF arithmetic;
 do not repeat completed SINGLE/DOUBLE INT/FIX, RND or this mode-0 signed16 path.
 [Evidence and limits](yt-mbf-int16/RECOVERY.md).
+
+
+### Default-mode DOUBLE to signed16 conversion (2026-11-08)
+
+Reused the shared SINGLE conversion kernel observations and added original DOUBLE
+helper/dispatch evidence. The helper collapses low words into a sticky bit before
+the shared integer kernel; it is not float64 demotion. Captured 104 independent
+one-operation controls / 52 encodings, preserving all 74 successful results and
+30 native Overflow outcomes, including exact call-specific messages and zero DOS
+errorlevel on failure. Added an isolated 56-bit `Int16Double` implementation,
+portable full-trace vectors, an independent rational/provenance verifier, ten
+acceptance/corruption tests, CI and README updates. One-ULP values before half ties
+and signed16 limits distinguish premature IEEE rounding. Existing evidence, source
+fingerprints, gameplay and saves remain unchanged. Signed32 conversion, mode 4
+and other MBF arithmetic remain future slices; do not repeat now-qualified
+SINGLE/DOUBLE default-mode signed16 conversions or earlier INT/FIX and RND work.
+[Evidence and limits](yt-mbf-int16-double/RECOVERY.md).
