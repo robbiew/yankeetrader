@@ -399,6 +399,10 @@ remain separate.
    [Raw-DOUBLE INT/FIX](yt-mbf-double/RECOVERY.md) now adds the separate eight-byte
    operations: 24 native controls / 1,536 exact raw pairs, 56-bit precision
    boundaries, portable bit-based Go primitives and eleven verifier tests.
+   [SINGLE to signed16](yt-mbf-int16/RECOVERY.md) now qualifies default-mode
+   memory/FAC conversion: 96 independent controls / 48 raw encodings, 70 results
+   and 26 native Overflow outcomes, with an isolated primitive and nine audit tests.
+   DOUBLE-to-integer, signed32 and mode-4 casts remain separate.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1918,3 +1922,19 @@ README upkeep and CI. No gameplay, source recipe, save schema or sysop operation
 changes. Machine-integer casts and other MBF arithmetic remain separate; do not
 repeat SINGLE/DOUBLE INT/FIX or argumented RND as missing work.
 [Evidence and limits](yt-mbf-double/RECOVERY.md).
+
+
+### Default-mode SINGLE to signed16 conversion (2026-11-08)
+
+Audited the already recovered numeric operations and existing initializer/stock
+call sites first. New original dispatch/kernel observations and 96 one-operation
+native controls qualify both INT3F/75 and /77 over 48 raw encodings. Seventy
+successful results and 26 exact native Overflow messages distinguish half-away
+rounding from INT/FIX and expose zero DOS errorlevel even on runtime overflow.
+Added an isolated numeric primitive, full-trace portable fixture, independent
+rational/provenance audit, nine corruption tests, README and CI updates. Successful
+FAC residue, RNG and default mode are checked; no post-error state is invented.
+No gameplay, save, source fingerprint or sysop changes. Remaining numeric slices
+include DOUBLE-to-integer, signed32 and mode-4 conversion, and other MBF arithmetic;
+do not repeat completed SINGLE/DOUBLE INT/FIX, RND or this mode-0 signed16 path.
+[Evidence and limits](yt-mbf-int16/RECOVERY.md).
