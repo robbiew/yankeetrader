@@ -1,0 +1,113 @@
+
+Yankee Trader Maintenance program
+        by Alan Davenport
+
+       (Revision 03/14/94)
+
+This should be run once per day.
+
+Compressing Message Base's
+
+Loading players, deleting inactive players and subtracting cloak charge.
+
+
+Running port maintenance...
+
+Running planet maintenance...
+
+Moving The Wanderer (Planet #1)
+
+Wanderer has successfully warped!
+
+Checking for Planet Xannor, create it if missing.
+
+Processing the Xannor.....
+
+Locating Top Player... (For Groups 16 - 20 to Pick on!)
+
+Calculated Dynamic Xannor Regeneration is 0 fighters.
+
+The Xannor are on the prowl...
+
+  -  Group: 2               Size: 6 
+  -  Group: 3               Size: 122 
+  -  Group: 4               Size: 494 
+  -  Group: 5               Size: 98 
+  -  Group: 6               Size: 315 
+  -  Group: 7               Size: 7 
+  -  Group: 8               Size: 100 
+  -  Group: 9               Size: 85 
+  -  Group: 10              Size: 132 
+  -  Group: 11              Size: 3 
+  -  Group: 12              Size: 609 
+  -  Group: 13              Size: 37 
+  -  Group: 14              Size: 342 
+  -  Group: 15              Size: 1 
+  -  Group: 16              Size: 64 
+  -  Group: 17              Size: 231 
+  -  Group: 18              Size: 8 
+  -  Group: 19              Size: 169 
+  -  Group: 20              Size: 16 
+
+
+  -  The goverment has collected 100 credits tax from the ports.
+
+Mercenary Maintenance...
+
+Checking for Mercenary Planet.. Rebuild if missing
+  -  The government has hired 10 mercenaries to help Fight the Xannor!
+  -  1 Mercenaries moving from sector 2997 
+ *** 1 mercenaries hit sector mines in sector 88!
+ *** The mercenariers were killed!
+  -  1 Mercenaries moving from sector 2538 
+  -  97337 Mercenaries moving from sector 2368 
+  -  1 Mercenaries moving from sector 2301 
+  -  1 Mercenaries moving from sector 2148 
+  -  1 Mercenaries moving from sector 2109 
+  -  1 Mercenaries moving from sector 2041 
+  -  1 Mercenaries moving from sector 1911 
+  -  1 Mercenaries moving from sector 1697 
+  -  1 Mercenaries moving from sector 1242 
+ *** 1 Mercenaries attacking 494 fighters beloning to The Xannor!
+ *** The Mercenaries Lost!
+  -  97337 Mercenaries moving from sector 1148 
+  -  1 Mercenaries moving from sector 1071 
+  -  1 Mercenaries moving from sector 1040 
+ *** 1 Mercenaries attacking 16 fighters beloning to The Xannor!
+ *** The Mercenaries Lost!
+  -  1 Mercenaries moving from sector 915 
+  -  1 Mercenaries moving from sector 900 
+ *** 1 Mercenaries attacking 16 fighters beloning to The Xannor!
+ *** The Mercenaries Lost!
+  -  1 Mercenaries moving from sector 579 
+  -  1 Mercenaries moving from sector 528 
+  -  1 Mercenaries moving from sector 441 
+  -  1 Mercenaries moving from sector 419 
+  -  1 Mercenaries moving from sector 113 
+  -  1 Mercenaries moving from sector 24 
+
+Running Super Planet Lottery
+No one won a planet today.
+
+Generating Updated Scoreboard...
+
+Y a n k e e   T r a d e r   S c o r e b o a r d
+
+Last updated at: 11-05-2026 00:00:03
+
+Rank  Rank%        Score        Team   Ports   Player
+==== ======= ================= ====== ======= ================================
+
+T e a m   R a n k i n g s
+
+Rank  Rank%        Score        Team   Team Name
+==== ======= ================= ====== ========================================
+
+N o n  -  H u m a n   P l a y e r s
+
+    The Xannor       Rank%     The Mercenaries   Rank%
+================== =========  ================= =======
+          496,100     5.10%          9,734,300  100.00%
+
+
+Daily Maintenance Completed OK

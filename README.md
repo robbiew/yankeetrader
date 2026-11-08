@@ -1957,3 +1957,11 @@ The original controller used for retained observations is preserved byte-for-byt
 under `research/yt-maint/clock-neutral-acquisition/`; the unchanged manifest still
 authenticates those original acquisition bytes. No retained observations or
 native hashes were regenerated or redefined by this error-path fix.
+
+Supplemental [tax-funded hiring controls](research/yt-maint/TAX_HIRING_CONTROLS.md)
+now retain 24 original-DOS runs across two evolved-world treasury fixtures, two
+days and six capture modes. All six output files agree across modes; independent
+provenance, treasury debit, literal hiring receipt and raw-zero preservation
+checks pass, with six acceptance/corruption tests. This reuses recovered hiring
+rules; positive-treasury before-only full-world replay remains outstanding.
+No gameplay policy, save format or sysop command changes.
