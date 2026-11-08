@@ -795,8 +795,13 @@ fixtures and their unchanged next-day handoffs. Mercenary attacks lose while
 Xannor defenders survive, including a one-fighter balanced-case survivor. Stock
 is not picked up and grows through ordinary next-day production. Seventeen new
 tests verify the exact losing receipt, preserved raw bytes and complete handoffs.
-This is new acquisition evidence, separate from PR #112's owner/mine replay;
-before-only defender-survival integration remains next. Gameplay/save 35 unchanged.
+Their [before-only replay](research/yt-maint/DEFENDER_STOCK_REPLAY.md) now derives
+the five-day chain before target reads: fatal offense, actual surviving defenders,
+the exact losing receipt and uncollected next-day stock. All 144 comparisons /
+864 files and 1074 new-stage RNG witnesses agree; 39 new tests pass. The publisher binds
+battle entry/exit to source clocks, helper progression and final RNG witnesses,
+rejects coherent casualty/resurrection forgeries, and preserves the inherited
+raw departure pair on the extinct next day. PR #112's owner/mine replay remains separate. Gameplay/save 35 unchanged.
 
 [Original initial-maintenance controls](research/yt-maint/INITIAL_MAINTENANCE.md)
 now retain eight copied-original DOS runs, including direct initializer launches,
