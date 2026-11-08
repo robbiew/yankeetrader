@@ -1,6 +1,6 @@
-// Package qbrng implements the recovered BRUN30 argumentless RND and raw-single
+// Package qbrng implements recovered BRUN30 RND, raw-single RND(argument), and
 // RANDOMIZE operations. It does not implement QB's complete math runtime, TIMER
-// conversion, RND(argument), or the modern game's choice of random streams.
+// conversion, or the modern game's choice of random streams.
 package qbrng
 
 import "encoding/binary"
@@ -31,4 +31,21 @@ func (g *Generator) RandomizeMBF(raw [4]byte) {
 func (g *Generator) Float32() float32 {
 	g.state = (214013*g.state + 1744579) & mask
 	return float32(g.state) / (1 << 24)
+}
+
+// Float32MBF applies RND(argument) to the actual four bytes of an MBF single.
+// Any exponent-zero encoding returns the current fraction without advancing,
+// including zeros retaining a sign or mantissa. A positive argument advances
+// once, regardless of magnitude. A negative argument replaces the entire state
+// with its raw 24-bit mantissa/sign plus exponent (with carry), then advances.
+// This is distinct from RandomizeMBF, which preserves the old low byte.
+func (g *Generator) Float32MBF(raw [4]byte) float32 {
+	if raw[3] == 0 {
+		return float32(g.state) / (1 << 24)
+	}
+	if raw[2]&0x80 != 0 {
+		g.state = (uint32(raw[0]) | uint32(raw[1])<<8 | uint32(raw[2])<<16) + uint32(raw[3])
+		g.state &= mask
+	}
+	return g.Float32()
 }

@@ -452,3 +452,10 @@
 /research/yt-maint/tax-hiring-controls/**/*.BIN -diff
 /research/yt-maint/tax-hiring-controls/**/dosbox.stdout -diff
 /research/yt-maint/tax-hiring-controls/**/dosbox.stderr -diff
+
+# Preserve synthetic native RND argument controls and frozen acquisition source.
+/research/yt-rng-seeding/argument-dos/** -text
+/research/yt-rng-seeding/argument-dos/**/TRACE.BIN -diff
+/research/yt-rng-seeding/argument-dos/**/dosbox.stderr -diff
+
+/research/yt-rng-seeding/argument-dos/**/*.LOG -diff

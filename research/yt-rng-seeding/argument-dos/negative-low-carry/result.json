@@ -1,0 +1,24 @@
+{
+  "recipe": "brun30-rnd-arguments-v1",
+  "case": "negative-low-carry",
+  "initial_state": 5,
+  "arguments": [
+    "ffff8081"
+  ],
+  "exit_code": 0,
+  "payload_hex": "c7065618524ec70658184432bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21b9400051c7061a00ffffc7061c008081bb0100b90400ba1a00b440cd21bb1a00cd3d339090bb0100b90400ba3402b440cd21bb0100b90400ba1a00b440cd2159497403e9bdffc7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_initializer_sha256": "4df1115a73af19539e24c745116a3fadaf98efd6859b2f870ecc491e1c38ece1",
+  "copied_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "3a9ebf6e0f4f5aa6f5fb650ce5f6f307056c8fc84d0bdbdbbdd10432dea37edd",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "2ec47bb1fce45fc85b2f32f15065e27a91fa545e3b6801cb46de34f1cf6c371d",
+    "dosbox.stderr": "ea7b94ca82f51f27dfc55365c31004f238d65052464509ebe0a8f0a743093411",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "9012b9f521d11d0be8fe0a32cdb5d4107fd6dbcd2f82e87452e653f4084220cb"
+  }
+}
