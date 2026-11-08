@@ -77,7 +77,7 @@ Numeric equivalence alone cannot pass the raw comparison.
   RNG vectors and twenty unchanged initializer goldens.
 
 Existing INT/native stock tests and all 4,682 archive hashes remain valid. CI
-runs the new audit and corruption controls. DOUBLE FIX/INT, machine-integer
-casts, general MBF arithmetic and arbitrary-world replay remain outside this
-bounded milestone. Do not repeat the completed SINGLE FIX, SINGLE INT or
+runs the new audit and corruption controls. The separate [DOUBLE INT/FIX supplement](../yt-mbf-double/RECOVERY.md) now qualifies
+those eight-byte operations. Machine-integer casts, general MBF arithmetic and
+arbitrary-world replay remain outside this bounded milestone. Do not repeat the completed SINGLE FIX, SINGLE INT or
 argumented RND controls as missing work. Live BBS acceptance is not newly claimed.

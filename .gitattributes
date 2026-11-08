@@ -471,3 +471,9 @@
 /research/yt-mbf-fix/native/**/*.LOG -diff
 /research/yt-mbf-fix/native/**/TRACE.BIN -diff
 /research/yt-mbf-fix/native/**/dosbox.stderr -diff
+
+# Preserve native DOUBLE INT/FIX diagnostics and executed acquisition source.
+/research/yt-mbf-double/native/** -text
+/research/yt-mbf-double/native/**/*.LOG -diff
+/research/yt-mbf-double/native/**/TRACE.BIN -diff
+/research/yt-mbf-double/native/**/dosbox.stderr -diff

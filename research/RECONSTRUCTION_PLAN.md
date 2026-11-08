@@ -396,6 +396,9 @@ remain separate.
    [Raw-SINGLE FIX](yt-mbf-fix/RECOVERY.md) now independently qualifies truncation
    toward zero and negative zero residues: eight native controls / 512 exact raw
    pairs, a separate shared primitive and eight verifier corruption tests.
+   [Raw-DOUBLE INT/FIX](yt-mbf-double/RECOVERY.md) now adds the separate eight-byte
+   operations: 24 native controls / 1,536 exact raw pairs, 56-bit precision
+   boundaries, portable bit-based Go primitives and eleven verifier tests.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1903,3 +1906,15 @@ Negative FIX truncates toward zero; negative INT continues to floor. All zero
 residues and old evidence are preserved. No gameplay, source recipe, save schema
 or sysop operation changes. DOUBLE operations, machine-integer casts and other
 MBF arithmetic remain separate. [Evidence](yt-mbf-fix/RECOVERY.md).
+
+### Raw-DOUBLE INT/FIX recovery (2026-11-08)
+
+The previously completed SINGLE paths remain unchanged. Twenty-four new copied
+runtime controls cover 42 distinct DOUBLE encodings / 1,536 exact raw pairs,
+including half-integers beyond IEEE float64 precision, zero residues, signed
+subunits, carries and integral extremes. Added raw `IntDouble`/`FixDouble`, a
+portable full-trace fixture, independent rational verification, eleven tests,
+README upkeep and CI. No gameplay, source recipe, save schema or sysop operation
+changes. Machine-integer casts and other MBF arithmetic remain separate; do not
+repeat SINGLE/DOUBLE INT/FIX or argumented RND as missing work.
+[Evidence and limits](yt-mbf-double/RECOVERY.md).

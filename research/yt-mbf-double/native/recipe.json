@@ -1,0 +1,250 @@
+{
+  "recipe": "brun30-double-int-fix-v1",
+  "cases": {
+    "int-zero-aliases": [
+      "int",
+      5,
+      [
+        "0000000000000000",
+        "ffffffffffff7f00",
+        "ffffffffffffff00",
+        "123456789abcde00"
+      ]
+    ],
+    "int-positive-subunit": [
+      "int",
+      5,
+      [
+        "0000000000000080",
+        "0000000000004080",
+        "ffffffffffff7f80",
+        "0000000000000001"
+      ]
+    ],
+    "int-negative-subunit": [
+      "int",
+      5,
+      [
+        "0000000000008080",
+        "000000000000c080",
+        "ffffffffffffff80",
+        "0000000000008001"
+      ]
+    ],
+    "int-positive-fractions": [
+      "int",
+      5,
+      [
+        "0000000000004081",
+        "0000000000002082",
+        "0000000000003e85",
+        "0000000000807f88"
+      ]
+    ],
+    "int-negative-fractions": [
+      "int",
+      5,
+      [
+        "000000000000c081",
+        "000000000000a082",
+        "000000000000be85",
+        "000000000080ff88"
+      ]
+    ],
+    "int-positive-byte-boundaries": [
+      "int",
+      5,
+      [
+        "0000000000807f88",
+        "0000000000400089",
+        "0000000080ff7f90",
+        "0000000040000091"
+      ]
+    ],
+    "int-negative-byte-boundaries": [
+      "int",
+      5,
+      [
+        "000000000080ff88",
+        "0000000000408089",
+        "0000000080ffff90",
+        "0000000040008091"
+      ]
+    ],
+    "int-positive-precision": [
+      "int",
+      5,
+      [
+        "fcffffffffff7fb5",
+        "02000000000000b6",
+        "ffffffffffff7fb7",
+        "ffffffffffff7fb8"
+      ]
+    ],
+    "int-negative-precision": [
+      "int",
+      5,
+      [
+        "fcffffffffffffb5",
+        "02000000000080b6",
+        "ffffffffffffffb7",
+        "ffffffffffffffb8"
+      ]
+    ],
+    "int-positive-large": [
+      "int",
+      5,
+      [
+        "00000000000000b9",
+        "01000000000000d1",
+        "ffffffffffff7fff",
+        "01000000000000ff"
+      ]
+    ],
+    "int-negative-large": [
+      "int",
+      5,
+      [
+        "00000000000080b9",
+        "01000000000080d1",
+        "ffffffffffffffff",
+        "01000000000080ff"
+      ]
+    ],
+    "int-mixed-history": [
+      "int",
+      16777215,
+      [
+        "000000000080ff88",
+        "0000000000004080",
+        "123456789abcde00",
+        "02000000000000b6"
+      ]
+    ],
+    "fix-zero-aliases": [
+      "fix",
+      5,
+      [
+        "0000000000000000",
+        "ffffffffffff7f00",
+        "ffffffffffffff00",
+        "123456789abcde00"
+      ]
+    ],
+    "fix-positive-subunit": [
+      "fix",
+      5,
+      [
+        "0000000000000080",
+        "0000000000004080",
+        "ffffffffffff7f80",
+        "0000000000000001"
+      ]
+    ],
+    "fix-negative-subunit": [
+      "fix",
+      5,
+      [
+        "0000000000008080",
+        "000000000000c080",
+        "ffffffffffffff80",
+        "0000000000008001"
+      ]
+    ],
+    "fix-positive-fractions": [
+      "fix",
+      5,
+      [
+        "0000000000004081",
+        "0000000000002082",
+        "0000000000003e85",
+        "0000000000807f88"
+      ]
+    ],
+    "fix-negative-fractions": [
+      "fix",
+      5,
+      [
+        "000000000000c081",
+        "000000000000a082",
+        "000000000000be85",
+        "000000000080ff88"
+      ]
+    ],
+    "fix-positive-byte-boundaries": [
+      "fix",
+      5,
+      [
+        "0000000000807f88",
+        "0000000000400089",
+        "0000000080ff7f90",
+        "0000000040000091"
+      ]
+    ],
+    "fix-negative-byte-boundaries": [
+      "fix",
+      5,
+      [
+        "000000000080ff88",
+        "0000000000408089",
+        "0000000080ffff90",
+        "0000000040008091"
+      ]
+    ],
+    "fix-positive-precision": [
+      "fix",
+      5,
+      [
+        "fcffffffffff7fb5",
+        "02000000000000b6",
+        "ffffffffffff7fb7",
+        "ffffffffffff7fb8"
+      ]
+    ],
+    "fix-negative-precision": [
+      "fix",
+      5,
+      [
+        "fcffffffffffffb5",
+        "02000000000080b6",
+        "ffffffffffffffb7",
+        "ffffffffffffffb8"
+      ]
+    ],
+    "fix-positive-large": [
+      "fix",
+      5,
+      [
+        "00000000000000b9",
+        "01000000000000d1",
+        "ffffffffffff7fff",
+        "01000000000000ff"
+      ]
+    ],
+    "fix-negative-large": [
+      "fix",
+      5,
+      [
+        "00000000000080b9",
+        "01000000000080d1",
+        "ffffffffffffffff",
+        "01000000000080ff"
+      ]
+    ],
+    "fix-mixed-history": [
+      "fix",
+      16777215,
+      [
+        "000000000080ff88",
+        "0000000000004080",
+        "123456789abcde00",
+        "02000000000000b6"
+      ]
+    ]
+  },
+  "samples": 64,
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "4d453aa0de564b6ca31fe231d2a9b97ff2d25789de5008804af7b9f783ef7846"
+}
