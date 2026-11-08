@@ -1844,7 +1844,15 @@ See [scope, safeguards and validation](yt-newspaper/events/PORT_SALE_IMPLEMENTAT
   lineage/source-clock/lifecycle audit, and six corruption/acceptance tests.
 - Existing isolated hiring rules and Go implementation are already complete;
   do not repeat their threshold or capacity controls.
-- Next: before-only full-world positive-treasury tax/hiring composition using
-  these existing captures; current zero-treasury replay guards remain intact.
+- Complete: before-only five-day composition from original occupied input,
+  modeled prefix and one treasury edit through both children: 72 comparisons /
+  432 exact files, with all helper/final RNG witnesses checked. Twenty replay
+  tests cover no target reads, modeled handoffs, source-derived placement and
+  action RNG, coherent event forgeries, exact raw zeros and force ledgers.
+- Historical zero-treasury guards remain intact. General positive-treasury or
+  active-player worlds, additional scheduling/capacity policies and complete
+  unrestricted maintenance parity remain outside this bounded milestone.
+- Do not repeat these captures or the now-complete two-case tax/hiring replay;
+  select the next outstanding branch from the existing admission boundaries.
 - Evidence: [tax/hiring controls](yt-maint/TAX_HIRING_CONTROLS.md). No production
   gameplay, save-format or scheduling-policy changes.
