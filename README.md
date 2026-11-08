@@ -1987,8 +1987,9 @@ flooring, byte/precision carries and exact zero residues using 16 original-runti
 diagnostic runs (1,024 raw pairs / 51 distinct inputs). The new isolated
 `internal/qbmbf.IntSingle` primitive matches every raw result, with ten portable
 verifier tests and Go native vectors. Existing positive-stock guards, gameplay,
-save format and twenty initializer goldens are unchanged. This does not implement
-DOUBLE INT or general MBF arithmetic; SINGLE FIX is covered separately below.
+save format and twenty initializer goldens are unchanged. The SINGLE
+contract remains separate from the FIX and DOUBLE supplements below; general
+MBF arithmetic is not implemented.
 
 [Raw-SINGLE FIX recovery](research/yt-mbf-fix/RECOVERY.md) now adds truncation
 toward zero as a separate `internal/qbmbf.FixSingle` operation. Eight original
@@ -1996,3 +1997,11 @@ runtime diagnostic runs match 512 exact raw records / 28 distinct inputs,
 including negative zero residues and the difference from INT flooring. Eight
 portable verifier tests and Go native vectors accompany README/plan and CI
 updates. Gameplay, saves, generation fingerprints and prior evidence are unchanged.
+
+[Raw-DOUBLE INT/FIX recovery](research/yt-mbf-double/RECOVERY.md) now adds separate
+eight-byte `IntDouble`/`FixDouble` primitives. Twenty-four original-runtime
+diagnostic runs match 1,536 exact raw records / 42 distinct encodings, including
+56-bit precision boundaries that IEEE float64 cannot preserve. Eleven independent
+verifier tests and portable Go vectors retain all zero residues and distinguish
+flooring from truncation. Existing SINGLE APIs, gameplay streams, saves and
+initializer fingerprints are unchanged; general MBF arithmetic remains separate.
