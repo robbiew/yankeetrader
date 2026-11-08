@@ -2005,3 +2005,14 @@ diagnostic runs match 1,536 exact raw records / 42 distinct encodings, including
 verifier tests and portable Go vectors retain all zero residues and distinguish
 flooring from truncation. Existing SINGLE APIs, gameplay streams, saves and
 initializer fingerprints are unchanged; general MBF arithmetic remains separate.
+
+
+[Raw-SINGLE to signed16 recovery](research/yt-mbf-int16/RECOVERY.md) now qualifies
+both original memory/FAC conversion entries in measured default mode 0. Ninety-six
+single-operation native controls cover 48 encodings: 70 successful conversions
+and 26 exact native Overflow outcomes. The isolated `qbmbf.Int16Single` rounds
+halves away from zero and reports overflow explicitly; native errors return DOS
+ERRORLEVEL 0, so verification checks exact error bytes rather than exit status
+alone. Portable Go vectors, nine verifier tests and CI accompany this bounded
+recovery. Gameplay, saves, source fingerprints and sysop procedures are unchanged.
+DOUBLE-to-integer, signed32 casts, mode 4 and general MBF arithmetic remain separate.

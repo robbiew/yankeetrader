@@ -1,0 +1,489 @@
+{
+  "recipe": "brun30-int16-single-v1",
+  "cases": {
+    "op75-00": {
+      "op": 117,
+      "raw": "00000000",
+      "initial": 5
+    },
+    "op75-01": {
+      "op": 117,
+      "raw": "0000007f",
+      "initial": 5
+    },
+    "op75-02": {
+      "op": 117,
+      "raw": "0000807f",
+      "initial": 5
+    },
+    "op75-03": {
+      "op": 117,
+      "raw": "ffff7f7f",
+      "initial": 5
+    },
+    "op75-04": {
+      "op": 117,
+      "raw": "ffffff7f",
+      "initial": 5
+    },
+    "op75-05": {
+      "op": 117,
+      "raw": "00000080",
+      "initial": 5
+    },
+    "op75-06": {
+      "op": 117,
+      "raw": "00008080",
+      "initial": 5
+    },
+    "op75-07": {
+      "op": 117,
+      "raw": "01000080",
+      "initial": 5
+    },
+    "op75-08": {
+      "op": 117,
+      "raw": "01008080",
+      "initial": 5
+    },
+    "op75-09": {
+      "op": 117,
+      "raw": "00004080",
+      "initial": 5
+    },
+    "op75-10": {
+      "op": 117,
+      "raw": "0000c080",
+      "initial": 5
+    },
+    "op75-11": {
+      "op": 117,
+      "raw": "00000081",
+      "initial": 5
+    },
+    "op75-12": {
+      "op": 117,
+      "raw": "00008081",
+      "initial": 5
+    },
+    "op75-13": {
+      "op": 117,
+      "raw": "00004081",
+      "initial": 5
+    },
+    "op75-14": {
+      "op": 117,
+      "raw": "0000c081",
+      "initial": 5
+    },
+    "op75-15": {
+      "op": 117,
+      "raw": "ffff1f82",
+      "initial": 5
+    },
+    "op75-16": {
+      "op": 117,
+      "raw": "ffff9f82",
+      "initial": 5
+    },
+    "op75-17": {
+      "op": 117,
+      "raw": "00002082",
+      "initial": 5
+    },
+    "op75-18": {
+      "op": 117,
+      "raw": "0000a082",
+      "initial": 5
+    },
+    "op75-19": {
+      "op": 117,
+      "raw": "01002082",
+      "initial": 5
+    },
+    "op75-20": {
+      "op": 117,
+      "raw": "0100a082",
+      "initial": 5
+    },
+    "op75-21": {
+      "op": 117,
+      "raw": "00006082",
+      "initial": 5
+    },
+    "op75-22": {
+      "op": 117,
+      "raw": "0000e082",
+      "initial": 5
+    },
+    "op75-23": {
+      "op": 117,
+      "raw": "00fe7f8f",
+      "initial": 5
+    },
+    "op75-24": {
+      "op": 117,
+      "raw": "00feff8f",
+      "initial": 5
+    },
+    "op75-25": {
+      "op": 117,
+      "raw": "80fe7f8f",
+      "initial": 5
+    },
+    "op75-26": {
+      "op": 117,
+      "raw": "80feff8f",
+      "initial": 5
+    },
+    "op75-27": {
+      "op": 117,
+      "raw": "fffe7f8f",
+      "initial": 5
+    },
+    "op75-28": {
+      "op": 117,
+      "raw": "fffeff8f",
+      "initial": 5
+    },
+    "op75-29": {
+      "op": 117,
+      "raw": "00ff7f8f",
+      "initial": 5
+    },
+    "op75-30": {
+      "op": 117,
+      "raw": "00ffff8f",
+      "initial": 5
+    },
+    "op75-31": {
+      "op": 117,
+      "raw": "01ff7f8f",
+      "initial": 5
+    },
+    "op75-32": {
+      "op": 117,
+      "raw": "01ffff8f",
+      "initial": 5
+    },
+    "op75-33": {
+      "op": 117,
+      "raw": "00000090",
+      "initial": 5
+    },
+    "op75-34": {
+      "op": 117,
+      "raw": "00008090",
+      "initial": 5
+    },
+    "op75-35": {
+      "op": 117,
+      "raw": "80000090",
+      "initial": 5
+    },
+    "op75-36": {
+      "op": 117,
+      "raw": "80008090",
+      "initial": 5
+    },
+    "op75-37": {
+      "op": 117,
+      "raw": "81000090",
+      "initial": 5
+    },
+    "op75-38": {
+      "op": 117,
+      "raw": "81008090",
+      "initial": 5
+    },
+    "op75-39": {
+      "op": 117,
+      "raw": "00010090",
+      "initial": 5
+    },
+    "op75-40": {
+      "op": 117,
+      "raw": "00018090",
+      "initial": 5
+    },
+    "op75-41": {
+      "op": 117,
+      "raw": "00000091",
+      "initial": 5
+    },
+    "op75-42": {
+      "op": 117,
+      "raw": "00008091",
+      "initial": 5
+    },
+    "op75-43": {
+      "op": 117,
+      "raw": "ffff7f00",
+      "initial": 5
+    },
+    "op75-44": {
+      "op": 117,
+      "raw": "ffffff00",
+      "initial": 5
+    },
+    "op75-45": {
+      "op": 117,
+      "raw": "12345600",
+      "initial": 5
+    },
+    "op75-46": {
+      "op": 117,
+      "raw": "ffff7fff",
+      "initial": 5
+    },
+    "op75-47": {
+      "op": 117,
+      "raw": "ffffffff",
+      "initial": 5
+    },
+    "op77-00": {
+      "op": 119,
+      "raw": "00000000",
+      "initial": 5
+    },
+    "op77-01": {
+      "op": 119,
+      "raw": "0000007f",
+      "initial": 5
+    },
+    "op77-02": {
+      "op": 119,
+      "raw": "0000807f",
+      "initial": 5
+    },
+    "op77-03": {
+      "op": 119,
+      "raw": "ffff7f7f",
+      "initial": 5
+    },
+    "op77-04": {
+      "op": 119,
+      "raw": "ffffff7f",
+      "initial": 5
+    },
+    "op77-05": {
+      "op": 119,
+      "raw": "00000080",
+      "initial": 5
+    },
+    "op77-06": {
+      "op": 119,
+      "raw": "00008080",
+      "initial": 5
+    },
+    "op77-07": {
+      "op": 119,
+      "raw": "01000080",
+      "initial": 5
+    },
+    "op77-08": {
+      "op": 119,
+      "raw": "01008080",
+      "initial": 5
+    },
+    "op77-09": {
+      "op": 119,
+      "raw": "00004080",
+      "initial": 5
+    },
+    "op77-10": {
+      "op": 119,
+      "raw": "0000c080",
+      "initial": 5
+    },
+    "op77-11": {
+      "op": 119,
+      "raw": "00000081",
+      "initial": 5
+    },
+    "op77-12": {
+      "op": 119,
+      "raw": "00008081",
+      "initial": 5
+    },
+    "op77-13": {
+      "op": 119,
+      "raw": "00004081",
+      "initial": 5
+    },
+    "op77-14": {
+      "op": 119,
+      "raw": "0000c081",
+      "initial": 5
+    },
+    "op77-15": {
+      "op": 119,
+      "raw": "ffff1f82",
+      "initial": 5
+    },
+    "op77-16": {
+      "op": 119,
+      "raw": "ffff9f82",
+      "initial": 5
+    },
+    "op77-17": {
+      "op": 119,
+      "raw": "00002082",
+      "initial": 5
+    },
+    "op77-18": {
+      "op": 119,
+      "raw": "0000a082",
+      "initial": 5
+    },
+    "op77-19": {
+      "op": 119,
+      "raw": "01002082",
+      "initial": 5
+    },
+    "op77-20": {
+      "op": 119,
+      "raw": "0100a082",
+      "initial": 5
+    },
+    "op77-21": {
+      "op": 119,
+      "raw": "00006082",
+      "initial": 5
+    },
+    "op77-22": {
+      "op": 119,
+      "raw": "0000e082",
+      "initial": 5
+    },
+    "op77-23": {
+      "op": 119,
+      "raw": "00fe7f8f",
+      "initial": 5
+    },
+    "op77-24": {
+      "op": 119,
+      "raw": "00feff8f",
+      "initial": 5
+    },
+    "op77-25": {
+      "op": 119,
+      "raw": "80fe7f8f",
+      "initial": 5
+    },
+    "op77-26": {
+      "op": 119,
+      "raw": "80feff8f",
+      "initial": 5
+    },
+    "op77-27": {
+      "op": 119,
+      "raw": "fffe7f8f",
+      "initial": 5
+    },
+    "op77-28": {
+      "op": 119,
+      "raw": "fffeff8f",
+      "initial": 5
+    },
+    "op77-29": {
+      "op": 119,
+      "raw": "00ff7f8f",
+      "initial": 5
+    },
+    "op77-30": {
+      "op": 119,
+      "raw": "00ffff8f",
+      "initial": 5
+    },
+    "op77-31": {
+      "op": 119,
+      "raw": "01ff7f8f",
+      "initial": 5
+    },
+    "op77-32": {
+      "op": 119,
+      "raw": "01ffff8f",
+      "initial": 5
+    },
+    "op77-33": {
+      "op": 119,
+      "raw": "00000090",
+      "initial": 5
+    },
+    "op77-34": {
+      "op": 119,
+      "raw": "00008090",
+      "initial": 5
+    },
+    "op77-35": {
+      "op": 119,
+      "raw": "80000090",
+      "initial": 5
+    },
+    "op77-36": {
+      "op": 119,
+      "raw": "80008090",
+      "initial": 5
+    },
+    "op77-37": {
+      "op": 119,
+      "raw": "81000090",
+      "initial": 5
+    },
+    "op77-38": {
+      "op": 119,
+      "raw": "81008090",
+      "initial": 5
+    },
+    "op77-39": {
+      "op": 119,
+      "raw": "00010090",
+      "initial": 5
+    },
+    "op77-40": {
+      "op": 119,
+      "raw": "00018090",
+      "initial": 5
+    },
+    "op77-41": {
+      "op": 119,
+      "raw": "00000091",
+      "initial": 5
+    },
+    "op77-42": {
+      "op": 119,
+      "raw": "00008091",
+      "initial": 5
+    },
+    "op77-43": {
+      "op": 119,
+      "raw": "ffff7f00",
+      "initial": 5
+    },
+    "op77-44": {
+      "op": 119,
+      "raw": "ffffff00",
+      "initial": 5
+    },
+    "op77-45": {
+      "op": 119,
+      "raw": "12345600",
+      "initial": 5
+    },
+    "op77-46": {
+      "op": 119,
+      "raw": "ffff7fff",
+      "initial": 5
+    },
+    "op77-47": {
+      "op": 119,
+      "raw": "ffffffff",
+      "initial": 5
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "3c764dd5b9fcc893127d2d006c0b7bf158029a7aca7e89f2623e8866ab68ad2e"
+}

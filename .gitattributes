@@ -477,3 +477,9 @@
 /research/yt-mbf-double/native/**/*.LOG -diff
 /research/yt-mbf-double/native/**/TRACE.BIN -diff
 /research/yt-mbf-double/native/**/dosbox.stderr -diff
+
+# Preserve native default-mode SINGLE-to-int16 observations and executed source.
+/research/yt-mbf-int16/native/** -text
+/research/yt-mbf-int16/native/**/*.LOG -diff
+/research/yt-mbf-int16/native/**/TRACE.BIN -diff
+/research/yt-mbf-int16/native/**/dosbox.stderr -diff
