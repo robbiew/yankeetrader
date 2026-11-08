@@ -9,6 +9,8 @@ from replay_qb_graph import QB3,mbf
 
 class SourceStream(Base):
     def __init__(self,schedule,state):super().__init__(schedule,state);self.contexts=[]
+    def placement_attempt(self,group,sector,force):
+        self.mark(('hire',group,sector,int(force)))
     def action(self,kind,fn,world,*args):
         sector,force=args[-2:];record=51+sector
         context=(kind,sector,args[0]if kind in('mine','defense')else None,force,int(mbf.get(world,record,81)),int(mbf.get(world,record,129)))
@@ -32,6 +34,9 @@ def verify(audit,source,contexts,events):
             seeds.append((family,caller,old,timer.hex(),rng.state))
         elif len(op)==2 and op[0]=='mark':
             marker=op[1]
+            if type(marker)is tuple and len(marker)==4 and marker[0]=='hire':
+                if any(type(v)is not int for v in marker[1:])or not 0<=marker[1]<10 or not 2<=marker[2]<=3000 or not 0<=marker[3]<=100000:raise ValueError('bounded source placement checkpoint required')
+                continue
             if type(marker)is not tuple or len(marker)!=2 or marker[0]not in('entry','exit')or type(marker[1])is not int or not 0<=marker[1]<len(contexts)or marker in marks:raise ValueError('unique derived action checkpoint required')
             marks[marker]=(rng.state,rng.draws,index)
         else:raise ValueError('unknown source operation')
@@ -77,16 +82,25 @@ def verify(audit,source,contexts,events):
 
 
 def verify_hiring(audit,hiring):
-    rows=[s for s in audit.schedule if s[:2]==('h1',0x4546)]
-    attempts=[sector for p in hiring['placements']for sector in p['attempts']]
-    # Follow the complete derived operation walk to obtain the seeded low byte;
-    # it is not safe to seed a placement from its mutable public event.
-    rng=QB3(audit.initial_state);index=0;derived=[]
+    # Source checkpoints preserve each group's rejection/acceptance boundary.
+    # Public attempt lists cannot supply their own acceptance decision.
+    rng=QB3(audit.initial_state);index=0;derived=[];attempts=[];pending=None;count=0
     for op in audit.operations:
         if op[0]=='draw':
             for _ in range(op[1]):rng.rnd()
         elif op[0]=='seed':
+            if pending is not None:raise ValueError('placement helper missing its source acceptance checkpoint')
             family,caller,timer=audit.schedule[index];index+=1
             rng.state=(rng.state&255)|((timer[0]^timer[2])<<8)|((timer[1]^timer[3])<<16)
-            if(family,caller)==('h1',0x4546):derived.append(QB3(rng.state).integer(2999)+1)
-    if len(rows)!=len(attempts)or attempts!=derived:raise ValueError('hiring placements must bind independently derived source RNG')
+            if(family,caller)==('h1',0x4546):
+                prediction=QB3(rng.state);sector=prediction.integer(2999)+1
+                pending=(sector,prediction.state);count+=1
+        elif op[0]=='mark'and type(op[1])is tuple and op[1][0]=='hire':
+            marker=op[1]
+            if len(marker)!=4 or any(type(v)is not int for v in marker[1:]):raise ValueError('typed source placement boundary required')
+            _,group,sector,force=marker
+            if pending!=(sector,rng.state)or group!=len(derived)or not 0<=force<=100000:raise ValueError('source placement boundary or candidate differs')
+            pending=None;attempts.append(sector)
+            if force==0:derived.append((sector,tuple(attempts)));attempts=[]
+    supplied=[(p['sector'],tuple(p['attempts']))for p in hiring['placements']]
+    if pending is not None or attempts or count!=sum(len(row[1])for row in derived)or supplied!=derived:raise ValueError('grouped hiring placements must bind source acceptance/rejection checkpoints')

@@ -67,7 +67,7 @@ events. The historical zero-treasury public entry points and all frozen native
 sources/observations remain unchanged.
 
 Run `python3 scripts/replay_maintenance_tax_hiring_records.py` and
-`python3 scripts/test_replay_maintenance_tax_hiring.py`. Twenty tests cover the
+`python3 scripts/test_replay_maintenance_tax_hiring.py`. Twenty-two tests cover the
 complete comparison matrix, no native target reads, actual modeled object
 handoffs, exact fixture edits, immutable clock/case boundaries, ignored captured
 RNG bytes, independently checked witnesses, coherent event/placement forgeries,
@@ -78,3 +78,10 @@ modern Go placement/scheduling/capacity policies are unchanged.
 This does not admit arbitrary treasuries, human owners/desertion, additional
 planet pickup, arbitrary public-event combinations or unrestricted maintenance
 parity. Do not repeat these captures, isolated thresholds or capacity controls.
+
+Review hardening: source operation markers retain each placement group, candidate
+and actual physical occupancy before acceptance. The independent audit checks
+group boundaries as well as the complete RNG attempt sequence. A regression
+redistributes rejected/accepted attempts without changing flattened draws and
+requires rejection. A second regression changes only Earth's exponent-zero
+treasury encoding; admission rejects it while leaving Earth outside taxation.

@@ -1846,7 +1846,7 @@ See [scope, safeguards and validation](yt-newspaper/events/PORT_SALE_IMPLEMENTAT
   do not repeat their threshold or capacity controls.
 - Complete: before-only five-day composition from original occupied input,
   modeled prefix and one treasury edit through both children: 72 comparisons /
-  432 exact files, with all helper/final RNG witnesses checked. Twenty replay
+  432 exact files, with all helper/final RNG witnesses checked. Twenty-two replay
   tests cover no target reads, modeled handoffs, source-derived placement and
   action RNG, coherent event forgeries, exact raw zeros and force ledgers.
 - Historical zero-treasury guards remain intact. General positive-treasury or

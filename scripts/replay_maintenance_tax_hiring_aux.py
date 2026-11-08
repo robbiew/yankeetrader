@@ -23,9 +23,9 @@ def _admit(before_files,world,events,mercenary,taxation,hiring):
         if any(field(data,r,85)for r in range(2,52)):raise ValueError('active human players excluded')
     tax=sum(int(field(before,r,89)//10)for r in range(3053,4052))
     if type(taxation)is not dict or taxation.get('tax')!=tax:raise ValueError('tax ledger must bind before-state debit')
-    for r in range(3053,4052):
+    for r in range(3052,4052):
         at=(r-1)*137+89;balance=field(before,r,89)
-        expected=mbf.enc(balance-int(balance//10))if balance else before[at:at+4]
+        expected=mbf.enc(balance-int(balance//10))if r!=3052 and balance else before[at:at+4]
         if world[at:at+4]!=expected:raise ValueError('exact saved treasury debit or raw zero residue differs')
     n=tax//10;groups=0 if n==0 else 1 if n<10 else 10;size=0 if n==0 else n if n<10 else n//10
     if type(hiring)is not dict or(hiring.get('groups'),hiring.get('group_size'),hiring.get('hired'))!=(groups,size,groups*size):raise ValueError('tax-funded group allocation differs')

@@ -33,11 +33,13 @@ def hire(world,stream,tax):
         raise ValueError('bounded modeled world and computed whole tax required')
     n=math.floor(F32(tax/10));groups=0 if n<1 else 1 if n<10 else 10;size=n if n<10 else math.floor(F32(n/10))
     placements=[]
-    for _ in range(groups):
+    for group in range(groups):
         attempts=[]
         for _ in range(64):
             sector=stream.one(2999,caller=0x4546)+1;attempts.append(sector)
-            if mbf.get(world,51+sector,81)<=0:break
+            physical=mbf.get(world,51+sector,81)
+            stream.placement_attempt(group,sector,physical)
+            if physical<=0:break
         else:raise ValueError('bounded placement rejection exhausted; no capacity policy invented')
         mbf.put(world,51+sector,85,-2);mbf.put(world,51+sector,81,size)
         placements.append(dict(sector=sector,force=size,attempts=attempts))

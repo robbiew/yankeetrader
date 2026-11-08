@@ -154,6 +154,7 @@ class TaxReplay(unittest.TestCase):
     def test_hiring_retries_occupied_sector_and_accepts_union(self):
         world=bytearray(self.outputs['one-group'][2]['YTDATA.DAT']);mbf.put(world,53,81,1);mbf.put(world,54,81,0)
         class Stream:
+            def placement_attempt(self,*args):pass
             def __init__(self):self.calls=[];self.values=iter((1,2))
             def one(self,bound,caller):self.calls.append((bound,caller));return next(self.values)
         stream=Stream();result=hire(world,stream,10)
@@ -186,12 +187,35 @@ class TaxReplay(unittest.TestCase):
             row['mercenary']['events'][0]['initial_rng_state']^=1;return before,world,row
         with self.assertRaises(ValueError):self.publication(change)
 
+    def test_earth_raw_zero_treasury_corruption_rejected(self):
+        def change(before,world,row):
+            data=bytearray(world);at=(3052-1)*137+89
+            raw=bytes(data[at:at+4]);replacement=bytes.fromhex('01000000')
+            self.assertNotEqual(raw,replacement);self.assertEqual(mbf.dec(replacement),0)
+            data[at:at+4]=replacement;return before,bytes(data),row
+        with self.assertRaises(ValueError):self.publication(change)
+
+    def test_regrouped_attempts_cannot_claim_occupied_sector(self):
+        from replay_maintenance_tax_hiring_rng import SourceStream
+        schedule=tuple(('h1',0x4546,mbf.enc(2))for _ in range(64))
+        probe=SourceStream(schedule,5);occupied=probe.one(2999,caller=0x4546)+1
+        world=bytearray(4151*137);mbf.put(world,51+occupied,81,1)
+        stream=SourceStream(schedule,5);hiring=hire(world,stream,100)
+        self.assertGreater(len(hiring['placements'][0]['attempts']),1)
+        verify_hiring(stream.audit(),hiring)
+        forged=copy.deepcopy(hiring);first=forged['placements'][0];second=forged['placements'][1]
+        moved=first['attempts'].pop();first['sector']=first['attempts'][-1];second['attempts'].insert(0,moved)
+        self.assertEqual([n for p in forged['placements']for n in p['attempts']],[n for p in hiring['placements']for n in p['attempts']])
+        self.assertEqual(first['sector'],occupied)
+        with self.assertRaises(ValueError):verify_hiring(stream.audit(),forged)
+
     def test_no_hiring_has_no_draws_and_capacity_is_bounded_failure(self):
         world=bytearray(self.outputs['one-group'][2]['YTDATA.DAT'])
         class NoDraw:
             def one(self,*args,**kwargs):raise AssertionError('unexpected helper')
         self.assertEqual(hire(world,NoDraw(),9)['placements'],[])
         class Blocked:
+            def placement_attempt(self,*args):pass
             def one(self,*args,**kwargs):return 1
         mbf.put(world,53,81,1)
         with self.assertRaises(ValueError):hire(world,Blocked(),10)
