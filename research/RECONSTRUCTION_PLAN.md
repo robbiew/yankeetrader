@@ -1836,3 +1836,15 @@ settlement and ownership. Asking price is distinct from the price-plus-treasury
 payout; no public purchase news is emitted. Current format29 upgrades without
 historical backfill. Earlier private-notice deferrals above are historical.
 See [scope, safeguards and validation](yt-newspaper/events/PORT_SALE_IMPLEMENTATION.md).
+
+### Supplemental evolved-world tax/hiring composition (2026-11-07)
+
+- Complete: 24 first-attempt original-DOS runs, two treasury cases × two days ×
+  six modes; exact six-file equality, frozen acquisition sources, independent
+  lineage/source-clock/lifecycle audit, and six corruption/acceptance tests.
+- Existing isolated hiring rules and Go implementation are already complete;
+  do not repeat their threshold or capacity controls.
+- Next: before-only full-world positive-treasury tax/hiring composition using
+  these existing captures; current zero-treasury replay guards remain intact.
+- Evidence: [tax/hiring controls](yt-maint/TAX_HIRING_CONTROLS.md). No production
+  gameplay, save-format or scheduling-policy changes.

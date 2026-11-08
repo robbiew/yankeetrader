@@ -445,3 +445,10 @@
 /research/yt-maint/defender-stock-controls/**/*.BIN -diff
 /research/yt-maint/defender-stock-controls/**/dosbox.stdout -diff
 /research/yt-maint/defender-stock-controls/**/dosbox.stderr -diff
+
+# Preserve supplemental native tax/hiring observations and executed sources.
+/research/yt-maint/tax-hiring-controls/** -text
+/research/yt-maint/tax-hiring-controls/**/*.LOG -diff
+/research/yt-maint/tax-hiring-controls/**/*.BIN -diff
+/research/yt-maint/tax-hiring-controls/**/dosbox.stdout -diff
+/research/yt-maint/tax-hiring-controls/**/dosbox.stderr -diff
