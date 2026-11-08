@@ -405,7 +405,10 @@ remain separate.
    [DOUBLE to signed16](yt-mbf-int16-double/RECOVERY.md) independently adds both
    default-mode DOUBLE entries: 104 controls / 52 raw encodings, 74 results and
    30 native errors, 56-bit tie boundaries and ten verifier tests.
-   Signed32 and mode-4 casts remain separate.
+   Mode-4 casts remain separate. The [conversion scope correction](yt-mbf-int16/CONVERSION_SCOPE.md)
+   removes signed32/LONG from the BRUN30 language backlog: QuickBASIC 3.0 has no
+   LONG type; Microsoft introduced it in 4.0. Internal/DOS 32-bit values are a
+   different research question.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1938,7 +1941,8 @@ Added an isolated numeric primitive, full-trace portable fixture, independent
 rational/provenance audit, nine corruption tests, README and CI updates. Successful
 FAC residue, RNG and default mode are checked; no post-error state is invented.
 No gameplay, save, source fingerprint or sysop changes. Remaining numeric slices
-include DOUBLE-to-integer, signed32 and mode-4 conversion, and other MBF arithmetic;
+include mode-4 conversion and other MBF arithmetic (DOUBLE-to-int16 is completed
+below; the speculative signed32 backlog is corrected by the scope audit);
 do not repeat completed SINGLE/DOUBLE INT/FIX, RND or this mode-0 signed16 path.
 [Evidence and limits](yt-mbf-int16/RECOVERY.md).
 
@@ -1954,7 +1958,18 @@ errorlevel on failure. Added an isolated 56-bit `Int16Double` implementation,
 portable full-trace vectors, an independent rational/provenance verifier, ten
 acceptance/corruption tests, CI and README updates. One-ULP values before half ties
 and signed16 limits distinguish premature IEEE rounding. Existing evidence, source
-fingerprints, gameplay and saves remain unchanged. Signed32 conversion, mode 4
-and other MBF arithmetic remain future slices; do not repeat now-qualified
+fingerprints, gameplay and saves remain unchanged. Mode 4 and other MBF arithmetic
+remain future slices; the speculative signed32 backlog is corrected below; do not repeat now-qualified
 SINGLE/DOUBLE default-mode signed16 conversions or earlier INT/FIX and RND work.
 [Evidence and limits](yt-mbf-int16-double/RECOVERY.md).
+
+
+### Conversion backlog correction (2026-11-08)
+
+Microsoft's archived Q43308 feature matrix marks LONG (32-bit integer) absent
+from QuickBASIC 3.0 and present in 4.0. Remove the speculative SINGLE/DOUBLE-to-LONG
+milestones from the current BRUN30 reconstruction backlog. The already qualified
+signed16 APIs and their immutable observations are unchanged. Do not confuse
+internal 32-bit arithmetic or DOS file offsets with native LONG type support.
+Proceed to the observed mode-4 signed16 branch, then other evidence-selected
+numeric operations. [Source and scope](yt-mbf-int16/CONVERSION_SCOPE.md).

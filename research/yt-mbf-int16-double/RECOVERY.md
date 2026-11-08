@@ -106,5 +106,10 @@ Native bytes and control characters are preserved with `.gitattributes` rules.
 
 CI includes the new audit and corruption controls. This is a bounded mode-0
 DOUBLE-to-int16 recovery, not general MBF arithmetic or arbitrary-world/native
-BBS acceptance. Signed32 conversion, mode 4 and other arithmetic paths remain
+BBS acceptance. Mode 4 and other arithmetic paths remain
 separate work. Do not repeat this or earlier numeric slices as missing work.
+
+
+The earlier signed32/LONG deferral is withdrawn by the [conversion scope
+audit](../yt-mbf-int16/CONVERSION_SCOPE.md): QuickBASIC 3.0 has no LONG language
+type. This correction does not change any DOUBLE observation or API.
