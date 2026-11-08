@@ -1,0 +1,24 @@
+{
+  "recipe": "brun30-rnd-arguments-v1",
+  "case": "negative-half",
+  "initial_state": 5,
+  "arguments": [
+    "00008080"
+  ],
+  "exit_code": 0,
+  "payload_hex": "c7065618524ec70658184432bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21b9400051c7061a000000c7061c008080bb0100b90400ba1a00b440cd21bb1a00cd3d339090bb0100b90400ba3402b440cd21bb0100b90400ba1a00b440cd2159497403e9bdffc7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_initializer_sha256": "fba659610f72dcc816173189d4280910682126ce9afd9b04ca8074b0ae9319ef",
+  "copied_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "a0c8d9146349dd131b87b5c254f3efe101446623f246d0727dd939d16a6125fc",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "913c44caafe26ba76ac6cf06af339ad7b5a3d32acbf61bae29be2c777e534e79",
+    "dosbox.stderr": "ecc9a804cb623f1cb7055acb45459cc1a9fb1e6c99e8f288221c536c8afdc79b",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "02670dbef07f48eaaa797a81af35eebd695dfe8c4b3852834bb48728e05ab779"
+  }
+}

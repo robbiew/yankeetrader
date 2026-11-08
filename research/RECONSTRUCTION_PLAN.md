@@ -382,6 +382,13 @@ remain separate.
    retain that distinct fatal-offense continuation over unchanged two-day handoffs.
    Their [before-only replay](yt-maint/DEFENDER_STOCK_REPLAY.md) now completes the
    five-day chain with 144 exact comparisons and 1074 new-stage RNG witnesses.
+   The [tax/hiring controls and before-only replay](yt-maint/TAX_HIRING_CONTROLS.md)
+   are merged in PRs #115–116: 24 native executions, 72 comparisons / 432 exact
+   files and 22 replay corruption/acceptance tests, including source placement
+   boundaries and Earth raw-treasury preservation.
+   [Argumented-single RND](yt-rng-seeding/RND_ARGUMENTS.md) now closes the explicit
+   zero/positive/negative argument gap: 16 native probes / 1,024 state-value pairs
+   and a portable shared Go API; existing whole-world goldens are unchanged.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -391,7 +398,7 @@ remain separate.
    [RNG controls](yt-rng-seeding/RECOVERY.md),
    [warp rules](yt-warp-generation/RECOVERY.md), [port rules](yt-port-generation/RECOVERY.md).
 2. **Resolve remaining rule, random-event and numeric parity questions in bounded
-   slices.** Remaining MBF arithmetic and other RND argument variants, uncovered command/encounter edges,
+   slices.** Remaining MBF arithmetic and other numeric-runtime operations, uncovered command/encounter edges,
    additional unconfirmed spy triggers and character-level editor wrapping/
    backspace behavior remain evidence-driven work. Preserve intentional exploit
    fixes; do not treat every historical deferral or removed DOS feature as a
@@ -1856,3 +1863,14 @@ See [scope, safeguards and validation](yt-newspaper/events/PORT_SALE_IMPLEMENTAT
   select the next outstanding branch from the existing admission boundaries.
 - Evidence: [tax/hiring controls](yt-maint/TAX_HIRING_CONTROLS.md). No production
   gameplay, save-format or scheduling-policy changes.
+
+### Raw-single argumented RND (2026-11-07)
+
+Reused the existing exact native handler packet, then captured 16 fresh copied
+runtime diagnostic controls (1,024 state/value pairs). Zero/residual-zero,
+positive advance, negative full reseed, carry/wrap and mixed sequences are
+independently verified and implemented in `internal/qbrng`. Eight verifier tests,
+portable Go fixtures and CI accompany README upkeep. No old corpus, gameplay
+stream, source-generation hash, save schema or sysop procedure changes.
+[Evidence and scope](yt-rng-seeding/RND_ARGUMENTS.md). Remaining broad MBF and
+arbitrary-world parity are separate; argumented-single RND is no longer deferred.

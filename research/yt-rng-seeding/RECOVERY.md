@@ -69,8 +69,10 @@ value = state / 2^24
 ```
 
 Values are exact binary fractions in [0,1), including both observed endpoints 0
-and 1−2^-24. Negative-argument RND uses another path; it is not implemented by the
-shared primitive and must not be conflated with RANDOMIZE.
+and 1−2^-24. The separate negative-argument path was outside this original milestone. It is
+now recovered and implemented alongside zero/positive arguments in the
+[argumented-single RND supplement](RND_ARGUMENTS.md); it must not be conflated
+with RANDOMIZE.
 
 Native observations in `runtime-rea.json`, `dispatch-rea.json` and
 `initializer-rea.json`, together with the reused LCG observations from the port

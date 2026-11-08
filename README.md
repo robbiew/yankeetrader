@@ -1974,3 +1974,10 @@ No gameplay policy, save format or sysop command changes.
 The hiring audit now binds per-group acceptance/rejection checkpoints, rejecting
 regrouped attempt lists even when their flattened RNG draws agree. Treasury
 admission preserves Earth's excluded raw bytes as well as ordinary-port zeros.
+
+The shared BRUN30 primitive now supports raw-single `RND(argument)`: zero preserves
+state, positive arguments advance once, and negative arguments replace the raw
+state before advancing. [Native argument controls](research/yt-rng-seeding/RND_ARGUMENTS.md)
+retain 16 diagnostic runs / 1,024 exact state-value pairs, eight independent
+acceptance/corruption tests and portable Go fixtures. Existing argumentless RNG,
+RANDOMIZE, twenty initializer goldens, gameplay streams and save 35 are unchanged.

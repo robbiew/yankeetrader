@@ -1,0 +1,112 @@
+{
+  "recipe": "brun30-rnd-arguments-v1",
+  "cases": {
+    "zero-state-zero": [
+      0,
+      [
+        "00000000"
+      ]
+    ],
+    "zero-state-five": [
+      5,
+      [
+        "00000000"
+      ]
+    ],
+    "zero-state-max": [
+      16777215,
+      [
+        "00000000"
+      ]
+    ],
+    "residual-zero": [
+      1193131,
+      [
+        "ffff7f00"
+      ]
+    ],
+    "negative-zero": [
+      1193131,
+      [
+        "fffffe00"
+      ]
+    ],
+    "positive-one": [
+      5,
+      [
+        "00000081"
+      ]
+    ],
+    "positive-half": [
+      5,
+      [
+        "00000080"
+      ]
+    ],
+    "positive-large": [
+      16777215,
+      [
+        "00004987"
+      ]
+    ],
+    "negative-one": [
+      5,
+      [
+        "00008081"
+      ]
+    ],
+    "negative-one-old-state": [
+      1193131,
+      [
+        "00008081"
+      ]
+    ],
+    "negative-half": [
+      5,
+      [
+        "00008080"
+      ]
+    ],
+    "negative-large": [
+      5,
+      [
+        "0000c987"
+      ]
+    ],
+    "negative-low-carry": [
+      5,
+      [
+        "ffff8081"
+      ]
+    ],
+    "negative-wrap": [
+      5,
+      [
+        "ffffffff"
+      ]
+    ],
+    "mixed": [
+      5,
+      [
+        "00000000",
+        "00000081",
+        "00008081",
+        "fffffe00"
+      ]
+    ],
+    "mixed-old-state": [
+      1193131,
+      [
+        "00004987",
+        "0000c987",
+        "00000000",
+        "00000081"
+      ]
+    ]
+  },
+  "samples": 64,
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "87ec3f6db66367d101892296a9b5c6656083e2967688fc16837259ac624eee58"
+}
