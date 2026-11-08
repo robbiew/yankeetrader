@@ -104,6 +104,12 @@ outcomes, and must equal the entire verified corpus.
 
 CI runs the new verifier and corruption controls. The [DOUBLE-to-int16
 supplement](../yt-mbf-int16-double/RECOVERY.md) now separately qualifies both
-default-mode DOUBLE entries. Signed32 casts, mode-4 conversion, other MBF
+default-mode DOUBLE entries. Mode-4 conversion, other MBF
 arithmetic and arbitrary-world parity remain separate work. Do not repeat the already completed RND, INT/FIX or this
 mode-0 SINGLE-to-int16 slice as missing work.
+
+
+The [scope audit](CONVERSION_SCOPE.md) removes the earlier speculative signed32
+language-cast backlog: LONG is not a QuickBASIC 3.0 type. Internal 32-bit runtime
+calculations and DOS interfaces require their own evidence and do not establish
+native LONG support.

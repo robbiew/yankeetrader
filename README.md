@@ -2015,7 +2015,7 @@ halves away from zero and reports overflow explicitly; native errors return DOS
 ERRORLEVEL 0, so verification checks exact error bytes rather than exit status
 alone. Portable Go vectors, nine verifier tests and CI accompany this bounded
 recovery. Gameplay, saves, source fingerprints and sysop procedures are unchanged.
-Signed32 casts, mode 4 and general MBF arithmetic remain separate; the DOUBLE
+Mode 4 and general MBF arithmetic remain separate; the DOUBLE
 conversion supplement below is independently qualified.
 
 
@@ -2027,5 +2027,14 @@ One-ULP controls below rounding ties distinguish the native result from float64
 demotion, including at the positive signed16 limit. Ten independent verifier tests,
 full-trace portable Go vectors, README/plan and CI updates accompany this isolated
 operation. Existing SINGLE operations, native captures, initializer fingerprints,
-gameplay, saves and sysop procedures are unchanged. Signed32 conversions, mode 4
-and other MBF arithmetic remain separate.
+gameplay, saves and sysop procedures are unchanged. Mode 4 and other MBF
+arithmetic remain separate.
+
+
+The [conversion scope audit](research/yt-mbf-int16/CONVERSION_SCOPE.md) removes the
+previously listed signed32/LONG conversion backlog: Microsoft documents that
+QuickBASIC 3.0 has no LONG integer type (introduced in 4.0). The qualified BRUN30
+integer paths are signed16; internal 32-bit calculations or DOS offsets do not
+establish a missing LONG language conversion. Next conversion research is the
+separately visible mode-4 branch, followed by other measured MBF arithmetic.
+This corrects planning only; no gameplay, save, evidence or sysop behavior changes.
