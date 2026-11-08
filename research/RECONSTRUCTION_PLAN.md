@@ -405,7 +405,12 @@ remain separate.
    [DOUBLE to signed16](yt-mbf-int16-double/RECOVERY.md) independently adds both
    default-mode DOUBLE entries: 104 controls / 52 raw encodings, 74 results and
    30 native errors, 56-bit tie boundaries and ten verifier tests.
-   Mode-4 casts remain separate. The [conversion scope correction](yt-mbf-int16/CONVERSION_SCOPE.md)
+   [Explicit mode-4 signed16](yt-mbf-int16-mode4/RECOVERY.md) now qualifies all
+   four entries under a declared mode-setting diagnostic: 224 controls, 168
+   successful results and 56 exact native errors, including a separately frozen
+   DOUBLE integer-boundary supplement. Twelve audit tests and isolated floor APIs
+   preserve default-mode behavior; normal mode-4 callers are not inferred.
+   The [conversion scope correction](yt-mbf-int16/CONVERSION_SCOPE.md)
    removes signed32/LONG from the BRUN30 language backlog: QuickBASIC 3.0 has no
    LONG type; Microsoft introduced it in 4.0. Internal/DOS 32-bit values are a
    different research question.
@@ -1971,5 +1976,22 @@ from QuickBASIC 3.0 and present in 4.0. Remove the speculative SINGLE/DOUBLE-to-
 milestones from the current BRUN30 reconstruction backlog. The already qualified
 signed16 APIs and their immutable observations are unchanged. Do not confuse
 internal 32-bit arithmetic or DOS file offsets with native LONG type support.
-Proceed to the observed mode-4 signed16 branch, then other evidence-selected
-numeric operations. [Source and scope](yt-mbf-int16/CONVERSION_SCOPE.md).
+The separately observed mode-4 signed16 branch is qualified below; other
+evidence-selected numeric operations remain. [Source and scope](yt-mbf-int16/CONVERSION_SCOPE.md).
+
+
+### Explicit mode-4 signed16 conversion (2026-11-08)
+
+Reused original shared-kernel/dispatch/DOUBLE-helper observations without
+recapturing them. Captured a 200-case explicit mode-setting matrix across both
+precisions and both entries, then a separately frozen 24-case DOUBLE whole-number
+boundary supplement. All 224 first attempts completed: 168 exact results and 56
+native Overflow outcomes, including normal shell errorlevel zero on runtime
+error. Original mode zero, explicit applied mode four, exact FAC residues and RNG
+preservation on success are authenticated. Isolated floor-to-signed16 APIs,
+portable full traces, independent rational/provenance verification, twelve tests,
+README and CI accompany the milestone. No native normal caller is inferred; no
+gameplay, source fingerprint, save or sysop policy changes. Prior signed32/LONG
+backlog is withdrawn by the scope audit. Next: other source-selected MBF arithmetic
+or call-site integration, without repeating completed mode-0/mode-4 conversions.
+[Evidence and boundaries](yt-mbf-int16-mode4/RECOVERY.md).
