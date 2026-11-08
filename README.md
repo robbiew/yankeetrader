@@ -1988,4 +1988,11 @@ diagnostic runs (1,024 raw pairs / 51 distinct inputs). The new isolated
 `internal/qbmbf.IntSingle` primitive matches every raw result, with ten portable
 verifier tests and Go native vectors. Existing positive-stock guards, gameplay,
 save format and twenty initializer goldens are unchanged. This does not implement
-FIX, DOUBLE INT or general MBF arithmetic.
+DOUBLE INT or general MBF arithmetic; SINGLE FIX is covered separately below.
+
+[Raw-SINGLE FIX recovery](research/yt-mbf-fix/RECOVERY.md) now adds truncation
+toward zero as a separate `internal/qbmbf.FixSingle` operation. Eight original
+runtime diagnostic runs match 512 exact raw records / 28 distinct inputs,
+including negative zero residues and the difference from INT flooring. Eight
+portable verifier tests and Go native vectors accompany README/plan and CI
+updates. Gameplay, saves, generation fingerprints and prior evidence are unchanged.

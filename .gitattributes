@@ -465,3 +465,9 @@
 /research/yt-mbf-int/native/**/*.LOG -diff
 /research/yt-mbf-int/native/**/TRACE.BIN -diff
 /research/yt-mbf-int/native/**/dosbox.stderr -diff
+
+# Preserve original-runtime SINGLE FIX diagnostics and executed source.
+/research/yt-mbf-fix/native/** -text
+/research/yt-mbf-fix/native/**/*.LOG -diff
+/research/yt-mbf-fix/native/**/TRACE.BIN -diff
+/research/yt-mbf-fix/native/**/dosbox.stderr -diff

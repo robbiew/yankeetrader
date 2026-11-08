@@ -83,7 +83,9 @@ bytes, never the label. This is not an additional positive-only observation.
 
 The earlier stock-conversion native tests and 4,682 archive hashes also pass.
 CI runs the independent native audit and new corruption tests. No full production
-or live BBS acceptance is newly claimed. FIX, DOUBLE INT, machine-integer casts,
-general MBF arithmetic and arbitrary-world maintenance remain separate work.
+or live BBS acceptance is newly claimed. The separate SINGLE FIX path is now
+qualified in [its own supplement](../yt-mbf-fix/RECOVERY.md). DOUBLE INT,
+machine-integer casts, general MBF arithmetic and arbitrary-world maintenance
+remain separate work.
 Do not repeat the positive stock recovery, argumented RND or these SINGLE INT
 controls as missing work.
