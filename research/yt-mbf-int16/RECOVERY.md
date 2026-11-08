@@ -113,3 +113,9 @@ The [scope audit](CONVERSION_SCOPE.md) removes the earlier speculative signed32
 language-cast backlog: LONG is not a QuickBASIC 3.0 type. Internal 32-bit runtime
 calculations and DOS interfaces require their own evidence and do not establish
 native LONG support.
+
+
+The [explicit mode-4 supplement](../yt-mbf-int16-mode4/RECOVERY.md) now qualifies
+the separate floor-to-signed16 branch with declared mode setting. This default-mode
+contract and its observations remain unchanged; normal mode-4 callers are not
+inferred by those diagnostic controls.

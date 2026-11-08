@@ -1,0 +1,153 @@
+{
+  "recipe": "brun30-int16-mode4-precision-v1",
+  "cases": {
+    "precision-double-op76-00": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7f80",
+      "initial": 16777215
+    },
+    "precision-double-op76-01": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffff80",
+      "initial": 16777215
+    },
+    "precision-double-op76-02": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000000081",
+      "initial": 16777215
+    },
+    "precision-double-op76-03": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000008081",
+      "initial": 16777215
+    },
+    "precision-double-op76-04": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7f81",
+      "initial": 16777215
+    },
+    "precision-double-op76-05": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffff81",
+      "initial": 16777215
+    },
+    "precision-double-op76-06": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000000082",
+      "initial": 16777215
+    },
+    "precision-double-op76-07": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000008082",
+      "initial": 16777215
+    },
+    "precision-double-op76-08": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7f8f",
+      "initial": 16777215
+    },
+    "precision-double-op76-09": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffff8f",
+      "initial": 16777215
+    },
+    "precision-double-op76-10": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000000090",
+      "initial": 16777215
+    },
+    "precision-double-op76-11": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000008090",
+      "initial": 16777215
+    },
+    "precision-double-op78-00": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7f80",
+      "initial": 16777215
+    },
+    "precision-double-op78-01": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffff80",
+      "initial": 16777215
+    },
+    "precision-double-op78-02": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000000081",
+      "initial": 16777215
+    },
+    "precision-double-op78-03": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000008081",
+      "initial": 16777215
+    },
+    "precision-double-op78-04": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7f81",
+      "initial": 16777215
+    },
+    "precision-double-op78-05": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffff81",
+      "initial": 16777215
+    },
+    "precision-double-op78-06": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000000082",
+      "initial": 16777215
+    },
+    "precision-double-op78-07": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000008082",
+      "initial": 16777215
+    },
+    "precision-double-op78-08": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7f8f",
+      "initial": 16777215
+    },
+    "precision-double-op78-09": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffff8f",
+      "initial": 16777215
+    },
+    "precision-double-op78-10": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000000090",
+      "initial": 16777215
+    },
+    "precision-double-op78-11": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000008090",
+      "initial": 16777215
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "515ac4e9f3be7728de376c6bd18b4e4062dbd79d40d709f09eb28d9aef4d8da2"
+}

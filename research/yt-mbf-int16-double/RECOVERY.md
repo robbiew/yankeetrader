@@ -113,3 +113,9 @@ separate work. Do not repeat this or earlier numeric slices as missing work.
 The earlier signed32/LONG deferral is withdrawn by the [conversion scope
 audit](../yt-mbf-int16/CONVERSION_SCOPE.md): QuickBASIC 3.0 has no LONG language
 type. This correction does not change any DOUBLE observation or API.
+
+
+The [explicit mode-4 supplement](../yt-mbf-int16-mode4/RECOVERY.md) now qualifies
+the separate floor-to-signed16 branch with declared mode setting. This default-mode
+contract and its observations remain unchanged; normal mode-4 callers are not
+inferred by those diagnostic controls.

@@ -2015,8 +2015,8 @@ halves away from zero and reports overflow explicitly; native errors return DOS
 ERRORLEVEL 0, so verification checks exact error bytes rather than exit status
 alone. Portable Go vectors, nine verifier tests and CI accompany this bounded
 recovery. Gameplay, saves, source fingerprints and sysop procedures are unchanged.
-Mode 4 and general MBF arithmetic remain separate; the DOUBLE
-conversion supplement below is independently qualified.
+The mode-4 branch and general MBF arithmetic are separate from this default-mode
+contract; the DOUBLE conversion supplement below is independently qualified.
 
 
 [Raw-DOUBLE to signed16 recovery](research/yt-mbf-int16-double/RECOVERY.md) now
@@ -2027,14 +2027,27 @@ One-ULP controls below rounding ties distinguish the native result from float64
 demotion, including at the positive signed16 limit. Ten independent verifier tests,
 full-trace portable Go vectors, README/plan and CI updates accompany this isolated
 operation. Existing SINGLE operations, native captures, initializer fingerprints,
-gameplay, saves and sysop procedures are unchanged. Mode 4 and other MBF
-arithmetic remain separate.
+gameplay, saves and sysop procedures are unchanged. The mode-4 supplement below
+qualifies a separate runtime branch; other MBF arithmetic remains separate.
 
 
 The [conversion scope audit](research/yt-mbf-int16/CONVERSION_SCOPE.md) removes the
 previously listed signed32/LONG conversion backlog: Microsoft documents that
 QuickBASIC 3.0 has no LONG integer type (introduced in 4.0). The qualified BRUN30
 integer paths are signed16; internal 32-bit calculations or DOS offsets do not
-establish a missing LONG language conversion. Next conversion research is the
-separately visible mode-4 branch, followed by other measured MBF arithmetic.
+establish a missing LONG language conversion. The separately visible mode-4
+branch is now qualified below; other measured MBF arithmetic remains future work.
 This corrects planning only; no gameplay, save, evidence or sysop behavior changes.
+
+
+[Explicit mode-4 signed16 conversion](research/yt-mbf-int16-mode4/RECOVERY.md) now
+qualifies all four SINGLE/DOUBLE memory/FAC entries under a declared diagnostic
+mode-setting intervention. Across 224 first-attempt controls (including a separately
+frozen DOUBLE integer-boundary supplement), 168 conversions and 56 exact native
+Overflow outcomes match independent rational flooring. The isolated
+`Int16SingleMode4`/`Int16DoubleMode4` APIs floor toward negative infinity with
+explicit range failure; default-mode rounding APIs are unchanged. Twelve verifier
+acceptance/corruption tests, full-trace Go fixtures, CI and plan updates accompany
+this bounded result. No normal mode-4 gameplay caller is inferred, no caller is
+switched to it, and saves/source fingerprints/sysop procedures remain unchanged.
+Other MBF arithmetic and source-selected call-site integration remain separate.

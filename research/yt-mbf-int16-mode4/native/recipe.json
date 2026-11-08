@@ -1,0 +1,1209 @@
+{
+  "recipe": "brun30-int16-mode4-v1",
+  "cases": {
+    "single-op75-00": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00000000",
+      "initial": 5
+    },
+    "single-op75-01": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000007f",
+      "initial": 5
+    },
+    "single-op75-02": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000807f",
+      "initial": 5
+    },
+    "single-op75-03": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffff7f7f",
+      "initial": 5
+    },
+    "single-op75-04": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffffff7f",
+      "initial": 5
+    },
+    "single-op75-05": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00000080",
+      "initial": 5
+    },
+    "single-op75-06": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00008080",
+      "initial": 5
+    },
+    "single-op75-07": {
+      "kind": "single",
+      "op": 117,
+      "raw": "01000080",
+      "initial": 5
+    },
+    "single-op75-08": {
+      "kind": "single",
+      "op": 117,
+      "raw": "01008080",
+      "initial": 5
+    },
+    "single-op75-09": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00004080",
+      "initial": 5
+    },
+    "single-op75-10": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000c080",
+      "initial": 5
+    },
+    "single-op75-11": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00000081",
+      "initial": 5
+    },
+    "single-op75-12": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00008081",
+      "initial": 5
+    },
+    "single-op75-13": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00004081",
+      "initial": 5
+    },
+    "single-op75-14": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000c081",
+      "initial": 5
+    },
+    "single-op75-15": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffff1f82",
+      "initial": 5
+    },
+    "single-op75-16": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffff9f82",
+      "initial": 5
+    },
+    "single-op75-17": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00002082",
+      "initial": 5
+    },
+    "single-op75-18": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000a082",
+      "initial": 5
+    },
+    "single-op75-19": {
+      "kind": "single",
+      "op": 117,
+      "raw": "01002082",
+      "initial": 5
+    },
+    "single-op75-20": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0100a082",
+      "initial": 5
+    },
+    "single-op75-21": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00006082",
+      "initial": 5
+    },
+    "single-op75-22": {
+      "kind": "single",
+      "op": 117,
+      "raw": "0000e082",
+      "initial": 5
+    },
+    "single-op75-23": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00fe7f8f",
+      "initial": 5
+    },
+    "single-op75-24": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00feff8f",
+      "initial": 5
+    },
+    "single-op75-25": {
+      "kind": "single",
+      "op": 117,
+      "raw": "80fe7f8f",
+      "initial": 5
+    },
+    "single-op75-26": {
+      "kind": "single",
+      "op": 117,
+      "raw": "80feff8f",
+      "initial": 5
+    },
+    "single-op75-27": {
+      "kind": "single",
+      "op": 117,
+      "raw": "fffe7f8f",
+      "initial": 5
+    },
+    "single-op75-28": {
+      "kind": "single",
+      "op": 117,
+      "raw": "fffeff8f",
+      "initial": 5
+    },
+    "single-op75-29": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00ff7f8f",
+      "initial": 5
+    },
+    "single-op75-30": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00ffff8f",
+      "initial": 5
+    },
+    "single-op75-31": {
+      "kind": "single",
+      "op": 117,
+      "raw": "01ff7f8f",
+      "initial": 5
+    },
+    "single-op75-32": {
+      "kind": "single",
+      "op": 117,
+      "raw": "01ffff8f",
+      "initial": 5
+    },
+    "single-op75-33": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00000090",
+      "initial": 5
+    },
+    "single-op75-34": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00008090",
+      "initial": 5
+    },
+    "single-op75-35": {
+      "kind": "single",
+      "op": 117,
+      "raw": "80000090",
+      "initial": 5
+    },
+    "single-op75-36": {
+      "kind": "single",
+      "op": 117,
+      "raw": "80008090",
+      "initial": 5
+    },
+    "single-op75-37": {
+      "kind": "single",
+      "op": 117,
+      "raw": "81000090",
+      "initial": 5
+    },
+    "single-op75-38": {
+      "kind": "single",
+      "op": 117,
+      "raw": "81008090",
+      "initial": 5
+    },
+    "single-op75-39": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00010090",
+      "initial": 5
+    },
+    "single-op75-40": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00018090",
+      "initial": 5
+    },
+    "single-op75-41": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00000091",
+      "initial": 5
+    },
+    "single-op75-42": {
+      "kind": "single",
+      "op": 117,
+      "raw": "00008091",
+      "initial": 5
+    },
+    "single-op75-43": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffff7f00",
+      "initial": 5
+    },
+    "single-op75-44": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffffff00",
+      "initial": 5
+    },
+    "single-op75-45": {
+      "kind": "single",
+      "op": 117,
+      "raw": "12345600",
+      "initial": 5
+    },
+    "single-op75-46": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffff7fff",
+      "initial": 5
+    },
+    "single-op75-47": {
+      "kind": "single",
+      "op": 117,
+      "raw": "ffffffff",
+      "initial": 5
+    },
+    "single-op77-00": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00000000",
+      "initial": 5
+    },
+    "single-op77-01": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000007f",
+      "initial": 5
+    },
+    "single-op77-02": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000807f",
+      "initial": 5
+    },
+    "single-op77-03": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffff7f7f",
+      "initial": 5
+    },
+    "single-op77-04": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffffff7f",
+      "initial": 5
+    },
+    "single-op77-05": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00000080",
+      "initial": 5
+    },
+    "single-op77-06": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00008080",
+      "initial": 5
+    },
+    "single-op77-07": {
+      "kind": "single",
+      "op": 119,
+      "raw": "01000080",
+      "initial": 5
+    },
+    "single-op77-08": {
+      "kind": "single",
+      "op": 119,
+      "raw": "01008080",
+      "initial": 5
+    },
+    "single-op77-09": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00004080",
+      "initial": 5
+    },
+    "single-op77-10": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000c080",
+      "initial": 5
+    },
+    "single-op77-11": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00000081",
+      "initial": 5
+    },
+    "single-op77-12": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00008081",
+      "initial": 5
+    },
+    "single-op77-13": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00004081",
+      "initial": 5
+    },
+    "single-op77-14": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000c081",
+      "initial": 5
+    },
+    "single-op77-15": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffff1f82",
+      "initial": 5
+    },
+    "single-op77-16": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffff9f82",
+      "initial": 5
+    },
+    "single-op77-17": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00002082",
+      "initial": 5
+    },
+    "single-op77-18": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000a082",
+      "initial": 5
+    },
+    "single-op77-19": {
+      "kind": "single",
+      "op": 119,
+      "raw": "01002082",
+      "initial": 5
+    },
+    "single-op77-20": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0100a082",
+      "initial": 5
+    },
+    "single-op77-21": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00006082",
+      "initial": 5
+    },
+    "single-op77-22": {
+      "kind": "single",
+      "op": 119,
+      "raw": "0000e082",
+      "initial": 5
+    },
+    "single-op77-23": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00fe7f8f",
+      "initial": 5
+    },
+    "single-op77-24": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00feff8f",
+      "initial": 5
+    },
+    "single-op77-25": {
+      "kind": "single",
+      "op": 119,
+      "raw": "80fe7f8f",
+      "initial": 5
+    },
+    "single-op77-26": {
+      "kind": "single",
+      "op": 119,
+      "raw": "80feff8f",
+      "initial": 5
+    },
+    "single-op77-27": {
+      "kind": "single",
+      "op": 119,
+      "raw": "fffe7f8f",
+      "initial": 5
+    },
+    "single-op77-28": {
+      "kind": "single",
+      "op": 119,
+      "raw": "fffeff8f",
+      "initial": 5
+    },
+    "single-op77-29": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00ff7f8f",
+      "initial": 5
+    },
+    "single-op77-30": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00ffff8f",
+      "initial": 5
+    },
+    "single-op77-31": {
+      "kind": "single",
+      "op": 119,
+      "raw": "01ff7f8f",
+      "initial": 5
+    },
+    "single-op77-32": {
+      "kind": "single",
+      "op": 119,
+      "raw": "01ffff8f",
+      "initial": 5
+    },
+    "single-op77-33": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00000090",
+      "initial": 5
+    },
+    "single-op77-34": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00008090",
+      "initial": 5
+    },
+    "single-op77-35": {
+      "kind": "single",
+      "op": 119,
+      "raw": "80000090",
+      "initial": 5
+    },
+    "single-op77-36": {
+      "kind": "single",
+      "op": 119,
+      "raw": "80008090",
+      "initial": 5
+    },
+    "single-op77-37": {
+      "kind": "single",
+      "op": 119,
+      "raw": "81000090",
+      "initial": 5
+    },
+    "single-op77-38": {
+      "kind": "single",
+      "op": 119,
+      "raw": "81008090",
+      "initial": 5
+    },
+    "single-op77-39": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00010090",
+      "initial": 5
+    },
+    "single-op77-40": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00018090",
+      "initial": 5
+    },
+    "single-op77-41": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00000091",
+      "initial": 5
+    },
+    "single-op77-42": {
+      "kind": "single",
+      "op": 119,
+      "raw": "00008091",
+      "initial": 5
+    },
+    "single-op77-43": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffff7f00",
+      "initial": 5
+    },
+    "single-op77-44": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffffff00",
+      "initial": 5
+    },
+    "single-op77-45": {
+      "kind": "single",
+      "op": 119,
+      "raw": "12345600",
+      "initial": 5
+    },
+    "single-op77-46": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffff7fff",
+      "initial": 5
+    },
+    "single-op77-47": {
+      "kind": "single",
+      "op": 119,
+      "raw": "ffffffff",
+      "initial": 5
+    },
+    "double-op76-00": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000000000",
+      "initial": 5
+    },
+    "double-op76-01": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000007f",
+      "initial": 5
+    },
+    "double-op76-02": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000807f",
+      "initial": 5
+    },
+    "double-op76-03": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7f7f",
+      "initial": 5
+    },
+    "double-op76-04": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffff7f",
+      "initial": 5
+    },
+    "double-op76-05": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000000080",
+      "initial": 5
+    },
+    "double-op76-06": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000008080",
+      "initial": 5
+    },
+    "double-op76-07": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000000080",
+      "initial": 5
+    },
+    "double-op76-08": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000008080",
+      "initial": 5
+    },
+    "double-op76-09": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000004080",
+      "initial": 5
+    },
+    "double-op76-10": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000c080",
+      "initial": 5
+    },
+    "double-op76-11": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000000081",
+      "initial": 5
+    },
+    "double-op76-12": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000008081",
+      "initial": 5
+    },
+    "double-op76-13": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000004081",
+      "initial": 5
+    },
+    "double-op76-14": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000c081",
+      "initial": 5
+    },
+    "double-op76-15": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff1f82",
+      "initial": 5
+    },
+    "double-op76-16": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff9f82",
+      "initial": 5
+    },
+    "double-op76-17": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000002082",
+      "initial": 5
+    },
+    "double-op76-18": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000a082",
+      "initial": 5
+    },
+    "double-op76-19": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000002082",
+      "initial": 5
+    },
+    "double-op76-20": {
+      "kind": "double",
+      "op": 118,
+      "raw": "010000000000a082",
+      "initial": 5
+    },
+    "double-op76-21": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000006082",
+      "initial": 5
+    },
+    "double-op76-22": {
+      "kind": "double",
+      "op": 118,
+      "raw": "000000000000e082",
+      "initial": 5
+    },
+    "double-op76-23": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000fe7f8f",
+      "initial": 5
+    },
+    "double-op76-24": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000feff8f",
+      "initial": 5
+    },
+    "double-op76-25": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000080fe7f8f",
+      "initial": 5
+    },
+    "double-op76-26": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000080feff8f",
+      "initial": 5
+    },
+    "double-op76-27": {
+      "kind": "double",
+      "op": 118,
+      "raw": "fffffffffffe7f8f",
+      "initial": 5
+    },
+    "double-op76-28": {
+      "kind": "double",
+      "op": 118,
+      "raw": "fffffffffffeff8f",
+      "initial": 5
+    },
+    "double-op76-29": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000ff7f8f",
+      "initial": 5
+    },
+    "double-op76-30": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000ffff8f",
+      "initial": 5
+    },
+    "double-op76-31": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000ff7f8f",
+      "initial": 5
+    },
+    "double-op76-32": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000000ffff8f",
+      "initial": 5
+    },
+    "double-op76-33": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000000090",
+      "initial": 5
+    },
+    "double-op76-34": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000008090",
+      "initial": 5
+    },
+    "double-op76-35": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000040000090",
+      "initial": 5
+    },
+    "double-op76-36": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000040008090",
+      "initial": 5
+    },
+    "double-op76-37": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffff7f000090",
+      "initial": 5
+    },
+    "double-op76-38": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffff7f008090",
+      "initial": 5
+    },
+    "double-op76-39": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000080000090",
+      "initial": 5
+    },
+    "double-op76-40": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000080008090",
+      "initial": 5
+    },
+    "double-op76-41": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000080000090",
+      "initial": 5
+    },
+    "double-op76-42": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0100000080008090",
+      "initial": 5
+    },
+    "double-op76-43": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000010090",
+      "initial": 5
+    },
+    "double-op76-44": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000018090",
+      "initial": 5
+    },
+    "double-op76-45": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000000091",
+      "initial": 5
+    },
+    "double-op76-46": {
+      "kind": "double",
+      "op": 118,
+      "raw": "0000000000008091",
+      "initial": 5
+    },
+    "double-op76-47": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7f00",
+      "initial": 5
+    },
+    "double-op76-48": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffff00",
+      "initial": 5
+    },
+    "double-op76-49": {
+      "kind": "double",
+      "op": 118,
+      "raw": "123456789abcde00",
+      "initial": 5
+    },
+    "double-op76-50": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffff7fff",
+      "initial": 5
+    },
+    "double-op76-51": {
+      "kind": "double",
+      "op": 118,
+      "raw": "ffffffffffffffff",
+      "initial": 5
+    },
+    "double-op78-00": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000000000",
+      "initial": 5
+    },
+    "double-op78-01": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000007f",
+      "initial": 5
+    },
+    "double-op78-02": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000807f",
+      "initial": 5
+    },
+    "double-op78-03": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7f7f",
+      "initial": 5
+    },
+    "double-op78-04": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffff7f",
+      "initial": 5
+    },
+    "double-op78-05": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000000080",
+      "initial": 5
+    },
+    "double-op78-06": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000008080",
+      "initial": 5
+    },
+    "double-op78-07": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000000080",
+      "initial": 5
+    },
+    "double-op78-08": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000008080",
+      "initial": 5
+    },
+    "double-op78-09": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000004080",
+      "initial": 5
+    },
+    "double-op78-10": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000c080",
+      "initial": 5
+    },
+    "double-op78-11": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000000081",
+      "initial": 5
+    },
+    "double-op78-12": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000008081",
+      "initial": 5
+    },
+    "double-op78-13": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000004081",
+      "initial": 5
+    },
+    "double-op78-14": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000c081",
+      "initial": 5
+    },
+    "double-op78-15": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff1f82",
+      "initial": 5
+    },
+    "double-op78-16": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff9f82",
+      "initial": 5
+    },
+    "double-op78-17": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000002082",
+      "initial": 5
+    },
+    "double-op78-18": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000a082",
+      "initial": 5
+    },
+    "double-op78-19": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000002082",
+      "initial": 5
+    },
+    "double-op78-20": {
+      "kind": "double",
+      "op": 120,
+      "raw": "010000000000a082",
+      "initial": 5
+    },
+    "double-op78-21": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000006082",
+      "initial": 5
+    },
+    "double-op78-22": {
+      "kind": "double",
+      "op": 120,
+      "raw": "000000000000e082",
+      "initial": 5
+    },
+    "double-op78-23": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000fe7f8f",
+      "initial": 5
+    },
+    "double-op78-24": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000feff8f",
+      "initial": 5
+    },
+    "double-op78-25": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000080fe7f8f",
+      "initial": 5
+    },
+    "double-op78-26": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000080feff8f",
+      "initial": 5
+    },
+    "double-op78-27": {
+      "kind": "double",
+      "op": 120,
+      "raw": "fffffffffffe7f8f",
+      "initial": 5
+    },
+    "double-op78-28": {
+      "kind": "double",
+      "op": 120,
+      "raw": "fffffffffffeff8f",
+      "initial": 5
+    },
+    "double-op78-29": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000ff7f8f",
+      "initial": 5
+    },
+    "double-op78-30": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000ffff8f",
+      "initial": 5
+    },
+    "double-op78-31": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000ff7f8f",
+      "initial": 5
+    },
+    "double-op78-32": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000000ffff8f",
+      "initial": 5
+    },
+    "double-op78-33": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000000090",
+      "initial": 5
+    },
+    "double-op78-34": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000008090",
+      "initial": 5
+    },
+    "double-op78-35": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000040000090",
+      "initial": 5
+    },
+    "double-op78-36": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000040008090",
+      "initial": 5
+    },
+    "double-op78-37": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffff7f000090",
+      "initial": 5
+    },
+    "double-op78-38": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffff7f008090",
+      "initial": 5
+    },
+    "double-op78-39": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000080000090",
+      "initial": 5
+    },
+    "double-op78-40": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000080008090",
+      "initial": 5
+    },
+    "double-op78-41": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000080000090",
+      "initial": 5
+    },
+    "double-op78-42": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0100000080008090",
+      "initial": 5
+    },
+    "double-op78-43": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000010090",
+      "initial": 5
+    },
+    "double-op78-44": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000018090",
+      "initial": 5
+    },
+    "double-op78-45": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000000091",
+      "initial": 5
+    },
+    "double-op78-46": {
+      "kind": "double",
+      "op": 120,
+      "raw": "0000000000008091",
+      "initial": 5
+    },
+    "double-op78-47": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7f00",
+      "initial": 5
+    },
+    "double-op78-48": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffff00",
+      "initial": 5
+    },
+    "double-op78-49": {
+      "kind": "double",
+      "op": 120,
+      "raw": "123456789abcde00",
+      "initial": 5
+    },
+    "double-op78-50": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffff7fff",
+      "initial": 5
+    },
+    "double-op78-51": {
+      "kind": "double",
+      "op": 120,
+      "raw": "ffffffffffffffff",
+      "initial": 5
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "bda480ab27231a5d0e19f0027ae0f591b8fad5891e252ee15e0c57b30d7ddbae"
+}

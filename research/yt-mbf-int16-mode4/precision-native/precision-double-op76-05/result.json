@@ -1,0 +1,26 @@
+{
+  "recipe": "brun30-int16-mode4-precision-v1",
+  "case": "precision-double-op76-05",
+  "kind": "double",
+  "op": 118,
+  "raw": "ffffffffffffff81",
+  "initial": 16777215,
+  "exit_code": 0,
+  "timeout": false,
+  "missing": [],
+  "payload_hex": "c70656184d34c70658184421bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21c7061600ffffc7061800ffffc7061a00ffffc7061c00ff81bb0100b90800ba1600b440cd21bb0100b90100ba1f00b440cd21c6061f0004bb0100b90100ba1f00b440cd21be1600cd3f769090891e5c18bb0100b90200ba5c18b440cd21bb0100b90800ba1600b440cd21bb0100b90400ba3402b440cd21bb0100b90100ba1f00b440cd21c7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_initializer_sha256": "5ac4bd874c19ed8af0cc0611f2a75ce666cc5d6d65c665c683a8bd798e790e0e",
+  "copied_runtime_sha256": "8774669b2e55088a532e55318f8cd59aee0ef8cf4e6a64cbfc5755f3b8f67c74",
+  "files": {
+    "COMMANDS.TXT": "7974c01d94c871520c43af5c2022beb5be7050ef88857fa8e48d94dad70477af",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "71b936366a39684a57a3dcde0082df6239a369b306fa9113c04d8fd958c9b7bd",
+    "dosbox.stderr": "88614d512f25d153b43f2e6451441c9a16efaf6e35d001608fb03a2cfa66bc4b",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "66688fe41f702df728c208db164ae45beda18a7df589eadd5a3b1dff855b0dda"
+  }
+}

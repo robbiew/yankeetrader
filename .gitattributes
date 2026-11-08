@@ -489,3 +489,13 @@
 /research/yt-mbf-int16-double/native/**/*.LOG -diff
 /research/yt-mbf-int16-double/native/**/TRACE.BIN -diff
 /research/yt-mbf-int16-double/native/**/dosbox.stderr -diff
+
+# Preserve explicit mode-4 controls and independently frozen precision supplement.
+/research/yt-mbf-int16-mode4/native/** -text
+/research/yt-mbf-int16-mode4/native/**/*.LOG -diff
+/research/yt-mbf-int16-mode4/native/**/TRACE.BIN -diff
+/research/yt-mbf-int16-mode4/native/**/dosbox.stderr -diff
+/research/yt-mbf-int16-mode4/precision-native/** -text
+/research/yt-mbf-int16-mode4/precision-native/**/*.LOG -diff
+/research/yt-mbf-int16-mode4/precision-native/**/TRACE.BIN -diff
+/research/yt-mbf-int16-mode4/precision-native/**/dosbox.stderr -diff

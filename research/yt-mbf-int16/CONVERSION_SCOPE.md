@@ -19,7 +19,7 @@ value is not a signed32 integer, and internal multiword arithmetic or a DOS
 32-bit file offset does not establish native LONG type support. No exhaustive
 absence claim about all internal 32-bit runtime operations is made here.
 
-The next bounded conversion slice is the original kernel's explicit mode-4
+The next identified conversion slice was the original kernel's explicit mode-4
 branch (DS byte `001f` equals 4), separately from the measured default mode 0.
 Qualify it with declared mode-setting diagnostic interventions and full native
 outcomes before naming or implementing its behavior. Do not infer normal
@@ -29,3 +29,9 @@ execution evidence. Other MBF arithmetic follows source/call-site audits.
 This planning-only correction updates README, current priorities and affected
 recovery reports. Original/native captures, fingerprints, Go APIs, gameplay,
 save compatibility and sysop procedures are unchanged.
+
+
+The [mode-4 supplement](../yt-mbf-int16-mode4/RECOVERY.md) now qualifies that
+explicit diagnostic intervention for both precisions and entries. Normal callers
+remain unestablished; other arithmetic and call-site integration need their own
+source evidence. Do not relist mode-4 numeric behavior as unmeasured.
