@@ -1981,3 +1981,11 @@ state before advancing. [Native argument controls](research/yt-rng-seeding/RND_A
 retain 16 diagnostic runs / 1,024 exact state-value pairs, eight independent
 acceptance/corruption tests and portable Go fixtures. Existing argumentless RNG,
 RANDOMIZE, twenty initializer goldens, gameplay streams and save 35 are unchanged.
+
+[Raw-SINGLE INT recovery](research/yt-mbf-int/RECOVERY.md) now qualifies negative
+flooring, byte/precision carries and exact zero residues using 16 original-runtime
+diagnostic runs (1,024 raw pairs / 51 distinct inputs). The new isolated
+`internal/qbmbf.IntSingle` primitive matches every raw result, with ten portable
+verifier tests and Go native vectors. Existing positive-stock guards, gameplay,
+save format and twenty initializer goldens are unchanged. This does not implement
+FIX, DOUBLE INT or general MBF arithmetic.

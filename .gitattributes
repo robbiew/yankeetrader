@@ -459,3 +459,9 @@
 /research/yt-rng-seeding/argument-dos/**/dosbox.stderr -diff
 
 /research/yt-rng-seeding/argument-dos/**/*.LOG -diff
+
+# Preserve original-runtime SINGLE INT diagnostic observations and executed source.
+/research/yt-mbf-int/native/** -text
+/research/yt-mbf-int/native/**/*.LOG -diff
+/research/yt-mbf-int/native/**/TRACE.BIN -diff
+/research/yt-mbf-int/native/**/dosbox.stderr -diff
