@@ -102,7 +102,8 @@ outcomes, and must equal the entire verified corpus.
   boundaries beyond the captured matrix are implementation tests, not additional
   native observations.
 
-CI runs the new verifier and corruption controls. DOUBLE-to-integer, signed
-32-bit casts, mode-4 conversion, other MBF arithmetic and arbitrary-world parity
-remain separate work. Do not repeat the already completed RND, INT/FIX or this
+CI runs the new verifier and corruption controls. The [DOUBLE-to-int16
+supplement](../yt-mbf-int16-double/RECOVERY.md) now separately qualifies both
+default-mode DOUBLE entries. Signed32 casts, mode-4 conversion, other MBF
+arithmetic and arbitrary-world parity remain separate work. Do not repeat the already completed RND, INT/FIX or this
 mode-0 SINGLE-to-int16 slice as missing work.

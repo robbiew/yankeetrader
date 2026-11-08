@@ -2015,4 +2015,17 @@ halves away from zero and reports overflow explicitly; native errors return DOS
 ERRORLEVEL 0, so verification checks exact error bytes rather than exit status
 alone. Portable Go vectors, nine verifier tests and CI accompany this bounded
 recovery. Gameplay, saves, source fingerprints and sysop procedures are unchanged.
-DOUBLE-to-integer, signed32 casts, mode 4 and general MBF arithmetic remain separate.
+Signed32 casts, mode 4 and general MBF arithmetic remain separate; the DOUBLE
+conversion supplement below is independently qualified.
+
+
+[Raw-DOUBLE to signed16 recovery](research/yt-mbf-int16-double/RECOVERY.md) now
+qualifies both default-mode DOUBLE conversion entries with 104 independent native
+controls over 52 raw encodings: 74 results and 30 exact native Overflow outcomes.
+`qbmbf.Int16Double` retains all 56 significand bits and reports overflow explicitly.
+One-ULP controls below rounding ties distinguish the native result from float64
+demotion, including at the positive signed16 limit. Ten independent verifier tests,
+full-trace portable Go vectors, README/plan and CI updates accompany this isolated
+operation. Existing SINGLE operations, native captures, initializer fingerprints,
+gameplay, saves and sysop procedures are unchanged. Signed32 conversions, mode 4
+and other MBF arithmetic remain separate.

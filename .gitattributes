@@ -483,3 +483,9 @@
 /research/yt-mbf-int16/native/**/*.LOG -diff
 /research/yt-mbf-int16/native/**/TRACE.BIN -diff
 /research/yt-mbf-int16/native/**/dosbox.stderr -diff
+
+# Preserve native DOUBLE-to-int16 controls and frozen acquisition sources.
+/research/yt-mbf-int16-double/native/** -text
+/research/yt-mbf-int16-double/native/**/*.LOG -diff
+/research/yt-mbf-int16-double/native/**/TRACE.BIN -diff
+/research/yt-mbf-int16-double/native/**/dosbox.stderr -diff
