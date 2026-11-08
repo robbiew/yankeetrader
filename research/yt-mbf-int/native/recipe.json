@@ -1,0 +1,151 @@
+{
+  "recipe": "brun30-single-int-v1",
+  "cases": {
+    "zero-canonical": [
+      5,
+      [
+        "00000000"
+      ]
+    ],
+    "zero-residues": [
+      5,
+      [
+        "ffff7f00",
+        "ffffff00",
+        "00008000",
+        "12345600"
+      ]
+    ],
+    "positive-subunit": [
+      5,
+      [
+        "00000001",
+        "ffff7f7f",
+        "00000080",
+        "00004080"
+      ]
+    ],
+    "negative-subunit": [
+      5,
+      [
+        "00008001",
+        "ffffff7f",
+        "00008080",
+        "0000c080"
+      ]
+    ],
+    "positive-near-one": [
+      5,
+      [
+        "ffff7f80",
+        "00000081",
+        "01000081",
+        "ffff7f81"
+      ]
+    ],
+    "negative-near-one": [
+      5,
+      [
+        "ffffff80",
+        "00008081",
+        "01008081",
+        "ffffff81"
+      ]
+    ],
+    "positive-fractions": [
+      5,
+      [
+        "00004081",
+        "00002082",
+        "00003e85",
+        "00807f88"
+      ]
+    ],
+    "negative-fractions": [
+      5,
+      [
+        "0000c081",
+        "0000a082",
+        "0000be85",
+        "0080ff88"
+      ]
+    ],
+    "positive-byte-boundaries": [
+      5,
+      [
+        "00807f88",
+        "00400089",
+        "80ff7f90",
+        "40000091"
+      ]
+    ],
+    "negative-byte-boundaries": [
+      5,
+      [
+        "0080ff88",
+        "00408089",
+        "80ffff90",
+        "40008091"
+      ]
+    ],
+    "positive-precision-boundaries": [
+      5,
+      [
+        "ffff7f97",
+        "00000098",
+        "ffff7f98",
+        "00000099"
+      ]
+    ],
+    "negative-precision-boundaries": [
+      5,
+      [
+        "ffffff97",
+        "00008098",
+        "ffffff98",
+        "00008099"
+      ]
+    ],
+    "positive-large": [
+      5,
+      [
+        "01000099",
+        "ffff7fff",
+        "000000ff",
+        "fffffffe"
+      ]
+    ],
+    "negative-large": [
+      5,
+      [
+        "01008099",
+        "ffffffff",
+        "000080ff",
+        "ffff80fe"
+      ]
+    ],
+    "mixed-history": [
+      5,
+      [
+        "00003e85",
+        "12345600",
+        "0000c080",
+        "ffff7f00"
+      ]
+    ],
+    "mixed-max-rng": [
+      16777215,
+      [
+        "0080ff88",
+        "00004080",
+        "ffffff00",
+        "00000099"
+      ]
+    ]
+  },
+  "samples": 64,
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "1d4a51d2d5355ebadbdc2cee48aa758bff50ac0877eaaf26177ccd8413bc5d09"
+}

@@ -229,6 +229,8 @@ jobs:
           python3 scripts/test_spy_intelligence_verifier.py
           python3 scripts/verify_rng_clock.py
           python3 scripts/test_verify_rng_clock.py
+          python3 scripts/verify_single_int.py
+          python3 scripts/test_verify_single_int.py
           python3 scripts/verify_rng_arguments.py
           python3 scripts/test_verify_rng_arguments.py
           python3 scripts/verify_rng_trace.py

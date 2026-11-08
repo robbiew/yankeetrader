@@ -389,6 +389,10 @@ remain separate.
    [Argumented-single RND](yt-rng-seeding/RND_ARGUMENTS.md) now closes the explicit
    zero/positive/negative argument gap: 16 native probes / 1,024 state-value pairs
    and a portable shared Go API; existing whole-world goldens are unchanged.
+   [Raw-SINGLE INT](yt-mbf-int/RECOVERY.md) now qualifies negative/subunit/precision
+   boundaries and raw zero preservation using sixteen native diagnostic controls,
+   1,024 exact raw pairs and an isolated shared primitive. Existing positive-stock
+   recovery and replay guards are unchanged.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1874,3 +1878,14 @@ portable Go fixtures and CI accompany README upkeep. No old corpus, gameplay
 stream, source-generation hash, save schema or sysop procedure changes.
 [Evidence and scope](yt-rng-seeding/RND_ARGUMENTS.md). Remaining broad MBF and
 arbitrary-world parity are separate; argumented-single RND is no longer deferred.
+
+### Raw-SINGLE INT boundary recovery (2026-11-08)
+
+Reused the existing original handler packets; captured sixteen copied-runtime
+controls covering 51 distinct encodings and 1,024 exact raw input/output pairs.
+Added an isolated `internal/qbmbf.IntSingle` primitive, portable native fixture,
+independent rational/raw-zero audit, ten corruption/acceptance tests and CI.
+No gameplay, generation fingerprint, save-format or sysop operation changes.
+FIX, DOUBLE INT and other MBF arithmetic remain separate; do not repeat the
+already completed positive-stock or argumented-RND controls.
+[Evidence and limitations](yt-mbf-int/RECOVERY.md).
