@@ -393,6 +393,9 @@ remain separate.
    boundaries and raw zero preservation using sixteen native diagnostic controls,
    1,024 exact raw pairs and an isolated shared primitive. Existing positive-stock
    recovery and replay guards are unchanged.
+   [Raw-SINGLE FIX](yt-mbf-fix/RECOVERY.md) now independently qualifies truncation
+   toward zero and negative zero residues: eight native controls / 512 exact raw
+   pairs, a separate shared primitive and eight verifier corruption tests.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -1889,3 +1892,14 @@ No gameplay, generation fingerprint, save-format or sysop operation changes.
 FIX, DOUBLE INT and other MBF arithmetic remain separate; do not repeat the
 already completed positive-stock or argumented-RND controls.
 [Evidence and limitations](yt-mbf-int/RECOVERY.md).
+
+### Raw-SINGLE FIX boundary recovery (2026-11-08)
+
+The existing SINGLE INT slice is complete. Its separately qualified FIX sibling
+now retains eight copied-runtime controls covering 28 distinct encodings / 512
+exact raw pairs. Added `internal/qbmbf.FixSingle`, portable native vectors, an
+independent rational/raw-byte verifier, eight corruption/acceptance tests and CI.
+Negative FIX truncates toward zero; negative INT continues to floor. All zero
+residues and old evidence are preserved. No gameplay, source recipe, save schema
+or sysop operation changes. DOUBLE operations, machine-integer casts and other
+MBF arithmetic remain separate. [Evidence](yt-mbf-fix/RECOVERY.md).
