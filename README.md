@@ -1963,5 +1963,14 @@ now retain 24 original-DOS runs across two evolved-world treasury fixtures, two
 days and six capture modes. All six output files agree across modes; independent
 provenance, treasury debit, literal hiring receipt and raw-zero preservation
 checks pass, with six acceptance/corruption tests. This reuses recovered hiring
-rules; positive-treasury before-only full-world replay remains outstanding.
+rules. The before-only five-day replay now composes the modeled three-day prefix,
+one treasury edit, tax debits, new-group placement and same-day movement/combat:
+72 complete comparisons (432 files), with zero byte mismatches. Twenty-two replay
+acceptance/corruption tests include source-derived RNG, casualty and placement
+checks. Historical zero-treasury APIs remain strict; general positive-treasury,
+active-player and unconstrained hiring worlds remain outside this bounded replay.
 No gameplay policy, save format or sysop command changes.
+
+The hiring audit now binds per-group acceptance/rejection checkpoints, rejecting
+regrouped attempt lists even when their flattened RNG draws agree. Treasury
+admission preserves Earth's excluded raw bytes as well as ordinary-port zeros.

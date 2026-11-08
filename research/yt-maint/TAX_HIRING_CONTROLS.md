@@ -1,7 +1,7 @@
 # Supplemental composed tax and hiring controls
 
-This is acquisition evidence, not a new hiring-rule recovery or a before-only
-full-world replay. The 41 completed isolated hiring controls and current Go
+This section describes acquisition evidence; the bounded before-only replay is
+recorded below. This is not a new hiring-rule recovery. The 41 completed isolated hiring controls and current Go
 implementation remain authoritative within their documented boundaries. Modern
 placement, capacity and daily scheduling policies are unchanged.
 
@@ -39,7 +39,49 @@ all placements, rejection draws, combat actions or record bytes from before only
 Run `python3 scripts/verify_maintenance_tax_hiring.py` and
 `python3 scripts/test_verify_maintenance_tax_hiring.py`.
 
-Next: compose the existing recovered tax/hiring rules and authenticated placement
-RNG calls into the full before-only six-file replay using this corpus. Preserve
-all historical replay guards until the positive-treasury path is independently
-implemented and checked. Do not repeat isolated thresholds or capacity captures.
+## Before-only composed replay
+
+`scripts/replay_maintenance_tax_hiring_records.py` accepts the original admitted
+three-file occupied world, a declared 100/1000-credit fixture and five immutable
+source-clock inputs. It first models November 2–4 with the existing combat
+prefix, applies the sole treasury edit to that modeled six-file object, then
+models November 5–6. Each child receives the preceding modeled six files.
+No retained before/after child file, transcript, capture writer, recipe or native
+RNG byte enters synthesis. Only immutable original YTMAINT literals are read by
+the core. The comparison layer opens expected files after all five days exist.
+
+All 72 complete new-child comparisons (two cases × two days × three observed
+clock streams × six native modes) match: **432 exact files, zero byte
+mismatches**. The modeled children include positive treasury debits, discarded
+hiring remainders, helper `4546` placement/rejection draws, immediate movement,
+mines, winning/losing offense, small friendly defenses and friendly merging.
+Scores use final physical inventory, with hiring and actual casualties reconciled.
+Newspaper receipts retain original spellings and the original source-selected
+raw casualty counters. Prior news rotates byte-for-byte.
+
+A separate full-source RNG walk checks seed chronology and all helper/final
+checkpoints. Independently derived entry/exit markers bind event seeds, draw
+counts, rolls and casualties; event-supplied entry seeds cannot establish their
+own validity. Placement attempts are re-derived from source RNG, not copied from
+events. The historical zero-treasury public entry points and all frozen native
+sources/observations remain unchanged.
+
+Run `python3 scripts/replay_maintenance_tax_hiring_records.py` and
+`python3 scripts/test_replay_maintenance_tax_hiring.py`. Twenty-two tests cover the
+complete comparison matrix, no native target reads, actual modeled object
+handoffs, exact fixture edits, immutable clock/case boundaries, ignored captured
+RNG bytes, independently checked witnesses, coherent event/placement forgeries,
+raw-zero preservation, hiring-funded physical conservation and bounded placement
+failure. Union-sector acceptance and immediate action here describe DOS research;
+modern Go placement/scheduling/capacity policies are unchanged.
+
+This does not admit arbitrary treasuries, human owners/desertion, additional
+planet pickup, arbitrary public-event combinations or unrestricted maintenance
+parity. Do not repeat these captures, isolated thresholds or capacity controls.
+
+Review hardening: source operation markers retain each placement group, candidate
+and actual physical occupancy before acceptance. The independent audit checks
+group boundaries as well as the complete RNG attempt sequence. A regression
+redistributes rejected/accepted attempts without changing flattened draws and
+requires rejection. A second regression changes only Earth's exponent-zero
+treasury encoding; admission rejects it while leaving Earth outside taxation.
