@@ -2075,7 +2075,7 @@ regressions; their native captures and modern gameplay policy are unchanged.
 Twelve independent verifier tests, portable raw Go vectors and CI accompany the
 new primitive. Cancellation/underflow clears only the initial FAC exponent;
 two zero aliases select the right encoding. The direct-entry supplement below
-now qualifies memory-to-memory and memory-to-FAC forms; inline address resolution,
+now qualifies memory-to-memory and memory-to-FAC forms; the inline supplement below qualifies address resolution;
 subtraction, DOUBLE arithmetic and multiplication/division remain separate.
 This isolated API changes no gameplay, source fingerprint, save or sysop behavior.
 
@@ -2089,4 +2089,18 @@ entry83, the right operand is the initial FAC; swapping arguments to `AddSingle`
 is incorrect for two zero aliases. Twelve verifier tests, full-trace Go vectors,
 CI and plan updates accompany this isolated API. Existing entry81 behavior,
 gameplay, source fingerprints, saves and sysop procedures are unchanged. Inline
-entry85 resolution and other arithmetic remain separate.
+entry85 resolution is now qualified by the supplement below; other arithmetic remains separate.
+
+
+[Inline SINGLE addition](research/yt-mbf-inline-add/RECOVERY.md) qualifies the
+INT3F/85 address wrapper using retained kernel evidence, three missing source
+reads, 138 new first-attempt controls (90 resolver-only, 48 full successful
+additions) and a static audit of 35 maintenance callers. The descriptor reached through the segment at
+SS:[BP-2] selects one of two separate caller-header bases; selectors have
+8-byte stride, high-bit aliases and 16-bit wrapping. `SingleAddInlineOffset`
+computes offsets only; full additions reuse `AddSingleWithFAC`. Explicit synthetic
+frame/header interventions and a resolver-only return stub are documented;
+resolver-only cases never dereference unsafe addresses or claim arithmetic.
+Portable traces, eight corruption/acceptance tests, Go native comparisons and CI
+cover both protocols. Normal complete maintenance, arbitrary frames and inline85
+overflow/unwind remain unqualified. Gameplay, save 35 and sysop policy are unchanged.
