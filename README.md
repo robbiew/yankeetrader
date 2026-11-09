@@ -2051,3 +2051,16 @@ acceptance/corruption tests, full-trace Go fixtures, CI and plan updates accompa
 this bounded result. No normal mode-4 gameplay caller is inferred, no caller is
 switched to it, and saves/source fingerprints/sysop procedures remain unchanged.
 Other MBF arithmetic and source-selected call-site integration remain separate.
+
+
+The [mode-selector caller admission audit](research/yt-mbf-mode-selector/RECOVERY.md)
+now retains seven post-startup observations, one for every shipped compiled EXE,
+using an untouched runtime and preserving both original startup calls. Every
+observed selector is 0. A separately labeled eight-file byte inventory finds five
+runtime comparisons and no match for 319 enumerated direct-store signatures;
+indirect/later writes are not excluded. An empty provider reference result is
+retained without treating it as absence proof. Twelve audit/regression tests and
+CI preserve those limits. Existing sector IDs agree numerically in both modes,
+while stock pickup uses a distinct MBF INT path supporting values above signed16.
+No mode-4 replay migration is admitted; normal late callers remain unestablished.
+No gameplay, numeric API, source fingerprint, save or sysop behavior changes.
