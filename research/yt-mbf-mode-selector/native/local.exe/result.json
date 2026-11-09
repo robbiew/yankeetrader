@@ -1,0 +1,25 @@
+{
+  "recipe": "brun30-normal-startup-selector-v1",
+  "program": "LOCAL.EXE",
+  "header": 512,
+  "startup_hex": "9a000090009a33016100",
+  "original_body_hex": "bb0e00cd3e",
+  "exit_code": 0,
+  "timeout": false,
+  "missing": [],
+  "payload_hex": "c70656184d53c7065818454cbb0100b90400ba5618b440cd21bb0100b94000ba0000b440cd21c7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_program_sha256": "25eb79009e2075ed64e4c55b66e75c35d5d5e58fecae855e0bccbeb33bfd5664",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "9082ad72dda3501f14024d83d61e07caf43e2d2712aa4437bcee0b0f263e2845",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "0ff434114402a5aaa02cb276ecf36bfd6eb53d50ad6f79e6046eb9469674460f",
+    "dosbox.stderr": "5824dbb82a29aa09db3f1b6aa2e3b65e277a87ab37dc6f99f7840d67c3ffa5ff",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "76651c15d17f3cad15539bb990a2610aa3db6f150611df3d78fa157e363ce622"
+  }
+}

@@ -409,7 +409,12 @@ remain separate.
    four entries under a declared mode-setting diagnostic: 224 controls, 168
    successful results and 56 exact native errors, including a separately frozen
    DOUBLE integer-boundary supplement. Twelve audit tests and isolated floor APIs
-   preserve default-mode behavior; normal mode-4 callers are not inferred.
+   preserve default-mode behavior. The [caller admission audit](yt-mbf-mode-selector/RECOVERY.md)
+   now measures selector zero after untouched runtime startup in all seven shipped
+   compiled programs and retains a bounded direct-store inventory, not an indirect
+   write exclusion. No existing replay migration is admitted: sector IDs are
+   integral, and stock pickup uses the distinct wider MBF INT path. Normal late
+   mode-4 callers remain unestablished; do not repeat startup controls as missing.
    The [conversion scope correction](yt-mbf-int16/CONVERSION_SCOPE.md)
    removes signed32/LONG from the BRUN30 language backlog: QuickBASIC 3.0 has no
    LONG type; Microsoft introduced it in 4.0. Internal/DOS 32-bit values are a
@@ -1995,3 +2000,21 @@ gameplay, source fingerprint, save or sysop policy changes. Prior signed32/LONG
 backlog is withdrawn by the scope audit. Next: other source-selected MBF arithmetic
 or call-site integration, without repeating completed mode-0/mode-4 conversions.
 [Evidence and boundaries](yt-mbf-int16-mode4/RECOVERY.md).
+
+
+### Mode-selector startup and replay admission audit (2026-11-08)
+
+PRs #123 and #124 are merged. Seven new first-attempt startup snapshots preserve
+both original startup calls and use the unchanged runtime: all selectors are zero.
+An explicitly ordinary eight-image byte scan retains five selector comparisons,
+74 literal address-word occurrences and zero matches for 319 enumerated direct
+store signatures, including overlapping word stores. It is not an exhaustive
+instruction graph or proof against indirect/later writes. A new fifth-read source
+observation and the provider's empty xref result retain that coverage boundary.
+Existing native contracts distinguish sector-write signed16 conversion from the
+maintenance stock INT and later name-related cast. Twelve tests preserve startup
+provenance, store/read classification, negative-result limits and replay domains.
+No replay migration or production change is justified. README and CI include the
+audits. Further normal-caller selection needs indirect-write or later-execution
+evidence; other MBF arithmetic remains a separate source-selected task.
+[Evidence and limits](yt-mbf-mode-selector/RECOVERY.md).

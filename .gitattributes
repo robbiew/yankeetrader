@@ -499,3 +499,9 @@
 /research/yt-mbf-int16-mode4/precision-native/**/*.LOG -diff
 /research/yt-mbf-int16-mode4/precision-native/**/TRACE.BIN -diff
 /research/yt-mbf-int16-mode4/precision-native/**/dosbox.stderr -diff
+
+# Preserve unchanged-runtime startup selector observations and executed source.
+/research/yt-mbf-mode-selector/native/** -text
+/research/yt-mbf-mode-selector/native/**/*.LOG -diff
+/research/yt-mbf-mode-selector/native/**/TRACE.BIN -diff
+/research/yt-mbf-mode-selector/native/**/dosbox.stderr -diff

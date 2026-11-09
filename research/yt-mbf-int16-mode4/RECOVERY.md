@@ -111,3 +111,10 @@ setting, change gameplay/save policies, qualify every input encoding, or claim
 arbitrary-world/native BBS acceptance. Other MBF arithmetic and any integration
 require separate source/call-site evidence. Existing fingerprints and save 35
 remain unchanged.
+
+
+The [normal-startup/caller admission audit](../yt-mbf-mode-selector/RECOVERY.md)
+now retains selector zero after both original startup calls in all seven shipped
+compiled programs. Its direct-store inventory does not exclude later indirect
+selection. Existing replay domains do not justify migrating to mode 4; this
+numeric intervention contract remains separate from normal caller admission.

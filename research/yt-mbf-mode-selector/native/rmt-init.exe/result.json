@@ -1,0 +1,25 @@
+{
+  "recipe": "brun30-normal-startup-selector-v1",
+  "program": "RMT-INIT.EXE",
+  "header": 512,
+  "startup_hex": "9a00001c059a33012f03",
+  "original_body_hex": "cd3d439090",
+  "exit_code": 0,
+  "timeout": false,
+  "missing": [],
+  "payload_hex": "c70656184d53c7065818454cbb0100b90400ba5618b440cd21bb0100b94000ba0000b440cd21c7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_program_sha256": "8b2cdadd5324b414c382fe616f8eab27f7f0db3c95deadb0526d11405873b8e0",
+  "runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "74c40fab568c368065031b58edf67edf2bf7e6b63891805cf9d0b25214394f4e",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "b823f36771cdb99e17372a086f0e664712a29f4271706198bceb9a806a1dbc89",
+    "dosbox.stderr": "c66c0a303d19bfa1a18d084cae9ddb16ffe4f2c522b9d15a681fe9397577da53",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "9d9512b36ed944bbf161deb0b1be03486a7d24748af97e44e84dad592e798c1a"
+  }
+}

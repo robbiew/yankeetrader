@@ -1,0 +1,15 @@
+{
+  "recipe": "brun30-normal-startup-selector-v1",
+  "programs": {
+    "LOCAL.EXE": "bb970c43eb29fb80e7252f3968884f1c43543a5e39c6714b209ffca7dbf2d93a",
+    "PORTNAME.EXE": "fc5239f345b39d0d425d1f41af54352fa545f7392fda26c700180382a1524ec4",
+    "RMT-INIT.EXE": "05f639fe5249ac6ae8e28d8656f4c5e668e40ff08bf66524b109ad31a2217dac",
+    "YT-INIT.EXE": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+    "YT.EXE": "c74093a488fdb44808f0a61908596fc04c4f3adbb1bbf63ccc9e1fc84296f037",
+    "YTCONFIG.EXE": "120da32994a9ae3b8b9276aeabe076a5d1e2aab86c011cf175db7573e59faa03",
+    "YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "2416c2894e6467cdf261dca2122d2f2ccc5ecb72564b71722bbbc57454dc421c"
+}
