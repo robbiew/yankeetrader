@@ -423,7 +423,10 @@ remain separate.
    new controls / 78 results and four native errors, plus nine reused HQ reward
    controls. The isolated raw Go API preserves even ties, exponent-gap skipping
    and initial-FAC zero residues; twelve verifier tests and CI retain the bounds.
-   Other entry forms, subtraction and other arithmetic remain separate.
+   [Direct addition entry state](yt-mbf-add-entries/RECOVERY.md) now qualifies
+   memory-to-memory 7f and memory-to-FAC 83: 184 controls / 176 results and eight
+   native errors, explicit prior-FAC handling, twelve verifier tests and a shared
+   arithmetic API. Inline address-resolving 85 and other arithmetic remain separate.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -2041,3 +2044,21 @@ source fingerprints, gameplay, save and sysop policies remain unchanged. Other
 addition entry forms, subtraction, DOUBLE arithmetic and multiplication/division
 remain separate; do not repeat this INT3F/81 recovery or old positive HQ captures.
 [Evidence and limits](yt-mbf-add/RECOVERY.md).
+
+
+### Direct SINGLE-addition entry-state parity (2026-11-09)
+
+Reused the shared addition kernel/dispatch observations and the parent operand
+matrix; new native executions select direct entries 7f and 83. All 184 first
+attempts completed: 176 results and eight exact entry-specific Overflow outcomes.
+Twenty focused controls vary independent prior FAC state without changing the
+operands. Added `AddSingleWithFAC` over the unchanged arithmetic primitive,
+portable complete frames, independent entry-state/provenance verification, twelve
+acceptance/corruption tests, README and CI. Entry7f cancellation/underflow preserves
+the prior FAC rather than either operand; entry83's right operand is the FAC,
+and naive operand swapping fails on zero aliases. Memory blocks, RNG and mode
+remain preserved. No old native capture or parent arithmetic changes; gameplay,
+source fingerprints, saves and sysop policies are unchanged. Inline entry85
+address resolution and other arithmetic remain separate. Do not repeat the now
+qualified direct entry-state controls as missing work.
+[Evidence and boundaries](yt-mbf-add-entries/RECOVERY.md).

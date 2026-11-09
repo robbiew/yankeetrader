@@ -1,0 +1,27 @@
+{
+  "recipe": "brun30-add-entry-state-v1",
+  "case": "op7f-max-below-round",
+  "op": 127,
+  "left": "ffff7fff",
+  "right": "ffff7fe6",
+  "initial": 5,
+  "fac": "5aa5d592",
+  "exit_code": 0,
+  "timeout": false,
+  "missing": [],
+  "payload_hex": "c70656184153c70658184531bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21c7061a005aa5c7061c00d592bb0100b90400ba1a00b440cd21c7066018ffffc70662187fffbb0100b90400ba6018b440cd21c7066418ffffc70666187fe6bb0100b90400ba6418b440cd21bb0100b90100ba1f00b440cd21be6018bf6418cd3f7f9090bb0100b90400ba1a00b440cd21bb0100b90400ba6018b440cd21bb0100b90400ba6418b440cd21bb0100b90400ba3402b440cd21bb0100b90100ba1f00b440cd21c7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_initializer_sha256": "841191be81224af15868aaeb18a060b3c262758f9c0904b2ee6f06d585858a2f",
+  "copied_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "3c61976fbc7e886f7067311b24d5f9bfaf7f742e1d76ae13575484a1cdab8da2",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "d1d29bf54cec98ad35ea1a2a4063c889288fbe53df64561a42ff6cc879a7ce27",
+    "dosbox.stderr": "ff0a77d3ba7e59aab9bf4271d7dc0a95b9d37bbc1ecdc4f804e59fa80620daaf",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "286b06ac127774417f053d1d80b7a24aa9fe08dcdf864163b6b526d786db2e24"
+  }
+}
