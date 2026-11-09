@@ -135,3 +135,10 @@ can have a different prior FAC independent of their operands; those are not
 silently admitted by this API. No exhaustive enumeration of every raw operand
 pair, arbitrary-world parity, normal negative reward call or live BBS acceptance
 is claimed. Existing saves and source profiles remain unchanged.
+
+
+The [direct-entry state supplement](../yt-mbf-add-entries/RECOVERY.md) now qualifies
+INT3F/7f memory-to-memory and INT3F/83 memory-to-FAC operations with explicit prior
+FAC state. It reuses this kernel, arithmetic API and operand matrix, without
+changing these INT3F/81 observations. The inline-address-resolving entry85 remains
+unqualified; it must not be treated as another subtraction opcode.

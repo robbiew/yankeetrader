@@ -2074,6 +2074,19 @@ float32 arithmetic. Nine existing HQ reward controls are reused as addition-then
 regressions; their native captures and modern gameplay policy are unchanged.
 Twelve independent verifier tests, portable raw Go vectors and CI accompany the
 new primitive. Cancellation/underflow clears only the initial FAC exponent;
-two zero aliases select the right encoding. Other entry forms, subtraction,
-DOUBLE arithmetic, multiplication/division and unmeasured branches remain separate.
+two zero aliases select the right encoding. The direct-entry supplement below
+now qualifies memory-to-memory and memory-to-FAC forms; inline address resolution,
+subtraction, DOUBLE arithmetic and multiplication/division remain separate.
 This isolated API changes no gameplay, source fingerprint, save or sysop behavior.
+
+
+[Direct addition entry-state parity](research/yt-mbf-add-entries/RECOVERY.md) now
+qualifies INT3F/7f memory-to-memory and INT3F/83 memory-to-FAC addition using the
+existing kernel evidence and 184 new entry-specific controls: 176 results and
+eight exact Overflow outcomes. `AddSingleWithFAC` reuses the qualified arithmetic
+with an explicit initial FAC, preserving independent zero-result residues. For
+entry83, the right operand is the initial FAC; swapping arguments to `AddSingle`
+is incorrect for two zero aliases. Twelve verifier tests, full-trace Go vectors,
+CI and plan updates accompany this isolated API. Existing entry81 behavior,
+gameplay, source fingerprints, saves and sysop procedures are unchanged. Inline
+entry85 resolution and other arithmetic remain separate.
