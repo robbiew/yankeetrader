@@ -228,3 +228,10 @@ remain outside this milestone. There is no new claim of complete game parity.
 | runtime-dispatch | `0x1038d` / 396 | `ev_3d057849ccb0d9cfe69764c83ea0276f2830fd959126a3b0f9efac0da45549b1` |
 | runtime-floor | `0x1acb2` / 180 | `ev_567123d41857df939d326c9daf676249df6b745ddf6c8bd7b563373a125605f5` |
 | runtime-single-add | `0x1b369` / 316 | `ev_a9b4d6f12e5517aed0b59c419f808f9d13b0c13c7adb8794afa662d9dfb14620` |
+
+
+The later [raw-SINGLE addition supplement](../yt-mbf-add/RECOVERY.md) reuses this
+packet and nine positive reward controls without recapturing or rewriting them.
+It qualifies signed INT3F/81 arithmetic, raw cancellation/underflow residues and
+the native exponent-gap shortcut in an isolated Go primitive. The positive reward
+model and modern gameplay policy documented here remain unchanged.

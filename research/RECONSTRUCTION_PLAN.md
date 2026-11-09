@@ -419,6 +419,11 @@ remain separate.
    removes signed32/LONG from the BRUN30 language backlog: QuickBASIC 3.0 has no
    LONG type; Microsoft introduced it in 4.0. Internal/DOS 32-bit values are a
    different research question.
+   [Raw-SINGLE addition](yt-mbf-add/RECOVERY.md) now qualifies INT3F/81 with 82
+   new controls / 78 results and four native errors, plus nine reused HQ reward
+   controls. The isolated raw Go API preserves even ties, exponent-gap skipping
+   and initial-FAC zero residues; twelve verifier tests and CI retain the bounds.
+   Other entry forms, subtraction and other arithmetic remain separate.
    Audit remaining branches before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -2018,3 +2023,21 @@ No replay migration or production change is justified. README and CI include the
 audits. Further normal-caller selection needs indirect-write or later-execution
 evidence; other MBF arithmetic remains a separate source-selected task.
 [Evidence and limits](yt-mbf-mode-selector/RECOVERY.md).
+
+
+### Raw-SINGLE addition parity (2026-11-09)
+
+Audited and reused original HQ dispatch/kernel/helper/constant observations,
+positive reward controls and initializer cancellation contracts before acquiring
+82 missing signed, alignment, tie, zero-residue and range controls. All first
+attempts completed: 78 raw results and four exact Overflow outcomes. The source
+skips smaller operands beyond a 24-bit exponent gap, which differs from IEEE
+addition at selected signed binade boundaries. Cancellation/underflow clears only
+the initial FAC exponent; zero aliases preserve operand-order semantics. Added an
+isolated `qbmbf.AddSingle`, a full-trace fixture with nine separately identified
+reused reward cases, independent exact-rational/source-aware verification, twelve
+acceptance/corruption tests, README/recovery docs and CI. Original evidence,
+source fingerprints, gameplay, save and sysop policies remain unchanged. Other
+addition entry forms, subtraction, DOUBLE arithmetic and multiplication/division
+remain separate; do not repeat this INT3F/81 recovery or old positive HQ captures.
+[Evidence and limits](yt-mbf-add/RECOVERY.md).

@@ -1,5 +1,5 @@
-// Package qbmbf implements recovered raw MBF INT/FIX and bounded integer conversions. It is not a
-// complete MBF arithmetic runtime. Existing gameplay and generation arithmetic
+// Package qbmbf implements selected raw MBF arithmetic, INT/FIX, and bounded
+// integer conversions. It is not a complete MBF arithmetic runtime. Existing gameplay and generation arithmetic
 // retain their current policies and do not select this primitive automatically.
 package qbmbf
 

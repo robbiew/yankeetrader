@@ -505,3 +505,9 @@
 /research/yt-mbf-mode-selector/native/**/*.LOG -diff
 /research/yt-mbf-mode-selector/native/**/TRACE.BIN -diff
 /research/yt-mbf-mode-selector/native/**/dosbox.stderr -diff
+
+# Preserve original-runtime raw-SINGLE addition controls and executed source.
+/research/yt-mbf-add/native/** -text
+/research/yt-mbf-add/native/**/*.LOG -diff
+/research/yt-mbf-add/native/**/TRACE.BIN -diff
+/research/yt-mbf-add/native/**/dosbox.stderr -diff

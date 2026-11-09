@@ -2064,3 +2064,16 @@ CI preserve those limits. Existing sector IDs agree numerically in both modes,
 while stock pickup uses a distinct MBF INT path supporting values above signed16.
 No mode-4 replay migration is admitted; normal late callers remain unestablished.
 No gameplay, numeric API, source fingerprint, save or sysop behavior changes.
+
+
+[Raw-SINGLE addition](research/yt-mbf-add/RECOVERY.md) now qualifies the original
+INT3F/81 FAC-plus-memory entry with 82 new native controls: 78 results and four
+exact Overflow outcomes. `qbmbf.AddSingle` retains native ties-to-even rounding,
+exponent-gap skipping and directional zero residues instead of substituting host
+float32 arithmetic. Nine existing HQ reward controls are reused as addition-then-INT
+regressions; their native captures and modern gameplay policy are unchanged.
+Twelve independent verifier tests, portable raw Go vectors and CI accompany the
+new primitive. Cancellation/underflow clears only the initial FAC exponent;
+two zero aliases select the right encoding. Other entry forms, subtraction,
+DOUBLE arithmetic, multiplication/division and unmeasured branches remain separate.
+This isolated API changes no gameplay, source fingerprint, save or sysop behavior.
