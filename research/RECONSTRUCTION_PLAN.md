@@ -2059,11 +2059,26 @@ the prior FAC rather than either operand; entry83's right operand is the FAC,
 and naive operand swapping fails on zero aliases. Memory blocks, RNG and mode
 remain preserved. No old native capture or parent arithmetic changes; gameplay,
 source fingerprints, saves and sysop policies are unchanged. Inline entry85
-address resolution and other arithmetic remain separate. Do not repeat the now
+address resolution is qualified by the following supplement; other arithmetic remains separate. Do not repeat the now
 qualified direct entry-state controls as missing work.
 [Evidence and boundaries](yt-mbf-add-entries/RECOVERY.md).
 
 
+### Inline SINGLE-addition resolver parity (2026-11-09)
+
+Checked merged #126/#127 and existing evidence before adding missing resolver
+controls. Entry85 now has 138 retained first-attempt outcomes: 90 address-only
+controls (including all ten maintenance selectors with archived header values)
+and 48 complete successful additions. Three new source reads fill helper/tail/
+caller gaps; a static original-byte inventory covers 35 direct maintenance call
+sites. Added an offset-only Go helper, full portable frames, eight verifier tests,
+Go native comparisons, README and CI. Synthetic BP/ES/descriptor and in-memory
+header interventions are explicit; resolver-only return stubs avoid unsafe reads.
+No normal full maintenance, arbitrary frame or inline85 overflow/unwind admission.
+Gameplay, fingerprints, saves and sysop procedures remain unchanged. Do not repeat
+qualified 81, 7f/83 or bounded85 work. The next source-selected arithmetic slice
+is subtraction; inspect retained dispatch/kernel and actual callers before any
+new acquisition. [Evidence and boundaries](yt-mbf-inline-add/RECOVERY.md).
 ### Direct SINGLE subtraction parity (2026-11-09)
 
 Checked current main through merged #127 and open #128 before starting. #128 owns

@@ -1,0 +1,256 @@
+{
+  "format": "ordinary-maintenance-inline85-inventory-v1",
+  "authority": "Archived original bytes and annotated listing; static call-site inventory, not observed execution or an exhaustive indirect-call graph.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "header_magic": "626d",
+  "base10": 32256,
+  "base12": 2243,
+  "calls": [
+    {
+      "code_offset": 2411,
+      "file_offset": 2923,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 2894,
+      "file_offset": 3406,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 2914,
+      "file_offset": 3426,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 4418,
+      "file_offset": 4930,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 4438,
+      "file_offset": 4950,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 4484,
+      "file_offset": 4996,
+      "selector": 130,
+      "base10_candidate": 32272,
+      "base12_candidate": 2259
+    },
+    {
+      "code_offset": 4504,
+      "file_offset": 5016,
+      "selector": 131,
+      "base10_candidate": 32280,
+      "base12_candidate": 2267
+    },
+    {
+      "code_offset": 4558,
+      "file_offset": 5070,
+      "selector": 132,
+      "base10_candidate": 32288,
+      "base12_candidate": 2275
+    },
+    {
+      "code_offset": 4578,
+      "file_offset": 5090,
+      "selector": 133,
+      "base10_candidate": 32296,
+      "base12_candidate": 2283
+    },
+    {
+      "code_offset": 4632,
+      "file_offset": 5144,
+      "selector": 134,
+      "base10_candidate": 32304,
+      "base12_candidate": 2291
+    },
+    {
+      "code_offset": 4652,
+      "file_offset": 5164,
+      "selector": 135,
+      "base10_candidate": 32312,
+      "base12_candidate": 2299
+    },
+    {
+      "code_offset": 4767,
+      "file_offset": 5279,
+      "selector": 136,
+      "base10_candidate": 32320,
+      "base12_candidate": 2307
+    },
+    {
+      "code_offset": 5105,
+      "file_offset": 5617,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 5161,
+      "file_offset": 5673,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 5188,
+      "file_offset": 5700,
+      "selector": 130,
+      "base10_candidate": 32272,
+      "base12_candidate": 2259
+    },
+    {
+      "code_offset": 5278,
+      "file_offset": 5790,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 5292,
+      "file_offset": 5804,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 5467,
+      "file_offset": 5979,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 5481,
+      "file_offset": 5993,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 5561,
+      "file_offset": 6073,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 5735,
+      "file_offset": 6247,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 5755,
+      "file_offset": 6267,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 6585,
+      "file_offset": 7097,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 6605,
+      "file_offset": 7117,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 9082,
+      "file_offset": 9594,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 32665,
+      "file_offset": 33177,
+      "selector": 128,
+      "base10_candidate": 32256,
+      "base12_candidate": 2243
+    },
+    {
+      "code_offset": 32695,
+      "file_offset": 33207,
+      "selector": 129,
+      "base10_candidate": 32264,
+      "base12_candidate": 2251
+    },
+    {
+      "code_offset": 32725,
+      "file_offset": 33237,
+      "selector": 130,
+      "base10_candidate": 32272,
+      "base12_candidate": 2259
+    },
+    {
+      "code_offset": 32753,
+      "file_offset": 33265,
+      "selector": 131,
+      "base10_candidate": 32280,
+      "base12_candidate": 2267
+    },
+    {
+      "code_offset": 32781,
+      "file_offset": 33293,
+      "selector": 132,
+      "base10_candidate": 32288,
+      "base12_candidate": 2275
+    },
+    {
+      "code_offset": 32809,
+      "file_offset": 33321,
+      "selector": 133,
+      "base10_candidate": 32296,
+      "base12_candidate": 2283
+    },
+    {
+      "code_offset": 32837,
+      "file_offset": 33349,
+      "selector": 134,
+      "base10_candidate": 32304,
+      "base12_candidate": 2291
+    },
+    {
+      "code_offset": 32865,
+      "file_offset": 33377,
+      "selector": 135,
+      "base10_candidate": 32312,
+      "base12_candidate": 2299
+    },
+    {
+      "code_offset": 32892,
+      "file_offset": 33404,
+      "selector": 136,
+      "base10_candidate": 32320,
+      "base12_candidate": 2307
+    },
+    {
+      "code_offset": 32912,
+      "file_offset": 33424,
+      "selector": 137,
+      "base10_candidate": 32328,
+      "base12_candidate": 2315
+    }
+  ]
+}
