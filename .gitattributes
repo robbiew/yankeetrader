@@ -517,3 +517,9 @@
 /research/yt-mbf-add-entries/native/**/*.LOG -diff
 /research/yt-mbf-add-entries/native/**/TRACE.BIN -diff
 /research/yt-mbf-add-entries/native/**/dosbox.stderr -diff
+
+# Immutable native subtraction byte protocols and raw host/clock logs.
+/research/yt-mbf-sub/native/** -text
+/research/yt-mbf-sub/native/**/TRACE.BIN -diff
+/research/yt-mbf-sub/native/**/*.LOG -diff
+/research/yt-mbf-sub/native/**/dosbox.stderr -diff
