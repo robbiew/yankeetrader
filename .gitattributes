@@ -517,3 +517,10 @@
 /research/yt-mbf-add-entries/native/**/*.LOG -diff
 /research/yt-mbf-add-entries/native/**/TRACE.BIN -diff
 /research/yt-mbf-add-entries/native/**/dosbox.stderr -diff
+
+# Immutable inline-addition native protocols and host logs.
+/research/yt-mbf-inline-add/native/** -text
+/research/yt-mbf-inline-add/caller-native/** -text
+/research/yt-mbf-inline-add/**/TRACE.BIN -diff
+/research/yt-mbf-inline-add/**/*.LOG -diff
+/research/yt-mbf-inline-add/**/dosbox.stderr -diff
