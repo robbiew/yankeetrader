@@ -2104,7 +2104,6 @@ resolver-only cases never dereference unsafe addresses or claim arithmetic.
 Portable traces, eight corruption/acceptance tests, Go native comparisons and CI
 cover both protocols. Normal complete maintenance, arbitrary frames and inline85
 overflow/unwind remain unqualified. Gameplay, save 35 and sysop policy are unchanged.
-entry85 resolution is qualified by the inline supplement below; other arithmetic remains separate.
 
 
 [Direct SINGLE subtraction](research/yt-mbf-sub/RECOVERY.md) now qualifies
