@@ -2132,5 +2132,5 @@ comparisons, eleven corruption/acceptance tests, shared verifier checks and CI
 preserve opcode/marker separation, sign-flipped zero aliases, unnegated FAC
 residues and selected/poison memory. Native inline overflow/unwind and complete
 maintenance remain unqualified. Gameplay, save 35 and sysop behavior are unchanged.
-This branch depends on both still-open parent PRs #128/#129; it must target main
+This branch depends on parent PRs #128/#129; it must target main
 after those merge, not a feature branch.
