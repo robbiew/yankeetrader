@@ -2079,3 +2079,19 @@ Gameplay, fingerprints, saves and sysop procedures remain unchanged. Do not repe
 qualified 81, 7f/83 or bounded85 work. The next source-selected arithmetic slice
 is subtraction; inspect retained dispatch/kernel and actual callers before any
 new acquisition. [Evidence and boundaries](yt-mbf-inline-add/RECOVERY.md).
+### Direct SINGLE subtraction parity (2026-11-09)
+
+Checked current main through merged #127 and open #128 before starting. #128 owns
+inline addition; this separate branch starts from main and does not repeat it.
+Reused retained dispatch, complete subtraction wrapper, ABI and addition kernel
+observations. Added 266 native executions (251 results, 15 exact Overflow outcomes) of direct
+97/99/9b, explicit prior-FAC
+controls, portable Go traces and `SubtractSingle`/`SubtractSingleWithFAC` adapters
+over existing addition. A fixed static audit matches 43 maintenance direct callers.
+Twelve verifier tests preserve direction, sign-flipped zero aliases, unnegated
+FAC residues, exact errors and source provenance. README and CI updated.
+No gameplay, source fingerprint, save 35 or sysop change; no complete maintenance
+or live acceptance claim. Next bounded work is inline 9d subtraction addressing,
+reusing #128 once merged; do not repeat direct subtraction, addition arithmetic
+or completed inline-addition controls. DOUBLE/multiply/divide stay separate.
+[Evidence and boundaries](yt-mbf-sub/RECOVERY.md).

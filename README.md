@@ -2104,3 +2104,19 @@ resolver-only cases never dereference unsafe addresses or claim arithmetic.
 Portable traces, eight corruption/acceptance tests, Go native comparisons and CI
 cover both protocols. Normal complete maintenance, arbitrary frames and inline85
 overflow/unwind remain unqualified. Gameplay, save 35 and sysop policy are unchanged.
+entry85 resolution is qualified by the inline supplement below; other arithmetic remains separate.
+
+
+[Direct SINGLE subtraction](research/yt-mbf-sub/RECOVERY.md) now qualifies
+INT3F/97 memory-minus-memory, /99 FAC-minus-memory and /9b memory-minus-FAC.
+`SubtractSingle` and `SubtractSingleWithFAC` reuse the qualified addition model
+after a register-equivalent right-sign flip, including raw zero aliases. The 266
+new native controls (251 results, 15 exact Overflow outcomes) exercise all three
+entry/FAC contracts and preserve independent
+unnegated FAC residues on cancellation/underflow. Original operand memory, RNG
+and mode are checked on successful returns; overflow retains exact diagnostics.
+A static original-byte audit covers 43 direct maintenance callers. Portable Go
+vectors, twelve verifier tests, CI and the plan accompany this isolated API.
+Inline 9d and DOUBLE subtraction remain separate. Gameplay, save 35, source
+fingerprints and sysop procedures are unchanged. Inline addition belongs to the
+separate [PR #128](https://github.com/robbiew/yankeetrader/pull/128).

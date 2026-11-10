@@ -1,0 +1,223 @@
+{
+  "format": "maintenance-direct-single-subtract-callers-v1",
+  "authority": "Static annotated direct-call inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "calls": [
+    {
+      "code_offset": 835,
+      "file_offset": 1347,
+      "op": 151
+    },
+    {
+      "code_offset": 2000,
+      "file_offset": 2512,
+      "op": 151
+    },
+    {
+      "code_offset": 2375,
+      "file_offset": 2887,
+      "op": 155
+    },
+    {
+      "code_offset": 2398,
+      "file_offset": 2910,
+      "op": 155
+    },
+    {
+      "code_offset": 3719,
+      "file_offset": 4231,
+      "op": 151
+    },
+    {
+      "code_offset": 4082,
+      "file_offset": 4594,
+      "op": 151
+    },
+    {
+      "code_offset": 4731,
+      "file_offset": 5243,
+      "op": 155
+    },
+    {
+      "code_offset": 4754,
+      "file_offset": 5266,
+      "op": 155
+    },
+    {
+      "code_offset": 8023,
+      "file_offset": 8535,
+      "op": 151
+    },
+    {
+      "code_offset": 8384,
+      "file_offset": 8896,
+      "op": 151
+    },
+    {
+      "code_offset": 8514,
+      "file_offset": 9026,
+      "op": 151
+    },
+    {
+      "code_offset": 8967,
+      "file_offset": 9479,
+      "op": 151
+    },
+    {
+      "code_offset": 9014,
+      "file_offset": 9526,
+      "op": 151
+    },
+    {
+      "code_offset": 9155,
+      "file_offset": 9667,
+      "op": 151
+    },
+    {
+      "code_offset": 9811,
+      "file_offset": 10323,
+      "op": 151
+    },
+    {
+      "code_offset": 11400,
+      "file_offset": 11912,
+      "op": 151
+    },
+    {
+      "code_offset": 11690,
+      "file_offset": 12202,
+      "op": 151
+    },
+    {
+      "code_offset": 11991,
+      "file_offset": 12503,
+      "op": 151
+    },
+    {
+      "code_offset": 12079,
+      "file_offset": 12591,
+      "op": 151
+    },
+    {
+      "code_offset": 12744,
+      "file_offset": 13256,
+      "op": 151
+    },
+    {
+      "code_offset": 12780,
+      "file_offset": 13292,
+      "op": 151
+    },
+    {
+      "code_offset": 13685,
+      "file_offset": 14197,
+      "op": 151
+    },
+    {
+      "code_offset": 13718,
+      "file_offset": 14230,
+      "op": 151
+    },
+    {
+      "code_offset": 16039,
+      "file_offset": 16551,
+      "op": 151
+    },
+    {
+      "code_offset": 16293,
+      "file_offset": 16805,
+      "op": 151
+    },
+    {
+      "code_offset": 16437,
+      "file_offset": 16949,
+      "op": 155
+    },
+    {
+      "code_offset": 16762,
+      "file_offset": 17274,
+      "op": 151
+    },
+    {
+      "code_offset": 17243,
+      "file_offset": 17755,
+      "op": 151
+    },
+    {
+      "code_offset": 17327,
+      "file_offset": 17839,
+      "op": 151
+    },
+    {
+      "code_offset": 17683,
+      "file_offset": 18195,
+      "op": 151
+    },
+    {
+      "code_offset": 18226,
+      "file_offset": 18738,
+      "op": 151
+    },
+    {
+      "code_offset": 18609,
+      "file_offset": 19121,
+      "op": 151
+    },
+    {
+      "code_offset": 18661,
+      "file_offset": 19173,
+      "op": 151
+    },
+    {
+      "code_offset": 21540,
+      "file_offset": 22052,
+      "op": 151
+    },
+    {
+      "code_offset": 21633,
+      "file_offset": 22145,
+      "op": 151
+    },
+    {
+      "code_offset": 22131,
+      "file_offset": 22643,
+      "op": 151
+    },
+    {
+      "code_offset": 22296,
+      "file_offset": 22808,
+      "op": 151
+    },
+    {
+      "code_offset": 22682,
+      "file_offset": 23194,
+      "op": 151
+    },
+    {
+      "code_offset": 25580,
+      "file_offset": 26092,
+      "op": 153
+    },
+    {
+      "code_offset": 27058,
+      "file_offset": 27570,
+      "op": 151
+    },
+    {
+      "code_offset": 27993,
+      "file_offset": 28505,
+      "op": 151
+    },
+    {
+      "code_offset": 29162,
+      "file_offset": 29674,
+      "op": 151
+    },
+    {
+      "code_offset": 29525,
+      "file_offset": 30037,
+      "op": 151
+    }
+  ]
+}
