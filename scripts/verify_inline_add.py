@@ -1202,7 +1202,9 @@ def expected_offset(case,alternate=False):
     return ((case['base12'] if use12 else case['base10'])+8*(case['selector']&127))&65535
 
 
-def expected_payload(case):
+def expected_payload(case,operation="add"):
+    assert operation in ("add","subtract"),"qualified inline operation"
+    opcode,marker=(0x85,b"IA85") if operation=="add" else (0x9d,b"IS9D")
     def word(at,value,cs=False):return (b'\x2e' if cs else b'')+bytes.fromhex('c706')+struct.pack('<HH',at,value)
     def assign(at,raw):return b''.join(word(at+2*i,w) for i,w in enumerate(struct.unpack('<HH',raw)))
     def output(at,size):return bytes.fromhex('bb0100b9')+struct.pack('<H',size)+b'\xba'+struct.pack('<H',at)+bytes.fromhex('b440cd21')
@@ -1212,18 +1214,20 @@ def expected_payload(case):
         poison='00000082' if case['left']=='00000081' else '00000081'
         setup+=assign(expected_offset(case),bytes.fromhex(case['left']))+assign(expected_offset(case,True),bytes.fromhex(poison))
     context=bytes.fromhex('a10050a380182ea11000a382182ea11200a384188c1e86188c0688188b46fea38a18892e8c18')
-    prefix=assign(0x1856,b'IA85')+output(0x1856,4)+output(0x234,4)+output(0x1a,4)+output(0x1860,4)+output(0x1f,1)+output(0x1870,1)+output(0x1880,14)
-    call=bytes.fromhex('b8efbecd3f859090')+bytes([case['selector']])
+    prefix=assign(0x1856,marker)+output(0x1856,4)+output(0x234,4)+output(0x1a,4)+output(0x1860,4)+output(0x1f,1)+output(0x1870,1)+output(0x1880,14)
+    call=bytes.fromhex('b8efbecd3f')+bytes([opcode,0x90,0x90,case['selector']])
     saved=bytes.fromhex('89369018893e9218a394188c1e96188c069818892e9a18')
     suffix=output(0x1890,12)+output(0x1a,4)+output(0x234,4)+output(0x1f,1)
     if case['kind']=='full':suffix+=output(expected_offset(case),4)+output(expected_offset(case,True),4)
     return setup+context+prefix+call+saved+suffix+assign(0x1856,b'END!')+output(0x1856,4)+bytes.fromhex('89ec5db8004ccd21')
 
 
-def verify_trace(trace,case):
+def verify_trace(trace,case,operation="add"):
+    assert operation in ("add","subtract"),"qualified inline operation"
+    marker=b"IA85" if operation=="add" else b"IS9D"
     assert case['kind'] in ('address','full'),'only declared resolver-only/full-success protocols'
     size=57 if case['kind']=='address' else 65
-    assert len(trace)==size and trace[:4]==b'IA85' and trace[-4:]==b'END!','complete protocol-specific inline frame'
+    assert len(trace)==size and trace[:4]==marker and trace[-4:]==b'END!','complete protocol-specific inline frame'
     assert trace[4:8]==struct.pack('<I',case['initial']) and trace[8:12].hex()==case['fac'] and trace[12:16].hex()==case['left'],'exact original RNG and inputs'
     assert trace[16]==0 and trace[17]==case['selector'],'default mode and actual selector'
     magic,b10,b12,ds,es,descriptor,bp=struct.unpack('<7H',trace[18:32])
@@ -1237,7 +1241,8 @@ def verify_trace(trace,case):
         assert trace[44:48].hex()==case['fac'],'resolver-only controls must not claim arithmetic or read operand memory'
     else:
         assert offset<=65532 and expected_offset(case,True)<=65532,'full controls use safe complete operand spans'
-        from verify_single_add_entries import expected_entry
+        if operation=="add":from verify_single_add_entries import expected_entry
+        else:from verify_single_sub import expected_entry
         want=expected_entry(bytes.fromhex(case['left']),bytes.fromhex(case['fac']),bytes.fromhex(case['fac']))
         assert want is not None and trace[44:48]==want,'qualified shared arithmetic after actual inline address resolution'
         poison='00000082' if case['left']=='00000081' else '00000081'
@@ -1268,7 +1273,8 @@ def verify_static(runtime):
     assert maint[0x200:0x202]==b'bm' and struct.unpack_from('<HH',maint,0x210)==(0x7e00,0x08c3),'original maintenance module metadata, not the synthetic safe bases'
 
 
-def verify_corpus(directory,cases,pins_sha,recipe_id,source_name):
+def verify_corpus(directory,cases,pins_sha,recipe_id,source_name,operation="add"):
+    assert operation in ("add","subtract"),"qualified inline operation"
     root=Path(directory); manifest=(root/'pins.json').read_bytes(); assert SHA(manifest)==pins_sha,'fixed native manifest'
     pins=json.loads(manifest)['files']
     assert {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p.name!='pins.json'}==set(pins),'complete artifact inventory'
@@ -1281,14 +1287,17 @@ def verify_corpus(directory,cases,pins_sha,recipe_id,source_name):
     assert {p.name for p in root.iterdir()}==set(cases)|{'pins.json','recipe.json','sources'} and {p.name for p in source.parent.iterdir()}=={source.name},'fixed case/source coverage'
     portable=[]
     for name,case in cases.items():
-        folder=root/name; meta=json.loads((folder/'result.json').read_text()); stub=expected_payload(case)
+        folder=root/name; meta=json.loads((folder/'result.json').read_text()); stub=expected_payload(case,operation)
         patched=bytearray(original); assert patched[0x23a:0x23f]==bytes.fromhex('cd3d439090'); patched[0x23a:0x23f]=bytes.fromhex('e930009090'); patched[0x26d:0x26d+len(stub)]=stub
         table=struct.unpack_from('<H',original,24)[0]
         for index in range(struct.unpack_from('<H',original,6)[0]):
             offset,segment=struct.unpack_from('<HH',original,table+4*index);at=16*segment+offset
             assert all(not(at<end and at+2>start) for start,end in ((0x3a,0x3f),(0x6d,0x6d+len(stub)))),'no loader relocation overlaps the diagnostic'
         copied=bytearray(runtime); struct.pack_into('<I',copied,0x10234,case['initial'])
-        if case['kind']=='address':copied[0xb571:0xb574]=bytes.fromhex('cb9090')
+        if case['kind']=='address':
+            at=0xb571 if operation=='add' else 0xb55c
+            assert copied[at:at+3]==bytes.fromhex('bf1a00'),'original post-resolver FAC selection'
+            copied[at:at+3]=bytes.fromhex('cb9090')
         assert set(meta)=={'recipe','case','kind','magic','base10','base12','selector','left','fac','initial','exit_code','timeout','missing','payload_hex','copied_initializer_sha256','copied_runtime_sha256','files'},'fixed result schema'
         assert {k:meta[k] for k in case}==case and meta['recipe']==recipe['recipe'] and meta['case']==name,'declared actual case'
         assert meta['exit_code']==0 and meta['timeout'] is False and meta['missing']==[],'normal emulator completion with all outcomes retained'
@@ -1305,7 +1314,7 @@ def verify_corpus(directory,cases,pins_sha,recipe_id,source_name):
         assert 'SDL: dummy video initialised' in messages and "MIXER: Sound output disabled ('nosound' mode)" in messages and any(m.startswith('CPU: Setting fixed 200000 cycles.') for m in messages),'fixed headless host controls'
         assert (folder/'dosbox.stdout').read_bytes()==b'' and (folder/'ERROR.LOG').read_bytes()==b'' and (folder/'OK.LOG').read_bytes()==b'PROGRAM_OK\r\n' and (folder/'RETURN.LOG').read_bytes()==b'PROBE_RETURNED\r\n','native shell return; ERRORLEVEL alone does not prove conversion success'
         assert read_date((folder/'DOSDATE.LOG').read_bytes()).isoformat()=='2026-11-02' and abs(read_time((folder/'DOSTIME.LOG').read_bytes()))<=.1,'raw date/time controls'
-        trace=(folder/'TRACE.BIN').read_bytes(); want=verify_trace(trace,case)
+        trace=(folder/'TRACE.BIN').read_bytes(); want=verify_trace(trace,case,operation)
         portable.append(dict(name=name,**case,**want,trace_hex=trace.hex(),source_trace_sha256=SHA(trace)))
     return portable
 
