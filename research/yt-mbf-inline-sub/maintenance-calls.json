@@ -1,0 +1,33 @@
+{
+  "format": "maintenance-inline9d-callers-v1",
+  "authority": "Static annotated direct-call inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "calls": [
+    {
+      "code_offset": 6077,
+      "file_offset": 6589,
+      "selector": 131
+    },
+    {
+      "code_offset": 25033,
+      "file_offset": 25545,
+      "selector": 128
+    },
+    {
+      "code_offset": 25450,
+      "file_offset": 25962,
+      "selector": 128
+    },
+    {
+      "code_offset": 25493,
+      "file_offset": 26005,
+      "selector": 129
+    },
+    {
+      "code_offset": 25538,
+      "file_offset": 26050,
+      "selector": 130
+    }
+  ]
+}

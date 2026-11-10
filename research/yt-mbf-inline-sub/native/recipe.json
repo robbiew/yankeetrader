@@ -1,0 +1,839 @@
+{
+  "recipe": "brun30-inline-sub-v1",
+  "cases": {
+    "address-bm-00": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 0,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-80": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-7f": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 127,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-ff": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-00": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 0,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-80": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-7f": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 127,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-ff": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-wrap-00": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 0,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-wrap-01": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 1,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bm-wrap-7f": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 127,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-wrap-00": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 0,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-wrap-01": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 1,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-bz-wrap-7f": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 127,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-fallback-83": {
+      "kind": "address",
+      "magic": 0,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-caller-bm-83": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 131,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "address-caller-bz-83": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 131,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 5
+    },
+    "full-bm-aliases-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-aliases-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-aliases-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-left-zero-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bm-left-zero-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bm-left-zero-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bm-right-zero-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-right-zero-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-right-zero-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bm-cancel-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bm-cancel-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bm-cancel-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bm-negative-cancel-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bm-negative-cancel-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bm-negative-cancel-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bm-underflow-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bm-underflow-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bm-underflow-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bm-reverse-underflow-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bm-reverse-underflow-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bm-reverse-underflow-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bm-even-tie-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bm-even-tie-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bm-even-tie-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bm-gap-cutoff-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bm-gap-cutoff-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bm-gap-cutoff-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bm-sign-cross-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bm-sign-cross-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bm-sign-cross-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bm-align-80": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    },
+    "full-bm-align-83": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    },
+    "full-bm-align-ff": {
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    },
+    "full-bz-aliases-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-aliases-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-aliases-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "12345600",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-left-zero-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bz-left-zero-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bz-left-zero-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "12345600",
+      "fac": "00000081",
+      "initial": 5
+    },
+    "full-bz-right-zero-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-right-zero-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-right-zero-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "ffffff00",
+      "initial": 5
+    },
+    "full-bz-cancel-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bz-cancel-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bz-cancel-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00004081",
+      "fac": "00004081",
+      "initial": 5
+    },
+    "full-bz-negative-cancel-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bz-negative-cancel-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bz-negative-cancel-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "0000c081",
+      "fac": "0000c081",
+      "initial": 5
+    },
+    "full-bz-underflow-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bz-underflow-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bz-underflow-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "01000001",
+      "fac": "00000001",
+      "initial": 5
+    },
+    "full-bz-reverse-underflow-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bz-reverse-underflow-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bz-reverse-underflow-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000001",
+      "fac": "01000001",
+      "initial": 5
+    },
+    "full-bz-even-tie-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bz-even-tie-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bz-even-tie-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "00008069",
+      "initial": 5
+    },
+    "full-bz-gap-cutoff-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bz-gap-cutoff-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bz-gap-cutoff-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00000081",
+      "fac": "00004068",
+      "initial": 16777215
+    },
+    "full-bz-sign-cross-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bz-sign-cross-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bz-sign-cross-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "00004081",
+      "fac": "00000082",
+      "initial": 5
+    },
+    "full-bz-align-80": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    },
+    "full-bz-align-83": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    },
+    "full-bz-align-ff": {
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "56341291",
+      "fac": "ac681380",
+      "initial": 5
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "c6decaccefd9826bc87e9f5a1e7f1eb3381cb0625afc112a10790f5cbba67b2b"
+}

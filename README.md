@@ -2120,3 +2120,17 @@ vectors, twelve verifier tests, CI and the plan accompany this isolated API.
 Inline 9d and DOUBLE subtraction remain separate. Gameplay, save 35, source
 fingerprints and sysop procedures are unchanged. Inline addition belongs to the
 separate [PR #128](https://github.com/robbiew/yankeetrader/pull/128).
+
+
+[Inline SINGLE subtraction](research/yt-mbf-inline-sub/RECOVERY.md) now qualifies
+bounded successful INT3F/9d execution in explicit synthetic frames. All 89 new
+controls completed: 23 resolver-only and 66 full successful subtractions. They
+reuse #128's shared resolver and #129's subtraction API; the helper's documented
+scope now includes both 85 and 9d. All four selectors at five archived direct
+maintenance callers are covered with archived header bases. Portable native Go
+comparisons, eleven corruption/acceptance tests, shared verifier checks and CI
+preserve opcode/marker separation, sign-flipped zero aliases, unnegated FAC
+residues and selected/poison memory. Native inline overflow/unwind and complete
+maintenance remain unqualified. Gameplay, save 35 and sysop behavior are unchanged.
+This branch depends on both still-open parent PRs #128/#129; it must target main
+after those merge, not a feature branch.

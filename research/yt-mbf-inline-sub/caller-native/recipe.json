@@ -1,0 +1,69 @@
+{
+  "recipe": "brun30-inline-sub-callers-v1",
+  "cases": {
+    "caller-bm-80": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 128,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    },
+    "caller-bm-81": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 129,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    },
+    "caller-bm-82": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 130,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    },
+    "caller-bz-80": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 128,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    },
+    "caller-bz-81": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 129,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    },
+    "caller-bz-82": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 32256,
+      "base12": 2243,
+      "selector": 130,
+      "left": "00000000",
+      "fac": "a55a3288",
+      "initial": 16777215
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "9324b7ffe37f7b27d919f448947d05aa6548d4181a14393f694e47f7c0257759"
+}

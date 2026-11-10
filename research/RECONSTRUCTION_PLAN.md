@@ -2095,3 +2095,20 @@ or live acceptance claim. Next bounded work is inline 9d subtraction addressing,
 reusing #128 once merged; do not repeat direct subtraction, addition arithmetic
 or completed inline-addition controls. DOUBLE/multiply/divide stay separate.
 [Evidence and boundaries](yt-mbf-sub/RECOVERY.md).
+
+
+### Successful inline SINGLE subtraction (2026-11-09)
+
+Checked main/open PRs: #128 and #129 remain separate dependencies, integrated on
+this new branch without modifying their heads. Reused their exact source and
+native evidence. Added 89 first-attempt 9d controls (23 resolver-only, 66 full
+successful subtractions), including all four selector bytes at five statically
+matched maintenance callers using archived header bases. Generalized shared
+verification with a closed operation choice; default addition fixtures remain
+unchanged. Existing Go offset/subtraction APIs match all new portable traces.
+Eleven corruption/acceptance tests, README, report and CI accompany the new slice.
+No gameplay, fingerprint, save 35 or sysop change. Keep the PR dependent until
+#128/#129 merge; then retarget only to main. Do not repeat successful inline85/9d
+or direct arithmetic controls. Inline fatal overflow/unwind remains a separate
+bounded question, alongside later DOUBLE/multiply/divide research.
+[Evidence and boundaries](yt-mbf-inline-sub/RECOVERY.md).
