@@ -111,3 +111,7 @@ addresses, select gameplay callers or broaden old bounded replay admissions.
 All claims concern the direct 7f/83 forms with declared memory/FAC relationships.
 No arbitrary inline85 frame, exhaustive operand-pair enumeration, subtraction,
 normal gameplay caller integration or live BBS acceptance is newly claimed.
+
+The [inline85 supplement](../yt-mbf-inline-add/RECOVERY.md) now qualifies its
+address resolver and bounded successful additions in explicit synthetic frames;
+it does not admit arbitrary frames or native inline overflow/unwind.
