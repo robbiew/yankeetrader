@@ -1,0 +1,113 @@
+{
+  "recipe": "brun30-inline-overflow-depth-v1",
+  "cases": {
+    "op85-pad16-overflow": {
+      "op": 133,
+      "expect": "overflow",
+      "pad": 16,
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "ffff7fff",
+      "fac": "ffff7fff",
+      "initial": 16777215
+    },
+    "op85-pad16-finite-control": {
+      "op": 133,
+      "expect": "return",
+      "pad": 16,
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "ffff7fff",
+      "initial": 16777215
+    },
+    "op85-pad32-overflow": {
+      "op": 133,
+      "expect": "overflow",
+      "pad": 32,
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "ffff7fff",
+      "fac": "ffff7fff",
+      "initial": 16777215
+    },
+    "op85-pad32-finite-control": {
+      "op": 133,
+      "expect": "return",
+      "pad": 32,
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "ffff7fff",
+      "initial": 16777215
+    },
+    "op9d-pad16-overflow": {
+      "op": 157,
+      "expect": "overflow",
+      "pad": 16,
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "ffff7fff",
+      "fac": "ffffffff",
+      "initial": 16777215
+    },
+    "op9d-pad16-finite-control": {
+      "op": 157,
+      "expect": "return",
+      "pad": 16,
+      "kind": "full",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "ffffffff",
+      "initial": 16777215
+    },
+    "op9d-pad32-overflow": {
+      "op": 157,
+      "expect": "overflow",
+      "pad": 32,
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "ffff7fff",
+      "fac": "ffffffff",
+      "initial": 16777215
+    },
+    "op9d-pad32-finite-control": {
+      "op": 157,
+      "expect": "return",
+      "pad": 32,
+      "kind": "full",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 131,
+      "left": "00004081",
+      "fac": "ffffffff",
+      "initial": 16777215
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "05c1dd996f60a0f9f5c53d3d09bc9a0ab0affb36725a311c9f93449afc49c77b"
+}

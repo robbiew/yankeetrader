@@ -2102,8 +2102,8 @@ computes offsets only; full additions reuse `AddSingleWithFAC`. Explicit synthet
 frame/header interventions and a resolver-only return stub are documented;
 resolver-only cases never dereference unsafe addresses or claim arithmetic.
 Portable traces, eight corruption/acceptance tests, Go native comparisons and CI
-cover both protocols. Normal complete maintenance, arbitrary frames and inline85
-overflow/unwind remain unqualified. Gameplay, save 35 and sysop policy are unchanged.
+cover both protocols. Normal complete maintenance, arbitrary frames and general
+unwind remain unqualified; bounded inline Overflow diagnostics are qualified below. Gameplay, save 35 and sysop policy are unchanged.
 
 
 [Direct SINGLE subtraction](research/yt-mbf-sub/RECOVERY.md) now qualifies
@@ -2116,7 +2116,7 @@ unnegated FAC residues on cancellation/underflow. Original operand memory, RNG
 and mode are checked on successful returns; overflow retains exact diagnostics.
 A static original-byte audit covers 43 direct maintenance callers. Portable Go
 vectors, twelve verifier tests, CI and the plan accompany this isolated API.
-Inline 9d and DOUBLE subtraction remain separate. Gameplay, save 35, source
+Inline 9d is qualified by the following supplements; DOUBLE subtraction remains separate. Gameplay, save 35, source
 fingerprints and sysop procedures are unchanged. Inline addition belongs to the
 separate [PR #128](https://github.com/robbiew/yankeetrader/pull/128).
 
@@ -2129,7 +2129,21 @@ scope now includes both 85 and 9d. All four selectors at five archived direct
 maintenance callers are covered with archived header bases. Portable native Go
 comparisons, eleven corruption/acceptance tests, shared verifier checks and CI
 preserve opcode/marker separation, sign-flipped zero aliases, unnegated FAC
-residues and selected/poison memory. Native inline overflow/unwind and complete
-maintenance remain unqualified. Gameplay, save 35 and sysop behavior are unchanged.
-This branch depends on parent PRs #128/#129; it must target main
-after those merge, not a feature branch.
+residues and selected/poison memory. General unwind and complete maintenance
+remain unqualified; the following supplement covers bounded fatal diagnostics. Gameplay, save 35 and sysop behavior are unchanged.
+PRs #128, #129 and #130 are merged into main.
+
+
+[Bounded inline Overflow controls](research/yt-mbf-inline-overflow/RECOVERY.md)
+now cover both 85 addition and 9d subtraction in declared bootstrap/frame contexts:
+twenty first-attempt runs yield twelve exact native fatal diagnostics and eight
+finite controls. A new pre-entry protocol captures the runtime error route/hook,
+saved BP/SP, module stack and original versus synthetic BP, including 16/32-byte
+frame padding. Existing Go arithmetic correctly rejects the overflowing pairs;
+no new numeric implementation is needed. Portable raw fixtures, twelve verifier
+tests, Go native comparisons, source authentication and CI preserve the exact
+consumed-selector error addresses and keep fatal output null. No post-error FAC,
+register/RNG preservation, arbitrary unwind, ON ERROR/RESUME, complete maintenance
+or live BBS behavior is claimed. Gameplay, source fingerprints, save 35 and sysop
+procedures remain unchanged. Direct SINGLE multiplication is the next independent
+source-selected arithmetic slice; reuse existing evidence before new acquisition.

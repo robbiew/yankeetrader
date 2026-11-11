@@ -92,3 +92,7 @@ Local validation passed: both complete inline verifiers and their 19 tests; the
 and their 24 tests; race-enabled qbmbf/qbrng/qbinit tests and Go vet; twenty native
 initializer goldens; and all 4,682 archived file hashes. These local results are
 separate from PR CI and live BBS acceptance.
+
+The [bounded overflow supplement](../yt-mbf-inline-overflow/RECOVERY.md) now
+qualifies complete fatal diagnostics in declared bootstrap/frame-depth contexts.
+It does not observe post-error FAC/registers or admit general unwind/ON ERROR.

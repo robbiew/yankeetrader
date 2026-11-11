@@ -536,3 +536,10 @@
 /research/yt-mbf-inline-sub/**/TRACE.BIN -diff
 /research/yt-mbf-inline-sub/**/*.LOG -diff
 /research/yt-mbf-inline-sub/**/dosbox.stderr -diff
+
+# Immutable inline overflow/error-context captures and raw host/clock logs.
+/research/yt-mbf-inline-overflow/native/** -text
+/research/yt-mbf-inline-overflow/depth-native/** -text
+/research/yt-mbf-inline-overflow/**/TRACE.BIN -diff
+/research/yt-mbf-inline-overflow/**/*.LOG -diff
+/research/yt-mbf-inline-overflow/**/dosbox.stderr -diff
