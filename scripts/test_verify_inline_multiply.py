@@ -60,7 +60,7 @@ class InlineMultiplication(unittest.TestCase):
             with self.assertRaises(AssertionError):a.verify(fixture=p)
     def test_operation_selection_remains_closed(self):
         c=next(iter(a.ADDRESS_CASES.values()))
-        with self.assertRaises(AssertionError):a.address.expected_payload(c,'divide')
-        with self.assertRaises(AssertionError):a.address.verify_trace(b'',c,'divide')
+        with self.assertRaises(AssertionError):a.address.expected_payload(c,'unqualified')
+        with self.assertRaises(AssertionError):a.address.verify_trace(b'',c,'unqualified')
 
 if __name__=='__main__':unittest.main()
