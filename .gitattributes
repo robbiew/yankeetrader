@@ -543,3 +543,10 @@
 /research/yt-mbf-inline-overflow/**/TRACE.BIN -diff
 /research/yt-mbf-inline-overflow/**/*.LOG -diff
 /research/yt-mbf-inline-overflow/**/dosbox.stderr -diff
+
+# Immutable direct multiplication observations and raw host/clock logs.
+/research/yt-mbf-multiply/native/** -text
+/research/yt-mbf-multiply/sticky-native/** -text
+/research/yt-mbf-multiply/**/TRACE.BIN -diff
+/research/yt-mbf-multiply/**/*.LOG -diff
+/research/yt-mbf-multiply/**/dosbox.stderr -diff

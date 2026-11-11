@@ -239,6 +239,8 @@ jobs:
           python3 scripts/test_verify_inline_sub.py
           python3 scripts/verify_inline_overflow.py
           python3 scripts/test_verify_inline_overflow.py
+          python3 scripts/verify_single_multiply.py
+          python3 scripts/test_verify_single_multiply.py
           python3 scripts/verify_single_add.py
           python3 scripts/test_verify_single_add.py
           python3 scripts/verify_mode_selector_startup.py

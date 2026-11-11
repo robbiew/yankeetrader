@@ -115,3 +115,7 @@ inline-addition, inline-subtraction and direct arithmetic verifier suites;
 race-enabled qbmbf/qbrng/qbinit tests and Go vet; twenty native initializer
 goldens; and all 4,682 original archive hashes. These local checks are distinct
 from PR CI and live BBS acceptance.
+
+The [direct multiplication supplement](../yt-mbf-multiply/RECOVERY.md) now
+qualifies the next isolated arithmetic primitive. Its native inputs reuse source
+observations and do not broaden this milestone into general error unwinding.

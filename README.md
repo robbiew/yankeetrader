@@ -2145,5 +2145,18 @@ tests, Go native comparisons, source authentication and CI preserve the exact
 consumed-selector error addresses and keep fatal output null. No post-error FAC,
 register/RNG preservation, arbitrary unwind, ON ERROR/RESUME, complete maintenance
 or live BBS behavior is claimed. Gameplay, source fingerprints, save 35 and sysop
-procedures remain unchanged. Direct SINGLE multiplication is the next independent
-source-selected arithmetic slice; reuse existing evidence before new acquisition.
+procedures remain unchanged. Direct SINGLE multiplication is qualified by the following supplement.
+
+
+[Direct SINGLE multiplication](research/yt-mbf-multiply/RECOVERY.md) now qualifies
+INT3F/8f memory-times-memory, /91 FAC-times-memory and /93 memory-times-FAC.
+`MultiplySingle` and `MultiplySingleWithFAC` preserve original FAC residue for
+zero/underflow, flush underflow before rounding, retain exact guard/sticky bits
+and ties-to-even, and reject overflow. The 115 new first-attempt controls retain
+106 results and nine exact Overflow diagnostics. Existing source observations
+were reused; only four missing tail bytes were queried. A static original-byte
+inventory identifies 60 direct caller sites and separately excludes 12 inline 95
+sites. Portable Go traces, fourteen verifier tests, CI and plan/report updates
+accompany the isolated APIs. No production caller, generator policy, source
+fingerprint, save 35 or sysop behavior changes. Inline 95 and broader arithmetic
+remain separate; native post-error FAC/registers are not inferred.
