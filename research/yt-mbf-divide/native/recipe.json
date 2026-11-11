@@ -1,0 +1,744 @@
+{
+  "recipe": "brun30-divide-entry-state-v1",
+  "cases": {
+    "op89-both-zero": {
+      "op": 137,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "00000000"
+    },
+    "op89-aliases": {
+      "op": 137,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op89-left-zero": {
+      "op": 137,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op89-right-zero": {
+      "op": 137,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op89-max-zero": {
+      "op": 137,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op89-zero-max": {
+      "op": 137,
+      "left": "ffffff00",
+      "right": "ffffffff",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op89-one": {
+      "op": 137,
+      "left": "00000081",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op89-three-two": {
+      "op": 137,
+      "left": "00004082",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00004082"
+    },
+    "op89-two-three": {
+      "op": 137,
+      "left": "00000082",
+      "right": "00004082",
+      "initial": 5,
+      "fac": "00000082"
+    },
+    "op89-one-three": {
+      "op": 137,
+      "left": "00000081",
+      "right": "00004082",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op89-raw": {
+      "op": 137,
+      "left": "56341281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "56341281"
+    },
+    "op89-raw-reversed": {
+      "op": 137,
+      "left": "ac681381",
+      "right": "56341281",
+      "initial": 5,
+      "fac": "ac681381"
+    },
+    "op89-million-half": {
+      "op": 137,
+      "left": "00247494",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "00247494"
+    },
+    "op89-thousand-tenth": {
+      "op": 137,
+      "left": "00007a8a",
+      "right": "cdcc4c7d",
+      "initial": 5,
+      "fac": "00007a8a"
+    },
+    "op89-max-one": {
+      "op": 137,
+      "left": "ffff7fff",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op89-min-one": {
+      "op": 137,
+      "left": "00000001",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-min-two": {
+      "op": 137,
+      "left": "00000001",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-max-half": {
+      "op": 137,
+      "left": "ffff7fff",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op89-max-min": {
+      "op": 137,
+      "left": "ffff7fff",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op89-min-max": {
+      "op": 137,
+      "left": "00000001",
+      "right": "ffff7fff",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-near-two": {
+      "op": 137,
+      "left": "ffff7f81",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "ffff7f81"
+    },
+    "op89-near-one-below": {
+      "op": 137,
+      "left": "feff7f81",
+      "right": "ffff7f81",
+      "initial": 5,
+      "fac": "feff7f81"
+    },
+    "op89-guard23-below-odd": {
+      "op": 137,
+      "left": "9ff50b81",
+      "right": "d7440881",
+      "initial": 5,
+      "fac": "9ff50b81"
+    },
+    "op89-guard23-above-even": {
+      "op": 137,
+      "left": "f12d1681",
+      "right": "0fb61481",
+      "initial": 5,
+      "fac": "f12d1681"
+    },
+    "op89-guard24-below-odd": {
+      "op": 137,
+      "left": "868d1281",
+      "right": "7b4d6c81",
+      "initial": 5,
+      "fac": "868d1281"
+    },
+    "op89-guard24-above-even": {
+      "op": 137,
+      "left": "6d2b2281",
+      "right": "c3622e81",
+      "initial": 5,
+      "fac": "6d2b2281"
+    },
+    "op89-delta-129-below": {
+      "op": 137,
+      "left": "00000001",
+      "right": "ffff7f82",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-129-equal": {
+      "op": 137,
+      "left": "00000001",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-129-above": {
+      "op": 137,
+      "left": "ffff7f01",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "ffff7f01"
+    },
+    "op89-delta-128-below": {
+      "op": 137,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-128-equal": {
+      "op": 137,
+      "left": "00000001",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-128-above": {
+      "op": 137,
+      "left": "ffff7f01",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "ffff7f01"
+    },
+    "op89-delta-127-below": {
+      "op": 137,
+      "left": "00000001",
+      "right": "ffff7f80",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-127-equal": {
+      "op": 137,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op89-delta-127-above": {
+      "op": 137,
+      "left": "ffff7f01",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "ffff7f01"
+    },
+    "op89-delta126-below": {
+      "op": 137,
+      "left": "0000007f",
+      "right": "ffff7f01",
+      "initial": 5,
+      "fac": "0000007f"
+    },
+    "op89-delta126-equal": {
+      "op": 137,
+      "left": "0000007f",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "0000007f"
+    },
+    "op89-delta126-above": {
+      "op": 137,
+      "left": "ffff7f7f",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "ffff7f7f"
+    },
+    "op89-delta127-below": {
+      "op": 137,
+      "left": "00000080",
+      "right": "ffff7f01",
+      "initial": 5,
+      "fac": "00000080"
+    },
+    "op89-delta127-equal": {
+      "op": 137,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "00000080"
+    },
+    "op89-delta127-above": {
+      "op": 137,
+      "left": "ffff7f80",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "ffff7f80"
+    },
+    "op89-delta128-below": {
+      "op": 137,
+      "left": "00000081",
+      "right": "ffff7f01",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op89-delta128-equal": {
+      "op": 137,
+      "left": "00000081",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op89-delta128-above": {
+      "op": 137,
+      "left": "ffff7f81",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "ffff7f81"
+    },
+    "op89-three-two-negative": {
+      "op": 137,
+      "left": "0000c082",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "0000c082"
+    },
+    "op89-one-three-negative": {
+      "op": 137,
+      "left": "00008081",
+      "right": "00004082",
+      "initial": 5,
+      "fac": "00008081"
+    },
+    "op89-raw-negative": {
+      "op": 137,
+      "left": "56349281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "56349281"
+    },
+    "op89-guard23-below-odd-negative": {
+      "op": 137,
+      "left": "9ff58b81",
+      "right": "d7440881",
+      "initial": 5,
+      "fac": "9ff58b81"
+    },
+    "op89-guard23-above-even-negative": {
+      "op": 137,
+      "left": "f12d9681",
+      "right": "0fb61481",
+      "initial": 5,
+      "fac": "f12d9681"
+    },
+    "op89-guard24-below-odd-negative": {
+      "op": 137,
+      "left": "868d9281",
+      "right": "7b4d6c81",
+      "initial": 5,
+      "fac": "868d9281"
+    },
+    "op89-guard24-above-even-negative": {
+      "op": 137,
+      "left": "6d2ba281",
+      "right": "c3622e81",
+      "initial": 5,
+      "fac": "6d2ba281"
+    },
+    "op89-min-two-negative": {
+      "op": 137,
+      "left": "00008001",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00008001"
+    },
+    "op89-max-half-negative": {
+      "op": 137,
+      "left": "ffffffff",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "ffffffff"
+    },
+    "op89-negative-right": {
+      "op": 137,
+      "left": "00004082",
+      "right": "00008082",
+      "initial": 5,
+      "fac": "00004082"
+    },
+    "op89-both-negative": {
+      "op": 137,
+      "left": "0000c082",
+      "right": "00008082",
+      "initial": 5,
+      "fac": "0000c082"
+    },
+    "op89-max-rng-zero": {
+      "op": 137,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "op89-max-rng-guard": {
+      "op": 137,
+      "left": "6d2b2281",
+      "right": "c3622e81",
+      "initial": 16777215,
+      "fac": "6d2b2281"
+    },
+    "op87-both-zero": {
+      "op": 135,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-aliases": {
+      "op": 135,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-left-zero": {
+      "op": 135,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-right-zero": {
+      "op": 135,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-max-zero": {
+      "op": 135,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-three-two": {
+      "op": 135,
+      "left": "00004082",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-two-three": {
+      "op": 135,
+      "left": "00000082",
+      "right": "00004082",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-raw": {
+      "op": 135,
+      "left": "56341281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-raw-reversed": {
+      "op": 135,
+      "left": "ac681381",
+      "right": "56341281",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-guard23-below-odd": {
+      "op": 135,
+      "left": "9ff50b81",
+      "right": "d7440881",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-guard24-above-even": {
+      "op": 135,
+      "left": "6d2b2281",
+      "right": "c3622e81",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-delta-128-below": {
+      "op": 135,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-delta-128-equal": {
+      "op": 135,
+      "left": "00000001",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-delta127-below": {
+      "op": 135,
+      "left": "00000080",
+      "right": "ffff7f01",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-delta127-equal": {
+      "op": 135,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op87-both-negative": {
+      "op": 135,
+      "left": "0000c082",
+      "right": "00008082",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8b-both-zero": {
+      "op": 139,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "00000000"
+    },
+    "op8b-aliases": {
+      "op": 139,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op8b-left-zero": {
+      "op": 139,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "00008081"
+    },
+    "op8b-right-zero": {
+      "op": 139,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op8b-max-zero": {
+      "op": 139,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op8b-three-two": {
+      "op": 139,
+      "left": "00004082",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00000082"
+    },
+    "op8b-two-three": {
+      "op": 139,
+      "left": "00000082",
+      "right": "00004082",
+      "initial": 5,
+      "fac": "00004082"
+    },
+    "op8b-raw": {
+      "op": 139,
+      "left": "56341281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "ac681381"
+    },
+    "op8b-raw-reversed": {
+      "op": 139,
+      "left": "ac681381",
+      "right": "56341281",
+      "initial": 5,
+      "fac": "56341281"
+    },
+    "op8b-guard23-below-odd": {
+      "op": 139,
+      "left": "9ff50b81",
+      "right": "d7440881",
+      "initial": 5,
+      "fac": "d7440881"
+    },
+    "op8b-guard24-above-even": {
+      "op": 139,
+      "left": "6d2b2281",
+      "right": "c3622e81",
+      "initial": 5,
+      "fac": "c3622e81"
+    },
+    "op8b-delta-128-below": {
+      "op": 139,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 5,
+      "fac": "ffff7f81"
+    },
+    "op8b-delta-128-equal": {
+      "op": 139,
+      "left": "00000001",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op8b-delta127-below": {
+      "op": 139,
+      "left": "00000080",
+      "right": "ffff7f01",
+      "initial": 5,
+      "fac": "ffff7f01"
+    },
+    "op8b-delta127-equal": {
+      "op": 139,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op8b-both-negative": {
+      "op": 139,
+      "left": "0000c082",
+      "right": "00008082",
+      "initial": 5,
+      "fac": "00008082"
+    },
+    "fac0-aliases": {
+      "op": 135,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-left-zero": {
+      "op": 135,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-delta-128-below": {
+      "op": 135,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-delta127-equal": {
+      "op": 135,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac1-aliases": {
+      "op": 135,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-left-zero": {
+      "op": 135,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-delta-128-below": {
+      "op": 135,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-delta127-equal": {
+      "op": 135,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac2-aliases": {
+      "op": 135,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-left-zero": {
+      "op": 135,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-delta-128-below": {
+      "op": 135,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-delta127-equal": {
+      "op": 135,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac3-aliases": {
+      "op": 135,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-left-zero": {
+      "op": 135,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-delta-128-below": {
+      "op": 135,
+      "left": "00000001",
+      "right": "ffff7f81",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-delta127-equal": {
+      "op": 135,
+      "left": "00000080",
+      "right": "00000001",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "77912ffe882ef873bbf9bc0b2351a351552ef40c3ef5d8e37bc7c4dd20835032"
+}

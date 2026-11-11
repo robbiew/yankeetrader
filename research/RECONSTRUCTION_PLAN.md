@@ -2168,6 +2168,27 @@ padded frames. Extended the shared validators with closed multiply/op95 choices,
 added separate portable profiles, fourteen verifier tests and Go comparisons.
 No gameplay, fingerprint, save 35, production replay or sysop changes. General
 unwind, hooks/RESUME, arbitrary frames, complete maintenance and live acceptance
-remain separate. Next: direct SINGLE division after auditing its retained source
-and normal callers. Do not repeat completed product/address/error controls.
+remain separate. Direct SINGLE division follows below. Do not repeat completed
+product/address/error controls.
 [Evidence and boundaries](yt-mbf-inline-multiply/RECOVERY.md).
+
+
+### Direct SINGLE division (2026-11-11)
+
+Merged #133 after two current-head green observations, an immediate full review/CI
+recheck and protected merge; verified ancestry before beginning division on main.
+Audited the plan, README, retained evidence and open PRs first. Reused the 48-byte
+division entry packet, ABI/dispatch, normalization and fatal-error evidence;
+queried only the missing 91-byte quotient tail and 18-byte error-code/text range.
+Qualified direct /87, /89 and /8b through 105 immutable first-attempt controls:
+75 numeric returns, 14 exact Overflow and 16 exact Division by zero outcomes.
+The independent rational verifier reconstructs complete copied images, frozen
+acquisition attribution, prior-FAC residue, ordered operands, default mode/RNG
+and exact fatal frames. Added the isolated Go division APIs with distinct errors,
+portable traces, twelve corruption tests and CI steps. A bounded original-byte
+inventory records 8 /87 and 16 /89 callers, with no /8b or inline /8d listing sites.
+Generator goldens, source fingerprints, gameplay, save 35 and sysop policy stay
+unchanged. Next: inspect existing inline /8d entry/address evidence before adding
+missing bounded controls; do not repeat the completed direct arithmetic captures.
+General unwind, hooks/RESUME, DOUBLE division and complete maintenance remain
+separate. [Evidence and boundaries](yt-mbf-divide/RECOVERY.md).
