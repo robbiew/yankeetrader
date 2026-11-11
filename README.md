@@ -21,7 +21,7 @@ details and limitations.
 | Build and test | [Build and validate](#build-and-validate) |
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
-| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-07) — verified implementation inventory and remaining work; older milestones are historical |
+| Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-work) — verified implementation inventory and remaining work; older milestones are historical |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -51,6 +51,12 @@ Click any screenshot to view it at full size.
 Release packages provide Linux x86-64/ARM64 tarballs and a Windows x86-64 ZIP,
 including a standalone executable, [sysop cheat sheet](docs/SYSOP_CHEAT_SHEET.md),
 full save/restore guidance, credits, third-party notices and build provenance.
+The published [v0.1.1-sysop.1 tester build](https://github.com/robbiew/yankeetrader/releases/tag/v0.1.1-sysop.1)
+is Linux x86-64 only and includes playable `qb36-v1` plus the Door32 negative-handle
+fix. The Windows x86-64 and Linux ARM64 packages from v0.1.0 predate that profile;
+use a current source build for those platforms. Native Windows/live-BBS acceptance
+remains pending.
+
 Tagged `vX.Y.Z` builds create a **draft** [GitHub Release](https://github.com/robbiew/yankeetrader/releases)
 with SHA-256 checksums; a maintainer reviews and publishes it. Archive verification
 rejects Windows separators/drive syntax and noncanonical member paths on every host. Existing data is
@@ -75,8 +81,8 @@ in-memory source bytes, preserving the original defects for comparison. Fresh
 [January 9/10/11 controls](research/yt-initializer-replay/JANUARY10.md) across
 2026–2028 verify the class-dependent January 10 zero residue; that date is now
 admitted without changing any previously supported source fingerprints.
-**Playable QB generation is available in this source build** (the published
-v0.1.0 packages predate it). To initialize a separate
+**Playable QB generation is available in this source build and the Linux x86-64
+v0.1.1-sysop.1 tester build** (the v0.1.0 packages predate it). To initialize a separate
 world, use `-init -generation-profile qb36-v1 -qb-state 0xc805 -qb-date 2027-01-01`.
 The saved typed recipe records the profile, raw 24-bit post-RANDOMIZE state,
 explicit source date and SHA-256 of the complete original source candidate.
@@ -2202,4 +2208,9 @@ synthetic controls. Seventeen verifier tests, portable Go traces, CI and plan/re
 updates accompany the shared resolver documentation. Gameplay, source fingerprints,
 save 35 and sysop behavior are unchanged. General unwind, hooks/RESUME, arbitrary
 frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
-unqualified; audit remaining arithmetic/conversion evidence before another slice.
+unqualified. The [reconciled current plan](research/RECONSTRUCTION_PLAN.md#current-work)
+marks these SINGLE arithmetic slices and existing DOUBLE INT/FIX/signed16
+conversions complete. The next bounded numeric task is direct raw-DOUBLE addition,
+starting with retained /82 source/caller evidence; raw DOUBLE binary arithmetic
+has no Go API or dedicated native arithmetic fixture yet. No overlapping open PR remains
+after #135 merged (checked 2026-11-11).

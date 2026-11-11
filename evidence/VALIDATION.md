@@ -1,7 +1,7 @@
 # Trading and planet milestone validation
 
 This is a chronological validation ledger. Older feature restrictions describe
-their dated milestone; use the [current plan](../research/RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-05)
+their dated milestone; use the [current plan](../research/RECONSTRUCTION_PLAN.md#current-work)
 and [README](../README.md#status) for implemented features and current scope.
 
 Validated locally on macOS arm64, 2026-10-25, with Go 1.27.3. Source and executable hashes are in `build.json`.
