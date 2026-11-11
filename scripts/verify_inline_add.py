@@ -1203,8 +1203,8 @@ def expected_offset(case,alternate=False):
 
 
 def expected_payload(case,operation="add"):
-    assert operation in ("add","subtract"),"qualified inline operation"
-    opcode,marker=(0x85,b"IA85") if operation=="add" else (0x9d,b"IS9D")
+    assert operation in ("add","subtract","multiply"),"qualified inline operation"
+    opcode,marker={"add":(0x85,b"IA85"),"subtract":(0x9d,b"IS9D"),"multiply":(0x95,b"IM95")}[operation]
     def word(at,value,cs=False):return (b'\x2e' if cs else b'')+bytes.fromhex('c706')+struct.pack('<HH',at,value)
     def assign(at,raw):return b''.join(word(at+2*i,w) for i,w in enumerate(struct.unpack('<HH',raw)))
     def output(at,size):return bytes.fromhex('bb0100b9')+struct.pack('<H',size)+b'\xba'+struct.pack('<H',at)+bytes.fromhex('b440cd21')
@@ -1223,8 +1223,8 @@ def expected_payload(case,operation="add"):
 
 
 def verify_trace(trace,case,operation="add"):
-    assert operation in ("add","subtract"),"qualified inline operation"
-    marker=b"IA85" if operation=="add" else b"IS9D"
+    assert operation in ("add","subtract","multiply"),"qualified inline operation"
+    marker={"add":b"IA85","subtract":b"IS9D","multiply":b"IM95"}[operation]
     assert case['kind'] in ('address','full'),'only declared resolver-only/full-success protocols'
     size=57 if case['kind']=='address' else 65
     assert len(trace)==size and trace[:4]==marker and trace[-4:]==b'END!','complete protocol-specific inline frame'
@@ -1242,7 +1242,8 @@ def verify_trace(trace,case,operation="add"):
     else:
         assert offset<=65532 and expected_offset(case,True)<=65532,'full controls use safe complete operand spans'
         if operation=="add":from verify_single_add_entries import expected_entry
-        else:from verify_single_sub import expected_entry
+        elif operation=="subtract":from verify_single_sub import expected_entry
+        else:from verify_single_multiply import expected_entry
         want=expected_entry(bytes.fromhex(case['left']),bytes.fromhex(case['fac']),bytes.fromhex(case['fac']))
         assert want is not None and trace[44:48]==want,'qualified shared arithmetic after actual inline address resolution'
         poison='00000082' if case['left']=='00000081' else '00000081'
@@ -1274,7 +1275,7 @@ def verify_static(runtime):
 
 
 def verify_corpus(directory,cases,pins_sha,recipe_id,source_name,operation="add"):
-    assert operation in ("add","subtract"),"qualified inline operation"
+    assert operation in ("add","subtract","multiply"),"qualified inline operation"
     root=Path(directory); manifest=(root/'pins.json').read_bytes(); assert SHA(manifest)==pins_sha,'fixed native manifest'
     pins=json.loads(manifest)['files']
     assert {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p.name!='pins.json'}==set(pins),'complete artifact inventory'
@@ -1295,7 +1296,7 @@ def verify_corpus(directory,cases,pins_sha,recipe_id,source_name,operation="add"
             assert all(not(at<end and at+2>start) for start,end in ((0x3a,0x3f),(0x6d,0x6d+len(stub)))),'no loader relocation overlaps the diagnostic'
         copied=bytearray(runtime); struct.pack_into('<I',copied,0x10234,case['initial'])
         if case['kind']=='address':
-            at=0xb571 if operation=='add' else 0xb55c
+            at={'add':0xb571,'subtract':0xb55c,'multiply':0xb6a8}[operation]
             assert copied[at:at+3]==bytes.fromhex('bf1a00'),'original post-resolver FAC selection'
             copied[at:at+3]=bytes.fromhex('cb9090')
         assert set(meta)=={'recipe','case','kind','magic','base10','base12','selector','left','fac','initial','exit_code','timeout','missing','payload_hex','copied_initializer_sha256','copied_runtime_sha256','files'},'fixed result schema'

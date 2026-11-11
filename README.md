@@ -2158,5 +2158,18 @@ were reused; only four missing tail bytes were queried. A static original-byte
 inventory identifies 60 direct caller sites and separately excludes 12 inline 95
 sites. Portable Go traces, fourteen verifier tests, CI and plan/report updates
 accompany the isolated APIs. No production caller, generator policy, source
-fingerprint, save 35 or sysop behavior changes. Inline 95 and broader arithmetic
-remain separate; native post-error FAC/registers are not inferred.
+fingerprint, save 35 or sysop behavior changes. The following supplement covers
+inline 95; broader arithmetic and native post-error state remain separate.
+
+
+[Inline SINGLE multiplication](research/yt-mbf-inline-multiply/RECOVERY.md) now
+qualifies bounded INT3F/95 execution by composing the existing resolver and
+`MultiplySingleWithFAC(left,FAC,FAC)`. All 81 first attempts completed: 25
+resolver-only frames, 42 numeric returns and 14 exact Overflow diagnostics. The
+existing twelve source call sites and all five selectors are reused; no new
+source query or arithmetic implementation is needed. Fourteen verifier tests,
+complete portable Go frames, CI and plan/report updates preserve right-FAC zero
+residue, safe/wrapped addressing separation and declared error/frame contexts.
+General unwind, ON ERROR/RESUME, arbitrary frames, complete maintenance and live
+BBS behavior remain unqualified. Gameplay, source fingerprints, save 35 and sysop
+behavior are unchanged. Direct SINGLE division is the next independent slice.

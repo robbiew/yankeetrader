@@ -142,3 +142,7 @@ existing inline/direct addition/subtraction and overflow verifier suites;
 race-enabled qbmbf/qbrng/qbinit tests and Go vet; twenty complete native
 initializer goldens; and all 4,682 original archive hashes. PR CI and live BBS
 acceptance remain separate validation.
+
+The [inline multiplication supplement](../yt-mbf-inline-multiply/RECOVERY.md)
+now qualifies declared 95 resolver/result/error contexts using these unchanged
+product APIs. General machine-frame validity and broader unwind remain separate.

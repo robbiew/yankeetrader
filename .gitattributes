@@ -550,3 +550,10 @@
 /research/yt-mbf-multiply/**/TRACE.BIN -diff
 /research/yt-mbf-multiply/**/*.LOG -diff
 /research/yt-mbf-multiply/**/dosbox.stderr -diff
+
+# Immutable inline95 resolver/result/error observations and raw logs.
+/research/yt-mbf-inline-multiply/native/** -text
+/research/yt-mbf-inline-multiply/address-native/** -text
+/research/yt-mbf-inline-multiply/**/TRACE.BIN -diff
+/research/yt-mbf-inline-multiply/**/*.LOG -diff
+/research/yt-mbf-inline-multiply/**/dosbox.stderr -diff
