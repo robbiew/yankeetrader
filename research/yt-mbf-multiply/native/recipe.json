@@ -1,0 +1,772 @@
+{
+  "recipe": "brun30-multiply-entry-state-v1",
+  "cases": {
+    "op91-both-zero": {
+      "op": 145,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "00000000"
+    },
+    "op91-aliases": {
+      "op": 145,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op91-left-zero": {
+      "op": 145,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op91-right-zero": {
+      "op": 145,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-max-zero": {
+      "op": 145,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op91-zero-max": {
+      "op": 145,
+      "left": "ffffff00",
+      "right": "ffffffff",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op91-one": {
+      "op": 145,
+      "left": "00000081",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000081"
+    },
+    "op91-one-negative": {
+      "op": 145,
+      "left": "00008081",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00008081"
+    },
+    "op91-fraction": {
+      "op": 145,
+      "left": "00004081",
+      "right": "00004081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-fraction-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "00004081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-raw-align": {
+      "op": 145,
+      "left": "56341281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "56341281"
+    },
+    "op91-raw-align-negative": {
+      "op": 145,
+      "left": "56349281",
+      "right": "ac681381",
+      "initial": 5,
+      "fac": "56349281"
+    },
+    "op91-tie47-odd": {
+      "op": 145,
+      "left": "00004081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-tie47-odd-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-tie47-even": {
+      "op": 145,
+      "left": "00004081",
+      "right": "03000081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-tie47-even-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "03000081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-below47": {
+      "op": 145,
+      "left": "ffff3f81",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "ffff3f81"
+    },
+    "op91-below47-negative": {
+      "op": 145,
+      "left": "ffffbf81",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "ffffbf81"
+    },
+    "op91-above47": {
+      "op": 145,
+      "left": "01004081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "01004081"
+    },
+    "op91-above47-negative": {
+      "op": 145,
+      "left": "0100c081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "0100c081"
+    },
+    "op91-tie48-odd": {
+      "op": 145,
+      "left": "00004081",
+      "right": "02004081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-tie48-odd-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "02004081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-tie48-even": {
+      "op": 145,
+      "left": "00004081",
+      "right": "06004081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-tie48-even-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "06004081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-below48": {
+      "op": 145,
+      "left": "ffff7f81",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "ffff7f81"
+    },
+    "op91-below48-negative": {
+      "op": 145,
+      "left": "ffffff81",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "ffffff81"
+    },
+    "op91-above48": {
+      "op": 145,
+      "left": "01004081",
+      "right": "01004081",
+      "initial": 5,
+      "fac": "01004081"
+    },
+    "op91-above48-negative": {
+      "op": 145,
+      "left": "0100c081",
+      "right": "01004081",
+      "initial": 5,
+      "fac": "0100c081"
+    },
+    "op91-round-carry": {
+      "op": 145,
+      "left": "01000081",
+      "right": "feff7f81",
+      "initial": 5,
+      "fac": "01000081"
+    },
+    "op91-round-carry-negative": {
+      "op": 145,
+      "left": "01008081",
+      "right": "feff7f81",
+      "initial": 5,
+      "fac": "01008081"
+    },
+    "op91-negative-right": {
+      "op": 145,
+      "left": "00004081",
+      "right": "01008081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op91-both-negative": {
+      "op": 145,
+      "left": "0000c081",
+      "right": "0200c081",
+      "initial": 5,
+      "fac": "0000c081"
+    },
+    "op91-raw-reversed": {
+      "op": 145,
+      "left": "ac681381",
+      "right": "56341281",
+      "initial": 5,
+      "fac": "ac681381"
+    },
+    "op91-ties-reversed": {
+      "op": 145,
+      "left": "03000081",
+      "right": "00004081",
+      "initial": 5,
+      "fac": "03000081"
+    },
+    "op91-million-half": {
+      "op": 145,
+      "left": "00247494",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "00247494"
+    },
+    "op91-thousand-tenth": {
+      "op": 145,
+      "left": "00007a8a",
+      "right": "cdcc4c7d",
+      "initial": 5,
+      "fac": "00007a8a"
+    },
+    "op91-exp-sum128-800000": {
+      "op": 145,
+      "left": "00000040",
+      "right": "00000040",
+      "initial": 5,
+      "fac": "00000040"
+    },
+    "op91-exp-sum128-c00000": {
+      "op": 145,
+      "left": "00004040",
+      "right": "00004040",
+      "initial": 5,
+      "fac": "00004040"
+    },
+    "op91-exp-sum129-800000": {
+      "op": 145,
+      "left": "00000040",
+      "right": "00000041",
+      "initial": 5,
+      "fac": "00000040"
+    },
+    "op91-exp-sum129-c00000": {
+      "op": 145,
+      "left": "00004040",
+      "right": "00004041",
+      "initial": 5,
+      "fac": "00004040"
+    },
+    "op91-exp-sum130-800000": {
+      "op": 145,
+      "left": "00000041",
+      "right": "00000041",
+      "initial": 5,
+      "fac": "00000041"
+    },
+    "op91-exp-sum130-c00000": {
+      "op": 145,
+      "left": "00004041",
+      "right": "00004041",
+      "initial": 5,
+      "fac": "00004041"
+    },
+    "op91-exp-sum383-800000": {
+      "op": 145,
+      "left": "000000bf",
+      "right": "000000c0",
+      "initial": 5,
+      "fac": "000000bf"
+    },
+    "op91-exp-sum383-c00000": {
+      "op": 145,
+      "left": "000040bf",
+      "right": "000040c0",
+      "initial": 5,
+      "fac": "000040bf"
+    },
+    "op91-exp-sum384-800000": {
+      "op": 145,
+      "left": "000000c0",
+      "right": "000000c0",
+      "initial": 5,
+      "fac": "000000c0"
+    },
+    "op91-exp-sum384-c00000": {
+      "op": 145,
+      "left": "000040c0",
+      "right": "000040c0",
+      "initial": 5,
+      "fac": "000040c0"
+    },
+    "op91-exp-sum385-800000": {
+      "op": 145,
+      "left": "000000c0",
+      "right": "000000c1",
+      "initial": 5,
+      "fac": "000000c0"
+    },
+    "op91-exp-sum385-c00000": {
+      "op": 145,
+      "left": "000040c0",
+      "right": "000040c1",
+      "initial": 5,
+      "fac": "000040c0"
+    },
+    "op91-flush-before-round": {
+      "op": 145,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "01000040"
+    },
+    "op91-reverse-flush": {
+      "op": 145,
+      "left": "feff7f41",
+      "right": "01000040",
+      "initial": 5,
+      "fac": "feff7f41"
+    },
+    "op91-negative-flush": {
+      "op": 145,
+      "left": "01008040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "01008040"
+    },
+    "op91-round-overflow": {
+      "op": 145,
+      "left": "010000c0",
+      "right": "feff7fc0",
+      "initial": 5,
+      "fac": "010000c0"
+    },
+    "op91-below-upper-range": {
+      "op": 145,
+      "left": "ffff7fbf",
+      "right": "ffff7fc0",
+      "initial": 5,
+      "fac": "ffff7fbf"
+    },
+    "op91-min-max": {
+      "op": 145,
+      "left": "00000001",
+      "right": "ffff7fff",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op91-max-min": {
+      "op": 145,
+      "left": "ffff7fff",
+      "right": "00000001",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op91-max-one": {
+      "op": 145,
+      "left": "ffff7fff",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op91-min-one": {
+      "op": 145,
+      "left": "00000001",
+      "right": "00000081",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op91-min-half": {
+      "op": 145,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "00000001"
+    },
+    "op91-max-two": {
+      "op": 145,
+      "left": "ffff7fff",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "ffff7fff"
+    },
+    "op91-max-rng-tie": {
+      "op": 145,
+      "left": "00004081",
+      "right": "01000081",
+      "initial": 16777215,
+      "fac": "00004081"
+    },
+    "op91-max-rng-zero": {
+      "op": 145,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "op8f-both-zero": {
+      "op": 143,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-aliases": {
+      "op": 143,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-left-zero": {
+      "op": 143,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-right-zero": {
+      "op": 143,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-max-zero": {
+      "op": 143,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-min-half": {
+      "op": 143,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-flush-before-round": {
+      "op": 143,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-negative-flush": {
+      "op": 143,
+      "left": "01008040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-exp-sum129-c00000": {
+      "op": 143,
+      "left": "00004040",
+      "right": "00004041",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-exp-sum128-c00000": {
+      "op": 143,
+      "left": "00004040",
+      "right": "00004040",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-fraction": {
+      "op": 143,
+      "left": "00004081",
+      "right": "00004081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-tie47-odd": {
+      "op": 143,
+      "left": "00004081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-tie48-even": {
+      "op": 143,
+      "left": "00004081",
+      "right": "06004081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-round-overflow": {
+      "op": 143,
+      "left": "010000c0",
+      "right": "feff7fc0",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-max-two": {
+      "op": 143,
+      "left": "ffff7fff",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op8f-both-negative": {
+      "op": 143,
+      "left": "0000c081",
+      "right": "0200c081",
+      "initial": 5,
+      "fac": "5aa5d592"
+    },
+    "op93-both-zero": {
+      "op": 147,
+      "left": "00000000",
+      "right": "00000000",
+      "initial": 5,
+      "fac": "00000000"
+    },
+    "op93-aliases": {
+      "op": 147,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op93-left-zero": {
+      "op": 147,
+      "left": "12345600",
+      "right": "00008081",
+      "initial": 5,
+      "fac": "00008081"
+    },
+    "op93-right-zero": {
+      "op": 147,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 5,
+      "fac": "ffffff00"
+    },
+    "op93-max-zero": {
+      "op": 147,
+      "left": "ffff7fff",
+      "right": "12345600",
+      "initial": 5,
+      "fac": "12345600"
+    },
+    "op93-min-half": {
+      "op": 147,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 5,
+      "fac": "00000080"
+    },
+    "op93-flush-before-round": {
+      "op": 147,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "feff7f41"
+    },
+    "op93-negative-flush": {
+      "op": 147,
+      "left": "01008040",
+      "right": "feff7f41",
+      "initial": 5,
+      "fac": "feff7f41"
+    },
+    "op93-exp-sum129-c00000": {
+      "op": 147,
+      "left": "00004040",
+      "right": "00004041",
+      "initial": 5,
+      "fac": "00004041"
+    },
+    "op93-exp-sum128-c00000": {
+      "op": 147,
+      "left": "00004040",
+      "right": "00004040",
+      "initial": 5,
+      "fac": "00004040"
+    },
+    "op93-fraction": {
+      "op": 147,
+      "left": "00004081",
+      "right": "00004081",
+      "initial": 5,
+      "fac": "00004081"
+    },
+    "op93-tie47-odd": {
+      "op": 147,
+      "left": "00004081",
+      "right": "01000081",
+      "initial": 5,
+      "fac": "01000081"
+    },
+    "op93-tie48-even": {
+      "op": 147,
+      "left": "00004081",
+      "right": "06004081",
+      "initial": 5,
+      "fac": "06004081"
+    },
+    "op93-round-overflow": {
+      "op": 147,
+      "left": "010000c0",
+      "right": "feff7fc0",
+      "initial": 5,
+      "fac": "feff7fc0"
+    },
+    "op93-max-two": {
+      "op": 147,
+      "left": "ffff7fff",
+      "right": "00000082",
+      "initial": 5,
+      "fac": "00000082"
+    },
+    "op93-both-negative": {
+      "op": 147,
+      "left": "0000c081",
+      "right": "0200c081",
+      "initial": 5,
+      "fac": "0200c081"
+    },
+    "fac0-aliases": {
+      "op": 143,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-right-zero": {
+      "op": 143,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-flush-before-round": {
+      "op": 143,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac0-min-half": {
+      "op": 143,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 16777215,
+      "fac": "00000000"
+    },
+    "fac1-aliases": {
+      "op": 143,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-right-zero": {
+      "op": 143,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-flush-before-round": {
+      "op": 143,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac1-min-half": {
+      "op": 143,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 16777215,
+      "fac": "12345600"
+    },
+    "fac2-aliases": {
+      "op": 143,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-right-zero": {
+      "op": 143,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-flush-before-round": {
+      "op": 143,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac2-min-half": {
+      "op": 143,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 16777215,
+      "fac": "01008001"
+    },
+    "fac3-aliases": {
+      "op": 143,
+      "left": "12345600",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-right-zero": {
+      "op": 143,
+      "left": "00004081",
+      "right": "ffffff00",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-flush-before-round": {
+      "op": 143,
+      "left": "01000040",
+      "right": "feff7f41",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    },
+    "fac3-min-half": {
+      "op": 143,
+      "left": "00000001",
+      "right": "00000080",
+      "initial": 16777215,
+      "fac": "ffffffff"
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "936d29b4275b04b6b81aeccabb3a574f5459e9a6dde3dccd1b3c2da8b90c5978"
+}

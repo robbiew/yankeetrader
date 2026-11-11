@@ -1,0 +1,51 @@
+{
+  "recipe": "brun30-multiply-sticky-v1",
+  "cases": {
+    "guard47-below-odd": {
+      "op": 145,
+      "left": "07000081",
+      "right": "49926481",
+      "initial": 16777215,
+      "fac": "07000081"
+    },
+    "guard47-below-odd-negative": {
+      "op": 145,
+      "left": "07008081",
+      "right": "49926481",
+      "initial": 16777215,
+      "fac": "07008081"
+    },
+    "guard48-below-odd": {
+      "op": 145,
+      "left": "5b200081",
+      "right": "2df07f81",
+      "initial": 16777215,
+      "fac": "5b200081"
+    },
+    "guard48-below-odd-negative": {
+      "op": 145,
+      "left": "5b208081",
+      "right": "2df07f81",
+      "initial": 16777215,
+      "fac": "5b208081"
+    },
+    "guard48-above-even": {
+      "op": 145,
+      "left": "3d0c0081",
+      "right": "15eb7f81",
+      "initial": 16777215,
+      "fac": "3d0c0081"
+    },
+    "guard48-above-even-negative": {
+      "op": 145,
+      "left": "3d0c8081",
+      "right": "15eb7f81",
+      "initial": 16777215,
+      "fac": "3d0c8081"
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "4ab1b6098f3c981c1e76b7557c4624102a62931f38b52d6e104bcb5ef06d0106"
+}

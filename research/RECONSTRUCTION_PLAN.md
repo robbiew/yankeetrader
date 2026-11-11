@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `095e7929` (including merged arithmetic PRs #126–130 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `c7d05a29` (including merged arithmetic PRs #126–131 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -2132,3 +2132,24 @@ Next: source-selected direct SINGLE multiplication, beginning with the retained
 wrapper/kernel and actual caller audit. Do not recapture qualified addition,
 subtraction, resolver or bounded fatal-control work as missing evidence.
 [Evidence and boundaries](yt-mbf-inline-overflow/RECOVERY.md).
+
+
+### Direct SINGLE multiplication parity (2026-11-11)
+
+Watched #131 through exact-head review/CI clearance, protected merge and verified
+ancestry before starting this branch from its merged main. Reused retained
+multiplication wrappers/kernel/normalizer/ABI observations; queried only four
+missing partial-product tail bytes. Added 115 first-attempt direct controls:
+106 results and nine exact Overflow diagnostics, including a separately frozen
+six-case signed guard/sticky supplement. Added `MultiplySingle` and
+`MultiplySingleWithFAC`, complete portable frames, an independent rational/source
+verifier and fourteen acceptance/corruption tests. A fixed original-byte inventory
+matches 60 direct maintenance calls and excludes 12 inline 95 calls; no listing
+match for 93 is not proof of absent indirect/other-module use. Zero/underflow
+preserves the original FAC residue; underflow precedes rounding into range.
+No gameplay, recipe fingerprint, save 35, production replay or sysop changes.
+Next: inline 95 multiplication addressing and bounded error controls, reusing the
+qualified resolver and new product model. DOUBLE multiplication, division and
+broader unwind/live acceptance remain separate. Do not repeat direct products,
+addition/subtraction or completed resolver evidence as missing work.
+[Evidence and boundaries](yt-mbf-multiply/RECOVERY.md).
