@@ -2187,4 +2187,19 @@ A static inventory matches 24 direct maintenance sites to original bytes.
 Portable Go traces, twelve corruption/verifier tests and CI checks accompany the
 isolated APIs. Gameplay, source fingerprints, save 35 and sysop behavior are
 unchanged. Inline /8d, arbitrary error/unwind contexts, DOUBLE arithmetic and
-complete maintenance remain separate; audit existing inline evidence next.
+complete maintenance remain separate. The following supplement qualifies bounded inline /8d.
+
+
+[Inline SINGLE division](research/yt-mbf-inline-divide/RECOVERY.md) now qualifies
+bounded INT3F/8d execution by composing the existing resolver with
+`DivideSingleWithFAC(left,FAC,FAC)`. No new source query or arithmetic algorithm
+was needed. All 93 first attempts completed: 15 resolver-only controls, 54 numeric
+returns, 10 exact Overflow errors and 14 exact Division by zero errors. The
+separate protocols preserve right-FAC zero residue, ordered operands, safe/wrapped
+addressing boundaries, consumed-selector error addresses and declared padded
+frames. The bounded maintenance listing has no inline /8d callers; these are
+synthetic controls. Seventeen verifier tests, portable Go traces, CI and plan/report
+updates accompany the shared resolver documentation. Gameplay, source fingerprints,
+save 35 and sysop behavior are unchanged. General unwind, hooks/RESUME, arbitrary
+frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
+unqualified; audit remaining arithmetic/conversion evidence before another slice.

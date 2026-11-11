@@ -2188,7 +2188,30 @@ and exact fatal frames. Added the isolated Go division APIs with distinct errors
 portable traces, twelve corruption tests and CI steps. A bounded original-byte
 inventory records 8 /87 and 16 /89 callers, with no /8b or inline /8d listing sites.
 Generator goldens, source fingerprints, gameplay, save 35 and sysop policy stay
-unchanged. Next: inspect existing inline /8d entry/address evidence before adding
-missing bounded controls; do not repeat the completed direct arithmetic captures.
+unchanged. Bounded inline /8d follows below; do not repeat the completed direct
+arithmetic captures.
 General unwind, hooks/RESUME, DOUBLE division and complete maintenance remain
 separate. [Evidence and boundaries](yt-mbf-divide/RECOVERY.md).
+
+
+### Bounded inline SINGLE division (2026-11-11)
+
+Merged #134 after two current-head green observations and immediate final
+review/CI recheck, protected merge and verified ancestry. Audited retained source,
+plan/README and open work before starting from merged main. Existing entry,
+resolver, quotient and fatal-error evidence completely covered inline /8d;
+no new source query or arithmetic implementation was needed. Added 93 immutable
+first-attempt controls: 15 resolver-only frames, 54 numeric returns, 10 exact
+Overflows and 14 exact Division by zero outcomes. Separate portable profiles and
+seventeen corruption tests check the composed Go resolver/division primitive,
+ordered operands, right-FAC zero residue, guard/sticky/range behavior and declared
+baseline/padded error frames. The static maintenance listing has no inline /8d
+sites; no synthetic controls are represented as normal callers. Extended shared
+validators with closed division choices while preserving earlier fixture schemas,
+updated resolver GoDoc and CI, and retained all original observation hashes.
+Gameplay, source fingerprints, save 35 and sysop policy are unchanged. Next:
+reconcile remaining arithmetic/conversion gaps and callers against recovered
+evidence and open work before selecting another slice. Do not repeat completed
+bounded direct/inline SINGLE arithmetic. General unwind, hooks/RESUME, arbitrary
+frames, DOUBLE arithmetic, full maintenance and live acceptance stay separate.
+[Evidence and boundaries](yt-mbf-inline-divide/RECOVERY.md).

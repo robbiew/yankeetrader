@@ -52,7 +52,7 @@ class InlineSubtraction(unittest.TestCase):
 
     def test_operation_selection_is_closed(self):
         c=next(iter(a.CASES.values()))
-        with self.assertRaises(AssertionError):parent.expected_payload(c,'divide')
-        with self.assertRaises(AssertionError):parent.verify_trace(b'',c,'divide')
+        with self.assertRaises(AssertionError):parent.expected_payload(c,'unqualified')
+        with self.assertRaises(AssertionError):parent.verify_trace(b'',c,'unqualified')
 
 if __name__=='__main__':unittest.main()

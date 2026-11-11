@@ -1,4 +1,4 @@
-"""Audit bounded native inline overflow, bootstrap context and finite controls."""
+"""Audit bounded native inline arithmetic errors, bootstrap context and finite controls."""
 import json,shlex,struct
 from pathlib import Path
 import verify_inline_add as shared
@@ -48,7 +48,8 @@ def error_address(c):
 
 
 def verify_trace(trace,c):
-    assert c['op'] in (0x85,0x9d,0x95) and c['kind']=='full' and c['expect'] in ('overflow','return')
+    assert c['op'] in (0x85,0x9d,0x95,0x8d) and c['kind']=='full' and c['expect'] in ('overflow','return','division_by_zero')
+    assert c['expect']!='division_by_zero' or c['op']==0x8d,'division-zero is a division-only outcome'
     assert len(trace)>=46 and trace[:4]==b'IOF1','complete pre-entry frame'
     left,fac=bytes.fromhex(c['left']),bytes.fromhex(c['fac'])
     assert trace[4:8]==struct.pack('<I',c['initial']) and trace[8:12]==fac and trace[12:16]==left and trace[16]==0 and trace[17]==c['selector'],'actual initial RNG, operands, mode and selector'
@@ -61,20 +62,28 @@ def verify_trace(trace,c):
     if c['op']==0x85:
         from verify_single_add_entries import expected_entry
     elif c['op']==0x9d:expected_entry=subtraction.expected_entry
-    else:
+    elif c['op']==0x95:
         from verify_single_multiply import expected_entry
+    else:
+        from verify_single_divide import expected_entry
     want=expected_entry(left,fac,fac)
-    assert (want is None)==(c['expect']=='overflow'),'source-qualified arithmetic determines outcome, not shell return code'
-    if want is None:
-        address=error_address(c);message=('\r\nOverflow in module YT-INIT  at address 01A3:'+address+'\r\n\r\nHit any key to return to system').encode()
+    failure=want if isinstance(want,str) else ('overflow' if want is None else None)
+    assert (failure or 'return')==c['expect'],'source-qualified arithmetic determines the distinct outcome'
+    if failure:
+        address=error_address(c);label={'overflow':'Overflow','division_by_zero':'Division by zero'}[failure]
+        message=('\r\n'+label+' in module YT-INIT  at address 01A3:'+address+'\r\n\r\nHit any key to return to system').encode()
         assert trace[46:]==message,'exact complete fatal diagnostic with consumed inline return byte; no invented post-error state'
-        return dict(output=None,error_address=address)
+        result=dict(output=None,error_address=address)
+        if c['op']==0x8d:result['error']=failure
+        return result
     assert len(trace)==79 and trace[-4:]==b'END!','complete finite control return'
     si,di,ax,after_ds,after_es,after_bp=struct.unpack('<6H',trace[46:58])
     assert si==shared.expected_offset(c) and di==0x1a and ax==0xbeef and (after_ds,after_es,after_bp)==(ds,es,bp),'finite control preserves registers and resolves the chosen base'
     assert trace[58:62]==want and trace[62:66]==struct.pack('<I',c['initial']) and trace[66]==0,'finite FAC, RNG and mode'
     assert trace[67:71]==left and trace[71:75]==bytes.fromhex('00000081'),'finite selected/poison memory unchanged'
-    return dict(output=want.hex(),error_address=None)
+    result=dict(output=want.hex(),error_address=None)
+    if c['op']==0x8d:result['error']=None
+    return result
 
 
 def verify_static(runtime):
