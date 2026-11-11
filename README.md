@@ -2172,4 +2172,19 @@ complete portable Go frames, CI and plan/report updates preserve right-FAC zero
 residue, safe/wrapped addressing separation and declared error/frame contexts.
 General unwind, ON ERROR/RESUME, arbitrary frames, complete maintenance and live
 BBS behavior remain unqualified. Gameplay, source fingerprints, save 35 and sysop
-behavior are unchanged. Direct SINGLE division is the next independent slice.
+behavior are unchanged. Direct SINGLE division follows below.
+
+
+[Direct SINGLE division](research/yt-mbf-divide/RECOVERY.md) now qualifies
+INT3F/87 memory divided by memory, /89 FAC divided by memory and /8b memory
+divided by FAC. `DivideSingle` and `DivideSingleWithFAC` preserve prior-FAC
+zero/underflow residue, retain exact quotient remainder for rounding and expose
+distinct Overflow and Division by zero errors, with divisor-zero precedence even
+for 0/0. Existing source evidence was reused; only the missing 91-byte kernel
+tail and 18-byte error text were queried. All 105 first-attempt controls completed:
+75 numeric returns, 14 exact Overflows and 16 exact Division by zero diagnostics.
+A static inventory matches 24 direct maintenance sites to original bytes.
+Portable Go traces, twelve corruption/verifier tests and CI checks accompany the
+isolated APIs. Gameplay, source fingerprints, save 35 and sysop behavior are
+unchanged. Inline /8d, arbitrary error/unwind contexts, DOUBLE arithmetic and
+complete maintenance remain separate; audit existing inline evidence next.
