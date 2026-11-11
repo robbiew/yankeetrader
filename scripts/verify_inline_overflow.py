@@ -48,7 +48,7 @@ def error_address(c):
 
 
 def verify_trace(trace,c):
-    assert c['op'] in (0x85,0x9d) and c['kind']=='full' and c['expect'] in ('overflow','return')
+    assert c['op'] in (0x85,0x9d,0x95) and c['kind']=='full' and c['expect'] in ('overflow','return')
     assert len(trace)>=46 and trace[:4]==b'IOF1','complete pre-entry frame'
     left,fac=bytes.fromhex(c['left']),bytes.fromhex(c['fac'])
     assert trace[4:8]==struct.pack('<I',c['initial']) and trace[8:12]==fac and trace[12:16]==left and trace[16]==0 and trace[17]==c['selector'],'actual initial RNG, operands, mode and selector'
@@ -60,7 +60,9 @@ def verify_trace(trace,c):
     assert shared.expected_offset(c)<=65532 and shared.expected_offset(c,True)<=65532,'safe complete memory spans'
     if c['op']==0x85:
         from verify_single_add_entries import expected_entry
-    else:expected_entry=subtraction.expected_entry
+    elif c['op']==0x9d:expected_entry=subtraction.expected_entry
+    else:
+        from verify_single_multiply import expected_entry
     want=expected_entry(left,fac,fac)
     assert (want is None)==(c['expect']=='overflow'),'source-qualified arithmetic determines outcome, not shell return code'
     if want is None:

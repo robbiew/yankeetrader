@@ -5,7 +5,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `c7d05a29` (including merged arithmetic PRs #126–131 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `b3061218` (including merged arithmetic PRs #126–132 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -2153,3 +2153,21 @@ qualified resolver and new product model. DOUBLE multiplication, division and
 broader unwind/live acceptance remain separate. Do not repeat direct products,
 addition/subtraction or completed resolver evidence as missing work.
 [Evidence and boundaries](yt-mbf-multiply/RECOVERY.md).
+
+
+### Bounded inline SINGLE multiplication (2026-11-11)
+
+Watched #132 through exact-head CI/review clearance, protected merge and verified
+ancestry before starting this branch from merged main. Reused its full product
+and twelve inline 95 source sites, plus the qualified resolver/error evidence;
+no new source query or arithmetic algorithm was needed. All 81 first-attempt
+controls completed: 25 resolver-only, 42 numeric returns and 14 exact Overflow
+diagnostics. Actual-header address controls cover all five listing selectors;
+full cases include zero/FAC residue, ties/sticky, range/round overflow and declared
+padded frames. Extended the shared validators with closed multiply/op95 choices,
+added separate portable profiles, fourteen verifier tests and Go comparisons.
+No gameplay, fingerprint, save 35, production replay or sysop changes. General
+unwind, hooks/RESUME, arbitrary frames, complete maintenance and live acceptance
+remain separate. Next: direct SINGLE division after auditing its retained source
+and normal callers. Do not repeat completed product/address/error controls.
+[Evidence and boundaries](yt-mbf-inline-multiply/RECOVERY.md).
