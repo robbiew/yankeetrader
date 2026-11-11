@@ -2,10 +2,10 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
-## Current implementation and next work — checked 2026-11-07
+## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `94e890ea` (including merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `095e7929` (including merged arithmetic PRs #126–130 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -2099,16 +2099,36 @@ or completed inline-addition controls. DOUBLE/multiply/divide stay separate.
 
 ### Successful inline SINGLE subtraction (2026-11-09)
 
-Checked main/open PRs: #128 and #129 remain separate dependencies, integrated on
-this new branch without modifying their heads. Reused their exact source and
+At the start, #128 and #129 were separate open dependencies, integrated on
+the new branch without modifying their heads. All three are now merged. Reused their exact source and
 native evidence. Added 89 first-attempt 9d controls (23 resolver-only, 66 full
 successful subtractions), including all four selector bytes at five statically
 matched maintenance callers using archived header bases. Generalized shared
 verification with a closed operation choice; default addition fixtures remain
 unchanged. Existing Go offset/subtraction APIs match all new portable traces.
 Eleven corruption/acceptance tests, README, report and CI accompany the new slice.
-No gameplay, fingerprint, save 35 or sysop change. Keep the PR dependent until
-#128/#129 merge; then retarget only to main. Do not repeat successful inline85/9d
+No gameplay, fingerprint, save 35 or sysop change. #128–130 merged into main
+in order with current-head checks, review audits and verified ancestry. Do not repeat successful inline85/9d
 or direct arithmetic controls. Inline fatal overflow/unwind remains a separate
 bounded question, alongside later DOUBLE/multiply/divide research.
 [Evidence and boundaries](yt-mbf-inline-sub/RECOVERY.md).
+
+
+### Bounded inline SINGLE overflow/error context (2026-11-11)
+
+Checked fetched main through merged #130 and confirmed no open PR duplicates.
+Reused the completed resolver/arithmetic evidence. Recovered the missing durable
+180-byte error-dispatch packet and added its nine-byte tail. Twenty new frozen
+first-attempt controls cover 85/9d, both overflow signs, finite controls and two
+additional synthetic frame depths: twelve exact fatal diagnostics and eight
+complete finite returns. Captured pre-entry route/hook, saved BP/SP, module stack
+and original BP separately from the synthetic BP. Error return addresses include
+the consumed selector byte. No post-fatal FAC/register/RNG state is invented.
+Existing Go APIs need no change; portable traces, twelve corruption/acceptance
+tests, Go comparisons, README/report and CI qualify this bounded outcome only.
+General unwind, ON ERROR/RESUME, arbitrary frames and complete maintenance remain
+unqualified. Gameplay, recipe fingerprints, save 35 and sysop policy are unchanged.
+Next: source-selected direct SINGLE multiplication, beginning with the retained
+wrapper/kernel and actual caller audit. Do not recapture qualified addition,
+subtraction, resolver or bounded fatal-control work as missing evidence.
+[Evidence and boundaries](yt-mbf-inline-overflow/RECOVERY.md).
