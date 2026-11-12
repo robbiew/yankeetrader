@@ -1,0 +1,27 @@
+{
+  "recipe": "brun30-add-double-entry-state-v1",
+  "case": "op84-overflow",
+  "op": 132,
+  "left": "ffffffffffff7fff",
+  "right": "ffffffffffff7fff",
+  "initial": 5,
+  "fac": "ffffffffffff7fff",
+  "exit_code": 0,
+  "timeout": false,
+  "missing": [],
+  "payload_hex": "c70656184441c70658184431bb0100b90400ba5618b440cd21bb0100b90400ba3402b440cd21c7061600ffffc7061800ffffc7061a00ffffc7061c007fffbb0100b90800ba1600b440cd21c7066018ffffc7066218ffffc7066418ffffc70666187fffbb0100b90800ba6018b440cd21c7066818ffffc7066a18ffffc7066c18ffffc7066e187fffbb0100b90800ba6818b440cd21bb0100b90100ba1f00b440cd21be6018cd3f849090bb0100b90800ba1600b440cd21bb0100b90800ba6018b440cd21bb0100b90800ba6818b440cd21bb0100b90400ba3402b440cd21bb0100b90100ba1f00b440cd21c7065618454ec70658184421bb0100b90400ba5618b440cd21b8004ccd21",
+  "copied_initializer_sha256": "05c4a3517295232a7b5c9f2c2b39d7631743d38a1fa7ee3584b04e0f02cab9f7",
+  "copied_runtime_sha256": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "files": {
+    "COMMANDS.TXT": "29d67465e86e54e5d6fdabbf5621bfe782fad6a1181d970d9d23b8a86396f3f5",
+    "DOSDATE.LOG": "003e44d44cab3901a31ecde0f83bae4e943d8a32646e93ef0b8566c4fe70fce9",
+    "DOSTIME.LOG": "1b1fc17a72bc0f5a8e372ffd204ad486d691ceaf80d476dc3c3ca0796552eea1",
+    "ERROR.LOG": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "OK.LOG": "880fc5f926ba46ff9592fc82b636699e8bfd52debae685d4376b2f8909f767b7",
+    "RETURN.LOG": "2c5e595b870a89a8f016a2266125b17fe029ad7c3d56181868eef981fa9228d2",
+    "TRACE.BIN": "4b38b649311615d3bbe9984d152f51dc140114239edf77ec5c825c0077bb5be7",
+    "dosbox.stderr": "e6aa0a4ce26904f3071fe22698c4ead857a5f248fcc0be68343f189b77ca426d",
+    "dosbox.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch.json": "9eeb4822be317e62c3e7f5f9872453ff94e5ec0f9d56dd2e8d7933fa11f748b0"
+  }
+}

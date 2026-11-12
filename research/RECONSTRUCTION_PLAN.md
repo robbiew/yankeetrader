@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `c7a6f6e3` (including merged numeric PRs #117–135 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `10a963b7` (including merged numeric PRs #117–135 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -31,9 +31,9 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
-### Current numeric work — reconciled after PR #135
+### Current numeric work — checked 2026-11-11
 
-PRs #117–135 are merged; no other open PR overlaps this audit as of 2026-11-11.
+PRs #117–136 merged before the direct DOUBLE-addition milestone began.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
 | Area | Current state; do not repeat |
@@ -42,18 +42,22 @@ The exported APIs, native fixtures, CI commands and retained reports agree:
 | SINGLE integer operations | INT/FIX and default/mode-4 signed16 conversion are qualified; signed32/LONG is excluded by the QB3 language audit. |
 | DOUBLE integer operations | INT/FIX and default/mode-4 signed16 conversion are already qualified. Do not schedule those completed conversions again. |
 | SINGLE binary arithmetic | Direct and bounded inline addition, subtraction, multiplication and division are complete, including declared overflow/division-zero contexts. See the [addition](yt-mbf-inline-add/RECOVERY.md), [subtraction](yt-mbf-inline-sub/RECOVERY.md), [multiplication](yt-mbf-inline-multiply/RECOVERY.md) and [division](yt-mbf-inline-divide/RECOVERY.md) supplements. |
-| DOUBLE binary arithmetic | No raw DOUBLE addition, subtraction, multiplication or division API or dedicated portable arithmetic corpus exists. This is a genuine remaining numeric family. |
+| DOUBLE binary arithmetic | Direct addition /80, /82 and /84 is qualified by AddDouble/AddDoubleWithFAC and native fixtures. Inline /86 and DOUBLE subtraction, multiplication and division remain separate. |
 
-**Next bounded task: direct raw-DOUBLE addition**, starting with an audit of
-retained source and callers before any fresh acquisition. The existing
-[Mercenary offer-path report](yt-mercenaries/RECOVERY.md#static-evidence-and-remaining-randomness) identifies
-DOUBLE addition /82; the annotated YTMAINT listing has ten /82 call slots whose
-five bytes match the original executable. That static inventory is not native
-execution or full entry qualification. Reuse the existing dispatch/ABI evidence,
-then determine missing kernel ranges and controls. Do not repeat DOUBLE INT/FIX,
-signed16 conversions, completed SINGLE arithmetic or generator acceptance.
-General error/unwind behavior, production replay integration, DOS save
-interoperability and native Windows/live-BBS acceptance remain separate.
+[Direct raw-DOUBLE addition](yt-mbf-double-add/RECOVERY.md) is now implemented
+and qualified by 145 first-attempt controls, preserving full 56-bit precision,
+directional zero selection, seven-byte FAC residue and the native gap shortcut.
+The original-byte inventory matches fourteen direct caller slots and records
+four excluded inline /86 sites separately. Source entry, ABI and error evidence
+were reused; only 352 missing kernel bytes were queried.
+
+**Next bounded task: inline DOUBLE addition /86**, beginning with the retained
+caller/address evidence and existing direct primitive. No additional /86 source
+or execution coverage is inferred from these direct controls. Do not repeat
+completed SINGLE arithmetic, DOUBLE INT/FIX/signed16 conversion, direct DOUBLE
+addition or generator acceptance. General error/unwind behavior, production
+replay integration, DOS save interoperability and native Windows/live-BBS
+acceptance remain separate.
 
 ### Completed bounded departure/stock replay
 
@@ -461,7 +465,8 @@ remain separate.
    [direct/inline multiplication](yt-mbf-inline-multiply/RECOVERY.md) and
    [direct/inline division](yt-mbf-inline-divide/RECOVERY.md) are also complete
    within their declared frames/error contexts (PRs #128–135). The next selected
-   numeric gap is direct DOUBLE addition, not another SINGLE or conversion slice.
+   numeric gap is inline DOUBLE addition /86; the [direct DOUBLE primitive](yt-mbf-double-add/RECOVERY.md)
+   is now qualified. Other DOUBLE binary arithmetic remains separate.
    Audit retained evidence before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
@@ -2250,3 +2255,24 @@ evidence and open work before selecting another slice. Do not repeat completed
 bounded direct/inline SINGLE arithmetic. General unwind, hooks/RESUME, arbitrary
 frames, DOUBLE arithmetic, full maintenance and live acceptance stay separate.
 [Evidence and boundaries](yt-mbf-inline-divide/RECOVERY.md).
+
+
+### Direct raw-DOUBLE addition (2026-11-11)
+
+Merged #136 after current-head green observations and final full review/CI
+rechecks with expected-head protection; verified ancestry before starting from
+main. Audited existing APIs/fixtures, retained source and open PRs first. Reused
+the 90-byte historical DOUBLE entry/copy/guard packet, dispatch, ABI and error
+source; queried only the missing 352-byte kernel tail. All 145 first attempts
+completed: 136 numeric returns and nine exact Overflows over direct /80, /82 and
+/84 entry forms. Added isolated AddDouble/AddDoubleWithFAC with bounded 112-bit
+integer alignment, all 56 significand bits, directional raw zeros, seven-byte
+prior-FAC residue, native gap shortcut and even rounding. Independent rational
+verification, full portable Go frames, sixteen corruption tests, CI and report
+updates preserve all original observations. Fourteen original-byte direct sites
+and four excluded inline /86 sites are inventoried. Existing numeric APIs,
+gameplay, fingerprints, save 35 and sysop policy are unchanged. Next: audit
+retained /86 caller/address evidence before bounded inline qualification; do not
+repeat this direct capture or completed integer conversions. Other DOUBLE
+operators, general unwind, full maintenance and live acceptance remain separate.
+[Evidence and boundaries](yt-mbf-double-add/RECOVERY.md).

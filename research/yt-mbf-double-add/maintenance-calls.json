@@ -1,0 +1,100 @@
+{
+  "format": "maintenance-direct-double-add-callers-v1",
+  "authority": "Static annotated call-site inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "direct_calls": [
+    {
+      "op": 130,
+      "code_offset": 10931,
+      "file_offset": 11443
+    },
+    {
+      "op": 130,
+      "code_offset": 19829,
+      "file_offset": 20341
+    },
+    {
+      "op": 130,
+      "code_offset": 19839,
+      "file_offset": 20351
+    },
+    {
+      "op": 128,
+      "code_offset": 19928,
+      "file_offset": 20440
+    },
+    {
+      "op": 128,
+      "code_offset": 20041,
+      "file_offset": 20553
+    },
+    {
+      "op": 128,
+      "code_offset": 20220,
+      "file_offset": 20732
+    },
+    {
+      "op": 128,
+      "code_offset": 21219,
+      "file_offset": 21731
+    },
+    {
+      "op": 130,
+      "code_offset": 23106,
+      "file_offset": 23618
+    },
+    {
+      "op": 130,
+      "code_offset": 23130,
+      "file_offset": 23642
+    },
+    {
+      "op": 130,
+      "code_offset": 23588,
+      "file_offset": 24100
+    },
+    {
+      "op": 130,
+      "code_offset": 30323,
+      "file_offset": 30835
+    },
+    {
+      "op": 130,
+      "code_offset": 30347,
+      "file_offset": 30859
+    },
+    {
+      "op": 130,
+      "code_offset": 32140,
+      "file_offset": 32652
+    },
+    {
+      "op": 130,
+      "code_offset": 33008,
+      "file_offset": 33520
+    }
+  ],
+  "excluded_inline_calls": [
+    {
+      "code_offset": 2541,
+      "file_offset": 3053,
+      "selector": 128
+    },
+    {
+      "code_offset": 32965,
+      "file_offset": 33477,
+      "selector": 138
+    },
+    {
+      "code_offset": 33287,
+      "file_offset": 33799,
+      "selector": 128
+    },
+    {
+      "code_offset": 33489,
+      "file_offset": 34001,
+      "selector": 128
+    }
+  ]
+}

@@ -2210,7 +2210,21 @@ save 35 and sysop behavior are unchanged. General unwind, hooks/RESUME, arbitrar
 frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
 unqualified. The [reconciled current plan](research/RECONSTRUCTION_PLAN.md#current-work)
 marks these SINGLE arithmetic slices and existing DOUBLE INT/FIX/signed16
-conversions complete. The next bounded numeric task is direct raw-DOUBLE addition,
-starting with retained /82 source/caller evidence; raw DOUBLE binary arithmetic
-has no Go API or dedicated native arithmetic fixture yet. No overlapping open PR remains
-after #135 merged (checked 2026-11-11).
+conversions complete. Direct raw-DOUBLE addition is qualified by the following
+supplement; inline /86 and other DOUBLE binary arithmetic remain separate.
+
+
+[Direct raw-DOUBLE addition](research/yt-mbf-double-add/RECOVERY.md) now qualifies
+INT3F/80 memory plus memory, /82 FAC plus memory and /84 memory plus FAC.
+`AddDouble` and `AddDoubleWithFAC` preserve all 56 significand bits, directional
+zero aliases, the native exponent-gap cutoff and seven prior-FAC residue bytes
+on cancellation/underflow. Bounded integer alignment avoids float64 demotion;
+Overflow returns a rejected result without claiming native post-error state.
+Existing entry/ABI/error observations were reused; only the missing 352-byte
+kernel tail was queried. All 145 first attempts completed: 136 numeric returns
+and nine exact Overflows. Sixteen verifier tests, complete portable Go traces,
+CI and plan/report updates accompany the APIs. The original-byte inventory has
+14 direct callers and four separately excluded inline /86 sites. Gameplay,
+source fingerprints, save 35 and sysop behavior are unchanged. Next: inspect the
+retained /86 caller/address evidence before adding bounded inline controls;
+DOUBLE subtraction/multiplication/division and general unwind remain separate.
