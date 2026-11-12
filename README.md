@@ -2211,8 +2211,7 @@ frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
 unqualified. The [reconciled current plan](research/RECONSTRUCTION_PLAN.md#current-work)
 marks these SINGLE arithmetic slices and existing DOUBLE INT/FIX/signed16
 conversions complete. Direct raw-DOUBLE addition is qualified by the following
-supplement; bounded inline /86 is qualified by its own supplement below. Other
-DOUBLE binary arithmetic remains separate.
+supplement. Bounded inline /86 is merged in PR #138; do not repeat it. Direct DOUBLE subtraction is qualified by its own supplement below.
 
 
 [Direct raw-DOUBLE addition](research/yt-mbf-double-add/RECOVERY.md) now qualifies
@@ -2226,9 +2225,8 @@ kernel tail was queried. All 145 first attempts completed: 136 numeric returns
 and nine exact Overflows. Sixteen verifier tests, complete portable Go traces,
 CI and plan/report updates accompany the APIs. The original-byte inventory has
 14 direct callers and four separately excluded inline /86 sites. Gameplay,
-source fingerprints, save 35 and sysop behavior are unchanged. The following
-supplement qualifies bounded inline /86; other DOUBLE arithmetic and general
-unwind remain separate.
+source fingerprints, save 35 and sysop behavior are unchanged. PR #138 merged bounded inline /86. Direct subtraction follows below; other DOUBLE
+arithmetic and general unwind remain separate.
 
 
 [Inline DOUBLE addition](research/yt-mbf-inline-add-double/RECOVERY.md) now
@@ -2243,6 +2241,19 @@ and consumed-selector error addresses in declared baseline/padded frames.
 Wrapped offsets remain address-only; complete reads use safe eight-byte spans.
 Eighteen verifier tests, portable Go traces, CI and plan/report updates accompany
 the shared resolver documentation. Gameplay, source fingerprints, save 35 and
-sysop behavior are unchanged. Next: audit retained direct DOUBLE subtraction
-evidence/callers before choosing missing controls. Other DOUBLE arithmetic,
+sysop behavior are unchanged. Direct subtraction is qualified below. Other DOUBLE arithmetic,
 general unwind, complete maintenance and live acceptance remain separate.
+
+
+[Direct raw-DOUBLE subtraction](research/yt-mbf-subtract-double/RECOVERY.md) now
+qualifies INT3F/98 memory minus memory, /9a FAC minus memory and /9c memory minus
+FAC. `SubtractDouble` and `SubtractDoubleWithFAC` reuse addition after the native
+register-only right sign flip, retaining full precision, zero aliases and
+original prior-FAC residue. All source was reused with no new query. All 148
+first attempts completed: 139 numeric returns and nine exact Overflows. The
+bounded original-byte inventory matches 21 direct sites and no inline /9e sites.
+Seventeen verifier tests, complete portable Go traces, CI and README/plan/report
+updates accompany the isolated APIs. PR #138 merged the separate inline-addition work. Gameplay, source fingerprints, save 35 and sysop behavior are unchanged.
+Next: inspect retained inline DOUBLE subtraction /9e evidence before adding
+bounded controls. Multiplication/division, general unwind, complete maintenance
+and native BBS/Windows acceptance remain separate.
