@@ -184,8 +184,12 @@ check storage health, and validate the active world before reopening the door.
 
 ## Playable qb36-v1 worlds
 
-This source-build feature is newer than the published v0.1.0 packages. Build a
-current binary before using these flags; no new release is implied.
+The v0.1.0 packages predate this feature. It is included in current source builds
+and the published Linux x86-64-only
+[v0.1.1-sysop.1 tester build](https://github.com/robbiew/yankeetrader/releases/tag/v0.1.1-sysop.1),
+which also fixes the unused Door32 `-1` communication handle. For Windows x86-64
+or Linux ARM64, build current source before using these flags. Live BBS and native
+Windows acceptance remain pending.
 
 Create a separate directory using an explicit raw initializer state and source date:
 

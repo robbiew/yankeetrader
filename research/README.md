@@ -6,14 +6,18 @@ leads, validated outcomes and deliberate modern policies. Historical reports are
 not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
-Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-implementation-and-next-work--checked-2026-11-03),
-checked against merged main through PR #76, then extended by the current complete
-initializer replay milestone, using save format **34**.
+Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
+checked against merged main through PR #135, using current save format **35**.
+The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
+Genesis/admin reset integration and bounded multi-day acceptance are implemented.
+Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
+conversions are also complete within their documented native controls. The next
+selected numeric task is direct DOUBLE addition, beginning with existing evidence.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
 
-Recent completed work includes [season administration](../README.md#season-administration)
+Earlier completed gameplay milestones include [season administration](../README.md#season-administration)
 (save 30), [extended newspaper events](yt-newspaper/remaining/RECOVERY.md)
 (save 31), and the [direct Xannor fighter-casualty turn bonus](yt-xannor-turn-bonus/RECOVERY.md)
 (save 32). Newspaper registration/team/combat coverage is implemented; general
@@ -23,8 +27,9 @@ The [port generation and startup pricing slice](yt-port-generation/RECOVERY.md)
 is implemented as an opt-in new-world profile (save 33). The [warp-generation slice](yt-warp-generation/RECOVERY.md) adds independently
 opt-in DOS map rules (save 34), including repaired connectivity and Earth shortcuts.
 The [RNG seeding follow-up](yt-rng-seeding/RECOVERY.md) verifies raw seeding and
-selected exact graph replay. Full port-stream/MBF integration and target-BBS
-acceptance remain separate boundaries.
+selected exact graph replay; the complete bounded source generator is now
+implemented separately. General numeric/runtime parity, production DOS maintenance
+and target-BBS acceptance remain separate boundaries.
 
 Included here:
 

@@ -2,10 +2,12 @@
 
 Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 binaries, documentation, and repeatable DOS experiments.
 
+<a id="current-work"></a>
+
 ## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `b3061218` (including merged arithmetic PRs #126–132 and merged maintenance PRs #88, #90–94 and #97–113, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `c7a6f6e3` (including merged numeric PRs #117–135 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -19,13 +21,41 @@ through `b3061218` (including merged arithmetic PRs #126–132 and merged mainte
 (full QB acceptance) and [#84](https://github.com/robbiew/yankeetrader/pull/84)
 (January 10 source-date admission). The playable integration adds typed
 recipes, CLI admission and both reset paths in the current source build; published
-v0.1.0 packages predate that integration. Release **v0.1.0 is published**. The playable QB profile uses documented modern adaptations rather than exact
-DOS maintenance. Application version is 0.1.0 and save format is **35**. See the
+v0.1.0 packages predate that integration. The published Linux x86-64 tester
+[v0.1.1-sysop.1](https://github.com/robbiew/yankeetrader/releases/tag/v0.1.1-sysop.1)
+includes the playable profile and Door32 negative-handle fix; it supplies no
+Windows x86-64 or Linux ARM64 package. Those platforms need a current build for QB
+generation. The playable profile uses documented modern adaptations rather than
+exact DOS maintenance. Source builds default to version 0.1.0; save format is **35**. See the
 [playable feature overview](../README.md#playable-feature-overview),
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
-### Latest bounded departure replay
+### Current numeric work — reconciled after PR #135
+
+PRs #117–135 are merged; no other open PR overlaps this audit as of 2026-11-11.
+The exported APIs, native fixtures, CI commands and retained reports agree:
+
+| Area | Current state; do not repeat |
+| --- | --- |
+| Raw RNG and initializer | Recovered core/argumented SINGLE RND, pure Go generator, twenty native goldens, safe projection, playable recipes and both reset paths are implemented. The multi-day/default-300-port campaign is complete within its documented session/store scope. |
+| SINGLE integer operations | INT/FIX and default/mode-4 signed16 conversion are qualified; signed32/LONG is excluded by the QB3 language audit. |
+| DOUBLE integer operations | INT/FIX and default/mode-4 signed16 conversion are already qualified. Do not schedule those completed conversions again. |
+| SINGLE binary arithmetic | Direct and bounded inline addition, subtraction, multiplication and division are complete, including declared overflow/division-zero contexts. See the [addition](yt-mbf-inline-add/RECOVERY.md), [subtraction](yt-mbf-inline-sub/RECOVERY.md), [multiplication](yt-mbf-inline-multiply/RECOVERY.md) and [division](yt-mbf-inline-divide/RECOVERY.md) supplements. |
+| DOUBLE binary arithmetic | No raw DOUBLE addition, subtraction, multiplication or division API or dedicated portable arithmetic corpus exists. This is a genuine remaining numeric family. |
+
+**Next bounded task: direct raw-DOUBLE addition**, starting with an audit of
+retained source and callers before any fresh acquisition. The existing
+[Mercenary offer-path report](yt-mercenaries/RECOVERY.md#static-evidence-and-remaining-randomness) identifies
+DOUBLE addition /82; the annotated YTMAINT listing has ten /82 call slots whose
+five bytes match the original executable. That static inventory is not native
+execution or full entry qualification. Reuse the existing dispatch/ABI evidence,
+then determine missing kernel ranges and controls. Do not repeat DOUBLE INT/FIX,
+signed16 conversions, completed SINGLE arithmetic or generator acceptance.
+General error/unwind behavior, production replay integration, DOS save
+interoperability and native Windows/live-BBS acceptance remain separate.
+
+### Completed bounded departure/stock replay
 
 The [departed-garrison stock matrix](yt-maint/DEPARTED_STOCK_CONTROLS.md) retains
 48 complete DOS runs / 288 files, six-mode equal. Four/eight-second fixtures
@@ -301,13 +331,13 @@ remain separate.
 | Exact graph/port replay / PR #76 | Six original clock worlds match all warp cells, complete port records and sector links; twelve independent native phase states. |
 | Full QB world acceptance | Controlled UTC multi-day production session/store campaign, earned 300-port Genesis, reconnect/old-login guards and source-layout reset; independent retained-evidence/corruption checks. [Boundaries and reproduction](../evidence/QB_FULL_WORLD_CAMPAIGN.md). |
 | Playable QB profile / save 35 / PR #82 | Typed source recipe and fingerprint, strict initialization CLI, recipe-bound Genesis, archive-first admin reset and repeat-layout policy. Existing worlds upgrade without rerolling; no DOS save interoperability. |
-| Pure Go generator and safe projection / PRs #80–81 | Portable ten-control goldens, bounded source generation and unpublished safe projection/admission. |
+| Pure Go generator and safe projection / PRs #80–81 | Portable twenty-control goldens, bounded source generation and unpublished safe projection/admission. |
 | January 10 admission parity | Ten additional original date controls verify port-date FAC residues across 2026–2028; twenty portable whole-world goldens pass. The source generator and playable recipe accept January 10 without changing earlier hashes or schema 35. [Evidence](yt-initializer-replay/JANUARY10.md). |
-| Complete initializer replay / PR #77 | Ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
+| Complete initializer replay / PR #77 | Initial ten bounded worlds match all 4,151 records, including FIELD/FAC residue rules and fresh path/date controls. Research only; save 34 unchanged. |
 
 ### Ordered genuine backlog
 
-1. **Complete generator stream and numeric parity beyond the verified core.**
+1. **Remaining numeric-runtime and maintenance parity beyond the verified core.**
    Raw `RANDOMIZE -TIMER`, the 24-bit RND recurrence, preserved low seed byte and
    midnight zero residue are now recovered, implemented as a shared primitive
    and checked against 4096 native state/value pairs. A research model exactly
@@ -426,8 +456,13 @@ remain separate.
    [Direct addition entry state](yt-mbf-add-entries/RECOVERY.md) now qualifies
    memory-to-memory 7f and memory-to-FAC 83: 184 controls / 176 results and eight
    native errors, explicit prior-FAC handling, twelve verifier tests and a shared
-   arithmetic API. Inline address-resolving 85 and other arithmetic remain separate.
-   Audit remaining branches before choosing new controls; do not repeat this work.
+   arithmetic API. [Inline addition /85](yt-mbf-inline-add/RECOVERY.md),
+   [direct/inline subtraction](yt-mbf-inline-sub/RECOVERY.md),
+   [direct/inline multiplication](yt-mbf-inline-multiply/RECOVERY.md) and
+   [direct/inline division](yt-mbf-inline-divide/RECOVERY.md) are also complete
+   within their declared frames/error contexts (PRs #128–135). The next selected
+   numeric gap is direct DOUBLE addition, not another SINGLE or conversion slice.
+   Audit retained evidence before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
    Do not repeat the established
