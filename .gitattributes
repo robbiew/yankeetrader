@@ -582,3 +582,10 @@
 /research/yt-mbf-multiply-double/**/TRACE.BIN -diff
 /research/yt-mbf-multiply-double/**/*.LOG -diff
 /research/yt-mbf-multiply-double/**/dosbox.stderr -diff
+
+# Immutable eight-byte inline96 address/result/error observations and raw logs.
+/research/yt-mbf-inline-multiply-double/native/** -text
+/research/yt-mbf-inline-multiply-double/address-native/** -text
+/research/yt-mbf-inline-multiply-double/**/TRACE.BIN -diff
+/research/yt-mbf-inline-multiply-double/**/*.LOG -diff
+/research/yt-mbf-inline-multiply-double/**/dosbox.stderr -diff
