@@ -2316,6 +2316,23 @@ missing division bytes were queried. All 178 first attempts completed: 150 numer
 returns, 12 exact Overflows and 16 exact Division-by-zero diagnostics. Nine /8a
 caller slots match archived bytes. Twenty verifier tests, portable Go traces,
 CI and README/plan/report updates accompany the APIs. Gameplay, source fingerprints,
-save 35 and sysop behavior are unchanged. Next: audit retained inline DOUBLE
-division /8e evidence before adding bounded controls. General unwind, full
+save 35 and sysop behavior are unchanged. Bounded inline /8e is qualified
+by its separate supplement below. General unwind, full
 maintenance, DOS save interoperability and native BBS/Windows acceptance remain separate.
+
+
+[Inline DOUBLE division](research/yt-mbf-inline-divide-double/RECOVERY.md) now
+qualifies bounded INT3F/8e by composing the shared resolver with
+`DivideDoubleWithFAC(left,FAC,FAC)`. Existing source was reused without a new
+query or algorithm. Controls are synthetic: the bounded listing has no /8e
+callers. All 163 first attempts completed: 15 address-only controls, 120 numeric
+returns, ten Overflows and 18 Division-by-zero diagnostics. Distinct eight-byte
+traces preserve operand order, full-width rounding, zero-divisor precedence and
+both original-FAC and shifted-divisor underflow residues, including declared
+padded frames. Twenty verifier tests, portable Go traces, CI and plan/report
+updates accompany the shared helper documentation. This slice is stacked on
+PR #144's still-open direct division dependency; merge that parent into main first.
+Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After
+ordered merge, audit remaining runtime/maintenance gaps rather than repeating
+completed arithmetic. General unwind, complete maintenance, DOS save interoperability
+and native BBS/Windows acceptance remain separate.

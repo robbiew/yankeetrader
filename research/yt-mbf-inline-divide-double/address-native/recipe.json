@@ -1,0 +1,159 @@
+{
+  "recipe": "brun30-inline-divide-double-address-v1",
+  "cases": {
+    "address-bm-00": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 0,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-80": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-7f": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 127,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-ff": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-00": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 0,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-80": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 128,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-7f": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 127,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-ff": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 255,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-wrap-00": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 0,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-wrap-01": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 1,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bm-wrap-7f": {
+      "kind": "address",
+      "magic": 28002,
+      "base10": 65528,
+      "base12": 26624,
+      "selector": 127,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-wrap-00": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 0,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-wrap-01": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 1,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-bz-wrap-7f": {
+      "kind": "address",
+      "magic": 31330,
+      "base10": 24576,
+      "base12": 65528,
+      "selector": 127,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    },
+    "address-fallback-84": {
+      "kind": "address",
+      "magic": 0,
+      "base10": 24576,
+      "base12": 26624,
+      "selector": 132,
+      "left": "0000000000000000",
+      "fac": "a55a32cc117e8088",
+      "initial": 16777215
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "391835354fec25b6c68a356fe364b2c97ef3a597670680e8523d6923afdb914b"
+}

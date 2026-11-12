@@ -19,8 +19,10 @@ is merged in PR #138; do not repeat it. [Bounded inline subtraction /9e](yt-mbf-
 is now qualified separately with synthetic controls. [Direct DOUBLE multiplication](yt-mbf-multiply-double/RECOVERY.md) is now
 qualified by its separate native corpus and Go APIs. [Bounded inline /96](yt-mbf-inline-multiply-double/RECOVERY.md) is qualified
 separately with synthetic controls. [Direct DOUBLE division](yt-mbf-divide-double/RECOVERY.md) is now qualified,
-including distinct early/late underflow residues and both error kinds. The next
-numeric audit is inline DOUBLE division /8e, starting with retained entry/resolver evidence.
+including distinct early/late underflow residues and both error kinds. [Bounded inline /8e](yt-mbf-inline-divide-double/RECOVERY.md) now qualifies
+that separate synthetic entry/frame slice. Direct division PR #144 is still open
+and is the dependency; merge it before the inline PR. After ordered merge, audit
+remaining runtime/maintenance gaps against implemented APIs and open work.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
