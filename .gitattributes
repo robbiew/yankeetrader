@@ -557,3 +557,9 @@
 /research/yt-mbf-inline-multiply/**/TRACE.BIN -diff
 /research/yt-mbf-inline-multiply/**/*.LOG -diff
 /research/yt-mbf-inline-multiply/**/dosbox.stderr -diff
+
+# Immutable direct raw-DOUBLE subtraction protocols and host/clock logs.
+/research/yt-mbf-subtract-double/native/** -text
+/research/yt-mbf-subtract-double/**/TRACE.BIN -diff
+/research/yt-mbf-subtract-double/**/*.LOG -diff
+/research/yt-mbf-subtract-double/**/dosbox.stderr -diff

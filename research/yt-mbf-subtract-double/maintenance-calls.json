@@ -1,0 +1,114 @@
+{
+  "format": "maintenance-direct-double-subtract-callers-v1",
+  "authority": "Static annotated call-site inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "direct_calls": [
+    {
+      "op": 154,
+      "code_offset": 6411,
+      "file_offset": 6923
+    },
+    {
+      "op": 156,
+      "code_offset": 11379,
+      "file_offset": 11891
+    },
+    {
+      "op": 156,
+      "code_offset": 19196,
+      "file_offset": 19708
+    },
+    {
+      "op": 156,
+      "code_offset": 20689,
+      "file_offset": 21201
+    },
+    {
+      "op": 156,
+      "code_offset": 20715,
+      "file_offset": 21227
+    },
+    {
+      "op": 152,
+      "code_offset": 22931,
+      "file_offset": 23443
+    },
+    {
+      "op": 152,
+      "code_offset": 22954,
+      "file_offset": 23466
+    },
+    {
+      "op": 152,
+      "code_offset": 23012,
+      "file_offset": 23524
+    },
+    {
+      "op": 152,
+      "code_offset": 23039,
+      "file_offset": 23551
+    },
+    {
+      "op": 152,
+      "code_offset": 23150,
+      "file_offset": 23662
+    },
+    {
+      "op": 152,
+      "code_offset": 23322,
+      "file_offset": 23834
+    },
+    {
+      "op": 152,
+      "code_offset": 23408,
+      "file_offset": 23920
+    },
+    {
+      "op": 152,
+      "code_offset": 23480,
+      "file_offset": 23992
+    },
+    {
+      "op": 156,
+      "code_offset": 23562,
+      "file_offset": 24074
+    },
+    {
+      "op": 154,
+      "code_offset": 23830,
+      "file_offset": 24342
+    },
+    {
+      "op": 152,
+      "code_offset": 30142,
+      "file_offset": 30654
+    },
+    {
+      "op": 152,
+      "code_offset": 30166,
+      "file_offset": 30678
+    },
+    {
+      "op": 152,
+      "code_offset": 30224,
+      "file_offset": 30736
+    },
+    {
+      "op": 154,
+      "code_offset": 30256,
+      "file_offset": 30768
+    },
+    {
+      "op": 154,
+      "code_offset": 30595,
+      "file_offset": 31107
+    },
+    {
+      "op": 152,
+      "code_offset": 30797,
+      "file_offset": 31309
+    }
+  ],
+  "excluded_inline_calls": []
+}
