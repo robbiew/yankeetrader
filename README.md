@@ -2299,6 +2299,23 @@ eight-byte traces retain full-product ties/sticky information, seven-byte FAC
 residue, safe-read boundaries and declared padded error continuations. Nineteen
 verifier tests, portable Go traces, CI and README/plan/report updates accompany
 the shared helper documentation. Gameplay, source fingerprints, save 35 and sysop
-behavior are unchanged. Next: audit retained direct DOUBLE division evidence and
-callers before adding missing controls. General unwind, complete maintenance,
+behavior are unchanged. Direct DOUBLE division is qualified by the following
+supplement. General unwind, complete maintenance,
 DOS save interoperability and native BBS/Windows acceptance remain separate.
+
+
+[Direct raw-DOUBLE division](research/yt-mbf-divide-double/RECOVERY.md) now
+qualifies INT3F/88 memory divided by memory, /8a FAC divided by memory and /8c
+memory divided by FAC. `DivideDouble` and `DivideDoubleWithFAC` retain exact
+56-bit quotients/remainders and distinct Overflow/Division-by-zero errors, with
+zero-divisor precedence even for 0/0. Early underflow retains original FAC residue;
+late normalization underflow instead retains source-qualified shifted divisor
+residue. The original boundary finding is preserved alongside forty separate
+counter-controls. Existing ABI/rounding/error evidence was reused; only 259
+missing division bytes were queried. All 178 first attempts completed: 150 numeric
+returns, 12 exact Overflows and 16 exact Division-by-zero diagnostics. Nine /8a
+caller slots match archived bytes. Twenty verifier tests, portable Go traces,
+CI and README/plan/report updates accompany the APIs. Gameplay, source fingerprints,
+save 35 and sysop behavior are unchanged. Next: audit retained inline DOUBLE
+division /8e evidence before adding bounded controls. General unwind, full
+maintenance, DOS save interoperability and native BBS/Windows acceptance remain separate.
