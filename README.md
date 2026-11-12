@@ -2269,6 +2269,21 @@ Overflows. Distinct eight-byte traces preserve ordered operands, register-only
 right negation, seven-byte FAC residue, safe-read boundaries and declared padded
 error continuations. Nineteen verifier tests, portable Go traces, CI and plan/report
 updates accompany the shared helper documentation. Gameplay, source fingerprints,
-save 35 and sysop behavior are unchanged. Next: audit retained direct DOUBLE
-multiplication evidence/callers before adding missing controls. General unwind,
+save 35 and sysop behavior are unchanged. Direct DOUBLE multiplication is
+qualified by the following supplement. General unwind,
 other DOUBLE arithmetic, full maintenance and live acceptance remain separate.
+
+
+[Direct raw-DOUBLE multiplication](research/yt-mbf-multiply-double/RECOVERY.md)
+now qualifies INT3F/90 memory times memory, /92 FAC times memory and /94 memory
+times FAC. `MultiplyDouble` and `MultiplyDoubleWithFAC` retain exact 112-bit
+products and round to 56 bits without float64 demotion, preserving original FAC
+residue on zero/pre-round underflow. Existing ABI/rounding/error evidence was
+reused; only 400 missing wrapper/helper bytes were queried. All 118 first attempts
+completed: 111 numeric returns and seven exact Overflows. Five original /92 caller
+slots match archived bytes; inline /96 has no matches in the bounded listing and
+remains separate. Eighteen verifier tests, full portable Go traces, CI and
+README/plan/report updates accompany the APIs. Gameplay, source fingerprints,
+save 35 and sysop behavior are unchanged. Next: audit retained inline DOUBLE
+multiplication /96 evidence before adding bounded controls. DOUBLE division,
+general unwind, complete maintenance and native BBS/Windows acceptance remain separate.
