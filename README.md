@@ -2254,6 +2254,21 @@ first attempts completed: 139 numeric returns and nine exact Overflows. The
 bounded original-byte inventory matches 21 direct sites and no inline /9e sites.
 Seventeen verifier tests, complete portable Go traces, CI and README/plan/report
 updates accompany the isolated APIs. PR #138 merged the separate inline-addition work. Gameplay, source fingerprints, save 35 and sysop behavior are unchanged.
-Next: inspect retained inline DOUBLE subtraction /9e evidence before adding
-bounded controls. Multiplication/division, general unwind, complete maintenance
+Bounded inline /9e is qualified by the following supplement.
+Multiplication/division, general unwind, complete maintenance
 and native BBS/Windows acceptance remain separate.
+
+
+[Inline DOUBLE subtraction](research/yt-mbf-inline-subtract-double/RECOVERY.md)
+now qualifies bounded INT3F/9e by composing the shared offset resolver with
+`SubtractDoubleWithFAC(left,FAC,FAC)`. Existing entry/kernel/frame/error evidence
+was reused without a source query or new algorithm. The bounded maintenance
+listing has no inline /9e callers; the new controls are synthetic. All 117 first
+attempts completed: 15 address-only controls, 88 numeric returns and 14 exact
+Overflows. Distinct eight-byte traces preserve ordered operands, register-only
+right negation, seven-byte FAC residue, safe-read boundaries and declared padded
+error continuations. Nineteen verifier tests, portable Go traces, CI and plan/report
+updates accompany the shared helper documentation. Gameplay, source fingerprints,
+save 35 and sysop behavior are unchanged. Next: audit retained direct DOUBLE
+multiplication evidence/callers before adding missing controls. General unwind,
+other DOUBLE arithmetic, full maintenance and live acceptance remain separate.
