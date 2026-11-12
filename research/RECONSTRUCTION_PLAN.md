@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-11
 
 This section is the current planning baseline, checked against merged `main`
-through `10a963b7` (including merged numeric PRs #117–135 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `8e711469` (including merged numeric PRs #117–137 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -33,7 +33,8 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-11
 
-PRs #117–136 merged before the direct DOUBLE-addition milestone began.
+PRs #117–137 are merged; direct DOUBLE addition is complete. The following
+inline /86 supplement reuses that implementation and retained source.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
 | Area | Current state; do not repeat |
@@ -42,7 +43,7 @@ The exported APIs, native fixtures, CI commands and retained reports agree:
 | SINGLE integer operations | INT/FIX and default/mode-4 signed16 conversion are qualified; signed32/LONG is excluded by the QB3 language audit. |
 | DOUBLE integer operations | INT/FIX and default/mode-4 signed16 conversion are already qualified. Do not schedule those completed conversions again. |
 | SINGLE binary arithmetic | Direct and bounded inline addition, subtraction, multiplication and division are complete, including declared overflow/division-zero contexts. See the [addition](yt-mbf-inline-add/RECOVERY.md), [subtraction](yt-mbf-inline-sub/RECOVERY.md), [multiplication](yt-mbf-inline-multiply/RECOVERY.md) and [division](yt-mbf-inline-divide/RECOVERY.md) supplements. |
-| DOUBLE binary arithmetic | Direct addition /80, /82 and /84 is qualified by AddDouble/AddDoubleWithFAC and native fixtures. Inline /86 and DOUBLE subtraction, multiplication and division remain separate. |
+| DOUBLE binary arithmetic | Direct addition /80, /82 and /84 and bounded inline /86 are qualified by AddDouble/AddDoubleWithFAC, the shared offset helper and native fixtures. DOUBLE subtraction, multiplication and division remain separate. |
 
 [Direct raw-DOUBLE addition](yt-mbf-double-add/RECOVERY.md) is now implemented
 and qualified by 145 first-attempt controls, preserving full 56-bit precision,
@@ -51,10 +52,17 @@ The original-byte inventory matches fourteen direct caller slots and records
 four excluded inline /86 sites separately. Source entry, ABI and error evidence
 were reused; only 352 missing kernel bytes were queried.
 
-**Next bounded task: inline DOUBLE addition /86**, beginning with the retained
-caller/address evidence and existing direct primitive. No additional /86 source
-or execution coverage is inferred from these direct controls. Do not repeat
-completed SINGLE arithmetic, DOUBLE INT/FIX/signed16 conversion, direct DOUBLE
+[Bounded inline DOUBLE addition /86](yt-mbf-inline-add-double/RECOVERY.md) now
+composes the existing resolver and direct primitive, with no new source query.
+All 113 first attempts completed: 19 address-only controls, 80 numeric returns
+and 14 exact Overflows. Separate eight-byte protocols cover both source selectors,
+actual caller headers, safe reads, seven-byte FAC residue and declared padded
+error frames; wrapped offsets remain resolver-only. Eighteen verifier tests,
+portable Go traces and CI checks accompany the supplement.
+
+**Next bounded task: direct DOUBLE subtraction**, beginning with an audit of
+retained source, caller inventory and existing controls. Do not repeat completed
+SINGLE arithmetic, DOUBLE INT/FIX/signed16 conversion, direct/inline DOUBLE
 addition or generator acceptance. General error/unwind behavior, production
 replay integration, DOS save interoperability and native Windows/live-BBS
 acceptance remain separate.

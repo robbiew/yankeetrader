@@ -2211,7 +2211,8 @@ frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
 unqualified. The [reconciled current plan](research/RECONSTRUCTION_PLAN.md#current-work)
 marks these SINGLE arithmetic slices and existing DOUBLE INT/FIX/signed16
 conversions complete. Direct raw-DOUBLE addition is qualified by the following
-supplement; inline /86 and other DOUBLE binary arithmetic remain separate.
+supplement; bounded inline /86 is qualified by its own supplement below. Other
+DOUBLE binary arithmetic remains separate.
 
 
 [Direct raw-DOUBLE addition](research/yt-mbf-double-add/RECOVERY.md) now qualifies
@@ -2225,6 +2226,23 @@ kernel tail was queried. All 145 first attempts completed: 136 numeric returns
 and nine exact Overflows. Sixteen verifier tests, complete portable Go traces,
 CI and plan/report updates accompany the APIs. The original-byte inventory has
 14 direct callers and four separately excluded inline /86 sites. Gameplay,
-source fingerprints, save 35 and sysop behavior are unchanged. Next: inspect the
-retained /86 caller/address evidence before adding bounded inline controls;
-DOUBLE subtraction/multiplication/division and general unwind remain separate.
+source fingerprints, save 35 and sysop behavior are unchanged. The following
+supplement qualifies bounded inline /86; other DOUBLE arithmetic and general
+unwind remain separate.
+
+
+[Inline DOUBLE addition](research/yt-mbf-inline-add-double/RECOVERY.md) now
+qualifies bounded INT3F/86 by composing the shared offset resolver with
+`AddDoubleWithFAC(left,FAC,FAC)`. All entry/kernel/caller source was reused; no
+new source query or arithmetic algorithm was needed. The four retained source
+caller sites use selectors 80/8a; new address controls also exercise their actual
+header words. All 113 first attempts completed: 19 resolver-only controls,
+80 numeric returns and 14 exact Overflows. Distinct eight-byte protocols preserve
+seven-byte FAC residue, low significand bits, unchanged operand/poison blocks
+and consumed-selector error addresses in declared baseline/padded frames.
+Wrapped offsets remain address-only; complete reads use safe eight-byte spans.
+Eighteen verifier tests, portable Go traces, CI and plan/report updates accompany
+the shared resolver documentation. Gameplay, source fingerprints, save 35 and
+sysop behavior are unchanged. Next: audit retained direct DOUBLE subtraction
+evidence/callers before choosing missing controls. Other DOUBLE arithmetic,
+general unwind, complete maintenance and live acceptance remain separate.
