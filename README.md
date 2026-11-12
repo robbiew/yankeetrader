@@ -2284,6 +2284,21 @@ completed: 111 numeric returns and seven exact Overflows. Five original /92 call
 slots match archived bytes; inline /96 has no matches in the bounded listing and
 remains separate. Eighteen verifier tests, full portable Go traces, CI and
 README/plan/report updates accompany the APIs. Gameplay, source fingerprints,
-save 35 and sysop behavior are unchanged. Next: audit retained inline DOUBLE
-multiplication /96 evidence before adding bounded controls. DOUBLE division,
+save 35 and sysop behavior are unchanged. Bounded inline /96 is qualified
+by the following supplement. DOUBLE division,
 general unwind, complete maintenance and native BBS/Windows acceptance remain separate.
+
+
+[Inline DOUBLE multiplication](research/yt-mbf-inline-multiply-double/RECOVERY.md)
+now qualifies bounded INT3F/96 by composing the shared resolver with
+`MultiplyDoubleWithFAC(left,FAC,FAC)`. All source was already retained; no new
+query or arithmetic algorithm was needed. The bounded listing has no inline /96
+callers, so controls are explicitly synthetic. All 153 first attempts completed:
+15 address-only controls, 128 numeric returns and ten exact Overflows. Distinct
+eight-byte traces retain full-product ties/sticky information, seven-byte FAC
+residue, safe-read boundaries and declared padded error continuations. Nineteen
+verifier tests, portable Go traces, CI and README/plan/report updates accompany
+the shared helper documentation. Gameplay, source fingerprints, save 35 and sysop
+behavior are unchanged. Next: audit retained direct DOUBLE division evidence and
+callers before adding missing controls. General unwind, complete maintenance,
+DOS save interoperability and native BBS/Windows acceptance remain separate.

@@ -255,6 +255,8 @@ jobs:
           python3 scripts/test_verify_inline_subtract_double.py
           python3 scripts/verify_multiply_double.py
           python3 scripts/test_verify_multiply_double.py
+          python3 scripts/verify_inline_multiply_double.py
+          python3 scripts/test_verify_inline_multiply_double.py
           python3 scripts/verify_inline_add_double.py
           python3 scripts/test_verify_inline_add_double.py
           python3 scripts/verify_single_add.py
