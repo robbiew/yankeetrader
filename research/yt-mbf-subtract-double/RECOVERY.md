@@ -11,9 +11,9 @@ FAC's seven residue bytes, not a negated operand's residue. Overflow returns a
 rejected API result without claiming native post-error FAC state.
 
 The README, plan, retained source, APIs and open PRs were audited first. PR #137
-is merged as `8e711469`; PR #138 already owns bounded inline DOUBLE addition
-and must not be repeated. This independent branch starts from main and does not
-include #138's controls. There was no existing direct DOUBLE subtraction corpus
+is merged as `8e711469`; PR #138 merged bounded inline DOUBLE addition as
+`fea64d23` and must not be repeated. This branch now integrates that merged
+work while preserving its original controls. There was no existing direct DOUBLE subtraction corpus
 or API in that bounded audit. No new source query was necessary.
 
 The fixed `yt-plague-civil-war/rea/target-paths.json` packet already includes

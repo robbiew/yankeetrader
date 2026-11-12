@@ -2211,8 +2211,7 @@ frames, DOUBLE arithmetic, complete maintenance and live acceptance remain
 unqualified. The [reconciled current plan](research/RECONSTRUCTION_PLAN.md#current-work)
 marks these SINGLE arithmetic slices and existing DOUBLE INT/FIX/signed16
 conversions complete. Direct raw-DOUBLE addition is qualified by the following
-supplement. PR #138 separately owns bounded inline /86; do not repeat that
-work. Direct DOUBLE subtraction is qualified by its own supplement below.
+supplement. Bounded inline /86 is merged in PR #138; do not repeat it. Direct DOUBLE subtraction is qualified by its own supplement below.
 
 
 [Direct raw-DOUBLE addition](research/yt-mbf-double-add/RECOVERY.md) now qualifies
@@ -2226,9 +2225,24 @@ kernel tail was queried. All 145 first attempts completed: 136 numeric returns
 and nine exact Overflows. Sixteen verifier tests, complete portable Go traces,
 CI and plan/report updates accompany the APIs. The original-byte inventory has
 14 direct callers and four separately excluded inline /86 sites. Gameplay,
-source fingerprints, save 35 and sysop behavior are unchanged. PR #138 already
-owns bounded inline /86. Direct subtraction follows below; other DOUBLE
+source fingerprints, save 35 and sysop behavior are unchanged. PR #138 merged bounded inline /86. Direct subtraction follows below; other DOUBLE
 arithmetic and general unwind remain separate.
+
+
+[Inline DOUBLE addition](research/yt-mbf-inline-add-double/RECOVERY.md) now
+qualifies bounded INT3F/86 by composing the shared offset resolver with
+`AddDoubleWithFAC(left,FAC,FAC)`. All entry/kernel/caller source was reused; no
+new source query or arithmetic algorithm was needed. The four retained source
+caller sites use selectors 80/8a; new address controls also exercise their actual
+header words. All 113 first attempts completed: 19 resolver-only controls,
+80 numeric returns and 14 exact Overflows. Distinct eight-byte protocols preserve
+seven-byte FAC residue, low significand bits, unchanged operand/poison blocks
+and consumed-selector error addresses in declared baseline/padded frames.
+Wrapped offsets remain address-only; complete reads use safe eight-byte spans.
+Eighteen verifier tests, portable Go traces, CI and plan/report updates accompany
+the shared resolver documentation. Gameplay, source fingerprints, save 35 and
+sysop behavior are unchanged. Direct subtraction is qualified below. Other DOUBLE arithmetic,
+general unwind, complete maintenance and live acceptance remain separate.
 
 
 [Direct raw-DOUBLE subtraction](research/yt-mbf-subtract-double/RECOVERY.md) now
@@ -2239,8 +2253,7 @@ original prior-FAC residue. All source was reused with no new query. All 148
 first attempts completed: 139 numeric returns and nine exact Overflows. The
 bounded original-byte inventory matches 21 direct sites and no inline /9e sites.
 Seventeen verifier tests, complete portable Go traces, CI and README/plan/report
-updates accompany the isolated APIs. PR #138 owns the separate inline-addition
-work. Gameplay, source fingerprints, save 35 and sysop behavior are unchanged.
+updates accompany the isolated APIs. PR #138 merged the separate inline-addition work. Gameplay, source fingerprints, save 35 and sysop behavior are unchanged.
 Next: inspect retained inline DOUBLE subtraction /9e evidence before adding
 bounded controls. Multiplication/division, general unwind, complete maintenance
 and native BBS/Windows acceptance remain separate.
