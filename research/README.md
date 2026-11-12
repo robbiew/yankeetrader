@@ -7,7 +7,7 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
-checked against merged main through PR #138, using current save format **35**.
+checked against merged main through PR #140, using current save format **35**.
 The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
 Genesis/admin reset integration and bounded multi-day acceptance are implemented.
 Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
@@ -15,8 +15,9 @@ conversions are also complete within their documented native controls.
 [Direct DOUBLE addition](yt-mbf-double-add/RECOVERY.md) and
 [direct subtraction](yt-mbf-subtract-double/RECOVERY.md) are qualified by native
 controls. [Bounded inline addition](yt-mbf-inline-add-double/RECOVERY.md)
-is merged in PR #138; do not repeat it. The next numeric audit is inline
-DOUBLE subtraction /9e, starting with retained source and address evidence.
+is merged in PR #138; do not repeat it. [Bounded inline subtraction /9e](yt-mbf-inline-subtract-double/RECOVERY.md)
+is now qualified separately with synthetic controls. The next numeric audit is
+direct DOUBLE multiplication, starting with retained source and caller evidence.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,
 backups and restoration. DOS save import/export remains unsupported.
