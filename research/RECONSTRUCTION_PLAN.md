@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-12
 
 This section is the current planning baseline, checked against merged `main`
-through `3fc4ec74` (including merged numeric PRs #117–138 and #140 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `c6c0a6e9` (including merged numeric PRs #117–138 and #140–141 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -33,8 +33,8 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-12
 
-PRs #117–138 and #140 are merged, including bounded inline DOUBLE addition
-and direct DOUBLE subtraction. The inline /9e supplement reuses that baseline.
+PRs #117–138 and #140–141 are merged, including direct/inline DOUBLE
+addition and subtraction. The direct multiplication supplement reuses that baseline.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
 | Area | Current state; do not repeat |
@@ -43,7 +43,7 @@ The exported APIs, native fixtures, CI commands and retained reports agree:
 | SINGLE integer operations | INT/FIX and default/mode-4 signed16 conversion are qualified; signed32/LONG is excluded by the QB3 language audit. |
 | DOUBLE integer operations | INT/FIX and default/mode-4 signed16 conversion are already qualified. Do not schedule those completed conversions again. |
 | SINGLE binary arithmetic | Direct and bounded inline addition, subtraction, multiplication and division are complete, including declared overflow/division-zero contexts. See the [addition](yt-mbf-inline-add/RECOVERY.md), [subtraction](yt-mbf-inline-sub/RECOVERY.md), [multiplication](yt-mbf-inline-multiply/RECOVERY.md) and [division](yt-mbf-inline-divide/RECOVERY.md) supplements. |
-| DOUBLE binary arithmetic | Direct addition /80, /82, /84 and subtraction /98, /9a, /9c are qualified by native fixtures and isolated APIs. Bounded inline addition /86 is merged in PR #138. Bounded inline subtraction /9e is now qualified by its own synthetic controls. DOUBLE multiplication and division remain separate. |
+| DOUBLE binary arithmetic | Direct addition /80, /82, /84 and subtraction /98, /9a, /9c are qualified by native fixtures and isolated APIs. Bounded inline addition /86 is merged in PR #138. Bounded inline subtraction /9e is now qualified by its own synthetic controls. Direct multiplication /90, /92 and /94 is now qualified by MultiplyDouble/MultiplyDoubleWithFAC and native fixtures. Inline multiplication /96 and DOUBLE division remain separate. |
 
 [Direct raw-DOUBLE addition](yt-mbf-double-add/RECOVERY.md) is now implemented
 and qualified by 145 first-attempt controls, preserving full 56-bit precision,
@@ -76,11 +76,19 @@ Overflows. The listing has no normal /9e callers; these are synthetic entry/fram
 controls. Nineteen verifier tests, portable Go traces and CI checks preserve
 ordered inputs, seven-byte FAC residue and declared baseline/padded errors.
 
-**Next bounded task: direct DOUBLE multiplication**, starting with retained
-source, caller inventory and existing controls. A 2026-11-12 source/API/open-PR
-audit found no implemented DOUBLE multiplication API or overlapping open PR.
-Do not repeat completed SINGLE arithmetic, DOUBLE INT/FIX/signed16 conversion,
-direct/inline DOUBLE addition/subtraction or generator acceptance. General error/unwind behavior, production
+[Direct raw-DOUBLE multiplication](yt-mbf-multiply-double/RECOVERY.md) now
+qualifies /90, /92 and /94 with exact 112-bit products and 56-bit rounding.
+Existing ABI/rounding/error source was reused; only 400 missing wrapper/helper
+bytes were queried. All 118 first attempts completed: 111 numeric returns and
+seven exact Overflows. The inventory matches five /92 caller slots and no inline
+/96 sites in the bounded listing. Eighteen verifier tests, portable Go traces and
+CI checks preserve zero/underflow residue, full-width ties/sticky information and
+exact error continuations.
+
+**Next bounded task: inline DOUBLE multiplication /96**, starting with retained
+entry/resolver/caller evidence and the now-qualified direct primitive. Do not
+repeat direct multiplication, completed SINGLE arithmetic, DOUBLE conversions,
+addition/subtraction or generator acceptance. General error/unwind behavior, production
 replay integration, DOS save interoperability and native Windows/live-BBS
 acceptance remain separate.
 
@@ -493,8 +501,9 @@ remain separate.
    [addition](yt-mbf-double-add/RECOVERY.md) and
    [subtraction](yt-mbf-subtract-double/RECOVERY.md) are now qualified. PR #138
    merged inline addition /86. Bounded [inline subtraction /9e](yt-mbf-inline-subtract-double/RECOVERY.md)
-   is also qualified. The next selected gap is direct DOUBLE multiplication;
-   other DOUBLE binary arithmetic remains separate.
+   is also qualified. [Direct DOUBLE multiplication](yt-mbf-multiply-double/RECOVERY.md)
+   is now qualified separately. The next selected gap is inline multiplication /96;
+   DOUBLE division and other unmeasured paths remain separate.
    Audit retained evidence before choosing new controls; do not repeat this work.
    General MBF,
    arbitrary inputs and unmeasured dynamic paths remain separate research.
