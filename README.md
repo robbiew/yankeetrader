@@ -2370,3 +2370,15 @@ and alternate-base poison. Wraparound stays resolver-only; full reads and
 synthetic descriptor/frame contexts are bounded. Tests and CI verify immutable
 provenance and portable traces. Inline DOUBLE comparisons and production
 integration remain separate; gameplay and save format 35 are unchanged.
+
+### Bounded inline DOUBLE comparisons /a6
+
+[Inline DOUBLE comparison evidence](research/yt-mbf-inline-double-compare/RECOVERY.md)
+now qualifies `SingleAddInlineOffset` plus `CompareDouble` with 329 full native
+flag/branch controls and 19 separate resolver-only controls. All source was
+reused; seven static caller sites match original bytes. Eight-byte protocols
+retain four-word ordering, full FAC/operands, alternate-base poison, five defined
+flags and sixteen actual Jcc outcomes. Full reads and declared synthetic frames
+are bounded; wrapped offsets remain resolver-only. Tests and CI verify immutable
+provenance and portable Go traces. Production integration and arbitrary contexts
+remain separate; gameplay and save format 35 are unchanged.
