@@ -7,7 +7,7 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
-checked against merged main through PR #143, using current save format **35**.
+checked against merged main through PR #144, using current save format **35**.
 The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
 Genesis/admin reset integration and bounded multi-day acceptance are implemented.
 Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
@@ -20,8 +20,7 @@ is now qualified separately with synthetic controls. [Direct DOUBLE multiplicati
 qualified by its separate native corpus and Go APIs. [Bounded inline /96](yt-mbf-inline-multiply-double/RECOVERY.md) is qualified
 separately with synthetic controls. [Direct DOUBLE division](yt-mbf-divide-double/RECOVERY.md) is now qualified,
 including distinct early/late underflow residues and both error kinds. [Bounded inline /8e](yt-mbf-inline-divide-double/RECOVERY.md) now qualifies
-that separate synthetic entry/frame slice. Direct division PR #144 is still open
-and is the dependency; merge it before the inline PR. After ordered merge, audit
+that separate synthetic entry/frame slice. Direct division PR #144 is merged; the inline PR now targets main. After its merge, audit
 remaining runtime/maintenance gaps against implemented APIs and open work.
 The [root README](../README.md#playable-feature-overview) describes playable
 features and usage; the [sysop guide](../docs/SYSOP.md) covers modern save exports,

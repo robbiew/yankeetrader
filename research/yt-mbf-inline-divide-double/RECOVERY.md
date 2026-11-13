@@ -6,9 +6,9 @@ INT3F/8e composes `SingleAddInlineOffset` with
 `DivideDoubleWithFAC(selectedMemory,FAC,FAC)`. The historical resolver name is
 retained. No new arithmetic algorithm or source query was required. The
 README, plan, retained source, APIs and open PRs were audited first. PR #144
-already owns direct DOUBLE division; this slice is stacked on its branch while
-that dependency remains open, rather than duplicating it or merging prematurely.
-The eventual merge target is main after the parent is merged.
+owned the direct division dependency when this slice began stacked on its branch.
+That parent is now merged as `ba4d27b0`, its ancestry is verified, and this slice
+now includes the merged dependency and targets main. No direct controls are duplicated.
 
 The parent's immutable `yt-mbf-divide-double/rea/division.json` already includes
 analysis af8e: `CALL 1ec3; MOV DI,0016; CALL 1f6b`. Original file bytes
@@ -98,8 +98,7 @@ go test -race ./internal/qbmbf ./internal/qbrng ./internal/qbinit
 go vet ./internal/qbmbf ./internal/qbrng ./internal/qbinit
 ```
 
-Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After
-ordered merge of the direct and inline division PRs, reconcile remaining runtime
+Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After this inline milestone merges, reconcile remaining runtime
 and maintenance gaps against current APIs, retained evidence and open work;
 do not reschedule completed binary arithmetic or conversions. General unwind,
 production maintenance integration, DOS save interoperability and native Windows/

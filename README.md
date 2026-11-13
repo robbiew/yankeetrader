@@ -2330,9 +2330,7 @@ returns, ten Overflows and 18 Division-by-zero diagnostics. Distinct eight-byte
 traces preserve operand order, full-width rounding, zero-divisor precedence and
 both original-FAC and shifted-divisor underflow residues, including declared
 padded frames. Twenty verifier tests, portable Go traces, CI and plan/report
-updates accompany the shared helper documentation. This slice is stacked on
-PR #144's still-open direct division dependency; merge that parent into main first.
-Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After
-ordered merge, audit remaining runtime/maintenance gaps rather than repeating
+updates accompany the shared helper documentation. PR #144's direct division dependency is merged; this slice now targets main.
+Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After this inline milestone merges, audit remaining runtime/maintenance gaps rather than repeating
 completed arithmetic. General unwind, complete maintenance, DOS save interoperability
 and native BBS/Windows acceptance remain separate.
