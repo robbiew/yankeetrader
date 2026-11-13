@@ -615,3 +615,9 @@
 /research/yt-mbf-double-compare/native/**/TRACE.BIN -diff
 /research/yt-mbf-double-compare/native/**/*.LOG -diff
 /research/yt-mbf-double-compare/native/**/dosbox.stderr -diff
+
+# Immutable bounded inline SINGLE comparison contexts, FLAGS and Jcc probes.
+/research/yt-mbf-inline-single-compare/native/** -text
+/research/yt-mbf-inline-single-compare/native/**/TRACE.BIN -diff
+/research/yt-mbf-inline-single-compare/native/**/*.LOG -diff
+/research/yt-mbf-inline-single-compare/native/**/dosbox.stderr -diff
