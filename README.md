@@ -2394,3 +2394,16 @@ integer SGN value. /a9 and /aa share the FAC high-word entry; input/FAC/RNG and
 captured registers remain unchanged. Native provenance/corruption checks,
 portable Go tests and CI retain the bounds. Production integration and adjacent
 boolean helpers remain separate; gameplay and save format 35 are unchanged.
+
+### Bounded Go clean-port maintenance replay
+
+[Go clean-port replay](research/yt-maint/GO_CLEAN_PORT_REPLAY.md) now derives
+1000 non-Earth port records from before-world bytes and explicit calendar/raw
+TIMER inputs. All 32 existing observed calendar/clock-matrix port blocks—32,000
+complete records—match byte for byte, with no new native captures. The isolated
+`qbmaint.ReplayCleanPorts` API preserves raw timestamps and untouched bytes,
+uses existing numeric primitives and rejects unsupported inputs atomically.
+Portable native fixtures, Go race tests and eight exporter/provenance tests run
+in CI. Python replay remains an independent reference. Populated-port economy,
+other phases and playable maintenance integration remain separate; gameplay and
+save format 35 are unchanged.

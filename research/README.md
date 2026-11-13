@@ -7,7 +7,7 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
-checked against merged main through PR #149, using current save format **35**.
+checked against merged main through PR #150, using current save format **35**.
 The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
 Genesis/admin reset integration and bounded multi-day acceptance are implemented.
 Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
@@ -82,3 +82,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded inline DOUBLE comparison /a6](yt-mbf-inline-double-compare/RECOVERY.md): 329 full eight-byte flag/branch controls, nineteen resolver-only controls and seven static callers; retained resolver/direct evidence reused.
 
 - [Raw sign/zero-test entries /a7–/aa](yt-mbf-sign-zero/RECOVERY.md): 248 native flag/branch controls, 102 original-byte callers and a four-byte source supplement; existing comparison-against-zero primitives reused.
+
+- [Bounded pure Go clean-port maintenance replay](yt-maint/GO_CLEAN_PORT_REPLAY.md): 32 existing native blocks / 32,000 exact records, portable before-only inputs, unchanged independent Python reference and guarded research-only API.
