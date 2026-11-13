@@ -589,3 +589,10 @@
 /research/yt-mbf-inline-multiply-double/**/TRACE.BIN -diff
 /research/yt-mbf-inline-multiply-double/**/*.LOG -diff
 /research/yt-mbf-inline-multiply-double/**/dosbox.stderr -diff
+
+# Immutable direct raw-DOUBLE division protocols, including late-underflow controls.
+/research/yt-mbf-divide-double/native/** -text
+/research/yt-mbf-divide-double/underflow-native/** -text
+/research/yt-mbf-divide-double/**/TRACE.BIN -diff
+/research/yt-mbf-divide-double/**/*.LOG -diff
+/research/yt-mbf-divide-double/**/dosbox.stderr -diff

@@ -1,0 +1,54 @@
+{
+  "format": "maintenance-direct-double-divide-callers-v1",
+  "authority": "Static annotated call-site inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "direct_calls": [
+    {
+      "op": 138,
+      "code_offset": 2563,
+      "file_offset": 3075
+    },
+    {
+      "op": 138,
+      "code_offset": 2609,
+      "file_offset": 3121
+    },
+    {
+      "op": 138,
+      "code_offset": 26587,
+      "file_offset": 27099
+    },
+    {
+      "op": 138,
+      "code_offset": 28411,
+      "file_offset": 28923
+    },
+    {
+      "op": 138,
+      "code_offset": 32132,
+      "file_offset": 32644
+    },
+    {
+      "op": 138,
+      "code_offset": 34644,
+      "file_offset": 35156
+    },
+    {
+      "op": 138,
+      "code_offset": 34994,
+      "file_offset": 35506
+    },
+    {
+      "op": 138,
+      "code_offset": 35236,
+      "file_offset": 35748
+    },
+    {
+      "op": 138,
+      "code_offset": 35277,
+      "file_offset": 35789
+    }
+  ],
+  "excluded_inline_calls": []
+}
