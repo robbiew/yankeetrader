@@ -33,7 +33,7 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-13
 
-PRs #117–138 and #140–146 are merged, including direct/inline DOUBLE
+PRs #117–138 and #140–147 are merged, including direct/inline DOUBLE
 addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
@@ -122,8 +122,15 @@ and sixteen actual Jcc outcomes. Source and ABI evidence was reused; thirty
 direct sites match original bytes, with seven inline /a6 sites excluded.
 `CompareDouble`, portable fixtures and corruption/provenance checks are implemented.
 
-**Next: audit bounded inline SINGLE comparisons /a5 against retained resolver
-evidence and open PRs, then consider inline DOUBLE /a6 separately.** Do not repeat completed
+[Bounded inline SINGLE /a5](yt-mbf-inline-single-compare/RECOVERY.md) now
+qualifies the existing resolver-plus-CompareSingle composition with 275 full
+native flag/branch controls and 21 separate resolver-only runs. All source was
+reused, and sixteen caller slots match original bytes. Both tag paths, selector
+aliases, original caller headers, safe last spans, alternate-base poison and
+declared padded descriptor frames are covered; wrapped reads are not admitted.
+
+**Next: audit bounded inline DOUBLE comparisons /a6 against existing evidence
+and open PRs.** Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.

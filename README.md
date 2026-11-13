@@ -2357,3 +2357,16 @@ actual Jcc outcomes. Undefined AF and signed CPU jumps as numeric ordering are
 outside the contract. Tests, immutable provenance checks and CI cover the new
 primitive; README/plan keep inline comparisons and production integration
 separate. Gameplay and save format 35 are unchanged.
+
+### Bounded inline SINGLE comparisons /a5
+
+[Inline SINGLE comparison evidence](research/yt-mbf-inline-single-compare/RECOVERY.md)
+now qualifies the composition of `SingleAddInlineOffset` and `CompareSingle` with
+275 full native flag/branch controls and 21 separate resolver-only controls.
+All source evidence was reused; sixteen original-byte caller slots are admitted
+statically. Selected memory is left and SINGLE FAC is right. Native probes retain
+all sixteen actual Jcc outcomes, five defined flags, readonly full FAC/operands
+and alternate-base poison. Wraparound stays resolver-only; full reads and
+synthetic descriptor/frame contexts are bounded. Tests and CI verify immutable
+provenance and portable traces. Inline DOUBLE comparisons and production
+integration remain separate; gameplay and save format 35 are unchanged.

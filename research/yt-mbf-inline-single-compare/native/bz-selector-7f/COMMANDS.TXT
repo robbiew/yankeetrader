@@ -1,0 +1,11 @@
+mount c /tmp/yt-inline-single-compare-first-20261113/bz-selector-7f
+c:
+date 11/02/2026
+time 00:00:00
+date > DOSDATE.LOG
+time > DOSTIME.LOG
+yt-init > TRACE.BIN
+if errorlevel 1 echo PROGRAM_ERROR > ERROR.LOG
+if not errorlevel 1 echo PROGRAM_OK > OK.LOG
+echo PROBE_RETURNED > RETURN.LOG
+exit
