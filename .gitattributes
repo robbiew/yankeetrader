@@ -627,3 +627,9 @@
 /research/yt-mbf-inline-double-compare/native/**/TRACE.BIN -diff
 /research/yt-mbf-inline-double-compare/native/**/*.LOG -diff
 /research/yt-mbf-inline-double-compare/native/**/dosbox.stderr -diff
+
+# Immutable raw sign/zero-test FLAGS, Jcc and original DOS observations.
+/research/yt-mbf-sign-zero/native/** -text
+/research/yt-mbf-sign-zero/native/**/TRACE.BIN -diff
+/research/yt-mbf-sign-zero/native/**/*.LOG -diff
+/research/yt-mbf-sign-zero/native/**/dosbox.stderr -diff

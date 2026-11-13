@@ -2382,3 +2382,15 @@ flags and sixteen actual Jcc outcomes. Full reads and declared synthetic frames
 are bounded; wrapped offsets remain resolver-only. Tests and CI verify immutable
 provenance and portable Go traces. Production integration and arbitrary contexts
 remain separate; gameplay and save format 35 are unchanged.
+
+### Raw sign/zero-test entries /a7–/aa
+
+[Sign/zero-test evidence](research/yt-mbf-sign-zero/RECOVERY.md) now qualifies
+`SignZeroSingle` and `SignZeroDouble` using existing comparison-against-zero
+primitives. There are 248 native controls, 102 original-byte maintenance caller
+slots and one four-byte source supplement; existing evidence supplies the rest.
+The APIs return five defined CPU flags and all sixteen Jcc conditions, not an
+integer SGN value. /a9 and /aa share the FAC high-word entry; input/FAC/RNG and
+captured registers remain unchanged. Native provenance/corruption checks,
+portable Go tests and CI retain the bounds. Production integration and adjacent
+boolean helpers remain separate; gameplay and save format 35 are unchanged.

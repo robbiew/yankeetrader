@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-13
 
 This section is the current planning baseline, checked against merged `main`
-through `ba4d27b0` (including merged numeric PRs #117–138 and #140–144 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `12cfd86e` (including merged numeric PRs #117–138 and #140–149 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -33,7 +33,7 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-13
 
-PRs #117–138 and #140–148 are merged, including direct/inline DOUBLE
+PRs #117–138 and #140–149 are merged, including direct/inline DOUBLE
 addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
@@ -136,10 +136,20 @@ reused; seven static caller slots match original bytes. Four-word precision,
 both tag paths, selector aliases, original caller headers, safe last spans,
 alternate-base poison and declared padded frames are covered.
 
-**Next: audit remaining numeric-runtime and maintenance-integration gaps against
-current APIs, retained evidence and open PRs.** Direct and bounded inline SINGLE
-and DOUBLE comparisons are now separately qualified. Wrapped reads, arbitrary
-frames and general unwind behavior remain outside these milestones. Do not repeat completed
+[Raw sign/zero-test entries /a7–/aa](yt-mbf-sign-zero/RECOVERY.md) now qualify
+SignZeroSingle/SignZeroDouble through the existing comparison-against-zero
+primitives. The 248 native controls cover actual flags, sixteen Jcc outcomes,
+readonly state and the shared /a9-/aa FAC entry. Existing source was reused;
+only four missing prefix bytes were queried. 102 direct caller slots match
+original bytes. Adjacent boolean helpers and production integration are excluded.
+
+**Next: a bounded pure Go before-only clean-port maintenance replay, reusing
+existing ten-day/capped clean-port captures and exact record expectations.**
+Keep the established Python replay as an independent oracle; do not change
+playable maintenance policy or claim general numeric/save compatibility.
+Direct and bounded inline SINGLE/DOUBLE comparisons and raw sign/zero tests
+are separately qualified; wrapped reads, arbitrary frames and general unwind
+behavior remain outside those milestones. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.
