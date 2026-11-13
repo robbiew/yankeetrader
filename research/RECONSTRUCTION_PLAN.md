@@ -150,11 +150,16 @@ bytes. No new captures were acquired. Portable before/schedule/native fixtures,
 input-admission and immutability tests, provenance checks and CI are implemented;
 the Python reference stays independent and playable maintenance is unchanged.
 
-**Next: audit the next independently recovered maintenance phase for a bounded
-Go before-only migration, reusing existing native inputs and Python replays.**
-Do not reimplement clean-port production, numeric arithmetic/comparison/sign-zero
-qualification or initializer acceptance. Populated-port economies, other phases,
-full Go maintenance and production integration remain separate. Do not repeat completed
+[Bounded Go inactive rank/watermark replay](yt-maint/GO_INACTIVE_RANK_REPLAY.md)
+now ports the separate all-inactive writer. All 51 written fields per native run
+match across 32 existing runs / 1,632 complete fields. Every unrelated world byte
+is preserved; active players, invalid geometry and invalid final days are rejected
+without partial output. Portable oracles reuse the clean-port before-worlds,
+with independent Python synthesis and source/capture provenance checks.
+
+**Next: audit the recovered NPC bootstrap/placement phase for the first bounded
+Go migration, reusing current captures and Python models.** These two Go writers
+are research slices, not complete Go maintenance or production integration. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.

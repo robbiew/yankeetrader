@@ -84,3 +84,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Raw sign/zero-test entries /a7–/aa](yt-mbf-sign-zero/RECOVERY.md): 248 native flag/branch controls, 102 original-byte callers and a four-byte source supplement; existing comparison-against-zero primitives reused.
 
 - [Bounded pure Go clean-port maintenance replay](yt-maint/GO_CLEAN_PORT_REPLAY.md): 32 existing native blocks / 32,000 exact records, portable before-only inputs, unchanged independent Python reference and guarded research-only API.
+
+- [Bounded Go inactive rank-cache/watermark writer](yt-maint/GO_INACTIVE_RANK_REPLAY.md): 1,632 exact native fields across 32 retained runs, before-only synthesis and complete unrelated-byte preservation; active rankings excluded.
