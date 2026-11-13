@@ -2334,3 +2334,14 @@ updates accompany the shared helper documentation. PR #144's direct division dep
 Gameplay, source fingerprints, save 35 and sysop behavior are unchanged. After this inline milestone merges, audit remaining runtime/maintenance gaps rather than repeating
 completed arithmetic. General unwind, complete maintenance, DOS save interoperability
 and native BBS/Windows acceptance remain separate.
+
+### Direct raw SINGLE comparisons
+
+[Comparison flag evidence](research/yt-mbf-single-compare/RECOVERY.md) now
+qualifies `qbmbf.CompareSingle`, its five defined CPU flags and sixteen Jcc
+conditions with 216 first-attempt native controls across /9f, /a1 and /a3.
+All source/ABI evidence was reused; 203 direct maintenance sites match original
+bytes. Signed CPU jumps are not numeric MBF ordering, and undefined AF is not
+predicted. Inputs/FAC/RNG remain unchanged. Inline and DOUBLE comparisons and
+production replay integration remain separate; gameplay and save format 35 are
+unchanged. Native provenance/corruption checks and portable Go tests run in CI.

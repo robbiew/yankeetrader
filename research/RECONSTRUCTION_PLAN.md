@@ -33,9 +33,8 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-12
 
-PRs #117–138 and #140–144 are merged, including direct/inline DOUBLE
-addition/subtraction/multiplication and direct division. The inline /8e slice now
-includes its merged parent and targets main. Do not duplicate either slice.
+PRs #117–138 and #140–145 are merged, including direct/inline DOUBLE
+addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
 | Area | Current state; do not repeat |
@@ -111,12 +110,17 @@ No normal /8e callers exist in the bounded listing; frames/selectors are synthet
 Twenty verifier tests, portable Go traces and CI retain ordered operands,
 full precision, zero-divisor precedence and both early/late underflow residues.
 
-**Next: finish inline division review/merge, then audit remaining runtime/maintenance gaps.** Check current APIs, evidence and open PRs
-before selecting another bounded slice. Direct/inline SINGLE and DOUBLE binary
-arithmetic, INT/FIX/signed16 conversions and generator acceptance already have
-separate qualified implementations; do not repeat them. General error/unwind behavior, production
-replay integration, DOS save interoperability and native Windows/live-BBS
-acceptance remain separate.
+[Direct raw SINGLE comparisons](yt-mbf-single-compare/RECOVERY.md) now qualify
+/9f, /a1 and /a3 with 216 native controls, five defined CPU flags and sixteen
+actual Jcc outcomes. All retained source was reused; 203 direct sites match
+original bytes. `CompareSingle` and portable fixtures are implemented; AF,
+inline /a5 and DOUBLE comparison entries remain outside this contract.
+
+**Next: audit direct DOUBLE comparisons against retained evidence and open PRs.**
+Then consider bounded inline comparisons separately. Do not repeat completed
+SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
+production replay integration, DOS save interoperability and native Windows/live
+BBS acceptance remain separate.
 
 ### Completed bounded departure/stock replay
 
