@@ -4,7 +4,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 
 <a id="current-work"></a>
 
-## Current implementation and next work — checked 2026-11-12
+## Current implementation and next work — checked 2026-11-13
 
 This section is the current planning baseline, checked against merged `main`
 through `ba4d27b0` (including merged numeric PRs #117–138 and #140–144 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
@@ -31,9 +31,9 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
-### Current numeric work — checked 2026-11-12
+### Current numeric work — checked 2026-11-13
 
-PRs #117–138 and #140–145 are merged, including direct/inline DOUBLE
+PRs #117–138 and #140–146 are merged, including direct/inline DOUBLE
 addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
@@ -116,8 +116,14 @@ actual Jcc outcomes. All retained source was reused; 203 direct sites match
 original bytes. `CompareSingle` and portable fixtures are implemented; AF,
 inline /a5 and DOUBLE comparison entries remain outside this contract.
 
-**Next: audit direct DOUBLE comparisons against retained evidence and open PRs.**
-Then consider bounded inline comparisons separately. Do not repeat completed
+[Direct raw DOUBLE comparisons](yt-mbf-double-compare/RECOVERY.md) now qualify
+/a0, /a2 and /a4 with 486 native controls, all four words, five defined flags
+and sixteen actual Jcc outcomes. Source and ABI evidence was reused; thirty
+direct sites match original bytes, with seven inline /a6 sites excluded.
+`CompareDouble`, portable fixtures and corruption/provenance checks are implemented.
+
+**Next: audit bounded inline SINGLE comparisons /a5 against retained resolver
+evidence and open PRs, then consider inline DOUBLE /a6 separately.** Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.

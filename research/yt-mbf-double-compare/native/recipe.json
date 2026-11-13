@@ -1,0 +1,3897 @@
+{
+  "recipe": "brun30-double-compare-flags-v1",
+  "cases": {
+    "opa0-zeros": {
+      "op": 160,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-aliases": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-aliases-reversed": {
+      "op": 160,
+      "left": "00000000ffffff00",
+      "right": "0000000012345600",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-signed-zero-aliases": {
+      "op": 160,
+      "left": "0000000000008000",
+      "right": "00000000ffff7f00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-one-equal": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-negative-equal": {
+      "op": 160,
+      "left": "0000000000008081",
+      "right": "0000000000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-one-two": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000000082",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-two-one": {
+      "op": 160,
+      "left": "0000000000000082",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-negative-one-two": {
+      "op": 160,
+      "left": "0000000000008081",
+      "right": "0000000000008082",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-negative-two-one": {
+      "op": 160,
+      "left": "0000000000008082",
+      "right": "0000000000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-positive-negative": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-negative-positive": {
+      "op": 160,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-signs": {
+      "op": 160,
+      "left": "0000000000004081",
+      "right": "0000000000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-negative-fraction-signs": {
+      "op": 160,
+      "left": "000000000000c081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-raw-signs": {
+      "op": 160,
+      "left": "0000000056341281",
+      "right": "000000002143e581",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-raw-signs-reversed": {
+      "op": 160,
+      "left": "000000002143e581",
+      "right": "0000000056341281",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-1-0": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "0000000056341201",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-1-0": {
+      "op": 160,
+      "left": "0000000056341201",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-1-1": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "0000000056349201",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-1-1": {
+      "op": 160,
+      "left": "0000000056349201",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-127-0": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "000000005634127f",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-127-0": {
+      "op": 160,
+      "left": "000000005634127f",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-127-1": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "000000005634927f",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-127-1": {
+      "op": 160,
+      "left": "000000005634927f",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-128-0": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "0000000056341280",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-128-0": {
+      "op": 160,
+      "left": "0000000056341280",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-128-1": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "0000000056349280",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-128-1": {
+      "op": 160,
+      "left": "0000000056349280",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-255-0": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "00000000563412ff",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-255-0": {
+      "op": 160,
+      "left": "00000000563412ff",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-zero-value-255-1": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "00000000563492ff",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-value-zero-255-1": {
+      "op": 160,
+      "left": "00000000563492ff",
+      "right": "00000000abcdef00",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-sign-boundary-0": {
+      "op": 160,
+      "left": "00000000ff7f0081",
+      "right": "0000000000800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-sign-boundary-reversed-0": {
+      "op": 160,
+      "left": "0000000000800081",
+      "right": "00000000ff7f0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-sign-boundary-1": {
+      "op": 160,
+      "left": "00000000ff7f8081",
+      "right": "0000000000808081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-sign-boundary-reversed-1": {
+      "op": 160,
+      "left": "0000000000808081",
+      "right": "00000000ff7f8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-zero-boundary-0": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-zero-boundary-reversed-0": {
+      "op": 160,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-zero-boundary-1": {
+      "op": 160,
+      "left": "0000000000008081",
+      "right": "0000000000808081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-zero-boundary-reversed-1": {
+      "op": 160,
+      "left": "0000000000808081",
+      "right": "0000000000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-ffff-boundary-0": {
+      "op": 160,
+      "left": "0000000000800081",
+      "right": "00000000ffff0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-ffff-boundary-reversed-0": {
+      "op": 160,
+      "left": "00000000ffff0081",
+      "right": "0000000000800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-ffff-boundary-1": {
+      "op": 160,
+      "left": "0000000000808081",
+      "right": "00000000ffff8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-low-ffff-boundary-reversed-1": {
+      "op": 160,
+      "left": "00000000ffff8081",
+      "right": "0000000000808081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-high-fraction-boundary-0": {
+      "op": 160,
+      "left": "00000000ffff0081",
+      "right": "0000000000000181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-high-fraction-boundary-reversed-0": {
+      "op": 160,
+      "left": "0000000000000181",
+      "right": "00000000ffff0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-high-fraction-boundary-1": {
+      "op": 160,
+      "left": "00000000ffff8081",
+      "right": "0000000000008181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-high-fraction-boundary-reversed-1": {
+      "op": 160,
+      "left": "0000000000008181",
+      "right": "00000000ffff8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-exponent-127-128": {
+      "op": 160,
+      "left": "00000000ffff7f7f",
+      "right": "0000000000000080",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-exponent-128-127": {
+      "op": 160,
+      "left": "0000000000000080",
+      "right": "00000000ffff7f7f",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-exponent-1-255": {
+      "op": 160,
+      "left": "00000000ffff7f01",
+      "right": "00000000000000ff",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-exponent-255-1": {
+      "op": 160,
+      "left": "00000000000000ff",
+      "right": "00000000ffff7f01",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit0": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit0-reversed": {
+      "op": 160,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit7": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit7-reversed": {
+      "op": 160,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit8": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit8-reversed": {
+      "op": 160,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit15": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit15-reversed": {
+      "op": 160,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit16": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit16-reversed": {
+      "op": 160,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit22": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-fraction-bit22-reversed": {
+      "op": 160,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-zero-0-0": {
+      "op": 160,
+      "left": "000068249a360081",
+      "right": "010068249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-zero-0-1": {
+      "op": 160,
+      "left": "010068249a360081",
+      "right": "000068249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-zero-128-0": {
+      "op": 160,
+      "left": "000068249a368081",
+      "right": "010068249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-zero-128-1": {
+      "op": 160,
+      "left": "010068249a368081",
+      "right": "000068249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-signed-0-0": {
+      "op": 160,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-signed-0-1": {
+      "op": 160,
+      "left": "008068249a360081",
+      "right": "ff7f68249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-signed-128-0": {
+      "op": 160,
+      "left": "ff7f68249a368081",
+      "right": "008068249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-signed-128-1": {
+      "op": 160,
+      "left": "008068249a368081",
+      "right": "ff7f68249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-wrap-0-0": {
+      "op": 160,
+      "left": "ffff68249a360081",
+      "right": "000068249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-wrap-0-1": {
+      "op": 160,
+      "left": "000068249a360081",
+      "right": "ffff68249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-wrap-128-0": {
+      "op": 160,
+      "left": "ffff68249a368081",
+      "right": "000068249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-wrap-128-1": {
+      "op": 160,
+      "left": "000068249a368081",
+      "right": "ffff68249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-parity-0-0": {
+      "op": 160,
+      "left": "ff0068249a360081",
+      "right": "000168249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-parity-0-1": {
+      "op": 160,
+      "left": "000168249a360081",
+      "right": "ff0068249a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-parity-128-0": {
+      "op": 160,
+      "left": "ff0068249a368081",
+      "right": "000168249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word0-parity-128-1": {
+      "op": 160,
+      "left": "000168249a368081",
+      "right": "ff0068249a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-zero-0-0": {
+      "op": 160,
+      "left": "571300009a360081",
+      "right": "571301009a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-zero-0-1": {
+      "op": 160,
+      "left": "571301009a360081",
+      "right": "571300009a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-zero-128-0": {
+      "op": 160,
+      "left": "571300009a368081",
+      "right": "571301009a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-zero-128-1": {
+      "op": 160,
+      "left": "571301009a368081",
+      "right": "571300009a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-signed-0-0": {
+      "op": 160,
+      "left": "5713ff7f9a360081",
+      "right": "571300809a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-signed-0-1": {
+      "op": 160,
+      "left": "571300809a360081",
+      "right": "5713ff7f9a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-signed-128-0": {
+      "op": 160,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-signed-128-1": {
+      "op": 160,
+      "left": "571300809a368081",
+      "right": "5713ff7f9a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-wrap-0-0": {
+      "op": 160,
+      "left": "5713ffff9a360081",
+      "right": "571300009a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-wrap-0-1": {
+      "op": 160,
+      "left": "571300009a360081",
+      "right": "5713ffff9a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-wrap-128-0": {
+      "op": 160,
+      "left": "5713ffff9a368081",
+      "right": "571300009a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-wrap-128-1": {
+      "op": 160,
+      "left": "571300009a368081",
+      "right": "5713ffff9a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-parity-0-0": {
+      "op": 160,
+      "left": "5713ff009a360081",
+      "right": "571300019a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-parity-0-1": {
+      "op": 160,
+      "left": "571300019a360081",
+      "right": "5713ff009a360081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-parity-128-0": {
+      "op": 160,
+      "left": "5713ff009a368081",
+      "right": "571300019a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-parity-128-1": {
+      "op": 160,
+      "left": "571300019a368081",
+      "right": "5713ff009a368081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-zero-0-0": {
+      "op": 160,
+      "left": "5713682400000081",
+      "right": "5713682401000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-zero-0-1": {
+      "op": 160,
+      "left": "5713682401000081",
+      "right": "5713682400000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-zero-128-0": {
+      "op": 160,
+      "left": "5713682400008081",
+      "right": "5713682401008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-zero-128-1": {
+      "op": 160,
+      "left": "5713682401008081",
+      "right": "5713682400008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-signed-0-0": {
+      "op": 160,
+      "left": "57136824ff7f0081",
+      "right": "5713682400800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-signed-0-1": {
+      "op": 160,
+      "left": "5713682400800081",
+      "right": "57136824ff7f0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-signed-128-0": {
+      "op": 160,
+      "left": "57136824ff7f8081",
+      "right": "5713682400808081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-signed-128-1": {
+      "op": 160,
+      "left": "5713682400808081",
+      "right": "57136824ff7f8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-wrap-0-0": {
+      "op": 160,
+      "left": "57136824ffff0081",
+      "right": "5713682400000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-wrap-0-1": {
+      "op": 160,
+      "left": "5713682400000081",
+      "right": "57136824ffff0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-wrap-128-0": {
+      "op": 160,
+      "left": "57136824ffff8081",
+      "right": "5713682400008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-wrap-128-1": {
+      "op": 160,
+      "left": "5713682400008081",
+      "right": "57136824ffff8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-parity-0-0": {
+      "op": 160,
+      "left": "57136824ff000081",
+      "right": "5713682400010081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-parity-0-1": {
+      "op": 160,
+      "left": "5713682400010081",
+      "right": "57136824ff000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-parity-128-0": {
+      "op": 160,
+      "left": "57136824ff008081",
+      "right": "5713682400018081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-parity-128-1": {
+      "op": 160,
+      "left": "5713682400018081",
+      "right": "57136824ff008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit0": {
+      "op": 160,
+      "left": "0100000000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit0-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0100000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit7": {
+      "op": 160,
+      "left": "8000000000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit7-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "8000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit8": {
+      "op": 160,
+      "left": "0001000000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit8-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0001000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit15": {
+      "op": 160,
+      "left": "0080000000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit15-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0080000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit16": {
+      "op": 160,
+      "left": "0000010000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit16-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000010000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit23": {
+      "op": 160,
+      "left": "0000800000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit23-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000800000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit24": {
+      "op": 160,
+      "left": "0000000100000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit24-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000100000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit31": {
+      "op": 160,
+      "left": "0000008000000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit31-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000008000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit32": {
+      "op": 160,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit32-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit39": {
+      "op": 160,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit39-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit40": {
+      "op": 160,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit40-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit47": {
+      "op": 160,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit47-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit48": {
+      "op": 160,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit48-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit54": {
+      "op": 160,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-bit54-reversed": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-precedence-0-0": {
+      "op": 160,
+      "left": "ffff0000ffff0081",
+      "right": "0000010000000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-precedence-0-1": {
+      "op": 160,
+      "left": "0000010000000081",
+      "right": "ffff0000ffff0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-precedence-128-0": {
+      "op": 160,
+      "left": "ffff0000ffff8081",
+      "right": "0000010000008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word1-precedence-128-1": {
+      "op": 160,
+      "left": "0000010000008081",
+      "right": "ffff0000ffff8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-precedence-0-0": {
+      "op": 160,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-precedence-0-1": {
+      "op": 160,
+      "left": "0000000001000081",
+      "right": "ffffffff00000081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-precedence-128-0": {
+      "op": 160,
+      "left": "ffffffff00008081",
+      "right": "0000000001008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word2-precedence-128-1": {
+      "op": 160,
+      "left": "0000000001008081",
+      "right": "ffffffff00008081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word3-precedence-0-0": {
+      "op": 160,
+      "left": "ffffffffffff0081",
+      "right": "0000000000000181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word3-precedence-0-1": {
+      "op": 160,
+      "left": "0000000000000181",
+      "right": "ffffffffffff0081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word3-precedence-128-0": {
+      "op": 160,
+      "left": "ffffffffffff8081",
+      "right": "0000000000008181",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-word3-precedence-128-1": {
+      "op": 160,
+      "left": "0000000000008181",
+      "right": "ffffffffffff8081",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-equal": {
+      "op": 160,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa0-full-negative-equal": {
+      "op": 160,
+      "left": "123456789abcd681",
+      "right": "123456789abcd681",
+      "fac": "a55a32cc5aa5d592",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "seeded-opa0-zeros": {
+      "op": 160,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-zero-aliases": {
+      "op": 160,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-positive-negative": {
+      "op": 160,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-negative-positive": {
+      "op": 160,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-full-equal": {
+      "op": 160,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-word0-signed-0-0": {
+      "op": 160,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-word1-signed-128-0": {
+      "op": 160,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa0-word2-precedence-0-0": {
+      "op": 160,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "5aa5d5c3deadbeef",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "opa2-zeros": {
+      "op": 162,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "0000000000000000",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-aliases": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-aliases-reversed": {
+      "op": 162,
+      "left": "00000000ffffff00",
+      "right": "0000000012345600",
+      "fac": "00000000ffffff00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-signed-zero-aliases": {
+      "op": 162,
+      "left": "0000000000008000",
+      "right": "00000000ffff7f00",
+      "fac": "0000000000008000",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-one-equal": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-negative-equal": {
+      "op": 162,
+      "left": "0000000000008081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-one-two": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000000082",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-two-one": {
+      "op": 162,
+      "left": "0000000000000082",
+      "right": "0000000000000081",
+      "fac": "0000000000000082",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-negative-one-two": {
+      "op": 162,
+      "left": "0000000000008081",
+      "right": "0000000000008082",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-negative-two-one": {
+      "op": 162,
+      "left": "0000000000008082",
+      "right": "0000000000008081",
+      "fac": "0000000000008082",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-positive-negative": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-negative-positive": {
+      "op": 162,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-signs": {
+      "op": 162,
+      "left": "0000000000004081",
+      "right": "0000000000008081",
+      "fac": "0000000000004081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-negative-fraction-signs": {
+      "op": 162,
+      "left": "000000000000c081",
+      "right": "0000000000000081",
+      "fac": "000000000000c081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-raw-signs": {
+      "op": 162,
+      "left": "0000000056341281",
+      "right": "000000002143e581",
+      "fac": "0000000056341281",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-raw-signs-reversed": {
+      "op": 162,
+      "left": "000000002143e581",
+      "right": "0000000056341281",
+      "fac": "000000002143e581",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-1-0": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "0000000056341201",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-1-0": {
+      "op": 162,
+      "left": "0000000056341201",
+      "right": "00000000abcdef00",
+      "fac": "0000000056341201",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-1-1": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "0000000056349201",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-1-1": {
+      "op": 162,
+      "left": "0000000056349201",
+      "right": "00000000abcdef00",
+      "fac": "0000000056349201",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-127-0": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "000000005634127f",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-127-0": {
+      "op": 162,
+      "left": "000000005634127f",
+      "right": "00000000abcdef00",
+      "fac": "000000005634127f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-127-1": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "000000005634927f",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-127-1": {
+      "op": 162,
+      "left": "000000005634927f",
+      "right": "00000000abcdef00",
+      "fac": "000000005634927f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-128-0": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "0000000056341280",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-128-0": {
+      "op": 162,
+      "left": "0000000056341280",
+      "right": "00000000abcdef00",
+      "fac": "0000000056341280",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-128-1": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "0000000056349280",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-128-1": {
+      "op": 162,
+      "left": "0000000056349280",
+      "right": "00000000abcdef00",
+      "fac": "0000000056349280",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-255-0": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "00000000563412ff",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-255-0": {
+      "op": 162,
+      "left": "00000000563412ff",
+      "right": "00000000abcdef00",
+      "fac": "00000000563412ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-zero-value-255-1": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "00000000563492ff",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-value-zero-255-1": {
+      "op": 162,
+      "left": "00000000563492ff",
+      "right": "00000000abcdef00",
+      "fac": "00000000563492ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-sign-boundary-0": {
+      "op": 162,
+      "left": "00000000ff7f0081",
+      "right": "0000000000800081",
+      "fac": "00000000ff7f0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-sign-boundary-reversed-0": {
+      "op": 162,
+      "left": "0000000000800081",
+      "right": "00000000ff7f0081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-sign-boundary-1": {
+      "op": 162,
+      "left": "00000000ff7f8081",
+      "right": "0000000000808081",
+      "fac": "00000000ff7f8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-sign-boundary-reversed-1": {
+      "op": 162,
+      "left": "0000000000808081",
+      "right": "00000000ff7f8081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-zero-boundary-0": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-zero-boundary-reversed-0": {
+      "op": 162,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-zero-boundary-1": {
+      "op": 162,
+      "left": "0000000000008081",
+      "right": "0000000000808081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-zero-boundary-reversed-1": {
+      "op": 162,
+      "left": "0000000000808081",
+      "right": "0000000000008081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-ffff-boundary-0": {
+      "op": 162,
+      "left": "0000000000800081",
+      "right": "00000000ffff0081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-ffff-boundary-reversed-0": {
+      "op": 162,
+      "left": "00000000ffff0081",
+      "right": "0000000000800081",
+      "fac": "00000000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-ffff-boundary-1": {
+      "op": 162,
+      "left": "0000000000808081",
+      "right": "00000000ffff8081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-low-ffff-boundary-reversed-1": {
+      "op": 162,
+      "left": "00000000ffff8081",
+      "right": "0000000000808081",
+      "fac": "00000000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-high-fraction-boundary-0": {
+      "op": 162,
+      "left": "00000000ffff0081",
+      "right": "0000000000000181",
+      "fac": "00000000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-high-fraction-boundary-reversed-0": {
+      "op": 162,
+      "left": "0000000000000181",
+      "right": "00000000ffff0081",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-high-fraction-boundary-1": {
+      "op": 162,
+      "left": "00000000ffff8081",
+      "right": "0000000000008181",
+      "fac": "00000000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-high-fraction-boundary-reversed-1": {
+      "op": 162,
+      "left": "0000000000008181",
+      "right": "00000000ffff8081",
+      "fac": "0000000000008181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-exponent-127-128": {
+      "op": 162,
+      "left": "00000000ffff7f7f",
+      "right": "0000000000000080",
+      "fac": "00000000ffff7f7f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-exponent-128-127": {
+      "op": 162,
+      "left": "0000000000000080",
+      "right": "00000000ffff7f7f",
+      "fac": "0000000000000080",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-exponent-1-255": {
+      "op": 162,
+      "left": "00000000ffff7f01",
+      "right": "00000000000000ff",
+      "fac": "00000000ffff7f01",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-exponent-255-1": {
+      "op": 162,
+      "left": "00000000000000ff",
+      "right": "00000000ffff7f01",
+      "fac": "00000000000000ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit0": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit0-reversed": {
+      "op": 162,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit7": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit7-reversed": {
+      "op": 162,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "0000000080000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit8": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit8-reversed": {
+      "op": 162,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "0000000000010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit15": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit15-reversed": {
+      "op": 162,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit16": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit16-reversed": {
+      "op": 162,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit22": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-fraction-bit22-reversed": {
+      "op": 162,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "0000000000004081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-zero-0-0": {
+      "op": 162,
+      "left": "000068249a360081",
+      "right": "010068249a360081",
+      "fac": "000068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-zero-0-1": {
+      "op": 162,
+      "left": "010068249a360081",
+      "right": "000068249a360081",
+      "fac": "010068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-zero-128-0": {
+      "op": 162,
+      "left": "000068249a368081",
+      "right": "010068249a368081",
+      "fac": "000068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-zero-128-1": {
+      "op": 162,
+      "left": "010068249a368081",
+      "right": "000068249a368081",
+      "fac": "010068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-signed-0-0": {
+      "op": 162,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "ff7f68249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-signed-0-1": {
+      "op": 162,
+      "left": "008068249a360081",
+      "right": "ff7f68249a360081",
+      "fac": "008068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-signed-128-0": {
+      "op": 162,
+      "left": "ff7f68249a368081",
+      "right": "008068249a368081",
+      "fac": "ff7f68249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-signed-128-1": {
+      "op": 162,
+      "left": "008068249a368081",
+      "right": "ff7f68249a368081",
+      "fac": "008068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-wrap-0-0": {
+      "op": 162,
+      "left": "ffff68249a360081",
+      "right": "000068249a360081",
+      "fac": "ffff68249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-wrap-0-1": {
+      "op": 162,
+      "left": "000068249a360081",
+      "right": "ffff68249a360081",
+      "fac": "000068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-wrap-128-0": {
+      "op": 162,
+      "left": "ffff68249a368081",
+      "right": "000068249a368081",
+      "fac": "ffff68249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-wrap-128-1": {
+      "op": 162,
+      "left": "000068249a368081",
+      "right": "ffff68249a368081",
+      "fac": "000068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-parity-0-0": {
+      "op": 162,
+      "left": "ff0068249a360081",
+      "right": "000168249a360081",
+      "fac": "ff0068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-parity-0-1": {
+      "op": 162,
+      "left": "000168249a360081",
+      "right": "ff0068249a360081",
+      "fac": "000168249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-parity-128-0": {
+      "op": 162,
+      "left": "ff0068249a368081",
+      "right": "000168249a368081",
+      "fac": "ff0068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word0-parity-128-1": {
+      "op": 162,
+      "left": "000168249a368081",
+      "right": "ff0068249a368081",
+      "fac": "000168249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-zero-0-0": {
+      "op": 162,
+      "left": "571300009a360081",
+      "right": "571301009a360081",
+      "fac": "571300009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-zero-0-1": {
+      "op": 162,
+      "left": "571301009a360081",
+      "right": "571300009a360081",
+      "fac": "571301009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-zero-128-0": {
+      "op": 162,
+      "left": "571300009a368081",
+      "right": "571301009a368081",
+      "fac": "571300009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-zero-128-1": {
+      "op": 162,
+      "left": "571301009a368081",
+      "right": "571300009a368081",
+      "fac": "571301009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-signed-0-0": {
+      "op": 162,
+      "left": "5713ff7f9a360081",
+      "right": "571300809a360081",
+      "fac": "5713ff7f9a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-signed-0-1": {
+      "op": 162,
+      "left": "571300809a360081",
+      "right": "5713ff7f9a360081",
+      "fac": "571300809a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-signed-128-0": {
+      "op": 162,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "5713ff7f9a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-signed-128-1": {
+      "op": 162,
+      "left": "571300809a368081",
+      "right": "5713ff7f9a368081",
+      "fac": "571300809a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-wrap-0-0": {
+      "op": 162,
+      "left": "5713ffff9a360081",
+      "right": "571300009a360081",
+      "fac": "5713ffff9a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-wrap-0-1": {
+      "op": 162,
+      "left": "571300009a360081",
+      "right": "5713ffff9a360081",
+      "fac": "571300009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-wrap-128-0": {
+      "op": 162,
+      "left": "5713ffff9a368081",
+      "right": "571300009a368081",
+      "fac": "5713ffff9a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-wrap-128-1": {
+      "op": 162,
+      "left": "571300009a368081",
+      "right": "5713ffff9a368081",
+      "fac": "571300009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-parity-0-0": {
+      "op": 162,
+      "left": "5713ff009a360081",
+      "right": "571300019a360081",
+      "fac": "5713ff009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-parity-0-1": {
+      "op": 162,
+      "left": "571300019a360081",
+      "right": "5713ff009a360081",
+      "fac": "571300019a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-parity-128-0": {
+      "op": 162,
+      "left": "5713ff009a368081",
+      "right": "571300019a368081",
+      "fac": "5713ff009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-parity-128-1": {
+      "op": 162,
+      "left": "571300019a368081",
+      "right": "5713ff009a368081",
+      "fac": "571300019a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-zero-0-0": {
+      "op": 162,
+      "left": "5713682400000081",
+      "right": "5713682401000081",
+      "fac": "5713682400000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-zero-0-1": {
+      "op": 162,
+      "left": "5713682401000081",
+      "right": "5713682400000081",
+      "fac": "5713682401000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-zero-128-0": {
+      "op": 162,
+      "left": "5713682400008081",
+      "right": "5713682401008081",
+      "fac": "5713682400008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-zero-128-1": {
+      "op": 162,
+      "left": "5713682401008081",
+      "right": "5713682400008081",
+      "fac": "5713682401008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-signed-0-0": {
+      "op": 162,
+      "left": "57136824ff7f0081",
+      "right": "5713682400800081",
+      "fac": "57136824ff7f0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-signed-0-1": {
+      "op": 162,
+      "left": "5713682400800081",
+      "right": "57136824ff7f0081",
+      "fac": "5713682400800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-signed-128-0": {
+      "op": 162,
+      "left": "57136824ff7f8081",
+      "right": "5713682400808081",
+      "fac": "57136824ff7f8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-signed-128-1": {
+      "op": 162,
+      "left": "5713682400808081",
+      "right": "57136824ff7f8081",
+      "fac": "5713682400808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-wrap-0-0": {
+      "op": 162,
+      "left": "57136824ffff0081",
+      "right": "5713682400000081",
+      "fac": "57136824ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-wrap-0-1": {
+      "op": 162,
+      "left": "5713682400000081",
+      "right": "57136824ffff0081",
+      "fac": "5713682400000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-wrap-128-0": {
+      "op": 162,
+      "left": "57136824ffff8081",
+      "right": "5713682400008081",
+      "fac": "57136824ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-wrap-128-1": {
+      "op": 162,
+      "left": "5713682400008081",
+      "right": "57136824ffff8081",
+      "fac": "5713682400008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-parity-0-0": {
+      "op": 162,
+      "left": "57136824ff000081",
+      "right": "5713682400010081",
+      "fac": "57136824ff000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-parity-0-1": {
+      "op": 162,
+      "left": "5713682400010081",
+      "right": "57136824ff000081",
+      "fac": "5713682400010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-parity-128-0": {
+      "op": 162,
+      "left": "57136824ff008081",
+      "right": "5713682400018081",
+      "fac": "57136824ff008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-parity-128-1": {
+      "op": 162,
+      "left": "5713682400018081",
+      "right": "57136824ff008081",
+      "fac": "5713682400018081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit0": {
+      "op": 162,
+      "left": "0100000000000081",
+      "right": "0000000000000081",
+      "fac": "0100000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit0-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0100000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit7": {
+      "op": 162,
+      "left": "8000000000000081",
+      "right": "0000000000000081",
+      "fac": "8000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit7-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "8000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit8": {
+      "op": 162,
+      "left": "0001000000000081",
+      "right": "0000000000000081",
+      "fac": "0001000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit8-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0001000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit15": {
+      "op": 162,
+      "left": "0080000000000081",
+      "right": "0000000000000081",
+      "fac": "0080000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit15-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0080000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit16": {
+      "op": 162,
+      "left": "0000010000000081",
+      "right": "0000000000000081",
+      "fac": "0000010000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit16-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000010000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit23": {
+      "op": 162,
+      "left": "0000800000000081",
+      "right": "0000000000000081",
+      "fac": "0000800000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit23-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000800000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit24": {
+      "op": 162,
+      "left": "0000000100000081",
+      "right": "0000000000000081",
+      "fac": "0000000100000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit24-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000100000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit31": {
+      "op": 162,
+      "left": "0000008000000081",
+      "right": "0000000000000081",
+      "fac": "0000008000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit31-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000008000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit32": {
+      "op": 162,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit32-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit39": {
+      "op": 162,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "0000000080000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit39-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit40": {
+      "op": 162,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "0000000000010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit40-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit47": {
+      "op": 162,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit47-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit48": {
+      "op": 162,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit48-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit54": {
+      "op": 162,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "0000000000004081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-bit54-reversed": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-precedence-0-0": {
+      "op": 162,
+      "left": "ffff0000ffff0081",
+      "right": "0000010000000081",
+      "fac": "ffff0000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-precedence-0-1": {
+      "op": 162,
+      "left": "0000010000000081",
+      "right": "ffff0000ffff0081",
+      "fac": "0000010000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-precedence-128-0": {
+      "op": 162,
+      "left": "ffff0000ffff8081",
+      "right": "0000010000008081",
+      "fac": "ffff0000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word1-precedence-128-1": {
+      "op": 162,
+      "left": "0000010000008081",
+      "right": "ffff0000ffff8081",
+      "fac": "0000010000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-precedence-0-0": {
+      "op": 162,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "ffffffff00000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-precedence-0-1": {
+      "op": 162,
+      "left": "0000000001000081",
+      "right": "ffffffff00000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-precedence-128-0": {
+      "op": 162,
+      "left": "ffffffff00008081",
+      "right": "0000000001008081",
+      "fac": "ffffffff00008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word2-precedence-128-1": {
+      "op": 162,
+      "left": "0000000001008081",
+      "right": "ffffffff00008081",
+      "fac": "0000000001008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word3-precedence-0-0": {
+      "op": 162,
+      "left": "ffffffffffff0081",
+      "right": "0000000000000181",
+      "fac": "ffffffffffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word3-precedence-0-1": {
+      "op": 162,
+      "left": "0000000000000181",
+      "right": "ffffffffffff0081",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word3-precedence-128-0": {
+      "op": 162,
+      "left": "ffffffffffff8081",
+      "right": "0000000000008181",
+      "fac": "ffffffffffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-word3-precedence-128-1": {
+      "op": 162,
+      "left": "0000000000008181",
+      "right": "ffffffffffff8081",
+      "fac": "0000000000008181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-equal": {
+      "op": 162,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "123456789abc5681",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa2-full-negative-equal": {
+      "op": 162,
+      "left": "123456789abcd681",
+      "right": "123456789abcd681",
+      "fac": "123456789abcd681",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "seeded-opa2-zeros": {
+      "op": 162,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "0000000000000000",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-zero-aliases": {
+      "op": 162,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "0000000012345600",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-positive-negative": {
+      "op": 162,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "0000000000000081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-negative-positive": {
+      "op": 162,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "0000000000008081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-full-equal": {
+      "op": 162,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "123456789abc5681",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-word0-signed-0-0": {
+      "op": 162,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "ff7f68249a360081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-word1-signed-128-0": {
+      "op": 162,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "5713ff7f9a368081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa2-word2-precedence-0-0": {
+      "op": 162,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "ffffffff00000081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "opa4-zeros": {
+      "op": 164,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "0000000000000000",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-aliases": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "00000000ffffff00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-aliases-reversed": {
+      "op": 164,
+      "left": "00000000ffffff00",
+      "right": "0000000012345600",
+      "fac": "0000000012345600",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-signed-zero-aliases": {
+      "op": 164,
+      "left": "0000000000008000",
+      "right": "00000000ffff7f00",
+      "fac": "00000000ffff7f00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-one-equal": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-negative-equal": {
+      "op": 164,
+      "left": "0000000000008081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-one-two": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000000082",
+      "fac": "0000000000000082",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-two-one": {
+      "op": 164,
+      "left": "0000000000000082",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-negative-one-two": {
+      "op": 164,
+      "left": "0000000000008081",
+      "right": "0000000000008082",
+      "fac": "0000000000008082",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-negative-two-one": {
+      "op": 164,
+      "left": "0000000000008082",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-positive-negative": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-negative-positive": {
+      "op": 164,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-signs": {
+      "op": 164,
+      "left": "0000000000004081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-negative-fraction-signs": {
+      "op": 164,
+      "left": "000000000000c081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-raw-signs": {
+      "op": 164,
+      "left": "0000000056341281",
+      "right": "000000002143e581",
+      "fac": "000000002143e581",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-raw-signs-reversed": {
+      "op": 164,
+      "left": "000000002143e581",
+      "right": "0000000056341281",
+      "fac": "0000000056341281",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-1-0": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "0000000056341201",
+      "fac": "0000000056341201",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-1-0": {
+      "op": 164,
+      "left": "0000000056341201",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-1-1": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "0000000056349201",
+      "fac": "0000000056349201",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-1-1": {
+      "op": 164,
+      "left": "0000000056349201",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-127-0": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "000000005634127f",
+      "fac": "000000005634127f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-127-0": {
+      "op": 164,
+      "left": "000000005634127f",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-127-1": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "000000005634927f",
+      "fac": "000000005634927f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-127-1": {
+      "op": 164,
+      "left": "000000005634927f",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-128-0": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "0000000056341280",
+      "fac": "0000000056341280",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-128-0": {
+      "op": 164,
+      "left": "0000000056341280",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-128-1": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "0000000056349280",
+      "fac": "0000000056349280",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-128-1": {
+      "op": 164,
+      "left": "0000000056349280",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-255-0": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "00000000563412ff",
+      "fac": "00000000563412ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-255-0": {
+      "op": 164,
+      "left": "00000000563412ff",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-zero-value-255-1": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "00000000563492ff",
+      "fac": "00000000563492ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-value-zero-255-1": {
+      "op": 164,
+      "left": "00000000563492ff",
+      "right": "00000000abcdef00",
+      "fac": "00000000abcdef00",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-sign-boundary-0": {
+      "op": 164,
+      "left": "00000000ff7f0081",
+      "right": "0000000000800081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-sign-boundary-reversed-0": {
+      "op": 164,
+      "left": "0000000000800081",
+      "right": "00000000ff7f0081",
+      "fac": "00000000ff7f0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-sign-boundary-1": {
+      "op": 164,
+      "left": "00000000ff7f8081",
+      "right": "0000000000808081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-sign-boundary-reversed-1": {
+      "op": 164,
+      "left": "0000000000808081",
+      "right": "00000000ff7f8081",
+      "fac": "00000000ff7f8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-zero-boundary-0": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-zero-boundary-reversed-0": {
+      "op": 164,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-zero-boundary-1": {
+      "op": 164,
+      "left": "0000000000008081",
+      "right": "0000000000808081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-zero-boundary-reversed-1": {
+      "op": 164,
+      "left": "0000000000808081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-ffff-boundary-0": {
+      "op": 164,
+      "left": "0000000000800081",
+      "right": "00000000ffff0081",
+      "fac": "00000000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-ffff-boundary-reversed-0": {
+      "op": 164,
+      "left": "00000000ffff0081",
+      "right": "0000000000800081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-ffff-boundary-1": {
+      "op": 164,
+      "left": "0000000000808081",
+      "right": "00000000ffff8081",
+      "fac": "00000000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-low-ffff-boundary-reversed-1": {
+      "op": 164,
+      "left": "00000000ffff8081",
+      "right": "0000000000808081",
+      "fac": "0000000000808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-high-fraction-boundary-0": {
+      "op": 164,
+      "left": "00000000ffff0081",
+      "right": "0000000000000181",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-high-fraction-boundary-reversed-0": {
+      "op": 164,
+      "left": "0000000000000181",
+      "right": "00000000ffff0081",
+      "fac": "00000000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-high-fraction-boundary-1": {
+      "op": 164,
+      "left": "00000000ffff8081",
+      "right": "0000000000008181",
+      "fac": "0000000000008181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-high-fraction-boundary-reversed-1": {
+      "op": 164,
+      "left": "0000000000008181",
+      "right": "00000000ffff8081",
+      "fac": "00000000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-exponent-127-128": {
+      "op": 164,
+      "left": "00000000ffff7f7f",
+      "right": "0000000000000080",
+      "fac": "0000000000000080",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-exponent-128-127": {
+      "op": 164,
+      "left": "0000000000000080",
+      "right": "00000000ffff7f7f",
+      "fac": "00000000ffff7f7f",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-exponent-1-255": {
+      "op": 164,
+      "left": "00000000ffff7f01",
+      "right": "00000000000000ff",
+      "fac": "00000000000000ff",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-exponent-255-1": {
+      "op": 164,
+      "left": "00000000000000ff",
+      "right": "00000000ffff7f01",
+      "fac": "00000000ffff7f01",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit0": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit0-reversed": {
+      "op": 164,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit7": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "0000000080000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit7-reversed": {
+      "op": 164,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit8": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "0000000000010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit8-reversed": {
+      "op": 164,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit15": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit15-reversed": {
+      "op": 164,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit16": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit16-reversed": {
+      "op": 164,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit22": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "0000000000004081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-fraction-bit22-reversed": {
+      "op": 164,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-zero-0-0": {
+      "op": 164,
+      "left": "000068249a360081",
+      "right": "010068249a360081",
+      "fac": "010068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-zero-0-1": {
+      "op": 164,
+      "left": "010068249a360081",
+      "right": "000068249a360081",
+      "fac": "000068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-zero-128-0": {
+      "op": 164,
+      "left": "000068249a368081",
+      "right": "010068249a368081",
+      "fac": "010068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-zero-128-1": {
+      "op": 164,
+      "left": "010068249a368081",
+      "right": "000068249a368081",
+      "fac": "000068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-signed-0-0": {
+      "op": 164,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "008068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-signed-0-1": {
+      "op": 164,
+      "left": "008068249a360081",
+      "right": "ff7f68249a360081",
+      "fac": "ff7f68249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-signed-128-0": {
+      "op": 164,
+      "left": "ff7f68249a368081",
+      "right": "008068249a368081",
+      "fac": "008068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-signed-128-1": {
+      "op": 164,
+      "left": "008068249a368081",
+      "right": "ff7f68249a368081",
+      "fac": "ff7f68249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-wrap-0-0": {
+      "op": 164,
+      "left": "ffff68249a360081",
+      "right": "000068249a360081",
+      "fac": "000068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-wrap-0-1": {
+      "op": 164,
+      "left": "000068249a360081",
+      "right": "ffff68249a360081",
+      "fac": "ffff68249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-wrap-128-0": {
+      "op": 164,
+      "left": "ffff68249a368081",
+      "right": "000068249a368081",
+      "fac": "000068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-wrap-128-1": {
+      "op": 164,
+      "left": "000068249a368081",
+      "right": "ffff68249a368081",
+      "fac": "ffff68249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-parity-0-0": {
+      "op": 164,
+      "left": "ff0068249a360081",
+      "right": "000168249a360081",
+      "fac": "000168249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-parity-0-1": {
+      "op": 164,
+      "left": "000168249a360081",
+      "right": "ff0068249a360081",
+      "fac": "ff0068249a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-parity-128-0": {
+      "op": 164,
+      "left": "ff0068249a368081",
+      "right": "000168249a368081",
+      "fac": "000168249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word0-parity-128-1": {
+      "op": 164,
+      "left": "000168249a368081",
+      "right": "ff0068249a368081",
+      "fac": "ff0068249a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-zero-0-0": {
+      "op": 164,
+      "left": "571300009a360081",
+      "right": "571301009a360081",
+      "fac": "571301009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-zero-0-1": {
+      "op": 164,
+      "left": "571301009a360081",
+      "right": "571300009a360081",
+      "fac": "571300009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-zero-128-0": {
+      "op": 164,
+      "left": "571300009a368081",
+      "right": "571301009a368081",
+      "fac": "571301009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-zero-128-1": {
+      "op": 164,
+      "left": "571301009a368081",
+      "right": "571300009a368081",
+      "fac": "571300009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-signed-0-0": {
+      "op": 164,
+      "left": "5713ff7f9a360081",
+      "right": "571300809a360081",
+      "fac": "571300809a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-signed-0-1": {
+      "op": 164,
+      "left": "571300809a360081",
+      "right": "5713ff7f9a360081",
+      "fac": "5713ff7f9a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-signed-128-0": {
+      "op": 164,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "571300809a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-signed-128-1": {
+      "op": 164,
+      "left": "571300809a368081",
+      "right": "5713ff7f9a368081",
+      "fac": "5713ff7f9a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-wrap-0-0": {
+      "op": 164,
+      "left": "5713ffff9a360081",
+      "right": "571300009a360081",
+      "fac": "571300009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-wrap-0-1": {
+      "op": 164,
+      "left": "571300009a360081",
+      "right": "5713ffff9a360081",
+      "fac": "5713ffff9a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-wrap-128-0": {
+      "op": 164,
+      "left": "5713ffff9a368081",
+      "right": "571300009a368081",
+      "fac": "571300009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-wrap-128-1": {
+      "op": 164,
+      "left": "571300009a368081",
+      "right": "5713ffff9a368081",
+      "fac": "5713ffff9a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-parity-0-0": {
+      "op": 164,
+      "left": "5713ff009a360081",
+      "right": "571300019a360081",
+      "fac": "571300019a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-parity-0-1": {
+      "op": 164,
+      "left": "571300019a360081",
+      "right": "5713ff009a360081",
+      "fac": "5713ff009a360081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-parity-128-0": {
+      "op": 164,
+      "left": "5713ff009a368081",
+      "right": "571300019a368081",
+      "fac": "571300019a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-parity-128-1": {
+      "op": 164,
+      "left": "571300019a368081",
+      "right": "5713ff009a368081",
+      "fac": "5713ff009a368081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-zero-0-0": {
+      "op": 164,
+      "left": "5713682400000081",
+      "right": "5713682401000081",
+      "fac": "5713682401000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-zero-0-1": {
+      "op": 164,
+      "left": "5713682401000081",
+      "right": "5713682400000081",
+      "fac": "5713682400000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-zero-128-0": {
+      "op": 164,
+      "left": "5713682400008081",
+      "right": "5713682401008081",
+      "fac": "5713682401008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-zero-128-1": {
+      "op": 164,
+      "left": "5713682401008081",
+      "right": "5713682400008081",
+      "fac": "5713682400008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-signed-0-0": {
+      "op": 164,
+      "left": "57136824ff7f0081",
+      "right": "5713682400800081",
+      "fac": "5713682400800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-signed-0-1": {
+      "op": 164,
+      "left": "5713682400800081",
+      "right": "57136824ff7f0081",
+      "fac": "57136824ff7f0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-signed-128-0": {
+      "op": 164,
+      "left": "57136824ff7f8081",
+      "right": "5713682400808081",
+      "fac": "5713682400808081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-signed-128-1": {
+      "op": 164,
+      "left": "5713682400808081",
+      "right": "57136824ff7f8081",
+      "fac": "57136824ff7f8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-wrap-0-0": {
+      "op": 164,
+      "left": "57136824ffff0081",
+      "right": "5713682400000081",
+      "fac": "5713682400000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-wrap-0-1": {
+      "op": 164,
+      "left": "5713682400000081",
+      "right": "57136824ffff0081",
+      "fac": "57136824ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-wrap-128-0": {
+      "op": 164,
+      "left": "57136824ffff8081",
+      "right": "5713682400008081",
+      "fac": "5713682400008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-wrap-128-1": {
+      "op": 164,
+      "left": "5713682400008081",
+      "right": "57136824ffff8081",
+      "fac": "57136824ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-parity-0-0": {
+      "op": 164,
+      "left": "57136824ff000081",
+      "right": "5713682400010081",
+      "fac": "5713682400010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-parity-0-1": {
+      "op": 164,
+      "left": "5713682400010081",
+      "right": "57136824ff000081",
+      "fac": "57136824ff000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-parity-128-0": {
+      "op": 164,
+      "left": "57136824ff008081",
+      "right": "5713682400018081",
+      "fac": "5713682400018081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-parity-128-1": {
+      "op": 164,
+      "left": "5713682400018081",
+      "right": "57136824ff008081",
+      "fac": "57136824ff008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit0": {
+      "op": 164,
+      "left": "0100000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit0-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0100000000000081",
+      "fac": "0100000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit7": {
+      "op": 164,
+      "left": "8000000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit7-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "8000000000000081",
+      "fac": "8000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit8": {
+      "op": 164,
+      "left": "0001000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit8-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0001000000000081",
+      "fac": "0001000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit15": {
+      "op": 164,
+      "left": "0080000000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit15-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0080000000000081",
+      "fac": "0080000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit16": {
+      "op": 164,
+      "left": "0000010000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit16-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000010000000081",
+      "fac": "0000010000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit23": {
+      "op": 164,
+      "left": "0000800000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit23-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000800000000081",
+      "fac": "0000800000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit24": {
+      "op": 164,
+      "left": "0000000100000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit24-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000100000081",
+      "fac": "0000000100000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit31": {
+      "op": 164,
+      "left": "0000008000000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit31-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000008000000081",
+      "fac": "0000008000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit32": {
+      "op": 164,
+      "left": "0000000001000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit32-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000001000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit39": {
+      "op": 164,
+      "left": "0000000080000081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit39-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000080000081",
+      "fac": "0000000080000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit40": {
+      "op": 164,
+      "left": "0000000000010081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit40-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000010081",
+      "fac": "0000000000010081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit47": {
+      "op": 164,
+      "left": "0000000000800081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit47-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000800081",
+      "fac": "0000000000800081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit48": {
+      "op": 164,
+      "left": "0000000000000181",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit48-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000000181",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit54": {
+      "op": 164,
+      "left": "0000000000004081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-bit54-reversed": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000004081",
+      "fac": "0000000000004081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-precedence-0-0": {
+      "op": 164,
+      "left": "ffff0000ffff0081",
+      "right": "0000010000000081",
+      "fac": "0000010000000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-precedence-0-1": {
+      "op": 164,
+      "left": "0000010000000081",
+      "right": "ffff0000ffff0081",
+      "fac": "ffff0000ffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-precedence-128-0": {
+      "op": 164,
+      "left": "ffff0000ffff8081",
+      "right": "0000010000008081",
+      "fac": "0000010000008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word1-precedence-128-1": {
+      "op": 164,
+      "left": "0000010000008081",
+      "right": "ffff0000ffff8081",
+      "fac": "ffff0000ffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-precedence-0-0": {
+      "op": 164,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "0000000001000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-precedence-0-1": {
+      "op": 164,
+      "left": "0000000001000081",
+      "right": "ffffffff00000081",
+      "fac": "ffffffff00000081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-precedence-128-0": {
+      "op": 164,
+      "left": "ffffffff00008081",
+      "right": "0000000001008081",
+      "fac": "0000000001008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word2-precedence-128-1": {
+      "op": 164,
+      "left": "0000000001008081",
+      "right": "ffffffff00008081",
+      "fac": "ffffffff00008081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word3-precedence-0-0": {
+      "op": 164,
+      "left": "ffffffffffff0081",
+      "right": "0000000000000181",
+      "fac": "0000000000000181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word3-precedence-0-1": {
+      "op": 164,
+      "left": "0000000000000181",
+      "right": "ffffffffffff0081",
+      "fac": "ffffffffffff0081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word3-precedence-128-0": {
+      "op": 164,
+      "left": "ffffffffffff8081",
+      "right": "0000000000008181",
+      "fac": "0000000000008181",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-word3-precedence-128-1": {
+      "op": 164,
+      "left": "0000000000008181",
+      "right": "ffffffffffff8081",
+      "fac": "ffffffffffff8081",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-equal": {
+      "op": 164,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "123456789abc5681",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "opa4-full-negative-equal": {
+      "op": 164,
+      "left": "123456789abcd681",
+      "right": "123456789abcd681",
+      "fac": "123456789abcd681",
+      "seed_flags": 0,
+      "initial": 5
+    },
+    "seeded-opa4-zeros": {
+      "op": 164,
+      "left": "0000000000000000",
+      "right": "0000000000000000",
+      "fac": "0000000000000000",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-zero-aliases": {
+      "op": 164,
+      "left": "0000000012345600",
+      "right": "00000000ffffff00",
+      "fac": "00000000ffffff00",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-positive-negative": {
+      "op": 164,
+      "left": "0000000000000081",
+      "right": "0000000000008081",
+      "fac": "0000000000008081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-negative-positive": {
+      "op": 164,
+      "left": "0000000000008081",
+      "right": "0000000000000081",
+      "fac": "0000000000000081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-full-equal": {
+      "op": 164,
+      "left": "123456789abc5681",
+      "right": "123456789abc5681",
+      "fac": "123456789abc5681",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-word0-signed-0-0": {
+      "op": 164,
+      "left": "ff7f68249a360081",
+      "right": "008068249a360081",
+      "fac": "008068249a360081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-word1-signed-128-0": {
+      "op": 164,
+      "left": "5713ff7f9a368081",
+      "right": "571300809a368081",
+      "fac": "571300809a368081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    },
+    "seeded-opa4-word2-precedence-0-0": {
+      "op": 164,
+      "left": "ffffffff00000081",
+      "right": "0000000001000081",
+      "fac": "0000000001000081",
+      "seed_flags": 2261,
+      "initial": 16777215
+    }
+  },
+  "initializer": "601e42bbe1ce91cb776d5a0fa6b4860b269a3d8c3e214df4ddd4d89d8b2aa7a2",
+  "runtime": "3ce1a61e2184c96c8ab9dcd4cbb7e5a9121ac289a469364730f3de1c21db4fe8",
+  "host_sha256": "781d61c874271a315d672c597697cf0fb3aa0f6a727934bce4d2a9ad34057de5",
+  "source_sha256": "3309bd7edd4778f090fa0f1a72868c7d8e80483c2956e39675c5f85e85b7857b"
+}

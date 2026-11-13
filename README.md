@@ -2345,3 +2345,15 @@ bytes. Signed CPU jumps are not numeric MBF ordering, and undefined AF is not
 predicted. Inputs/FAC/RNG remain unchanged. Inline and DOUBLE comparisons and
 production replay integration remain separate; gameplay and save format 35 are
 unchanged. Native provenance/corruption checks and portable Go tests run in CI.
+
+### Direct raw DOUBLE comparisons
+
+[DOUBLE comparison flag evidence](research/yt-mbf-double-compare/RECOVERY.md)
+now qualifies `qbmbf.CompareDouble` across /a0, /a2 and /a4 with 486 native
+controls. All retained source and ABI evidence was reused; thirty direct caller
+sites match original bytes, with seven inline /a6 sites excluded. Four-word
+ordering retains all 56 significand bits, five defined CPU flags and sixteen
+actual Jcc outcomes. Undefined AF and signed CPU jumps as numeric ordering are
+outside the contract. Tests, immutable provenance checks and CI cover the new
+primitive; README/plan keep inline comparisons and production integration
+separate. Gameplay and save format 35 are unchanged.

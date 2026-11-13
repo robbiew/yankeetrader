@@ -3,7 +3,7 @@ package qbmbf
 import "math/bits"
 
 // ComparisonFlags contains only the defined CF/PF/ZF/SF/OF outputs of the
-// raw SINGLE comparison core. AF and reserved flags are outside this contract.
+// raw SINGLE/DOUBLE comparison core. AF and reserved flags are outside this contract.
 type ComparisonFlags struct {
 	Carry, Parity, Zero, Sign, Overflow bool
 }
