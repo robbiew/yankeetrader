@@ -33,7 +33,7 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 
 ### Current numeric work — checked 2026-11-13
 
-PRs #117–138 and #140–147 are merged, including direct/inline DOUBLE
+PRs #117–138 and #140–148 are merged, including direct/inline DOUBLE
 addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
 The exported APIs, native fixtures, CI commands and retained reports agree:
 
@@ -129,8 +129,17 @@ reused, and sixteen caller slots match original bytes. Both tag paths, selector
 aliases, original caller headers, safe last spans, alternate-base poison and
 declared padded descriptor frames are covered; wrapped reads are not admitted.
 
-**Next: audit bounded inline DOUBLE comparisons /a6 against existing evidence
-and open PRs.** Do not repeat completed
+[Bounded inline DOUBLE /a6](yt-mbf-inline-double-compare/RECOVERY.md) now
+qualifies the existing resolver-plus-CompareDouble composition with 329 full
+native flag/branch controls and 19 separate resolver-only runs. All source was
+reused; seven static caller slots match original bytes. Four-word precision,
+both tag paths, selector aliases, original caller headers, safe last spans,
+alternate-base poison and declared padded frames are covered.
+
+**Next: audit remaining numeric-runtime and maintenance-integration gaps against
+current APIs, retained evidence and open PRs.** Direct and bounded inline SINGLE
+and DOUBLE comparisons are now separately qualified. Wrapped reads, arbitrary
+frames and general unwind behavior remain outside these milestones. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.
