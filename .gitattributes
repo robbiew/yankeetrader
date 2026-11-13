@@ -609,3 +609,9 @@
 /research/yt-mbf-single-compare/native/**/TRACE.BIN -diff
 /research/yt-mbf-single-compare/native/**/*.LOG -diff
 /research/yt-mbf-single-compare/native/**/dosbox.stderr -diff
+
+# Immutable native DOUBLE comparison FLAGS/Jcc observations and raw logs.
+/research/yt-mbf-double-compare/native/** -text
+/research/yt-mbf-double-compare/native/**/TRACE.BIN -diff
+/research/yt-mbf-double-compare/native/**/*.LOG -diff
+/research/yt-mbf-double-compare/native/**/dosbox.stderr -diff

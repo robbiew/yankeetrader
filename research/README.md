@@ -7,7 +7,7 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
-checked against merged main through PR #145, using current save format **35**.
+checked against merged main through PR #146, using current save format **35**.
 The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
 Genesis/admin reset integration and bounded multi-day acceptance are implemented.
 Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
@@ -74,3 +74,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Safe QB source projection/admission](yt-initializer-replay/PROJECTION.md): unpublished modern candidates, collision/protected-HQ/connectivity rejection, current UTC stocks/watermarks and independently seeded required-home bootstrap. CLI/save/reset integration remains next.
 
 - [Direct SINGLE comparison flags and branch conditions](yt-mbf-single-compare/RECOVERY.md): 216 native controls, retained source/ABI, 203 original-byte direct callers; isolated Go primitive and immutable evidence checks.
+
+- [Direct DOUBLE comparison flags and branch conditions](yt-mbf-double-compare/RECOVERY.md): 486 native controls, retained source/ABI, thirty direct callers, full four-word ordering; inline /a6 excluded.

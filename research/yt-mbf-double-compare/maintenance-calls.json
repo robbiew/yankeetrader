@@ -1,0 +1,195 @@
+{
+  "format": "maintenance-direct-double-compare-callers-v1",
+  "authority": "Static annotated call-site inventory matched to archived bytes; not observed execution or exhaustive indirect coverage.",
+  "original_sha256": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+  "listing_sha256": "097f46fd3f0e70743b9b89b56c8f5efd13f2bc2b6faf081aae4bb1b0583004c2",
+  "direct_calls": [
+    {
+      "op": 160,
+      "code_offset": 11306,
+      "file_offset": 11818
+    },
+    {
+      "op": 162,
+      "code_offset": 11634,
+      "file_offset": 12146
+    },
+    {
+      "op": 162,
+      "code_offset": 19124,
+      "file_offset": 19636
+    },
+    {
+      "op": 160,
+      "code_offset": 20602,
+      "file_offset": 21114
+    },
+    {
+      "op": 160,
+      "code_offset": 20615,
+      "file_offset": 21127
+    },
+    {
+      "op": 160,
+      "code_offset": 22886,
+      "file_offset": 23398
+    },
+    {
+      "op": 160,
+      "code_offset": 22907,
+      "file_offset": 23419
+    },
+    {
+      "op": 162,
+      "code_offset": 22939,
+      "file_offset": 23451
+    },
+    {
+      "op": 162,
+      "code_offset": 22961,
+      "file_offset": 23473
+    },
+    {
+      "op": 162,
+      "code_offset": 23020,
+      "file_offset": 23532
+    },
+    {
+      "op": 162,
+      "code_offset": 23046,
+      "file_offset": 23558
+    },
+    {
+      "op": 160,
+      "code_offset": 23306,
+      "file_offset": 23818
+    },
+    {
+      "op": 160,
+      "code_offset": 23368,
+      "file_offset": 23880
+    },
+    {
+      "op": 162,
+      "code_offset": 23416,
+      "file_offset": 23928
+    },
+    {
+      "op": 160,
+      "code_offset": 23429,
+      "file_offset": 23941
+    },
+    {
+      "op": 162,
+      "code_offset": 23488,
+      "file_offset": 24000
+    },
+    {
+      "op": 160,
+      "code_offset": 23502,
+      "file_offset": 24014
+    },
+    {
+      "op": 160,
+      "code_offset": 23738,
+      "file_offset": 24250
+    },
+    {
+      "op": 160,
+      "code_offset": 23752,
+      "file_offset": 24264
+    },
+    {
+      "op": 160,
+      "code_offset": 30022,
+      "file_offset": 30534
+    },
+    {
+      "op": 160,
+      "code_offset": 30086,
+      "file_offset": 30598
+    },
+    {
+      "op": 162,
+      "code_offset": 30118,
+      "file_offset": 30630
+    },
+    {
+      "op": 162,
+      "code_offset": 30150,
+      "file_offset": 30662
+    },
+    {
+      "op": 162,
+      "code_offset": 30173,
+      "file_offset": 30685
+    },
+    {
+      "op": 162,
+      "code_offset": 30232,
+      "file_offset": 30744
+    },
+    {
+      "op": 162,
+      "code_offset": 30263,
+      "file_offset": 30775
+    },
+    {
+      "op": 160,
+      "code_offset": 30565,
+      "file_offset": 31077
+    },
+    {
+      "op": 160,
+      "code_offset": 30676,
+      "file_offset": 31188
+    },
+    {
+      "op": 162,
+      "code_offset": 33774,
+      "file_offset": 34286
+    },
+    {
+      "op": 162,
+      "code_offset": 34012,
+      "file_offset": 34524
+    }
+  ],
+  "excluded_inline_calls": [
+    {
+      "code_offset": 2587,
+      "file_offset": 3099,
+      "selector": 129
+    },
+    {
+      "code_offset": 3257,
+      "file_offset": 3769,
+      "selector": 128
+    },
+    {
+      "code_offset": 3340,
+      "file_offset": 3852,
+      "selector": 128
+    },
+    {
+      "code_offset": 3423,
+      "file_offset": 3935,
+      "selector": 128
+    },
+    {
+      "code_offset": 3644,
+      "file_offset": 4156,
+      "selector": 128
+    },
+    {
+      "code_offset": 33663,
+      "file_offset": 34175,
+      "selector": 128
+    },
+    {
+      "code_offset": 33932,
+      "file_offset": 34444,
+      "selector": 128
+    }
+  ]
+}
