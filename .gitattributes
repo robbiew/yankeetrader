@@ -596,3 +596,10 @@
 /research/yt-mbf-divide-double/**/TRACE.BIN -diff
 /research/yt-mbf-divide-double/**/*.LOG -diff
 /research/yt-mbf-divide-double/**/dosbox.stderr -diff
+
+# Immutable eight-byte inline8e address/result/error observations and raw logs.
+/research/yt-mbf-inline-divide-double/native/** -text
+/research/yt-mbf-inline-divide-double/address-native/** -text
+/research/yt-mbf-inline-divide-double/**/TRACE.BIN -diff
+/research/yt-mbf-inline-divide-double/**/*.LOG -diff
+/research/yt-mbf-inline-divide-double/**/dosbox.stderr -diff
