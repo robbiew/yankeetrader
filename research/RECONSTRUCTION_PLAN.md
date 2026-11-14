@@ -172,10 +172,17 @@ covered by portable fixtures and provenance/admission tests; no captures were
 added. Exact-zero TIMER, zero-ground births and occupied-HQ cases are excluded.
 Native record/field oracles remain separate from independent model RNG endpoints.
 
-**Next: audit initial mobile-group allocation and its RNG continuation against
-existing source/captures and open PRs before selecting the next Go migration.**
-Routes/interceptions, Mercenary Base, complete maintenance and production
-integration remain separate. Do not repeat completed
+[Bounded Go initial mobile groups](yt-maint/GO_INITIAL_MOBILE_GROUPS.md) now
+reuses 29 existing native force/owner/pointer/mine inventories. Go birth prefixes
+feed allocation, plain directed routes and eager player-scan draws with 39
+helper-one and 19 helper-two samples. Native field oracles remain distinct from
+modeled RNG endpoints. Three late-clock Wanderer encounter targets are excluded;
+retries, merges, regeneration and active encounters are not admitted.
+
+**Next: audit Mercenary Base creation/placement and its RNG handoff using existing
+source/captures and open PRs before selecting the next Go migration.**
+Encounter/interception actions, complete maintenance and production integration
+remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.

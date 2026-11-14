@@ -1,0 +1,4431 @@
+{
+  "format": "qb-mobile-groups-v1",
+  "sources": {
+    "scripts/replay_maintenance_ports.py": "d8a35d817a6f5442b98e158fb8bbc95607d7deaedf8f3ce20e0f3110553927aa",
+    "scripts/export_clean_port_fixture.py": "50211e188f3fbacc13b82947f2eff4a52d336d6fea5ff8d3d9de7808d1996c51",
+    "scripts/verify_maintenance_calendar.py": "e06fc0e1094042ea7b4189e1ca7eb3ad120daa70d5a9399dff5af634cc15e6fa",
+    "scripts/verify_maintenance_clock_matrix.py": "de62a4eb8259506599784caf8bd45657974c55f23130021f89f1b8e9f6edd34d",
+    "research/yt-maint/calendar-pins.json": "7382f01703145f2f2d37afab6a297bb18d226a5a65d6baf682f94ae63812ffc2",
+    "research/yt-maint/clock-matrix-pins.json": "6156ee078a8a00edbfe6ad89e44fa8fe592295f025b9285582fdc65b3b7310f7",
+    "scripts/export_xannoron_birth_fixture.py": "85661674cbbf3d706fc7848101a4130c61bedd874fae77b3fffb0141ff842cd9",
+    "scripts/export_wanderer_birth_fixture.py": "2a3a5be6c63cd9196a70e65b4c4bf2461ca0df40beecf6d3154a45f0f9d48f00",
+    "scripts/replay_maintenance_npcs.py": "0015fae2dc2aa399706b7e45db487a7fdbaea4168213e80cbbd24fa7d5489cf2",
+    "archive/dos-original/YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "scripts/export_mobile_groups_fixture.py": "5f79e8d188201bc8dce1bbbb64f39582b04660672e0023bfeeaa6e3c8c28f16e"
+  },
+  "excluded_later_encounters": [
+    "matrix/late/observed-a",
+    "matrix/late/observed-b",
+    "matrix/late/observed-c"
+  ],
+  "cases": [
+    {
+      "name": "calendar/next-day/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "calendar/next-day/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "calendar/new-year/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "calendar/new-year/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "calendar/leap-day/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1814
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 410,
+          "strength": 30
+        },
+        {
+          "sector": 1314,
+          "strength": 63
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25465,
+      "final_state": 6784880,
+      "native_sha256": "a1c527ec3a9584436be6252f4fc3039bc5cd795346e91ab0a7072beb92dbd05e"
+    },
+    {
+      "name": "calendar/leap-day/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1814
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 410,
+          "strength": 30
+        },
+        {
+          "sector": 1314,
+          "strength": 63
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25465,
+      "final_state": 6784880,
+      "native_sha256": "a1c527ec3a9584436be6252f4fc3039bc5cd795346e91ab0a7072beb92dbd05e"
+    },
+    {
+      "name": "calendar/noon/observed-a",
+      "state": 15161433,
+      "helper_one": [
+        "f6b73090",
+        "05b83090",
+        "05b83090",
+        "05b83090",
+        "05b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "4ab83090",
+        "4ab83090",
+        "4ab83090",
+        "4ab83090"
+      ],
+      "helper_two": [
+        "05b83090",
+        "05b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "4ab83090",
+        "4ab83090"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 6408
+        },
+        {
+          "sector": 2777,
+          "strength": 34
+        },
+        {
+          "sector": 1200,
+          "strength": 121
+        },
+        {
+          "sector": 756,
+          "strength": 163
+        },
+        {
+          "sector": 2378,
+          "strength": 1
+        },
+        {
+          "sector": 1506,
+          "strength": 1131
+        },
+        {
+          "sector": 206,
+          "strength": 13
+        },
+        {
+          "sector": 635,
+          "strength": 27
+        },
+        {
+          "sector": 987,
+          "strength": 326
+        },
+        {
+          "sector": 1278,
+          "strength": 4
+        },
+        {
+          "sector": 436,
+          "strength": 11
+        },
+        {
+          "sector": 783,
+          "strength": 57
+        },
+        {
+          "sector": 1151,
+          "strength": 63
+        },
+        {
+          "sector": 2406,
+          "strength": 33
+        },
+        {
+          "sector": 172,
+          "strength": 194
+        },
+        {
+          "sector": 2024,
+          "strength": 114
+        },
+        {
+          "sector": 2162,
+          "strength": 333
+        },
+        {
+          "sector": 387,
+          "strength": 113
+        },
+        {
+          "sector": 140,
+          "strength": 746
+        },
+        {
+          "sector": 1106,
+          "strength": 108
+        }
+      ],
+      "top_fallback": 1106,
+      "draws": 25165,
+      "final_state": 5494916,
+      "native_sha256": "9e3e25b4a290f8992d39aa88621a696803c9a16e2be3adc10ccb8b48eaebac17"
+    },
+    {
+      "name": "calendar/noon/observed-b",
+      "state": 15161433,
+      "helper_one": [
+        "f6b73090",
+        "05b83090",
+        "05b83090",
+        "05b83090",
+        "05b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "4ab83090",
+        "4ab83090",
+        "4ab83090",
+        "4ab83090"
+      ],
+      "helper_two": [
+        "05b83090",
+        "05b83090",
+        "12b83090",
+        "12b83090",
+        "12b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "21b83090",
+        "2eb83090",
+        "2eb83090",
+        "2eb83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "3db83090",
+        "4ab83090",
+        "4ab83090"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 6408
+        },
+        {
+          "sector": 2777,
+          "strength": 34
+        },
+        {
+          "sector": 1200,
+          "strength": 121
+        },
+        {
+          "sector": 756,
+          "strength": 163
+        },
+        {
+          "sector": 2378,
+          "strength": 1
+        },
+        {
+          "sector": 1506,
+          "strength": 1131
+        },
+        {
+          "sector": 206,
+          "strength": 13
+        },
+        {
+          "sector": 635,
+          "strength": 27
+        },
+        {
+          "sector": 987,
+          "strength": 326
+        },
+        {
+          "sector": 1278,
+          "strength": 4
+        },
+        {
+          "sector": 436,
+          "strength": 11
+        },
+        {
+          "sector": 783,
+          "strength": 57
+        },
+        {
+          "sector": 1151,
+          "strength": 63
+        },
+        {
+          "sector": 2406,
+          "strength": 33
+        },
+        {
+          "sector": 172,
+          "strength": 194
+        },
+        {
+          "sector": 2024,
+          "strength": 114
+        },
+        {
+          "sector": 2162,
+          "strength": 333
+        },
+        {
+          "sector": 387,
+          "strength": 113
+        },
+        {
+          "sector": 140,
+          "strength": 746
+        },
+        {
+          "sector": 1106,
+          "strength": 108
+        }
+      ],
+      "top_fallback": 1106,
+      "draws": 25165,
+      "final_state": 5494916,
+      "native_sha256": "9e3e25b4a290f8992d39aa88621a696803c9a16e2be3adc10ccb8b48eaebac17"
+    },
+    {
+      "name": "matrix/shift-two/observed-a",
+      "state": 1341017,
+      "helper_one": [
+        "85eb0182",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "helper_two": [
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2457
+        },
+        {
+          "sector": 2055,
+          "strength": 2235
+        },
+        {
+          "sector": 616,
+          "strength": 502
+        },
+        {
+          "sector": 1821,
+          "strength": 1351
+        },
+        {
+          "sector": 321,
+          "strength": 20
+        },
+        {
+          "sector": 2668,
+          "strength": 6
+        },
+        {
+          "sector": 1658,
+          "strength": 30
+        },
+        {
+          "sector": 2745,
+          "strength": 266
+        },
+        {
+          "sector": 1006,
+          "strength": 11
+        },
+        {
+          "sector": 2230,
+          "strength": 587
+        },
+        {
+          "sector": 455,
+          "strength": 228
+        },
+        {
+          "sector": 1633,
+          "strength": 214
+        },
+        {
+          "sector": 1373,
+          "strength": 85
+        },
+        {
+          "sector": 1173,
+          "strength": 371
+        },
+        {
+          "sector": 1111,
+          "strength": 78
+        },
+        {
+          "sector": 112,
+          "strength": 1262
+        },
+        {
+          "sector": 2729,
+          "strength": 148
+        },
+        {
+          "sector": 954,
+          "strength": 23
+        },
+        {
+          "sector": 2132,
+          "strength": 74
+        },
+        {
+          "sector": 203,
+          "strength": 52
+        }
+      ],
+      "top_fallback": 203,
+      "draws": 26265,
+      "final_state": 976528,
+      "native_sha256": "3a6a31d5f06ab8668480b8b1e908f8a6de78536b21dc1d1251ad5a4f931e08ec"
+    },
+    {
+      "name": "matrix/shift-two/observed-b",
+      "state": 1341017,
+      "helper_one": [
+        "85eb0182",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "helper_two": [
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2457
+        },
+        {
+          "sector": 2055,
+          "strength": 2235
+        },
+        {
+          "sector": 616,
+          "strength": 502
+        },
+        {
+          "sector": 1821,
+          "strength": 1351
+        },
+        {
+          "sector": 321,
+          "strength": 20
+        },
+        {
+          "sector": 2668,
+          "strength": 6
+        },
+        {
+          "sector": 1658,
+          "strength": 30
+        },
+        {
+          "sector": 2745,
+          "strength": 266
+        },
+        {
+          "sector": 1006,
+          "strength": 11
+        },
+        {
+          "sector": 2230,
+          "strength": 587
+        },
+        {
+          "sector": 455,
+          "strength": 228
+        },
+        {
+          "sector": 1633,
+          "strength": 214
+        },
+        {
+          "sector": 1373,
+          "strength": 85
+        },
+        {
+          "sector": 1173,
+          "strength": 371
+        },
+        {
+          "sector": 1111,
+          "strength": 78
+        },
+        {
+          "sector": 112,
+          "strength": 1262
+        },
+        {
+          "sector": 2729,
+          "strength": 148
+        },
+        {
+          "sector": 954,
+          "strength": 23
+        },
+        {
+          "sector": 2132,
+          "strength": 74
+        },
+        {
+          "sector": 203,
+          "strength": 52
+        }
+      ],
+      "top_fallback": 203,
+      "draws": 26265,
+      "final_state": 976528,
+      "native_sha256": "3a6a31d5f06ab8668480b8b1e908f8a6de78536b21dc1d1251ad5a4f931e08ec"
+    },
+    {
+      "name": "matrix/shift-two/observed-c",
+      "state": 1341017,
+      "helper_one": [
+        "85eb0182",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "helper_two": [
+        "b81e0582",
+        "b81e0582",
+        "c3f50882",
+        "c3f50882",
+        "f6280c82",
+        "f6280c82",
+        "f6280c82",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "00001082",
+        "33331382",
+        "33331382",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782",
+        "3d0a1782"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2457
+        },
+        {
+          "sector": 2055,
+          "strength": 2235
+        },
+        {
+          "sector": 616,
+          "strength": 502
+        },
+        {
+          "sector": 1821,
+          "strength": 1351
+        },
+        {
+          "sector": 321,
+          "strength": 20
+        },
+        {
+          "sector": 2668,
+          "strength": 6
+        },
+        {
+          "sector": 1658,
+          "strength": 30
+        },
+        {
+          "sector": 2745,
+          "strength": 266
+        },
+        {
+          "sector": 1006,
+          "strength": 11
+        },
+        {
+          "sector": 2230,
+          "strength": 587
+        },
+        {
+          "sector": 455,
+          "strength": 228
+        },
+        {
+          "sector": 1633,
+          "strength": 214
+        },
+        {
+          "sector": 1373,
+          "strength": 85
+        },
+        {
+          "sector": 1173,
+          "strength": 371
+        },
+        {
+          "sector": 1111,
+          "strength": 78
+        },
+        {
+          "sector": 112,
+          "strength": 1262
+        },
+        {
+          "sector": 2729,
+          "strength": 148
+        },
+        {
+          "sector": 954,
+          "strength": 23
+        },
+        {
+          "sector": 2132,
+          "strength": 74
+        },
+        {
+          "sector": 203,
+          "strength": 52
+        }
+      ],
+      "top_fallback": 203,
+      "draws": 26265,
+      "final_state": 976528,
+      "native_sha256": "3a6a31d5f06ab8668480b8b1e908f8a6de78536b21dc1d1251ad5a4f931e08ec"
+    },
+    {
+      "name": "matrix/noon/observed-a",
+      "state": 8615257,
+      "helper_one": [
+        "fbbf2890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890",
+        "4fc02890"
+      ],
+      "helper_two": [
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 4521
+        },
+        {
+          "sector": 2639,
+          "strength": 11
+        },
+        {
+          "sector": 986,
+          "strength": 62
+        },
+        {
+          "sector": 726,
+          "strength": 223
+        },
+        {
+          "sector": 827,
+          "strength": 48
+        },
+        {
+          "sector": 1134,
+          "strength": 11
+        },
+        {
+          "sector": 812,
+          "strength": 59
+        },
+        {
+          "sector": 2373,
+          "strength": 2435
+        },
+        {
+          "sector": 1042,
+          "strength": 1334
+        },
+        {
+          "sector": 2041,
+          "strength": 233
+        },
+        {
+          "sector": 2638,
+          "strength": 456
+        },
+        {
+          "sector": 2806,
+          "strength": 2
+        },
+        {
+          "sector": 523,
+          "strength": 95
+        },
+        {
+          "sector": 1747,
+          "strength": 54
+        },
+        {
+          "sector": 1165,
+          "strength": 7
+        },
+        {
+          "sector": 723,
+          "strength": 4
+        },
+        {
+          "sector": 2407,
+          "strength": 238
+        },
+        {
+          "sector": 2239,
+          "strength": 100
+        },
+        {
+          "sector": 570,
+          "strength": 27
+        },
+        {
+          "sector": 2180,
+          "strength": 80
+        }
+      ],
+      "top_fallback": 2180,
+      "draws": 23665,
+      "final_state": 8311720,
+      "native_sha256": "060951df44519fe75f40933e6821887be4f13802aa83641bc9091e4b6639ce7f"
+    },
+    {
+      "name": "matrix/noon/observed-b",
+      "state": 8615257,
+      "helper_one": [
+        "fbbf2890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890",
+        "4fc02890"
+      ],
+      "helper_two": [
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 4521
+        },
+        {
+          "sector": 2639,
+          "strength": 11
+        },
+        {
+          "sector": 986,
+          "strength": 62
+        },
+        {
+          "sector": 726,
+          "strength": 223
+        },
+        {
+          "sector": 827,
+          "strength": 48
+        },
+        {
+          "sector": 1134,
+          "strength": 11
+        },
+        {
+          "sector": 812,
+          "strength": 59
+        },
+        {
+          "sector": 2373,
+          "strength": 2435
+        },
+        {
+          "sector": 1042,
+          "strength": 1334
+        },
+        {
+          "sector": 2041,
+          "strength": 233
+        },
+        {
+          "sector": 2638,
+          "strength": 456
+        },
+        {
+          "sector": 2806,
+          "strength": 2
+        },
+        {
+          "sector": 523,
+          "strength": 95
+        },
+        {
+          "sector": 1747,
+          "strength": 54
+        },
+        {
+          "sector": 1165,
+          "strength": 7
+        },
+        {
+          "sector": 723,
+          "strength": 4
+        },
+        {
+          "sector": 2407,
+          "strength": 238
+        },
+        {
+          "sector": 2239,
+          "strength": 100
+        },
+        {
+          "sector": 570,
+          "strength": 27
+        },
+        {
+          "sector": 2180,
+          "strength": 80
+        }
+      ],
+      "top_fallback": 2180,
+      "draws": 23665,
+      "final_state": 8311720,
+      "native_sha256": "060951df44519fe75f40933e6821887be4f13802aa83641bc9091e4b6639ce7f"
+    },
+    {
+      "name": "matrix/noon/observed-c",
+      "state": 8615257,
+      "helper_one": [
+        "fbbf2890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890",
+        "4fc02890"
+      ],
+      "helper_two": [
+        "08c02890",
+        "08c02890",
+        "08c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "17c02890",
+        "24c02890",
+        "24c02890",
+        "24c02890",
+        "33c02890",
+        "33c02890",
+        "33c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "40c02890",
+        "4fc02890"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 4521
+        },
+        {
+          "sector": 2639,
+          "strength": 11
+        },
+        {
+          "sector": 986,
+          "strength": 62
+        },
+        {
+          "sector": 726,
+          "strength": 223
+        },
+        {
+          "sector": 827,
+          "strength": 48
+        },
+        {
+          "sector": 1134,
+          "strength": 11
+        },
+        {
+          "sector": 812,
+          "strength": 59
+        },
+        {
+          "sector": 2373,
+          "strength": 2435
+        },
+        {
+          "sector": 1042,
+          "strength": 1334
+        },
+        {
+          "sector": 2041,
+          "strength": 233
+        },
+        {
+          "sector": 2638,
+          "strength": 456
+        },
+        {
+          "sector": 2806,
+          "strength": 2
+        },
+        {
+          "sector": 523,
+          "strength": 95
+        },
+        {
+          "sector": 1747,
+          "strength": 54
+        },
+        {
+          "sector": 1165,
+          "strength": 7
+        },
+        {
+          "sector": 723,
+          "strength": 4
+        },
+        {
+          "sector": 2407,
+          "strength": 238
+        },
+        {
+          "sector": 2239,
+          "strength": 100
+        },
+        {
+          "sector": 570,
+          "strength": 27
+        },
+        {
+          "sector": 2180,
+          "strength": 80
+        }
+      ],
+      "top_fallback": 2180,
+      "draws": 23665,
+      "final_state": 8311720,
+      "native_sha256": "060951df44519fe75f40933e6821887be4f13802aa83641bc9091e4b6639ce7f"
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-a",
+      "state": 5916249,
+      "helper_one": [
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "helper_two": [
+        "7cbf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3189
+        },
+        {
+          "sector": 265,
+          "strength": 49
+        },
+        {
+          "sector": 451,
+          "strength": 504
+        },
+        {
+          "sector": 2047,
+          "strength": 75
+        },
+        {
+          "sector": 1985,
+          "strength": 1567
+        },
+        {
+          "sector": 1641,
+          "strength": 6
+        },
+        {
+          "sector": 1580,
+          "strength": 2387
+        },
+        {
+          "sector": 683,
+          "strength": 176
+        },
+        {
+          "sector": 2794,
+          "strength": 77
+        },
+        {
+          "sector": 2348,
+          "strength": 89
+        },
+        {
+          "sector": 802,
+          "strength": 211
+        },
+        {
+          "sector": 244,
+          "strength": 198
+        },
+        {
+          "sector": 718,
+          "strength": 23
+        },
+        {
+          "sector": 446,
+          "strength": 442
+        },
+        {
+          "sector": 2803,
+          "strength": 98
+        },
+        {
+          "sector": 2949,
+          "strength": 1
+        },
+        {
+          "sector": 1801,
+          "strength": 339
+        },
+        {
+          "sector": 1123,
+          "strength": 494
+        },
+        {
+          "sector": 1329,
+          "strength": 3
+        },
+        {
+          "sector": 34,
+          "strength": 72
+        }
+      ],
+      "top_fallback": 34,
+      "draws": 25315,
+      "final_state": 10465490,
+      "native_sha256": "28ab821a098922f4fd98d63a96fce328cf8b71a3e5aaee41b2124e599c67a849"
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-b",
+      "state": 5916249,
+      "helper_one": [
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "helper_two": [
+        "7cbf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3189
+        },
+        {
+          "sector": 265,
+          "strength": 49
+        },
+        {
+          "sector": 451,
+          "strength": 504
+        },
+        {
+          "sector": 2047,
+          "strength": 75
+        },
+        {
+          "sector": 1985,
+          "strength": 1567
+        },
+        {
+          "sector": 1641,
+          "strength": 6
+        },
+        {
+          "sector": 1580,
+          "strength": 2387
+        },
+        {
+          "sector": 683,
+          "strength": 176
+        },
+        {
+          "sector": 2794,
+          "strength": 77
+        },
+        {
+          "sector": 2348,
+          "strength": 89
+        },
+        {
+          "sector": 802,
+          "strength": 211
+        },
+        {
+          "sector": 244,
+          "strength": 198
+        },
+        {
+          "sector": 718,
+          "strength": 23
+        },
+        {
+          "sector": 446,
+          "strength": 442
+        },
+        {
+          "sector": 2803,
+          "strength": 98
+        },
+        {
+          "sector": 2949,
+          "strength": 1
+        },
+        {
+          "sector": 1801,
+          "strength": 339
+        },
+        {
+          "sector": 1123,
+          "strength": 494
+        },
+        {
+          "sector": 1329,
+          "strength": 3
+        },
+        {
+          "sector": 34,
+          "strength": 72
+        }
+      ],
+      "top_fallback": 34,
+      "draws": 25315,
+      "final_state": 10465490,
+      "native_sha256": "28ab821a098922f4fd98d63a96fce328cf8b71a3e5aaee41b2124e599c67a849"
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-c",
+      "state": 5916249,
+      "helper_one": [
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "helper_two": [
+        "7cbf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891",
+        "9fbf2891",
+        "a6bf2891",
+        "a6bf2891",
+        "adbf2891",
+        "adbf2891",
+        "b4bf2891",
+        "b4bf2891",
+        "bbbf2891",
+        "bbbf2891",
+        "c3bf2891",
+        "c9bf2891",
+        "c9bf2891"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3189
+        },
+        {
+          "sector": 265,
+          "strength": 49
+        },
+        {
+          "sector": 451,
+          "strength": 504
+        },
+        {
+          "sector": 2047,
+          "strength": 75
+        },
+        {
+          "sector": 1985,
+          "strength": 1567
+        },
+        {
+          "sector": 1641,
+          "strength": 6
+        },
+        {
+          "sector": 1580,
+          "strength": 2387
+        },
+        {
+          "sector": 683,
+          "strength": 176
+        },
+        {
+          "sector": 2794,
+          "strength": 77
+        },
+        {
+          "sector": 2348,
+          "strength": 89
+        },
+        {
+          "sector": 802,
+          "strength": 211
+        },
+        {
+          "sector": 244,
+          "strength": 198
+        },
+        {
+          "sector": 718,
+          "strength": 23
+        },
+        {
+          "sector": 446,
+          "strength": 442
+        },
+        {
+          "sector": 2803,
+          "strength": 98
+        },
+        {
+          "sector": 2949,
+          "strength": 1
+        },
+        {
+          "sector": 1801,
+          "strength": 339
+        },
+        {
+          "sector": 1123,
+          "strength": 494
+        },
+        {
+          "sector": 1329,
+          "strength": 3
+        },
+        {
+          "sector": 34,
+          "strength": 72
+        }
+      ],
+      "top_fallback": 34,
+      "draws": 25315,
+      "final_state": 10465490,
+      "native_sha256": "28ab821a098922f4fd98d63a96fce328cf8b71a3e5aaee41b2124e599c67a849"
+    },
+    {
+      "name": "matrix/rollover/observed-a",
+      "state": 13616729,
+      "helper_one": [
+        "85eb5180",
+        "52b85e80",
+        "52b85e80",
+        "0ad74381",
+        "0ad74381",
+        "f6287c81",
+        "f6287c81",
+        "f6280c82",
+        "f6280c82",
+        "33331382",
+        "33331382",
+        "295c2f82",
+        "295c2f82",
+        "33333382",
+        "33333382",
+        "a4703d82",
+        "a4703d82",
+        "a4705d82",
+        "a4705d82",
+        "14ae6782",
+        "14ae6782",
+        "c3f57882",
+        "c3f57882",
+        "85eb0183",
+        "85eb0183",
+        "3d0a0783",
+        "3d0a0783",
+        "9a991183",
+        "9a991183",
+        "5c8f1a83",
+        "5c8f1a83",
+        "7b141e83",
+        "7b141e83",
+        "d7a32883",
+        "d7a32883",
+        "713d2a83",
+        "713d2a83",
+        "713d3a83",
+        "713d3a83"
+      ],
+      "helper_two": [
+        "52b85e80",
+        "0ad74381",
+        "f6287c81",
+        "f6280c82",
+        "33331382",
+        "295c2f82",
+        "33333382",
+        "a4703d82",
+        "a4705d82",
+        "14ae6782",
+        "c3f57882",
+        "85eb0183",
+        "3d0a0783",
+        "9a991183",
+        "5c8f1a83",
+        "7b141e83",
+        "d7a32883",
+        "713d2a83",
+        "713d3a83"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3722
+        },
+        {
+          "sector": 2548,
+          "strength": 1481
+        },
+        {
+          "sector": 1803,
+          "strength": 9
+        },
+        {
+          "sector": 2367,
+          "strength": 544
+        },
+        {
+          "sector": 2194,
+          "strength": 99
+        },
+        {
+          "sector": 1479,
+          "strength": 80
+        },
+        {
+          "sector": 977,
+          "strength": 51
+        },
+        {
+          "sector": 2509,
+          "strength": 112
+        },
+        {
+          "sector": 1833,
+          "strength": 1019
+        },
+        {
+          "sector": 1269,
+          "strength": 273
+        },
+        {
+          "sector": 192,
+          "strength": 141
+        },
+        {
+          "sector": 997,
+          "strength": 28
+        },
+        {
+          "sector": 132,
+          "strength": 984
+        },
+        {
+          "sector": 1238,
+          "strength": 62
+        },
+        {
+          "sector": 2513,
+          "strength": 53
+        },
+        {
+          "sector": 40,
+          "strength": 1268
+        },
+        {
+          "sector": 291,
+          "strength": 37
+        },
+        {
+          "sector": 9,
+          "strength": 13
+        },
+        {
+          "sector": 2662,
+          "strength": 23
+        },
+        {
+          "sector": 870,
+          "strength": 1
+        }
+      ],
+      "top_fallback": 870,
+      "draws": 22365,
+      "final_state": 8342292,
+      "native_sha256": "a985d2a54b23b10fdc9be7477ff6b059b4958921eca964ba4cd27eaaa5e22ed1"
+    },
+    {
+      "name": "matrix/rollover/observed-b",
+      "state": 13616729,
+      "helper_one": [
+        "85eb5180",
+        "52b85e80",
+        "52b85e80",
+        "0ad74381",
+        "0ad74381",
+        "f6287c81",
+        "f6287c81",
+        "f6280c82",
+        "f6280c82",
+        "33331382",
+        "33331382",
+        "295c2f82",
+        "295c2f82",
+        "33333382",
+        "33333382",
+        "a4703d82",
+        "a4703d82",
+        "a4705d82",
+        "a4705d82",
+        "14ae6782",
+        "14ae6782",
+        "c3f57882",
+        "c3f57882",
+        "85eb0183",
+        "85eb0183",
+        "3d0a0783",
+        "3d0a0783",
+        "9a991183",
+        "9a991183",
+        "5c8f1a83",
+        "5c8f1a83",
+        "7b141e83",
+        "7b141e83",
+        "d7a32883",
+        "d7a32883",
+        "713d2a83",
+        "713d2a83",
+        "713d3a83",
+        "713d3a83"
+      ],
+      "helper_two": [
+        "52b85e80",
+        "0ad74381",
+        "f6287c81",
+        "f6280c82",
+        "33331382",
+        "295c2f82",
+        "33333382",
+        "a4703d82",
+        "a4705d82",
+        "14ae6782",
+        "c3f57882",
+        "85eb0183",
+        "3d0a0783",
+        "9a991183",
+        "5c8f1a83",
+        "7b141e83",
+        "d7a32883",
+        "713d2a83",
+        "713d3a83"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3722
+        },
+        {
+          "sector": 2548,
+          "strength": 1481
+        },
+        {
+          "sector": 1803,
+          "strength": 9
+        },
+        {
+          "sector": 2367,
+          "strength": 544
+        },
+        {
+          "sector": 2194,
+          "strength": 99
+        },
+        {
+          "sector": 1479,
+          "strength": 80
+        },
+        {
+          "sector": 977,
+          "strength": 51
+        },
+        {
+          "sector": 2509,
+          "strength": 112
+        },
+        {
+          "sector": 1833,
+          "strength": 1019
+        },
+        {
+          "sector": 1269,
+          "strength": 273
+        },
+        {
+          "sector": 192,
+          "strength": 141
+        },
+        {
+          "sector": 997,
+          "strength": 28
+        },
+        {
+          "sector": 132,
+          "strength": 984
+        },
+        {
+          "sector": 1238,
+          "strength": 62
+        },
+        {
+          "sector": 2513,
+          "strength": 53
+        },
+        {
+          "sector": 40,
+          "strength": 1268
+        },
+        {
+          "sector": 291,
+          "strength": 37
+        },
+        {
+          "sector": 9,
+          "strength": 13
+        },
+        {
+          "sector": 2662,
+          "strength": 23
+        },
+        {
+          "sector": 870,
+          "strength": 1
+        }
+      ],
+      "top_fallback": 870,
+      "draws": 22365,
+      "final_state": 8342292,
+      "native_sha256": "a985d2a54b23b10fdc9be7477ff6b059b4958921eca964ba4cd27eaaa5e22ed1"
+    },
+    {
+      "name": "matrix/rollover/observed-c",
+      "state": 13616729,
+      "helper_one": [
+        "85eb5180",
+        "52b85e80",
+        "52b85e80",
+        "0ad74381",
+        "0ad74381",
+        "f6287c81",
+        "f6287c81",
+        "f6280c82",
+        "f6280c82",
+        "33331382",
+        "33331382",
+        "295c2f82",
+        "295c2f82",
+        "33333382",
+        "33333382",
+        "a4703d82",
+        "a4703d82",
+        "a4705d82",
+        "a4705d82",
+        "14ae6782",
+        "14ae6782",
+        "c3f57882",
+        "c3f57882",
+        "85eb0183",
+        "85eb0183",
+        "3d0a0783",
+        "3d0a0783",
+        "9a991183",
+        "9a991183",
+        "5c8f1a83",
+        "5c8f1a83",
+        "7b141e83",
+        "7b141e83",
+        "d7a32883",
+        "d7a32883",
+        "713d2a83",
+        "713d2a83",
+        "713d3a83",
+        "713d3a83"
+      ],
+      "helper_two": [
+        "52b85e80",
+        "0ad74381",
+        "f6287c81",
+        "f6280c82",
+        "33331382",
+        "295c2f82",
+        "33333382",
+        "a4703d82",
+        "a4705d82",
+        "14ae6782",
+        "c3f57882",
+        "85eb0183",
+        "3d0a0783",
+        "9a991183",
+        "5c8f1a83",
+        "7b141e83",
+        "d7a32883",
+        "713d2a83",
+        "713d3a83"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 3722
+        },
+        {
+          "sector": 2548,
+          "strength": 1481
+        },
+        {
+          "sector": 1803,
+          "strength": 9
+        },
+        {
+          "sector": 2367,
+          "strength": 544
+        },
+        {
+          "sector": 2194,
+          "strength": 99
+        },
+        {
+          "sector": 1479,
+          "strength": 80
+        },
+        {
+          "sector": 977,
+          "strength": 51
+        },
+        {
+          "sector": 2509,
+          "strength": 112
+        },
+        {
+          "sector": 1833,
+          "strength": 1019
+        },
+        {
+          "sector": 1269,
+          "strength": 273
+        },
+        {
+          "sector": 192,
+          "strength": 141
+        },
+        {
+          "sector": 997,
+          "strength": 28
+        },
+        {
+          "sector": 132,
+          "strength": 984
+        },
+        {
+          "sector": 1238,
+          "strength": 62
+        },
+        {
+          "sector": 2513,
+          "strength": 53
+        },
+        {
+          "sector": 40,
+          "strength": 1268
+        },
+        {
+          "sector": 291,
+          "strength": 37
+        },
+        {
+          "sector": 9,
+          "strength": 13
+        },
+        {
+          "sector": 2662,
+          "strength": 23
+        },
+        {
+          "sector": 870,
+          "strength": 1
+        }
+      ],
+      "top_fallback": 870,
+      "draws": 22365,
+      "final_state": 8342292,
+      "native_sha256": "a985d2a54b23b10fdc9be7477ff6b059b4958921eca964ba4cd27eaaa5e22ed1"
+    },
+    {
+      "name": "matrix/next-day/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/next-day/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/next-day/observed-c",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/eleven-days/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/eleven-days/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/eleven-days/observed-c",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "helper_two": [
+        "cdcc4c7c",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "5c8f427f",
+        "5c8f427f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1608
+        },
+        {
+          "sector": 1548,
+          "strength": 15
+        },
+        {
+          "sector": 2935,
+          "strength": 978
+        },
+        {
+          "sector": 2706,
+          "strength": 569
+        },
+        {
+          "sector": 1476,
+          "strength": 123
+        },
+        {
+          "sector": 1155,
+          "strength": 42
+        },
+        {
+          "sector": 2061,
+          "strength": 9
+        },
+        {
+          "sector": 1051,
+          "strength": 267
+        },
+        {
+          "sector": 133,
+          "strength": 1215
+        },
+        {
+          "sector": 1357,
+          "strength": 1296
+        },
+        {
+          "sector": 1966,
+          "strength": 46
+        },
+        {
+          "sector": 2716,
+          "strength": 155
+        },
+        {
+          "sector": 129,
+          "strength": 1655
+        },
+        {
+          "sector": 2057,
+          "strength": 528
+        },
+        {
+          "sector": 1114,
+          "strength": 199
+        },
+        {
+          "sector": 2736,
+          "strength": 949
+        },
+        {
+          "sector": 793,
+          "strength": 36
+        },
+        {
+          "sector": 1603,
+          "strength": 11
+        },
+        {
+          "sector": 1115,
+          "strength": 230
+        },
+        {
+          "sector": 1314,
+          "strength": 69
+        }
+      ],
+      "top_fallback": 1314,
+      "draws": 25865,
+      "final_state": 11183232,
+      "native_sha256": "a8d84b31a1c21a5cdcfcbd035cf36275b08cb0b74932d2cbc718c724a23c6d83"
+    },
+    {
+      "name": "matrix/next-year/observed-a",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "helper_two": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1687
+        },
+        {
+          "sector": 1513,
+          "strength": 838
+        },
+        {
+          "sector": 2935,
+          "strength": 897
+        },
+        {
+          "sector": 1874,
+          "strength": 83
+        },
+        {
+          "sector": 1783,
+          "strength": 158
+        },
+        {
+          "sector": 1002,
+          "strength": 181
+        },
+        {
+          "sector": 2227,
+          "strength": 440
+        },
+        {
+          "sector": 1951,
+          "strength": 552
+        },
+        {
+          "sector": 2165,
+          "strength": 342
+        },
+        {
+          "sector": 2337,
+          "strength": 196
+        },
+        {
+          "sector": 2276,
+          "strength": 116
+        },
+        {
+          "sector": 1955,
+          "strength": 462
+        },
+        {
+          "sector": 2429,
+          "strength": 408
+        },
+        {
+          "sector": 1492,
+          "strength": 2090
+        },
+        {
+          "sector": 635,
+          "strength": 302
+        },
+        {
+          "sector": 2210,
+          "strength": 33
+        },
+        {
+          "sector": 527,
+          "strength": 737
+        },
+        {
+          "sector": 1833,
+          "strength": 367
+        },
+        {
+          "sector": 1680,
+          "strength": 106
+        },
+        {
+          "sector": 1279,
+          "strength": 5
+        }
+      ],
+      "top_fallback": 1279,
+      "draws": 24015,
+      "final_state": 8066974,
+      "native_sha256": "c5c333ece42bf184fb40046eb2e9abe5eb9539405af1d5317303822bcb6089b6"
+    },
+    {
+      "name": "matrix/next-year/observed-b",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "helper_two": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1687
+        },
+        {
+          "sector": 1513,
+          "strength": 838
+        },
+        {
+          "sector": 2935,
+          "strength": 897
+        },
+        {
+          "sector": 1874,
+          "strength": 83
+        },
+        {
+          "sector": 1783,
+          "strength": 158
+        },
+        {
+          "sector": 1002,
+          "strength": 181
+        },
+        {
+          "sector": 2227,
+          "strength": 440
+        },
+        {
+          "sector": 1951,
+          "strength": 552
+        },
+        {
+          "sector": 2165,
+          "strength": 342
+        },
+        {
+          "sector": 2337,
+          "strength": 196
+        },
+        {
+          "sector": 2276,
+          "strength": 116
+        },
+        {
+          "sector": 1955,
+          "strength": 462
+        },
+        {
+          "sector": 2429,
+          "strength": 408
+        },
+        {
+          "sector": 1492,
+          "strength": 2090
+        },
+        {
+          "sector": 635,
+          "strength": 302
+        },
+        {
+          "sector": 2210,
+          "strength": 33
+        },
+        {
+          "sector": 527,
+          "strength": 737
+        },
+        {
+          "sector": 1833,
+          "strength": 367
+        },
+        {
+          "sector": 1680,
+          "strength": 106
+        },
+        {
+          "sector": 1279,
+          "strength": 5
+        }
+      ],
+      "top_fallback": 1279,
+      "draws": 24015,
+      "final_state": 8066974,
+      "native_sha256": "c5c333ece42bf184fb40046eb2e9abe5eb9539405af1d5317303822bcb6089b6"
+    },
+    {
+      "name": "matrix/next-year/observed-c",
+      "state": 10126169,
+      "helper_one": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "helper_two": [
+        "cdcc4c7d",
+        "cdcc4c7d",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "0ad7237e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "3d0a577e",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "713d0a7f",
+        "0ad7237f",
+        "0ad7237f",
+        "0ad7237f"
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 1687
+        },
+        {
+          "sector": 1513,
+          "strength": 838
+        },
+        {
+          "sector": 2935,
+          "strength": 897
+        },
+        {
+          "sector": 1874,
+          "strength": 83
+        },
+        {
+          "sector": 1783,
+          "strength": 158
+        },
+        {
+          "sector": 1002,
+          "strength": 181
+        },
+        {
+          "sector": 2227,
+          "strength": 440
+        },
+        {
+          "sector": 1951,
+          "strength": 552
+        },
+        {
+          "sector": 2165,
+          "strength": 342
+        },
+        {
+          "sector": 2337,
+          "strength": 196
+        },
+        {
+          "sector": 2276,
+          "strength": 116
+        },
+        {
+          "sector": 1955,
+          "strength": 462
+        },
+        {
+          "sector": 2429,
+          "strength": 408
+        },
+        {
+          "sector": 1492,
+          "strength": 2090
+        },
+        {
+          "sector": 635,
+          "strength": 302
+        },
+        {
+          "sector": 2210,
+          "strength": 33
+        },
+        {
+          "sector": 527,
+          "strength": 737
+        },
+        {
+          "sector": 1833,
+          "strength": 367
+        },
+        {
+          "sector": 1680,
+          "strength": 106
+        },
+        {
+          "sector": 1279,
+          "strength": 5
+        }
+      ],
+      "top_fallback": 1279,
+      "draws": 24015,
+      "final_state": 8066974,
+      "native_sha256": "c5c333ece42bf184fb40046eb2e9abe5eb9539405af1d5317303822bcb6089b6"
+    }
+  ]
+}

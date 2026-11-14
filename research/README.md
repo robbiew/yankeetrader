@@ -90,3 +90,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go initial Wanderer creation/placement](yt-maint/GO_WANDERER_BIRTH_REPLAY.md): 29 whole native records and links, three declared later-encounter exclusions, raw TIMER seeding and inherited bytes; other NPC phases excluded.
 
 - [Bounded Go Xannoron creation](yt-maint/GO_XANNORON_BIRTH_REPLAY.md): 32 native whole records/HQ links, Go-modeled Wanderer prefix, raw timestamp/rounding/state continuation and explicit admission bounds; no new captures.
+
+- [Bounded Go initial mobile groups](yt-maint/GO_INITIAL_MOBILE_GROUPS.md): 29 existing native field inventories, before-only Go birth handoff, bounded plain routes and modeled RNG continuation; three late-clock combat targets excluded.
