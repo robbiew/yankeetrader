@@ -2479,3 +2479,17 @@ Three existing late-clock Wanderer-combat runs are explicitly excluded; no new
 captures were acquired. Existing groups, retries, merges, regeneration and
 encounters remain outside this research API. Complete maintenance, gameplay
 integration and DOS save interoperability remain separate; save 35 is unchanged.
+
+### Bounded Go Mercenary Base creation
+
+[Mercenary Base creation evidence](research/yt-maint/GO_MERCENARY_BASE_BIRTH.md)
+qualifies `qbmaint.ReplayMercenaryBaseBirth` against 29 existing complete native
+records and placement links, after a Go-modeled Wanderer/Xannoron/mobile-group
+prefix. The API preserves inherited fields and raw stock/FAC zero residues,
+reseeds from the next measured helper TIMER and draws one empty placement.
+Portable fixtures, corruption checks, atomic admission and byte-preservation
+tests are included in CI; no new captures were acquired. Pending revenge,
+existing bases, placement retries and noninitial group worlds are excluded.
+RNG endpoints are independently modeled, not new native measurements. Hiring,
+desertion/lottery tail, full maintenance and gameplay integration remain separate;
+save format 35 is unchanged.

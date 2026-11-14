@@ -179,8 +179,15 @@ helper-one and 19 helper-two samples. Native field oracles remain distinct from
 modeled RNG endpoints. Three late-clock Wanderer encounter targets are excluded;
 retries, merges, regeneration and active encounters are not admitted.
 
-**Next: audit Mercenary Base creation/placement and its RNG handoff using existing
-source/captures and open PRs before selecting the next Go migration.**
+[Bounded Go Mercenary Base birth](yt-maint/GO_MERCENARY_BASE_BIRTH.md) now
+reuses 29 complete native records and placement links after an independent Go
+mobile-group handoff. Inherited fields, raw FAC zero residues, next-helper
+reseed/one-draw continuation and atomic input admission have portable tests and
+provenance checks. Three late-clock combat prefixes remain outside this composition.
+
+**Next: audit the initial no-hiring desertion/lottery tail, auxiliary writes and
+RNG continuation against existing source/captures and open PRs before selecting
+the next Go migration.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
