@@ -86,3 +86,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded pure Go clean-port maintenance replay](yt-maint/GO_CLEAN_PORT_REPLAY.md): 32 existing native blocks / 32,000 exact records, portable before-only inputs, unchanged independent Python reference and guarded research-only API.
 
 - [Bounded Go inactive rank-cache/watermark writer](yt-maint/GO_INACTIVE_RANK_REPLAY.md): 1,632 exact native fields across 32 retained runs, before-only synthesis and complete unrelated-byte preservation; active rankings excluded.
+
+- [Bounded Go initial Wanderer creation/placement](yt-maint/GO_WANDERER_BIRTH_REPLAY.md): 29 whole native records and links, three declared later-encounter exclusions, raw TIMER seeding and inherited bytes; other NPC phases excluded.
