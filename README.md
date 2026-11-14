@@ -2506,3 +2506,19 @@ YTDATA worlds; no captures were added. RNG endpoints remain Python-model
 expectations. The three late-clock Wanderer-combat prefixes, funded hiring, human
 desertion, active-player lottery, auxiliary files, complete six-file maintenance
 and playable integration remain separate. Modern save format 35 is unchanged.
+
+### Bounded Go initial auxiliary files and six-file validation
+
+[Initial auxiliary-file evidence](research/yt-maint/GO_INITIAL_AUX_FILES.md) now
+qualifies `qbmaint.ReplayInitialAux` for the all-inactive, missing-NPC bootstrap
+profile. It preserves before name/news bytes, emits empty messages and generates
+news/scoreboard bytes from source-qualified literals and separately sampled
+calendar/clock inputs, including native `24:00:00` without date carry. The fixed
+bootstrap scoreboard has exactly 10000 Xannor fighters and no other scored force;
+this is not a general PRINT USING formatter or active ranking implementation.
+Composing the bounded Go world writers and auxiliary API matches all six complete
+native files in 29 existing plain-route runs. Tests preserve DOS CRLF/EOF, reject
+unsupported inputs atomically and keep output storage independent. No new captures
+were acquired. Late-clock combat prefixes, active players, message compression,
+general maintenance, DOS save loading, a public orchestration CLI and playable
+integration remain separate; modern save format 35 is unchanged.
