@@ -2565,3 +2565,18 @@ were added. Modeled step inputs/states are distinct from native final record
 oracles. Routing, shared pursuit, complete late-clock orchestration/news and
 other combat branches remain separate; ordinary 29-run APIs retain their existing
 bounds and modern gameplay/save 35 is unchanged.
+
+### Explicit Go late-clock combat integration
+
+[Late-clock integration evidence](research/yt-maint/GO_LATE_CLOCK_INTEGRATION.md)
+qualifies `qbmaint.ReplayInitialMaintenanceWithWanderer` and the explicit mobile
+variant against all 32 existing observed initial runs: 29 ordinary and three
+repeated late-clock combat runs. All six complete native files match. Forward
+routes, shared pursuit, lost-group pointer clearing, skipped eager scans and
+RNG continuation now compose with the bounded assault. Replayed encounter
+receipts account for the reduced force, two surviving desertion draws, dynamic
+NPC score and 36 encounter-news lines. Ordinary exported APIs retain their
+strict bounds and their original 29-run fixtures. No new captures or native
+endpoint measurements were added; model receipts remain distinct from native
+file oracles. Partial or other encounter chains, defended/populated planets,
+general maintenance and playable integration remain excluded; save 35 is unchanged.

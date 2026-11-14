@@ -30,8 +30,27 @@ type InitialStats struct {
 // gameplay saves. Unsupported phases return no partial files/statistics.
 // Input maps, files and recipe slices are readonly. Outputs own their storage.
 func ReplayInitialMaintenance(before map[string][]byte, recipe InitialRecipe) (map[string][]byte, InitialStats, error) {
-	fail := func(phase string, e error) (map[string][]byte, InitialStats, error) {
-		return nil, InitialStats{}, fmt.Errorf("initial maintenance %s: %w", phase, e)
+	out, stats, _, err := replayInitialMaintenance(before, recipe, false)
+	return out, stats, err
+}
+
+type WandererInitialStats struct {
+	InitialStats
+	Encounters []WandererEncounter
+}
+
+// ReplayInitialMaintenanceWithWanderer is the explicit bounded encounter profile.
+// Ordinary historical APIs keep their strict admission and all inputs remain readonly.
+func ReplayInitialMaintenanceWithWanderer(before map[string][]byte, recipe InitialRecipe) (map[string][]byte, WandererInitialStats, error) {
+	out, stats, events, err := replayInitialMaintenance(before, recipe, true)
+	if err != nil {
+		return nil, WandererInitialStats{}, err
+	}
+	return out, WandererInitialStats{InitialStats: stats, Encounters: events}, nil
+}
+func replayInitialMaintenance(before map[string][]byte, recipe InitialRecipe, allowWanderer bool) (map[string][]byte, InitialStats, []WandererEncounter, error) {
+	fail := func(phase string, e error) (map[string][]byte, InitialStats, []WandererEncounter, error) {
+		return nil, InitialStats{}, nil, fmt.Errorf("initial maintenance %s: %w", phase, e)
 	}
 	if len(before) != 3 || len(recipe.HelperOne) < 41 || len(recipe.HelperOne) > 42 || len(recipe.HelperTwo) != 19 {
 		return fail("inventory", fmt.Errorf("three before files and 41/42+19 helpers required"))
@@ -62,12 +81,12 @@ func ReplayInitialMaintenance(before map[string][]byte, recipe InitialRecipe) (m
 	mobileIn := MobileInputs{State: x.FinalState}
 	copy(mobileIn.HelperOne[:], recipe.HelperOne[1:40])
 	copy(mobileIn.HelperTwo[:], recipe.HelperTwo)
-	world, m, e := ReplayInitialMobileGroups(world, mobileIn)
+	world, m, encounters, e := replayInitialMobileGroups(world, mobileIn, allowWanderer)
 	if e != nil {
 		return fail("mobile groups", e)
 	}
 	stats.Mobile = m
-	world, b, e := ReplayMercenaryBaseBirth(world, BaseInputs{Day: recipe.BaseDay, State: m.FinalState, HelperTimer: recipe.HelperOne[40]})
+	world, b, e := replayMercenaryBaseBirth(world, BaseInputs{Day: recipe.BaseDay, State: m.FinalState, HelperTimer: recipe.HelperOne[40]}, encounters)
 	if e != nil {
 		return fail("base", e)
 	}
@@ -77,7 +96,7 @@ func ReplayInitialMaintenance(before map[string][]byte, recipe InitialRecipe) (m
 		timer := recipe.HelperOne[41]
 		tailIn.CandidateTimer = &timer
 	}
-	t, e := ReplayInitialNPCTail(world, tailIn)
+	t, e := replayInitialNPCTail(world, tailIn, encounters)
 	if e != nil {
 		return fail("tail", e)
 	}
@@ -86,12 +105,12 @@ func ReplayInitialMaintenance(before map[string][]byte, recipe InitialRecipe) (m
 	if e != nil {
 		return fail("ranks", e)
 	}
-	out, e := ReplayInitialAux(before, world, recipe.Aux)
+	out, e := replayInitialAux(before, world, recipe.Aux, encounters)
 	if e != nil {
 		return fail("auxiliary", e)
 	}
 	out["YTDATA.DAT"] = world
 	stats.Draws = w.Draws + x.Draws + m.Draws + b.Draws + t.Draws
 	stats.FinalState = t.FinalState
-	return out, stats, nil
+	return out, stats, encounters, nil
 }

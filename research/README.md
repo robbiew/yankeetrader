@@ -102,3 +102,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Research-only initial maintenance API](yt-maint/GO_INITIAL_MAINTENANCE_API.md): explicit before-file/phase recipe orchestration, 29 complete six-file native comparisons, composed RNG statistics and atomic phase failures; no new captures or playable integration.
 
 - [Bounded Go Wanderer assault](yt-maint/GO_WANDERER_ASSAULT.md): 54 modeled steps across three repeated observed late runs, three complete native final records, raw arithmetic/zero residues and unchanged ordinary-profile admission; integration remains separate.
+
+- [Explicit Go late-clock integration](yt-maint/GO_LATE_CLOCK_INTEGRATION.md): forward routing/shared pursuit, bounded assault receipts, reduced-force downstream phases and encounter news; all six files match in 32 existing observed runs while historical APIs stay strict.

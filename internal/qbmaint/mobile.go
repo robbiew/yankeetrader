@@ -26,13 +26,39 @@ type MobileStats struct {
 // routes. Retries, encounters, existing groups and regeneration are excluded.
 // It preserves unrelated bytes and returns no partial output on rejection.
 func ReplayInitialMobileGroups(before []byte, in MobileInputs) ([]byte, MobileStats, error) {
-	fail := func(s string) ([]byte, MobileStats, error) {
-		return nil, MobileStats{}, fmt.Errorf("initial mobile groups: %s", s)
+	out, stats, _, err := replayInitialMobileGroups(before, in, false)
+	return out, stats, err
+}
+
+// WandererEncounter is a model-derived receipt, never an input correction.
+type WandererEncounter struct {
+	Inputs AssaultInputs
+	Result AssaultStats
+}
+type WandererMobileStats struct {
+	MobileStats
+	Encounters []WandererEncounter
+}
+
+// ReplayInitialMobileGroupsWithWanderer explicitly admits the retained late-clock
+// neutral Wanderer chain as well as ordinary plain routes. The strict API above
+// continues rejecting encounters. Partial or other combat chains are excluded.
+func ReplayInitialMobileGroupsWithWanderer(before []byte, in MobileInputs) ([]byte, WandererMobileStats, error) {
+	out, stats, events, err := replayInitialMobileGroups(before, in, true)
+	if err != nil {
+		return nil, WandererMobileStats{}, err
+	}
+	return out, WandererMobileStats{MobileStats: stats, Encounters: events}, nil
+}
+func replayInitialMobileGroups(before []byte, in MobileInputs, allowWanderer bool) ([]byte, MobileStats, []WandererEncounter, error) {
+	fail := func(s string) ([]byte, MobileStats, []WandererEncounter, error) {
+		return nil, MobileStats{}, nil, fmt.Errorf("initial mobile groups: %s", s)
 	}
 	if len(before) != WorldRecords*RecordSize || in.State > 0xffffff {
 		return fail("world/state extent")
 	}
-	read := func(r, o int) [4]byte { a := (r-1)*RecordSize + o; return [4]byte(before[a : a+4]) }
+	source := before
+	read := func(r, o int) [4]byte { a := (r-1)*RecordSize + o; return [4]byte(source[a : a+4]) }
 	get := func(r, o int) int {
 		n, ok := integer(read(r, o))
 		if !ok {
@@ -124,6 +150,13 @@ func ReplayInitialMobileGroups(before []byte, in MobileInputs) ([]byte, MobileSt
 			return fail("helper TIMER")
 		}
 	}
+	work := append([]byte(nil), before...)
+	source = work
+	put := func(r, o, n int) { a := (r-1)*RecordSize + o; v := encode(n); copy(work[a:a+4], v[:]) }
+	put(51+hq, 81, 0)
+	put(51+hq, 85, 0)
+	var encounters []WandererEncounter
+	preferred := 0
 	rng := qbrng.New(in.State)
 	stats := MobileStats{}
 	draw := func(n int) int { stats.Draws++; return int(float32(rng.Float32()*float32(n))) + 1 }
@@ -149,10 +182,15 @@ func ReplayInitialMobileGroups(before []byte, in MobileInputs) ([]byte, MobileSt
 		if get(51+candidate, 81) > 1 && get(51+candidate, 85) != -1 || get(51+candidate, 93) > 1 {
 			return fail("candidate rejection")
 		}
-		for j := 0; j < 50; j++ {
-			draw(1)
+		if preferred == 0 {
+			for j := 0; j < 50; j++ {
+				draw(1)
+			}
 		}
 		target := fallback
+		if preferred != 0 {
+			target = preferred
+		}
 		if g == 19 {
 			target = stats.TopFallback
 		}
@@ -174,34 +212,84 @@ func ReplayInitialMobileGroups(before []byte, in MobileInputs) ([]byte, MobileSt
 		if prev[target] == 0 {
 			return fail("unreachable target")
 		}
+		route := []int{}
 		for s := target; s != hq; s = prev[s] {
-			if get(51+s, 93) != 0 || get(51+s, 89) != 0 || get(51+s, 129) != 0 {
-				return fail("entered encounter")
+			route = append(route, s)
+		}
+		for j := len(route) - 1; j >= 0; j-- {
+			sector := route[j]
+			if get(51+sector, 93) != 0 || get(51+sector, 89) != 0 || get(51+sector, 129) != 0 {
+				if !allowWanderer {
+					return fail("entered encounter")
+				}
+				input := AssaultInputs{Group: g + 1, Sector: sector, Force: strength, State: rng.State()}
+				updated, result, err := ReplayWandererAssault(work, input)
+				if err != nil {
+					return fail("unsupported entered encounter: " + err.Error())
+				}
+				work = updated
+				source = work
+				rng = qbrng.New(result.FinalState)
+				stats.Draws += result.Draws
+				encounters = append(encounters, WandererEncounter{Inputs: input, Result: result})
+				preferred = sector
+				strength = 0
+				break // skip this sector's scans and all later edges
 			}
-			for j := 0; j < 50; j++ {
+			for k := 0; k < 50; k++ {
 				draw(1)
 			}
 		}
-		stats.Groups[g] = MobileGroup{target, strength}
+		if strength == 0 {
+			stats.Groups[g] = MobileGroup{}
+		} else {
+			stats.Groups[g] = MobileGroup{target, strength}
+		}
 	}
 	stats.Groups[0] = MobileGroup{hq, remaining}
 	seen := map[int]bool{}
 	for _, g := range stats.Groups {
+		if g.Strength == 0 && g.Sector == 0 && allowWanderer {
+			continue
+		}
 		if g.Strength <= 0 || seen[g.Sector] {
 			return fail("zero or merged group")
 		}
 		seen[g.Sector] = true
 	}
-	out := append([]byte(nil), before...)
-	put := func(r, o, n int) { a := (r-1)*RecordSize + o; v := encode(n); copy(out[a:a+4], v[:]) }
-	put(51+hq, 81, 0)
-	put(51+hq, 85, 0)
+	if len(encounters) != 0 {
+		if len(encounters) != 18 {
+			return fail("partial Wanderer chain outside retained profile")
+		}
+		for i, event := range encounters {
+			if event.Inputs.Group != i+2 || event.Inputs.Sector != encounters[0].Inputs.Sector {
+				return fail("ordinary groups 2..19 must share the retained pursuit")
+			}
+		}
+	}
+	out := work
 	for g, item := range stats.Groups {
 		put(52+g, 105, item.Sector)
+		if item.Strength == 0 {
+			continue
+		}
 		put(51+item.Sector, 81, item.Strength)
 		put(51+item.Sector, 85, -1)
 	}
 	put(51+stats.Groups[19].Sector, 129, 1)
+	if len(encounters) > 0 {
+		lost, err := retainedWandererLosses(out, encounters)
+		if err != nil {
+			return fail(err.Error())
+		}
+		total := lost
+		for _, group := range stats.Groups {
+			total += group.Strength
+		}
+		if total != 10000 {
+			return fail("encounter force conservation")
+		}
+	}
 	stats.FinalState = rng.State()
-	return out, stats, nil
+	return out, stats, encounters, nil
 }
