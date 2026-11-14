@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-13
 
 This section is the current planning baseline, checked against merged `main`
-through `970c663b` (including merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `44a717cc` (including clean-port replay PR #151 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -157,9 +157,17 @@ is preserved; active players, invalid geometry and invalid final days are reject
 without partial output. Portable oracles reuse the clean-port before-worlds,
 with independent Python synthesis and source/capture provenance checks.
 
-**Next: audit the recovered NPC bootstrap/placement phase for the first bounded
-Go migration, reusing current captures and Python models.** These two Go writers
-are research slices, not complete Go maintenance or production integration. Do not repeat completed
+[Bounded Go Wanderer birth replay](yt-maint/GO_WANDERER_BIRTH_REPLAY.md)
+now ports the first initial NPC creation/placement step. Complete birth records
+and links match 29 existing undisturbed native runs; the three later-encounter
+matrix targets are explicitly excluded from birth validation. Original constants,
+raw helper TIMER seeding, inherited bytes and independent model RNG endpoints
+are retained with portable fixtures and provenance/admission tests.
+
+**Next: audit the recovered Xannoron creation slice—timestamp, ground and bank
+inputs—against existing captures/source and open PRs before a Go migration.**
+Occupied-sector retries, subsequent NPC movement/encounters, complete maintenance
+and production integration remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.

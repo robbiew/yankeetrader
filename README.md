@@ -2418,3 +2418,21 @@ byte. Active-player inputs are rejected atomically. Portable field oracles reuse
 the clean-port before-world fixture; Go race tests and exporter/provenance checks
 run in CI. This remains a research-only writer, with active rankings, NPC phases,
 full Go maintenance and gameplay integration separate. Save format 35 is unchanged.
+
+### Bounded Go Wanderer birth replay
+
+[Initial Wanderer creation/placement](research/yt-maint/GO_WANDERER_BIRTH_REPLAY.md)
+now qualifies `qbmaint.ReplayWandererBirth` against 29 existing undisturbed native
+whole records and sector links. Three late-night targets altered by later combat
+are explicitly excluded from birth validation. Source constants, raw TIMER/RNG
+inputs and inherited record bytes are preserved; no new captures were acquired.
+Go race tests and exporter/provenance checks cover the bounded before-only API.
+RNG endpoints are independent model expectations, separately identified from
+native record/link oracles. Other NPC phases, full maintenance and gameplay
+integration remain separate; save format 35 is unchanged.
+
+The controller cleanup regression keeps its five-second outer hang guard and
+four-second initialization/deadline/cleanup bound, measured from the controller’s
+own recorded interval. Cold Node startup is excluded from that internal deadline
+measurement; forced termination, actual process exit and all six stall phases
+remain required. The production controller and retained capture sources are unchanged.
