@@ -2522,3 +2522,16 @@ unsupported inputs atomically and keep output storage independent. No new captur
 were acquired. Late-clock combat prefixes, active players, message compression,
 general maintenance, DOS save loading, a public orchestration CLI and playable
 integration remain separate; modern save format 35 is unchanged.
+
+### Research-only initial maintenance orchestration
+
+[Initial maintenance API](research/yt-maint/GO_INITIAL_MAINTENANCE_API.md) now
+exposes `qbmaint.ReplayInitialMaintenance`: one readonly before-file map plus an
+explicit phase recipe yields all six DOS files and composed RNG statistics. It
+uses the already qualified ports, births, mobile, base, tail, rank and auxiliary
+slices without target inputs or corrections. All 29 existing plain-route
+six-file captures match through this single API. Errors at any phase return no
+partial files/statistics; files and recipe slices remain unchanged. This is an
+exported research package API, not a CLI, modern save recipe, general DOS save
+loader or playable maintenance replacement. The three late-clock combat prefixes
+and other unsupported profiles remain rejected; no captures or save changes.
