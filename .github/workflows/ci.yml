@@ -277,6 +277,8 @@ jobs:
           python3 scripts/test_export_inactive_rank_fixture.py
           python3 scripts/export_wanderer_birth_fixture.py --check
           python3 scripts/test_export_wanderer_birth_fixture.py
+          python3 scripts/export_xannoron_birth_fixture.py --check
+          python3 scripts/test_export_xannoron_birth_fixture.py
           python3 scripts/verify_inline_add_double.py
           python3 scripts/test_verify_inline_add_double.py
           python3 scripts/verify_single_add.py

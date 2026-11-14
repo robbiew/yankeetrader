@@ -7,7 +7,7 @@ not promises of complete modern parity, and a research-era “next” or
 “unimplemented” statement is not the current project backlog.
 
 Start with the [current reconstruction baseline and ordered backlog](RECONSTRUCTION_PLAN.md#current-work),
-checked against merged main through PR #150, using current save format **35**.
+checked against merged main through PR #153, using current save format **35**.
 The twenty-control source generator, safe projection, playable `qb36-v1` recipes,
 Genesis/admin reset integration and bounded multi-day acceptance are implemented.
 Direct and bounded inline SINGLE arithmetic, SINGLE/DOUBLE INT/FIX and signed16
@@ -88,3 +88,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go inactive rank-cache/watermark writer](yt-maint/GO_INACTIVE_RANK_REPLAY.md): 1,632 exact native fields across 32 retained runs, before-only synthesis and complete unrelated-byte preservation; active rankings excluded.
 
 - [Bounded Go initial Wanderer creation/placement](yt-maint/GO_WANDERER_BIRTH_REPLAY.md): 29 whole native records and links, three declared later-encounter exclusions, raw TIMER seeding and inherited bytes; other NPC phases excluded.
+
+- [Bounded Go Xannoron creation](yt-maint/GO_XANNORON_BIRTH_REPLAY.md): 32 native whole records/HQ links, Go-modeled Wanderer prefix, raw timestamp/rounding/state continuation and explicit admission bounds; no new captures.

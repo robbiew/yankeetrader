@@ -4,10 +4,10 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 
 <a id="current-work"></a>
 
-## Current implementation and next work — checked 2026-11-13
+## Current implementation and next work — checked 2026-11-14
 
 This section is the current planning baseline, checked against merged `main`
-through `44a717cc` (including clean-port replay PR #151 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `c80a51b8` (including bounded maintenance replay PRs #151–153 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -31,7 +31,7 @@ exact DOS maintenance. Source builds default to version 0.1.0; save format is **
 [save compatibility](../README.md#storage-and-recovery) and
 [validation evidence](../evidence/VALIDATION.md) for operating details and limits.
 
-### Current numeric work — checked 2026-11-13
+### Current numeric work — checked 2026-11-14
 
 PRs #117–138 and #140–150 are merged, including direct/inline DOUBLE
 addition/subtraction/multiplication and direct division. The inline /8e slice and its parent are merged. Do not duplicate either slice.
@@ -164,10 +164,18 @@ matrix targets are explicitly excluded from birth validation. Original constants
 raw helper TIMER seeding, inherited bytes and independent model RNG endpoints
 are retained with portable fixtures and provenance/admission tests.
 
-**Next: audit the recovered Xannoron creation slice—timestamp, ground and bank
-inputs—against existing captures/source and open PRs before a Go migration.**
-Occupied-sector retries, subsequent NPC movement/encounters, complete maintenance
-and production integration remain separate. Do not repeat completed
+[Bounded Go Xannoron creation](yt-maint/GO_XANNORON_BIRTH_REPLAY.md) now
+models the next NPC prefix step. All 32 existing native creation records/HQ
+links match after a Go-modeled Wanderer handoff. Raw TIMER division/INT residue,
+separate bank rounding, inherited fields and three-draw state continuation are
+covered by portable fixtures and provenance/admission tests; no captures were
+added. Exact-zero TIMER, zero-ground births and occupied-HQ cases are excluded.
+Native record/field oracles remain separate from independent model RNG endpoints.
+
+**Next: audit initial mobile-group allocation and its RNG continuation against
+existing source/captures and open PRs before selecting the next Go migration.**
+Routes/interceptions, Mercenary Base, complete maintenance and production
+integration remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
 production replay integration, DOS save interoperability and native Windows/live
 BBS acceptance remain separate.
