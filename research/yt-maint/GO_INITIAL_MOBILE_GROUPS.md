@@ -21,7 +21,11 @@ field. Original column-order directed BFS supplies finite routes; no encounter
 handler is implemented.
 
 The default 4151-by-137 layout, all-inactive players (whose cached positions are zero), initial 10000 HQ force,
-empty mobile slots and the two modeled birth planets are required. Invalid
+empty mobile slots, zero pending revenge pointer (record 72/offset 105) and the
+two modeled birth planets are required. The recovered
+[revenge control](../yt-xannor-revenge/RECOVERY.md) activates independently of
+player activity; the inactive-slot-three regression therefore rejects that
+input instead of running ordinary candidate scans. Invalid
 warps, unreachable routes, same-HQ fallback retries, candidate rejection,
 entered planets/mines, protected targets, zero-bound allocations, zero or merged groups and existing hazards fail without
 partial output. The admitted plain routes never change RNG behavior by route

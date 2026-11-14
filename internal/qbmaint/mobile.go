@@ -69,6 +69,10 @@ func ReplayInitialMobileGroups(before []byte, in MobileInputs) ([]byte, MobileSt
 	if string(before[4051*RecordSize:4051*RecordSize+12]) != "The Wanderer" || string(before[4150*RecordSize:4150*RecordSize+8]) != "Xannoron" || get(4151, 73) != -1 {
 		return fail("birth prefix")
 	}
+	// Sector 21 carries a pending player ID, independently of player activity.
+	if read(72, 105)[3] != 0 {
+		return fail("pending revenge outside ordinary initial profile")
+	}
 	var warps [3001][6]int
 	links := 0
 	for s := 1; s <= 3000; s++ {

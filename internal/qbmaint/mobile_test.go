@@ -178,3 +178,21 @@ func TestMobileEnteredPlanetRejected(t *testing.T) {
 		t.Fatal("entered planet accepted or partially mutated")
 	}
 }
+
+func TestMobileRejectsPendingRevengeForInactiveVictim(t *testing.T) {
+	p, x, cases := mobileFixture(t)
+	b, in := mobilePrefix(t, p, x, cases[0])
+	for _, v := range []struct{ r, o, n int }{{72, 105, 3}, {3, 57, 260}} {
+		raw := encode(v.n)
+		at := (v.r-1)*137 + v.o
+		copy(b[at:at+4], raw[:])
+	}
+	if b[2*137+88] != 0 {
+		t.Fatal("victim must remain inactive")
+	}
+	saved := append([]byte(nil), b...)
+	out, st, e := ReplayInitialMobileGroups(b, in)
+	if e == nil || out != nil || st != (MobileStats{}) || !bytes.Equal(b, saved) {
+		t.Fatal("pending revenge accepted or partial mutation")
+	}
+}
