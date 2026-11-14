@@ -100,3 +100,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go initial auxiliary files](yt-maint/GO_INITIAL_AUX_FILES.md): source-qualified bootstrap news/scoreboard, separate native clocks, preserved DOS bytes and 29 complete six-file native output comparisons; no new captures or production integration.
 
 - [Research-only initial maintenance API](yt-maint/GO_INITIAL_MAINTENANCE_API.md): explicit before-file/phase recipe orchestration, 29 complete six-file native comparisons, composed RNG statistics and atomic phase failures; no new captures or playable integration.
+
+- [Bounded Go Wanderer assault](yt-maint/GO_WANDERER_ASSAULT.md): 54 modeled steps across three repeated observed late runs, three complete native final records, raw arithmetic/zero residues and unchanged ordinary-profile admission; integration remains separate.

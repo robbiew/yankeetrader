@@ -203,9 +203,16 @@ with six native files matching in all 29 admitted runs. Input isolation, compose
 RNG statistics and atomic early/late phase failures are tested. This is an exported
 Go research API, not a CLI, modern save recipe or playable maintenance switch.
 
-**Next: audit the three excluded late-clock Wanderer-combat prefixes against
-existing Python recovery, native captures and open PRs before expanding Go
-admission.**
+[Bounded Go Wanderer assault](yt-maint/GO_WANDERER_ASSAULT.md) now implements
+the existing restored neutral zero-ground large-rate encounter primitive. Three
+repeated observed late runs supply the same 18-group scenario; all 54 modeled
+steps and three whole native final Wanderer records match Go chains. Qualified
+raw arithmetic, the 450-batch defect and inherited zero residues are preserved
+only in research. Historical ordinary-profile APIs are not broadened.
+
+**Next: compose the bounded assault into an explicit late-clock mobile/shared-
+pursuit and recipe/auxiliary extension, reusing existing captures and preserving
+the strict historical ordinary-profile APIs.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

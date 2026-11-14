@@ -2549,3 +2549,19 @@ partial files/statistics; files and recipe slices remain unchanged. This is an
 exported research package API, not a CLI, modern save recipe, general DOS save
 loader or playable maintenance replacement. The three late-clock combat prefixes
 and other unsupported profiles remain rejected; no captures or save changes.
+
+### Bounded Go late-clock Wanderer assault primitive
+
+[Wanderer assault evidence](research/yt-maint/GO_WANDERER_ASSAULT.md) now qualifies
+`qbmaint.ReplayWandererAssault` for the restored neutral zero-ground, empty-stock
+planet with rates above 500. The three existing observed late-clock runs each
+contain the same 18-group scenario: 54 modeled steps agree, and each Go chain
+ends at the complete native Wanderer record. Portable gzip containers are checked
+by complete decompressed bytes across Python versions, with recompression and
+corruption regressions. Raw multiply/divide/subtract
+composition, the strict half gate, inherited zero residues and the original
+450-fighter batch defect are preserved only in this research API. No captures
+were added. Modeled step inputs/states are distinct from native final record
+oracles. Routing, shared pursuit, complete late-clock orchestration/news and
+other combat branches remain separate; ordinary 29-run APIs retain their existing
+bounds and modern gameplay/save 35 is unchanged.
