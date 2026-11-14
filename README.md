@@ -2430,3 +2430,9 @@ Go race tests and exporter/provenance checks cover the bounded before-only API.
 RNG endpoints are independent model expectations, separately identified from
 native record/link oracles. Other NPC phases, full maintenance and gameplay
 integration remain separate; save format 35 is unchanged.
+
+The controller cleanup regression keeps its five-second outer hang guard and
+four-second initialization/deadline/cleanup bound, measured from the controller’s
+own recorded interval. Cold Node startup is excluded from that internal deadline
+measurement; forced termination, actual process exit and all six stall phases
+remain required. The production controller and retained capture sources are unchanged.

@@ -1,11 +1,11 @@
 """Exercise real owned-process cleanup with a fake stalled Frida adapter."""
+import datetime
 import json
 import os
 from pathlib import Path
 import shutil
 import subprocess
 import tempfile
-import time
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,13 +50,19 @@ class CaptureDeadlineTests(unittest.TestCase):
                 work=root/'capture';work.mkdir();(work/'launch.json').write_text('["unused-target"]')
                 observer=root/'observer.js';observer.write_text('// test observer')
                 pidfile=root/'owned.pid'
-                started=time.monotonic()
                 result=subprocess.run(['node',str(ROOT/'scripts/capture_maintenance_clock_neutral.mjs'),
                     str(module),str(work),str(observer),'observed','300'],
                     env={**os.environ,'TEST_STALL':phase,'TEST_PID':str(pidfile)},capture_output=True,timeout=5)
                 self.assertEqual(result.returncode,1,result.stderr.decode())
-                self.assertLess(time.monotonic()-started,4)
                 report=json.loads((work/'controller.json').read_text())
+                # Cold Node startup precedes the controller's deadline timer.
+                # Keep the five-second external hang guard, but measure the
+                # initialization/deadline/owned-cleanup interval inside Node.
+                started=datetime.datetime.fromisoformat(report['started'].replace('Z','+00:00'))
+                finished=datetime.datetime.fromisoformat(report['finished'].replace('Z','+00:00'))
+                elapsed=(finished-started).total_seconds()
+                self.assertGreaterEqual(elapsed,0)
+                self.assertLess(elapsed,4,report)
                 self.assertFalse(report['success']);self.assertTrue(report['forced'])
                 self.assertTrue(report['process_exited']);self.assertNotIn('cleanup_error',report)
                 self.assertIn('including initialization',report['error'])
