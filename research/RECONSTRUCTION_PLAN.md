@@ -191,9 +191,15 @@ Combining all implemented Go writers matches the complete YTDATA bytes in 29
 existing plain-route native runs. Endpoint RNG expectations remain modeled, not
 new native measurements; three late-clock combat prefixes remain excluded.
 
-**Next: audit the existing auxiliary-file writers and bounded six-file before-only
-composition against source/captures and open PRs before selecting the next Go
-migration.**
+[Bounded Go initial auxiliary files](yt-maint/GO_INITIAL_AUX_FILES.md) now
+implements five bootstrap auxiliary writers from before files, a Go-modeled
+world and separate sampled news/score clocks. Tests match all six complete native
+files in 29 existing plain-route runs, preserve DOS CRLF/EOF and keep inactive
+fixed-score formatting distinct from general rankings/message compression.
+
+**Next: audit a public research-only six-file orchestration/recipe API and the
+three excluded late-clock combat prefixes against existing evidence and open PRs
+before expanding the admitted Go corpus.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

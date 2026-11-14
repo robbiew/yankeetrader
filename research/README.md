@@ -96,3 +96,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go Mercenary Base birth](yt-maint/GO_MERCENARY_BASE_BIRTH.md): 29 complete existing native records/links, Go-modeled birth/mobile prefix, raw inherited FAC residues and one-draw reseed continuation; no new captures.
 
 - [Bounded Go initial NPC tail](yt-maint/GO_INITIAL_NPC_TAIL.md): 29 whole native YTDATA worlds match Go writer composition; eager desertion/conditional lottery RNG is separately modeled, with no new captures or six-file claim.
+
+- [Bounded Go initial auxiliary files](yt-maint/GO_INITIAL_AUX_FILES.md): source-qualified bootstrap news/scoreboard, separate native clocks, preserved DOS bytes and 29 complete six-file native output comparisons; no new captures or production integration.

@@ -1,0 +1,509 @@
+{
+  "format": "qb-initial-aux-v1",
+  "sources": {
+    "scripts/replay_maintenance_ports.py": "d8a35d817a6f5442b98e158fb8bbc95607d7deaedf8f3ce20e0f3110553927aa",
+    "scripts/export_clean_port_fixture.py": "50211e188f3fbacc13b82947f2eff4a52d336d6fea5ff8d3d9de7808d1996c51",
+    "scripts/verify_maintenance_calendar.py": "e06fc0e1094042ea7b4189e1ca7eb3ad120daa70d5a9399dff5af634cc15e6fa",
+    "scripts/verify_maintenance_clock_matrix.py": "de62a4eb8259506599784caf8bd45657974c55f23130021f89f1b8e9f6edd34d",
+    "research/yt-maint/calendar-pins.json": "7382f01703145f2f2d37afab6a297bb18d226a5a65d6baf682f94ae63812ffc2",
+    "research/yt-maint/clock-matrix-pins.json": "6156ee078a8a00edbfe6ad89e44fa8fe592295f025b9285582fdc65b3b7310f7",
+    "scripts/export_xannoron_birth_fixture.py": "85661674cbbf3d706fc7848101a4130c61bedd874fae77b3fffb0141ff842cd9",
+    "scripts/export_wanderer_birth_fixture.py": "2a3a5be6c63cd9196a70e65b4c4bf2461ca0df40beecf6d3154a45f0f9d48f00",
+    "scripts/replay_maintenance_npcs.py": "0015fae2dc2aa399706b7e45db487a7fdbaea4168213e80cbbd24fa7d5489cf2",
+    "archive/dos-original/YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6",
+    "scripts/export_mobile_groups_fixture.py": "5f79e8d188201bc8dce1bbbb64f39582b04660672e0023bfeeaa6e3c8c28f16e",
+    "scripts/export_mercenary_base_fixture.py": "06f63e468927ea0dac26a0bcfc4c0a32afea699b0c2572e66ca356061538c478",
+    "scripts/export_npc_tail_fixture.py": "4af75e18aa0ba21c1ede5c239de1bedcfc1af7014f994ba9279bd5ddc30c4746",
+    "scripts/export_initial_aux_fixture.py": "7ba063910039c67c9afab75906946c715f5b2148877ee58a13e105cb0986060f",
+    "scripts/replay_maintenance_aux.py": "c42f77ac41b2750e8b04e9016d580904da08fa21346597741ccc96aa7aafc24a"
+  },
+  "before_aux": {
+    "c8d2eb63b2c3da66d5b50ad5c020cc04bcfd27e900c93d47aba358a636debbbc": {
+      "YTNAME.DAT": "RHVtbXksRHVtbXksRHVtbXksRHVtbXkNCho=",
+      "YTNEWS.DAT": "MDA6MDA6MDEgMTEtMDMtMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQowMDowMDowMSAxMS0wMy0yMDI2ICoqKioqKioqKioqKioqKioqKioqKioNCjAwOjAwOjAxIDExLTAzLTIwMjYgKiogICAgICAgICAgICAgICAgICAqKg0KMDA6MDA6MDEgMTEtMDMtMjAyNiAqKiBHYW1lIEluaXRpYWxpemVkICoqDQowMDowMDowMSAxMS0wMy0yMDI2ICoqICAgICAgICAgICAgICAgICAgKioNCjAwOjAwOjAxIDExLTAzLTIwMjYgKioqKioqKioqKioqKioqKioqKioqKg0KMDA6MDA6MDEgMTEtMDMtMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQoa"
+    },
+    "daaed08277f86f42e5b1c79cb8477303484db66b9187c8f9166f0c2bf9243788": {
+      "YTNAME.DAT": "RHVtbXksRHVtbXksRHVtbXksRHVtbXkNCho=",
+      "YTNEWS.DAT": "MDA6MDA6MDEgMDEtMDEtMjAyNyAqKioqKioqKioqKioqKioqKioqKioqDQowMDowMDowMSAwMS0wMS0yMDI3ICoqKioqKioqKioqKioqKioqKioqKioNCjAwOjAwOjAxIDAxLTAxLTIwMjcgKiogICAgICAgICAgICAgICAgICAqKg0KMDA6MDA6MDEgMDEtMDEtMjAyNyAqKiBHYW1lIEluaXRpYWxpemVkICoqDQowMDowMDowMSAwMS0wMS0yMDI3ICoqICAgICAgICAgICAgICAgICAgKioNCjAwOjAwOjAxIDAxLTAxLTIwMjcgKioqKioqKioqKioqKioqKioqKioqKg0KMDA6MDA6MDEgMDEtMDEtMjAyNyAqKioqKioqKioqKioqKioqKioqKioqDQoa"
+    },
+    "d9d4a4538deb9e0aa60c795dd4b7a5271b6e97fbe723d6ef10128ffc1663802d": {
+      "YTNAME.DAT": "RHVtbXksRHVtbXksRHVtbXksRHVtbXkNCho=",
+      "YTNEWS.DAT": "MDA6MDA6MDEgMDItMjktMjAyOCAqKioqKioqKioqKioqKioqKioqKioqDQowMDowMDowMSAwMi0yOS0yMDI4ICoqKioqKioqKioqKioqKioqKioqKioNCjAwOjAwOjAxIDAyLTI5LTIwMjggKiogICAgICAgICAgICAgICAgICAqKg0KMDA6MDA6MDEgMDItMjktMjAyOCAqKiBHYW1lIEluaXRpYWxpemVkICoqDQowMDowMDowMSAwMi0yOS0yMDI4ICoqICAgICAgICAgICAgICAgICAgKioNCjAwOjAwOjAxIDAyLTI5LTIwMjggKioqKioqKioqKioqKioqKioqKioqKg0KMDA6MDA6MDEgMDItMjktMjAyOCAqKioqKioqKioqKioqKioqKioqKioqDQoa"
+    },
+    "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da": {
+      "YTNAME.DAT": "RHVtbXksRHVtbXksRHVtbXksRHVtbXkNCho=",
+      "YTNEWS.DAT": "MDA6MDA6MDEgMTEtMDItMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQowMDowMDowMSAxMS0wMi0yMDI2ICoqKioqKioqKioqKioqKioqKioqKioNCjAwOjAwOjAxIDExLTAyLTIwMjYgKiogICAgICAgICAgICAgICAgICAqKg0KMDA6MDA6MDEgMTEtMDItMjAyNiAqKiBHYW1lIEluaXRpYWxpemVkICoqDQowMDowMDowMSAxMS0wMi0yMDI2ICoqICAgICAgICAgICAgICAgICAgKioNCjAwOjAwOjAxIDExLTAyLTIwMjYgKioqKioqKioqKioqKioqKioqKioqKg0KMDA6MDA6MDEgMTEtMDItMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQoa"
+    }
+  },
+  "excluded_later_encounters": [
+    "matrix/late/observed-a",
+    "matrix/late/observed-b",
+    "matrix/late/observed-c"
+  ],
+  "cases": [
+    {
+      "name": "calendar/next-day/observed-a",
+      "before_aux": "c8d2eb63b2c3da66d5b50ad5c020cc04bcfd27e900c93d47aba358a636debbbc",
+      "news_date": "2026-11-03",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "f4a668df28cedbab1de85ece3578c059b369582eb3bc2c8c00b1916cf5239c4e",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "6c4b8008a84d1b5b87045e58d6e543ff8143a8d57fcc567fc92cc4121fc225bf",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c8962b6819972c65085cf17eb6dbe9fd3d21b45a751726b706024405681950e5",
+        "YTSCORE.ASC": "e00d28823474f4b2cf0fdea8a0d40aec80ad4219a53ad9c1983548c21c8bbef0"
+      }
+    },
+    {
+      "name": "calendar/next-day/observed-b",
+      "before_aux": "c8d2eb63b2c3da66d5b50ad5c020cc04bcfd27e900c93d47aba358a636debbbc",
+      "news_date": "2026-11-03",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "f4a668df28cedbab1de85ece3578c059b369582eb3bc2c8c00b1916cf5239c4e",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "6c4b8008a84d1b5b87045e58d6e543ff8143a8d57fcc567fc92cc4121fc225bf",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c8962b6819972c65085cf17eb6dbe9fd3d21b45a751726b706024405681950e5",
+        "YTSCORE.ASC": "e00d28823474f4b2cf0fdea8a0d40aec80ad4219a53ad9c1983548c21c8bbef0"
+      }
+    },
+    {
+      "name": "calendar/new-year/observed-a",
+      "before_aux": "daaed08277f86f42e5b1c79cb8477303484db66b9187c8f9166f0c2bf9243788",
+      "news_date": "2027-01-01",
+      "news_clock": "00:00:00",
+      "score_date": "2027-01-01",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "202337451ea390d0b20a89c4cf223755f3fa5efc7932ee9855c5ee4034f46ab6",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "07901bde0493ec123c5cdad35c4fa32add64125f0511e05e90a74942e9352759",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "3ead9803ab7162a0aa4c21608eb7d969c1ee37f312288554316b58be96b215f0",
+        "YTSCORE.ASC": "2f6387d9cef22d07859666c0c0eccfdd7c7b4ab707b71cf19347a338e88ab176"
+      }
+    },
+    {
+      "name": "calendar/new-year/observed-b",
+      "before_aux": "daaed08277f86f42e5b1c79cb8477303484db66b9187c8f9166f0c2bf9243788",
+      "news_date": "2027-01-01",
+      "news_clock": "00:00:00",
+      "score_date": "2027-01-01",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "202337451ea390d0b20a89c4cf223755f3fa5efc7932ee9855c5ee4034f46ab6",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "07901bde0493ec123c5cdad35c4fa32add64125f0511e05e90a74942e9352759",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "3ead9803ab7162a0aa4c21608eb7d969c1ee37f312288554316b58be96b215f0",
+        "YTSCORE.ASC": "2f6387d9cef22d07859666c0c0eccfdd7c7b4ab707b71cf19347a338e88ab176"
+      }
+    },
+    {
+      "name": "calendar/leap-day/observed-a",
+      "before_aux": "d9d4a4538deb9e0aa60c795dd4b7a5271b6e97fbe723d6ef10128ffc1663802d",
+      "news_date": "2028-02-29",
+      "news_clock": "00:00:00",
+      "score_date": "2028-02-29",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "5b1d27eeaa7005134c0261ca89e087143386e134437a4d6bcad6b684346a2232",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1db9e6a4ed58cb1dca016be01227031ae06f41cdc29ec40253c074d9ad1ae67f",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "ee0afe57be0b82e9114b50206a761fab50ba57d772893453209dd2c2a37856e4",
+        "YTSCORE.ASC": "598f5f63aeba11d23ece8f7336da91a1c4c4f9e89b8a8504fa84115ff509da59"
+      }
+    },
+    {
+      "name": "calendar/leap-day/observed-b",
+      "before_aux": "d9d4a4538deb9e0aa60c795dd4b7a5271b6e97fbe723d6ef10128ffc1663802d",
+      "news_date": "2028-02-29",
+      "news_clock": "00:00:00",
+      "score_date": "2028-02-29",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "5b1d27eeaa7005134c0261ca89e087143386e134437a4d6bcad6b684346a2232",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1db9e6a4ed58cb1dca016be01227031ae06f41cdc29ec40253c074d9ad1ae67f",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "ee0afe57be0b82e9114b50206a761fab50ba57d772893453209dd2c2a37856e4",
+        "YTSCORE.ASC": "598f5f63aeba11d23ece8f7336da91a1c4c4f9e89b8a8504fa84115ff509da59"
+      }
+    },
+    {
+      "name": "calendar/noon/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "12:34:00",
+      "score_date": "2026-11-02",
+      "score_clock": "12:34:00",
+      "native_files": {
+        "YTDATA.DAT": "ba9322593fd7160107bd684245e847416137f43c93c72d8decd9e5c078c2886a",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c20324e5b00556f72534aa9fc959373bf4a51913d35fad9ab0e2b0e256e3fd00",
+        "YTSCORE.ASC": "bb6dc870e6a37110a6644d14e890c29204bd3c642e73b88bb9f6194c507e3ee0"
+      }
+    },
+    {
+      "name": "calendar/noon/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "12:34:00",
+      "score_date": "2026-11-02",
+      "score_clock": "12:34:00",
+      "native_files": {
+        "YTDATA.DAT": "ba9322593fd7160107bd684245e847416137f43c93c72d8decd9e5c078c2886a",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c20324e5b00556f72534aa9fc959373bf4a51913d35fad9ab0e2b0e256e3fd00",
+        "YTSCORE.ASC": "bb6dc870e6a37110a6644d14e890c29204bd3c642e73b88bb9f6194c507e3ee0"
+      }
+    },
+    {
+      "name": "matrix/shift-two/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "00:00:02",
+      "score_date": "2026-11-02",
+      "score_clock": "00:00:02",
+      "native_files": {
+        "YTDATA.DAT": "0cd3985c84668e50285c1592fc3c0f7a71d8faefdff30de25d20ab2c78ac655f",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "5e2dc90c6e620f12f54207ac93da554a4fec76cd570f43e831c183f8b5811152",
+        "YTSCORE.ASC": "19246f1e8e9cfe685adb30cbc4d9687318f3baeb54e99167989c75273103a609"
+      }
+    },
+    {
+      "name": "matrix/shift-two/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "00:00:02",
+      "score_date": "2026-11-02",
+      "score_clock": "00:00:02",
+      "native_files": {
+        "YTDATA.DAT": "0cd3985c84668e50285c1592fc3c0f7a71d8faefdff30de25d20ab2c78ac655f",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "5e2dc90c6e620f12f54207ac93da554a4fec76cd570f43e831c183f8b5811152",
+        "YTSCORE.ASC": "19246f1e8e9cfe685adb30cbc4d9687318f3baeb54e99167989c75273103a609"
+      }
+    },
+    {
+      "name": "matrix/shift-two/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "00:00:02",
+      "score_date": "2026-11-02",
+      "score_clock": "00:00:02",
+      "native_files": {
+        "YTDATA.DAT": "0cd3985c84668e50285c1592fc3c0f7a71d8faefdff30de25d20ab2c78ac655f",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "5e2dc90c6e620f12f54207ac93da554a4fec76cd570f43e831c183f8b5811152",
+        "YTSCORE.ASC": "19246f1e8e9cfe685adb30cbc4d9687318f3baeb54e99167989c75273103a609"
+      }
+    },
+    {
+      "name": "matrix/noon/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "12:00:00",
+      "score_date": "2026-11-02",
+      "score_clock": "12:00:00",
+      "native_files": {
+        "YTDATA.DAT": "9792a4adf107fa47714dd92435f104ad091b492b92300b64cef60f3f89da3aed",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "453785290ea2daf8bf7a7772f9311e3d49a9cab8a619b448e59951a7d0e9e3b3",
+        "YTSCORE.ASC": "e86f79b2629bd6311bc5bb2635d6f0f73970ff5db4f0ac3eafff6f509b47f484"
+      }
+    },
+    {
+      "name": "matrix/noon/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "12:00:00",
+      "score_date": "2026-11-02",
+      "score_clock": "12:00:00",
+      "native_files": {
+        "YTDATA.DAT": "9792a4adf107fa47714dd92435f104ad091b492b92300b64cef60f3f89da3aed",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "453785290ea2daf8bf7a7772f9311e3d49a9cab8a619b448e59951a7d0e9e3b3",
+        "YTSCORE.ASC": "e86f79b2629bd6311bc5bb2635d6f0f73970ff5db4f0ac3eafff6f509b47f484"
+      }
+    },
+    {
+      "name": "matrix/noon/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "12:00:00",
+      "score_date": "2026-11-02",
+      "score_clock": "12:00:00",
+      "native_files": {
+        "YTDATA.DAT": "9792a4adf107fa47714dd92435f104ad091b492b92300b64cef60f3f89da3aed",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "453785290ea2daf8bf7a7772f9311e3d49a9cab8a619b448e59951a7d0e9e3b3",
+        "YTSCORE.ASC": "e86f79b2629bd6311bc5bb2635d6f0f73970ff5db4f0ac3eafff6f509b47f484"
+      }
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-02",
+      "score_clock": "24:00:00",
+      "native_files": {
+        "YTDATA.DAT": "331ade472136f26099b05068fa6afb8e9fbb96c376812ba4fd4c4d064b828da8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "cb1148894903f59b5837c998a292aee7661e132f5352a83efeceb56d9c973e07"
+      }
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-02",
+      "score_clock": "24:00:00",
+      "native_files": {
+        "YTDATA.DAT": "331ade472136f26099b05068fa6afb8e9fbb96c376812ba4fd4c4d064b828da8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "cb1148894903f59b5837c998a292aee7661e132f5352a83efeceb56d9c973e07"
+      }
+    },
+    {
+      "name": "matrix/near-midnight-100k/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-02",
+      "score_clock": "24:00:00",
+      "native_files": {
+        "YTDATA.DAT": "331ade472136f26099b05068fa6afb8e9fbb96c376812ba4fd4c4d064b828da8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "cb1148894903f59b5837c998a292aee7661e132f5352a83efeceb56d9c973e07"
+      }
+    },
+    {
+      "name": "matrix/rollover/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:08",
+      "native_files": {
+        "YTDATA.DAT": "b47edb824b00ebb58852f7b112ccfcb9257295bc4937349c47c16bf3cfb5bb48",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "eb8564bb3bad7a3d759fd9346b2edb3f2150453744b9903521f57b01ccc6674a"
+      }
+    },
+    {
+      "name": "matrix/rollover/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:08",
+      "native_files": {
+        "YTDATA.DAT": "b47edb824b00ebb58852f7b112ccfcb9257295bc4937349c47c16bf3cfb5bb48",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "eb8564bb3bad7a3d759fd9346b2edb3f2150453744b9903521f57b01ccc6674a"
+      }
+    },
+    {
+      "name": "matrix/rollover/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-02",
+      "news_clock": "23:59:59",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:08",
+      "native_files": {
+        "YTDATA.DAT": "b47edb824b00ebb58852f7b112ccfcb9257295bc4937349c47c16bf3cfb5bb48",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "9dd9e7e2162df648ef8a53cae010c8dd65cf506594176ac5410468fe79a147c7",
+        "YTSCORE.ASC": "eb8564bb3bad7a3d759fd9346b2edb3f2150453744b9903521f57b01ccc6674a"
+      }
+    },
+    {
+      "name": "matrix/next-day/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-03",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "39cd295b8bd96ca1cd5f6f53617cf98696ba66019436e57fc585d2c121ff7d85",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c8962b6819972c65085cf17eb6dbe9fd3d21b45a751726b706024405681950e5",
+        "YTSCORE.ASC": "e00d28823474f4b2cf0fdea8a0d40aec80ad4219a53ad9c1983548c21c8bbef0"
+      }
+    },
+    {
+      "name": "matrix/next-day/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-03",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "39cd295b8bd96ca1cd5f6f53617cf98696ba66019436e57fc585d2c121ff7d85",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c8962b6819972c65085cf17eb6dbe9fd3d21b45a751726b706024405681950e5",
+        "YTSCORE.ASC": "e00d28823474f4b2cf0fdea8a0d40aec80ad4219a53ad9c1983548c21c8bbef0"
+      }
+    },
+    {
+      "name": "matrix/next-day/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-03",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-03",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "39cd295b8bd96ca1cd5f6f53617cf98696ba66019436e57fc585d2c121ff7d85",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "c8962b6819972c65085cf17eb6dbe9fd3d21b45a751726b706024405681950e5",
+        "YTSCORE.ASC": "e00d28823474f4b2cf0fdea8a0d40aec80ad4219a53ad9c1983548c21c8bbef0"
+      }
+    },
+    {
+      "name": "matrix/eleven-days/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-13",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-13",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "493d748afe82fd4a8adcff82ec9c8bb028a21d2803e856b077c478b81b98cb0a",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "d1ab8ba5cafb60b9cecbf52b020244b09b47f507755c1e14e292e228891ab6e0",
+        "YTSCORE.ASC": "db90b6e8e72fb0d37ff0a6492b00d23dc78203f4f29c4c141f91cca9f69be4e8"
+      }
+    },
+    {
+      "name": "matrix/eleven-days/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-13",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-13",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "493d748afe82fd4a8adcff82ec9c8bb028a21d2803e856b077c478b81b98cb0a",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "d1ab8ba5cafb60b9cecbf52b020244b09b47f507755c1e14e292e228891ab6e0",
+        "YTSCORE.ASC": "db90b6e8e72fb0d37ff0a6492b00d23dc78203f4f29c4c141f91cca9f69be4e8"
+      }
+    },
+    {
+      "name": "matrix/eleven-days/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2026-11-13",
+      "news_clock": "00:00:00",
+      "score_date": "2026-11-13",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "493d748afe82fd4a8adcff82ec9c8bb028a21d2803e856b077c478b81b98cb0a",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "d1ab8ba5cafb60b9cecbf52b020244b09b47f507755c1e14e292e228891ab6e0",
+        "YTSCORE.ASC": "db90b6e8e72fb0d37ff0a6492b00d23dc78203f4f29c4c141f91cca9f69be4e8"
+      }
+    },
+    {
+      "name": "matrix/next-year/observed-a",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2027-01-01",
+      "news_clock": "00:00:00",
+      "score_date": "2027-01-01",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "cc55869ede2bc022b0fbbc8423dafe827d9f4638c9ad03a905afbbbdd79f3efb",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "3ead9803ab7162a0aa4c21608eb7d969c1ee37f312288554316b58be96b215f0",
+        "YTSCORE.ASC": "2f6387d9cef22d07859666c0c0eccfdd7c7b4ab707b71cf19347a338e88ab176"
+      }
+    },
+    {
+      "name": "matrix/next-year/observed-b",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2027-01-01",
+      "news_clock": "00:00:00",
+      "score_date": "2027-01-01",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "cc55869ede2bc022b0fbbc8423dafe827d9f4638c9ad03a905afbbbdd79f3efb",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "3ead9803ab7162a0aa4c21608eb7d969c1ee37f312288554316b58be96b215f0",
+        "YTSCORE.ASC": "2f6387d9cef22d07859666c0c0eccfdd7c7b4ab707b71cf19347a338e88ab176"
+      }
+    },
+    {
+      "name": "matrix/next-year/observed-c",
+      "before_aux": "c513796097fa6da1e27e301854cf3ab317208daa364051b90bf5691dcdee65da",
+      "news_date": "2027-01-01",
+      "news_clock": "00:00:00",
+      "score_date": "2027-01-01",
+      "score_clock": "00:00:00",
+      "native_files": {
+        "YTDATA.DAT": "cc55869ede2bc022b0fbbc8423dafe827d9f4638c9ad03a905afbbbdd79f3efb",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "3ead9803ab7162a0aa4c21608eb7d969c1ee37f312288554316b58be96b215f0",
+        "YTSCORE.ASC": "2f6387d9cef22d07859666c0c0eccfdd7c7b4ab707b71cf19347a338e88ab176"
+      }
+    }
+  ]
+}
