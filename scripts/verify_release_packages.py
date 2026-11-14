@@ -53,9 +53,10 @@ def verify(directory):
         assert root == 'yankeetrader-' + info['version'] + '-' + target
         binary = 'yt.exe' if target.startswith('windows') else 'yt'
         assert info['binary'] == binary and hashlib.sha256(files[binary]).hexdigest() == info['binary_sha256']
-        assert {'README.md','SYSOP.md','SYSOP_CHEAT_SHEET.md','RELEASE_INFO.json','CREDITS.txt',binary} <= set(files)
-        assert all(name in {binary,'README.md','SYSOP.md','SYSOP_CHEAT_SHEET.md','RELEASE_INFO.json','CREDITS.txt'} or name.startswith('licenses/') for name in files), 'unexpected bundled file'
+        assert {'README.md','SYSOP.md','SYSOP_CHEAT_SHEET.md','RELEASE_INFO.json','CREDITS.txt','LICENSE','NOTICE.md',binary} <= set(files)
+        assert all(name in {binary,'README.md','SYSOP.md','SYSOP_CHEAT_SHEET.md','RELEASE_INFO.json','CREDITS.txt','LICENSE','NOTICE.md'} or name.startswith('licenses/') for name in files), 'unexpected bundled file'
         assert b'Original game by Alan Davenport' in files['CREDITS.txt']
+        assert files['LICENSE'].startswith(b'MIT License') and b'Alan Davenport' in files['NOTICE.md']
         assert b'-init' in files['SYSOP_CHEAT_SHEET.md'] and b'-maint' in files['SYSOP_CHEAT_SHEET.md']
         assert b'@VERSION@' not in files['README.md'] and b'](../' not in files['SYSOP.md']
         data = files[binary]

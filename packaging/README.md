@@ -17,3 +17,7 @@ save schema and binary hash. Compare the downloaded archive to the release's
 `SHA256SUMS.txt`. Test the door with your BBS transport before opening it to callers.
 
 Full documentation and source: [GitHub](https://github.com/robbiew/yankeetrader/tree/@REF@).
+
+Licence: the Resurrection code is MIT-licensed ([LICENSE](LICENSE)). The original
+Yankee Trader 3.6 artwork and text embedded in the executable remain Copyright
+Alan Davenport; see [NOTICE.md](NOTICE.md). Dependency licences are under `licenses/`.

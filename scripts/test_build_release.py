@@ -31,6 +31,8 @@ class ReleasePackageTests(unittest.TestCase):
                 binary='yt.exe' if target.startswith('windows') else 'yt'
                 self.assertEqual(files[binary],b'binary-control')
                 self.assertEqual(files['licenses/test-LICENSE.txt'],b'license-control')
+                self.assertTrue(files['LICENSE'].startswith(b'MIT License'))
+                self.assertIn(b'Alan Davenport',files['NOTICE.md'])
                 manifest=json.loads(files['RELEASE_INFO.json'])
                 self.assertEqual((manifest['version'],manifest['target'],manifest['binary']),('0.1.0',target,binary))
                 self.assertNotIn(b'](../',files['SYSOP.md'])
