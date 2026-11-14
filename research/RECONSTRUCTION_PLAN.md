@@ -197,9 +197,15 @@ world and separate sampled news/score clocks. Tests match all six complete nativ
 files in 29 existing plain-route runs, preserve DOS CRLF/EOF and keep inactive
 fixed-score formatting distinct from general rankings/message compression.
 
-**Next: audit a public research-only six-file orchestration/recipe API and the
-three excluded late-clock combat prefixes against existing evidence and open PRs
-before expanding the admitted Go corpus.**
+[Research-only initial maintenance API](yt-maint/GO_INITIAL_MAINTENANCE_API.md) now
+composes the qualified slices from one before-file map and explicit phase recipe,
+with six native files matching in all 29 admitted runs. Input isolation, composed
+RNG statistics and atomic early/late phase failures are tested. This is an exported
+Go research API, not a CLI, modern save recipe or playable maintenance switch.
+
+**Next: audit the three excluded late-clock Wanderer-combat prefixes against
+existing Python recovery, native captures and open PRs before expanding Go
+admission.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

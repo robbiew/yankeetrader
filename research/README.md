@@ -98,3 +98,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go initial NPC tail](yt-maint/GO_INITIAL_NPC_TAIL.md): 29 whole native YTDATA worlds match Go writer composition; eager desertion/conditional lottery RNG is separately modeled, with no new captures or six-file claim.
 
 - [Bounded Go initial auxiliary files](yt-maint/GO_INITIAL_AUX_FILES.md): source-qualified bootstrap news/scoreboard, separate native clocks, preserved DOS bytes and 29 complete six-file native output comparisons; no new captures or production integration.
+
+- [Research-only initial maintenance API](yt-maint/GO_INITIAL_MAINTENANCE_API.md): explicit before-file/phase recipe orchestration, 29 complete six-file native comparisons, composed RNG statistics and atomic phase failures; no new captures or playable integration.
