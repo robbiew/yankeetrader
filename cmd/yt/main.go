@@ -43,7 +43,7 @@ func run() error {
 	local := flag.String("local", "", "local player name")
 	compact := flag.Bool("compact", false, "skip DOS startup and use the compact command interface")
 	ascii := flag.Bool("ascii", false, "disable ANSI color and cursor control")
-	drop := flag.String("drop", "", "Door32 drop-file directory")
+	drop := flag.String("drop", "", "Door32 drop-file directory or DOORDROP.INI file (default $DOORDROP_INI)")
 	system := flag.String("system", "bbs", "stable BBS identity namespace")
 	flag.Parse()
 	if *showVersion {
@@ -155,12 +155,17 @@ func run() error {
 		})
 		return printMaintenanceReceipt(os.Stdout, receipt, e)
 	}
+	if *local == "" && *drop == "" {
+		// DOORDROP.INI 1.0: a door not given a path uses DOORDROP_INI.
+		*drop = os.Getenv("DOORDROP_INI")
+	}
 	if (*local == "") == (*drop == "") {
-		return errors.New("choose -local <name> or -drop <directory>")
+		return errors.New("choose -local <name> or -drop <directory or DOORDROP.INI>")
 	}
 	realName := *local
 	ansi := !*ascii
 	alias, identity, minutes := *local, "local:"+strings.ToLower(strings.TrimSpace(*local)), 180
+	sound := true
 	if *drop != "" {
 		info, e := gd.OpenSession(*drop)
 		if e != nil {
@@ -170,12 +175,21 @@ func run() error {
 		ansi = info.Emulation == 1 && !*ascii
 		alias = info.Alias
 		minutes = info.TimeLeft
-		uid, name, e := door32Identity(*drop)
-		if e != nil {
-			return e
+		if info.INI != nil {
+			identity, realName, minutes, e = doorDropIdentity(info, *system)
+			if e != nil {
+				fmt.Fprint(gd.Output(), "\r\nYANKEE TRADER: "+strings.ToUpper(e.Error())+"\r\n")
+				return e
+			}
+			sound = info.INI.SoundAllowed()
+		} else {
+			uid, name, e := door32Identity(*drop)
+			if e != nil {
+				return e
+			}
+			realName = name
+			identity = "door32:" + *system + ":" + strconv.Itoa(uid)
 		}
-		realName = name
-		identity = "door32:" + *system + ":" + strconv.Itoa(uid)
 	}
 	if minutes < 1 || minutes > 1440 {
 		return errors.New("session time must be between 1 and 1440 minutes")
@@ -184,8 +198,45 @@ func run() error {
 		return e
 	}
 	defer gd.CloseSession()
-	music := ansi && gd.IsCTerm()
+	music := ansi && sound && gd.IsCTerm()
 	return (door.Session{Music: music, RealName: realName, Classic: !*compact, ANSI: ansi, Local: *drop == "", Store: st, Terminal: &door.GoDoors{}, Identity: identity, Alias: alias, Deadline: time.Now().Add(time.Duration(minutes) * time.Minute)}).Run()
+}
+
+// doorDropIdentity maps DOORDROP.INI 1.0 metadata to a player identity. USER_KEY
+// never changes for an account and is never reused, unlike USER_NUMBER. A guest
+// account is shared by unregistered callers, so it gets no persistent ship.
+// A missing TIME_LEFT means no host limit, capped at the door's 24-hour maximum.
+func doorDropIdentity(info gd.DropFile, system string) (identity, realName string, minutes int, err error) {
+	ini := info.INI
+	if ini.Role == "guest" {
+		return "", "", 0, errors.New("guest accounts cannot play; please log in as a registered user")
+	}
+	key := ini.Values["USER_KEY"]
+	if !validUserKey(key) {
+		return "", "", 0, errors.New("DOORDROP.INI USER_KEY is missing or invalid")
+	}
+	// Empty falls back to the alias when choosing a new player's default name.
+	realName = ini.Values["USER_REALNAME"]
+	minutes = 1440
+	if ini.TimeLeftSeconds != nil && *ini.TimeLeftSeconds < 1440*60 {
+		minutes = info.TimeLeft
+	}
+	return "doordrop:" + system + ":" + key, realName, minutes, nil
+}
+
+// USER_KEY: ASCII letters, digits, '-', '_' and '.', starting with a letter
+// or digit, at most 64 characters.
+func validUserKey(key string) bool {
+	if key == "" || len(key) > 64 {
+		return false
+	}
+	for i, c := range key {
+		alnum := c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9'
+		if !alnum && (i == 0 || c != '-' && c != '_' && c != '.') {
+			return false
+		}
+	}
+	return true
 }
 
 // Door32 line five is the stable BBS user record number; alias is display only.

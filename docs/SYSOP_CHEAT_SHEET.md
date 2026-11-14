@@ -111,6 +111,13 @@ absolute `-data` directory and stable `-system` value. Changing `-system` change
 caller identity mapping. The Windows launch example assumes you place `yt.exe`
 at that stable path when upgrading.
 
+DOORDROP.INI 1.0 (for example Synchronet's DOORDROP.INI drop file type) also
+works: pass the file's full path as `-drop`, such as
+`-drop /srv/bbs/node1/DOORDROP.INI`, or omit `-drop` and let the door read
+`DOORDROP_INI`. Configure the door for CP437 text and `stdio` (or `socket` on
+Windows). Identity uses `USER_KEY`, which differs from the Door32 identity, so
+pick one drop file type per season. Guest accounts can't play.
+
 Configure Door32 transport in your BBS: Linux uses the caller's standard I/O;
 Windows requires the supported inherited Door32 socket. The drop file alone does
 not connect a caller. Caller minutes come from the drop file. Live BBS and native
