@@ -30,8 +30,17 @@ def build():
         key=parent.SHA(first);worlds[key]=parent.packed(first);rows.append(dict(name='matrix/late/'+mode,before_sha256=key,events=events,native_record_hex=native.hex()))
     sources={**d['sources'],'scripts/replay_maintenance_npcs.py':parent.SHA((parent.ROOT/'scripts/replay_maintenance_npcs.py').read_bytes()),'scripts/replay_maintenance_wanderer.py':parent.SHA(Path(encounter.__file__).read_bytes()),'scripts/export_wanderer_assault_fixture.py':parent.SHA(Path(__file__).read_bytes())}
     return dict(format='qb-wanderer-assault-v1',sources=sources,worlds=worlds,cases=rows)
+def validate(document,expected):
+    # These are derived portable containers, not original native observations.
+    # Qualify complete uncompressed worlds across Python/zlib versions.
+    import copy
+    def normalized(d):
+        d=copy.deepcopy(d)
+        d['worlds']={k:base64.b64encode(gzip.decompress(base64.b64decode(v,validate=True))).decode()for k,v in d['worlds'].items()}
+        return d
+    assert normalized(document)==normalized(expected),'portable assault fixture equals modeled prefixes/steps and native final records'
 def check(path=FIXTURE):
-    d=build();assert json.loads(Path(path).read_text())==d,'portable assault fixture equals modeled prefixes/steps and native final records';return d
+    d=build();validate(json.loads(Path(path).read_text()),d);return d
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--check',action='store_true');a=p.parse_args();d=check()if a.check else build()
     if not a.check:FIXTURE.write_text(json.dumps(d,indent=2)+'\n')

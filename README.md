@@ -2542,7 +2542,9 @@ and other unsupported profiles remain rejected; no captures or save changes.
 `qbmaint.ReplayWandererAssault` for the restored neutral zero-ground, empty-stock
 planet with rates above 500. The three existing observed late-clock runs each
 contain the same 18-group scenario: 54 modeled steps agree, and each Go chain
-ends at the complete native Wanderer record. Raw multiply/divide/subtract
+ends at the complete native Wanderer record. Portable gzip containers are checked
+by complete decompressed bytes across Python versions, with recompression and
+corruption regressions. Raw multiply/divide/subtract
 composition, the strict half gate, inherited zero residues and the original
 450-fighter batch defect are preserved only in this research API. No captures
 were added. Modeled step inputs/states are distinct from native final record

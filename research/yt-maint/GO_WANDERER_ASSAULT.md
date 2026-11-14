@@ -40,6 +40,11 @@ bytes except the preceding modeled Wanderer changes; this is asserted before
 export. The complete independent Python six-file synthesis still matches all
 native outputs before the final Wanderer record is retained as a native oracle.
 
+Derived portable prefix containers are compared by complete decompressed bytes,
+independently of Python/zlib gzip encodings. Source/step/native metadata remains
+exact; recompression is accepted and altered uncompressed bytes are rejected.
+Original native gzip observations are never rewritten.
+
 Each of the three observed late-clock runs follows the same groups 2..19
 scenario. Go chains start with a Python-modeled prefix and feed each Go output
 into the next assault call. All 54 modeled step records/stats match; each final
