@@ -2493,3 +2493,16 @@ existing bases, placement retries and noninitial group worlds are excluded.
 RNG endpoints are independently modeled, not new native measurements. Hiring,
 desertion/lottery tail, full maintenance and gameplay integration remain separate;
 save format 35 is unchanged.
+
+### Bounded Go initial NPC tail and complete world-file composition
+
+[Initial NPC tail evidence](research/yt-maint/GO_INITIAL_NPC_TAIL.md) now qualifies
+`qbmaint.ReplayInitialNPCTail` for the zero-treasury, all-inactive initial profile.
+It consumes twenty eager defense draws, then the lottery gate and its conditional
+helper/player draw without writing world bytes. Tests cover both branches, the
+exact .5 gate, raw clock inventory and atomic admission. Composing the Go ports,
+births, mobile groups, base and ranks now matches all bytes of 29 existing native
+YTDATA worlds; no captures were added. RNG endpoints remain Python-model
+expectations. The three late-clock Wanderer-combat prefixes, funded hiring, human
+desertion, active-player lottery, auxiliary files, complete six-file maintenance
+and playable integration remain separate. Modern save format 35 is unchanged.

@@ -185,9 +185,15 @@ mobile-group handoff. Inherited fields, raw FAC zero residues, next-helper
 reseed/one-draw continuation and atomic input admission have portable tests and
 provenance checks. Three late-clock combat prefixes remain outside this composition.
 
-**Next: audit the initial no-hiring desertion/lottery tail, auxiliary writes and
-RNG continuation against existing source/captures and open PRs before selecting
-the next Go migration.**
+[Bounded Go initial NPC tail](yt-maint/GO_INITIAL_NPC_TAIL.md) now covers twenty
+eager defense draws and both inactive lottery branches. It has no world writes.
+Combining all implemented Go writers matches the complete YTDATA bytes in 29
+existing plain-route native runs. Endpoint RNG expectations remain modeled, not
+new native measurements; three late-clock combat prefixes remain excluded.
+
+**Next: audit the existing auxiliary-file writers and bounded six-file before-only
+composition against source/captures and open PRs before selecting the next Go
+migration.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
