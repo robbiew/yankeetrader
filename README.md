@@ -22,6 +22,7 @@ details and limitations.
 | Back up, export, restore or reset a season | [Season administration](#season-administration), [Storage and recovery](#storage-and-recovery), and the [sysop guide](docs/SYSOP.md) |
 | Read detailed game rules | [Planet management](#planet-management), [Teams](#teams), [Combat preparation](#combat-preparation), and [plasma](#bounded-plasma-launching) |
 | Find the next unfinished task | [Current reconstruction plan](research/RECONSTRUCTION_PLAN.md#current-work) — verified implementation inventory and remaining work; older milestones are historical |
+| Check licence terms | [Licence](#licence) and [NOTICE.md](NOTICE.md) |
 | Review the reconstruction | [History](#a-little-history), [screenshots](#screenshots), [research](research/) and [validation evidence](evidence/) |
 
 ## Screenshots
@@ -926,6 +927,19 @@ Production uses elapsed time capped at ten days. Visiting grows rates before pro
 Money remains exact integer credits, including interest. This deliberately fixes the DOS large-balance banking exploit: even a one-credit deposit debits the ship. Empty transfers cannot increase production; failed or competing actions cannot duplicate goods. Clock rollback preserves the production watermark. Movement, reconnect and maintenance invalidate landing authorization.
 
 Version-1 through version-34 worlds upgrade to version 35 in memory and are saved atomically on the next successful update, preserving existing players and assets. The local `data` and `bin` directories are ignored by Git. The original DOS distribution and full recovery workspace are preserved under `archive/`; portable supporting reports and compressed DOS snapshots are included under `research`.
+
+## Licence
+
+The Yankee Trader: Resurrection code (Go source, scripts, tests and
+documentation) is released under the [MIT License](LICENSE), as is the
+[GoDoors](https://github.com/robbiew/godoors) library it builds against, so
+sysops and contributors can fork, modify and share changed builds. The original
+Yankee Trader 3.6 game, its DOS distribution under `archive/dos-original/`, and
+the original artwork and text embedded in the game remain Copyright (c)
+1989–1994 Alan Davenport and are **not** covered by the MIT License. DOSBox
+Staging excerpts kept as research evidence stay under GPL-2.0-or-later. See
+[NOTICE.md](NOTICE.md) for the full breakdown. Release archives include
+`LICENSE`, `NOTICE.md` and the bundled dependency licences under `licenses/`.
 
 ## Complete recovery archive
 

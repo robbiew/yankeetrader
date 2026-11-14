@@ -63,7 +63,8 @@ def package(target, version, binary, info, licenses):
     files = {exe: binary, 'README.md': readme.encode(), 'SYSOP.md': guide.encode(),
              'SYSOP_CHEAT_SHEET.md': (ROOT / 'docs/SYSOP_CHEAT_SHEET.md').read_bytes(),
              'RELEASE_INFO.json': (json.dumps(manifest, indent=2, sort_keys=True) + '\n').encode(),
-             'CREDITS.txt': b'Yankee Trader: Resurrection\nOriginal game by Alan Davenport\nBased on Yankee Trader Version 3.6\nhttps://github.com/robbiew/yankeetrader\n\nDoor transport: https://github.com/robbiew/godoors\nGo and golang.org/x dependencies: https://go.dev/\nBundled third-party license texts are under licenses/.\n'}
+             'LICENSE': (ROOT / 'LICENSE').read_bytes(), 'NOTICE.md': (ROOT / 'NOTICE.md').read_bytes(),
+             'CREDITS.txt': b'Yankee Trader: Resurrection\nOriginal game by Alan Davenport\nBased on Yankee Trader Version 3.6\nhttps://github.com/robbiew/yankeetrader\n\nDoor transport: https://github.com/robbiew/godoors\nGo and golang.org/x dependencies: https://go.dev/\nYankee Trader: Resurrection code is MIT-licensed (LICENSE); original Yankee Trader 3.6 material\nembedded in the game remains Copyright Alan Davenport (NOTICE.md).\nBundled third-party license texts are under licenses/.\n'}
     files.update({'licenses/' + name: data for name, data in licenses.items()})
     output = io.BytesIO()
     if target.startswith('windows'):
