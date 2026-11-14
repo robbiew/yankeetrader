@@ -2407,3 +2407,14 @@ Portable native fixtures, Go race tests and eight exporter/provenance tests run
 in CI. Python replay remains an independent reference. Populated-port economy,
 other phases and playable maintenance integration remain separate; gameplay and
 save format 35 are unchanged.
+
+### Bounded Go inactive rank/watermark replay
+
+[Inactive rank-cache replay](research/yt-maint/GO_INACTIVE_RANK_REPLAY.md) now
+qualifies `qbmaint.ReplayInactiveRanks` against 1,632 complete native fields
+across 32 existing runs, without new captures. It resets fifty inactive-player
+rank caches and the explicit final-day watermark, preserving every other world
+byte. Active-player inputs are rejected atomically. Portable field oracles reuse
+the clean-port before-world fixture; Go race tests and exporter/provenance checks
+run in CI. This remains a research-only writer, with active rankings, NPC phases,
+full Go maintenance and gameplay integration separate. Save format 35 is unchanged.
