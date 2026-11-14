@@ -226,7 +226,7 @@ claim of complete DOS parity or live BBS acceptance; see
 | **Combat** | Confirmed planetary ground assaults and ship fighter attacks, routed missiles and retaliation, confirmed plasma launches with bounded black-hole routing, planetary bombardment and destruction, sector-fighter deployment/recovery, reinforcement, breach combat, surrender and escape; death, loot, port settlement, replacement ships and minefields. |
 | **Mercenaries and Xannor** | Mercenary bribery/recruitment, tax-funded hiring, daily routes, desertion and base restoration; Xannor HQ/home restoration, reclaim battles, bounded mobile groups, combat aftermath and ship-bound revenge. Direct Xannor fighter casualties can earn capped turn bonuses; HQ victories award up to 1,000,000 exact credits and publish a victory notice. |
 | **Computer and communication** | Rankings, commerce and planet reports, planet/port finders, trading forecasts, direct/team/broadcast radio and message history; spies report mines, planets, defenses, ships and login-local disruptions. Newspaper coverage includes logins, planet/team creation, combat outcomes, daily events, HQ victories and confirmed public broadcasts. |
-| **Presentation and door sessions** | DOS-style menus, ANSI/CP437 or plain text, compact commands, local play and Door32 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals. |
+| **Presentation and door sessions** | DOS-style menus, ANSI/CP437 or plain text, compact commands, local play, Door32 sessions and DOORDROP.INI 1.0 sessions. Exit music is enabled for detected SyncTERM/CTerm terminals unless a DOORDROP.INI caller has muted sound. |
 
 **Multi-caller simulation completed:** six concurrent simulated BBS callers played
 through Door32 processes to a configured 20-port Genesis victory, including
@@ -336,7 +336,7 @@ plain text. No terminal-size probes are required.
 
 Press a key at the title, then a separate key after the opening artwork. Each
 page stays visible until its own keypress. New players enter an in-game alias (Enter uses the
-Door32 real name, or the local name), confirm with `Y`, and choose whether to read
+Door32 or DOORDROP.INI real name, or the local name), confirm with `Y`, and choose whether to read
 the original instructions. Press a key after ship information. At the main
 prompt, Enter redisplays the sector, `?` shows the original two-column help,
 `C` enters the ship's computer, and `Q` asks for confirmation. Commands finish
@@ -571,6 +571,20 @@ Use the directory containing that node's Door32 drop file and the same absolute 
 ```
 
 `-system` is a stable namespace for the BBS. Identity uses this value plus the positive user-record number on Door32 line five; alias is display information. Changing an alias does not create a fresh ship. Keep the system value stable. Local identities are separate from Door32 identities.
+
+### DOORDROP.INI
+
+The door also reads [DOORDROP.INI 1.0](https://github.com/SynchronetBBS/sbbs/blob/master/docs/doordrop_ini.md). Pass the file's full path, which must end in `.ini`, as `-drop`, or leave out `-drop` and `-local` and the door uses the `DOORDROP_INI` environment variable:
+
+```sh
+/path/to/yankeetrader/bin/yt -data /path/to/yankeetrader/data -drop /path/to/node1/DOORDROP.INI -system mybbs
+```
+
+- **Identity** is `-system` plus `USER_KEY`, which the BBS never changes or reuses for an account. A DOORDROP.INI identity is separate from the Door32 identity of the same caller, so switching an existing door from DOOR32.SYS to DOORDROP.INI gives returning players a fresh ship. Choose the drop file type before opening a season.
+- **Guest accounts** (`USER_ROLE=guest`) are shared by unregistered callers, so they are told they can't play and the door exits.
+- **Time** comes from `TIME_LEFT`, rounded up to whole minutes. A missing `TIME_LEFT` means no BBS limit, and the door caps the session at 1,440 minutes.
+- **Sound:** `PREF_SOUND=0` turns off the exit music.
+- **Transport:** configure the door for CP437 text (not "Support UTF-8") and `COMM_TYPE=stdio` on Linux/macOS, or `stdio` or `socket` on Windows. GoDoors rejects other connection types and character sets with an error instead of garbling the session. New players' default in-game alias is `USER_REALNAME` when the BBS sends it, otherwise `USER_ALIAS`.
 
 GoDoors handles standard I/O on macOS/Linux and inherited Door32 sockets on supported Windows hosts. Linux/macOS sessions accept unused Door32 communication handles such as `-1`, using the BBS-provided standard I/O streams. Rebuild older binaries with the GoDoors revision below to pick up this startup fix. The door honors the drop file's remaining session time (1–1,440 minutes). The DOS-style interface supports ANSI/CP437 and plain text; `-compact` retains the original printable-ASCII command interface. Neither requires terminal probing.
 
@@ -870,7 +884,7 @@ CI allows 60 minutes for the complete race, evidence, terminal and cross-build
 sequence. Wanderer-aware maintenance fixtures isolate unrelated production and
 random encounters while retaining their resource, replay and durability checks.
 
-Requires Go 1.23+ and a local GoDoors checkout at commit [`2bb91d527ae926b436a5a65eb380441eb937e6a9`](https://github.com/robbiew/godoors/commit/2bb91d527ae926b436a5a65eb380441eb937e6a9) or a descendant. That revision fixes `OpenSession` rejecting unused Unix Door32 handles such as `-1`; it also includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. CI and release builds pin this GoDoors revision. The Unix handle regression and GoDoors suite pass locally, along with Yankee Trader startup and door tests; live Scorpio BBS acceptance remains pending.
+Requires Go 1.23+ and a local GoDoors checkout at commit [`de49cf2554c33b67e7daf0fcdfca2eb594159d5b`](https://github.com/robbiew/godoors/commit/de49cf2554c33b67e7daf0fcdfca2eb594159d5b) or a descendant. That revision adds DOORDROP.INI 1.0 support (required terminal keys, host-supplied size and the `PREF_SOUND` preference); it also fixes `OpenSession` rejecting unused Unix Door32 handles such as `-1`, and includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. CI and release builds pin this GoDoors revision. The Unix handle regression and GoDoors suite pass locally, along with Yankee Trader startup and door tests; live Scorpio BBS acceptance remains pending.
 
 ```sh
 go build -o bin/yt ./cmd/yt

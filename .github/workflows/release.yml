@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: robbiew/godoors
-          ref: 2bb91d527ae926b436a5a65eb380441eb937e6a9
+          ref: de49cf2554c33b67e7daf0fcdfca2eb594159d5b
           path: godoors
           persist-credentials: false
       - name: Set up Go
