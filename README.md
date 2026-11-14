@@ -2436,3 +2436,16 @@ four-second initialization/deadline/cleanup bound, measured from the controllerâ
 own recorded interval. Cold Node startup is excluded from that internal deadline
 measurement; forced termination, actual process exit and all six stall phases
 remain required. The production controller and retained capture sources are unchanged.
+
+### Bounded Go Xannoron creation replay
+
+[Xannoron creation evidence](research/yt-maint/GO_XANNORON_BIRTH_REPLAY.md) now
+qualifies `qbmaint.ReplayXannoronBirth` against all 32 existing native whole
+creation records and HQ links, with a Go-modeled Wanderer prefix. Qualified raw
+numeric primitives preserve TIMER/60/INT residue, separate bank rounding and
+three-draw ground/bank RNG continuation. No new captures were acquired. Native
+record/field oracles and independent model RNG endpoints are identified separately.
+Tests reject unsupported inputs atomically and preserve inherited/unrelated bytes.
+Exact-zero TIMER, zero-ground birth and occupied-HQ cases remain excluded. This
+is prefix creation parity, not final-world/full-maintenance or gameplay
+integration; save format 35 is unchanged.
