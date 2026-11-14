@@ -1,0 +1,1423 @@
+{
+  "format": "qb-late-clock-integration-v1",
+  "sources": {
+    "scripts/replay_maintenance_ports.py": "d8a35d817a6f5442b98e158fb8bbc95607d7deaedf8f3ce20e0f3110553927aa",
+    "scripts/export_clean_port_fixture.py": "50211e188f3fbacc13b82947f2eff4a52d336d6fea5ff8d3d9de7808d1996c51",
+    "scripts/verify_maintenance_calendar.py": "e06fc0e1094042ea7b4189e1ca7eb3ad120daa70d5a9399dff5af634cc15e6fa",
+    "scripts/verify_maintenance_clock_matrix.py": "de62a4eb8259506599784caf8bd45657974c55f23130021f89f1b8e9f6edd34d",
+    "research/yt-maint/calendar-pins.json": "7382f01703145f2f2d37afab6a297bb18d226a5a65d6baf682f94ae63812ffc2",
+    "research/yt-maint/clock-matrix-pins.json": "6156ee078a8a00edbfe6ad89e44fa8fe592295f025b9285582fdc65b3b7310f7",
+    "scripts/export_late_clock_fixture.py": "1774c9e14d1a1a8be9acbaaec1904030ac606d0f2021f31d942acb6c6796b6f0",
+    "scripts/replay_maintenance_clock_matrix.py": "349c620fc1c9cbc7bfe17fbbf06e05f1cbdce499d0d9bcd5af7094eb8149203b",
+    "scripts/replay_maintenance_npcs.py": "0015fae2dc2aa399706b7e45db487a7fdbaea4168213e80cbbd24fa7d5489cf2",
+    "scripts/replay_maintenance_wanderer.py": "21e6ee53c9007e4184cb4758c3c6a73f47e6d8bb5fa9c96a59403d9f6dcbc05d",
+    "scripts/replay_maintenance_aux.py": "c42f77ac41b2750e8b04e9016d580904da08fa21346597741ccc96aa7aafc24a"
+  },
+  "before_aux": {
+    "YTNAME.DAT": "RHVtbXksRHVtbXksRHVtbXksRHVtbXkNCho=",
+    "YTNEWS.DAT": "MDA6MDA6MDEgMTEtMDItMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQowMDowMDowMSAxMS0wMi0yMDI2ICoqKioqKioqKioqKioqKioqKioqKioNCjAwOjAwOjAxIDExLTAyLTIwMjYgKiogICAgICAgICAgICAgICAgICAqKg0KMDA6MDA6MDEgMTEtMDItMjAyNiAqKiBHYW1lIEluaXRpYWxpemVkICoqDQowMDowMDowMSAxMS0wMi0yMDI2ICoqICAgICAgICAgICAgICAgICAgKioNCjAwOjAwOjAxIDExLTAyLTIwMjYgKioqKioqKioqKioqKioqKioqKioqKg0KMDA6MDA6MDEgMTEtMDItMjAyNiAqKioqKioqKioqKioqKioqKioqKioqDQoa"
+  },
+  "cases": [
+    {
+      "name": "matrix/late/observed-a",
+      "days": {
+        "wanderer": 306,
+        "xannoron": 306,
+        "base": 306,
+        "final": 306
+      },
+      "initial_state": 3067397,
+      "helper_one": [
+        "6ebf2891",
+        "6ebf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891"
+      ],
+      "helper_two": [
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891"
+      ],
+      "xannoron_timer": "6ebf2891",
+      "aux": {
+        "NewsDate": "2026-11-02",
+        "NewsClock": "23:59:59",
+        "ScoreDate": "2026-11-02",
+        "ScoreClock": "23:59:59"
+      },
+      "events": [
+        {
+          "group": 2,
+          "sector": 658,
+          "force": 382,
+          "state": 15364484,
+          "final_state": 16374827,
+          "raw_force": -68,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 3,
+          "sector": 658,
+          "force": 468,
+          "state": 4596405,
+          "final_state": 16535255,
+          "raw_force": -432,
+          "draws": 2,
+          "rounds": 2,
+          "damage_rounds": 0,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 4,
+          "sector": 658,
+          "force": 1307,
+          "state": 4493889,
+          "final_state": 16460006,
+          "raw_force": -43,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 5,
+          "sector": 658,
+          "force": 100,
+          "state": 11706088,
+          "final_state": 15753739,
+          "raw_force": -350,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 6,
+          "sector": 658,
+          "force": 25,
+          "state": 9595541,
+          "final_state": 8747084,
+          "raw_force": -425,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "cff2108d",
+            "7b690b8d",
+            "2e96098d"
+          ]
+        },
+        {
+          "group": 7,
+          "sector": 658,
+          "force": 604,
+          "state": 766654,
+          "final_state": 12330736,
+          "raw_force": -296,
+          "draws": 10,
+          "rounds": 4,
+          "damage_rounds": 2,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 8,
+          "sector": 658,
+          "force": 4,
+          "state": 2579202,
+          "final_state": 14095805,
+          "raw_force": -446,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 9,
+          "sector": 658,
+          "force": 268,
+          "state": 4205207,
+          "final_state": 11027506,
+          "raw_force": -182,
+          "draws": 21,
+          "rounds": 6,
+          "damage_rounds": 5,
+          "rates": [
+            "ce03038d",
+            "a65f798c",
+            "b2e7728c"
+          ]
+        },
+        {
+          "group": 10,
+          "sector": 658,
+          "force": 291,
+          "state": 477972,
+          "final_state": 16685179,
+          "raw_force": -159,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "3a897f8c",
+            "f0ad758c",
+            "3282718c"
+          ]
+        },
+        {
+          "group": 11,
+          "sector": 658,
+          "force": 377,
+          "state": 4228485,
+          "final_state": 8957184,
+          "raw_force": -73,
+          "draws": 13,
+          "rounds": 4,
+          "damage_rounds": 3,
+          "rates": [
+            "9c76698c",
+            "6515658c",
+            "5aff5f8c"
+          ]
+        },
+        {
+          "group": 12,
+          "sector": 658,
+          "force": 1194,
+          "state": 5351314,
+          "final_state": 11700747,
+          "raw_force": -156,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 13,
+          "sector": 658,
+          "force": 258,
+          "state": 5234837,
+          "final_state": 9539844,
+          "raw_force": -192,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 14,
+          "sector": 658,
+          "force": 1107,
+          "state": 12679990,
+          "final_state": 11187443,
+          "raw_force": -243,
+          "draws": 19,
+          "rounds": 7,
+          "damage_rounds": 4,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 15,
+          "sector": 658,
+          "force": 376,
+          "state": 2453437,
+          "final_state": 9405324,
+          "raw_force": -74,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 16,
+          "sector": 658,
+          "force": 86,
+          "state": 15755006,
+          "final_state": 10412489,
+          "raw_force": -364,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 17,
+          "sector": 658,
+          "force": 65,
+          "state": 16374659,
+          "final_state": 15443266,
+          "raw_force": -385,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 18,
+          "sector": 658,
+          "force": 7,
+          "state": 1120932,
+          "final_state": 15130327,
+          "raw_force": -443,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 19,
+          "sector": 658,
+          "force": 4,
+          "state": 7093825,
+          "final_state": 12830916,
+          "raw_force": -446,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "d8383b8c",
+            "0eda328c",
+            "09a92d8c"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2834
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 878,
+          "strength": 243
+        }
+      ],
+      "mobile_final_state": 8768654,
+      "final_state": 758962,
+      "draws": 24007,
+      "desertion_draws": 2,
+      "lottery": 0.04523766040802002,
+      "candidate": 0,
+      "native_files": {
+        "YTDATA.DAT": "0342301be6ec9898b7b86ba55c9f5ba4591e72d5f3ac0db6ca1c5c66108a2b05",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "232d9d4c9f2fd14fa4cd11d09d3f585224dad03b5dea97eb47f0aa29d83a6dd5",
+        "YTSCORE.ASC": "41d72e1462b7100de9bf9a2f716c12cfd57c546c51276d10352dfd167c659d5e"
+      }
+    },
+    {
+      "name": "matrix/late/observed-b",
+      "days": {
+        "wanderer": 306,
+        "xannoron": 306,
+        "base": 306,
+        "final": 306
+      },
+      "initial_state": 3067397,
+      "helper_one": [
+        "6ebf2891",
+        "6ebf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891"
+      ],
+      "helper_two": [
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891"
+      ],
+      "xannoron_timer": "6ebf2891",
+      "aux": {
+        "NewsDate": "2026-11-02",
+        "NewsClock": "23:59:59",
+        "ScoreDate": "2026-11-02",
+        "ScoreClock": "23:59:59"
+      },
+      "events": [
+        {
+          "group": 2,
+          "sector": 658,
+          "force": 382,
+          "state": 15364484,
+          "final_state": 16374827,
+          "raw_force": -68,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 3,
+          "sector": 658,
+          "force": 468,
+          "state": 4596405,
+          "final_state": 16535255,
+          "raw_force": -432,
+          "draws": 2,
+          "rounds": 2,
+          "damage_rounds": 0,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 4,
+          "sector": 658,
+          "force": 1307,
+          "state": 4493889,
+          "final_state": 16460006,
+          "raw_force": -43,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 5,
+          "sector": 658,
+          "force": 100,
+          "state": 11706088,
+          "final_state": 15753739,
+          "raw_force": -350,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 6,
+          "sector": 658,
+          "force": 25,
+          "state": 9595541,
+          "final_state": 8747084,
+          "raw_force": -425,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "cff2108d",
+            "7b690b8d",
+            "2e96098d"
+          ]
+        },
+        {
+          "group": 7,
+          "sector": 658,
+          "force": 604,
+          "state": 766654,
+          "final_state": 12330736,
+          "raw_force": -296,
+          "draws": 10,
+          "rounds": 4,
+          "damage_rounds": 2,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 8,
+          "sector": 658,
+          "force": 4,
+          "state": 2579202,
+          "final_state": 14095805,
+          "raw_force": -446,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 9,
+          "sector": 658,
+          "force": 268,
+          "state": 4205207,
+          "final_state": 11027506,
+          "raw_force": -182,
+          "draws": 21,
+          "rounds": 6,
+          "damage_rounds": 5,
+          "rates": [
+            "ce03038d",
+            "a65f798c",
+            "b2e7728c"
+          ]
+        },
+        {
+          "group": 10,
+          "sector": 658,
+          "force": 291,
+          "state": 477972,
+          "final_state": 16685179,
+          "raw_force": -159,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "3a897f8c",
+            "f0ad758c",
+            "3282718c"
+          ]
+        },
+        {
+          "group": 11,
+          "sector": 658,
+          "force": 377,
+          "state": 4228485,
+          "final_state": 8957184,
+          "raw_force": -73,
+          "draws": 13,
+          "rounds": 4,
+          "damage_rounds": 3,
+          "rates": [
+            "9c76698c",
+            "6515658c",
+            "5aff5f8c"
+          ]
+        },
+        {
+          "group": 12,
+          "sector": 658,
+          "force": 1194,
+          "state": 5351314,
+          "final_state": 11700747,
+          "raw_force": -156,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 13,
+          "sector": 658,
+          "force": 258,
+          "state": 5234837,
+          "final_state": 9539844,
+          "raw_force": -192,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 14,
+          "sector": 658,
+          "force": 1107,
+          "state": 12679990,
+          "final_state": 11187443,
+          "raw_force": -243,
+          "draws": 19,
+          "rounds": 7,
+          "damage_rounds": 4,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 15,
+          "sector": 658,
+          "force": 376,
+          "state": 2453437,
+          "final_state": 9405324,
+          "raw_force": -74,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 16,
+          "sector": 658,
+          "force": 86,
+          "state": 15755006,
+          "final_state": 10412489,
+          "raw_force": -364,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 17,
+          "sector": 658,
+          "force": 65,
+          "state": 16374659,
+          "final_state": 15443266,
+          "raw_force": -385,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 18,
+          "sector": 658,
+          "force": 7,
+          "state": 1120932,
+          "final_state": 15130327,
+          "raw_force": -443,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 19,
+          "sector": 658,
+          "force": 4,
+          "state": 7093825,
+          "final_state": 12830916,
+          "raw_force": -446,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "d8383b8c",
+            "0eda328c",
+            "09a92d8c"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2834
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 878,
+          "strength": 243
+        }
+      ],
+      "mobile_final_state": 8768654,
+      "final_state": 758962,
+      "draws": 24007,
+      "desertion_draws": 2,
+      "lottery": 0.04523766040802002,
+      "candidate": 0,
+      "native_files": {
+        "YTDATA.DAT": "0342301be6ec9898b7b86ba55c9f5ba4591e72d5f3ac0db6ca1c5c66108a2b05",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "232d9d4c9f2fd14fa4cd11d09d3f585224dad03b5dea97eb47f0aa29d83a6dd5",
+        "YTSCORE.ASC": "41d72e1462b7100de9bf9a2f716c12cfd57c546c51276d10352dfd167c659d5e"
+      }
+    },
+    {
+      "name": "matrix/late/observed-c",
+      "days": {
+        "wanderer": 306,
+        "xannoron": 306,
+        "base": 306,
+        "final": 306
+      },
+      "initial_state": 3067397,
+      "helper_one": [
+        "6ebf2891",
+        "6ebf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891",
+        "9fbf2891"
+      ],
+      "helper_two": [
+        "74bf2891",
+        "74bf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "7cbf2891",
+        "83bf2891",
+        "83bf2891",
+        "83bf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "8abf2891",
+        "91bf2891",
+        "91bf2891",
+        "91bf2891",
+        "98bf2891",
+        "98bf2891",
+        "98bf2891"
+      ],
+      "xannoron_timer": "6ebf2891",
+      "aux": {
+        "NewsDate": "2026-11-02",
+        "NewsClock": "23:59:59",
+        "ScoreDate": "2026-11-02",
+        "ScoreClock": "23:59:59"
+      },
+      "events": [
+        {
+          "group": 2,
+          "sector": 658,
+          "force": 382,
+          "state": 15364484,
+          "final_state": 16374827,
+          "raw_force": -68,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 3,
+          "sector": 658,
+          "force": 468,
+          "state": 4596405,
+          "final_state": 16535255,
+          "raw_force": -432,
+          "draws": 2,
+          "rounds": 2,
+          "damage_rounds": 0,
+          "rates": [
+            "a1b3198d",
+            "1ab4198d",
+            "1e76198d"
+          ]
+        },
+        {
+          "group": 4,
+          "sector": 658,
+          "force": 1307,
+          "state": 4493889,
+          "final_state": 16460006,
+          "raw_force": -43,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 5,
+          "sector": 658,
+          "force": 100,
+          "state": 11706088,
+          "final_state": 15753739,
+          "raw_force": -350,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "dcb0138d",
+            "c93e108d",
+            "1b3b108d"
+          ]
+        },
+        {
+          "group": 6,
+          "sector": 658,
+          "force": 25,
+          "state": 9595541,
+          "final_state": 8747084,
+          "raw_force": -425,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "cff2108d",
+            "7b690b8d",
+            "2e96098d"
+          ]
+        },
+        {
+          "group": 7,
+          "sector": 658,
+          "force": 604,
+          "state": 766654,
+          "final_state": 12330736,
+          "raw_force": -296,
+          "draws": 10,
+          "rounds": 4,
+          "damage_rounds": 2,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 8,
+          "sector": 658,
+          "force": 4,
+          "state": 2579202,
+          "final_state": 14095805,
+          "raw_force": -446,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "d89c0c8d",
+            "2b4a088d",
+            "81ac048d"
+          ]
+        },
+        {
+          "group": 9,
+          "sector": 658,
+          "force": 268,
+          "state": 4205207,
+          "final_state": 11027506,
+          "raw_force": -182,
+          "draws": 21,
+          "rounds": 6,
+          "damage_rounds": 5,
+          "rates": [
+            "ce03038d",
+            "a65f798c",
+            "b2e7728c"
+          ]
+        },
+        {
+          "group": 10,
+          "sector": 658,
+          "force": 291,
+          "state": 477972,
+          "final_state": 16685179,
+          "raw_force": -159,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "3a897f8c",
+            "f0ad758c",
+            "3282718c"
+          ]
+        },
+        {
+          "group": 11,
+          "sector": 658,
+          "force": 377,
+          "state": 4228485,
+          "final_state": 8957184,
+          "raw_force": -73,
+          "draws": 13,
+          "rounds": 4,
+          "damage_rounds": 3,
+          "rates": [
+            "9c76698c",
+            "6515658c",
+            "5aff5f8c"
+          ]
+        },
+        {
+          "group": 12,
+          "sector": 658,
+          "force": 1194,
+          "state": 5351314,
+          "final_state": 11700747,
+          "raw_force": -156,
+          "draws": 15,
+          "rounds": 6,
+          "damage_rounds": 3,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 13,
+          "sector": 658,
+          "force": 258,
+          "state": 5234837,
+          "final_state": 9539844,
+          "raw_force": -192,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "e16c538c",
+            "149e518c",
+            "25d9548c"
+          ]
+        },
+        {
+          "group": 14,
+          "sector": 658,
+          "force": 1107,
+          "state": 12679990,
+          "final_state": 11187443,
+          "raw_force": -243,
+          "draws": 19,
+          "rounds": 7,
+          "damage_rounds": 4,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 15,
+          "sector": 658,
+          "force": 376,
+          "state": 2453437,
+          "final_state": 9405324,
+          "raw_force": -74,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 16,
+          "sector": 658,
+          "force": 86,
+          "state": 15755006,
+          "final_state": 10412489,
+          "raw_force": -364,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "da4d488c",
+            "b79c3f8c",
+            "b2f93f8c"
+          ]
+        },
+        {
+          "group": 17,
+          "sector": 658,
+          "force": 65,
+          "state": 16374659,
+          "final_state": 15443266,
+          "raw_force": -385,
+          "draws": 9,
+          "rounds": 3,
+          "damage_rounds": 2,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 18,
+          "sector": 658,
+          "force": 7,
+          "state": 1120932,
+          "final_state": 15130327,
+          "raw_force": -443,
+          "draws": 1,
+          "rounds": 1,
+          "damage_rounds": 0,
+          "rates": [
+            "c34d3e8c",
+            "d567398c",
+            "5429368c"
+          ]
+        },
+        {
+          "group": 19,
+          "sector": 658,
+          "force": 4,
+          "state": 7093825,
+          "final_state": 12830916,
+          "raw_force": -446,
+          "draws": 5,
+          "rounds": 2,
+          "damage_rounds": 1,
+          "rates": [
+            "d8383b8c",
+            "0eda328c",
+            "09a92d8c"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "sector": 849,
+          "strength": 2834
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 0,
+          "strength": 0
+        },
+        {
+          "sector": 878,
+          "strength": 243
+        }
+      ],
+      "mobile_final_state": 8768654,
+      "final_state": 758962,
+      "draws": 24007,
+      "desertion_draws": 2,
+      "lottery": 0.04523766040802002,
+      "candidate": 0,
+      "native_files": {
+        "YTDATA.DAT": "0342301be6ec9898b7b86ba55c9f5ba4591e72d5f3ac0db6ca1c5c66108a2b05",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "232d9d4c9f2fd14fa4cd11d09d3f585224dad03b5dea97eb47f0aa29d83a6dd5",
+        "YTSCORE.ASC": "41d72e1462b7100de9bf9a2f716c12cfd57c546c51276d10352dfd167c659d5e"
+      }
+    }
+  ]
+}

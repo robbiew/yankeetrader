@@ -2,7 +2,6 @@ package qbmaint
 
 import (
 	"fmt"
-
 	"strings"
 	"time"
 )
@@ -17,6 +16,9 @@ type AuxInputs struct{ NewsDate, NewsClock, ScoreDate, ScoreClock string }
 // all-inactive, missing-NPC bootstrap scoreboard/news is admitted. No target,
 // filesystem, host clock or general PRINT USING formatter is used.
 func ReplayInitialAux(before map[string][]byte, world []byte, in AuxInputs) (map[string][]byte, error) {
+	return replayInitialAux(before, world, in, nil)
+}
+func replayInitialAux(before map[string][]byte, world []byte, in AuxInputs, events []WandererEncounter) (map[string][]byte, error) {
 	fail := func(s string) (map[string][]byte, error) { return nil, fmt.Errorf("initial auxiliary replay: %s", s) }
 	if len(before) != 3 {
 		return fail("exact three-file before inventory")
@@ -87,7 +89,11 @@ func ReplayInitialAux(before map[string][]byte, world []byte, in AuxInputs) (map
 			return fail("modeled NPC name")
 		}
 	}
-	for _, b := range [][]byte{old, world} {
+	lost, err := retainedWandererLosses(world, events)
+	if err != nil {
+		return fail(err.Error())
+	}
+	for index, b := range [][]byte{old, world} {
 		total := 0
 		for s := 1; s <= 3000; s++ {
 			force := get(b, 51+s, 81)
@@ -99,7 +105,11 @@ func ReplayInitialAux(before map[string][]byte, world []byte, in AuxInputs) (map
 			}
 			total += force
 		}
-		if total != 10000 {
+		want := 10000
+		if index == 1 {
+			want -= lost
+		}
+		if total != want {
 			return fail("initial NPC score total")
 		}
 	}
@@ -139,11 +149,24 @@ func ReplayInitialAux(before map[string][]byte, world []byte, in AuxInputs) (map
 		"  -  The Xannor have made a Planet!", "The Xannor home base now has a planet!",
 		"  -  Xannor report:", "Calculated Dynamic Xannor Regeneration is 0 fighters.",
 		"  -  Mercenary Report:", "  -  The Mercenaries have built a home base using a captured Genesis Device!"}
+	if lost > 0 {
+		extra := []string{}
+		for _, event := range events {
+			extra = append(extra, fmt.Sprintf(" *** %d Xannor attacked the planet \"The Wanderer\"", event.Inputs.Force), " *** Xannor fighters destroyed!")
+		}
+		news = append(news[:7], append(extra, news[7:]...)...)
+	}
+	score := 100 * (10000 - lost)
+	text := fmt.Sprintf("%d", score)
+	for i := len(text) - 3; i > 0; i -= 3 {
+		text = text[:i] + "," + text[i:]
+	}
+	row := fmt.Sprintf("  %15s  %7s%%    %15s  %6s%%", text, "100.00", "0", "0.00")
 	board := []string{"", "Y a n k e e   T r a d e r   S c o r e b o a r d", "", "Last updated at: " + scoreDate + " " + in.ScoreClock, "",
 		"Rank  Rank%        Score        Team   Ports   Player", "==== ======= ================= ====== ======= ================================", "",
 		"T e a m   R a n k i n g s", "", "Rank  Rank%        Score        Team   Team Name", "==== ======= ================= ====== ========================================", "",
 		"N o n  -  H u m a n   P l a y e r s", "", "    The Xannor       Rank%     The Mercenaries   Rank%", "================== =========  ================= =======",
-		"        1,000,000   100.00%                  0    0.00%", ""}
+		row, ""}
 	dos := func(lines []string) []byte { return []byte(strings.Join(lines, "\r\n") + "\r\n\x1a") }
 	return map[string][]byte{"YTNAME.DAT": append([]byte{}, before["YTNAME.DAT"]...), "YTYNEWS.DAT": append([]byte{}, before["YTNEWS.DAT"]...), "YTRMSG.DAT": {}, "YTNEWS.DAT": dos(news), "YTSCORE.ASC": dos(board)}, nil
 }

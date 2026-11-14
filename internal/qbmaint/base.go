@@ -22,6 +22,9 @@ type BaseStats struct {
 // Existing bases, placement retries and later hiring/desertion are excluded.
 // Clock/state provenance is the caller's responsibility. Targets are not inputs.
 func ReplayMercenaryBaseBirth(before []byte, in BaseInputs) ([]byte, BaseStats, error) {
+	return replayMercenaryBaseBirth(before, in, nil)
+}
+func replayMercenaryBaseBirth(before []byte, in BaseInputs, events []WandererEncounter) ([]byte, BaseStats, error) {
 	fail := func(s string) ([]byte, BaseStats, error) {
 		return nil, BaseStats{}, fmt.Errorf("Mercenary Base birth: %s", s)
 	}
@@ -64,6 +67,10 @@ func ReplayMercenaryBaseBirth(before []byte, in BaseInputs) ([]byte, BaseStats, 
 	if string(before[4051*RecordSize:4051*RecordSize+12]) != "The Wanderer" || string(before[4150*RecordSize:4150*RecordSize+8]) != "Xannoron" || get(4151, 73) != -1 || read(72, 105)[3] != 0 {
 		return fail("ordinary birth prefix")
 	}
+	lost, err := retainedWandererLosses(before, events)
+	if err != nil {
+		return fail(err.Error())
+	}
 	hq := get(1, 117)
 	if hq < 8 || hq > 3000 || get(52, 105) != hq {
 		return fail("tracked HQ")
@@ -73,6 +80,12 @@ func ReplayMercenaryBaseBirth(before []byte, in BaseInputs) ([]byte, BaseStats, 
 	endpoint := 0
 	for g := 1; g <= 20; g++ {
 		s := get(51+g, 105)
+		if lost > 0 && g >= 2 && g <= 19 {
+			if s != 0 {
+				return fail("lost group pointer must be zero")
+			}
+			continue
+		}
 		if s < 8 || s > 3000 || groups[s] {
 			return fail("20 distinct mobile endpoints required")
 		}
@@ -86,7 +99,7 @@ func ReplayMercenaryBaseBirth(before []byte, in BaseInputs) ([]byte, BaseStats, 
 			endpoint = s
 		}
 	}
-	if total != 10000 {
+	if total != 10000-lost {
 		return fail("initial force total")
 	}
 	wandererLinks := 0

@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-14
 
 This section is the current planning baseline, checked against merged `main`
-through `c80a51b8` (including bounded maintenance replay PRs #151–153 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `e476e950` (including bounded maintenance replay PRs #151–155 and #158–162 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -210,9 +210,17 @@ steps and three whole native final Wanderer records match Go chains. Qualified
 raw arithmetic, the 450-batch defect and inherited zero residues are preserved
 only in research. Historical ordinary-profile APIs are not broadened.
 
-**Next: compose the bounded assault into an explicit late-clock mobile/shared-
-pursuit and recipe/auxiliary extension, reusing existing captures and preserving
-the strict historical ordinary-profile APIs.**
+[Explicit Go late-clock combat integration](yt-maint/GO_LATE_CLOCK_INTEGRATION.md)
+now composes forward routes/shared pursuit, lost-group clearing and skipped scans
+with the bounded assault. Model receipts are replayed for downstream force and
+score accounting; base placement, two surviving desertion draws, lottery and 36
+encounter-news lines complete each late run. The explicit API matches all six
+complete files in all 32 existing observed initial runs. Historical ordinary APIs
+and their 29-run fixtures remain strict; other/partial combat chains are excluded.
+
+**Next: audit a research-only recipe/CLI adapter and the existing evolved-world
+corpus against implemented APIs and open PRs before selecting the next bounded
+migration. Do not repeat the completed initial-world combat integration.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

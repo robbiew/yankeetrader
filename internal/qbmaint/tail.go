@@ -24,6 +24,9 @@ type TailStats struct {
 // has no world writes. Active players, human defenses and funded hiring are
 // excluded. No targets, reports or native endpoint corrections enter this API.
 func ReplayInitialNPCTail(before []byte, in TailInputs) (TailStats, error) {
+	return replayInitialNPCTail(before, in, nil)
+}
+func replayInitialNPCTail(before []byte, in TailInputs, events []WandererEncounter) (TailStats, error) {
 	fail := func(s string) (TailStats, error) { return TailStats{}, fmt.Errorf("initial NPC tail: %s", s) }
 	if len(before) != WorldRecords*RecordSize || in.State > 0xffffff {
 		return fail("world/state extent")
@@ -58,10 +61,20 @@ func ReplayInitialNPCTail(before []byte, in TailInputs) (TailStats, error) {
 	if read(72, 105)[3] != 0 {
 		return fail("pending revenge")
 	}
+	lost, err := retainedWandererLosses(before, events)
+	if err != nil {
+		return fail(err.Error())
+	}
 	total, count := 0, 0
 	seen := map[int]bool{}
 	for g := 1; g <= 20; g++ {
 		s := get(51+g, 105)
+		if lost > 0 && g >= 2 && g <= 19 {
+			if s != 0 {
+				return fail("lost group pointer must be zero")
+			}
+			continue
+		}
 		if s < 8 || s > 3000 || seen[s] {
 			return fail("twenty distinct group endpoints required")
 		}
@@ -81,7 +94,11 @@ func ReplayInitialNPCTail(before []byte, in TailInputs) (TailStats, error) {
 		total += force
 		count++
 	}
-	if total != 10000 || count != 20 {
+	wantCount := 20
+	if lost > 0 {
+		wantCount = 2
+	}
+	if total != 10000-lost || count != wantCount {
 		return fail("initial force inventory")
 	}
 	rng := qbrng.New(in.State)
