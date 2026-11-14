@@ -2463,3 +2463,19 @@ Tests reject unsupported inputs atomically and preserve inherited/unrelated byte
 Exact-zero TIMER, zero-ground birth and occupied-HQ cases remain excluded. This
 is prefix creation parity, not final-world/full-maintenance or gameplay
 integration; save format 35 is unchanged.
+
+### Bounded Go initial mobile groups
+
+[Initial mobile-group evidence](research/yt-maint/GO_INITIAL_MOBILE_GROUPS.md)
+qualifies `qbmaint.ReplayInitialMobileGroups` against 29 existing native force,
+owner, group-pointer and endpoint-mine inventories. A Go-modeled Wanderer and
+Xannoron prefix feeds the RNG handoff. Allocation, directed plain routes and
+eager inactive-player draws continue through 39 helper-one and 19 helper-two
+reseed samples. Tests preserve the 10000-force total and unrelated bytes, reject
+unsupported inputs atomically and compare separately modeled RNG endpoints.
+Pending revenge pointers are rejected even for inactive victims, with a regression
+based on the recovered inactive-slot control.
+Three existing late-clock Wanderer-combat runs are explicitly excluded; no new
+captures were acquired. Existing groups, retries, merges, regeneration and
+encounters remain outside this research API. Complete maintenance, gameplay
+integration and DOS save interoperability remain separate; save 35 is unchanged.
