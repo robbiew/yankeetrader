@@ -275,6 +275,8 @@ jobs:
           python3 scripts/test_export_clean_port_fixture.py
           python3 scripts/export_evolved_port_fixture.py --check
           python3 scripts/test_export_evolved_port_fixture.py
+          python3 scripts/export_evolved_planet_fixture.py --check
+          python3 scripts/test_export_evolved_planet_fixture.py
           python3 scripts/export_inactive_rank_fixture.py --check
           python3 scripts/test_export_inactive_rank_fixture.py
           python3 scripts/export_wanderer_birth_fixture.py --check

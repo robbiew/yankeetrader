@@ -2605,5 +2605,18 @@ The nine Go blocks match complete native hashes; the exporter checks all 54
 native port-block pairings without new captures or native child-world inputs.
 Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
 with profile-refusal, corruption and immutability tests. This is port-only research:
-full Go evolved maintenance and evolved-planet/NPC migration remain separate.
+full Go evolved maintenance and NPC migration remain separate.
 Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
+
+### Bounded Go evolved-planet economy
+
+[Go evolved-planet replay](research/yt-maint/GO_EVOLVED_PLANET_REPLAY.md) now models
+the retained named planets' elapsed production, old-bank bonuses, interest,
+ground, surplus growth and three eager event draws. All nine complete Go phase
+worlds /27 planet updates match the independently implemented Python phase;
+the exporter revalidates its full three-day chains against 324 native files and
+501 RNG witnesses. Intermediate phase receipts remain modeled, and later NPC
+writes are separate. Tests cover assignment order, immutable inputs, raw clocks,
+unsupported contexts, atomic refusals and corrupted evidence. No captures were
+added. Full Go evolved NPC/auxiliary composition, playable integration and native
+Windows/BBS acceptance remain separate; CLI v1 profiles and save 35 are unchanged.
