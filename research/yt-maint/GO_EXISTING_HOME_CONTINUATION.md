@@ -77,7 +77,9 @@ go test ./internal/qbmaint -run 'TestExistingHome|TestGoPlanetEconomyFeeds'
 
 The [evolved Mercenary/desertion and lottery tail](GO_EVOLVED_TAIL_REPLAY.md)
 now has its own bounded Go API and composes directly with this phase. Next are
-day-one convergence admission, auxiliary output and complete Go evolved chaining.
+evolved auxiliary/final metadata and complete Go chaining. The explicit
+[day-one convergence API](GO_CONVERGENCE_DAY_ONE.md) now shares this mobile engine
+under a separate missing-home gate; this existing-home API remains strict.
 Reuse the [existing Python chain](EVOLVED_CHAIN_REPLAY.md); its recovery is already
 done. The research CLI's initial-only v1 recipes, modern gameplay and save 35 are
 unchanged. This does not establish arbitrary worlds, general DOS loading,

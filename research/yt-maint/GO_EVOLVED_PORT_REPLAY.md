@@ -54,4 +54,5 @@ evolved NPCs, general DOS loading and playable integration remain separate;
 modern saves and gameplay are unchanged. The [bounded Go evolved-planet phase](GO_EVOLVED_PLANET_REPLAY.md) now has its
 own qualified API, as does [existing-home continuation](GO_EXISTING_HOME_CONTINUATION.md).
 The [evolved tail](GO_EVOLVED_TAIL_REPLAY.md) is now migrated too; next audit
-day-one convergence admission and auxiliary output before adding controls.
+evolved auxiliary/final metadata output before adding controls. Explicit
+[day-one convergence admission](GO_CONVERGENCE_DAY_ONE.md) is now migrated.

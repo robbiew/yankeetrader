@@ -73,6 +73,7 @@ Full Go evolved maintenance is still separate: the qualified Go port and planet
 phases do not yet replace the Python evolved NPC and auxiliary composition.
 [Existing-home/mobile continuation](GO_EXISTING_HOME_CONTINUATION.md) now has its
 own bounded Go API and composes directly with this phase, as does the
-[evolved tail](GO_EVOLVED_TAIL_REPLAY.md). Next migrate day-one convergence
-admission and auxiliary output against the [existing chain](EVOLVED_CHAIN_REPLAY.md).
+[evolved tail](GO_EVOLVED_TAIL_REPLAY.md) and explicit
+[day-one convergence phase](GO_CONVERGENCE_DAY_ONE.md). Next migrate evolved
+auxiliary/final output against the [existing chain](EVOLVED_CHAIN_REPLAY.md).
 Do not reacquire completed controls or repeat port/planet/continuation recovery.

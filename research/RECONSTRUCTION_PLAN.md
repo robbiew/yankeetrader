@@ -258,10 +258,19 @@ six cases compose actual Go economy, continuation and tail outputs/states.
 Separate audits revalidate 540 native files, 885 RNG witnesses and 1,440 cache
 fields from existing captures. Intermediate phase oracles remain model-derived.
 
-**Next: migrate bounded day-one convergence home/birth/mobile admission, then
-evolved auxiliary output and complete Go chaining. Reuse the recovered Python
-chain/captures; do not repeat initial replay, CLI, late-clock integration, evolved
-port/planet economy, existing-home/mobile continuation or the completed tail.**
+[Bounded Go day-one convergence admission](yt-maint/GO_CONVERGENCE_DAY_ONE.md)
+now restores the three missing homes around active Convergence Haven and uses
+the shared cache/mobile engine through Base placement. Three complete modeled
+phase worlds, creation flags, 60 helper seeds and 19 activities per run match
+Python. Actual Go port, planet, day-one homes/mobile and tail outputs/states now
+compose in all three cases. Full native qualification remains separate at 324
+files, 501 RNG witnesses and 1,440 cache-field comparisons; older strict APIs
+and existing-home six-phase regressions are retained.
+
+**Next: migrate evolved auxiliary output and final watermark/inactive-rank
+integration, then qualify complete Go three-day six-file chaining. Reuse existing
+Python recovery/captures; do not repeat completed port, planet, day-one birth,
+existing-home/mobile, tail, initial replay, CLI or numeric-runtime work.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
