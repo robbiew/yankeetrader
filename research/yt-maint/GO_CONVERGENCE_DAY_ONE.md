@@ -80,9 +80,8 @@ python3 scripts/test_export_convergence_day_one_fixture.py
 go test ./internal/qbmaint -run 'TestQualifiedConvergenceDayOne|TestGoConvergenceDayOne|TestConvergenceDayOne'
 ```
 
-Next migrate the already recovered evolved auxiliary output and final
-watermark/inactive-rank integration, then qualify complete Go three-day six-file
-chaining. Reuse existing captures and the [Python chain](EVOLVED_CHAIN_REPLAY.md).
+[Evolved auxiliary output and final metadata](GO_EVOLVED_AUXILIARY.md) are now
+implemented separately. Next qualify complete Go three-day six-file chaining. Reuse existing captures and the [Python chain](EVOLVED_CHAIN_REPLAY.md).
 Do not repeat completed port, planet, birth/mobile or tail recovery. Initial-only
 research CLI v1, modern gameplay/save 35, general DOS interoperability and native
 Windows/live BBS acceptance remain separate.
