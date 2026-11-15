@@ -120,5 +120,11 @@ intermediate model receipts. Full Go evolved NPC/auxiliary composition remains o
 [Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
 now follows the Go planet phase through existing-home reuse, physical cache
 normalization and peaceful routes to the pre-Mercenary boundary. Six complete
-modeled phase worlds are qualified separately from full native-chain checks;
-Mercenary/lottery tail, auxiliary output and full Go chaining remain open.
+modeled phase worlds are qualified separately from full native-chain checks.
+The Mercenary/lottery tail is now migrated separately; auxiliary output and
+full Go chaining remain open.
+
+[Bounded Go evolved-tail replay](yt-maint/GO_EVOLVED_TAIL_REPLAY.md) qualifies
+physical-sector desertion, retained empty-route Mercenary movement/reactivation
+and inactive-player lottery selection against 15 modeled Python phases, with
+540 native files and independent RNG/cache qualification kept separate.
