@@ -2605,7 +2605,7 @@ The nine Go blocks match complete native hashes; the exporter checks all 54
 native port-block pairings without new captures or native child-world inputs.
 Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
 with profile-refusal, corruption and immutability tests. This is port-only research:
-full Go evolved maintenance and day-one convergence admission remain separate.
+full Go evolved maintenance and auxiliary composition remain separate.
 Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
 
 ### Bounded Go evolved-planet economy
@@ -2647,5 +2647,20 @@ gates and final states match the Python phase. The exporter separately checks
 Tests compose Go economy, existing-home/mobile continuation and tail directly in
 six cases, preserve departure-zero residues and reject unsupported branches
 without partial output. Model receipts remain distinct from native observations.
-Day-one convergence admission, evolved auxiliary output and complete Go chaining
-remain open; initial/late APIs, research CLI v1, gameplay and save 35 are unchanged.
+Day-one convergence admission now has its own bounded API; evolved auxiliary
+output and complete Go chaining remain open. Initial/late APIs, research CLI v1,
+gameplay and save 35 are unchanged.
+
+### Bounded Go day-one convergence admission
+
+[Day-one convergence replay](research/yt-maint/GO_CONVERGENCE_DAY_ONE.md) now
+restores missing NPC homes and runs cache-normalized mobile allocation while
+preserving active Convergence Haven. Three complete phase worlds, 60 helper
+reseeds and 19 mobile activities per run match the existing Python phase.
+Tests compose actual Go port, planet, birth/mobile and tail outputs/states in
+all three cases. The exporter separately revalidates 324 native files, 501 RNG
+witnesses and 1,440 cache fields; no native child or endpoint corrections enter
+synthesis, and no captures changed. Strict older APIs, raw residues, unassigned
+bytes, source dates and atomic refusals are covered. Evolved auxiliary/final
+metadata and complete Go six-file chaining remain separate; CLI v1 profiles,
+modern gameplay and save 35 are unchanged.

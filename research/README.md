@@ -128,3 +128,9 @@ full Go chaining remain open.
 physical-sector desertion, retained empty-route Mercenary movement/reactivation
 and inactive-player lottery selection against 15 modeled Python phases, with
 540 native files and independent RNG/cache qualification kept separate.
+
+[Bounded Go day-one convergence admission](yt-maint/GO_CONVERGENCE_DAY_ONE.md)
+now preserves the active Haven while restoring missing homes and routing mobile
+groups. Three complete modeled phases and direct Go port/economy/home/tail
+composition are qualified separately from full native-chain file/RNG/cache audits.
+Evolved auxiliary/final metadata and complete Go chaining remain open.

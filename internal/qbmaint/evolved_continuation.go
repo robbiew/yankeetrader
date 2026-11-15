@@ -36,7 +36,8 @@ type ContinuationRoute struct {
 	Route                                                           []int
 }
 
-// ContinuationStats describes only the existing-home/mobile phase.
+// ContinuationStats describes the bounded home/mobile phase. Births is nil
+// for the strict existing-home API and explicit for day-one creation.
 type ContinuationStats struct {
 	InitialState, FinalState                                                       uint32
 	Draws, Allocations, TopFallback, WandererSector, BaseSector, XannoronIncrement int
@@ -45,6 +46,7 @@ type ContinuationStats struct {
 	ClearedSectors, WandererAttempts                                               []int
 	Seeds                                                                          []ContinuationSeed
 	Routes                                                                         []ContinuationRoute
+	Births                                                                         *ConvergenceBirthStats
 }
 
 // ReplayExistingHomeContinuation preserves existing homes and normalizes mobile
@@ -52,8 +54,15 @@ type ContinuationStats struct {
 // complete world at the pre-Mercenary boundary. Unknown homes, combat, exhausted
 // clocks/guards or unconsumed clocks fail without output, statistics or mutation.
 func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byte, ContinuationStats, error) {
+	return replayHomeContinuation(before, in, nil)
+}
+func replayHomeContinuation(before []byte, in ContinuationInputs, birth *ConvergenceDayOneInputs) ([]byte, ContinuationStats, error) {
+	context := "existing-home continuation"
+	if birth != nil {
+		context = "convergence day one"
+	}
 	fail := func(s string) ([]byte, ContinuationStats, error) {
-		return nil, ContinuationStats{}, fmt.Errorf("existing-home continuation: %s", s)
+		return nil, ContinuationStats{}, fmt.Errorf("%s: %s", context, s)
 	}
 	if len(before) != WorldRecords*RecordSize || in.State > 0xffffff || len(in.Helpers) < 1 || len(in.Helpers) > 256 {
 		return fail("world/state/clock extent")
@@ -76,7 +85,7 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 		}
 	}
 	day := get(1, 81) + 1
-	if day != 307 && day != 308 {
+	if birth == nil && day != 307 && day != 308 || birth != nil && day != 306 {
 		return fail("post-economy existing-home day")
 	}
 	for r := 2; r <= 51; r++ {
@@ -96,6 +105,9 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 	owners := map[int]int{4052: 0, 4053: -1, 4150: -2, 4151: -1}
 	for r := 4052; r <= 4151; r++ {
 		name, active := names[r]
+		if birth != nil && r != 4053 {
+			active = false
+		}
 		if !active {
 			if number(r, 85) != 0 {
 				return fail("unknown active planet")
@@ -111,7 +123,7 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 		}
 	}
 	ground := get(4151, 77)
-	if ground < 0 || ground > 1000000 {
+	if birth == nil && (ground < 0 || ground > 1000000) {
 		return fail("bounded whole Xannoron ground")
 	}
 	hq := get(1, 117)
@@ -128,6 +140,9 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 			return fail("peaceful whole Xannor force")
 		}
 		total += force
+		if birth != nil && (s != hq && force != 0 || mine != 0) {
+			return fail("clean day-one physical force/mines")
+		}
 		if link < -1 || link > 100 || link > 0 && link != 1 && link != 2 && link != 99 && link != 100 {
 			return fail("known planet links")
 		}
@@ -148,13 +163,19 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 	if total != 10000 || get(51+hq, 85) != -1 || get(51+hq, 81) < 1 {
 		return fail("conserved physical HQ force")
 	}
-	for _, slot := range []int{1, 2, 99, 100} {
-		if len(links[slot]) != 1 {
-			return fail("one existing home link")
+	if birth == nil {
+		for _, slot := range []int{1, 2, 99, 100} {
+			if len(links[slot]) != 1 {
+				return fail("one existing home link")
+			}
 		}
-	}
-	if links[100][0] != hq {
-		return fail("existing Xannoron at HQ")
+		if links[100][0] != hq {
+			return fail("existing Xannoron at HQ")
+		}
+	} else {
+		if len(links[2]) != 1 || len(links[1])+len(links[99])+len(links[100]) != 0 || get(51+hq, 93) != 0 {
+			return fail("day-one Convergence link and missing homes")
+		}
 	}
 	for _, c := range in.Helpers {
 		v := portSingleValue(c.Timer)
@@ -162,7 +183,10 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 			return fail("typed bounded helper TIMER")
 		}
 	}
-	stats := ContinuationStats{InitialState: in.State, BaseSector: links[99][0]}
+	stats := ContinuationStats{InitialState: in.State}
+	if birth == nil {
+		stats.BaseSector = links[99][0]
+	}
 	// Cache ownership is consumed once per physical sector, before pair cleanup.
 	consumed := map[int]bool{}
 	for g := 0; g < 20; g++ {
@@ -196,6 +220,18 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 	if cacheTotal != 10000 || stats.Cache[0].Sector != hq || stats.Cache[0].Strength < 1 {
 		return fail("complete conserved normalized cache")
 	}
+	if birth != nil {
+		for i, g := range stats.Cache {
+			if i == 0 {
+				if g.Strength != 10000 {
+					return fail("day-one HQ cache")
+				}
+			} else if g.Strength != 0 || g.Sector != 0 {
+				return fail("day-one missing mobile groups")
+			}
+		}
+		stats.Births = &ConvergenceBirthStats{Created: [3]string{"wanderer", "xannoron", "base"}}
+	}
 	rng := qbrng.New(in.State)
 	index := 0
 	draw := func(bound int) int { stats.Draws++; return int(float32(rng.Float32()*float32(bound))) + 1 }
@@ -219,7 +255,11 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 		}
 		return n, nil
 	}
-	put(51+links[1][0], 93, 0)
+	if birth == nil {
+		put(51+links[1][0], 93, 0)
+	} else {
+		restoreConvergenceWanderer(work, birth.WandererDay)
+	}
 	accepted := false
 	for attempt := 0; attempt < 64; attempt++ {
 		s, e := helper(1, 0x1f88, 3000)
@@ -241,8 +281,22 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 	if number(4052, 117) == 0 {
 		put(4052, 117, 250000)
 	}
+	if birth != nil {
+		g, bank, stamp, err := restoreConvergenceXannoron(work, *birth, hq, rng)
+		if err != nil {
+			return fail(err.Error())
+		}
+		ground = g
+		stats.Draws += 2
+		stats.Births.InitialGround = g
+		stats.Births.Bank = bank
+		stats.Births.Timestamp = stamp
+	}
 	stats.Draws++
 	stats.XannoronIncrement = int(float32(rng.Float32() * 25))
+	if birth != nil && (ground+stats.XannoronIncrement < 1 || ground+stats.XannoronIncrement > 273) {
+		return fail("zero/out-of-range birth ground outside qualified profile")
+	}
 	put(4151, 77, ground+stats.XannoronIncrement)
 	put(4151, 73, -1)
 	if number(4151, 117) == 0 {
@@ -387,6 +441,26 @@ func ReplayExistingHomeContinuation(before []byte, in ContinuationInputs) ([]byt
 	}
 	if groupTotal != 10000 {
 		return fail("group conservation")
+	}
+	if birth != nil {
+		restoreConvergenceBase(work, birth.BaseDay)
+		accepted := false
+		for attempt := 0; attempt < 64; attempt++ {
+			sector, err := helper(1, 0x437a, 3000)
+			if err != nil {
+				return fail(err.Error())
+			}
+			stats.Births.BaseAttempts = append(stats.Births.BaseAttempts, sector)
+			if get(51+sector, 93) <= 0 {
+				stats.BaseSector = sector
+				put(51+sector, 93, 99)
+				accepted = true
+				break
+			}
+		}
+		if !accepted {
+			return fail("Base placement guard")
+		}
 	}
 	if index != len(in.Helpers) {
 		return fail("unconsumed phase helper clocks")

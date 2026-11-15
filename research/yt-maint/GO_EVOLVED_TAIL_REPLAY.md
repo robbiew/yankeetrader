@@ -84,9 +84,9 @@ python3 scripts/test_export_evolved_tail_fixture.py
 go test ./internal/qbmaint -run 'TestEvolvedTail|TestGoEvolvedEconomyContinuationAndTail'
 ```
 
-Next migrate the bounded day-one convergence home/birth/mobile admission using
-the existing Python recovery, then evolved auxiliary output and complete Go
-chaining. Do not redo completed port, planet, continuation or tail recovery.
+[Day-one convergence admission](GO_CONVERGENCE_DAY_ONE.md) now has its own
+bounded Go API and composes with this tail. Next migrate evolved auxiliary/final
+metadata output and complete Go chaining using the existing Python recovery. Do not redo completed port, planet, continuation or tail recovery.
 Research CLI v1 profiles, playable gameplay and save 35 remain unchanged. General
 DOS loading, broader Mercenary combat, native Windows durability and live BBS
 acceptance remain separate.
