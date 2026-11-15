@@ -104,3 +104,5 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go Wanderer assault](yt-maint/GO_WANDERER_ASSAULT.md): 54 modeled steps across three repeated observed late runs, three complete native final records, raw arithmetic/zero residues and unchanged ordinary-profile admission; integration remains separate.
 
 - [Explicit Go late-clock integration](yt-maint/GO_LATE_CLOCK_INTEGRATION.md): forward routing/shared pursuit, bounded assault receipts, reduced-force downstream phases and encounter news; all six files match in 32 existing observed runs while historical APIs stay strict.
+
+- [Research replay recipe/CLI adapter](yt-maint/REPLAY_CLI.md): versioned raw-clock recipes, verified before/source hashes, exclusive complete-bundle publication and32 existing six-file CLI comparisons; not modern maintenance or DOS save interoperability.

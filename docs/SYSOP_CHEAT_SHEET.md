@@ -201,3 +201,14 @@ Stale/replayed expected seasons are rejected. It is not routine maintenance.
 An error may leave an archive without resetting. A warning saying **Update
 committed** means the new world is already visible: inspect it before any retry;
 do not repeat a completed reset. See SYSOP.md for recovery details.
+
+## 8. Research-only DOS replay
+
+The source checkout now has `go run ./cmd/qbmaint-replay` for qualified research
+fixtures. It requires an explicit versioned recipe, separate original before
+files and a source root for declared hashes, and writes only to a new isolated
+output bundle. It does not import/export modern saves or replace `yt -maint`;
+keep using the maintenance and backup commands above for a live door. It is not
+included in the published tester packages. See the
+[research instructions](../research/yt-maint/REPLAY_CLI.md) for fixture examples,
+output receipts and validation limits.
