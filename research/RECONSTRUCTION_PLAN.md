@@ -226,9 +226,16 @@ admission, concurrent output reservation and no-publication failures are tested.
 This does not add a playable maintenance switch or general DOS save loader.
 Windows-reserved path renames are handled separately in PR #164; do not duplicate that work.
 
-**Next: audit the already recovered Python evolved-world/three-day corpus for
-the next bounded Go migration, starting with evolved port economy. Reuse existing
-captures and do not repeat initial-world replay, CLI or late-clock integration.**
+[Bounded Go evolved-port economy](yt-maint/GO_EVOLVED_PORT_REPLAY.md) now replays
+three observer chains through days 306/307/308 using only its own modeled port
+handoffs. Nine Go blocks match native hashes; the exporter checks 54 complete
+native port-block pairings from existing captures. Wider cargo sums, rate
+promotions and stored-SINGLE maximum selection are covered. This is port-only;
+full Go evolved records and auxiliary output remain separate.
+
+**Next: audit the already recovered Python evolved-planet economy for the next
+bounded Go migration. Reuse existing captures and do not repeat initial-world
+replay, CLI, late-clock integration or the completed evolved-port slice.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

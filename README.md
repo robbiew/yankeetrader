@@ -2596,3 +2596,14 @@ These are declared provenance checks, not authentication of arbitrary recipes
 or new native RNG witnesses. The source-only tool is separate from `yt -maint`,
 modern saves and release packages; gameplay/save format35 is unchanged. See the
 [sysop boundary note](docs/SYSOP_CHEAT_SHEET.md#8-research-only-dos-replay).
+
+### Bounded Go evolved-port economy
+
+[Go evolved-port replay](research/yt-maint/GO_EVOLVED_PORT_REPLAY.md) now carries
+its own modeled port blocks through the retained three-day convergence profile.
+The nine Go blocks match complete native hashes; the exporter checks all 54
+native port-block pairings without new captures or native child-world inputs.
+Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
+with profile-refusal, corruption and immutability tests. This is port-only research:
+full Go evolved maintenance and evolved-planet/NPC migration remain separate.
+Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
