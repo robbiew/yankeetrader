@@ -75,9 +75,9 @@ python3 scripts/test_export_evolved_continuation_fixture.py
 go test ./internal/qbmaint -run 'TestExistingHome|TestGoPlanetEconomyFeeds'
 ```
 
-The next bounded migration is the existing zero-tax evolved Mercenary/desertion
-and lottery tail, followed by day-one convergence admission, auxiliary output
-and complete Go evolved chaining.
+The [evolved Mercenary/desertion and lottery tail](GO_EVOLVED_TAIL_REPLAY.md)
+now has its own bounded Go API and composes directly with this phase. Next are
+day-one convergence admission, auxiliary output and complete Go evolved chaining.
 Reuse the [existing Python chain](EVOLVED_CHAIN_REPLAY.md); its recovery is already
 done. The research CLI's initial-only v1 recipes, modern gameplay and save 35 are
 unchanged. This does not establish arbitrary worlds, general DOS loading,

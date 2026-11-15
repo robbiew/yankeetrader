@@ -2605,7 +2605,7 @@ The nine Go blocks match complete native hashes; the exporter checks all 54
 native port-block pairings without new captures or native child-world inputs.
 Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
 with profile-refusal, corruption and immutability tests. This is port-only research:
-full Go evolved maintenance and remaining NPC-tail migration remain separate.
+full Go evolved maintenance and day-one convergence admission remain separate.
 Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
 
 ### Bounded Go evolved-planet economy
@@ -2632,5 +2632,20 @@ and 1,440 cache fields. No captures were added or used as endpoint corrections.
 Tests also compose the Go planet phase directly into this phase, cover 17/0
 reallocations, preserve Base bytes and reject unsupported or incomplete inputs
 without partial output. README/plan and CI distinguish model receipts from
-native oracles. The evolved Mercenary/lottery tail, auxiliary output and full Go
-chaining remain separate; CLI v1 profiles, modern gameplay and save 35 are unchanged.
+native oracles. The [evolved tail](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now
+has its own bounded Go API; auxiliary output and full Go chaining remain separate.
+CLI v1 profiles, modern gameplay and save 35 are unchanged.
+
+### Bounded Go evolved Mercenary/desertion and lottery tail
+
+[Evolved Go tail replay](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now counts
+physical defenses independently of duplicate group pointers, follows the retained
+37/97,525-fighter empty-route movement/reactivation paths and computes the
+inactive-player lottery. All 15 complete phase worlds, helper reseeds, routes,
+gates and final states match the Python phase. The exporter separately checks
+540 native files, 885 RNG witnesses and 1,440 cache fields using existing captures.
+Tests compose Go economy, existing-home/mobile continuation and tail directly in
+six cases, preserve departure-zero residues and reject unsupported branches
+without partial output. Model receipts remain distinct from native observations.
+Day-one convergence admission, evolved auxiliary output and complete Go chaining
+remain open; initial/late APIs, research CLI v1, gameplay and save 35 are unchanged.

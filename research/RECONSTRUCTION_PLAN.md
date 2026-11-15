@@ -250,11 +250,18 @@ creation clocks while common Xannoron ground draws remain. Exporter audits keep
 324 native files, 501 RNG witnesses and 1,440 cache fields separate from modeled
 phase receipts. No native capture or historical API was changed.
 
-**Next: audit the existing zero-tax evolved Mercenary/desertion and lottery tail
-for the next bounded Go migration, then day-one convergence admission, auxiliary
-output and complete chaining.
-Reuse the recovered Python chain/captures; do not repeat initial replay, CLI,
-late-clock integration, evolved port/planet economy or existing-home/mobile work.**
+[Bounded Go evolved Mercenary/desertion and lottery tail](yt-maint/GO_EVOLVED_TAIL_REPLAY.md)
+now covers physical-sector eager draws, absent or retained 37/97,525 Mercenaries,
+empty-route descending reactivation and inactive-player lottery selection.
+All 15 complete modeled phase worlds and calculated receipts match Python;
+six cases compose actual Go economy, continuation and tail outputs/states.
+Separate audits revalidate 540 native files, 885 RNG witnesses and 1,440 cache
+fields from existing captures. Intermediate phase oracles remain model-derived.
+
+**Next: migrate bounded day-one convergence home/birth/mobile admission, then
+evolved auxiliary output and complete Go chaining. Reuse the recovered Python
+chain/captures; do not repeat initial replay, CLI, late-clock integration, evolved
+port/planet economy, existing-home/mobile continuation or the completed tail.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

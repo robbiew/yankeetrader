@@ -53,4 +53,5 @@ three-day files, NPCs, economy and auxiliary output. Full Go evolved maintenance
 evolved NPCs, general DOS loading and playable integration remain separate;
 modern saves and gameplay are unchanged. The [bounded Go evolved-planet phase](GO_EVOLVED_PLANET_REPLAY.md) now has its
 own qualified API, as does [existing-home continuation](GO_EXISTING_HOME_CONTINUATION.md).
-The next migration should audit the evolved Mercenary/lottery tail before adding controls.
+The [evolved tail](GO_EVOLVED_TAIL_REPLAY.md) is now migrated too; next audit
+day-one convergence admission and auxiliary output before adding controls.
