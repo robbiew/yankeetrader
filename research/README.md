@@ -111,3 +111,8 @@ The [bounded Go evolved-port replay](yt-maint/GO_EVOLVED_PORT_REPLAY.md) reuses
 the three-day convergence captures for port-only modeled handoff, with wider
 cargo sums and complete native-block validation; full Go evolved maintenance
 remains separate.
+
+The [bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md)
+qualifies nine modeled phase worlds /27 updates against the existing Python
+phase, with complete native-chain and RNG witness checks kept separate from
+intermediate model receipts. Full Go evolved NPC/auxiliary composition remains open.

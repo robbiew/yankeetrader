@@ -233,9 +233,18 @@ native port-block pairings from existing captures. Wider cargo sums, rate
 promotions and stored-SINGLE maximum selection are covered. This is port-only;
 full Go evolved records and auxiliary output remain separate.
 
-**Next: audit the already recovered Python evolved-planet economy for the next
-bounded Go migration. Reuse existing captures and do not repeat initial-world
-replay, CLI, late-clock integration or the completed evolved-port slice.**
+[Bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md) now
+qualifies all nine complete modeled economy-phase worlds /27 planet updates
+against the independent Python phase. Its exporter revalidates all 324 complete
+native chain files and 501 RNG witnesses, without new captures or native child
+inputs. Old-bank bonuses, SINGLE assignment/floor order, fractional production,
+surplus growth and eager event draws are covered. Phase receipts remain modeled;
+subsequent NPC changes and full Go evolved composition remain separate.
+
+**Next: audit existing-home lookup/skip and cache-normalized mobile continuation
+in the already recovered Python evolved chain for the next bounded Go migration.
+Reuse captures; do not repeat initial replay, CLI, late-clock integration or
+completed evolved port/planet economy.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

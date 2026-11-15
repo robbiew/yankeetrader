@@ -50,6 +50,7 @@ go test ./internal/qbmaint -run TestEvolved
 This establishes port-only Go handoff. The existing
 [Python evolved-chain replay](EVOLVED_CHAIN_REPLAY.md) already covers complete
 three-day files, NPCs, economy and auxiliary output. Full Go evolved maintenance,
-evolved planets/NPCs, general DOS loading and playable integration remain separate;
-modern saves and gameplay are unchanged. The next migration should audit the
-already recovered evolved-planet economy before adding any controls.
+evolved NPCs, general DOS loading and playable integration remain separate;
+modern saves and gameplay are unchanged. The [bounded Go evolved-planet phase](GO_EVOLVED_PLANET_REPLAY.md) now has its
+own qualified API; the next migration should audit existing-home continuation
+before adding controls.
