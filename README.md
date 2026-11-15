@@ -2605,7 +2605,7 @@ The nine Go blocks match complete native hashes; the exporter checks all 54
 native port-block pairings without new captures or native child-world inputs.
 Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
 with profile-refusal, corruption and immutability tests. This is port-only research:
-full Go evolved maintenance and NPC migration remain separate.
+full Go evolved maintenance and remaining NPC-tail migration remain separate.
 Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
 
 ### Bounded Go evolved-planet economy
@@ -2620,3 +2620,17 @@ writes are separate. Tests cover assignment order, immutable inputs, raw clocks,
 unsupported contexts, atomic refusals and corrupted evidence. No captures were
 added. Full Go evolved NPC/auxiliary composition, playable integration and native
 Windows/BBS acceptance remain separate; CLI v1 profiles and save 35 are unchanged.
+
+### Bounded Go existing-home and mobile continuation
+
+[Existing-home continuation](research/yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now reuses evolved homes, normalizes physical group caches once and continues
+peaceful mobile routes on days 307/308. Six complete Go phase worlds, helper
+reseeds, 120 group outcomes and 114 route activities match the existing Python
+phase. The exporter separately revalidates 324 native files, 501 RNG witnesses
+and 1,440 cache fields. No captures were added or used as endpoint corrections.
+Tests also compose the Go planet phase directly into this phase, cover 17/0
+reallocations, preserve Base bytes and reject unsupported or incomplete inputs
+without partial output. README/plan and CI distinguish model receipts from
+native oracles. The evolved Mercenary/lottery tail, auxiliary output and full Go
+chaining remain separate; CLI v1 profiles, modern gameplay and save 35 are unchanged.

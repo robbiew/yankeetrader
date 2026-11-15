@@ -116,3 +116,9 @@ The [bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md)
 qualifies nine modeled phase worlds /27 updates against the existing Python
 phase, with complete native-chain and RNG witness checks kept separate from
 intermediate model receipts. Full Go evolved NPC/auxiliary composition remains open.
+
+[Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now follows the Go planet phase through existing-home reuse, physical cache
+normalization and peaceful routes to the pre-Mercenary boundary. Six complete
+modeled phase worlds are qualified separately from full native-chain checks;
+Mercenary/lottery tail, auxiliary output and full Go chaining remain open.
