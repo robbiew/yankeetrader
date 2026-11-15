@@ -52,5 +52,5 @@ This establishes port-only Go handoff. The existing
 three-day files, NPCs, economy and auxiliary output. Full Go evolved maintenance,
 evolved NPCs, general DOS loading and playable integration remain separate;
 modern saves and gameplay are unchanged. The [bounded Go evolved-planet phase](GO_EVOLVED_PLANET_REPLAY.md) now has its
-own qualified API; the next migration should audit existing-home continuation
-before adding controls.
+own qualified API, as does [existing-home continuation](GO_EXISTING_HOME_CONTINUATION.md).
+The next migration should audit the evolved Mercenary/lottery tail before adding controls.

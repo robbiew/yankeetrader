@@ -241,10 +241,20 @@ inputs. Old-bank bonuses, SINGLE assignment/floor order, fractional production,
 surplus growth and eager event draws are covered. Phase receipts remain modeled;
 subsequent NPC changes and full Go evolved composition remain separate.
 
-**Next: audit existing-home lookup/skip and cache-normalized mobile continuation
-in the already recovered Python evolved chain for the next bounded Go migration.
-Reuse captures; do not repeat initial replay, CLI, late-clock integration or
-completed evolved port/planet economy.**
+[Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now covers the post-economy to pre-Mercenary phase on days 307/308. Six complete
+phase worlds, 120 groups, 114 routes and helper reseeds match the Python phase;
+Go planet output/state also feeds it directly in all six cases. Cache force is
+consumed once per physical deployment; allocations are 17/0. Existing homes skip
+creation clocks while common Xannoron ground draws remain. Exporter audits keep
+324 native files, 501 RNG witnesses and 1,440 cache fields separate from modeled
+phase receipts. No native capture or historical API was changed.
+
+**Next: audit the existing zero-tax evolved Mercenary/desertion and lottery tail
+for the next bounded Go migration, then day-one convergence admission, auxiliary
+output and complete chaining.
+Reuse the recovered Python chain/captures; do not repeat initial replay, CLI,
+late-clock integration, evolved port/planet economy or existing-home/mobile work.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
