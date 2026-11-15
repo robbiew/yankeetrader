@@ -2580,3 +2580,19 @@ strict bounds and their original 29-run fixtures. No new captures or native
 endpoint measurements were added; model receipts remain distinct from native
 file oracles. Partial or other encounter chains, defended/populated planets,
 general maintenance and playable integration remain excluded; save 35 is unchanged.
+
+### Research-only maintenance recipe/CLI adapter
+
+[Research replay CLI](research/yt-maint/REPLAY_CLI.md) now exposes
+`go run ./cmd/qbmaint-replay -recipe FILE -before DIR -source-root CHECKOUT -out NEWDIR`.
+Versioned JSON selects `initial` or `initial-wanderer` explicitly, preserves raw
+SINGLE clock hex and checks all three before-file hashes plus declared source
+hashes against the original YTMAINT identity. Unknown/duplicate/missing fields,
+profile mismatches and changed inputs fail before publication. The six DOS files
+and a modeled-RNG receipt are published together under `NEWDIR/replay/`; existing
+paths and output inside input/source trees are refused. The adapter reuses all
+32 existing fixtures /192 complete native outputs; no captures were added.
+These are declared provenance checks, not authentication of arbitrary recipes
+or new native RNG witnesses. The source-only tool is separate from `yt -maint`,
+modern saves and release packages; gameplay/save format35 is unchanged. See the
+[sysop boundary note](docs/SYSOP_CHEAT_SHEET.md#8-research-only-dos-replay).

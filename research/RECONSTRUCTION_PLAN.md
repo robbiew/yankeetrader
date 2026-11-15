@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-14
 
 This section is the current planning baseline, checked against merged `main`
-through `e476e950` (including bounded maintenance replay PRs #151–155 and #158–162 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `394559ff` (including bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -218,9 +218,17 @@ encounter-news lines complete each late run. The explicit API matches all six
 complete files in all 32 existing observed initial runs. Historical ordinary APIs
 and their 29-run fixtures remain strict; other/partial combat chains are excluded.
 
-**Next: audit a research-only recipe/CLI adapter and the existing evolved-world
-corpus against implemented APIs and open PRs before selecting the next bounded
-migration. Do not repeat the completed initial-world combat integration.**
+[Research-only recipe/CLI adapter](yt-maint/REPLAY_CLI.md) now loads explicit
+versioned raw-clock recipes, verifies before/source identities and publishes six
+DOS files plus a modeled receipt in a new isolated bundle. All32 existing cases
+match192 native files through the compiled CLI. Strict schema, file/path/hash
+admission, concurrent output reservation and no-publication failures are tested.
+This does not add a playable maintenance switch or general DOS save loader.
+Windows-reserved path renames are handled separately in PR #164; do not duplicate that work.
+
+**Next: audit the already recovered Python evolved-world/three-day corpus for
+the next bounded Go migration, starting with evolved port economy. Reuse existing
+captures and do not repeat initial-world replay, CLI or late-clock integration.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
