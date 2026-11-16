@@ -886,6 +886,8 @@ random encounters while retaining their resource, replay and durability checks.
 
 Requires Go 1.23+ and a local GoDoors checkout at commit [`d040641937f3d153eefa9d46f23049c4cf91994e`](https://github.com/robbiew/godoors/commit/d040641937f3d153eefa9d46f23049c4cf91994e) or a descendant. That revision adds DOORDROP.INI 1.0 support (required terminal keys, host-supplied size and the `PREF_SOUND` preference) and GoDoors' MIT licence, which release archives bundle under `licenses/`; it also fixes `OpenSession` rejecting unused Unix Door32 handles such as `-1`, and includes the timed-input API and preserves partial escape sequences across the 1 ms autopilot polls. `go.mod` currently replaces `github.com/robbiew/godoors` with `../godoors`, matching this workspace. For another checkout, point that replacement at the matching GoDoors source before building. CI and release builds pin this GoDoors revision. The Unix handle regression and GoDoors suite pass locally, along with Yankee Trader startup and door tests; live Scorpio BBS acceptance remains pending.
 
+The repository checks out on Windows. Windows reserves device names such as `AUX`, `CON`, `NUL`, `COM1` and `LPT1`, with or without an extension, so no path may use one: the Go file is `internal/qbmaint/auxfiles.go`, and the auxiliary native packet is `research/yt-maint/record-replay-native/auxiliary/`. Its bytes, its `aux` contract and pin key and every hash are unchanged; `scripts/verify_maintenance_record_inputs.py` maps that key to the new directory.
+
 ```sh
 go build -o bin/yt ./cmd/yt
 go test -race ./...

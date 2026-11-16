@@ -37,6 +37,10 @@ NATIVE_CONTRACTS = {
             '0x19b50': 1240, '0x18c90': 2130, '0x168b3': 107,
             '0x194e0': 128, '0x19b2a': 12, '0x18148': 236},
 }
+# Contract and pin keys stay immutable. The aux packet lives in auxiliary/
+# because Windows reserves AUX as a device name and cannot check it out.
+NATIVE_DIRS = {'npc': 'npc', 'ports': 'ports', 'aux': 'auxiliary'}
+assert set(NATIVE_DIRS) == set(NATIVE_CONTRACTS)
 
 
 def mbf_integer(n):
@@ -82,11 +86,11 @@ def reconstructed_readonly(original, target):
 
 def verify_native(root, original, pins=None):
     root = Path(root)
-    assert {p.name for p in root.iterdir()} == set(NATIVE_CONTRACTS), 'native packet inventory'
+    assert {p.name for p in root.iterdir()} == set(NATIVE_DIRS.values()), 'native packet inventory'
     loaded = image(original)
     count = 0
     for group, wanted in NATIVE_CONTRACTS.items():
-        path = root / group / 'rea.json'
+        path = root / NATIVE_DIRS[group] / 'rea.json'
         records = json.loads(path.read_text())['records']
         assert len(records) == len(wanted), 'native coverage'
         seen = set()

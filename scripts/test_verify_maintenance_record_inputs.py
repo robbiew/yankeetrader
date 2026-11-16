@@ -198,6 +198,17 @@ class RecordInputTests(unittest.TestCase):
     def test_native_wrong_relocated_bytes(self):
         self.native_reject(lambda r: r['normalized_result'].__setitem__('bytes_hex', '00' * 436), 'native relocated bytes')
 
+    def test_native_renamed_auxiliary_layout(self):
+        self.assertEqual(set(v.NATIVE_DIRS.values()), {'npc', 'ports', 'auxiliary'})
+        self.assertEqual(set(self.pins['native']), set(v.NATIVE_CONTRACTS))
+        root = Path(self.temp.name) / 'native'
+        shutil.copytree(v.NATIVE, root)
+        self.assertEqual(v.verify_native(root, self.original, self.pins['native']), 14)
+        self.assertEqual(v.SHA((root / 'auxiliary/rea.json').read_bytes()), self.pins['native']['aux'])
+        (root / 'auxiliary').rename(root / 'aux-old')
+        with self.assertRaisesRegex(AssertionError, 'native packet inventory'):
+            v.verify_native(root, self.original, self.pins['native'])
+
     def test_changed_pin_file(self):
         path = Path(self.temp.name) / 'pins.json'
         path.write_bytes(v.PINS_FILE.read_bytes() + b' ')
