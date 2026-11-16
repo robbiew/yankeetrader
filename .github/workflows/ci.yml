@@ -283,6 +283,8 @@ jobs:
           python3 scripts/test_export_evolved_tail_fixture.py
           python3 scripts/export_convergence_day_one_fixture.py --check
           python3 scripts/test_export_convergence_day_one_fixture.py
+          python3 scripts/export_evolved_aux_fixture.py --check
+          python3 scripts/test_export_evolved_aux_fixture.py
           python3 scripts/export_inactive_rank_fixture.py --check
           python3 scripts/test_export_inactive_rank_fixture.py
           python3 scripts/export_wanderer_birth_fixture.py --check

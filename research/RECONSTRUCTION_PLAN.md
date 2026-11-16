@@ -267,10 +267,16 @@ compose in all three cases. Full native qualification remains separate at 324
 files, 501 RNG witnesses and 1,440 cache-field comparisons; older strict APIs
 and existing-home six-phase regressions are retained.
 
-**Next: migrate evolved auxiliary output and final watermark/inactive-rank
-integration, then qualify complete Go three-day six-file chaining. Reuse existing
-Python recovery/captures; do not repeat completed port, planet, day-one birth,
-existing-home/mobile, tail, initial replay, CLI or numeric-runtime work.**
+[Bounded Go evolved auxiliary/final metadata](yt-maint/GO_EVOLVED_AUXILIARY.md)
+now qualifies nine complete six-file outputs, including per-day composition of
+actual Go phases. Separate clocks, raw journal rotation, conditional creation
+news, physical-force scoring and watermark/inactive ranks are covered. Existing
+native audits remain separate: 324 files, 501 RNG witnesses, 1,440 cache fields.
+
+**Next: qualify complete Go three-day six-file chaining, feeding each day's own
+outputs into the next day. Reuse the completed Go phases and existing captures;
+do not repeat port, planet, birth/mobile, tail, auxiliary, initial replay, CLI
+or numeric-runtime recovery.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

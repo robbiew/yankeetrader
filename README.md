@@ -2633,7 +2633,7 @@ Tests also compose the Go planet phase directly into this phase, cover 17/0
 reallocations, preserve Base bytes and reject unsupported or incomplete inputs
 without partial output. README/plan and CI distinguish model receipts from
 native oracles. The [evolved tail](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now
-has its own bounded Go API; auxiliary output and full Go chaining remain separate.
+has its own bounded Go API; [evolved auxiliary output](research/yt-maint/GO_EVOLVED_AUXILIARY.md) is now implemented; full cross-day Go chaining remains separate.
 CLI v1 profiles, modern gameplay and save 35 are unchanged.
 
 ### Bounded Go evolved Mercenary/desertion and lottery tail
@@ -2647,8 +2647,7 @@ gates and final states match the Python phase. The exporter separately checks
 Tests compose Go economy, existing-home/mobile continuation and tail directly in
 six cases, preserve departure-zero residues and reject unsupported branches
 without partial output. Model receipts remain distinct from native observations.
-Day-one convergence admission now has its own bounded API; evolved auxiliary
-output and complete Go chaining remain open. Initial/late APIs, research CLI v1,
+Day-one convergence admission now has its own bounded API; evolved auxiliary output is now implemented; complete cross-day Go chaining remains open. Initial/late APIs, research CLI v1,
 gameplay and save 35 are unchanged.
 
 ### Bounded Go day-one convergence admission
@@ -2661,6 +2660,19 @@ Tests compose actual Go port, planet, birth/mobile and tail outputs/states in
 all three cases. The exporter separately revalidates 324 native files, 501 RNG
 witnesses and 1,440 cache fields; no native child or endpoint corrections enter
 synthesis, and no captures changed. Strict older APIs, raw residues, unassigned
-bytes, source dates and atomic refusals are covered. Evolved auxiliary/final
-metadata and complete Go six-file chaining remain separate; CLI v1 profiles,
+bytes, source dates and atomic refusals are covered. Evolved auxiliary/final metadata now has its own bounded API; complete cross-day Go six-file chaining remains separate; CLI v1 profiles,
 modern gameplay and save 35 are unchanged.
+
+### Bounded Go evolved auxiliary output and final metadata
+
+[Evolved auxiliary replay](research/yt-maint/GO_EVOLVED_AUXILIARY.md) now writes
+conditional home-creation news, the physical-force scoreboard, raw journal
+rotation and final watermark/inactive ranks. All nine complete six-file results
+match the retained qualified hashes, including tests composing actual Go port,
+planet, home/mobile and tail outputs within each day. The exporter independently
+revalidates 324 native files, 501 RNG witnesses and 1,440 cache fields without
+new captures or native child-world inputs. Separate report clocks, DOS CRLF/EOF,
+immutable inputs and atomic profile refusals are covered; older initial/late
+auxiliary regressions remain intact. Each day still starts from independently
+modeled before files: complete cross-day Go chaining is next. Research CLI v1,
+modern gameplay, save 35 and Windows/live BBS acceptance remain unchanged.
