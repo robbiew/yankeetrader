@@ -280,10 +280,16 @@ within-day state continuation, per-run startup reset, immutable inputs/outputs
 and late atomic failure are tested. Existing fixture provenance and independent
 324-file/501-witness/1,440-cache-field audits remain unchanged.
 
-**Next: expose this bounded chain through an explicit research recipe/CLI
-profile, reusing existing fixtures and the new Go orchestration. Do not repeat
-completed phase recovery, auxiliary output, three-day chaining or numeric work;
-retain the initial-only CLI v1 boundary until a separate adapter is qualified.**
+[Research recipe/CLI v2](yt-maint/REPLAY_CLI.md#three-day-chain-recipe-v2)
+now exposes `convergence-three-day` from existing fixtures with strict ordered
+clock recipes, isolated 18-file publication and modeled per-day receipts. All
+three compiled-CLI chains match the nine qualified six-file results, with late
+failure/schema/source/overwrite regressions. Existing v1 profiles remain intact.
+
+**Next: audit remaining maintenance-integration gaps against recovered evidence
+and open PRs before selecting another bounded slice. The retained convergence
+phases, cross-day chaining and research CLI exposure are completed; do not repeat
+them or broaden these research profiles into production maintenance implicitly.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

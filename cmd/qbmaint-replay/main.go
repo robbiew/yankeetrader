@@ -14,7 +14,7 @@ func run(args []string, stdout, stderr io.Writer) error {
 	f := flag.NewFlagSet("qbmaint-replay", flag.ContinueOnError)
 	f.SetOutput(stderr)
 	var c qbreplay.Config
-	f.StringVar(&c.RecipePath, "recipe", "", "versioned research recipe JSON")
+	f.StringVar(&c.RecipePath, "recipe", "", "research JSON: v1 initial or v2 convergence-three-day")
 	f.StringVar(&c.BeforeDir, "before", "", "directory containing three original before files")
 	f.StringVar(&c.SourceRoot, "source-root", "", "checkout root for declared source hashes")
 	f.StringVar(&c.OutDir, "out", "", "new directory outside input/source trees; publishes replay/ inside it")
