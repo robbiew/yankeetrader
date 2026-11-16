@@ -273,10 +273,17 @@ actual Go phases. Separate clocks, raw journal rotation, conditional creation
 news, physical-force scoring and watermark/inactive ranks are covered. Existing
 native audits remain separate: 324 files, 501 RNG witnesses, 1,440 cache fields.
 
-**Next: qualify complete Go three-day six-file chaining, feeding each day's own
-outputs into the next day. Reuse the completed Go phases and existing captures;
-do not repeat port, planet, birth/mobile, tail, auxiliary, initial replay, CLI
-or numeric-runtime recovery.**
+[Complete Go three-day convergence chaining](yt-maint/GO_CONVERGENCE_CHAIN.md)
+now passes its own complete six-file outputs across days, beginning with the
+three measured originals. Nine results match native-qualified output hashes;
+within-day state continuation, per-run startup reset, immutable inputs/outputs
+and late atomic failure are tested. Existing fixture provenance and independent
+324-file/501-witness/1,440-cache-field audits remain unchanged.
+
+**Next: expose this bounded chain through an explicit research recipe/CLI
+profile, reusing existing fixtures and the new Go orchestration. Do not repeat
+completed phase recovery, auxiliary output, three-day chaining or numeric work;
+retain the initial-only CLI v1 boundary until a separate adapter is qualified.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

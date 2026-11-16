@@ -2632,36 +2632,42 @@ and 1,440 cache fields. No captures were added or used as endpoint corrections.
 Tests also compose the Go planet phase directly into this phase, cover 17/0
 reallocations, preserve Base bytes and reject unsupported or incomplete inputs
 without partial output. README/plan and CI distinguish model receipts from
-native oracles. The [evolved tail](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now
-has its own bounded Go API; [evolved auxiliary output](research/yt-maint/GO_EVOLVED_AUXILIARY.md) is now implemented; full cross-day Go chaining remains separate.
-CLI v1 profiles, modern gameplay and save 35 are unchanged.
+native oracles. The [evolved tail](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md)
+now has its own bounded Go API; [evolved auxiliary
+output](research/yt-maint/GO_EVOLVED_AUXILIARY.md) is now implemented; full
+cross-day Go chaining now has a separate bounded convergence API. CLI v1
+profiles, modern gameplay and save 35 are unchanged.
 
 ### Bounded Go evolved Mercenary/desertion and lottery tail
 
 [Evolved Go tail replay](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now counts
-physical defenses independently of duplicate group pointers, follows the retained
-37/97,525-fighter empty-route movement/reactivation paths and computes the
-inactive-player lottery. All 15 complete phase worlds, helper reseeds, routes,
-gates and final states match the Python phase. The exporter separately checks
-540 native files, 885 RNG witnesses and 1,440 cache fields using existing captures.
-Tests compose Go economy, existing-home/mobile continuation and tail directly in
-six cases, preserve departure-zero residues and reject unsupported branches
-without partial output. Model receipts remain distinct from native observations.
-Day-one convergence admission now has its own bounded API; evolved auxiliary output is now implemented; complete cross-day Go chaining remains open. Initial/late APIs, research CLI v1,
-gameplay and save 35 are unchanged.
+physical defenses independently of duplicate group pointers, follows the
+retained 37/97,525-fighter empty-route movement/reactivation paths and computes
+the inactive-player lottery. All 15 complete phase worlds, helper reseeds,
+routes, gates and final states match the Python phase. The exporter separately
+checks 540 native files, 885 RNG witnesses and 1,440 cache fields using existing
+captures. Tests compose Go economy, existing-home/mobile continuation and tail
+directly in six cases, preserve departure-zero residues and reject unsupported
+branches without partial output. Model receipts remain distinct from native
+observations. Day-one convergence admission now has its own bounded API; evolved
+auxiliary output is now implemented; complete cross-day Go chaining now has a
+separate bounded API. Initial/late APIs, research CLI v1, gameplay and save 35
+are unchanged.
 
 ### Bounded Go day-one convergence admission
 
 [Day-one convergence replay](research/yt-maint/GO_CONVERGENCE_DAY_ONE.md) now
 restores missing NPC homes and runs cache-normalized mobile allocation while
 preserving active Convergence Haven. Three complete phase worlds, 60 helper
-reseeds and 19 mobile activities per run match the existing Python phase.
-Tests compose actual Go port, planet, birth/mobile and tail outputs/states in
-all three cases. The exporter separately revalidates 324 native files, 501 RNG
+reseeds and 19 mobile activities per run match the existing Python phase. Tests
+compose actual Go port, planet, birth/mobile and tail outputs/states in all
+three cases. The exporter separately revalidates 324 native files, 501 RNG
 witnesses and 1,440 cache fields; no native child or endpoint corrections enter
 synthesis, and no captures changed. Strict older APIs, raw residues, unassigned
-bytes, source dates and atomic refusals are covered. Evolved auxiliary/final metadata now has its own bounded API; complete cross-day Go six-file chaining remains separate; CLI v1 profiles,
-modern gameplay and save 35 are unchanged.
+bytes, source dates and atomic refusals are covered. Evolved auxiliary/final
+metadata now has its own bounded API; [complete Go
+chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md) now has its own bounded
+API; CLI v1 profiles, modern gameplay and save 35 are unchanged.
 
 ### Bounded Go evolved auxiliary output and final metadata
 
@@ -2673,6 +2679,25 @@ planet, home/mobile and tail outputs within each day. The exporter independently
 revalidates 324 native files, 501 RNG witnesses and 1,440 cache fields without
 new captures or native child-world inputs. Separate report clocks, DOS CRLF/EOF,
 immutable inputs and atomic profile refusals are covered; older initial/late
-auxiliary regressions remain intact. Each day still starts from independently
-modeled before files: complete cross-day Go chaining is next. Research CLI v1,
-modern gameplay, save 35 and Windows/live BBS acceptance remain unchanged.
+auxiliary regressions remain intact. These per-day tests still start from
+independently modeled before files; [complete Go
+chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md) now qualifies actual
+cross-day handoffs separately. Research CLI v1, modern gameplay, save 35 and
+Windows/live BBS acceptance remain unchanged.
+
+### Bounded Go three-day convergence chain
+
+[Complete Go convergence chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md)
+now feeds each day's own six-file output into the next day, beginning with only
+the three measured original inputs. All nine day results across three source
+clock sequences match the native-qualified six-file hashes. It reuses the
+qualified port, planet, home/mobile, tail and auxiliary APIs without loading
+native child worlds, phase targets, cache probes or observed RNG endpoints.
+RNG state continues within each day; a fresh source-derived startup seed begins
+each DOS run. Late failures return no partial chain, and inputs and earlier-day
+outputs remain unchanged. Existing evidence checks separately revalidate 324
+native files, 501 RNG witnesses and 1,440 cache fields; no captures changed.
+The next adapter milestone is an explicit research recipe/CLI profile for this
+chain. Existing CLI v1 profiles, modern gameplay and save 35 are unchanged;
+production maintenance, general DOS interoperability and native Windows/BBS
+acceptance remain separate.

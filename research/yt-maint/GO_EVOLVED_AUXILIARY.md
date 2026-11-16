@@ -46,6 +46,7 @@ python3 scripts/test_export_evolved_aux_fixture.py
 go test ./internal/qbmaint -run 'TestEvolvedAux'
 ```
 
-Next qualify complete Go three-day six-file chaining using these existing phases.
+[Complete Go three-day six-file chaining](GO_CONVERGENCE_CHAIN.md) now qualifies
+actual cross-day handoffs separately using these existing phases.
 Research CLI v1 profiles, playable gameplay, save 35, general DOS interoperability
 and native Windows/live BBS acceptance remain separate.
