@@ -171,7 +171,7 @@ original MZ bytes, are retained in three packets:
 - [NPCs](record-replay-native/npc/rea.json), three complete writer ranges including
   the Wanderer assignment list:
   `ev_72238fc8070c6b162c4287f1f769228fd14978ef5b6242b90236532d69bcb631`.
-- [Auxiliary/rankings](record-replay-native/aux/rea.json), ten reads covering writers,
+- [Auxiliary/rankings](record-replay-native/auxiliary/rea.json), ten reads covering writers,
   rotation, literals, masks and the double-precision −1 constant:
   `ev_7780b9339a4ab4e61784c452aea32e9b6301c9daf8b4798e1539d7494e5a9f57`.
 
