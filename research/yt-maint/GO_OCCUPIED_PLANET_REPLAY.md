@@ -61,8 +61,9 @@ go test ./internal/qbmaint -run TestOccupiedPlanet
 
 ## Remaining scope
 
-Next port bounded foreign-defense combat and strong neutral-planet ground
-assault using the existing occupied captures/Python rules. Routing, casualties,
+[Bounded foreign-defense combat](GO_FOREIGN_DEFENSE_REPLAY.md) is now qualified
+separately. Next port strong neutral-planet ground assault using the existing
+occupied captures/Python rules. Routing, casualties,
 news, faction scores and complete occupied-world six-file Go composition remain
 separate. The convergence chain/CLI v2 and Windows path fix are already merged;
 do not repeat them. Modern gameplay, save 35, production maintenance, release

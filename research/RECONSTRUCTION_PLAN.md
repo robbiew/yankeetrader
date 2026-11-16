@@ -295,10 +295,18 @@ match Python. Separate existing-evidence qualification checks 1080 native files
 and 1872 RNG witnesses; no captures were repeated. The older convergence gate
 and research CLI profiles retain their boundaries.
 
-**Next: bounded Go foreign-defense combat from the existing occupied-world
-captures/Python replay, then strong neutral-planet ground assault and routing /
-casualty-dependent news and scores. Do not repeat completed ordinary economy,
-convergence phases, three-day chaining, recipe/CLI exposure or numeric recovery.**
+[Bounded Go foreign-defense combat](yt-maint/GO_FOREIGN_DEFENSE_REPLAY.md)
+now covers the retained sector854 Mercenary defense primitive: 63 modeled
+encounters and 24 synthetic boundary controls match Python, with raw counters,
+capped survivors, exact RNG gates and a derived pursuit-clear instruction.
+The existing whole-run 1080-file/1872-witness audit remains independent; no
+native acquisition was repeated. Moving-group routing/news/score integration
+is not established by this primitive.
+
+**Next: bounded Go strong neutral-planet ground assault from the existing
+occupied captures/Python rules, then routing/shared-pursuit integration and
+casualty-dependent news/scores. Do not repeat completed foreign-defense or
+ordinary economy primitives, convergence chaining, CLI or numeric recovery.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
