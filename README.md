@@ -2735,3 +2735,20 @@ fractional production, wider ground flooring, raw-zero timestamps, owned storage
 exact write bounds and atomic profile refusals. Earlier convergence APIs and
 CLI profiles stay strict; combat/routing and complete occupied-world Go output
 remain next, with modern gameplay, save 35 and release packages unchanged.
+
+### Bounded Go foreign-defense combat
+
+[Foreign-defense replay](research/yt-maint/GO_FOREIGN_DEFENSE_REPLAY.md) now models
+the retained hazard-free sector-854 Mercenary defense branch through a separate
+Go API. All 63 modeled encounter worlds, raw damage counters, capped survivors
+and RNG receipts match the existing Python rules. Twenty-four synthetic controls
+use real LCG states to cover the exact-half/adjacent gate and strict 500/5000
+batch thresholds; they are not new native runs. Inputs stay immutable, only the
+physical defender fields change, and defeated force/owner clear to canonical
+zero. A calculated pursuit-clear flag is returned for later routing integration.
+The exporter separately revalidates 1080 native files and 1872 RNG witnesses
+without new captures, target corrections or changed observation hashes. Tests,
+corruption/provenance controls and CI cover the bounded primitive; moving-group
+routing, neutral-planet ground assault, casualty news/scores and full occupied
+Go maintenance remain separate. Existing CLI profiles, gameplay and save 35 are
+unchanged.
