@@ -57,6 +57,6 @@ go test -race ./internal/qbmaint ./internal/qbrng ./internal/qbmbf ./internal/qb
 go vet ./internal/qbmaint ./internal/qbrng ./internal/qbmbf ./internal/qbinit
 ```
 
-Next audit: the existing auxiliary-file Python writers and six-file before-only
-composition. Check existing evidence and open PRs before migrating them; do not
-repeat the completed ordinary initial NPC world/RNG sequence.
+[Initial auxiliary output](GO_INITIAL_AUX_FILES.md), full initial composition and
+[research CLI profiles](REPLAY_CLI.md) are now complete. Do not repeat them;
+consult the current reconstruction plan for the next bounded gap.

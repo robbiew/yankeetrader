@@ -51,8 +51,9 @@ entry point without duplicating native artifacts or adding another exporter.
 The three late-clock Wanderer-combat prefixes remain excluded. Active players,
 existing NPC worlds, arbitrary production, hiring/desertion, general lottery,
 message compression, DOS save loading, a public CLI and playable integration
-remain outside this API. Modern save format 35 is unchanged. Next audit is the
-existing late-clock combat recovery/captures before expanding Go admission.
+remain outside this API. Modern save format 35 is unchanged. The explicit [late-clock API](GO_LATE_CLOCK_INTEGRATION.md) and
+[research CLI](REPLAY_CLI.md) now cover those separate bounded profiles; this
+original entry point stays strict.
 
 ```
 go test -race ./internal/qbmaint ./internal/qbrng ./internal/qbmbf ./internal/qbinit

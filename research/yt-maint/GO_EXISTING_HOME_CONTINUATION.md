@@ -76,8 +76,8 @@ go test ./internal/qbmaint -run 'TestExistingHome|TestGoPlanetEconomyFeeds'
 ```
 
 The [evolved Mercenary/desertion and lottery tail](GO_EVOLVED_TAIL_REPLAY.md)
-now has its own bounded Go API and composes directly with this phase. Next are
-evolved auxiliary/final metadata and complete Go chaining. The explicit
+now has its own bounded Go API and composes directly with this phase. [Evolved auxiliary output](GO_EVOLVED_AUXILIARY.md) and
+[complete Go chaining](GO_CONVERGENCE_CHAIN.md) are now qualified separately. The explicit
 [day-one convergence API](GO_CONVERGENCE_DAY_ONE.md) now shares this mobile engine
 under a separate missing-home gate; this existing-home API remains strict.
 Reuse the [existing Python chain](EVOLVED_CHAIN_REPLAY.md); its recovery is already

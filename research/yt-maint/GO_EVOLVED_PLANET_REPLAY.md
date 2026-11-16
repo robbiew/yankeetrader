@@ -69,11 +69,11 @@ python3 scripts/test_export_evolved_planet_fixture.py
 go test ./internal/qbmaint -run TestEvolvedPlanet
 ```
 
-Full Go evolved maintenance is still separate: the qualified Go port and planet
-phases do not yet replace the Python evolved NPC and auxiliary composition.
+The bounded [complete Go convergence chain](GO_CONVERGENCE_CHAIN.md) now
+composes these phases; general evolved maintenance remains separate.
 [Existing-home/mobile continuation](GO_EXISTING_HOME_CONTINUATION.md) now has its
 own bounded Go API and composes directly with this phase, as does the
 [evolved tail](GO_EVOLVED_TAIL_REPLAY.md) and explicit
-[day-one convergence phase](GO_CONVERGENCE_DAY_ONE.md). Next migrate evolved
-auxiliary/final output against the [existing chain](EVOLVED_CHAIN_REPLAY.md).
+[day-one convergence phase](GO_CONVERGENCE_DAY_ONE.md). [Evolved auxiliary output](GO_EVOLVED_AUXILIARY.md), complete Go chaining
+and research CLI v2 are now implemented separately.
 Do not reacquire completed controls or repeat port/planet/continuation recovery.

@@ -58,6 +58,6 @@ go vet ./internal/qbmaint ./internal/qbrng ./internal/qbmbf ./internal/qbinit
 
 CI checks the portable oracle, source/clock inventory and corruption controls.
 Tests cover whole records/links, one-draw continuation, inherited sentinel bytes,
-stock/FAC zero residues, atomic admission and output independence. Next audit is
-the initial no-hiring desertion/lottery tail and auxiliary writes against existing
-source/captures; do not repeat completed initial mobile or base creation.
+stock/FAC zero residues, atomic admission and output independence. The initial
+no-hiring tail, auxiliary writers and [research CLI profiles](REPLAY_CLI.md) are
+now complete separately. Do not repeat completed initial mobile/base recovery.
