@@ -115,14 +115,14 @@ remains separate.
 The [bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md)
 qualifies nine modeled phase worlds /27 updates against the existing Python
 phase, with complete native-chain and RNG witness checks kept separate from
-intermediate model receipts. Full Go evolved NPC/auxiliary composition remains open.
+intermediate model receipts. Complete Go convergence composition now has a separate bounded API.
 
 [Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
 now follows the Go planet phase through existing-home reuse, physical cache
 normalization and peaceful routes to the pre-Mercenary boundary. Six complete
 modeled phase worlds are qualified separately from full native-chain checks.
 The Mercenary/lottery tail and auxiliary output are now migrated separately;
-full cross-day Go chaining remains open.
+full cross-day Go chaining now has a separate bounded API.
 
 [Bounded Go evolved-tail replay](yt-maint/GO_EVOLVED_TAIL_REPLAY.md) qualifies
 physical-sector desertion, retained empty-route Mercenary movement/reactivation
@@ -132,10 +132,16 @@ and inactive-player lottery selection against 15 modeled Python phases, with
 [Bounded Go day-one convergence admission](yt-maint/GO_CONVERGENCE_DAY_ONE.md)
 now preserves the active Haven while restoring missing homes and routing mobile
 groups. Three complete modeled phases and direct Go port/economy/home/tail
-composition are qualified separately from full native-chain file/RNG/cache audits.
-Evolved auxiliary/final metadata is now implemented; complete cross-day Go chaining remains open.
+composition are qualified separately from full native-chain file/RNG/cache
+audits. Evolved auxiliary/final metadata is now implemented; complete cross-day
+Go chaining now has a separate bounded API.
 
 [Bounded Go evolved auxiliary/final metadata](yt-maint/GO_EVOLVED_AUXILIARY.md)
 qualifies all six outputs in nine retained day cases, including direct per-day
-Go phase composition. Full cross-day Go chaining remains next; native evidence
+Go phase composition. Complete cross-day Go chaining is now qualified separately; native evidence
 and intermediate modeled inputs retain separate provenance.
+
+[Complete Go three-day convergence chaining](yt-maint/GO_CONVERGENCE_CHAIN.md)
+uses only its own six-file children after the original three inputs. Nine day
+results match native-qualified hashes across three independent source-clock
+sequences. Research recipe/CLI exposure is the next distinct adapter milestone.

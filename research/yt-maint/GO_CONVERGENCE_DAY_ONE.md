@@ -81,7 +81,8 @@ go test ./internal/qbmaint -run 'TestQualifiedConvergenceDayOne|TestGoConvergenc
 ```
 
 [Evolved auxiliary output and final metadata](GO_EVOLVED_AUXILIARY.md) are now
-implemented separately. Next qualify complete Go three-day six-file chaining. Reuse existing captures and the [Python chain](EVOLVED_CHAIN_REPLAY.md).
+implemented separately. [Complete Go three-day six-file chaining](GO_CONVERGENCE_CHAIN.md) is now
+qualified separately. Reuse existing captures and the [Python chain](EVOLVED_CHAIN_REPLAY.md).
 Do not repeat completed port, planet, birth/mobile or tail recovery. Initial-only
 research CLI v1, modern gameplay/save 35, general DOS interoperability and native
 Windows/live BBS acceptance remain separate.
