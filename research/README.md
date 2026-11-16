@@ -147,3 +147,9 @@ results match native-qualified hashes across three independent source-clock
 sequences. [Research recipe/CLI v2](yt-maint/REPLAY_CLI.md#three-day-chain-recipe-v2) now
 exposes this bounded chain through a separate profile and isolated three-day
 bundle; the existing v1 profiles remain intact.
+
+[Bounded Go ordinary/occupied-planet economy](yt-maint/GO_OCCUPIED_PLANET_REPLAY.md)
+qualifies 30 modeled phases /24 updates from the existing ten-case corpus, with
+actual Go port handoffs and separate 1080-file/1872-witness native qualification.
+No acquisition is repeated. Next are bounded foreign-defense and strong neutral
+planet combat, followed by occupied-world routing/news/score composition.

@@ -2720,3 +2720,18 @@ Three compiled-CLI chains match all nine qualified six-file results. Schema,
 source/before corruption, late-helper failure, journal rotation, output reuse
 and atomic publication are tested; existing 32 one-day cases remain intact.
 No native captures, gameplay policy, modern saves or release packages changed.
+
+### Bounded Go ordinary/occupied-planet economy
+
+[Ordinary occupied-world economy](research/yt-maint/GO_OCCUPIED_PLANET_REPLAY.md)
+now has a separate Go research API for clean day-306 ordinary slots 2/3: zero-bank,
+empty stocks, 1000 production rates, 500000 ground and neutral/Xannor owners.
+All 30 complete modeled phase worlds, 24 updates, eager event draws and final
+states match the existing Python replay, including actual Go port handoffs.
+The exporter separately revalidates 180 six-file comparisons /1080 native files
+and 1872 RNG witnesses. Native targets and captured endpoints never correct
+synthesis, and no captures or historical source hashes changed. Tests cover
+fractional production, wider ground flooring, raw-zero timestamps, owned storage,
+exact write bounds and atomic profile refusals. Earlier convergence APIs and
+CLI profiles stay strict; combat/routing and complete occupied-world Go output
+remain next, with modern gameplay, save 35 and release packages unchanged.

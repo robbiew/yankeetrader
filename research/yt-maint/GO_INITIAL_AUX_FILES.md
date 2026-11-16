@@ -55,8 +55,9 @@ this Go composition and authenticated in parent research.
 
 This is bounded six-file validation through research APIs/test composition,
 not a public orchestration CLI, general maintenance, a native save loader or
-playable integration. Modern save format 35 is unchanged. Next audit is public
-research-only recipe/orchestration and excluded late-clock combat prefixes.
+playable integration. Modern save format 35 is unchanged. The separate
+[research CLI](REPLAY_CLI.md) and [late-clock integration](GO_LATE_CLOCK_INTEGRATION.md)
+are now complete; this bootstrap API retains its strict admission.
 
 ```
 python3 scripts/export_initial_aux_fixture.py --check

@@ -65,5 +65,6 @@ rank and report phases remain separate. Modern save format 35 is unchanged.
 CI regenerates and checks source/observation provenance and corruption controls.
 Tests compare every projected native field via its digest, conserve force,
 validate helper/state handoffs, preserve input/unrelated bytes and reject
-unsupported profiles atomically. Next audit is Mercenary Base creation and
-placement against existing captures; do not repeat completed mobile allocation.
+unsupported profiles atomically. [Mercenary Base creation](GO_MERCENARY_BASE_BIRTH.md), tail and
+full initial composition are now migrated separately; do not repeat completed
+mobile allocation or base recovery.

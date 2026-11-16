@@ -224,14 +224,15 @@ DOS files plus a modeled receipt in a new isolated bundle. All32 existing cases
 match192 native files through the compiled CLI. Strict schema, file/path/hash
 admission, concurrent output reservation and no-publication failures are tested.
 This does not add a playable maintenance switch or general DOS save loader.
-Windows-reserved path renames are handled separately in PR #164; do not duplicate that work.
+Windows-reserved path renames and the verifier directory mapping are merged in
+PR #164; native bytes and pin keys are unchanged. Do not duplicate that work.
 
 [Bounded Go evolved-port economy](yt-maint/GO_EVOLVED_PORT_REPLAY.md) now replays
 three observer chains through days 306/307/308 using only its own modeled port
 handoffs. Nine Go blocks match native hashes; the exporter checks 54 complete
 native port-block pairings from existing captures. Wider cargo sums, rate
 promotions and stored-SINGLE maximum selection are covered. This is port-only;
-full Go evolved records and auxiliary output remain separate.
+later convergence phases and six-file chaining are now migrated separately.
 
 [Bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md) now
 qualifies all nine complete modeled economy-phase worlds /27 planet updates
@@ -239,7 +240,7 @@ against the independent Python phase. Its exporter revalidates all 324 complete
 native chain files and 501 RNG witnesses, without new captures or native child
 inputs. Old-bank bonuses, SINGLE assignment/floor order, fractional production,
 surplus growth and eager event draws are covered. Phase receipts remain modeled;
-subsequent NPC changes and full Go evolved composition remain separate.
+subsequent NPC changes and full convergence composition now have separate Go APIs.
 
 [Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
 now covers the post-economy to pre-Mercenary phase on days 307/308. Six complete
@@ -286,10 +287,18 @@ clock recipes, isolated 18-file publication and modeled per-day receipts. All
 three compiled-CLI chains match the nine qualified six-file results, with late
 failure/schema/source/overwrite regressions. Existing v1 profiles remain intact.
 
-**Next: audit remaining maintenance-integration gaps against recovered evidence
-and open PRs before selecting another bounded slice. The retained convergence
-phases, cross-day chaining and research CLI exposure are completed; do not repeat
-them or broaden these research profiles into production maintenance implicitly.**
+[Bounded Go ordinary/occupied-planet economy](yt-maint/GO_OCCUPIED_PLANET_REPLAY.md)
+now covers clean prior-day ordinary slots 2/3, including fractional elapsed and
+production, wider ground flooring, three eager draws per active record and raw
+TIMER persistence. Thirty modeled phases /24 updates and actual Go port handoffs
+match Python. Separate existing-evidence qualification checks 1080 native files
+and 1872 RNG witnesses; no captures were repeated. The older convergence gate
+and research CLI profiles retain their boundaries.
+
+**Next: bounded Go foreign-defense combat from the existing occupied-world
+captures/Python replay, then strong neutral-planet ground assault and routing /
+casualty-dependent news and scores. Do not repeat completed ordinary economy,
+convergence phases, three-day chaining, recipe/CLI exposure or numeric recovery.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

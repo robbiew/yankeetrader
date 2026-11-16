@@ -277,6 +277,8 @@ jobs:
           python3 scripts/test_export_evolved_port_fixture.py
           python3 scripts/export_evolved_planet_fixture.py --check
           python3 scripts/test_export_evolved_planet_fixture.py
+          python3 scripts/export_occupied_planet_fixture.py --check
+          python3 scripts/test_export_occupied_planet_fixture.py
           python3 scripts/export_evolved_continuation_fixture.py --check
           python3 scripts/test_export_evolved_continuation_fixture.py
           python3 scripts/export_evolved_tail_fixture.py --check

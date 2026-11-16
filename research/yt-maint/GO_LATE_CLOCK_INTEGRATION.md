@@ -68,8 +68,9 @@ fixtures; no native evidence was rehashed to redefine an observation.
 The API remains programmatic research. Arbitrary input worlds, general combat,
 active players, evolved maintenance, a public CLI, DOS save loading and playable
 maintenance remain separate. Modern save format35 and sysop behavior are
-unchanged. Next audit is a research-only recipe/CLI adapter and existing evolved
-world evidence; do not repeat initial-world late-clock integration.
+unchanged. The [research CLI](REPLAY_CLI.md), bounded convergence chain and
+[ordinary occupied economy](GO_OCCUPIED_PLANET_REPLAY.md) are now qualified
+separately. Do not repeat initial-world late-clock integration.
 
 ```
 python3 scripts/export_late_clock_fixture.py --check
