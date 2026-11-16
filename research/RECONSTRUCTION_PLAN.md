@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-14
 
 This section is the current planning baseline, checked against merged `main`
-through `e476e950` (including bounded maintenance replay PRs #151–155 and #158–162 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `394559ff` (including bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -218,9 +218,72 @@ encounter-news lines complete each late run. The explicit API matches all six
 complete files in all 32 existing observed initial runs. Historical ordinary APIs
 and their 29-run fixtures remain strict; other/partial combat chains are excluded.
 
-**Next: audit a research-only recipe/CLI adapter and the existing evolved-world
-corpus against implemented APIs and open PRs before selecting the next bounded
-migration. Do not repeat the completed initial-world combat integration.**
+[Research-only recipe/CLI adapter](yt-maint/REPLAY_CLI.md) now loads explicit
+versioned raw-clock recipes, verifies before/source identities and publishes six
+DOS files plus a modeled receipt in a new isolated bundle. All32 existing cases
+match192 native files through the compiled CLI. Strict schema, file/path/hash
+admission, concurrent output reservation and no-publication failures are tested.
+This does not add a playable maintenance switch or general DOS save loader.
+Windows-reserved path renames are handled separately in PR #164; do not duplicate that work.
+
+[Bounded Go evolved-port economy](yt-maint/GO_EVOLVED_PORT_REPLAY.md) now replays
+three observer chains through days 306/307/308 using only its own modeled port
+handoffs. Nine Go blocks match native hashes; the exporter checks 54 complete
+native port-block pairings from existing captures. Wider cargo sums, rate
+promotions and stored-SINGLE maximum selection are covered. This is port-only;
+full Go evolved records and auxiliary output remain separate.
+
+[Bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md) now
+qualifies all nine complete modeled economy-phase worlds /27 planet updates
+against the independent Python phase. Its exporter revalidates all 324 complete
+native chain files and 501 RNG witnesses, without new captures or native child
+inputs. Old-bank bonuses, SINGLE assignment/floor order, fractional production,
+surplus growth and eager event draws are covered. Phase receipts remain modeled;
+subsequent NPC changes and full Go evolved composition remain separate.
+
+[Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now covers the post-economy to pre-Mercenary phase on days 307/308. Six complete
+phase worlds, 120 groups, 114 routes and helper reseeds match the Python phase;
+Go planet output/state also feeds it directly in all six cases. Cache force is
+consumed once per physical deployment; allocations are 17/0. Existing homes skip
+creation clocks while common Xannoron ground draws remain. Exporter audits keep
+324 native files, 501 RNG witnesses and 1,440 cache fields separate from modeled
+phase receipts. No native capture or historical API was changed.
+
+[Bounded Go evolved Mercenary/desertion and lottery tail](yt-maint/GO_EVOLVED_TAIL_REPLAY.md)
+now covers physical-sector eager draws, absent or retained 37/97,525 Mercenaries,
+empty-route descending reactivation and inactive-player lottery selection.
+All 15 complete modeled phase worlds and calculated receipts match Python;
+six cases compose actual Go economy, continuation and tail outputs/states.
+Separate audits revalidate 540 native files, 885 RNG witnesses and 1,440 cache
+fields from existing captures. Intermediate phase oracles remain model-derived.
+
+[Bounded Go day-one convergence admission](yt-maint/GO_CONVERGENCE_DAY_ONE.md)
+now restores the three missing homes around active Convergence Haven and uses
+the shared cache/mobile engine through Base placement. Three complete modeled
+phase worlds, creation flags, 60 helper seeds and 19 activities per run match
+Python. Actual Go port, planet, day-one homes/mobile and tail outputs/states now
+compose in all three cases. Full native qualification remains separate at 324
+files, 501 RNG witnesses and 1,440 cache-field comparisons; older strict APIs
+and existing-home six-phase regressions are retained.
+
+[Bounded Go evolved auxiliary/final metadata](yt-maint/GO_EVOLVED_AUXILIARY.md)
+now qualifies nine complete six-file outputs, including per-day composition of
+actual Go phases. Separate clocks, raw journal rotation, conditional creation
+news, physical-force scoring and watermark/inactive ranks are covered. Existing
+native audits remain separate: 324 files, 501 RNG witnesses, 1,440 cache fields.
+
+[Complete Go three-day convergence chaining](yt-maint/GO_CONVERGENCE_CHAIN.md)
+now passes its own complete six-file outputs across days, beginning with the
+three measured originals. Nine results match native-qualified output hashes;
+within-day state continuation, per-run startup reset, immutable inputs/outputs
+and late atomic failure are tested. Existing fixture provenance and independent
+324-file/501-witness/1,440-cache-field audits remain unchanged.
+
+**Next: expose this bounded chain through an explicit research recipe/CLI
+profile, reusing existing fixtures and the new Go orchestration. Do not repeat
+completed phase recovery, auxiliary output, three-day chaining or numeric work;
+retain the initial-only CLI v1 boundary until a separate adapter is qualified.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

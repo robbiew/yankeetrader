@@ -113,6 +113,16 @@ func replayInitialAux(before map[string][]byte, world []byte, in AuxInputs, even
 			return fail("initial NPC score total")
 		}
 	}
+	news, board, e := formatAuxReports(in, 100*(10000-lost), [3]bool{true, true, true}, events)
+	if e != nil {
+		return fail(e.Error())
+	}
+	return map[string][]byte{"YTNAME.DAT": append([]byte{}, before["YTNAME.DAT"]...), "YTYNEWS.DAT": append([]byte{}, before["YTNEWS.DAT"]...), "YTRMSG.DAT": {}, "YTNEWS.DAT": news, "YTSCORE.ASC": board}, nil
+}
+
+// formatAuxReports is shared by the strict bootstrap and bounded evolved
+// admissions. It owns no admission policy, filesystem, clock or oracle reads.
+func formatAuxReports(in AuxInputs, score int, created [3]bool, events []WandererEncounter) ([]byte, []byte, error) {
 	date := func(value string) (string, error) {
 		d, e := time.Parse("2006-01-02", value)
 		if e != nil || d.Year() < 2026 || d.Year() > 2028 {
@@ -122,11 +132,11 @@ func replayInitialAux(before map[string][]byte, world []byte, in AuxInputs, even
 	}
 	newsDate, e := date(in.NewsDate)
 	if e != nil {
-		return fail("news date")
+		return nil, nil, fmt.Errorf("news date")
 	}
 	scoreDate, e := date(in.ScoreDate)
 	if e != nil {
-		return fail("score date")
+		return nil, nil, fmt.Errorf("score date")
 	}
 	clock := func(s string) bool {
 		if s == "24:00:00" {
@@ -139,24 +149,25 @@ func replayInitialAux(before map[string][]byte, world []byte, in AuxInputs, even
 		return e == nil && t.Format("15:04:05") == s
 	}
 	if !clock(in.NewsClock) || !clock(in.ScoreClock) {
-		return fail("exact native clock")
+		return nil, nil, fmt.Errorf("exact native clock")
 	}
 	// These literals and the fixed bootstrap PRINT USING row are source-qualified
 	// against the immutable original executable by the portable exporter.
-	news := []string{in.NewsClock + " " + newsDate + ": Maintenance Program Ran (Revision 03/14/94)",
-		"  -  The Wanderer is missing or has been destroyed!",
-		"  -  The Wanderer regenerated with P.H.O.E.N.I.X. device!",
-		"  -  The Xannor have made a Planet!", "The Xannor home base now has a planet!",
-		"  -  Xannor report:", "Calculated Dynamic Xannor Regeneration is 0 fighters.",
-		"  -  Mercenary Report:", "  -  The Mercenaries have built a home base using a captured Genesis Device!"}
-	if lost > 0 {
-		extra := []string{}
-		for _, event := range events {
-			extra = append(extra, fmt.Sprintf(" *** %d Xannor attacked the planet \"The Wanderer\"", event.Inputs.Force), " *** Xannor fighters destroyed!")
-		}
-		news = append(news[:7], append(extra, news[7:]...)...)
+	news := []string{in.NewsClock + " " + newsDate + ": Maintenance Program Ran (Revision 03/14/94)"}
+	if created[0] {
+		news = append(news, "  -  The Wanderer is missing or has been destroyed!", "  -  The Wanderer regenerated with P.H.O.E.N.I.X. device!")
 	}
-	score := 100 * (10000 - lost)
+	if created[1] {
+		news = append(news, "  -  The Xannor have made a Planet!", "The Xannor home base now has a planet!")
+	}
+	news = append(news, "  -  Xannor report:", "Calculated Dynamic Xannor Regeneration is 0 fighters.")
+	for _, event := range events {
+		news = append(news, fmt.Sprintf(" *** %d Xannor attacked the planet \"The Wanderer\"", event.Inputs.Force), " *** Xannor fighters destroyed!")
+	}
+	news = append(news, "  -  Mercenary Report:")
+	if created[2] {
+		news = append(news, "  -  The Mercenaries have built a home base using a captured Genesis Device!")
+	}
 	text := fmt.Sprintf("%d", score)
 	for i := len(text) - 3; i > 0; i -= 3 {
 		text = text[:i] + "," + text[i:]
@@ -168,5 +179,5 @@ func replayInitialAux(before map[string][]byte, world []byte, in AuxInputs, even
 		"N o n  -  H u m a n   P l a y e r s", "", "    The Xannor       Rank%     The Mercenaries   Rank%", "================== =========  ================= =======",
 		row, ""}
 	dos := func(lines []string) []byte { return []byte(strings.Join(lines, "\r\n") + "\r\n\x1a") }
-	return map[string][]byte{"YTNAME.DAT": append([]byte{}, before["YTNAME.DAT"]...), "YTYNEWS.DAT": append([]byte{}, before["YTNEWS.DAT"]...), "YTRMSG.DAT": {}, "YTNEWS.DAT": dos(news), "YTSCORE.ASC": dos(board)}, nil
+	return dos(news), dos(board), nil
 }

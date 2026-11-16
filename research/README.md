@@ -104,3 +104,44 @@ Older experiment scripts expect DOS files beside `analysis/` and write results i
 - [Bounded Go Wanderer assault](yt-maint/GO_WANDERER_ASSAULT.md): 54 modeled steps across three repeated observed late runs, three complete native final records, raw arithmetic/zero residues and unchanged ordinary-profile admission; integration remains separate.
 
 - [Explicit Go late-clock integration](yt-maint/GO_LATE_CLOCK_INTEGRATION.md): forward routing/shared pursuit, bounded assault receipts, reduced-force downstream phases and encounter news; all six files match in 32 existing observed runs while historical APIs stay strict.
+
+- [Research replay recipe/CLI adapter](yt-maint/REPLAY_CLI.md): versioned raw-clock recipes, verified before/source hashes, exclusive complete-bundle publication and32 existing six-file CLI comparisons; not modern maintenance or DOS save interoperability.
+
+The [bounded Go evolved-port replay](yt-maint/GO_EVOLVED_PORT_REPLAY.md) reuses
+the three-day convergence captures for port-only modeled handoff, with wider
+cargo sums and complete native-block validation; full Go evolved maintenance
+remains separate.
+
+The [bounded Go evolved-planet economy](yt-maint/GO_EVOLVED_PLANET_REPLAY.md)
+qualifies nine modeled phase worlds /27 updates against the existing Python
+phase, with complete native-chain and RNG witness checks kept separate from
+intermediate model receipts. Complete Go convergence composition now has a separate bounded API.
+
+[Bounded Go existing-home/mobile continuation](yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now follows the Go planet phase through existing-home reuse, physical cache
+normalization and peaceful routes to the pre-Mercenary boundary. Six complete
+modeled phase worlds are qualified separately from full native-chain checks.
+The Mercenary/lottery tail and auxiliary output are now migrated separately;
+full cross-day Go chaining now has a separate bounded API.
+
+[Bounded Go evolved-tail replay](yt-maint/GO_EVOLVED_TAIL_REPLAY.md) qualifies
+physical-sector desertion, retained empty-route Mercenary movement/reactivation
+and inactive-player lottery selection against 15 modeled Python phases, with
+540 native files and independent RNG/cache qualification kept separate.
+
+[Bounded Go day-one convergence admission](yt-maint/GO_CONVERGENCE_DAY_ONE.md)
+now preserves the active Haven while restoring missing homes and routing mobile
+groups. Three complete modeled phases and direct Go port/economy/home/tail
+composition are qualified separately from full native-chain file/RNG/cache
+audits. Evolved auxiliary/final metadata is now implemented; complete cross-day
+Go chaining now has a separate bounded API.
+
+[Bounded Go evolved auxiliary/final metadata](yt-maint/GO_EVOLVED_AUXILIARY.md)
+qualifies all six outputs in nine retained day cases, including direct per-day
+Go phase composition. Complete cross-day Go chaining is now qualified separately; native evidence
+and intermediate modeled inputs retain separate provenance.
+
+[Complete Go three-day convergence chaining](yt-maint/GO_CONVERGENCE_CHAIN.md)
+uses only its own six-file children after the original three inputs. Nine day
+results match native-qualified hashes across three independent source-clock
+sequences. Research recipe/CLI exposure is the next distinct adapter milestone.

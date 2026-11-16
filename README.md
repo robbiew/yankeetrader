@@ -2580,3 +2580,124 @@ strict bounds and their original 29-run fixtures. No new captures or native
 endpoint measurements were added; model receipts remain distinct from native
 file oracles. Partial or other encounter chains, defended/populated planets,
 general maintenance and playable integration remain excluded; save 35 is unchanged.
+
+### Research-only maintenance recipe/CLI adapter
+
+[Research replay CLI](research/yt-maint/REPLAY_CLI.md) now exposes
+`go run ./cmd/qbmaint-replay -recipe FILE -before DIR -source-root CHECKOUT -out NEWDIR`.
+Versioned JSON selects `initial` or `initial-wanderer` explicitly, preserves raw
+SINGLE clock hex and checks all three before-file hashes plus declared source
+hashes against the original YTMAINT identity. Unknown/duplicate/missing fields,
+profile mismatches and changed inputs fail before publication. The six DOS files
+and a modeled-RNG receipt are published together under `NEWDIR/replay/`; existing
+paths and output inside input/source trees are refused. The adapter reuses all
+32 existing fixtures /192 complete native outputs; no captures were added.
+These are declared provenance checks, not authentication of arbitrary recipes
+or new native RNG witnesses. The source-only tool is separate from `yt -maint`,
+modern saves and release packages; gameplay/save format35 is unchanged. See the
+[sysop boundary note](docs/SYSOP_CHEAT_SHEET.md#8-research-only-dos-replay).
+
+### Bounded Go evolved-port economy
+
+[Go evolved-port replay](research/yt-maint/GO_EVOLVED_PORT_REPLAY.md) now carries
+its own modeled port blocks through the retained three-day convergence profile.
+The nine Go blocks match complete native hashes; the exporter checks all 54
+native port-block pairings without new captures or native child-world inputs.
+Wider cargo sums, SINGLE rate promotions and stored-maximum rounding are retained,
+with profile-refusal, corruption and immutability tests. This is port-only research:
+full Go evolved maintenance and auxiliary composition remain separate.
+Initial-only replay APIs, CLI v1 profiles, modern saves and gameplay are unchanged.
+
+### Bounded Go evolved-planet economy
+
+[Go evolved-planet replay](research/yt-maint/GO_EVOLVED_PLANET_REPLAY.md) now models
+the retained named planets' elapsed production, old-bank bonuses, interest,
+ground, surplus growth and three eager event draws. All nine complete Go phase
+worlds /27 planet updates match the independently implemented Python phase;
+the exporter revalidates its full three-day chains against 324 native files and
+501 RNG witnesses. Intermediate phase receipts remain modeled, and later NPC
+writes are separate. Tests cover assignment order, immutable inputs, raw clocks,
+unsupported contexts, atomic refusals and corrupted evidence. No captures were
+added. Full Go evolved NPC/auxiliary composition, playable integration and native
+Windows/BBS acceptance remain separate; CLI v1 profiles and save 35 are unchanged.
+
+### Bounded Go existing-home and mobile continuation
+
+[Existing-home continuation](research/yt-maint/GO_EXISTING_HOME_CONTINUATION.md)
+now reuses evolved homes, normalizes physical group caches once and continues
+peaceful mobile routes on days 307/308. Six complete Go phase worlds, helper
+reseeds, 120 group outcomes and 114 route activities match the existing Python
+phase. The exporter separately revalidates 324 native files, 501 RNG witnesses
+and 1,440 cache fields. No captures were added or used as endpoint corrections.
+Tests also compose the Go planet phase directly into this phase, cover 17/0
+reallocations, preserve Base bytes and reject unsupported or incomplete inputs
+without partial output. README/plan and CI distinguish model receipts from
+native oracles. The [evolved tail](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md)
+now has its own bounded Go API; [evolved auxiliary
+output](research/yt-maint/GO_EVOLVED_AUXILIARY.md) is now implemented; full
+cross-day Go chaining now has a separate bounded convergence API. CLI v1
+profiles, modern gameplay and save 35 are unchanged.
+
+### Bounded Go evolved Mercenary/desertion and lottery tail
+
+[Evolved Go tail replay](research/yt-maint/GO_EVOLVED_TAIL_REPLAY.md) now counts
+physical defenses independently of duplicate group pointers, follows the
+retained 37/97,525-fighter empty-route movement/reactivation paths and computes
+the inactive-player lottery. All 15 complete phase worlds, helper reseeds,
+routes, gates and final states match the Python phase. The exporter separately
+checks 540 native files, 885 RNG witnesses and 1,440 cache fields using existing
+captures. Tests compose Go economy, existing-home/mobile continuation and tail
+directly in six cases, preserve departure-zero residues and reject unsupported
+branches without partial output. Model receipts remain distinct from native
+observations. Day-one convergence admission now has its own bounded API; evolved
+auxiliary output is now implemented; complete cross-day Go chaining now has a
+separate bounded API. Initial/late APIs, research CLI v1, gameplay and save 35
+are unchanged.
+
+### Bounded Go day-one convergence admission
+
+[Day-one convergence replay](research/yt-maint/GO_CONVERGENCE_DAY_ONE.md) now
+restores missing NPC homes and runs cache-normalized mobile allocation while
+preserving active Convergence Haven. Three complete phase worlds, 60 helper
+reseeds and 19 mobile activities per run match the existing Python phase. Tests
+compose actual Go port, planet, birth/mobile and tail outputs/states in all
+three cases. The exporter separately revalidates 324 native files, 501 RNG
+witnesses and 1,440 cache fields; no native child or endpoint corrections enter
+synthesis, and no captures changed. Strict older APIs, raw residues, unassigned
+bytes, source dates and atomic refusals are covered. Evolved auxiliary/final
+metadata now has its own bounded API; [complete Go
+chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md) now has its own bounded
+API; CLI v1 profiles, modern gameplay and save 35 are unchanged.
+
+### Bounded Go evolved auxiliary output and final metadata
+
+[Evolved auxiliary replay](research/yt-maint/GO_EVOLVED_AUXILIARY.md) now writes
+conditional home-creation news, the physical-force scoreboard, raw journal
+rotation and final watermark/inactive ranks. All nine complete six-file results
+match the retained qualified hashes, including tests composing actual Go port,
+planet, home/mobile and tail outputs within each day. The exporter independently
+revalidates 324 native files, 501 RNG witnesses and 1,440 cache fields without
+new captures or native child-world inputs. Separate report clocks, DOS CRLF/EOF,
+immutable inputs and atomic profile refusals are covered; older initial/late
+auxiliary regressions remain intact. These per-day tests still start from
+independently modeled before files; [complete Go
+chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md) now qualifies actual
+cross-day handoffs separately. Research CLI v1, modern gameplay, save 35 and
+Windows/live BBS acceptance remain unchanged.
+
+### Bounded Go three-day convergence chain
+
+[Complete Go convergence chaining](research/yt-maint/GO_CONVERGENCE_CHAIN.md)
+now feeds each day's own six-file output into the next day, beginning with only
+the three measured original inputs. All nine day results across three source
+clock sequences match the native-qualified six-file hashes. It reuses the
+qualified port, planet, home/mobile, tail and auxiliary APIs without loading
+native child worlds, phase targets, cache probes or observed RNG endpoints.
+RNG state continues within each day; a fresh source-derived startup seed begins
+each DOS run. Late failures return no partial chain, and inputs and earlier-day
+outputs remain unchanged. Existing evidence checks separately revalidate 324
+native files, 501 RNG witnesses and 1,440 cache fields; no captures changed.
+The next adapter milestone is an explicit research recipe/CLI profile for this
+chain. Existing CLI v1 profiles, modern gameplay and save 35 are unchanged;
+production maintenance, general DOS interoperability and native Windows/BBS
+acceptance remain separate.
