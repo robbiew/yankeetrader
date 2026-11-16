@@ -46,7 +46,7 @@ python3 scripts/test_export_evolved_aux_fixture.py
 ```
 
 CI's existing race-enabled package tests run the new chain tests, and existing
-fixture checks retain provenance qualification. Next add an explicit research
-recipe/CLI adapter for the bounded chain. Current CLI v1 remains initial-only;
+fixture checks retain provenance qualification. [Research recipe/CLI v2](REPLAY_CLI.md#three-day-chain-recipe-v2) now exposes
+this bounded chain separately. Current CLI v1 remains initial-only;
 modern gameplay/save 35, general production maintenance, DOS save interoperability
 and native Windows/live BBS acceptance are unchanged.

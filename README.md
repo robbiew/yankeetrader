@@ -2585,11 +2585,13 @@ general maintenance and playable integration remain excluded; save 35 is unchang
 
 [Research replay CLI](research/yt-maint/REPLAY_CLI.md) now exposes
 `go run ./cmd/qbmaint-replay -recipe FILE -before DIR -source-root CHECKOUT -out NEWDIR`.
-Versioned JSON selects `initial` or `initial-wanderer` explicitly, preserves raw
-SINGLE clock hex and checks all three before-file hashes plus declared source
+Recipe v1 selects `initial` or `initial-wanderer`; v2 separately selects
+`convergence-three-day`. Both preserve raw SINGLE clock hex and check all three
+before-file hashes plus declared source
 hashes against the original YTMAINT identity. Unknown/duplicate/missing fields,
-profile mismatches and changed inputs fail before publication. The six DOS files
-and a modeled-RNG receipt are published together under `NEWDIR/replay/`; existing
+profile mismatches and changed inputs fail before publication. V1 publishes six
+DOS files and a receipt; v2 publishes three day directories and one receipt under
+`NEWDIR/replay/`. Existing
 paths and output inside input/source trees are refused. The adapter reuses all
 32 existing fixtures /192 complete native outputs; no captures were added.
 These are declared provenance checks, not authentication of arbitrary recipes
@@ -2697,7 +2699,22 @@ RNG state continues within each day; a fresh source-derived startup seed begins
 each DOS run. Late failures return no partial chain, and inputs and earlier-day
 outputs remain unchanged. Existing evidence checks separately revalidate 324
 native files, 501 RNG witnesses and 1,440 cache fields; no captures changed.
-The next adapter milestone is an explicit research recipe/CLI profile for this
-chain. Existing CLI v1 profiles, modern gameplay and save 35 are unchanged;
-production maintenance, general DOS interoperability and native Windows/BBS
+The [research CLI v2 adapter](research/yt-maint/REPLAY_CLI.md#three-day-chain-recipe-v2)
+now exposes this chain separately. Existing CLI v1 profiles, modern gameplay and
+save 35 are unchanged; production maintenance, general DOS interoperability
+and native Windows/BBS
 acceptance remain separate.
+
+### Research three-day recipe/CLI profile
+
+[Recipe v2](research/yt-maint/REPLAY_CLI.md#three-day-chain-recipe-v2) explicitly
+selects `convergence-three-day` with three ordered source-day recipes and only
+the original three before files. The exporter reuses qualified portable fixtures;
+expected outputs and states remain separate from replay inputs. The command
+publishes all 18 DOS files under `replay/day-1/` through `day-3/` and one receipt
+with per-day startup/final states, draw counts, verified inputs and output hashes.
+States are labeled modeled; hashes bind declared provenance, not recipe authors.
+Three compiled-CLI chains match all nine qualified six-file results. Schema,
+source/before corruption, late-helper failure, journal rotation, output reuse
+and atomic publication are tested; existing 32 one-day cases remain intact.
+No native captures, gameplay policy, modern saves or release packages changed.

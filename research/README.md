@@ -144,4 +144,6 @@ and intermediate modeled inputs retain separate provenance.
 [Complete Go three-day convergence chaining](yt-maint/GO_CONVERGENCE_CHAIN.md)
 uses only its own six-file children after the original three inputs. Nine day
 results match native-qualified hashes across three independent source-clock
-sequences. Research recipe/CLI exposure is the next distinct adapter milestone.
+sequences. [Research recipe/CLI v2](yt-maint/REPLAY_CLI.md#three-day-chain-recipe-v2) now
+exposes this bounded chain through a separate profile and isolated three-day
+bundle; the existing v1 profiles remain intact.

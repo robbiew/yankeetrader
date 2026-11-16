@@ -211,4 +211,7 @@ output bundle. It does not import/export modern saves or replace `yt -maint`;
 keep using the maintenance and backup commands above for a live door. It is not
 included in the published tester packages. See the
 [research instructions](../research/yt-maint/REPLAY_CLI.md) for fixture examples,
-output receipts and validation limits.
+output receipts and validation limits. Recipe v1 covers initial maintenance;
+recipe v2 selects `convergence-three-day` and writes `replay/day-1/` through
+`day-3/` together with one receipt. These are retained research worlds, not
+a way to run three days of maintenance on a live game.

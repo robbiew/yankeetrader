@@ -14,7 +14,15 @@ import (
 )
 
 type Config struct{ RecipePath, BeforeDir, SourceRoot, OutDir string }
+type ChainDayReceipt struct {
+	Day          int    `json:"day"`
+	InitialState uint32 `json:"initial_state"`
+	FinalState   uint32 `json:"final_state"`
+	Draws        int    `json:"draws"`
+}
+
 type Receipt struct {
+	Days          []ChainDayReceipt           `json:"days,omitempty"`
 	Format        string                      `json:"format"`
 	Profile       string                      `json:"profile"`
 	Name          string                      `json:"name"`
@@ -42,7 +50,22 @@ func Run(c Config) (Receipt, error) {
 	if e != nil {
 		return fail(e)
 	}
-	d, r, e := Decode(data)
+	var envelope struct {
+		Format string `json:"format"`
+	}
+	if e = json.Unmarshal(data, &envelope); e != nil {
+		return fail(e)
+	}
+	var d Document
+	var r qbmaint.InitialRecipe
+	var chain []qbmaint.ConvergenceDayInputs
+	if envelope.Format == ChainFormat {
+		var v ChainDocument
+		v, chain, e = DecodeChain(data)
+		d = Document{Format: v.Format, Profile: v.Profile, Name: v.Name, BeforeSHA256: v.BeforeSHA256, SourceSHA256: v.SourceSHA256}
+	} else {
+		d, r, e = Decode(data)
+	}
 	if e != nil {
 		return fail(e)
 	}
@@ -125,26 +148,55 @@ func Run(c Config) (Receipt, error) {
 	var files map[string][]byte
 	var stats qbmaint.InitialStats
 	var encounters []qbmaint.WandererEncounter
-	if d.Profile == "initial" {
-		files, stats, e = qbmaint.ReplayInitialMaintenance(before, r)
-	} else {
-		var late qbmaint.WandererInitialStats
-		files, late, e = qbmaint.ReplayInitialMaintenanceWithWanderer(before, r)
-		stats = late.InitialStats
-		encounters = late.Encounters
-	}
-	if e != nil {
-		return fail(e)
-	}
-	receipt := Receipt{Format: "qbmaint-receipt-v1", Profile: d.Profile, Name: d.Name, RecipeSHA256: digest(data), BeforeSHA256: d.BeforeSHA256, SourceSHA256: d.SourceSHA256, OutputSHA256: map[string]string{}, StateEvidence: "modeled-not-native-endpoint", FinalState: stats.FinalState, Draws: stats.Draws, Encounters: encounters}
-	if len(files) != 6 {
-		return fail(fmt.Errorf("unexpected replay output inventory"))
-	}
-	for _, n := range outputNames {
-		b, ok := files[n]
-		if !ok {
-			return fail(fmt.Errorf("missing output: %s", n))
+	receipt := Receipt{Format: "qbmaint-receipt-v1", Profile: d.Profile, Name: d.Name, RecipeSHA256: digest(data), BeforeSHA256: d.BeforeSHA256, SourceSHA256: d.SourceSHA256, OutputSHA256: map[string]string{}, StateEvidence: "modeled-not-native-endpoint"}
+	if d.Profile == ChainProfile {
+		rows, err := qbmaint.ReplayConvergenceChain(before, chain)
+		if err != nil {
+			return fail(err)
 		}
+		files = map[string][]byte{}
+		receipt.Format = "qbmaint-receipt-v2"
+		for i, row := range rows {
+			draws := row.Ports.RNGDraws + row.Planets.Draws + row.Homes.Draws + row.Tail.Draws
+			receipt.Days = append(receipt.Days, ChainDayReceipt{Day: chain[i].Day, InitialState: chain[i].InitialState, FinalState: row.Tail.FinalState, Draws: draws})
+			receipt.Draws += draws
+			receipt.FinalState = row.Tail.FinalState
+			if len(row.Files) != 6 {
+				return fail(fmt.Errorf("unexpected chain inventory"))
+			}
+			for _, n := range outputNames {
+				b, ok := row.Files[n]
+				if !ok {
+					return fail(fmt.Errorf("missing chain output"))
+				}
+				files[fmt.Sprintf("day-%d/%s", i+1, n)] = b
+			}
+		}
+	} else {
+		if d.Profile == "initial" {
+			files, stats, e = qbmaint.ReplayInitialMaintenance(before, r)
+		} else {
+			var late qbmaint.WandererInitialStats
+			files, late, e = qbmaint.ReplayInitialMaintenanceWithWanderer(before, r)
+			stats = late.InitialStats
+			encounters = late.Encounters
+		}
+		if e != nil {
+			return fail(e)
+		}
+		if len(files) != 6 {
+			return fail(fmt.Errorf("unexpected replay output inventory"))
+		}
+		for _, n := range outputNames {
+			if _, ok := files[n]; !ok {
+				return fail(fmt.Errorf("missing output: %s", n))
+			}
+		}
+		receipt.FinalState = stats.FinalState
+		receipt.Draws = stats.Draws
+		receipt.Encounters = encounters
+	}
+	for n, b := range files {
 		receipt.OutputSHA256[n] = digest(b)
 	}
 	rb, e := json.MarshalIndent(receipt, "", "  ")
@@ -255,6 +307,9 @@ func publish(parent, out string, files map[string][]byte, receipt []byte) (err e
 	}
 	defer os.RemoveAll(stage)
 	write := func(n string, b []byte) error {
+		if e := os.MkdirAll(filepath.Dir(filepath.Join(stage, n)), 0700); e != nil {
+			return e
+		}
 		f, e := os.OpenFile(filepath.Join(stage, n), os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
 		if e != nil {
 			return e
@@ -272,7 +327,15 @@ func publish(parent, out string, files map[string][]byte, receipt []byte) (err e
 		}
 		return ce
 	}
-	for _, n := range outputNames {
+	names := make([]string, 0, len(files))
+	for n := range files {
+		if !safeRelative(n) || n == "receipt.json" {
+			return fmt.Errorf("invalid bundle path")
+		}
+		names = append(names, n)
+	}
+	sort.Strings(names)
+	for _, n := range names {
 		if e = write(n, files[n]); e != nil {
 			return e
 		}

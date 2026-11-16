@@ -160,3 +160,27 @@ func TestPublishRefusesExistingFileAndOutputTreeAliases(t *testing.T) {
 		t.Fatal("aliased output tree admitted", e)
 	}
 }
+
+func TestPublishNestedBundleIsolationAndFailure(t *testing.T) {
+	for _, name := range []string{"../escape", "/escape", "day-1/../../escape", "day-1\\escape", "receipt.json"} {
+		parent := t.TempDir()
+		out := filepath.Join(parent, "out")
+		if e := publish(parent, out, map[string][]byte{name: []byte("bad")}, nil); e == nil {
+			t.Fatal("unsafe bundle path admitted", name)
+		}
+		entries, e := os.ReadDir(parent)
+		if e != nil || len(entries) != 0 {
+			t.Fatal("failed publication left files", name, e)
+		}
+	}
+	// A conflicting staged file/directory must not reserve or publish an output.
+	parent := t.TempDir()
+	out := filepath.Join(parent, "out")
+	if e := publish(parent, out, map[string][]byte{"day-1": []byte("file"), "day-1/YTDATA.DAT": []byte("world")}, nil); e == nil {
+		t.Fatal("conflicting bundle published")
+	}
+	entries, e := os.ReadDir(parent)
+	if e != nil || len(entries) != 0 {
+		t.Fatal("failed nested publication left files", e)
+	}
+}
