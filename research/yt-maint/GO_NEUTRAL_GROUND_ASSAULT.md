@@ -55,9 +55,9 @@ python3 scripts/test_export_neutral_ground_fixture.py
 go test ./internal/qbmaint -run TestNeutralGround
 ```
 
-Next integrate ordinary economy, foreign-defense and neutral-ground primitives
-into bounded occupied-world routing/shared pursuit, skipped scans and moving
-groups. Casualty news/scores, downstream tail and complete occupied-world six-file
+[Bounded occupied-world routing](GO_OCCUPIED_ROUTING_REPLAY.md) now composes
+ordinary economy and both combat primitives with shared pursuit, skipped scans
+and moving groups. Casualty news/scores, downstream tail and complete occupied-world six-file
 Go qualification follow separately. Existing convergence/initial APIs and CLI
 profiles, modern gameplay, save 35, releases and native Windows/live BBS
 acceptance are unchanged.

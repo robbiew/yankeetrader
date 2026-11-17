@@ -309,11 +309,18 @@ now models the retained Route Haven branch: 57 encounter worlds/receipts and
 signed force is preserved and only ground bytes change. Separate 1080-file /
 1872-witness native qualification remains unchanged; no new capture was needed.
 
-**Next: bounded Go occupied-world home/mobile routing, composing the qualified
-ordinary economy, foreign defense and strong neutral ground primitives with
-shared pursuit, scan suppression and moving-group writes. Then qualify casualty
-news/scores and complete occupied six-file output. Do not repeat these primitives,
-convergence chaining, CLI or numeric recovery.**
+[Bounded Go occupied-world home/mobile routing](yt-maint/GO_OCCUPIED_ROUTING_REPLAY.md)
+now composes the qualified economy and combat primitives, home restoration,
+source-order placement rejection, shared pursuit, fatal-edge scan suppression,
+physical/group writes and Base birth. Thirty modeled phase worlds /120 events
+match Python; actual Go port/economy handoffs and late atomic refusals are tested.
+Independent existing-evidence qualification retains 1080 files /1872 witnesses.
+Historical convergence/initial gates remain strict; no captures were repeated.
+
+**Next: bounded occupied-world casualty news and faction scoring, then downstream
+Mercenary/lottery-tail composition, final metadata and complete six-file Go replay.
+Reuse the existing occupied Python rules/captures and qualified Go phases; do not
+repeat home/mobile routing, combat/economy primitives or convergence/CLI work.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
