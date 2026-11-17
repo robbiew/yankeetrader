@@ -2893,3 +2893,23 @@ The main CI validation job now has a 120-minute allowance after its 90-minute
 limit canceled an otherwise progressing retained-evidence run. The departure
 fixture checks passed before cancellation; all existing evidence, race/vet,
 terminal and release-package checks remain required and unchanged.
+
+### Bounded Go neutral-owner transfer and mine-before-stock pickup
+
+`qbmaint.ReplayNeutralOwnerStockMercenary` replays the retained six-case linked
+gateway phase from modeled pre-phase bytes and explicit source state/clocks.
+Neutral fighters do not activate as Mercenaries and transfer once at pickup;
+friendly merging and neutral transfer have separate receipts and conservation.
+The linked one-mine action reseeds helper2 /4aa4 and uses two shrinking draws,
+damaging only the incoming force before local fighters and whole stock are added.
+Spent mines use canonical subtraction zero, distinct from stock/departure zeros.
+
+All 18 modeled worlds /27 activation receipts match existing Python replay,
+including nine mine actions and the local departure/reactivation ending at 356.
+Independent retained qualification remains 108 six-file comparisons /648 native
+files and 855 child RNG witnesses; no captures or observation hashes changed.
+Tests verify whole worlds, helper/event order, incoming-only loss, neutral debit,
+actors/fractions/zeros, source-owned writes and late atomic failures. Historical
+held/departed profiles remain strict. [Scope and validation](research/yt-maint/GO_NEUTRAL_OWNER_STOCK.md).
+The API ends before lottery/reports/final metadata; full four-day Go composition,
+CLI admission and playable maintenance remain separate.

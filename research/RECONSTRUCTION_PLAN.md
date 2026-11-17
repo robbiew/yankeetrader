@@ -356,11 +356,18 @@ match Python, with 18 later same-scan activations and independent retained
 cached pickup actor, capture/governor behavior and source zeros are preserved.
 The held-only API and historical tails retain their original strict admission.
 
-**Next: bounded Go neutral-owner transfer and mine-before-stock pickup, reusing
-the existing six-case Python replay/captures. Do not repeat its completed native
-acquisition or Python four-day replay, nor the new held/departed Go phases.
-Complete four-day Go economy/mobile/tail/report composition and research recipe
-admission remain subsequent integration work; audit their dependencies first.**
+[Bounded Go neutral-owner/mine-stock phase](yt-maint/GO_NEUTRAL_OWNER_STOCK.md)
+now derives neutral transfer independently of friendly merging, linked count-two
+mine damage before local/stock addition, and complete mutable local scans. All
+18 modeled worlds /27 activations and nine mine receipts match Python, with
+retained 648-file /855-child-witness qualification. Original captures/hashes and
+historical friendly/departed admission remain unchanged.
+
+**Next: bounded Go surviving foreign-defense/stock continuations from the existing
+defender corpus and Python replay. Audit the specific Mercenary attack branch
+before composing it; do not duplicate the completed Xannor attack primitive or
+owner/mine captures/replay. Complete four-day Go economy/mobile/report/recipe
+composition remains subsequent integration work requiring a dependency audit.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

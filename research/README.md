@@ -192,3 +192,8 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
   phases /66 calculated activations, including later descending-scan reactivation;
   distinct local physical force and incoming pickup actor; retained 864-file /
   1152-child-witness native qualification.
+
+- [Bounded Go neutral-owner/mine pickup](yt-maint/GO_NEUTRAL_OWNER_STOCK.md):
+  18 modeled phases /27 activations, incoming count-two mine damage before local
+  addition and distinct neutral transfer; retained 648-file /855-child-witness
+  qualification remains independent.
