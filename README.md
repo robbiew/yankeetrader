@@ -2752,3 +2752,20 @@ corruption/provenance controls and CI cover the bounded primitive; moving-group
 routing, neutral-planet ground assault, casualty news/scores and full occupied
 Go maintenance remain separate. Existing CLI profiles, gameplay and save 35 are
 unchanged.
+
+### Bounded Go strong neutral-planet ground assault
+
+[Strong neutral-planet replay](research/yt-maint/GO_NEUTRAL_GROUND_ASSAULT.md)
+now models the retained unscreened Route Haven branch at sector 854 /slot 2.
+All 57 modeled encounter worlds, ground losses, signed attacker remainders and
+RNG receipts match the existing Python rules. Thirty-six synthetic controls use
+real recovered RNG states to cover zero/half/maximum draws, small/maximum forces
+and whole/fractional starting ground. Only the ground field changes; production,
+warehouse stocks, owner and placement remain untouched. Inputs are immutable,
+outputs owned and unsupported contexts fail without partial results. The exporter
+separately revalidates 1080 native files and 1872 RNG witnesses without changing
+observations or acquiring new captures. Tests and CI distinguish modeled phase
+receipts from native whole-run qualification. Next is bounded occupied-world
+routing/shared-pursuit integration with both combat primitives, then casualty
+news/scores and complete six-file output. Existing research CLI profiles, modern
+gameplay, save 35 and release packages are unchanged.

@@ -55,7 +55,8 @@ python3 scripts/test_export_foreign_defense_fixture.py
 go test ./internal/qbmaint -run TestForeignDefense
 ```
 
-Next port the recovered strong neutral-planet ground assault. Then integrate
+[Strong neutral-planet ground assault](GO_NEUTRAL_GROUND_ASSAULT.md) is now
+qualified separately. Next integrate
 combat with routing, shared pursuit, scan suppression, group writes, casualties,
 news and scores before claiming complete occupied-world Go maintenance. Existing
 ordinary/convergence APIs, CLI profiles, modern gameplay, save 35, release
