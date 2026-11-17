@@ -152,10 +152,15 @@ bundle; the existing v1 profiles remain intact.
 qualifies 30 modeled phases /24 updates from the existing ten-case corpus, with
 actual Go port handoffs and separate 1080-file/1872-witness native qualification.
 No acquisition is repeated. The foreign-defense primitive is now qualified
-separately; strong neutral-planet ground combat and routing/news/score composition
-remain next.
+separately; strong neutral-planet ground combat is now qualified separately.
+Occupied-world routing/news/score composition remains next.
 
 [Bounded Go foreign-defense combat](yt-maint/GO_FOREIGN_DEFENSE_REPLAY.md)
 qualifies 63 modeled encounters and 24 synthetic gate/batch controls separately
 from the full native-file/RNG witness audit. Routing and casualty publication
 remain distinct integration work; no captures or production behavior changed.
+
+[Bounded Go strong neutral-planet ground assault](yt-maint/GO_NEUTRAL_GROUND_ASSAULT.md)
+qualifies 57 modeled attacks and 36 synthetic controls while retaining original
+capture hashes. Next integrate both combat primitives into bounded occupied-world
+routing, shared pursuit, scan suppression and casualty publication.

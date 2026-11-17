@@ -303,10 +303,17 @@ The existing whole-run 1080-file/1872-witness audit remains independent; no
 native acquisition was repeated. Moving-group routing/news/score integration
 is not established by this primitive.
 
-**Next: bounded Go strong neutral-planet ground assault from the existing
-occupied captures/Python rules, then routing/shared-pursuit integration and
-casualty-dependent news/scores. Do not repeat completed foreign-defense or
-ordinary economy primitives, convergence chaining, CLI or numeric recovery.**
+[Bounded Go strong neutral-planet ground assault](yt-maint/GO_NEUTRAL_GROUND_ASSAULT.md)
+now models the retained Route Haven branch: 57 encounter worlds/receipts and
+36 real-LCG synthetic controls match Python. One ground point is spent per roll,
+signed force is preserved and only ground bytes change. Separate 1080-file /
+1872-witness native qualification remains unchanged; no new capture was needed.
+
+**Next: bounded Go occupied-world home/mobile routing, composing the qualified
+ordinary economy, foreign defense and strong neutral ground primitives with
+shared pursuit, scan suppression and moving-group writes. Then qualify casualty
+news/scores and complete occupied six-file output. Do not repeat these primitives,
+convergence chaining, CLI or numeric recovery.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
