@@ -2847,3 +2847,24 @@ sources/before bytes, injected endpoints and invalid late helpers. See
 Historical v1/v2 profiles remain separate; this does not import DOS worlds into
 modern saves or select playable maintenance policy. Release packages are not
 republished by this milestone.
+
+### Bounded Go friendly-garrison and planet-stock pickup
+
+`qbmaint.ReplayFriendlyStockMercenary` now replays the retained held sector-3000
+garrison and incoming sector-2368 Mercenary phase from modeled pre-phase bytes,
+explicit RNG state and source-labelled target-helper clocks. It derives eager
+physical-defense draws, the earlier hold gate, the incoming activation, target
+rejection/BFS route and actual first gateway entry. Cached friendly force adds
+once before `qbmbf.IntSingle` stock conversion. The positive taking actor is the
+combined pre-stock force; empty/subunit stock clears silently. Gateway governor
+and unrelated bytes survive, with distinct source departure/stock-zero residues.
+
+All 24 modeled phase worlds/receipts across eight joint cases match the existing
+Python replay. Retained four-day synthesis independently matches 144 complete
+six-file comparisons /864 native files and 1104 child RNG witnesses; no captures
+or observation hashes changed. Tests cover raw stock/fractions, held-versus-
+departed gates, derived paths/reseeds, physical conservation, owned output,
+restricted writes and late atomic refusal. [Scope and validation](research/yt-maint/GO_FRIENDLY_STOCK.md).
+This phase ends before lottery/reports/final metadata; full four-day Go/CLI
+composition and departed-garrison behavior remain separate. Existing research
+profiles, playable maintenance, save 35 and release packages are unchanged.

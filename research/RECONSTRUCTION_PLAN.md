@@ -340,11 +340,20 @@ six outputs, source/recipe/before/output receipts, modeled phase results and fre
 publication, with late failures publishing nothing. No historical v1/v2 admission
 was widened and no production policy or release changed.
 
-**Next: audit remaining source branches and maintenance-integration boundaries
-before any further capture or implementation. The retained occupied-world Go
-primitives, reports, six-file composition and research recipe/CLI are complete;
-do not repeat them. General encounters, active-human ranking/mail and production
-maintenance selection still require separate evidence and acceptance scope.**
+[Bounded Go friendly-garrison/stock pickup](yt-maint/GO_FRIENDLY_STOCK.md)
+now models the retained sector-3000 hold and sector-2368 arrival, eager physical
+rolls, source helper reseeds/BFS route, once-only friendly composition and positive
+SINGLE stock floor. All 24 modeled phase worlds/receipts match Python; existing
+four-day qualification remains 864 native files /1104 child RNG witnesses. No
+acquisition was repeated. It ends before lottery/reports/final metadata and does
+not widen historical tail or occupied recipe admission.
+
+**Next: bounded Go departed-garrison/local movement and later same-scan activation,
+reusing the existing departure Python replay/captures. Preserve the newly qualified
+held-garrison guard as a separate API/profile. Full friendly/departed four-day Go
+composition, reports and recipe/CLI admission remain later integration work;
+audit their dependencies first. Do not repeat occupied-world Go composition/CLI,
+held-friendly pickup, original stock controls or Python four-day replay.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
