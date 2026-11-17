@@ -2805,3 +2805,22 @@ owned outputs, DOS CRLF/EOF and unsupported numeric formatting. The finalized
 world still comes from the Python fixture in this report-only milestone; Go tail,
 final metadata and complete occupied six-file composition remain next. Existing
 CLI profiles, gameplay, save 35 and release packages are unchanged.
+
+### Bounded Go occupied-world six-file composition
+
+`qbmaint.ReplayOccupiedFiles` now composes the existing capped ports, ordinary
+planet economy, home/mobile combat, Mercenary/desertion and lottery tail, final
+watermark/inactive ranks, and casualty reports from the original three before
+files and explicit startup/source clocks. It derives intermediate worlds, RNG
+states and events internally. Ten pinned before worlds and original side files,
+day-306 clocks and qualified phase admissions bound this research-only API;
+unsupported contexts and late failures publish no files or partial receipt.
+
+All 30 complete six-file sets match existing before-only Python replay, including
+120 combat events, three surviving-Mercenary activations and conditional lottery
+helpers. Existing captures independently qualify 1080 files and 1872 RNG
+witnesses; no native observations were repeated or changed. Tests cover source
+RNG continuation, mutable descending scans, final metadata, ownership and late
+atomic refusal. [Composition details](research/yt-maint/GO_OCCUPIED_RECORDS.md).
+The research CLI has no occupied-world recipe yet; production maintenance,
+modern saves and release artifacts are unchanged.

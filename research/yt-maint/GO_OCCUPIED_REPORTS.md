@@ -73,7 +73,8 @@ python3 scripts/test_export_occupied_report_fixture.py
 go test ./internal/qbmaint -run TestOccupiedReports
 ```
 
-Next compose the Go routing/reports with the downstream Mercenary/lottery tail
-and final watermark/ranks, then qualify all six occupied-world files. Existing
+[The separate six-file composition](GO_OCCUPIED_RECORDS.md) now joins the Go
+routing/reports with the existing Mercenary/lottery tail and final metadata.
+This report-only API retains its finalized-world boundary. Existing
 research CLI profiles, historical admission, modern gameplay/save 35, releases
 and native Windows/live BBS acceptance remain unchanged.
