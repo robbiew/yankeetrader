@@ -164,3 +164,8 @@ remain distinct integration work; no captures or production behavior changed.
 qualifies 57 modeled attacks and 36 synthetic controls while retaining original
 capture hashes. Next integrate both combat primitives into bounded occupied-world
 routing, shared pursuit, scan suppression and casualty publication.
+
+[Bounded Go occupied-world home/mobile routing](yt-maint/GO_OCCUPIED_ROUTING_REPLAY.md)
+qualifies 30 complete modeled phases /120 combat events, including actual Go
+port/economy handoffs, shared pursuit, scan suppression and moving-group writes.
+Casualty news/scores and complete occupied six-file Go composition remain next.

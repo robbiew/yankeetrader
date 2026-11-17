@@ -2769,3 +2769,21 @@ receipts from native whole-run qualification. Next is bounded occupied-world
 routing/shared-pursuit integration with both combat primitives, then casualty
 news/scores and complete six-file output. Existing research CLI profiles, modern
 gameplay, save 35 and release packages are unchanged.
+
+### Bounded Go occupied-world home/mobile routing
+
+[Occupied routing replay](research/yt-maint/GO_OCCUPIED_ROUTING_REPLAY.md) now
+composes home creation, initial allocation, directed routes, shared pursuit and
+both qualified combat primitives through Mercenary Base birth. All 30 complete
+modeled phase worlds, 120 combat events, traversed prefixes, skipped/eager scans,
+helper reseeds and final states match the existing Python phase. Tests feed
+actual Go port and ordinary-economy output/state directly into routing. Defeated
+foreign defenses clear pursuit; dead groups stop traversal before interception
+scans and clear their pointers. Physical defense and moving-group conservation
+remain distinct, including neutral force retained during deposition. The exporter
+separately revalidates 1080 native files and 1872 RNG witnesses without new
+captures, endpoint correction or changed native hashes. Input isolation, owned
+outputs, strict historical gates and atomic late failures are tested. Next are
+casualty-dependent news/scores, downstream tail composition and complete occupied
+six-file Go output. Existing research CLI profiles, gameplay, save 35 and release
+packages are unchanged.

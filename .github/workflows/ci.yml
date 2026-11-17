@@ -283,6 +283,8 @@ jobs:
           python3 scripts/test_export_foreign_defense_fixture.py
           python3 scripts/export_neutral_ground_fixture.py --check
           python3 scripts/test_export_neutral_ground_fixture.py
+          python3 scripts/export_occupied_routing_fixture.py --check
+          python3 scripts/test_export_occupied_routing_fixture.py
           python3 scripts/export_evolved_continuation_fixture.py --check
           python3 scripts/test_export_evolved_continuation_fixture.py
           python3 scripts/export_evolved_tail_fixture.py --check

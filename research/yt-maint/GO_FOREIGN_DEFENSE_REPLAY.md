@@ -56,8 +56,8 @@ go test ./internal/qbmaint -run TestForeignDefense
 ```
 
 [Strong neutral-planet ground assault](GO_NEUTRAL_GROUND_ASSAULT.md) is now
-qualified separately. Next integrate
-combat with routing, shared pursuit, scan suppression, group writes, casualties,
-news and scores before claiming complete occupied-world Go maintenance. Existing
+qualified separately. [Bounded occupied routing](GO_OCCUPIED_ROUTING_REPLAY.md)
+now integrates combat, shared pursuit, skipped scans and group writes. Casualty
+news/scores and complete occupied-world Go maintenance remain separate. Existing
 ordinary/convergence APIs, CLI profiles, modern gameplay, save 35, release
 packages and native Windows/live BBS acceptance are unchanged.
