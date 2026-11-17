@@ -2868,3 +2868,23 @@ restricted writes and late atomic refusal. [Scope and validation](research/yt-ma
 This phase ends before lottery/reports/final metadata; full four-day Go/CLI
 composition and departed-garrison behavior remain separate. Existing research
 profiles, playable maintenance, save 35 and release packages are unchanged.
+
+### Bounded Go departed-garrison movement and same-scan activation
+
+`qbmaint.ReplayDepartedStockMercenary` now replays the retained local sector-3000
+hold/departure, incoming sector-2368 pickup and later lower-sector activations.
+It reads the changing physical records in descending source order and derives
+eager gates, helper reseeds, rejection candidates, BFS routes and entered prefixes.
+Departed local fighters remain separate from the pickup actor and can activate
+again later in the same scan. Capture depends on the actual entering physical
+force, even for a Mercenary-owned planet; governor bytes remain unchanged.
+
+All 24 modeled phases /66 activations match the existing Python replay, including
+18 later same-scan activations and the held counter-controls. Retained four-day
+qualification remains 144 six-file comparisons /864 native files and 1152 child
+RNG witnesses; no acquisition bytes or observation hashes changed. Tests cover
+complete worlds/receipts, separate physical totals and pickup actors, raw zeros,
+owned writes, unchanged historical guards and late failures after pickup.
+[Scope and validation](research/yt-maint/GO_DEPARTED_STOCK.md).
+The API ends before lottery/reports/final metadata; complete four-day Go/CLI
+composition, general encounters and production maintenance remain separate.

@@ -291,6 +291,8 @@ jobs:
           python3 scripts/test_export_occupied_records_fixture.py
           python3 scripts/export_friendly_stock_fixture.py --check
           python3 scripts/test_export_friendly_stock_fixture.py
+          python3 scripts/export_departed_stock_fixture.py --check
+          python3 scripts/test_export_departed_stock_fixture.py
           python3 scripts/export_evolved_continuation_fixture.py --check
           python3 scripts/test_export_evolved_continuation_fixture.py
           python3 scripts/export_evolved_tail_fixture.py --check
