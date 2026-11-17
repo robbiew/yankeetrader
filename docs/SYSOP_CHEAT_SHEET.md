@@ -215,3 +215,12 @@ output receipts and validation limits. Recipe v1 covers initial maintenance;
 recipe v2 selects `convergence-three-day` and writes `replay/day-1/` through
 `day-3/` together with one receipt. These are retained research worlds, not
 a way to run three days of maintenance on a live game.
+
+
+The checkout-only research command also accepts recipe v3 `occupied-day306` for
+the ten retained occupied-world cases. Export the existing 30 case/observation
+bundles with `python3 scripts/export_occupied_cli_recipes.py --out NEW-DIR`, then
+pass one bundle's `recipe.json` and `before/` directory to `qbmaint-replay`.
+Use a new output directory outside source/input trees; six DOS files plus a
+modeled receipt appear under `OUT/replay/`. This does not import into modern
+saves or change scheduled maintenance. See the [v3 research instructions](../research/yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3).

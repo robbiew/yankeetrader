@@ -332,10 +332,19 @@ Mercenary/lottery tail and final metadata writer required composition, not a
 second primitive. All 30 six-file sets match Python, with independent retained
 1080-file/1872-witness native qualification and no new captures.
 
-**Next: add a research-only occupied-world recipe/CLI adapter for the ten pinned
-before-world cases, reusing these qualified phase clocks/fixtures. Preserve strict
-historical profiles, source attribution, fresh output publication and complete
-six-file receipts. Do not repeat completed combat, reports, tail or composition.**
+The [occupied research recipe/CLI v3](yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3)
+now exposes the composed API through `occupied-day306`. Existing fixtures export
+30 standalone recipes with original before files; comparison oracles and modeled
+intermediate states remain outside command inputs. End-to-end tests compare all
+six outputs, source/recipe/before/output receipts, modeled phase results and fresh
+publication, with late failures publishing nothing. No historical v1/v2 admission
+was widened and no production policy or release changed.
+
+**Next: audit remaining source branches and maintenance-integration boundaries
+before any further capture or implementation. The retained occupied-world Go
+primitives, reports, six-file composition and research recipe/CLI are complete;
+do not repeat them. General encounters, active-human ranking/mail and production
+maintenance selection still require separate evidence and acceptance scope.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

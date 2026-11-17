@@ -178,3 +178,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Go occupied six-file replay](yt-maint/GO_OCCUPIED_RECORDS.md): before-only
   composition of existing Go phases through final metadata and reports, 30
   complete sets with retained native qualification; research API only.
+
+- [Occupied research CLI v3](yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3):
+  30 existing-fixture recipes, before/source checks and fresh six-file publication
+  with modeled faction/combat/tail receipts; no production maintenance selection.
