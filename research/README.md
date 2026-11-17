@@ -174,3 +174,7 @@ Casualty news/scores and complete occupied six-file Go composition remain next.
 qualify 30 five-file report sets, including actual Go combat-event handoffs,
 while retaining modeled-final-world and native whole-run provenance boundaries.
 Next compose the downstream tail/final metadata and complete occupied Go outputs.
+
+- [Go occupied six-file replay](yt-maint/GO_OCCUPIED_RECORDS.md): before-only
+  composition of existing Go phases through final metadata and reports, 30
+  complete sets with retained native qualification; research API only.

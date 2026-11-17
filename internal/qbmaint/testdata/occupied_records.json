@@ -1,0 +1,1686 @@
+{
+  "format": "qb-occupied-records-v1",
+  "sources": {
+    "scripts/export_occupied_records_fixture.py": "84ac5ad0260ff11a3a1867bc590aab1ec86a42327408bf582d45233170da1a90",
+    "scripts/replay_maintenance_occupied_records.py": "175e004a120812a1e61d1d97a166278e93a9e72b590ac52bdcd03b83f5ad3092",
+    "scripts/replay_maintenance_occupied_npcs.py": "e6bb578c64dad3958b4409f4bf690c2cb9130a62ec9773227df92e8d8d6f02fc",
+    "scripts/replay_maintenance_occupied_mercenary.py": "bd4105cb43c592677cf4f1e5cf2e51cef68ae69d98512bbbc79b8a1f7f39c93d",
+    "scripts/replay_maintenance_occupied_aux.py": "649b4b372c6088eb20dcff21be78c3b459183035d7796f64e282e5926f0f4ffe",
+    "scripts/replay_maintenance_active_planets.py": "8f2439363707540407bac5b03f2dc1e31ca2e038b2606f31e0371ed6e82d29a5",
+    "scripts/replay_maintenance_clock_matrix.py": "349c620fc1c9cbc7bfe17fbbf06e05f1cbdce499d0d9bcd5af7094eb8149203b",
+    "scripts/verify_maintenance_occupied.py": "ede7255ad99ff4ce10655c8bf27a3a9c907970f6da144bce806edb9bea217c3b",
+    "scripts/verify_maintenance_occupied_replay.py": "f0a1782e44dfb9af90baed6042806c816808ce445eaa26d4eafd6ac75f4aee6f",
+    "research/yt-maint/occupied-route-controls/pins.json": "7c01a0ef401f3df96f413e4aefd046c7f8a57499a1dfa537c83ea950d0dc7a3a",
+    "research/yt-maint/occupied-replay-native/rea.json": "107dd59cca0e57ade5f590df37b178621abc999f086574de97ad6d83332d0fd7",
+    "archive/dos-original/YTMAINT.EXE": "8fdb4d0a13a8a1f5dae9d41c22cfe5f55fb58f2de58a62fe163165a774ec26a6"
+  },
+  "cases": [
+    {
+      "initial_before_sha256": "f3791778af7ec503dd98e34b030c328c66c4a9e0431fc43dffa5eb1d12816a4c",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "62a561df667708092a4b1e45e2153baa5e781fdca43afc5ace70cef4e8165ca3",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4176d7a30505554a1b398b5fcc3066c0a7615cfb68725f6e8222c11fc02db11e",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-occupied/observed-a"
+    },
+    {
+      "initial_before_sha256": "f3791778af7ec503dd98e34b030c328c66c4a9e0431fc43dffa5eb1d12816a4c",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "62a561df667708092a4b1e45e2153baa5e781fdca43afc5ace70cef4e8165ca3",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4176d7a30505554a1b398b5fcc3066c0a7615cfb68725f6e8222c11fc02db11e",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-occupied/observed-b"
+    },
+    {
+      "initial_before_sha256": "f3791778af7ec503dd98e34b030c328c66c4a9e0431fc43dffa5eb1d12816a4c",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "62a561df667708092a4b1e45e2153baa5e781fdca43afc5ace70cef4e8165ca3",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4176d7a30505554a1b398b5fcc3066c0a7615cfb68725f6e8222c11fc02db11e",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-occupied/observed-c"
+    },
+    {
+      "initial_before_sha256": "70e270190c2a4bb9dc246a0d53d5cb270a9df04805a7b70d4fd452d509e8ab2b",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "31c16813b609dac546acd6494ab4c3fff5d639a0e63f28e92dee234d34ff78ce",
+        "initial_state": 14187577,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4d6c2ebbd2e78c53bc1a2586949bc775aa0b939beed76e53d69c5db02d4e6b08",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2716652,
+      "lottery": "b0cf257e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          89,
+          455,
+          608,
+          635,
+          655,
+          849,
+          1002,
+          1471,
+          1492,
+          1783,
+          1874,
+          1951,
+          1955,
+          2165,
+          2210,
+          2227,
+          2276,
+          2337,
+          2429,
+          2826
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-two-occupied/observed-a"
+    },
+    {
+      "initial_before_sha256": "70e270190c2a4bb9dc246a0d53d5cb270a9df04805a7b70d4fd452d509e8ab2b",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "31c16813b609dac546acd6494ab4c3fff5d639a0e63f28e92dee234d34ff78ce",
+        "initial_state": 14187577,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4d6c2ebbd2e78c53bc1a2586949bc775aa0b939beed76e53d69c5db02d4e6b08",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2716652,
+      "lottery": "b0cf257e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          89,
+          455,
+          608,
+          635,
+          655,
+          849,
+          1002,
+          1471,
+          1492,
+          1783,
+          1874,
+          1951,
+          1955,
+          2165,
+          2210,
+          2227,
+          2276,
+          2337,
+          2429,
+          2826
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-two-occupied/observed-b"
+    },
+    {
+      "initial_before_sha256": "70e270190c2a4bb9dc246a0d53d5cb270a9df04805a7b70d4fd452d509e8ab2b",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "31c16813b609dac546acd6494ab4c3fff5d639a0e63f28e92dee234d34ff78ce",
+        "initial_state": 14187577,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "4d6c2ebbd2e78c53bc1a2586949bc775aa0b939beed76e53d69c5db02d4e6b08",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2716652,
+      "lottery": "b0cf257e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          89,
+          455,
+          608,
+          635,
+          655,
+          849,
+          1002,
+          1471,
+          1492,
+          1783,
+          1874,
+          1951,
+          1955,
+          2165,
+          2210,
+          2227,
+          2276,
+          2337,
+          2429,
+          2826
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-two-occupied/observed-c"
+    },
+    {
+      "initial_before_sha256": "5f758fc6559124ed665fa4d523bf08bb08f99dca71d2047fca11cefa0a13e8a2",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "fc59036639d9568624f3817719f7e25d394c1be55387e371d3ccffa3b9d0e987",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "782436c57e002156af096c2fffb354f57c4b457c6f0fc0a73059f1d8de677208",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-occupied/observed-a"
+    },
+    {
+      "initial_before_sha256": "5f758fc6559124ed665fa4d523bf08bb08f99dca71d2047fca11cefa0a13e8a2",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "fc59036639d9568624f3817719f7e25d394c1be55387e371d3ccffa3b9d0e987",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "782436c57e002156af096c2fffb354f57c4b457c6f0fc0a73059f1d8de677208",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-occupied/observed-b"
+    },
+    {
+      "initial_before_sha256": "5f758fc6559124ed665fa4d523bf08bb08f99dca71d2047fca11cefa0a13e8a2",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "fc59036639d9568624f3817719f7e25d394c1be55387e371d3ccffa3b9d0e987",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "782436c57e002156af096c2fffb354f57c4b457c6f0fc0a73059f1d8de677208",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-occupied/observed-c"
+    },
+    {
+      "initial_before_sha256": "1522c4e0ebc60b6678825289ba7128174a0e72add90f538f89c63a1f6ebbc008",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "858de42d16454f625c1c747921c5560fee9747848fdaf4b9cfa2750aee935687",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "723112a3b166abd4d982a74bbe9722f5f403ba6ffcde03b91ce2f0d30508ca86",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-friendly/observed-a"
+    },
+    {
+      "initial_before_sha256": "1522c4e0ebc60b6678825289ba7128174a0e72add90f538f89c63a1f6ebbc008",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "858de42d16454f625c1c747921c5560fee9747848fdaf4b9cfa2750aee935687",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "723112a3b166abd4d982a74bbe9722f5f403ba6ffcde03b91ce2f0d30508ca86",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-friendly/observed-b"
+    },
+    {
+      "initial_before_sha256": "1522c4e0ebc60b6678825289ba7128174a0e72add90f538f89c63a1f6ebbc008",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "858de42d16454f625c1c747921c5560fee9747848fdaf4b9cfa2750aee935687",
+        "initial_state": 108328,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "723112a3b166abd4d982a74bbe9722f5f403ba6ffcde03b91ce2f0d30508ca86",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 2542799,
+      "lottery": "3c331b7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-friendly/observed-c"
+    },
+    {
+      "initial_before_sha256": "f545d697b28d93910407cfeb7baac96666062ebe3cb5ac3334d6a3e85f5e45b7",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "77f84fb691074c0615e735aa178d2821a0b258120459a4a956207b915bc1eda3",
+        "initial_state": 9110107,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 21428,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 3
+      },
+      "expected_files": {
+        "YTDATA.DAT": "0e1e98fa3b5ed2416add813fdfa758274b1bfcdfd149e149a94238551e5881ef",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "ab99c3a780b7d0d146402053684935387813bf549a122bbf0d0e82e2ff495bb7",
+        "YTSCORE.ASC": "79b97fb6050d6215c56bb29326db0e8a915edc4dfdabb0c8ddd196caa0a375ea"
+      },
+      "final_state": 1725116,
+      "lottery": "ad9b2b80",
+      "candidate": 7,
+      "mercenary": {
+        "desertion_draws": 1,
+        "desertion_sectors": [
+          849
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-neutral/observed-a"
+    },
+    {
+      "initial_before_sha256": "f545d697b28d93910407cfeb7baac96666062ebe3cb5ac3334d6a3e85f5e45b7",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "77f84fb691074c0615e735aa178d2821a0b258120459a4a956207b915bc1eda3",
+        "initial_state": 9110107,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 21428,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 3
+      },
+      "expected_files": {
+        "YTDATA.DAT": "0e1e98fa3b5ed2416add813fdfa758274b1bfcdfd149e149a94238551e5881ef",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "ab99c3a780b7d0d146402053684935387813bf549a122bbf0d0e82e2ff495bb7",
+        "YTSCORE.ASC": "79b97fb6050d6215c56bb29326db0e8a915edc4dfdabb0c8ddd196caa0a375ea"
+      },
+      "final_state": 1725116,
+      "lottery": "ad9b2b80",
+      "candidate": 7,
+      "mercenary": {
+        "desertion_draws": 1,
+        "desertion_sectors": [
+          849
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-neutral/observed-b"
+    },
+    {
+      "initial_before_sha256": "f545d697b28d93910407cfeb7baac96666062ebe3cb5ac3334d6a3e85f5e45b7",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "77f84fb691074c0615e735aa178d2821a0b258120459a4a956207b915bc1eda3",
+        "initial_state": 9110107,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 21428,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 3
+      },
+      "expected_files": {
+        "YTDATA.DAT": "0e1e98fa3b5ed2416add813fdfa758274b1bfcdfd149e149a94238551e5881ef",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "ab99c3a780b7d0d146402053684935387813bf549a122bbf0d0e82e2ff495bb7",
+        "YTSCORE.ASC": "79b97fb6050d6215c56bb29326db0e8a915edc4dfdabb0c8ddd196caa0a375ea"
+      },
+      "final_state": 1725116,
+      "lottery": "ad9b2b80",
+      "candidate": 7,
+      "mercenary": {
+        "desertion_draws": 1,
+        "desertion_sectors": [
+          849
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-planet-neutral/observed-c"
+    },
+    {
+      "initial_before_sha256": "40947d888c7bd9192acfc12d2531d6414fe6392c9c815ead42ea4d28ef6325bf",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "b3803c78c86f2ee9445e4c7c8009ef5b3002b548bea574b1bd2721d190bf664a",
+        "initial_state": 11107193,
+        "helpers": [],
+        "draws": 20
+      },
+      "expected_files": {
+        "YTDATA.DAT": "360978ce3221c19520e1b70121864818aca1d3a75bac45f4d2eb1f6aa97e32e8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "7400a6bf417d3531d9c097339578c1aec22d602b33113d593ad5d0ea9904ac05",
+        "YTSCORE.ASC": "38bf5f6e4652c89c6762b840f28cbe6fe5e9885be01d8aa43e8306e750fa1e61"
+      },
+      "final_state": 4518621,
+      "lottery": "bae5097f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 19,
+        "desertion_sectors": [
+          205,
+          297,
+          303,
+          838,
+          849,
+          854,
+          1189,
+          1314,
+          1353,
+          1415,
+          1981,
+          2061,
+          2185,
+          2410,
+          2429,
+          2517,
+          2721,
+          2828,
+          2839
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-mercenary-37/observed-a"
+    },
+    {
+      "initial_before_sha256": "40947d888c7bd9192acfc12d2531d6414fe6392c9c815ead42ea4d28ef6325bf",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "b3803c78c86f2ee9445e4c7c8009ef5b3002b548bea574b1bd2721d190bf664a",
+        "initial_state": 11107193,
+        "helpers": [],
+        "draws": 20
+      },
+      "expected_files": {
+        "YTDATA.DAT": "360978ce3221c19520e1b70121864818aca1d3a75bac45f4d2eb1f6aa97e32e8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "7400a6bf417d3531d9c097339578c1aec22d602b33113d593ad5d0ea9904ac05",
+        "YTSCORE.ASC": "38bf5f6e4652c89c6762b840f28cbe6fe5e9885be01d8aa43e8306e750fa1e61"
+      },
+      "final_state": 4518621,
+      "lottery": "bae5097f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 19,
+        "desertion_sectors": [
+          205,
+          297,
+          303,
+          838,
+          849,
+          854,
+          1189,
+          1314,
+          1353,
+          1415,
+          1981,
+          2061,
+          2185,
+          2410,
+          2429,
+          2517,
+          2721,
+          2828,
+          2839
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-mercenary-37/observed-b"
+    },
+    {
+      "initial_before_sha256": "40947d888c7bd9192acfc12d2531d6414fe6392c9c815ead42ea4d28ef6325bf",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "b3803c78c86f2ee9445e4c7c8009ef5b3002b548bea574b1bd2721d190bf664a",
+        "initial_state": 11107193,
+        "helpers": [],
+        "draws": 20
+      },
+      "expected_files": {
+        "YTDATA.DAT": "360978ce3221c19520e1b70121864818aca1d3a75bac45f4d2eb1f6aa97e32e8",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "7400a6bf417d3531d9c097339578c1aec22d602b33113d593ad5d0ea9904ac05",
+        "YTSCORE.ASC": "38bf5f6e4652c89c6762b840f28cbe6fe5e9885be01d8aa43e8306e750fa1e61"
+      },
+      "final_state": 4518621,
+      "lottery": "bae5097f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 19,
+        "desertion_sectors": [
+          205,
+          297,
+          303,
+          838,
+          849,
+          854,
+          1189,
+          1314,
+          1353,
+          1415,
+          1981,
+          2061,
+          2185,
+          2410,
+          2429,
+          2517,
+          2721,
+          2828,
+          2839
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-mercenary-37/observed-c"
+    },
+    {
+      "initial_before_sha256": "0e5d8934af1be3debc72708ecdd3e2825a2c4000398253fc8b793340907669a6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "818e275be24e05f25c50d5130f419fad0b73760385d24cf84a59b279390464e3",
+        "initial_state": 8015695,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 18639,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 5
+      },
+      "expected_files": {
+        "YTDATA.DAT": "08a467f11407416513495d420a3ca270d97f6519a98ff83819867aece97be285",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "72021b5fdf3d65280003e1ebfbc870880752ee9bf3e2b18b3df49298590ebdfd",
+        "YTSCORE.ASC": "04afe8d339c56811bbb69a12f1b7aee38d4c8da4a1a128d1adb759b8a1754c36"
+      },
+      "final_state": 6768762,
+      "lottery": "f4904e7f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 2,
+        "desertion_sectors": [
+          849,
+          854
+        ],
+        "movement_gate_draws": 1,
+        "target_draws": 1,
+        "activations": [
+          {
+            "origin": 854,
+            "force": 97525,
+            "gate": 0.084259033203125,
+            "held": false,
+            "candidates": [
+              2689
+            ],
+            "target": 2689,
+            "route": [
+              854,
+              860,
+              857,
+              866,
+              869,
+              868,
+              1350,
+              1359,
+              1364,
+              2200,
+              2201,
+              107,
+              98,
+              88,
+              90,
+              84,
+              2717,
+              2715,
+              2711,
+              2718,
+              2712,
+              2706,
+              2705,
+              2699,
+              2689
+            ]
+          }
+        ],
+        "final_sectors": [
+          2689
+        ],
+        "force": 97525,
+        "events": []
+      },
+      "name": "route-mercenary-100000/observed-a"
+    },
+    {
+      "initial_before_sha256": "0e5d8934af1be3debc72708ecdd3e2825a2c4000398253fc8b793340907669a6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "818e275be24e05f25c50d5130f419fad0b73760385d24cf84a59b279390464e3",
+        "initial_state": 8015695,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 18639,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 5
+      },
+      "expected_files": {
+        "YTDATA.DAT": "08a467f11407416513495d420a3ca270d97f6519a98ff83819867aece97be285",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "72021b5fdf3d65280003e1ebfbc870880752ee9bf3e2b18b3df49298590ebdfd",
+        "YTSCORE.ASC": "04afe8d339c56811bbb69a12f1b7aee38d4c8da4a1a128d1adb759b8a1754c36"
+      },
+      "final_state": 6768762,
+      "lottery": "f4904e7f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 2,
+        "desertion_sectors": [
+          849,
+          854
+        ],
+        "movement_gate_draws": 1,
+        "target_draws": 1,
+        "activations": [
+          {
+            "origin": 854,
+            "force": 97525,
+            "gate": 0.084259033203125,
+            "held": false,
+            "candidates": [
+              2689
+            ],
+            "target": 2689,
+            "route": [
+              854,
+              860,
+              857,
+              866,
+              869,
+              868,
+              1350,
+              1359,
+              1364,
+              2200,
+              2201,
+              107,
+              98,
+              88,
+              90,
+              84,
+              2717,
+              2715,
+              2711,
+              2718,
+              2712,
+              2706,
+              2705,
+              2699,
+              2689
+            ]
+          }
+        ],
+        "final_sectors": [
+          2689
+        ],
+        "force": 97525,
+        "events": []
+      },
+      "name": "route-mercenary-100000/observed-b"
+    },
+    {
+      "initial_before_sha256": "0e5d8934af1be3debc72708ecdd3e2825a2c4000398253fc8b793340907669a6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "818e275be24e05f25c50d5130f419fad0b73760385d24cf84a59b279390464e3",
+        "initial_state": 8015695,
+        "helpers": [
+          {
+            "family": 1,
+            "caller": 18639,
+            "timer": "3d0a577e"
+          }
+        ],
+        "draws": 5
+      },
+      "expected_files": {
+        "YTDATA.DAT": "08a467f11407416513495d420a3ca270d97f6519a98ff83819867aece97be285",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "72021b5fdf3d65280003e1ebfbc870880752ee9bf3e2b18b3df49298590ebdfd",
+        "YTSCORE.ASC": "04afe8d339c56811bbb69a12f1b7aee38d4c8da4a1a128d1adb759b8a1754c36"
+      },
+      "final_state": 6768762,
+      "lottery": "f4904e7f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 2,
+        "desertion_sectors": [
+          849,
+          854
+        ],
+        "movement_gate_draws": 1,
+        "target_draws": 1,
+        "activations": [
+          {
+            "origin": 854,
+            "force": 97525,
+            "gate": 0.084259033203125,
+            "held": false,
+            "candidates": [
+              2689
+            ],
+            "target": 2689,
+            "route": [
+              854,
+              860,
+              857,
+              866,
+              869,
+              868,
+              1350,
+              1359,
+              1364,
+              2200,
+              2201,
+              107,
+              98,
+              88,
+              90,
+              84,
+              2717,
+              2715,
+              2711,
+              2718,
+              2712,
+              2706,
+              2705,
+              2699,
+              2689
+            ]
+          }
+        ],
+        "final_sectors": [
+          2689
+        ],
+        "force": 97525,
+        "events": []
+      },
+      "name": "route-mercenary-100000/observed-c"
+    },
+    {
+      "initial_before_sha256": "277c3cadeea74b02596c3d832566ff7de5b39a7a5a1b8edbd9a2ac563edd31b6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "c70ba6395c39647eaf91d3d943f1f3a1f5373fc80d16cd65e0ed8fc777517919",
+        "initial_state": 14524227,
+        "helpers": [],
+        "draws": 22
+      },
+      "expected_files": {
+        "YTDATA.DAT": "83f1681be12d395457421ba38e388ed2ad8d5da1fdb156a535b34ff2626031ff",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 3587833,
+      "lottery": "e4fb5a7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 21,
+        "desertion_sectors": [
+          129,
+          133,
+          793,
+          849,
+          854,
+          1051,
+          1114,
+          1115,
+          1155,
+          1314,
+          1357,
+          1476,
+          1548,
+          1603,
+          1966,
+          2057,
+          2061,
+          2706,
+          2716,
+          2736,
+          2935
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-neutral-37/observed-a"
+    },
+    {
+      "initial_before_sha256": "277c3cadeea74b02596c3d832566ff7de5b39a7a5a1b8edbd9a2ac563edd31b6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "c70ba6395c39647eaf91d3d943f1f3a1f5373fc80d16cd65e0ed8fc777517919",
+        "initial_state": 14524227,
+        "helpers": [],
+        "draws": 22
+      },
+      "expected_files": {
+        "YTDATA.DAT": "83f1681be12d395457421ba38e388ed2ad8d5da1fdb156a535b34ff2626031ff",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 3587833,
+      "lottery": "e4fb5a7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 21,
+        "desertion_sectors": [
+          129,
+          133,
+          793,
+          849,
+          854,
+          1051,
+          1114,
+          1115,
+          1155,
+          1314,
+          1357,
+          1476,
+          1548,
+          1603,
+          1966,
+          2057,
+          2061,
+          2706,
+          2716,
+          2736,
+          2935
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-neutral-37/observed-b"
+    },
+    {
+      "initial_before_sha256": "277c3cadeea74b02596c3d832566ff7de5b39a7a5a1b8edbd9a2ac563edd31b6",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "c70ba6395c39647eaf91d3d943f1f3a1f5373fc80d16cd65e0ed8fc777517919",
+        "initial_state": 14524227,
+        "helpers": [],
+        "draws": 22
+      },
+      "expected_files": {
+        "YTDATA.DAT": "83f1681be12d395457421ba38e388ed2ad8d5da1fdb156a535b34ff2626031ff",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 3587833,
+      "lottery": "e4fb5a7e",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 21,
+        "desertion_sectors": [
+          129,
+          133,
+          793,
+          849,
+          854,
+          1051,
+          1114,
+          1115,
+          1155,
+          1314,
+          1357,
+          1476,
+          1548,
+          1603,
+          1966,
+          2057,
+          2061,
+          2706,
+          2716,
+          2736,
+          2935
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "route-neutral-37/observed-c"
+    },
+    {
+      "initial_before_sha256": "9d5dcb72ff9fb127e45d3449704af5edbab6abc519af2c707c702df1625db14a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "a93bd0bd117a3f5be9e7095aac96d0ffc5d63d7dc580043b2c2b4b416a76513d",
+        "initial_state": 15036455,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "25c3a2489241cc61fb98b675a7793d31430f298ae2624ffdfc9a7e501717ce63",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 6013058,
+      "lottery": "0481377f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          37,
+          67,
+          257,
+          271,
+          441,
+          849,
+          978,
+          1113,
+          1114,
+          1185,
+          1297,
+          1461,
+          1604,
+          1706,
+          1986,
+          2027,
+          2042,
+          2108,
+          2802,
+          2946
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-active-rejection/observed-a"
+    },
+    {
+      "initial_before_sha256": "9d5dcb72ff9fb127e45d3449704af5edbab6abc519af2c707c702df1625db14a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "a93bd0bd117a3f5be9e7095aac96d0ffc5d63d7dc580043b2c2b4b416a76513d",
+        "initial_state": 15036455,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "25c3a2489241cc61fb98b675a7793d31430f298ae2624ffdfc9a7e501717ce63",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 6013058,
+      "lottery": "0481377f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          37,
+          67,
+          257,
+          271,
+          441,
+          849,
+          978,
+          1113,
+          1114,
+          1185,
+          1297,
+          1461,
+          1604,
+          1706,
+          1986,
+          2027,
+          2042,
+          2108,
+          2802,
+          2946
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-active-rejection/observed-b"
+    },
+    {
+      "initial_before_sha256": "9d5dcb72ff9fb127e45d3449704af5edbab6abc519af2c707c702df1625db14a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "a93bd0bd117a3f5be9e7095aac96d0ffc5d63d7dc580043b2c2b4b416a76513d",
+        "initial_state": 15036455,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "25c3a2489241cc61fb98b675a7793d31430f298ae2624ffdfc9a7e501717ce63",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 6013058,
+      "lottery": "0481377f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          37,
+          67,
+          257,
+          271,
+          441,
+          849,
+          978,
+          1113,
+          1114,
+          1185,
+          1297,
+          1461,
+          1604,
+          1706,
+          1986,
+          2027,
+          2042,
+          2108,
+          2802,
+          2946
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "wanderer-active-rejection/observed-c"
+    },
+    {
+      "initial_before_sha256": "fae728912fae47d5bc9a64dfc4a6cd1c47a5a25fe022ceca2962f87370088c8a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "da2c3cefe749ad381ffaaaa4c3ccdfd1602e2bc121153c179bf76127e0c60ee0",
+        "initial_state": 12903499,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "969c7866a450f9b04e04b6ad2e3b5980f9e2a853e7e3bbc5f0f831f4ad213575",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 5493590,
+      "lottery": "aca6277f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-active-rejection/observed-a"
+    },
+    {
+      "initial_before_sha256": "fae728912fae47d5bc9a64dfc4a6cd1c47a5a25fe022ceca2962f87370088c8a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "da2c3cefe749ad381ffaaaa4c3ccdfd1602e2bc121153c179bf76127e0c60ee0",
+        "initial_state": 12903499,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "969c7866a450f9b04e04b6ad2e3b5980f9e2a853e7e3bbc5f0f831f4ad213575",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 5493590,
+      "lottery": "aca6277f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-active-rejection/observed-b"
+    },
+    {
+      "initial_before_sha256": "fae728912fae47d5bc9a64dfc4a6cd1c47a5a25fe022ceca2962f87370088c8a",
+      "startup_state": 51205,
+      "final_day": 306,
+      "tail": {
+        "before_sha256": "da2c3cefe749ad381ffaaaa4c3ccdfd1602e2bc121153c179bf76127e0c60ee0",
+        "initial_state": 12903499,
+        "helpers": [],
+        "draws": 21
+      },
+      "expected_files": {
+        "YTDATA.DAT": "969c7866a450f9b04e04b6ad2e3b5980f9e2a853e7e3bbc5f0f831f4ad213575",
+        "YTNAME.DAT": "af3183fabb75a3c5ae25b71abf89bd6c7e19a7470e8363214fe9b9b88923d08f",
+        "YTYNEWS.DAT": "1acaf18a99ffc43c85f96b375476c46a1fd25904ffc75d8a93dce829a27e313a",
+        "YTRMSG.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "YTNEWS.DAT": "496dd8e6f9d32228c2e3b50c714a33edfa97366e1e0609e9b2a2dfd555ad041c",
+        "YTSCORE.ASC": "e8c51ad1607e48ad85896c41c18639abc180801b76d5d0a4dbc0bc0486c03aba"
+      },
+      "final_state": 5493590,
+      "lottery": "aca6277f",
+      "candidate": 0,
+      "mercenary": {
+        "desertion_draws": 20,
+        "desertion_sectors": [
+          152,
+          370,
+          473,
+          509,
+          611,
+          688,
+          779,
+          849,
+          856,
+          1169,
+          1242,
+          1285,
+          1319,
+          1551,
+          1836,
+          2290,
+          2510,
+          2560,
+          2865,
+          2938
+        ],
+        "movement_gate_draws": 0,
+        "target_draws": 0,
+        "activations": [],
+        "final_sectors": [],
+        "force": 0,
+        "events": []
+      },
+      "name": "base-active-rejection/observed-c"
+    }
+  ],
+  "native_six_file_comparisons": 180,
+  "native_rng_witnesses": 1872
+}

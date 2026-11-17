@@ -325,11 +325,17 @@ exact percentage rounding, DOS formatting and raw side-file handling are covered
 Independent whole-run qualification remains 1080 native files /1872 witnesses;
 no capture or source observation was repeated or changed.
 
-**Next: compose the qualified occupied Go routing and reports with the downstream
-Mercenary/lottery tail and final metadata, then qualify complete occupied-world
-six-file Go replay. Reuse existing captures/Python rules and preserve the report-
-only finalized-world boundary until composition is verified. Do not repeat
-routing, combat/economy/report primitives, convergence chaining or CLI work.**
+[Bounded Go occupied six-file composition](yt-maint/GO_OCCUPIED_RECORDS.md)
+now derives all intermediate worlds, RNG states and combat events from the
+original three before files and explicit startup/source clocks. The existing
+Mercenary/lottery tail and final metadata writer required composition, not a
+second primitive. All 30 six-file sets match Python, with independent retained
+1080-file/1872-witness native qualification and no new captures.
+
+**Next: add a research-only occupied-world recipe/CLI adapter for the ten pinned
+before-world cases, reusing these qualified phase clocks/fixtures. Preserve strict
+historical profiles, source attribution, fresh output publication and complete
+six-file receipts. Do not repeat completed combat, reports, tail or composition.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
