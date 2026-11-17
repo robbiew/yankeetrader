@@ -2588,11 +2588,12 @@ general maintenance and playable integration remain excluded; save 35 is unchang
 [Research replay CLI](research/yt-maint/REPLAY_CLI.md) now exposes
 `go run ./cmd/qbmaint-replay -recipe FILE -before DIR -source-root CHECKOUT -out NEWDIR`.
 Recipe v1 selects `initial` or `initial-wanderer`; v2 separately selects
-`convergence-three-day`. Both preserve raw SINGLE clock hex and check all three
+`convergence-three-day`; v3 selects `occupied-day306`. All preserve raw SINGLE clock hex and check all three
 before-file hashes plus declared source
 hashes against the original YTMAINT identity. Unknown/duplicate/missing fields,
 profile mismatches and changed inputs fail before publication. V1 publishes six
-DOS files and a receipt; v2 publishes three day directories and one receipt under
+DOS files and a receipt; v2 publishes three day directories, and v3 publishes six
+occupied-world files with a faction/combat receipt under
 `NEWDIR/replay/`. Existing
 paths and output inside input/source trees are refused. The adapter reuses all
 32 existing fixtures /192 complete native outputs; no captures were added.
@@ -2822,5 +2823,27 @@ helpers. Existing captures independently qualify 1080 files and 1872 RNG
 witnesses; no native observations were repeated or changed. Tests cover source
 RNG continuation, mutable descending scans, final metadata, ownership and late
 atomic refusal. [Composition details](research/yt-maint/GO_OCCUPIED_RECORDS.md).
-The research CLI has no occupied-world recipe yet; production maintenance,
+The [occupied research CLI v3](research/yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3)
+now exposes this API; production maintenance,
 modern saves and release artifacts are unchanged.
+
+### Occupied-world research recipe and CLI
+
+`qbmaint-replay` now accepts the separate `qbmaint-replay-v3` /
+`occupied-day306` recipe. It checks original before/source identities and explicit
+startup, economy, home/mobile, tail and report clocks, then publishes the six
+calculated DOS files plus a v3 receipt in a fresh `OUT/replay/` directory. The
+receipt includes modeled RNG continuation, combat-event counts, faction scores
+and losses, Mercenary activations and lottery candidate. No intermediate world,
+event, endpoint state or expected target is accepted by the recipe.
+
+`python3 scripts/export_occupied_cli_recipes.py --out /tmp/yt-occupied-recipes`
+reuses existing fixtures for all 30 measured case/observation recipes and their
+three original before files. Comparison oracles stay separate and are ignored
+by the CLI. End-to-end checks match all six files for every recipe, verify
+receipts, exclusive publication and input preservation, and refuse changed
+sources/before bytes, injected endpoints and invalid late helpers. See
+[research CLI usage](research/yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3).
+Historical v1/v2 profiles remain separate; this does not import DOS worlds into
+modern saves or select playable maintenance policy. Release packages are not
+republished by this milestone.

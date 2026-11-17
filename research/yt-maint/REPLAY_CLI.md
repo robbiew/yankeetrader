@@ -197,3 +197,48 @@ explicit zeros, raw residues, missing/null/duplicate fields, wrong days/records,
 creation context and unsupported references. Existing one-day CLI/native hashes
 remain covered separately. This is source-only research; it does not replace
 `yt -maint`, add a playable profile, change save 35 or ship new release binaries.
+
+
+## Occupied day-306 profile (v3)
+
+The separate `qbmaint-replay-v3` format selects only `occupied-day306`. It supplies
+three original before hashes, bounded source hashes and a single explicit recipe:
+startup state, 1000 capped port day/TIMER-minute pairs, zero to two ordered ordinary
+planet clocks, one missing-home creation clock set, source-labelled routing/tail
+helper arrays, final day306 and independent news/score clocks on 2026-11-02.
+All raw SINGLE values remain exactly eight lowercase hex digits. Empty arrays
+are explicit; missing/null, duplicate/case-alias, unknown and oracle fields fail.
+The Go composed API additionally pins the ten measured before worlds/side files
+and enforces all phase admissions. No intermediate world, combat event or RNG
+endpoint is accepted as a correction. Existing v1/v2 schemas remain unchanged.
+
+```sh
+python3 scripts/export_occupied_cli_recipes.py --out /tmp/yt-occupied-recipes
+go run ./cmd/qbmaint-replay \
+  -recipe /tmp/yt-occupied-recipes/route-mercenary-100000-observed-a/recipe.json \
+  -before /tmp/yt-occupied-recipes/route-mercenary-100000-observed-a/before \
+  -source-root . -out /tmp/yt-occupied-replay
+```
+
+The exporter writes 30 case/observation bundles using existing fixtures. Each has
+three before files, a clock-only recipe and separate `oracles.json` for testing.
+The command never reads that oracle. `OUT` must be new and outside input/source
+trees; publication reserves it exclusively and places six raw DOS files and
+`receipt.json` under `OUT/replay/`. Existing output is refused without modification.
+The v3 receipt records source/before/recipe/output hashes, modeled final RNG state
+and total draws, combat-event count, Xannor/Mercenary scores/losses, Mercenary
+activation count and lottery candidate. Neutral force remains unscored. No
+receipt asserts modeled endpoint state as new native acquisition.
+
+End-to-end tests compare all 30 six-file sets and receipts, poison comparison
+oracles, preserve before bytes and existing outputs, and reject altered sources,
+changed before files, injected endpoints and late helper/report errors without
+publication or leftover staging directories. Canonical schema tests preserve
+raw zero residues and exact `24:00:00`. Existing source/path/publication checks
+are shared; this remains a checkout-based research command, not a modern-save
+import, release package update or playable maintenance selector.
+
+```sh
+python3 scripts/test_occupied_cli_recipes.py
+go test ./internal/qbreplay ./cmd/qbmaint-replay
+```

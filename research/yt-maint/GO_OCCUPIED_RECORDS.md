@@ -61,6 +61,7 @@ python3 scripts/test_export_occupied_records_fixture.py
 go test ./internal/qbmaint -run TestOccupiedFiles
 ```
 
-Next add an occupied research recipe/CLI profile that reuses these fixtures and
-retains fresh output publication/source receipts. Full general maintenance,
+[Occupied research CLI v3](REPLAY_CLI.md#occupied-day-306-profile-v3) now reuses
+these fixtures and retains fresh output publication/source receipts. The API
+remains independently usable. Full general maintenance,
 arbitrary encounters and production integration remain outside this milestone.

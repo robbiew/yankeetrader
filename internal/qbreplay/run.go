@@ -21,7 +21,16 @@ type ChainDayReceipt struct {
 	Draws        int    `json:"draws"`
 }
 
+type OccupiedReceipt struct {
+	CombatEvents         int    `json:"combat_events"`
+	FactionScores        [2]int `json:"faction_scores"`
+	FactionLosses        [2]int `json:"faction_losses"`
+	MercenaryActivations int    `json:"mercenary_activations"`
+	LotteryCandidate     int    `json:"lottery_candidate"`
+}
+
 type Receipt struct {
+	Occupied      *OccupiedReceipt            `json:"occupied,omitempty"`
 	Days          []ChainDayReceipt           `json:"days,omitempty"`
 	Format        string                      `json:"format"`
 	Profile       string                      `json:"profile"`
@@ -59,7 +68,12 @@ func Run(c Config) (Receipt, error) {
 	var d Document
 	var r qbmaint.InitialRecipe
 	var chain []qbmaint.ConvergenceDayInputs
-	if envelope.Format == ChainFormat {
+	var occupied qbmaint.OccupiedInputs
+	if envelope.Format == OccupiedFormat {
+		var v OccupiedDocument
+		v, occupied, e = DecodeOccupied(data)
+		d = Document{Format: v.Format, Profile: v.Profile, Name: v.Name, BeforeSHA256: v.BeforeSHA256, SourceSHA256: v.SourceSHA256}
+	} else if envelope.Format == ChainFormat {
 		var v ChainDocument
 		v, chain, e = DecodeChain(data)
 		d = Document{Format: v.Format, Profile: v.Profile, Name: v.Name, BeforeSHA256: v.BeforeSHA256, SourceSHA256: v.SourceSHA256}
@@ -149,7 +163,25 @@ func Run(c Config) (Receipt, error) {
 	var stats qbmaint.InitialStats
 	var encounters []qbmaint.WandererEncounter
 	receipt := Receipt{Format: "qbmaint-receipt-v1", Profile: d.Profile, Name: d.Name, RecipeSHA256: digest(data), BeforeSHA256: d.BeforeSHA256, SourceSHA256: d.SourceSHA256, OutputSHA256: map[string]string{}, StateEvidence: "modeled-not-native-endpoint"}
-	if d.Profile == ChainProfile {
+	if d.Profile == OccupiedProfile {
+		var s qbmaint.OccupiedStats
+		files, s, e = qbmaint.ReplayOccupiedFiles(before, occupied)
+		if e != nil {
+			return fail(e)
+		}
+		if len(files) != 6 {
+			return fail(fmt.Errorf("unexpected occupied output inventory"))
+		}
+		for _, n := range outputNames {
+			if _, ok := files[n]; !ok {
+				return fail(fmt.Errorf("missing occupied output"))
+			}
+		}
+		receipt.Format = "qbmaint-receipt-v3"
+		receipt.FinalState = s.Tail.FinalState
+		receipt.Draws = s.Planets.Draws + s.Routing.Draws + s.Tail.Draws
+		receipt.Occupied = &OccupiedReceipt{CombatEvents: len(s.Routing.Events), FactionScores: s.Reports.Scores, FactionLosses: s.Reports.Losses, MercenaryActivations: len(s.Tail.Activations), LotteryCandidate: s.Tail.Candidate}
+	} else if d.Profile == ChainProfile {
 		rows, err := qbmaint.ReplayConvergenceChain(before, chain)
 		if err != nil {
 			return fail(err)
