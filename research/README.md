@@ -182,3 +182,8 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Occupied research CLI v3](yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3):
   30 existing-fixture recipes, before/source checks and fresh six-file publication
   with modeled faction/combat/tail receipts; no production maintenance selection.
+
+- [Bounded Go held-friendly stock pickup](yt-maint/GO_FRIENDLY_STOCK.md):
+  24 modeled Mercenary phases from existing four-day replay; distinct cached
+  physical force, receipt actor, whole stock and zero residues; native 864-file /
+  1104-child-witness qualification remains separate.
