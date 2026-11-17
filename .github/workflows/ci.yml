@@ -13,7 +13,8 @@ jobs:
   validate:
     name: Go tests, evidence and terminal smoke
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    # Full retained evidence replay plus terminal/package checks exceeds 90 minutes.
+    timeout-minutes: 120
     defaults:
       run:
         working-directory: yankeetrader

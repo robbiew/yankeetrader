@@ -2888,3 +2888,8 @@ owned writes, unchanged historical guards and late failures after pickup.
 [Scope and validation](research/yt-maint/GO_DEPARTED_STOCK.md).
 The API ends before lottery/reports/final metadata; complete four-day Go/CLI
 composition, general encounters and production maintenance remain separate.
+
+The main CI validation job now has a 120-minute allowance after its 90-minute
+limit canceled an otherwise progressing retained-evidence run. The departure
+fixture checks passed before cancellation; all existing evidence, race/vet,
+terminal and release-package checks remain required and unchanged.
