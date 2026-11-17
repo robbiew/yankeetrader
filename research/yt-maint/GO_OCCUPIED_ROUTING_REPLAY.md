@@ -72,7 +72,8 @@ python3 scripts/test_export_occupied_routing_fixture.py
 go test ./internal/qbmaint -run TestOccupiedRouting
 ```
 
-Next qualify casualty-dependent news/faction scores and compose the already
-recovered Mercenary/lottery tail, final metadata and all six occupied-world files.
+[Casualty-dependent news/faction scores](GO_OCCUPIED_REPORTS.md) are now
+qualified separately. Next compose the already recovered Mercenary/lottery tail,
+final metadata and all six occupied-world files.
 This milestone does not add a research CLI profile, broaden historical APIs or
 change modern gameplay/save 35, releases or Windows/live BBS acceptance.
