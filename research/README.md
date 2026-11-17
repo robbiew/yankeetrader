@@ -169,3 +169,8 @@ routing, shared pursuit, scan suppression and casualty publication.
 qualifies 30 complete modeled phases /120 combat events, including actual Go
 port/economy handoffs, shared pursuit, scan suppression and moving-group writes.
 Casualty news/scores and complete occupied six-file Go composition remain next.
+
+[Occupied casualty news and faction scores](yt-maint/GO_OCCUPIED_REPORTS.md)
+qualify 30 five-file report sets, including actual Go combat-event handoffs,
+while retaining modeled-final-world and native whole-run provenance boundaries.
+Next compose the downstream tail/final metadata and complete occupied Go outputs.

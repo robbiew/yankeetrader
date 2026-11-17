@@ -2787,3 +2787,21 @@ outputs, strict historical gates and atomic late failures are tested. Next are
 casualty-dependent news/scores, downstream tail composition and complete occupied
 six-file Go output. Existing research CLI profiles, gameplay, save 35 and release
 packages are unchanged.
+
+### Bounded Go casualty-dependent news and faction scoring
+
+[Occupied casualty reports](research/yt-maint/GO_OCCUPIED_REPORTS.md) now generate
+the five auxiliary files from original before files, a modeled finalized world
+and source-ordered Go combat receipts. All 30 complete five-file sets match the
+existing native-qualified Python outputs; tests also feed actual Go port,
+economy and routing events directly into the writer. Physical faction counts,
+capped casualties, raw public damage counters and neutral unscored forces remain
+distinct. The original misleading `Plyr`/`Xannor` suffixes, event order, comma/
+percentage widths, raw journal rotation and separate text clocks are preserved.
+Exact rational percentage rounding rejects unqualified halfway cases. Exporter
+checks independently revalidate 1080 native files and 1872 RNG witnesses without
+new captures or altered native hashes. Tests cover corruption, atomic refusals,
+owned outputs, DOS CRLF/EOF and unsupported numeric formatting. The finalized
+world still comes from the Python fixture in this report-only milestone; Go tail,
+final metadata and complete occupied six-file composition remain next. Existing
+CLI profiles, gameplay, save 35 and release packages are unchanged.

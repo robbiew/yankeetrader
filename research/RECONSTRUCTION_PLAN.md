@@ -317,10 +317,19 @@ match Python; actual Go port/economy handoffs and late atomic refusals are teste
 Independent existing-evidence qualification retains 1080 files /1872 witnesses.
 Historical convergence/initial gates remain strict; no captures were repeated.
 
-**Next: bounded occupied-world casualty news and faction scoring, then downstream
-Mercenary/lottery-tail composition, final metadata and complete six-file Go replay.
-Reuse the existing occupied Python rules/captures and qualified Go phases; do not
-repeat home/mobile routing, combat/economy primitives or convergence/CLI work.**
+[Bounded Go casualty news/faction scoring](yt-maint/GO_OCCUPIED_REPORTS.md)
+now qualifies all 30 five-file report sets from modeled finalized worlds and
+source-ordered combat events. Actual Go port/economy/routing receipts also feed
+the writer. Unique physical owners, capped losses, original misleading labels,
+exact percentage rounding, DOS formatting and raw side-file handling are covered.
+Independent whole-run qualification remains 1080 native files /1872 witnesses;
+no capture or source observation was repeated or changed.
+
+**Next: compose the qualified occupied Go routing and reports with the downstream
+Mercenary/lottery tail and final metadata, then qualify complete occupied-world
+six-file Go replay. Reuse existing captures/Python rules and preserve the report-
+only finalized-world boundary until composition is verified. Do not repeat
+routing, combat/economy/report primitives, convergence chaining or CLI work.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
