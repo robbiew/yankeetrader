@@ -187,3 +187,8 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
   24 modeled Mercenary phases from existing four-day replay; distinct cached
   physical force, receipt actor, whole stock and zero residues; native 864-file /
   1104-child-witness qualification remains separate.
+
+- [Bounded Go departed garrison/stock](yt-maint/GO_DEPARTED_STOCK.md): 24 modeled
+  phases /66 calculated activations, including later descending-scan reactivation;
+  distinct local physical force and incoming pickup actor; retained 864-file /
+  1152-child-witness native qualification.

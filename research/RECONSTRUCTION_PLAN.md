@@ -348,12 +348,19 @@ four-day qualification remains 864 native files /1104 child RNG witnesses. No
 acquisition was repeated. It ends before lottery/reports/final metadata and does
 not widen historical tail or occupied recipe admission.
 
-**Next: bounded Go departed-garrison/local movement and later same-scan activation,
-reusing the existing departure Python replay/captures. Preserve the newly qualified
-held-garrison guard as a separate API/profile. Full friendly/departed four-day Go
-composition, reports and recipe/CLI admission remain later integration work;
-audit their dependencies first. Do not repeat occupied-world Go composition/CLI,
-held-friendly pickup, original stock controls or Python four-day replay.**
+[Bounded Go departed-garrison movement](yt-maint/GO_DEPARTED_STOCK.md)
+now derives the held/departure gates, mutable descending scan, incoming pickup
+and later local activations. All 24 modeled phase worlds /66 activation receipts
+match Python, with 18 later same-scan activations and independent retained
+864-file /1152-child-witness native qualification. Separate local physical force,
+cached pickup actor, capture/governor behavior and source zeros are preserved.
+The held-only API and historical tails retain their original strict admission.
+
+**Next: bounded Go neutral-owner transfer and mine-before-stock pickup, reusing
+the existing six-case Python replay/captures. Do not repeat its completed native
+acquisition or Python four-day replay, nor the new held/departed Go phases.
+Complete four-day Go economy/mobile/tail/report composition and research recipe
+admission remain subsequent integration work; audit their dependencies first.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
