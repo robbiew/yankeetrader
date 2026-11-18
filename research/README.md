@@ -197,3 +197,8 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
   18 modeled phases /27 activations, incoming count-two mine damage before local
   addition and distinct neutral transfer; retained 648-file /855-child-witness
   qualification remains independent.
+
+- [Bounded Go fatal Mercenary defense/stock continuation](yt-maint/GO_DEFENDER_STOCK.md):
+  24 modeled phases from existing five-day Python replay, unit-casualty fatal
+  offense and extinct next-day scans; retained 864-file /1074-child-witness
+  qualification remains independent.
