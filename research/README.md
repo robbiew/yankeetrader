@@ -207,3 +207,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
   12 modeled phases /21 activations, source-selected victory without immediate
   pickup; selected 432-file /660-witness qualification is distinct from the wider
   gateway 1296-file /1962-witness audit.
+
+- [Bounded Go clear-gateway stock conversion](yt-maint/GO_CLEAR_GATEWAY_STOCK.md):
+  36 modeled phases for twelve positive SINGLE values, whole-only transfer and
+  silent subunit capture; independent 1296-file /1656-witness qualification.
