@@ -379,11 +379,16 @@ qualification remains 432 files /660 witnesses, separately from the wider gatewa
 1296-file /1962-witness audit; no acquisition was repeated. Fatal-only admission
 and unrelated stock/friendly/neutral/defender profiles remain strict.
 
-**Next: bounded Go clear-gateway positive stock conversion using the twelve existing
-stock-conversion cases and Python replay. Reuse the already qualified raw SINGLE
-INT primitive; do not duplicate runtime controls or the new guarded-victory
-continuation. Preserve older joint-profile admission. Full four/five-day Go
-economy/mobile/report/recipe composition still needs a separate dependency audit.**
+[Bounded Go clear-gateway positive stock conversion](yt-maint/GO_CLEAR_GATEWAY_STOCK.md)
+now derives all twelve existing rational contexts: 36 modeled worlds and receipts,
+whole-only transfer, full source stock clear and silent subunit capture. It reuses
+qualified raw SINGLE INT and retained Python replay with independent 1296-file /
+1656-child-witness qualification. Historical joint-profile admission stays strict.
+
+**Next: audit full four/five-day Go economy/mobile/report/recipe composition against
+these completed bounded phases and remaining gateway outcomes before selecting
+another implementation. Do not repeat stock conversion, guarded victory or raw
+numeric controls; do not imply complete-chain admission from phase-only tests.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

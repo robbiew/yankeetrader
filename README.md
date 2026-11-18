@@ -2956,3 +2956,23 @@ casualty/faction conservation, source zeros, ownership and late atomic refusal.
 This API ends before lottery/reports/final metadata. Positive stock conversion,
 other gateway outcomes, general batch combat and full five-day Go/CLI composition
 remain separate; no playable policy or save/release format changed.
+
+### Bounded Go clear-gateway positive stock conversion
+
+`qbmaint.ReplayClearGatewayStockMercenary` now derives the retained twelve positive
+SINGLE stock contexts from a modeled pre-Mercenary world and explicit RNG/helper
+clocks. The incoming 97337 force follows its calculated target/BFS route into the
+clear neutral Gateway Cache. Qualified `qbmbf.IntSingle` floors stock, the entire
+fractional field clears to source `00008000`, and only whole fighters transfer.
+Capture/taking receipt metadata keeps the entering force; subunit stock captures
+without a taking receipt. Governor, ground, caches and other fields stay intact.
+
+All 36 modeled worlds and activation/reseed/pickup receipts match Python. Retained
+independent qualification checks 216 six-file comparisons /1296 native files and
+1656 child RNG witnesses. Tests cover half/adjacent values, silent subunit cases,
+source zeros, conservation, ownership, atomic refusals and target-read/RNG-witness
+separation. No observations, hashes or frozen acquisition sources changed.
+[Scope and validation](research/yt-maint/GO_CLEAR_GATEWAY_STOCK.md).
+This phase ends before lottery/reports/final metadata. Full four-day Go composition,
+CLI selection, arbitrary stocks and playable maintenance remain separate; older
+joint garrison/stock and victory admission is unchanged.
