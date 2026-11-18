@@ -211,3 +211,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Bounded Go clear-gateway stock conversion](yt-maint/GO_CLEAR_GATEWAY_STOCK.md):
   36 modeled phases for twelve positive SINGLE values, whole-only transfer and
   silent subunit capture; independent 1296-file /1656-witness qualification.
+
+- [Maintenance-chain composition audit](yt-maint/MAINTENANCE_COMPOSITION_AUDIT.md):
+  current complete Go/CLI profiles, distinct stock/gateway phase boundaries and
+  dependency-ordered gaps; next is evolved occupied-combat child economy.

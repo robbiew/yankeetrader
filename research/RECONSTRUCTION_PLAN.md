@@ -4,10 +4,11 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 
 <a id="current-work"></a>
 
-## Current implementation and next work — checked 2026-11-14
+## Current implementation and next work — checked 2026-11-18
 
 This section is the current planning baseline, checked against merged `main`
-through `394559ff` (including bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
+through `fa4c5968` after #186, including the later composition/stock phases audited below
+(earlier recovery includes bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
 (raw RNG recovery), and [#76](https://github.com/robbiew/yankeetrader/pull/76)
@@ -385,10 +386,18 @@ whole-only transfer, full source stock clear and silent subunit capture. It reus
 qualified raw SINGLE INT and retained Python replay with independent 1296-file /
 1656-child-witness qualification. Historical joint-profile admission stays strict.
 
-**Next: audit full four/five-day Go economy/mobile/report/recipe composition against
-these completed bounded phases and remaining gateway outcomes before selecting
-another implementation. Do not repeat stock conversion, guarded victory or raw
-numeric controls; do not imply complete-chain admission from phase-only tests.**
+The [full maintenance-chain composition audit](yt-maint/MAINTENANCE_COMPOSITION_AUDIT.md)
+checks merged main through #186 and the live open-PR collection (empty on
+2026-11-18). Initial, late-clock, convergence-three-day and occupied-day306 Go/CLI
+composition already exists; do not repeat it. New Mercenary phases still lack
+the distinct evolved occupied-combat parent, day-309/310 economy/home routing,
+post-phase lottery, family-specific reports and transactional child composition.
+
+**Next: bounded Go evolved occupied-combat planet economy on days 307/308,
+reusing the four existing chains and Python planet writer (24 modeled phases).
+Then complete their home/mobile/tail/report continuation and three-day parent
+before composing the later gateway/stock children. Keep all existing phase and
+recipe admission strict; reuse captures and numeric primitives.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
