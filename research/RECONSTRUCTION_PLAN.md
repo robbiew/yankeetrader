@@ -371,11 +371,19 @@ Post-economy stock 40/3 remains uncollected and raw departure/cache/governor byt
 survive. Independent qualification remains 864 native files /1074 child witnesses;
 no new acquisition was needed. Victorious or large-force combat remains refused.
 
-**Next: audit the retained gateway/stock-conversion corpus for a distinct bounded
-Go victorious-Mercenary/stock continuation before extending combat admission.
-Do not repeat completed fatal-defense, owner/mine, held/departed phases or their
-Python/native controls. Full four/five-day Go economy/mobile/report/recipe
-composition still requires a separate dependency audit.**
+[Bounded Go victorious gateway continuation](yt-maint/GO_GATEWAY_VICTORY.md)
+now models the two guarded profiles and next-day empty routes: 12 modeled worlds,
+21 activations, six unit victories and three mine actions match Python. Victory
+continues routing rather than taking stock on that encounter. Selected native
+qualification remains 432 files /660 witnesses, separately from the wider gateway
+1296-file /1962-witness audit; no acquisition was repeated. Fatal-only admission
+and unrelated stock/friendly/neutral/defender profiles remain strict.
+
+**Next: bounded Go clear-gateway positive stock conversion using the twelve existing
+stock-conversion cases and Python replay. Reuse the already qualified raw SINGLE
+INT primitive; do not duplicate runtime controls or the new guarded-victory
+continuation. Preserve older joint-profile admission. Full four/five-day Go
+economy/mobile/report/recipe composition still needs a separate dependency audit.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
