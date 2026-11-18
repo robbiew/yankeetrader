@@ -131,3 +131,11 @@ recipe/CLI package tests. No full native
 verifier, remote CI campaign, new executable or gameplay behavior was run or
 changed for this documentation-only audit. Open PRs were checked live; that is a
 point-in-time observation, not a permanent guarantee.
+
+## Implementation following the audit
+
+The [evolved occupied-combat planet economy](GO_EVOLVED_OCCUPIED_PLANETS.md)
+now completes the first queued phase using those existing captures and Python
+chains. The audit's main snapshot and open-PR observation above describe its
+original inspection point. Next is evolved occupied-combat home/mobile
+continuation, not repeating planet economy or the existing initial compositions.

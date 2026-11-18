@@ -133,6 +133,15 @@ func ReplayEvolvedPlanets(before []byte, in EvolvedPlanetInputs) ([]byte, Evolve
 			return fail("one physical sector link per active planet")
 		}
 	}
+	return replayQualifiedPlanetEconomy(before, in, "evolved planets")
+}
+
+// replayQualifiedPlanetEconomy shares source arithmetic only after each public
+// profile has checked its own complete admission. It does not select a profile.
+func replayQualifiedPlanetEconomy(before []byte, in EvolvedPlanetInputs, context string) ([]byte, EvolvedPlanetStats, error) {
+	fail := func(s string) ([]byte, EvolvedPlanetStats, error) {
+		return nil, EvolvedPlanetStats{}, fmt.Errorf("%s: %s", context, s)
+	}
 	work := bytes.Clone(before)
 	read := func(r, o int) float64 { a := (r-1)*RecordSize + o; return portSingleValue([4]byte(work[a : a+4])) }
 	put := func(r, o int, v float64) {

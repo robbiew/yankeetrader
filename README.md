@@ -2985,10 +2985,30 @@ three-day convergence chain and occupied day-306 composition/CLI already exist.
 Recent stock/gateway Go phases remain phase-only; their native-qualified Python
 chains do not establish complete four/five-day Go output.
 
-The first missing dependency is evolved occupied-combat planet economy on days
-307/308, followed by corresponding mobile/tail/report continuation and its
-three-day parent. Later stock chains also need day-309/310 ports, gateway economy
+The first missing dependency identified was evolved occupied-combat planet economy
+on days 307/308, now implemented below. Corresponding mobile/tail/report continuation
+and its three-day parent remain. Later stock chains also need day-309/310 ports, gateway economy
 and routing, unimplemented gateway outcomes, once-only lottery, family-specific
 news/scores, internally chained Go files and then explicit CLI admission. Reuse
 existing captures, arithmetic and completed combat phases. Historical admissions,
+playable maintenance, save 35 and release formats are unchanged.
+
+### Bounded Go evolved occupied-combat planet economy
+
+`qbmaint.ReplayEvolvedOccupiedPlanets` now derives day-307/308 economy for the
+three named homes and optional neutral Route Haven from modeled bytes/state and
+ordered source clocks. Separate admission preserves both existing convergence
+and initial-occupied guards. The existing arithmetic kernel is reused after
+validation: fractional/capped elapsed time, stocks/rates, interest, ground,
+raw timestamps and three eager event draws retain source order.
+
+All 24 modeled phase worlds /78 planet updates /234 eager draws match the retained
+Python chains. Independent qualification remains 144 six-file comparisons /864
+native files and 1242 child RNG witnesses. Tests cover complete worlds/receipts,
+ownership, fractional/interest boundaries and late atomic event rejection;
+exporter controls enforce synthesis-before-targets and reject corruption/RNG
+oracle input. No captures, observation hashes or frozen sources changed.
+[Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md).
+Next is matching evolved occupied-combat home/mobile continuation, then tail,
+reports and the three-day parent. Full stock/gateway composition, CLI selection,
 playable maintenance, save 35 and release formats are unchanged.

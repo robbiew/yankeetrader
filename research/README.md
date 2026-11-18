@@ -215,3 +215,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Maintenance-chain composition audit](yt-maint/MAINTENANCE_COMPOSITION_AUDIT.md):
   current complete Go/CLI profiles, distinct stock/gateway phase boundaries and
   dependency-ordered gaps; next is evolved occupied-combat child economy.
+
+- [Bounded Go evolved occupied-combat planet economy](yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md):
+  24 day-307/308 modeled phases, 78 planet updates and 234 eager draws; independent
+  retained 864-file /1242-child-witness qualification, with separate admission.

@@ -393,11 +393,17 @@ composition already exists; do not repeat it. New Mercenary phases still lack
 the distinct evolved occupied-combat parent, day-309/310 economy/home routing,
 post-phase lottery, family-specific reports and transactional child composition.
 
-**Next: bounded Go evolved occupied-combat planet economy on days 307/308,
-reusing the four existing chains and Python planet writer (24 modeled phases).
-Then complete their home/mobile/tail/report continuation and three-day parent
-before composing the later gateway/stock children. Keep all existing phase and
-recipe admission strict; reuse captures and numeric primitives.**
+[Bounded Go evolved occupied-combat planet economy](yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md)
+now implements that first dependency for days 307/308: 24 modeled phases, 78
+planet updates and 234 eager draws match the retained four Python chains. Separate
+admission reuses the qualified arithmetic kernel without widening convergence or
+initial-occupied profiles. Existing 864-file /1242-child-witness qualification is
+revalidated, not reacquired; source/capture hashes remain unchanged.
+
+**Next: bounded Go evolved occupied-combat home/mobile continuation, reusing
+those same four chains and Python NPC routing/cache/combat rules. Then integrate
+its tail/report continuation and three-day parent before composing later
+gateway/stock children. Keep existing phase and recipe admission strict.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
