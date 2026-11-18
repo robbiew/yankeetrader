@@ -2935,3 +2935,24 @@ ownership, late atomic failures and independently computed unqualified victory
 refusal. [Scope and validation](research/yt-maint/GO_DEFENDER_STOCK.md).
 This phase ends before lottery/reports/final metadata. Complete five-day Go/CLI
 composition, general large-force combat and playable maintenance remain separate.
+
+### Bounded Go victorious Mercenary gateway continuation
+
+`qbmaint.ReplayGatewayVictoryMercenary` now models the two retained guarded gateway
+profiles and next-day empty routes. It derives target/helper chronology, optional
+one-mine incoming damage, unit-round victory against 37 Xannor defenders, continued
+routing and later descending-scan activations. The entering negative owner selects
+combat: victory clears defense/owner canonically and continues to the next edge,
+without falling through into planet pickup. Stock 37/40, governor, ground and
+stale caches remain unchanged throughout this phase.
+
+All 12 modeled worlds /21 activation receipts match existing Python replay,
+including six victories and three mine actions. The selected profiles independently
+match 72 six-file comparisons /432 native files and 660 RNG witnesses; the separate
+full gateway audit still checks 1296 files /1962 witnesses. No observations,
+hashes or frozen acquisition sources changed. Tests cover complete routes,
+casualty/faction conservation, source zeros, ownership and late atomic refusal.
+[Scope and validation](research/yt-maint/GO_GATEWAY_VICTORY.md).
+This API ends before lottery/reports/final metadata. Positive stock conversion,
+other gateway outcomes, general batch combat and full five-day Go/CLI composition
+remain separate; no playable policy or save/release format changed.
