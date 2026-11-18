@@ -363,11 +363,19 @@ mine damage before local/stock addition, and complete mutable local scans. All
 retained 648-file /855-child-witness qualification. Original captures/hashes and
 historical friendly/departed admission remain unchanged.
 
-**Next: bounded Go surviving foreign-defense/stock continuations from the existing
-defender corpus and Python replay. Audit the specific Mercenary attack branch
-before composing it; do not duplicate the completed Xannor attack primitive or
-owner/mine captures/replay. Complete four-day Go economy/mobile/report/recipe
-composition remains subsequent integration work requiring a dependency audit.**
+[Bounded Go fatal Mercenary offense and extinct stock continuation](yt-maint/GO_DEFENDER_STOCK.md)
+now models the four small-attacker defense contexts and both child phases. All
+24 modeled worlds/receipts match Python; physical/source helper/eager combat
+progression derives every casualty and the next scan cannot resurrect force.
+Post-economy stock 40/3 remains uncollected and raw departure/cache/governor bytes
+survive. Independent qualification remains 864 native files /1074 child witnesses;
+no new acquisition was needed. Victorious or large-force combat remains refused.
+
+**Next: audit the retained gateway/stock-conversion corpus for a distinct bounded
+Go victorious-Mercenary/stock continuation before extending combat admission.
+Do not repeat completed fatal-defense, owner/mine, held/departed phases or their
+Python/native controls. Full four/five-day Go economy/mobile/report/recipe
+composition still requires a separate dependency audit.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

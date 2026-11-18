@@ -2913,3 +2913,25 @@ actors/fractions/zeros, source-owned writes and late atomic failures. Historical
 held/departed profiles remain strict. [Scope and validation](research/yt-maint/GO_NEUTRAL_OWNER_STOCK.md).
 The API ends before lottery/reports/final metadata; full four-day Go composition,
 CLI admission and playable maintenance remain separate.
+
+### Bounded Go Mercenary fatal offense and surviving-stock continuation
+
+`qbmaint.ReplayDefenderStockMercenary` now models the retained four fatal
+Mercenary attacks and the next day's extinct-force scans from modeled pre-phase
+worlds, calculated state and explicit source target clocks. It derives eager
+physical/movement/combat draws, target rejection/BFS routes and every unit
+casualty; all admitted attackers are at most 37, so the generic 150-loss branch
+is excluded. Fatal first-hop combat leaves stock uncollected and preserves
+surviving Xannor ownership and stale group caches. An extinct scan consumes only
+its physical-field draws, preserves the entire world and never resurrects force.
+
+All 24 modeled phase worlds/receipts match the existing Python five-day replay.
+The next-day phase preserves upstream-grown stock 40/3, rather than admitting the
+whole-day before values 37/0 or growing stock twice. Retained independent
+qualification remains 144 six-file comparisons /864 native files and 1074 child
+RNG witnesses; no captures, observation hashes or frozen acquisition sources
+changed. Tests cover exact continuation, raw zeros, stock/governor preservation,
+ownership, late atomic failures and independently computed unqualified victory
+refusal. [Scope and validation](research/yt-maint/GO_DEFENDER_STOCK.md).
+This phase ends before lottery/reports/final metadata. Complete five-day Go/CLI
+composition, general large-force combat and playable maintenance remain separate.
