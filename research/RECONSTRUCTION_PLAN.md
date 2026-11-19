@@ -400,10 +400,16 @@ admission reuses the qualified arithmetic kernel without widening convergence or
 initial-occupied profiles. Existing 864-file /1242-child-witness qualification is
 revalidated, not reacquired; source/capture hashes remain unchanged.
 
-**Next: bounded Go evolved occupied-combat home/mobile continuation, reusing
-those same four chains and Python NPC routing/cache/combat rules. Then integrate
-its tail/report continuation and three-day parent before composing later
-gateway/stock children. Keep existing phase and recipe admission strict.**
+[Bounded Go evolved occupied-combat home/mobile continuation](yt-maint/GO_EVOLVED_OCCUPIED_MOBILE.md)
+now derives 24 modeled phases /465 routes /108 Route Haven ground assaults and
+joins actual Go economy output/state. Cache normalization, casualty-reduced
+allocation, source pursuit/scans, deposition and nine no-travel mine counter-cases
+match retained Python. The 864-file /1242-child-witness qualification remains
+independent; no captures or old combat admission changed.
+
+**Next: bounded Go evolved occupied-combat Mercenary/lottery tail and auxiliary
+reports using those same four retained chains. Then compose the three-day Go
+parent before later gateway/stock children; retain strict old phase/recipe guards.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,

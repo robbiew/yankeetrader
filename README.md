@@ -3009,6 +3009,27 @@ ownership, fractional/interest boundaries and late atomic event rejection;
 exporter controls enforce synthesis-before-targets and reject corruption/RNG
 oracle input. No captures, observation hashes or frozen sources changed.
 [Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md).
-Next is matching evolved occupied-combat home/mobile continuation, then tail,
-reports and the three-day parent. Full stock/gateway composition, CLI selection,
+Matching evolved occupied-combat home/mobile continuation is now implemented
+below; tail, reports and the three-day parent remain. Full stock/gateway composition, CLI selection,
 playable maintenance, save 35 and release formats are unchanged.
+
+### Bounded Go evolved occupied-combat home/mobile continuation
+
+`qbmaint.ReplayEvolvedOccupiedHomeMobile` now derives the same four retained
+chains' day-307/308 home/cache/mobile phase from modeled economy bytes/state and
+explicit helper clocks. It normalizes loaded caches once, reallocates missing
+groups, moves Wanderer, updates Xannoron and derives routing, pursuit, fatal
+Route Haven assaults and physical deposition. Group20's mine increment requires
+actual travel. Existing peaceful and initial combat admissions remain strict;
+entered mine/foreign-defense or unqualified ground encounters fail atomically.
+
+All 24 modeled worlds, 465 route receipts and 108 ground assaults match Python,
+including actual Go economy handoffs and nine positive-force no-travel group20
+cases. Independent qualification remains 864 native files /1242 child RNG
+witnesses. Tests cover caches/groups, source zeros, casualty/state continuation,
+owned storage and early/late refusals. Five exporter controls protect provenance,
+target-read ordering and RNG independence; no captures or native hashes changed.
+[Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_MOBILE.md).
+Next are evolved occupied-combat tail/reports and the three-day parent, before
+stock/gateway full chains or new CLI admission. Playable maintenance and save 35
+remain unchanged.

@@ -219,3 +219,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Bounded Go evolved occupied-combat planet economy](yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md):
   24 day-307/308 modeled phases, 78 planet updates and 234 eager draws; independent
   retained 864-file /1242-child-witness qualification, with separate admission.
+
+- [Bounded Go evolved occupied-combat home/mobile continuation](yt-maint/GO_EVOLVED_OCCUPIED_MOBILE.md):
+  24 phases /465 routes /108 ground assaults, actual Go economy handoffs and nine
+  no-travel mine counter-cases; retained 864-file /1242-child-witness qualification.

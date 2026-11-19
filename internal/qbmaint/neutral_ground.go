@@ -49,6 +49,16 @@ func ReplayNeutralGroundAssault(before []byte, in NeutralGroundInputs) ([]byte, 
 	if !named || length != 11 || !bytes.Equal(before[at:at+41], []byte(fmt.Sprintf("%-41s", "Route Haven"))) || raw(4053, 73)[3] != 0 || ground <= 500000 || ground > 505000 {
 		return fail("strong neutral Route Haven required")
 	}
+	return replayQualifiedNeutralGround(before, in, int(ground))
+}
+
+// replayQualifiedNeutralGround runs only the positive-ground fatal calculation;
+// public callers independently validate their measured sector/name/ground scope.
+func replayQualifiedNeutralGround(before []byte, in NeutralGroundInputs, ground int) ([]byte, NeutralGroundStats, error) {
+	fail := func(s string) ([]byte, NeutralGroundStats, error) {
+		return nil, NeutralGroundStats{}, fmt.Errorf("neutral ground assault: %s", s)
+	}
+	at := (4053 - 1) * RecordSize
 	stats := NeutralGroundStats{InitialForce: in.Force, RawForce: in.Force, InitialGround: int(ground), Ground: int(ground), InitialState: in.State}
 	rng := qbrng.New(in.State)
 	for stats.RawForce > 0 {
@@ -61,6 +71,9 @@ func ReplayNeutralGroundAssault(before []byte, in NeutralGroundInputs) ([]byte, 
 		damage := int(float32(rng.Float32()*float32(1000))) + 1
 		stats.RawForce -= damage
 		stats.Draws++
+	}
+	if stats.Ground <= 0 {
+		return fail("ground exhausted; owner/deletion aftermath excluded")
 	}
 	stats.Force = 0
 	stats.FinalState = rng.State()
