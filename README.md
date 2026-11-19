@@ -2734,8 +2734,9 @@ and 1872 RNG witnesses. Native targets and captured endpoints never correct
 synthesis, and no captures or historical source hashes changed. Tests cover
 fractional production, wider ground flooring, raw-zero timestamps, owned storage,
 exact write bounds and atomic profile refusals. Earlier convergence APIs and
-CLI profiles stay strict; combat/routing and complete occupied-world Go output
-remain next, with modern gameplay, save 35 and release packages unchanged.
+CLI profiles stay strict; occupied combat/routing, complete six-file Go output
+and its separate CLI profile are now implemented below. Modern gameplay, save 35
+and release packages are unchanged.
 
 ### Bounded Go foreign-defense combat
 
@@ -2766,10 +2767,8 @@ warehouse stocks, owner and placement remain untouched. Inputs are immutable,
 outputs owned and unsupported contexts fail without partial results. The exporter
 separately revalidates 1080 native files and 1872 RNG witnesses without changing
 observations or acquiring new captures. Tests and CI distinguish modeled phase
-receipts from native whole-run qualification. Next is bounded occupied-world
-routing/shared-pursuit integration with both combat primitives, then casualty
-news/scores and complete six-file output. Existing research CLI profiles, modern
-gameplay, save 35 and release packages are unchanged.
+receipts from native whole-run qualification. Occupied routing/shared-pursuit,
+casualty news/scores and complete six-file output are now implemented below. Existing research CLI profiles, modern gameplay, save 35 and release packages are unchanged.
 
 ### Bounded Go occupied-world home/mobile routing
 
@@ -2784,9 +2783,9 @@ scans and clear their pointers. Physical defense and moving-group conservation
 remain distinct, including neutral force retained during deposition. The exporter
 separately revalidates 1080 native files and 1872 RNG witnesses without new
 captures, endpoint correction or changed native hashes. Input isolation, owned
-outputs, strict historical gates and atomic late failures are tested. Next are
-casualty-dependent news/scores, downstream tail composition and complete occupied
-six-file Go output. Existing research CLI profiles, gameplay, save 35 and release
+outputs, strict historical gates and atomic late failures are tested. Casualty
+news/scores, tail composition and complete occupied six-file output are now
+implemented below. Existing research CLI profiles, gameplay, save 35 and release
 packages are unchanged.
 
 ### Bounded Go casualty-dependent news and faction scoring
@@ -2803,8 +2802,8 @@ Exact rational percentage rounding rejects unqualified halfway cases. Exporter
 checks independently revalidate 1080 native files and 1872 RNG witnesses without
 new captures or altered native hashes. Tests cover corruption, atomic refusals,
 owned outputs, DOS CRLF/EOF and unsupported numeric formatting. The finalized
-world still comes from the Python fixture in this report-only milestone; Go tail,
-final metadata and complete occupied six-file composition remain next. Existing
+world comes from the Python fixture in this report-only API test; the separate
+occupied composition below now derives Go tail, metadata and all six files. Existing
 CLI profiles, gameplay, save 35 and release packages are unchanged.
 
 ### Bounded Go occupied-world six-file composition
@@ -2866,8 +2865,8 @@ or observation hashes changed. Tests cover raw stock/fractions, held-versus-
 departed gates, derived paths/reseeds, physical conservation, owned output,
 restricted writes and late atomic refusal. [Scope and validation](research/yt-maint/GO_FRIENDLY_STOCK.md).
 This phase ends before lottery/reports/final metadata; full four-day Go/CLI
-composition and departed-garrison behavior remain separate. Existing research
-profiles, playable maintenance, save 35 and release packages are unchanged.
+composition remains separate; departed-garrison behavior is implemented below.
+Existing research profiles, playable maintenance, save 35 and release packages are unchanged.
 
 ### Bounded Go departed-garrison movement and same-scan activation
 
@@ -2976,3 +2975,40 @@ separation. No observations, hashes or frozen acquisition sources changed.
 This phase ends before lottery/reports/final metadata. Full four-day Go composition,
 CLI selection, arbitrary stocks and playable maintenance remain separate; older
 joint garrison/stock and victory admission is unchanged.
+
+### Maintenance-chain composition audit
+
+The [composition audit](research/yt-maint/MAINTENANCE_COMPOSITION_AUDIT.md) checks
+merged main through #186 against the plan, source guards, Python chains and open
+PRs (none at the 2026-11-18 check). Initial/late-clock six-file replay, the
+three-day convergence chain and occupied day-306 composition/CLI already exist.
+Recent stock/gateway Go phases remain phase-only; their native-qualified Python
+chains do not establish complete four/five-day Go output.
+
+The first missing dependency identified was evolved occupied-combat planet economy
+on days 307/308, now implemented below. Corresponding mobile/tail/report continuation
+and its three-day parent remain. Later stock chains also need day-309/310 ports, gateway economy
+and routing, unimplemented gateway outcomes, once-only lottery, family-specific
+news/scores, internally chained Go files and then explicit CLI admission. Reuse
+existing captures, arithmetic and completed combat phases. Historical admissions,
+playable maintenance, save 35 and release formats are unchanged.
+
+### Bounded Go evolved occupied-combat planet economy
+
+`qbmaint.ReplayEvolvedOccupiedPlanets` now derives day-307/308 economy for the
+three named homes and optional neutral Route Haven from modeled bytes/state and
+ordered source clocks. Separate admission preserves both existing convergence
+and initial-occupied guards. The existing arithmetic kernel is reused after
+validation: fractional/capped elapsed time, stocks/rates, interest, ground,
+raw timestamps and three eager event draws retain source order.
+
+All 24 modeled phase worlds /78 planet updates /234 eager draws match the retained
+Python chains. Independent qualification remains 144 six-file comparisons /864
+native files and 1242 child RNG witnesses. Tests cover complete worlds/receipts,
+ownership, fractional/interest boundaries and late atomic event rejection;
+exporter controls enforce synthesis-before-targets and reject corruption/RNG
+oracle input. No captures, observation hashes or frozen sources changed.
+[Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_PLANETS.md).
+Next is matching evolved occupied-combat home/mobile continuation, then tail,
+reports and the three-day parent. Full stock/gateway composition, CLI selection,
+playable maintenance, save 35 and release formats are unchanged.
