@@ -69,7 +69,12 @@ func Run(c Config) (Receipt, error) {
 	var r qbmaint.InitialRecipe
 	var chain []qbmaint.ConvergenceDayInputs
 	var occupied qbmaint.OccupiedInputs
-	if envelope.Format == OccupiedFormat {
+	var evolved []qbmaint.EvolvedOccupiedDayInputs
+	if envelope.Format == EvolvedChainFormat {
+		var v EvolvedChainDocument
+		v, evolved, e = DecodeEvolvedChain(data)
+		d = Document{Format: v.Format, Profile: v.Profile, Name: v.Name, BeforeSHA256: v.BeforeSHA256, SourceSHA256: v.SourceSHA256}
+	} else if envelope.Format == OccupiedFormat {
 		var v OccupiedDocument
 		v, occupied, e = DecodeOccupied(data)
 		d = Document{Format: v.Format, Profile: v.Profile, Name: v.Name, BeforeSHA256: v.BeforeSHA256, SourceSHA256: v.SourceSHA256}
@@ -163,7 +168,35 @@ func Run(c Config) (Receipt, error) {
 	var stats qbmaint.InitialStats
 	var encounters []qbmaint.WandererEncounter
 	receipt := Receipt{Format: "qbmaint-receipt-v1", Profile: d.Profile, Name: d.Name, RecipeSHA256: digest(data), BeforeSHA256: d.BeforeSHA256, SourceSHA256: d.SourceSHA256, OutputSHA256: map[string]string{}, StateEvidence: "modeled-not-native-endpoint"}
-	if d.Profile == OccupiedProfile {
+	if d.Profile == EvolvedChainProfile {
+		rows, err := qbmaint.ReplayEvolvedOccupiedChain(before, evolved)
+		if err != nil {
+			return fail(err)
+		}
+		files = map[string][]byte{}
+		receipt.Format = "qbmaint-receipt-v4"
+		for i, row := range rows {
+			final, draws := row.Tail.FinalState, row.Ports.RNGDraws+row.Planets.Draws+row.Mobile.Draws+row.Tail.Draws
+			if row.Initial != nil {
+				v := row.Initial
+				final = v.Tail.FinalState
+				draws = v.Planets.Draws + v.Routing.Draws + v.Tail.Draws
+			}
+			receipt.Days = append(receipt.Days, ChainDayReceipt{Day: row.Day, InitialState: evolved[i].InitialState, FinalState: final, Draws: draws})
+			receipt.Draws += draws
+			receipt.FinalState = final
+			if len(row.Files) != 6 {
+				return fail(fmt.Errorf("unexpected evolved chain inventory"))
+			}
+			for _, n := range outputNames {
+				b, ok := row.Files[n]
+				if !ok {
+					return fail(fmt.Errorf("missing evolved output"))
+				}
+				files[fmt.Sprintf("day-%d/%s", i+1, n)] = b
+			}
+		}
+	} else if d.Profile == OccupiedProfile {
 		var s qbmaint.OccupiedStats
 		files, s, e = qbmaint.ReplayOccupiedFiles(before, occupied)
 		if e != nil {

@@ -1,7 +1,8 @@
 # Research-only maintenance recipes and CLI
 
 `cmd/qbmaint-replay` is a separate source-only adapter around the qualified Go
-initial maintenance APIs and bounded three-day convergence chain. It does not run a door, load modern saves, generate a
+initial/occupied maintenance APIs and bounded three-day convergence and evolved
+occupied-combat chains. It does not run a door, load modern saves, generate a
 new playable world, import a DOS game into the modern schema, or replace
 `yt -maint`. The repository's published release packages remain unchanged.
 
@@ -240,5 +241,66 @@ import, release package update or playable maintenance selector.
 
 ```sh
 python3 scripts/test_occupied_cli_recipes.py
+go test ./internal/qbreplay ./cmd/qbmaint-replay
+```
+
+## Evolved occupied-combat three-day profile (v4)
+
+The separate `qbmaint-replay-v4` format selects only
+`evolved-occupied-three-day`. Its clock-only fields follow the three-day shape:
+three original before hashes, bounded source hashes, and three ordered day
+recipes with startup state, 1000 port DATE/TIMER-minute pairs, planet clocks,
+creation arrays, home/tail helpers and independent report clocks. Days are fixed
+to 306–308. Each DOS process starts from its own explicit seed; no captured child
+world, cache, combat event, endpoint or expected-output field is accepted.
+
+Admission pins the four originals from the evolved occupied-combat corpus.
+Three profiles have no ordinary planet on day306 and three home clocks on each
+child; the Route Haven profile has one ordinary clock initially and four clocks
+on each child. This inventory derives from the qualified original hash, never a
+caller-supplied layout override. Creation has exactly one entry on the first day
+and explicit empty arrays afterward. Empty arrays, zero state and raw SINGLE
+zero residues remain explicit. Missing/null/duplicate/case-alias/unknown fields,
+noncanonical hex, incompatible originals and source references are refused.
+Existing v1–v3 decoders and phase guards are unchanged.
+
+```sh
+replay_work=$(mktemp -d)
+python3 scripts/export_evolved_chain_cli_recipes.py --out "$replay_work/cases"
+go build -o "$replay_work/qbmaint-replay" ./cmd/qbmaint-replay
+"$replay_work/qbmaint-replay" \
+  -recipe "$replay_work/cases/route-mercenary-100000-observed-a/recipe.json" \
+  -before "$replay_work/cases/route-mercenary-100000-observed-a/before" \
+  -source-root "$PWD" -out "$replay_work/result"
+```
+
+The exporter reuses the existing complete-chain and phase fixtures, writing
+12 original/source-observation bundles. Each contains three original files,
+`recipe.json` and separate comparison-only `oracles.json`. It acquires no native
+captures and supplies no native child handoff. Expected files/states/draws stay
+outside the recipe and command; poisoning that oracle file does not change replay.
+Declared before/source hashes are checked against actual files; they bind declared
+provenance and do not authenticate a recipe author or attest native endpoint state.
+
+Output is 18 raw DOS files in `OUT/replay/day-1/` through `day-3/`, plus one
+`receipt.json`. Publication uses the existing exclusive fresh-bundle mechanism,
+outside source/input trees, only after all days succeed. Existing output is never
+reused. Late helper/report or changed before/source failures leave no output or
+staging directory. The v4 receipt records all 18 output hashes, recipe/before/
+source hashes, per-day startup/final states and draw counts, total draws and last
+process final state. States remain `modeled-not-native-endpoint`.
+
+Compiled-CLI tests match all **12 chains /36 six-file results /216 output files**,
+receipt states/draws, journal rotation, before-file preservation and output reuse
+refusal. They test late failure and source/input/endpoint corruption, while schema
+checks cover all four layouts, raw zeros, version isolation and malformed fields.
+Compiled v2/v3 regressions and shared path/publication tests remain in place.
+Existing independent native qualification remains 864 child files /1242 RNG
+witnesses, with parent qualification separate; this adapter adds no new native
+observations. The research command is checkout-only and does not add a playable
+maintenance selector, DOS save importer/exporter or release binary.
+
+```sh
+python3 scripts/test_evolved_chain_cli_recipes.py
 go test ./internal/qbreplay ./cmd/qbmaint-replay
 ```

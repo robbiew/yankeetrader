@@ -77,8 +77,8 @@ python3 scripts/test_export_evolved_occupied_chain_fixture.py
 go test ./internal/qbmaint -run TestEvolvedOccupiedChain
 ```
 
-Next expose this complete bounded chain through a separate research recipe/CLI
-profile using these recipes, preserving existing v1–v3 decoding and fresh bundle
-publication. Later four/five-day stock/gateway extensions still need their own
+The separate [research recipe/CLI v4](REPLAY_CLI.md#evolved-occupied-combat-three-day-profile-v4)
+now exposes this complete chain using these recipes, preserving existing v1–v3
+decoding and fresh bundle publication. Later four/five-day stock/gateway extensions still need their own
 fixture transforms and child-phase admissions. General production maintenance,
 DOS save import/export and native Windows/live BBS acceptance remain separate.

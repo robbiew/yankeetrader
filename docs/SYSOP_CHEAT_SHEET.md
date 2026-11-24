@@ -224,3 +224,11 @@ pass one bundle's `recipe.json` and `before/` directory to `qbmaint-replay`.
 Use a new output directory outside source/input trees; six DOS files plus a
 modeled receipt appear under `OUT/replay/`. This does not import into modern
 saves or change scheduled maintenance. See the [v3 research instructions](../research/yt-maint/REPLAY_CLI.md#occupied-day-306-profile-v3).
+
+Recipe v4 `evolved-occupied-three-day` now replays the four retained evolved
+occupied-combat worlds across three days. Export its 12 qualified bundles with
+`python3 scripts/export_evolved_chain_cli_recipes.py --out NEW-DIR`, then pass
+one recipe and its three original before files to the same research command.
+A fresh `OUT/replay/` contains `day-1/` through `day-3/` (six files each) and one
+modeled receipt. Scheduled maintenance and modern save import/export are
+unchanged. See the [v4 instructions](../research/yt-maint/REPLAY_CLI.md#evolved-occupied-combat-three-day-profile-v4).

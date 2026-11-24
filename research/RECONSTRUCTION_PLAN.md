@@ -7,7 +7,7 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 ## Current implementation and next work — checked 2026-11-24
 
 This section is the current planning baseline, checked against merged `main`
-through `d494b0c8` after #189, including the later composition/stock phases audited below
+through `426afc58` after #190, including the later composition/stock phases audited below
 (earlier recovery includes bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
@@ -421,10 +421,18 @@ remain calculated. Original-only portable recipes and five corruption/provenance
 controls revalidate existing 864-child-file /1242-witness qualification; no native
 observations or historical phase guards changed.
 
-**Next: a separate research recipe/CLI profile for the complete evolved
-occupied-combat three-day chain, reusing these recipes and existing atomic bundle
-publication. Preserve v1–v3 admission and verify compiled CLI results before later
-stock/gateway four/five-day extension. Do not repeat completed chain phases.**
+[Research recipe/CLI v4](yt-maint/REPLAY_CLI.md#evolved-occupied-combat-three-day-profile-v4)
+now exposes the completed evolved occupied-combat chain through twelve existing-
+fixture recipes. Four original pins determine empty/ordinary initial and three/
+four-home child clock layouts. Compiled CLI matches 36 six-file results /216 files
+and receipts with exclusive publication, raw clocks and no endpoint/oracle input.
+Existing v1–v3 admission and historical evidence hashes remain unchanged.
+
+**Next: bounded Go survivor/gateway port economy for days 309/310, reusing
+`scripts/replay_maintenance_survivor_ports.py`, the gateway adapter and retained
+captures. Preserve the current day306–308 port profile's guard; verify actual
+later port clocks/bytes before gateway planet/mobile and stock-chain extension.
+Do not repeat completed three-day chains, CLI profiles or numeric recovery.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
