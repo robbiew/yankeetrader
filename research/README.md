@@ -223,3 +223,7 @@ Next compose the downstream tail/final metadata and complete occupied Go outputs
 - [Bounded Go evolved occupied-combat home/mobile continuation](yt-maint/GO_EVOLVED_OCCUPIED_MOBILE.md):
   24 phases /465 routes /108 ground assaults, actual Go economy handoffs and nine
   no-travel mine counter-cases; retained 864-file /1242-child-witness qualification.
+
+- [Bounded Go evolved occupied-combat tail/reports](yt-maint/GO_EVOLVED_OCCUPIED_TAIL_REPORTS.md):
+  24 phase/report sets, selected unit victory, once-only lottery and source/public
+  faction ledger; retained 864-file /1242-child-witness qualification.

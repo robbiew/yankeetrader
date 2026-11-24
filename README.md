@@ -3030,6 +3030,26 @@ witnesses. Tests cover caches/groups, source zeros, casualty/state continuation,
 owned storage and early/late refusals. Five exporter controls protect provenance,
 target-read ordering and RNG independence; no captures or native hashes changed.
 [Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_MOBILE.md).
-Next are evolved occupied-combat tail/reports and the three-day parent, before
-stock/gateway full chains or new CLI admission. Playable maintenance and save 35
+Evolved occupied-combat tail/reports are now implemented below. The three-day
+parent still precedes stock/gateway full chains or new CLI admission. Playable maintenance and save 35
 remain unchanged.
+
+### Bounded Go evolved occupied-combat tail and reports
+
+`qbmaint.ReplayEvolvedOccupiedTail` now derives the retained child Mercenary scan,
+selected unit victory and once-only inactive lottery from modeled bytes/state
+and suffix helper clocks. `ReplayEvolvedOccupiedAux` emits five child report
+files from modeled before/final worlds and calculated Go event/tail ledgers.
+Entering news force remains distinct from casualties and surviving physical
+scores; original spelling, ordering, CRLF/EOF and journal rotation are preserved.
+Older empty-route tail and bootstrap report admissions remain strict.
+
+All 24 tail/report sets match retained Python: 12 activations, three unit-victory
+instances and 18 conditional lottery calls. Tests join actual Go mobile output
+through tail and metadata into all five byte-exact reports, and cover owned
+storage and early/late atomic refusals. Five exporter controls revalidate existing
+864-file /1242-child-witness qualification without changing native evidence.
+[Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_TAIL_REPORTS.md).
+Next is the complete three-day Go parent using only its own day outputs, then
+explicit recipe/CLI admission. Phase fixtures do not establish a full Go chain;
+playable maintenance, save 35 and release formats are unchanged.

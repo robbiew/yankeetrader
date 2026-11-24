@@ -138,5 +138,6 @@ The [evolved occupied-combat planet economy](GO_EVOLVED_OCCUPIED_PLANETS.md)
 now completes the first queued phase using those existing captures and Python
 chains. The audit's main snapshot and open-PR observation above describe its
 original inspection point. Evolved occupied-combat [home/mobile continuation](GO_EVOLVED_OCCUPIED_MOBILE.md)
-is now implemented too. Next are its Mercenary/lottery tail and reports, then the
-three-day parent; do not repeat economy, home/mobile or initial compositions.
+is now implemented too. The [Mercenary/lottery tail and reports](GO_EVOLVED_OCCUPIED_TAIL_REPORTS.md) are
+now implemented too. Next compose the full original-input three-day Go parent;
+do not repeat these phases or the existing initial/convergence compositions.

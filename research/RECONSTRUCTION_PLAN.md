@@ -4,10 +4,10 @@ Build a modern Go BBS door using godoors, grounded in the supplied original 3.6 
 
 <a id="current-work"></a>
 
-## Current implementation and next work — checked 2026-11-18
+## Current implementation and next work — checked 2026-11-23
 
 This section is the current planning baseline, checked against merged `main`
-through `fa4c5968` after #186, including the later composition/stock phases audited below
+through `85988979` after #188, including the later composition/stock phases audited below
 (earlier recovery includes bounded maintenance replay PRs #151–155 and #158–163 and merged numeric PRs #117–138 and #140–150 and merged maintenance PRs #88, #90–94 and #97–116, cursor fix #95 and smoke evidence #96), including PRs [#73](https://github.com/robbiew/yankeetrader/pull/73)
 (port rules/pricing), [#74](https://github.com/robbiew/yankeetrader/pull/74)
 (warp rules), [#75](https://github.com/robbiew/yankeetrader/pull/75)
@@ -407,9 +407,17 @@ allocation, source pursuit/scans, deposition and nine no-travel mine counter-cas
 match retained Python. The 864-file /1242-child-witness qualification remains
 independent; no captures or old combat admission changed.
 
-**Next: bounded Go evolved occupied-combat Mercenary/lottery tail and auxiliary
-reports using those same four retained chains. Then compose the three-day Go
-parent before later gateway/stock children; retain strict old phase/recipe guards.**
+[Bounded Go evolved occupied-combat tail and reports](yt-maint/GO_EVOLVED_OCCUPIED_TAIL_REPORTS.md)
+now derives 24 tail/report sets, 12 activations, three selected unit-victory
+instances and 18 lottery helper calls. Actual Go mobile/tail/metadata/report
+handoffs match all phase worlds and five auxiliary files. Existing 864-file /
+1242-child-witness qualification is revalidated without new capture changes.
+
+**Next: compose the full three-day Go evolved occupied-combat parent for the
+four retained chains, beginning with pinned original files and explicit clocks.
+Reuse existing occupied-day306, evolved ports, economy/mobile, tail, metadata and
+report APIs; feed only each Go day's own six files into its child. Verify full
+chains before separate recipe/CLI admission or later stock/gateway children.**
 Encounter/interception actions, complete maintenance and production integration
 remain separate. Do not repeat completed
 SINGLE/DOUBLE arithmetic or integer conversions. General error/unwind behavior,
