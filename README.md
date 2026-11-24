@@ -3050,6 +3050,27 @@ through tail and metadata into all five byte-exact reports, and cover owned
 storage and early/late atomic refusals. Five exporter controls revalidate existing
 864-file /1242-child-witness qualification without changing native evidence.
 [Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_TAIL_REPORTS.md).
-Next is the complete three-day Go parent using only its own day outputs, then
-explicit recipe/CLI admission. Phase fixtures do not establish a full Go chain;
+The complete three-day Go parent is now implemented below; explicit recipe/CLI
+admission remains separate. Phase fixtures alone do not establish a full Go chain;
 playable maintenance, save 35 and release formats are unchanged.
+
+### Complete bounded Go evolved occupied-combat three-day chain
+
+`qbmaint.ReplayEvolvedOccupiedChain` now composes the four retained occupied-combat
+profiles across days 306–308 from pinned original files and explicit clocks.
+It reuses existing occupied-day306 and child port/economy/mobile/tail/metadata/
+report APIs. Only each day's own Go six-file output feeds the next day; startup
+seeds remain independent per DOS process while state continues within each day.
+Late failures return no partial bundles, and all outputs own their storage.
+
+All 12 source recipes /36 six-file Go results match retained Python hashes,
+including calculated state handoffs and previous-news rotation. Independent
+child qualification remains 864 files /1242 RNG witnesses; parent qualification
+is reused from occupied-day306. Tests cover original pins, cross-day ownership,
+calendars, creation guards and last-day failures. Five exporter controls retain
+source/clock provenance and synthesis-before-target/RNG-independence boundaries.
+No native captures, observation hashes or old profile admission changed.
+[Scope and validation](research/yt-maint/GO_EVOLVED_OCCUPIED_CHAIN.md).
+Next is a separate research recipe/CLI profile using these complete chains;
+stock/gateway full chains, playable policy, save 35 and release formats remain
+separate.
